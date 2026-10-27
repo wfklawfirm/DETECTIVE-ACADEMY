@@ -1,0 +1,2192 @@
+{
+  "schema_version": "0.1.0",
+  "case_id": "c006_map_without_north",
+  "case_version": "0.1.0",
+  "meta": {
+    "title_ar": "خريطة بلا شمال",
+    "title_en": "A Map Without North",
+    "age_band": "16-18",
+    "locale": "ar",
+    "dialogue_register": "msa",
+    "estimated_minutes": 25,
+    "difficulty": 2,
+    "content_flags": [
+      "no_violence",
+      "science_lab"
+    ],
+    "authors": [
+      "فريق أثر التحريري (مسودة بمساعدة الذكاء الاصطناعي، لم تُراجَع بشرياً بعد)"
+    ],
+    "knowledge_object_refs": [
+      "KO-RS-05-001",
+      "KO-RS-05-005",
+      "KO-RS-05-002",
+      "KO-RS-06-001",
+      "KO-RS-06-009",
+      "KO-RS-06-021"
+    ]
+  },
+  "premise": {
+    "hook_ar": "شاهدان رأيا مركبة واحدة في ليلة واحدة، لكن أحدهما قال «يسار» والآخر قال «يمين». فهل يكذب أحدهما؟",
+    "player_role_ar": "أنت محلّل ملفات في لجنة السلامة المرورية الليلية، وعليك أن تحسم هل تتناقض الشهادتان فعلاً قبل أن تُقرّ اللجنة مسودتها.",
+    "setting_ar": "ساحة الصنوبر، ساحة دائرية في مدينة متخيَّلة، مساء الخميس. توقيت البلدية هو توقيت كل السجلات.",
+    "public_fact_ids": [
+      "f_vehicle_night",
+      "f_testimonies_differ",
+      "f_committee_draft"
+    ],
+    "assumed_general_knowledge_ar": [
+      "الاتجاهات الأربعة (شمال، جنوب، شرق، غرب) ثابتة على الخريطة",
+      "الرسم المنشور قد يختلف عن أصله في الحجم أو الاتجاه"
+    ]
+  },
+  "entities": {
+    "characters": [
+      {
+        "id": "muneer",
+        "name_ar": "منير العلي",
+        "role": "witness",
+        "age_descriptor_ar": "صاحب مقهى الشرفة",
+        "persona_ar": "هادئ ودقيق في وصف ما يراه من شرفته، ولا ينتبه إلى أن غيره ينظر إلى الساحة من جهة أخرى.",
+        "motives_ar": [
+          "أن تؤخذ شهادته على محمل الجد",
+          "ألا يُتّهم بأنه أخطأ أو بالغ"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "mu_greet",
+            "purpose": "greeting",
+            "text_ar": "تفضّل. كل ما سأقوله رأيته بعيني من الشرفة."
+          },
+          {
+            "line_id": "mu_pos",
+            "purpose": "reveal",
+            "text_ar": "أقف عادةً على شرفة المقهى المطلّة على الساحة، وأنظر إلى وسطها لأرى ما يمرّ.",
+            "fact_ids": [
+              "f_east_position"
+            ]
+          },
+          {
+            "line_id": "mu_turn",
+            "purpose": "reveal",
+            "text_ar": "رأيت المركبة تنعطف إلى اليسار، وبقي ضوؤها الأحمر ظاهراً حتى اختفى عند عمود الساعة، وكان العمود عن يساري.",
+            "fact_ids": [
+              "f_east_saw_pole_left"
+            ],
+            "claim_ids": [
+              "cl_east_left"
+            ]
+          },
+          {
+            "line_id": "mu_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أستطيع أن أجزم بأكثر مما رأيت."
+          },
+          {
+            "line_id": "mu_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عمّا رأيته من الشرفة فقط."
+          },
+          {
+            "line_id": "mu_bye",
+            "purpose": "farewell",
+            "text_ar": "أرجو أن تُكتب شهادتي كما قلتها."
+          }
+        ]
+      },
+      {
+        "id": "adel",
+        "name_ar": "عادل النمر",
+        "role": "witness",
+        "age_descriptor_ar": "حارس مكتبة المدينة",
+        "persona_ar": "منضبط وقليل الكلام، يدوّن ما يراه عند البوابة ولا يحب أن يُقال إنه أخطأ.",
+        "motives_ar": [
+          "أن تُقبل ملاحظاته كما دوّنها",
+          "ألا يُنسب إليه خطأ في جهة الانعطاف"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "ad_greet",
+            "purpose": "greeting",
+            "text_ar": "مساء الخير. أحرس البوابة، وأرى الساحة من أمامها."
+          },
+          {
+            "line_id": "ad_pos",
+            "purpose": "reveal",
+            "text_ar": "كنت عند بوابة المكتبة أنظر إلى الساحة كلها من جهتي، ولا أحوّل نظري عنها حين تمرّ مركبة.",
+            "fact_ids": [
+              "f_west_position"
+            ]
+          },
+          {
+            "line_id": "ad_turn",
+            "purpose": "reveal",
+            "text_ar": "رأيت المركبة تنعطف إلى اليمين، وضوؤها الأحمر اختفى عند عمود الساعة، وكان العمود عن يميني.",
+            "fact_ids": [
+              "f_west_saw_pole_right"
+            ],
+            "claim_ids": [
+              "cl_west_right"
+            ]
+          },
+          {
+            "line_id": "ad_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لم أرَ غير ذلك."
+          },
+          {
+            "line_id": "ad_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن البوابة وما رأيته منها."
+          },
+          {
+            "line_id": "ad_bye",
+            "purpose": "farewell",
+            "text_ar": "مع السلامة."
+          }
+        ]
+      },
+      {
+        "id": "samer",
+        "name_ar": "سامر الخوري",
+        "role": "suspect",
+        "age_descriptor_ar": "موظف الإصدارات في البلدية",
+        "persona_ar": "متعجل ويخشى أن يُنسب إليه خطأ في التقرير، فيؤكد أن عمله سليم قبل أن يُسأل عنه.",
+        "motives_ar": [
+          "ألا يُلام على التباس الشكل المنشور",
+          "إنهاء تقرير اللجنة في موعده"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "sm_greet",
+            "purpose": "greeting",
+            "text_ar": "أهلاً. الشكل 2 جاهز منذ أسبوع."
+          },
+          {
+            "line_id": "sm_prep",
+            "purpose": "reveal",
+            "text_ar": "أنا من أعدّ الشكل 2 من ملف الخريطة. هو الخريطة الرسمية كما هي، لم أغيّر فيها إلا الحجم.",
+            "fact_ids": [
+              "f_samer_prepared_fig"
+            ],
+            "claim_ids": [
+              "cl_samer_same"
+            ]
+          },
+          {
+            "line_id": "sm_refuse",
+            "purpose": "refuse_secret",
+            "text_ar": "الشكل واضح لمن يقرؤه بتمعّن."
+          },
+          {
+            "line_id": "sm_rot",
+            "purpose": "reveal",
+            "text_ar": "حسناً... أدرتُ الخريطة ربع دورة لتلائم الصفحة الرأسية، ولم أنقل سهم الشمال معها فبقي مخفياً.",
+            "fact_ids": [
+              "f_fig_rotated"
+            ]
+          },
+          {
+            "line_id": "sm_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف شيئاً عن ذلك."
+          },
+          {
+            "line_id": "sm_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن إعداد الشكل فقط."
+          },
+          {
+            "line_id": "sm_bye",
+            "purpose": "farewell",
+            "text_ar": "سأصحّح الشكل إن لزم."
+          }
+        ]
+      }
+    ],
+    "locations": [
+      {
+        "id": "loc_office",
+        "name_ar": "مكتب لجنة السلامة",
+        "description_ar": "مسودة اللجنة وسجل خط البلاغات."
+      },
+      {
+        "id": "loc_archive",
+        "name_ar": "أرشيف البلدية",
+        "description_ar": "الخرائط المعتمدة ورسوم قسم المساحة."
+      },
+      {
+        "id": "loc_plaza",
+        "name_ar": "ساحة الصنوبر",
+        "description_ar": "ساحة دائرية تحيط بها حلقة سير باتجاه واحد."
+      },
+      {
+        "id": "loc_cafe",
+        "name_ar": "شرفة مقهى الشرفة",
+        "description_ar": "تطلّ على الساحة من جهتها الشرقية."
+      },
+      {
+        "id": "loc_library",
+        "name_ar": "بوابة مكتبة المدينة",
+        "description_ar": "تطلّ على الساحة من جهتها الغربية."
+      },
+      {
+        "id": "loc_publications",
+        "name_ar": "قسم الإصدارات",
+        "description_ar": "ملفات تصميم صفحات التقارير."
+      }
+    ],
+    "objects": [
+      {
+        "id": "obj_vehicle",
+        "name_ar": "المركبة الصغيرة البيضاء",
+        "description_ar": "مركبة مرّت في الساحة مساء الخميس."
+      },
+      {
+        "id": "obj_clock",
+        "name_ar": "عمود الساعة",
+        "description_ar": "معلم ثابت عند أحد مداخل الساحة."
+      }
+    ],
+    "organizations": [
+      {
+        "id": "org_committee",
+        "name_ar": "لجنة السلامة المرورية الليلية",
+        "description_ar": "لجنة بلدية تعدّ ملاحظة عن حركة الساحة."
+      }
+    ]
+  },
+  "truth": {
+    "solution": {
+      "culprit_ids": [
+        "samer"
+      ],
+      "summary_ar": "لا كذب ولا مسار مختلف في هذه القضية. الشاهدان وقفا على جانبين متقابلين من الساحة، فوصف كل منهما الجهة الجنوبية نفسها بكلمة تخص موضعه. وسبب ظهور تناقض في الورق شكل مُدار نُشر بلا سهم شمال، وقد أعدّه موظف الإصدارات دون قصد التضليل.",
+      "key_fact_ids": [
+        "f_east_left_is_south",
+        "f_west_right_is_south"
+      ]
+    },
+    "facts": [
+      {
+        "id": "f_vehicle_night",
+        "statement_ar": "مرّت مركبة صغيرة بيضاء في ساحة الصنوبر قرابة الحادية عشرة والربع ليلاً.",
+        "kind": "event",
+        "subject_ids": [
+          "obj_vehicle",
+          "loc_plaza"
+        ],
+        "spoiler_level": 0,
+        "time": {
+          "start_min": 12,
+          "precision": "approx"
+        },
+        "location_id": "loc_plaza"
+      },
+      {
+        "id": "f_testimonies_differ",
+        "statement_ar": "قال صاحب المقهى إن المركبة انعطفت يساراً، وقال حارس المكتبة إنها انعطفت يميناً.",
+        "kind": "event",
+        "subject_ids": [
+          "muneer",
+          "adel"
+        ],
+        "spoiler_level": 0
+      },
+      {
+        "id": "f_committee_draft",
+        "statement_ar": "تقترح مسودة اللجنة عدم الاعتماد على الشهادتين لأنهما متعارضتان في الظاهر.",
+        "kind": "attribute",
+        "subject_ids": [
+          "org_committee"
+        ],
+        "spoiler_level": 0
+      },
+      {
+        "id": "f_east_position",
+        "statement_ar": "يقف صاحب المقهى على الضلع الشرقي من الساحة ووجهه إلى مركزها، أي نحو الغرب.",
+        "kind": "state",
+        "subject_ids": [
+          "muneer",
+          "loc_cafe"
+        ],
+        "spoiler_level": 1,
+        "location_id": "loc_cafe",
+        "science_ko_refs": [
+          "KO-RS-06-003"
+        ]
+      },
+      {
+        "id": "f_west_position",
+        "statement_ar": "يقف حارس المكتبة على الضلع الغربي من الساحة ووجهه إلى مركزها، أي نحو الشرق.",
+        "kind": "state",
+        "subject_ids": [
+          "adel",
+          "loc_library"
+        ],
+        "spoiler_level": 1,
+        "location_id": "loc_library",
+        "science_ko_refs": [
+          "KO-RS-06-003"
+        ]
+      },
+      {
+        "id": "f_east_saw_pole_left",
+        "statement_ar": "رأى صاحب المقهى الضوء الخلفي للمركبة يختفي عند عمود الساعة، وكان العمود في جهته اليسرى.",
+        "kind": "event",
+        "subject_ids": [
+          "muneer",
+          "obj_clock"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 12,
+          "precision": "approx"
+        },
+        "location_id": "loc_cafe"
+      },
+      {
+        "id": "f_west_saw_pole_right",
+        "statement_ar": "رأى حارس المكتبة الضوء الخلفي للمركبة يختفي عند عمود الساعة، وكان العمود في جهته اليمنى.",
+        "kind": "event",
+        "subject_ids": [
+          "adel",
+          "obj_clock"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 12,
+          "precision": "approx"
+        },
+        "location_id": "loc_library"
+      },
+      {
+        "id": "f_pole_south",
+        "statement_ar": "عمود الساعة يقع عند مدخل «شارع الميناء» في الجهة الجنوبية من الساحة.",
+        "kind": "attribute",
+        "subject_ids": [
+          "obj_clock",
+          "loc_plaza"
+        ],
+        "spoiler_level": 1,
+        "location_id": "loc_plaza"
+      },
+      {
+        "id": "f_ring_oneway",
+        "statement_ar": "حلقة السير حول الساحة باتجاه واحد عكس عقارب الساعة، ولا تقاطعات داخلها.",
+        "kind": "attribute",
+        "subject_ids": [
+          "loc_plaza"
+        ],
+        "spoiler_level": 1,
+        "location_id": "loc_plaza"
+      },
+      {
+        "id": "f_samer_prepared_fig",
+        "statement_ar": "أعدّ سامر الخوري الشكل المنشور من ملف الخريطة الأصلية.",
+        "kind": "event",
+        "subject_ids": [
+          "samer"
+        ],
+        "spoiler_level": 1,
+        "location_id": "loc_publications"
+      },
+      {
+        "id": "f_fig_rotated",
+        "statement_ar": "دُوِّر الشكل المنشور ربع دورة ليلائم صفحة رأسية، وبقي سهم الشمال مخفياً.",
+        "kind": "event",
+        "subject_ids": [
+          "samer",
+          "loc_publications"
+        ],
+        "spoiler_level": 2,
+        "location_id": "loc_publications",
+        "science_ko_refs": [
+          "KO-RS-05-014"
+        ]
+      },
+      {
+        "id": "f_exit_south",
+        "statement_ar": "غادرت المركبة الساحة عبر «شارع الميناء» بعد دخولها من «طريق السوق»، في مسار واحد.",
+        "kind": "event",
+        "subject_ids": [
+          "obj_vehicle",
+          "loc_plaza"
+        ],
+        "spoiler_level": 2,
+        "time": {
+          "start_min": 11,
+          "precision": "exact",
+          "end_min": 12
+        },
+        "location_id": "loc_plaza"
+      },
+      {
+        "id": "f_east_left_is_south",
+        "statement_ar": "كلمة «يسار» على لسان صاحب المقهى، بحكم موضعه واتجاه نظره، تعني الجهة الجنوبية من الساحة.",
+        "kind": "relation",
+        "subject_ids": [
+          "muneer"
+        ],
+        "spoiler_level": 3,
+        "location_id": "loc_cafe",
+        "science_ko_refs": [
+          "KO-RS-06-008"
+        ]
+      },
+      {
+        "id": "f_west_right_is_south",
+        "statement_ar": "كلمة «يمين» على لسان حارس المكتبة، بحكم موضعه واتجاه نظره، تعني الجهة الجنوبية من الساحة.",
+        "kind": "relation",
+        "subject_ids": [
+          "adel"
+        ],
+        "spoiler_level": 3,
+        "location_id": "loc_library",
+        "science_ko_refs": [
+          "KO-RS-06-008"
+        ]
+      }
+    ],
+    "claims": [
+      {
+        "id": "cl_east_left",
+        "statement_ar": "المركبة انعطفت إلى اليسار.",
+        "kind": "half_truth",
+        "held_by": [
+          "muneer"
+        ],
+        "true_fact_id": "f_east_left_is_south",
+        "contradicted_by_evidence_ids": [
+          "ev_sightline",
+          "ev_map_orig"
+        ]
+      },
+      {
+        "id": "cl_west_right",
+        "statement_ar": "المركبة انعطفت إلى اليمين.",
+        "kind": "half_truth",
+        "held_by": [
+          "adel"
+        ],
+        "true_fact_id": "f_west_right_is_south",
+        "contradicted_by_evidence_ids": [
+          "ev_sightline",
+          "ev_map_orig"
+        ]
+      },
+      {
+        "id": "cl_samer_same",
+        "statement_ar": "الشكل المنشور هو الخريطة الرسمية كما هي، لم يتغير فيه شيء سوى الحجم.",
+        "kind": "half_truth",
+        "held_by": [
+          "samer"
+        ],
+        "true_fact_id": "f_fig_rotated",
+        "contradicted_by_evidence_ids": [
+          "ev_layout_meta",
+          "ev_map_orig"
+        ]
+      }
+    ]
+  },
+  "timeline": [
+    {
+      "id": "te_enter",
+      "description_ar": "المركبة تدخل الساحة من طريق السوق.",
+      "time": {
+        "start_min": 11,
+        "precision": "exact"
+      },
+      "location_id": "loc_plaza",
+      "actor_ids": [],
+      "fact_ids": [
+        "f_exit_south"
+      ]
+    },
+    {
+      "id": "te_exit",
+      "description_ar": "المركبة تغادر الساحة عبر شارع الميناء عند عمود الساعة.",
+      "time": {
+        "start_min": 12,
+        "precision": "exact"
+      },
+      "location_id": "loc_plaza",
+      "actor_ids": [],
+      "fact_ids": [
+        "f_exit_south",
+        "f_pole_south"
+      ]
+    },
+    {
+      "id": "te_east_call",
+      "description_ar": "صاحب المقهى يتصل بخط البلاغات الليلي.",
+      "time": {
+        "start_min": 14,
+        "precision": "exact"
+      },
+      "location_id": "loc_cafe",
+      "actor_ids": [
+        "muneer"
+      ],
+      "fact_ids": [
+        "f_east_saw_pole_left"
+      ],
+      "motivated_by_ar": "أراد أن يبلغ عن مركبة بلا شعار مرّت في الساحة"
+    },
+    {
+      "id": "te_west_call",
+      "description_ar": "حارس المكتبة يتصل بخط البلاغات الليلي.",
+      "time": {
+        "start_min": 21,
+        "precision": "exact"
+      },
+      "location_id": "loc_library",
+      "actor_ids": [
+        "adel"
+      ],
+      "fact_ids": [
+        "f_west_saw_pole_right"
+      ],
+      "motivated_by_ar": "سمع أن مقهى الشرفة بلّغ فأراد أن يضيف ما رآه"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_draft_note",
+      "title_ar": "مسودة ملاحظة اللجنة",
+      "kind": "documentary",
+      "content_ar": "مسودة ملاحظة لجنة السلامة المرورية الليلية (غير نهائية)\nالبند 3: «أفاد صاحب المقهى بأن المركبة انعطفت يساراً، وأفاد حارس المكتبة بأنها انعطفت يميناً. الإفادتان متعارضتان، ويُقترح عدم الاعتماد عليهما في تحديد مسار المركبة.»",
+      "acquired_by_action_ids": [
+        "a_read_draft"
+      ],
+      "supports_fact_ids": [
+        "f_committee_draft"
+      ],
+      "reliability": "weak",
+      "limits_ar": "رأي أولي لكاتب المسودة لا تحليل؛ اعتمد على صياغة مختصرة للإفادتين لا على نصّيهما الأصليين.",
+      "location_id": "loc_office"
+    },
+    {
+      "id": "ev_fig_rotated",
+      "title_ar": "الشكل 2 من تقرير اللجنة",
+      "kind": "documentary",
+      "content_ar": "الشكل 2 (صفحة رأسية؛ لا سهم شمال ولا مقياس رسم)\nدائرة تمثّل الساحة. في أعلى الصفحة: «مقهى الشرفة». في أسفلها: «مكتبة المدينة». على يسار الصفحة مدخل «طريق السوق»، وعلى يمينها مخرج «شارع الميناء».\nخط المسار يبدأ من يسار الصفحة، ويمرّ بالجهة السفلى من الدائرة، وينتهي عند يمين الصفحة.\nلا علامة على موضع أي شاهد ولا على جهة نظره.",
+      "acquired_by_action_ids": [
+        "a_read_fig"
+      ],
+      "supports_fact_ids": [],
+      "reliability": "moderate",
+      "limits_ar": "رسم منشور بلا اتجاه مرجعي؛ لا تُعرف منه جهة الشمال، ولا هل هو الأصل أم نسخة معدّلة منه.",
+      "location_id": "loc_office"
+    },
+    {
+      "id": "ev_map_orig",
+      "title_ar": "الخريطة المعتمدة لساحة الصنوبر",
+      "kind": "documentary",
+      "content_ar": "خريطة البلدية المعتمدة (سهم الشمال مرسوم إلى أعلى الخريطة)\n- الساحة جزيرة دائرية تحيط بها حلقة سير باتجاه واحد عكس عقارب الساعة.\n- أربعة مداخل ومخارج: شمالاً «طريق السوق»، جنوباً «شارع الميناء»، شرقاً «شارع الجسر»، غرباً «شارع المستودعات».\n- على الضلع الشرقي «مقهى الشرفة»، وعلى الضلع الغربي «مكتبة المدينة».\n- عمود الساعة عند مدخل «شارع الميناء» في الجنوب.",
+      "acquired_by_action_ids": [
+        "a_search_archive"
+      ],
+      "supports_fact_ids": [
+        "f_pole_south",
+        "f_ring_oneway"
+      ],
+      "reliability": "strong",
+      "limits_ar": "تثبت مواضع المعالم والاتجاهات الثابتة، ولا تثبت ما جرى تلك الليلة ولا أين وقف كل شاهد على وجه التحديد.",
+      "contradicts_claim_ids": [
+        "cl_samer_same"
+      ],
+      "location_id": "loc_archive"
+    },
+    {
+      "id": "ev_east_call",
+      "title_ar": "سجل خط البلاغات: الاتصال الأول",
+      "kind": "documentary",
+      "content_ar": "سجل خط البلاغات الليلي\n23:14 — المتصل: صاحب مقهى الشرفة\nالنص المدوَّن: «مرّت مركبة بيضاء صغيرة في الساحة، ثم انعطفت إلى اليسار واختفت.»\nملاحظة المستقبِل: لم يُسأل المتصل من أين رأى.",
+      "acquired_by_action_ids": [
+        "a_read_east_call"
+      ],
+      "supports_fact_ids": [
+        "f_testimonies_differ",
+        "f_vehicle_night"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "تدوين مختصر لكلام المتصل؛ لا يحدد موضع وقوفه ولا جهة نظره، ولا ما يقصده بكلمة «اليسار».",
+      "location_id": "loc_office"
+    },
+    {
+      "id": "ev_west_call",
+      "title_ar": "سجل خط البلاغات: الاتصال الثاني",
+      "kind": "documentary",
+      "content_ar": "سجل خط البلاغات الليلي\n23:21 — المتصل: حارس مكتبة المدينة\nالنص المدوَّن: «رأيت مركبة بيضاء صغيرة تدور في الساحة ثم تنعطف إلى اليمين.»\nملاحظة المستقبِل: لم يُسأل المتصل من أين رأى.",
+      "acquired_by_action_ids": [
+        "a_read_west_call"
+      ],
+      "supports_fact_ids": [
+        "f_testimonies_differ",
+        "f_vehicle_night"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "تدوين مختصر لكلام المتصل؛ لا يحدد موضع وقوفه ولا جهة نظره، ولا ما يقصده بكلمة «اليمين».",
+      "location_id": "loc_office"
+    },
+    {
+      "id": "ev_east_note",
+      "title_ar": "إفادة صاحب المقهى الموسّعة",
+      "kind": "testimonial",
+      "content_ar": "ملخص إفادة منير العلي:\n«كنت على الشرفة أنظر إلى وسط الساحة. مرّت المركبة أمامي وبقي ضوؤها الأحمر ظاهراً حتى اختفى عند عمود الساعة، وكان العمود عن يساري.»",
+      "acquired_by_action_ids": [
+        "a_note_muneer"
+      ],
+      "supports_fact_ids": [
+        "f_east_saw_pole_left"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "ذاكرة شخص عن مشهد ليلي قصير؛ تحتاج إلى خريطة تحدد أين يقع عمود الساعة من الساحة.",
+      "location_id": "loc_cafe"
+    },
+    {
+      "id": "ev_west_note",
+      "title_ar": "إفادة حارس المكتبة الموسّعة",
+      "kind": "testimonial",
+      "content_ar": "ملخص إفادة عادل النمر:\n«كنت عند بوابة المكتبة أنظر إلى الساحة. تحرّكت المركبة أمامي وبقي ضوؤها الأحمر ظاهراً حتى اختفى عند عمود الساعة، وكان العمود عن يميني.»",
+      "acquired_by_action_ids": [
+        "a_note_adel"
+      ],
+      "supports_fact_ids": [
+        "f_west_saw_pole_right"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "ذاكرة شخص عن مشهد ليلي قصير؛ تحتاج إلى خريطة تحدد أين يقع عمود الساعة من الساحة.",
+      "location_id": "loc_library"
+    },
+    {
+      "id": "ev_sightline",
+      "title_ar": "رسم خطوط الرؤية",
+      "kind": "documentary",
+      "content_ar": "رسم قسم المساحة (الشمال إلى أعلى الرسم)\nالموقع م: شرفة مقهى الشرفة على الضلع الشرقي، وخط الرؤية متجه إلى مركز الساحة نحو الغرب.\nالموقع ك: بوابة مكتبة المدينة على الضلع الغربي، وخط الرؤية متجه إلى مركز الساحة نحو الشرق.\nمخرج «شارع الميناء» عند أسفل الرسم.",
+      "acquired_by_action_ids": [
+        "a_survey"
+      ],
+      "supports_fact_ids": [
+        "f_east_position",
+        "f_west_position"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يحدد موضعي الوقوف واتجاه النظر بحسب معاينة القسم، ولا يثبت ما رآه كل شاهد فعلاً.",
+      "location_id": "loc_archive"
+    },
+    {
+      "id": "ev_counter",
+      "title_ar": "سجل عدّاد الحركة عند الساحة",
+      "kind": "digital",
+      "content_ar": "سجل عدّاد الحركة عند مداخل الساحة ومخارجها (من 23:05 إلى 23:20)\n23:11 — دخول عبر «طريق السوق»\n23:12 — خروج عبر «شارع الميناء»\nلا تسجيلات أخرى في أي مدخل أو مخرج خلال المدة.",
+      "acquired_by_action_ids": [
+        "a_counter"
+      ],
+      "supports_fact_ids": [
+        "f_exit_south"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يعدّ عبوراً عند المداخل والمخارج فقط؛ لا يحدد هوية المركبة ولا يخبر بما رآه الشاهدان.",
+      "location_id": "loc_plaza"
+    },
+    {
+      "id": "ev_layout_meta",
+      "title_ar": "خصائص صفحة الشكل 2",
+      "kind": "documentary",
+      "content_ar": "ملف تصميم الشكل 2 — قسم الإصدارات\n- اتجاه الصفحة: رأسي.\n- تدوير الخريطة: ربع دورة عكس عقارب الساعة.\n- طبقة «سهم الشمال»: مخفية.\n- ملاحظة المصمّم: «أُدير الرسم ليلائم الصفحة».",
+      "acquired_by_action_ids": [
+        "a_get_layout"
+      ],
+      "supports_fact_ids": [
+        "f_fig_rotated"
+      ],
+      "reliability": "strong",
+      "limits_ar": "ملف إنتاج يصف كيف رُتّبت الصفحة، ولا يصف الحادثة ولا ما رآه أي شاهد.",
+      "location_id": "loc_publications"
+    },
+    {
+      "id": "ev_samer_stmt",
+      "title_ar": "إفادة موظف الإصدارات",
+      "kind": "testimonial",
+      "content_ar": "ملخص إفادة سامر الخوري:\n«الشكل 2 هو الخريطة الرسمية كما هي، لم أغيّر فيه شيئاً سوى الحجم. من يقرؤه يفهم الاتجاهات.»",
+      "acquired_by_action_ids": [
+        "a_note_samer"
+      ],
+      "supports_fact_ids": [
+        "f_samer_prepared_fig"
+      ],
+      "reliability": "weak",
+      "limits_ar": "إفادة صاحب علاقة بالتصميم؛ تُقاس بملف التصميم وبالخريطة المعتمدة.",
+      "contradicts_claim_ids": [
+        "cl_samer_same"
+      ],
+      "location_id": "loc_publications"
+    }
+  ],
+  "evidence_graph": {
+    "inferences": [
+      {
+        "id": "i_east_a",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_east_call"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_sightline"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_east_left_is_south"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "رسم المساحة يضع صاحب المقهى في الشرق ناظراً إلى الغرب؛ والجنوب عن يسار من ينظر إلى الغرب، فكلمته تصف الجهة الجنوبية.",
+        "skill_ko_refs": [
+          "KO-RS-06-008"
+        ]
+      },
+      {
+        "id": "i_west_a",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_west_call"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_sightline"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_west_right_is_south"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "رسم المساحة يضع حارس المكتبة في الغرب ناظراً إلى الشرق؛ والجنوب عن يمين من ينظر إلى الشرق، فكلمته تصف الجهة الجنوبية.",
+        "skill_ko_refs": [
+          "KO-RS-06-008"
+        ]
+      },
+      {
+        "id": "i_east_b",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_east_note"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_map_orig"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_east_left_is_south"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "إفادته تحدد أن العمود كان عن يساره، والخريطة المعتمدة تضع العمود في الجنوب؛ فيسار الشاهد هو جهة المعلم الجنوبي.",
+        "skill_ko_refs": [
+          "KO-RS-06-008"
+        ]
+      },
+      {
+        "id": "i_west_b",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_west_note"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_map_orig"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_west_right_is_south"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "إفادته تحدد أن العمود كان عن يمينه، والخريطة المعتمدة تضع العمود في الجنوب؛ فيمين الشاهد هو جهة المعلم الجنوبي.",
+        "skill_ko_refs": [
+          "KO-RS-06-008"
+        ]
+      },
+      {
+        "id": "i_rotated_a",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_fig_rotated"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_map_orig"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_fig_rotated"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "المعالم نفسها في الشكلين بعلاقاتها نفسها، لكن الأعلى في الشكل المنشور هو الشرق في الخريطة المعتمدة؛ فالرسم مُدار.",
+        "skill_ko_refs": [
+          "KO-RS-05-014"
+        ]
+      },
+      {
+        "id": "i_rotated_b",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_layout_meta"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_fig_rotated"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "ملف التصميم يسجّل تدوير الصفحة وإخفاء سهم الشمال.",
+        "skill_ko_refs": [
+          "KO-RS-05-014"
+        ]
+      },
+      {
+        "id": "i_exit_south",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_counter"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_map_orig"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_exit_south"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "العدّاد سجّل دخولاً واحداً وخروجاً واحداً، والخريطة تبيّن أن الحلقة باتجاه واحد؛ فالمسار واحد.",
+        "skill_ko_refs": [
+          "KO-RS-06-003"
+        ]
+      },
+      {
+        "id": "i_support_frames",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_east_left_is_south"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_west_right_is_south"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_frames"
+        },
+        "relation": "supports",
+        "strength": "strong",
+        "rule_ar": "كلمتا «يسار» و«يمين» تدلان على الجهة نفسها حين تُقاسان من موضعي الشاهدين المتقابلين؛ فلا تعارض في الواقعة.",
+        "skill_ko_refs": [
+          "KO-RS-05-002"
+        ]
+      },
+      {
+        "id": "i_rule_liar",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_east_left_is_south"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_west_right_is_south"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_liar"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "إذا اتفق الوصفان على الجهة نفسها فاختلاف الكلمتين وحده لا يدل على أن أحدهما مخطئ أو كاذب.",
+        "skill_ko_refs": [
+          "KO-RS-06-009"
+        ]
+      },
+      {
+        "id": "i_rule_twice_a",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_counter"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_twice"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "العدّاد سجّل دخولاً واحداً وخروجاً واحداً ولا عبوراً آخر؛ فلا مخرجان ولا انعطافتان متعاكستان.",
+        "skill_ko_refs": [
+          "KO-RS-06-009"
+        ]
+      },
+      {
+        "id": "i_rule_twice_b",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_east_note"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_west_note"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_twice"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "كلا الشاهدين يسمّي المعلم نفسه، عمود الساعة، موضعاً لاختفاء الضوء؛ فالمخرج واحد وليس مخرجين.",
+        "skill_ko_refs": [
+          "KO-RS-06-009"
+        ]
+      },
+      {
+        "id": "i_east_claim",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_east_call"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_sightline"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_east_left"
+        },
+        "relation": "contradicts_claim",
+        "strength": "suggestive",
+        "rule_ar": "الكلمة صحيحة بالنسبة إلى موضع قائلها فقط؛ ولا تصلح اتجاهاً عاماً قبل معرفة موضعه.",
+        "skill_ko_refs": [
+          "KO-RS-05-001"
+        ]
+      },
+      {
+        "id": "i_west_claim",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_west_call"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_sightline"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_west_right"
+        },
+        "relation": "contradicts_claim",
+        "strength": "suggestive",
+        "rule_ar": "الكلمة صحيحة بالنسبة إلى موضع قائلها فقط؛ ولا تصلح اتجاهاً عاماً قبل معرفة موضعه.",
+        "skill_ko_refs": [
+          "KO-RS-05-001"
+        ]
+      },
+      {
+        "id": "i_samer_claim",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_layout_meta"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_samer_stmt"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_samer_same"
+        },
+        "relation": "contradicts_claim",
+        "strength": "strong",
+        "rule_ar": "ملف التصميم يسجّل تدويراً وإخفاء لسهم الشمال، وهذا ينقض قوله إن شيئاً لم يتغير سوى الحجم.",
+        "skill_ko_refs": [
+          "KO-RS-05-001"
+        ]
+      }
+    ]
+  },
+  "character_knowledge": [
+    {
+      "character_id": "muneer",
+      "knows": [
+        {
+          "fact_id": "f_east_position",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_east_saw_pole_left",
+          "access": "witnessed",
+          "certainty": "fairly_sure"
+        }
+      ],
+      "hides": [],
+      "believes": [
+        {
+          "claim_id": "cl_east_left",
+          "stance": "sincere"
+        }
+      ]
+    },
+    {
+      "character_id": "adel",
+      "knows": [
+        {
+          "fact_id": "f_west_position",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_west_saw_pole_right",
+          "access": "witnessed",
+          "certainty": "fairly_sure"
+        }
+      ],
+      "hides": [],
+      "believes": [
+        {
+          "claim_id": "cl_west_right",
+          "stance": "sincere"
+        }
+      ]
+    },
+    {
+      "character_id": "samer",
+      "knows": [
+        {
+          "fact_id": "f_samer_prepared_fig",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [
+        {
+          "fact_id": "f_fig_rotated",
+          "reveal_when": {
+            "presented": {
+              "evidence_id": "ev_map_orig",
+              "to_character": "samer"
+            }
+          },
+          "cover_claim_id": null,
+          "reveal_line_id": "sm_rot"
+        }
+      ],
+      "believes": [
+        {
+          "claim_id": "cl_samer_same",
+          "stance": "sincere"
+        }
+      ]
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "h_liar",
+      "statement_ar": "أحد الشاهدين أخطأ أو كذب في وصف جهة الانعطاف، ولذلك تعارضت شهادتاهما.",
+      "is_true": false,
+      "plausibility_at_start": "high"
+    },
+    {
+      "id": "h_frames",
+      "statement_ar": "الشاهدان وصفا الحدث نفسه بإطارين مرجعيين مختلفين، فلا تناقض بين شهادتيهما.",
+      "is_true": true,
+      "plausibility_at_start": "low"
+    },
+    {
+      "id": "h_twice",
+      "statement_ar": "غيّرت المركبة اتجاهها مرتين فسلكت مخرجين مختلفين، فرأى كل شاهد انعطافة مختلفة.",
+      "is_true": false,
+      "plausibility_at_start": "medium"
+    }
+  ],
+  "misdirection_plan": [
+    {
+      "id": "rh_opposite",
+      "points_to_hypothesis_id": "h_liar",
+      "planted_via_ar": "السجلان يدوّنان كلمتين متعاكستين، «يسار» و«يمين»، والشكل المنشور بلا اتجاه مرجعي.",
+      "evidence_ids": [
+        "ev_east_call",
+        "ev_west_call",
+        "ev_fig_rotated"
+      ],
+      "refuted_by_inference_ids": [
+        "i_rule_liar"
+      ],
+      "fairness_note_ar": "السجلان لا يحددان موضع القائل، والرسم والخريطة المعتمدة والإفادات الموسّعة متاحة كلها قبل الاستنتاج."
+    },
+    {
+      "id": "rh_two_turns",
+      "points_to_hypothesis_id": "h_twice",
+      "planted_via_ar": "كل شهادة تذكر انعطافة واحدة بوصف مختلف، فقد يُظن أنهما انعطافتان.",
+      "evidence_ids": [
+        "ev_east_call",
+        "ev_west_call"
+      ],
+      "refuted_by_inference_ids": [
+        "i_rule_twice_a",
+        "i_rule_twice_b"
+      ],
+      "fairness_note_ar": "سجل العدّاد والإفادتان الموسّعتان متاحة كلها بالإجراءات العادية، وكل منها وحده يدل على مخرج واحد."
+    }
+  ],
+  "learning_objectives": [
+    {
+      "id": "lo_claim",
+      "statement_ar": "يفرّق بين ما شاهده الشخص وبين طريقته في وصفه، ويصنّف المصدر.",
+      "skill_ko_ref": "KO-RS-05-001",
+      "observable_behaviors_ar": [
+        "يصنّف السجلات والإفادات",
+        "يقابل القول بالسجل"
+      ],
+      "evidence_sources": [
+        "evidence_board"
+      ]
+    },
+    {
+      "id": "lo_timeline",
+      "statement_ar": "يرتّب الأحداث على خط زمني ليتحقق من تتابع الدخول والخروج والبلاغات.",
+      "skill_ko_ref": "KO-RS-05-005",
+      "observable_behaviors_ar": [
+        "يضع الأدلة في أزمنتها"
+      ],
+      "evidence_sources": [
+        "timeline_task",
+        "action_log"
+      ]
+    },
+    {
+      "id": "lo_hyp",
+      "statement_ar": "يوازن بين فرضيتين على الأقل ويستبعد ما تنقضه الأدلة.",
+      "skill_ko_ref": "KO-RS-05-002",
+      "observable_behaviors_ar": [
+        "يضيف فرضيات",
+        "يستبعد بدليل"
+      ],
+      "evidence_sources": [
+        "hypothesis_ledger"
+      ]
+    },
+    {
+      "id": "lo_diag",
+      "statement_ar": "يميّز بين الاتجاه النسبي إلى الواقف (يمين/يسار) والاتجاه الثابت (شمال/جنوب).",
+      "skill_ko_ref": "KO-RS-06-001",
+      "observable_behaviors_ar": [
+        "يربط الدليل بالفرضية باتجاه صحيح"
+      ],
+      "evidence_sources": [
+        "evidence_board",
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_calib",
+      "statement_ar": "يصوغ ثقته بحدودها.",
+      "skill_ko_ref": "KO-RS-06-021",
+      "observable_behaviors_ar": [
+        "يختار ثقة معقولة",
+        "يذكر حدوداً"
+      ],
+      "evidence_sources": [
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_revise",
+      "statement_ar": "يراجع رأيه الأول حين يظهر ما يخالفه.",
+      "skill_ko_ref": "KO-RS-06-009",
+      "observable_behaviors_ar": [
+        "يغيّر فرضيته الرائدة بدليل"
+      ],
+      "evidence_sources": [
+        "hypothesis_ledger"
+      ]
+    }
+  ],
+  "mechanics": {
+    "time_budget_units": 30,
+    "actions": [
+      {
+        "id": "a_read_draft",
+        "type": "examine",
+        "label_ar": "اقرأ مسودة ملاحظة اللجنة",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_draft_note"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_office",
+        "telemetry_code": "READ_DRAFT"
+      },
+      {
+        "id": "a_read_fig",
+        "type": "examine",
+        "label_ar": "افتح الشكل 2 من تقرير اللجنة",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_fig_rotated"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_office",
+        "telemetry_code": "READ_FIG"
+      },
+      {
+        "id": "a_read_east_call",
+        "type": "examine",
+        "label_ar": "اقرأ الاتصال الأول في سجل البلاغات",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_east_call"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_office",
+        "telemetry_code": "READ_EAST_CALL"
+      },
+      {
+        "id": "a_read_west_call",
+        "type": "examine",
+        "label_ar": "اقرأ الاتصال الثاني في سجل البلاغات",
+        "precondition": {
+          "has_evidence": "ev_east_call"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_west_call"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_office",
+        "telemetry_code": "READ_WEST_CALL"
+      },
+      {
+        "id": "a_search_archive",
+        "type": "search_location",
+        "label_ar": "ابحث في أرشيف البلدية عن الخريطة المعتمدة",
+        "precondition": {
+          "has_evidence": "ev_fig_rotated"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_map_orig"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_archive",
+        "telemetry_code": "SEARCH_ARCHIVE"
+      },
+      {
+        "id": "a_survey",
+        "type": "examine",
+        "label_ar": "اطلب رسم خطوط الرؤية من قسم المساحة",
+        "precondition": {
+          "has_evidence": "ev_east_call"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_sightline"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_archive",
+        "telemetry_code": "SURVEY"
+      },
+      {
+        "id": "a_counter",
+        "type": "examine",
+        "label_ar": "اطلب سجل عدّاد الحركة عند الساحة",
+        "precondition": {
+          "has_evidence": "ev_east_call"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_counter"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_plaza",
+        "telemetry_code": "COUNTER"
+      },
+      {
+        "id": "a_int_muneer",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة منير",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "muneer",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "muneer",
+        "telemetry_code": "INT_MUNEER"
+      },
+      {
+        "id": "a_int_adel",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة عادل",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "adel",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "adel",
+        "telemetry_code": "INT_ADEL"
+      },
+      {
+        "id": "a_int_samer",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة سامر",
+        "precondition": {
+          "has_evidence": "ev_fig_rotated"
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "samer",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "samer",
+        "telemetry_code": "INT_SAMER"
+      },
+      {
+        "id": "a_note_muneer",
+        "type": "examine",
+        "label_ar": "دوّن إفادة منير الموسّعة",
+        "precondition": {
+          "fact_unlocked": "f_east_saw_pole_left"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_east_note"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "muneer",
+        "telemetry_code": "NOTE_MUNEER"
+      },
+      {
+        "id": "a_note_adel",
+        "type": "examine",
+        "label_ar": "دوّن إفادة عادل الموسّعة",
+        "precondition": {
+          "fact_unlocked": "f_west_saw_pole_right"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_west_note"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "adel",
+        "telemetry_code": "NOTE_ADEL"
+      },
+      {
+        "id": "a_note_samer",
+        "type": "examine",
+        "label_ar": "دوّن إفادة سامر",
+        "precondition": {
+          "fact_unlocked": "f_samer_prepared_fig"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_samer_stmt"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "samer",
+        "telemetry_code": "NOTE_SAMER"
+      },
+      {
+        "id": "a_get_layout",
+        "type": "search_location",
+        "label_ar": "اطلب ملف تصميم الشكل من قسم الإصدارات",
+        "precondition": {
+          "fact_unlocked": "f_fig_rotated"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_layout_meta"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_publications",
+        "telemetry_code": "GET_LAYOUT"
+      },
+      {
+        "id": "p_map_samer",
+        "type": "present_evidence",
+        "label_ar": "اعرض الخريطة المعتمدة على سامر",
+        "precondition": {
+          "presented": {
+            "evidence_id": "ev_map_orig",
+            "to_character": "samer"
+          }
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "PRESENTED_MAP"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "samer",
+        "telemetry_code": "P_MAP_SAMER"
+      },
+      {
+        "id": "a_hint",
+        "type": "request_hint",
+        "label_ar": "اطلب تلميحاً",
+        "precondition": {
+          "always": true
+        },
+        "effects": [],
+        "time_cost_units": 0,
+        "telemetry_code": "REQUEST_HINT"
+      },
+      {
+        "id": "a_accuse",
+        "type": "final_accusation",
+        "label_ar": "قدّم الاستنتاج النهائي",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "SUBMIT"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "FINAL_ACCUSATION"
+      },
+      {
+        "id": "ask_muneer_f_east_position",
+        "type": "interview",
+        "label_ar": "[نموذج] muneer يذكر f_east_position",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_east_position"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "muneer",
+        "telemetry_code": "ASK_MUNEER_F_EAST_POSITION"
+      },
+      {
+        "id": "ask_muneer_f_east_saw_pole_left",
+        "type": "interview",
+        "label_ar": "[نموذج] muneer يذكر f_east_saw_pole_left",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_east_saw_pole_left"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "muneer",
+        "telemetry_code": "ASK_MUNEER_F_EAST_SAW_POLE_LEFT"
+      },
+      {
+        "id": "ask_adel_f_west_position",
+        "type": "interview",
+        "label_ar": "[نموذج] adel يذكر f_west_position",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_west_position"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "adel",
+        "telemetry_code": "ASK_ADEL_F_WEST_POSITION"
+      },
+      {
+        "id": "ask_adel_f_west_saw_pole_right",
+        "type": "interview",
+        "label_ar": "[نموذج] adel يذكر f_west_saw_pole_right",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_west_saw_pole_right"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "adel",
+        "telemetry_code": "ASK_ADEL_F_WEST_SAW_POLE_RIGHT"
+      },
+      {
+        "id": "ask_samer_f_samer_prepared_fig",
+        "type": "interview",
+        "label_ar": "[نموذج] samer يذكر f_samer_prepared_fig",
+        "precondition": {
+          "has_evidence": "ev_fig_rotated"
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_samer_prepared_fig"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "samer",
+        "telemetry_code": "ASK_SAMER_F_SAMER_PREPARED_FIG"
+      },
+      {
+        "id": "ask_samer_f_fig_rotated",
+        "type": "interview",
+        "label_ar": "[نموذج] samer يكشف f_fig_rotated",
+        "precondition": {
+          "all": [
+            {
+              "has_evidence": "ev_fig_rotated"
+            },
+            {
+              "presented": {
+                "evidence_id": "ev_map_orig",
+                "to_character": "samer"
+              }
+            }
+          ]
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_fig_rotated"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "samer",
+        "telemetry_code": "ASK_SAMER_F_FIG_ROTATED"
+      }
+    ]
+  },
+  "state_machine": {
+    "id": "c006",
+    "initial": "briefing",
+    "type": "compound",
+    "states": {
+      "briefing": {
+        "description_ar": "الإحاطة",
+        "type": "atomic",
+        "on": {
+          "START": {
+            "target": "investigating"
+          }
+        }
+      },
+      "investigating": {
+        "description_ar": "التحقيق",
+        "type": "compound",
+        "initial": "gathering",
+        "states": {
+          "gathering": {
+            "type": "atomic",
+            "on": {
+              "OPEN_DEDUCTION": {
+                "target": "deducing"
+              }
+            }
+          },
+          "deducing": {
+            "type": "atomic",
+            "on": {
+              "BACK": {
+                "target": "gathering"
+              }
+            }
+          }
+        },
+        "on": {
+          "SUBMIT": {
+            "target": "review"
+          }
+        }
+      },
+      "review": {
+        "description_ar": "مراجعة",
+        "type": "atomic",
+        "on": {
+          "CLOSE": {
+            "target": "resolved"
+          }
+        }
+      },
+      "resolved": {
+        "description_ar": "إغلاق",
+        "type": "final"
+      }
+    }
+  },
+  "dialogue": {
+    "max_turns_per_interview": 10,
+    "llm_enabled": false,
+    "topics": [
+      {
+        "id": "t_where",
+        "label_ar": "موضع الوقوف ووجهة النظر",
+        "example_questions_ar": [
+          "من أين كنت تنظر؟",
+          "أين كنت واقفاً؟"
+        ],
+        "fact_ids": [
+          "f_east_position",
+          "f_west_position"
+        ]
+      },
+      {
+        "id": "t_turn",
+        "label_ar": "اتجاه الانعطاف",
+        "example_questions_ar": [
+          "إلى أي جهة انعطفت المركبة؟",
+          "ماذا رأيت عند عمود الساعة؟"
+        ],
+        "fact_ids": [
+          "f_east_saw_pole_left",
+          "f_west_saw_pole_right"
+        ],
+        "claim_ids": [
+          "cl_east_left",
+          "cl_west_right"
+        ]
+      },
+      {
+        "id": "t_fig",
+        "label_ar": "إعداد الشكل المنشور",
+        "example_questions_ar": [
+          "كيف أُعدّ الشكل 2؟",
+          "هل تغيّر شيء في الخريطة؟"
+        ],
+        "fact_ids": [
+          "f_samer_prepared_fig",
+          "f_fig_rotated"
+        ],
+        "claim_ids": [
+          "cl_samer_same"
+        ]
+      }
+    ]
+  },
+  "rubric": {
+    "reference_answer_ar": "لا حاجة إلى افتراض أن أحد الشاهدين أخطأ. وقف صاحب المقهى في شرق الساحة ناظراً إلى مركزها، ووقف حارس المكتبة في غربها ناظراً إلى مركزها من الجهة المقابلة؛ فقال الأول «يسار» وقال الثاني «يمين» وكلاهما يصف الجهة الجنوبية حيث عمود الساعة ومخرج شارع الميناء. وسجل العدّاد يثبت عبوراً واحداً، ولا دليل على مسار ثانٍ. أما التباس القارئ فمنشؤه شكل منشور أُدير ربع دورة وأُخفي فيه سهم الشمال. حدود الاستنتاج: لا نعرف هوية المركبة ولا سبب مرورها، ولا نملك ما يضبط تفاصيل أخرى رآها الشاهدان ليلاً.",
+    "criteria": [
+      {
+        "id": "c_source",
+        "name_ar": "تصنيف المصادر",
+        "objective_ids": [
+          "lo_claim"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يصنّف"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "أخطأ في الأغلب"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "نصف صحيح"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمه صحيح"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كله صحيح"
+          }
+        ]
+      },
+      {
+        "id": "c_conflict",
+        "name_ar": "التحقق من تتابع الأحداث على الخط الزمني",
+        "objective_ids": [
+          "lo_timeline"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.2,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يضع شيئاً"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "وضع قليلاً"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "وضع نصفها صحيحاً"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمها"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كلها في موضعها"
+          }
+        ]
+      },
+      {
+        "id": "c_links",
+        "name_ar": "ربط الأدلة بالفرضيات",
+        "objective_ids": [
+          "lo_diag"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.2,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لا روابط"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "قليلة"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "نصفها صحيح"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمها"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كلها دقيقة"
+          }
+        ]
+      },
+      {
+        "id": "c_uncertainty",
+        "name_ar": "معايرة الثقة",
+        "objective_ids": [
+          "lo_calib"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "ثقة مفرطة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "حدود قليلة"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "جزئية"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معقولة"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "معايَرة كاملة"
+          }
+        ]
+      },
+      {
+        "id": "c_revision",
+        "name_ar": "مراجعة الرأي",
+        "objective_ids": [
+          "lo_revise"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "بقي على فرضية مرفوضة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "لم يعلن فرضية"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "ثبت على فرضية سليمة"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "غيّر بدليل"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "غيّر بدليل ووثّق"
+          }
+        ]
+      },
+      {
+        "id": "c_elimination",
+        "name_ar": "استبعاد الفرضيات الخاطئة",
+        "objective_ids": [
+          "lo_hyp"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يستبعد"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "استبعد خطأً"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "فرضية بدليل"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "فرضيتين"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كل الخاطئة"
+          }
+        ]
+      },
+      {
+        "id": "c_justification",
+        "name_ar": "جودة الحجة المكتوبة",
+        "objective_ids": [
+          "lo_diag",
+          "lo_hyp"
+        ],
+        "scored_by": "human",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لا حجة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "ادعاء بلا سند"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "أدلة دون ربط"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "ربط الأدلة بالاستنتاج"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "ربط مع البدائل والحدود"
+          }
+        ]
+      }
+    ]
+  },
+  "hint_ladder": [
+    {
+      "id": "hg1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "أين ينتهي ما شاهده الشخص وتبدأ طريقته في وصفه؟",
+      "trigger": {
+        "always": true
+      },
+      "assessment_weight": 0.02
+    },
+    {
+      "id": "hg2",
+      "level": 2,
+      "kind": "focus_area",
+      "text_ar": "ضع كل معلومة في جدول: مصدر أصلي أم نسخة أم تعليق؟",
+      "trigger": {
+        "has_evidence": "ev_fig_rotated"
+      },
+      "assessment_weight": 0.04
+    },
+    {
+      "id": "hg3",
+      "level": 3,
+      "kind": "pointer",
+      "text_ar": "راجع تحديداً الدليل الذي يوضح سياق الاتجاه أو الموضع أو الوثيقة.",
+      "trigger": {
+        "has_evidence": "ev_west_call"
+      },
+      "assessment_weight": 0.06
+    },
+    {
+      "id": "hm1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "من أي جهة من الساحة كان كل شاهد ينظر إليها؟",
+      "trigger": {
+        "has_evidence": "ev_west_call"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_east_a"
+    },
+    {
+      "id": "hm2",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "يمين الواقف ويساره يتبدلان إن وقف في الجهة المقابلة. ما الذي لا يتبدل؟",
+      "trigger": {
+        "has_evidence": "ev_west_call"
+      },
+      "assessment_weight": 0.05,
+      "targets_inference_id": "i_east_a"
+    },
+    {
+      "id": "hm3",
+      "level": 3,
+      "kind": "partial_reveal",
+      "text_ar": "اطلب رسم خطوط الرؤية وابحث في الأرشيف عن الخريطة المعتمدة، ثم قارن موضعي الشاهدين.",
+      "trigger": {
+        "has_evidence": "ev_map_orig"
+      },
+      "assessment_weight": 0.1,
+      "targets_inference_id": "i_east_a"
+    }
+  ],
+  "fairness_test": {
+    "requirements": {
+      "min_disjoint_proof_paths": 2,
+      "max_inference_depth": 3,
+      "all_red_herrings_refutable": true,
+      "culprit_uniquely_entailed": true,
+      "no_hidden_fact_dependency": true,
+      "max_required_actions": 30
+    },
+    "runs": []
+  },
+  "ending_explanation": {
+    "steps": [
+      {
+        "order": 1,
+        "text_ar": "السجلان يدوّنان كلمتين متعاكستين دون موضع القائل، والشكل المنشور بلا سهم شمال؛ فالتعارض ظاهر في الورق لا في الواقعة بعد.",
+        "uses_evidence_ids": [
+          "ev_east_call",
+          "ev_west_call",
+          "ev_fig_rotated"
+        ],
+        "inference_id": "i_rotated_a"
+      },
+      {
+        "order": 2,
+        "text_ar": "رسم المساحة يضع الشاهدين على جانبين متقابلين ينظر كل منهما إلى وسط الساحة؛ فالجنوب عن يسار الشرقي وعن يمين الغربي.",
+        "uses_evidence_ids": [
+          "ev_sightline",
+          "ev_east_call",
+          "ev_west_call"
+        ],
+        "inference_id": "i_east_a"
+      },
+      {
+        "order": 3,
+        "text_ar": "الطريق الثاني: الإفادتان الموسّعتان تسميان المعلم نفسه، عمود الساعة، والخريطة المعتمدة تضعه في الجنوب.",
+        "uses_evidence_ids": [
+          "ev_east_note",
+          "ev_west_note",
+          "ev_map_orig"
+        ],
+        "inference_id": "i_east_b"
+      },
+      {
+        "order": 4,
+        "text_ar": "إذن لا تعارض في الواقعة: الكلمتان تصفان الجهة نفسها من موضعين مختلفين، وسجل العدّاد لا يُظهر مساراً آخر.",
+        "uses_evidence_ids": [
+          "ev_counter",
+          "ev_east_note",
+          "ev_west_note"
+        ],
+        "inference_id": "i_rule_twice_a"
+      },
+      {
+        "order": 5,
+        "text_ar": "اختلاف الكلمتين وحده لا يدل على أن أحدهما أخطأ أو كذب.",
+        "uses_evidence_ids": [
+          "ev_sightline",
+          "ev_map_orig"
+        ],
+        "inference_id": "i_rule_liar"
+      }
+    ],
+    "alternative_paths_ar": [
+      "يمكن الوصول إلى النتيجة بمسارين مستقلين: رسم خطوط الرؤية مع السجلين، أو الإفادتين الموسّعتين مع الخريطة المعتمدة؛ والثاني يبيّن أن المعلم الثابت يوحّد الوصفين."
+    ],
+    "what_evidence_could_not_show_ar": [
+      "لا تحدد الأدلة هوية المركبة ولا سبب مرورها.",
+      "كلا الشاهدين رأى مشهداً ليلياً قصيراً من بعيد؛ فتبقى التفاصيل الدقيقة مثل السرعة والوقت غير مضبوطة."
+    ],
+    "science_notes_ar": [
+      "اليمين واليسار يتبدلان بتبدل موضع الواقف واتجاه نظره، أما الجهات الأصلية فثابتة على الخريطة.",
+      "الخريطة المنشورة بلا سهم شمال قد تكون مُدارة؛ تحقق من اتجاهها قبل أن تقارنها بإفادة."
+    ]
+  },
+  "expert_review": [
+    {
+      "role": "narrative_editor",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "scientific_reviewer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "learning_designer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "age_appropriateness",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "cultural_reviewer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "legal_rights",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "safety",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    }
+  ]
+}

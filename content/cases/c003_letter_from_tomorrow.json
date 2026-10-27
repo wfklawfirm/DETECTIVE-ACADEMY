@@ -1,0 +1,2579 @@
+{
+  "schema_version": "0.1.0",
+  "case_id": "c003_letter_from_tomorrow",
+  "case_version": "0.1.0",
+  "meta": {
+    "title_ar": "رسالة من الغد",
+    "title_en": "A Letter From Tomorrow",
+    "age_band": "16-18",
+    "locale": "ar",
+    "dialogue_register": "msa",
+    "estimated_minutes": 30,
+    "difficulty": 3,
+    "content_flags": [
+      "no_violence",
+      "science_lab"
+    ],
+    "authors": [
+      "فريق أثر التحريري (مسودة بمساعدة الذكاء الاصطناعي، لم تُراجَع بشرياً بعد)"
+    ],
+    "knowledge_object_refs": [
+      "KO-RS-05-001",
+      "KO-RS-05-005",
+      "KO-RS-05-002",
+      "KO-RS-05-004",
+      "KO-RS-06-001",
+      "KO-RS-06-008",
+      "KO-RS-06-009",
+      "KO-RS-06-021",
+      "KO-FC-04-024",
+      "KO-RS-05-014"
+    ]
+  },
+  "premise": {
+    "hook_ar": "رسالة بدا أنها وصلت قبل أن تُكتب بساعات، وزملاء يهمسون: اختراق، أو شيء أغرب.",
+    "player_role_ar": "أنت مراجع ملفات في مركز الشرفة للإعلام العلمي، وطُلب منك تفسير ما حدث قبل أن تنتشر الشائعة أكثر.",
+    "setting_ar": "غرفة الأخبار في مركز علمي خيالي صباح الجمعة. المرسلة على سفينة أبحاث في عرض البحر، وللسفينة ساعتها الخاصة.",
+    "public_fact_ids": [
+      "f_msg_looks_early",
+      "f_rumor_breach",
+      "f_nora_reporting"
+    ],
+    "assumed_general_knowledge_ar": [
+      "لكل منطقة زمنية إزاحة عن التوقيت العالمي UTC",
+      "الوقت المعروض على الجهاز قد يختلف عن الوقت المخزّن في الخادم"
+    ]
+  },
+  "entities": {
+    "characters": [
+      {
+        "id": "nora",
+        "name_ar": "نورة العبدالله",
+        "role": "victim",
+        "age_descriptor_ar": "صحفية علمية على متن سفينة أبحاث، في أواخر الثلاثينات",
+        "persona_ar": "هادئة وعملية، تكتب أوقاتها بساعة السفينة وتتوقع أن يفهم القارئ ذلك، وتنزعج حين تُنسب إليها رسالة لم تقصدها.",
+        "motives_ar": [
+          "أن تصل خلاصة قراءاتها إلى غرفة الأخبار",
+          "ألا تُتّهم بأنها تلاعبت بالوقت"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": [
+            "اتهام أحد بالاختراق دون سند"
+          ]
+        },
+        "authored_lines": [
+          {
+            "line_id": "nr_greet",
+            "purpose": "greeting",
+            "text_ar": "أهلاً. كتبتُ الرسالة مساءً على متن السفينة، ولم أتوقع أن تثير كل هذا."
+          },
+          {
+            "line_id": "nr_zone",
+            "purpose": "reveal",
+            "text_ar": "ساعة السفينة مضبوطة على منطقة زمنية تتأخر ساعتين عن التوقيت العالمي، وأكتب أوقاتي بها دائماً.",
+            "fact_ids": [
+              "f_ship_zone"
+            ]
+          },
+          {
+            "line_id": "nr_sent",
+            "purpose": "reveal",
+            "text_ar": "أرسلتُ الرسالة قبل منتصف الليل بدقيقتين بحسب ساعة السفينة، ورأس الملف يسجّل ذلك.",
+            "fact_ids": [
+              "f_nora_sent"
+            ]
+          },
+          {
+            "line_id": "nr_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "ليس لدي دليل يدعم ذلك."
+          },
+          {
+            "line_id": "nr_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن رسالتي وساعة السفينة فقط."
+          },
+          {
+            "line_id": "nr_bye",
+            "purpose": "farewell",
+            "text_ar": "أرجو أن تقرأ السجلات قبل الشائعات."
+          }
+        ]
+      },
+      {
+        "id": "walid",
+        "name_ar": "وليد البدر",
+        "role": "expert",
+        "age_descriptor_ar": "مسؤول نظم المراسلات في المركز",
+        "persona_ar": "دقيق ويفضّل أن يعرض السجل على أن يفسّره، ولا يتحدث عمّا لم يفحصه.",
+        "motives_ar": [
+          "أن تبقى سجلات النظام سليمة وقابلة للتدقيق"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "wl_greet",
+            "purpose": "greeting",
+            "text_ar": "أهلاً. أجيب عمّا في سجلات الخادم، لا عن النوايا."
+          },
+          {
+            "line_id": "wl_utc",
+            "purpose": "reveal",
+            "text_ar": "الخادم يخزّن كل وقت بالتوقيت العالمي، ثم تعرضه الأجهزة بحسب منطقة صاحبها.",
+            "fact_ids": [
+              "f_server_utc"
+            ]
+          },
+          {
+            "line_id": "wl_log",
+            "purpose": "reveal",
+            "text_ar": "سجل الاستلام عندي، ويمكنني إخراج السطر الخاص بالرسالة.",
+            "fact_ids": [
+              "f_server_log_exists"
+            ]
+          },
+          {
+            "line_id": "wl_net",
+            "purpose": "reveal",
+            "text_ar": "أجرينا قياساً تجريبياً لزمن النقل من السفينة إلى الخادم، ونتيجته متاحة.",
+            "fact_ids": [
+              "f_net_tested"
+            ]
+          },
+          {
+            "line_id": "wl_trace",
+            "purpose": "reveal",
+            "text_ar": "إن أردت المصدر الكامل فسجل التسليم يغطي كل خطوة من الإنشاء إلى الوصول، وأستطيع تصديره.",
+            "fact_ids": [
+              "f_trace_exists"
+            ]
+          },
+          {
+            "line_id": "wl_job",
+            "purpose": "reveal",
+            "text_ar": "وتُسجَّل أيضاً المهام الليلية المجدولة، فاطلبها إن أردت.",
+            "fact_ids": [
+              "f_job_exists"
+            ]
+          },
+          {
+            "line_id": "wl_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "ليس لدي دليل يدعم ذلك."
+          },
+          {
+            "line_id": "wl_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "فلنعد إلى سجلات النظام."
+          },
+          {
+            "line_id": "wl_bye",
+            "purpose": "farewell",
+            "text_ar": "السجلات متاحة متى احتجتها."
+          }
+        ]
+      },
+      {
+        "id": "rima",
+        "name_ar": "ريما الشريف",
+        "role": "witness",
+        "age_descriptor_ar": "محررة في غرفة الأخبار، في أوائل الثلاثينات",
+        "persona_ar": "سريعة الانطباع وصادقة، تكتب ما رأته كما رأته وتتردد في التدقيق حين يتفق الرقمان مع انطباعها.",
+        "motives_ar": [
+          "أن تعرف إن كانت الرسالة حقيقية قبل أن تنشر شيئاً"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "rm_greet",
+            "purpose": "greeting",
+            "text_ar": "أهلاً. رأيتُ ما رأيته، وأريد أن أفهمه."
+          },
+          {
+            "line_id": "rm_tomorrow",
+            "purpose": "reveal",
+            "text_ar": "فتحتُ الوارد فوجدتُ وقت الرسالة 23:58 وساعة جهازي تقول 04:59، فظننتها من الغد.",
+            "fact_ids": [
+              "f_rima_saw"
+            ],
+            "claim_ids": [
+              "cl_rima_tomorrow"
+            ]
+          },
+          {
+            "line_id": "rm_summary",
+            "purpose": "reveal",
+            "text_ar": "وصلني بعد الاجتماع ملخص أعاد أحدهم إرساله، وفيه الوقتان كما رأيتهما.",
+            "fact_ids": [
+              "f_summary_circulates"
+            ]
+          },
+          {
+            "line_id": "rm_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "ليس لدي دليل يدعم ذلك."
+          },
+          {
+            "line_id": "rm_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عمّا رأيته في الوارد."
+          },
+          {
+            "line_id": "rm_bye",
+            "purpose": "farewell",
+            "text_ar": "شكراً لأنك تسأل قبل أن تحكم."
+          }
+        ]
+      },
+      {
+        "id": "karim",
+        "name_ar": "كريم الحداد",
+        "role": "suspect",
+        "age_descriptor_ar": "أمين محضر اجتماع الصباح في غرفة الأخبار",
+        "persona_ar": "مستعجل ويحب الإيجاز، ويقلّل مما اختصره حين يشعر أنه قد يُلام.",
+        "motives_ar": [
+          "ألا يُنسب إليه سبب الشائعة",
+          "أن يبقى ملخصه وسيلة للتواصل السريع"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": [
+            "اتهام ريما أو نورة دون سند"
+          ]
+        },
+        "authored_lines": [
+          {
+            "line_id": "kr_greet",
+            "purpose": "greeting",
+            "text_ar": "تفضّل. كتبتُ المحضر، وأرسلتُ ملخصاً قصيراً بعده."
+          },
+          {
+            "line_id": "kr_minutes",
+            "purpose": "reveal",
+            "text_ar": "المحضر الأصلي محفوظ في مجلد الاجتماع، ويمكنك الاطلاع عليه.",
+            "fact_ids": [
+              "f_minutes_exist"
+            ]
+          },
+          {
+            "line_id": "kr_copy",
+            "purpose": "lie",
+            "text_ar": "نقلتُ الوقتين كما ظهرا في المحضر، دون أي تغيير.",
+            "claim_ids": [
+              "cl_karim_copy"
+            ]
+          },
+          {
+            "line_id": "kr_refuse",
+            "purpose": "refuse_secret",
+            "text_ar": "لا أرى أن للملخص علاقة بما تسأل."
+          },
+          {
+            "line_id": "kr_break",
+            "purpose": "break_down",
+            "text_ar": "نعم... اختصرتُ المحضر في سطر واحد، فحذفتُ المنطقتين الزمنيتين وكتبتُ «الخميس» للوقتين. لم أتخيل أن يُفهم منه أن الرسالة سبقت كتابتها.",
+            "fact_ids": [
+              "f_summary_zone_dropped"
+            ]
+          },
+          {
+            "line_id": "kr_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "ليس لدي دليل يدعم ذلك."
+          },
+          {
+            "line_id": "kr_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن المحضر والملخص."
+          },
+          {
+            "line_id": "kr_bye",
+            "purpose": "farewell",
+            "text_ar": "كان ينبغي أن أترك المنطقتين في السطر."
+          }
+        ]
+      }
+    ],
+    "locations": [
+      {
+        "id": "loc_ship",
+        "name_ar": "سفينة الأبحاث «الندى»",
+        "description_ar": "حيث كُتبت الرسالة، وساعتها مضبوطة على توقيتها."
+      },
+      {
+        "id": "loc_server",
+        "name_ar": "غرفة خوادم المراسلات",
+        "description_ar": "سجلات الاستلام والتسليم."
+      },
+      {
+        "id": "loc_newsroom",
+        "name_ar": "غرفة الأخبار",
+        "description_ar": "أجهزة المحررين ومجلد الاجتماع."
+      }
+    ],
+    "objects": [
+      {
+        "id": "obj_msg",
+        "name_ar": "الرسالة msg-7141",
+        "description_ar": "خلاصة قراءات الليلة المرسلة من السفينة."
+      }
+    ],
+    "organizations": [
+      {
+        "id": "org_center",
+        "name_ar": "مركز الشرفة للإعلام العلمي",
+        "description_ar": "مركز خيالي للإعلام العلمي."
+      }
+    ]
+  },
+  "truth": {
+    "solution": {
+      "culprit_ids": [
+        "karim"
+      ],
+      "summary_ar": "لم تصل رسالة قبل كتابتها ولم يخترق أحد النظام. الرسالة كُتبت بتوقيت السفينة وخُزّنت بالتوقيت العالمي وعُرضت بتوقيت المحرر، فبدت الأرقام متناقضة. وملخص مختصر أُعيد إرساله حذف ما يدل على المناطق.",
+      "key_fact_ids": [
+        "f_one_instant",
+        "f_summary_zone_dropped"
+      ]
+    },
+    "facts": [
+      {
+        "id": "f_msg_looks_early",
+        "statement_ar": "تبدو رسالة نورة في الملخص المتداول وكأنها وصلت قبل أن تُكتب بساعات.",
+        "kind": "event",
+        "subject_ids": [
+          "obj_msg"
+        ],
+        "spoiler_level": 0
+      },
+      {
+        "id": "f_rumor_breach",
+        "statement_ar": "يتداول زملاء في المركز أن النظام اختُرق أو أن الوقت عُبث به.",
+        "kind": "attribute",
+        "subject_ids": [
+          "org_center"
+        ],
+        "spoiler_level": 0
+      },
+      {
+        "id": "f_nora_reporting",
+        "statement_ar": "نورة صحفية على متن سفينة أبحاث وترسل خلاصاتها إلى غرفة الأخبار.",
+        "kind": "attribute",
+        "subject_ids": [
+          "nora"
+        ],
+        "spoiler_level": 0
+      },
+      {
+        "id": "f_header_time",
+        "statement_ar": "يسجّل رأس الرسالة وقت الإنشاء الخميس 23:58 بمنطقة UTC-2.",
+        "kind": "attribute",
+        "subject_ids": [
+          "obj_msg",
+          "nora"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 358,
+          "precision": "exact"
+        },
+        "location_id": "loc_ship"
+      },
+      {
+        "id": "f_server_recv",
+        "statement_ar": "سجّل الخادم استلام الرسالة الجمعة 01:59 بالتوقيت العالمي.",
+        "kind": "event",
+        "subject_ids": [
+          "obj_msg"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 359,
+          "precision": "exact"
+        },
+        "location_id": "loc_server"
+      },
+      {
+        "id": "f_device_time",
+        "statement_ar": "تعرض واجهة جهاز المحرر وصول الرسالة الجمعة 04:59 بمنطقة UTC+3.",
+        "kind": "state",
+        "subject_ids": [
+          "obj_msg"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 359,
+          "precision": "exact"
+        },
+        "location_id": "loc_newsroom"
+      },
+      {
+        "id": "f_summary_text",
+        "statement_ar": "أعاد أحد المشاركين إرسال ملخص يضع الوصول والكتابة في يوم واحد دون ذكر منطقة.",
+        "kind": "event",
+        "subject_ids": [
+          "karim",
+          "obj_msg"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 750,
+          "precision": "exact"
+        },
+        "location_id": "loc_newsroom"
+      },
+      {
+        "id": "f_job_run",
+        "statement_ar": "شُغّلت مهمة فهرسة مجدولة على الخادم في الجمعة 03:12 بالتوقيت العالمي.",
+        "kind": "event",
+        "subject_ids": [
+          "loc_server"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 432,
+          "precision": "exact"
+        },
+        "location_id": "loc_server"
+      },
+      {
+        "id": "f_ship_zone",
+        "statement_ar": "ساعة السفينة مضبوطة على منطقة تتأخر ساعتين عن التوقيت العالمي.",
+        "kind": "state",
+        "subject_ids": [
+          "nora",
+          "loc_ship"
+        ],
+        "spoiler_level": 1,
+        "location_id": "loc_ship"
+      },
+      {
+        "id": "f_nora_sent",
+        "statement_ar": "أرسلت نورة الرسالة قبل منتصف الليل بدقيقتين بساعة السفينة.",
+        "kind": "event",
+        "subject_ids": [
+          "nora",
+          "obj_msg"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 358,
+          "precision": "exact"
+        },
+        "location_id": "loc_ship"
+      },
+      {
+        "id": "f_server_utc",
+        "statement_ar": "يخزّن الخادم كل وقت بالتوقيت العالمي وتحوّله الأجهزة إلى منطقة صاحبها.",
+        "kind": "state",
+        "subject_ids": [
+          "loc_server"
+        ],
+        "spoiler_level": 1,
+        "location_id": "loc_server"
+      },
+      {
+        "id": "f_server_log_exists",
+        "statement_ar": "يحتفظ الخادم بسجل استلام لكل رسالة.",
+        "kind": "state",
+        "subject_ids": [
+          "walid",
+          "loc_server"
+        ],
+        "spoiler_level": 1,
+        "location_id": "loc_server"
+      },
+      {
+        "id": "f_net_tested",
+        "statement_ar": "أُجري قياس تجريبي لزمن النقل من السفينة إلى الخادم.",
+        "kind": "state",
+        "subject_ids": [
+          "walid"
+        ],
+        "spoiler_level": 1,
+        "location_id": "loc_server"
+      },
+      {
+        "id": "f_trace_exists",
+        "statement_ar": "يتوفر سجل تسليم كامل يغطي مراحل الرسالة.",
+        "kind": "state",
+        "subject_ids": [
+          "walid",
+          "loc_server"
+        ],
+        "spoiler_level": 1,
+        "location_id": "loc_server"
+      },
+      {
+        "id": "f_job_exists",
+        "statement_ar": "تُسجَّل المهام المجدولة على الخادم.",
+        "kind": "state",
+        "subject_ids": [
+          "walid",
+          "loc_server"
+        ],
+        "spoiler_level": 1,
+        "location_id": "loc_server"
+      },
+      {
+        "id": "f_rima_saw",
+        "statement_ar": "فتحت ريما الوارد فقارنت الوقتين 23:58 و04:59 دون اليوم ودون المنطقة.",
+        "kind": "event",
+        "subject_ids": [
+          "rima"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 365,
+          "precision": "approx"
+        },
+        "location_id": "loc_newsroom"
+      },
+      {
+        "id": "f_summary_circulates",
+        "statement_ar": "وصل زملاء في غرفة الأخبار ملخص معاد إرساله بعد الاجتماع.",
+        "kind": "event",
+        "subject_ids": [
+          "rima",
+          "karim"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 750,
+          "precision": "approx"
+        },
+        "location_id": "loc_newsroom"
+      },
+      {
+        "id": "f_minutes_exist",
+        "statement_ar": "محضر الاجتماع الأصلي محفوظ في مجلد الاجتماع.",
+        "kind": "state",
+        "subject_ids": [
+          "karim",
+          "loc_newsroom"
+        ],
+        "spoiler_level": 1,
+        "location_id": "loc_newsroom"
+      },
+      {
+        "id": "f_one_instant",
+        "statement_ar": "الأزمنة الثلاثة المختلفة المكتوبة في الرأس والخادم والجهاز تقيس لحظة واحدة تقريباً، تفصل بينها دقيقة نقل.",
+        "kind": "relation",
+        "subject_ids": [
+          "obj_msg"
+        ],
+        "spoiler_level": 3,
+        "time": {
+          "start_min": 358,
+          "precision": "approx",
+          "end_min": 359
+        },
+        "science_ko_refs": [
+          "KO-FC-04-024"
+        ]
+      },
+      {
+        "id": "f_summary_zone_dropped",
+        "statement_ar": "الاختصار الذي أُعيد إرساله أسقط ما يدل على منطقتي الوقتين وجعل اليوم نفسه لهما، فنشأ ترتيب معكوس لا وجود له في الواقع.",
+        "kind": "event",
+        "subject_ids": [
+          "karim",
+          "obj_msg"
+        ],
+        "spoiler_level": 3,
+        "time": {
+          "start_min": 750,
+          "precision": "exact"
+        },
+        "location_id": "loc_newsroom",
+        "science_ko_refs": [
+          "KO-RS-05-014"
+        ]
+      }
+    ],
+    "claims": [
+      {
+        "id": "cl_rima_tomorrow",
+        "statement_ar": "الرسالة مؤرَّخة بالغد؛ وقتها 23:58 وجهازي يشير إلى 04:59.",
+        "kind": "honest_mistake",
+        "held_by": [
+          "rima"
+        ],
+        "true_fact_id": "f_one_instant",
+        "contradicted_by_evidence_ids": [
+          "ev_delivery_trace",
+          "ev_lab_norm"
+        ]
+      },
+      {
+        "id": "cl_karim_copy",
+        "statement_ar": "نقلت الوقتين كما ظهرا في المحضر دون تغيير.",
+        "kind": "half_truth",
+        "held_by": [
+          "karim"
+        ],
+        "true_fact_id": "f_summary_zone_dropped",
+        "contradicted_by_evidence_ids": [
+          "ev_minutes_orig",
+          "ev_device_view"
+        ]
+      }
+    ]
+  },
+  "timeline": [
+    {
+      "id": "te_write",
+      "description_ar": "نورة تنشئ الرسالة على السفينة.",
+      "time": {
+        "start_min": 358,
+        "precision": "exact"
+      },
+      "location_id": "loc_ship",
+      "actor_ids": [
+        "nora"
+      ],
+      "fact_ids": [
+        "f_header_time",
+        "f_nora_sent"
+      ],
+      "motivated_by_ar": "أنهت قراءات الليلة وأرادت إبلاغ غرفة الأخبار"
+    },
+    {
+      "id": "te_server",
+      "description_ar": "الخادم يقبل الرسالة ويسجّل الاستلام.",
+      "time": {
+        "start_min": 359,
+        "precision": "exact"
+      },
+      "location_id": "loc_server",
+      "actor_ids": [],
+      "fact_ids": [
+        "f_server_recv"
+      ]
+    },
+    {
+      "id": "te_device",
+      "description_ar": "الرسالة تظهر في صندوق المحرر بتوقيت غرفة الأخبار.",
+      "time": {
+        "start_min": 359,
+        "precision": "exact"
+      },
+      "location_id": "loc_newsroom",
+      "actor_ids": [],
+      "fact_ids": [
+        "f_device_time"
+      ]
+    },
+    {
+      "id": "te_open",
+      "description_ar": "ريما تفتح الوارد وتقرأ الوقتين.",
+      "time": {
+        "start_min": 365,
+        "precision": "approx"
+      },
+      "location_id": "loc_newsroom",
+      "actor_ids": [
+        "rima"
+      ],
+      "fact_ids": [
+        "f_rima_saw"
+      ],
+      "motivated_by_ar": "بدأت وردية الصباح بمراجعة الوارد"
+    },
+    {
+      "id": "te_job",
+      "description_ar": "مهمة فهرسة مجدولة على الخادم.",
+      "time": {
+        "start_min": 432,
+        "precision": "exact"
+      },
+      "location_id": "loc_server",
+      "actor_ids": [],
+      "fact_ids": [
+        "f_job_run"
+      ]
+    },
+    {
+      "id": "te_summary",
+      "description_ar": "كريم يرسل ملخصاً مختصراً بعد الاجتماع.",
+      "time": {
+        "start_min": 750,
+        "precision": "exact"
+      },
+      "location_id": "loc_newsroom",
+      "actor_ids": [
+        "karim"
+      ],
+      "fact_ids": [
+        "f_summary_text",
+        "f_summary_zone_dropped",
+        "f_summary_circulates"
+      ],
+      "motivated_by_ar": "أراد إيصال الخلاصة بسرعة"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_header",
+      "title_ar": "رأس الرسالة msg-7141",
+      "kind": "digital",
+      "content_ar": "رأس الرسالة (مبسّط)\nالمعرّف: msg-7141\nمن: نورة العبدالله — سفينة الأبحاث «الندى»\nإلى: غرفة الأخبار\nأُنشئت: الخميس 23:58 (UTC-2)\nالموضوع: خلاصة قراءات الليلة",
+      "acquired_by_action_ids": [
+        "a_read_header"
+      ],
+      "supports_fact_ids": [
+        "f_header_time"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يثبت وقت الإنشاء بتوقيت جهاز المرسلة ومنطقته؛ لا يثبت متى وصلت الرسالة ولا كيف عُرض وقتها لدى غيرها.",
+      "location_id": "loc_ship"
+    },
+    {
+      "id": "ev_device_view",
+      "title_ar": "واجهة بريد جهاز المحرر",
+      "kind": "digital",
+      "content_ar": "واجهة بريد جهاز المحرر في غرفة الأخبار:\nmsg-7141 — وصلت: الجمعة 04:59 (UTC+3)",
+      "acquired_by_action_ids": [
+        "a_read_device"
+      ],
+      "supports_fact_ids": [
+        "f_device_time",
+        "f_msg_looks_early"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "تعرض الوقت بمنطقة جهاز المستلم؛ ليست وقت الحدث نفسه بل صورة له.",
+      "location_id": "loc_newsroom"
+    },
+    {
+      "id": "ev_server_log",
+      "title_ar": "سجل استلام خادم المراسلات",
+      "kind": "digital",
+      "content_ar": "سجل خادم المراسلات — الأوقات مخزّنة بالتوقيت العالمي UTC\nmsg-7141 | الاستلام: الجمعة 01:59 UTC | الحالة: مقبولة | تعديل لاحق: لا يوجد",
+      "acquired_by_action_ids": [
+        "a_get_server"
+      ],
+      "supports_fact_ids": [
+        "f_server_recv"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يثبت وقت قبول الخادم للرسالة بمرجع واحد؛ لا يثبت وقت كتابتها ولا ما عُرض على الأجهزة.",
+      "location_id": "loc_server"
+    },
+    {
+      "id": "ev_summary",
+      "title_ar": "ملخص أُعيد إرساله بعد الاجتماع",
+      "kind": "digital",
+      "content_ar": "رسالة أعاد أحد المشاركين إرسالها بعد اجتماع الصباح:\n«وصلت رسالة نورة الخميس 04:59، وكتبتها الخميس 23:58.»",
+      "acquired_by_action_ids": [
+        "a_get_summary"
+      ],
+      "supports_fact_ids": [
+        "f_summary_text",
+        "f_summary_circulates"
+      ],
+      "reliability": "weak",
+      "limits_ar": "نسخة مختصرة أُعيد إرسالها؛ لا تذكر منطقة أي وقت، فلا تثبت ترتيب الحدثين وحدها.",
+      "is_red_herring": true,
+      "location_id": "loc_newsroom"
+    },
+    {
+      "id": "ev_network_info",
+      "title_ar": "قياس زمن النقل التجريبي",
+      "kind": "digital",
+      "content_ar": "قياس شبكة تجريبي بين سفينة الأبحاث وخادم المراسلات:\nزمن النقل المعتاد نحو دقيقة واحدة (متوسط عشر رسائل اختبار: 58 ثانية).",
+      "acquired_by_action_ids": [
+        "a_get_net"
+      ],
+      "supports_fact_ids": [
+        "f_net_tested"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "بيانات اختبار لرسائل أخرى؛ تقدّر الزمن الاعتيادي ولا تقيس هذه الرسالة بعينها.",
+      "location_id": "loc_server"
+    },
+    {
+      "id": "ev_rima_comment",
+      "title_ar": "تعليق ريما",
+      "kind": "testimonial",
+      "content_ar": "ريما الشريف، محررة:\n«فتحت الوارد فرأيت أن وقت الرسالة 23:58 وساعة جهازي تقول 04:59. يعني وصلت من الغد!»",
+      "acquired_by_action_ids": [
+        "a_note_rima"
+      ],
+      "supports_fact_ids": [
+        "f_rima_saw"
+      ],
+      "reliability": "weak",
+      "limits_ar": "انطباع شخص قارن رقمين دون يومهما ودون منطقتيهما؛ لا يثبت ترتيب الحدثين.",
+      "is_red_herring": true,
+      "location_id": "loc_newsroom"
+    },
+    {
+      "id": "ev_delivery_trace",
+      "title_ar": "سجل التسليم الكامل",
+      "kind": "digital",
+      "content_ar": "سجل التسليم الكامل للرسالة msg-7141 — كل الأوقات بالتوقيت العالمي UTC\n01:58:12 إنشاء عند المرسلة\n01:59:10 قبول عند الخادم\n01:59:11 تسليم إلى صندوق المحرر\nيعرض جهاز المحرر الوقت بمنطقته UTC+3.\nعدد الحلقات: 3 — دون فجوات.",
+      "acquired_by_action_ids": [
+        "a_get_trace"
+      ],
+      "supports_fact_ids": [
+        "f_trace_exists",
+        "f_one_instant"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يربط خطوات الرسالة بمرجع زمني واحد؛ لا يثبت أن محتوى الرسالة صحيح ولا ما قيل عنها لاحقاً.",
+      "contradicts_claim_ids": [
+        "cl_rima_tomorrow"
+      ],
+      "location_id": "loc_server"
+    },
+    {
+      "id": "ev_minutes_orig",
+      "title_ar": "محضر الاجتماع الأصلي",
+      "kind": "documentary",
+      "content_ar": "محضر اجتماع الصباح (قبل أن يختصره أحد):\n«وصلت الرسالة الجمعة 04:59 بتوقيت غرفة الأخبار (UTC+3)، وكانت أُنشئت الخميس 23:58 بتوقيت السفينة (UTC-2).»",
+      "acquired_by_action_ids": [
+        "a_get_minutes"
+      ],
+      "supports_fact_ids": [
+        "f_minutes_exist",
+        "f_summary_text"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يحفظ اليوم والمنطقة لكل وقت؛ كتبه أمين الاجتماع نقلاً من الشاشتين ولا يعرض سجل الخادم.",
+      "contradicts_claim_ids": [
+        "cl_karim_copy"
+      ],
+      "location_id": "loc_newsroom"
+    },
+    {
+      "id": "ev_karim_statement",
+      "title_ar": "إفادة أمين المحضر (ملخص)",
+      "kind": "testimonial",
+      "content_ar": "ملخص إفادة كريم الحداد، دوّنه أمين اللجنة:\n«اختصرت المحضر في سطر لأرسله بسرعة. حذفت المنطقتين، وكتبت (الخميس) للوقتين لأنه التاريخ الذي بدأ به المحضر.»",
+      "acquired_by_action_ids": [
+        "a_note_karim"
+      ],
+      "supports_fact_ids": [
+        "f_summary_zone_dropped"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "إقرار شخص عن عمله هو؛ يؤيده المحضر، ولا يثبت وحده أن الاختصار هو سبب الشائعة.",
+      "location_id": "loc_newsroom"
+    },
+    {
+      "id": "ev_job_log",
+      "title_ar": "سجل المهام المجدولة",
+      "kind": "digital",
+      "content_ar": "سجل المهام المجدولة على الخادم:\nالجمعة 03:12 UTC — إعادة بناء فهرس البحث في البريد (أسبوعية، قراءة فقط)",
+      "acquired_by_action_ids": [
+        "a_get_job"
+      ],
+      "supports_fact_ids": [
+        "f_job_run"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "يثبت تشغيل مهمة فهرسة بعد الاستلام؛ لا يقول إنها لمست هذه الرسالة أو أوقاتها.",
+      "is_red_herring": true,
+      "location_id": "loc_server"
+    },
+    {
+      "id": "ev_lab_norm",
+      "title_ar": "تقرير توحيد الأزمنة",
+      "kind": "lab_result",
+      "content_ar": "تقرير مختبر الأزمنة: بعد تحويل كل وقت إلى التوقيت العالمي تتقارب القراءات الثلاث (رأس الرسالة، سجل الخادم، واجهة الجهاز) عند 01:58 و01:59 UTC فجر الجمعة بفارق دقيقة واحدة. أي أن الفارق الظاهر بين «23:58» و«04:59» ناتج عن اختلاف المنطقة الزمنية لا عن اختلاف الحدث.",
+      "acquired_by_action_ids": [
+        "a_compare_times"
+      ],
+      "supports_fact_ids": [
+        "f_one_instant"
+      ],
+      "reliability": "strong",
+      "limits_ar": "نتيجة حسابية تعتمد على صحة الإزاحات المدخلة؛ توحّد الأزمنة ولا تثبت وحدها أن الخادم غير معدَّل.",
+      "contradicts_claim_ids": [
+        "cl_rima_tomorrow"
+      ],
+      "forensic_ko_ref": "KO-FC-04-024",
+      "location_id": "loc_server"
+    }
+  ],
+  "evidence_graph": {
+    "inferences": [
+      {
+        "id": "i_one_instant_a",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_header"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_server_log"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_device_view"
+          },
+          {
+            "ref_type": "general_knowledge",
+            "ref_id": "utc_common_reference"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_one_instant"
+        },
+        "relation": "establishes",
+        "strength": "conclusive",
+        "rule_ar": "بتحويل 23:58 (UTC-2) و04:59 (UTC+3) إلى التوقيت العالمي تصبحان 01:58 و01:59، وهما تلتقيان مع سجل الخادم 01:59؛ فالأرقام الثلاثة تصف لحظة واحدة.",
+        "skill_ko_refs": [
+          "KO-FC-04-024"
+        ]
+      },
+      {
+        "id": "i_one_instant_lab",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_lab_norm"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_one_instant"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "ناتج المختبر يوحّد الأزمنة الثلاثة في نافذة دقيقة واحدة بعد تحويل الإزاحات.",
+        "skill_ko_refs": [
+          "KO-FC-04-024"
+        ]
+      },
+      {
+        "id": "i_one_instant_b",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_delivery_trace"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_network_info"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_one_instant"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "السلسلة الكاملة مكتوبة بمرجع واحد: إنشاء 01:58:12 وقبول 01:59:10؛ وفارق الدقيقة يطابق زمن النقل الاعتيادي في القياس التجريبي.",
+        "skill_ko_refs": [
+          "KO-FC-04-024",
+          "KO-RS-05-004"
+        ]
+      },
+      {
+        "id": "i_zone_dropped_a",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_summary"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_device_view"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_header"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_summary_zone_dropped"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "الملخص يكتب 04:59 و23:58 تحت اليوم نفسه، بينما تضعهما الواجهة والرأس في يومين وبمنطقتين؛ فالترتيب المعكوس صنعه الاختصار لا الرسالة.",
+        "skill_ko_refs": [
+          "KO-RS-05-014"
+        ]
+      },
+      {
+        "id": "i_zone_dropped_b",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_minutes_orig"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_karim_statement"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_summary_zone_dropped"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "المحضر الأصلي يحفظ المنطقة واليوم لكل وقت، وصاحب الملخص يقرّ بأنه حذفهما وكتب يوماً واحداً؛ فمصدر الالتباس هو الاختصار.",
+        "skill_ko_refs": [
+          "KO-RS-05-014"
+        ]
+      },
+      {
+        "id": "i_rima_claim",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_header"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_device_view"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_rima_tomorrow"
+        },
+        "relation": "contradicts_claim",
+        "strength": "strong",
+        "rule_ar": "الوقتان اللذان قارنتهما ريما من يومين مختلفين وبمنطقتين مختلفتين؛ لا يصحّ مقارنة 23:58 بـ04:59 قبل تحويلهما.",
+        "skill_ko_refs": [
+          "KO-RS-05-001"
+        ]
+      },
+      {
+        "id": "i_karim_claim",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_minutes_orig"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_summary"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_karim_copy"
+        },
+        "relation": "contradicts_claim",
+        "strength": "strong",
+        "rule_ar": "المحضر يحوي اليوم والمنطقة والملخص لا يحويهما؛ فالقول إن الوقتين نُقلا دون تغيير غير دقيق.",
+        "skill_ko_refs": [
+          "KO-RS-05-001"
+        ]
+      },
+      {
+        "id": "i_rule_breach_a",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_header"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_server_log"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_device_view"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_breach"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "بعد توحيد الأزمنة يأتي الإنشاء قبل الاستلام بدقيقة، وسجل الخادم يقول إنه لم يُعدَّل؛ فلا يبقى شيء يحتاج إلى اختراق لتفسيره.",
+        "skill_ko_refs": [
+          "KO-RS-06-008"
+        ]
+      },
+      {
+        "id": "i_rule_breach_b",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_delivery_trace"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_network_info"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_breach"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "السلسلة كاملة بلا فجوات وبمرجع واحد، وفارق خطواتها يطابق زمن النقل المعتاد؛ فلا موضع لتلاعب في الوقت.",
+        "skill_ko_refs": [
+          "KO-RS-06-008"
+        ]
+      },
+      {
+        "id": "i_job_explained",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_job_log"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_server_log"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_breach"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "مهمة الفهرسة قراءة فقط وجرت بعد الاستلام بأكثر من ساعة، وسجل الخادم لا يذكر تعديلاً لاحقاً؛ فلا علاقة لها بوقت الرسالة.",
+        "skill_ko_refs": [
+          "KO-RS-06-008"
+        ]
+      },
+      {
+        "id": "i_rule_insufficient_a",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_header"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_server_log"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_device_view"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_insufficient"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "ثلاثة سجلات أصلية لكل منها منطقته تكفي بعد التحويل لتفسير التسلسل دون انتظار سجل آخر.",
+        "skill_ko_refs": [
+          "KO-RS-06-001"
+        ]
+      },
+      {
+        "id": "i_rule_insufficient_b",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_delivery_trace"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_insufficient"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "سجل التسليم الكامل نفسه يغطي مراحل الرسالة كلها بمرجع واحد، فلا ينقص أصل سجل.",
+        "skill_ko_refs": [
+          "KO-RS-06-001"
+        ]
+      },
+      {
+        "id": "i_support_zones",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_one_instant"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_summary_zone_dropped"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_zones"
+        },
+        "relation": "supports",
+        "strength": "strong",
+        "rule_ar": "حدث واحد قُرئ بثلاث مناطق زمنية، ثم اختصر ملخص ما يدل على مناطقها؛ وهذا يفسّر كل ما بدا مستحيلاً دون افتراض سفر في الزمن أو اختراق.",
+        "skill_ko_refs": [
+          "KO-RS-05-002"
+        ]
+      }
+    ]
+  },
+  "character_knowledge": [
+    {
+      "character_id": "nora",
+      "knows": [
+        {
+          "fact_id": "f_ship_zone",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_nora_sent",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    },
+    {
+      "character_id": "walid",
+      "knows": [
+        {
+          "fact_id": "f_server_utc",
+          "access": "professional",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_server_log_exists",
+          "access": "professional",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_net_tested",
+          "access": "professional",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_trace_exists",
+          "access": "professional",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_job_exists",
+          "access": "professional",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    },
+    {
+      "character_id": "rima",
+      "knows": [
+        {
+          "fact_id": "f_rima_saw",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_summary_circulates",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": [
+        {
+          "claim_id": "cl_rima_tomorrow",
+          "stance": "sincere"
+        }
+      ]
+    },
+    {
+      "character_id": "karim",
+      "knows": [
+        {
+          "fact_id": "f_minutes_exist",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [
+        {
+          "fact_id": "f_summary_zone_dropped",
+          "reveal_when": {
+            "presented": {
+              "evidence_id": "ev_minutes_orig",
+              "to_character": "karim"
+            }
+          },
+          "cover_claim_id": "cl_karim_copy",
+          "reveal_line_id": "kr_break"
+        }
+      ],
+      "believes": [
+        {
+          "claim_id": "cl_karim_copy",
+          "stance": "deliberate_lie"
+        }
+      ]
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "h_breach",
+      "statement_ar": "حدث اختراق أو عبث بالوقت: عُدّلت أوقات الرسالة أو دُسّت في النظام فوصلت قبل أن تُكتب.",
+      "is_true": false,
+      "plausibility_at_start": "high"
+    },
+    {
+      "id": "h_zones",
+      "statement_ar": "اختلاف في المناطق الزمنية وطريقة العرض: حدث واحد كُتب بوقت السفينة وعُرض بوقت المحرر، وأسقط ملخص مختصر ما يدل على المنطقة.",
+      "is_true": true,
+      "plausibility_at_start": "low",
+      "suspect_id": "karim"
+    },
+    {
+      "id": "h_insufficient",
+      "statement_ar": "لا تكفي الأدلة للفصل بين الاختراق وتنسيق الزمن قبل الحصول على أصل سجل التسليم.",
+      "is_true": false,
+      "plausibility_at_start": "medium"
+    }
+  ],
+  "misdirection_plan": [
+    {
+      "id": "rh_summary",
+      "points_to_hypothesis_id": "h_breach",
+      "planted_via_ar": "الملخص المتداول يضع الوصول الخميس 04:59 والكتابة الخميس 23:58، أي وصولاً قبل الكتابة بتسع عشرة ساعة.",
+      "evidence_ids": [
+        "ev_summary"
+      ],
+      "refuted_by_inference_ids": [
+        "i_zone_dropped_a",
+        "i_zone_dropped_b",
+        "i_rule_breach_a"
+      ],
+      "fairness_note_ar": "الرأس وواجهة الجهاز وسجل الخادم متاحة من البداية أو بسؤال وليد، وفيها المنطقة واليوم؛ والمحضر الأصلي محفوظ في مجلد الاجتماع."
+    },
+    {
+      "id": "rh_witness",
+      "points_to_hypothesis_id": "h_breach",
+      "planted_via_ar": "ريما تقول إن وقت الرسالة 23:58 أكبر من ساعة جهازها 04:59، فتبدو الرسالة من الغد.",
+      "evidence_ids": [
+        "ev_rima_comment"
+      ],
+      "refuted_by_inference_ids": [
+        "i_rima_claim",
+        "i_rule_breach_a"
+      ],
+      "fairness_note_ar": "الوقتان المقارَنان يحملان منطقتين مختلفتين مكتوبتين في الرأس والواجهة، فالتحويل ممكن لكل لاعب."
+    },
+    {
+      "id": "rh_job",
+      "points_to_hypothesis_id": "h_breach",
+      "planted_via_ar": "سجل المهام يُظهر نشاطاً على الخادم بعد وصول الرسالة بساعة تقريباً.",
+      "evidence_ids": [
+        "ev_job_log"
+      ],
+      "refuted_by_inference_ids": [
+        "i_job_explained"
+      ],
+      "fairness_note_ar": "سطر المهمة نفسه يقول إنها قراءة فقط، وسجل الخادم يقول إن الرسالة لم تُعدَّل."
+    }
+  ],
+  "learning_objectives": [
+    {
+      "id": "lo_claim",
+      "statement_ar": "يصنّف المصادر الزمنية (رأس أصلي، عرض جهاز، ملخص مختصر، شهادة) قبل الاعتماد عليها.",
+      "skill_ko_ref": "KO-RS-05-001",
+      "observable_behaviors_ar": [
+        "يصنّف الرأس والخادم والملخص",
+        "يقابل القول بسجل"
+      ],
+      "evidence_sources": [
+        "evidence_board"
+      ]
+    },
+    {
+      "id": "lo_timeline",
+      "statement_ar": "يحوّل كل وقت إلى مرجع واحد ويرتّب الأحداث عليه.",
+      "skill_ko_ref": "KO-RS-05-005",
+      "observable_behaviors_ar": [
+        "يشغّل مختبر الأزمنة بإزاحات صحيحة",
+        "يضع الأدلة في أزمنتها الموحّدة"
+      ],
+      "evidence_sources": [
+        "timeline_task",
+        "action_log"
+      ]
+    },
+    {
+      "id": "lo_hyp",
+      "statement_ar": "يوازن بين فرضيتين على الأقل ويستبعد ما تنقضه الأدلة.",
+      "skill_ko_ref": "KO-RS-05-002",
+      "observable_behaviors_ar": [
+        "يضيف فرضيات",
+        "يستبعد بدليل"
+      ],
+      "evidence_sources": [
+        "hypothesis_ledger"
+      ]
+    },
+    {
+      "id": "lo_diag",
+      "statement_ar": "يفصل بين وقت الحدث ووقت عرضه، ويحدد حدود موثوقية الملخص المختصر.",
+      "skill_ko_ref": "KO-RS-06-001",
+      "observable_behaviors_ar": [
+        "يربط الدليل بالفرضية باتجاه صحيح"
+      ],
+      "evidence_sources": [
+        "evidence_board",
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_calib",
+      "statement_ar": "يصوغ ثقته بحدودها.",
+      "skill_ko_ref": "KO-RS-06-021",
+      "observable_behaviors_ar": [
+        "يختار ثقة معقولة",
+        "يذكر حدوداً"
+      ],
+      "evidence_sources": [
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_revise",
+      "statement_ar": "يراجع رأيه الأول حين يظهر دليل جديد.",
+      "skill_ko_ref": "KO-RS-06-009",
+      "observable_behaviors_ar": [
+        "يغيّر فرضيته الرائدة بدليل"
+      ],
+      "evidence_sources": [
+        "hypothesis_ledger"
+      ]
+    }
+  ],
+  "mechanics": {
+    "time_budget_units": 30,
+    "actions": [
+      {
+        "id": "a_read_header",
+        "type": "examine",
+        "label_ar": "افتح رأس الرسالة msg-7141",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_header"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "obj_msg",
+        "telemetry_code": "READ_HEADER"
+      },
+      {
+        "id": "a_read_device",
+        "type": "examine",
+        "label_ar": "افتح واجهة بريد جهاز المحرر",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_device_view"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_newsroom",
+        "telemetry_code": "READ_DEVICE"
+      },
+      {
+        "id": "a_get_server",
+        "type": "examine",
+        "label_ar": "اطلب سطر الرسالة من سجل الخادم",
+        "precondition": {
+          "fact_unlocked": "f_server_log_exists"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_server_log"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_server",
+        "telemetry_code": "GET_SERVER"
+      },
+      {
+        "id": "a_get_net",
+        "type": "examine",
+        "label_ar": "اطلب نتيجة قياس زمن النقل",
+        "precondition": {
+          "fact_unlocked": "f_net_tested"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_network_info"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_server",
+        "telemetry_code": "GET_NET"
+      },
+      {
+        "id": "a_get_trace",
+        "type": "examine",
+        "label_ar": "اطلب سجل التسليم الكامل",
+        "precondition": {
+          "fact_unlocked": "f_trace_exists"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_delivery_trace"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_server",
+        "telemetry_code": "GET_TRACE"
+      },
+      {
+        "id": "a_get_job",
+        "type": "examine",
+        "label_ar": "اطلب سجل المهام المجدولة",
+        "precondition": {
+          "fact_unlocked": "f_job_exists"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_job_log"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_server",
+        "telemetry_code": "GET_JOB"
+      },
+      {
+        "id": "a_get_summary",
+        "type": "examine",
+        "label_ar": "اطلب الملخص الذي أُعيد إرساله",
+        "precondition": {
+          "fact_unlocked": "f_summary_circulates"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_summary"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_newsroom",
+        "telemetry_code": "GET_SUMMARY"
+      },
+      {
+        "id": "a_note_rima",
+        "type": "examine",
+        "label_ar": "دوّن تعليق ريما",
+        "precondition": {
+          "fact_unlocked": "f_rima_saw"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_rima_comment"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "rima",
+        "telemetry_code": "NOTE_RIMA"
+      },
+      {
+        "id": "a_get_minutes",
+        "type": "examine",
+        "label_ar": "افتح محضر الاجتماع الأصلي",
+        "precondition": {
+          "fact_unlocked": "f_minutes_exist"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_minutes_orig"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_newsroom",
+        "telemetry_code": "GET_MINUTES"
+      },
+      {
+        "id": "a_note_karim",
+        "type": "examine",
+        "label_ar": "دوّن إفادة كريم",
+        "precondition": {
+          "fact_unlocked": "f_summary_zone_dropped"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_karim_statement"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "karim",
+        "telemetry_code": "NOTE_KARIM"
+      },
+      {
+        "id": "a_int_nora",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة نورة",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "nora",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "nora",
+        "telemetry_code": "INT_NORA"
+      },
+      {
+        "id": "a_int_walid",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة وليد",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "walid",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "walid",
+        "telemetry_code": "INT_WALID"
+      },
+      {
+        "id": "a_int_rima",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة ريما",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "rima",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "rima",
+        "telemetry_code": "INT_RIMA"
+      },
+      {
+        "id": "a_int_karim",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة كريم",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "karim",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "karim",
+        "telemetry_code": "INT_KARIM"
+      },
+      {
+        "id": "a_compare_times",
+        "type": "compare_evidence",
+        "label_ar": "وحِّد الأزمنة (يُمنح عبر المختبر عند نجاحه)",
+        "precondition": {
+          "all": [
+            {
+              "has_evidence": "ev_header"
+            },
+            {
+              "has_evidence": "ev_server_log"
+            },
+            {
+              "has_evidence": "ev_device_view"
+            }
+          ]
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_lab_norm"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "COMPARE_TIMES"
+      },
+      {
+        "id": "p_minutes_karim",
+        "type": "present_evidence",
+        "label_ar": "اعرض المحضر الأصلي على كريم",
+        "precondition": {
+          "presented": {
+            "evidence_id": "ev_minutes_orig",
+            "to_character": "karim"
+          }
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "PRESENTED_MINUTES_KARIM"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "karim",
+        "telemetry_code": "P_MINUTES_KARIM"
+      },
+      {
+        "id": "a_hint",
+        "type": "request_hint",
+        "label_ar": "اطلب تلميحاً",
+        "precondition": {
+          "always": true
+        },
+        "effects": [],
+        "time_cost_units": 0,
+        "telemetry_code": "REQUEST_HINT"
+      },
+      {
+        "id": "a_accuse",
+        "type": "final_accusation",
+        "label_ar": "قدّم الاستنتاج النهائي",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "SUBMIT"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "FINAL_ACCUSATION"
+      },
+      {
+        "id": "ask_nora_f_ship_zone",
+        "type": "interview",
+        "label_ar": "[نموذج] nora يذكر f_ship_zone",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_ship_zone"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "nora",
+        "telemetry_code": "ASK_NORA_F_SHIP_ZONE"
+      },
+      {
+        "id": "ask_nora_f_nora_sent",
+        "type": "interview",
+        "label_ar": "[نموذج] nora يذكر f_nora_sent",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_nora_sent"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "nora",
+        "telemetry_code": "ASK_NORA_F_NORA_SENT"
+      },
+      {
+        "id": "ask_walid_f_server_utc",
+        "type": "interview",
+        "label_ar": "[نموذج] walid يذكر f_server_utc",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_server_utc"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "walid",
+        "telemetry_code": "ASK_WALID_F_SERVER_UTC"
+      },
+      {
+        "id": "ask_walid_f_server_log_exists",
+        "type": "interview",
+        "label_ar": "[نموذج] walid يذكر f_server_log_exists",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_server_log_exists"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "walid",
+        "telemetry_code": "ASK_WALID_F_SERVER_LOG_EXISTS"
+      },
+      {
+        "id": "ask_walid_f_net_tested",
+        "type": "interview",
+        "label_ar": "[نموذج] walid يذكر f_net_tested",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_net_tested"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "walid",
+        "telemetry_code": "ASK_WALID_F_NET_TESTED"
+      },
+      {
+        "id": "ask_walid_f_trace_exists",
+        "type": "interview",
+        "label_ar": "[نموذج] walid يذكر f_trace_exists",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_trace_exists"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "walid",
+        "telemetry_code": "ASK_WALID_F_TRACE_EXISTS"
+      },
+      {
+        "id": "ask_walid_f_job_exists",
+        "type": "interview",
+        "label_ar": "[نموذج] walid يذكر f_job_exists",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_job_exists"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "walid",
+        "telemetry_code": "ASK_WALID_F_JOB_EXISTS"
+      },
+      {
+        "id": "ask_rima_f_rima_saw",
+        "type": "interview",
+        "label_ar": "[نموذج] rima يذكر f_rima_saw",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_rima_saw"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "rima",
+        "telemetry_code": "ASK_RIMA_F_RIMA_SAW"
+      },
+      {
+        "id": "ask_rima_f_summary_circulates",
+        "type": "interview",
+        "label_ar": "[نموذج] rima يذكر f_summary_circulates",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_summary_circulates"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "rima",
+        "telemetry_code": "ASK_RIMA_F_SUMMARY_CIRCULATES"
+      },
+      {
+        "id": "ask_karim_f_minutes_exist",
+        "type": "interview",
+        "label_ar": "[نموذج] karim يذكر f_minutes_exist",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_minutes_exist"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "karim",
+        "telemetry_code": "ASK_KARIM_F_MINUTES_EXIST"
+      },
+      {
+        "id": "ask_karim_f_summary_zone_dropped",
+        "type": "interview",
+        "label_ar": "[نموذج] karim يكشف f_summary_zone_dropped",
+        "precondition": {
+          "all": [
+            {
+              "always": true
+            },
+            {
+              "presented": {
+                "evidence_id": "ev_minutes_orig",
+                "to_character": "karim"
+              }
+            }
+          ]
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_summary_zone_dropped"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "karim",
+        "telemetry_code": "ASK_KARIM_F_SUMMARY_ZONE_DROPPED"
+      }
+    ]
+  },
+  "state_machine": {
+    "id": "c003",
+    "initial": "briefing",
+    "type": "compound",
+    "states": {
+      "briefing": {
+        "description_ar": "الإحاطة",
+        "type": "atomic",
+        "on": {
+          "START": {
+            "target": "investigating"
+          }
+        }
+      },
+      "investigating": {
+        "description_ar": "التحقيق",
+        "type": "compound",
+        "initial": "gathering",
+        "states": {
+          "gathering": {
+            "type": "atomic",
+            "on": {
+              "OPEN_DEDUCTION": {
+                "target": "deducing"
+              }
+            }
+          },
+          "deducing": {
+            "type": "atomic",
+            "on": {
+              "BACK": {
+                "target": "gathering"
+              }
+            }
+          }
+        },
+        "on": {
+          "SUBMIT": {
+            "target": "review"
+          }
+        }
+      },
+      "review": {
+        "description_ar": "مراجعة",
+        "type": "atomic",
+        "on": {
+          "CLOSE": {
+            "target": "resolved"
+          }
+        }
+      },
+      "resolved": {
+        "description_ar": "إغلاق",
+        "type": "final"
+      }
+    }
+  },
+  "dialogue": {
+    "max_turns_per_interview": 10,
+    "llm_enabled": false,
+    "topics": [
+      {
+        "id": "t_ship",
+        "label_ar": "ساعة السفينة والإرسال",
+        "example_questions_ar": [
+          "متى أرسلت الرسالة؟",
+          "ما توقيت ساعة السفينة؟"
+        ],
+        "fact_ids": [
+          "f_ship_zone",
+          "f_nora_sent"
+        ]
+      },
+      {
+        "id": "t_server",
+        "label_ar": "سجلات الخادم",
+        "example_questions_ar": [
+          "بأي توقيت يخزّن الخادم الأوقات؟",
+          "هل لديك سجل الاستلام؟",
+          "هل أُجري قياس لزمن النقل؟",
+          "هل يوجد سجل تسليم كامل؟",
+          "هل جرى شيء على الخادم بعد الاستلام؟"
+        ],
+        "fact_ids": [
+          "f_server_utc",
+          "f_server_log_exists",
+          "f_net_tested",
+          "f_trace_exists",
+          "f_job_exists"
+        ]
+      },
+      {
+        "id": "t_seen",
+        "label_ar": "ما رأته ريما",
+        "example_questions_ar": [
+          "ماذا رأيت في الوارد؟",
+          "هل وصلك ملخص بعد الاجتماع؟"
+        ],
+        "fact_ids": [
+          "f_rima_saw",
+          "f_summary_circulates"
+        ],
+        "claim_ids": [
+          "cl_rima_tomorrow"
+        ]
+      },
+      {
+        "id": "t_minutes",
+        "label_ar": "المحضر والملخص",
+        "example_questions_ar": [
+          "أين المحضر الأصلي؟",
+          "هل غيّرت شيئاً في الوقتين؟"
+        ],
+        "fact_ids": [
+          "f_minutes_exist",
+          "f_summary_zone_dropped"
+        ],
+        "claim_ids": [
+          "cl_karim_copy"
+        ]
+      }
+    ]
+  },
+  "rubric": {
+    "reference_answer_ar": "لا سفر في الزمن ولا اختراق. أُنشئت الرسالة مساء الخميس عند 23:58 على ساعة السفينة (UTC-2)، أي 01:58 بالتوقيت العالمي فجر الجمعة، وقبلها الخادم بعد دقيقة تقريباً (01:59 UTC)، وعرضها جهاز المحرر في 04:59 بتوقيته (UTC+3). ثلاثة أرقام لحظة واحدة. ثم أعاد أحد المشاركين إرسال ملخص حذف المناطق وكتب «الخميس» للوقتين، فبدت الرسالة وصلت قبل كتابتها. حدود الاستنتاج: السجلات تثبت التوقيت لا صحة محتوى الرسالة، ولا تثبت لماذا اختُصر الملخص هكذا.",
+    "criteria": [
+      {
+        "id": "c_source",
+        "name_ar": "استدعاء مصادر مناسبة وتصنيفها",
+        "objective_ids": [
+          "lo_claim"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.25,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يصنّف"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "أخطأ في الأغلب"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "نصف صحيح"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمه صحيح"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كله صحيح"
+          }
+        ]
+      },
+      {
+        "id": "c_conflict",
+        "name_ar": "تفسير التعارض بتوحيد الأزمنة",
+        "objective_ids": [
+          "lo_timeline"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.25,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يوحّد شيئاً"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "حاول دون نجاح"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "وحّد نصفها"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "وحّد معظمها"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "وحّد كلها ووضعها في مواضعها"
+          }
+        ]
+      },
+      {
+        "id": "c_links",
+        "name_ar": "ربط الأدلة بالفرضيات",
+        "objective_ids": [
+          "lo_diag"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.12,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لا روابط"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "قليلة"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "نصفها صحيح"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمها"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كلها دقيقة"
+          }
+        ]
+      },
+      {
+        "id": "c_elimination",
+        "name_ar": "استبعاد الفرضيات الخاطئة",
+        "objective_ids": [
+          "lo_hyp"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.08,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يستبعد"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "استبعد خطأً"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "فرضية بدليل"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "فرضيتين"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كل الخاطئة"
+          }
+        ]
+      },
+      {
+        "id": "c_uncertainty",
+        "name_ar": "التعامل مع عدم اليقين",
+        "objective_ids": [
+          "lo_calib"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "ثقة مفرطة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "حدود قليلة"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "جزئية"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معقولة"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "معايَرة كاملة"
+          }
+        ]
+      },
+      {
+        "id": "c_revision",
+        "name_ar": "تصحيح الرأي عند الدليل الجديد",
+        "objective_ids": [
+          "lo_revise"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "بقي على فرضية مرفوضة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "لم يعلن فرضية"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "ثبت على فرضية سليمة"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "غيّر بدليل"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "غيّر بدليل ووثّق"
+          }
+        ]
+      },
+      {
+        "id": "c_justification",
+        "name_ar": "جودة الحجة المكتوبة (مراجعة بشرية)",
+        "objective_ids": [
+          "lo_diag",
+          "lo_hyp"
+        ],
+        "scored_by": "human",
+        "weight": 0.0,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لا حجة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "ادعاء بلا سند"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "أدلة دون ربط"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "ربط الأدلة بالاستنتاج"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "ربط مع البدائل والحدود"
+          }
+        ]
+      }
+    ]
+  },
+  "hint_ladder": [
+    {
+      "id": "hg1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "قبل أن تقارن وقتين، اسأل: هل كُتبا بمرجع زمني واحد؟",
+      "trigger": {
+        "always": true
+      },
+      "assessment_weight": 0.02
+    },
+    {
+      "id": "hg2",
+      "level": 2,
+      "kind": "focus_area",
+      "text_ar": "اقرأ بجانب كل وقت ما يدل على منطقته واليوم الذي ينتمي إليه.",
+      "trigger": {
+        "has_evidence": "ev_server_log"
+      },
+      "assessment_weight": 0.04
+    },
+    {
+      "id": "hz1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "أي السجلات الثلاثة يكتب بمرجع واحد لا يتغير بتغير الجهاز؟",
+      "trigger": {
+        "has_evidence": "ev_server_log"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_one_instant_a"
+    },
+    {
+      "id": "hz2",
+      "level": 2,
+      "kind": "focus_area",
+      "text_ar": "ابدأ من سجل الخادم، ثم حوّل وقت الرأس ووقت الواجهة إليه.",
+      "trigger": {
+        "has_evidence": "ev_server_log"
+      },
+      "assessment_weight": 0.04,
+      "targets_inference_id": "i_one_instant_a"
+    },
+    {
+      "id": "hz3",
+      "level": 3,
+      "kind": "pointer",
+      "text_ar": "الوقت المحلي = UTC + الإزاحة؛ فاطرح الإزاحة من الوقت المحلي، وإن كانت سالبة فسيزيد الوقت.",
+      "trigger": {
+        "has_evidence": "ev_server_log"
+      },
+      "assessment_weight": 0.08,
+      "targets_inference_id": "i_one_instant_a"
+    },
+    {
+      "id": "hz4",
+      "level": 4,
+      "kind": "partial_reveal",
+      "text_ar": "بعد التحويل الصحيح ستتقارب القراءات الثلاث إلى دقيقة أو دقيقتين؛ فإن لم تتقارب فراجع إشارة الإزاحة.",
+      "trigger": {
+        "has_evidence": "ev_server_log"
+      },
+      "assessment_weight": 0.12,
+      "targets_inference_id": "i_one_instant_a"
+    },
+    {
+      "id": "hs1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "ما الذي يظهر في الرأس والواجهة ولا يظهر في الملخص المعاد إرساله؟",
+      "trigger": {
+        "has_evidence": "ev_summary"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_zone_dropped_a"
+    },
+    {
+      "id": "hs2",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "قارن تاريخ كل وقت في الملخص بتاريخه في الرأس وفي الواجهة.",
+      "trigger": {
+        "has_evidence": "ev_summary"
+      },
+      "assessment_weight": 0.06,
+      "targets_inference_id": "i_zone_dropped_a"
+    },
+    {
+      "id": "hs3",
+      "level": 3,
+      "kind": "partial_reveal",
+      "text_ar": "اعرض المحضر الأصلي على من أرسل الملخص وسترى ما يقوله عمّا حذفه.",
+      "trigger": {
+        "has_evidence": "ev_summary"
+      },
+      "assessment_weight": 0.1,
+      "targets_inference_id": "i_zone_dropped_a"
+    }
+  ],
+  "fairness_test": {
+    "requirements": {
+      "min_disjoint_proof_paths": 2,
+      "max_inference_depth": 3,
+      "all_red_herrings_refutable": true,
+      "culprit_uniquely_entailed": true,
+      "no_hidden_fact_dependency": true,
+      "max_required_actions": 30
+    },
+    "runs": []
+  },
+  "ending_explanation": {
+    "steps": [
+      {
+        "order": 1,
+        "text_ar": "الرأس مكتوب بمنطقة السفينة (UTC-2)، وسجل الخادم بالتوقيت العالمي، وواجهة الجهاز بمنطقة المحرر (UTC+3)؛ فالأرقام الثلاثة لا تُقارن قبل تحويلها إلى مرجع واحد.",
+        "uses_evidence_ids": [
+          "ev_header",
+          "ev_server_log",
+          "ev_device_view"
+        ],
+        "inference_id": "i_one_instant_a"
+      },
+      {
+        "order": 2,
+        "text_ar": "بعد التحويل تقع الأرقام الثلاثة بين 01:58 و01:59 UTC فجر الجمعة، وفارق الدقيقة يطابق زمن النقل المعتاد وسلسلة التسليم الكاملة.",
+        "uses_evidence_ids": [
+          "ev_lab_norm",
+          "ev_delivery_trace",
+          "ev_network_info"
+        ],
+        "inference_id": "i_one_instant_b"
+      },
+      {
+        "order": 3,
+        "text_ar": "الملخص المعاد إرساله كتب 04:59 و23:58 تحت «الخميس» معاً، بينما يضعهما الرأس والواجهة في يومين مختلفين؛ فالترتيب المعكوس جاء من الاختصار.",
+        "uses_evidence_ids": [
+          "ev_summary",
+          "ev_device_view",
+          "ev_header"
+        ],
+        "inference_id": "i_zone_dropped_a"
+      },
+      {
+        "order": 4,
+        "text_ar": "المحضر الأصلي يحفظ المنطقة واليوم، وصاحب الملخص يقرّ بأنه حذفهما.",
+        "uses_evidence_ids": [
+          "ev_minutes_orig",
+          "ev_karim_statement"
+        ],
+        "inference_id": "i_zone_dropped_b"
+      },
+      {
+        "order": 5,
+        "text_ar": "مهمة الفهرسة الليلية قراءة فقط وبعد الاستلام، وسجل الخادم يقول إن الرسالة لم تُعدَّل؛ فلا قرينة على اختراق.",
+        "uses_evidence_ids": [
+          "ev_job_log",
+          "ev_server_log"
+        ],
+        "inference_id": "i_job_explained"
+      },
+      {
+        "order": 6,
+        "text_ar": "انطباع «من الغد» قارن رقمين من يومين ومنطقتين؛ فلا يصحّ حتى يُحوَّلا.",
+        "uses_evidence_ids": [
+          "ev_rima_comment",
+          "ev_header",
+          "ev_device_view"
+        ],
+        "inference_id": "i_rima_claim"
+      },
+      {
+        "order": 7,
+        "text_ar": "نسبة الترجيح عالية لتعارض في تنسيقات الزمن والمناطق، لا لحدث مستحيل؛ وهي مبنية على سجلات تُعيد بناء التسلسل من المصدر.",
+        "uses_evidence_ids": [
+          "ev_delivery_trace",
+          "ev_minutes_orig",
+          "ev_lab_norm"
+        ],
+        "inference_id": "i_support_zones"
+      }
+    ],
+    "alternative_paths_ar": [
+      "يمكن الوصول إلى النتيجة بتحويل الأوقات الثلاثة بنفسك، أو من سجل التسليم الكامل وقياس زمن النقل ومحضر الاجتماع الأصلي دون حساب."
+    ],
+    "what_evidence_could_not_show_ar": [
+      "السجلات تثبت التوقيت لا صحة محتوى الرسالة.",
+      "لا تثبت الأدلة لماذا اختُصر الملخص بهذه الصورة، ولا أن الاختصار هو وحده سبب انتشار الشائعة."
+    ],
+    "science_notes_ar": [
+      "التوقيت النسبي (محلي بلا منطقة) قد يولد معجزة وهمية؛ حوّل كل وقت إلى مرجع واحد قبل المقارنة.",
+      "سجل التسليم الكامل هو سلسلة العهدة الرقمية للرسالة: يربط كل خطوة بمرجع زمني واحد، ويُعاد بناء التسلسل منه لا من الملخص."
+    ]
+  },
+  "expert_review": [
+    {
+      "role": "narrative_editor",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "scientific_reviewer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "learning_designer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "age_appropriateness",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "cultural_reviewer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "legal_rights",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "safety",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    }
+  ]
+}

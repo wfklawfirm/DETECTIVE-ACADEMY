@@ -1,0 +1,2586 @@
+{
+  "schema_version": "0.1.0",
+  "case_id": "c004_silent_photo",
+  "case_version": "0.1.0",
+  "meta": {
+    "title_ar": "شهادة الصورة الصامتة",
+    "title_en": "The Silent Photograph",
+    "age_band": "16-18",
+    "locale": "ar",
+    "dialogue_register": "msa",
+    "estimated_minutes": 25,
+    "difficulty": 2,
+    "content_flags": [
+      "no_violence"
+    ],
+    "authors": [
+      "فريق أثر التحريري (مسودة بمساعدة الذكاء الاصطناعي، لم تُراجَع بشرياً بعد)"
+    ],
+    "knowledge_object_refs": [
+      "KO-RS-05-001",
+      "KO-RS-05-002",
+      "KO-RS-05-004",
+      "KO-RS-05-005",
+      "KO-RS-05-010",
+      "KO-RS-05-014",
+      "KO-RS-06-001",
+      "KO-RS-06-004",
+      "KO-RS-06-008",
+      "KO-RS-06-009",
+      "KO-RS-06-021",
+      "KO-FC-04-024",
+      "KO-FC-04-026"
+    ]
+  },
+  "premise": {
+    "hook_ar": "صورة واحدة وتاريخان لا يتفقان. فمن يكذب: الصورة أم من وصفها؟",
+    "player_role_ar": "أنت مدقق معلومات في المركز الثقافي، وأول مهامك أن تحكم على صحة صورة الممر ووصفها قبل أن يتسع الجدل.",
+    "setting_ar": "المركز الثقافي في المدينة، مساء يوم افتتاح معرض «ممر الضوء». كل الأوقات والتواريخ بتوقيت المركز.",
+    "public_fact_ids": [
+      "f_photo_circulates",
+      "f_post_claim",
+      "f_mgmt_claim",
+      "f_poster_visible"
+    ],
+    "assumed_general_knowledge_ar": [
+      "تُنشأ نسخ النشر من ملف أصلي ويُغيَّر فيها الحجم والقص",
+      "الملصق المعلّق في مكان ثابت لا يتغير بين يوم وآخر"
+    ]
+  },
+  "entities": {
+    "characters": [
+      {
+        "id": "mona",
+        "name_ar": "منى القاسم",
+        "role": "witness",
+        "age_descriptor_ar": "أمينة أرشيف المركز، في الأربعينات",
+        "persona_ar": "منظّمة وحذرة، تقرأ من السجل ولا تضيف إليه، وتفرّق بين ما استلمته وما تفترضه.",
+        "motives_ar": [
+          "أن يبقى سجل الأرشيف سليماً",
+          "ألا يُنسب إلى الأرشيف ما لم يسجّله"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "mn_greet",
+            "purpose": "greeting",
+            "text_ar": "سجل الاستلام أمامي. أقرأ منه ولا أضيف إليه."
+          },
+          {
+            "line_id": "mn_recv",
+            "purpose": "reveal",
+            "text_ar": "سجّلنا استلام الملف الأصلي صباح التاسع من تشرين الثاني، قادماً من المصوّر، وهو محفوظ كما وصل.",
+            "fact_ids": [
+              "f_archive_received"
+            ]
+          },
+          {
+            "line_id": "mn_nodate",
+            "purpose": "reveal",
+            "text_ar": "ما يسجّله الأرشيف هو لحظة الاستلام. أما لحظة الالتقاط فليست في سجلي ولا أستطيع أن أخمّنها.",
+            "fact_ids": [
+              "f_archive_no_capture_date"
+            ]
+          },
+          {
+            "line_id": "mn_notpub",
+            "purpose": "reveal",
+            "text_ar": "الأرشيف لا ينشر شيئاً. نسخ النشر يعدّها فريق الإعلام من الملف المشترك.",
+            "fact_ids": [
+              "f_archive_not_publisher"
+            ]
+          },
+          {
+            "line_id": "mn_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "هذا ليس في سجلاتي."
+          },
+          {
+            "line_id": "mn_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عمّا استلمه الأرشيف ومتى."
+          },
+          {
+            "line_id": "mn_bye",
+            "purpose": "farewell",
+            "text_ar": "السجل يبقى كما هو، فاقرأه كما هو."
+          }
+        ]
+      },
+      {
+        "id": "karim",
+        "name_ar": "كريم العلي",
+        "role": "witness",
+        "age_descriptor_ar": "مصوّر مستقل، في أواخر الثلاثينات",
+        "persona_ar": "هادئ ويعتدّ بدقته، يفصل بين ما رآه بعينه وما يسمعه لاحقاً، ولا يحب أن يُحمَّل ما لا يخصّه.",
+        "motives_ar": [
+          "أن يُنسب إليه عمله كما هو",
+          "ألا يُتّهم بنشر شيء لم ينشره"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "kr_greet",
+            "purpose": "greeting",
+            "text_ar": "أهلاً. أخبرك بما أتذكره، وأفرّق بين ما رأيته وما سمعته لاحقاً."
+          },
+          {
+            "line_id": "kr_access",
+            "purpose": "reveal",
+            "text_ar": "أُتيح لي دخول القاعة من السابع من تشرين الثاني بتصريح تصوير خاص بالتجهيز، أي قبل الافتتاح بثمانية أيام.",
+            "fact_ids": [
+              "f_access_window"
+            ]
+          },
+          {
+            "line_id": "kr_sent",
+            "purpose": "reveal",
+            "text_ar": "أرسلت صور الممر إلى أرشيف المركز برسالة صباح التاسع من الشهر، ومعها الملف الأصلي كما خرج من الكاميرا.",
+            "fact_ids": [
+              "f_photog_sent"
+            ]
+          },
+          {
+            "line_id": "kr_memory",
+            "purpose": "reveal",
+            "text_ar": "أذكر أنني صوّرتها والتركيب ما زال جارياً، لكنني لا أذكر اليوم بالضبط.",
+            "fact_ids": [
+              "f_karim_memory"
+            ]
+          },
+          {
+            "line_id": "kr_notpub",
+            "purpose": "reveal",
+            "text_ar": "لا أتابع ما يُنشر على حسابات المركز، ولا أعرف متى صُنعت كل نسخة منها.",
+            "fact_ids": [
+              "f_karim_not_publisher"
+            ]
+          },
+          {
+            "line_id": "kr_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف، ولا أحب أن أخمّن."
+          },
+          {
+            "line_id": "kr_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "هذا بعيد عمّا صوّرته. اسألني عن التصريح والإرسال."
+          },
+          {
+            "line_id": "kr_bye",
+            "purpose": "farewell",
+            "text_ar": "شكراً لأنك تسأل عن المصدر قبل أن تحكم على الصورة."
+          }
+        ]
+      },
+      {
+        "id": "dima",
+        "name_ar": "ديما الشامي",
+        "role": "witness",
+        "age_descriptor_ar": "منسقة المعرض، في أواخر الثلاثينات",
+        "persona_ar": "مشغولة بالتفاصيل العملية وحريصة على سمعة المركز، وتميل إلى تبنّي أول رواية رسمية وصلتها.",
+        "motives_ar": [
+          "أن يبدو بيان الإدارة دقيقاً",
+          "أن تُحفظ سجلات التجهيز كاملة"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "dm_greet",
+            "purpose": "greeting",
+            "text_ar": "أنا منسقة المعرض. عندي جدول التجهيز وتفاصيل الملصق."
+          },
+          {
+            "line_id": "dm_log",
+            "purpose": "reveal",
+            "text_ar": "نسجّل كل يوم حالة الممر في سجل التجهيز: ما عُلّق وما رُفع وما بقي في مكانه.",
+            "fact_ids": [
+              "f_setup_log_kept"
+            ]
+          },
+          {
+            "line_id": "dm_poster",
+            "purpose": "reveal",
+            "text_ar": "الملصق جزء من إعلان موسم المركز. عُلّق في إطار آخر الممر قبل أن يبدأ التركيب، ويبقى مكانه طوال فترة المعرض.",
+            "fact_ids": [
+              "f_poster_hung"
+            ]
+          },
+          {
+            "line_id": "dm_claim",
+            "purpose": "reveal",
+            "text_ar": "وصلنا أن الصورة من مساء الافتتاح، ولذلك قلنا في البيان إنها التقطت بعد الافتتاح.",
+            "claim_ids": [
+              "cl_mgmt_after"
+            ]
+          },
+          {
+            "line_id": "dm_relied",
+            "purpose": "reveal",
+            "text_ar": "اعتمدت في البيان على وصف المنشور الأول، ولم أرجع إلى سجل التجهيز قبل إصداره.",
+            "fact_ids": [
+              "f_dima_relied"
+            ]
+          },
+          {
+            "line_id": "dm_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "هذا خارج ما أتابعه."
+          },
+          {
+            "line_id": "dm_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "فلنبقَ مع التجهيز والملصق والبيان."
+          },
+          {
+            "line_id": "dm_bye",
+            "purpose": "farewell",
+            "text_ar": "أرجو أن نصحّح ما يحتاج إلى تصحيح."
+          }
+        ]
+      },
+      {
+        "id": "rami",
+        "name_ar": "رامي الخطيب",
+        "role": "suspect",
+        "age_descriptor_ar": "متطوع في فريق الإعلام، في العشرينات",
+        "persona_ar": "متحمس وسريع، ينشر بحماس ويكتب الوصف من الانطباع الأول، وقد يخلط بين وقت النشر ووقت التصوير.",
+        "motives_ar": [
+          "أن ينجح منشور الافتتاح",
+          "ألا يُلام على خطأ في وصف"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "rm_greet",
+            "purpose": "greeting",
+            "text_ar": "أنا متطوع في فريق الإعلام. أنشر صور المركز وأكتب أوصافها."
+          },
+          {
+            "line_id": "rm_file",
+            "purpose": "reveal",
+            "text_ar": "جهّزت نسخة النشر من الملف المشترك: قصصتها وصغّرتها بعد ظهر يوم الافتتاح.",
+            "fact_ids": [
+              "f_derived_created"
+            ]
+          },
+          {
+            "line_id": "rm_claim",
+            "purpose": "reveal",
+            "text_ar": "كتبت في الوصف أن الصورة التقطت بعد الافتتاح، فهذا ما فهمته.",
+            "claim_ids": [
+              "cl_post_after"
+            ]
+          },
+          {
+            "line_id": "rm_check",
+            "purpose": "refuse_secret",
+            "text_ar": "دعني أراجع سجل المنشور قبل أن أجيب عن ترتيب ما كتبته."
+          },
+          {
+            "line_id": "rm_admit",
+            "purpose": "reveal",
+            "text_ar": "صحيح، أضفت الوصف بعد رفع الصورة. لم أسأل أحداً عن تاريخ الالتقاط؛ افترضت أنها من يوم الافتتاح لأنني نشرتها مساءه.",
+            "fact_ids": [
+              "f_caption_added_later"
+            ]
+          },
+          {
+            "line_id": "rm_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف، لم أكن هناك أيام التجهيز."
+          },
+          {
+            "line_id": "rm_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن الملف والمنشور."
+          },
+          {
+            "line_id": "rm_bye",
+            "purpose": "farewell",
+            "text_ar": "سأصحّح الوصف إن ثبت الخطأ."
+          }
+        ]
+      }
+    ],
+    "locations": [
+      {
+        "id": "loc_corridor",
+        "name_ar": "ممر المعرض",
+        "description_ar": "الممر الذي تظهر صورته، وفي آخره إطار الملصق."
+      },
+      {
+        "id": "loc_archive",
+        "name_ar": "أرشيف المركز",
+        "description_ar": "سجل استلام المواد."
+      },
+      {
+        "id": "loc_office",
+        "name_ar": "مكتب التنسيق",
+        "description_ar": "جدول التجهيز وسجل حالة الممر."
+      },
+      {
+        "id": "loc_media",
+        "name_ar": "مكتب الإعلام",
+        "description_ar": "إعداد المنشورات ونسخ النشر."
+      }
+    ],
+    "objects": [
+      {
+        "id": "obj_photo",
+        "name_ar": "الملف الأصلي للصورة",
+        "description_ar": "ملف الصورة كما خرج من الكاميرا."
+      },
+      {
+        "id": "obj_derived",
+        "name_ar": "ملف النشر",
+        "description_ar": "نسخة مقصوصة ومصغّرة أُعدّت للمنشور."
+      },
+      {
+        "id": "obj_poster",
+        "name_ar": "ملصق الموسم",
+        "description_ar": "ملصق مؤطَّر في آخر الممر."
+      },
+      {
+        "id": "obj_post",
+        "name_ar": "المنشور الأول",
+        "description_ar": "المنشور الذي حمل الصورة ووصفها."
+      }
+    ],
+    "organizations": [
+      {
+        "id": "org_center",
+        "name_ar": "المركز الثقافي",
+        "description_ar": "مركز ثقافي يستضيف معرض «ممر الضوء»."
+      }
+    ]
+  },
+  "truth": {
+    "solution": {
+      "culprit_ids": [
+        "rami"
+      ],
+      "summary_ar": "الصورة غير مفبركة، لكن وصفها الأول أخطأ في زمنها: لقطة من مرحلة تركيب المعرض قبل افتتاحه بأيام، ونسخة منها نُشرت مساء الافتتاح. كتب متطوع الإعلام عبارة «بعد الافتتاح» افتراضاً ثم ردّدتها الإدارة. وتاريخ ملف النشر يخص النسخة، والملصق معلّق قبل التركيب وبعد الافتتاح.",
+      "key_fact_ids": [
+        "f_capture_in_setup"
+      ]
+    },
+    "facts": [
+      {
+        "id": "f_photo_circulates",
+        "statement_ar": "تداولت الشبكات مساء يوم الافتتاح صورة لممر معرض «ممر الضوء».",
+        "kind": "event",
+        "subject_ids": [
+          "loc_corridor",
+          "obj_derived"
+        ],
+        "spoiler_level": 0,
+        "time": {
+          "start_min": 29910,
+          "precision": "approx"
+        }
+      },
+      {
+        "id": "f_post_claim",
+        "statement_ar": "كتب المنشور الأول أن الصورة لقطة من الممر بعد الافتتاح.",
+        "kind": "attribute",
+        "subject_ids": [
+          "obj_post"
+        ],
+        "spoiler_level": 0
+      },
+      {
+        "id": "f_mgmt_claim",
+        "statement_ar": "قالت إدارة المعرض في بيانها إن الصورة التقطت بعد الافتتاح.",
+        "kind": "attribute",
+        "subject_ids": [
+          "org_center"
+        ],
+        "spoiler_level": 0
+      },
+      {
+        "id": "f_poster_visible",
+        "statement_ar": "يظهر في آخر الممر ملصق فيه موعد افتتاح المعرض بصيغة المستقبل.",
+        "kind": "attribute",
+        "subject_ids": [
+          "obj_poster",
+          "loc_corridor"
+        ],
+        "spoiler_level": 0
+      },
+      {
+        "id": "f_access_window",
+        "statement_ar": "أُتيح للمصوّر دخول القاعة قبل الافتتاح بثمانية أيام، بتصريح تجهيز يبدأ في 7 تشرين الثاني.",
+        "kind": "state",
+        "subject_ids": [
+          "karim",
+          "loc_corridor"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 17820,
+          "precision": "exact",
+          "end_min": 28440
+        }
+      },
+      {
+        "id": "f_photog_sent",
+        "statement_ar": "أرسل المصوّر صور الممر والملف الأصلي إلى أرشيف المركز صباح 9 تشرين الثاني.",
+        "kind": "event",
+        "subject_ids": [
+          "karim",
+          "obj_photo"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 20695,
+          "precision": "exact"
+        },
+        "location_id": "loc_office",
+        "science_ko_refs": [
+          "KO-FC-04-026"
+        ]
+      },
+      {
+        "id": "f_karim_memory",
+        "statement_ar": "يتذكّر المصوّر أنه التقط الصورة والتركيب جارٍ، ولا يذكر اليوم تحديداً.",
+        "kind": "attribute",
+        "subject_ids": [
+          "karim"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 18720,
+          "precision": "unknown"
+        }
+      },
+      {
+        "id": "f_karim_not_publisher",
+        "statement_ar": "لا يتابع المصوّر ما يُنشر على حسابات المركز ولا يعرف متى صُنعت نسخ النشر.",
+        "kind": "attribute",
+        "subject_ids": [
+          "karim"
+        ],
+        "spoiler_level": 0
+      },
+      {
+        "id": "f_archive_received",
+        "statement_ar": "سجّل الأرشيف استلام الملف الأصلي صباح 9 تشرين الثاني.",
+        "kind": "event",
+        "subject_ids": [
+          "mona",
+          "obj_photo"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 20710,
+          "precision": "exact"
+        },
+        "location_id": "loc_archive",
+        "science_ko_refs": [
+          "KO-FC-04-026"
+        ]
+      },
+      {
+        "id": "f_archive_no_capture_date",
+        "statement_ar": "سجل الأرشيف يحفظ وقت الاستلام ولا يحدد وقت الالتقاط.",
+        "kind": "attribute",
+        "subject_ids": [
+          "mona",
+          "obj_photo"
+        ],
+        "spoiler_level": 1,
+        "location_id": "loc_archive"
+      },
+      {
+        "id": "f_archive_not_publisher",
+        "statement_ar": "الأرشيف لا ينشر؛ نسخ النشر يعدّها فريق الإعلام.",
+        "kind": "attribute",
+        "subject_ids": [
+          "mona"
+        ],
+        "spoiler_level": 0
+      },
+      {
+        "id": "f_setup_log_kept",
+        "statement_ar": "تحتفظ منسقة المعرض بسجل يومي لحالة الممر أثناء التجهيز.",
+        "kind": "state",
+        "subject_ids": [
+          "dima",
+          "loc_office"
+        ],
+        "spoiler_level": 1,
+        "location_id": "loc_office"
+      },
+      {
+        "id": "f_poster_hung",
+        "statement_ar": "عُلّق ملصق إعلان الموسم في إطار آخر الممر قبل بدء التجهيز، ويبقى مكانه طوال فترة المعرض.",
+        "kind": "state",
+        "subject_ids": [
+          "dima",
+          "obj_poster"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 660,
+          "precision": "exact"
+        },
+        "location_id": "loc_corridor"
+      },
+      {
+        "id": "f_dima_relied",
+        "statement_ar": "اعتمدت منسقة المعرض في بيان الإدارة على وصف المنشور الأول دون الرجوع إلى سجل التجهيز.",
+        "kind": "event",
+        "subject_ids": [
+          "dima"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 30840,
+          "precision": "approx"
+        }
+      },
+      {
+        "id": "f_derived_created",
+        "statement_ar": "أعدّ متطوع الإعلام ملف النشر قصّاً وتصغيراً من الملف المشترك بعد ظهر يوم الافتتاح.",
+        "kind": "event",
+        "subject_ids": [
+          "rami",
+          "obj_derived"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 29740,
+          "precision": "exact"
+        },
+        "location_id": "loc_media",
+        "science_ko_refs": [
+          "KO-FC-04-024"
+        ]
+      },
+      {
+        "id": "f_caption_added_later",
+        "statement_ar": "أضاف المتطوع عبارة «بعد الافتتاح» إلى المنشور بعد رفع الصورة، افتراضاً منه ودون مرجع لتاريخ الالتقاط.",
+        "kind": "event",
+        "subject_ids": [
+          "rami",
+          "obj_post"
+        ],
+        "spoiler_level": 2,
+        "time": {
+          "start_min": 29945,
+          "precision": "exact"
+        },
+        "location_id": "loc_media"
+      },
+      {
+        "id": "f_derived_later",
+        "statement_ar": "تاريخ إنشاء ملف النشر يعود إلى نسخة مشتقة أُنشئت بعد تسجيل الأصل في الأرشيف بستة أيام.",
+        "kind": "relation",
+        "subject_ids": [
+          "obj_derived",
+          "obj_photo"
+        ],
+        "spoiler_level": 2,
+        "science_ko_refs": [
+          "KO-FC-04-024",
+          "KO-RS-06-004"
+        ]
+      },
+      {
+        "id": "f_poster_standing",
+        "statement_ar": "الملصق معلّق قبل بدء التجهيز ويبقى بعد الافتتاح، فلا يحدّد وقت أي لقطة تظهر فيها جدرانه.",
+        "kind": "relation",
+        "subject_ids": [
+          "obj_poster"
+        ],
+        "spoiler_level": 2,
+        "location_id": "loc_corridor",
+        "science_ko_refs": [
+          "KO-RS-06-004"
+        ]
+      },
+      {
+        "id": "f_capture_in_setup",
+        "statement_ar": "التُقطت الصورة بين 7 و9 تشرين الثاني في مرحلة تركيب المعرض، أي قبل افتتاحه بستة أيام على الأقل.",
+        "kind": "event",
+        "subject_ids": [
+          "karim",
+          "obj_photo",
+          "loc_corridor"
+        ],
+        "spoiler_level": 3,
+        "time": {
+          "start_min": 17820,
+          "precision": "approx",
+          "end_min": 20710
+        },
+        "location_id": "loc_corridor",
+        "science_ko_refs": [
+          "KO-FC-04-024",
+          "KO-RS-05-005"
+        ]
+      }
+    ],
+    "claims": [
+      {
+        "id": "cl_post_after",
+        "statement_ar": "الصورة التقطت بعد الافتتاح.",
+        "kind": "honest_mistake",
+        "held_by": [
+          "rami"
+        ],
+        "true_fact_id": "f_capture_in_setup",
+        "contradicted_by_evidence_ids": [
+          "ev_archive_receipt",
+          "ev_photog_msg",
+          "ev_setup_log"
+        ]
+      },
+      {
+        "id": "cl_mgmt_after",
+        "statement_ar": "إدارة المعرض: الصورة التقطت بعد الافتتاح.",
+        "kind": "honest_mistake",
+        "held_by": [
+          "dima"
+        ],
+        "true_fact_id": "f_capture_in_setup",
+        "contradicted_by_evidence_ids": [
+          "ev_archive_receipt",
+          "ev_setup_log"
+        ]
+      }
+    ]
+  },
+  "timeline": [
+    {
+      "id": "te_poster",
+      "description_ar": "تعليق ملصق الموسم في إطار آخر الممر.",
+      "time": {
+        "start_min": 660,
+        "precision": "exact"
+      },
+      "location_id": "loc_corridor",
+      "actor_ids": [
+        "dima"
+      ],
+      "fact_ids": [
+        "f_poster_hung"
+      ],
+      "motivated_by_ar": "إعلان موسم المركز قبل بدء التركيب"
+    },
+    {
+      "id": "te_access",
+      "description_ar": "بدء تصريح التجهيز وتغطية المنصات وفرش الورق الواقي.",
+      "time": {
+        "start_min": 17820,
+        "precision": "exact"
+      },
+      "location_id": "loc_corridor",
+      "actor_ids": [
+        "karim",
+        "dima"
+      ],
+      "fact_ids": [
+        "f_access_window"
+      ],
+      "motivated_by_ar": "بدء أعمال التركيب قبل الافتتاح"
+    },
+    {
+      "id": "te_capture",
+      "description_ar": "المصوّر يلتقط صورة الممر أثناء التركيب.",
+      "time": {
+        "start_min": 19640,
+        "precision": "approx",
+        "end_min": 19670
+      },
+      "location_id": "loc_corridor",
+      "actor_ids": [
+        "karim"
+      ],
+      "fact_ids": [
+        "f_capture_in_setup",
+        "f_karim_memory"
+      ],
+      "motivated_by_ar": "توثيق مراحل التجهيز"
+    },
+    {
+      "id": "te_send",
+      "description_ar": "المصوّر يرسل الملف الأصلي والأرشيف يسجّل استلامه.",
+      "time": {
+        "start_min": 20695,
+        "precision": "exact",
+        "end_min": 20710
+      },
+      "location_id": "loc_archive",
+      "actor_ids": [
+        "karim",
+        "mona"
+      ],
+      "fact_ids": [
+        "f_photog_sent",
+        "f_archive_received"
+      ],
+      "motivated_by_ar": "حفظ مواد التوثيق في الأرشيف"
+    },
+    {
+      "id": "te_open",
+      "description_ar": "افتتاح المعرض للجمهور.",
+      "time": {
+        "start_min": 29460,
+        "precision": "exact"
+      },
+      "location_id": "loc_corridor",
+      "actor_ids": [
+        "dima"
+      ],
+      "fact_ids": [],
+      "motivated_by_ar": "الموعد المعلن للافتتاح"
+    },
+    {
+      "id": "te_derived",
+      "description_ar": "إعداد نسخة النشر قصّاً وتصغيراً.",
+      "time": {
+        "start_min": 29740,
+        "precision": "exact"
+      },
+      "location_id": "loc_media",
+      "actor_ids": [
+        "rami"
+      ],
+      "fact_ids": [
+        "f_derived_created"
+      ],
+      "motivated_by_ar": "تجهيز منشور مساء الافتتاح"
+    },
+    {
+      "id": "te_post",
+      "description_ar": "نشر الصورة ثم إضافة الوصف بعد رفعها.",
+      "time": {
+        "start_min": 29910,
+        "precision": "exact",
+        "end_min": 29945
+      },
+      "location_id": "loc_media",
+      "actor_ids": [
+        "rami"
+      ],
+      "fact_ids": [
+        "f_photo_circulates",
+        "f_caption_added_later"
+      ],
+      "motivated_by_ar": "الظن بأن الصورة من يوم الافتتاح"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_photo",
+      "title_ar": "الصورة المتداولة (نسخة النشر)",
+      "kind": "digital",
+      "content_ar": "صورة أفقية لممر معرض «ممر الضوء». على الجدار الأيمن إطارات معلّقة، ومكان بطاقة التعريف بجانب كل إطار فارغ. في وسط الممر سلّم ألمنيوم مسنود إلى الجدار، والأرضية مغطاة بورق واقٍ. إلى اليسار منصتان مغطاتان بقماش أبيض. في آخر الممر ملصق مؤطَّر نصه: «معرض ممر الضوء — يفتتح في 15 تشرين الثاني». لا يظهر في المشهد زوار ولا حبال إرشاد، ولا تاريخ مكتوب سوى الملصق.",
+      "acquired_by_action_ids": [
+        "a_view_photo"
+      ],
+      "supports_fact_ids": [
+        "f_photo_circulates",
+        "f_poster_visible"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "تعرض حالة الممر لحظة التصوير ولا تحمل تاريخاً؛ والملصق إعلان لا يؤرّخ اللقطة.",
+      "location_id": "loc_corridor"
+    },
+    {
+      "id": "ev_post",
+      "title_ar": "المنشور الأول على حساب المركز",
+      "kind": "digital",
+      "content_ar": "منشور على حساب المركز الثقافي، نُشر 15 تشرين الثاني الساعة 18:30. الصورة المرفقة هي نسخة النشر. نص الوصف: «لقطة من ممر المعرض بعد افتتاحه اليوم.» عدد التعليقات: 212.",
+      "acquired_by_action_ids": [
+        "a_open_post"
+      ],
+      "supports_fact_ids": [
+        "f_post_claim"
+      ],
+      "reliability": "weak",
+      "limits_ar": "ادعاء كتبه ناشر المنشور؛ لا يذكر مصدراً لتاريخ الالتقاط، وكثرة التعليقات لا تدل على صحته.",
+      "location_id": "loc_media"
+    },
+    {
+      "id": "ev_file_meta",
+      "title_ar": "خصائص ملف النشر",
+      "kind": "digital",
+      "content_ar": "خصائص الملف المرفق بالمنشور:\nالنوع: صورة مقصوصة ومصغّرة (نسخة للنشر)\nأُنشئ بواسطة: برنامج تحرير صور\nتاريخ الإنشاء: 15 تشرين الثاني، 15:40\nحقل «تاريخ الالتقاط»: فارغ",
+      "acquired_by_action_ids": [
+        "a_open_meta"
+      ],
+      "supports_fact_ids": [
+        "f_derived_created"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "تاريخ إنشاء نسخة مشتقة وليس تاريخ الالتقاط الأصلي؛ وحقول الملف قد تتغير أو تُمحى عند التصدير والتصغير، فلا تُعتمد برهاناً قاطعاً.",
+      "is_red_herring": true,
+      "forensic_ko_ref": "KO-FC-04-024",
+      "location_id": "loc_media"
+    },
+    {
+      "id": "ev_post_history",
+      "title_ar": "سجل تعديلات المنشور",
+      "kind": "digital",
+      "content_ar": "سجل النظام للمنشور على حساب المركز:\n15 تشرين الثاني 18:30 — نُشر المنشور بصورة مرفقة دون أي نص وصفي.\n15 تشرين الثاني 19:05 — عُدّل المنشور بإضافة النص «لقطة من ممر المعرض بعد افتتاحه اليوم».\nالحساب المحرِّر: فريق الإعلام (متطوع).\nحقل «مصدر التاريخ» في نموذج الوصف: فارغ.",
+      "acquired_by_action_ids": [
+        "a_open_history"
+      ],
+      "supports_fact_ids": [
+        "f_caption_added_later"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يثبت متى كُتب الوصف ومن أي حساب، ولا يثبت سبب كتابته ولا صحته.",
+      "forensic_ko_ref": "KO-RS-06-004",
+      "location_id": "loc_media"
+    },
+    {
+      "id": "ev_access",
+      "title_ar": "جدول تصاريح التجهيز",
+      "kind": "documentary",
+      "content_ar": "جدول دخول قاعة المعرض في فترة التجهيز:\nالفترة: من 7 تشرين الثاني إلى 14 تشرين الثاني، يومياً من 09:00 إلى 18:00\nالمصرَّح لهم: فريق التركيب، منسقة المعرض، المصوّر كريم العلي (تصريح تصوير التجهيز)\nافتتاح الجمهور: 15 تشرين الثاني، 11:00\nينتهي تصريح التصوير بنهاية فترة التجهيز.",
+      "acquired_by_action_ids": [
+        "a_get_access"
+      ],
+      "supports_fact_ids": [
+        "f_access_window"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يثبت متى أُتيح الدخول، ولا يثبت أن الصورة التقطت في يوم بعينه ولا أن صاحب التصريح هو من التقطها.",
+      "location_id": "loc_office"
+    },
+    {
+      "id": "ev_photog_msg",
+      "title_ar": "رسالة المصوّر إلى الأرشيف",
+      "kind": "digital",
+      "content_ar": "رسالة بريد:\nمن: كريم العلي — إلى: أرشيف المركز\nالوقت: 9 تشرين الثاني، 08:55\nالنص: «صباح الخير. أرفقت صور ممر المعرض التي التقطتها خلال أعمال التركيب، وهي بالملف الأصلي كما خرج من الكاميرا. التركيب لم ينتهِ بعد، فاحتفظوا بها ضمن مواد التوثيق.»\nالمرفقات: ممر_المعرض_01 (ملف أصلي)",
+      "acquired_by_action_ids": [
+        "a_get_msg"
+      ],
+      "supports_fact_ids": [
+        "f_photog_sent"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "يثبت وقت إرسال الملف ووصفه بحسب المصوّر، ولا يحدد يوم الالتقاط الدقيق؛ ويحتاج إلى سجل الأرشيف لتأكيد وصول المرفق.",
+      "forensic_ko_ref": "KO-FC-04-026",
+      "location_id": "loc_office"
+    },
+    {
+      "id": "ev_archive_receipt",
+      "title_ar": "سجل استلام الأرشيف",
+      "kind": "documentary",
+      "content_ar": "سجل استلام المواد — أرشيف المركز\nرقم الإدخال: 0412\nالتاريخ والوقت: 9 تشرين الثاني، 09:10\nالمرسل: كريم العلي (مصوّر)\nالوصف: صورة ممر المعرض — ملف أصلي كامل الإطار\nسلسلة العهدة: المصوّر ← بريد الأرشيف ← خادم الأرشيف، دون انتقال آخر\nملاحظة الأمينة: المشهد هو نفسه الظاهر في نسخة النشر، وفي الأصل امتداد أوسع للممر.",
+      "acquired_by_action_ids": [
+        "a_get_receipt"
+      ],
+      "supports_fact_ids": [
+        "f_archive_received"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يثبت وقت وجود الأصل عند الأرشيف لا وقت التقاطه، ويعتمد على دقة تسجيل الأرشيف نفسه.",
+      "forensic_ko_ref": "KO-FC-04-026",
+      "location_id": "loc_archive"
+    },
+    {
+      "id": "ev_setup_log",
+      "title_ar": "سجل حالة الممر اليومي",
+      "kind": "documentary",
+      "content_ar": "سجل التجهيز اليومي — إعداد منسقة المعرض:\n7 تشرين الثاني: بدء التركيب؛ تغطية المنصات بالقماش؛ فرش الورق الواقي؛ السلّم داخل الممر.\n8 تشرين الثاني: تعليق الإطارات على الجدار الأيمن؛ البطاقات التعريفية غير مركّبة؛ السلّم داخل الممر.\n9 تشرين الثاني: متابعة التعليق؛ السلّم داخل الممر.\n10 تشرين الثاني: إخراج السلّم من الممر؛ تركيب الإضاءة.\n11–12 تشرين الثاني: ضبط الإضاءة؛ المنصات ما زالت مغطاة.\n13 تشرين الثاني: رفع أغطية المنصات وإزالة الورق الواقي؛ تركيب البطاقات التعريفية.\n14 تشرين الثاني: تنظيف نهائي وتركيب الحبال الإرشادية.\n15 تشرين الثاني: افتتاح الجمهور 11:00.",
+      "acquired_by_action_ids": [
+        "a_get_setup_log"
+      ],
+      "supports_fact_ids": [
+        "f_setup_log_kept"
+      ],
+      "reliability": "strong",
+      "limits_ar": "سجل داخلي كتبته المنسقة يحدد حالة الممر يوماً بيوم لا ساعة الالتقاط، ولا يغني عن فحص مستقل لسلامة الصورة نفسها.",
+      "location_id": "loc_office"
+    },
+    {
+      "id": "ev_poster_record",
+      "title_ar": "سجل طباعة الملصق وتعليقه",
+      "kind": "documentary",
+      "content_ar": "سجل أعمال الطباعة والتعليق — المركز الثقافي:\nالبند: ملصق إعلان الموسم، وفيه عبارة «يفتتح في 15 تشرين الثاني»\nطُبع: 20 تشرين الأول\nعُلّق في إطار آخر الممر: 26 تشرين الأول\nملاحظة: يبقى الملصق في إطاره حتى انتهاء المعرض ولا يُستبدل عند الافتتاح.",
+      "acquired_by_action_ids": [
+        "a_get_poster"
+      ],
+      "supports_fact_ids": [
+        "f_poster_hung"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يفسّر وجود الملصق وصيغته المستقبلية، ولا يحدد تاريخ أي صورة التُقطت أمامه.",
+      "location_id": "loc_office"
+    },
+    {
+      "id": "ev_rami_stmt",
+      "title_ar": "إفادة رامي الخطيب (ملخص)",
+      "kind": "testimonial",
+      "content_ar": "ملخص إفادة رامي الخطيب، متطوع الإعلام:\n«جهّزت نسخة النشر من الملف المشترك بعد ظهر يوم الافتتاح، وكتبت في الوصف أن الصورة التقطت بعد الافتتاح.»",
+      "acquired_by_action_ids": [
+        "a_note_rami"
+      ],
+      "supports_fact_ids": [
+        "f_derived_created"
+      ],
+      "reliability": "weak",
+      "limits_ar": "إفادة ناشر المنشور تذكر ما كتبه لا ما تحقق منه، وتُقاس بالسجلات.",
+      "location_id": "loc_media"
+    },
+    {
+      "id": "ev_dima_stmt",
+      "title_ar": "إفادة ديما الشامي (ملخص)",
+      "kind": "testimonial",
+      "content_ar": "ملخص إفادة ديما الشامي، منسقة المعرض:\n«بياننا الأول اعتمد وصف المنشور. وعندنا سجل لحالة الممر يوماً بيوم لم أرجع إليه قبل إصدار البيان.»",
+      "acquired_by_action_ids": [
+        "a_note_dima"
+      ],
+      "supports_fact_ids": [
+        "f_dima_relied"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "تشرح كيف نشأ بيان الإدارة، وتُظهر أنه ترديد لوصف المنشور لا نتيجة فحص.",
+      "location_id": "loc_office"
+    },
+    {
+      "id": "ev_karim_stmt",
+      "title_ar": "إفادة كريم العلي (ملخص)",
+      "kind": "testimonial",
+      "content_ar": "ملخص إفادة كريم العلي، المصوّر:\n«صوّرت الممر والتركيب جارٍ وأرسلتها إلى الأرشيف. لا أذكر اليوم بالضبط، ولا أتابع نشر النسخ.»",
+      "acquired_by_action_ids": [
+        "a_note_karim"
+      ],
+      "supports_fact_ids": [
+        "f_karim_memory"
+      ],
+      "reliability": "weak",
+      "limits_ar": "ذاكرة صاحب اللقطة عن اليوم غير دقيقة، وتتقوّى فقط حين تؤيدها سجلات مستقلة.",
+      "location_id": "loc_corridor"
+    }
+  ],
+  "evidence_graph": {
+    "inferences": [
+      {
+        "id": "i_derived",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_file_meta"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_archive_receipt"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_derived_later"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "تاريخ إنشاء ملف النشر (15 تشرين الثاني) متأخر عن تسجيل الأصل لدى الأرشيف (9 تشرين الثاني)؛ فهو يؤرّخ النسخة المشتقة لا اللقطة.",
+        "skill_ko_refs": [
+          "KO-FC-04-024",
+          "KO-RS-06-004"
+        ]
+      },
+      {
+        "id": "i_path_a",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_access"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_photog_msg"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_archive_receipt"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_capture_in_setup"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "الدخول لم يُتَح قبل 7 تشرين الثاني، والملف الأصلي وصل إلى الأرشيف صباح 9 تشرين الثاني بسلسلة عهدة قصيرة؛ فاللقطة وقعت بين التاريخين، قبل الافتتاح بستة أيام على الأقل.",
+        "skill_ko_refs": [
+          "KO-FC-04-026",
+          "KO-RS-05-004"
+        ]
+      },
+      {
+        "id": "i_path_b",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_photo"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_setup_log"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_capture_in_setup"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "اجتماع السلّم والأغطية والورق الواقي والإطارات المعلّقة دون بطاقات لا يتحقق في سجل الحالة إلا يومي 8 و9 تشرين الثاني؛ فمشهد الصورة يطابق مرحلة التركيب لا مرحلة الجمهور.",
+        "skill_ko_refs": [
+          "KO-RS-06-004",
+          "KO-RS-05-005"
+        ]
+      },
+      {
+        "id": "i_poster",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_poster_record"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_poster_standing"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "ما كان معلّقاً قبل التركيب وبقي بعد الافتتاح موجود في أي لقطة من الفترتين؛ فوجوده لا يرجّح إحداهما.",
+        "skill_ko_refs": [
+          "KO-RS-06-001"
+        ]
+      },
+      {
+        "id": "i_support_misdated",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_capture_in_setup"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_misdated"
+        },
+        "relation": "supports",
+        "strength": "strong",
+        "rule_ar": "إذا وقعت اللقطة في مرحلة التركيب فالصورة أصلية في سياقها، ويكون وصف «بعد الافتتاح» هو الخطأ.",
+        "skill_ko_refs": [
+          "KO-RS-05-002"
+        ]
+      },
+      {
+        "id": "i_rule_after",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_capture_in_setup"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_after_ok"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "لا تجتمع لقطة قبل الافتتاح بستة أيام مع كونها بعد الافتتاح.",
+        "skill_ko_refs": [
+          "KO-RS-06-008"
+        ]
+      },
+      {
+        "id": "i_rule_fake",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_capture_in_setup"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_fake"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "حين يتفق مسار الملف مع سجلات مستقلة، أو يتفق المشهد بتفاصيله مع سجل مستقل لحالة المكان، لا يبقى للتركيب الكامل سند؛ ويبقى احتمالاً نظرياً لم يُفحص تقنياً.",
+        "skill_ko_refs": [
+          "KO-RS-06-001",
+          "KO-RS-05-004"
+        ]
+      },
+      {
+        "id": "i_rule_unknown",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_capture_in_setup"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_unknowable"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "حين تحصر السجلات اللقطة في نافذة محددة قبل الافتتاح، يكون القول بأن لا شيء يمكن إثباته أضعف مما تدل عليه الأدلة.",
+        "skill_ko_refs": [
+          "KO-RS-05-010"
+        ]
+      },
+      {
+        "id": "i_poster_ctx",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_poster_standing"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_fake"
+        },
+        "relation": "refutes",
+        "strength": "suggestive",
+        "rule_ar": "إذا لم يكن في الملصق تعارض فعلي مع بقية السجلات، فلا تبقى قرينة التركيب التي بدت منه.",
+        "skill_ko_refs": [
+          "KO-RS-06-001"
+        ]
+      },
+      {
+        "id": "i_claim_post",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_capture_in_setup"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_post_after"
+        },
+        "relation": "contradicts_claim",
+        "strength": "strong",
+        "rule_ar": "قول «بعد الافتتاح» يخالف لقطة وقعت قبل الافتتاح بستة أيام على الأقل.",
+        "skill_ko_refs": [
+          "KO-RS-05-014"
+        ]
+      },
+      {
+        "id": "i_claim_mgmt",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_capture_in_setup"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_mgmt_after"
+        },
+        "relation": "contradicts_claim",
+        "strength": "strong",
+        "rule_ar": "بيان الإدارة ردّد الوصف نفسه؛ فيسقط معه حين تسقط المقارنة بالسجلات.",
+        "skill_ko_refs": [
+          "KO-RS-05-014"
+        ]
+      }
+    ]
+  },
+  "character_knowledge": [
+    {
+      "character_id": "mona",
+      "knows": [
+        {
+          "fact_id": "f_archive_received",
+          "access": "professional",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_archive_no_capture_date",
+          "access": "professional",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_archive_not_publisher",
+          "access": "professional",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    },
+    {
+      "character_id": "karim",
+      "knows": [
+        {
+          "fact_id": "f_access_window",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_photog_sent",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_karim_memory",
+          "access": "witnessed",
+          "certainty": "unsure"
+        },
+        {
+          "fact_id": "f_karim_not_publisher",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    },
+    {
+      "character_id": "dima",
+      "knows": [
+        {
+          "fact_id": "f_setup_log_kept",
+          "access": "professional",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_poster_hung",
+          "access": "professional",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_dima_relied",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": [
+        {
+          "claim_id": "cl_mgmt_after",
+          "stance": "sincere"
+        }
+      ]
+    },
+    {
+      "character_id": "rami",
+      "knows": [
+        {
+          "fact_id": "f_derived_created",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [
+        {
+          "fact_id": "f_caption_added_later",
+          "reveal_when": {
+            "presented": {
+              "evidence_id": "ev_post_history",
+              "to_character": "rami"
+            }
+          },
+          "cover_claim_id": null,
+          "reveal_line_id": "rm_admit"
+        }
+      ],
+      "believes": [
+        {
+          "claim_id": "cl_post_after",
+          "stance": "sincere"
+        }
+      ]
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "h_fake",
+      "statement_ar": "الصورة مفبركة أو مركّبة بالكامل.",
+      "is_true": false,
+      "plausibility_at_start": "high"
+    },
+    {
+      "id": "h_misdated",
+      "statement_ar": "الصورة حقيقية، لكن الوصف الذي نسب لقطتها إلى ما بعد الافتتاح خاطئ.",
+      "is_true": true,
+      "plausibility_at_start": "medium",
+      "suspect_id": "rami"
+    },
+    {
+      "id": "h_unknowable",
+      "statement_ar": "لا يمكن إثبات أي شيء عن تاريخ التقاط الصورة.",
+      "is_true": false,
+      "plausibility_at_start": "low"
+    },
+    {
+      "id": "h_after_ok",
+      "statement_ar": "الصورة حقيقية والتقطت بعد الافتتاح كما ورد في المنشور وبيان الإدارة.",
+      "is_true": false,
+      "plausibility_at_start": "medium"
+    }
+  ],
+  "misdirection_plan": [
+    {
+      "id": "rh_meta",
+      "points_to_hypothesis_id": "h_after_ok",
+      "planted_via_ar": "خصائص ملف النشر تعطي تاريخ إنشاء يوم الافتتاح بعد الظهر، فتبدو وكأنها تؤيد وصف «بعد الافتتاح».",
+      "evidence_ids": [
+        "ev_file_meta"
+      ],
+      "refuted_by_inference_ids": [
+        "i_derived",
+        "i_rule_after"
+      ],
+      "fairness_note_ar": "سجل الاستلام يضع الأصل لدى الأرشيف قبل تاريخ إنشاء ملف النشر بستة أيام، وخصائص الملف نفسها تقول إنه نسخة مقصوصة ومصغّرة."
+    },
+    {
+      "id": "rh_poster",
+      "points_to_hypothesis_id": "h_fake",
+      "planted_via_ar": "الملصق في الصورة يعلن الافتتاح بصيغة المستقبل بينما يقول الوصف إن الصورة بعد الافتتاح، فيبدو التعارض كأنه تلاعب.",
+      "evidence_ids": [
+        "ev_photo"
+      ],
+      "refuted_by_inference_ids": [
+        "i_poster",
+        "i_poster_ctx",
+        "i_rule_fake"
+      ],
+      "fairness_note_ar": "سجل الطباعة والتعليق يبيّن أن الملصق عُلّق قبل التركيب ويبقى بعد الافتتاح، فصيغته المستقبلية تعارض الوصف لا الصورة."
+    }
+  ],
+  "learning_objectives": [
+    {
+      "id": "lo_source",
+      "statement_ar": "يفرّق بين السجل الأصلي والنسخة المشتقة والادعاء، ويسأل أي ملف يصفه كل تاريخ.",
+      "skill_ko_ref": "KO-RS-05-001",
+      "observable_behaviors_ar": [
+        "يصنّف خصائص الملف المنشور نسخة معروضة",
+        "يصنّف المنشور والإفادات أقوالاً"
+      ],
+      "evidence_sources": [
+        "evidence_board"
+      ]
+    },
+    {
+      "id": "lo_hyp",
+      "statement_ar": "يوازن بين فرضيات متنافسة ويستبعد ما تنقضه الأدلة.",
+      "skill_ko_ref": "KO-RS-05-002",
+      "observable_behaviors_ar": [
+        "يضيف أكثر من فرضية",
+        "يستبعد فرضية بدليل مرفق"
+      ],
+      "evidence_sources": [
+        "hypothesis_ledger"
+      ]
+    },
+    {
+      "id": "lo_diag",
+      "statement_ar": "يقدّر ما يثبته كل دليل وما لا يثبته، ويفرّق بين أصالة الصورة وصحة وصفها.",
+      "skill_ko_ref": "KO-RS-06-001",
+      "observable_behaviors_ar": [
+        "يربط الدليل بالفرضية باتجاه صحيح",
+        "لا يعامل الاختلاف في الرواية تزويراً"
+      ],
+      "evidence_sources": [
+        "evidence_board",
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_calib",
+      "statement_ar": "يصوغ ثقته بحدودها ويحدد ما قد يغيّر رأيه.",
+      "skill_ko_ref": "KO-RS-06-021",
+      "observable_behaviors_ar": [
+        "يختار ثقة معقولة",
+        "يذكر حدوداً",
+        "يحدد دليلاً مغيّراً للرأي"
+      ],
+      "evidence_sources": [
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_revise",
+      "statement_ar": "يراجع رأيه الأول حين يظهر دليل أفضل.",
+      "skill_ko_ref": "KO-RS-06-009",
+      "observable_behaviors_ar": [
+        "يغيّر فرضيته الرائدة بدليل"
+      ],
+      "evidence_sources": [
+        "hypothesis_ledger",
+        "action_log"
+      ]
+    }
+  ],
+  "mechanics": {
+    "time_budget_units": 30,
+    "actions": [
+      {
+        "id": "a_view_photo",
+        "type": "examine",
+        "label_ar": "افحص الصورة المتداولة",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_photo"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "obj_derived",
+        "telemetry_code": "VIEW_PHOTO"
+      },
+      {
+        "id": "a_open_post",
+        "type": "examine",
+        "label_ar": "افتح المنشور الأول",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_post"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "obj_post",
+        "telemetry_code": "OPEN_POST"
+      },
+      {
+        "id": "a_open_meta",
+        "type": "examine",
+        "label_ar": "افتح خصائص الملف المرفق بالمنشور",
+        "precondition": {
+          "has_evidence": "ev_post"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_file_meta"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "obj_derived",
+        "telemetry_code": "OPEN_META"
+      },
+      {
+        "id": "a_open_history",
+        "type": "examine",
+        "label_ar": "اطلب سجل تعديلات المنشور",
+        "precondition": {
+          "has_evidence": "ev_post"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_post_history"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "obj_post",
+        "telemetry_code": "OPEN_HISTORY"
+      },
+      {
+        "id": "a_int_mona",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة منى",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "mona",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "mona",
+        "telemetry_code": "INT_MONA"
+      },
+      {
+        "id": "a_int_karim",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة كريم",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "karim",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "karim",
+        "telemetry_code": "INT_KARIM"
+      },
+      {
+        "id": "a_int_dima",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة ديما",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "dima",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "dima",
+        "telemetry_code": "INT_DIMA"
+      },
+      {
+        "id": "a_int_rami",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة رامي",
+        "precondition": {
+          "has_evidence": "ev_post"
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "rami",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "rami",
+        "telemetry_code": "INT_RAMI"
+      },
+      {
+        "id": "a_get_receipt",
+        "type": "examine",
+        "label_ar": "اطلب سجل استلام الأرشيف",
+        "precondition": {
+          "fact_unlocked": "f_archive_received"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_archive_receipt"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_archive",
+        "telemetry_code": "GET_RECEIPT"
+      },
+      {
+        "id": "a_get_msg",
+        "type": "examine",
+        "label_ar": "اطلب رسالة المصوّر المرسلة إلى الأرشيف",
+        "precondition": {
+          "fact_unlocked": "f_photog_sent"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_photog_msg"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "karim",
+        "telemetry_code": "GET_MSG"
+      },
+      {
+        "id": "a_get_access",
+        "type": "examine",
+        "label_ar": "اطلب جدول تصاريح التجهيز",
+        "precondition": {
+          "fact_unlocked": "f_access_window"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_access"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_office",
+        "telemetry_code": "GET_ACCESS"
+      },
+      {
+        "id": "a_get_setup_log",
+        "type": "examine",
+        "label_ar": "اطلب سجل حالة الممر اليومي",
+        "precondition": {
+          "fact_unlocked": "f_setup_log_kept"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_setup_log"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_office",
+        "telemetry_code": "GET_SETUP_LOG"
+      },
+      {
+        "id": "a_get_poster",
+        "type": "examine",
+        "label_ar": "اطلب سجل طباعة الملصق وتعليقه",
+        "precondition": {
+          "fact_unlocked": "f_poster_hung"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_poster_record"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "obj_poster",
+        "telemetry_code": "GET_POSTER"
+      },
+      {
+        "id": "a_note_karim",
+        "type": "examine",
+        "label_ar": "دوّن إفادة كريم",
+        "precondition": {
+          "fact_unlocked": "f_karim_memory"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_karim_stmt"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "karim",
+        "telemetry_code": "NOTE_KARIM"
+      },
+      {
+        "id": "a_note_dima",
+        "type": "examine",
+        "label_ar": "دوّن إفادة ديما",
+        "precondition": {
+          "fact_unlocked": "f_dima_relied"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_dima_stmt"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "dima",
+        "telemetry_code": "NOTE_DIMA"
+      },
+      {
+        "id": "a_note_rami",
+        "type": "examine",
+        "label_ar": "دوّن إفادة رامي",
+        "precondition": {
+          "fact_unlocked": "f_derived_created"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_rami_stmt"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "rami",
+        "telemetry_code": "NOTE_RAMI"
+      },
+      {
+        "id": "p_history_rami",
+        "type": "present_evidence",
+        "label_ar": "اعرض سجل تعديلات المنشور على رامي",
+        "precondition": {
+          "presented": {
+            "evidence_id": "ev_post_history",
+            "to_character": "rami"
+          }
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "PRESENTED_HISTORY"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "rami",
+        "telemetry_code": "P_HISTORY_RAMI"
+      },
+      {
+        "id": "a_hint",
+        "type": "request_hint",
+        "label_ar": "اطلب تلميحاً",
+        "precondition": {
+          "always": true
+        },
+        "effects": [],
+        "time_cost_units": 0,
+        "telemetry_code": "REQUEST_HINT"
+      },
+      {
+        "id": "a_accuse",
+        "type": "final_accusation",
+        "label_ar": "قدّم الاستنتاج النهائي",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "SUBMIT"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "FINAL_ACCUSATION"
+      },
+      {
+        "id": "ask_mona_f_archive_received",
+        "type": "interview",
+        "label_ar": "[نموذج] mona يذكر f_archive_received",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_archive_received"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "mona",
+        "telemetry_code": "ASK_MONA_F_ARCHIVE_RECEIVED"
+      },
+      {
+        "id": "ask_mona_f_archive_no_capture_date",
+        "type": "interview",
+        "label_ar": "[نموذج] mona يذكر f_archive_no_capture_date",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_archive_no_capture_date"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "mona",
+        "telemetry_code": "ASK_MONA_F_ARCHIVE_NO_CAPTURE_DATE"
+      },
+      {
+        "id": "ask_mona_f_archive_not_publisher",
+        "type": "interview",
+        "label_ar": "[نموذج] mona يذكر f_archive_not_publisher",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_archive_not_publisher"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "mona",
+        "telemetry_code": "ASK_MONA_F_ARCHIVE_NOT_PUBLISHER"
+      },
+      {
+        "id": "ask_karim_f_access_window",
+        "type": "interview",
+        "label_ar": "[نموذج] karim يذكر f_access_window",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_access_window"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "karim",
+        "telemetry_code": "ASK_KARIM_F_ACCESS_WINDOW"
+      },
+      {
+        "id": "ask_karim_f_photog_sent",
+        "type": "interview",
+        "label_ar": "[نموذج] karim يذكر f_photog_sent",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_photog_sent"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "karim",
+        "telemetry_code": "ASK_KARIM_F_PHOTOG_SENT"
+      },
+      {
+        "id": "ask_karim_f_karim_memory",
+        "type": "interview",
+        "label_ar": "[نموذج] karim يذكر f_karim_memory",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_karim_memory"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "karim",
+        "telemetry_code": "ASK_KARIM_F_KARIM_MEMORY"
+      },
+      {
+        "id": "ask_karim_f_karim_not_publisher",
+        "type": "interview",
+        "label_ar": "[نموذج] karim يذكر f_karim_not_publisher",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_karim_not_publisher"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "karim",
+        "telemetry_code": "ASK_KARIM_F_KARIM_NOT_PUBLISHER"
+      },
+      {
+        "id": "ask_dima_f_setup_log_kept",
+        "type": "interview",
+        "label_ar": "[نموذج] dima يذكر f_setup_log_kept",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_setup_log_kept"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "dima",
+        "telemetry_code": "ASK_DIMA_F_SETUP_LOG_KEPT"
+      },
+      {
+        "id": "ask_dima_f_poster_hung",
+        "type": "interview",
+        "label_ar": "[نموذج] dima يذكر f_poster_hung",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_poster_hung"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "dima",
+        "telemetry_code": "ASK_DIMA_F_POSTER_HUNG"
+      },
+      {
+        "id": "ask_dima_f_dima_relied",
+        "type": "interview",
+        "label_ar": "[نموذج] dima يذكر f_dima_relied",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_dima_relied"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "dima",
+        "telemetry_code": "ASK_DIMA_F_DIMA_RELIED"
+      },
+      {
+        "id": "ask_rami_f_derived_created",
+        "type": "interview",
+        "label_ar": "[نموذج] rami يذكر f_derived_created",
+        "precondition": {
+          "has_evidence": "ev_post"
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_derived_created"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "rami",
+        "telemetry_code": "ASK_RAMI_F_DERIVED_CREATED"
+      },
+      {
+        "id": "ask_rami_f_caption_added_later",
+        "type": "interview",
+        "label_ar": "[نموذج] rami يكشف f_caption_added_later",
+        "precondition": {
+          "all": [
+            {
+              "has_evidence": "ev_post"
+            },
+            {
+              "presented": {
+                "evidence_id": "ev_post_history",
+                "to_character": "rami"
+              }
+            }
+          ]
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_caption_added_later"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "rami",
+        "telemetry_code": "ASK_RAMI_F_CAPTION_ADDED_LATER"
+      }
+    ]
+  },
+  "state_machine": {
+    "id": "c004",
+    "initial": "briefing",
+    "type": "compound",
+    "states": {
+      "briefing": {
+        "description_ar": "الإحاطة",
+        "type": "atomic",
+        "on": {
+          "START": {
+            "target": "investigating"
+          }
+        }
+      },
+      "investigating": {
+        "description_ar": "التحقيق",
+        "type": "compound",
+        "initial": "gathering",
+        "states": {
+          "gathering": {
+            "type": "atomic",
+            "on": {
+              "OPEN_DEDUCTION": {
+                "target": "deducing"
+              }
+            }
+          },
+          "deducing": {
+            "type": "atomic",
+            "on": {
+              "BACK": {
+                "target": "gathering"
+              }
+            }
+          }
+        },
+        "on": {
+          "SUBMIT": {
+            "target": "review"
+          }
+        }
+      },
+      "review": {
+        "description_ar": "مراجعة",
+        "type": "atomic",
+        "on": {
+          "CLOSE": {
+            "target": "resolved"
+          }
+        }
+      },
+      "resolved": {
+        "description_ar": "إغلاق",
+        "type": "final"
+      }
+    }
+  },
+  "dialogue": {
+    "max_turns_per_interview": 10,
+    "llm_enabled": false,
+    "topics": [
+      {
+        "id": "t_capture",
+        "label_ar": "متى التُقطت الصورة",
+        "example_questions_ar": [
+          "متى التقطت الصورة؟",
+          "هل تذكر يوم التصوير؟"
+        ],
+        "fact_ids": [
+          "f_karim_memory"
+        ]
+      },
+      {
+        "id": "t_access",
+        "label_ar": "تصريح الدخول إلى القاعة",
+        "example_questions_ar": [
+          "متى سُمح لك بدخول القاعة؟",
+          "ما تصريح التصوير؟"
+        ],
+        "fact_ids": [
+          "f_access_window"
+        ]
+      },
+      {
+        "id": "t_sending",
+        "label_ar": "إرسال الملف إلى الأرشيف",
+        "example_questions_ar": [
+          "متى أرسلت الملف؟",
+          "متى استلم الأرشيف الملف الأصلي؟",
+          "هل يحدد السجل تاريخ الالتقاط؟"
+        ],
+        "fact_ids": [
+          "f_photog_sent",
+          "f_archive_received",
+          "f_archive_no_capture_date"
+        ]
+      },
+      {
+        "id": "t_publishing",
+        "label_ar": "نسخ النشر",
+        "example_questions_ar": [
+          "من يعدّ نسخ النشر؟",
+          "متى صُنعت نسخة المنشور؟"
+        ],
+        "fact_ids": [
+          "f_karim_not_publisher",
+          "f_archive_not_publisher",
+          "f_derived_created"
+        ]
+      },
+      {
+        "id": "t_setup",
+        "label_ar": "سجل التجهيز اليومي",
+        "example_questions_ar": [
+          "هل يوجد سجل لحالة الممر؟",
+          "كيف وثّقتم أيام التجهيز؟"
+        ],
+        "fact_ids": [
+          "f_setup_log_kept"
+        ]
+      },
+      {
+        "id": "t_poster",
+        "label_ar": "الملصق في آخر الممر",
+        "example_questions_ar": [
+          "متى عُلّق الملصق؟",
+          "لماذا يقول الملصق يفتتح؟"
+        ],
+        "fact_ids": [
+          "f_poster_hung"
+        ]
+      },
+      {
+        "id": "t_statement",
+        "label_ar": "بيان إدارة المعرض",
+        "example_questions_ar": [
+          "على ماذا اعتمد البيان؟",
+          "من أين عرفتم أنها بعد الافتتاح؟"
+        ],
+        "fact_ids": [
+          "f_dima_relied"
+        ],
+        "claim_ids": [
+          "cl_mgmt_after"
+        ]
+      },
+      {
+        "id": "t_caption",
+        "label_ar": "وصف المنشور",
+        "example_questions_ar": [
+          "من كتب الوصف؟",
+          "متى أضفت عبارة بعد الافتتاح؟"
+        ],
+        "fact_ids": [
+          "f_caption_added_later"
+        ],
+        "claim_ids": [
+          "cl_post_after"
+        ]
+      }
+    ]
+  },
+  "rubric": {
+    "reference_answer_ar": "الصورة أصلية والخطأ في وصف زمنها. التقطها المصوّر في مرحلة التركيب بين 7 و9 تشرين الثاني، وبهذا يثبت مساران مستقلان: تصريح الدخول ورسالة المصوّر وسجل الأرشيف يضعون الملف الأصلي عند الأرشيف صباح 9 تشرين الثاني، وتفاصيل المشهد لا تجتمع في سجل المنسقة إلا في يومي 8 و9. أما تاريخ ملف النشر فيعود إلى قصّ وتصغير جرى يوم الافتتاح، والملصق معلّق من قبل ويبقى من بعد. كتب متطوع الإعلام «بعد الافتتاح» افتراضاً ثم ردّدته الإدارة. حدود الاستنتاج: لا نعرف ساعة اللقطة، ولم يُجرَ فحص تقني مستقل لنفي التركيب، ولا دليل على سوء نية.",
+    "criteria": [
+      {
+        "id": "c_source",
+        "name_ar": "تمييز الادعاء من المستند الأصلي",
+        "objective_ids": [
+          "lo_source"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.2,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يصنّف"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "أخطأ في الأغلب"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "نصف صحيح"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمه صحيح"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كله صحيح"
+          }
+        ]
+      },
+      {
+        "id": "c_links",
+        "name_ar": "ربط الأدلة بفرضيتين فأكثر",
+        "objective_ids": [
+          "lo_diag"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.2,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لا روابط"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "قليلة"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "نصفها صحيح"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمها"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كلها دقيقة"
+          }
+        ]
+      },
+      {
+        "id": "c_elimination",
+        "name_ar": "تفسير التعارض واستبعاد الفرضيات الخاطئة",
+        "objective_ids": [
+          "lo_hyp"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يستبعد"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "استبعد خطأً"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "فرضية بدليل"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "فرضيتين"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كل الخاطئة"
+          }
+        ]
+      },
+      {
+        "id": "c_uncertainty",
+        "name_ar": "درجة عدم اليقين والمعلومات الناقصة",
+        "objective_ids": [
+          "lo_calib"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "ثقة مفرطة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "حدود قليلة"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "جزئية"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معقولة"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "معايَرة كاملة"
+          }
+        ]
+      },
+      {
+        "id": "c_revision",
+        "name_ar": "تعديل الرأي عند ظهور دليل أفضل",
+        "objective_ids": [
+          "lo_revise"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "بقي على فرضية مرفوضة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "لم يعلن فرضية"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "ثبت على فرضية سليمة"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "غيّر بدليل"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "غيّر بدليل ووثّق"
+          }
+        ]
+      },
+      {
+        "id": "c_justification",
+        "name_ar": "جودة الحجة المكتوبة",
+        "objective_ids": [
+          "lo_diag",
+          "lo_hyp"
+        ],
+        "scored_by": "human",
+        "weight": 0.25,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لا حجة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "ادعاء بلا سند"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "أدلة دون ربط"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "ربط الأدلة بالاستنتاج"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "ربط مع البدائل والحدود"
+          }
+        ]
+      }
+    ]
+  },
+  "hint_ladder": [
+    {
+      "id": "hg1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "أين ينتهي ما تُظهره الصورة وتبدأ العبارة التي كُتبت عنها؟",
+      "trigger": {
+        "always": true
+      },
+      "assessment_weight": 0.02
+    },
+    {
+      "id": "hg2",
+      "level": 2,
+      "kind": "focus_area",
+      "text_ar": "ضع كل معلومة في جدول: مصدر أصلي أم نسخة أم تعليق؟ ثم اسأل عن أي ملف تتحدث خصائص الملف.",
+      "trigger": {
+        "has_evidence": "ev_file_meta"
+      },
+      "assessment_weight": 0.04
+    },
+    {
+      "id": "hg3",
+      "level": 3,
+      "kind": "pointer",
+      "text_ar": "راجع تحديداً الدليل الذي يوضح سياق الرقم أو الزمن أو الوثيقة: متى وصل الأصل إلى جهة محايدة؟",
+      "trigger": {
+        "has_evidence": "ev_file_meta"
+      },
+      "assessment_weight": 0.06
+    },
+    {
+      "id": "hd1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "هل التاريخ الذي تقرؤه يخصّ اللقطة نفسها أم ملفاً صُنع منها؟",
+      "trigger": {
+        "has_evidence": "ev_file_meta"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_derived"
+    },
+    {
+      "id": "hd2",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "اطلب من الأرشيف سجل استلام الملف الأصلي، وقارن تاريخه بتاريخ إنشاء ملف النشر.",
+      "trigger": {
+        "has_evidence": "ev_file_meta"
+      },
+      "assessment_weight": 0.06,
+      "targets_inference_id": "i_derived"
+    },
+    {
+      "id": "ha1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "من يستطيع أن يخبرك متى خرج الملف الأصلي من الكاميرا إلى جهة أخرى؟",
+      "trigger": {
+        "has_evidence": "ev_post"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_path_a"
+    },
+    {
+      "id": "ha2",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "اسأل المصوّر والأرشيف عن أول لحظة سُجّل فيها الملف الأصلي، وعن بداية السماح بالدخول.",
+      "trigger": {
+        "has_evidence": "ev_post"
+      },
+      "assessment_weight": 0.06,
+      "targets_inference_id": "i_path_a"
+    },
+    {
+      "id": "ha3",
+      "level": 3,
+      "kind": "partial_reveal",
+      "text_ar": "ضع التصريح والرسالة وسجل الاستلام على سطر واحد: بين أي تاريخين تقع اللقطة؟",
+      "trigger": {
+        "has_evidence": "ev_archive_receipt"
+      },
+      "assessment_weight": 0.1,
+      "targets_inference_id": "i_path_a"
+    },
+    {
+      "id": "hb1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "ما العناصر في الصورة التي تتبدّل من يوم إلى يوم في مكان يجري تجهيزه؟",
+      "trigger": {
+        "has_evidence": "ev_photo"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_path_b"
+    },
+    {
+      "id": "hb2",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "اسأل المنسقة عمّا يوثّق حالة الممر يوماً بيوم.",
+      "trigger": {
+        "has_evidence": "ev_photo"
+      },
+      "assessment_weight": 0.06,
+      "targets_inference_id": "i_path_b"
+    },
+    {
+      "id": "hb3",
+      "level": 3,
+      "kind": "partial_reveal",
+      "text_ar": "طابق ثلاثة عناصر مرئية في الصورة مع أسطر السجل، وانظر في أي يوم تجتمع معاً.",
+      "trigger": {
+        "has_evidence": "ev_setup_log"
+      },
+      "assessment_weight": 0.1,
+      "targets_inference_id": "i_path_b"
+    }
+  ],
+  "fairness_test": {
+    "requirements": {
+      "min_disjoint_proof_paths": 2,
+      "max_inference_depth": 3,
+      "all_red_herrings_refutable": true,
+      "culprit_uniquely_entailed": true,
+      "no_hidden_fact_dependency": true,
+      "max_required_actions": 30
+    },
+    "runs": []
+  },
+  "ending_explanation": {
+    "steps": [
+      {
+        "order": 1,
+        "text_ar": "خصائص ملف النشر تؤرّخ نسخة صُنعت يوم الافتتاح، بينما سجل الأرشيف يضع الأصل عنده قبل ذلك بستة أيام؛ فاختلاف الملفين هو مصدر الالتباس.",
+        "uses_evidence_ids": [
+          "ev_file_meta",
+          "ev_archive_receipt"
+        ],
+        "inference_id": "i_derived"
+      },
+      {
+        "order": 2,
+        "text_ar": "التصريح يبدأ في 7 تشرين الثاني، ورسالة المصوّر وسجل الاستلام يضعان الأصل في الأرشيف صباح 9 تشرين الثاني: وقعت اللقطة بين التاريخين.",
+        "uses_evidence_ids": [
+          "ev_access",
+          "ev_photog_msg",
+          "ev_archive_receipt"
+        ],
+        "inference_id": "i_path_a"
+      },
+      {
+        "order": 3,
+        "text_ar": "مسار ثانٍ لا يستعمل تلك السجلات: عناصر المشهد معاً لا تتحقق في سجل حالة الممر إلا يومي 8 و9 تشرين الثاني.",
+        "uses_evidence_ids": [
+          "ev_photo",
+          "ev_setup_log"
+        ],
+        "inference_id": "i_path_b"
+      },
+      {
+        "order": 4,
+        "text_ar": "الملصق طُبع وعُلّق قبل بدء التركيب ولا يُرفع عند الافتتاح، فصيغته المستقبلية لا تؤرّخ اللقطة ولا تدل على تركيب.",
+        "uses_evidence_ids": [
+          "ev_poster_record"
+        ],
+        "inference_id": "i_poster"
+      },
+      {
+        "order": 5,
+        "text_ar": "إذن الصورة حقيقية، والعبارة التي نسبتها إلى ما بعد الافتتاح هي الخطأ؛ كُتبت على سبيل الافتراض ثم رُدّدت في البيان.",
+        "uses_evidence_ids": [
+          "ev_post_history",
+          "ev_archive_receipt"
+        ],
+        "inference_id": "i_support_misdated"
+      }
+    ],
+    "alternative_paths_ar": [
+      "يكفي المسار الأول وحده (التصريح والرسالة وسجل الاستلام) أو المسار الثاني وحده (مطابقة مشهد الصورة لسجل حالة الممر)؛ والأفضل أن تتقاطع الحجتان."
+    ],
+    "what_evidence_could_not_show_ar": [
+      "لا يحدد أي دليل ساعة اللقطة بالدقيقة؛ المثبت نافذة أيام قبل الافتتاح.",
+      "لم يُجرَ فحص تقني مستقل لبيانات الصورة نفسها، فنفي التركيب مبني على تعدد السجلات المستقلة لا على فحص مخبري.",
+      "لا تثبت الأدلة سبب افتراض الناشر ولا دافعه؛ المعروف فقط أنه كتب الوصف دون مرجع."
+    ],
+    "science_notes_ar": [
+      "تاريخ إنشاء الملف وتاريخ الالتقاط معلومتان مختلفتان: الأولى تخص النسخة التي بين يديك، والثانية تخص اللحظة الأولى.",
+      "اختلاف الرواية عن السجل لا يعني أن أحداً كذب؛ قد يكون ظناً لم يُراجَع.",
+      "سلسلة العهدة القصيرة الموثقة تقوّي الاستنتاج حول الأصل، ولا تغني عن ذكر حدوده."
+    ]
+  },
+  "expert_review": [
+    {
+      "role": "narrative_editor",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "scientific_reviewer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "learning_designer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "age_appropriateness",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "cultural_reviewer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "legal_rights",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "safety",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    }
+  ]
+}

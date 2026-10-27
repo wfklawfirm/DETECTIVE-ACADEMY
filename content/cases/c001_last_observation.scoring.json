@@ -1,0 +1,171 @@
+{
+  "case_id": "c001_last_observation",
+  "accepted_conclusions": {
+    "h_hisham": {
+      "grade": 1,
+      "note_ar": "استنتاج متسق مع الأدلة ويتطلب ذكر حدوده."
+    },
+    "h_parallel": {
+      "grade": 0,
+      "note_ar": "يتجاهل واقعة علم هشام المسجَّلة بسجلين مستقلين."
+    },
+    "h_reem_false": {
+      "grade": 0,
+      "note_ar": "قائم على قراءة أزمنة غير موحّدة."
+    },
+    "h_nadir": {
+      "grade": 0,
+      "note_ar": "الفرق الظاهر ناتج عن اختلاف المنطقة الزمنية لا عن تزوير."
+    }
+  },
+  "confidence_band": {
+    "h_hisham": [
+      65,
+      92
+    ],
+    "h_parallel": [
+      0,
+      20
+    ],
+    "h_reem_false": [
+      0,
+      15
+    ],
+    "h_nadir": [
+      0,
+      15
+    ]
+  },
+  "source_key": {
+    "ev_obs_log": "primary_record",
+    "ev_press_board": "redisplay",
+    "ev_archive_log": "primary_record",
+    "ev_sync_report": "primary_record",
+    "ev_reem_hdr": "primary_record",
+    "ev_hisham_hdr": "primary_record",
+    "ev_chat_log": "primary_record",
+    "ev_ws_log": "primary_record",
+    "ev_audit_relabel": "primary_record",
+    "ev_door_log": "primary_record",
+    "ev_bulletin_form": "claim",
+    "ev_yusuf_statement": "claim",
+    "ev_nadir_statement": "claim"
+  },
+  "link_key": {
+    "h_hisham": {
+      "ev_reem_hdr": "supports",
+      "ev_hisham_hdr": "supports",
+      "ev_chat_log": "supports",
+      "ev_ws_log": "supports",
+      "ev_audit_relabel": "supports",
+      "ev_door_log": "supports",
+      "ev_lab_norm": "supports",
+      "ev_sheet": "supports",
+      "ev_press_board": "neutral",
+      "ev_reem_warning": "neutral"
+    },
+    "h_reem_false": {
+      "ev_reem_hdr": "weakens",
+      "ev_hisham_hdr": "weakens",
+      "ev_chat_log": "weakens",
+      "ev_lab_norm": "weakens",
+      "ev_press_board": "supports",
+      "ev_reem_warning": "neutral"
+    },
+    "h_nadir": {
+      "ev_lab_norm": "weakens",
+      "ev_nadir_statement": "weakens",
+      "ev_press_board": "supports"
+    },
+    "h_parallel": {
+      "ev_chat_log": "weakens",
+      "ev_ws_log": "weakens",
+      "ev_audit_relabel": "weakens",
+      "ev_bulletin_form": "neutral"
+    }
+  },
+  "required_limits": [
+    "l_intent",
+    "l_read_receipt"
+  ],
+  "valid_mind_changers": [
+    "m_other_user",
+    "m_gps_fault",
+    "m_third_frame"
+  ],
+  "invalid_limits": [
+    "l_invalid_demeanor",
+    "l_invalid_reputation",
+    "l_invalid_all"
+  ],
+  "decisive_evidence": [
+    "ev_reem_hdr",
+    "ev_hisham_hdr",
+    "ev_chat_log",
+    "ev_ws_log",
+    "ev_lab_norm"
+  ],
+  "lab_requirement": {
+    "lab_id": "lab_time",
+    "must_converge": true
+  },
+  "timeline_requirement": [
+    {
+      "evidence_id": "ev_obs_log",
+      "utc_minute": 10,
+      "tol": 2
+    },
+    {
+      "evidence_id": "ev_press_board",
+      "utc_minute": 10,
+      "tol": 2
+    },
+    {
+      "evidence_id": "ev_archive_log",
+      "utc_minute": 10,
+      "tol": 2
+    },
+    {
+      "evidence_id": "ev_reem_hdr",
+      "utc_minute": 10,
+      "tol": 2
+    },
+    {
+      "evidence_id": "ev_hisham_hdr",
+      "utc_minute": 34,
+      "tol": 2
+    }
+  ],
+  "refuted_hypotheses": [
+    "h_reem_false",
+    "h_nadir",
+    "h_parallel"
+  ],
+  "criteria_map": {
+    "c_source": "source_typing",
+    "c_conflict": "conflict_resolution",
+    "c_links": "hypothesis_links",
+    "c_uncertainty": "uncertainty",
+    "c_revision": "revision",
+    "c_elimination": "elimination",
+    "c_justification": "justification_human"
+  },
+  "transfer_key": {
+    "valid": [
+      "o1",
+      "o2",
+      "o3",
+      "o4"
+    ],
+    "invalid": [
+      "o5",
+      "o6",
+      "o7",
+      "o8"
+    ]
+  },
+  "caps": {
+    "no_citations_max": 45,
+    "no_conflict_resolution_max": 60
+  }
+}

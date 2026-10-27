@@ -1,0 +1,2681 @@
+{
+  "schema_version": "0.1.0",
+  "case_id": "c002_manuscript_twice",
+  "case_version": "0.1.0",
+  "meta": {
+    "title_ar": "المخطوطة التي اختفت مرتين",
+    "title_en": "The Manuscript That Vanished Twice",
+    "age_band": "16-18",
+    "locale": "ar",
+    "dialogue_register": "msa",
+    "estimated_minutes": 25,
+    "difficulty": 2,
+    "content_flags": [
+      "no_violence",
+      "historical"
+    ],
+    "authors": [
+      "فريق أثر التحريري (مسودة بمساعدة الذكاء الاصطناعي، لم تُراجَع بشرياً بعد)"
+    ],
+    "knowledge_object_refs": [
+      "KO-RS-05-001",
+      "KO-RS-05-005",
+      "KO-RS-05-002",
+      "KO-RS-05-004",
+      "KO-RS-06-001",
+      "KO-RS-06-004",
+      "KO-RS-06-008",
+      "KO-RS-06-009",
+      "KO-RS-06-017",
+      "KO-RS-06-021",
+      "KO-RS-05-014"
+    ]
+  },
+  "premise": {
+    "hook_ar": "وثيقتان تقولان إن «الأصل» في مكانين في اليوم نفسه. هل اختفى مرتين، أم أن أحداً بدّل شيئاً؟",
+    "player_role_ar": "أنت مراجع ملفات في متحف الوراقين، وطُلب منك أن تقدّم تفسيراً تبرره الأدلة قبل افتتاح المعرض.",
+    "setting_ar": "متحف خيالي للتراث والمخطوطات، يوم إغلاق للصيانة ونقل نظام الفهرسة ثم صباح الافتتاح. توقيت المتحف المحلي هو توقيت كل السجلات.",
+    "public_fact_ids": [
+      "f_catalog_shows_both",
+      "f_layla_suspects",
+      "f_hall_label"
+    ],
+    "assumed_general_knowledge_ar": [
+      "رقم الحفظ يُعطى لقطعة واحدة بعينها",
+      "لقطة الشاشة أو القصاصة قد تحذف أجزاء من الوثيقة الأصلية"
+    ]
+  },
+  "entities": {
+    "characters": [
+      {
+        "id": "layla",
+        "name_ar": "د. ليلى القاسمي",
+        "role": "victim",
+        "age_descriptor_ar": "أمينة المعرض، في أواخر الأربعينات",
+        "persona_ar": "دقيقة وغيورة على المقتنيات، تعوّدت أن تسمع كلمة «الأصل» مفردة فتتوقع شيئاً واحداً بهذا الاسم.",
+        "motives_ar": [
+          "أن تعرف أين الأصل فعلاً قبل افتتاح المعرض",
+          "ألا يُتّهم أحد من فريقها دون سند"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": [
+            "اتهام موظف بنية معيّنة دون دليل"
+          ]
+        },
+        "authored_lines": [
+          {
+            "line_id": "ly_greet",
+            "purpose": "greeting",
+            "text_ar": "أهلاً بك. في ملفي وثيقتان تتحدثان عن «الأصل»، ولا أفهم كيف يكون في مكانين."
+          },
+          {
+            "line_id": "ly_complaint",
+            "purpose": "reveal",
+            "text_ar": "كتبتُ مذكرة أبيّن فيها أن السجل الموحّد يضع الأصل في الترميم صباحاً وفي القاعة عصراً.",
+            "fact_ids": [
+              "f_layla_complaint"
+            ]
+          },
+          {
+            "line_id": "ly_clip",
+            "purpose": "reveal",
+            "text_ar": "عندي قصاصة من نشرة المتحف نشرنا فيها بطاقة «الأصل» كما وصلتنا. يمكنك الاطلاع عليها.",
+            "fact_ids": [
+              "f_layla_clip"
+            ]
+          },
+          {
+            "line_id": "ly_twice",
+            "purpose": "reveal",
+            "text_ar": "أظن أن الأصل اختفى ثم عاد، أو أن أحداً بدّله ثم أعاده. لا أرى تفسيراً آخر الآن.",
+            "claim_ids": [
+              "cl_layla_twice"
+            ]
+          },
+          {
+            "line_id": "ly_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "ليس لدي دليل يدعم ذلك."
+          },
+          {
+            "line_id": "ly_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "فلنعد إلى الأصل وبطاقاته، فهذا ما يهمني الآن."
+          },
+          {
+            "line_id": "ly_bye",
+            "purpose": "farewell",
+            "text_ar": "أرجو أن تقرأ الأوراق قبل أن تحكم على أحد."
+          }
+        ]
+      },
+      {
+        "id": "mona",
+        "name_ar": "منى الصيرفي",
+        "role": "suspect",
+        "age_descriptor_ar": "فنية فهرسة في أوائل الثلاثينات",
+        "persona_ar": "مجتهدة وتعمل تحت ضغط الموعد، وتخشى أن يُنسب إليها خطأ حين يتعطل نظام جديد.",
+        "motives_ar": [
+          "ألا تُلام على التباس السجل",
+          "أن تنهي الإدخال قبل الإغلاق"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": [
+            "اتهام زملاء دون سند"
+          ]
+        },
+        "authored_lines": [
+          {
+            "line_id": "mn_greet",
+            "purpose": "greeting",
+            "text_ar": "تفضّل. كان يوم نقل الفهرسة طويلاً، وسأقول ما دوّنته."
+          },
+          {
+            "line_id": "mn_memo",
+            "purpose": "reveal",
+            "text_ar": "كتبتُ مذكرة لرئيس القسم أنبّه فيها إلى أن الاسم المختصر والرقم المحلي لا يكفيان للتمييز بين النسخ.",
+            "fact_ids": [
+              "f_memo_exists"
+            ]
+          },
+          {
+            "line_id": "mn_migration",
+            "purpose": "reveal",
+            "text_ar": "في قائمة المراجعة يوم النقل سجّلنا البطاقات التي وجدناها والتي لم نجدها.",
+            "fact_ids": [
+              "f_migration_list"
+            ]
+          },
+          {
+            "line_id": "mn_nochange",
+            "purpose": "lie",
+            "text_ar": "لم أغيّر شيئاً في الوصف. نقلتُ البطاقات كما وجدتها.",
+            "claim_ids": [
+              "cl_mona_nochange"
+            ]
+          },
+          {
+            "line_id": "mn_refuse",
+            "purpose": "refuse_secret",
+            "text_ar": "لا أرى أن في هذا ما يفيد الملف."
+          },
+          {
+            "line_id": "mn_break",
+            "purpose": "break_down",
+            "text_ar": "نعم... لم أجد بطاقة وصف A-114 قبل الإغلاق، فنسخت وصف B-114 إلى السجل الموحّد مؤقتاً لأكمل الإدخال. نويت أن أصحّحه ثم نسيت أن أعلّمه.",
+            "fact_ids": [
+              "f_desc_reused"
+            ]
+          },
+          {
+            "line_id": "mn_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "ليس لدي دليل يدعم ذلك."
+          },
+          {
+            "line_id": "mn_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن الفهرسة والبطاقات فقط."
+          },
+          {
+            "line_id": "mn_bye",
+            "purpose": "farewell",
+            "text_ar": "كنت أتمنى لو علّمتُ ذلك الإدخال."
+          }
+        ]
+      },
+      {
+        "id": "saeed",
+        "name_ar": "سعيد الخطيب",
+        "role": "witness",
+        "age_descriptor_ar": "أمين السجلات في الأربعينات",
+        "persona_ar": "منظّم وقليل الكلام، يعتمد على الدفاتر ولا يعتمد على الذاكرة.",
+        "motives_ar": [
+          "أن تبقى سجلات الجرد والنقل سليمة"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "sd_greet",
+            "purpose": "greeting",
+            "text_ar": "السجلات أمامي. أقول ما فيها."
+          },
+          {
+            "line_id": "sd_ledger",
+            "purpose": "reveal",
+            "text_ar": "سجل الجرد يدوّن مكان كل نسخة برقم حفظها الكامل، ويمكنني إخراج صفحة يوم النقل.",
+            "fact_ids": [
+              "f_ledger_exists"
+            ]
+          },
+          {
+            "line_id": "sd_transfer",
+            "purpose": "reveal",
+            "text_ar": "نقل المخطوطات إلى القاعة يُدوَّن في محضر يوقّعه اثنان.",
+            "fact_ids": [
+              "f_transfer_exists"
+            ]
+          },
+          {
+            "line_id": "sd_vault",
+            "purpose": "reveal",
+            "text_ar": "دخول مخزن المخطوطات يُسجَّل في دفتر الدخول، وهو متاح.",
+            "fact_ids": [
+              "f_vault_log_exists"
+            ]
+          },
+          {
+            "line_id": "sd_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "ليس لدي دليل يدعم ذلك."
+          },
+          {
+            "line_id": "sd_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن الجرد والنقل والمخزن."
+          },
+          {
+            "line_id": "sd_bye",
+            "purpose": "farewell",
+            "text_ar": "الدفاتر تبقى حيث هي."
+          }
+        ]
+      },
+      {
+        "id": "hasan",
+        "name_ar": "حسن المرمّم",
+        "role": "witness",
+        "age_descriptor_ar": "مرمّم مخطوطات في مشغل خارجي",
+        "persona_ar": "هادئ وعملي، يصف ما أمامه بالتفصيل ولا يتحدث عمّا لم يرَه.",
+        "motives_ar": [
+          "أن يُسلَّم العمل في موعده"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "hs_greet",
+            "purpose": "greeting",
+            "text_ar": "أهلاً. نعرف ما استلمناه فقط."
+          },
+          {
+            "line_id": "hs_intake",
+            "purpose": "reveal",
+            "text_ar": "استلمنا من المتحف نسخة واحدة صباح الاثنين، وسجّلنا حالتها وأوصافها في استمارة استلام بإيصال مرقّم.",
+            "fact_ids": [
+              "f_intake_exists"
+            ]
+          },
+          {
+            "line_id": "hs_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "ليس لدي دليل يدعم ذلك."
+          },
+          {
+            "line_id": "hs_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "لا أعرف شيئاً عن القاعة ولا عن الفهرسة."
+          },
+          {
+            "line_id": "hs_bye",
+            "purpose": "farewell",
+            "text_ar": "النسخة ما زالت عندنا إلى أن يتم العمل."
+          }
+        ]
+      }
+    ],
+    "locations": [
+      {
+        "id": "loc_catalog",
+        "name_ar": "قسم الفهرسة",
+        "description_ar": "البطاقات الورقية والنظام الجديد."
+      },
+      {
+        "id": "loc_registry",
+        "name_ar": "سجلات المتحف",
+        "description_ar": "الجرد ومحاضر النقل."
+      },
+      {
+        "id": "loc_vault",
+        "name_ar": "مخزن المخطوطات",
+        "description_ar": "حفظ النسخ خارج العرض."
+      },
+      {
+        "id": "loc_hall",
+        "name_ar": "قاعة العرض",
+        "description_ar": "الصندوق الزجاجي الذي تُعرض فيه المخطوطة."
+      },
+      {
+        "id": "loc_studio",
+        "name_ar": "مشغل الترميم الخارجي",
+        "description_ar": "مشغل يستلم النسخ المتعاقد على ترميمها."
+      }
+    ],
+    "objects": [
+      {
+        "id": "obj_copy_a",
+        "name_ar": "نسخة «رحلة الوراق» رقم A-114",
+        "description_ar": "نسخة من مجموعة الوقف القديم."
+      },
+      {
+        "id": "obj_copy_b",
+        "name_ar": "نسخة «رحلة الوراق» رقم B-114",
+        "description_ar": "نسخة من مجموعة المدرسة العتيقة."
+      }
+    ],
+    "organizations": [
+      {
+        "id": "org_museum",
+        "name_ar": "متحف الوراقين",
+        "description_ar": "متحف خيالي للتراث والمخطوطات."
+      }
+    ]
+  },
+  "truth": {
+    "solution": {
+      "culprit_ids": [
+        "mona"
+      ],
+      "summary_ar": "لم تختفِ مخطوطة ولم يُبدَّل شيء. نسختان مستقلتان تشتركان في الاسم المختصر والرقم المحلي: إحداهما في الترميم، والأخرى في القاعة. وقد التبس وصفهما في السجل الموحّد بعد ضياع بطاقة وصف إحداهما.",
+      "key_fact_ids": [
+        "f_two_copies",
+        "f_catalog_confusion"
+      ]
+    },
+    "facts": [
+      {
+        "id": "f_catalog_shows_both",
+        "statement_ar": "يضع السجل الموحّد لمخطوطة «رحلة الوراق» موقعين لها في اليوم نفسه: الترميم الخارجي ثم قاعة العرض.",
+        "kind": "event",
+        "subject_ids": [
+          "org_museum"
+        ],
+        "spoiler_level": 0
+      },
+      {
+        "id": "f_layla_suspects",
+        "statement_ar": "تظن أمينة المعرض أن الأصل اختفى أو بُدّل ثم أُعيد.",
+        "kind": "attribute",
+        "subject_ids": [
+          "layla"
+        ],
+        "spoiler_level": 0
+      },
+      {
+        "id": "f_hall_label",
+        "statement_ar": "بطاقة العرض في القاعة تقول إن «الأصل» معروض.",
+        "kind": "state",
+        "subject_ids": [
+          "loc_hall"
+        ],
+        "spoiler_level": 0
+      },
+      {
+        "id": "f_card_a_id",
+        "statement_ar": "تحمل بطاقة مجموعة الوقف القديم رقم الحفظ A-114.",
+        "kind": "attribute",
+        "subject_ids": [
+          "obj_copy_a"
+        ],
+        "spoiler_level": 1,
+        "location_id": "loc_catalog"
+      },
+      {
+        "id": "f_card_b_id",
+        "statement_ar": "تحمل بطاقة مجموعة المدرسة العتيقة رقم الحفظ B-114.",
+        "kind": "attribute",
+        "subject_ids": [
+          "obj_copy_b"
+        ],
+        "spoiler_level": 1,
+        "location_id": "loc_catalog"
+      },
+      {
+        "id": "f_a_out",
+        "statement_ar": "خرجت النسخة A-114 إلى الترميم الخارجي نحو الساعة 09:10 بإيصال مرقّم.",
+        "kind": "event",
+        "subject_ids": [
+          "obj_copy_a",
+          "hasan"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 70,
+          "precision": "exact"
+        },
+        "location_id": "loc_studio"
+      },
+      {
+        "id": "f_a_plain",
+        "statement_ar": "سجّل المشغل عند الاستلام أن النسخة A-114 بغلاف جلد بني بسيط بلا ختم و96 ورقة.",
+        "kind": "attribute",
+        "subject_ids": [
+          "obj_copy_a",
+          "hasan"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 85,
+          "precision": "exact"
+        },
+        "location_id": "loc_studio"
+      },
+      {
+        "id": "f_b_to_hall",
+        "statement_ar": "نُقلت النسخة B-114 من المخزن إلى قاعة العرض نحو الساعة 15:20 بمحضر موقّع.",
+        "kind": "event",
+        "subject_ids": [
+          "obj_copy_b",
+          "saeed"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 440,
+          "precision": "exact"
+        },
+        "location_id": "loc_hall"
+      },
+      {
+        "id": "f_hall_seal",
+        "statement_ar": "على غلاف النسخة المعروضة ختم زخرفي بارز.",
+        "kind": "attribute",
+        "subject_ids": [
+          "obj_copy_b",
+          "loc_hall"
+        ],
+        "spoiler_level": 1,
+        "location_id": "loc_hall"
+      },
+      {
+        "id": "f_vault_entry",
+        "statement_ar": "دخل أمين السجلات مخزن المخطوطات نحو 15:05 وأخرج مخطوطة واحدة دون تدوين رقمها.",
+        "kind": "event",
+        "subject_ids": [
+          "saeed",
+          "loc_vault"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 425,
+          "precision": "exact"
+        },
+        "location_id": "loc_vault"
+      },
+      {
+        "id": "f_shared_local_no",
+        "statement_ar": "الاسم المختصر والرقم المحلي 114 يتكرران عند مجموعتين مختلفتين، وقد نبّهت فنية الفهرسة إلى ذلك قبل الظهر.",
+        "kind": "state",
+        "subject_ids": [
+          "mona",
+          "org_museum"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 140,
+          "precision": "approx"
+        },
+        "location_id": "loc_catalog"
+      },
+      {
+        "id": "f_a_desc_card_lost",
+        "statement_ar": "لم تُعثر على بطاقة الوصف المادي للنسخة A-114 أثناء نقل الفهرسة.",
+        "kind": "event",
+        "subject_ids": [
+          "obj_copy_a",
+          "mona"
+        ],
+        "spoiler_level": 2,
+        "time": {
+          "start_min": 180,
+          "precision": "approx"
+        },
+        "location_id": "loc_catalog"
+      },
+      {
+        "id": "f_crop_prefix",
+        "statement_ar": "اللقطة المنشورة قصّت من البطاقة اسم المجموعة وحرف رقم الحفظ وأبقت 114 وحدها.",
+        "kind": "relation",
+        "subject_ids": [
+          "obj_copy_a",
+          "obj_copy_b"
+        ],
+        "spoiler_level": 2,
+        "location_id": "loc_catalog"
+      },
+      {
+        "id": "f_layla_complaint",
+        "statement_ar": "كتبت أمينة المعرض مذكرة تعترض فيها على ظهور الأصل في موقعين.",
+        "kind": "event",
+        "subject_ids": [
+          "layla"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 1560,
+          "precision": "approx"
+        }
+      },
+      {
+        "id": "f_layla_clip",
+        "statement_ar": "نشرت نشرة المتحف صورة مقصوصة لبطاقة مكتوب عليها «الأصل».",
+        "kind": "event",
+        "subject_ids": [
+          "layla",
+          "org_museum"
+        ],
+        "spoiler_level": 1
+      },
+      {
+        "id": "f_memo_exists",
+        "statement_ar": "كتبت فنية الفهرسة مذكرة داخلية عن التباس الاسم المختصر.",
+        "kind": "event",
+        "subject_ids": [
+          "mona"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 140,
+          "precision": "approx"
+        },
+        "location_id": "loc_catalog"
+      },
+      {
+        "id": "f_migration_list",
+        "statement_ar": "قائمة مراجعة نقل الفهرسة تدوّن البطاقات الموجودة والمفقودة.",
+        "kind": "state",
+        "subject_ids": [
+          "mona",
+          "loc_catalog"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 180,
+          "precision": "approx"
+        },
+        "location_id": "loc_catalog"
+      },
+      {
+        "id": "f_ledger_exists",
+        "statement_ar": "يدوّن سجل الجرد موقع كل نسخة برقم حفظها الكامل.",
+        "kind": "state",
+        "subject_ids": [
+          "saeed",
+          "loc_registry"
+        ],
+        "spoiler_level": 1,
+        "location_id": "loc_registry"
+      },
+      {
+        "id": "f_transfer_exists",
+        "statement_ar": "يوثّق محضر موقّع كل نقل إلى قاعة العرض.",
+        "kind": "state",
+        "subject_ids": [
+          "saeed",
+          "loc_registry"
+        ],
+        "spoiler_level": 1,
+        "location_id": "loc_registry"
+      },
+      {
+        "id": "f_vault_log_exists",
+        "statement_ar": "يسجّل دفتر دخول المخزن كل دخول وخروج.",
+        "kind": "state",
+        "subject_ids": [
+          "saeed",
+          "loc_vault"
+        ],
+        "spoiler_level": 1,
+        "location_id": "loc_vault"
+      },
+      {
+        "id": "f_intake_exists",
+        "statement_ar": "يملأ المشغل استمارة استلام بإيصال مرقّم لكل نسخة يستلمها.",
+        "kind": "state",
+        "subject_ids": [
+          "hasan",
+          "loc_studio"
+        ],
+        "spoiler_level": 1,
+        "location_id": "loc_studio"
+      },
+      {
+        "id": "f_desc_reused",
+        "statement_ar": "كُتب وصف النسخة المعروضة في خانة الوصف الموحّدة بدل وصف النسخة التي غابت بطاقتها، وبقيت الخانة دون تعليم.",
+        "kind": "event",
+        "subject_ids": [
+          "mona",
+          "obj_copy_b",
+          "obj_copy_a"
+        ],
+        "spoiler_level": 3,
+        "time": {
+          "start_min": 285,
+          "precision": "exact"
+        },
+        "location_id": "loc_catalog",
+        "science_ko_refs": [
+          "KO-RS-05-014"
+        ]
+      },
+      {
+        "id": "f_two_copies",
+        "statement_ar": "في المتحف مخطوطتان مستقلتان لا واحدة: A-114 خارج المبنى، وB-114 معروضة.",
+        "kind": "relation",
+        "subject_ids": [
+          "obj_copy_a",
+          "obj_copy_b"
+        ],
+        "spoiler_level": 3,
+        "science_ko_refs": [
+          "KO-RS-06-017"
+        ]
+      },
+      {
+        "id": "f_catalog_confusion",
+        "statement_ar": "اجتمع تشابه الاسم المختصر وتطابق الرقم المحلي مع ضياع بطاقة وصف إحداهما، فاختلط وصفاهما في السجل الموحّد.",
+        "kind": "relation",
+        "subject_ids": [
+          "mona",
+          "org_museum"
+        ],
+        "spoiler_level": 3,
+        "time": {
+          "start_min": 285,
+          "precision": "exact"
+        },
+        "location_id": "loc_catalog",
+        "science_ko_refs": [
+          "KO-RS-05-004"
+        ]
+      }
+    ],
+    "claims": [
+      {
+        "id": "cl_layla_twice",
+        "statement_ar": "الأصل اختفى ثم عاد، أو بُدّل ثم أُعيد.",
+        "kind": "honest_mistake",
+        "held_by": [
+          "layla"
+        ],
+        "true_fact_id": "f_two_copies",
+        "contradicted_by_evidence_ids": [
+          "ev_inventory",
+          "ev_transfer_minutes"
+        ]
+      },
+      {
+        "id": "cl_mona_nochange",
+        "statement_ar": "لم أغيّر شيئاً في الوصف؛ نقلت البطاقات كما وجدتها.",
+        "kind": "half_truth",
+        "held_by": [
+          "mona"
+        ],
+        "true_fact_id": "f_desc_reused",
+        "contradicted_by_evidence_ids": [
+          "ev_db_record",
+          "ev_restoration_intake"
+        ]
+      }
+    ]
+  },
+  "timeline": [
+    {
+      "id": "te_a_out",
+      "description_ar": "خروج النسخة A-114 إلى مشغل الترميم الخارجي.",
+      "time": {
+        "start_min": 70,
+        "precision": "exact"
+      },
+      "location_id": "loc_studio",
+      "actor_ids": [
+        "hasan"
+      ],
+      "fact_ids": [
+        "f_a_out",
+        "f_a_plain"
+      ],
+      "motivated_by_ar": "ترميم متعاقد عليه من قبل"
+    },
+    {
+      "id": "te_memo",
+      "description_ar": "مذكرة الفهرسة عن تكرار الاسم المختصر والرقم 114.",
+      "time": {
+        "start_min": 140,
+        "precision": "approx"
+      },
+      "location_id": "loc_catalog",
+      "actor_ids": [
+        "mona"
+      ],
+      "fact_ids": [
+        "f_shared_local_no",
+        "f_memo_exists"
+      ],
+      "motivated_by_ar": "لاحظت التكرار أثناء الإدخال"
+    },
+    {
+      "id": "te_card_lost",
+      "description_ar": "تعذّر العثور على بطاقة وصف A-114 أثناء نقل الفهرسة.",
+      "time": {
+        "start_min": 180,
+        "precision": "approx"
+      },
+      "location_id": "loc_catalog",
+      "actor_ids": [],
+      "fact_ids": [
+        "f_a_desc_card_lost",
+        "f_migration_list"
+      ]
+    },
+    {
+      "id": "te_record",
+      "description_ar": "إنشاء السجل الموحّد وإدخال الوصف.",
+      "time": {
+        "start_min": 285,
+        "precision": "exact"
+      },
+      "location_id": "loc_catalog",
+      "actor_ids": [
+        "mona"
+      ],
+      "fact_ids": [
+        "f_desc_reused",
+        "f_catalog_confusion"
+      ],
+      "motivated_by_ar": "أرادت إنهاء الإدخال قبل الإغلاق"
+    },
+    {
+      "id": "te_vault",
+      "description_ar": "دخول أمين السجلات إلى المخزن لإخراج النسخة المقرّر عرضها.",
+      "time": {
+        "start_min": 425,
+        "precision": "exact"
+      },
+      "location_id": "loc_vault",
+      "actor_ids": [
+        "saeed"
+      ],
+      "fact_ids": [
+        "f_vault_entry"
+      ],
+      "motivated_by_ar": "تجهيز القاعة لافتتاح المعرض"
+    },
+    {
+      "id": "te_hall",
+      "description_ar": "نقل B-114 إلى قاعة العرض بمحضر موقّع.",
+      "time": {
+        "start_min": 440,
+        "precision": "exact"
+      },
+      "location_id": "loc_hall",
+      "actor_ids": [
+        "saeed"
+      ],
+      "fact_ids": [
+        "f_b_to_hall",
+        "f_hall_seal"
+      ],
+      "motivated_by_ar": "تركيب النسخة قبل الافتتاح"
+    },
+    {
+      "id": "te_complaint",
+      "description_ar": "أمينة المعرض تكتب مذكرتها عن الأصل في موقعين.",
+      "time": {
+        "start_min": 1560,
+        "precision": "approx"
+      },
+      "location_id": "loc_hall",
+      "actor_ids": [
+        "layla"
+      ],
+      "fact_ids": [
+        "f_layla_complaint"
+      ],
+      "motivated_by_ar": "اطّلعت على السجل الموحّد صباح اليوم التالي"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_card_a",
+      "title_ar": "بطاقة مجموعة الوقف القديم",
+      "kind": "documentary",
+      "content_ar": "متحف الوراقين — بطاقة مجموعة (ورقية)\nالمجموعة: الوقف القديم\nرقم الحفظ: A-114\nالاسم المختصر: رحلة الوراق\nالصفة: أصل بخط المؤلف\nسجل الرحلة: يبدأ بعبارة «خرجنا مع الفجر من باب المدينة…»\nملاحظة: بطاقة الوصف المادي منفصلة عن هذه البطاقة.",
+      "acquired_by_action_ids": [
+        "a_read_card_a"
+      ],
+      "supports_fact_ids": [
+        "f_card_a_id"
+      ],
+      "reliability": "strong",
+      "limits_ar": "تثبت رقم الحفظ ومجموعته كما كُتبا على البطاقة؛ لا تثبت مكان النسخة الآن ولا وصفها المادي.",
+      "location_id": "loc_catalog"
+    },
+    {
+      "id": "ev_card_b",
+      "title_ar": "بطاقة مجموعة المدرسة العتيقة",
+      "kind": "documentary",
+      "content_ar": "متحف الوراقين — بطاقة مجموعة (ورقية)\nالمجموعة: المدرسة العتيقة\nرقم الحفظ: B-114\nالاسم المختصر: رحلة الوراق\nالصفة: أصل بخط المؤلف\nسجل الرحلة: يبدأ بعبارة «خرجنا مع الفجر من باب المدينة…»\nملاحظة: بطاقة الوصف المادي منفصلة عن هذه البطاقة.",
+      "acquired_by_action_ids": [
+        "a_read_card_b"
+      ],
+      "supports_fact_ids": [
+        "f_card_b_id"
+      ],
+      "reliability": "strong",
+      "limits_ar": "تثبت رقم الحفظ ومجموعته كما كُتبا على البطاقة؛ لا تثبت مكان النسخة الآن ولا وصفها المادي.",
+      "location_id": "loc_catalog"
+    },
+    {
+      "id": "ev_db_record",
+      "title_ar": "السجل الموحّد في نظام الفهرسة الجديد",
+      "kind": "digital",
+      "content_ar": "نظام الفهرسة الجديد — سجل موحّد\nالعنوان المختصر: رحلة الوراق\nالمعرّف المحلي: 114\nالوصف المادي: جلد مزخرف بختم بارز على الغلاف، 88 ورقة\nالموقع الحالي: قاعة العرض (حُدّث 15:25)\nسجل المواقع: ترميم خارجي (09:10) ثم قاعة العرض (15:20)\nأُنشئ السجل: 12:45 — فنية الفهرسة",
+      "acquired_by_action_ids": [
+        "a_open_record"
+      ],
+      "supports_fact_ids": [
+        "f_catalog_shows_both"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "عرض تجميعي في النظام الجديد، لا مصدر أصلي؛ يضمّ ما نُقل إليه من أكثر من سجل ولا يذكر حرف المجموعة.",
+      "contradicts_claim_ids": [
+        "cl_mona_nochange"
+      ],
+      "location_id": "loc_catalog"
+    },
+    {
+      "id": "ev_gallery_photo",
+      "title_ar": "صورة الصندوق الزجاجي في القاعة",
+      "kind": "observation",
+      "content_ar": "صورة التُقطت بعد التركيب: المخطوطة المعروضة في الصندوق الزجاجي، وعلى غلافها ختم زخرفي بارز. بطاقة العرض بجانبها تحمل كلمة «الأصل».",
+      "acquired_by_action_ids": [
+        "a_view_hall"
+      ],
+      "supports_fact_ids": [
+        "f_hall_seal",
+        "f_hall_label"
+      ],
+      "reliability": "strong",
+      "limits_ar": "تُظهر شكل النسخة المعروضة فقط؛ لا تقول أي رقم حفظ هي ولا ما في المشغل الخارجي.",
+      "location_id": "loc_hall"
+    },
+    {
+      "id": "ev_crop",
+      "title_ar": "قصاصة بطاقة من نشرة المتحف",
+      "kind": "documentary",
+      "content_ar": "قصاصة من نشرة المتحف (ركن «من كنوزنا»):\n[…]114 | رحلة الوراق | أصل بخط المؤلف\nسجل الرحلة: «خرجنا مع الفجر من باب المدينة…»\n(الجزء العلوي الأيمن من البطاقة مقصوص)",
+      "acquired_by_action_ids": [
+        "a_get_clip"
+      ],
+      "supports_fact_ids": [
+        "f_crop_prefix",
+        "f_layla_clip"
+      ],
+      "reliability": "weak",
+      "limits_ar": "لقطة منشورة بعد القص: لا تُظهر المجموعة ولا الحرف السابق للرقم، فلا تكفي لتحديد أي النسختين تقصد.",
+      "is_red_herring": true,
+      "location_id": "loc_catalog"
+    },
+    {
+      "id": "ev_transfer_minutes",
+      "title_ar": "محضر نقل إلى قاعة العرض",
+      "kind": "documentary",
+      "content_ar": "محضر نقل مخطوطات إلى قاعة العرض — الاثنين 15:20\nالمنقول: رحلة الوراق — رقم الحفظ B-114\nمن: مخزن المخطوطات   إلى: قاعة العرض\nالمسلِّم: س. الخطيب   المستلم: فني العرض\nالتوقيعان: موجودان",
+      "acquired_by_action_ids": [
+        "a_get_transfer"
+      ],
+      "supports_fact_ids": [
+        "f_b_to_hall"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يثبت أن B-114 بالذات نُقلت إلى القاعة في ذلك الوقت؛ لا يخبر عن مكان A-114 ولا عن سبب الالتباس في الفهرسة.",
+      "contradicts_claim_ids": [
+        "cl_layla_twice"
+      ],
+      "location_id": "loc_registry"
+    },
+    {
+      "id": "ev_inventory",
+      "title_ar": "سجل جرد المخطوطات (صفحة الاثنين)",
+      "kind": "documentary",
+      "content_ar": "سجل جرد مخطوطات المتحف — الاثنين\nA-114 | رحلة الوراق | خروج 09:10 إلى مشغل الترميم الخارجي | إيصال R-2207 | موقّع من المشغل\nB-114 | رحلة الوراق | في المخزن حتى 15:20 ثم قاعة العرض",
+      "acquired_by_action_ids": [
+        "a_get_ledger"
+      ],
+      "supports_fact_ids": [
+        "f_a_out"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يثبت خروج A-114 بإيصال؛ لا يثبت حالتها المادية ولا يشرح الالتباس في سجل الفهرسة.",
+      "contradicts_claim_ids": [
+        "cl_layla_twice"
+      ],
+      "location_id": "loc_registry"
+    },
+    {
+      "id": "ev_restoration_intake",
+      "title_ar": "استمارة استلام المشغل الخارجي",
+      "kind": "documentary",
+      "content_ar": "استمارة استلام — مشغل الترميم الخارجي\nالاثنين 09:25 | الإيصال R-2207\nالمستلَم: «رحلة الوراق» — رقم الحفظ A-114 (الوقف القديم)\nالوصف عند الاستلام: غلاف جلد بني بسيط بلا ختم، 96 ورقة\nالمستلِم: ح. المرمّم",
+      "acquired_by_action_ids": [
+        "a_get_intake"
+      ],
+      "supports_fact_ids": [
+        "f_a_plain",
+        "f_a_out"
+      ],
+      "reliability": "strong",
+      "limits_ar": "مصدر مستقل عن المتحف يصف النسخة التي استلمها بوصفها وقت التسليم؛ لا يخبر عمّا كُتب في سجل الفهرسة.",
+      "contradicts_claim_ids": [
+        "cl_mona_nochange"
+      ],
+      "location_id": "loc_studio"
+    },
+    {
+      "id": "ev_vault_log",
+      "title_ar": "دفتر دخول مخزن المخطوطات",
+      "kind": "documentary",
+      "content_ar": "دفتر دخول مخزن المخطوطات — الاثنين\n15:05 | دخول: س. الخطيب | بلا مرافق | إخراج: مخطوطة واحدة (خانة الرقم فارغة)\n15:12 | خروج: س. الخطيب",
+      "acquired_by_action_ids": [
+        "a_get_vault"
+      ],
+      "supports_fact_ids": [
+        "f_vault_entry"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "يثبت دخولاً وإخراج مخطوطة واحدة؛ لا رقمها ولا وجهتها، وخانة فارغة تدل على إهمال في التعبئة لا على فعل بعينه.",
+      "is_red_herring": true,
+      "location_id": "loc_vault"
+    },
+    {
+      "id": "ev_index_memo",
+      "title_ar": "مذكرة فهرسة داخلية",
+      "kind": "documentary",
+      "content_ar": "مذكرة فهرسة داخلية — الاثنين 10:20\nمن: فنية الفهرسة   إلى: رئيس القسم\nالموضوع: الاسم المختصر «رحلة الوراق» يرد في مجموعتين، والنظام الجديد يعطي الرقم المحلي 114 لكليهما. هذا يسبب التباساً، والأصح اعتماد رقم الحفظ كاملاً بحرفه. لم يُنفَّذ بعد.",
+      "acquired_by_action_ids": [
+        "a_get_memo"
+      ],
+      "supports_fact_ids": [
+        "f_shared_local_no",
+        "f_memo_exists"
+      ],
+      "reliability": "strong",
+      "limits_ar": "تُظهر أن الالتباس كان معروفاً قبل الظهر؛ لا تقول إنه وقع فعلاً ولا كيف.",
+      "location_id": "loc_catalog"
+    },
+    {
+      "id": "ev_migration_log",
+      "title_ar": "قائمة مراجعة نقل الفهرسة",
+      "kind": "documentary",
+      "content_ar": "قائمة مراجعة نقل الفهرسة — الاثنين\nالبند 37: بطاقة الوصف المادي لـ A-114 — لم تُعثر عليها في الدرج (11:00)\nالبند 38: بطاقة الوصف المادي لـ B-114 — موجودة\nالبند 39: السجل الموحّد «رحلة الوراق / 114» — قيد الإنشاء",
+      "acquired_by_action_ids": [
+        "a_get_migration"
+      ],
+      "supports_fact_ids": [
+        "f_a_desc_card_lost",
+        "f_migration_list"
+      ],
+      "reliability": "strong",
+      "limits_ar": "تثبت غياب بطاقة الوصف في ذلك الوقت؛ لا تثبت ما أُدخل في السجل الموحّد بدلاً منها.",
+      "location_id": "loc_catalog"
+    },
+    {
+      "id": "ev_layla_note",
+      "title_ar": "مذكرة أمينة المعرض",
+      "kind": "testimonial",
+      "content_ar": "مذكرة أمينة المعرض:\n«سجل الفهرسة يضع الأصل في الترميم منذ الصباح وفي القاعة منذ العصر. فإما أنه اختفى مرتين، أو أن أحداً بدّله ثم أعاده. أطلب معرفة من فعل ذلك.»",
+      "acquired_by_action_ids": [
+        "a_note_layla"
+      ],
+      "supports_fact_ids": [
+        "f_layla_complaint",
+        "f_layla_suspects"
+      ],
+      "reliability": "weak",
+      "limits_ar": "رأي شخص اطّلع على السجل الموحّد وحده؛ يصف ما بدا له، ولا يستند إلى الأوراق الأصلية.",
+      "location_id": "loc_hall"
+    },
+    {
+      "id": "ev_mona_statement",
+      "title_ar": "إفادة فنية الفهرسة (ملخص)",
+      "kind": "testimonial",
+      "content_ar": "ملخص إفادة فنية الفهرسة، دوّنه أمين اللجنة:\n«قلت في البداية إنني لم أغيّر وصفاً. الصحيح أنني لم أجد بطاقة وصف A-114، فنسخت وصف B-114 إلى السجل الموحّد لأكمل الإدخال قبل الإغلاق، ونويت تصحيحه ولم أعلّمه.»",
+      "acquired_by_action_ids": [
+        "a_note_mona"
+      ],
+      "supports_fact_ids": [
+        "f_desc_reused"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "إقرار شخصي بعد مواجهة بالأوراق؛ يؤيده السجل والاستمارة ولا يحلّ محلهما، ولا يبيّن نيّتها كاملة.",
+      "location_id": "loc_catalog"
+    }
+  ],
+  "evidence_graph": {
+    "inferences": [
+      {
+        "id": "i_two_ids",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_card_a"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_card_b"
+          },
+          {
+            "ref_type": "general_knowledge",
+            "ref_id": "unique_id_vs_name"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_two_copies"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "البطاقتان الأصليتان تحملان رقمي حفظ مختلفين (A-114 وB-114) لمجموعتين مختلفتين؛ والاسم المختصر المشترك لا يجعل الرقمين الفريدين رقماً واحداً.",
+        "skill_ko_refs": [
+          "KO-RS-06-017"
+        ]
+      },
+      {
+        "id": "i_two_places",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_inventory"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_transfer_minutes"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_two_copies"
+        },
+        "relation": "establishes",
+        "strength": "conclusive",
+        "rule_ar": "في اليوم نفسه خرجت A-114 بإيصال إلى المشغل وانتقلت B-114 من المخزن إلى القاعة؛ ما يكون في مكانين معاً نسختان لا نسخة واحدة.",
+        "skill_ko_refs": [
+          "KO-RS-06-017",
+          "KO-RS-06-008"
+        ]
+      },
+      {
+        "id": "i_confusion_a",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_index_memo"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_migration_log"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_catalog_confusion"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "الرقم المحلي 114 مشترك بين مجموعتين، وبطاقة وصف A-114 لم تُوجد، وبطاقة B-114 وحدها كانت متاحة وقت إنشاء السجل الموحّد؛ فشروط الخلط قائمة.",
+        "skill_ko_refs": [
+          "KO-RS-05-004"
+        ]
+      },
+      {
+        "id": "i_confusion_b",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_db_record"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_restoration_intake"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_gallery_photo"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_catalog_confusion"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "السجل الموحّد يصف غلافاً بختم و88 ورقة، وهذا ما تُظهره صورة القاعة، بينما وصف المشغل A-114 بلا ختم و96 ورقة؛ فوصف السجل ينتمي إلى النسخة المعروضة لا إلى نسخة الترميم.",
+        "skill_ko_refs": [
+          "KO-RS-05-014"
+        ]
+      },
+      {
+        "id": "i_crop_prefix",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_crop"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_card_a"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_crop_prefix"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "القصاصة تُبقي 114 وتحذف المجموعة والحرف، أما البطاقة الأصلية فتُظهرهما؛ والحكم يُبنى على الأصل لا على اللقطة.",
+        "skill_ko_refs": [
+          "KO-RS-06-004"
+        ]
+      },
+      {
+        "id": "i_layla_claim",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_inventory"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_transfer_minutes"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_layla_twice"
+        },
+        "relation": "contradicts_claim",
+        "strength": "strong",
+        "rule_ar": "ما ظنّته اختفاءً مرتين هو انتقال نسختين مختلفتين في مكانين مختلفين؛ لا شيء اختفى ولا شيء عاد.",
+        "skill_ko_refs": [
+          "KO-RS-05-001"
+        ]
+      },
+      {
+        "id": "i_mona_claim",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_db_record"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_restoration_intake"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_mona_nochange"
+        },
+        "relation": "contradicts_claim",
+        "strength": "strong",
+        "rule_ar": "وصف السجل الموحّد لا يطابق وصف A-114 عند المشغل؛ فالقول إن البطاقات نُقلت كما هي لا يتفق مع ما في السجل.",
+        "skill_ko_refs": [
+          "KO-RS-05-001"
+        ]
+      },
+      {
+        "id": "i_rule_tamper_docs",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_card_a"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_card_b"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_index_memo"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_tamper"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "بطاقتان لمجموعتين مستقلتين برقمين فريدين، ومذكرة تنبّه إلى تكرار الاسم قبل أي تغيير؛ فكل ما بدا تناقضاً له تفسير إداري ولا يبقى شيء يحتاج إلى تبديل أو تزوير.",
+        "skill_ko_refs": [
+          "KO-RS-06-008"
+        ]
+      },
+      {
+        "id": "i_rule_tamper_moves",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_inventory"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_transfer_minutes"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_tamper"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "A-114 كانت خارج المبنى بإيصال، وB-114 انتقلت إلى القاعة بمحضر موقّع؛ فكل مخطوطة في مكانها الموثّق ولا حاجة إلى افتراض تبديل.",
+        "skill_ko_refs": [
+          "KO-RS-06-008"
+        ]
+      },
+      {
+        "id": "i_vault_explained",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_vault_log"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_transfer_minutes"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_inventory"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_tamper"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "A-114 كانت خارج المبنى قبل دخول المخزن بنحو ست ساعات، والمخطوطة الوحيدة التي أُخرجت هي B-114 بمحضر موقّع؛ فخانة الرقم الفارغة إهمال في التعبئة لا إخراج غير موثّق.",
+        "skill_ko_refs": [
+          "KO-RS-06-008"
+        ]
+      },
+      {
+        "id": "i_rule_insufficient_docs",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_card_a"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_card_b"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_insufficient"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "البطاقتان الأصليتان بحرفيهما ورقميهما كافيتان لتمييز نسختين؛ ولا حاجة لانتظار أصل آخر للسجل.",
+        "skill_ko_refs": [
+          "KO-RS-06-001"
+        ]
+      },
+      {
+        "id": "i_rule_insufficient_moves",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_inventory"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_transfer_minutes"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_insufficient"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "جرد يضع A-114 خارج المبنى ومحضر يضع B-114 في القاعة يكفيان للفصل في الهوية دون أصل آخر.",
+        "skill_ko_refs": [
+          "KO-RS-06-001"
+        ]
+      },
+      {
+        "id": "i_support_identity",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_two_copies"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_catalog_confusion"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_identity"
+        },
+        "relation": "supports",
+        "strength": "strong",
+        "rule_ar": "نسختان مستقلتان وخلط وصف بسبب اسم مشترك وبطاقة مفقودة يفسّران كل ما بدا تناقضاً من غير افتراض فعل متعمد.",
+        "skill_ko_refs": [
+          "KO-RS-05-002"
+        ]
+      }
+    ]
+  },
+  "character_knowledge": [
+    {
+      "character_id": "layla",
+      "knows": [
+        {
+          "fact_id": "f_layla_complaint",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_layla_clip",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": [
+        {
+          "claim_id": "cl_layla_twice",
+          "stance": "sincere"
+        }
+      ]
+    },
+    {
+      "character_id": "mona",
+      "knows": [
+        {
+          "fact_id": "f_memo_exists",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_migration_list",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [
+        {
+          "fact_id": "f_desc_reused",
+          "reveal_when": {
+            "all": [
+              {
+                "presented": {
+                  "evidence_id": "ev_db_record",
+                  "to_character": "mona"
+                }
+              },
+              {
+                "presented": {
+                  "evidence_id": "ev_restoration_intake",
+                  "to_character": "mona"
+                }
+              }
+            ]
+          },
+          "cover_claim_id": "cl_mona_nochange",
+          "reveal_line_id": "mn_break"
+        }
+      ],
+      "believes": [
+        {
+          "claim_id": "cl_mona_nochange",
+          "stance": "deliberate_lie"
+        }
+      ]
+    },
+    {
+      "character_id": "saeed",
+      "knows": [
+        {
+          "fact_id": "f_ledger_exists",
+          "access": "professional",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_transfer_exists",
+          "access": "professional",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_vault_log_exists",
+          "access": "professional",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    },
+    {
+      "character_id": "hasan",
+      "knows": [
+        {
+          "fact_id": "f_intake_exists",
+          "access": "professional",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "h_tamper",
+      "statement_ar": "حدث عبث متعمد: بُدّلت المخطوطة الأصلية أو سُرّب وصفها أو زُوّرت إحدى بطاقاتها.",
+      "is_true": false,
+      "plausibility_at_start": "high",
+      "suspect_id": "saeed"
+    },
+    {
+      "id": "h_identity",
+      "statement_ar": "التبس الأمر في الفهرسة: نسختان أصليتان مستقلتان تحملان الاسم المختصر نفسه، واختلط وصفاهما حين فُقدت بطاقة إحداهما.",
+      "is_true": true,
+      "plausibility_at_start": "low",
+      "suspect_id": "mona"
+    },
+    {
+      "id": "h_insufficient",
+      "statement_ar": "لا تكفي الأدلة للفصل بين العبث والالتباس قبل العثور على أصل آخر للسجل.",
+      "is_true": false,
+      "plausibility_at_start": "medium"
+    }
+  ],
+  "misdirection_plan": [
+    {
+      "id": "rh_vault",
+      "points_to_hypothesis_id": "h_tamper",
+      "planted_via_ar": "دفتر المخزن يُظهر دخولاً منفرداً بلا مرافق وإخراج مخطوطة بلا رقم قبل ظهور الأصل في القاعة.",
+      "evidence_ids": [
+        "ev_vault_log"
+      ],
+      "refuted_by_inference_ids": [
+        "i_vault_explained",
+        "i_rule_tamper_moves"
+      ],
+      "fairness_note_ar": "الجرد ومحضر النقل متاحان لمن يسأل أمين السجلات؛ وهما يضعان A-114 خارج المبنى ويوثّقان نقل B-114 بتوقيعين."
+    },
+    {
+      "id": "rh_crop",
+      "points_to_hypothesis_id": "h_insufficient",
+      "planted_via_ar": "القصاصة المنشورة تُظهر 114 وحدها، فتبدو الوثيقتان وصفاً لشيء واحد لا يمكن الفصل فيه.",
+      "evidence_ids": [
+        "ev_crop"
+      ],
+      "refuted_by_inference_ids": [
+        "i_crop_prefix",
+        "i_rule_insufficient_docs"
+      ],
+      "fairness_note_ar": "البطاقتان الأصليتان متاحتان من أول الملف وتحملان الحرف والمجموعة؛ والقصاصة نفسها تنبّه بقولها إن جزءاً منها مقصوص."
+    }
+  ],
+  "learning_objectives": [
+    {
+      "id": "lo_claim",
+      "statement_ar": "يفرّق بين اسم الشيء ومعرّفه الفريد، ويصنّف المصادر قبل الاعتماد عليها.",
+      "skill_ko_ref": "KO-RS-05-001",
+      "observable_behaviors_ar": [
+        "يصنّف البطاقات والإفادات واللقطات",
+        "يقارن الأرقام الفريدة قبل وصف أحد بالخطأ"
+      ],
+      "evidence_sources": [
+        "evidence_board"
+      ]
+    },
+    {
+      "id": "lo_timeline",
+      "statement_ar": "يضع الأحداث على خط زمني ليفسّر التعارض الظاهر.",
+      "skill_ko_ref": "KO-RS-05-005",
+      "observable_behaviors_ar": [
+        "يضع الأدلة في أزمنتها"
+      ],
+      "evidence_sources": [
+        "timeline_task",
+        "action_log"
+      ]
+    },
+    {
+      "id": "lo_hyp",
+      "statement_ar": "يوازن بين فرضيتين على الأقل ويستبعد ما تنقضه الأدلة.",
+      "skill_ko_ref": "KO-RS-05-002",
+      "observable_behaviors_ar": [
+        "يضيف فرضيات",
+        "يستبعد بدليل"
+      ],
+      "evidence_sources": [
+        "hypothesis_ledger"
+      ]
+    },
+    {
+      "id": "lo_diag",
+      "statement_ar": "يقدّر ما يثبته الدليل وما لا يثبته، ويرجع إلى الأصل لا اللقطة المقصوصة.",
+      "skill_ko_ref": "KO-RS-06-001",
+      "observable_behaviors_ar": [
+        "يربط الدليل بالفرضية باتجاه صحيح"
+      ],
+      "evidence_sources": [
+        "evidence_board",
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_calib",
+      "statement_ar": "يصوغ ثقته بحدودها.",
+      "skill_ko_ref": "KO-RS-06-021",
+      "observable_behaviors_ar": [
+        "يختار ثقة معقولة",
+        "يذكر حدوداً"
+      ],
+      "evidence_sources": [
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_revise",
+      "statement_ar": "يراجع رأيه الأول حين يظهر دليل جديد.",
+      "skill_ko_ref": "KO-RS-06-009",
+      "observable_behaviors_ar": [
+        "يغيّر فرضيته الرائدة بدليل"
+      ],
+      "evidence_sources": [
+        "hypothesis_ledger"
+      ]
+    }
+  ],
+  "mechanics": {
+    "time_budget_units": 30,
+    "actions": [
+      {
+        "id": "a_read_card_a",
+        "type": "examine",
+        "label_ar": "اقرأ بطاقة مجموعة الوقف القديم",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_card_a"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_catalog",
+        "telemetry_code": "READ_CARD_A"
+      },
+      {
+        "id": "a_read_card_b",
+        "type": "examine",
+        "label_ar": "اقرأ بطاقة مجموعة المدرسة العتيقة",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_card_b"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_catalog",
+        "telemetry_code": "READ_CARD_B"
+      },
+      {
+        "id": "a_open_record",
+        "type": "examine",
+        "label_ar": "افتح السجل الموحّد في نظام الفهرسة الجديد",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_db_record"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_catalog",
+        "telemetry_code": "OPEN_RECORD"
+      },
+      {
+        "id": "a_view_hall",
+        "type": "search_location",
+        "label_ar": "عاين الصندوق الزجاجي في قاعة العرض",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_gallery_photo"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_hall",
+        "telemetry_code": "VIEW_HALL"
+      },
+      {
+        "id": "a_get_clip",
+        "type": "examine",
+        "label_ar": "اطلب قصاصة النشرة من الأمينة",
+        "precondition": {
+          "fact_unlocked": "f_layla_clip"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_crop"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "layla",
+        "telemetry_code": "GET_CLIP"
+      },
+      {
+        "id": "a_note_layla",
+        "type": "examine",
+        "label_ar": "دوّن مذكرة الأمينة",
+        "precondition": {
+          "fact_unlocked": "f_layla_complaint"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_layla_note"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "layla",
+        "telemetry_code": "NOTE_LAYLA"
+      },
+      {
+        "id": "a_get_ledger",
+        "type": "examine",
+        "label_ar": "اطلب صفحة الجرد من أمين السجلات",
+        "precondition": {
+          "fact_unlocked": "f_ledger_exists"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_inventory"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_registry",
+        "telemetry_code": "GET_LEDGER"
+      },
+      {
+        "id": "a_get_transfer",
+        "type": "examine",
+        "label_ar": "اطلب محضر النقل",
+        "precondition": {
+          "fact_unlocked": "f_transfer_exists"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_transfer_minutes"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_registry",
+        "telemetry_code": "GET_TRANSFER"
+      },
+      {
+        "id": "a_get_vault",
+        "type": "search_location",
+        "label_ar": "اطلب دفتر دخول المخزن",
+        "precondition": {
+          "fact_unlocked": "f_vault_log_exists"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_vault_log"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_vault",
+        "telemetry_code": "GET_VAULT"
+      },
+      {
+        "id": "a_get_memo",
+        "type": "examine",
+        "label_ar": "اطلب مذكرة الفهرسة",
+        "precondition": {
+          "fact_unlocked": "f_memo_exists"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_index_memo"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_catalog",
+        "telemetry_code": "GET_MEMO"
+      },
+      {
+        "id": "a_get_migration",
+        "type": "examine",
+        "label_ar": "اطلب قائمة مراجعة نقل الفهرسة",
+        "precondition": {
+          "fact_unlocked": "f_migration_list"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_migration_log"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_catalog",
+        "telemetry_code": "GET_MIGRATION"
+      },
+      {
+        "id": "a_get_intake",
+        "type": "examine",
+        "label_ar": "اطلب استمارة الاستلام من المشغل",
+        "precondition": {
+          "fact_unlocked": "f_intake_exists"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_restoration_intake"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_studio",
+        "telemetry_code": "GET_INTAKE"
+      },
+      {
+        "id": "a_note_mona",
+        "type": "examine",
+        "label_ar": "دوّن إفادة فنية الفهرسة",
+        "precondition": {
+          "fact_unlocked": "f_desc_reused"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_mona_statement"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "mona",
+        "telemetry_code": "NOTE_MONA"
+      },
+      {
+        "id": "a_int_layla",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة د. ليلى",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "layla",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "layla",
+        "telemetry_code": "INT_LAYLA"
+      },
+      {
+        "id": "a_int_saeed",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة سعيد",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "saeed",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "saeed",
+        "telemetry_code": "INT_SAEED"
+      },
+      {
+        "id": "a_int_mona",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة منى",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "mona",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "mona",
+        "telemetry_code": "INT_MONA"
+      },
+      {
+        "id": "a_int_hasan",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة حسن",
+        "precondition": {
+          "has_evidence": "ev_inventory"
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "hasan",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "hasan",
+        "telemetry_code": "INT_HASAN"
+      },
+      {
+        "id": "p_record_mona",
+        "type": "present_evidence",
+        "label_ar": "اعرض السجل الموحّد على منى",
+        "precondition": {
+          "presented": {
+            "evidence_id": "ev_db_record",
+            "to_character": "mona"
+          }
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "PRESENTED_RECORD_MONA"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "mona",
+        "telemetry_code": "P_RECORD_MONA"
+      },
+      {
+        "id": "p_intake_mona",
+        "type": "present_evidence",
+        "label_ar": "اعرض استمارة المشغل على منى",
+        "precondition": {
+          "presented": {
+            "evidence_id": "ev_restoration_intake",
+            "to_character": "mona"
+          }
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "PRESENTED_INTAKE_MONA"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "mona",
+        "telemetry_code": "P_INTAKE_MONA"
+      },
+      {
+        "id": "a_hint",
+        "type": "request_hint",
+        "label_ar": "اطلب تلميحاً",
+        "precondition": {
+          "always": true
+        },
+        "effects": [],
+        "time_cost_units": 0,
+        "telemetry_code": "REQUEST_HINT"
+      },
+      {
+        "id": "a_accuse",
+        "type": "final_accusation",
+        "label_ar": "قدّم الاستنتاج النهائي",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "SUBMIT"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "FINAL_ACCUSATION"
+      },
+      {
+        "id": "ask_layla_f_layla_complaint",
+        "type": "interview",
+        "label_ar": "[نموذج] layla يذكر f_layla_complaint",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_layla_complaint"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "layla",
+        "telemetry_code": "ASK_LAYLA_F_LAYLA_COMPLAINT"
+      },
+      {
+        "id": "ask_layla_f_layla_clip",
+        "type": "interview",
+        "label_ar": "[نموذج] layla يذكر f_layla_clip",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_layla_clip"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "layla",
+        "telemetry_code": "ASK_LAYLA_F_LAYLA_CLIP"
+      },
+      {
+        "id": "ask_mona_f_memo_exists",
+        "type": "interview",
+        "label_ar": "[نموذج] mona يذكر f_memo_exists",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_memo_exists"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "mona",
+        "telemetry_code": "ASK_MONA_F_MEMO_EXISTS"
+      },
+      {
+        "id": "ask_mona_f_migration_list",
+        "type": "interview",
+        "label_ar": "[نموذج] mona يذكر f_migration_list",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_migration_list"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "mona",
+        "telemetry_code": "ASK_MONA_F_MIGRATION_LIST"
+      },
+      {
+        "id": "ask_mona_f_desc_reused",
+        "type": "interview",
+        "label_ar": "[نموذج] mona يكشف f_desc_reused",
+        "precondition": {
+          "all": [
+            {
+              "always": true
+            },
+            {
+              "all": [
+                {
+                  "presented": {
+                    "evidence_id": "ev_db_record",
+                    "to_character": "mona"
+                  }
+                },
+                {
+                  "presented": {
+                    "evidence_id": "ev_restoration_intake",
+                    "to_character": "mona"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_desc_reused"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "mona",
+        "telemetry_code": "ASK_MONA_F_DESC_REUSED"
+      },
+      {
+        "id": "ask_saeed_f_ledger_exists",
+        "type": "interview",
+        "label_ar": "[نموذج] saeed يذكر f_ledger_exists",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_ledger_exists"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "saeed",
+        "telemetry_code": "ASK_SAEED_F_LEDGER_EXISTS"
+      },
+      {
+        "id": "ask_saeed_f_transfer_exists",
+        "type": "interview",
+        "label_ar": "[نموذج] saeed يذكر f_transfer_exists",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_transfer_exists"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "saeed",
+        "telemetry_code": "ASK_SAEED_F_TRANSFER_EXISTS"
+      },
+      {
+        "id": "ask_saeed_f_vault_log_exists",
+        "type": "interview",
+        "label_ar": "[نموذج] saeed يذكر f_vault_log_exists",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_vault_log_exists"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "saeed",
+        "telemetry_code": "ASK_SAEED_F_VAULT_LOG_EXISTS"
+      },
+      {
+        "id": "ask_hasan_f_intake_exists",
+        "type": "interview",
+        "label_ar": "[نموذج] hasan يذكر f_intake_exists",
+        "precondition": {
+          "has_evidence": "ev_inventory"
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_intake_exists"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "hasan",
+        "telemetry_code": "ASK_HASAN_F_INTAKE_EXISTS"
+      }
+    ]
+  },
+  "state_machine": {
+    "id": "c002",
+    "initial": "briefing",
+    "type": "compound",
+    "states": {
+      "briefing": {
+        "description_ar": "الإحاطة",
+        "type": "atomic",
+        "on": {
+          "START": {
+            "target": "investigating"
+          }
+        }
+      },
+      "investigating": {
+        "description_ar": "التحقيق",
+        "type": "compound",
+        "initial": "gathering",
+        "states": {
+          "gathering": {
+            "type": "atomic",
+            "on": {
+              "OPEN_DEDUCTION": {
+                "target": "deducing"
+              }
+            }
+          },
+          "deducing": {
+            "type": "atomic",
+            "on": {
+              "BACK": {
+                "target": "gathering"
+              }
+            }
+          }
+        },
+        "on": {
+          "SUBMIT": {
+            "target": "review"
+          }
+        }
+      },
+      "review": {
+        "description_ar": "مراجعة",
+        "type": "atomic",
+        "on": {
+          "CLOSE": {
+            "target": "resolved"
+          }
+        }
+      },
+      "resolved": {
+        "description_ar": "إغلاق",
+        "type": "final"
+      }
+    }
+  },
+  "dialogue": {
+    "max_turns_per_interview": 10,
+    "llm_enabled": false,
+    "topics": [
+      {
+        "id": "t_complaint",
+        "label_ar": "اعتراض الأمينة",
+        "example_questions_ar": [
+          "ما الذي أزعجك في السجل؟",
+          "من أين جاءت صورة البطاقة؟"
+        ],
+        "fact_ids": [
+          "f_layla_complaint",
+          "f_layla_clip"
+        ],
+        "claim_ids": [
+          "cl_layla_twice"
+        ]
+      },
+      {
+        "id": "t_records",
+        "label_ar": "الجرد والنقل والمخزن",
+        "example_questions_ar": [
+          "أين تُدوَّن مواقع النسخ؟",
+          "من يوقّع نقل المخطوطات؟",
+          "هل يُسجَّل دخول المخزن؟"
+        ],
+        "fact_ids": [
+          "f_ledger_exists",
+          "f_transfer_exists",
+          "f_vault_log_exists"
+        ]
+      },
+      {
+        "id": "t_catalog",
+        "label_ar": "الفهرسة ونقل النظام",
+        "example_questions_ar": [
+          "ماذا حدث يوم نقل الفهرسة؟",
+          "هل غيّرتِ شيئاً في الوصف؟"
+        ],
+        "fact_ids": [
+          "f_memo_exists",
+          "f_migration_list",
+          "f_desc_reused"
+        ],
+        "claim_ids": [
+          "cl_mona_nochange"
+        ]
+      },
+      {
+        "id": "t_studio",
+        "label_ar": "استلام المشغل",
+        "example_questions_ar": [
+          "ماذا استلمتم من المتحف؟",
+          "كيف تسجّلون ما تستلمونه؟"
+        ],
+        "fact_ids": [
+          "f_intake_exists"
+        ]
+      }
+    ]
+  },
+  "rubric": {
+    "reference_answer_ar": "لم تختفِ مخطوطة مرتين، ولم يُبدَّل شيء. هناك نسختان أصليتان مستقلتان: A-114 من مجموعة الوقف القديم خرجت إلى الترميم الخارجي بإيصال، وB-114 من المدرسة العتيقة نُقلت إلى القاعة بمحضر موقّع. اشتركت النسختان في الاسم المختصر وفي الرقم المحلي 114، وغابت بطاقة وصف A-114 يوم نقل الفهرسة، فجاء الوصف في السجل الموحّد مطابقاً للنسخة المعروضة. حدود الاستنتاج: لا نعرف كل ما جرى في ذلك اليوم من نية، ولم تُفحص النسختان جنباً إلى جنب.",
+    "criteria": [
+      {
+        "id": "c_source",
+        "name_ar": "استدعاء مصادر مناسبة وتصنيفها",
+        "objective_ids": [
+          "lo_claim"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.25,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يصنّف"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "أخطأ في الأغلب"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "نصف صحيح"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمه صحيح"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كله صحيح"
+          }
+        ]
+      },
+      {
+        "id": "c_conflict",
+        "name_ar": "تفسير التعارض على الخط الزمني",
+        "objective_ids": [
+          "lo_timeline"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.25,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يضع شيئاً"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "وضع قليلاً"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "وضع نصفها صحيحاً"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمها"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كلها في موضعها"
+          }
+        ]
+      },
+      {
+        "id": "c_links",
+        "name_ar": "ربط الأدلة بالفرضيات",
+        "objective_ids": [
+          "lo_diag"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.12,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لا روابط"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "قليلة"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "نصفها صحيح"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمها"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كلها دقيقة"
+          }
+        ]
+      },
+      {
+        "id": "c_elimination",
+        "name_ar": "استبعاد الفرضيات الخاطئة",
+        "objective_ids": [
+          "lo_hyp"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.08,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يستبعد"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "استبعد خطأً"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "فرضية بدليل"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "فرضيتين"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كل الخاطئة"
+          }
+        ]
+      },
+      {
+        "id": "c_uncertainty",
+        "name_ar": "التعامل مع عدم اليقين",
+        "objective_ids": [
+          "lo_calib"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "ثقة مفرطة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "حدود قليلة"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "جزئية"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معقولة"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "معايَرة كاملة"
+          }
+        ]
+      },
+      {
+        "id": "c_revision",
+        "name_ar": "تصحيح الرأي عند الدليل الجديد",
+        "objective_ids": [
+          "lo_revise"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "بقي على فرضية مرفوضة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "لم يعلن فرضية"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "ثبت على فرضية سليمة"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "غيّر بدليل"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "غيّر بدليل ووثّق"
+          }
+        ]
+      },
+      {
+        "id": "c_justification",
+        "name_ar": "جودة الحجة المكتوبة (مراجعة بشرية)",
+        "objective_ids": [
+          "lo_diag",
+          "lo_hyp"
+        ],
+        "scored_by": "human",
+        "weight": 0.0,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لا حجة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "ادعاء بلا سند"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "أدلة دون ربط"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "ربط الأدلة بالاستنتاج"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "ربط مع البدائل والحدود"
+          }
+        ]
+      }
+    ]
+  },
+  "hint_ladder": [
+    {
+      "id": "hg1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "حين تتشابه وثيقتان في الاسم، اسأل: ما الذي يميّز كل واحدة عن الأخرى تمييزاً لا يتكرر؟",
+      "trigger": {
+        "always": true
+      },
+      "assessment_weight": 0.02
+    },
+    {
+      "id": "hg2",
+      "level": 2,
+      "kind": "focus_area",
+      "text_ar": "اقرأ البطاقتين الأصليتين سطراً سطراً، وقارن الخانات التي تختلف بينهما.",
+      "trigger": {
+        "has_evidence": "ev_card_b"
+      },
+      "assessment_weight": 0.04
+    },
+    {
+      "id": "hk1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "قبل أن تقول إن شخصاً أخطأ، هل قارنت الأرقام الفريدة في الأوراق؟",
+      "trigger": {
+        "has_evidence": "ev_db_record"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_two_ids"
+    },
+    {
+      "id": "hk2",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "انظر إلى الحرف الذي يسبق 114 في كل بطاقة، ثم إلى سجل الجرد يوم النقل.",
+      "trigger": {
+        "has_evidence": "ev_db_record"
+      },
+      "assessment_weight": 0.06,
+      "targets_inference_id": "i_two_ids"
+    },
+    {
+      "id": "hk3",
+      "level": 3,
+      "kind": "partial_reveal",
+      "text_ar": "إن كان رقم الحفظ في البطاقتين مختلفاً وكل رقم له موقع موثّق، فهل الحديث عن شيء واحد أم عن شيئين؟",
+      "trigger": {
+        "has_evidence": "ev_db_record"
+      },
+      "assessment_weight": 0.1,
+      "targets_inference_id": "i_two_ids"
+    },
+    {
+      "id": "hc1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "هل الوصف المكتوب في السجل الموحّد يطابق ما كتبه المشغل عن النسخة التي استلمها؟",
+      "trigger": {
+        "has_evidence": "ev_restoration_intake"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_confusion_b"
+    },
+    {
+      "id": "hc2",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "قارن الوصف المادي في السجل الموحّد باستمارة المشغل وبصورة القاعة: أيّهما يشبه؟",
+      "trigger": {
+        "has_evidence": "ev_restoration_intake"
+      },
+      "assessment_weight": 0.06,
+      "targets_inference_id": "i_confusion_b"
+    },
+    {
+      "id": "hc3",
+      "level": 3,
+      "kind": "partial_reveal",
+      "text_ar": "اعرض السجل الموحّد واستمارة المشغل على فنية الفهرسة، وسترى كيف يتغير ما تقوله.",
+      "trigger": {
+        "has_evidence": "ev_restoration_intake"
+      },
+      "assessment_weight": 0.1,
+      "targets_inference_id": "i_confusion_b"
+    }
+  ],
+  "fairness_test": {
+    "requirements": {
+      "min_disjoint_proof_paths": 2,
+      "max_inference_depth": 3,
+      "all_red_herrings_refutable": true,
+      "culprit_uniquely_entailed": true,
+      "no_hidden_fact_dependency": true,
+      "max_required_actions": 30
+    },
+    "runs": []
+  },
+  "ending_explanation": {
+    "steps": [
+      {
+        "order": 1,
+        "text_ar": "البطاقتان الأصليتان تحملان رقمين مختلفين: A-114 لمجموعة الوقف القديم وB-114 للمدرسة العتيقة؛ تطابق الاسم المختصر والرقم المحلي لا يعني تطابق الهوية.",
+        "uses_evidence_ids": [
+          "ev_card_a",
+          "ev_card_b"
+        ],
+        "inference_id": "i_two_ids"
+      },
+      {
+        "order": 2,
+        "text_ar": "الجرد يضع A-114 خارج المبنى منذ 09:10 بإيصال، ومحضر النقل يضع B-114 في القاعة 15:20؛ فنسختان في مكانين، لا نسخة واحدة تنتقل.",
+        "uses_evidence_ids": [
+          "ev_inventory",
+          "ev_transfer_minutes"
+        ],
+        "inference_id": "i_two_places"
+      },
+      {
+        "order": 3,
+        "text_ar": "القصاصة المنشورة قصّت الحرف والمجموعة، فبدت البطاقتان بلا فرق؛ والرجوع إلى الأصل يعيد الفرق.",
+        "uses_evidence_ids": [
+          "ev_crop",
+          "ev_card_a"
+        ],
+        "inference_id": "i_crop_prefix"
+      },
+      {
+        "order": 4,
+        "text_ar": "وصف السجل الموحّد (ختم و88 ورقة) هو وصف النسخة المعروضة كما في الصورة، لا وصف A-114 عند المشغل (بلا ختم و96 ورقة)؛ وقد غابت بطاقة وصف A-114 وقت إنشاء السجل.",
+        "uses_evidence_ids": [
+          "ev_db_record",
+          "ev_restoration_intake",
+          "ev_gallery_photo",
+          "ev_migration_log"
+        ],
+        "inference_id": "i_confusion_b"
+      },
+      {
+        "order": 5,
+        "text_ar": "دخول المخزن المنفرد أخرج مخطوطة واحدة هي المنقولة بمحضر موقّع؛ لا دليل على تبديل أو تسريب.",
+        "uses_evidence_ids": [
+          "ev_vault_log",
+          "ev_transfer_minutes",
+          "ev_inventory"
+        ],
+        "inference_id": "i_vault_explained"
+      },
+      {
+        "order": 6,
+        "text_ar": "نسبة الترجيح هنا عالية للتباس في الفهرسة وفي هوية الوثيقة، لا اختفاء ولا تزوير؛ وهي مبنية على سجلات، لا حكم على نية أحد.",
+        "uses_evidence_ids": [
+          "ev_card_a",
+          "ev_card_b",
+          "ev_inventory",
+          "ev_restoration_intake"
+        ],
+        "inference_id": "i_support_identity"
+      }
+    ],
+    "alternative_paths_ar": [
+      "يمكن الوصول إلى النتيجة من الأوراق وحدها (البطاقتان والمذكرة وقائمة النقل)، أو من الجرد ومحضر النقل واستمارة المشغل وصورة القاعة، دون الاعتماد على إقرار أحد."
+    ],
+    "what_evidence_could_not_show_ar": [
+      "لا تثبت الأدلة لماذا لم تُعلَّم الخانة المنسوخة ولا ما كانت تنوي الفنية فعله بعد ذلك.",
+      "لم تُفحص النسختان جنباً إلى جنب؛ الاعتماد على أوراق وصور ووصف مشغل مستقل."
+    ],
+    "science_notes_ar": [
+      "الاسم المختصر ليس معرّفاً: ما يميّز الشيء رقمه الفريد وسلسلة العهدة الموثّقة له.",
+      "اللقطة المقصوصة لا تغني عن أصل الوثيقة؛ والنتيجة المدعومة بالأدلة ليست دائماً اتهاماً لأحد."
+    ]
+  },
+  "expert_review": [
+    {
+      "role": "narrative_editor",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "scientific_reviewer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "learning_designer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "age_appropriateness",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "cultural_reviewer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "legal_rights",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "safety",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    }
+  ]
+}

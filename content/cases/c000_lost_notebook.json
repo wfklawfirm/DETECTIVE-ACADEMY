@@ -1,0 +1,1869 @@
+{
+  "schema_version": "0.1.0",
+  "case_id": "c000_lost_notebook",
+  "case_version": "0.1.0",
+  "meta": {
+    "title_ar": "دفتر المختبر الضائع",
+    "title_en": "The Lost Lab Notebook",
+    "age_band": "all",
+    "locale": "ar",
+    "dialogue_register": "msa",
+    "estimated_minutes": 12,
+    "difficulty": 1,
+    "content_flags": [
+      "no_violence",
+      "missing_person",
+      "science_lab"
+    ],
+    "authors": [
+      "فريق أثر التحريري (مسودة بمساعدة الذكاء الاصطناعي، لم تُراجَع بشرياً بعد)"
+    ],
+    "knowledge_object_refs": [
+      "KO-RS-05-001",
+      "KO-RS-05-005",
+      "KO-RS-05-002",
+      "KO-RS-06-001",
+      "KO-RS-06-009",
+      "KO-RS-06-021"
+    ]
+  },
+  "premise": {
+    "hook_ar": "دفتر واحد اختفى، وكل الأصابع تشير إلى شخص واحد. لكن السجلات لا تقول ما يقوله الناس.",
+    "player_role_ar": "أنت مراجع ملفات في نادي العلوم بالجامعة، وأول مهامك أن تحسم من أخذ دفتر التجربة.",
+    "setting_ar": "مختبر الكيمياء في الجامعة، عصر يوم الأربعاء. توقيت المبنى المحلي هو توقيت كل السجلات.",
+    "public_fact_ids": [
+      "f_notebook_missing",
+      "f_jamal_suspects",
+      "f_hadi_denies"
+    ],
+    "assumed_general_knowledge_ar": [
+      "ورقة التوقيع تسجّل ما كتبه الموقّعون فقط"
+    ]
+  },
+  "entities": {
+    "characters": [
+      {
+        "id": "hadi",
+        "name_ar": "هادي النجار",
+        "role": "suspect",
+        "age_descriptor_ar": "طالب في السنة الثالثة، عضو في نادي العلوم",
+        "persona_ar": "هادئ وحذر، يتكلم بسرعة حين يشعر أنه متّهم، ويصحّح نفسه إذا واجهته بسجل.",
+        "motives_ar": [
+          "ألا يُتّهم بشيء لم يفعله",
+          "أن يستعيد دفتر التجربة لأن نتائجه فيه"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "hd_greet",
+            "purpose": "greeting",
+            "text_ar": "أنا لم آخذ الدفتر. اسألني ما شئت."
+          },
+          {
+            "line_id": "hd_left",
+            "purpose": "reveal",
+            "text_ar": "وقّعت خروجي من المختبر في الثانية والعشر دقائق تقريباً، وكان الدفتر على الطاولة حين خرجت.",
+            "fact_ids": [
+              "f_hadi_left_lab"
+            ]
+          },
+          {
+            "line_id": "hd_time",
+            "purpose": "reveal",
+            "text_ar": "ظننت أنني غادرت المبنى في الثانية تماماً. لعلّي نسيت أنني بقيت أتحدث مع زميل عند البوابة.",
+            "claim_ids": [
+              "cl_hadi_time"
+            ]
+          },
+          {
+            "line_id": "hd_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف، ولا أريد أن أخمّن."
+          },
+          {
+            "line_id": "hd_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "هذا لا يخصّ الدفتر. اسألني عن وقت خروجي."
+          },
+          {
+            "line_id": "hd_bye",
+            "purpose": "farewell",
+            "text_ar": "شكراً لأنك تسأل قبل أن تحكم."
+          }
+        ]
+      },
+      {
+        "id": "jamal",
+        "name_ar": "د. جمال الأيوبي",
+        "role": "victim",
+        "age_descriptor_ar": "مشرف نادي العلوم",
+        "persona_ar": "مشغول ومتعجل، يتحدث بثقة من أمضى سنوات في الإشراف، ويميل إلى تصديق أول تفسير يخطر له.",
+        "motives_ar": [
+          "استعادة دفتر التجربة قبل موعد التسليم"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "jm_greet",
+            "purpose": "greeting",
+            "text_ar": "أهلاً. الدفتر مفقود منذ أمس، وأظن أنني أعرف من أخذه."
+          },
+          {
+            "line_id": "jm_saw",
+            "purpose": "reveal",
+            "text_ar": "مررت بالمختبر قرابة الثانية والربع ورأيت الدفتر على الطاولة نفسها، ثم لم أنتبه إليه بعد ذلك.",
+            "fact_ids": [
+              "f_jamal_saw_notebook"
+            ]
+          },
+          {
+            "line_id": "jm_last",
+            "purpose": "reveal",
+            "text_ar": "ظننت أن هادي آخر من غادر المختبر، فهو دائماً آخر من يخرج.",
+            "claim_ids": [
+              "cl_jamal_last"
+            ]
+          },
+          {
+            "line_id": "jm_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أذكر ذلك."
+          },
+          {
+            "line_id": "jm_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "ركّز على الدفتر لو سمحت."
+          },
+          {
+            "line_id": "jm_bye",
+            "purpose": "farewell",
+            "text_ar": "أريد الدفتر بأسرع وقت."
+          }
+        ]
+      },
+      {
+        "id": "omar",
+        "name_ar": "عمر الحارس",
+        "role": "witness",
+        "age_descriptor_ar": "حارس بوابة المبنى",
+        "persona_ar": "دقيق في تدوين الدخول والخروج، قليل الكلام، لا يحب التخمين.",
+        "motives_ar": [
+          "أن يبقى سجل البوابة سليماً"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "om_greet",
+            "purpose": "greeting",
+            "text_ar": "السجل أمامي. أقرأ ما فيه فقط."
+          },
+          {
+            "line_id": "om_gate",
+            "purpose": "reveal",
+            "text_ar": "سجّلت خروج هادي من البوابة في الثالثة إلا عشرين دقيقة بعد الظهر، أي 14:40.",
+            "fact_ids": [
+              "f_gate_exit_hadi"
+            ]
+          },
+          {
+            "line_id": "om_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا شيء عندي عن هذا."
+          },
+          {
+            "line_id": "om_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن البوابة فقط."
+          },
+          {
+            "line_id": "om_bye",
+            "purpose": "farewell",
+            "text_ar": "مع السلامة."
+          }
+        ]
+      },
+      {
+        "id": "samira",
+        "name_ar": "سميرة الحلبي",
+        "role": "suspect",
+        "age_descriptor_ar": "فنية المختبر",
+        "persona_ar": "مجتهدة وتخشى أن تُلام على أي شيء في المختبر، فتقلّل من شأن ما فعلته.",
+        "motives_ar": [
+          "ألا تُلام على انسكاب أو على فقدان شيء"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "sm_greet",
+            "purpose": "greeting",
+            "text_ar": "تفضّل. أنا أنظّف المختبر عادةً بعد الظهر."
+          },
+          {
+            "line_id": "sm_spill",
+            "purpose": "reveal",
+            "text_ar": "حدث انسكاب لمحلول التنظيف على الطاولة الأولى، فنظّفتها في الثانية والنصف تقريباً.",
+            "fact_ids": [
+              "f_spill"
+            ]
+          },
+          {
+            "line_id": "sm_refuse",
+            "purpose": "refuse_secret",
+            "text_ar": "لا أذكر شيئاً مهماً آخر."
+          },
+          {
+            "line_id": "sm_moved",
+            "purpose": "reveal",
+            "text_ar": "نعم... كان الدفتر مبتلاً بالمحلول فوضعته على رف التجفيف في خزانة المستلزمات، وكتبت ورقة بذلك. لا بد أنها وقعت خلف الرف.",
+            "fact_ids": [
+              "f_samira_moved",
+              "f_closet_location"
+            ]
+          },
+          {
+            "line_id": "sm_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف."
+          },
+          {
+            "line_id": "sm_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن المختبر والتنظيف."
+          },
+          {
+            "line_id": "sm_bye",
+            "purpose": "farewell",
+            "text_ar": "أرجو أن يجد الدفتر مكانه."
+          }
+        ]
+      }
+    ],
+    "locations": [
+      {
+        "id": "loc_office",
+        "name_ar": "مكتب النادي",
+        "description_ar": "ملفات النادي وطلبات الصيانة."
+      },
+      {
+        "id": "loc_lab",
+        "name_ar": "مختبر الكيمياء",
+        "description_ar": "الطاولة الأولى حيث كان الدفتر."
+      },
+      {
+        "id": "loc_gate",
+        "name_ar": "بوابة المبنى",
+        "description_ar": "سجل الدخول والخروج."
+      },
+      {
+        "id": "loc_closet",
+        "name_ar": "خزانة المستلزمات",
+        "description_ar": "رف التجفيف في آخر المختبر."
+      }
+    ],
+    "objects": [
+      {
+        "id": "obj_notebook",
+        "name_ar": "دفتر التجربة",
+        "description_ar": "دفتر نتائج تجربة نمو النبات."
+      }
+    ],
+    "organizations": [
+      {
+        "id": "org_club",
+        "name_ar": "نادي العلوم",
+        "description_ar": "نادي طلابي في الجامعة."
+      }
+    ]
+  },
+  "truth": {
+    "solution": {
+      "culprit_ids": [
+        "samira"
+      ],
+      "summary_ar": "لم يُسرق الدفتر. هادي غادر المختبر قبل الانسكاب والدفتر على الطاولة، ونقلته فنية المختبر المبتلّ إلى خزانة التجفيف دون أن تُبلغ أحداً. خطأ هادي في ساعة مغادرة المبنى لا يتعلق بمكان الدفتر.",
+      "key_fact_ids": [
+        "f_hadi_left_before",
+        "f_samira_moved"
+      ]
+    },
+    "facts": [
+      {
+        "id": "f_notebook_missing",
+        "statement_ar": "اختفى دفتر التجربة من الطاولة الأولى في المختبر عصر الأربعاء.",
+        "kind": "event",
+        "subject_ids": [
+          "obj_notebook"
+        ],
+        "spoiler_level": 0
+      },
+      {
+        "id": "f_jamal_suspects",
+        "statement_ar": "يظن المشرف أن هادي هو من أخذ الدفتر لأنه آخر من غادر المختبر في ظنّه.",
+        "kind": "attribute",
+        "subject_ids": [
+          "jamal",
+          "hadi"
+        ],
+        "spoiler_level": 0
+      },
+      {
+        "id": "f_hadi_denies",
+        "statement_ar": "ينفي هادي أنه أخذ الدفتر، ويقول إنه غادر المبنى في الثانية.",
+        "kind": "event",
+        "subject_ids": [
+          "hadi"
+        ],
+        "spoiler_level": 0
+      },
+      {
+        "id": "f_hadi_left_lab",
+        "statement_ar": "وقّع هادي خروجه من المختبر الساعة 14:10.",
+        "kind": "event",
+        "subject_ids": [
+          "hadi"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 10,
+          "precision": "exact"
+        },
+        "location_id": "loc_lab"
+      },
+      {
+        "id": "f_gate_exit_hadi",
+        "statement_ar": "خرج هادي من بوابة المبنى الساعة 14:40.",
+        "kind": "event",
+        "subject_ids": [
+          "hadi",
+          "loc_gate"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 40,
+          "precision": "exact"
+        },
+        "location_id": "loc_gate"
+      },
+      {
+        "id": "f_jamal_saw_notebook",
+        "statement_ar": "رأى المشرف الدفتر على الطاولة الأولى الساعة 14:15 تقريباً.",
+        "kind": "event",
+        "subject_ids": [
+          "jamal",
+          "obj_notebook"
+        ],
+        "spoiler_level": 2,
+        "time": {
+          "start_min": 15,
+          "precision": "approx"
+        },
+        "location_id": "loc_lab"
+      },
+      {
+        "id": "f_spill",
+        "statement_ar": "انسكب محلول تنظيف على الطاولة الأولى ونظّفته سميرة نحو الساعة 14:25.",
+        "kind": "event",
+        "subject_ids": [
+          "samira",
+          "obj_notebook"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 25,
+          "precision": "approx"
+        },
+        "location_id": "loc_lab"
+      },
+      {
+        "id": "f_closet_location",
+        "statement_ar": "وُضع الدفتر لتجفيفه على رف التجفيف في خزانة المستلزمات.",
+        "kind": "state",
+        "subject_ids": [
+          "obj_notebook",
+          "loc_closet"
+        ],
+        "spoiler_level": 1,
+        "location_id": "loc_closet"
+      },
+      {
+        "id": "f_hadi_left_before",
+        "statement_ar": "غادر هادي المختبر قبل انسكاب المحلول، وكان الدفتر ما زال على الطاولة بعد مغادرته.",
+        "kind": "relation",
+        "subject_ids": [
+          "hadi",
+          "obj_notebook"
+        ],
+        "spoiler_level": 3,
+        "time": {
+          "start_min": 10,
+          "precision": "exact",
+          "end_min": 15
+        },
+        "location_id": "loc_lab",
+        "science_ko_refs": [
+          "KO-RS-06-017"
+        ]
+      },
+      {
+        "id": "f_samira_moved",
+        "statement_ar": "نقلت سميرة الدفتر المبتل إلى خزانة المستلزمات لتجفيفه بعد الانسكاب، دون أن تُبلغ أحداً.",
+        "kind": "event",
+        "subject_ids": [
+          "samira",
+          "obj_notebook"
+        ],
+        "spoiler_level": 3,
+        "time": {
+          "start_min": 30,
+          "precision": "approx"
+        },
+        "location_id": "loc_lab",
+        "science_ko_refs": [
+          "KO-RS-05-014"
+        ]
+      }
+    ],
+    "claims": [
+      {
+        "id": "cl_hadi_time",
+        "statement_ar": "غادرتُ المبنى في الثانية تماماً.",
+        "kind": "honest_mistake",
+        "held_by": [
+          "hadi"
+        ],
+        "true_fact_id": "f_gate_exit_hadi",
+        "contradicted_by_evidence_ids": [
+          "ev_gate_log"
+        ]
+      },
+      {
+        "id": "cl_jamal_last",
+        "statement_ar": "هادي آخر من غادر المختبر.",
+        "kind": "honest_mistake",
+        "held_by": [
+          "jamal"
+        ],
+        "true_fact_id": "f_samira_moved",
+        "contradicted_by_evidence_ids": [
+          "ev_cleaning_ticket",
+          "ev_lab_sheet"
+        ]
+      }
+    ]
+  },
+  "timeline": [
+    {
+      "id": "te_hadi_out",
+      "description_ar": "هادي يوقّع خروجه من المختبر.",
+      "time": {
+        "start_min": 10,
+        "precision": "exact"
+      },
+      "location_id": "loc_lab",
+      "actor_ids": [
+        "hadi"
+      ],
+      "fact_ids": [
+        "f_hadi_left_lab"
+      ],
+      "motivated_by_ar": "حان موعد محاضرته"
+    },
+    {
+      "id": "te_jamal_pass",
+      "description_ar": "المشرف يمرّ ويرى الدفتر على الطاولة.",
+      "time": {
+        "start_min": 15,
+        "precision": "approx"
+      },
+      "location_id": "loc_lab",
+      "actor_ids": [
+        "jamal"
+      ],
+      "fact_ids": [
+        "f_jamal_saw_notebook"
+      ],
+      "motivated_by_ar": "مرور عابر في طريقه إلى مكتبه"
+    },
+    {
+      "id": "te_spill",
+      "description_ar": "انسكاب محلول التنظيف وتنظيف الطاولة.",
+      "time": {
+        "start_min": 25,
+        "precision": "approx"
+      },
+      "location_id": "loc_lab",
+      "actor_ids": [
+        "samira"
+      ],
+      "fact_ids": [
+        "f_spill"
+      ],
+      "motivated_by_ar": "واجب التنظيف بعد الظهر"
+    },
+    {
+      "id": "te_move",
+      "description_ar": "سميرة تنقل الدفتر المبتل إلى خزانة التجفيف.",
+      "time": {
+        "start_min": 30,
+        "precision": "approx"
+      },
+      "location_id": "loc_closet",
+      "actor_ids": [
+        "samira"
+      ],
+      "fact_ids": [
+        "f_samira_moved",
+        "f_closet_location"
+      ],
+      "motivated_by_ar": "خشيت أن يتلف الدفتر"
+    },
+    {
+      "id": "te_gate",
+      "description_ar": "هادي يخرج من بوابة المبنى.",
+      "time": {
+        "start_min": 40,
+        "precision": "exact"
+      },
+      "location_id": "loc_gate",
+      "actor_ids": [
+        "hadi"
+      ],
+      "fact_ids": [
+        "f_gate_exit_hadi"
+      ],
+      "motivated_by_ar": "بقي يتحدث مع زميل قبل أن يغادر"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_lab_sheet",
+      "title_ar": "ورقة توقيع الدخول والخروج في المختبر",
+      "kind": "documentary",
+      "content_ar": "ورقة توقيع المختبر — الأربعاء\nالاسم | الدخول | الخروج\nهادي النجار | 13:20 | 14:10\nلينا حداد | 13:45 | 14:00\n(لا توقيعات أخرى بعد 14:10 حتى 15:00)",
+      "acquired_by_action_ids": [
+        "a_read_sheet"
+      ],
+      "supports_fact_ids": [
+        "f_hadi_left_lab"
+      ],
+      "reliability": "strong",
+      "limits_ar": "تثبت توقيعاً مكتوباً بخروج هادي، ولا تثبت أن الدفتر كان على الطاولة أو لم يكن؛ وهي لا تسجّل دخول الفنية أو المشرف إذ لا يوقّعان.",
+      "location_id": "loc_lab"
+    },
+    {
+      "id": "ev_gate_log",
+      "title_ar": "سجل بوابة المبنى",
+      "kind": "documentary",
+      "content_ar": "سجل بوابة المبنى — الأربعاء\n13:05 دخول: هادي النجار\n14:40 خروج: هادي النجار\n14:42 خروج: لينا حداد",
+      "acquired_by_action_ids": [
+        "a_read_gate"
+      ],
+      "supports_fact_ids": [
+        "f_gate_exit_hadi"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يثبت وقت خروج هادي من المبنى، لا ما فعله قبل ذلك داخله ولا مكان الدفتر.",
+      "contradicts_claim_ids": [
+        "cl_hadi_time"
+      ],
+      "is_red_herring": true,
+      "location_id": "loc_gate"
+    },
+    {
+      "id": "ev_cleaning_ticket",
+      "title_ar": "طلب تنظيف المختبر",
+      "kind": "documentary",
+      "content_ar": "طلب تنظيف — مختبر الكيمياء\nالوقت: 14:20\nالسبب: انسكاب محلول على الطاولة الأولى\nالمكلّفة: س. الحلبي\nأُنجز: 14:35",
+      "acquired_by_action_ids": [
+        "a_search_office"
+      ],
+      "supports_fact_ids": [
+        "f_spill"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يثبت أن فنية المختبر كانت عند الطاولة الأولى بين 14:20 و14:35، لا ما فعلته بالدفتر.",
+      "contradicts_claim_ids": [
+        "cl_jamal_last"
+      ],
+      "location_id": "loc_office"
+    },
+    {
+      "id": "ev_jamal_statement",
+      "title_ar": "إفادة د. جمال (ملخص)",
+      "kind": "testimonial",
+      "content_ar": "ملخص إفادة د. جمال الأيوبي:\n«مررت بالمختبر قرابة 14:15 ورأيت الدفتر على الطاولة الأولى، ثم لم أنتبه إليه. ظننت أن هادي آخر من غادر.»",
+      "acquired_by_action_ids": [
+        "a_note_jamal"
+      ],
+      "supports_fact_ids": [
+        "f_jamal_saw_notebook"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "ذاكرة شخص عن وقت مرور عابر؛ تحتاج إلى سجل يؤيد الترتيب.",
+      "location_id": "loc_lab"
+    },
+    {
+      "id": "ev_hadi_statement",
+      "title_ar": "إفادة هادي (ملخص)",
+      "kind": "testimonial",
+      "content_ar": "ملخص إفادة هادي النجار:\n«وقّعت خروجي من المختبر في الثانية والعشر دقائق، وكان الدفتر على الطاولة. وظننت أنني غادرت المبنى في الثانية تماماً.»",
+      "acquired_by_action_ids": [
+        "a_note_hadi"
+      ],
+      "supports_fact_ids": [
+        "f_hadi_left_lab"
+      ],
+      "reliability": "weak",
+      "limits_ar": "إفادة صاحب مصلحة، ويصحّح فيها وقتاً ظنّه؛ تُقاس بالسجلات.",
+      "location_id": "loc_lab"
+    },
+    {
+      "id": "ev_note_shelf",
+      "title_ar": "ورقة خلف الرف",
+      "kind": "physical",
+      "content_ar": "ورقة صغيرة وُجدت خلف رف التجفيف:\n«الدفتر مبلل بالمحلول — وضعته هنا ليجفّ. س.»\nلا تاريخ على الورقة.",
+      "acquired_by_action_ids": [
+        "a_search_closet"
+      ],
+      "supports_fact_ids": [
+        "f_samira_moved"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "ورقة غير مؤرّخة وحرف توقيعها واحد؛ تدل على فعل النقل لكن لا تثبت وقته، ويدعمها طلب التنظيف.",
+      "location_id": "loc_closet"
+    },
+    {
+      "id": "ev_notebook_closet",
+      "title_ar": "دفتر التجربة على رف التجفيف",
+      "kind": "physical",
+      "content_ar": "الدفتر نفسه على رف التجفيف في الخزانة، صفحاته متموّجة قليلاً، وعلى غلافه بقعة محلول جافة.",
+      "acquired_by_action_ids": [
+        "a_search_closet"
+      ],
+      "supports_fact_ids": [
+        "f_closet_location"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يثبت مكان الدفتر الآن لا من وضعه فيه ولا متى.",
+      "location_id": "loc_closet"
+    }
+  ],
+  "evidence_graph": {
+    "inferences": [
+      {
+        "id": "i_hadi_left",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_lab_sheet"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_jamal_statement"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_hadi_left_before"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "هادي وقّع خروجه 14:10، والمشرف رأى الدفتر 14:15 على الطاولة؛ فالدفتر كان موجوداً بعد خروج هادي.",
+        "skill_ko_refs": [
+          "KO-RS-06-017"
+        ]
+      },
+      {
+        "id": "i_moved",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_cleaning_ticket"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_note_shelf"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_samira_moved"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "طلب التنظيف يضع الفنية عند الطاولة 14:20–14:35، وورقتها خلف الرف تقول إنها وضعت الدفتر ليجف؛ فهي من نقله.",
+        "skill_ko_refs": [
+          "KO-RS-05-014"
+        ]
+      },
+      {
+        "id": "i_time_claim",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_gate_log"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_lab_sheet"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_hadi_time"
+        },
+        "relation": "contradicts_claim",
+        "strength": "strong",
+        "rule_ar": "الخطأ في ساعة مغادرة المبنى (14:40) لا يغيّر ساعة مغادرة المختبر (14:10)؛ فهو خطأ ذاكرة لا كذبة تخدم إخفاء شيء.",
+        "skill_ko_refs": [
+          "KO-RS-05-007"
+        ]
+      },
+      {
+        "id": "i_last_claim",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_cleaning_ticket"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_lab_sheet"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_jamal_last"
+        },
+        "relation": "contradicts_claim",
+        "strength": "strong",
+        "rule_ar": "الفنية كانت عند الطاولة بعد خروج هادي، وهي لا توقّع في الورقة؛ فالورقة لا تدل على من كان آخر من غادر.",
+        "skill_ko_refs": [
+          "KO-RS-05-001"
+        ]
+      },
+      {
+        "id": "i_support_samira",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_samira_moved"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_samira"
+        },
+        "relation": "supports",
+        "strength": "strong",
+        "rule_ar": "نقل الدفتر المبتل إلى الخزانة هو التفسير الذي يجمع الانسكاب والورقة ومكان الدفتر الآن.",
+        "skill_ko_refs": [
+          "KO-RS-05-002"
+        ]
+      },
+      {
+        "id": "i_rule_hadi",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_hadi_left_before"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_hadi"
+        },
+        "relation": "rules_out",
+        "strength": "conclusive",
+        "rule_ar": "إذا كان الدفتر على الطاولة بعد خروج هادي فلا يصح أن يكون هو من أخذه عند خروجه.",
+        "skill_ko_refs": [
+          "KO-RS-06-008"
+        ]
+      },
+      {
+        "id": "i_rule_loss",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_notebook_closet"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_loss"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "الدفتر وُجد على رف التجفيف، فهو لم يضِع بين الأوراق بل نُقل إلى مكان محدد.",
+        "skill_ko_refs": [
+          "KO-RS-06-008"
+        ]
+      }
+    ]
+  },
+  "character_knowledge": [
+    {
+      "character_id": "hadi",
+      "knows": [
+        {
+          "fact_id": "f_hadi_left_lab",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": [
+        {
+          "claim_id": "cl_hadi_time",
+          "stance": "sincere"
+        }
+      ]
+    },
+    {
+      "character_id": "jamal",
+      "knows": [
+        {
+          "fact_id": "f_jamal_saw_notebook",
+          "access": "witnessed",
+          "certainty": "fairly_sure"
+        }
+      ],
+      "hides": [],
+      "believes": [
+        {
+          "claim_id": "cl_jamal_last",
+          "stance": "sincere"
+        }
+      ]
+    },
+    {
+      "character_id": "omar",
+      "knows": [
+        {
+          "fact_id": "f_gate_exit_hadi",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    },
+    {
+      "character_id": "samira",
+      "knows": [
+        {
+          "fact_id": "f_spill",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [
+        {
+          "fact_id": "f_samira_moved",
+          "reveal_when": {
+            "presented": {
+              "evidence_id": "ev_cleaning_ticket",
+              "to_character": "samira"
+            }
+          },
+          "cover_claim_id": null,
+          "reveal_line_id": "sm_moved"
+        },
+        {
+          "fact_id": "f_closet_location",
+          "reveal_when": {
+            "presented": {
+              "evidence_id": "ev_cleaning_ticket",
+              "to_character": "samira"
+            }
+          },
+          "cover_claim_id": null,
+          "reveal_line_id": "sm_moved"
+        }
+      ],
+      "believes": []
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "h_samira",
+      "statement_ar": "نقلت فنية المختبر الدفتر المبتل لتجفيفه بعد الانسكاب دون أن تُبلغ أحداً.",
+      "is_true": true,
+      "plausibility_at_start": "low",
+      "suspect_id": "samira"
+    },
+    {
+      "id": "h_hadi",
+      "statement_ar": "أخذ هادي الدفتر عند خروجه من المختبر.",
+      "is_true": false,
+      "plausibility_at_start": "high",
+      "suspect_id": "hadi"
+    },
+    {
+      "id": "h_loss",
+      "statement_ar": "لم يأخذ أحد الدفتر؛ ضاع بين الأوراق في المختبر.",
+      "is_true": false,
+      "plausibility_at_start": "medium"
+    }
+  ],
+  "misdirection_plan": [
+    {
+      "id": "rh_gate",
+      "points_to_hypothesis_id": "h_hadi",
+      "planted_via_ar": "سجل البوابة يُظهر أن هادي خرج 14:40 لا 14:00 كما قال.",
+      "evidence_ids": [
+        "ev_gate_log"
+      ],
+      "refuted_by_inference_ids": [
+        "i_rule_hadi",
+        "i_time_claim"
+      ],
+      "fairness_note_ar": "ورقة المختبر وإفادة المشرف يضعان الدفتر على الطاولة بعد خروج هادي؛ والخطأ في ساعة مغادرة المبنى لا يتعلق بمكان الدفتر."
+    }
+  ],
+  "learning_objectives": [
+    {
+      "id": "lo_claim",
+      "statement_ar": "يفرّق بين قول خاطئ بحسن نية وقول يخفي شيئاً، ويقيس القول بسجل.",
+      "skill_ko_ref": "KO-RS-05-001",
+      "observable_behaviors_ar": [
+        "يصنّف إفادات الشهود كأقوال",
+        "يقابل القول بسجل"
+      ],
+      "evidence_sources": [
+        "evidence_board"
+      ]
+    },
+    {
+      "id": "lo_timeline",
+      "statement_ar": "يرتّب الأحداث على خط زمني ليكشف التعارض.",
+      "skill_ko_ref": "KO-RS-05-005",
+      "observable_behaviors_ar": [
+        "يضع الأدلة في أزمنتها"
+      ],
+      "evidence_sources": [
+        "timeline_task",
+        "action_log"
+      ]
+    },
+    {
+      "id": "lo_hyp",
+      "statement_ar": "يوازن بين فرضيتين على الأقل ويستبعد ما تنقضه الأدلة.",
+      "skill_ko_ref": "KO-RS-05-002",
+      "observable_behaviors_ar": [
+        "يضيف فرضيات",
+        "يستبعد بدليل"
+      ],
+      "evidence_sources": [
+        "hypothesis_ledger"
+      ]
+    },
+    {
+      "id": "lo_diag",
+      "statement_ar": "يقدّر ما يثبته الدليل وما لا يثبته.",
+      "skill_ko_ref": "KO-RS-06-001",
+      "observable_behaviors_ar": [
+        "يربط الدليل بالفرضية باتجاه صحيح"
+      ],
+      "evidence_sources": [
+        "evidence_board",
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_calib",
+      "statement_ar": "يصوغ ثقته بحدودها.",
+      "skill_ko_ref": "KO-RS-06-021",
+      "observable_behaviors_ar": [
+        "يختار ثقة معقولة",
+        "يذكر حدوداً"
+      ],
+      "evidence_sources": [
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_revise",
+      "statement_ar": "يراجع رأيه الأول حين يظهر ما يخالفه.",
+      "skill_ko_ref": "KO-RS-06-009",
+      "observable_behaviors_ar": [
+        "يغيّر فرضيته الرائدة بدليل"
+      ],
+      "evidence_sources": [
+        "hypothesis_ledger"
+      ]
+    }
+  ],
+  "mechanics": {
+    "time_budget_units": 30,
+    "actions": [
+      {
+        "id": "a_read_sheet",
+        "type": "examine",
+        "label_ar": "اقرأ ورقة توقيع المختبر",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_lab_sheet"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_lab",
+        "telemetry_code": "READ_SHEET"
+      },
+      {
+        "id": "a_read_gate",
+        "type": "examine",
+        "label_ar": "اطلب سجل بوابة المبنى",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_gate_log"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_gate",
+        "telemetry_code": "READ_GATE"
+      },
+      {
+        "id": "a_search_office",
+        "type": "search_location",
+        "label_ar": "ابحث في طلبات الصيانة بمكتب النادي",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_cleaning_ticket"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_office",
+        "telemetry_code": "SEARCH_OFFICE"
+      },
+      {
+        "id": "a_int_hadi",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة هادي",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "hadi",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "hadi",
+        "telemetry_code": "INT_HADI"
+      },
+      {
+        "id": "a_int_jamal",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة د. جمال",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "jamal",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "jamal",
+        "telemetry_code": "INT_JAMAL"
+      },
+      {
+        "id": "a_int_omar",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة عمر",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "omar",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "omar",
+        "telemetry_code": "INT_OMAR"
+      },
+      {
+        "id": "a_int_samira",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة سميرة",
+        "precondition": {
+          "has_evidence": "ev_cleaning_ticket"
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "samira",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "samira",
+        "telemetry_code": "INT_SAMIRA"
+      },
+      {
+        "id": "a_note_jamal",
+        "type": "examine",
+        "label_ar": "دوّن إفادة د. جمال",
+        "precondition": {
+          "fact_unlocked": "f_jamal_saw_notebook"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_jamal_statement"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "jamal",
+        "telemetry_code": "NOTE_JAMAL"
+      },
+      {
+        "id": "a_note_hadi",
+        "type": "examine",
+        "label_ar": "دوّن إفادة هادي",
+        "precondition": {
+          "fact_unlocked": "f_hadi_left_lab"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_hadi_statement"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "hadi",
+        "telemetry_code": "NOTE_HADI"
+      },
+      {
+        "id": "a_search_closet",
+        "type": "search_location",
+        "label_ar": "افتش خزانة المستلزمات",
+        "precondition": {
+          "fact_unlocked": "f_closet_location"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_note_shelf"
+          },
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_notebook_closet"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_closet",
+        "telemetry_code": "SEARCH_CLOSET"
+      },
+      {
+        "id": "p_ticket_samira",
+        "type": "present_evidence",
+        "label_ar": "اعرض طلب التنظيف على سميرة",
+        "precondition": {
+          "presented": {
+            "evidence_id": "ev_cleaning_ticket",
+            "to_character": "samira"
+          }
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "PRESENTED_TICKET"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "samira",
+        "telemetry_code": "P_TICKET_SAMIRA"
+      },
+      {
+        "id": "a_hint",
+        "type": "request_hint",
+        "label_ar": "اطلب تلميحاً",
+        "precondition": {
+          "always": true
+        },
+        "effects": [],
+        "time_cost_units": 0,
+        "telemetry_code": "REQUEST_HINT"
+      },
+      {
+        "id": "a_accuse",
+        "type": "final_accusation",
+        "label_ar": "قدّم الاستنتاج النهائي",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "SUBMIT"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "FINAL_ACCUSATION"
+      },
+      {
+        "id": "ask_hadi_f_hadi_left_lab",
+        "type": "interview",
+        "label_ar": "[نموذج] hadi يذكر f_hadi_left_lab",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_hadi_left_lab"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "hadi",
+        "telemetry_code": "ASK_HADI_F_HADI_LEFT_LAB"
+      },
+      {
+        "id": "ask_jamal_f_jamal_saw_notebook",
+        "type": "interview",
+        "label_ar": "[نموذج] jamal يذكر f_jamal_saw_notebook",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_jamal_saw_notebook"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "jamal",
+        "telemetry_code": "ASK_JAMAL_F_JAMAL_SAW_NOTEBOOK"
+      },
+      {
+        "id": "ask_omar_f_gate_exit_hadi",
+        "type": "interview",
+        "label_ar": "[نموذج] omar يذكر f_gate_exit_hadi",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_gate_exit_hadi"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "omar",
+        "telemetry_code": "ASK_OMAR_F_GATE_EXIT_HADI"
+      },
+      {
+        "id": "ask_samira_f_spill",
+        "type": "interview",
+        "label_ar": "[نموذج] samira يذكر f_spill",
+        "precondition": {
+          "has_evidence": "ev_cleaning_ticket"
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_spill"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "samira",
+        "telemetry_code": "ASK_SAMIRA_F_SPILL"
+      },
+      {
+        "id": "ask_samira_f_samira_moved",
+        "type": "interview",
+        "label_ar": "[نموذج] samira يكشف f_samira_moved",
+        "precondition": {
+          "all": [
+            {
+              "has_evidence": "ev_cleaning_ticket"
+            },
+            {
+              "presented": {
+                "evidence_id": "ev_cleaning_ticket",
+                "to_character": "samira"
+              }
+            }
+          ]
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_samira_moved"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "samira",
+        "telemetry_code": "ASK_SAMIRA_F_SAMIRA_MOVED"
+      },
+      {
+        "id": "ask_samira_f_closet_location",
+        "type": "interview",
+        "label_ar": "[نموذج] samira يكشف f_closet_location",
+        "precondition": {
+          "all": [
+            {
+              "has_evidence": "ev_cleaning_ticket"
+            },
+            {
+              "presented": {
+                "evidence_id": "ev_cleaning_ticket",
+                "to_character": "samira"
+              }
+            }
+          ]
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_closet_location"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "samira",
+        "telemetry_code": "ASK_SAMIRA_F_CLOSET_LOCATION"
+      }
+    ]
+  },
+  "state_machine": {
+    "id": "c000",
+    "initial": "briefing",
+    "type": "compound",
+    "states": {
+      "briefing": {
+        "description_ar": "الإحاطة",
+        "type": "atomic",
+        "on": {
+          "START": {
+            "target": "investigating"
+          }
+        }
+      },
+      "investigating": {
+        "description_ar": "التحقيق",
+        "type": "compound",
+        "initial": "gathering",
+        "states": {
+          "gathering": {
+            "type": "atomic",
+            "on": {
+              "OPEN_DEDUCTION": {
+                "target": "deducing"
+              }
+            }
+          },
+          "deducing": {
+            "type": "atomic",
+            "on": {
+              "BACK": {
+                "target": "gathering"
+              }
+            }
+          }
+        },
+        "on": {
+          "SUBMIT": {
+            "target": "review"
+          }
+        }
+      },
+      "review": {
+        "description_ar": "مراجعة",
+        "type": "atomic",
+        "on": {
+          "CLOSE": {
+            "target": "resolved"
+          }
+        }
+      },
+      "resolved": {
+        "description_ar": "إغلاق",
+        "type": "final"
+      }
+    }
+  },
+  "dialogue": {
+    "max_turns_per_interview": 10,
+    "llm_enabled": false,
+    "topics": [
+      {
+        "id": "t_leaving",
+        "label_ar": "وقت المغادرة",
+        "example_questions_ar": [
+          "متى غادرت المختبر؟",
+          "متى خرجت من المبنى؟"
+        ],
+        "fact_ids": [
+          "f_hadi_left_lab",
+          "f_gate_exit_hadi"
+        ],
+        "claim_ids": [
+          "cl_hadi_time"
+        ]
+      },
+      {
+        "id": "t_saw",
+        "label_ar": "الدفتر على الطاولة",
+        "example_questions_ar": [
+          "هل رأيت الدفتر؟",
+          "متى مررت بالمختبر؟"
+        ],
+        "fact_ids": [
+          "f_jamal_saw_notebook"
+        ],
+        "claim_ids": [
+          "cl_jamal_last"
+        ]
+      },
+      {
+        "id": "t_spill",
+        "label_ar": "الانسكاب والتنظيف",
+        "example_questions_ar": [
+          "ماذا حدث عند الطاولة الأولى؟",
+          "هل رأيت الدفتر وقت التنظيف؟"
+        ],
+        "fact_ids": [
+          "f_spill",
+          "f_samira_moved",
+          "f_closet_location"
+        ]
+      }
+    ]
+  },
+  "rubric": {
+    "reference_answer_ar": "هادي لم يأخذ الدفتر: وقّع خروجه من المختبر 14:10، ورآه المشرف على الطاولة 14:15 بعد خروجه. وخطؤه في ساعة مغادرة المبنى (14:40 لا 14:00) خطأ ذاكرة لا يتعلق بمكان الدفتر. الأرجح أن فنية المختبر نقلت الدفتر المبتل بعد الانسكاب إلى خزانة التجفيف ولم تُبلغ أحداً، وتدل على ذلك ورقتها وطلب التنظيف ووجود الدفتر هناك. حدود الاستنتاج: لا نعرف لماذا لم تُبلغ، ولا يثبت السجل وقت النقل بالدقيقة.",
+    "criteria": [
+      {
+        "id": "c_source",
+        "name_ar": "تصنيف المصادر",
+        "objective_ids": [
+          "lo_claim"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يصنّف"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "أخطأ في الأغلب"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "نصف صحيح"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمه صحيح"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كله صحيح"
+          }
+        ]
+      },
+      {
+        "id": "c_conflict",
+        "name_ar": "كشف التعارض على الخط الزمني",
+        "objective_ids": [
+          "lo_timeline"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.25,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يضع شيئاً"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "وضع قليلاً"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "وضع نصفها صحيحاً"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمها"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كلها في موضعها"
+          }
+        ]
+      },
+      {
+        "id": "c_links",
+        "name_ar": "ربط الأدلة بالفرضيات",
+        "objective_ids": [
+          "lo_diag"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لا روابط"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "قليلة"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "نصفها صحيح"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمها"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كلها دقيقة"
+          }
+        ]
+      },
+      {
+        "id": "c_uncertainty",
+        "name_ar": "معايرة الثقة",
+        "objective_ids": [
+          "lo_calib"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "ثقة مفرطة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "حدود قليلة"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "جزئية"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معقولة"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "معايَرة كاملة"
+          }
+        ]
+      },
+      {
+        "id": "c_revision",
+        "name_ar": "مراجعة الرأي",
+        "objective_ids": [
+          "lo_revise"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "بقي على فرضية مرفوضة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "لم يعلن فرضية"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "ثبت على فرضية سليمة"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "غيّر بدليل"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "غيّر بدليل ووثّق"
+          }
+        ]
+      },
+      {
+        "id": "c_elimination",
+        "name_ar": "استبعاد الفرضيات الخاطئة",
+        "objective_ids": [
+          "lo_hyp"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يستبعد"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "استبعد خطأً"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "فرضية بدليل"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "فرضيتين"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كل الخاطئة"
+          }
+        ]
+      },
+      {
+        "id": "c_justification",
+        "name_ar": "جودة الحجة المكتوبة",
+        "objective_ids": [
+          "lo_diag",
+          "lo_hyp"
+        ],
+        "scored_by": "human",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لا حجة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "ادعاء بلا سند"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "أدلة دون ربط"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "ربط الأدلة بالاستنتاج"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "ربط مع البدائل والحدود"
+          }
+        ]
+      }
+    ]
+  },
+  "hint_ladder": [
+    {
+      "id": "hg1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "حين يخالف قولٌ سجلاً، اسأل: هل الخطأ في الوقت نفسه الذي يخص الدفتر، أم في وقت آخر؟",
+      "trigger": {
+        "always": true
+      },
+      "assessment_weight": 0.02
+    },
+    {
+      "id": "hg2",
+      "level": 2,
+      "kind": "focus_area",
+      "text_ar": "قارن بين أوقات الورقة والبوابة وإفادة المشرف: أيها يخصّ الدفتر مباشرة؟",
+      "trigger": {
+        "has_evidence": "ev_gate_log"
+      },
+      "assessment_weight": 0.04
+    },
+    {
+      "id": "hm1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "من كان عند الطاولة الأولى بعد خروج هادي؟",
+      "trigger": {
+        "has_evidence": "ev_cleaning_ticket"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_moved"
+    },
+    {
+      "id": "hm2",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "ابحث عن مكان يضع فيه شخصٌ ما أغراضاً مبتلة ليجف.",
+      "trigger": {
+        "has_evidence": "ev_cleaning_ticket"
+      },
+      "assessment_weight": 0.06,
+      "targets_inference_id": "i_moved"
+    },
+    {
+      "id": "hm3",
+      "level": 3,
+      "kind": "partial_reveal",
+      "text_ar": "اعرض طلب التنظيف على الفنية وسترى كيف تتغير إجابتها.",
+      "trigger": {
+        "has_evidence": "ev_cleaning_ticket"
+      },
+      "assessment_weight": 0.1,
+      "targets_inference_id": "i_moved"
+    }
+  ],
+  "fairness_test": {
+    "requirements": {
+      "min_disjoint_proof_paths": 1,
+      "max_inference_depth": 3,
+      "all_red_herrings_refutable": true,
+      "culprit_uniquely_entailed": true,
+      "no_hidden_fact_dependency": true,
+      "max_required_actions": 30
+    },
+    "runs": []
+  },
+  "ending_explanation": {
+    "steps": [
+      {
+        "order": 1,
+        "text_ar": "سجل البوابة (14:40) يخالف قول هادي (14:00)، لكن هذا التعارض في وقت مغادرة المبنى، لا في وقت مغادرة المختبر.",
+        "uses_evidence_ids": [
+          "ev_gate_log",
+          "ev_lab_sheet"
+        ],
+        "inference_id": "i_time_claim"
+      },
+      {
+        "order": 2,
+        "text_ar": "ورقة المختبر تضع خروج هادي 14:10، والمشرف رأى الدفتر 14:15 على الطاولة: الدفتر كان موجوداً بعد خروجه.",
+        "uses_evidence_ids": [
+          "ev_lab_sheet",
+          "ev_jamal_statement"
+        ],
+        "inference_id": "i_hadi_left"
+      },
+      {
+        "order": 3,
+        "text_ar": "طلب التنظيف (14:20–14:35) يضع الفنية عند الطاولة، وورقتها خلف الرف تقول إنها وضعت الدفتر ليجفّ.",
+        "uses_evidence_ids": [
+          "ev_cleaning_ticket",
+          "ev_note_shelf",
+          "ev_notebook_closet"
+        ],
+        "inference_id": "i_moved"
+      },
+      {
+        "order": 4,
+        "text_ar": "إذن لم يضِع الدفتر ولم يسرقه أحد: نُقل بحسن نية ولم يُبلَّغ بنقله.",
+        "uses_evidence_ids": [
+          "ev_notebook_closet",
+          "ev_note_shelf"
+        ],
+        "inference_id": "i_support_samira"
+      }
+    ],
+    "alternative_paths_ar": [
+      "يمكن الوصول إلى النتيجة من الخزانة مباشرة بعد معرفة موضعها، لكن إثبات براءة هادي يحتاج ورقة المختبر وإفادة المشرف."
+    ],
+    "what_evidence_could_not_show_ar": [
+      "لا تثبت الأدلة لماذا لم تُبلغ الفنية بنقل الدفتر.",
+      "لا يثبت السجل وقت النقل بالدقيقة؛ الورقة غير مؤرّخة."
+    ],
+    "science_notes_ar": [
+      "الفرق بين قول خاطئ بحسن نية وقول كاذب لا يظهر من نبرة القائل، بل من مقابلة قوله بسجل.",
+      "غياب توقيع في ورقة لا يعني غياب شخص؛ تحقق مما يسجّله النظام فعلاً."
+    ]
+  },
+  "expert_review": [
+    {
+      "role": "narrative_editor",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "scientific_reviewer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "learning_designer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "age_appropriateness",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "cultural_reviewer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "legal_rights",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "safety",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    }
+  ]
+}

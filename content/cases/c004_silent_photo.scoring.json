@@ -1,0 +1,141 @@
+{
+  "case_id": "c004_silent_photo",
+  "accepted_conclusions": {
+    "h_misdated": {
+      "grade": 1,
+      "note_ar": "استنتاج متسق مع الأدلة ويتطلب ذكر حدوده."
+    },
+    "h_fake": {
+      "grade": 0,
+      "note_ar": "يخلط بين اختلاف الوصف عن السجل وتركيب الصورة."
+    },
+    "h_unknowable": {
+      "grade": 0,
+      "note_ar": "السجلات المستقلة تحصر اللقطة في نافذة أيام قبل الافتتاح."
+    },
+    "h_after_ok": {
+      "grade": 0,
+      "note_ar": "يعتمد على تاريخ ملف النشر وهو تاريخ نسخة مشتقة."
+    }
+  },
+  "confidence_band": {
+    "h_misdated": [
+      65,
+      90
+    ],
+    "h_fake": [
+      0,
+      15
+    ],
+    "h_unknowable": [
+      0,
+      25
+    ],
+    "h_after_ok": [
+      0,
+      15
+    ]
+  },
+  "source_key": {
+    "ev_photo": "primary_record",
+    "ev_post": "claim",
+    "ev_file_meta": "redisplay",
+    "ev_post_history": "primary_record",
+    "ev_access": "primary_record",
+    "ev_photog_msg": "primary_record",
+    "ev_archive_receipt": "primary_record",
+    "ev_setup_log": "primary_record",
+    "ev_poster_record": "primary_record",
+    "ev_rami_stmt": "claim",
+    "ev_dima_stmt": "claim",
+    "ev_karim_stmt": "claim"
+  },
+  "link_key": {
+    "h_misdated": {
+      "ev_photo": "supports",
+      "ev_access": "supports",
+      "ev_photog_msg": "supports",
+      "ev_archive_receipt": "supports",
+      "ev_setup_log": "supports",
+      "ev_post_history": "supports",
+      "ev_file_meta": "neutral",
+      "ev_poster_record": "neutral"
+    },
+    "h_after_ok": {
+      "ev_file_meta": "neutral",
+      "ev_post": "neutral",
+      "ev_archive_receipt": "weakens",
+      "ev_photog_msg": "weakens",
+      "ev_access": "weakens",
+      "ev_setup_log": "weakens",
+      "ev_photo": "weakens",
+      "ev_post_history": "weakens"
+    },
+    "h_fake": {
+      "ev_archive_receipt": "weakens",
+      "ev_setup_log": "weakens",
+      "ev_poster_record": "weakens",
+      "ev_photog_msg": "weakens",
+      "ev_file_meta": "neutral"
+    },
+    "h_unknowable": {
+      "ev_archive_receipt": "weakens",
+      "ev_setup_log": "weakens",
+      "ev_access": "weakens",
+      "ev_file_meta": "neutral"
+    }
+  },
+  "required_limits": [
+    "l_window",
+    "l_no_pixel"
+  ],
+  "valid_mind_changers": [
+    "m_receipt_late",
+    "m_log_rewritten",
+    "m_other_file"
+  ],
+  "invalid_limits": [
+    "l_invalid_poster",
+    "l_invalid_conflict",
+    "l_invalid_nodate"
+  ],
+  "decisive_evidence": [
+    "ev_archive_receipt",
+    "ev_photog_msg",
+    "ev_access",
+    "ev_setup_log",
+    "ev_photo"
+  ],
+  "lab_requirement": null,
+  "refuted_hypotheses": [
+    "h_fake",
+    "h_after_ok",
+    "h_unknowable"
+  ],
+  "criteria_map": {
+    "c_source": "source_typing",
+    "c_links": "hypothesis_links",
+    "c_elimination": "elimination",
+    "c_uncertainty": "uncertainty",
+    "c_revision": "revision",
+    "c_justification": "justification_human"
+  },
+  "transfer_key": {
+    "valid": [
+      "o1",
+      "o2",
+      "o3",
+      "o4"
+    ],
+    "invalid": [
+      "o5",
+      "o6",
+      "o7",
+      "o8"
+    ]
+  },
+  "caps": {
+    "no_citations_max": 45,
+    "no_conflict_resolution_max": 70
+  }
+}

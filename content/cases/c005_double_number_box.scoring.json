@@ -1,0 +1,137 @@
+{
+  "case_id": "c005_double_number_box",
+  "accepted_conclusions": {
+    "h_confusion": {
+      "grade": 1,
+      "note_ar": "استنتاج متسق مع الأدلة ويتطلب ذكر حدوده."
+    },
+    "h_fake": {
+      "grade": 0,
+      "note_ar": "يخلط بين تطابق القيمة وتطابق القطعة."
+    },
+    "h_swap": {
+      "grade": 0,
+      "note_ar": "السجلان لا يتعارضان إذا ضمّت الحاوية قطعتين."
+    },
+    "h_typo": {
+      "grade": 0,
+      "note_ar": "كل سجل يصف قطعة موجودة، فلا خطأ كتابياً يلزم افتراضه."
+    }
+  },
+  "confidence_band": {
+    "h_confusion": [
+      65,
+      90
+    ],
+    "h_fake": [
+      0,
+      15
+    ],
+    "h_swap": [
+      0,
+      15
+    ],
+    "h_typo": [
+      0,
+      20
+    ]
+  },
+  "source_key": {
+    "ev_ledger": "primary_record",
+    "ev_card": "primary_record",
+    "ev_datafile": "redisplay",
+    "ev_policy": "public_document",
+    "ev_reviewer_note": "claim",
+    "ev_packing": "primary_record",
+    "ev_condition": "primary_record",
+    "ev_donor": "primary_record",
+    "ev_curator_stmt": "claim",
+    "ev_clerk_stmt": "claim",
+    "ev_reviewer_stmt": "claim"
+  },
+  "link_key": {
+    "h_confusion": {
+      "ev_ledger": "supports",
+      "ev_card": "supports",
+      "ev_policy": "supports",
+      "ev_packing": "supports",
+      "ev_condition": "supports",
+      "ev_datafile": "neutral",
+      "ev_donor": "supports"
+    },
+    "h_fake": {
+      "ev_datafile": "neutral",
+      "ev_reviewer_note": "neutral",
+      "ev_policy": "weakens",
+      "ev_condition": "weakens",
+      "ev_packing": "weakens",
+      "ev_donor": "weakens"
+    },
+    "h_swap": {
+      "ev_ledger": "neutral",
+      "ev_card": "neutral",
+      "ev_policy": "weakens",
+      "ev_condition": "weakens",
+      "ev_packing": "weakens"
+    },
+    "h_typo": {
+      "ev_ledger": "weakens",
+      "ev_card": "weakens",
+      "ev_condition": "weakens",
+      "ev_packing": "weakens"
+    }
+  },
+  "required_limits": [
+    "l_no_test",
+    "l_how_filled"
+  ],
+  "valid_mind_changers": [
+    "m_ledger_edit",
+    "m_other_box",
+    "m_policy_changed"
+  ],
+  "invalid_limits": [
+    "l_invalid_dup",
+    "l_invalid_title",
+    "l_invalid_swap"
+  ],
+  "decisive_evidence": [
+    "ev_ledger",
+    "ev_card",
+    "ev_policy",
+    "ev_packing",
+    "ev_condition"
+  ],
+  "lab_requirement": null,
+  "refuted_hypotheses": [
+    "h_fake",
+    "h_swap",
+    "h_typo"
+  ],
+  "criteria_map": {
+    "c_source": "source_typing",
+    "c_links": "hypothesis_links",
+    "c_elimination": "elimination",
+    "c_uncertainty": "uncertainty",
+    "c_revision": "revision",
+    "c_justification": "justification_human"
+  },
+  "transfer_key": {
+    "valid": [
+      "o1",
+      "o2",
+      "o3",
+      "o4"
+    ],
+    "invalid": [
+      "o5",
+      "o6",
+      "o7",
+      "o8"
+    ]
+  },
+  "caps": {
+    "no_citations_max": 45,
+    "no_conflict_resolution_max": 70
+  }
+}

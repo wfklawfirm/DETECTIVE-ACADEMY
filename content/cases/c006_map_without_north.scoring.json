@@ -1,0 +1,124 @@
+{
+  "case_id": "c006_map_without_north",
+  "accepted_conclusions": {
+    "h_liar": {
+      "grade": 0,
+      "note_ar": "يعامل اختلاف الكلمتين كأنه اختلاف في الواقعة، دون معرفة موضع كل قائل."
+    },
+    "h_frames": {
+      "grade": 1,
+      "note_ar": "استنتاج متسق مع الأدلة ويتطلب ذكر حدوده."
+    },
+    "h_twice": {
+      "grade": 0,
+      "note_ar": "سجل العدّاد والحلقة ذات الاتجاه الواحد لا يتركان مجالاً لمسارين."
+    }
+  },
+  "confidence_band": {
+    "h_liar": [
+      0,
+      15
+    ],
+    "h_frames": [
+      65,
+      90
+    ],
+    "h_twice": [
+      0,
+      15
+    ]
+  },
+  "source_key": {
+    "ev_map_orig": "primary_record",
+    "ev_sightline": "primary_record",
+    "ev_counter": "primary_record",
+    "ev_layout_meta": "primary_record",
+    "ev_east_call": "primary_record",
+    "ev_west_call": "primary_record",
+    "ev_fig_rotated": "redisplay",
+    "ev_draft_note": "claim",
+    "ev_east_note": "claim",
+    "ev_west_note": "claim",
+    "ev_samer_stmt": "claim"
+  },
+  "link_key": {
+    "h_frames": {
+      "ev_sightline": "supports",
+      "ev_map_orig": "supports",
+      "ev_east_note": "supports",
+      "ev_west_note": "supports",
+      "ev_counter": "supports",
+      "ev_layout_meta": "supports",
+      "ev_draft_note": "neutral"
+    },
+    "h_liar": {
+      "ev_east_call": "supports",
+      "ev_west_call": "supports",
+      "ev_sightline": "weakens",
+      "ev_map_orig": "weakens",
+      "ev_east_note": "weakens",
+      "ev_west_note": "weakens",
+      "ev_draft_note": "supports"
+    },
+    "h_twice": {
+      "ev_counter": "weakens",
+      "ev_map_orig": "weakens",
+      "ev_east_call": "supports",
+      "ev_west_call": "supports"
+    }
+  },
+  "required_limits": [
+    "l_vehicle",
+    "l_night"
+  ],
+  "valid_mind_changers": [
+    "m_other_exit",
+    "m_stand_swap"
+  ],
+  "invalid_limits": [
+    "l_invalid_tone",
+    "l_invalid_page"
+  ],
+  "decisive_evidence": [
+    "ev_sightline",
+    "ev_map_orig",
+    "ev_east_call",
+    "ev_west_call",
+    "ev_counter"
+  ],
+  "lab_requirement": null,
+  "timeline_requirement": [
+    {
+      "evidence_id": "ev_counter",
+      "utc_minute": 12,
+      "tol": 2
+    },
+    {
+      "evidence_id": "ev_east_call",
+      "utc_minute": 14,
+      "tol": 2
+    },
+    {
+      "evidence_id": "ev_west_call",
+      "utc_minute": 21,
+      "tol": 2
+    }
+  ],
+  "refuted_hypotheses": [
+    "h_liar",
+    "h_twice"
+  ],
+  "criteria_map": {
+    "c_source": "source_typing",
+    "c_conflict": "conflict_resolution",
+    "c_links": "hypothesis_links",
+    "c_uncertainty": "uncertainty",
+    "c_revision": "revision",
+    "c_elimination": "elimination",
+    "c_justification": "justification_human"
+  },
+  "caps": {
+    "no_citations_max": 45,
+    "no_conflict_resolution_max": 70
+  }
+}

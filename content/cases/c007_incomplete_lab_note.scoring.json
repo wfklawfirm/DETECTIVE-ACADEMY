@@ -1,0 +1,123 @@
+{
+  "case_id": "c007_incomplete_lab_note",
+  "accepted_conclusions": {
+    "h_change": {
+      "grade": 0,
+      "note_ar": "يتجاوز ما تسمح به الأدلة: الفارق الظاهر ناتج عن وحدتين وحرارتين مختلفتين."
+    },
+    "h_units": {
+      "grade": 1,
+      "note_ar": "استنتاج متسق مع الأدلة ويتطلب ذكر حدوده."
+    },
+    "h_none": {
+      "grade": 0,
+      "note_ar": "ينفي كل فرق، والأدلة لا تستبعد فارقاً حقيقياً صغيراً."
+    }
+  },
+  "confidence_band": {
+    "h_change": [
+      0,
+      15
+    ],
+    "h_units": [
+      60,
+      85
+    ],
+    "h_none": [
+      0,
+      10
+    ]
+  },
+  "source_key": {
+    "ev_sheet1": "primary_record",
+    "ev_sheet2": "primary_record",
+    "ev_conditions": "primary_record",
+    "ev_cal_log": "primary_record",
+    "ev_device_sheet": "public_document",
+    "ev_summary_sheet": "redisplay",
+    "ev_super_calc": "redisplay",
+    "ev_press_report": "claim",
+    "ev_trainee_note": "claim",
+    "ev_officer_stmt": "claim"
+  },
+  "link_key": {
+    "h_units": {
+      "ev_sheet1": "supports",
+      "ev_sheet2": "supports",
+      "ev_conditions": "supports",
+      "ev_device_sheet": "supports",
+      "ev_trainee_note": "supports",
+      "ev_super_calc": "supports",
+      "ev_cal_log": "neutral"
+    },
+    "h_change": {
+      "ev_press_report": "supports",
+      "ev_summary_sheet": "supports",
+      "ev_sheet2": "weakens",
+      "ev_conditions": "weakens",
+      "ev_device_sheet": "weakens",
+      "ev_super_calc": "weakens",
+      "ev_cal_log": "neutral"
+    },
+    "h_none": {
+      "ev_cal_log": "supports",
+      "ev_super_calc": "weakens",
+      "ev_device_sheet": "weakens",
+      "ev_press_report": "neutral"
+    }
+  },
+  "required_limits": [
+    "l_cause",
+    "l_constants"
+  ],
+  "valid_mind_changers": [
+    "m_repeat",
+    "m_drift"
+  ],
+  "invalid_limits": [
+    "l_invalid_headline",
+    "l_invalid_overlap"
+  ],
+  "decisive_evidence": [
+    "ev_sheet1",
+    "ev_sheet2",
+    "ev_device_sheet",
+    "ev_conditions",
+    "ev_super_calc"
+  ],
+  "lab_requirement": null,
+  "timeline_requirement": [
+    {
+      "evidence_id": "ev_sheet1",
+      "utc_minute": 30,
+      "tol": 5
+    },
+    {
+      "evidence_id": "ev_sheet2",
+      "utc_minute": 480,
+      "tol": 5
+    },
+    {
+      "evidence_id": "ev_super_calc",
+      "utc_minute": 660,
+      "tol": 10
+    }
+  ],
+  "refuted_hypotheses": [
+    "h_change",
+    "h_none"
+  ],
+  "criteria_map": {
+    "c_source": "source_typing",
+    "c_conflict": "conflict_resolution",
+    "c_links": "hypothesis_links",
+    "c_uncertainty": "uncertainty",
+    "c_revision": "revision",
+    "c_elimination": "elimination",
+    "c_justification": "justification_human"
+  },
+  "caps": {
+    "no_citations_max": 45,
+    "no_conflict_resolution_max": 70
+  }
+}

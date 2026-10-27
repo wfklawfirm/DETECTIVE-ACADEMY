@@ -1,0 +1,151 @@
+{
+  "case_id": "c003_letter_from_tomorrow",
+  "accepted_conclusions": {
+    "h_zones": {
+      "grade": 1,
+      "note_ar": "استنتاج متسق مع الأدلة ويتطلب ذكر حدوده."
+    },
+    "h_breach": {
+      "grade": 0,
+      "note_ar": "يخلط بين اختلاف العرض والتلاعب؛ بعد توحيد الأزمنة لا يبقى ما يستدعي الاختراق."
+    },
+    "h_insufficient": {
+      "grade": 0,
+      "note_ar": "تحفّظ مفرط: السجلات المتاحة تكفي لإعادة بناء التسلسل؛ والتحفظ المقبول يخص النيّة ومحتوى الرسالة."
+    }
+  },
+  "confidence_band": {
+    "h_zones": [
+      70,
+      92
+    ],
+    "h_breach": [
+      0,
+      10
+    ],
+    "h_insufficient": [
+      0,
+      20
+    ]
+  },
+  "source_key": {
+    "ev_header": "primary_record",
+    "ev_server_log": "primary_record",
+    "ev_device_view": "redisplay",
+    "ev_summary": "redisplay",
+    "ev_network_info": "primary_record",
+    "ev_rima_comment": "claim",
+    "ev_delivery_trace": "primary_record",
+    "ev_minutes_orig": "primary_record",
+    "ev_karim_statement": "claim",
+    "ev_job_log": "primary_record"
+  },
+  "link_key": {
+    "h_zones": {
+      "ev_header": "supports",
+      "ev_server_log": "supports",
+      "ev_device_view": "supports",
+      "ev_delivery_trace": "supports",
+      "ev_network_info": "supports",
+      "ev_minutes_orig": "supports",
+      "ev_karim_statement": "supports",
+      "ev_lab_norm": "supports",
+      "ev_summary": "neutral",
+      "ev_rima_comment": "neutral",
+      "ev_job_log": "neutral"
+    },
+    "h_breach": {
+      "ev_header": "weakens",
+      "ev_server_log": "weakens",
+      "ev_device_view": "weakens",
+      "ev_delivery_trace": "weakens",
+      "ev_network_info": "weakens",
+      "ev_minutes_orig": "weakens",
+      "ev_lab_norm": "weakens",
+      "ev_summary": "supports",
+      "ev_rima_comment": "supports",
+      "ev_job_log": "supports"
+    },
+    "h_insufficient": {
+      "ev_header": "weakens",
+      "ev_server_log": "weakens",
+      "ev_delivery_trace": "weakens",
+      "ev_lab_norm": "weakens",
+      "ev_summary": "neutral",
+      "ev_rima_comment": "neutral"
+    }
+  },
+  "required_limits": [
+    "l_intent",
+    "l_content"
+  ],
+  "valid_mind_changers": [
+    "m_server_edit",
+    "m_trace_gap",
+    "m_header_zone"
+  ],
+  "invalid_limits": [
+    "l_invalid_display",
+    "l_invalid_witness",
+    "l_invalid_all"
+  ],
+  "decisive_evidence": [
+    "ev_header",
+    "ev_server_log",
+    "ev_device_view",
+    "ev_lab_norm",
+    "ev_minutes_orig"
+  ],
+  "lab_requirement": {
+    "lab_id": "lab_time",
+    "must_converge": true
+  },
+  "timeline_requirement": [
+    {
+      "evidence_id": "ev_header",
+      "utc_minute": 358,
+      "tol": 2
+    },
+    {
+      "evidence_id": "ev_server_log",
+      "utc_minute": 359,
+      "tol": 2
+    },
+    {
+      "evidence_id": "ev_device_view",
+      "utc_minute": 359,
+      "tol": 2
+    }
+  ],
+  "refuted_hypotheses": [
+    "h_breach",
+    "h_insufficient"
+  ],
+  "criteria_map": {
+    "c_source": "source_typing",
+    "c_conflict": "conflict_resolution",
+    "c_links": "hypothesis_links",
+    "c_elimination": "elimination",
+    "c_uncertainty": "uncertainty",
+    "c_revision": "revision",
+    "c_justification": "justification_human"
+  },
+  "transfer_key": {
+    "valid": [
+      "o1",
+      "o2",
+      "o3",
+      "o4"
+    ],
+    "invalid": [
+      "o5",
+      "o6",
+      "o7",
+      "o8"
+    ]
+  },
+  "caps": {
+    "no_citations_max": 45,
+    "no_conflict_resolution_max": 60
+  }
+}

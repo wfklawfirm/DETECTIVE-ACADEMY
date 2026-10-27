@@ -1,0 +1,2383 @@
+{
+  "schema_version": "0.1.0",
+  "case_id": "c009_inverted_quote",
+  "case_version": "0.1.0",
+  "meta": {
+    "title_ar": "المخطوطة والاقتباس المقلوب",
+    "title_en": "The Manuscript and the Stitched Quote",
+    "age_band": "16-18",
+    "locale": "ar",
+    "dialogue_register": "msa",
+    "estimated_minutes": 25,
+    "difficulty": 2,
+    "content_flags": [
+      "no_violence",
+      "historical"
+    ],
+    "authors": [
+      "فريق أثر التحريري (مسودة بمساعدة الذكاء الاصطناعي، لم تُراجَع بشرياً بعد)"
+    ],
+    "knowledge_object_refs": [
+      "KO-RS-05-001",
+      "KO-RS-05-005",
+      "KO-RS-05-002",
+      "KO-RS-06-001",
+      "KO-RS-06-009",
+      "KO-RS-06-021"
+    ]
+  },
+  "premise": {
+    "hook_ar": "جملة واحدة تتناقلها الصفحات منسوبة إلى رحالة قديم، وعليها تقوم نظرية كاملة عن مدينة مفقودة.",
+    "player_role_ar": "أنت باحث توثيق في مكتبة الأبحاث، وطُلب منك أن تحقق في الجملة المنسوبة إلى سالم بن نصر قبل أن يستند إليها أحد.",
+    "setting_ar": "مكتبة أبحاث في مدينة معاصرة، وصباح يوم نُشر فيه المنشور. المخطوطة ومؤلفها وكل الأسماء خيالية.",
+    "public_fact_ids": [
+      "f_post_published",
+      "f_fan_theory",
+      "f_writer_says"
+    ],
+    "assumed_general_knowledge_ar": [
+      "الترجمة نص ثانوي منقول عن الأصل",
+      "الاقتباس الموثق يُحال إلى فصل وصفحة"
+    ]
+  },
+  "entities": {
+    "characters": [
+      {
+        "id": "amina",
+        "name_ar": "أمينة الصبّاغ",
+        "role": "expert",
+        "age_descriptor_ar": "أمينة مكتبة الأبحاث في المدينة",
+        "persona_ar": "منظمة ودقيقة، تحب أن تقول ما في الفهارس والسجلات فقط، ولا تعرف من بدأ نشر المنشور.",
+        "motives_ar": [
+          "أن يُرجع إلى الكتب نفسها قبل الحكم عليها"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "am_greet",
+            "purpose": "greeting",
+            "text_ar": "أهلاً بك. الفهرس أمامي، وأستطيع أن أدلّك على النسخ والطبعات."
+          },
+          {
+            "line_id": "am_a",
+            "purpose": "reveal",
+            "text_ar": "عندنا الترجمة (أ) كاملة، ويمكنك الرجوع إلى فصلها الرابع.",
+            "fact_ids": [
+              "f_has_trans_a"
+            ]
+          },
+          {
+            "line_id": "am_b",
+            "purpose": "reveal",
+            "text_ar": "وعندنا الترجمة (ب) أيضاً، ويمكنك الرجوع إلى فصلها التاسع.",
+            "fact_ids": [
+              "f_has_trans_b"
+            ]
+          },
+          {
+            "line_id": "am_fac",
+            "purpose": "reveal",
+            "text_ar": "للمكتبة نسخة مصورة من المخطوطة نفسها، ولها فهرس يحدد مواضع الأبواب.",
+            "fact_ids": [
+              "f_has_facsimile"
+            ]
+          },
+          {
+            "line_id": "am_cat",
+            "purpose": "reveal",
+            "text_ar": "السجل الفهرسي يصف الطبعتين والمترجمين، وأستطيع أن أخرجه لك.",
+            "fact_ids": [
+              "f_has_catalogue"
+            ]
+          },
+          {
+            "line_id": "am_nojoint",
+            "purpose": "reveal",
+            "text_ar": "لم أجد في الفهرس طبعة تضع العبارتين متجاورتين؛ كل منهما في موضعها.",
+            "fact_ids": [
+              "f_no_joint_edition"
+            ]
+          },
+          {
+            "line_id": "am_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "هذا خارج ما في الفهرس."
+          },
+          {
+            "line_id": "am_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن النسخ والطبعات."
+          },
+          {
+            "line_id": "am_bye",
+            "purpose": "farewell",
+            "text_ar": "ارجع إلى الأصل كلما استطعت."
+          }
+        ]
+      },
+      {
+        "id": "nabil",
+        "name_ar": "نبيل الخطيب",
+        "role": "suspect",
+        "age_descriptor_ar": "محرر الصفحة الثقافية التي نشرت المنشور",
+        "persona_ar": "متحمس وسريع الكتابة، يخاف أن يُتّهم بالتضليل فيقلّل من شأن خطوة اختصر بها الطريق.",
+        "motives_ar": [
+          "ألا يُتّهم بتضليل القراء",
+          "أن يبقى المنشور صالحاً للدفاع عنه"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "nb_greet",
+            "purpose": "greeting",
+            "text_ar": "أنا نقلت الجملة من كتاب مطبوع. اسألني ما شئت."
+          },
+          {
+            "line_id": "nb_cited",
+            "purpose": "reveal",
+            "text_ar": "قرأتها في ترجمة مطبوعة، وظننتها نصاً واحداً متصلاً.",
+            "claim_ids": [
+              "cl_nabil_original"
+            ]
+          },
+          {
+            "line_id": "nb_notes",
+            "purpose": "reveal",
+            "text_ar": "أحتفظ بملف ملاحظات لكل مقال، وفيه بطاقات المصادر.",
+            "fact_ids": [
+              "f_notes_exist"
+            ]
+          },
+          {
+            "line_id": "nb_refuse",
+            "purpose": "refuse_secret",
+            "text_ar": "لا أذكر شيئاً آخر عن طريقة كتابة الاقتباس."
+          },
+          {
+            "line_id": "nb_joined",
+            "purpose": "reveal",
+            "text_ar": "نعم... نسخت العبارة الأولى من ترجمة والثانية من ترجمة أخرى، ولصقتهما معاً في بطاقة واحدة قبل النشر بقليل. كنت أنوي مراجعة الأصل ولم أفعل.",
+            "fact_ids": [
+              "f_joined_by_writer"
+            ]
+          },
+          {
+            "line_id": "nb_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أذكر ذلك."
+          },
+          {
+            "line_id": "nb_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن المنشور وعن مصدره."
+          },
+          {
+            "line_id": "nb_bye",
+            "purpose": "farewell",
+            "text_ar": "أريد أن أصحّح ما يجب تصحيحه."
+          }
+        ]
+      },
+      {
+        "id": "rana",
+        "name_ar": "د. رنا العلي",
+        "role": "expert",
+        "age_descriptor_ar": "مؤرخة متخصصة في أدب الرحلات القديم",
+        "persona_ar": "هادئة وصبورة، تفرّق بين ما في النص وما يُقال عنه، ولا تعرف من نشر المنشور أولاً.",
+        "motives_ar": [
+          "أن تُقرأ النصوص القديمة في سياقها"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "rn_greet",
+            "purpose": "greeting",
+            "text_ar": "تفضّل. النص القديم لا يُفهم بسطر واحد مقتطع."
+          },
+          {
+            "line_id": "rn_fig",
+            "purpose": "reveal",
+            "text_ar": "الفصل التاسع في الرحلة كله أمثال تضرب لتواضع النفس، والمدينة فيه صورة مجازية لا خبر عن مكان.",
+            "fact_ids": [
+              "f_second_figurative"
+            ]
+          },
+          {
+            "line_id": "rn_preface",
+            "purpose": "reveal",
+            "text_ar": "مترجمة الطبعة (ب) كتبت مقدمة تشرح فيها منهجها وقراءاتها، فاقرأها.",
+            "fact_ids": [
+              "f_preface_exists"
+            ]
+          },
+          {
+            "line_id": "rn_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أستطيع الجزم بذلك."
+          },
+          {
+            "line_id": "rn_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن النص وسياقه."
+          },
+          {
+            "line_id": "rn_bye",
+            "purpose": "farewell",
+            "text_ar": "اقرأ السياق قبل أن تستنتج."
+          }
+        ]
+      },
+      {
+        "id": "salim",
+        "name_ar": "سليم الفرّاء",
+        "role": "witness",
+        "age_descriptor_ar": "متابع متحمس لنظريات المدن المفقودة",
+        "persona_ar": "صادق الحماسة، يبني حكمه على المنشور وحده، ويتراجع إن وجد أمامه الصفحة الأصلية.",
+        "motives_ar": [
+          "أن يثبت وجود المدينة التي يبحث عنها"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "sl_greet",
+            "purpose": "greeting",
+            "text_ar": "الجملة واضحة وضوح الشمس!"
+          },
+          {
+            "line_id": "sl_source",
+            "purpose": "reveal",
+            "text_ar": "لم أقرأ الكتاب نفسه؛ قرأت المنشور ونسخت منه.",
+            "fact_ids": [
+              "f_salim_source"
+            ]
+          },
+          {
+            "line_id": "sl_city",
+            "purpose": "reveal",
+            "text_ar": "الرحالة يذكر ساحلاً ثم مدينة فيه، فلا بد أن المدينة حقيقية.",
+            "claim_ids": [
+              "cl_salim_city"
+            ]
+          },
+          {
+            "line_id": "sl_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف أكثر من المنشور."
+          },
+          {
+            "line_id": "sl_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "حدثني عن المدينة والمنشور."
+          },
+          {
+            "line_id": "sl_bye",
+            "purpose": "farewell",
+            "text_ar": "سأقرأ الأصل إذا دللتني عليه."
+          }
+        ]
+      }
+    ],
+    "locations": [
+      {
+        "id": "loc_library",
+        "name_ar": "مكتبة الأبحاث",
+        "description_ar": "الفهارس والنسخ المصورة والطبعات."
+      },
+      {
+        "id": "loc_desk",
+        "name_ar": "مكتب محرر الصفحة الثقافية",
+        "description_ar": "ملف الملاحظات وبطاقات المصادر."
+      },
+      {
+        "id": "loc_page",
+        "name_ar": "الصفحة الثقافية على الشبكة",
+        "description_ar": "حيث نُشر المنشور."
+      },
+      {
+        "id": "loc_ms",
+        "name_ar": "المخطوطة المصورة",
+        "description_ar": "نسخة مصورة لمخطوطة الرحالة الخيالي."
+      }
+    ],
+    "objects": [
+      {
+        "id": "obj_quote",
+        "name_ar": "الاقتباس المنسوب إلى الرحالة",
+        "description_ar": "جملة نُشرت منسوبة إلى سالم بن نصر."
+      },
+      {
+        "id": "obj_ms",
+        "name_ar": "مخطوطة «نزهة الأسفار»",
+        "description_ar": "رحلة خيالية لسالم بن نصر."
+      }
+    ],
+    "organizations": [
+      {
+        "id": "org_page",
+        "name_ar": "صفحة «أسرار الأزمنة»",
+        "description_ar": "صفحة ثقافية شعبية على الشبكة."
+      }
+    ]
+  },
+  "truth": {
+    "solution": {
+      "culprit_ids": [
+        "nabil"
+      ],
+      "summary_ar": "الجملة المنشورة ليست نصاً واحداً في الرحلة. ركّبها محرر الصفحة من عبارتين بنصّي ترجمتين مختلفتين، وكل منهما في فصل مستقل، والثانية مثل مجازي. لا تدعم المصادر وجود مدينة مخفية، لكنها هي التي أتاحت كشف التركيب.",
+      "key_fact_ids": [
+        "f_two_places",
+        "f_composite_phrase"
+      ]
+    },
+    "facts": [
+      {
+        "id": "f_post_published",
+        "statement_ar": "نشرت صفحة ثقافية جملة منسوبة إلى الرحالة سالم بن نصر، وقالت إنها تثبت وجود مدينة الفيروز المفقودة.",
+        "kind": "event",
+        "subject_ids": [
+          "obj_quote",
+          "org_page"
+        ],
+        "spoiler_level": 0,
+        "time": {
+          "start_min": 132,
+          "precision": "exact"
+        },
+        "location_id": "loc_page"
+      },
+      {
+        "id": "f_fan_theory",
+        "statement_ar": "يرى سليم أن الجملة دليل على وجود المدينة.",
+        "kind": "attribute",
+        "subject_ids": [
+          "salim"
+        ],
+        "spoiler_level": 0
+      },
+      {
+        "id": "f_writer_says",
+        "statement_ar": "يقول نبيل إنه نقل الجملة من كتاب مطبوع.",
+        "kind": "attribute",
+        "subject_ids": [
+          "nabil"
+        ],
+        "spoiler_level": 0
+      },
+      {
+        "id": "f_has_trans_a",
+        "statement_ar": "تحتفظ المكتبة بالترجمة (أ) ويمكن الرجوع إلى فصلها الرابع.",
+        "kind": "state",
+        "subject_ids": [
+          "loc_library"
+        ],
+        "spoiler_level": 1
+      },
+      {
+        "id": "f_has_trans_b",
+        "statement_ar": "تحتفظ المكتبة بالترجمة (ب) ويمكن الرجوع إلى فصلها التاسع.",
+        "kind": "state",
+        "subject_ids": [
+          "loc_library"
+        ],
+        "spoiler_level": 1
+      },
+      {
+        "id": "f_has_facsimile",
+        "statement_ar": "للمكتبة نسخة مصورة من المخطوطة مع فهرس لمواضع أبوابها.",
+        "kind": "state",
+        "subject_ids": [
+          "loc_library",
+          "obj_ms"
+        ],
+        "spoiler_level": 1
+      },
+      {
+        "id": "f_has_catalogue",
+        "statement_ar": "للمكتبة سجل فهرسي يصف طبعات الرحلة ومترجميها.",
+        "kind": "state",
+        "subject_ids": [
+          "loc_library"
+        ],
+        "spoiler_level": 1
+      },
+      {
+        "id": "f_no_joint_edition",
+        "statement_ar": "لا توجد في الفهرس طبعة تضع العبارتين متجاورتين.",
+        "kind": "absence",
+        "subject_ids": [
+          "loc_library"
+        ],
+        "spoiler_level": 2,
+        "location_id": "loc_library",
+        "science_ko_refs": [
+          "KO-RS-05-004"
+        ]
+      },
+      {
+        "id": "f_notes_exist",
+        "statement_ar": "يحتفظ نبيل بملف ملاحظات فيه بطاقات مصادر كل مقال.",
+        "kind": "state",
+        "subject_ids": [
+          "nabil",
+          "loc_desk"
+        ],
+        "spoiler_level": 1,
+        "location_id": "loc_desk"
+      },
+      {
+        "id": "f_preface_exists",
+        "statement_ar": "كتبت مترجمة الطبعة (ب) مقدمة تشرح فيها منهجها وقراءاتها.",
+        "kind": "state",
+        "subject_ids": [
+          "loc_library"
+        ],
+        "spoiler_level": 1
+      },
+      {
+        "id": "f_salim_source",
+        "statement_ar": "اعتمد سليم على المنشور وحده ولم يرجع إلى الكتاب.",
+        "kind": "state",
+        "subject_ids": [
+          "salim"
+        ],
+        "spoiler_level": 1
+      },
+      {
+        "id": "f_second_figurative",
+        "statement_ar": "العبارة الثانية جزء من مثل مضروب في تواضع النفس، لا خبر عن مكان.",
+        "kind": "attribute",
+        "subject_ids": [
+          "obj_quote",
+          "obj_ms"
+        ],
+        "spoiler_level": 2,
+        "location_id": "loc_ms",
+        "science_ko_refs": [
+          "KO-RS-05-001"
+        ]
+      },
+      {
+        "id": "f_joined_by_writer",
+        "statement_ar": "نسخ نبيل العبارة الأولى من الترجمة (أ) والثانية من الترجمة (ب) ولصقهما في بطاقة واحدة الساعة 08:20.",
+        "kind": "event",
+        "subject_ids": [
+          "nabil",
+          "obj_quote"
+        ],
+        "spoiler_level": 2,
+        "time": {
+          "start_min": 80,
+          "precision": "exact"
+        },
+        "location_id": "loc_desk",
+        "science_ko_refs": [
+          "KO-RS-06-017"
+        ]
+      },
+      {
+        "id": "f_two_places",
+        "statement_ar": "وردت العبارتان في فصلين مختلفين تفصل بينهما فصول وعشرات الصفحات، لا في سياق واحد.",
+        "kind": "relation",
+        "subject_ids": [
+          "obj_quote",
+          "obj_ms"
+        ],
+        "spoiler_level": 3,
+        "location_id": "loc_ms",
+        "science_ko_refs": [
+          "KO-RS-05-004",
+          "KO-RS-05-001"
+        ]
+      },
+      {
+        "id": "f_composite_phrase",
+        "statement_ar": "الصيغة الموحدة التي نشرها نبيل مركبة من عبارتين بنصّي الترجمتين، ولا ترد بهذه الصيغة في أي طبعة ولا في المخطوطة.",
+        "kind": "relation",
+        "subject_ids": [
+          "obj_quote",
+          "nabil"
+        ],
+        "spoiler_level": 3,
+        "science_ko_refs": [
+          "KO-RS-05-004",
+          "KO-RS-06-017"
+        ]
+      }
+    ],
+    "claims": [
+      {
+        "id": "cl_salim_city",
+        "statement_ar": "الرحالة يذكر ساحلاً ثم مدينة فيه، فالمدينة حقيقية.",
+        "kind": "half_truth",
+        "held_by": [
+          "salim"
+        ],
+        "true_fact_id": "f_two_places",
+        "contradicted_by_evidence_ids": [
+          "ev_facsimile",
+          "ev_trans_a"
+        ]
+      },
+      {
+        "id": "cl_nabil_original",
+        "statement_ar": "الجملة وردت متصلة كما هي في الكتاب.",
+        "kind": "honest_mistake",
+        "held_by": [
+          "nabil"
+        ],
+        "true_fact_id": "f_composite_phrase",
+        "contradicted_by_evidence_ids": [
+          "ev_note_log",
+          "ev_catalogue"
+        ]
+      }
+    ]
+  },
+  "timeline": [
+    {
+      "id": "te_card_a",
+      "description_ar": "نبيل ينسخ عبارة الساحل من الترجمة (أ) في بطاقة.",
+      "time": {
+        "start_min": 40,
+        "precision": "approx"
+      },
+      "location_id": "loc_desk",
+      "actor_ids": [
+        "nabil"
+      ],
+      "fact_ids": [],
+      "motivated_by_ar": "يجمع مادة مقال عن الرحلة"
+    },
+    {
+      "id": "te_card_b",
+      "description_ar": "نبيل ينسخ عبارة المدينة من الترجمة (ب) في بطاقة أخرى.",
+      "time": {
+        "start_min": 65,
+        "precision": "approx"
+      },
+      "location_id": "loc_desk",
+      "actor_ids": [
+        "nabil"
+      ],
+      "fact_ids": [],
+      "motivated_by_ar": "يبحث عما يزيّن مقاله"
+    },
+    {
+      "id": "te_join",
+      "description_ar": "نبيل يلصق العبارتين معاً في بطاقة «اقتباس للنشر».",
+      "time": {
+        "start_min": 80,
+        "precision": "exact"
+      },
+      "location_id": "loc_desk",
+      "actor_ids": [
+        "nabil"
+      ],
+      "fact_ids": [
+        "f_joined_by_writer"
+      ],
+      "motivated_by_ar": "أراد صياغة اقتباس مؤثر قبل موعد النشر"
+    },
+    {
+      "id": "te_post",
+      "description_ar": "نشر المنشور على الصفحة الثقافية.",
+      "time": {
+        "start_min": 132,
+        "precision": "exact"
+      },
+      "location_id": "loc_page",
+      "actor_ids": [
+        "nabil"
+      ],
+      "fact_ids": [
+        "f_post_published"
+      ],
+      "motivated_by_ar": "حان موعد النشر اليومي"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_post",
+      "title_ar": "منشور «أسرار الأزمنة»",
+      "kind": "digital",
+      "content_ar": "منشور على صفحة «أسرار الأزمنة» (نُشر 09:12)\n«قال الرحالة سالم بن نصر في مخطوطته: ‹بلغنا ساحلاً تحرسه الأمواج، وفيه مدينةٌ لا يراها إلا من جاء بلا سيف›. إنها مدينة الفيروز التي أخفاها التاريخ، والنص الأصلي يشهد!»\nكتبه: نبيل الخطيب، محرر الصفحة الثقافية\nعدد المشاركات: 4300",
+      "acquired_by_action_ids": [
+        "a_read_post"
+      ],
+      "supports_fact_ids": [
+        "f_post_published"
+      ],
+      "reliability": "weak",
+      "limits_ar": "منشور ثانوي يسوق اقتباساً بلا إحالة إلى فصل أو صفحة؛ لا يثبت وجود هذه الصيغة في المصدر.",
+      "is_red_herring": true,
+      "location_id": "loc_page"
+    },
+    {
+      "id": "ev_trans_a",
+      "title_ar": "الترجمة (أ) — الفصل الرابع «ركوب البحر»",
+      "kind": "documentary",
+      "content_ar": "الترجمة (أ)، الفصل الرابع «ركوب البحر»، ص 88:\n«ثم بلغنا ساحلاً تحرسه الأمواج، فرسونا عليه ثلاثة أيام نملأ الماء ونرمّم الشراع، وكان صخراً لا زرع فيه ولا أثر لساكن.»",
+      "acquired_by_action_ids": [
+        "a_get_trans_a"
+      ],
+      "supports_fact_ids": [
+        "f_two_places"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "ترجمة لا أصل؛ تنقل مقطعاً واحداً من الفصل الرابع، وقد تختلف صياغتها عن غيرها في الألفاظ.",
+      "contradicts_claim_ids": [
+        "cl_salim_city"
+      ],
+      "location_id": "loc_library"
+    },
+    {
+      "id": "ev_trans_b",
+      "title_ar": "الترجمة (ب) — الفصل التاسع «مقامات الصمت»",
+      "kind": "documentary",
+      "content_ar": "الترجمة (ب)، الفصل التاسع «مقامات الصمت»، ص 211:\n«ويضرب الشيخ مثلاً للقلب إذا تواضع، فيقول: كمدينةٍ لا يراها إلا من جاء بلا سيف، ولا يدخلها إلا من ترك الكبر عند بابها.»",
+      "acquired_by_action_ids": [
+        "a_get_trans_b"
+      ],
+      "supports_fact_ids": [
+        "f_two_places",
+        "f_second_figurative"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "ترجمة لا أصل؛ تنقل مقطعاً واحداً من الفصل التاسع، وتصف المقطع كما فهمه مترجمه.",
+      "location_id": "loc_library"
+    },
+    {
+      "id": "ev_facsimile",
+      "title_ar": "النسخة المصورة للمخطوطة",
+      "kind": "documentary",
+      "content_ar": "فهرس النسخة المصورة لمخطوطة «نزهة الأسفار»:\nالورقة 14ب، السطر 3 — باب «في ركوب البحر»: قراءة السطر: «…ثم بلغنا ساحلاً حرسته الأمواج، فرسونا عليه…»\nالورقة 63أ، السطر 9 — باب «ما ضربه الشيخ مثلاً»: قراءة السطر: «…كمدينةٍ لا يراها إلا من جاء بلا سيف…»\nبين الموضعين 48 ورقة وثلاثة أبواب. لا علامة في المخطوطة تصل أحد الموضعين بالآخر.",
+      "acquired_by_action_ids": [
+        "a_get_facsimile"
+      ],
+      "supports_fact_ids": [
+        "f_two_places"
+      ],
+      "reliability": "strong",
+      "limits_ar": "نسخة مصورة لمخطوطة واحدة؛ تفيد في تحديد المواضع ولا تثبت وحدها ما أراده مؤلفها بها.",
+      "contradicts_claim_ids": [
+        "cl_salim_city"
+      ],
+      "location_id": "loc_ms"
+    },
+    {
+      "id": "ev_catalogue",
+      "title_ar": "السجل الفهرسي للطبعات",
+      "kind": "documentary",
+      "content_ar": "السجل الفهرسي لمكتبة الأبحاث — «نزهة الأسفار»:\nالطبعة (أ): ترجمة، 1961، المترجم حمدان الريس.\nالطبعة (ب): ترجمة، 1989، المترجمة سوسن البدري.\nكلتا الطبعتين عن المخطوطة نفسها، وتتبعان ترتيب أبوابها.\nلا طبعة في المكتبة تضع عبارة الساحل وعبارة المدينة في موضع واحد.",
+      "acquired_by_action_ids": [
+        "a_get_catalogue"
+      ],
+      "supports_fact_ids": [
+        "f_no_joint_edition",
+        "f_two_places"
+      ],
+      "reliability": "strong",
+      "limits_ar": "فهرس مكتبة واحدة؛ يصف ما تملكه وما سُجّل فيه ولا يحصي كل طبعة في العالم.",
+      "contradicts_claim_ids": [
+        "cl_nabil_original"
+      ],
+      "location_id": "loc_library"
+    },
+    {
+      "id": "ev_note_log",
+      "title_ar": "ملف ملاحظات نبيل الخطيب",
+      "kind": "digital",
+      "content_ar": "ملف ملاحظات المقال — نبيل الخطيب\nبطاقة 1 — المصدر: الترجمة (أ)، الفصل الرابع، ص 88 — «ساحلاً تحرسه الأمواج»\nبطاقة 2 — المصدر: الترجمة (ب)، الفصل التاسع، ص 211 — «مدينةٌ لا يراها إلا من جاء بلا سيف»\nبطاقة 3 — «اقتباس للنشر»: نُسخت من البطاقتين ولُصقتا معاً، وأُنشئت 08:20\nملاحظة: «أراجع الأصل في المكتبة لاحقاً»",
+      "acquired_by_action_ids": [
+        "a_get_notes"
+      ],
+      "supports_fact_ids": [
+        "f_joined_by_writer",
+        "f_composite_phrase"
+      ],
+      "reliability": "strong",
+      "limits_ar": "سجل خاص بصاحبه يثبت ترتيب عمله ومصدر كل بطاقة؛ لا يثبت سبب اختصاره الطريق.",
+      "contradicts_claim_ids": [
+        "cl_nabil_original"
+      ],
+      "location_id": "loc_desk"
+    },
+    {
+      "id": "ev_preface_b",
+      "title_ar": "مقدمة المترجمة (ب)",
+      "kind": "documentary",
+      "content_ar": "من مقدمة الطبعة (ب):\n«اختلفت قراءتي عن الترجمة الأولى في ثلاث كلمات من الباب الأول، ولم يختلف النصان في الفصلين الرابع والتاسع. والفصل التاسع كله أمثال تضرب في تهذيب النفس، ولا يرد فيه وصف لرحلة أو مكان.»",
+      "acquired_by_action_ids": [
+        "a_get_preface"
+      ],
+      "supports_fact_ids": [
+        "f_second_figurative"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "مقدمة صاحبة ترجمة تصف منهجها؛ تفيد في سياق الفصل وفي حدود الاختلاف بين الترجمتين، ولا تغني عن الرجوع إلى الأصل.",
+      "location_id": "loc_library"
+    },
+    {
+      "id": "ev_context_table",
+      "title_ar": "جدول مقارنة سياق المقطعين",
+      "kind": "lab_result",
+      "content_ar": "جدول مقارنة السياق:\nالمقطع الأول: الفصل الرابع، باب السفر، وصف حسي: ساحل صخري بلا ساكن.\nالمقطع الثاني: الفصل التاسع، باب الأمثال، وصف مجازي: مثل لحال القلب.\nالسياقان مختلفان في النوع والموضع، ولا رابط نصياً بينهما في المخطوطة.",
+      "acquired_by_action_ids": [
+        "a_compare_passages"
+      ],
+      "supports_fact_ids": [
+        "f_two_places",
+        "f_second_figurative"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "ملخص مقارنة بين المقطعين كما ظهرا في الأدلة التي بين يديك؛ لا يغني عن الرجوع إلى المخطوطة نفسها.",
+      "contradicts_claim_ids": [
+        "cl_salim_city"
+      ],
+      "forensic_ko_ref": "KO-RS-05-004",
+      "location_id": "loc_library"
+    },
+    {
+      "id": "ev_amina_statement",
+      "title_ar": "إفادة أمينة الصبّاغ (ملخص)",
+      "kind": "testimonial",
+      "content_ar": "ملخص إفادة أمينة الصبّاغ:\n«الطبعتان عن المخطوطة نفسها، والعبارتان في موضعين متباعدين. لم أجد طبعة تضعهما معاً. ولا أعرف من نشر المنشور.»",
+      "acquired_by_action_ids": [
+        "a_note_amina"
+      ],
+      "supports_fact_ids": [
+        "f_no_joint_edition"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "إفادة موظفة مختصة عن حدود ما في الفهرس؛ تؤيد السجل ولا تحل محله.",
+      "location_id": "loc_library"
+    },
+    {
+      "id": "ev_rana_statement",
+      "title_ar": "إفادة د. رنا العلي (ملخص)",
+      "kind": "testimonial",
+      "content_ar": "ملخص إفادة د. رنا العلي:\n«الفصل التاسع أمثال في تواضع النفس. والمدينة فيه صورة مجازية. لا أعرف من نشر المنشور ولا من ركّب الصيغة.»",
+      "acquired_by_action_ids": [
+        "a_note_rana"
+      ],
+      "supports_fact_ids": [
+        "f_second_figurative"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "رأي مؤرخة مختصة في سياق نوع النص؛ يقاس بالنص نفسه وبما تقوله الطبعات.",
+      "location_id": "loc_library"
+    },
+    {
+      "id": "ev_nabil_statement",
+      "title_ar": "إفادة نبيل الخطيب (ملخص)",
+      "kind": "testimonial",
+      "content_ar": "ملخص إفادة نبيل الخطيب:\n«نسخت العبارة الأولى من الترجمة (أ) والثانية من الترجمة (ب) ولصقتهما في بطاقة واحدة، وكنت أنوي مراجعة الأصل ولم أفعل.»",
+      "acquired_by_action_ids": [
+        "a_note_nabil"
+      ],
+      "supports_fact_ids": [
+        "f_joined_by_writer"
+      ],
+      "reliability": "weak",
+      "limits_ar": "إفادة صاحب الشأن بعد أن عُرض عليه ملفه؛ تؤيدها السجلات ولا تغني عنها.",
+      "location_id": "loc_desk"
+    },
+    {
+      "id": "ev_salim_statement",
+      "title_ar": "إفادة سليم الفرّاء (ملخص)",
+      "kind": "testimonial",
+      "content_ar": "ملخص إفادة سليم الفرّاء:\n«لم أقرأ الكتاب. قرأت المنشور ورأيت فيه ساحلاً ثم مدينة، فاعتقدت أن المدينة حقيقية.»",
+      "acquired_by_action_ids": [
+        "a_note_salim"
+      ],
+      "supports_fact_ids": [
+        "f_salim_source"
+      ],
+      "reliability": "weak",
+      "limits_ar": "رأي متابع يعتمد على المنشور وحده؛ يصلح مثالاً لانتشار الاقتباس لا دليلاً على صحته.",
+      "location_id": "loc_page"
+    }
+  ],
+  "evidence_graph": {
+    "inferences": [
+      {
+        "id": "i_a_places",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_trans_a"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_trans_b"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_two_places"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "الترجمتان تذكران العبارتين في فصلين مختلفين (الرابع ص 88 والتاسع ص 211) وبعنوانين مختلفين؛ فهما ليستا من سياق واحد.",
+        "skill_ko_refs": [
+          "KO-RS-05-004"
+        ]
+      },
+      {
+        "id": "i_b_places",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_facsimile"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_catalogue"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_two_places"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "الفهرس يقول إن الطبعتين عن المخطوطة نفسها، وفهرس النسخة المصورة يضع الموضعين في الورقتين 14ب و63أ في بابين مختلفين بينهما 48 ورقة.",
+        "skill_ko_refs": [
+          "KO-RS-05-004",
+          "KO-RS-05-001"
+        ]
+      },
+      {
+        "id": "i_a_comp",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_post"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_trans_a"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_trans_b"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_composite_phrase"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "عبارة المنشور تجمع لفظ الترجمة (أ) ولفظ الترجمة (ب) بحرف وصل لا يرد في أي منهما، فهي صيغة موحدة ليست في أي من النصين.",
+        "skill_ko_refs": [
+          "KO-RS-06-017"
+        ]
+      },
+      {
+        "id": "i_b_comp",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_note_log"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_catalogue"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_composite_phrase"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "ملف الملاحظات يبيّن أن «الاقتباس» بطاقة لُصقت من بطاقتين من مصدرين، والفهرس لا يذكر طبعة تحمل الصيغة الموحدة؛ فالتركيب جاء من خارج الطبعات.",
+        "skill_ko_refs": [
+          "KO-RS-06-017",
+          "KO-RS-05-004"
+        ]
+      },
+      {
+        "id": "i_figurative",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_preface_b"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_rana_statement"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_second_figurative"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "مقدمة المترجمة ورأي المؤرخة يتفقان على أن الفصل التاسع أمثال مجازية في تهذيب النفس، فالمدينة فيه صورة لا موضع.",
+        "skill_ko_refs": [
+          "KO-RS-05-001"
+        ]
+      },
+      {
+        "id": "i_salim_claim",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_two_places"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_second_figurative"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_salim_city"
+        },
+        "relation": "contradicts_claim",
+        "strength": "strong",
+        "rule_ar": "العبارة الأولى في وصف سفر والثانية في مثل مجازي من فصل آخر؛ فليس في المخطوطة ساحل «فيه» مدينة، وهذا قفز من عبارتين إلى خبر واحد.",
+        "skill_ko_refs": [
+          "KO-RS-05-001",
+          "KO-RS-05-007"
+        ]
+      },
+      {
+        "id": "i_nabil_claim",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_composite_phrase"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_nabil_original"
+        },
+        "relation": "contradicts_claim",
+        "strength": "strong",
+        "rule_ar": "القول إن الجملة وردت متصلة يخالف أن الصيغة الموحدة غير موجودة في أي طبعة وأنها لُصقت من بطاقتين؛ هو خطأ فهم من الكاتب لا ادعاء كاذب.",
+        "skill_ko_refs": [
+          "KO-RS-05-014"
+        ]
+      },
+      {
+        "id": "i_support_comp",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_two_places"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_composite_phrase"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_composite"
+        },
+        "relation": "supports",
+        "strength": "strong",
+        "rule_ar": "عبارتان من فصلين مختلفين، تُركبان في جملة لا توجد في أي مصدر، تفسّر كل ما بين أيدينا: المنشور، والترجمتين، والمخطوطة، وملف الكاتب.",
+        "skill_ko_refs": [
+          "KO-RS-05-002"
+        ]
+      },
+      {
+        "id": "i_rule_history",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_two_places"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_composite_phrase"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_history"
+        },
+        "relation": "rules_out",
+        "strength": "conclusive",
+        "rule_ar": "لا يصح أن يدعم الاقتباس حقيقة تاريخية وهو غير موجود بهذه الصيغة في أي مصدر، وعباراته من سياقين مختلفين.",
+        "skill_ko_refs": [
+          "KO-RS-06-008"
+        ]
+      },
+      {
+        "id": "i_rule_history_fig",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_second_figurative"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_history"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "العبارة الثانية مثل مجازي في تهذيب النفس، فلا تُقرأ خبراً عن موضع جغرافي.",
+        "skill_ko_refs": [
+          "KO-RS-06-008"
+        ]
+      },
+      {
+        "id": "i_rule_worthless",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_composite_phrase"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_two_places"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_worthless"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "الترجمتان والمخطوطة والفهرس هي ما كشف التركيب نفسه؛ فالمصادر لم تكن عديمة القيمة، بل كانت سبيل التحقق.",
+        "skill_ko_refs": [
+          "KO-RS-06-008"
+        ]
+      }
+    ]
+  },
+  "character_knowledge": [
+    {
+      "character_id": "amina",
+      "knows": [
+        {
+          "fact_id": "f_has_trans_a",
+          "access": "professional",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_has_trans_b",
+          "access": "professional",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_has_facsimile",
+          "access": "professional",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_has_catalogue",
+          "access": "professional",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_no_joint_edition",
+          "access": "professional",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    },
+    {
+      "character_id": "rana",
+      "knows": [
+        {
+          "fact_id": "f_second_figurative",
+          "access": "professional",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_preface_exists",
+          "access": "professional",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    },
+    {
+      "character_id": "salim",
+      "knows": [
+        {
+          "fact_id": "f_salim_source",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": [
+        {
+          "claim_id": "cl_salim_city",
+          "stance": "sincere"
+        }
+      ]
+    },
+    {
+      "character_id": "nabil",
+      "knows": [
+        {
+          "fact_id": "f_notes_exist",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_joined_by_writer",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [
+        {
+          "fact_id": "f_joined_by_writer",
+          "reveal_when": {
+            "presented": {
+              "evidence_id": "ev_note_log",
+              "to_character": "nabil"
+            }
+          },
+          "cover_claim_id": null,
+          "reveal_line_id": "nb_joined"
+        }
+      ],
+      "believes": [
+        {
+          "claim_id": "cl_nabil_original",
+          "stance": "sincere"
+        }
+      ]
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "h_history",
+      "statement_ar": "الاقتباس نص أصلي واحد، فهو يدعم وجود مدينة مفقودة حقيقية.",
+      "is_true": false,
+      "plausibility_at_start": "high"
+    },
+    {
+      "id": "h_composite",
+      "statement_ar": "الاقتباس مركب من عبارتين متباعدتين ومضلل، والمصادر الأصلية لا تدعم وجود المدينة.",
+      "is_true": true,
+      "plausibility_at_start": "low",
+      "suspect_id": "nabil"
+    },
+    {
+      "id": "h_worthless",
+      "statement_ar": "كل المصادر التاريخية بلا قيمة، فلا يمكن معرفة شيء عن الرحلة.",
+      "is_true": false,
+      "plausibility_at_start": "medium"
+    }
+  ],
+  "misdirection_plan": [
+    {
+      "id": "rh_post",
+      "points_to_hypothesis_id": "h_history",
+      "planted_via_ar": "المنشور يضع «ساحلاً» و«مدينة» في جملة واحدة وينسبها إلى المخطوطة ويجمع آلاف المشاركات.",
+      "evidence_ids": [
+        "ev_post"
+      ],
+      "refuted_by_inference_ids": [
+        "i_rule_history",
+        "i_rule_history_fig",
+        "i_a_comp",
+        "i_salim_claim"
+      ],
+      "fairness_note_ar": "الترجمتان مع الفصلين وصفحاتهما في متناول اللاعب، وكذلك فهرس النسخة المصورة وملف الكاتب؛ لا يتطلب الحل غير مقارنة الألفاظ والمواضع."
+    },
+    {
+      "id": "rh_preface",
+      "points_to_hypothesis_id": "h_worthless",
+      "planted_via_ar": "مقدمة المترجمة تعترف باختلاف قراءتها عن الترجمة الأولى في ثلاث كلمات، فيبدو أن النصوص غير مستقرة.",
+      "evidence_ids": [
+        "ev_preface_b"
+      ],
+      "refuted_by_inference_ids": [
+        "i_rule_worthless"
+      ],
+      "fairness_note_ar": "المقدمة نفسها تنص على أن النصين لم يختلفا في الفصلين الرابع والتاسع، فالاختلاف المذكور لا يمس المقطعين محل البحث."
+    }
+  ],
+  "learning_objectives": [
+    {
+      "id": "lo_claim",
+      "statement_ar": "يفرّق بين الاقتباس الثانوي والنص الأصلي والفهرس، ويصنف مصدر كل معلومة.",
+      "skill_ko_ref": "KO-RS-05-001",
+      "observable_behaviors_ar": [
+        "يصنّف المصادر",
+        "يقابل الاقتباس بالأصل"
+      ],
+      "evidence_sources": [
+        "evidence_board"
+      ]
+    },
+    {
+      "id": "lo_timeline",
+      "statement_ar": "يرتّب مراحل صنع الاقتباس ونشره ليعرف متى وُجدت الصيغة الموحدة.",
+      "skill_ko_ref": "KO-RS-05-005",
+      "observable_behaviors_ar": [
+        "يضع ملف الملاحظات والمنشور في موضعيهما"
+      ],
+      "evidence_sources": [
+        "timeline_task",
+        "action_log"
+      ]
+    },
+    {
+      "id": "lo_hyp",
+      "statement_ar": "يوازن بين فرضيتين على الأقل ويستبعد ما تنقضه الأدلة، ومنها التشكيك الشامل.",
+      "skill_ko_ref": "KO-RS-05-002",
+      "observable_behaviors_ar": [
+        "يضيف فرضيات",
+        "يستبعد بدليل"
+      ],
+      "evidence_sources": [
+        "hypothesis_ledger"
+      ]
+    },
+    {
+      "id": "lo_diag",
+      "statement_ar": "يقدّر ما يثبته كل مصدر وما لا يثبته، ويربط الدليل بالفرضية باتجاه صحيح.",
+      "skill_ko_ref": "KO-RS-06-001",
+      "observable_behaviors_ar": [
+        "يقارن سياق المقطعين",
+        "يربط الدليل بالفرضية"
+      ],
+      "evidence_sources": [
+        "evidence_board",
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_calib",
+      "statement_ar": "يصوغ نسبة الترجيح بحدودها.",
+      "skill_ko_ref": "KO-RS-06-021",
+      "observable_behaviors_ar": [
+        "يختار ثقة معقولة",
+        "يذكر حدوداً"
+      ],
+      "evidence_sources": [
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_revise",
+      "statement_ar": "يراجع رأيه الأول حين يظهر ما يخالفه.",
+      "skill_ko_ref": "KO-RS-06-009",
+      "observable_behaviors_ar": [
+        "يغيّر فرضيته الرائدة بدليل"
+      ],
+      "evidence_sources": [
+        "hypothesis_ledger"
+      ]
+    }
+  ],
+  "mechanics": {
+    "time_budget_units": 40,
+    "actions": [
+      {
+        "id": "a_read_post",
+        "type": "examine",
+        "label_ar": "اقرأ المنشور المتداول",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_post"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_page",
+        "telemetry_code": "READ_POST"
+      },
+      {
+        "id": "a_int_amina",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة أمينة المكتبة",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "amina",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "amina",
+        "telemetry_code": "INT_AMINA"
+      },
+      {
+        "id": "a_int_nabil",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة نبيل",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "nabil",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "nabil",
+        "telemetry_code": "INT_NABIL"
+      },
+      {
+        "id": "a_int_rana",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة د. رنا",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "rana",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "rana",
+        "telemetry_code": "INT_RANA"
+      },
+      {
+        "id": "a_int_salim",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة سليم",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "salim",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "salim",
+        "telemetry_code": "INT_SALIM"
+      },
+      {
+        "id": "a_get_trans_a",
+        "type": "examine",
+        "label_ar": "اطلب الترجمة (أ)، الفصل الرابع",
+        "precondition": {
+          "fact_unlocked": "f_has_trans_a"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_trans_a"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_library",
+        "telemetry_code": "GET_TRANS_A"
+      },
+      {
+        "id": "a_get_trans_b",
+        "type": "examine",
+        "label_ar": "اطلب الترجمة (ب)، الفصل التاسع",
+        "precondition": {
+          "fact_unlocked": "f_has_trans_b"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_trans_b"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_library",
+        "telemetry_code": "GET_TRANS_B"
+      },
+      {
+        "id": "a_get_facsimile",
+        "type": "examine",
+        "label_ar": "اطلب فهرس النسخة المصورة",
+        "precondition": {
+          "fact_unlocked": "f_has_facsimile"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_facsimile"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_ms",
+        "telemetry_code": "GET_FACSIMILE"
+      },
+      {
+        "id": "a_get_catalogue",
+        "type": "examine",
+        "label_ar": "اطلب السجل الفهرسي للطبعات",
+        "precondition": {
+          "fact_unlocked": "f_has_catalogue"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_catalogue"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_library",
+        "telemetry_code": "GET_CATALOGUE"
+      },
+      {
+        "id": "a_get_notes",
+        "type": "examine",
+        "label_ar": "اطلب ملف ملاحظات نبيل",
+        "precondition": {
+          "fact_unlocked": "f_notes_exist"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_note_log"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_desk",
+        "telemetry_code": "GET_NOTES"
+      },
+      {
+        "id": "a_get_preface",
+        "type": "examine",
+        "label_ar": "اقرأ مقدمة الطبعة (ب)",
+        "precondition": {
+          "fact_unlocked": "f_preface_exists"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_preface_b"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_library",
+        "telemetry_code": "GET_PREFACE"
+      },
+      {
+        "id": "a_compare_passages",
+        "type": "request_lab_test",
+        "label_ar": "قارن سياق المقطعين",
+        "precondition": {
+          "all": [
+            {
+              "has_evidence": "ev_trans_a"
+            },
+            {
+              "has_evidence": "ev_trans_b"
+            },
+            {
+              "has_evidence": "ev_facsimile"
+            }
+          ]
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_context_table"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_library",
+        "telemetry_code": "COMPARE_PASSAGES"
+      },
+      {
+        "id": "a_note_amina",
+        "type": "examine",
+        "label_ar": "دوّن إفادة أمينة",
+        "precondition": {
+          "fact_unlocked": "f_no_joint_edition"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_amina_statement"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "amina",
+        "telemetry_code": "NOTE_AMINA"
+      },
+      {
+        "id": "a_note_rana",
+        "type": "examine",
+        "label_ar": "دوّن إفادة د. رنا",
+        "precondition": {
+          "fact_unlocked": "f_second_figurative"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_rana_statement"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "rana",
+        "telemetry_code": "NOTE_RANA"
+      },
+      {
+        "id": "a_note_nabil",
+        "type": "examine",
+        "label_ar": "دوّن إفادة نبيل",
+        "precondition": {
+          "fact_unlocked": "f_joined_by_writer"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_nabil_statement"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "nabil",
+        "telemetry_code": "NOTE_NABIL"
+      },
+      {
+        "id": "a_note_salim",
+        "type": "examine",
+        "label_ar": "دوّن إفادة سليم",
+        "precondition": {
+          "fact_unlocked": "f_salim_source"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_salim_statement"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "salim",
+        "telemetry_code": "NOTE_SALIM"
+      },
+      {
+        "id": "p_notes_nabil",
+        "type": "present_evidence",
+        "label_ar": "اعرض ملف الملاحظات على نبيل",
+        "precondition": {
+          "presented": {
+            "evidence_id": "ev_note_log",
+            "to_character": "nabil"
+          }
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "PRESENTED_NOTES"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "nabil",
+        "telemetry_code": "P_NOTES_NABIL"
+      },
+      {
+        "id": "a_hint",
+        "type": "request_hint",
+        "label_ar": "اطلب تلميحاً",
+        "precondition": {
+          "always": true
+        },
+        "effects": [],
+        "time_cost_units": 0,
+        "telemetry_code": "REQUEST_HINT"
+      },
+      {
+        "id": "a_accuse",
+        "type": "final_accusation",
+        "label_ar": "قدّم الاستنتاج النهائي",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "SUBMIT"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "FINAL_ACCUSATION"
+      },
+      {
+        "id": "ask_amina_f_has_trans_a",
+        "type": "interview",
+        "label_ar": "[نموذج] amina يذكر f_has_trans_a",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_has_trans_a"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "amina",
+        "telemetry_code": "ASK_AMINA_F_HAS_TRANS_A"
+      },
+      {
+        "id": "ask_amina_f_has_trans_b",
+        "type": "interview",
+        "label_ar": "[نموذج] amina يذكر f_has_trans_b",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_has_trans_b"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "amina",
+        "telemetry_code": "ASK_AMINA_F_HAS_TRANS_B"
+      },
+      {
+        "id": "ask_amina_f_has_facsimile",
+        "type": "interview",
+        "label_ar": "[نموذج] amina يذكر f_has_facsimile",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_has_facsimile"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "amina",
+        "telemetry_code": "ASK_AMINA_F_HAS_FACSIMILE"
+      },
+      {
+        "id": "ask_amina_f_has_catalogue",
+        "type": "interview",
+        "label_ar": "[نموذج] amina يذكر f_has_catalogue",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_has_catalogue"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "amina",
+        "telemetry_code": "ASK_AMINA_F_HAS_CATALOGUE"
+      },
+      {
+        "id": "ask_amina_f_no_joint_edition",
+        "type": "interview",
+        "label_ar": "[نموذج] amina يذكر f_no_joint_edition",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_no_joint_edition"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "amina",
+        "telemetry_code": "ASK_AMINA_F_NO_JOINT_EDITION"
+      },
+      {
+        "id": "ask_nabil_f_notes_exist",
+        "type": "interview",
+        "label_ar": "[نموذج] nabil يذكر f_notes_exist",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_notes_exist"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "nabil",
+        "telemetry_code": "ASK_NABIL_F_NOTES_EXIST"
+      },
+      {
+        "id": "ask_nabil_f_joined_by_writer",
+        "type": "interview",
+        "label_ar": "[نموذج] nabil يكشف f_joined_by_writer",
+        "precondition": {
+          "all": [
+            {
+              "always": true
+            },
+            {
+              "presented": {
+                "evidence_id": "ev_note_log",
+                "to_character": "nabil"
+              }
+            }
+          ]
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_joined_by_writer"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "nabil",
+        "telemetry_code": "ASK_NABIL_F_JOINED_BY_WRITER"
+      },
+      {
+        "id": "ask_rana_f_second_figurative",
+        "type": "interview",
+        "label_ar": "[نموذج] rana يذكر f_second_figurative",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_second_figurative"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "rana",
+        "telemetry_code": "ASK_RANA_F_SECOND_FIGURATIVE"
+      },
+      {
+        "id": "ask_rana_f_preface_exists",
+        "type": "interview",
+        "label_ar": "[نموذج] rana يذكر f_preface_exists",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_preface_exists"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "rana",
+        "telemetry_code": "ASK_RANA_F_PREFACE_EXISTS"
+      },
+      {
+        "id": "ask_salim_f_salim_source",
+        "type": "interview",
+        "label_ar": "[نموذج] salim يذكر f_salim_source",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_salim_source"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "salim",
+        "telemetry_code": "ASK_SALIM_F_SALIM_SOURCE"
+      }
+    ]
+  },
+  "state_machine": {
+    "id": "c009",
+    "initial": "briefing",
+    "type": "compound",
+    "states": {
+      "briefing": {
+        "description_ar": "الإحاطة",
+        "type": "atomic",
+        "on": {
+          "START": {
+            "target": "investigating"
+          }
+        }
+      },
+      "investigating": {
+        "description_ar": "التحقيق",
+        "type": "compound",
+        "initial": "gathering",
+        "states": {
+          "gathering": {
+            "type": "atomic",
+            "on": {
+              "OPEN_DEDUCTION": {
+                "target": "deducing"
+              }
+            }
+          },
+          "deducing": {
+            "type": "atomic",
+            "on": {
+              "BACK": {
+                "target": "gathering"
+              }
+            }
+          }
+        },
+        "on": {
+          "SUBMIT": {
+            "target": "review"
+          }
+        }
+      },
+      "review": {
+        "description_ar": "مراجعة",
+        "type": "atomic",
+        "on": {
+          "CLOSE": {
+            "target": "resolved"
+          }
+        }
+      },
+      "resolved": {
+        "description_ar": "إغلاق",
+        "type": "final"
+      }
+    }
+  },
+  "dialogue": {
+    "max_turns_per_interview": 10,
+    "llm_enabled": false,
+    "topics": [
+      {
+        "id": "t_editions",
+        "label_ar": "النسخ والطبعات",
+        "example_questions_ar": [
+          "أي ترجمات عندكم؟",
+          "هل لديكم نسخة مصورة؟",
+          "هل يوجد سجل بالطبعات؟"
+        ],
+        "fact_ids": [
+          "f_has_trans_a",
+          "f_has_trans_b",
+          "f_has_facsimile",
+          "f_has_catalogue"
+        ]
+      },
+      {
+        "id": "t_joint",
+        "label_ar": "هل العبارتان معاً في طبعة؟",
+        "example_questions_ar": [
+          "هل في أي طبعة العبارتان متجاورتان؟"
+        ],
+        "fact_ids": [
+          "f_no_joint_edition"
+        ]
+      },
+      {
+        "id": "t_context",
+        "label_ar": "سياق الفصل التاسع",
+        "example_questions_ar": [
+          "ما نوع الفصل التاسع؟",
+          "هل من مقدمة تشرح منهج الترجمة؟"
+        ],
+        "fact_ids": [
+          "f_second_figurative",
+          "f_preface_exists"
+        ]
+      },
+      {
+        "id": "t_writing",
+        "label_ar": "كيف كُتب الاقتباس",
+        "example_questions_ar": [
+          "من أين نقلت الجملة؟",
+          "هل تحتفظ بملف ملاحظات؟",
+          "كيف جمعت العبارتين؟"
+        ],
+        "fact_ids": [
+          "f_notes_exist",
+          "f_joined_by_writer"
+        ],
+        "claim_ids": [
+          "cl_nabil_original"
+        ]
+      },
+      {
+        "id": "t_theory",
+        "label_ar": "نظرية المدينة",
+        "example_questions_ar": [
+          "من أين عرفت الجملة؟",
+          "ماذا تعني لك المدينة؟"
+        ],
+        "fact_ids": [
+          "f_salim_source"
+        ],
+        "claim_ids": [
+          "cl_salim_city"
+        ]
+      }
+    ]
+  },
+  "rubric": {
+    "reference_answer_ar": "الاقتباس المنسوب إلى الرحالة ليس نصاً واحداً. عبارة الساحل في الفصل الرابع (ص 88 في الترجمة أ، والورقة 14ب في المصورة)، وعبارة المدينة مثل مجازي في الفصل التاسع (ص 211 في الترجمة ب، والورقة 63أ)، وتفصل بينهما أبواب وأوراق كثيرة. ركّب المحرر الصيغة الموحدة بنسخ العبارتين من ترجمتين ولصقهما في بطاقة قبل النشر الساعة 08:20، ولا توجد هذه الصيغة في أي طبعة. لا يدعم المصدر الأصلي وجود مدينة مخفية، لكن المصادر نفسها صالحة للتحقق منها. حدود الاستنتاج: لا ينفي هذا وجود مدينة حقيقية بأدلة أخرى، ولم نفحص إلا ما في المكتبة، ولا نعرف نية المحرر.",
+    "criteria": [
+      {
+        "id": "c_source",
+        "name_ar": "تصنيف المصادر",
+        "objective_ids": [
+          "lo_claim"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يصنّف"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "أخطأ في الأغلب"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "نصف صحيح"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمه صحيح"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كله صحيح"
+          }
+        ]
+      },
+      {
+        "id": "c_conflict",
+        "name_ar": "ترتيب مراحل صنع الاقتباس",
+        "objective_ids": [
+          "lo_timeline"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.25,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يضع شيئاً"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "وضع قليلاً"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "وضع نصفها صحيحاً"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمها"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كلها في موضعها"
+          }
+        ]
+      },
+      {
+        "id": "c_links",
+        "name_ar": "ربط الأدلة بالفرضيات",
+        "objective_ids": [
+          "lo_diag"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لا روابط"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "قليلة"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "نصفها صحيح"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمها"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كلها دقيقة"
+          }
+        ]
+      },
+      {
+        "id": "c_uncertainty",
+        "name_ar": "معايرة الثقة",
+        "objective_ids": [
+          "lo_calib"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "ثقة مفرطة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "حدود قليلة"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "جزئية"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معقولة"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "معايَرة كاملة"
+          }
+        ]
+      },
+      {
+        "id": "c_revision",
+        "name_ar": "مراجعة الرأي",
+        "objective_ids": [
+          "lo_revise"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "بقي على فرضية مرفوضة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "لم يعلن فرضية"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "ثبت على فرضية سليمة"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "غيّر بدليل"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "غيّر بدليل ووثّق"
+          }
+        ]
+      },
+      {
+        "id": "c_elimination",
+        "name_ar": "استبعاد الفرضيات الخاطئة",
+        "objective_ids": [
+          "lo_hyp"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يستبعد"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "استبعد خطأً"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "فرضية بدليل"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "فرضيتين"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كل الخاطئة"
+          }
+        ]
+      },
+      {
+        "id": "c_justification",
+        "name_ar": "جودة الحجة المكتوبة",
+        "objective_ids": [
+          "lo_diag",
+          "lo_hyp"
+        ],
+        "scored_by": "human",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لا حجة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "ادعاء بلا سند"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "أدلة دون ربط"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "ربط الأدلة بالاستنتاج"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "ربط مع البدائل والحدود"
+          }
+        ]
+      }
+    ]
+  },
+  "hint_ladder": [
+    {
+      "id": "hg1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "أين ينتهي ما قاله المصدر وتبدأ طريقة من نقله في عرضه؟",
+      "trigger": {
+        "always": true
+      },
+      "assessment_weight": 0.02
+    },
+    {
+      "id": "hg2",
+      "level": 2,
+      "kind": "focus_area",
+      "text_ar": "ضع كل معلومة في جدول: أصل مصوَّر، أم ترجمة، أم منشور، أم فهرس؟",
+      "trigger": {
+        "has_evidence": "ev_post"
+      },
+      "assessment_weight": 0.04
+    },
+    {
+      "id": "hg3",
+      "level": 3,
+      "kind": "pointer",
+      "text_ar": "راجع تحديداً موضع كل عبارة في الكتاب: في أي فصل وفي أي صفحة؟",
+      "trigger": {
+        "has_evidence": "ev_post"
+      },
+      "assessment_weight": 0.08
+    },
+    {
+      "id": "hc1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "هل ترد عبارة المنشور بحروفها متصلة في أي مصدر عندك؟",
+      "trigger": {
+        "has_evidence": "ev_trans_b"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_a_comp"
+    },
+    {
+      "id": "hc2",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "قارن لفظ المنشور بلفظ الترجمة (أ) ثم بلفظ الترجمة (ب)، وانتبه إلى ما يصل بينهما.",
+      "trigger": {
+        "has_evidence": "ev_trans_b"
+      },
+      "assessment_weight": 0.06,
+      "targets_inference_id": "i_a_comp"
+    },
+    {
+      "id": "hc3",
+      "level": 3,
+      "kind": "partial_reveal",
+      "text_ar": "ضع الفصلين وصفحتيهما جنباً إلى جنب، وستعرف أن ما اتصل في المنشور لم يتصل في الكتاب.",
+      "trigger": {
+        "has_evidence": "ev_trans_b"
+      },
+      "assessment_weight": 0.1,
+      "targets_inference_id": "i_a_comp"
+    }
+  ],
+  "fairness_test": {
+    "requirements": {
+      "min_disjoint_proof_paths": 2,
+      "max_inference_depth": 3,
+      "all_red_herrings_refutable": true,
+      "culprit_uniquely_entailed": true,
+      "no_hidden_fact_dependency": true,
+      "max_required_actions": 40
+    },
+    "runs": []
+  },
+  "ending_explanation": {
+    "steps": [
+      {
+        "order": 1,
+        "text_ar": "الترجمتان تضعان العبارتين في فصلين مختلفين (الرابع ص 88 والتاسع ص 211)، وفهرس المصورة يضعهما في الورقتين 14ب و63أ بين بابين وبينهما 48 ورقة.",
+        "uses_evidence_ids": [
+          "ev_trans_a",
+          "ev_trans_b",
+          "ev_facsimile",
+          "ev_catalogue"
+        ],
+        "inference_id": "i_b_places"
+      },
+      {
+        "order": 2,
+        "text_ar": "عبارة الساحل وصف سفر صخري بلا ساكن، وعبارة المدينة مثل مجازي في تواضع النفس؛ فلا يصلهما سياق واحد ولا تثبتان مدينة.",
+        "uses_evidence_ids": [
+          "ev_preface_b",
+          "ev_rana_statement",
+          "ev_trans_a"
+        ],
+        "inference_id": "i_figurative"
+      },
+      {
+        "order": 3,
+        "text_ar": "عبارة المنشور تجمع لفظ الترجمة (أ) ولفظ الترجمة (ب) بحرف وصل لا يرد في أي منهما.",
+        "uses_evidence_ids": [
+          "ev_post",
+          "ev_trans_a",
+          "ev_trans_b"
+        ],
+        "inference_id": "i_a_comp"
+      },
+      {
+        "order": 4,
+        "text_ar": "ملف الملاحظات يبيّن أن «الاقتباس» بطاقة لُصقت 08:20 من بطاقتين من مصدرين، قبل نشر المنشور 09:12، والفهرس لا يذكر طبعة بالصيغة الموحدة.",
+        "uses_evidence_ids": [
+          "ev_note_log",
+          "ev_catalogue",
+          "ev_post"
+        ],
+        "inference_id": "i_b_comp"
+      },
+      {
+        "order": 5,
+        "text_ar": "إذن الاقتباس مركب ومضلل لا مزوّر عن عمد: كاتبه أراد مراجعة الأصل لاحقاً ولم يفعل.",
+        "uses_evidence_ids": [
+          "ev_note_log",
+          "ev_nabil_statement"
+        ],
+        "inference_id": "i_support_comp"
+      },
+      {
+        "order": 6,
+        "text_ar": "ولا يعني ذلك أن المصادر بلا قيمة، فالمصادر نفسها هي التي كشفت التركيب.",
+        "uses_evidence_ids": [
+          "ev_facsimile",
+          "ev_catalogue",
+          "ev_preface_b"
+        ],
+        "inference_id": "i_rule_worthless"
+      }
+    ],
+    "alternative_paths_ar": [
+      "يمكن الوصول إلى النتيجة من الترجمتين والمنشور وحدها دون المخطوطة، لكن من يفعل ذلك لا يعرف إن كان المترجمان نقلا الموضعين بأمانة.",
+      "ويمكن الوصول إليها من فهرس النسخة المصورة وملف الملاحظات والسجل الفهرسي دون الترجمتين؛ والأقوى أن يتفق المساران."
+    ],
+    "what_evidence_could_not_show_ar": [
+      "لا ينفي هذا وجود مدينة حقيقية بأدلة أخرى؛ هو ينفي أن هذا الاقتباس يثبتها.",
+      "اقتصر الفحص على الطبعتين والنسخة المصورة المتاحة، ولا يستبعد وجود نسخة أخرى لم تُفحص.",
+      "لا تبيّن الأدلة قصد المحرر؛ تبيّن ما فعله لا لماذا فعله."
+    ],
+    "science_notes_ar": [
+      "الاقتباس الصحيح له إحالة: عنوان وفصل وصفحة، فإن غابت الإحالة فابحث عن الموضع قبل أن تصدق.",
+      "الاختلاف بين مصدرين لا يعني أن أحدهما كاذب، وبطلان الثقة بكل المصادر ليس نتيجة منطقية لخطأ في واحد منها.",
+      "حفظ النسخ الأصلية ومن تناولها يسمى سلسلة العهدة، وهو ما يجعل المقارنة بين النص الأصلي ونسخه ممكنة، وترتبط به نسبة الترجيح التي نمنحها لأي ادعاء."
+    ]
+  },
+  "expert_review": [
+    {
+      "role": "narrative_editor",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "scientific_reviewer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "learning_designer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "age_appropriateness",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "cultural_reviewer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "legal_rights",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "safety",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    }
+  ]
+}

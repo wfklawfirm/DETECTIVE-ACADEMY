@@ -1,0 +1,2183 @@
+{
+  "schema_version": "0.1.0",
+  "case_id": "c007_incomplete_lab_note",
+  "case_version": "0.1.0",
+  "meta": {
+    "title_ar": "مذكّرة المختبر الناقصة",
+    "title_en": "The Incomplete Lab Note",
+    "age_band": "16-18",
+    "locale": "ar",
+    "dialogue_register": "msa",
+    "estimated_minutes": 30,
+    "difficulty": 3,
+    "content_flags": [
+      "no_violence",
+      "science_lab"
+    ],
+    "authors": [
+      "فريق أثر التحريري (مسودة بمساعدة الذكاء الاصطناعي، لم تُراجَع بشرياً بعد)"
+    ],
+    "knowledge_object_refs": [
+      "KO-RS-05-001",
+      "KO-RS-05-005",
+      "KO-RS-05-002",
+      "KO-RS-06-003",
+      "KO-RS-05-010",
+      "KO-RS-06-009"
+    ]
+  },
+  "premise": {
+    "hook_ar": "خبر يقول إن ماء نافورة المدرسة تغيّر تغيراً هائلاً في يوم واحد، لكن سجلاً في المختبر لا يؤيد ذلك. فأي الرقمين يُصدَّق؟",
+    "player_role_ar": "أنت مراجع بيانات في نادي العلوم بالمدرسة، وعليك أن تقرر ماذا يثبت الملف فعلاً قبل أن يصدر المختبر بيانه.",
+    "setting_ar": "مختبر مدرسة ثانوية في مدينة متخيَّلة، يوم الثلاثاء. القياسات تمثيلية لأغراض التعلم، وتوقيت المدرسة هو توقيت كل الأوراق.",
+    "public_fact_ids": [
+      "f_announce",
+      "f_press_claim"
+    ],
+    "assumed_general_knowledge_ar": [
+      "البادئتان «ملّي» و«ميكرو» تدلان على أجزاء من الوحدة تختلف بمعامل ثابت",
+      "توصيلية الماء الكهربائية تتغير بتغير حرارته"
+    ]
+  },
+  "entities": {
+    "characters": [
+      {
+        "id": "rana",
+        "name_ar": "رنا السعدي",
+        "role": "witness",
+        "age_descriptor_ar": "باحثة متدربة في مختبر المدرسة",
+        "persona_ar": "متحمسة ودقيقة في تدوين ما تفعله، وتقلق من أن يُظن أنها أخطأت في القياس.",
+        "motives_ar": [
+          "ألا يُنسب إليها خطأ في القياس",
+          "أن يُفهم ما دوّنته كما كتبته"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "rn_greet",
+            "purpose": "greeting",
+            "text_ar": "أهلاً. كل قياس دوّنته بيدي في ورقته."
+          },
+          {
+            "line_id": "rn_samples",
+            "purpose": "reveal",
+            "text_ar": "أخذت العينة الأولى صباحاً من حافة الحوض الشمالية، والثانية عصراً من الحافة الجنوبية قرب فتحة التدوير. وقست حرارة كل عينة قبل قراءتها.",
+            "fact_ids": [
+              "f_sample1_taken",
+              "f_sample2_taken"
+            ],
+            "claim_ids": [
+              "cl_rana_same"
+            ]
+          },
+          {
+            "line_id": "rn_refuse",
+            "purpose": "refuse_secret",
+            "text_ar": "دوّنت كل شيء في الورقتين."
+          },
+          {
+            "line_id": "rn_mode",
+            "purpose": "reveal",
+            "text_ar": "نعم... بعد الظهر فعّلت نمط المدى العالي، فصار الجهاز يعرض بالملّي سيمنز لكل متر. كتبت الوحدة في الورقة الثانية، لكن الملخص المختصر لم يتسع لها.",
+            "fact_ids": [
+              "f_display_mode_changed"
+            ]
+          },
+          {
+            "line_id": "rn_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف أكثر من ذلك."
+          },
+          {
+            "line_id": "rn_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن القياس وكيف جرى."
+          },
+          {
+            "line_id": "rn_bye",
+            "purpose": "farewell",
+            "text_ar": "أتمنى أن تُفهم القراءتان كما كُتبتا."
+          }
+        ]
+      },
+      {
+        "id": "haitham",
+        "name_ar": "د. هيثم الفارس",
+        "role": "expert",
+        "age_descriptor_ar": "مشرف المختبر",
+        "persona_ar": "منهجي وحذر، يفرّق بين ما قيس وما فُسّر، ولا يجزم فوق ما تسمح به الأرقام.",
+        "motives_ar": [
+          "أن يبقى الجهاز موثوقاً",
+          "ألا يخرج بيان يتجاوز الأرقام"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "ht_greet",
+            "purpose": "greeting",
+            "text_ar": "تفضّل. أحب أن أرى الأرقام قبل أي عنوان."
+          },
+          {
+            "line_id": "ht_margin",
+            "purpose": "reveal",
+            "text_ar": "هامش خطأ الجهاز المعتمد خمسة بالمئة من القراءة بعد التعويض الحراري إلى 25 درجة. هذا ما تقوله ورقة الجهاز عندنا.",
+            "fact_ids": [
+              "f_device_margin"
+            ]
+          },
+          {
+            "line_id": "ht_cal",
+            "purpose": "reveal",
+            "text_ar": "عايرت الجهاز قبل تسعة أيام بمحلول معياري، ولم أعايره بين الجلستين.",
+            "fact_ids": [
+              "f_calibrated"
+            ]
+          },
+          {
+            "line_id": "ht_calc",
+            "purpose": "reveal",
+            "text_ar": "حسبت القراءتين مساء اليوم نفسه بعد توحيد الوحدة والحرارة، وهي في الورقة التي أعطيك إياها. ما يتبقى صغير، ولا أجزم بسببه.",
+            "fact_ids": [
+              "f_super_calc"
+            ]
+          },
+          {
+            "line_id": "ht_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أستطيع أن أجزم بما لم يُقَس."
+          },
+          {
+            "line_id": "ht_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن الجهاز والأرقام."
+          },
+          {
+            "line_id": "ht_bye",
+            "purpose": "farewell",
+            "text_ar": "راجع الأرقام قبل أن تحكم."
+          }
+        ]
+      },
+      {
+        "id": "yasser",
+        "name_ar": "ياسر العلوي",
+        "role": "suspect",
+        "age_descriptor_ar": "مسؤول النشر في المدرسة",
+        "persona_ar": "مشغول ويكتب بسرعة، يثق بالملخصات القصيرة، ويخشى أن يُقال إن خبره بالغ.",
+        "motives_ar": [
+          "ألا يُنسب إليه تضخيم الخبر",
+          "نشر الخبر في موعده"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "ys_greet",
+            "purpose": "greeting",
+            "text_ar": "أهلاً. نشرنا الخبر كما وصلنا."
+          },
+          {
+            "line_id": "ys_read",
+            "purpose": "reveal",
+            "text_ar": "كتبت الخبر من الملخص الذي وصلني: العينة الأولى 410 والثانية 54، فبدا لي الفارق كبيراً جداً.",
+            "fact_ids": [
+              "f_officer_read_summary"
+            ],
+            "claim_ids": [
+              "cl_press_big"
+            ]
+          },
+          {
+            "line_id": "ys_refuse",
+            "purpose": "refuse_secret",
+            "text_ar": "الملخص هو المعتمد عندنا."
+          },
+          {
+            "line_id": "ys_units",
+            "purpose": "reveal",
+            "text_ar": "لم أفتح ورقتي القياس ولا جدول الوحدات، وظننت أن الرقمين بوحدة واحدة.",
+            "fact_ids": [
+              "f_no_unit_table"
+            ]
+          },
+          {
+            "line_id": "ys_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا علم لي بذلك."
+          },
+          {
+            "line_id": "ys_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن كتابة الخبر فقط."
+          },
+          {
+            "line_id": "ys_bye",
+            "purpose": "farewell",
+            "text_ar": "سأراجع الخبر قبل أي تحديث."
+          }
+        ]
+      }
+    ],
+    "locations": [
+      {
+        "id": "loc_lab",
+        "name_ar": "مختبر المدرسة",
+        "description_ar": "جهاز قياس التوصيلية وأوراق القياس."
+      },
+      {
+        "id": "loc_fountain",
+        "name_ar": "نافورة ساحة المدرسة",
+        "description_ar": "حوض له حافتان شمالية وجنوبية، وفتحة تدوير في الجنوب."
+      },
+      {
+        "id": "loc_press",
+        "name_ar": "مكتب النشر",
+        "description_ar": "الأخبار والملخصات الواردة إلى المدرسة."
+      },
+      {
+        "id": "loc_records",
+        "name_ar": "ملفات المختبر",
+        "description_ar": "سجل الظروف وسجل المعايرة وورقة بيانات الجهاز."
+      }
+    ],
+    "objects": [
+      {
+        "id": "obj_meter",
+        "name_ar": "جهاز قياس التوصيلية",
+        "description_ar": "جهاز مدرسي يعرض التوصيلية بوحدتين بحسب النمط."
+      },
+      {
+        "id": "obj_water",
+        "name_ar": "ماء النافورة",
+        "description_ar": "عينتان أُخذتا من حوض النافورة."
+      }
+    ],
+    "organizations": [
+      {
+        "id": "org_lab",
+        "name_ar": "مختبر المدرسة",
+        "description_ar": "مختبر طلابي يشرف عليه معلّم."
+      }
+    ]
+  },
+  "truth": {
+    "solution": {
+      "culprit_ids": [
+        "yasser"
+      ],
+      "summary_ar": "لم يثبت تغير جوهري. الرقمان لا يُقارنان مباشرة لأن لكل منهما وحدة وحرارة مختلفتين، وبعد التوحيد يبقى فارق صغير داخل هامش الجهاز ولا يُجزم بسببه. وجاءت المبالغة من خبر كُتب من ملخص بلا وحدات، دون قصد التضليل.",
+      "key_fact_ids": [
+        "f_unit_mismatch",
+        "f_temp_differ",
+        "f_within_margin"
+      ]
+    },
+    "facts": [
+      {
+        "id": "f_announce",
+        "statement_ar": "أعلن المختبر المدرسي أن بين عينتين من ماء النافورة فارقاً كبيراً.",
+        "kind": "event",
+        "subject_ids": [
+          "org_lab",
+          "obj_water"
+        ],
+        "spoiler_level": 0
+      },
+      {
+        "id": "f_press_claim",
+        "statement_ar": "نشر تقرير صحفي أن توصيلية ماء النافورة هبطت من 410 إلى 54 وعدّ ذلك تغيراً جوهرياً.",
+        "kind": "event",
+        "subject_ids": [
+          "yasser",
+          "obj_water"
+        ],
+        "spoiler_level": 0
+      },
+      {
+        "id": "f_sample1_taken",
+        "statement_ar": "أُخذت العينة الأولى الساعة 07:30 من حافة الحوض الشمالية، وحرارة الماء 15.0 درجة مئوية، وقراءتها 410 ميكروسيمنز لكل سنتيمتر.",
+        "kind": "event",
+        "subject_ids": [
+          "rana",
+          "obj_water"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 30,
+          "precision": "exact"
+        },
+        "location_id": "loc_fountain",
+        "science_ko_refs": [
+          "KO-RS-06-003"
+        ]
+      },
+      {
+        "id": "f_sample2_taken",
+        "statement_ar": "أُخذت العينة الثانية الساعة 15:00 من حافة الحوض الجنوبية قرب فتحة التدوير، وحرارة الماء 25.0 درجة مئوية، وقراءتها 54.0 ملّي سيمنز لكل متر.",
+        "kind": "event",
+        "subject_ids": [
+          "rana",
+          "obj_water"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 480,
+          "precision": "exact"
+        },
+        "location_id": "loc_fountain",
+        "science_ko_refs": [
+          "KO-RS-06-003"
+        ]
+      },
+      {
+        "id": "f_display_mode_changed",
+        "statement_ar": "فعّلت الباحثة نمط المدى العالي قبل القياس الثاني، فتحوّل عرض الجهاز إلى ملّي سيمنز لكل متر.",
+        "kind": "event",
+        "subject_ids": [
+          "rana",
+          "obj_meter"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 470,
+          "precision": "approx"
+        },
+        "location_id": "loc_lab"
+      },
+      {
+        "id": "f_device_margin",
+        "statement_ar": "هامش خطأ الجهاز المعتمد خمسة بالمئة من القراءة بعد التعويض الحراري إلى 25 درجة، بمعامل تعويض 2.0 بالمئة لكل درجة.",
+        "kind": "attribute",
+        "subject_ids": [
+          "obj_meter"
+        ],
+        "spoiler_level": 1,
+        "location_id": "loc_lab",
+        "science_ko_refs": [
+          "KO-RS-06-003"
+        ]
+      },
+      {
+        "id": "f_calibrated",
+        "statement_ar": "عُوير الجهاز قبل تسعة أيام ولم يُعايَر بين الجلستين.",
+        "kind": "state",
+        "subject_ids": [
+          "obj_meter"
+        ],
+        "spoiler_level": 1,
+        "location_id": "loc_lab"
+      },
+      {
+        "id": "f_super_calc",
+        "statement_ar": "أعدّ المشرف مساءً ورقة حساب توحّد الوحدة والحرارة للقراءتين.",
+        "kind": "event",
+        "subject_ids": [
+          "haitham"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 660,
+          "precision": "exact"
+        },
+        "location_id": "loc_lab"
+      },
+      {
+        "id": "f_officer_read_summary",
+        "statement_ar": "كتب مسؤول النشر الخبر من ملخص يذكر الرقمين دون وحدتيهما.",
+        "kind": "event",
+        "subject_ids": [
+          "yasser"
+        ],
+        "spoiler_level": 1,
+        "location_id": "loc_press"
+      },
+      {
+        "id": "f_no_unit_table",
+        "statement_ar": "لم يفتح مسؤول النشر ورقتي القياس ولا جدول الوحدات قبل النشر.",
+        "kind": "state",
+        "subject_ids": [
+          "yasser"
+        ],
+        "spoiler_level": 2,
+        "location_id": "loc_press"
+      },
+      {
+        "id": "f_unit_mismatch",
+        "statement_ar": "سُجلت القراءتان بوحدتين مختلفتين، ميكروسيمنز لكل سنتيمتر ثم ملّي سيمنز لكل متر، والقراءة الثانية تعادل 540 بوحدة الأولى.",
+        "kind": "relation",
+        "subject_ids": [
+          "obj_water",
+          "obj_meter"
+        ],
+        "spoiler_level": 2,
+        "location_id": "loc_lab",
+        "science_ko_refs": [
+          "KO-RS-05-010"
+        ]
+      },
+      {
+        "id": "f_temp_differ",
+        "statement_ar": "أُخذت العينتان في درجتي حرارة مختلفتين، 15.0 ثم 25.0 درجة مئوية.",
+        "kind": "relation",
+        "subject_ids": [
+          "obj_water"
+        ],
+        "spoiler_level": 2,
+        "location_id": "loc_fountain",
+        "science_ko_refs": [
+          "KO-RS-06-003"
+        ]
+      },
+      {
+        "id": "f_within_margin",
+        "statement_ar": "بعد توحيد الوحدة والتعويض الحراري تقترب القراءتان من 512.5 و540، ويبقى فارق اسمي صغير تتسع له فترتا الخطأ المتداخلتان؛ فلا يكفي لإثبات تغير ولا لنفيه، وسببه غير محسوم.",
+        "kind": "relation",
+        "subject_ids": [
+          "obj_water",
+          "obj_meter"
+        ],
+        "spoiler_level": 3,
+        "location_id": "loc_lab",
+        "science_ko_refs": [
+          "KO-RS-05-010",
+          "KO-RS-06-003"
+        ]
+      }
+    ],
+    "claims": [
+      {
+        "id": "cl_press_big",
+        "statement_ar": "التوصيلية هبطت من 410 إلى 54، وهذا تغير جوهري مثبت.",
+        "kind": "honest_mistake",
+        "held_by": [
+          "yasser"
+        ],
+        "true_fact_id": "f_within_margin",
+        "contradicted_by_evidence_ids": [
+          "ev_sheet2",
+          "ev_super_calc"
+        ]
+      },
+      {
+        "id": "cl_rana_same",
+        "statement_ar": "قست العينتين بالطريقة نفسها.",
+        "kind": "half_truth",
+        "held_by": [
+          "rana"
+        ],
+        "true_fact_id": "f_unit_mismatch",
+        "contradicted_by_evidence_ids": [
+          "ev_sheet2",
+          "ev_conditions"
+        ]
+      }
+    ]
+  },
+  "timeline": [
+    {
+      "id": "te_s1",
+      "description_ar": "الباحثة تأخذ العينة الأولى وتقيسها.",
+      "time": {
+        "start_min": 30,
+        "precision": "exact"
+      },
+      "location_id": "loc_fountain",
+      "actor_ids": [
+        "rana"
+      ],
+      "fact_ids": [
+        "f_sample1_taken"
+      ],
+      "motivated_by_ar": "جدول القياس الصباحي في المختبر"
+    },
+    {
+      "id": "te_mode",
+      "description_ar": "الباحثة تفعّل نمط المدى العالي في الجهاز.",
+      "time": {
+        "start_min": 470,
+        "precision": "approx"
+      },
+      "location_id": "loc_lab",
+      "actor_ids": [
+        "rana"
+      ],
+      "fact_ids": [
+        "f_display_mode_changed"
+      ],
+      "motivated_by_ar": "أرادت قراءة أوسع لعينة العصر"
+    },
+    {
+      "id": "te_s2",
+      "description_ar": "الباحثة تأخذ العينة الثانية وتقيسها.",
+      "time": {
+        "start_min": 480,
+        "precision": "exact"
+      },
+      "location_id": "loc_fountain",
+      "actor_ids": [
+        "rana"
+      ],
+      "fact_ids": [
+        "f_sample2_taken"
+      ],
+      "motivated_by_ar": "جدول القياس بعد الظهر"
+    },
+    {
+      "id": "te_calc",
+      "description_ar": "المشرف يحسب القراءتين بعد التوحيد.",
+      "time": {
+        "start_min": 660,
+        "precision": "exact"
+      },
+      "location_id": "loc_lab",
+      "actor_ids": [
+        "haitham"
+      ],
+      "fact_ids": [
+        "f_super_calc"
+      ],
+      "motivated_by_ar": "أراد أن يراجع الأرقام قبل أي بيان"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_sheet1",
+      "title_ar": "ورقة القياس الأولى",
+      "kind": "lab_result",
+      "content_ar": "ورقة قياس 1 — جهاز التوصيلية\nالوقت: 07:30 | الموضع: حافة الحوض الشمالية\nحرارة الماء: 15.0 °م\nالقراءة: 410\nالوحدة المعروضة: ميكروسيمنز لكل سنتيمتر\nالمدوِّنة: ر. السعدي",
+      "acquired_by_action_ids": [
+        "a_read_sheet1"
+      ],
+      "supports_fact_ids": [
+        "f_sample1_taken"
+      ],
+      "reliability": "strong",
+      "limits_ar": "قياس واحد لعينة واحدة عند لحظة واحدة؛ لا يصف ماء النافورة في بقية اليوم، ولا يقارن بنفسه بقياس بوحدة أخرى.",
+      "forensic_ko_ref": "KO-RS-06-003",
+      "location_id": "loc_lab"
+    },
+    {
+      "id": "ev_sheet2",
+      "title_ar": "ورقة القياس الثانية",
+      "kind": "lab_result",
+      "content_ar": "ورقة قياس 2 — جهاز التوصيلية\nالوقت: 15:00 | الموضع: حافة الحوض الجنوبية قرب فتحة التدوير\nحرارة الماء: 25.0 °م\nالقراءة: 54.0\nالوحدة المعروضة: ملّي سيمنز لكل متر\nالمدوِّنة: ر. السعدي",
+      "acquired_by_action_ids": [
+        "a_read_sheet2"
+      ],
+      "supports_fact_ids": [
+        "f_sample2_taken"
+      ],
+      "reliability": "strong",
+      "limits_ar": "قياس واحد لعينة واحدة عند لحظة واحدة، بوحدة غير وحدة الورقة الأولى وفي موضع آخر.",
+      "contradicts_claim_ids": [
+        "cl_press_big",
+        "cl_rana_same"
+      ],
+      "forensic_ko_ref": "KO-RS-06-003",
+      "location_id": "loc_lab"
+    },
+    {
+      "id": "ev_press_report",
+      "title_ar": "الخبر الصحفي",
+      "kind": "documentary",
+      "content_ar": "خبر في موقع محلي (نسخة)\nالعنوان: «ماء نافورة المدرسة يتغيّر كثيراً!»\nالمتن: «أظهرت قياسات مختبر المدرسة أن توصيلية ماء النافورة هبطت من 410 إلى 54 خلال يوم واحد، أي بنسبة تتجاوز 86%، في نتيجة قاطعة لا تحتمل التأويل.»",
+      "acquired_by_action_ids": [
+        "a_read_press"
+      ],
+      "supports_fact_ids": [
+        "f_press_claim",
+        "f_announce"
+      ],
+      "reliability": "weak",
+      "limits_ar": "نص صحفي يعرض رقمين بلا وحدات ولا ظروف أخذ العينات؛ هو ادعاء عن القياس لا قياس.",
+      "location_id": "loc_press"
+    },
+    {
+      "id": "ev_summary_sheet",
+      "title_ar": "ملخص النتائج في صفحة واحدة",
+      "kind": "documentary",
+      "content_ar": "ملخص نتائج مختبر المدرسة\nالعينة | الرقم\n1 | 410\n2 | 54\nملاحظة: التفاصيل في ورقتي القياس.",
+      "acquired_by_action_ids": [
+        "a_read_summary"
+      ],
+      "supports_fact_ids": [
+        "f_officer_read_summary"
+      ],
+      "reliability": "weak",
+      "limits_ar": "جدول مختصر بلا عمود للوحدات ولا للحرارة؛ لا يغني عن ورقتي القياس.",
+      "location_id": "loc_press"
+    },
+    {
+      "id": "ev_conditions",
+      "title_ar": "سجل ظروف أخذ العينات",
+      "kind": "documentary",
+      "content_ar": "سجل ظروف أخذ العينات (ورقة مشتركة)\n1 — 07:30، ظل الصباح، ماء 15.0 °م، الحافة الشمالية.\n2 — 15:00، شمس مباشرة، ماء 25.0 °م، الحافة الجنوبية قرب فتحة التدوير.\nلا قراءات أخرى في اليوم.",
+      "acquired_by_action_ids": [
+        "a_read_conditions"
+      ],
+      "supports_fact_ids": [
+        "f_temp_differ"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يصف ظروف أخذ كل عينة، ولا يقول شيئاً عن تأثير هذه الظروف في القراءة.",
+      "contradicts_claim_ids": [
+        "cl_rana_same"
+      ],
+      "location_id": "loc_records"
+    },
+    {
+      "id": "ev_device_sheet",
+      "title_ar": "ورقة بيانات الجهاز (مرجع تعليمي)",
+      "kind": "documentary",
+      "content_ar": "ورقة بيانات جهاز التوصيلية — مرجع تعليمي لهذه المحاكاة\n- التحويل: 1 ملّي سيمنز لكل متر = 10 ميكروسيمنز لكل سنتيمتر.\n- المرجع الحراري 25 °م؛ القراءة عند 25 = القراءة ÷ (1 + 0.02 × (الحرارة − 25)).\n- معامل التعويض هنا: 2.0% لكل درجة.\n- هامش الخطأ: ±5% من القراءة بعد التعويض.\n- نمط المدى العالي يعرض بالملّي سيمنز لكل متر.",
+      "acquired_by_action_ids": [
+        "a_read_device"
+      ],
+      "supports_fact_ids": [
+        "f_device_margin"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "ثوابت تمثيلية لغرض المحاكاة التعليمية؛ لا تُستعمل خارجها دون مراجعة علمية.",
+      "location_id": "loc_records"
+    },
+    {
+      "id": "ev_cal_log",
+      "title_ar": "سجل معايرة الجهاز",
+      "kind": "documentary",
+      "content_ar": "سجل معايرة الجهاز\nآخر معايرة: قبل تسعة أيام بمحلول معياري؛ الانحراف ضمن الحد المقبول.\nلا معايرة بين جلستي الثلاثاء.",
+      "acquired_by_action_ids": [
+        "a_get_cal"
+      ],
+      "supports_fact_ids": [
+        "f_calibrated"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يثبت حال الجهاز لا حال الماء؛ ومعايرة سليمة لا تجعل مقارنة رقمين بوحدتين مختلفتين صحيحة.",
+      "location_id": "loc_records"
+    },
+    {
+      "id": "ev_trainee_note",
+      "title_ar": "إفادة الباحثة المتدربة",
+      "kind": "testimonial",
+      "content_ar": "ملخص إفادة رنا السعدي:\n«بعد الظهر فعّلت نمط المدى العالي، فصار الجهاز يعرض بالملّي سيمنز لكل متر، وكتبت الوحدة في الورقة الثانية. أما الورقة الأولى فكانت بالميكروسيمنز لكل سنتيمتر.»",
+      "acquired_by_action_ids": [
+        "a_note_rana"
+      ],
+      "supports_fact_ids": [
+        "f_display_mode_changed"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "ذاكرة صاحبة الفعل عن إعداد جهاز؛ تتفق مع الورقتين لكنها تحتاج إليهما لتأكيد القيم.",
+      "location_id": "loc_lab"
+    },
+    {
+      "id": "ev_officer_stmt",
+      "title_ar": "إفادة مسؤول النشر",
+      "kind": "testimonial",
+      "content_ar": "ملخص إفادة ياسر العلوي:\n«كتبت الخبر من الملخص ذي الرقمين، ولم أفتح جدول الوحدات. ظننت أن الرقمين بوحدة واحدة.»",
+      "acquired_by_action_ids": [
+        "a_note_yasser"
+      ],
+      "supports_fact_ids": [
+        "f_no_unit_table"
+      ],
+      "reliability": "weak",
+      "limits_ar": "إفادة صاحب علاقة بالخبر؛ تفسّر كيف وُلد الخبر ولا تقيس الماء.",
+      "contradicts_claim_ids": [
+        "cl_press_big"
+      ],
+      "location_id": "loc_press"
+    },
+    {
+      "id": "ev_super_calc",
+      "title_ar": "ورقة حساب المشرف",
+      "kind": "documentary",
+      "content_ar": "ورقة حساب د. هيثم الفارس (مساء الثلاثاء، 18:00)\nتوحيد الوحدة: 54.0 ملّي سيمنز لكل متر تعادل 540 ميكروسيمنز لكل سنتيمتر.\nالتعويض إلى 25 °م: العينة 1 = 410 ÷ (1 + 0.02 × (15 − 25)) = 512.5؛ العينة 2 = 540 (حرارتها 25 أصلاً).\nالفارق الاسمي: 27.5.\nالهامش ±5%: العينة 1 بين 486.9 و538.1؛ العينة 2 بين 513.0 و567.0.\nملاحظة: الموضعان مختلفان والوقتان مختلفان.",
+      "acquired_by_action_ids": [
+        "a_get_calc"
+      ],
+      "supports_fact_ids": [
+        "f_super_calc"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "حساب مشتق من الورقتين وليس قياساً جديداً؛ يقوم على الثوابت التمثيلية نفسها، فيُقاس بالورقتين وبورقة الجهاز.",
+      "contradicts_claim_ids": [
+        "cl_press_big"
+      ],
+      "location_id": "loc_lab"
+    }
+  ],
+  "evidence_graph": {
+    "inferences": [
+      {
+        "id": "i_units_a",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_sheet1"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_sheet2"
+          },
+          {
+            "ref_type": "general_knowledge",
+            "ref_id": "milli_micro_unit_conversion"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_unit_mismatch"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "الورقة الأولى بالميكروسيمنز لكل سنتيمتر والثانية بالملّي سيمنز لكل متر؛ والمضاعفة بين الوحدتين تجعل 54.0 تعادل 540 بوحدة الأولى.",
+        "skill_ko_refs": [
+          "KO-RS-05-010"
+        ]
+      },
+      {
+        "id": "i_temp_a",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_sheet1"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_sheet2"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_temp_differ"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "الورقتان تسجلان حرارتي الماء 15.0 و25.0 درجة؛ فالعينتان لم تُقاسا في الظرف الحراري نفسه.",
+        "skill_ko_refs": [
+          "KO-RS-06-003"
+        ]
+      },
+      {
+        "id": "i_margin_a",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_unit_mismatch"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_temp_differ"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_device_sheet"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_within_margin"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "بتوحيد الوحدة ثم الحرارة بحسب ورقة الجهاز يصبح الفرق صغيراً، وتتداخل فترتا الخطأ المحسوبتان من الهامش المعتمد.",
+        "skill_ko_refs": [
+          "KO-RS-05-010"
+        ]
+      },
+      {
+        "id": "i_units_b",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_trainee_note"
+          },
+          {
+            "ref_type": "general_knowledge",
+            "ref_id": "milli_micro_unit_conversion"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_unit_mismatch"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "الباحثة تقرّ بتبديل نمط العرض بين الجلستين، فالقراءتان بوحدتين مختلفتين وتحتاجان إلى تحويل قبل المقارنة.",
+        "skill_ko_refs": [
+          "KO-RS-05-010"
+        ]
+      },
+      {
+        "id": "i_temp_b",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_conditions"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_temp_differ"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "سجل الظروف يذكر حرارة كل عينة، 15.0 و25.0 درجة.",
+        "skill_ko_refs": [
+          "KO-RS-06-003"
+        ]
+      },
+      {
+        "id": "i_margin_b",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_super_calc"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_within_margin"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "ورقة المشرف توحّد الوحدة والحرارة ثم تضع فترتي الخطأ، وتبيّن أنهما تتداخلان.",
+        "skill_ko_refs": [
+          "KO-RS-05-010"
+        ]
+      },
+      {
+        "id": "i_support_units",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_unit_mismatch"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_temp_differ"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_within_margin"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_units"
+        },
+        "relation": "supports",
+        "strength": "strong",
+        "rule_ar": "اختلاف الوحدة واختلاف الحرارة يفسران معظم الفارق الظاهر، وما يتبقى يقع ضمن هامش الجهاز.",
+        "skill_ko_refs": [
+          "KO-RS-05-002"
+        ]
+      },
+      {
+        "id": "i_rule_change",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_within_margin"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_change"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "فارق صغير تتسع له فترتا الخطأ لا يثبت تغيراً؛ فدعوى «التغير المثبت» غير مسنودة.",
+        "skill_ko_refs": [
+          "KO-RS-06-009"
+        ]
+      },
+      {
+        "id": "i_rule_none",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_within_margin"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_none"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "الفارق الاسمي لا يساوي صفراً، وفترتا الخطأ تتسعان لفارق حقيقي صغير؛ فنفي كل فرق إطلاقاً غير مسنود.",
+        "skill_ko_refs": [
+          "KO-RS-06-009"
+        ]
+      },
+      {
+        "id": "i_press_claim",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_summary_sheet"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_sheet2"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_press_big"
+        },
+        "relation": "contradicts_claim",
+        "strength": "strong",
+        "rule_ar": "الملخص بلا وحدات، وورقة القياس الثانية بوحدة أخرى؛ فالمقارنة المباشرة بين 410 و54 غير صحيحة.",
+        "skill_ko_refs": [
+          "KO-RS-05-001"
+        ]
+      },
+      {
+        "id": "i_rana_claim",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_sheet1"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_sheet2"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_rana_same"
+        },
+        "relation": "contradicts_claim",
+        "strength": "suggestive",
+        "rule_ar": "الطريقة واحدة لكن الوحدة المعروضة والحرارة والموضع تغيّرت بين الجلستين.",
+        "skill_ko_refs": [
+          "KO-RS-05-001"
+        ]
+      }
+    ]
+  },
+  "character_knowledge": [
+    {
+      "character_id": "rana",
+      "knows": [
+        {
+          "fact_id": "f_sample1_taken",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_sample2_taken",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [
+        {
+          "fact_id": "f_display_mode_changed",
+          "reveal_when": {
+            "presented": {
+              "evidence_id": "ev_press_report",
+              "to_character": "rana"
+            }
+          },
+          "cover_claim_id": null,
+          "reveal_line_id": "rn_mode"
+        }
+      ],
+      "believes": [
+        {
+          "claim_id": "cl_rana_same",
+          "stance": "sincere"
+        }
+      ]
+    },
+    {
+      "character_id": "haitham",
+      "knows": [
+        {
+          "fact_id": "f_device_margin",
+          "access": "professional",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_calibrated",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_super_calc",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    },
+    {
+      "character_id": "yasser",
+      "knows": [
+        {
+          "fact_id": "f_officer_read_summary",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [
+        {
+          "fact_id": "f_no_unit_table",
+          "reveal_when": {
+            "presented": {
+              "evidence_id": "ev_sheet2",
+              "to_character": "yasser"
+            }
+          },
+          "cover_claim_id": null,
+          "reveal_line_id": "ys_units"
+        }
+      ],
+      "believes": [
+        {
+          "claim_id": "cl_press_big",
+          "stance": "sincere"
+        }
+      ]
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "h_change",
+      "statement_ar": "حدث تغير جوهري مثبت في ماء النافورة بين العينتين.",
+      "is_true": false,
+      "plausibility_at_start": "high"
+    },
+    {
+      "id": "h_units",
+      "statement_ar": "الفارق الظاهر الضخم جاء من قراءتين بوحدتين وحرارتين مختلفتين؛ وبعد التوحيد يبقى فارق صغير ضمن هامش الخطأ لا يكفي للجزم بتغير ولا بنفيه.",
+      "is_true": true,
+      "plausibility_at_start": "low"
+    },
+    {
+      "id": "h_none",
+      "statement_ar": "لا يمكن أن يوجد أي فرق بين العينتين إطلاقاً.",
+      "is_true": false,
+      "plausibility_at_start": "low"
+    }
+  ],
+  "misdirection_plan": [
+    {
+      "id": "rh_press",
+      "points_to_hypothesis_id": "h_change",
+      "planted_via_ar": "الخبر والملخص يعرضان 410 ثم 54 بلا وحدات، فيبدو الهبوط هائلاً.",
+      "evidence_ids": [
+        "ev_press_report",
+        "ev_summary_sheet"
+      ],
+      "refuted_by_inference_ids": [
+        "i_press_claim",
+        "i_rule_change"
+      ],
+      "fairness_note_ar": "ورقتا القياس وورقة الجهاز متاحتان بالإجراءات العادية، وفيهما الوحدات والحرارة وجدول التحويل."
+    },
+    {
+      "id": "rh_units_only",
+      "points_to_hypothesis_id": "h_change",
+      "planted_via_ar": "بعد تحويل الوحدة وحدها يظهر ارتفاع من 410 إلى 540، فقد يظن القارئ أن التغير حقيقي لكن باتجاه معاكس.",
+      "evidence_ids": [
+        "ev_sheet1",
+        "ev_sheet2"
+      ],
+      "refuted_by_inference_ids": [
+        "i_rule_change"
+      ],
+      "fairness_note_ar": "الورقتان تذكران حرارة الماء، وورقة الجهاز تعطي صيغة التعويض والهامش، فالخطوة التالية للتحويل متاحة."
+    },
+    {
+      "id": "rh_cal",
+      "points_to_hypothesis_id": "h_none",
+      "planted_via_ar": "سجل المعايرة سليم، فقد يُظن أن القراءتين لا بد أن تتطابقا.",
+      "evidence_ids": [
+        "ev_cal_log"
+      ],
+      "refuted_by_inference_ids": [
+        "i_rule_none"
+      ],
+      "fairness_note_ar": "سجل المعايرة يصف الجهاز لا الماء، والفارق الاسمي المتبقي ظاهر في ورقة الحساب."
+    }
+  ],
+  "learning_objectives": [
+    {
+      "id": "lo_claim",
+      "statement_ar": "يفرّق بين الرقم المقاس وبين ما نُقل عنه في الخبر أو الملخص، ويصنّف المصدر.",
+      "skill_ko_ref": "KO-RS-05-001",
+      "observable_behaviors_ar": [
+        "يصنّف الأوراق والأخبار",
+        "يقابل القول بالسجل"
+      ],
+      "evidence_sources": [
+        "evidence_board"
+      ]
+    },
+    {
+      "id": "lo_timeline",
+      "statement_ar": "يرتّب القياسات على خط زمني ليربط كل قراءة بظرفها.",
+      "skill_ko_ref": "KO-RS-05-005",
+      "observable_behaviors_ar": [
+        "يضع الأدلة في أزمنتها"
+      ],
+      "evidence_sources": [
+        "timeline_task",
+        "action_log"
+      ]
+    },
+    {
+      "id": "lo_hyp",
+      "statement_ar": "يوازن بين فرضيتين على الأقل ويستبعد ما تنقضه الأدلة.",
+      "skill_ko_ref": "KO-RS-05-002",
+      "observable_behaviors_ar": [
+        "يضيف فرضيات",
+        "يستبعد بدليل"
+      ],
+      "evidence_sources": [
+        "hypothesis_ledger"
+      ]
+    },
+    {
+      "id": "lo_diag",
+      "statement_ar": "يحوّل الوحدات ويوحّد الظروف قبل أن يقارن قياسين.",
+      "skill_ko_ref": "KO-RS-06-003",
+      "observable_behaviors_ar": [
+        "يربط الدليل بالفرضية باتجاه صحيح"
+      ],
+      "evidence_sources": [
+        "evidence_board",
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_calib",
+      "statement_ar": "يصوغ ثقته بحدود هامش الخطأ.",
+      "skill_ko_ref": "KO-RS-05-010",
+      "observable_behaviors_ar": [
+        "يختار ثقة معقولة",
+        "يذكر حدوداً"
+      ],
+      "evidence_sources": [
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_revise",
+      "statement_ar": "يراجع رأيه الأول حين يظهر ما يخالفه.",
+      "skill_ko_ref": "KO-RS-06-009",
+      "observable_behaviors_ar": [
+        "يغيّر فرضيته الرائدة بدليل"
+      ],
+      "evidence_sources": [
+        "hypothesis_ledger"
+      ]
+    }
+  ],
+  "mechanics": {
+    "time_budget_units": 30,
+    "actions": [
+      {
+        "id": "a_read_sheet1",
+        "type": "examine",
+        "label_ar": "افتح ورقة القياس الأولى",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_sheet1"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_lab",
+        "telemetry_code": "READ_SHEET1"
+      },
+      {
+        "id": "a_read_press",
+        "type": "examine",
+        "label_ar": "اقرأ الخبر الصحفي",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_press_report"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_press",
+        "telemetry_code": "READ_PRESS"
+      },
+      {
+        "id": "a_read_sheet2",
+        "type": "examine",
+        "label_ar": "افتح ورقة القياس الثانية",
+        "precondition": {
+          "has_evidence": "ev_sheet1"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_sheet2"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_lab",
+        "telemetry_code": "READ_SHEET2"
+      },
+      {
+        "id": "a_read_summary",
+        "type": "examine",
+        "label_ar": "اطلب الملخص الذي استند إليه الخبر",
+        "precondition": {
+          "has_evidence": "ev_press_report"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_summary_sheet"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_press",
+        "telemetry_code": "READ_SUMMARY"
+      },
+      {
+        "id": "a_read_conditions",
+        "type": "search_location",
+        "label_ar": "افتح سجل ظروف أخذ العينات",
+        "precondition": {
+          "has_evidence": "ev_press_report"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_conditions"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_records",
+        "telemetry_code": "READ_CONDITIONS"
+      },
+      {
+        "id": "a_read_device",
+        "type": "search_location",
+        "label_ar": "ابحث عن ورقة بيانات الجهاز",
+        "precondition": {
+          "has_evidence": "ev_sheet2"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_device_sheet"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_records",
+        "telemetry_code": "READ_DEVICE"
+      },
+      {
+        "id": "a_int_rana",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة رنا",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "rana",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "rana",
+        "telemetry_code": "INT_RANA"
+      },
+      {
+        "id": "a_int_haitham",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة د. هيثم",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "haitham",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "haitham",
+        "telemetry_code": "INT_HAITHAM"
+      },
+      {
+        "id": "a_int_yasser",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة ياسر",
+        "precondition": {
+          "has_evidence": "ev_press_report"
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "yasser",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "yasser",
+        "telemetry_code": "INT_YASSER"
+      },
+      {
+        "id": "a_note_rana",
+        "type": "examine",
+        "label_ar": "دوّن إفادة رنا",
+        "precondition": {
+          "fact_unlocked": "f_display_mode_changed"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_trainee_note"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "rana",
+        "telemetry_code": "NOTE_RANA"
+      },
+      {
+        "id": "a_note_yasser",
+        "type": "examine",
+        "label_ar": "دوّن إفادة ياسر",
+        "precondition": {
+          "fact_unlocked": "f_no_unit_table"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_officer_stmt"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "yasser",
+        "telemetry_code": "NOTE_YASSER"
+      },
+      {
+        "id": "a_get_cal",
+        "type": "search_location",
+        "label_ar": "اطلب سجل معايرة الجهاز",
+        "precondition": {
+          "fact_unlocked": "f_calibrated"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_cal_log"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_records",
+        "telemetry_code": "GET_CAL"
+      },
+      {
+        "id": "a_get_calc",
+        "type": "examine",
+        "label_ar": "اطلب ورقة حساب المشرف",
+        "precondition": {
+          "fact_unlocked": "f_super_calc"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_super_calc"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "haitham",
+        "telemetry_code": "GET_CALC"
+      },
+      {
+        "id": "p_press_rana",
+        "type": "present_evidence",
+        "label_ar": "اعرض الخبر على رنا",
+        "precondition": {
+          "presented": {
+            "evidence_id": "ev_press_report",
+            "to_character": "rana"
+          }
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "PRESENTED_PRESS"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "rana",
+        "telemetry_code": "P_PRESS_RANA"
+      },
+      {
+        "id": "p_sheet2_yasser",
+        "type": "present_evidence",
+        "label_ar": "اعرض ورقة القياس الثانية على ياسر",
+        "precondition": {
+          "presented": {
+            "evidence_id": "ev_sheet2",
+            "to_character": "yasser"
+          }
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "PRESENTED_SHEET2"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "yasser",
+        "telemetry_code": "P_SHEET2_YASSER"
+      },
+      {
+        "id": "a_hint",
+        "type": "request_hint",
+        "label_ar": "اطلب تلميحاً",
+        "precondition": {
+          "always": true
+        },
+        "effects": [],
+        "time_cost_units": 0,
+        "telemetry_code": "REQUEST_HINT"
+      },
+      {
+        "id": "a_accuse",
+        "type": "final_accusation",
+        "label_ar": "قدّم الاستنتاج النهائي",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "SUBMIT"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "FINAL_ACCUSATION"
+      },
+      {
+        "id": "ask_rana_f_sample1_taken",
+        "type": "interview",
+        "label_ar": "[نموذج] rana يذكر f_sample1_taken",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_sample1_taken"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "rana",
+        "telemetry_code": "ASK_RANA_F_SAMPLE1_TAKEN"
+      },
+      {
+        "id": "ask_rana_f_sample2_taken",
+        "type": "interview",
+        "label_ar": "[نموذج] rana يذكر f_sample2_taken",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_sample2_taken"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "rana",
+        "telemetry_code": "ASK_RANA_F_SAMPLE2_TAKEN"
+      },
+      {
+        "id": "ask_rana_f_display_mode_changed",
+        "type": "interview",
+        "label_ar": "[نموذج] rana يكشف f_display_mode_changed",
+        "precondition": {
+          "all": [
+            {
+              "always": true
+            },
+            {
+              "presented": {
+                "evidence_id": "ev_press_report",
+                "to_character": "rana"
+              }
+            }
+          ]
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_display_mode_changed"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "rana",
+        "telemetry_code": "ASK_RANA_F_DISPLAY_MODE_CHANGED"
+      },
+      {
+        "id": "ask_haitham_f_device_margin",
+        "type": "interview",
+        "label_ar": "[نموذج] haitham يذكر f_device_margin",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_device_margin"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "haitham",
+        "telemetry_code": "ASK_HAITHAM_F_DEVICE_MARGIN"
+      },
+      {
+        "id": "ask_haitham_f_calibrated",
+        "type": "interview",
+        "label_ar": "[نموذج] haitham يذكر f_calibrated",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_calibrated"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "haitham",
+        "telemetry_code": "ASK_HAITHAM_F_CALIBRATED"
+      },
+      {
+        "id": "ask_haitham_f_super_calc",
+        "type": "interview",
+        "label_ar": "[نموذج] haitham يذكر f_super_calc",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_super_calc"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "haitham",
+        "telemetry_code": "ASK_HAITHAM_F_SUPER_CALC"
+      },
+      {
+        "id": "ask_yasser_f_officer_read_summary",
+        "type": "interview",
+        "label_ar": "[نموذج] yasser يذكر f_officer_read_summary",
+        "precondition": {
+          "has_evidence": "ev_press_report"
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_officer_read_summary"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "yasser",
+        "telemetry_code": "ASK_YASSER_F_OFFICER_READ_SUMMARY"
+      },
+      {
+        "id": "ask_yasser_f_no_unit_table",
+        "type": "interview",
+        "label_ar": "[نموذج] yasser يكشف f_no_unit_table",
+        "precondition": {
+          "all": [
+            {
+              "has_evidence": "ev_press_report"
+            },
+            {
+              "presented": {
+                "evidence_id": "ev_sheet2",
+                "to_character": "yasser"
+              }
+            }
+          ]
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_no_unit_table"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "yasser",
+        "telemetry_code": "ASK_YASSER_F_NO_UNIT_TABLE"
+      }
+    ]
+  },
+  "state_machine": {
+    "id": "c007",
+    "initial": "briefing",
+    "type": "compound",
+    "states": {
+      "briefing": {
+        "description_ar": "الإحاطة",
+        "type": "atomic",
+        "on": {
+          "START": {
+            "target": "investigating"
+          }
+        }
+      },
+      "investigating": {
+        "description_ar": "التحقيق",
+        "type": "compound",
+        "initial": "gathering",
+        "states": {
+          "gathering": {
+            "type": "atomic",
+            "on": {
+              "OPEN_DEDUCTION": {
+                "target": "deducing"
+              }
+            }
+          },
+          "deducing": {
+            "type": "atomic",
+            "on": {
+              "BACK": {
+                "target": "gathering"
+              }
+            }
+          }
+        },
+        "on": {
+          "SUBMIT": {
+            "target": "review"
+          }
+        }
+      },
+      "review": {
+        "description_ar": "مراجعة",
+        "type": "atomic",
+        "on": {
+          "CLOSE": {
+            "target": "resolved"
+          }
+        }
+      },
+      "resolved": {
+        "description_ar": "إغلاق",
+        "type": "final"
+      }
+    }
+  },
+  "dialogue": {
+    "max_turns_per_interview": 10,
+    "llm_enabled": false,
+    "topics": [
+      {
+        "id": "t_sampling",
+        "label_ar": "أخذ العينتين",
+        "example_questions_ar": [
+          "كيف أخذت العينتين؟",
+          "متى أخذت كل عينة؟"
+        ],
+        "fact_ids": [
+          "f_sample1_taken",
+          "f_sample2_taken"
+        ],
+        "claim_ids": [
+          "cl_rana_same"
+        ]
+      },
+      {
+        "id": "t_units",
+        "label_ar": "وحدة عرض الجهاز",
+        "example_questions_ar": [
+          "بأي وحدة عرض الجهاز؟",
+          "هل غيّرت إعدادات الجهاز؟"
+        ],
+        "fact_ids": [
+          "f_display_mode_changed"
+        ]
+      },
+      {
+        "id": "t_device",
+        "label_ar": "معايرة الجهاز وحدوده",
+        "example_questions_ar": [
+          "ما هامش خطأ الجهاز؟",
+          "هل حُسبت الأرقام بعد توحيدها؟"
+        ],
+        "fact_ids": [
+          "f_device_margin",
+          "f_calibrated",
+          "f_super_calc"
+        ]
+      },
+      {
+        "id": "t_press",
+        "label_ar": "كتابة الخبر",
+        "example_questions_ar": [
+          "من أين أخذت الرقمين؟",
+          "هل اطلعت على الوحدات؟"
+        ],
+        "fact_ids": [
+          "f_officer_read_summary",
+          "f_no_unit_table"
+        ],
+        "claim_ids": [
+          "cl_press_big"
+        ]
+      }
+    ]
+  },
+  "rubric": {
+    "reference_answer_ar": "الملف لا يثبت تغيراً جوهرياً في ماء النافورة. القراءتان مكتوبتان بوحدتين مختلفتين، 410 بالميكروسيمنز للسنتيمتر الواحد و54.0 بالملّي سيمنز للمتر الواحد، أي 540 بوحدة الأولى، وقد أُخذتا عند حرارتين مختلفتين، 15 و25 درجة. وبعد التوحيد تقترب القراءتان من 512.5 و540 وتتداخل فترتا الخطأ، فالمبالغة جاءت من مقارنة رقمين ظاهرهما واحد. ويبقى فارق اسمي صغير لا نجزم بسببه، لاختلاف الوقت والموضع ولأن ثابتي التعويض والهامش تمثيليان. حدود الاستنتاج: عينتان فقط في يوم واحد، دون قياسات متكررة.",
+    "criteria": [
+      {
+        "id": "c_source",
+        "name_ar": "تصنيف المصادر",
+        "objective_ids": [
+          "lo_claim"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يصنّف"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "أخطأ في الأغلب"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "نصف صحيح"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمه صحيح"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كله صحيح"
+          }
+        ]
+      },
+      {
+        "id": "c_conflict",
+        "name_ar": "ربط القياسات بأزمنتها",
+        "objective_ids": [
+          "lo_timeline"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يضع شيئاً"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "وضع قليلاً"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "وضع نصفها صحيحاً"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمها"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كلها في موضعها"
+          }
+        ]
+      },
+      {
+        "id": "c_links",
+        "name_ar": "ربط الأدلة بالفرضيات",
+        "objective_ids": [
+          "lo_diag"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.2,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لا روابط"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "قليلة"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "نصفها صحيح"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمها"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كلها دقيقة"
+          }
+        ]
+      },
+      {
+        "id": "c_uncertainty",
+        "name_ar": "معايرة الثقة",
+        "objective_ids": [
+          "lo_calib"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.2,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "ثقة مفرطة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "حدود قليلة"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "جزئية"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معقولة"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "معايَرة كاملة"
+          }
+        ]
+      },
+      {
+        "id": "c_revision",
+        "name_ar": "مراجعة الرأي",
+        "objective_ids": [
+          "lo_revise"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "بقي على فرضية مرفوضة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "لم يعلن فرضية"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "ثبت على فرضية سليمة"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "غيّر بدليل"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "غيّر بدليل ووثّق"
+          }
+        ]
+      },
+      {
+        "id": "c_elimination",
+        "name_ar": "استبعاد الفرضيات الخاطئة",
+        "objective_ids": [
+          "lo_hyp"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يستبعد"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "استبعد خطأً"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "فرضية بدليل"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "فرضيتين"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كل الخاطئة"
+          }
+        ]
+      },
+      {
+        "id": "c_justification",
+        "name_ar": "جودة الحجة المكتوبة",
+        "objective_ids": [
+          "lo_diag",
+          "lo_hyp"
+        ],
+        "scored_by": "human",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لا حجة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "ادعاء بلا سند"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "أدلة دون ربط"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "ربط الأدلة بالاستنتاج"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "ربط مع البدائل والحدود"
+          }
+        ]
+      }
+    ]
+  },
+  "hint_ladder": [
+    {
+      "id": "hg1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "أين ينتهي ما قاسه الجهاز وتبدأ طريقة عرض الرقم وتفسيره؟",
+      "trigger": {
+        "always": true
+      },
+      "assessment_weight": 0.02
+    },
+    {
+      "id": "hg2",
+      "level": 2,
+      "kind": "focus_area",
+      "text_ar": "ضع كل معلومة في جدول: مصدر أصلي أم نسخة أم تعليق؟",
+      "trigger": {
+        "has_evidence": "ev_summary_sheet"
+      },
+      "assessment_weight": 0.04
+    },
+    {
+      "id": "hg3",
+      "level": 3,
+      "kind": "pointer",
+      "text_ar": "راجع تحديداً الدليل الذي يوضح وحدة الرقم وظرف أخذه وسياق الوثيقة.",
+      "trigger": {
+        "has_evidence": "ev_sheet2"
+      },
+      "assessment_weight": 0.06
+    },
+    {
+      "id": "hm1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "هل الرقمان معروضان بالوحدة نفسها؟ وهل أُخذا عند الحرارة نفسها؟",
+      "trigger": {
+        "has_evidence": "ev_sheet2"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_units_a"
+    },
+    {
+      "id": "hm2",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "ابحث عن مرجع يعطي جدول التحويل وصيغة التعويض الحراري وهامش الخطأ.",
+      "trigger": {
+        "has_evidence": "ev_sheet2"
+      },
+      "assessment_weight": 0.05,
+      "targets_inference_id": "i_units_a"
+    },
+    {
+      "id": "hm3",
+      "level": 3,
+      "kind": "partial_reveal",
+      "text_ar": "افتح ورقة بيانات الجهاز، وحوّل 54.0 ملّي سيمنز لكل متر إلى وحدة الورقة الأولى، ثم وحّد الحرارة وقارن مع الهامش.",
+      "trigger": {
+        "has_evidence": "ev_device_sheet"
+      },
+      "assessment_weight": 0.1,
+      "targets_inference_id": "i_units_a"
+    }
+  ],
+  "fairness_test": {
+    "requirements": {
+      "min_disjoint_proof_paths": 2,
+      "max_inference_depth": 3,
+      "all_red_herrings_refutable": true,
+      "culprit_uniquely_entailed": true,
+      "no_hidden_fact_dependency": true,
+      "max_required_actions": 30
+    },
+    "runs": []
+  },
+  "ending_explanation": {
+    "steps": [
+      {
+        "order": 1,
+        "text_ar": "الخبر والملخص يعرضان رقمين بلا وحدات؛ ورقة القياس الثانية تبيّن أن الرقم الثاني مكتوب بوحدة غير وحدة الأول.",
+        "uses_evidence_ids": [
+          "ev_press_report",
+          "ev_summary_sheet",
+          "ev_sheet2"
+        ],
+        "inference_id": "i_press_claim"
+      },
+      {
+        "order": 2,
+        "text_ar": "تحويل الرقم الثاني إلى وحدة الورقة الأولى يرفعه إلى 540، فيختفي الهبوط الظاهر ويحلّ محله ارتفاع.",
+        "uses_evidence_ids": [
+          "ev_sheet1",
+          "ev_sheet2",
+          "ev_device_sheet"
+        ],
+        "inference_id": "i_units_a"
+      },
+      {
+        "order": 3,
+        "text_ar": "العينتان أُخذتا عند حرارتين مختلفتين، والتوصيلية تتأثر بالحرارة؛ فلا بد من مرجع حراري واحد قبل المقارنة.",
+        "uses_evidence_ids": [
+          "ev_sheet1",
+          "ev_sheet2"
+        ],
+        "inference_id": "i_temp_a"
+      },
+      {
+        "order": 4,
+        "text_ar": "بعد التوحيد يبقى فارق اسمي صغير، وهامش الجهاز يجعل فترتي الخطأ متداخلتين.",
+        "uses_evidence_ids": [
+          "ev_device_sheet",
+          "ev_sheet1",
+          "ev_sheet2"
+        ],
+        "inference_id": "i_margin_a"
+      },
+      {
+        "order": 5,
+        "text_ar": "إذن لا يثبت الملف تغيراً جوهرياً، ولا يصح كذلك الجزم بأن لا فرق إطلاقاً.",
+        "uses_evidence_ids": [
+          "ev_super_calc"
+        ],
+        "inference_id": "i_rule_change"
+      }
+    ],
+    "alternative_paths_ar": [
+      "مسار مستقل: إفادة الباحثة تثبت تبديل نمط العرض، وسجل الظروف يثبت اختلاف الحرارة، وورقة المشرف تعرض الأرقام بعد التوحيد مع الهامش."
+    ],
+    "what_evidence_could_not_show_ar": [
+      "لا تحدد الأدلة سبب الفارق الاسمي الصغير المتبقي؛ فقد يعود إلى الوقت أو الموضع أو الخطأ العشوائي.",
+      "ثابتا التعويض والهامش تمثيليان في هذه المحاكاة، فأرقامها للتعلم ولا تصلح مرجعاً علمياً دون مراجعة."
+    ],
+    "science_notes_ar": [
+      "مقارنة رقمين لا تصح قبل التأكد من وحدتيهما ومن ظروف أخذهما.",
+      "تداخل فترتي الخطأ يعني أن الفرق لا يُثبت ولا يُنفى بهذه البيانات، لا أن القراءتين متطابقتان."
+    ]
+  },
+  "expert_review": [
+    {
+      "role": "narrative_editor",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "scientific_reviewer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "learning_designer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "age_appropriateness",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "cultural_reviewer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "legal_rights",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "safety",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    }
+  ]
+}

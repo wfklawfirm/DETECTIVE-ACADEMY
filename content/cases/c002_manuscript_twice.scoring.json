@@ -1,0 +1,158 @@
+{
+  "case_id": "c002_manuscript_twice",
+  "accepted_conclusions": {
+    "h_identity": {
+      "grade": 1,
+      "note_ar": "استنتاج متسق مع الأدلة ويتطلب ذكر حدوده."
+    },
+    "h_tamper": {
+      "grade": 0,
+      "note_ar": "يبني على الاسم المشترك ويتجاهل أن الجرد ومحضر النقل يفرّقان بين نسختين."
+    },
+    "h_insufficient": {
+      "grade": 0,
+      "note_ar": "تحفّظ مفرط: الأدلة المتاحة تكفي للفصل، والتحفظ المقبول هو ما يتعلق بالنيّة لا بالهوية."
+    }
+  },
+  "confidence_band": {
+    "h_identity": [
+      65,
+      90
+    ],
+    "h_tamper": [
+      0,
+      15
+    ],
+    "h_insufficient": [
+      0,
+      25
+    ]
+  },
+  "source_key": {
+    "ev_card_a": "primary_record",
+    "ev_card_b": "primary_record",
+    "ev_db_record": "redisplay",
+    "ev_gallery_photo": "primary_record",
+    "ev_crop": "redisplay",
+    "ev_transfer_minutes": "primary_record",
+    "ev_inventory": "primary_record",
+    "ev_restoration_intake": "primary_record",
+    "ev_vault_log": "primary_record",
+    "ev_index_memo": "primary_record",
+    "ev_migration_log": "primary_record",
+    "ev_layla_note": "claim",
+    "ev_mona_statement": "claim"
+  },
+  "link_key": {
+    "h_identity": {
+      "ev_card_a": "supports",
+      "ev_card_b": "supports",
+      "ev_inventory": "supports",
+      "ev_transfer_minutes": "supports",
+      "ev_restoration_intake": "supports",
+      "ev_gallery_photo": "supports",
+      "ev_index_memo": "supports",
+      "ev_migration_log": "supports",
+      "ev_db_record": "supports",
+      "ev_mona_statement": "supports",
+      "ev_vault_log": "neutral",
+      "ev_crop": "neutral",
+      "ev_layla_note": "neutral"
+    },
+    "h_tamper": {
+      "ev_card_a": "weakens",
+      "ev_card_b": "weakens",
+      "ev_inventory": "weakens",
+      "ev_transfer_minutes": "weakens",
+      "ev_restoration_intake": "weakens",
+      "ev_migration_log": "weakens",
+      "ev_vault_log": "supports",
+      "ev_db_record": "supports",
+      "ev_layla_note": "neutral",
+      "ev_crop": "neutral"
+    },
+    "h_insufficient": {
+      "ev_card_a": "weakens",
+      "ev_card_b": "weakens",
+      "ev_inventory": "weakens",
+      "ev_crop": "supports",
+      "ev_db_record": "neutral",
+      "ev_layla_note": "neutral"
+    }
+  },
+  "required_limits": [
+    "l_intent",
+    "l_physical"
+  ],
+  "valid_mind_changers": [
+    "m_same_number",
+    "m_receipt_forged",
+    "m_vault_other"
+  ],
+  "invalid_limits": [
+    "l_invalid_name",
+    "l_invalid_entry",
+    "l_invalid_all"
+  ],
+  "decisive_evidence": [
+    "ev_card_a",
+    "ev_card_b",
+    "ev_inventory",
+    "ev_transfer_minutes",
+    "ev_restoration_intake"
+  ],
+  "lab_requirement": null,
+  "timeline_requirement": [
+    {
+      "evidence_id": "ev_inventory",
+      "utc_minute": 70,
+      "tol": 10
+    },
+    {
+      "evidence_id": "ev_db_record",
+      "utc_minute": 285,
+      "tol": 10
+    },
+    {
+      "evidence_id": "ev_vault_log",
+      "utc_minute": 425,
+      "tol": 10
+    },
+    {
+      "evidence_id": "ev_transfer_minutes",
+      "utc_minute": 440,
+      "tol": 10
+    }
+  ],
+  "refuted_hypotheses": [
+    "h_tamper",
+    "h_insufficient"
+  ],
+  "criteria_map": {
+    "c_source": "source_typing",
+    "c_conflict": "conflict_resolution",
+    "c_links": "hypothesis_links",
+    "c_elimination": "elimination",
+    "c_uncertainty": "uncertainty",
+    "c_revision": "revision",
+    "c_justification": "justification_human"
+  },
+  "transfer_key": {
+    "valid": [
+      "o1",
+      "o2",
+      "o3",
+      "o4"
+    ],
+    "invalid": [
+      "o5",
+      "o6",
+      "o7",
+      "o8"
+    ]
+  },
+  "caps": {
+    "no_citations_max": 45,
+    "no_conflict_resolution_max": 70
+  }
+}

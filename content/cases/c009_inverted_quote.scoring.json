@@ -1,0 +1,137 @@
+{
+  "case_id": "c009_inverted_quote",
+  "accepted_conclusions": {
+    "h_composite": {
+      "grade": 1,
+      "note_ar": "استنتاج متسق مع الأدلة ويتطلب ذكر حدوده."
+    },
+    "h_history": {
+      "grade": 0,
+      "note_ar": "يعامل منشوراً ثانوياً على أنه نص أصلي ويتجاهل موضع العبارتين."
+    },
+    "h_worthless": {
+      "grade": 0,
+      "note_ar": "يقفز من اختلاف الصياغة إلى بطلان كل المصادر، والمصادر هي التي كشفت التركيب."
+    }
+  },
+  "confidence_band": {
+    "h_composite": [
+      65,
+      92
+    ],
+    "h_history": [
+      0,
+      15
+    ],
+    "h_worthless": [
+      0,
+      15
+    ]
+  },
+  "source_key": {
+    "ev_post": "redisplay",
+    "ev_trans_a": "redisplay",
+    "ev_trans_b": "redisplay",
+    "ev_facsimile": "primary_record",
+    "ev_catalogue": "public_document",
+    "ev_note_log": "primary_record",
+    "ev_preface_b": "public_document",
+    "ev_amina_statement": "claim",
+    "ev_rana_statement": "claim",
+    "ev_nabil_statement": "claim",
+    "ev_salim_statement": "claim"
+  },
+  "link_key": {
+    "h_composite": {
+      "ev_facsimile": "supports",
+      "ev_catalogue": "supports",
+      "ev_note_log": "supports",
+      "ev_trans_a": "supports",
+      "ev_trans_b": "supports",
+      "ev_preface_b": "supports",
+      "ev_context_table": "supports",
+      "ev_rana_statement": "supports",
+      "ev_post": "neutral"
+    },
+    "h_history": {
+      "ev_post": "supports",
+      "ev_salim_statement": "neutral",
+      "ev_facsimile": "weakens",
+      "ev_trans_a": "weakens",
+      "ev_trans_b": "weakens",
+      "ev_note_log": "weakens",
+      "ev_catalogue": "weakens",
+      "ev_context_table": "weakens"
+    },
+    "h_worthless": {
+      "ev_preface_b": "supports",
+      "ev_facsimile": "weakens",
+      "ev_catalogue": "weakens",
+      "ev_trans_a": "weakens",
+      "ev_trans_b": "weakens"
+    }
+  },
+  "required_limits": [
+    "l_no_city_proof",
+    "l_scope"
+  ],
+  "valid_mind_changers": [
+    "m_other_ms",
+    "m_edition",
+    "m_notes_late"
+  ],
+  "invalid_limits": [
+    "l_invalid_diff",
+    "l_invalid_viral"
+  ],
+  "decisive_evidence": [
+    "ev_facsimile",
+    "ev_catalogue",
+    "ev_note_log",
+    "ev_trans_a",
+    "ev_trans_b"
+  ],
+  "lab_requirement": null,
+  "timeline_requirement": [
+    {
+      "evidence_id": "ev_note_log",
+      "utc_minute": 80,
+      "tol": 3
+    },
+    {
+      "evidence_id": "ev_post",
+      "utc_minute": 132,
+      "tol": 3
+    }
+  ],
+  "refuted_hypotheses": [
+    "h_history",
+    "h_worthless"
+  ],
+  "criteria_map": {
+    "c_source": "source_typing",
+    "c_conflict": "conflict_resolution",
+    "c_links": "hypothesis_links",
+    "c_uncertainty": "uncertainty",
+    "c_revision": "revision",
+    "c_elimination": "elimination",
+    "c_justification": "justification_human"
+  },
+  "transfer_key": {
+    "valid": [
+      "o1",
+      "o2",
+      "o3",
+      "o4"
+    ],
+    "invalid": [
+      "o5",
+      "o6",
+      "o7"
+    ]
+  },
+  "caps": {
+    "no_citations_max": 45,
+    "no_conflict_resolution_max": 70
+  }
+}

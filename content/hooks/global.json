@@ -1,0 +1,437 @@
+{
+ "version": "0.1.0",
+ "principles_ar": [
+  "فضول لا ضغط: لا عدّادات خسارة ولا لوم على الغياب ولا إلحاح مصطنع.",
+  "لا حرق للأحداث: لا يذكر أي خطاف حقيقة غير علنية من أي قضية.",
+  "خطاف واحد في كل دخول، وغير مكرر مع السابق، ويمكن تخفيفه من الإعدادات."
+ ],
+ "hooks": [
+  {
+   "id": "g_new_01",
+   "kind": "teaser",
+   "surfaces": [
+    "landing",
+    "home"
+   ],
+   "when": {
+    "never_started": true
+   },
+   "text_ar": "ملف واحد، عشر دقائق، وتناقض واحد ينتظر من ينتبه له. هل أنت ذلك الشخص؟",
+   "cta_ar": "افتح أول ملف",
+   "cta_href": "/start"
+  },
+  {
+   "id": "g_new_02",
+   "kind": "teaser",
+   "surfaces": [
+    "landing",
+    "home"
+   ],
+   "when": {
+    "never_started": true
+   },
+   "text_ar": "وصلتك رسالة بلا اسم: «هناك سجلٌّ لا يقول ما تظنه». ابدأ من السطر الأول.",
+   "cta_ar": "اقرأ الرسالة",
+   "cta_href": "/start"
+  },
+  {
+   "id": "g_new_03",
+   "kind": "teaser",
+   "surfaces": [
+    "landing",
+    "home"
+   ],
+   "when": {
+    "never_started": true
+   },
+   "text_ar": "لا تحتاج إلى معرفة مسبقة. تحتاج إلى عين تلاحظ، وعقل يؤجّل الحكم قليلاً.",
+   "cta_ar": "ابدأ التحقيق",
+   "cta_href": "/start"
+  },
+  {
+   "id": "g_back_01",
+   "kind": "welcome_back",
+   "surfaces": [
+    "landing",
+    "home",
+    "case_return"
+   ],
+   "when": {
+    "has_open_case": true
+   },
+   "text_ar": "ملفك ما زال مفتوحاً: «{{case_title}}». الأدلة التي جمعتها: {{n_evidence}}، والتي لم تُكشف بعد: {{n_locked}}.",
+   "cta_ar": "تابع الملف",
+   "cta_href": "{{case_href}}"
+  },
+  {
+   "id": "g_back_02",
+   "kind": "welcome_back",
+   "surfaces": [
+    "landing",
+    "home",
+    "case_return"
+   ],
+   "when": {
+    "has_open_case": true
+   },
+   "text_ar": "قبل أن تعود إلى «{{case_title}}»: اسأل نفسك ما الفرضية التي تتمسك بها الآن، وما الذي قد يُسقطها؟",
+   "cta_ar": "عد إلى الملف",
+   "cta_href": "{{case_href}}"
+  },
+  {
+   "id": "g_back_03",
+   "kind": "welcome_back",
+   "surfaces": [
+    "landing",
+    "home",
+    "case_return"
+   ],
+   "when": {
+    "has_open_case": true
+   },
+   "text_ar": "في «{{case_title}}» شخص لم تسأله عن كل شيء بعد. أحياناً يكشف السؤال الثاني ما أخفاه الأول.",
+   "cta_ar": "تابع",
+   "cta_href": "{{case_href}}"
+  },
+  {
+   "id": "g_done_01",
+   "kind": "cliffhanger",
+   "surfaces": [
+    "landing",
+    "home"
+   ],
+   "when": {
+    "min_done": 1,
+    "has_open_case": false
+   },
+   "text_ar": "أغلقت «{{last_done_title}}». في الأرشيف ملفات لم تُفتح بعد، وبعضها لا يشبه ما اعتدت عليه.",
+   "cta_ar": "تصفّح الملفات",
+   "cta_href": "/cases"
+  },
+  {
+   "id": "g_done_02",
+   "kind": "challenge",
+   "surfaces": [
+    "landing",
+    "home"
+   ],
+   "when": {
+    "min_done": 1
+   },
+   "text_ar": "هل تستطيع أن تنقل ما تعلّمته من «{{last_done_title}}» إلى سياق مختلف تماماً؟ تحدّي النقل ينتظرك.",
+   "cta_ar": "جرّب تحدّي النقل",
+   "cta_href": "/challenges"
+  },
+  {
+   "id": "g_skill_01",
+   "kind": "skill",
+   "surfaces": [
+    "landing",
+    "home",
+    "case_open",
+    "case_return"
+   ],
+   "text_ar": "مهارة اليوم: افصل ما رأيته عمّا استنتجته. اكتب جملة لكل منهما قبل أن تفتح الدليل التالي."
+  },
+  {
+   "id": "g_skill_02",
+   "kind": "skill",
+   "surfaces": [
+    "landing",
+    "home",
+    "case_open",
+    "case_return"
+   ],
+   "text_ar": "الدليل الذي يوافق كل الفرضيات لا يساعدك على الاختيار بينها. ابحث عن الدليل الذي يفرّق."
+  },
+  {
+   "id": "g_skill_03",
+   "kind": "skill",
+   "surfaces": [
+    "landing",
+    "home",
+    "case_open",
+    "case_return"
+   ],
+   "text_ar": "ليس كل ما هو مكتوب بخط مرتب سجلاً أصلياً. اسأل: من كتبه، ومن أين نقل؟"
+  },
+  {
+   "id": "g_skill_04",
+   "kind": "skill",
+   "surfaces": [
+    "landing",
+    "home",
+    "case_open",
+    "case_return"
+   ],
+   "text_ar": "قل «لا أعرف بعد» حين تكون أمانتك أقوى من سرعتك. هذه من أصعب جمل المحقق وأنفعها."
+  },
+  {
+   "id": "g_skill_05",
+   "kind": "skill",
+   "surfaces": [
+    "landing",
+    "home",
+    "case_open",
+    "case_return"
+   ],
+   "text_ar": "قبل أن تثق بمن يتكلم بثقة عالية، ابحث عمّا يؤيد كلامه خارج كلامه."
+  },
+  {
+   "id": "g_skill_06",
+   "kind": "skill",
+   "surfaces": [
+    "landing",
+    "home",
+    "case_open",
+    "case_return"
+   ],
+   "text_ar": "المحقق الجيد لا يسأل «من المذنب؟» أولاً، بل «ما الذي يمكن أن يفسّر هذه الوقائع؟» ثم يختبر التفسيرات."
+  },
+  {
+   "id": "g_skill_07",
+   "kind": "skill",
+   "surfaces": [
+    "landing",
+    "home",
+    "case_open",
+    "case_return"
+   ],
+   "text_ar": "غياب الدليل قد يعني شيئاً وقد لا يعني. اسأل: لو كان الحدث قد وقع، هل كان يُفترض أن يترك أثراً؟"
+  },
+  {
+   "id": "g_skill_08",
+   "kind": "skill",
+   "surfaces": [
+    "landing",
+    "home",
+    "case_open",
+    "case_return"
+   ],
+   "text_ar": "الثقة رقم لا شعور. جرّب أن تكتب نسبة ثقتك قبل الكشف التالي وقارنها بعده."
+  },
+  {
+   "id": "g_chal_01",
+   "kind": "challenge",
+   "surfaces": [
+    "landing",
+    "home"
+   ],
+   "text_ar": "تحدّي الدقيقة: ستة أدلة، واحد منها نسخة عن أصل غائب. أيّها؟",
+   "cta_ar": "جرّب تحدّي اليوم",
+   "cta_href": "/challenges"
+  },
+  {
+   "id": "g_chal_02",
+   "kind": "challenge",
+   "surfaces": [
+    "landing",
+    "home"
+   ],
+   "text_ar": "لغز اليوم ينتظرك: سؤال قصير، ثلاثة اختيارات، وتفسير يكشف أين كان الفخ.",
+   "cta_ar": "افتح لغز اليوم",
+   "cta_href": "/challenges"
+  },
+  {
+   "id": "g_world_01",
+   "kind": "teaser",
+   "surfaces": [
+    "landing",
+    "home"
+   ],
+   "text_ar": "هنا لا يحلّ القضيةَ من يخمّن أسرع، بل من يعرف لماذا يثق بما يثق به."
+  },
+  {
+   "id": "g_world_02",
+   "kind": "teaser",
+   "surfaces": [
+    "landing",
+    "home"
+   ],
+   "text_ar": "كل قضية في أثر لها حلّ واحد يمكن إثباته من الأدلة، ومسارا إثبات مستقلان على الأقل. لا حظ ولا تخمين."
+  },
+  {
+   "id": "g_world_03",
+   "kind": "teaser",
+   "surfaces": [
+    "landing",
+    "home"
+   ],
+   "text_ar": "الأدلة هنا لا تتحدث بصوت عالٍ. بعضها يهمس، وبعضها يكذب بأدب، وبعضها يبدو متناقضاً وهو غير ذلك."
+  },
+  {
+   "id": "g_open_01",
+   "kind": "cliffhanger",
+   "surfaces": [
+    "case_open"
+   ],
+   "text_ar": "قبل أن تبدأ: ضع فرضيتك الأولى على الورق، ثم اجعل كل دليل جديد يختبرها لا يزيّنها."
+  },
+  {
+   "id": "g_open_02",
+   "kind": "cliffhanger",
+   "surfaces": [
+    "case_open"
+   ],
+   "text_ar": "أسئلتك محدودة بمقابلة كل شخص. اسأل أولاً عمّا يمكن إثباته بالسجلات."
+  },
+  {
+   "id": "g_open_03",
+   "kind": "cliffhanger",
+   "surfaces": [
+    "case_open"
+   ],
+   "text_ar": "لا تسرع إلى الحلّ؛ كل ملف هنا يتسع لتفسيرين على الأقل قبل أن تتضح الأدلة."
+  },
+  {
+   "id": "g_gentle_01",
+   "kind": "welcome_back",
+   "surfaces": [
+    "landing",
+    "home",
+    "case_return"
+   ],
+   "text_ar": "أهلاً بعودتك. لا شيء يضيع بالغياب؛ ملفاتك كما تركتها تماماً."
+  },
+  {
+   "id": "g_gentle_02",
+   "kind": "welcome_back",
+   "surfaces": [
+    "landing",
+    "home",
+    "case_return"
+   ],
+   "text_ar": "التحقيق الجيد يحتمل الاستراحة. حين تعود، ابدأ بقراءة دفتر ملاحظاتك."
+  },
+  {
+   "id": "g_sk_01",
+   "kind": "skill",
+   "surfaces": [
+    "landing",
+    "home",
+    "case_return"
+   ],
+   "text_ar": "قبل أن تتمسك بفكرتك: ما الذي لو ظهر لأضعفها؟ المحقق الجيد يبحث عنه بنفسه.",
+   "cta_ar": "جرّب في قضية",
+   "cta_href": "/cases",
+   "source": "skills_patterns.json#SKILLS-06"
+  },
+  {
+   "id": "g_sk_02",
+   "kind": "skill",
+   "surfaces": [
+    "landing",
+    "home",
+    "case_return"
+   ],
+   "text_ar": "انقطعت الكهرباء ثم اختفى الملف. هل الثاني بسبب الأول؟ التتابع في الزمن ليس سبباً بالضرورة.",
+   "cta_ar": "جرّب في قضية",
+   "cta_href": "/cases",
+   "source": "skills_patterns.json#SKILLS-07"
+  },
+  {
+   "id": "g_sk_03",
+   "kind": "skill",
+   "surfaces": [
+    "landing",
+    "home",
+    "case_return"
+   ],
+   "text_ar": "جهاز يُنذر أحياناً بلا سبب. قبل أن تثق بإنذاره: كم مرة يخطئ؟",
+   "cta_ar": "جرّب في قضية",
+   "cta_href": "/cases",
+   "source": "skills_patterns.json#SKILLS-09"
+  },
+  {
+   "id": "g_sk_04",
+   "kind": "skill",
+   "surfaces": [
+    "landing",
+    "home",
+    "case_return"
+   ],
+   "text_ar": "شاهدان يرويان الحكاية نفسها بالتفاصيل نفسها. متى يكون هذا التطابق أضعف مما يبدو؟",
+   "cta_ar": "جرّب في قضية",
+   "cta_href": "/cases",
+   "source": "skills_patterns.json#SKILLS-12"
+  },
+  {
+   "id": "g_sk_05",
+   "kind": "skill",
+   "surfaces": [
+    "landing",
+    "home",
+    "case_return"
+   ],
+   "text_ar": "وصفان لمكان واحد بعبارتين مختلفتين. هل هذا تناقض حقيقي، أم أن اللغة اختلفت فقط؟",
+   "cta_ar": "جرّب في قضية",
+   "cta_href": "/cases",
+   "source": "skills_patterns.json#SKILLS-13"
+  },
+  {
+   "id": "g_sk_06",
+   "kind": "skill",
+   "surfaces": [
+    "landing",
+    "home",
+    "case_return"
+   ],
+   "text_ar": "أحياناً أفضل ما تفعله في ثغرة هو أن تسأل سؤالاً محدداً، لا أن تملأها بالخيال. ما سؤالك التالي؟",
+   "cta_ar": "جرّب في قضية",
+   "cta_href": "/cases",
+   "source": "skills_patterns.json#SKILLS-15"
+  },
+  {
+   "id": "g_sk_07",
+   "kind": "skill",
+   "surfaces": [
+    "landing",
+    "home",
+    "case_return"
+   ],
+   "text_ar": "صورة قُصّت من لقطة أكبر. هل القص يعني التزوير؟ ابحث عن الأصل قبل الحكم.",
+   "cta_ar": "جرّب في قضية",
+   "cta_href": "/cases",
+   "source": "skills_patterns.json#SKILLS-16"
+  },
+  {
+   "id": "g_sk_08",
+   "kind": "skill",
+   "surfaces": [
+    "landing",
+    "home",
+    "case_return"
+   ],
+   "text_ar": "كم أنت متأكد الآن؟ وكم كنت قبل الدليل الأخير؟ الثقة الجيدة تتحرك مع الدليل.",
+   "cta_ar": "جرّب في قضية",
+   "cta_href": "/cases",
+   "source": "skills_patterns.json#SKILLS-20"
+  },
+  {
+   "id": "g_sk_09",
+   "kind": "skill",
+   "surfaces": [
+    "landing",
+    "home",
+    "case_return"
+   ],
+   "text_ar": "وثيقة مؤرخة بتاريخ خاطئ. جرّب أولاً تفسير الخطأ البريء قبل أن تفكر في الخداع.",
+   "cta_ar": "جرّب في قضية",
+   "cta_href": "/cases",
+   "source": "skills_patterns.json#SKILLS-23"
+  },
+  {
+   "id": "g_sk_10",
+   "kind": "skill",
+   "surfaces": [
+    "landing",
+    "home",
+    "case_return"
+   ],
+   "text_ar": "الكاميرا لم تُظهر أحداً. هل يعني هذا أنه لم يمر؟ انظر أولاً ماذا كانت تغطي.",
+   "cta_ar": "جرّب في قضية",
+   "cta_href": "/cases",
+   "source": "skills_patterns.json#SKILLS-24"
+  }
+ ]
+}

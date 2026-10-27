@@ -1,0 +1,2468 @@
+{
+  "schema_version": "0.1.0",
+  "case_id": "c008_early_message",
+  "case_version": "0.1.0",
+  "meta": {
+    "title_ar": "رسالة وصلت مبكراً",
+    "title_en": "The Message That Arrived Early",
+    "age_band": "16-18",
+    "locale": "ar",
+    "dialogue_register": "msa",
+    "estimated_minutes": 25,
+    "difficulty": 2,
+    "content_flags": [
+      "no_violence",
+      "science_lab"
+    ],
+    "authors": [
+      "فريق أثر التحريري (مسودة بمساعدة الذكاء الاصطناعي، لم تُراجَع بشرياً بعد)"
+    ],
+    "knowledge_object_refs": [
+      "KO-RS-05-001",
+      "KO-RS-05-005",
+      "KO-RS-05-002",
+      "KO-RS-06-001",
+      "KO-RS-06-009",
+      "KO-RS-06-021",
+      "KO-FC-04-024"
+    ]
+  },
+  "premise": {
+    "hook_ar": "أربعة طلاب تلقّوا الإعلان نفسه، لكن كل واحد يذكر وقتاً مختلفاً. ويزعم واحد منهم أن الرسالة سبقت كتابة النتيجة.",
+    "player_role_ar": "أنت مراجع في لجنة مسابقة المقال العلمي، وطُلب منك أن تحسم هل وصلت رسالة النتيجة قبل أن تُكتب.",
+    "setting_ar": "ثانوية الأفق، عصر يوم الخميس. سجلات الخادم بالتوقيت العالمي UTC، أما الأجهزة فتعرض توقيتها المحلي.",
+    "public_fact_ids": [
+      "f_result_published",
+      "f_rayan_alleges",
+      "f_layla_confused"
+    ],
+    "assumed_general_knowledge_ar": [
+      "التوقيت المحلي = UTC + الإزاحة",
+      "تسمية الحقل في الشاشة قد لا تطابق الحقل الذي يغذّيها"
+    ]
+  },
+  "entities": {
+    "characters": [
+      {
+        "id": "layla",
+        "name_ar": "ليلى الراشد",
+        "role": "witness",
+        "age_descriptor_ar": "طالبة في الصف الحادي عشر، شاركت في المسابقة",
+        "persona_ar": "فضولية ودقيقة في وصف ما رأته على شاشتها، لكنها تفسّر الأرقام بحسب ما تتوقعه لا بحسب ما تعنيه.",
+        "motives_ar": [
+          "أن تفهم لماذا تبدو أوقات الرسالة غير متفقة",
+          "ألا يظن أحد أنها عرفت النتيجة بطريقة غير سليمة"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "ly_greet",
+            "purpose": "greeting",
+            "text_ar": "أهلاً. أريد أن أفهم هذه الأوقات أكثر منكم."
+          },
+          {
+            "line_id": "ly_notified",
+            "purpose": "reveal",
+            "text_ar": "ظهر إشعار الرسالة على هاتفي وعليه 18:10، وهاتفي مضبوط على التوقيت المحلي، أي UTC+3.",
+            "fact_ids": [
+              "f_notified"
+            ]
+          },
+          {
+            "line_id": "ly_inbox",
+            "purpose": "reveal",
+            "text_ar": "حين فتحت قائمة الرسائل وجدت تاريخ الرسالة 14:45، ولم أفهم كيف يسبق الإشعار بكل هذه الساعات.",
+            "fact_ids": [
+              "f_layla_inbox"
+            ]
+          },
+          {
+            "line_id": "ly_late",
+            "purpose": "reveal",
+            "text_ar": "ظننت أن الرسالة تأخرت ثلاث ساعات عن وقت إرسالها، فالإشعار 18:10 والإعلان نُشر عند الثالثة وبضع دقائق.",
+            "claim_ids": [
+              "cl_layla_late"
+            ]
+          },
+          {
+            "line_id": "ly_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف، ولا أحب أن أخمّن في الأرقام."
+          },
+          {
+            "line_id": "ly_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "هذا لا يخصّ الرسالة. اسألني عمّا رأيته على الشاشة."
+          },
+          {
+            "line_id": "ly_bye",
+            "purpose": "farewell",
+            "text_ar": "شكراً لأنك تقرأ الأرقام قبل أن تحكم."
+          }
+        ]
+      },
+      {
+        "id": "rayan",
+        "name_ar": "ريان القاسم",
+        "role": "witness",
+        "age_descriptor_ar": "طالب في الصف الثاني عشر، يشارك في معسكر علمي خارج البلاد",
+        "persona_ar": "متحمس ويحب الحسم، يرى في كل تعارض دليلاً على خلل، ويتراجع إذا واجهته بسجل واضح.",
+        "motives_ar": [
+          "أن تكون المسابقة عادلة",
+          "أن يُصحَّح الخلل إن كان هناك خلل"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "ry_greet",
+            "purpose": "greeting",
+            "text_ar": "أنا أبلغت اللجنة لأن في الأمر شيئاً غير طبيعي."
+          },
+          {
+            "line_id": "ry_notified",
+            "purpose": "reveal",
+            "text_ar": "وصلني الإشعار على حاسوبي وعليه 17:11، وتوقيت حاسوبي هنا UTC+2.",
+            "fact_ids": [
+              "f_rayan_notified"
+            ]
+          },
+          {
+            "line_id": "ry_early",
+            "purpose": "reveal",
+            "text_ar": "تاريخ رسالة ليلى 14:45، والنتيجة لم تُعتمد إلا 15:07؛ فلا بد أن أحداً أبلغها قبل أن تُكتب.",
+            "claim_ids": [
+              "cl_rayan_early"
+            ]
+          },
+          {
+            "line_id": "ry_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف أكثر من الأرقام التي رأيتها."
+          },
+          {
+            "line_id": "ry_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن الإشعار وعن الأوقات فقط."
+          },
+          {
+            "line_id": "ry_bye",
+            "purpose": "farewell",
+            "text_ar": "أريد جواباً مقنعاً، لا أريد اتهام أحد بلا سبب."
+          }
+        ]
+      },
+      {
+        "id": "faris",
+        "name_ar": "فارس الجابر",
+        "role": "expert",
+        "age_descriptor_ar": "المسؤول التقني عن بوابة المدرسة",
+        "persona_ar": "هادئ ومباشر، يعرف تعريفات حقول النظام جيداً ولا يعرف من قرأ الرسالة ولا متى فتحها أحد.",
+        "motives_ar": [
+          "أن تُفهم حقول البوابة فهماً صحيحاً"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "fr_greet",
+            "purpose": "greeting",
+            "text_ar": "تفضّل. أستطيع شرح الحقول، لكنني لا أعرف من قرأ الرسالة."
+          },
+          {
+            "line_id": "fr_sent",
+            "purpose": "reveal",
+            "text_ar": "سجل الخادم يضع وقت الإرسال 15:10 بالتوقيت العالمي UTC.",
+            "fact_ids": [
+              "f_sent"
+            ]
+          },
+          {
+            "line_id": "fr_autosave",
+            "purpose": "reveal",
+            "text_ar": "المحرر يحفظ المسودات آلياً ويحتفظ بسجل لنسخها.",
+            "fact_ids": [
+              "f_autosave_exists"
+            ]
+          },
+          {
+            "line_id": "fr_guide",
+            "purpose": "reveal",
+            "text_ar": "للبوابة دليل منشور يعرّف كل حقل يظهر فيها.",
+            "fact_ids": [
+              "f_guide_exists"
+            ]
+          },
+          {
+            "line_id": "fr_column",
+            "purpose": "reveal",
+            "text_ar": "عمود «التاريخ» في قائمة الرسائل يعرض وقت إنشاء المسودة، لا وقت الإرسال.",
+            "fact_ids": [
+              "f_list_date_created"
+            ]
+          },
+          {
+            "line_id": "fr_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "هذا خارج ما أعرفه عن النظام."
+          },
+          {
+            "line_id": "fr_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن حقول البوابة فقط."
+          },
+          {
+            "line_id": "fr_bye",
+            "purpose": "farewell",
+            "text_ar": "إن شككت في معنى حقل فاقرأ تعريفه أولاً."
+          }
+        ]
+      },
+      {
+        "id": "hind",
+        "name_ar": "هند السعدي",
+        "role": "suspect",
+        "age_descriptor_ar": "محررة بيانات المسابقة",
+        "persona_ar": "مجتهدة وتخاف أن تُلام على أي تفصيل، فتقلّل من شأن خطوة أولى قامت بها مبكراً.",
+        "motives_ar": [
+          "ألا تُلام على تاريخ ظهر في القائمة",
+          "أن تُنشر النتيجة صحيحة"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "hn_greet",
+            "purpose": "greeting",
+            "text_ar": "تفضّل. أنا أعدّ نصوص الإعلانات قبل نشرها."
+          },
+          {
+            "line_id": "hn_final",
+            "purpose": "reveal",
+            "text_ar": "اعتمدت لجنة المسابقة النص النهائي ووصلني الاعتماد، وحفظت النسخة النهائية الساعة 15:07 UTC.",
+            "fact_ids": [
+              "f_final_approved"
+            ]
+          },
+          {
+            "line_id": "hn_approval",
+            "purpose": "reveal",
+            "text_ar": "وصلتني رسالة اعتماد من رئيسة اللجنة، وهي محفوظة عندي.",
+            "fact_ids": [
+              "f_approval_exists"
+            ]
+          },
+          {
+            "line_id": "hn_refuse",
+            "purpose": "refuse_secret",
+            "text_ar": "لا أذكر شيئاً آخر قبل الاعتماد."
+          },
+          {
+            "line_id": "hn_draft",
+            "purpose": "reveal",
+            "text_ar": "نعم... فتحت المحرر 14:45 وكتبت العنوان فقط، وتركت النص فارغاً حتى تعتمد اللجنة النتيجة. لم أرسل شيئاً قبل ذلك.",
+            "fact_ids": [
+              "f_draft_created"
+            ]
+          },
+          {
+            "line_id": "hn_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف."
+          },
+          {
+            "line_id": "hn_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن إعداد الإعلان."
+          },
+          {
+            "line_id": "hn_bye",
+            "purpose": "farewell",
+            "text_ar": "أرجو أن يتضح الأمر قبل أن يُظلم أحد."
+          }
+        ]
+      }
+    ],
+    "locations": [
+      {
+        "id": "loc_portal",
+        "name_ar": "خادم بوابة المدرسة",
+        "description_ar": "سجلات الإرسال والنسخ الآلية."
+      },
+      {
+        "id": "loc_office",
+        "name_ar": "مكتب لجنة المسابقة",
+        "description_ar": "حيث تُعدّ الإعلانات وتُعتمد."
+      },
+      {
+        "id": "loc_home",
+        "name_ar": "هاتف ليلى",
+        "description_ar": "الجهاز الذي وصله الإشعار الأول."
+      },
+      {
+        "id": "loc_camp",
+        "name_ar": "حاسوب ريان في المعسكر",
+        "description_ar": "جهاز يعمل بتوقيت بلد المعسكر."
+      }
+    ],
+    "objects": [
+      {
+        "id": "obj_msg",
+        "name_ar": "رسالة النتيجة M-204",
+        "description_ar": "رسالة بوابة المدرسة التي تعلن نتيجة مسابقة المقال العلمي."
+      }
+    ],
+    "organizations": [
+      {
+        "id": "org_school",
+        "name_ar": "ثانوية الأفق",
+        "description_ar": "مدرسة خيالية تنظم مسابقة المقال العلمي."
+      }
+    ]
+  },
+  "truth": {
+    "solution": {
+      "culprit_ids": [
+        "hind"
+      ],
+      "summary_ar": "لم تصل الرسالة قبل كتابة النتيجة. فتحت المحررة مسودة بعنوان فقط مبكراً فتولّد تاريخ 14:45 الذي عرضته القائمة، أما النص النهائي فحُفظ 15:07 وأُرسل 15:10، وإشعارات الأجهزة كانت بتوقيتات محلية مختلفة. لا إبلاغ مسبق ولا تلاعب.",
+      "key_fact_ids": [
+        "f_after_final",
+        "f_date_is_draft"
+      ]
+    },
+    "facts": [
+      {
+        "id": "f_result_published",
+        "statement_ar": "نُشرت نتيجة مسابقة المقال العلمي عبر بوابة المدرسة عصر يوم الخميس.",
+        "kind": "event",
+        "subject_ids": [
+          "obj_msg"
+        ],
+        "spoiler_level": 0
+      },
+      {
+        "id": "f_rayan_alleges",
+        "statement_ar": "يقول ريان إن ليلى علمت بالنتيجة قبل أن تُكتب.",
+        "kind": "attribute",
+        "subject_ids": [
+          "rayan",
+          "layla"
+        ],
+        "spoiler_level": 0
+      },
+      {
+        "id": "f_layla_confused",
+        "statement_ar": "ترى ليلى أن أوقات الرسالة لا تتفق ولا تعرف السبب.",
+        "kind": "attribute",
+        "subject_ids": [
+          "layla"
+        ],
+        "spoiler_level": 0
+      },
+      {
+        "id": "f_notified",
+        "statement_ar": "ظهر إشعار الرسالة على هاتف ليلى وعليه 18:10 بتوقيت هاتفها (UTC+3).",
+        "kind": "event",
+        "subject_ids": [
+          "layla",
+          "obj_msg"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 70,
+          "precision": "exact"
+        },
+        "location_id": "loc_home",
+        "science_ko_refs": [
+          "KO-FC-04-024"
+        ]
+      },
+      {
+        "id": "f_layla_inbox",
+        "statement_ar": "يظهر في قائمة رسائل ليلى تاريخ للرسالة هو 14:45.",
+        "kind": "state",
+        "subject_ids": [
+          "layla",
+          "obj_msg"
+        ],
+        "spoiler_level": 1,
+        "location_id": "loc_home"
+      },
+      {
+        "id": "f_rayan_notified",
+        "statement_ar": "ظهر إشعار الرسالة على حاسوب ريان وعليه 17:11 بتوقيت حاسوبه (UTC+2).",
+        "kind": "event",
+        "subject_ids": [
+          "rayan",
+          "obj_msg"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 71,
+          "precision": "exact"
+        },
+        "location_id": "loc_camp",
+        "science_ko_refs": [
+          "KO-FC-04-024"
+        ]
+      },
+      {
+        "id": "f_sent",
+        "statement_ar": "وُضعت الرسالة في قائمة الإرسال الساعة 15:10 UTC.",
+        "kind": "event",
+        "subject_ids": [
+          "obj_msg",
+          "loc_portal"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 70,
+          "precision": "exact"
+        },
+        "location_id": "loc_portal"
+      },
+      {
+        "id": "f_autosave_exists",
+        "statement_ar": "محرر البوابة يحفظ المسودات آلياً ويحتفظ بسجل لنسخها.",
+        "kind": "state",
+        "subject_ids": [
+          "loc_portal"
+        ],
+        "spoiler_level": 1
+      },
+      {
+        "id": "f_guide_exists",
+        "statement_ar": "للبوابة دليل حقول منشور يعرّف معنى كل تاريخ يظهر فيها.",
+        "kind": "state",
+        "subject_ids": [
+          "loc_portal"
+        ],
+        "spoiler_level": 1
+      },
+      {
+        "id": "f_list_date_created",
+        "statement_ar": "عمود «التاريخ» في قائمة الرسائل يعرض وقت إنشاء المسودة، لا وقت الإرسال.",
+        "kind": "attribute",
+        "subject_ids": [
+          "obj_msg",
+          "loc_portal"
+        ],
+        "spoiler_level": 2,
+        "location_id": "loc_portal",
+        "science_ko_refs": [
+          "KO-FC-04-024"
+        ]
+      },
+      {
+        "id": "f_final_approved",
+        "statement_ar": "حُفظ النص النهائي الذي يتضمن النتيجة الساعة 15:07 UTC بعد اعتماد اللجنة.",
+        "kind": "event",
+        "subject_ids": [
+          "hind",
+          "obj_msg"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 67,
+          "precision": "exact"
+        },
+        "location_id": "loc_office"
+      },
+      {
+        "id": "f_approval_exists",
+        "statement_ar": "بعثت رئيسة اللجنة إلى المحررة رسالة اعتماد بالنتيجة.",
+        "kind": "state",
+        "subject_ids": [
+          "hind"
+        ],
+        "spoiler_level": 1
+      },
+      {
+        "id": "f_draft_created",
+        "statement_ar": "أنشأت المحررة مسودة الرسالة وحُفظت آلياً الساعة 14:45 UTC بعنوان فقط ودون نتيجة.",
+        "kind": "event",
+        "subject_ids": [
+          "hind",
+          "obj_msg"
+        ],
+        "spoiler_level": 2,
+        "time": {
+          "start_min": 45,
+          "precision": "exact"
+        },
+        "location_id": "loc_office",
+        "science_ko_refs": [
+          "KO-RS-06-017"
+        ]
+      },
+      {
+        "id": "f_same_instant",
+        "statement_ar": "إشعارا هاتف ليلى وحاسوب ريان، بعد تحويلهما إلى مرجع واحد، يصفان وصولاً واحداً تقريباً (15:10 و15:11 UTC).",
+        "kind": "relation",
+        "subject_ids": [
+          "layla",
+          "rayan",
+          "obj_msg"
+        ],
+        "spoiler_level": 2,
+        "time": {
+          "start_min": 70,
+          "precision": "approx",
+          "end_min": 71
+        },
+        "science_ko_refs": [
+          "KO-FC-04-024",
+          "KO-RS-05-005"
+        ]
+      },
+      {
+        "id": "f_after_final",
+        "statement_ar": "وصلت الرسالة الطلاب بعد حفظ نصها النهائي (15:10 UTC مقابل 15:07 UTC)، فلم تصل قبل أن توجد النتيجة.",
+        "kind": "relation",
+        "subject_ids": [
+          "obj_msg",
+          "hind"
+        ],
+        "spoiler_level": 3,
+        "time": {
+          "start_min": 67,
+          "precision": "exact",
+          "end_min": 70
+        },
+        "science_ko_refs": [
+          "KO-RS-05-005",
+          "KO-RS-06-017"
+        ]
+      },
+      {
+        "id": "f_date_is_draft",
+        "statement_ar": "التاريخ 14:45 الذي تعرضه القائمة هو وقت إنشاء مسودة بلا نتيجة، لا وقت وصول الرسالة إلى أحد.",
+        "kind": "relation",
+        "subject_ids": [
+          "obj_msg",
+          "hind"
+        ],
+        "spoiler_level": 3,
+        "time": {
+          "start_min": 45,
+          "precision": "exact"
+        },
+        "science_ko_refs": [
+          "KO-FC-04-024",
+          "KO-RS-05-001"
+        ]
+      }
+    ],
+    "claims": [
+      {
+        "id": "cl_rayan_early",
+        "statement_ar": "وصلت الرسالة ليلى قبل أن تُكتب النتيجة، فلا بد أن أحداً أبلغها مسبقاً.",
+        "kind": "half_truth",
+        "held_by": [
+          "rayan"
+        ],
+        "true_fact_id": "f_after_final",
+        "contradicted_by_evidence_ids": [
+          "ev_draft_history",
+          "ev_published_notice"
+        ]
+      },
+      {
+        "id": "cl_layla_late",
+        "statement_ar": "الرسالة تأخرت ثلاث ساعات عن إرسالها.",
+        "kind": "honest_mistake",
+        "held_by": [
+          "layla"
+        ],
+        "true_fact_id": "f_same_instant",
+        "contradicted_by_evidence_ids": [
+          "ev_lab_norm",
+          "ev_system_ref"
+        ]
+      }
+    ]
+  },
+  "timeline": [
+    {
+      "id": "te_draft",
+      "description_ar": "هند تفتح محرر الرسالة وتكتب العنوان فقط، فيُحفظ آلياً.",
+      "time": {
+        "start_min": 45,
+        "precision": "exact"
+      },
+      "location_id": "loc_office",
+      "actor_ids": [
+        "hind"
+      ],
+      "fact_ids": [
+        "f_draft_created"
+      ],
+      "motivated_by_ar": "أرادت تجهيز الإعلان قبل اعتماد اللجنة"
+    },
+    {
+      "id": "te_final",
+      "description_ar": "حفظ النص النهائي بعد اعتماد اللجنة.",
+      "time": {
+        "start_min": 67,
+        "precision": "exact"
+      },
+      "location_id": "loc_office",
+      "actor_ids": [
+        "hind"
+      ],
+      "fact_ids": [
+        "f_final_approved"
+      ],
+      "motivated_by_ar": "وصلها اعتماد رئيسة اللجنة"
+    },
+    {
+      "id": "te_send",
+      "description_ar": "الرسالة تدخل قائمة الإرسال في الخادم.",
+      "time": {
+        "start_min": 70,
+        "precision": "exact"
+      },
+      "location_id": "loc_portal",
+      "actor_ids": [],
+      "fact_ids": [
+        "f_sent"
+      ]
+    },
+    {
+      "id": "te_layla",
+      "description_ar": "الإشعار يظهر على هاتف ليلى.",
+      "time": {
+        "start_min": 70,
+        "precision": "approx"
+      },
+      "location_id": "loc_home",
+      "actor_ids": [
+        "layla"
+      ],
+      "fact_ids": [
+        "f_notified"
+      ],
+      "motivated_by_ar": "تلقّت إشعاراً تلقائياً من التطبيق"
+    },
+    {
+      "id": "te_rayan",
+      "description_ar": "الإشعار يظهر على حاسوب ريان في المعسكر.",
+      "time": {
+        "start_min": 71,
+        "precision": "approx"
+      },
+      "location_id": "loc_camp",
+      "actor_ids": [
+        "rayan"
+      ],
+      "fact_ids": [
+        "f_rayan_notified"
+      ],
+      "motivated_by_ar": "تلقّى إشعاراً تلقائياً من التطبيق"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_server_log",
+      "title_ar": "سجل إرسال بوابة المدرسة",
+      "kind": "digital",
+      "content_ar": "سجل خادم البوابة (كل الأوقات بالتوقيت العالمي UTC)\nالرسالة M-204 «نتيجة مسابقة المقال العلمي»\nالحالة: مُرسلة\nوقت الإرسال sent_at: 15:10 UTC\nالمستلمون: 4 طلاب\nالمحاولات: 1",
+      "acquired_by_action_ids": [
+        "a_read_server"
+      ],
+      "supports_fact_ids": [
+        "f_sent"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يثبت وقت وضع الرسالة في قائمة الإرسال؛ لا يثبت وقت ظهور الإشعار عند كل مستلم ولا ما كُتب في نصها.",
+      "location_id": "loc_portal"
+    },
+    {
+      "id": "ev_published_notice",
+      "title_ar": "إعلان النتيجة كما نُشر",
+      "kind": "documentary",
+      "content_ar": "ثانوية الأفق — مسابقة المقال العلمي\nإعلان النتيجة (النسخة النهائية)\nالمركز الأول: مقال «ماء الفجر»\nالمركز الثاني: مقال «صدى الطين»\nحُفظت النسخة النهائية: 15:07 UTC\nاعتمدتها: لجنة المسابقة",
+      "acquired_by_action_ids": [
+        "a_read_notice"
+      ],
+      "supports_fact_ids": [
+        "f_final_approved"
+      ],
+      "reliability": "strong",
+      "limits_ar": "وثيقة منشورة تبيّن وقت حفظ النسخة النهائية؛ لا تذكر وقت إرسالها ولا ما حفظه المحرر قبلها.",
+      "location_id": "loc_office"
+    },
+    {
+      "id": "ev_phone_screen",
+      "title_ar": "لقطة شاشة هاتف ليلى",
+      "kind": "digital",
+      "content_ar": "لقطة شاشة هاتف ليلى:\nإشعار: «بوابة المدرسة — نتيجة مسابقة المقال العلمي»\nوقت ظهور الإشعار: 18:10\nإعدادات الهاتف: المنطقة الزمنية UTC+3 (ضبط تلقائي)",
+      "acquired_by_action_ids": [
+        "a_get_phone"
+      ],
+      "supports_fact_ids": [
+        "f_notified"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "لقطة لجهاز واحد تعرض وقت ظهور الإشعار بتوقيت الجهاز؛ لا تعرض وقت الإرسال ولا تثبت وحدها صحة ضبط ساعته.",
+      "is_red_herring": true,
+      "location_id": "loc_home"
+    },
+    {
+      "id": "ev_laptop_screen",
+      "title_ar": "لقطة شاشة حاسوب ريان",
+      "kind": "digital",
+      "content_ar": "لقطة شاشة حاسوب ريان:\nإشعار سطح المكتب: «بوابة المدرسة — نتيجة مسابقة المقال العلمي»\nوقت الظهور: 17:11\nالمنطقة الزمنية للحاسوب: UTC+2",
+      "acquired_by_action_ids": [
+        "a_get_laptop"
+      ],
+      "supports_fact_ids": [
+        "f_rayan_notified"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "لقطة لجهاز واحد بتوقيت بلد المعسكر؛ تصف جهازه هو لا جهاز ليلى.",
+      "location_id": "loc_camp"
+    },
+    {
+      "id": "ev_inbox_screen",
+      "title_ar": "لقطة قائمة رسائل ليلى",
+      "kind": "digital",
+      "content_ar": "لقطة من قائمة الرسائل في بوابة المدرسة (الحساب: ليلى)\nالرسالة: نتيجة مسابقة المقال العلمي\nالتاريخ: 14:45 (توقيت البوابة UTC)\nالحالة: غير مقروءة",
+      "acquired_by_action_ids": [
+        "a_get_inbox"
+      ],
+      "supports_fact_ids": [
+        "f_layla_inbox"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "تعرض عمودًا اسمه «التاريخ» ولا تبيّن أي حقل في النظام يغذّيه.",
+      "is_red_herring": true,
+      "location_id": "loc_home"
+    },
+    {
+      "id": "ev_draft_history",
+      "title_ar": "سجل النسخ الآلية لمحرر البوابة",
+      "kind": "digital",
+      "content_ar": "سجل نسخ محرر البوابة (UTC) — الرسالة M-204\nالنسخة 1 — 14:45:03 — حفظ آلي — العنوان: «نتيجة مسابقة المقال العلمي» — النص: «[تُكتب النتيجة لاحقاً]»\nالنسخة 2 — 15:07:40 — حفظ يدوي — النص الكامل متضمناً النتيجة",
+      "acquired_by_action_ids": [
+        "a_get_draft"
+      ],
+      "supports_fact_ids": [
+        "f_draft_created",
+        "f_final_approved"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يبيّن ما كان في كل نسخة ووقت حفظها؛ لا يبيّن متى أُرسلت الرسالة ولا من فتحها.",
+      "contradicts_claim_ids": [
+        "cl_rayan_early"
+      ],
+      "location_id": "loc_portal"
+    },
+    {
+      "id": "ev_system_ref",
+      "title_ar": "دليل حقول بوابة المدرسة",
+      "kind": "documentary",
+      "content_ar": "دليل المستخدم — حقول التواريخ في البوابة\ncreated_at: وقت أول حفظ آلي لمسودة الرسالة (UTC).\nsent_at: وقت وضع الرسالة في قائمة الإرسال (UTC).\nnotified_at: وقت ظهور الإشعار على جهاز المستلم، بتوقيت جهازه المحلي.\nعمود «التاريخ» في قائمة الرسائل يعرض الحقل created_at.",
+      "acquired_by_action_ids": [
+        "a_get_guide"
+      ],
+      "supports_fact_ids": [
+        "f_list_date_created"
+      ],
+      "reliability": "strong",
+      "limits_ar": "مرجع تعريفي منشور؛ يشرح معنى الحقول ولا يخبر بقيمها في رسالة بعينها.",
+      "contradicts_claim_ids": [
+        "cl_layla_late"
+      ],
+      "location_id": "loc_portal"
+    },
+    {
+      "id": "ev_approval_email",
+      "title_ar": "رسالة اعتماد النتيجة",
+      "kind": "digital",
+      "content_ar": "رسالة داخلية من رئيسة لجنة المسابقة إلى المحررة\nالوقت: 15:07 UTC\nالموضوع: اعتماد النتيجة\n«اعتمدتُ النتيجة بصيغتها الأخيرة. أرسلي الإعلان للطلاب الآن.»",
+      "acquired_by_action_ids": [
+        "a_get_approval"
+      ],
+      "supports_fact_ids": [
+        "f_final_approved"
+      ],
+      "reliability": "strong",
+      "limits_ar": "تثبت وقت الاعتماد؛ لا تثبت وقت الإرسال ولا وقت وصول الرسالة.",
+      "location_id": "loc_office"
+    },
+    {
+      "id": "ev_lab_norm",
+      "title_ar": "تقرير توحيد الأزمنة",
+      "kind": "lab_result",
+      "content_ar": "تقرير مختبر الأزمنة: بعد تحويل 18:10 (UTC+3) و17:11 (UTC+2) إلى التوقيت العالمي يتوافق إشعار هاتف ليلى وحاسوب ريان عند نحو 15:10 و15:11 UTC بفارق دقيقة. أي أن الفارق الظاهر بينهما ناتج عن اختلاف المنطقة الزمنية لا عن اختلاف اللحظة.",
+      "acquired_by_action_ids": [
+        "a_compare_times"
+      ],
+      "supports_fact_ids": [
+        "f_same_instant"
+      ],
+      "reliability": "strong",
+      "limits_ar": "نتيجة حسابية تعتمد على صحة الإزاحتين المدخلتين؛ توحّد الأزمنة ولا تقول متى كُتب النص ولا من علم به قبل غيره.",
+      "contradicts_claim_ids": [
+        "cl_layla_late"
+      ],
+      "forensic_ko_ref": "KO-FC-04-024",
+      "location_id": "loc_portal"
+    },
+    {
+      "id": "ev_faris_statement",
+      "title_ar": "إفادة فارس الجابر (ملخص)",
+      "kind": "testimonial",
+      "content_ar": "ملخص إفادة فارس الجابر، المسؤول التقني:\n«عمود التاريخ في قائمة الرسائل يأخذ قيمته من وقت إنشاء المسودة، لا من وقت الإرسال. لا أعرف من فتح الرسالة ولا متى.»",
+      "acquired_by_action_ids": [
+        "a_note_faris"
+      ],
+      "supports_fact_ids": [
+        "f_list_date_created"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "إفادة خبير بالنظام عن تعريف الحقول؛ تُقاس بالدليل المنشور وبالسجل، ولا تخبر بما حدث لرسالة بعينها.",
+      "location_id": "loc_portal"
+    },
+    {
+      "id": "ev_layla_statement",
+      "title_ar": "إفادة ليلى (ملخص)",
+      "kind": "testimonial",
+      "content_ar": "ملخص إفادة ليلى الراشد:\n«ظهر الإشعار على هاتفي 18:10 فظننت أن الرسالة تأخرت ثلاث ساعات. وفي القائمة تاريخ الرسالة 14:45، ولا أفهم السبب.»",
+      "acquired_by_action_ids": [
+        "a_note_layla"
+      ],
+      "supports_fact_ids": [
+        "f_notified",
+        "f_layla_inbox"
+      ],
+      "reliability": "weak",
+      "limits_ar": "تصف ما رأته على شاشتها وتضيف تفسيراً من عندها؛ يُقاس التفسير بتعريف الحقول.",
+      "location_id": "loc_home"
+    },
+    {
+      "id": "ev_rayan_statement",
+      "title_ar": "إفادة ريان (ملخص)",
+      "kind": "testimonial",
+      "content_ar": "ملخص إفادة ريان القاسم:\n«وصلني الإشعار 17:11 بتوقيت حاسوبي. لكن تاريخ رسالة ليلى 14:45، أي قبل 15:07، فأرى أن أحداً أبلغها مسبقاً.»",
+      "acquired_by_action_ids": [
+        "a_note_rayan"
+      ],
+      "supports_fact_ids": [
+        "f_rayan_notified"
+      ],
+      "reliability": "weak",
+      "limits_ar": "استنتاج صاحبه من مقارنة أرقام بعضها بتوقيت مختلف وبعضها لا يُعرف حقله؛ يحتاج إلى معنى الحقل قبل أن يصير دليلاً.",
+      "location_id": "loc_camp"
+    },
+    {
+      "id": "ev_hind_statement",
+      "title_ar": "إفادة هند (ملخص)",
+      "kind": "testimonial",
+      "content_ar": "ملخص إفادة هند السعدي، محررة البيان:\n«فتحت المحرر 14:45 وكتبت العنوان فقط. حفظت النص النهائي 15:07 بعد الاعتماد وأرسلت الإعلان بعده.»",
+      "acquired_by_action_ids": [
+        "a_note_hind"
+      ],
+      "supports_fact_ids": [
+        "f_draft_created",
+        "f_final_approved"
+      ],
+      "reliability": "weak",
+      "limits_ar": "إفادة صاحبة الشأن؛ تؤيدها سجلات النسخ ولا تغني عنها.",
+      "location_id": "loc_office"
+    }
+  ],
+  "evidence_graph": {
+    "inferences": [
+      {
+        "id": "i_a_after",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_server_log"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_published_notice"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_after_final"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "الخادم يضع الإرسال 15:10 UTC والنسخة النهائية حُفظت 15:07 UTC، والتوقيتان على مرجع واحد؛ فالإرسال جاء بعد اكتمال النص.",
+        "skill_ko_refs": [
+          "KO-RS-05-005"
+        ]
+      },
+      {
+        "id": "i_b_after",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_lab_norm"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_approval_email"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_after_final"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "إشعارا الجهازين، بعد توحيد منطقتيهما، يقعان عند 15:10 و15:11 UTC، والاعتماد 15:07 UTC؛ فالوصول جاء بعد الاعتماد بمسار مستقل عن سجل الخادم.",
+        "skill_ko_refs": [
+          "KO-RS-05-005",
+          "KO-FC-04-024"
+        ]
+      },
+      {
+        "id": "i_a_date",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_inbox_screen"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_system_ref"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_date_is_draft"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "الدليل المنشور يقول إن عمود «التاريخ» يعرض created_at؛ فالقيمة 14:45 في القائمة وقت إنشاء المسودة لا وقت الوصول.",
+        "skill_ko_refs": [
+          "KO-FC-04-024"
+        ]
+      },
+      {
+        "id": "i_b_date",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_draft_history"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_faris_statement"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_date_is_draft"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "سجل النسخ يضع إنشاء المسودة 14:45 وهي بلا نتيجة، وخبير النظام يقول إن عمود التاريخ يأخذ قيمة الإنشاء؛ فالتاريخ الظاهر يعود إلى مسودة فارغة.",
+        "skill_ko_refs": [
+          "KO-FC-04-024",
+          "KO-RS-05-001"
+        ]
+      },
+      {
+        "id": "i_same",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_lab_norm"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_server_log"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_same_instant"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "الإشعاران بعد التحويل متقاربان، ويتفقان مع وقت الإرسال في الخادم؛ فالفرق الظاهر في الأرقام من اختلاف المنطقة لا من اختلاف اللحظة.",
+        "skill_ko_refs": [
+          "KO-FC-04-024"
+        ]
+      },
+      {
+        "id": "i_rayan_claim",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_after_final"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_date_is_draft"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_rayan_early"
+        },
+        "relation": "contradicts_claim",
+        "strength": "strong",
+        "rule_ar": "التاريخ الذي استند إليه ريان هو تاريخ مسودة فارغة، أما الرسالة بنصها فلم تصل إلا بعد حفظ النتيجة؛ فاستنتاجه قفز من تسمية حقل إلى واقعة لم تحدث.",
+        "skill_ko_refs": [
+          "KO-RS-05-001",
+          "KO-RS-05-007"
+        ]
+      },
+      {
+        "id": "i_layla_claim",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_lab_norm"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_system_ref"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_layla_late"
+        },
+        "relation": "contradicts_claim",
+        "strength": "strong",
+        "rule_ar": "حقل notified_at يُعرض بتوقيت الجهاز المحلي، وبعد طرح الإزاحة (+3) يصير الإشعار 15:10 UTC؛ فلا يوجد تأخير بثلاث ساعات.",
+        "skill_ko_refs": [
+          "KO-FC-04-024",
+          "KO-RS-05-007"
+        ]
+      },
+      {
+        "id": "i_support_display",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_after_final"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_date_is_draft"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_display"
+        },
+        "relation": "supports",
+        "strength": "strong",
+        "rule_ar": "اختلاف معنى الحقول وتوقيتات العرض يفسّر كل الأرقام: مسودة مبكرة فارغة، واعتماد 15:07، وإرسال 15:10، وإشعارات بتوقيتات محلية.",
+        "skill_ko_refs": [
+          "KO-RS-05-002"
+        ]
+      },
+      {
+        "id": "i_rule_leak",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_after_final"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_date_is_draft"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_leak"
+        },
+        "relation": "rules_out",
+        "strength": "conclusive",
+        "rule_ar": "لا يمكن أن يُبلَّغ أحد بنتيجة بعد وصولها فقط؛ والتاريخ المبكر كان لمسودة فارغة، فلا يدل على إبلاغ سابق عبر هذه الرسالة.",
+        "skill_ko_refs": [
+          "KO-RS-06-008"
+        ]
+      },
+      {
+        "id": "i_rule_untrust",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_after_final"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_date_is_draft"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_untrust"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "حين يُعرف مرجع كل رقم ومعنى كل حقل تتسق سجلات من أنظمة مستقلة في ترتيب واحد؛ فالتضارب كان في قراءتنا الأولى لا في زمن البيانات.",
+        "skill_ko_refs": [
+          "KO-RS-06-008"
+        ]
+      },
+      {
+        "id": "i_rule_untrust_lab",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_same_instant"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_untrust"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "جهازان بمنطقتين مختلفتين يتطابقان بعد التوحيد؛ فلا يصح القول إن زمن البيانات لا يوثق به.",
+        "skill_ko_refs": [
+          "KO-RS-06-008"
+        ]
+      }
+    ]
+  },
+  "character_knowledge": [
+    {
+      "character_id": "layla",
+      "knows": [
+        {
+          "fact_id": "f_notified",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_layla_inbox",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": [
+        {
+          "claim_id": "cl_layla_late",
+          "stance": "sincere"
+        }
+      ]
+    },
+    {
+      "character_id": "rayan",
+      "knows": [
+        {
+          "fact_id": "f_rayan_notified",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": [
+        {
+          "claim_id": "cl_rayan_early",
+          "stance": "sincere"
+        }
+      ]
+    },
+    {
+      "character_id": "faris",
+      "knows": [
+        {
+          "fact_id": "f_sent",
+          "access": "professional",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_autosave_exists",
+          "access": "professional",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_guide_exists",
+          "access": "professional",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_list_date_created",
+          "access": "professional",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    },
+    {
+      "character_id": "hind",
+      "knows": [
+        {
+          "fact_id": "f_final_approved",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_approval_exists",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_draft_created",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [
+        {
+          "fact_id": "f_draft_created",
+          "reveal_when": {
+            "presented": {
+              "evidence_id": "ev_inbox_screen",
+              "to_character": "hind"
+            }
+          },
+          "cover_claim_id": null,
+          "reveal_line_id": "hn_draft"
+        }
+      ],
+      "believes": []
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "h_leak",
+      "statement_ar": "أُبلغت ليلى بالنتيجة قبل أن تُكتب، فالرسالة وصلتها مبكراً بطريقة غير مشروعة.",
+      "is_true": false,
+      "plausibility_at_start": "high"
+    },
+    {
+      "id": "h_display",
+      "statement_ar": "اختلاف الأوقات ناتج عن اختلاف معنى الحقول وتوقيتات العرض؛ الرسالة وصلت بعد كتابة نتيجتها.",
+      "is_true": true,
+      "plausibility_at_start": "low",
+      "suspect_id": "hind"
+    },
+    {
+      "id": "h_untrust",
+      "statement_ar": "أزمنة البوابة متضاربة ولا يمكن الوثوق بها إطلاقاً.",
+      "is_true": false,
+      "plausibility_at_start": "medium"
+    }
+  ],
+  "misdirection_plan": [
+    {
+      "id": "rh_inbox",
+      "points_to_hypothesis_id": "h_leak",
+      "planted_via_ar": "قائمة رسائل ليلى تضع الرسالة عند 14:45، قبل حفظ النص النهائي 15:07.",
+      "evidence_ids": [
+        "ev_inbox_screen"
+      ],
+      "refuted_by_inference_ids": [
+        "i_rule_leak",
+        "i_a_date",
+        "i_b_date"
+      ],
+      "fairness_note_ar": "دليل المستخدم المنشور وسجل النسخ وإفادة الخبير تبيّن كلها أن عمود التاريخ هو وقت الإنشاء، وأن النسخة الأولى كانت بلا نتيجة."
+    },
+    {
+      "id": "rh_phone",
+      "points_to_hypothesis_id": "h_untrust",
+      "planted_via_ar": "الهاتف يقول 18:10 والخادم يقول 15:10، فتبدو الأزمنة متضاربة.",
+      "evidence_ids": [
+        "ev_phone_screen"
+      ],
+      "refuted_by_inference_ids": [
+        "i_rule_untrust",
+        "i_rule_untrust_lab",
+        "i_layla_claim",
+        "i_same"
+      ],
+      "fairness_note_ar": "اللقطة نفسها تذكر المنطقة الزمنية UTC+3، وحقل notified_at معرَّف في الدليل بأنه بتوقيت الجهاز؛ كل ما يلزم للتحويل متاح للاعب."
+    }
+  ],
+  "learning_objectives": [
+    {
+      "id": "lo_claim",
+      "statement_ar": "يفرّق بين قول فُسِّر خطأً وقول كاذب، ويقيس القول بتعريف الحقل وبالسجل.",
+      "skill_ko_ref": "KO-RS-05-001",
+      "observable_behaviors_ar": [
+        "يصنّف الإفادات أقوالاً",
+        "لا يساوي بين الاختلاف والكذب"
+      ],
+      "evidence_sources": [
+        "evidence_board"
+      ]
+    },
+    {
+      "id": "lo_timeline",
+      "statement_ar": "يوحّد الأزمنة ويرتّب الأحداث على خط زمني واحد.",
+      "skill_ko_ref": "KO-RS-05-005",
+      "observable_behaviors_ar": [
+        "يشغّل مختبر الأزمنة بإزاحات صحيحة",
+        "يضع الأدلة في أزمنتها بالتوقيت العالمي"
+      ],
+      "evidence_sources": [
+        "timeline_task",
+        "action_log"
+      ]
+    },
+    {
+      "id": "lo_hyp",
+      "statement_ar": "يوازن بين فرضيتين على الأقل ويستبعد ما تنقضه الأدلة.",
+      "skill_ko_ref": "KO-RS-05-002",
+      "observable_behaviors_ar": [
+        "يضيف فرضيات",
+        "يستبعد بدليل"
+      ],
+      "evidence_sources": [
+        "hypothesis_ledger"
+      ]
+    },
+    {
+      "id": "lo_diag",
+      "statement_ar": "يقدّر ما يثبته كل حقل زمني وما لا يثبته، ويربط الدليل بالفرضية باتجاه صحيح.",
+      "skill_ko_ref": "KO-RS-06-001",
+      "observable_behaviors_ar": [
+        "يميز created وsent وnotified",
+        "يربط الدليل بالفرضية"
+      ],
+      "evidence_sources": [
+        "evidence_board",
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_calib",
+      "statement_ar": "يصوغ نسبة الترجيح بحدودها.",
+      "skill_ko_ref": "KO-RS-06-021",
+      "observable_behaviors_ar": [
+        "يختار ثقة معقولة",
+        "يذكر حدوداً"
+      ],
+      "evidence_sources": [
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_revise",
+      "statement_ar": "يراجع رأيه الأول حين يظهر ما يخالفه.",
+      "skill_ko_ref": "KO-RS-06-009",
+      "observable_behaviors_ar": [
+        "يغيّر فرضيته الرائدة بدليل"
+      ],
+      "evidence_sources": [
+        "hypothesis_ledger"
+      ]
+    }
+  ],
+  "mechanics": {
+    "time_budget_units": 40,
+    "actions": [
+      {
+        "id": "a_read_server",
+        "type": "examine",
+        "label_ar": "اطلب سجل إرسال البوابة",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_server_log"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_portal",
+        "telemetry_code": "READ_SERVER"
+      },
+      {
+        "id": "a_read_notice",
+        "type": "examine",
+        "label_ar": "اقرأ إعلان النتيجة المنشور",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_published_notice"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_office",
+        "telemetry_code": "READ_NOTICE"
+      },
+      {
+        "id": "a_int_layla",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة ليلى",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "layla",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "layla",
+        "telemetry_code": "INT_LAYLA"
+      },
+      {
+        "id": "a_int_rayan",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة ريان",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "rayan",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "rayan",
+        "telemetry_code": "INT_RAYAN"
+      },
+      {
+        "id": "a_int_faris",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة فارس",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "faris",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "faris",
+        "telemetry_code": "INT_FARIS"
+      },
+      {
+        "id": "a_int_hind",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة هند",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "hind",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "hind",
+        "telemetry_code": "INT_HIND"
+      },
+      {
+        "id": "a_get_phone",
+        "type": "examine",
+        "label_ar": "اطلب لقطة شاشة هاتف ليلى",
+        "precondition": {
+          "fact_unlocked": "f_notified"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_phone_screen"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_home",
+        "telemetry_code": "GET_PHONE"
+      },
+      {
+        "id": "a_get_inbox",
+        "type": "examine",
+        "label_ar": "اطلب لقطة قائمة رسائل ليلى",
+        "precondition": {
+          "fact_unlocked": "f_layla_inbox"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_inbox_screen"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_home",
+        "telemetry_code": "GET_INBOX"
+      },
+      {
+        "id": "a_get_laptop",
+        "type": "examine",
+        "label_ar": "اطلب لقطة شاشة حاسوب ريان",
+        "precondition": {
+          "fact_unlocked": "f_rayan_notified"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_laptop_screen"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_camp",
+        "telemetry_code": "GET_LAPTOP"
+      },
+      {
+        "id": "a_get_draft",
+        "type": "examine",
+        "label_ar": "اطلب سجل النسخ الآلية للمحرر",
+        "precondition": {
+          "fact_unlocked": "f_autosave_exists"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_draft_history"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_portal",
+        "telemetry_code": "GET_DRAFT"
+      },
+      {
+        "id": "a_get_guide",
+        "type": "examine",
+        "label_ar": "اقرأ دليل حقول البوابة",
+        "precondition": {
+          "fact_unlocked": "f_guide_exists"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_system_ref"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_portal",
+        "telemetry_code": "GET_GUIDE"
+      },
+      {
+        "id": "a_get_approval",
+        "type": "examine",
+        "label_ar": "اطلب رسالة اعتماد النتيجة",
+        "precondition": {
+          "fact_unlocked": "f_approval_exists"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_approval_email"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_office",
+        "telemetry_code": "GET_APPROVAL"
+      },
+      {
+        "id": "a_note_layla",
+        "type": "examine",
+        "label_ar": "دوّن إفادة ليلى",
+        "precondition": {
+          "fact_unlocked": "f_notified"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_layla_statement"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "layla",
+        "telemetry_code": "NOTE_LAYLA"
+      },
+      {
+        "id": "a_note_rayan",
+        "type": "examine",
+        "label_ar": "دوّن إفادة ريان",
+        "precondition": {
+          "fact_unlocked": "f_rayan_notified"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_rayan_statement"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "rayan",
+        "telemetry_code": "NOTE_RAYAN"
+      },
+      {
+        "id": "a_note_faris",
+        "type": "examine",
+        "label_ar": "دوّن إفادة فارس",
+        "precondition": {
+          "fact_unlocked": "f_list_date_created"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_faris_statement"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "faris",
+        "telemetry_code": "NOTE_FARIS"
+      },
+      {
+        "id": "a_note_hind",
+        "type": "examine",
+        "label_ar": "دوّن إفادة هند",
+        "precondition": {
+          "fact_unlocked": "f_draft_created"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_hind_statement"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "hind",
+        "telemetry_code": "NOTE_HIND"
+      },
+      {
+        "id": "a_compare_times",
+        "type": "compare_evidence",
+        "label_ar": "وحِّد الأزمنة (يُمنح عبر المختبر عند نجاحه)",
+        "precondition": {
+          "all": [
+            {
+              "has_evidence": "ev_phone_screen"
+            },
+            {
+              "has_evidence": "ev_laptop_screen"
+            }
+          ]
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_lab_norm"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "COMPARE_TIMES"
+      },
+      {
+        "id": "p_inbox_hind",
+        "type": "present_evidence",
+        "label_ar": "اعرض قائمة رسائل ليلى على هند",
+        "precondition": {
+          "presented": {
+            "evidence_id": "ev_inbox_screen",
+            "to_character": "hind"
+          }
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "PRESENTED_INBOX"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "hind",
+        "telemetry_code": "P_INBOX_HIND"
+      },
+      {
+        "id": "a_hint",
+        "type": "request_hint",
+        "label_ar": "اطلب تلميحاً",
+        "precondition": {
+          "always": true
+        },
+        "effects": [],
+        "time_cost_units": 0,
+        "telemetry_code": "REQUEST_HINT"
+      },
+      {
+        "id": "a_accuse",
+        "type": "final_accusation",
+        "label_ar": "قدّم الاستنتاج النهائي",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "SUBMIT"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "FINAL_ACCUSATION"
+      },
+      {
+        "id": "ask_layla_f_notified",
+        "type": "interview",
+        "label_ar": "[نموذج] layla يذكر f_notified",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_notified"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "layla",
+        "telemetry_code": "ASK_LAYLA_F_NOTIFIED"
+      },
+      {
+        "id": "ask_layla_f_layla_inbox",
+        "type": "interview",
+        "label_ar": "[نموذج] layla يذكر f_layla_inbox",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_layla_inbox"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "layla",
+        "telemetry_code": "ASK_LAYLA_F_LAYLA_INBOX"
+      },
+      {
+        "id": "ask_rayan_f_rayan_notified",
+        "type": "interview",
+        "label_ar": "[نموذج] rayan يذكر f_rayan_notified",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_rayan_notified"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "rayan",
+        "telemetry_code": "ASK_RAYAN_F_RAYAN_NOTIFIED"
+      },
+      {
+        "id": "ask_faris_f_sent",
+        "type": "interview",
+        "label_ar": "[نموذج] faris يذكر f_sent",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_sent"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "faris",
+        "telemetry_code": "ASK_FARIS_F_SENT"
+      },
+      {
+        "id": "ask_faris_f_autosave_exists",
+        "type": "interview",
+        "label_ar": "[نموذج] faris يذكر f_autosave_exists",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_autosave_exists"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "faris",
+        "telemetry_code": "ASK_FARIS_F_AUTOSAVE_EXISTS"
+      },
+      {
+        "id": "ask_faris_f_guide_exists",
+        "type": "interview",
+        "label_ar": "[نموذج] faris يذكر f_guide_exists",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_guide_exists"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "faris",
+        "telemetry_code": "ASK_FARIS_F_GUIDE_EXISTS"
+      },
+      {
+        "id": "ask_faris_f_list_date_created",
+        "type": "interview",
+        "label_ar": "[نموذج] faris يذكر f_list_date_created",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_list_date_created"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "faris",
+        "telemetry_code": "ASK_FARIS_F_LIST_DATE_CREATED"
+      },
+      {
+        "id": "ask_hind_f_final_approved",
+        "type": "interview",
+        "label_ar": "[نموذج] hind يذكر f_final_approved",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_final_approved"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "hind",
+        "telemetry_code": "ASK_HIND_F_FINAL_APPROVED"
+      },
+      {
+        "id": "ask_hind_f_approval_exists",
+        "type": "interview",
+        "label_ar": "[نموذج] hind يذكر f_approval_exists",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_approval_exists"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "hind",
+        "telemetry_code": "ASK_HIND_F_APPROVAL_EXISTS"
+      },
+      {
+        "id": "ask_hind_f_draft_created",
+        "type": "interview",
+        "label_ar": "[نموذج] hind يكشف f_draft_created",
+        "precondition": {
+          "all": [
+            {
+              "always": true
+            },
+            {
+              "presented": {
+                "evidence_id": "ev_inbox_screen",
+                "to_character": "hind"
+              }
+            }
+          ]
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_draft_created"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "hind",
+        "telemetry_code": "ASK_HIND_F_DRAFT_CREATED"
+      }
+    ]
+  },
+  "state_machine": {
+    "id": "c008",
+    "initial": "briefing",
+    "type": "compound",
+    "states": {
+      "briefing": {
+        "description_ar": "الإحاطة",
+        "type": "atomic",
+        "on": {
+          "START": {
+            "target": "investigating"
+          }
+        }
+      },
+      "investigating": {
+        "description_ar": "التحقيق",
+        "type": "compound",
+        "initial": "gathering",
+        "states": {
+          "gathering": {
+            "type": "atomic",
+            "on": {
+              "OPEN_DEDUCTION": {
+                "target": "deducing"
+              }
+            }
+          },
+          "deducing": {
+            "type": "atomic",
+            "on": {
+              "BACK": {
+                "target": "gathering"
+              }
+            }
+          }
+        },
+        "on": {
+          "SUBMIT": {
+            "target": "review"
+          }
+        }
+      },
+      "review": {
+        "description_ar": "مراجعة",
+        "type": "atomic",
+        "on": {
+          "CLOSE": {
+            "target": "resolved"
+          }
+        }
+      },
+      "resolved": {
+        "description_ar": "إغلاق",
+        "type": "final"
+      }
+    }
+  },
+  "dialogue": {
+    "max_turns_per_interview": 10,
+    "llm_enabled": false,
+    "topics": [
+      {
+        "id": "t_notice",
+        "label_ar": "إشعار الرسالة",
+        "example_questions_ar": [
+          "متى ظهر الإشعار عندك؟",
+          "بأي توقيت يعمل جهازك؟"
+        ],
+        "fact_ids": [
+          "f_notified",
+          "f_rayan_notified"
+        ],
+        "claim_ids": [
+          "cl_layla_late"
+        ]
+      },
+      {
+        "id": "t_inbox",
+        "label_ar": "التاريخ في قائمة الرسائل",
+        "example_questions_ar": [
+          "ماذا رأيت في قائمة الرسائل؟",
+          "لماذا يظن البعض أن الرسالة وصلت مبكراً؟"
+        ],
+        "fact_ids": [
+          "f_layla_inbox",
+          "f_list_date_created"
+        ],
+        "claim_ids": [
+          "cl_rayan_early"
+        ]
+      },
+      {
+        "id": "t_system",
+        "label_ar": "حقول البوابة وسجلاتها",
+        "example_questions_ar": [
+          "متى أُرسلت الرسالة؟",
+          "هل يحتفظ النظام بنسخ المسودات؟",
+          "هل يوجد دليل لمعاني الحقول؟"
+        ],
+        "fact_ids": [
+          "f_sent",
+          "f_autosave_exists",
+          "f_guide_exists"
+        ]
+      },
+      {
+        "id": "t_approval",
+        "label_ar": "اعتماد النص النهائي",
+        "example_questions_ar": [
+          "متى اعتُمدت النتيجة؟",
+          "هل بقي أثر للاعتماد؟"
+        ],
+        "fact_ids": [
+          "f_final_approved",
+          "f_approval_exists"
+        ]
+      },
+      {
+        "id": "t_draft",
+        "label_ar": "المسودة الأولى",
+        "example_questions_ar": [
+          "ماذا فعلتِ في المحرر قبل الاعتماد؟"
+        ],
+        "fact_ids": [
+          "f_draft_created"
+        ]
+      }
+    ]
+  },
+  "rubric": {
+    "reference_answer_ar": "لا دليل على أن ليلى عرفت النتيجة قبل كتابتها. التاريخ 14:45 في قائمتها هو وقت إنشاء مسودة فيها عنوان بلا نتيجة، وليس وقت وصول الرسالة. النسخة النهائية حُفظت 15:07 UTC، والإرسال 15:10 UTC، وإشعارا هاتف ليلى (18:10 بتوقيت UTC+3) وحاسوب ريان (17:11 بتوقيت UTC+2) يقعان بعد التحويل عند 15:10 و15:11 UTC. فالأرقام لم تتضارب، بل كانت بمناطق زمنية وحقول مختلفة المعنى. حدود الاستنتاج: لا تنفي الأدلة وجود قناة أخرى خارج البوابة، ولقطات الشاشة تصف أجهزة بعينها، ولا نعرف لماذا فُتحت المسودة قبل الاعتماد.",
+    "criteria": [
+      {
+        "id": "c_source",
+        "name_ar": "تصنيف المصادر",
+        "objective_ids": [
+          "lo_claim"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يصنّف"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "أخطأ في الأغلب"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "نصف صحيح"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمه صحيح"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كله صحيح"
+          }
+        ]
+      },
+      {
+        "id": "c_conflict",
+        "name_ar": "توحيد الأزمنة وترتيبها",
+        "objective_ids": [
+          "lo_timeline"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.25,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يوحّد شيئاً"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "وحّد قليلاً"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "وحّد نصفها"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمها"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كلها في موضعها"
+          }
+        ]
+      },
+      {
+        "id": "c_links",
+        "name_ar": "ربط الأدلة بالفرضيات",
+        "objective_ids": [
+          "lo_diag"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لا روابط"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "قليلة"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "نصفها صحيح"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمها"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كلها دقيقة"
+          }
+        ]
+      },
+      {
+        "id": "c_uncertainty",
+        "name_ar": "معايرة الثقة",
+        "objective_ids": [
+          "lo_calib"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "ثقة مفرطة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "حدود قليلة"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "جزئية"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معقولة"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "معايَرة كاملة"
+          }
+        ]
+      },
+      {
+        "id": "c_revision",
+        "name_ar": "مراجعة الرأي",
+        "objective_ids": [
+          "lo_revise"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "بقي على فرضية مرفوضة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "لم يعلن فرضية"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "ثبت على فرضية سليمة"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "غيّر بدليل"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "غيّر بدليل ووثّق"
+          }
+        ]
+      },
+      {
+        "id": "c_elimination",
+        "name_ar": "استبعاد الفرضيات الخاطئة",
+        "objective_ids": [
+          "lo_hyp"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يستبعد"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "استبعد خطأً"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "فرضية بدليل"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "فرضيتين"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كل الخاطئة"
+          }
+        ]
+      },
+      {
+        "id": "c_justification",
+        "name_ar": "جودة الحجة المكتوبة",
+        "objective_ids": [
+          "lo_diag",
+          "lo_hyp"
+        ],
+        "scored_by": "human",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لا حجة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "ادعاء بلا سند"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "أدلة دون ربط"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "ربط الأدلة بالاستنتاج"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "ربط مع البدائل والحدود"
+          }
+        ]
+      }
+    ]
+  },
+  "hint_ladder": [
+    {
+      "id": "hg1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "أين ينتهي ما شاهده الشخص وتبدأ طريقته في تفسيره؟",
+      "trigger": {
+        "always": true
+      },
+      "assessment_weight": 0.02
+    },
+    {
+      "id": "hg2",
+      "level": 2,
+      "kind": "focus_area",
+      "text_ar": "ضع كل معلومة في جدول: هل هي سجل أصلي، أم نسخة معروضة، أم تعليق؟",
+      "trigger": {
+        "has_evidence": "ev_phone_screen"
+      },
+      "assessment_weight": 0.04
+    },
+    {
+      "id": "hg3",
+      "level": 3,
+      "kind": "pointer",
+      "text_ar": "راجع تحديداً الدليل الذي يوضح معنى كل تاريخ في البوابة قبل أن تقارن بين الأرقام.",
+      "trigger": {
+        "has_evidence": "ev_phone_screen"
+      },
+      "assessment_weight": 0.08
+    },
+    {
+      "id": "ht1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "هل الوقت الذي تراه مكتوب بالمرجع نفسه الذي في الخادم؟",
+      "trigger": {
+        "has_evidence": "ev_laptop_screen"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_b_after"
+    },
+    {
+      "id": "ht2",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "حوّل كل وقت محلي إلى UTC بطرح الإزاحة المذكورة في اللقطة، ثم قارنه بوقت الاعتماد.",
+      "trigger": {
+        "has_evidence": "ev_laptop_screen"
+      },
+      "assessment_weight": 0.06,
+      "targets_inference_id": "i_b_after"
+    },
+    {
+      "id": "ht3",
+      "level": 3,
+      "kind": "partial_reveal",
+      "text_ar": "استعمل مختبر الأزمنة بإزاحة +3 للهاتف و+2 للحاسوب، وسترى أين يلتقيان.",
+      "trigger": {
+        "has_evidence": "ev_laptop_screen"
+      },
+      "assessment_weight": 0.1,
+      "targets_inference_id": "i_b_after"
+    }
+  ],
+  "fairness_test": {
+    "requirements": {
+      "min_disjoint_proof_paths": 2,
+      "max_inference_depth": 3,
+      "all_red_herrings_refutable": true,
+      "culprit_uniquely_entailed": true,
+      "no_hidden_fact_dependency": true,
+      "max_required_actions": 40
+    },
+    "runs": []
+  },
+  "ending_explanation": {
+    "steps": [
+      {
+        "order": 1,
+        "text_ar": "أرقام الإشعارات مكتوبة بتوقيتين محليين مختلفين (+3 و+2): بعد التحويل إلى UTC يتقاربان عند 15:10 و15:11، فلا تأخير بثلاث ساعات.",
+        "uses_evidence_ids": [
+          "ev_phone_screen",
+          "ev_laptop_screen",
+          "ev_lab_norm",
+          "ev_system_ref"
+        ],
+        "inference_id": "i_layla_claim"
+      },
+      {
+        "order": 2,
+        "text_ar": "الخادم يضع الإرسال 15:10 UTC والنسخة النهائية حُفظت 15:07 UTC؛ فالرسالة بنصها أُرسلت بعد اكتماله.",
+        "uses_evidence_ids": [
+          "ev_server_log",
+          "ev_published_notice"
+        ],
+        "inference_id": "i_a_after"
+      },
+      {
+        "order": 3,
+        "text_ar": "المسار المستقل: الإشعاران الموحَّدان واعتماد رئيسة اللجنة 15:07 يعطيان الترتيب نفسه دون الاعتماد على سجل الخادم.",
+        "uses_evidence_ids": [
+          "ev_lab_norm",
+          "ev_approval_email"
+        ],
+        "inference_id": "i_b_after"
+      },
+      {
+        "order": 4,
+        "text_ar": "التاريخ 14:45 في قائمة ليلى يغذّيه الحقل created_at، ووقت إنشاء المسودة الأولى، وهي بلا نتيجة.",
+        "uses_evidence_ids": [
+          "ev_inbox_screen",
+          "ev_system_ref",
+          "ev_draft_history",
+          "ev_faris_statement"
+        ],
+        "inference_id": "i_a_date"
+      },
+      {
+        "order": 5,
+        "text_ar": "ريان انتقل من تسمية حقل إلى واقعة لم تحدث: لا يدل التاريخ المبكر على إبلاغ مسبق.",
+        "uses_evidence_ids": [
+          "ev_draft_history",
+          "ev_server_log"
+        ],
+        "inference_id": "i_rule_leak"
+      },
+      {
+        "order": 6,
+        "text_ar": "الأزمنة لم تكن عديمة القيمة؛ حين وُحّدت تطابقت سجلات مستقلة، وبقي الخطأ في قراءتنا لها.",
+        "uses_evidence_ids": [
+          "ev_lab_norm"
+        ],
+        "inference_id": "i_rule_untrust_lab"
+      }
+    ],
+    "alternative_paths_ar": [
+      "يمكن الوصول إلى النتيجة من سجل الخادم ووثيقة الإعلان دون مختبر الأزمنة، لكن من يفعل ذلك يترك أرقام الإشعارات بلا تفسير ويضعف حجته أمام من يستشهد بها.",
+      "ويمكن الوصول إليها من الإشعارين الموحَّدين واعتماد اللجنة وحدهما، دون الرجوع إلى سجل الخادم؛ والأقوى أن يتفق المساران."
+    ],
+    "what_evidence_could_not_show_ar": [
+      "لا تنفي الأدلة وجود قناة أخرى (مكالمة أو رسالة خارج البوابة) نقلت النتيجة قبل 15:07؛ هي تنفي هذه الرسالة فقط.",
+      "لقطات الشاشة تصف جهازين بعينهما ولا تثبت صحة ضبط ساعتيهما.",
+      "لا تبيّن الأدلة لماذا فتحت المحررة المسودة قبل الاعتماد."
+    ],
+    "science_notes_ar": [
+      "توحيد الأزمنة: لا تُقارن أزمنة قبل أن يُعرف مرجع كل منها (UTC أم توقيت محلي) وما يعنيه الحقل الذي كُتبت فيه.",
+      "created وsent وnotified قياسات لثلاث لحظات مختلفة؛ سمّها بأسمائها قبل أن تقارنها.",
+      "يبقى ما نسميه نسبة الترجيح حكماً مبنياً على سجلات يمكن تتبّعها (سلسلة العهدة)، لا ثقة بمجرد أن الرقم مكتوب."
+    ]
+  },
+  "expert_review": [
+    {
+      "role": "narrative_editor",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "scientific_reviewer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "learning_designer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "age_appropriateness",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "cultural_reviewer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "legal_rights",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "safety",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    }
+  ]
+}

@@ -1,0 +1,110 @@
+{
+  "case_id": "c000_lost_notebook",
+  "accepted_conclusions": {
+    "h_samira": {
+      "grade": 1,
+      "note_ar": "استنتاج متسق مع الأدلة."
+    },
+    "h_hadi": {
+      "grade": 0,
+      "note_ar": "يخلط بين خطأ في ساعة خروج المبنى ومكان الدفتر."
+    },
+    "h_loss": {
+      "grade": 0,
+      "note_ar": "الدفتر وُجد في مكان محدد، لم يضِع."
+    }
+  },
+  "confidence_band": {
+    "h_samira": [
+      65,
+      90
+    ],
+    "h_hadi": [
+      0,
+      15
+    ],
+    "h_loss": [
+      0,
+      20
+    ]
+  },
+  "source_key": {
+    "ev_lab_sheet": "primary_record",
+    "ev_gate_log": "primary_record",
+    "ev_cleaning_ticket": "primary_record",
+    "ev_note_shelf": "primary_record",
+    "ev_jamal_statement": "claim",
+    "ev_hadi_statement": "claim"
+  },
+  "link_key": {
+    "h_samira": {
+      "ev_cleaning_ticket": "supports",
+      "ev_note_shelf": "supports",
+      "ev_notebook_closet": "supports",
+      "ev_gate_log": "neutral"
+    },
+    "h_hadi": {
+      "ev_gate_log": "supports",
+      "ev_lab_sheet": "weakens",
+      "ev_jamal_statement": "weakens",
+      "ev_notebook_closet": "weakens"
+    },
+    "h_loss": {
+      "ev_notebook_closet": "weakens",
+      "ev_note_shelf": "weakens"
+    }
+  },
+  "required_limits": [
+    "l_why",
+    "l_time"
+  ],
+  "valid_mind_changers": [
+    "m_late_sign",
+    "m_notebook_gone"
+  ],
+  "invalid_limits": [
+    "l_invalid_tone",
+    "l_invalid_gate"
+  ],
+  "decisive_evidence": [
+    "ev_lab_sheet",
+    "ev_jamal_statement",
+    "ev_cleaning_ticket",
+    "ev_note_shelf"
+  ],
+  "lab_requirement": null,
+  "timeline_requirement": [
+    {
+      "evidence_id": "ev_lab_sheet",
+      "utc_minute": 10,
+      "tol": 3
+    },
+    {
+      "evidence_id": "ev_cleaning_ticket",
+      "utc_minute": 20,
+      "tol": 3
+    },
+    {
+      "evidence_id": "ev_gate_log",
+      "utc_minute": 40,
+      "tol": 3
+    }
+  ],
+  "refuted_hypotheses": [
+    "h_hadi",
+    "h_loss"
+  ],
+  "criteria_map": {
+    "c_source": "source_typing",
+    "c_conflict": "conflict_resolution",
+    "c_links": "hypothesis_links",
+    "c_uncertainty": "uncertainty",
+    "c_revision": "revision",
+    "c_elimination": "elimination",
+    "c_justification": "justification_human"
+  },
+  "caps": {
+    "no_citations_max": 45,
+    "no_conflict_resolution_max": 70
+  }
+}

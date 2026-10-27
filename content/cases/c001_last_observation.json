@@ -1,0 +1,3627 @@
+{
+  "schema_version": "0.1.0",
+  "case_id": "c001_last_observation",
+  "case_version": "0.1.0",
+  "meta": {
+    "title_ar": "الرصد الأخير",
+    "title_en": "The Last Observation",
+    "age_band": "16-18",
+    "locale": "ar",
+    "dialogue_register": "msa",
+    "estimated_minutes": 40,
+    "difficulty": 3,
+    "content_flags": [
+      "no_violence",
+      "fraud",
+      "science_lab"
+    ],
+    "authors": [
+      "فريق أثر التحريري (مسودة بمساعدة الذكاء الاصطناعي، لم تُراجَع بشرياً بعد)"
+    ],
+    "knowledge_object_refs": [
+      "KO-RS-05-001",
+      "KO-RS-05-005",
+      "KO-RS-05-002",
+      "KO-RS-06-001",
+      "KO-RS-06-009",
+      "KO-RS-06-021",
+      "KO-FC-04-024",
+      "KO-FC-04-026"
+    ]
+  },
+  "premise": {
+    "hook_ar": "ليلة واحدة، نقطة ضوء واحدة، واسمان يطالبان بها. أحدهما يملك المنصب، والآخر يملك الملف الأصلي.",
+    "player_role_ar": "أنت محقّق في لجنة أسبقية الاكتشافات التابعة لاتحاد الراصدين. مهمتك أن تحدد من سجّل الجسم أولاً، وهل أُخفي شيء.",
+    "setting_ar": "مرصد وادي النجوم، على هضبة صحراوية بعيدة عن أضواء المدن. توقيت المرصد المحلي UTC+3، وسجل التشغيل الليلي يُكتب بالتوقيت العالمي.",
+    "public_fact_ids": [
+      "f_new_object",
+      "f_public_credit",
+      "f_reem_objects",
+      "f_local_tz"
+    ],
+    "assumed_general_knowledge_ar": [
+      "التوقيت العالمي UTC مرجع زمني واحد، والتوقيت المحلي يزيد عنه أو ينقص بعدد ثابت من الساعات",
+      "إذا كان الجهاز متأخراً فالوقت الحقيقي أكبر مما يعرضه"
+    ]
+  },
+  "entities": {
+    "characters": [
+      {
+        "id": "reem",
+        "name_ar": "ريم الخزرجي",
+        "role": "victim",
+        "age_descriptor_ar": "متدربة في التاسعة عشرة، طالبة فيزياء فلكية",
+        "persona_ar": "متحمسة ودقيقة، تفضّل أن يتكلم الملف نيابةً عنها. قلقة من أن يُنظر إليها كمتّهمة لا كصاحبة اعتراض.",
+        "motives_ar": [
+          "أن يُسجَّل الرصد الأول باسمها إن كان لها",
+          "ألا تضيع فرصتها الأكاديمية بسبب خلاف مع رئيسها"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": [
+            "اتهام شخص بنية معيّنة دون دليل"
+          ]
+        },
+        "authored_lines": [
+          {
+            "line_id": "reem_greet",
+            "purpose": "greeting",
+            "text_ar": "تفضّل. أرجو أن تقرأ الملفات قبل أن تحكم؛ الأرقام في رأس الملف أصدق مني."
+          },
+          {
+            "line_id": "reem_arrival",
+            "purpose": "reveal",
+            "text_ar": "التقطت كاميرا المسح الإطار الذي يظهر فيه الجسم في الحادية والعشرين وعشر دقائق بالتوقيت العالمي. هذا ما يقوله رأس الملف، لا ذاكرتي.",
+            "fact_ids": [
+              "f_reem_frame_time"
+            ]
+          },
+          {
+            "line_id": "reem_clock",
+            "purpose": "reveal",
+            "text_ar": "حاسوب الكاميرا مربوط بمستقبل GPS ويُضبط وقته باستمرار، ورأس الملف يسجّل ذلك.",
+            "fact_ids": [
+              "f_clock_gps"
+            ]
+          },
+          {
+            "line_id": "reem_sent",
+            "purpose": "reveal",
+            "text_ar": "أرسلت لد. هشام رسالة ومعها الإطار بعد نحو إحدى عشرة دقيقة، حين تأكدت أن الجسم ليس عيباً في الحسّاس.",
+            "fact_ids": [
+              "f_chat_sent"
+            ]
+          },
+          {
+            "line_id": "reem_seen",
+            "purpose": "reveal",
+            "text_ar": "ظهر لي إيصال القراءة بعد دقائق قليلة. ثم لم يأتِني ردّ.",
+            "fact_ids": [
+              "f_chat_seen"
+            ]
+          },
+          {
+            "line_id": "reem_file",
+            "purpose": "reveal",
+            "text_ar": "أستطيع أن أسلّمك الإطار الأصلي كما هو، برأس الملف دون أي تعديل. وهناك أيضاً نسخة في الأرشيف يمكن مقارنتها.",
+            "fact_ids": [
+              "f_reem_file_shared"
+            ]
+          },
+          {
+            "line_id": "reem_warning",
+            "purpose": "reveal",
+            "text_ar": "نعم، تلقيت تنبيهاً قبل أشهر لأنني استخدمت الكاميرا خارج الجدول. لا علاقة له بتلك الليلة، لكنني أفهم لماذا قد يُستخدم ضدي.",
+            "fact_ids": [
+              "f_reem_warning"
+            ]
+          },
+          {
+            "line_id": "reem_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف هذا، ولا أريد أن أخمّن في ملفٍ يحتاج إلى أدلة."
+          },
+          {
+            "line_id": "reem_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "أخشى أن هذا بعيد عمّا أعرفه. اسألني عن الإطار أو الرسالة أو الساعات."
+          },
+          {
+            "line_id": "reem_bye",
+            "purpose": "farewell",
+            "text_ar": "شكراً لأنك تقرأ الملف قبل أن تسأل عن الأشخاص."
+          }
+        ]
+      },
+      {
+        "id": "hisham",
+        "name_ar": "د. هشام المنصور",
+        "role": "suspect",
+        "age_descriptor_ar": "في أواخر الخمسينات، رئيس قسم الرصد",
+        "persona_ar": "رصين ومهذّب، يحتمي بمكانته وبلغة الإجراءات. يجيب بدقة عمّا يُسأل عنه ولا يزيد.",
+        "motives_ar": [
+          "أن يبقى اسم المرصد واسمه مقترنَين بالاكتشاف",
+          "ألا يظهر أنه تأخر عن متدربة"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": [
+            "اتهام ريم بالكذب دون سند"
+          ]
+        },
+        "authored_lines": [
+          {
+            "line_id": "h_greet",
+            "purpose": "greeting",
+            "text_ar": "أهلاً بك. أثق أن اللجنة ستنصف الحقيقة، وهي أن رصدي موثّق بأدق ما لدينا من أجهزة."
+          },
+          {
+            "line_id": "h_frame",
+            "purpose": "reveal",
+            "text_ar": "التقط المقراب الرئيسي أول إطار لي في الحادية والعشرين وأربع وثلاثين دقيقة بالتوقيت العالمي.",
+            "fact_ids": [
+              "f_hisham_frame_time"
+            ]
+          },
+          {
+            "line_id": "h_bulletin",
+            "purpose": "reveal",
+            "text_ar": "أرسلت البلاغ إلى النشرة الدولية بعد أن تأكدت من ثبات الجسم، وصرّحت فيه بأنني لا أعلم برصد أسبق.",
+            "fact_ids": [
+              "f_bulletin_declared"
+            ]
+          },
+          {
+            "line_id": "h_lie_unaware",
+            "purpose": "lie",
+            "text_ar": "لم تصلني أي رسالة قبل أن ألتقط إطاري. لو علمت بشيء لذكرته في البلاغ.",
+            "claim_ids": [
+              "cl_h_unaware"
+            ]
+          },
+          {
+            "line_id": "h_lie_clock",
+            "purpose": "lie",
+            "text_ar": "ساعة كاميرا المسح لم تكن موثوقة تلك الليلة؛ كانت هناك فروق في التوقيت في أكثر من جهاز.",
+            "claim_ids": [
+              "cl_h_clock"
+            ]
+          },
+          {
+            "line_id": "h_lie_auto",
+            "purpose": "lie",
+            "text_ar": "أي تعديل في الوسوم جاء من نظام الأرشفة الآلي، ولا علاقة لي به.",
+            "claim_ids": [
+              "cl_h_auto"
+            ]
+          },
+          {
+            "line_id": "h_break_aware",
+            "purpose": "break_down",
+            "text_ar": "فتحت رسالتها فعلاً قبل أن ألتقط إطاري. ظننت أن الإطار قد يكون ضجيجاً فأردت أن أتأكد بنفسي، ولم يكن ينبغي أن أترك ذلك خارج البلاغ.",
+            "fact_ids": [
+              "f_hisham_aware"
+            ]
+          },
+          {
+            "line_id": "h_break_relabel",
+            "purpose": "break_down",
+            "text_ar": "نعم، عدّلت الوسم من محطتي، وسمّيته «روتينياً» حتى لا يُربك البلاغ. كان خطأً.",
+            "fact_ids": [
+              "f_relabel"
+            ]
+          },
+          {
+            "line_id": "h_refuse",
+            "purpose": "refuse_secret",
+            "text_ar": "هذا سؤال لا أرى أن إجابته تفيد اللجنة الآن."
+          },
+          {
+            "line_id": "h_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا علم لي بهذا الأمر."
+          },
+          {
+            "line_id": "h_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "فلنعد إلى ما يخصّ البلاغ والسجلات، فهذا اختصاص اللجنة."
+          },
+          {
+            "line_id": "h_bye",
+            "purpose": "farewell",
+            "text_ar": "أرجو أن تكون اللجنة سريعة في قرارها."
+          }
+        ]
+      },
+      {
+        "id": "yusuf",
+        "name_ar": "يوسف السالم",
+        "role": "witness",
+        "age_descriptor_ar": "في منتصف الثلاثينات، مشغّل الليل",
+        "persona_ar": "دقيق ومتوتر قليلاً، يكره الدخول في خلافات الكبار ويفضّل أن يكتب ما رآه بدل أن يفسّره.",
+        "motives_ar": [
+          "أن يحافظ على عمله وعلى علاقته بالفريق"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "y_greet",
+            "purpose": "greeting",
+            "text_ar": "أهلاً. أنا هنا لأقول ما دوّنته وما رأيته، لا ما أظنّه."
+          },
+          {
+            "line_id": "y_logged",
+            "purpose": "reveal",
+            "text_ar": "دوّنت في سجل التشغيل أن إطاراً جديداً وصل من كاميرا المسح في الحادية والعشرين وعشر دقائق بالتوقيت العالمي.",
+            "fact_ids": [
+              "f_yusuf_logged"
+            ]
+          },
+          {
+            "line_id": "y_tz",
+            "purpose": "reveal",
+            "text_ar": "ساعات الجدار عندنا محلية، لكن سجل التشغيل نكتبه بالتوقيت العالمي دائماً. والتوقيت المحلي ثلاث ساعات قبله.",
+            "fact_ids": [
+              "f_local_tz"
+            ]
+          },
+          {
+            "line_id": "y_saw",
+            "purpose": "reveal",
+            "text_ar": "رأيت د. هشام يفتح إطار المسح على محطته ويقول إن في الحقل شيئاً لم يكن موجوداً، وذلك قبل أن يوجّه المقراب، على ما أذكر. لا أجزم بالدقائق.",
+            "fact_ids": [
+              "f_yusuf_saw"
+            ]
+          },
+          {
+            "line_id": "y_ws",
+            "purpose": "reveal",
+            "text_ar": "المحطة تسجّل أي حساب يفتح أي ملف. يمكنك طلب سجلها.",
+            "fact_ids": [
+              "f_ws_logs_exist"
+            ]
+          },
+          {
+            "line_id": "y_badge",
+            "purpose": "reveal",
+            "text_ar": "والبوابة تسجّل البطاقات دخولاً وخروجاً.",
+            "fact_ids": [
+              "f_badge_exists"
+            ]
+          },
+          {
+            "line_id": "y_alone",
+            "purpose": "reveal",
+            "text_ar": "غادرت غرفة التحكم قرب الواحدة والخامسة ليلاً بالتوقيت المحلي، وبقي د. هشام فيها.",
+            "fact_ids": [
+              "f_alone_in_room"
+            ]
+          },
+          {
+            "line_id": "y_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف، ولا أحب أن أخمّن."
+          },
+          {
+            "line_id": "y_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "هذا خارج ما رأيته. اسألني عن السجل أو عن الغرفة."
+          },
+          {
+            "line_id": "y_bye",
+            "purpose": "farewell",
+            "text_ar": "إن احتجت إلى السجلات فهي في الغرفة."
+          }
+        ]
+      },
+      {
+        "id": "nadir",
+        "name_ar": "نادر الجابري",
+        "role": "bystander",
+        "age_descriptor_ar": "في أوائل الأربعينات، مسؤول الإعلام",
+        "persona_ar": "حريص على صورة المرصد ويكتب بسرعة. لا يميل إلى التدقيق في الأرقام التي تبدو متفقة مع الرواية المعلنة.",
+        "motives_ar": [
+          "أن يصدر البيان الصحفي في موعده"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "n_greet",
+            "purpose": "greeting",
+            "text_ar": "أهلاً بك. أنا أنقل ما يصلني من الفريق، ولا أصنع الأخبار."
+          },
+          {
+            "line_id": "n_note",
+            "purpose": "reveal",
+            "text_ar": "نسخت الوقت من شاشة الأرشيف كما هو إلى لوحتنا، ولم أتحقق من المنطقة الزمنية.",
+            "fact_ids": [
+              "f_press_note_local"
+            ]
+          },
+          {
+            "line_id": "n_late",
+            "purpose": "reveal",
+            "text_ar": "حسب اللوحة وصل إطار ريم بعد منتصف الليل، أي بعد رصد د. هشام. هذا ما فهمته وقتها.",
+            "claim_ids": [
+              "cl_reem_late"
+            ]
+          },
+          {
+            "line_id": "n_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعلم، فهذا ليس من اختصاص مكتبي."
+          },
+          {
+            "line_id": "n_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن البيان واللوحة فقط."
+          },
+          {
+            "line_id": "n_bye",
+            "purpose": "farewell",
+            "text_ar": "أرجو أن لا يتأخر القرار؛ الصحافة تنتظر."
+          }
+        ]
+      },
+      {
+        "id": "salma",
+        "name_ar": "سلمى العطار",
+        "role": "witness",
+        "age_descriptor_ar": "في أواخر الثلاثينات، أمينة الأرشيف",
+        "persona_ar": "منظّمة وهادئة، تثق بالسجلات أكثر من الانطباعات وتكره أن يُنسب إليها ما لم تفحصه.",
+        "motives_ar": [
+          "أن تبقى سجلات الأرشيف سليمة وموثوقة"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "s_greet",
+            "purpose": "greeting",
+            "text_ar": "تفضّل. ما أعرفه مكتوب في تقارير الفحص."
+          },
+          {
+            "line_id": "s_lag",
+            "purpose": "reveal",
+            "text_ar": "خادم الأرشيف يعرض الوقت المحلي، وآخر فحص مزامنة أظهر أنه متأخر أربع دقائق، ووثّقت ذلك في تقرير.",
+            "fact_ids": [
+              "f_archive_lag"
+            ]
+          },
+          {
+            "line_id": "s_tz",
+            "purpose": "reveal",
+            "text_ar": "الوقت المحلي للمرصد ثلاث ساعات قبل التوقيت العالمي، وأجهزة العرض عندنا معظمها محلية.",
+            "fact_ids": [
+              "f_local_tz"
+            ]
+          },
+          {
+            "line_id": "s_audit",
+            "purpose": "reveal",
+            "text_ar": "كل تعديل على وسوم الملفات يُسجَّل في سجل تدقيق، ويمكنني تصديره لك.",
+            "fact_ids": [
+              "f_audit_available"
+            ]
+          },
+          {
+            "line_id": "s_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "هذا ليس مسجّلاً عندي."
+          },
+          {
+            "line_id": "s_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن الأرشيف والساعات والتدقيق."
+          },
+          {
+            "line_id": "s_bye",
+            "purpose": "farewell",
+            "text_ar": "إن احتجت إلى تصدير آخر فأخبرني."
+          }
+        ]
+      }
+    ],
+    "locations": [
+      {
+        "id": "loc_committee",
+        "name_ar": "مكتب اللجنة",
+        "description_ar": "مكتبك المؤقت في المرصد: ملفات البلاغ والاعتراض."
+      },
+      {
+        "id": "loc_control",
+        "name_ar": "غرفة التحكم",
+        "description_ar": "حيث يُدار المقراب الرئيسي T1 وتُدوَّن سجلات الليل."
+      },
+      {
+        "id": "loc_dome",
+        "name_ar": "قبّة المسح الصغيرة",
+        "description_ar": "قبّة كاميرا المسح التي تعمل عليها المتدربة."
+      },
+      {
+        "id": "loc_archive",
+        "name_ar": "غرفة الأرشيف والخوادم",
+        "description_ar": "خوادم تخزين الإطارات وسجلاتها."
+      },
+      {
+        "id": "loc_press",
+        "name_ar": "مكتب الإعلام",
+        "description_ar": "لوحة الملاحظات السريعة وإعداد البيانات."
+      }
+    ],
+    "objects": [
+      {
+        "id": "obj_cam",
+        "name_ar": "كاميرا المسح (SURVEY-CAM-B)",
+        "description_ar": "كاميرا مسح واسعة الحقل، ساعة حاسوبها مضبوطة بمستقبل GPS."
+      },
+      {
+        "id": "obj_t1",
+        "name_ar": "المقراب الرئيسي T1",
+        "description_ar": "المقراب الذي يُدار من غرفة التحكم."
+      },
+      {
+        "id": "obj_cr2",
+        "name_ar": "محطة غرفة التحكم CR-2",
+        "description_ar": "محطة العمل التي يدخلها العاملون ببطاقاتهم الشخصية."
+      },
+      {
+        "id": "obj_frame",
+        "name_ar": "الإطار field17_reem_0001",
+        "description_ar": "الإطار الأول من حقل المسح 17 الذي يظهر فيه الجسم الجديد."
+      },
+      {
+        "id": "obj_object",
+        "name_ar": "الجسم الضوئي الجديد",
+        "description_ar": "نقطة ضوئية غير موجودة في الإطار المرجعي للحقل 17."
+      }
+    ],
+    "organizations": [
+      {
+        "id": "org_obs",
+        "name_ar": "مرصد وادي النجوم",
+        "description_ar": "مرصد افتراضي في هضبة صحراوية، توقيته المحلي UTC+3."
+      },
+      {
+        "id": "org_union",
+        "name_ar": "اتحاد الراصدين",
+        "description_ar": "الجهة التي تشكّل لجنة الأسبقية وتراجع بلاغات الاكتشاف."
+      }
+    ]
+  },
+  "truth": {
+    "solution": {
+      "culprit_ids": [
+        "hisham"
+      ],
+      "summary_ar": "علم هشام بإطار ريم الأسبق (21:10 UTC) قبل التقاط إطاره (21:34 UTC)، فنسب الاكتشاف إلى نفسه في البلاغ مصرّحاً بعدم علمه بأي رصد أسبق، ثم عدّل وسم إطارها يدوياً ليبدو روتينياً. ولا تثبت الأدلة دافعه.",
+      "key_fact_ids": [
+        "f_reem_first",
+        "f_hisham_aware"
+      ]
+    },
+    "facts": [
+      {
+        "id": "f_new_object",
+        "statement_ar": "ظهر جسم ضوئي جديد في حقل المسح 17 ليلة الحادثة.",
+        "kind": "event",
+        "subject_ids": [
+          "obj_object"
+        ],
+        "spoiler_level": 0,
+        "time": {
+          "start_min": 10,
+          "precision": "approx"
+        },
+        "location_id": "loc_dome"
+      },
+      {
+        "id": "f_public_credit",
+        "statement_ar": "أعلن المرصد أن د. هشام المنصور هو مكتشف الجسم، وأرسل بلاغاً بذلك إلى النشرة الدولية.",
+        "kind": "event",
+        "subject_ids": [
+          "hisham",
+          "org_obs"
+        ],
+        "spoiler_level": 0
+      },
+      {
+        "id": "f_reem_objects",
+        "statement_ar": "اعترضت المتدربة ريم الخزرجي على نسبة الاكتشاف وقالت إن كاميرا المسح التقطت الجسم قبل المقراب الرئيسي.",
+        "kind": "event",
+        "subject_ids": [
+          "reem"
+        ],
+        "spoiler_level": 0
+      },
+      {
+        "id": "f_local_tz",
+        "statement_ar": "التوقيت المحلي للمرصد هو UTC+3، ويُكتب سجل التشغيل الليلي بالتوقيت العالمي UTC.",
+        "kind": "attribute",
+        "subject_ids": [
+          "org_obs"
+        ],
+        "spoiler_level": 0
+      },
+      {
+        "id": "f_clock_gps",
+        "statement_ar": "حاسوب كاميرا المسح مضبوط على GPS، وانحراف ساعته أقل من ثانية.",
+        "kind": "state",
+        "subject_ids": [
+          "obj_cam"
+        ],
+        "spoiler_level": 1,
+        "location_id": "loc_dome",
+        "science_ko_refs": [
+          "KO-FC-04-024"
+        ]
+      },
+      {
+        "id": "f_archive_lag",
+        "statement_ar": "خادم الأرشيف يعرض توقيتاً محلياً وساعته متأخرة 4 دقائق عن المرجع.",
+        "kind": "state",
+        "subject_ids": [
+          "loc_archive"
+        ],
+        "spoiler_level": 1,
+        "location_id": "loc_archive",
+        "science_ko_refs": [
+          "KO-FC-04-024"
+        ]
+      },
+      {
+        "id": "f_press_note_local",
+        "statement_ar": "ورقة مكتب الإعلام نقلت وقت الأرشيف كما تعرضه شاشته (محلي وساعته متأخرة) دون ذكر المنطقة الزمنية، إلى جانب وقت هشام بالتوقيت العالمي.",
+        "kind": "event",
+        "subject_ids": [
+          "nadir"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 100,
+          "precision": "approx"
+        },
+        "location_id": "loc_press"
+      },
+      {
+        "id": "f_yusuf_logged",
+        "statement_ar": "دوّن يوسف في سجل التشغيل وصول إطار جديد من كاميرا المسح الساعة 21:10 UTC.",
+        "kind": "event",
+        "subject_ids": [
+          "yusuf"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 10,
+          "precision": "exact"
+        },
+        "location_id": "loc_control"
+      },
+      {
+        "id": "f_reem_file_shared",
+        "statement_ar": "ريم مستعدة لتسليم الإطار الأصلي برأس الملف كما هو.",
+        "kind": "state",
+        "subject_ids": [
+          "reem",
+          "obj_frame"
+        ],
+        "spoiler_level": 1
+      },
+      {
+        "id": "f_ws_logs_exist",
+        "statement_ar": "محطة غرفة التحكم تسجّل الحسابات التي تفتح الملفات.",
+        "kind": "state",
+        "subject_ids": [
+          "obj_cr2"
+        ],
+        "spoiler_level": 1
+      },
+      {
+        "id": "f_badge_exists",
+        "statement_ar": "بوابة غرفة التحكم تسجّل دخول البطاقات وخروجها.",
+        "kind": "state",
+        "subject_ids": [
+          "loc_control"
+        ],
+        "spoiler_level": 1
+      },
+      {
+        "id": "f_audit_available",
+        "statement_ar": "أرشيف الإطارات يحتفظ بسجل تدقيق لكل تعديل في وسوم الملفات.",
+        "kind": "state",
+        "subject_ids": [
+          "loc_archive"
+        ],
+        "spoiler_level": 1
+      },
+      {
+        "id": "f_reem_warning",
+        "statement_ar": "تلقّت ريم قبل أشهر تنبيهاً إدارياً لاستخدامها الكاميرا خارج الجدول المعتمد.",
+        "kind": "event",
+        "subject_ids": [
+          "reem"
+        ],
+        "spoiler_level": 1
+      },
+      {
+        "id": "f_bulletin_declared",
+        "statement_ar": "صرّح هشام في استمارة البلاغ بأنه لا يعلم بأي رصد أسبق لرصده.",
+        "kind": "event",
+        "subject_ids": [
+          "hisham"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 63,
+          "precision": "exact"
+        },
+        "location_id": "loc_control"
+      },
+      {
+        "id": "f_reem_frame_time",
+        "statement_ar": "التقطت كاميرا المسح الإطار الأول الذي يظهر فيه الجسم الساعة 21:10 UTC.",
+        "kind": "event",
+        "subject_ids": [
+          "reem",
+          "obj_cam",
+          "obj_frame"
+        ],
+        "spoiler_level": 2,
+        "time": {
+          "start_min": 10,
+          "precision": "exact"
+        },
+        "location_id": "loc_dome",
+        "science_ko_refs": [
+          "KO-FC-04-024"
+        ]
+      },
+      {
+        "id": "f_hisham_frame_time",
+        "statement_ar": "التقط المقراب T1 أول إطار لهشام الساعة 21:34 UTC.",
+        "kind": "event",
+        "subject_ids": [
+          "hisham",
+          "obj_t1"
+        ],
+        "spoiler_level": 2,
+        "time": {
+          "start_min": 34,
+          "precision": "exact"
+        },
+        "location_id": "loc_control"
+      },
+      {
+        "id": "f_chat_sent",
+        "statement_ar": "أرسلت ريم إلى هشام رسالة مرفقة بالإطار الساعة 21:21 UTC (00:21 محلياً).",
+        "kind": "event",
+        "subject_ids": [
+          "reem",
+          "hisham"
+        ],
+        "spoiler_level": 2,
+        "time": {
+          "start_min": 21,
+          "precision": "exact"
+        },
+        "location_id": "loc_dome"
+      },
+      {
+        "id": "f_chat_seen",
+        "statement_ar": "ظهر إيصال قراءة هشام للرسالة الساعة 21:27 UTC (00:27 محلياً).",
+        "kind": "event",
+        "subject_ids": [
+          "hisham"
+        ],
+        "spoiler_level": 2,
+        "time": {
+          "start_min": 27,
+          "precision": "exact"
+        },
+        "location_id": "loc_control"
+      },
+      {
+        "id": "f_ws_open",
+        "statement_ar": "فتح الحساب hmansour على المحطة CR-2 ملف إطار ريم الساعة 21:24 UTC، بعد دخوله ببطاقته.",
+        "kind": "event",
+        "subject_ids": [
+          "hisham",
+          "obj_cr2",
+          "obj_frame"
+        ],
+        "spoiler_level": 2,
+        "time": {
+          "start_min": 24,
+          "precision": "exact"
+        },
+        "location_id": "loc_control"
+      },
+      {
+        "id": "f_yusuf_saw",
+        "statement_ar": "شاهد يوسف هشاماً يفتح إطار المسح ويعلّق على جسم جديد قبل أن يوجّه المقراب، دون تحديد دقيق للوقت.",
+        "kind": "event",
+        "subject_ids": [
+          "yusuf",
+          "hisham"
+        ],
+        "spoiler_level": 2,
+        "time": {
+          "start_min": 25,
+          "precision": "approx"
+        },
+        "location_id": "loc_control"
+      },
+      {
+        "id": "f_alone_in_room",
+        "statement_ar": "غادر يوسف غرفة التحكم الساعة 22:05 UTC (01:05 محلياً) وبقي هشام وحده فيها حتى بعد التعديل.",
+        "kind": "event",
+        "subject_ids": [
+          "yusuf",
+          "hisham"
+        ],
+        "spoiler_level": 2,
+        "time": {
+          "start_min": 65,
+          "precision": "exact"
+        },
+        "location_id": "loc_control"
+      },
+      {
+        "id": "f_reem_first",
+        "statement_ar": "إطار ريم سابق لإطار هشام بنحو 24 دقيقة.",
+        "kind": "relation",
+        "subject_ids": [
+          "reem",
+          "hisham"
+        ],
+        "spoiler_level": 3,
+        "time": {
+          "start_min": 10,
+          "precision": "exact",
+          "end_min": 34
+        },
+        "science_ko_refs": [
+          "KO-RS-05-005",
+          "KO-FC-04-024"
+        ]
+      },
+      {
+        "id": "f_hisham_aware",
+        "statement_ar": "علم هشام بإطار ريم قبل التقاط إطاره وقبل إرسال بلاغه، ثم لم يذكره في البلاغ.",
+        "kind": "state",
+        "subject_ids": [
+          "hisham"
+        ],
+        "spoiler_level": 3,
+        "time": {
+          "start_min": 24,
+          "precision": "exact",
+          "end_min": 63
+        },
+        "location_id": "loc_control",
+        "science_ko_refs": [
+          "KO-RS-06-017"
+        ]
+      },
+      {
+        "id": "f_relabel",
+        "statement_ar": "عُدّل وسم إطار ريم يدوياً من محطة CR-2 بحساب hmansour بعد البلاغ، من «جسم مرشّح» إلى «حقل روتيني».",
+        "kind": "event",
+        "subject_ids": [
+          "hisham",
+          "obj_cr2",
+          "obj_frame"
+        ],
+        "spoiler_level": 3,
+        "time": {
+          "start_min": 72,
+          "precision": "exact"
+        },
+        "location_id": "loc_control",
+        "science_ko_refs": [
+          "KO-FC-04-026"
+        ]
+      }
+    ],
+    "claims": [
+      {
+        "id": "cl_h_unaware",
+        "statement_ar": "لم أعلم بأي رصد سابق لرصدي قبل أن ألتقط إطاري وأرسل البلاغ.",
+        "kind": "lie",
+        "held_by": [
+          "hisham"
+        ],
+        "true_fact_id": "f_hisham_aware",
+        "contradicted_by_evidence_ids": [
+          "ev_chat_log",
+          "ev_ws_log"
+        ]
+      },
+      {
+        "id": "cl_h_clock",
+        "statement_ar": "ساعة كاميرا المسح لم تكن موثوقة تلك الليلة.",
+        "kind": "half_truth",
+        "held_by": [
+          "hisham"
+        ],
+        "true_fact_id": "f_clock_gps",
+        "contradicted_by_evidence_ids": [
+          "ev_sync_report",
+          "ev_reem_hdr"
+        ]
+      },
+      {
+        "id": "cl_h_auto",
+        "statement_ar": "تعديل الوسم جرى آلياً من نظام الأرشفة.",
+        "kind": "lie",
+        "held_by": [
+          "hisham"
+        ],
+        "true_fact_id": "f_relabel",
+        "contradicted_by_evidence_ids": [
+          "ev_audit_relabel",
+          "ev_door_log"
+        ]
+      },
+      {
+        "id": "cl_reem_late",
+        "statement_ar": "إطار ريم وصل بعد إطار هشام.",
+        "kind": "honest_mistake",
+        "held_by": [
+          "nadir"
+        ],
+        "true_fact_id": "f_reem_first",
+        "contradicted_by_evidence_ids": [
+          "ev_reem_hdr",
+          "ev_lab_norm"
+        ]
+      }
+    ]
+  },
+  "timeline": [
+    {
+      "id": "te_sync",
+      "description_ar": "أمينة الأرشيف تجري الفحص الدوري للمزامنة وتوثّق تأخر خادم الأرشيف.",
+      "time": {
+        "start_min": -60,
+        "precision": "exact"
+      },
+      "actor_ids": [
+        "salma"
+      ],
+      "fact_ids": [
+        "f_archive_lag"
+      ],
+      "location_id": "loc_archive",
+      "motivated_by_ar": "إجراء روتيني أسبوعي"
+    },
+    {
+      "id": "te_frame_reem",
+      "description_ar": "كاميرا المسح تلتقط الإطار الأول الذي يظهر فيه الجسم.",
+      "time": {
+        "start_min": 10,
+        "precision": "exact"
+      },
+      "actor_ids": [
+        "reem"
+      ],
+      "fact_ids": [
+        "f_reem_frame_time",
+        "f_new_object"
+      ],
+      "location_id": "loc_dome",
+      "motivated_by_ar": "مسح روتيني لحقل المسح 17",
+      "witness_ids": [
+        "yusuf"
+      ]
+    },
+    {
+      "id": "te_log_yusuf",
+      "description_ar": "يوسف يدوّن وصول إطار جديد في سجل التشغيل.",
+      "time": {
+        "start_min": 10,
+        "precision": "exact"
+      },
+      "actor_ids": [
+        "yusuf"
+      ],
+      "fact_ids": [
+        "f_yusuf_logged"
+      ],
+      "location_id": "loc_control",
+      "motivated_by_ar": "واجب المشغّل تدوين كل إطار يصل"
+    },
+    {
+      "id": "te_chat_sent",
+      "description_ar": "ريم ترسل الإطار إلى هشام وتخبره بوجود جسم جديد.",
+      "time": {
+        "start_min": 21,
+        "precision": "exact"
+      },
+      "actor_ids": [
+        "reem"
+      ],
+      "fact_ids": [
+        "f_chat_sent"
+      ],
+      "location_id": "loc_dome",
+      "motivated_by_ar": "تريد التأكد من الجسم قبل أن تعلن شيئاً"
+    },
+    {
+      "id": "te_ws_open",
+      "description_ar": "هشام يفتح ملف إطار ريم على المحطة CR-2.",
+      "time": {
+        "start_min": 24,
+        "precision": "exact"
+      },
+      "actor_ids": [
+        "hisham"
+      ],
+      "fact_ids": [
+        "f_ws_open",
+        "f_yusuf_saw"
+      ],
+      "location_id": "loc_control",
+      "motivated_by_ar": "يريد التحقق من الإطار بنفسه",
+      "witness_ids": [
+        "yusuf"
+      ]
+    },
+    {
+      "id": "te_chat_seen",
+      "description_ar": "إيصال القراءة يظهر لرسالة ريم.",
+      "time": {
+        "start_min": 27,
+        "precision": "exact"
+      },
+      "actor_ids": [
+        "hisham"
+      ],
+      "fact_ids": [
+        "f_chat_seen"
+      ],
+      "location_id": "loc_control",
+      "motivated_by_ar": "فتح تطبيق المراسلة على المحطة"
+    },
+    {
+      "id": "te_frame_hisham",
+      "description_ar": "المقراب T1 يلتقط إطار هشام الأول.",
+      "time": {
+        "start_min": 34,
+        "precision": "exact"
+      },
+      "actor_ids": [
+        "hisham"
+      ],
+      "fact_ids": [
+        "f_hisham_frame_time"
+      ],
+      "location_id": "loc_control",
+      "motivated_by_ar": "التأكد بمقرابه قبل الإبلاغ"
+    },
+    {
+      "id": "te_bulletin",
+      "description_ar": "هشام يرسل البلاغ إلى النشرة الدولية بصفته المكتشف.",
+      "time": {
+        "start_min": 63,
+        "precision": "exact"
+      },
+      "actor_ids": [
+        "hisham"
+      ],
+      "fact_ids": [
+        "f_bulletin_declared"
+      ],
+      "location_id": "loc_control",
+      "motivated_by_ar": "الأسبقية تُنسب لأول مُبلِّغ"
+    },
+    {
+      "id": "te_yusuf_leaves",
+      "description_ar": "يوسف يغادر غرفة التحكم.",
+      "time": {
+        "start_min": 65,
+        "precision": "exact"
+      },
+      "actor_ids": [
+        "yusuf"
+      ],
+      "fact_ids": [
+        "f_alone_in_room"
+      ],
+      "location_id": "loc_control",
+      "motivated_by_ar": "انتهاء مناوبته المبكرة"
+    },
+    {
+      "id": "te_press",
+      "description_ar": "نادر يكتب ملاحظة اللوحة منقولاً فيها وقت الأرشيف دون منطقته الزمنية.",
+      "time": {
+        "start_min": 100,
+        "precision": "exact"
+      },
+      "actor_ids": [
+        "nadir"
+      ],
+      "fact_ids": [
+        "f_press_note_local"
+      ],
+      "location_id": "loc_press",
+      "motivated_by_ar": "تجهيز البيان الصحفي بسرعة"
+    },
+    {
+      "id": "te_relabel",
+      "description_ar": "تعديل وسم إطار ريم يدوياً من CR-2.",
+      "time": {
+        "start_min": 72,
+        "precision": "exact"
+      },
+      "actor_ids": [
+        "hisham"
+      ],
+      "fact_ids": [
+        "f_relabel"
+      ],
+      "location_id": "loc_control",
+      "motivated_by_ar": "تعديل الوسم يجعل الإطار يبدو روتينياً"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_bulletin_form",
+      "title_ar": "استمارة بلاغ الاكتشاف (نسخة المرصد)",
+      "kind": "documentary",
+      "content_ar": "استمارة بلاغ اكتشاف — النشرة الفلكية الدولية\nرقم البلاغ: WN-2291\nالجهة المبلِّغة: مرصد وادي النجوم\nالمبلِّغ: د. هشام المنصور\nالحقل: مسح 17\nأول رصد مسجَّل: 21:34:40 بالتوقيت العالمي (UTC) — المقراب T1\nوقت إرسال البلاغ: 22:03 UTC\nإقرار المبلِّغ: «أقرّ بأنني لا أعلم بأي رصد أسبق لهذا الجسم، وأن ما أوردته مبنيّ على معرفتي المباشرة.»",
+      "acquired_by_action_ids": [
+        "a_read_bulletin"
+      ],
+      "supports_fact_ids": [
+        "f_bulletin_declared",
+        "f_hisham_frame_time"
+      ],
+      "reliability": "strong",
+      "limits_ar": "تثبت ما صرّح به المبلِّغ في الاستمارة، لا صحة هذا التصريح؛ الإقرار قولٌ يحتاج مقابلته بسجلات أخرى.",
+      "location_id": "loc_committee"
+    },
+    {
+      "id": "ev_reem_warning",
+      "title_ar": "مذكرة إدارية: تنبيه لمتدربة",
+      "kind": "documentary",
+      "content_ar": "برنامج المتدربين — مذكرة داخلية\nإلى: ريم الخزرجي\nالموضوع: تنبيه كتابي\nاستخدمتِ كاميرا المسح خارج الجدول المعتمد في تموز الماضي. هذا تنبيه أول ولا إجراء إضافي.\nالتوقيع: إدارة البرنامج",
+      "acquired_by_action_ids": [
+        "a_read_hr"
+      ],
+      "supports_fact_ids": [
+        "f_reem_warning"
+      ],
+      "reliability": "weak",
+      "limits_ar": "تتعلق بمخالفة جدولة سابقة؛ لا علاقة لها بصحة الوقت المسجَّل في رأس ملف ليلة الحادثة، ولا تقول شيئاً عن صدق أحد.",
+      "is_red_herring": true,
+      "location_id": "loc_committee"
+    },
+    {
+      "id": "ev_obs_log",
+      "title_ar": "سجل التشغيل الليلي — غرفة التحكم",
+      "kind": "documentary",
+      "content_ar": "سجل التشغيل الليلي — غرفة التحكم\n(يُكتب بالتوقيت العالمي UTC؛ توقيت المرصد المحلي = UTC+3)\nالمشغّل: يوسف السالم\n20:55  بدء الجلسة. سماء صافية.\n21:10  وصل إطار جديد من كاميرا المسح (حقل 17). يظهر فيه جسم غير مدرج في الفهرس.\n21:34  د. هشام يوجّه المقراب T1 إلى الحقل 17.\n22:05  مغادرة المشغّل مبكراً بإذن.",
+      "acquired_by_action_ids": [
+        "a_search_control"
+      ],
+      "supports_fact_ids": [
+        "f_yusuf_logged",
+        "f_local_tz"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "سجل مكتوب يدوياً بأصبع المشغّل في اللحظة؛ دقّته في الدقيقة لا الثانية، وهو يعتمد على أمانة كاتبه.",
+      "location_id": "loc_control"
+    },
+    {
+      "id": "ev_press_board",
+      "title_ar": "ورقة على لوحة مكتب الإعلام",
+      "kind": "documentary",
+      "content_ar": "[بخط اليد، حبر أزرق]\nملاحظة سريعة قبل البيان الصحفي:\n– رصد د. هشام (المقراب T1): 21:34\n– إطار الطالبة ريم (كاميرا المسح): وصل 00:06 (من الأرشيف)\n⇒ إطار ريم لاحق. لا داعي لذكره في البيان.\n— ن.",
+      "acquired_by_action_ids": [
+        "a_search_press"
+      ],
+      "supports_fact_ids": [
+        "f_press_note_local"
+      ],
+      "reliability": "weak",
+      "limits_ar": "ملاحظة بخط اليد تنقل رقمين من مصدرين مختلفين دون ذكر المنطقة الزمنية لأي منهما؛ لا تدل بنفسها على ترتيب الأحداث.",
+      "is_red_herring": true,
+      "location_id": "loc_press"
+    },
+    {
+      "id": "ev_archive_log",
+      "title_ar": "سجل استقبال خادم الأرشيف",
+      "kind": "digital",
+      "content_ar": "سجل استقبال خادم الأرشيف ARCH-1\n(عرض الوقت: محلي — كما تظهر على الشاشة)\n00:06:31  INGEST  survey17/field17_reem_0001.fits  48.2 MB  OK\n00:06:33  INDEX   object_flag = NEW_CANDIDATE\n00:06:40  NOTIFY  duty_operator\nتنبيه أسفل الشاشة: راجع تقرير المزامنة الأخير لهذا الخادم.",
+      "acquired_by_action_ids": [
+        "a_search_archive"
+      ],
+      "supports_fact_ids": [
+        "f_reem_frame_time"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "يسجّل وقت وصول الملف إلى الخادم لا وقت التقاطه، ويعرض الوقت بساعة الخادم نفسه.",
+      "location_id": "loc_archive"
+    },
+    {
+      "id": "ev_sync_report",
+      "title_ar": "تقرير فحص المزامنة الدوري",
+      "kind": "documentary",
+      "content_ar": "تقرير فحص المزامنة الدوري — خوادم المرصد\nالمسؤولة: س. العطار — وقت الفحص: 20:00 UTC (قبل ساعات من الحادثة)\nARCH-1 (الأرشيف، يعرض محلياً): متأخر عن المرجع بمقدار 4 دقائق 00 ثانية — لم يُصحَّح بعد\nCAM-SURVEY (حاسوب كاميرا المسح): مقفل على GPS — انحراف 0.2 ثانية\nCR-2 (محطة غرفة التحكم): NTP — انحراف 0.4 ثانية\nCHAT (خادم المراسلة، يعرض محلياً): NTP — انحراف 0.3 ثانية",
+      "acquired_by_action_ids": [
+        "a_get_sync"
+      ],
+      "supports_fact_ids": [
+        "f_archive_lag",
+        "f_clock_gps"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يصف حالة الأجهزة وقت الفحص قبل الحادثة بساعات؛ لا يثبت أن الانحراف بقي ثابتاً بعد ذلك، لكنه أفضل مرجع متاح.",
+      "contradicts_claim_ids": [
+        "cl_h_clock"
+      ],
+      "forensic_ko_ref": "KO-FC-04-024",
+      "location_id": "loc_archive"
+    },
+    {
+      "id": "ev_reem_hdr",
+      "title_ar": "رأس ملف إطار ريم (نسخة مطابقة)",
+      "kind": "digital",
+      "content_ar": "رأس ملف field17_reem_0001.fits — نسخة مطابقة من الأرشيف\nTELESCOP = SURVEY-CAM-B\nDATE-OBS = 2026-03-14T21:10:12.4\nTIMESYS  = UTC (GPS-locked)\nEXPTIME  = 30.0\nOBJECT   = FIELD17_SURVEY\nANALYSIS = نقطة مصدرية جديدة عند (412, 877)، سطوعها 14.8، غير موجودة في الإطار المرجعي",
+      "acquired_by_action_ids": [
+        "a_get_reem_file"
+      ],
+      "supports_fact_ids": [
+        "f_reem_frame_time",
+        "f_clock_gps"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يثبت وقت التقاط الإطار على ساعة الكاميرا، ولا يقول من لاحظ الجسم أولاً بعينه ولا شيئاً عن نوايا أحد؛ ويفترض أن الملف لم يُغيَّر منذ التقاطه.",
+      "contradicts_claim_ids": [
+        "cl_h_clock",
+        "cl_reem_late"
+      ],
+      "forensic_ko_ref": "KO-FC-04-024",
+      "location_id": "loc_dome"
+    },
+    {
+      "id": "ev_hisham_hdr",
+      "title_ar": "رأس ملف إطار المقراب T1",
+      "kind": "digital",
+      "content_ar": "رأس ملف field17_t1_0001.fits\nTELESCOP = T1-MAIN\nDATE-OBS = 2026-03-14T21:34:40.1\nTIMESYS  = UTC (NTP)\nEXPTIME  = 60.0\nOBSERVER = h.mansour\nANALYSIS = نقطة مصدرية عند الإحداثيات نفسها تقريباً، سطوعها 14.7",
+      "acquired_by_action_ids": [
+        "a_inspect_t1"
+      ],
+      "supports_fact_ids": [
+        "f_hisham_frame_time"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يثبت وقت إطار هشام وحده؛ لا يقول ماذا كان يعلم قبله.",
+      "forensic_ko_ref": "KO-FC-04-024",
+      "location_id": "loc_control"
+    },
+    {
+      "id": "ev_chat_log",
+      "title_ar": "تصدير سجل المراسلة الداخلية",
+      "kind": "digital",
+      "content_ar": "تصدير سجل المراسلة الداخلية — قناة «رصد-ليلي»\n(يعرض الوقت المحلي UTC+3)\n[00:21] ريم الخزرجي: د. هشام، في الحقل 17 جسم جديد غير موجود في المرجع. أرفقت الإطار: field17_reem_0001.fits\n[00:27] ✓ تمت القراءة — هشام المنصور\n[00:28] ريم الخزرجي: هل تريد أن أعيد التقاط إطار ثانٍ؟\n(لا ردّ مسجَّل حتى 02:00)",
+      "acquired_by_action_ids": [
+        "a_get_chat"
+      ],
+      "supports_fact_ids": [
+        "f_chat_sent",
+        "f_chat_seen"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "إيصال القراءة يثبت فتح الرسالة لا فهم مضمونها ولا فتح المرفق؛ وهو سجل خادم لا شهادة شخص.",
+      "contradicts_claim_ids": [
+        "cl_h_unaware"
+      ],
+      "location_id": "loc_dome"
+    },
+    {
+      "id": "ev_ws_log",
+      "title_ar": "سجل فتح الملفات — المحطة CR-2",
+      "kind": "digital",
+      "content_ar": "سجل دخول وفتح الملفات — محطة غرفة التحكم CR-2\n(الوقت المحلي UTC+3)\n00:19:44  LOGIN   hmansour (بطاقة شخصية)\n00:24:05  OPEN    /survey17/field17_reem_0001.fits   (قراءة)\n00:24:50  OPEN    /survey17/ref_field17.fits         (قراءة)\n00:31:20  SLEW    T1 → field17                        (hmansour)\n00:34:40  EXPOSE  T1 start                            (hmansour)",
+      "acquired_by_action_ids": [
+        "a_get_ws"
+      ],
+      "supports_fact_ids": [
+        "f_ws_open",
+        "f_hisham_frame_time"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يثبت أن الحساب فتح الملف لا أن صاحبه فحصه ولا ماذا استنتج؛ ويعتمد على أن الحساب لم يستخدمه غير صاحبه، وهو دخول ببطاقة شخصية.",
+      "contradicts_claim_ids": [
+        "cl_h_unaware"
+      ],
+      "location_id": "loc_control"
+    },
+    {
+      "id": "ev_audit_relabel",
+      "title_ar": "سجل التدقيق في الأرشيف",
+      "kind": "digital",
+      "content_ar": "سجل التدقيق — خادم الأرشيف ARCH-1\n(عرض الوقت: محلي — الخادم متأخر 4 دقائق حسب آخر فحص)\n01:08:09  META_EDIT  field17_reem_0001.fits   OBJECT_FLAG: NEW_CANDIDATE → FIELD17_ROUTINE   by: hmansour   terminal: CR-2   method: manual\n01:08:41  INDEX_REBUILD  survey17   by: system\nملاحظة: لا توجد مهام مجدولة أو برامج آلية مضبوطة على تغيير الوسوم.",
+      "acquired_by_action_ids": [
+        "a_get_audit"
+      ],
+      "supports_fact_ids": [
+        "f_relabel"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يسجّل من غيّر الوسم ومن أي محطة وكيف، لا سبب التغيير ولا نية صاحبه.",
+      "contradicts_claim_ids": [
+        "cl_h_auto"
+      ],
+      "forensic_ko_ref": "KO-FC-04-026",
+      "location_id": "loc_archive"
+    },
+    {
+      "id": "ev_door_log",
+      "title_ar": "سجل بوابة غرفة التحكم",
+      "kind": "documentary",
+      "content_ar": "سجل قارئ البطاقات — بوابة غرفة التحكم\n(الوقت المحلي؛ القارئ مزامن)\n23:50  دخول — Y. Salem\n00:02  دخول — H. Mansour\n01:05  خروج — Y. Salem\n01:31  خروج — H. Mansour\nلا دخول آخر بين 00:02 و01:31.",
+      "acquired_by_action_ids": [
+        "a_get_door"
+      ],
+      "supports_fact_ids": [
+        "f_alone_in_room"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يثبت من دخل وخرج ومتى، لا ما فعله داخل الغرفة؛ ولا يغطي من استعار بطاقة غيره.",
+      "contradicts_claim_ids": [
+        "cl_h_auto"
+      ],
+      "location_id": "loc_control"
+    },
+    {
+      "id": "ev_sheet",
+      "title_ar": "ورقة رصد ورقية مكتوبة بالقلم",
+      "kind": "physical",
+      "content_ar": "ورقة رصد T1 مطبوعة، كُتب عليها بالقلم:\n«00:34 — حقل 17 — جسم جديد؟ (إطار ريم؟)»\nخطٌّ واحد مرسوم فوق عبارة «(إطار ريم؟)» تبقى كلماتها مقروءة.\nلا توقيع ولا تاريخ على الورقة.",
+      "acquired_by_action_ids": [
+        "a_search_desk"
+      ],
+      "supports_fact_ids": [
+        "f_hisham_aware"
+      ],
+      "reliability": "weak",
+      "limits_ar": "الورقة غير موقّعة ولا مؤرَّخة، ولا يمكن نسب خطّها إلى كاتب بالمقارنة العينية وحدها؛ فهي مؤشر يوجّه البحث لا دليل يكفي لإثبات علم أحد.",
+      "forensic_ko_ref": "KO-FC-04-017",
+      "location_id": "loc_control"
+    },
+    {
+      "id": "ev_yusuf_statement",
+      "title_ar": "إفادة يوسف السالم (ملخص)",
+      "kind": "testimonial",
+      "content_ar": "ملخص إفادة يوسف السالم، دوّنه أمين اللجنة:\n«رأيت د. هشام يفتح إطار المسح على محطته ويعلّق على جسم جديد قبل أن يوجّه المقراب، على ما أذكر. لا أجزم بالدقائق، فقد كنت مشغولاً بالأجهزة.»",
+      "acquired_by_action_ids": [
+        "a_note_yusuf"
+      ],
+      "supports_fact_ids": [
+        "f_yusuf_saw"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "ذاكرة شاهد عن ترتيب دقائق قبل أشهر؛ مفيدة للاتجاه لا للدقيقة.",
+      "location_id": "loc_control"
+    },
+    {
+      "id": "ev_nadir_statement",
+      "title_ar": "إفادة نادر الجابري (ملخص)",
+      "kind": "testimonial",
+      "content_ar": "ملخص إفادة نادر الجابري، دوّنه أمين اللجنة:\n«نقلت الرقمين كما رأيتهما: 21:34 من د. هشام، و00:06 من شاشة الأرشيف. لم أنتبه أن أحدهما بالتوقيت العالمي والآخر محلي.»",
+      "acquired_by_action_ids": [
+        "a_note_nadir"
+      ],
+      "supports_fact_ids": [
+        "f_press_note_local"
+      ],
+      "reliability": "weak",
+      "limits_ar": "إفادة شخص يصف خطأه هو؛ لا تثبت وحدها عدم التلاعب، وإنما ينبغي أن يؤيدها فحص الأزمنة.",
+      "location_id": "loc_press"
+    },
+    {
+      "id": "ev_lab_norm",
+      "title_ar": "تقرير توحيد الأزمنة",
+      "kind": "lab_result",
+      "content_ar": "تقرير مختبر الأزمنة: بعد تحويل كل وقت إلى التوقيت العالمي وتصحيح انحراف الساعة المسجَّل، تتوافق السجلات الثلاثة (سجل التشغيل، لوحة الإعلام، سجل الأرشيف) عند 21:10 UTC بفارق أقل من دقيقتين. أي أن الفارق الظاهر بين «21:10» و«00:10» ناتج عن اختلاف المنطقة الزمنية لا عن اختلاف الحدث.",
+      "acquired_by_action_ids": [
+        "a_compare_times"
+      ],
+      "supports_fact_ids": [
+        "f_reem_frame_time"
+      ],
+      "reliability": "strong",
+      "limits_ar": "نتيجة حسابية تعتمد على صحة المدخلات (الإزاحة والانحراف)؛ توحّد الأزمنة ولا تثبت وحدها من لاحظ أولاً أو ماذا علم أحد.",
+      "contradicts_claim_ids": [
+        "cl_reem_late"
+      ],
+      "forensic_ko_ref": "KO-FC-04-024",
+      "location_id": "loc_committee"
+    }
+  ],
+  "evidence_graph": {
+    "inferences": [
+      {
+        "id": "i_hdr_order",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_reem_hdr"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_hisham_hdr"
+          },
+          {
+            "ref_type": "general_knowledge",
+            "ref_id": "utc_common_reference"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_reem_first"
+        },
+        "relation": "establishes",
+        "strength": "conclusive",
+        "rule_ar": "رأسا الملفين مكتوبان بالتوقيت العالمي نفسه وبساعتين مضبوطتين؛ فمقارنة 21:10:12 بـ 21:34:40 مقارنة مباشرة بين لحظتين على مرجع واحد.",
+        "skill_ko_refs": [
+          "KO-RS-06-017",
+          "KO-FC-04-024"
+        ]
+      },
+      {
+        "id": "i_lab_order",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_lab_norm"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_bulletin_form"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_reem_first"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "بعد توحيد المناطق الزمنية وتصحيح انحراف الساعة تصير كل السجلات تضع إطار ريم عند 21:10 UTC، وتصريح هشام نفسه يضع إطاره عند 21:34 UTC.",
+        "skill_ko_refs": [
+          "KO-RS-05-005",
+          "KO-FC-04-024"
+        ]
+      },
+      {
+        "id": "i_aware_chat",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_chat_log"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_hisham_hdr"
+          },
+          {
+            "ref_type": "general_knowledge",
+            "ref_id": "local_utc_plus_3"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_hisham_aware"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "الوقت المحلي ناقص ثلاث ساعات يساوي UTC: إيصال القراءة 00:27 محلياً هو 21:27 UTC، أي قبل التقاط هشام لإطاره 21:34 UTC.",
+        "skill_ko_refs": [
+          "KO-FC-04-024",
+          "KO-RS-06-001"
+        ]
+      },
+      {
+        "id": "i_aware_ws",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_ws_log"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_bulletin_form"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_hisham_aware"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "سجل المحطة مستقل عن المراسلة: فتح ملف إطار ريم 00:24 محلياً (21:24 UTC)، أي قبل إطار هشام وقبل بلاغه.",
+        "skill_ko_refs": [
+          "KO-FC-04-024",
+          "KO-RS-05-004"
+        ]
+      },
+      {
+        "id": "i_unaware_false",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_hisham_aware"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_bulletin_form"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_h_unaware"
+        },
+        "relation": "contradicts_claim",
+        "strength": "conclusive",
+        "rule_ar": "إقرار عدم العلم يتعارض مع واقعة علمه المسجَّلة بسجلين مستقلين؛ فهو قول يخالف السجلات لا مجرد نسيان.",
+        "skill_ko_refs": [
+          "KO-RS-05-014"
+        ]
+      },
+      {
+        "id": "i_clock_false",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_sync_report"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_reem_hdr"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_h_clock"
+        },
+        "relation": "contradicts_claim",
+        "strength": "strong",
+        "rule_ar": "الذي كان متأخراً هو خادم الأرشيف (بـ4 دقائق) لا حاسوب الكاميرا، وهو مقفل على GPS؛ فالقول إن ساعة الكاميرا غير موثوقة نصف حقيقة.",
+        "skill_ko_refs": [
+          "KO-RS-06-003"
+        ]
+      },
+      {
+        "id": "i_relabel_fact",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_audit_relabel"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_door_log"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_relabel"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "سجل التدقيق يقول إن التعديل يدوي من المحطة CR-2 بحساب hmansour، وسجل البوابة يقول إن هشاماً كان وحده في الغرفة وقت التعديل.",
+        "skill_ko_refs": [
+          "KO-FC-04-026"
+        ]
+      },
+      {
+        "id": "i_auto_false",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_audit_relabel"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_door_log"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_h_auto"
+        },
+        "relation": "contradicts_claim",
+        "strength": "strong",
+        "rule_ar": "حقل method يقول manual، ولا توجد مهام آلية مضبوطة على الوسوم؛ فالتعديل لم يكن آلياً.",
+        "skill_ko_refs": [
+          "KO-RS-05-014"
+        ]
+      },
+      {
+        "id": "i_late_false",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_reem_first"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_reem_late"
+        },
+        "relation": "contradicts_claim",
+        "strength": "conclusive",
+        "rule_ar": "إذا كان إطار ريم سابقاً بحسب السجلات الموحّدة فالقول إنه وصل لاحقاً خطأ ناتج عن قراءة أزمنة غير موحّدة.",
+        "skill_ko_refs": [
+          "KO-RS-06-004"
+        ]
+      },
+      {
+        "id": "i_support_hisham",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_reem_first"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_hisham_aware"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_hisham"
+        },
+        "relation": "supports",
+        "strength": "strong",
+        "rule_ar": "سبق إطار ريم، وعلم هشام به قبل إطاره، وصرّح مع ذلك بعدم العلم؛ هذه الوقائع الثلاث تُنتج معاً أرجح تفسير، من غير أن تقول شيئاً عن دافعه.",
+        "skill_ko_refs": [
+          "KO-RS-05-002",
+          "KO-RS-06-007"
+        ]
+      },
+      {
+        "id": "i_concealment",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_relabel"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_hisham"
+        },
+        "relation": "supports",
+        "strength": "suggestive",
+        "rule_ar": "تغيير وسم إطار ريم من «مرشّح» إلى «روتيني» بعد البلاغ بيد هشام يتسق مع إخفاء الإطار لا مع التصحيح التقني.",
+        "skill_ko_refs": [
+          "KO-RS-06-001"
+        ]
+      },
+      {
+        "id": "i_rule_reem_false",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_reem_first"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_reem_false"
+        },
+        "relation": "rules_out",
+        "strength": "conclusive",
+        "rule_ar": "فرضية أن ريم اختلقت سبقاً تسقط إذا كانت رؤوس الملفين المستقلة وسجلات الخوادم تؤيد أن إطارها هو الأسبق.",
+        "skill_ko_refs": [
+          "KO-RS-06-008"
+        ]
+      },
+      {
+        "id": "i_rule_nadir",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_lab_norm"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_nadir"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "الرقم الذي بدا متناقضاً في لوحة الإعلام يتطابق بعد توحيد المناطق وتصحيح الانحراف مع السجلين الآخرين؛ فهو خطأ نقل لا تزوير.",
+        "skill_ko_refs": [
+          "KO-RS-06-008",
+          "KO-FC-04-024"
+        ]
+      },
+      {
+        "id": "i_rule_nadir_b",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_audit_relabel"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_door_log"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_nadir"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "التعديل الوحيد المثبت على سجل جرى بحساب هشام من محطة في غرفة التحكم لا يظهر في سجل بوابتها أي دخول لنادر؛ فلا شيء يربط مسؤول الإعلام بتعديل سجل.",
+        "skill_ko_refs": [
+          "KO-RS-06-008",
+          "KO-FC-04-026"
+        ]
+      },
+      {
+        "id": "i_rule_parallel",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_hisham_aware"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_parallel"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "فرضية الاكتشاف المستقل المتزامن تقتضي أن لا يكون هشام قد اطّلع على إطار ريم قبل إطاره، وهذا ما تنفيه واقعة علمه.",
+        "skill_ko_refs": [
+          "KO-RS-06-008"
+        ]
+      }
+    ]
+  },
+  "character_knowledge": [
+    {
+      "character_id": "reem",
+      "knows": [
+        {
+          "fact_id": "f_reem_frame_time",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_clock_gps",
+          "access": "professional",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_chat_sent",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_chat_seen",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_reem_file_shared",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_reem_warning",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    },
+    {
+      "character_id": "hisham",
+      "knows": [
+        {
+          "fact_id": "f_hisham_frame_time",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_bulletin_declared",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [
+        {
+          "fact_id": "f_hisham_aware",
+          "reveal_when": {
+            "any": [
+              {
+                "presented": {
+                  "evidence_id": "ev_chat_log",
+                  "to_character": "hisham"
+                }
+              },
+              {
+                "presented": {
+                  "evidence_id": "ev_ws_log",
+                  "to_character": "hisham"
+                }
+              }
+            ]
+          },
+          "cover_claim_id": "cl_h_unaware",
+          "reveal_line_id": "h_break_aware"
+        },
+        {
+          "fact_id": "f_relabel",
+          "reveal_when": {
+            "all": [
+              {
+                "presented": {
+                  "evidence_id": "ev_audit_relabel",
+                  "to_character": "hisham"
+                }
+              },
+              {
+                "presented": {
+                  "evidence_id": "ev_door_log",
+                  "to_character": "hisham"
+                }
+              }
+            ]
+          },
+          "cover_claim_id": "cl_h_auto",
+          "reveal_line_id": "h_break_relabel"
+        }
+      ],
+      "believes": [
+        {
+          "claim_id": "cl_h_unaware",
+          "stance": "deliberate_lie"
+        },
+        {
+          "claim_id": "cl_h_clock",
+          "stance": "deliberate_lie"
+        },
+        {
+          "claim_id": "cl_h_auto",
+          "stance": "deliberate_lie"
+        }
+      ]
+    },
+    {
+      "character_id": "yusuf",
+      "knows": [
+        {
+          "fact_id": "f_yusuf_logged",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_local_tz",
+          "access": "common_knowledge",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_yusuf_saw",
+          "access": "witnessed",
+          "certainty": "fairly_sure"
+        },
+        {
+          "fact_id": "f_ws_logs_exist",
+          "access": "professional",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_badge_exists",
+          "access": "professional",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_alone_in_room",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    },
+    {
+      "character_id": "nadir",
+      "knows": [
+        {
+          "fact_id": "f_press_note_local",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": [
+        {
+          "claim_id": "cl_reem_late",
+          "stance": "sincere"
+        }
+      ]
+    },
+    {
+      "character_id": "salma",
+      "knows": [
+        {
+          "fact_id": "f_archive_lag",
+          "access": "professional",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_local_tz",
+          "access": "common_knowledge",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_audit_available",
+          "access": "professional",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "h_hisham",
+      "statement_ar": "هشام علم بإطار ريم السابق قبل إطاره، ونسب الاكتشاف إلى نفسه وأخفى إطارها.",
+      "is_true": true,
+      "plausibility_at_start": "low",
+      "suspect_id": "hisham"
+    },
+    {
+      "id": "h_reem_false",
+      "statement_ar": "ريم تدّعي سبقاً لم يحدث؛ فإطارها وصل بعد إطار هشام.",
+      "is_true": false,
+      "plausibility_at_start": "high",
+      "suspect_id": "reem"
+    },
+    {
+      "id": "h_nadir",
+      "statement_ar": "مسؤول الإعلام تلاعب بالسجلات (لوحة الإعلام أو وسم الإطار) ليخدم رواية المرصد.",
+      "is_true": false,
+      "plausibility_at_start": "low",
+      "suspect_id": "nadir"
+    },
+    {
+      "id": "h_parallel",
+      "statement_ar": "لم يغشّ أحد: رصدان مستقلان متقاربان، والفروق في الأزمنة التباس مناطق زمنية فقط.",
+      "is_true": false,
+      "plausibility_at_start": "medium"
+    }
+  ],
+  "misdirection_plan": [
+    {
+      "id": "rh_press",
+      "points_to_hypothesis_id": "h_reem_false",
+      "planted_via_ar": "ورقة لوحة الإعلام تضع إطار ريم «00:06» بعد رصد هشام «21:34».",
+      "evidence_ids": [
+        "ev_press_board"
+      ],
+      "refuted_by_inference_ids": [
+        "i_lab_order",
+        "i_rule_reem_false"
+      ],
+      "fairness_note_ar": "كل ما يلزم لحل الالتباس موجود: المنطقة الزمنية في سجل التشغيل، وتقرير المزامنة، وسجل الأرشيف الذي يقول إن الوقت محلي."
+    },
+    {
+      "id": "rh_warning",
+      "points_to_hypothesis_id": "h_reem_false",
+      "planted_via_ar": "مذكرة تنبيه سابق تُلمّح إلى أن ريم غير منضبطة.",
+      "evidence_ids": [
+        "ev_reem_warning"
+      ],
+      "refuted_by_inference_ids": [
+        "i_rule_reem_false"
+      ],
+      "fairness_note_ar": "التنبيه عن مخالفة جدولة لا عن صدق؛ ورأس الملف سجل جهاز لا يتأثر بسمعة صاحبته."
+    },
+    {
+      "id": "rh_nadir",
+      "points_to_hypothesis_id": "h_nadir",
+      "planted_via_ar": "الورقة المكتوبة بخط نادر تبدو كأنها تُقدّم رواية المرصد.",
+      "evidence_ids": [
+        "ev_press_board"
+      ],
+      "refuted_by_inference_ids": [
+        "i_rule_nadir",
+        "i_rule_nadir_b"
+      ],
+      "fairness_note_ar": "الرقم الذي بدا مزوّراً يتطابق بعد التوحيد مع سجلين آخرين، وسجلا التدقيق والبوابة يحددان من عدّل الوسم فعلاً."
+    }
+  ],
+  "learning_objectives": [
+    {
+      "id": "lo_source",
+      "statement_ar": "يصنّف الأدلة بحسب نوع مصدرها وطريقة معرفتها (سجل أصلي، نسخة معروضة، قول).",
+      "skill_ko_ref": "KO-RS-05-001",
+      "observable_behaviors_ar": [
+        "يصنّف الورقة اليدوية كنسخة معروضة لا كسجل أصلي",
+        "يفرّق بين الإقرار والسجل"
+      ],
+      "evidence_sources": [
+        "evidence_board"
+      ]
+    },
+    {
+      "id": "lo_time",
+      "statement_ar": "يوحّد أزمنة مكتوبة بمناطق زمنية وساعات مختلفة قبل مقارنتها.",
+      "skill_ko_ref": "KO-RS-05-005",
+      "observable_behaviors_ar": [
+        "يحوّل المحلي إلى UTC",
+        "يصحّح انحراف الساعة المعلن",
+        "يضع الأحداث على الخط الزمني الموحّد"
+      ],
+      "evidence_sources": [
+        "action_log",
+        "timeline_task"
+      ]
+    },
+    {
+      "id": "lo_hyp",
+      "statement_ar": "يوازن فرضيات متنافسة ويستبعد منها ما تنقضه الأدلة.",
+      "skill_ko_ref": "KO-RS-05-002",
+      "observable_behaviors_ar": [
+        "يضيف أكثر من فرضية",
+        "يستبعد فرضية بدليل مرفق"
+      ],
+      "evidence_sources": [
+        "hypothesis_ledger"
+      ]
+    },
+    {
+      "id": "lo_diag",
+      "statement_ar": "يقدّر القوة التشخيصية للدليل: هل يميّز بين الفرضيات أم يوافق عليها جميعاً؟",
+      "skill_ko_ref": "KO-RS-06-001",
+      "observable_behaviors_ar": [
+        "يربط الدليل بالفرضية باتجاه صحيح",
+        "يتجنب ربط الدليل الضعيف كحاسم"
+      ],
+      "evidence_sources": [
+        "evidence_board",
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_calib",
+      "statement_ar": "يعبّر عن ثقته بحدودها ويحدّد ما قد يغيّر رأيه.",
+      "skill_ko_ref": "KO-RS-06-021",
+      "observable_behaviors_ar": [
+        "يختار ثقة معقولة",
+        "يذكر حدود الأدلة",
+        "يحدد دليلاً مغيّراً للرأي"
+      ],
+      "evidence_sources": [
+        "final_justification",
+        "hypothesis_ledger"
+      ]
+    },
+    {
+      "id": "lo_revise",
+      "statement_ar": "يراجع فرضيته الأولى عند سقوط الدليل الذي بُنيت عليه.",
+      "skill_ko_ref": "KO-RS-06-009",
+      "observable_behaviors_ar": [
+        "يعلن فرضية رائدة ثم يغيّرها بعد دليل جديد"
+      ],
+      "evidence_sources": [
+        "hypothesis_ledger",
+        "action_log"
+      ]
+    }
+  ],
+  "mechanics": {
+    "time_budget_units": 60,
+    "actions": [
+      {
+        "id": "a_read_bulletin",
+        "type": "examine",
+        "label_ar": "اقرأ استمارة بلاغ الاكتشاف",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_bulletin_form"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "ev_bulletin_form",
+        "telemetry_code": "READ_BULLETIN"
+      },
+      {
+        "id": "a_read_hr",
+        "type": "examine",
+        "label_ar": "افتح ملف المتدربة في إدارة البرنامج",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_reem_warning"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "ev_reem_warning",
+        "telemetry_code": "READ_HR"
+      },
+      {
+        "id": "a_search_control",
+        "type": "search_location",
+        "label_ar": "ابحث في سجل غرفة التحكم",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_obs_log"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_control",
+        "telemetry_code": "SEARCH_CONTROL"
+      },
+      {
+        "id": "a_search_desk",
+        "type": "search_location",
+        "label_ar": "افحص مكتب المقراب T1",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_sheet"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_control",
+        "telemetry_code": "SEARCH_DESK"
+      },
+      {
+        "id": "a_inspect_t1",
+        "type": "examine",
+        "label_ar": "افحص إطار المقراب T1",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_hisham_hdr"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "obj_t1",
+        "telemetry_code": "INSPECT_T1"
+      },
+      {
+        "id": "a_search_press",
+        "type": "search_location",
+        "label_ar": "ابحث في لوحة مكتب الإعلام",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_press_board"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_press",
+        "telemetry_code": "SEARCH_PRESS"
+      },
+      {
+        "id": "a_search_archive",
+        "type": "search_location",
+        "label_ar": "افتح سجل استقبال الأرشيف",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_archive_log"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_archive",
+        "telemetry_code": "SEARCH_ARCHIVE"
+      },
+      {
+        "id": "a_int_reem",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة ريم",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "reem",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "reem",
+        "telemetry_code": "INT_REEM"
+      },
+      {
+        "id": "a_int_yusuf",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة يوسف",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "yusuf",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "yusuf",
+        "telemetry_code": "INT_YUSUF"
+      },
+      {
+        "id": "a_int_nadir",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة نادر",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "nadir",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "nadir",
+        "telemetry_code": "INT_NADIR"
+      },
+      {
+        "id": "a_int_salma",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة سلمى",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "salma",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "salma",
+        "telemetry_code": "INT_SALMA"
+      },
+      {
+        "id": "a_int_hisham",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة د. هشام",
+        "precondition": {
+          "has_evidence": "ev_bulletin_form"
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "hisham",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "hisham",
+        "telemetry_code": "INT_HISHAM"
+      },
+      {
+        "id": "a_get_reem_file",
+        "type": "examine",
+        "label_ar": "تسلّم الإطار الأصلي من ريم",
+        "precondition": {
+          "fact_unlocked": "f_reem_file_shared"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_reem_hdr"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "obj_frame",
+        "telemetry_code": "GET_REEM_FILE"
+      },
+      {
+        "id": "a_get_chat",
+        "type": "examine",
+        "label_ar": "اطلب تصدير سجل المراسلة",
+        "precondition": {
+          "fact_unlocked": "f_chat_sent"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_chat_log"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "reem",
+        "telemetry_code": "GET_CHAT"
+      },
+      {
+        "id": "a_note_yusuf",
+        "type": "examine",
+        "label_ar": "دوّن إفادة يوسف",
+        "precondition": {
+          "fact_unlocked": "f_yusuf_saw"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_yusuf_statement"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "yusuf",
+        "telemetry_code": "NOTE_YUSUF"
+      },
+      {
+        "id": "a_note_nadir",
+        "type": "examine",
+        "label_ar": "دوّن إفادة نادر",
+        "precondition": {
+          "fact_unlocked": "f_press_note_local"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_nadir_statement"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "nadir",
+        "telemetry_code": "NOTE_NADIR"
+      },
+      {
+        "id": "a_get_sync",
+        "type": "examine",
+        "label_ar": "اطلب تقرير المزامنة",
+        "precondition": {
+          "fact_unlocked": "f_archive_lag"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_sync_report"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "salma",
+        "telemetry_code": "GET_SYNC"
+      },
+      {
+        "id": "a_get_ws",
+        "type": "examine",
+        "label_ar": "اطلب سجل المحطة CR-2",
+        "precondition": {
+          "fact_unlocked": "f_ws_logs_exist"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_ws_log"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "obj_cr2",
+        "telemetry_code": "GET_WS"
+      },
+      {
+        "id": "a_get_door",
+        "type": "examine",
+        "label_ar": "اطلب سجل بوابة غرفة التحكم",
+        "precondition": {
+          "fact_unlocked": "f_badge_exists"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_door_log"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_control",
+        "telemetry_code": "GET_DOOR"
+      },
+      {
+        "id": "a_get_audit",
+        "type": "examine",
+        "label_ar": "اطلب سجل التدقيق من الأرشيف",
+        "precondition": {
+          "fact_unlocked": "f_audit_available"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_audit_relabel"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "salma",
+        "telemetry_code": "GET_AUDIT"
+      },
+      {
+        "id": "a_compare_times",
+        "type": "compare_evidence",
+        "label_ar": "وحِّد الأزمنة (يُمنح عبر المختبر عند نجاحه)",
+        "precondition": {
+          "all": [
+            {
+              "has_evidence": "ev_obs_log"
+            },
+            {
+              "has_evidence": "ev_press_board"
+            },
+            {
+              "has_evidence": "ev_archive_log"
+            },
+            {
+              "has_evidence": "ev_sync_report"
+            }
+          ]
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_lab_norm"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "COMPARE_TIMES"
+      },
+      {
+        "id": "p_chat_hisham",
+        "type": "present_evidence",
+        "label_ar": "اعرض ev_chat_log على hisham",
+        "precondition": {
+          "presented": {
+            "evidence_id": "ev_chat_log",
+            "to_character": "hisham"
+          }
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "PRESENTED_EV_CHAT_LOG_HISHAM"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "hisham",
+        "telemetry_code": "P_CHAT_HISHAM"
+      },
+      {
+        "id": "p_ws_hisham",
+        "type": "present_evidence",
+        "label_ar": "اعرض ev_ws_log على hisham",
+        "precondition": {
+          "presented": {
+            "evidence_id": "ev_ws_log",
+            "to_character": "hisham"
+          }
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "PRESENTED_EV_WS_LOG_HISHAM"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "hisham",
+        "telemetry_code": "P_WS_HISHAM"
+      },
+      {
+        "id": "p_audit_hisham",
+        "type": "present_evidence",
+        "label_ar": "اعرض ev_audit_relabel على hisham",
+        "precondition": {
+          "presented": {
+            "evidence_id": "ev_audit_relabel",
+            "to_character": "hisham"
+          }
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "PRESENTED_EV_AUDIT_RELABEL_HISHAM"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "hisham",
+        "telemetry_code": "P_AUDIT_HISHAM"
+      },
+      {
+        "id": "p_door_hisham",
+        "type": "present_evidence",
+        "label_ar": "اعرض ev_door_log على hisham",
+        "precondition": {
+          "presented": {
+            "evidence_id": "ev_door_log",
+            "to_character": "hisham"
+          }
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "PRESENTED_EV_DOOR_LOG_HISHAM"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "hisham",
+        "telemetry_code": "P_DOOR_HISHAM"
+      },
+      {
+        "id": "p_hdr_nadir",
+        "type": "present_evidence",
+        "label_ar": "اعرض ev_reem_hdr على nadir",
+        "precondition": {
+          "presented": {
+            "evidence_id": "ev_reem_hdr",
+            "to_character": "nadir"
+          }
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "PRESENTED_EV_REEM_HDR_NADIR"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "nadir",
+        "telemetry_code": "P_HDR_NADIR"
+      },
+      {
+        "id": "a_hint",
+        "type": "request_hint",
+        "label_ar": "اطلب تلميحاً",
+        "precondition": {
+          "always": true
+        },
+        "effects": [],
+        "time_cost_units": 0,
+        "telemetry_code": "REQUEST_HINT"
+      },
+      {
+        "id": "a_accuse",
+        "type": "final_accusation",
+        "label_ar": "قدّم الاستنتاج النهائي",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "SUBMIT"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "FINAL_ACCUSATION"
+      },
+      {
+        "id": "ask_reem_f_reem_frame_time",
+        "type": "interview",
+        "label_ar": "[نموذج] reem يذكر f_reem_frame_time",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_reem_frame_time"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "reem",
+        "telemetry_code": "ASK_REEM_F_REEM_FRAME_TIME"
+      },
+      {
+        "id": "ask_reem_f_clock_gps",
+        "type": "interview",
+        "label_ar": "[نموذج] reem يذكر f_clock_gps",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_clock_gps"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "reem",
+        "telemetry_code": "ASK_REEM_F_CLOCK_GPS"
+      },
+      {
+        "id": "ask_reem_f_chat_sent",
+        "type": "interview",
+        "label_ar": "[نموذج] reem يذكر f_chat_sent",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_chat_sent"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "reem",
+        "telemetry_code": "ASK_REEM_F_CHAT_SENT"
+      },
+      {
+        "id": "ask_reem_f_chat_seen",
+        "type": "interview",
+        "label_ar": "[نموذج] reem يذكر f_chat_seen",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_chat_seen"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "reem",
+        "telemetry_code": "ASK_REEM_F_CHAT_SEEN"
+      },
+      {
+        "id": "ask_reem_f_reem_file_shared",
+        "type": "interview",
+        "label_ar": "[نموذج] reem يذكر f_reem_file_shared",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_reem_file_shared"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "reem",
+        "telemetry_code": "ASK_REEM_F_REEM_FILE_SHARED"
+      },
+      {
+        "id": "ask_reem_f_reem_warning",
+        "type": "interview",
+        "label_ar": "[نموذج] reem يذكر f_reem_warning",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_reem_warning"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "reem",
+        "telemetry_code": "ASK_REEM_F_REEM_WARNING"
+      },
+      {
+        "id": "ask_hisham_f_hisham_frame_time",
+        "type": "interview",
+        "label_ar": "[نموذج] hisham يذكر f_hisham_frame_time",
+        "precondition": {
+          "has_evidence": "ev_bulletin_form"
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_hisham_frame_time"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "hisham",
+        "telemetry_code": "ASK_HISHAM_F_HISHAM_FRAME_TIME"
+      },
+      {
+        "id": "ask_hisham_f_bulletin_declared",
+        "type": "interview",
+        "label_ar": "[نموذج] hisham يذكر f_bulletin_declared",
+        "precondition": {
+          "has_evidence": "ev_bulletin_form"
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_bulletin_declared"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "hisham",
+        "telemetry_code": "ASK_HISHAM_F_BULLETIN_DECLARED"
+      },
+      {
+        "id": "ask_hisham_f_hisham_aware",
+        "type": "interview",
+        "label_ar": "[نموذج] hisham يكشف f_hisham_aware",
+        "precondition": {
+          "all": [
+            {
+              "has_evidence": "ev_bulletin_form"
+            },
+            {
+              "any": [
+                {
+                  "presented": {
+                    "evidence_id": "ev_chat_log",
+                    "to_character": "hisham"
+                  }
+                },
+                {
+                  "presented": {
+                    "evidence_id": "ev_ws_log",
+                    "to_character": "hisham"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_hisham_aware"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "hisham",
+        "telemetry_code": "ASK_HISHAM_F_HISHAM_AWARE"
+      },
+      {
+        "id": "ask_hisham_f_relabel",
+        "type": "interview",
+        "label_ar": "[نموذج] hisham يكشف f_relabel",
+        "precondition": {
+          "all": [
+            {
+              "has_evidence": "ev_bulletin_form"
+            },
+            {
+              "all": [
+                {
+                  "presented": {
+                    "evidence_id": "ev_audit_relabel",
+                    "to_character": "hisham"
+                  }
+                },
+                {
+                  "presented": {
+                    "evidence_id": "ev_door_log",
+                    "to_character": "hisham"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_relabel"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "hisham",
+        "telemetry_code": "ASK_HISHAM_F_RELABEL"
+      },
+      {
+        "id": "ask_yusuf_f_yusuf_logged",
+        "type": "interview",
+        "label_ar": "[نموذج] yusuf يذكر f_yusuf_logged",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_yusuf_logged"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "yusuf",
+        "telemetry_code": "ASK_YUSUF_F_YUSUF_LOGGED"
+      },
+      {
+        "id": "ask_yusuf_f_local_tz",
+        "type": "interview",
+        "label_ar": "[نموذج] yusuf يذكر f_local_tz",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_local_tz"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "yusuf",
+        "telemetry_code": "ASK_YUSUF_F_LOCAL_TZ"
+      },
+      {
+        "id": "ask_yusuf_f_yusuf_saw",
+        "type": "interview",
+        "label_ar": "[نموذج] yusuf يذكر f_yusuf_saw",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_yusuf_saw"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "yusuf",
+        "telemetry_code": "ASK_YUSUF_F_YUSUF_SAW"
+      },
+      {
+        "id": "ask_yusuf_f_ws_logs_exist",
+        "type": "interview",
+        "label_ar": "[نموذج] yusuf يذكر f_ws_logs_exist",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_ws_logs_exist"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "yusuf",
+        "telemetry_code": "ASK_YUSUF_F_WS_LOGS_EXIST"
+      },
+      {
+        "id": "ask_yusuf_f_badge_exists",
+        "type": "interview",
+        "label_ar": "[نموذج] yusuf يذكر f_badge_exists",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_badge_exists"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "yusuf",
+        "telemetry_code": "ASK_YUSUF_F_BADGE_EXISTS"
+      },
+      {
+        "id": "ask_yusuf_f_alone_in_room",
+        "type": "interview",
+        "label_ar": "[نموذج] yusuf يذكر f_alone_in_room",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_alone_in_room"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "yusuf",
+        "telemetry_code": "ASK_YUSUF_F_ALONE_IN_ROOM"
+      },
+      {
+        "id": "ask_nadir_f_press_note_local",
+        "type": "interview",
+        "label_ar": "[نموذج] nadir يذكر f_press_note_local",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_press_note_local"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "nadir",
+        "telemetry_code": "ASK_NADIR_F_PRESS_NOTE_LOCAL"
+      },
+      {
+        "id": "ask_salma_f_archive_lag",
+        "type": "interview",
+        "label_ar": "[نموذج] salma يذكر f_archive_lag",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_archive_lag"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "salma",
+        "telemetry_code": "ASK_SALMA_F_ARCHIVE_LAG"
+      },
+      {
+        "id": "ask_salma_f_local_tz",
+        "type": "interview",
+        "label_ar": "[نموذج] salma يذكر f_local_tz",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_local_tz"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "salma",
+        "telemetry_code": "ASK_SALMA_F_LOCAL_TZ"
+      },
+      {
+        "id": "ask_salma_f_audit_available",
+        "type": "interview",
+        "label_ar": "[نموذج] salma يذكر f_audit_available",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_audit_available"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "salma",
+        "telemetry_code": "ASK_SALMA_F_AUDIT_AVAILABLE"
+      }
+    ]
+  },
+  "state_machine": {
+    "id": "c001",
+    "initial": "briefing",
+    "type": "compound",
+    "states": {
+      "briefing": {
+        "description_ar": "الإحاطة الأولى",
+        "type": "atomic",
+        "on": {
+          "START": {
+            "target": "investigating"
+          }
+        }
+      },
+      "investigating": {
+        "description_ar": "التحقيق",
+        "type": "compound",
+        "initial": "gathering",
+        "states": {
+          "gathering": {
+            "type": "atomic",
+            "on": {
+              "OPEN_DEDUCTION": {
+                "target": "deducing"
+              }
+            }
+          },
+          "deducing": {
+            "type": "atomic",
+            "on": {
+              "BACK": {
+                "target": "gathering"
+              }
+            }
+          }
+        },
+        "on": {
+          "SUBMIT": {
+            "target": "review"
+          }
+        }
+      },
+      "review": {
+        "description_ar": "مراجعة الاستنتاج",
+        "type": "atomic",
+        "on": {
+          "CLOSE": {
+            "target": "resolved"
+          }
+        }
+      },
+      "resolved": {
+        "description_ar": "إغلاق الملف",
+        "type": "final"
+      }
+    }
+  },
+  "dialogue": {
+    "max_turns_per_interview": 14,
+    "llm_enabled": false,
+    "topics": [
+      {
+        "id": "t_arrival",
+        "label_ar": "الإطار الأول ووقته",
+        "example_questions_ar": [
+          "متى التُقط الإطار الأول؟",
+          "ما الذي سجّلته أول مرة؟"
+        ],
+        "fact_ids": [
+          "f_reem_frame_time",
+          "f_yusuf_logged"
+        ]
+      },
+      {
+        "id": "t_clock",
+        "label_ar": "الساعات والتوقيت",
+        "example_questions_ar": [
+          "هل ساعات الأجهزة موثوقة؟",
+          "ما التوقيت المحلي؟"
+        ],
+        "fact_ids": [
+          "f_clock_gps",
+          "f_archive_lag",
+          "f_local_tz"
+        ],
+        "claim_ids": [
+          "cl_h_clock"
+        ]
+      },
+      {
+        "id": "t_message",
+        "label_ar": "الرسالة وإيصال القراءة",
+        "example_questions_ar": [
+          "هل وصلتك رسالة قبل إطارك؟",
+          "متى أرسلت الرسالة؟"
+        ],
+        "fact_ids": [
+          "f_chat_sent",
+          "f_chat_seen",
+          "f_hisham_aware"
+        ],
+        "claim_ids": [
+          "cl_h_unaware"
+        ]
+      },
+      {
+        "id": "t_filing",
+        "label_ar": "بلاغ الاكتشاف",
+        "example_questions_ar": [
+          "متى أرسلت البلاغ؟",
+          "ماذا صرّحت في الاستمارة؟"
+        ],
+        "fact_ids": [
+          "f_hisham_frame_time",
+          "f_bulletin_declared"
+        ]
+      },
+      {
+        "id": "t_relabel",
+        "label_ar": "وسم الإطار في الأرشيف",
+        "example_questions_ar": [
+          "من غيّر وسم الإطار؟",
+          "هل يُسجَّل أي تعديل؟"
+        ],
+        "fact_ids": [
+          "f_relabel",
+          "f_audit_available"
+        ],
+        "claim_ids": [
+          "cl_h_auto"
+        ]
+      },
+      {
+        "id": "t_press",
+        "label_ar": "لوحة الإعلام",
+        "example_questions_ar": [
+          "من أين جاء رقم 00:10؟",
+          "كيف كتبت الملاحظة؟"
+        ],
+        "fact_ids": [
+          "f_press_note_local"
+        ],
+        "claim_ids": [
+          "cl_reem_late"
+        ]
+      },
+      {
+        "id": "t_presence",
+        "label_ar": "من كان في غرفة التحكم",
+        "example_questions_ar": [
+          "من كان في الغرفة؟",
+          "ماذا رأيت قبل التقاط الإطار؟"
+        ],
+        "fact_ids": [
+          "f_yusuf_saw",
+          "f_alone_in_room"
+        ]
+      },
+      {
+        "id": "t_records",
+        "label_ar": "سجلات الدخول والمحطات",
+        "example_questions_ar": [
+          "هل توجد سجلات للمحطة؟",
+          "هل تُسجَّل البطاقات؟"
+        ],
+        "fact_ids": [
+          "f_ws_logs_exist",
+          "f_badge_exists"
+        ]
+      },
+      {
+        "id": "t_file",
+        "label_ar": "الملف الأصلي",
+        "example_questions_ar": [
+          "هل لديك الملف الأصلي؟",
+          "هل عُدّل الإطار؟"
+        ],
+        "fact_ids": [
+          "f_reem_file_shared"
+        ]
+      },
+      {
+        "id": "t_history",
+        "label_ar": "التنبيه السابق",
+        "example_questions_ar": [
+          "ما قصة التنبيه الإداري؟"
+        ],
+        "fact_ids": [
+          "f_reem_warning"
+        ]
+      }
+    ]
+  },
+  "rubric": {
+    "reference_answer_ar": "أول إطار يُظهر الجسم هو إطار ريم عند 21:10 UTC، ويسبق إطار هشام عند 21:34 UTC بنحو 24 دقيقة. يظهر هذا من رأسي الملفين مباشرة، ومن توحيد السجلات الثلاثة التي بدت متناقضة (سجل التشغيل بالتوقيت العالمي، ولوحة الإعلام والأرشيف بالمحلي، والأرشيف متأخر 4 دقائق). وقد علم هشام بالإطار قبل إطاره: فتح ملفه 21:24 UTC وقرأ رسالتها 21:27 UTC، ثم صرّح في البلاغ بعدم علمه بأي رصد أسبق، وعدّل وسم الإطار يدوياً من محطته وهو وحده في الغرفة. أرجح تفسير أنه نسب الاكتشاف إلى نفسه وأخفى إطارها. والحدود: لا تثبت الأدلة دافعه ولا ما أدركه حين فتح الإطار، ولا تقرر هي أسبقية الاكتشاف رسمياً؛ ذلك قرار اللجنة الدولية.",
+    "criteria": [
+      {
+        "id": "c_source",
+        "name_ar": "تصنيف المصادر",
+        "objective_ids": [
+          "lo_source"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يصنّف شيئاً"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "صنّف قليلاً وأخطأ في الغالب"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "صنّف نصف الأدلة بدقة"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "صنّف معظمها بدقة"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "صنّف كل الأدلة الأساسية بدقة وفرّق بين القول والسجل"
+          }
+        ]
+      },
+      {
+        "id": "c_conflict",
+        "name_ar": "حل تعارض الأزمنة",
+        "objective_ids": [
+          "lo_time"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.25,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "تجاهل التعارض"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "لاحظه دون حل"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "حاول الحل بمدخلات غير متسقة"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "وحّد الأزمنة في المختبر"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "وحّدها في المختبر ووضع الأحداث على الخط الزمني بالتوقيت الموحّد"
+          }
+        ]
+      },
+      {
+        "id": "c_links",
+        "name_ar": "ربط الأدلة بالفرضيات",
+        "objective_ids": [
+          "lo_diag"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لا روابط"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "روابط قليلة أو معظمها خاطئ"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "نصف الروابط صحيح"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظم الروابط صحيح مع مقارنة فرضيتين"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "روابط دقيقة عبر عدة فرضيات"
+          }
+        ]
+      },
+      {
+        "id": "c_uncertainty",
+        "name_ar": "معايرة الثقة وحدود الاستنتاج",
+        "objective_ids": [
+          "lo_calib"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "ثقة مفرطة بلا حدود"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "حدود قليلة أو غير ملائمة"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "ثقة معقولة مع حدود جزئية"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "ثقة معقولة وحدود صحيحة"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "ثقة معايَرة وحدود كاملة ودليل مغيّر للرأي"
+          }
+        ]
+      },
+      {
+        "id": "c_revision",
+        "name_ar": "مراجعة الرأي",
+        "objective_ids": [
+          "lo_revise"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "بقي على فرضية تنقضها الأدلة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "لم يعلن فرضية"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "ثبت على فرضية سليمة"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "غيّر موقفه بعد دليل"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "غيّر موقفه بعد دليل ووثّق المراجعة"
+          }
+        ]
+      },
+      {
+        "id": "c_elimination",
+        "name_ar": "استبعاد الفرضيات الخاطئة",
+        "objective_ids": [
+          "lo_hyp"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يستبعد"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "استبعد خطأً"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "استبعد فرضية واحدة بدليل"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "استبعد فرضيتين بدليل"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "استبعد كل الفرضيات الخاطئة بأدلة مرفقة"
+          }
+        ]
+      },
+      {
+        "id": "c_justification",
+        "name_ar": "جودة الحجة المكتوبة",
+        "objective_ids": [
+          "lo_diag",
+          "lo_hyp"
+        ],
+        "scored_by": "human",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لا حجة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "ادعاء بلا سند"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "ذكر أدلة دون ربط"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "ربط الأدلة بالاستنتاج"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "ربط الأدلة بالاستنتاج مع ذكر البدائل وما لا تثبته الأدلة"
+          }
+        ]
+      }
+    ]
+  },
+  "hint_ladder": [
+    {
+      "id": "hg1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "اسأل نفسك: هل كُتبت كل الأزمنة في هذه الأوراق بالمنطقة الزمنية نفسها؟ وما الذي يدلّك على ذلك؟",
+      "trigger": {
+        "always": true
+      },
+      "assessment_weight": 0.02
+    },
+    {
+      "id": "hg2",
+      "level": 2,
+      "kind": "focus_area",
+      "text_ar": "قارن بين السجلات التي تصف اللحظة نفسها، وانظر إلى ما يُكتب بجانب كل وقت: من كتبه، وبأي توقيت، وبأي ساعة.",
+      "trigger": {
+        "has_evidence": "ev_press_board"
+      },
+      "assessment_weight": 0.04
+    },
+    {
+      "id": "hg3",
+      "level": 3,
+      "kind": "pointer",
+      "text_ar": "ابحث عمّن يعرف حال ساعات الخوادم، ثم جرّب مختبر الأزمنة بعد أن تجمع ما يلزمه.",
+      "trigger": {
+        "has_evidence": "ev_archive_log"
+      },
+      "assessment_weight": 0.06
+    },
+    {
+      "id": "hl1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "هل بين أدلتك ما يخبرك بمقدار تأخر ساعة الأرشيف؟",
+      "trigger": {
+        "has_evidence": "ev_archive_log"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_lab_order"
+    },
+    {
+      "id": "hl2",
+      "level": 2,
+      "kind": "focus_area",
+      "text_ar": "الفرق بين سجل التشغيل واللوحة يكاد يكون ثلاث ساعات بالضبط. ماذا يعني ذلك؟",
+      "trigger": {
+        "has_evidence": "ev_sync_report"
+      },
+      "assessment_weight": 0.04,
+      "targets_inference_id": "i_lab_order"
+    },
+    {
+      "id": "hl3",
+      "level": 3,
+      "kind": "pointer",
+      "text_ar": "حوّل كل وقت محلي إلى UTC بطرح 3 ساعات، ثم أضف دقائق التأخر إن كان الجهاز متأخراً.",
+      "trigger": {
+        "has_evidence": "ev_sync_report"
+      },
+      "assessment_weight": 0.08,
+      "targets_inference_id": "i_lab_order"
+    },
+    {
+      "id": "hl4",
+      "level": 4,
+      "kind": "partial_reveal",
+      "text_ar": "بعد التحويل يتفق سجلان بسرعة؛ فإن لم يتفق الثالث فراجع تصحيح ساعة الأرشيف: هل هو متأخر أم متقدم؟",
+      "trigger": {
+        "has_evidence": "ev_sync_report"
+      },
+      "assessment_weight": 0.12,
+      "targets_inference_id": "i_lab_order"
+    },
+    {
+      "id": "hc1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "ما الذي يثبته إيصال القراءة وما الذي لا يثبته؟",
+      "trigger": {
+        "has_evidence": "ev_chat_log"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_aware_chat"
+    },
+    {
+      "id": "hc2",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "قارن وقت القراءة بعد تحويله إلى UTC بوقت أول إطار لهشام.",
+      "trigger": {
+        "has_evidence": "ev_hisham_hdr"
+      },
+      "assessment_weight": 0.06,
+      "targets_inference_id": "i_aware_chat"
+    },
+    {
+      "id": "hc3",
+      "level": 3,
+      "kind": "partial_reveal",
+      "text_ar": "سجل المحطة يضيف مصدراً مستقلاً عن المراسلة؛ هل تتفق رواية السجلين على الترتيب؟",
+      "trigger": {
+        "has_evidence": "ev_ws_log"
+      },
+      "assessment_weight": 0.1,
+      "targets_inference_id": "i_aware_chat"
+    },
+    {
+      "id": "ha1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "اقرأ حقل method جيداً. ماذا يقول عن طريقة التعديل؟",
+      "trigger": {
+        "has_evidence": "ev_audit_relabel"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_auto_false"
+    },
+    {
+      "id": "ha2",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "قارن وقت التعديل بتوقيت خروج المشغّل من الغرفة في سجل البوابة.",
+      "trigger": {
+        "has_evidence": "ev_door_log"
+      },
+      "assessment_weight": 0.06,
+      "targets_inference_id": "i_auto_false"
+    }
+  ],
+  "fairness_test": {
+    "requirements": {
+      "min_disjoint_proof_paths": 2,
+      "max_inference_depth": 3,
+      "all_red_herrings_refutable": true,
+      "culprit_uniquely_entailed": true,
+      "no_hidden_fact_dependency": true,
+      "max_required_actions": 40
+    },
+    "runs": []
+  },
+  "ending_explanation": {
+    "steps": [
+      {
+        "order": 1,
+        "text_ar": "السجلات الثلاثة التي بدت متناقضة تصف لحظة واحدة: سجل التشغيل بالتوقيت العالمي، ولوحة الإعلام والأرشيف بالتوقيت المحلي (+3)، والأرشيف متأخر 4 دقائق. بعد التوحيد تتطابق كلها عند 21:10 UTC.",
+        "uses_evidence_ids": [
+          "ev_obs_log",
+          "ev_press_board",
+          "ev_archive_log",
+          "ev_sync_report",
+          "ev_lab_norm"
+        ],
+        "inference_id": "i_lab_order"
+      },
+      {
+        "order": 2,
+        "text_ar": "رأسا ملفي الإطارين، وهما سجلان آليان بساعتين مضبوطتين وبمرجع واحد، يضعان إطار ريم عند 21:10:12 وإطار هشام عند 21:34:40: ريم أسبق بنحو 24 دقيقة.",
+        "uses_evidence_ids": [
+          "ev_reem_hdr",
+          "ev_hisham_hdr"
+        ],
+        "inference_id": "i_hdr_order"
+      },
+      {
+        "order": 3,
+        "text_ar": "ما بدا تزويراً في لوحة الإعلام كان نقلاً لرقمين بمنطقتين زمنيتين مختلفتين، وبعد التوحيد لا يوجد ما يشير إلى تلاعب.",
+        "uses_evidence_ids": [
+          "ev_press_board",
+          "ev_lab_norm",
+          "ev_nadir_statement"
+        ],
+        "inference_id": "i_rule_nadir"
+      },
+      {
+        "order": 4,
+        "text_ar": "علم هشام بإطار ريم قبل إطاره: فتح ملفها 21:24 UTC وقرأ رسالتها 21:27 UTC، بينما أول إطار له 21:34 UTC.",
+        "uses_evidence_ids": [
+          "ev_chat_log",
+          "ev_ws_log",
+          "ev_hisham_hdr"
+        ],
+        "inference_id": "i_aware_chat"
+      },
+      {
+        "order": 5,
+        "text_ar": "تصريحه في البلاغ بعدم العلم بأي رصد أسبق يخالف سجلين مستقلين، فلا يصلح تفسيراً أن الرصدين كانا مستقلين.",
+        "uses_evidence_ids": [
+          "ev_bulletin_form",
+          "ev_ws_log"
+        ],
+        "inference_id": "i_unaware_false"
+      },
+      {
+        "order": 6,
+        "text_ar": "تعديل وسم إطارها إلى «روتيني» كان يدوياً من محطته وهو وحده في الغرفة، وليس آلياً كما قال.",
+        "uses_evidence_ids": [
+          "ev_audit_relabel",
+          "ev_door_log"
+        ],
+        "inference_id": "i_relabel_fact"
+      },
+      {
+        "order": 7,
+        "text_ar": "الأرجح إذن أنه نسب الاكتشاف إلى نفسه وأخفى إطارها. هذا ترجيح مبني على وقائع مسجَّلة، لا حكم على دوافعه.",
+        "uses_evidence_ids": [
+          "ev_reem_hdr",
+          "ev_chat_log",
+          "ev_audit_relabel"
+        ],
+        "inference_id": "i_support_hisham"
+      }
+    ],
+    "alternative_paths_ar": [
+      "يمكن بلوغ الاستنتاج مباشرة من رأسي الملفين دون المرور بتوحيد السجلات الثلاثة، لكن من يفعل ذلك يترك التعارض الظاهر في اللوحة والأرشيف بلا تفسير، وهذا يضعف الحجة أمام من يستشهد بتلك الورقة.",
+      "يمكن إثبات علم هشام من سجل المراسلة وحده، أو من سجل المحطة وحده، والأقوى أن يتفقا معاً لأنهما مستقلان."
+    ],
+    "what_evidence_could_not_show_ar": [
+      "لا تثبت الأدلة دافع هشام ولا إن كان فهم مضمون الإطار حين فتحه.",
+      "إيصال القراءة لا يثبت فتح المرفق، والورقة المكتوبة بالقلم لا يمكن نسبتها إلى كاتبها بلا فحص مختص.",
+      "لا تحدد هذه الأدلة قرار الأسبقية الرسمي؛ ذلك للجنة الدولية."
+    ],
+    "science_notes_ar": [
+      "توحيد الأزمنة: لا تُقارن أزمنة قبل أن يُعرف مرجعها (المنطقة الزمنية) وانحراف ساعة الجهاز الذي سجّلها.",
+      "رأس ملف الصورة سجل آلي، لكنه يثبت وقت ساعة الجهاز لا نية أحد، ويحتاج التأكد أن النسخة لم تتغير (سلسلة العهدة).",
+      "سجلات الدخول والتدقيق تثبت الحسابات والمحطات، ولا تثبت الدوافع، وتحتاج دعماً مستقلاً."
+    ]
+  },
+  "expert_review": [
+    {
+      "role": "narrative_editor",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "scientific_reviewer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "learning_designer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "age_appropriateness",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "cultural_reviewer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "legal_rights",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "safety",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    }
+  ]
+}

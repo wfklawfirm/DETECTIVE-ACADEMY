@@ -1,0 +1,51 @@
+"use client";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
+import { useMe } from "@/components/Shell";
+import { api, ApiError, setGentle } from "@/lib/client";
+
+export default function Account() {
+  const { me, refresh } = useMe();
+  const router = useRouter();
+  const [mode, setMode] = useState<"login" | "register">("login");
+  const [f, setF] = useState({ email: "", password: "", display_name: "", adult: false });
+  const [err, setErr] = useState<string | null>(null);
+  const [busy, setBusy] = useState(false);
+  const [del, setDel] = useState("");
+  const next = typeof window !== "undefined" ? new URLSearchParams(location.search).get("next") : null;
+  const safeNext = next && next.startsWith("/") && !next.startsWith("//") ? next : "/home";
+  const submit = async (e: React.FormEvent) => {
+    e.preventDefault(); setBusy(true); setErr(null);
+    try {
+      if (mode === "register") await api("/api/auth/register", f); else await api("/api/auth/login", { email: f.email, password: f.password });
+      await refresh(); router.push(safeNext);
+    } catch (x) { setErr(x instanceof ApiError ? x.message : "تعذّر الاتصال"); } finally { setBusy(false); }
+  };
+  if (me?.user) {
+    return (
+      <div className="wrap-narrow stack">
+        <h1>حسابي</h1><p>مرحباً {me.user.display_name ?? ""}. تقدّمك محفوظ في حسابك.</p>
+        <label style={{ display: "flex", gap: 12, fontWeight: 400 }}><input type="checkbox" checked={me.user.gentle_hooks} onChange={async (e) => { await api("/api/auth/settings", { gentle_hooks: e.target.checked }); setGentle(e.target.checked); await refresh(); }} /><span>وضع هادئ: تلميحات الدخول أقصر وأقل تشويقاً.</span></label>
+        <div className="row"><button className="btn" onClick={async () => { await api("/api/auth/logout", {}); await refresh(); router.push("/"); }}>تسجيل الخروج</button></div>
+        <hr className="hr" />
+        <section className="card stack"><h2>حذف الحساب</h2><p className="small dim">يحذف حسابك وتقدّمك نهائياً. للتأكيد أدخل كلمة المرور.</p>
+          <label htmlFor="dpw">كلمة المرور</label><input id="dpw" type="password" autoComplete="current-password" value={del} onChange={(e) => setDel(e.target.value)} />
+          {err && <p role="alert" className="err">{err}</p>}
+          <button className="btn danger" disabled={!del} onClick={async () => { try { await api("/api/auth/delete", { password: del, confirm: true }); await refresh(); router.push("/"); } catch (x) { setErr(x instanceof ApiError ? x.message : "فشل"); } }}>احذف حسابي نهائياً</button></section>
+      </div>
+    );
+  }
+  return (
+    <form className="wrap-narrow stack" onSubmit={submit}>
+      <h1>{mode === "login" ? "تسجيل الدخول" : "إنشاء حساب"}</h1>
+      <p className="dim small">الحساب اختياري. بدونه يُحفظ تقدّمك على هذا الجهاز فقط. الحسابات للبالغين (١٨+) حالياً.</p>
+      <label htmlFor="em">البريد الإلكتروني</label><input id="em" type="email" autoComplete="email" required value={f.email} onChange={(e) => setF({ ...f, email: e.target.value })} />
+      {mode === "register" && <><label htmlFor="dn">الاسم الظاهر (اختياري)</label><input id="dn" maxLength={40} value={f.display_name} onChange={(e) => setF({ ...f, display_name: e.target.value })} /></>}
+      <label htmlFor="pw">كلمة المرور {mode === "register" && "(١٠ أحرف على الأقل)"}</label><input id="pw" type="password" autoComplete={mode === "login" ? "current-password" : "new-password"} required minLength={mode === "register" ? 10 : 1} value={f.password} onChange={(e) => setF({ ...f, password: e.target.value })} />
+      {mode === "register" && <label style={{ display: "flex", gap: 12, fontWeight: 400 }}><input type="checkbox" checked={f.adult} onChange={(e) => setF({ ...f, adult: e.target.checked })} /><span>أؤكد أن عمري ١٨ سنة أو أكثر.</span></label>}
+      {err && <p role="alert" className="err">{err}</p>}
+      <button className="btn primary" disabled={busy}>{mode === "login" ? "دخول" : "إنشاء الحساب"}</button>
+      <button type="button" className="btn ghost" onClick={() => { setMode(mode === "login" ? "register" : "login"); setErr(null); }}>{mode === "login" ? "ليس لدي حساب" : "لدي حساب"}</button>
+    </form>
+  );
+}

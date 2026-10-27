@@ -1,0 +1,2280 @@
+{
+  "schema_version": "0.1.0",
+  "case_id": "c005_double_number_box",
+  "case_version": "0.1.0",
+  "meta": {
+    "title_ar": "الصندوق ذو الرقمين",
+    "title_en": "The Box With Two Numbers",
+    "age_band": "16-18",
+    "locale": "ar",
+    "dialogue_register": "msa",
+    "estimated_minutes": 25,
+    "difficulty": 2,
+    "content_flags": [
+      "no_violence"
+    ],
+    "authors": [
+      "فريق أثر التحريري (مسودة بمساعدة الذكاء الاصطناعي، لم تُراجَع بشرياً بعد)"
+    ],
+    "knowledge_object_refs": [
+      "KO-RS-05-001",
+      "KO-RS-05-002",
+      "KO-RS-05-004",
+      "KO-RS-05-014",
+      "KO-RS-06-001",
+      "KO-RS-06-004",
+      "KO-RS-06-008",
+      "KO-RS-06-009",
+      "KO-RS-06-021",
+      "KO-FC-04-026"
+    ]
+  },
+  "premise": {
+    "hook_ar": "رقم واحد في صفين، واتهام بنسخة مزورة. هل الرقم هو ما تظنه؟",
+    "player_role_ar": "أنت مدقق بيانات في متحف الحِرَف، وأول مهامك أن تحسم هل في الجرد قطعة مزورة أم أن في الجدول خللاً.",
+    "setting_ar": "متحف الحِرَف في المدينة، بعد إهداء من ورثة متبرعة. كل التواريخ بتوقيت المتحف.",
+    "public_fact_ids": [
+      "f_two_rows_same_number",
+      "f_forgery_alleged"
+    ],
+    "assumed_general_knowledge_ar": [
+      "الأرقام قد تسمّي أشياء من أنواع مختلفة",
+      "الجدول المُصدَّر قد يحذف عناوين الحقول الأصلية"
+    ]
+  },
+  "entities": {
+    "characters": [
+      {
+        "id": "salim",
+        "name_ar": "سليم البزري",
+        "role": "witness",
+        "age_descriptor_ar": "أمين المقتنيات، في الخمسينات",
+        "persona_ar": "متأنٍّ يحب النظام، يشرح تصميم الأرقام كمن صمّمه، ويتحفظ على أي نتيجة لم يحصل عليها بنفسه.",
+        "motives_ar": [
+          "أن تبقى منظومة الترقيم سليمة",
+          "ألا يُنسب إلى المتحف تزوير دون دليل"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "sl_greet",
+            "purpose": "greeting",
+            "text_ar": "أهلاً. أعرف كيف صُمّم الترقيم عندنا، ولا أدّعي معرفة ما لم أفحصه."
+          },
+          {
+            "line_id": "sl_design",
+            "purpose": "reveal",
+            "text_ar": "نعطي الصندوق رقماً يبدأ بحرف M، ونعطي كل قطعة رقماً يبدأ بحرف A. وقد يضم الصندوق الواحد أكثر من قطعة.",
+            "fact_ids": [
+              "f_numbering_design"
+            ]
+          },
+          {
+            "line_id": "sl_donor",
+            "purpose": "reveal",
+            "text_ar": "ملف الإهداء عندي، وفيه جرد كتبته المتبرعة نفسها قبل أن نرقّم شيئاً.",
+            "fact_ids": [
+              "f_donor_file"
+            ]
+          },
+          {
+            "line_id": "sl_notest",
+            "purpose": "reveal",
+            "text_ar": "لم يصلني أي فحص تقني للمعدن أو العمر. ما عندي سجلات، ولا شيء غيرها.",
+            "fact_ids": [
+              "f_no_test"
+            ]
+          },
+          {
+            "line_id": "sl_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف ذلك، ولن أخمّن."
+          },
+          {
+            "line_id": "sl_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن الترقيم وملف الإهداء."
+          },
+          {
+            "line_id": "sl_bye",
+            "purpose": "farewell",
+            "text_ar": "اقرأ الوثائق بتأنٍّ، ففي الأرقام فخاخ."
+          }
+        ]
+      },
+      {
+        "id": "nuha",
+        "name_ar": "نهى العطار",
+        "role": "suspect",
+        "age_descriptor_ar": "موظفة استلام في المتحف، في أواخر الثلاثينات",
+        "persona_ar": "سريعة ومنشغلة بالمواعيد، تعمل بحسب النماذج وتخشى أن يُنسب إليها خطأ في الجداول.",
+        "motives_ar": [
+          "ألا تُلام على جدول جُمع على عجل",
+          "أن تبقى إجراءات الاستلام مفهومة"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "nh_greet",
+            "purpose": "greeting",
+            "text_ar": "أنا من تستلم الشحنات وتملأ نماذج الاستلام. اسألني عمّا فعلته."
+          },
+          {
+            "line_id": "nh_pack",
+            "purpose": "reveal",
+            "text_ar": "كانت مع الشحنة قائمة تعبئة من الورثة، وقد أرفقتها بالملف.",
+            "fact_ids": [
+              "f_packing_attached"
+            ]
+          },
+          {
+            "line_id": "nh_cond",
+            "purpose": "reveal",
+            "text_ar": "فحصت الصينيتين بالعين عند الاستلام وملأت نموذج الحالة لكل قطعة على حدة.",
+            "fact_ids": [
+              "f_condition_sheet"
+            ]
+          },
+          {
+            "line_id": "nh_compiled",
+            "purpose": "reveal",
+            "text_ar": "جمعت صفّي الجدول من سجل الوارد وبطاقة المتحف في ملف واحد لجرد نهاية الأسبوع.",
+            "fact_ids": [
+              "f_clerk_compiled"
+            ]
+          },
+          {
+            "line_id": "nh_claim",
+            "purpose": "reveal",
+            "text_ar": "حسب فهمي كان عمود «الرقم» هو رقم القطعة.",
+            "claim_ids": [
+              "cl_clerk_column"
+            ]
+          },
+          {
+            "line_id": "nh_check",
+            "purpose": "refuse_secret",
+            "text_ar": "دعني أنظر إلى الملف أمامي قبل أن أحدد من أين نقلت القيمة."
+          },
+          {
+            "line_id": "nh_admit",
+            "purpose": "reveal",
+            "text_ar": "نقلت القيمة 24 من الملصق المثبت على الصندوق، أي رقم الصندوق. لم أنتبه إلى أن العمود لا يقول ذلك.",
+            "fact_ids": [
+              "f_column_from_box"
+            ]
+          },
+          {
+            "line_id": "nh_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أذكر ذلك."
+          },
+          {
+            "line_id": "nh_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن الاستلام والنماذج."
+          },
+          {
+            "line_id": "nh_bye",
+            "purpose": "farewell",
+            "text_ar": "سأضيف تسمية واضحة للعمود في المرة القادمة."
+          }
+        ]
+      },
+      {
+        "id": "walid",
+        "name_ar": "وليد الرفاعي",
+        "role": "witness",
+        "age_descriptor_ar": "مراجع جودة بيانات خارجي، في الأربعينات",
+        "persona_ar": "ودود لكنه يميل إلى الجزم بسرعة حين يرى نمطاً متكرراً، ويعتمد على ما يصله من لقطات الشاشة.",
+        "motives_ar": [
+          "أن يُحترم تنبيهه كمراجع",
+          "ألا يُتّهم بنشر اتهام بلا أساس"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "wl_greet",
+            "purpose": "greeting",
+            "text_ar": "أنا مراجع بيانات من خارج المتحف. أراجع ما يُرسل إليّ."
+          },
+          {
+            "line_id": "wl_image",
+            "purpose": "reveal",
+            "text_ar": "لم يصلني إلا صورة للجدول. لم أرَ سجل الوارد ولا بطاقة المتحف.",
+            "fact_ids": [
+              "f_reviewer_saw_image"
+            ]
+          },
+          {
+            "line_id": "wl_claim",
+            "purpose": "reveal",
+            "text_ar": "رأيت الرقم نفسه في صفين لصينيتين متشابهتين، فخمّنت أن إحداهما نسخة مزورة.",
+            "claim_ids": [
+              "cl_reviewer_dup"
+            ]
+          },
+          {
+            "line_id": "wl_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أملك غير ما رأيته في الصورة."
+          },
+          {
+            "line_id": "wl_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "فلنعد إلى الجدول الذي رأيته."
+          },
+          {
+            "line_id": "wl_bye",
+            "purpose": "farewell",
+            "text_ar": "سأعيد النظر إن وصلتني سجلات أخرى."
+          }
+        ]
+      }
+    ],
+    "locations": [
+      {
+        "id": "loc_receiving",
+        "name_ar": "قاعة الاستلام",
+        "description_ar": "حيث تُفتح الشحنات وتُفحص قطعها."
+      },
+      {
+        "id": "loc_office",
+        "name_ar": "مكتب الجرد",
+        "description_ar": "حيث تُجمع الجداول والملفات."
+      },
+      {
+        "id": "loc_store",
+        "name_ar": "مخزن المتحف",
+        "description_ar": "حيث يُحفظ الصندوق وقطعه."
+      }
+    ],
+    "objects": [
+      {
+        "id": "obj_box",
+        "name_ar": "الصندوق M-24",
+        "description_ar": "صندوق الشحنة الذي ضم الصينيتين."
+      },
+      {
+        "id": "obj_tray19",
+        "name_ar": "القطعة A-19",
+        "description_ar": "صينية نحاسية مستديرة."
+      },
+      {
+        "id": "obj_tray20",
+        "name_ar": "القطعة A-20",
+        "description_ar": "صينية نحاسية مستديرة."
+      },
+      {
+        "id": "obj_datafile",
+        "name_ar": "ملف جمع بيانات الجرد",
+        "description_ar": "جدول مُصدَّر من وثيقتين."
+      }
+    ],
+    "organizations": [
+      {
+        "id": "org_museum",
+        "name_ar": "متحف الحِرَف",
+        "description_ar": "متحف محلي تلقّى إهداء من ورثة متبرعة."
+      },
+      {
+        "id": "org_heirs",
+        "name_ar": "ورثة المتبرعة",
+        "description_ar": "الجهة التي أرسلت الشحنة."
+      }
+    ]
+  },
+  "truth": {
+    "solution": {
+      "culprit_ids": [
+        "nuha"
+      ],
+      "summary_ar": "لا نسخة مزورة في الجرد. القطعتان صينيتان مختلفتان وصلتا في صندوق واحد، والرقم المكرر هو رقم الصندوق لا رقم قطعة. جمعت موظفة الاستلام الصفّين في عمود واحد غير مسمّى، فظهر التشابه كأنه تكرار قطعة.",
+      "key_fact_ids": [
+        "f_pair_in_one_box"
+      ]
+    },
+    "facts": [
+      {
+        "id": "f_two_rows_same_number",
+        "statement_ar": "في جدول جرد المتحف صفّان لصينيتين نحاسيتين متشابهتين تحمل خانة «الرقم» فيهما القيمة نفسها.",
+        "kind": "attribute",
+        "subject_ids": [
+          "obj_datafile",
+          "obj_tray19",
+          "obj_tray20"
+        ],
+        "spoiler_level": 0,
+        "time": {
+          "start_min": 4890,
+          "precision": "approx"
+        }
+      },
+      {
+        "id": "f_forgery_alleged",
+        "statement_ar": "قال مراجع خارجي إن تكرار الرقم يدل على أن إحدى القطعتين نسخة مزورة.",
+        "kind": "attribute",
+        "subject_ids": [
+          "walid",
+          "org_museum"
+        ],
+        "spoiler_level": 0,
+        "time": {
+          "start_min": 9180,
+          "precision": "approx"
+        }
+      },
+      {
+        "id": "f_numbering_design",
+        "statement_ar": "يعطي المتحف الحاوية رقماً بحرف M والقطعة رقماً بحرف A، ويجوز أن تضم الحاوية الواحدة أكثر من قطعة.",
+        "kind": "attribute",
+        "subject_ids": [
+          "salim",
+          "org_museum"
+        ],
+        "spoiler_level": 1
+      },
+      {
+        "id": "f_donor_file",
+        "statement_ar": "يضم ملف الإهداء جرداً كتبته المتبرعة قبل ترقيم المتحف.",
+        "kind": "state",
+        "subject_ids": [
+          "salim",
+          "org_heirs"
+        ],
+        "spoiler_level": 1
+      },
+      {
+        "id": "f_no_test",
+        "statement_ar": "لم يُجرَ أي فحص تقني للمعدن أو العمر على القطعتين.",
+        "kind": "absence",
+        "subject_ids": [
+          "salim",
+          "obj_tray19",
+          "obj_tray20"
+        ],
+        "spoiler_level": 0
+      },
+      {
+        "id": "f_packing_attached",
+        "statement_ar": "أرفقت موظفة الاستلام بالشحنة قائمة تعبئة أرسلها الورثة.",
+        "kind": "state",
+        "subject_ids": [
+          "nuha",
+          "org_heirs"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 3495,
+          "precision": "exact"
+        },
+        "location_id": "loc_receiving"
+      },
+      {
+        "id": "f_condition_sheet",
+        "statement_ar": "فحصت موظفة الاستلام القطعتين بالعين وملأت نموذج حالة لكل قطعة.",
+        "kind": "event",
+        "subject_ids": [
+          "nuha",
+          "obj_tray19",
+          "obj_tray20"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 3520,
+          "precision": "exact"
+        },
+        "location_id": "loc_receiving"
+      },
+      {
+        "id": "f_clerk_compiled",
+        "statement_ar": "جمعت موظفة الاستلام صفّي الجدول من سجل الوارد وبطاقة المتحف في ملف واحد.",
+        "kind": "event",
+        "subject_ids": [
+          "nuha",
+          "obj_datafile"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 4890,
+          "precision": "exact"
+        },
+        "location_id": "loc_office"
+      },
+      {
+        "id": "f_column_from_box",
+        "statement_ar": "نقلت الموظفة قيمة عمود «الرقم» من ملصق الصندوق، أي رقم الحاوية، دون أن تسمّي العمود.",
+        "kind": "event",
+        "subject_ids": [
+          "nuha",
+          "obj_datafile",
+          "obj_box"
+        ],
+        "spoiler_level": 2,
+        "time": {
+          "start_min": 4890,
+          "precision": "exact"
+        },
+        "location_id": "loc_office"
+      },
+      {
+        "id": "f_reviewer_saw_image",
+        "statement_ar": "لم يطّلع المراجع الخارجي إلا على صورة للجدول.",
+        "kind": "state",
+        "subject_ids": [
+          "walid",
+          "obj_datafile"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 8160,
+          "precision": "exact"
+        }
+      },
+      {
+        "id": "f_ledger_line",
+        "statement_ar": "سجل الوارد يسجّل أن الحاوية M-24 تضم القطعة A-19.",
+        "kind": "attribute",
+        "subject_ids": [
+          "obj_box",
+          "obj_tray19"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 3495,
+          "precision": "exact"
+        },
+        "location_id": "loc_receiving"
+      },
+      {
+        "id": "f_card_line",
+        "statement_ar": "بطاقة المتحف تسجّل أن الحاوية M-24 تضم القطعة A-20.",
+        "kind": "attribute",
+        "subject_ids": [
+          "obj_box",
+          "obj_tray20"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 3720,
+          "precision": "exact"
+        },
+        "location_id": "loc_office"
+      },
+      {
+        "id": "f_independent_pair",
+        "statement_ar": "جرد المتبرعة، المؤرخ قبل ترقيم المتحف، يذكر زوجاً من الصواني في إحداهما إصلاح قديم في الحافة.",
+        "kind": "relation",
+        "subject_ids": [
+          "org_heirs",
+          "obj_tray19",
+          "obj_tray20"
+        ],
+        "spoiler_level": 2,
+        "science_ko_refs": [
+          "KO-FC-04-026",
+          "KO-RS-05-004"
+        ]
+      },
+      {
+        "id": "f_column_is_box",
+        "statement_ar": "القيمة المتكررة في عمود «الرقم» تطابق رقم الحاوية في السجلين، لا رقمي القطعتين 19 و20.",
+        "kind": "relation",
+        "subject_ids": [
+          "obj_datafile",
+          "obj_box"
+        ],
+        "spoiler_level": 2,
+        "location_id": "loc_office",
+        "science_ko_refs": [
+          "KO-RS-06-004"
+        ]
+      },
+      {
+        "id": "f_pair_in_one_box",
+        "statement_ar": "القطعتان A-19 وA-20 قطعتان مختلفتان وصلتا معاً في الحاوية M-24 نفسها، وليستا قطعة واحدة مكررة.",
+        "kind": "relation",
+        "subject_ids": [
+          "obj_box",
+          "obj_tray19",
+          "obj_tray20"
+        ],
+        "spoiler_level": 3,
+        "time": {
+          "start_min": 3495,
+          "precision": "exact",
+          "end_min": 3720
+        },
+        "location_id": "loc_receiving",
+        "science_ko_refs": [
+          "KO-RS-06-004",
+          "KO-RS-05-004"
+        ]
+      }
+    ],
+    "claims": [
+      {
+        "id": "cl_reviewer_dup",
+        "statement_ar": "الرقم نفسه ظهر في قطعتين، فإحداهما نسخة مزورة.",
+        "kind": "honest_mistake",
+        "held_by": [
+          "walid"
+        ],
+        "true_fact_id": "f_column_is_box",
+        "contradicted_by_evidence_ids": [
+          "ev_policy",
+          "ev_condition"
+        ]
+      },
+      {
+        "id": "cl_clerk_column",
+        "statement_ar": "عمود «الرقم» في الجدول هو رقم القطعة.",
+        "kind": "honest_mistake",
+        "held_by": [
+          "nuha"
+        ],
+        "true_fact_id": "f_column_is_box",
+        "contradicted_by_evidence_ids": [
+          "ev_ledger",
+          "ev_card",
+          "ev_policy"
+        ]
+      }
+    ]
+  },
+  "timeline": [
+    {
+      "id": "te_pack",
+      "description_ar": "الورثة يعدّون قائمة التعبئة ويغلقون الصندوق.",
+      "time": {
+        "start_min": 660,
+        "precision": "exact"
+      },
+      "fact_ids": [
+        "f_independent_pair"
+      ],
+      "actor_ids": []
+    },
+    {
+      "id": "te_receive",
+      "description_ar": "استلام الشحنة وتسجيل بند القطعة A-19 في سجل الوارد.",
+      "time": {
+        "start_min": 3495,
+        "precision": "exact"
+      },
+      "location_id": "loc_receiving",
+      "actor_ids": [
+        "nuha"
+      ],
+      "fact_ids": [
+        "f_ledger_line",
+        "f_packing_attached"
+      ],
+      "motivated_by_ar": "إجراء الاستلام المعتاد عند وصول الشحنات"
+    },
+    {
+      "id": "te_condition",
+      "description_ar": "فحص القطعتين بالعين وملء نموذج حالة لكل قطعة.",
+      "time": {
+        "start_min": 3520,
+        "precision": "exact"
+      },
+      "location_id": "loc_receiving",
+      "actor_ids": [
+        "nuha"
+      ],
+      "fact_ids": [
+        "f_condition_sheet",
+        "f_pair_in_one_box"
+      ],
+      "motivated_by_ar": "توثيق الحالة قبل التخزين"
+    },
+    {
+      "id": "te_card",
+      "description_ar": "كتابة بطاقة المتحف للقطعة A-20.",
+      "time": {
+        "start_min": 3720,
+        "precision": "exact"
+      },
+      "location_id": "loc_office",
+      "actor_ids": [
+        "salim"
+      ],
+      "fact_ids": [
+        "f_card_line"
+      ],
+      "motivated_by_ar": "إكمال بطاقة كل قطعة جديدة"
+    },
+    {
+      "id": "te_compile",
+      "description_ar": "جمع الصفين في ملف واحد ونقل القيمة 24 إلى عمود «الرقم».",
+      "time": {
+        "start_min": 4890,
+        "precision": "exact"
+      },
+      "location_id": "loc_office",
+      "actor_ids": [
+        "nuha"
+      ],
+      "fact_ids": [
+        "f_clerk_compiled",
+        "f_column_from_box",
+        "f_two_rows_same_number"
+      ],
+      "motivated_by_ar": "تجهيز جرد نهاية الأسبوع"
+    },
+    {
+      "id": "te_review",
+      "description_ar": "وصول صورة الجدول إلى المراجع الخارجي.",
+      "time": {
+        "start_min": 8160,
+        "precision": "exact"
+      },
+      "actor_ids": [
+        "walid"
+      ],
+      "fact_ids": [
+        "f_reviewer_saw_image"
+      ],
+      "motivated_by_ar": "مراجعة جودة بيانات الجرد"
+    },
+    {
+      "id": "te_allege",
+      "description_ar": "المراجع يدوّن أن الرقم المتكرر يرجّح نسخة مزورة.",
+      "time": {
+        "start_min": 9180,
+        "precision": "approx"
+      },
+      "actor_ids": [
+        "walid"
+      ],
+      "fact_ids": [
+        "f_forgery_alleged"
+      ],
+      "motivated_by_ar": "الظن بأن التكرار يعني قطعة منسوخة"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_ledger",
+      "title_ar": "سجل الوارد (صفحة الاستلام)",
+      "kind": "documentary",
+      "content_ar": "سجل الوارد — متحف الحِرَف\nتاريخ الاستلام: 5 تشرين الثاني، 10:15\nالمورِّد: ورثة المتبرعة (شحنة واحدة)\nرقم الحاوية: M-24\nالبند المسجَّل: القطعة A-19 — صينية نحاسية مستديرة\nسلسلة العهدة: الورثة ← شركة النقل ← موظفة الاستلام ← مخزن المتحف",
+      "acquired_by_action_ids": [
+        "a_open_ledger"
+      ],
+      "supports_fact_ids": [
+        "f_ledger_line"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يسجّل ما استلمه المتحف عن القطعة A-19 ولا يصف بقية محتويات الحاوية؛ وسلسلة العهدة فيه تخص هذه الشحنة وحدها.",
+      "forensic_ko_ref": "KO-FC-04-026",
+      "location_id": "loc_receiving"
+    },
+    {
+      "id": "ev_card",
+      "title_ar": "بطاقة المتحف",
+      "kind": "documentary",
+      "content_ar": "بطاقة قطعة — متحف الحِرَف\nرقم الحاوية: M-24\nرقم القطعة: A-20\nالوصف: صينية نحاسية مستديرة\nتاريخ الكتابة: 5 تشرين الثاني، 14:00\nكتبها: أمين المقتنيات",
+      "acquired_by_action_ids": [
+        "a_open_card"
+      ],
+      "supports_fact_ids": [
+        "f_card_line"
+      ],
+      "reliability": "strong",
+      "limits_ar": "تسجّل القطعة A-20 وحاويتها، ولا تقول شيئاً عن القطعة A-19 ولا عن أنهما متكرّرتان أو متمايزتان.",
+      "location_id": "loc_office"
+    },
+    {
+      "id": "ev_datafile",
+      "title_ar": "ملف جمع بيانات الجرد",
+      "kind": "digital",
+      "content_ar": "جدول مُصدَّر لجرد نهاية الأسبوع:\nالأعمدة: الرقم | الوصف | المصدر\nالصف 1: 24 | صينية نحاسية مستديرة | سجل الوارد\nالصف 2: 24 | صينية نحاسية مستديرة | بطاقة المتحف\nملاحظة: لا يوجد تعريف لنوع القيمة في عمود «الرقم».",
+      "acquired_by_action_ids": [
+        "a_open_datafile"
+      ],
+      "supports_fact_ids": [
+        "f_two_rows_same_number"
+      ],
+      "reliability": "weak",
+      "limits_ar": "مستند مشتق جُمع من وثيقتين، ولا يعرّف عمود «الرقم»، فلا يصلح وحده دليلاً على أن القيمتين لقطعتين متطابقتين.",
+      "forensic_ko_ref": "KO-RS-06-004",
+      "location_id": "loc_office"
+    },
+    {
+      "id": "ev_policy",
+      "title_ar": "سياسة ترقيم المقتنيات",
+      "kind": "documentary",
+      "content_ar": "سياسة الترقيم — متحف الحِرَف:\n1. رقم الحاوية يبدأ بالحرف M ويُلصق على الصندوق عند الاستلام، ويتكرر لكل ما يضمه الصندوق.\n2. رقم القطعة يبدأ بالحرف A ويُمنح لكل قطعة على حدة، ولا يتكرر.\n3. قد يضم الصندوق الواحد أكثر من قطعة.\n4. يُسجَّل في سجل الوارد وفي بطاقة المتحف بند واحد لكل قطعة.",
+      "acquired_by_action_ids": [
+        "a_get_policy"
+      ],
+      "supports_fact_ids": [
+        "f_numbering_design"
+      ],
+      "reliability": "strong",
+      "limits_ar": "تصف القاعدة المعلنة لا ما جرى لقطعة بعينها، وتفترض أن العاملين اتبعوها.",
+      "location_id": "loc_office"
+    },
+    {
+      "id": "ev_reviewer_note",
+      "title_ar": "ملاحظة المراجع الخارجي",
+      "kind": "digital",
+      "content_ar": "ملاحظة مراجع خارجي كُتبت من صورة للجدول:\n«الرقم 24 تكرر في صفين لصينيتين متشابهتين. إذا كان هذا الرقم هو رقم الصندوق فالرقمان متطابقان، وهذا يرجّح وجود نسخة مزورة بالرقم نفسه.»",
+      "acquired_by_action_ids": [
+        "a_open_note"
+      ],
+      "supports_fact_ids": [
+        "f_forgery_alleged"
+      ],
+      "reliability": "weak",
+      "limits_ar": "استنتاج مبني على صورة جدول لا على السجلات الأصلية، ويفترض أن التطابق في رقم يعني تطابقاً في القطعة.",
+      "is_red_herring": true,
+      "location_id": "loc_office"
+    },
+    {
+      "id": "ev_packing",
+      "title_ar": "قائمة تعبئة الورثة",
+      "kind": "documentary",
+      "content_ar": "قائمة تعبئة الورثة (مرفقة بالشحنة):\nالتاريخ: 3 تشرين الثاني\nعدد الصناديق: صندوق واحد\nالمحتويات: صينيتان نحاسيتان مستديرتان من زوج واحد، ملفوفة كل منهما على حدة\nملاحظة الورثة: في إحداهما إصلاح قديم في الحافة، وفي الأخرى شرخ شعري في القاعدة.",
+      "acquired_by_action_ids": [
+        "a_get_packing"
+      ],
+      "supports_fact_ids": [
+        "f_packing_attached"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "وثيقة طرف خارجي تصف الشحنة قبل ترقيم المتحف ولا تذكر أرقامه، وتعتمد على دقة جرد الورثة.",
+      "forensic_ko_ref": "KO-RS-05-004",
+      "location_id": "loc_receiving"
+    },
+    {
+      "id": "ev_condition",
+      "title_ar": "نموذج فحص الحالة عند الاستلام",
+      "kind": "documentary",
+      "content_ar": "نموذج فحص الحالة عند الاستلام — 5 تشرين الثاني، 10:40\nالحاوية: M-24\nالقطعة A-19: صينية نحاسية مستديرة؛ الحافة مصلَّحة بطول ثلاثة سنتيمترات تقريباً؛ لا شرخ في القاعدة.\nالقطعة A-20: صينية نحاسية مستديرة؛ الحافة سليمة؛ شرخ شعري في القاعدة.\nأعدّته: موظفة الاستلام",
+      "acquired_by_action_ids": [
+        "a_get_condition"
+      ],
+      "supports_fact_ids": [
+        "f_condition_sheet"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يصف حالة ظاهرة بالعين، وليس فحصاً فنياً لعمر المعدن أو مصدره.",
+      "location_id": "loc_receiving"
+    },
+    {
+      "id": "ev_donor",
+      "title_ar": "سند الإهداء وجرد المتبرعة",
+      "kind": "documentary",
+      "content_ar": "سند الإهداء وجرد المتبرعة (مؤرَّخ 2019، قبل ترقيم المتحف):\n«صينيتان نحاسيتان من زوج واحد؛ في إحداهما إصلاح قديم في الحافة.»\nالتوقيع: المتبرعة",
+      "acquired_by_action_ids": [
+        "a_get_donor"
+      ],
+      "supports_fact_ids": [
+        "f_donor_file"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "وثيقة مستقلة عن المتحف تؤيد وجود زوج، لكنها وصف نصي لا يغني عن فحص فني.",
+      "forensic_ko_ref": "KO-RS-05-004",
+      "location_id": "loc_office"
+    },
+    {
+      "id": "ev_curator_stmt",
+      "title_ar": "إفادة سليم البزري (ملخص)",
+      "kind": "testimonial",
+      "content_ar": "ملخص إفادة سليم البزري، أمين المقتنيات:\n«الترقيم عندنا نوعان: للحاوية وللقطعة. ولم يصلني أي فحص تقني للمعدن أو العمر.»",
+      "acquired_by_action_ids": [
+        "a_note_curator"
+      ],
+      "supports_fact_ids": [
+        "f_no_test"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "إفادة من صمّم المنظومة؛ تبيّن القاعدة ولا تثبت ما جرى في هذه الشحنة.",
+      "location_id": "loc_office"
+    },
+    {
+      "id": "ev_clerk_stmt",
+      "title_ar": "إفادة نهى العطار (ملخص)",
+      "kind": "testimonial",
+      "content_ar": "ملخص إفادة نهى العطار، موظفة الاستلام:\n«جمعت صفّي الجدول من الوثيقتين الأصليتين في ملف واحد، وفهمت أن عمود الرقم هو رقم القطعة.»",
+      "acquired_by_action_ids": [
+        "a_note_clerk"
+      ],
+      "supports_fact_ids": [
+        "f_clerk_compiled"
+      ],
+      "reliability": "weak",
+      "limits_ar": "إفادة صاحبة الجدول عن فهمها هي، وتُقاس بالسجلين والسياسة.",
+      "location_id": "loc_office"
+    },
+    {
+      "id": "ev_reviewer_stmt",
+      "title_ar": "إفادة وليد الرفاعي (ملخص)",
+      "kind": "testimonial",
+      "content_ar": "ملخص إفادة وليد الرفاعي، المراجع الخارجي:\n«لم أرَ إلا صورة الجدول. رأيت الرقم نفسه في صفين فخمّنت وجود نسخة.»",
+      "acquired_by_action_ids": [
+        "a_note_reviewer"
+      ],
+      "supports_fact_ids": [
+        "f_reviewer_saw_image"
+      ],
+      "reliability": "weak",
+      "limits_ar": "تخمين مبني على صورة جدول؛ يصف ما رآه المراجع لا ما تقوله السجلات.",
+      "location_id": "loc_office"
+    }
+  ],
+  "evidence_graph": {
+    "inferences": [
+      {
+        "id": "i_path_a",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_ledger"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_card"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_policy"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_pair_in_one_box"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "السجلان يذكران الحاوية نفسها M-24 برقمي قطعة مختلفين، والسياسة تقول إن رقم الحاوية يتكرر ورقم القطعة لا يتكرر وإن الحاوية قد تضم أكثر من قطعة؛ فهما بندان لقطعتين لا بندان لقطعة.",
+        "skill_ko_refs": [
+          "KO-RS-06-004",
+          "KO-RS-05-004"
+        ]
+      },
+      {
+        "id": "i_path_b",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_packing"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_condition"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_pair_in_one_box"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "قائمة الورثة تذكر صينيتين في صندوق واحد بعلامتين مختلفتين، ونموذج الاستلام يسجّل لكل رقم قطعة العلامة التي تخصه داخل الحاوية؛ فالجسمان مختلفان.",
+        "skill_ko_refs": [
+          "KO-RS-05-004",
+          "KO-RS-06-001"
+        ]
+      },
+      {
+        "id": "i_column",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_datafile"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_pair_in_one_box"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_column_is_box"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "القيمة 24 تطابق رقم الحاوية في السجلين، أما رقما القطعتين فهما 19 و20؛ فالعمود الذي لا تعريف له يحمل رقم الحاوية.",
+        "skill_ko_refs": [
+          "KO-RS-06-004"
+        ]
+      },
+      {
+        "id": "i_provenance",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_donor"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_condition"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_independent_pair"
+        },
+        "relation": "establishes",
+        "strength": "suggestive",
+        "rule_ar": "وثيقة كُتبت قبل أي ترقيم تذكر زوجاً بإصلاح قديم في إحدى الحافتين، ونموذج الاستلام يسجّل الإصلاح نفسه في إحدى القطعتين؛ فالتوافق يأتي من مصدرين مستقلين عن الترقيم.",
+        "skill_ko_refs": [
+          "KO-RS-05-004"
+        ]
+      },
+      {
+        "id": "i_support_confusion",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_pair_in_one_box"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_confusion"
+        },
+        "relation": "supports",
+        "strength": "strong",
+        "rule_ar": "إذا كانت القطعتان مختلفتين في حاوية واحدة فأي رقم مكرر بينهما هو رقم الحاوية، ويكون التعارض من تسمية الحقول لا من القطع.",
+        "skill_ko_refs": [
+          "KO-RS-05-002"
+        ]
+      },
+      {
+        "id": "i_rule_fake",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_pair_in_one_box"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_fake"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "الاتهام قام على تكرار رقم قطعة؛ فإذا كان المتكرر رقم الحاوية وكانت القطعتان مختلفتين سقط ما يدعو إلى افتراض نسخة.",
+        "skill_ko_refs": [
+          "KO-RS-06-001"
+        ]
+      },
+      {
+        "id": "i_rule_swap",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_pair_in_one_box"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_swap"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "السجلان لا يتعارضان إذا ضمّت الحاوية قطعتين، فلا حاجة إلى استبدال لتفسير اختلاف رقمي القطعتين.",
+        "skill_ko_refs": [
+          "KO-RS-06-008"
+        ]
+      },
+      {
+        "id": "i_rule_typo",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_pair_in_one_box"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_typo"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "حين يصف كل سجل قطعة موجودة فعلاً، لا يعود أي منهما خطأ كتابياً يحتاج إلى تصحيح.",
+        "skill_ko_refs": [
+          "KO-RS-06-008"
+        ]
+      },
+      {
+        "id": "i_claim_reviewer",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_column_is_box"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_reviewer_dup"
+        },
+        "relation": "contradicts_claim",
+        "strength": "strong",
+        "rule_ar": "التطابق الذي رآه المراجع هو تطابق رقم الحاوية، وهو متوقع أن يتكرر لقطع الحاوية الواحدة.",
+        "skill_ko_refs": [
+          "KO-RS-05-014"
+        ]
+      },
+      {
+        "id": "i_claim_clerk",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_column_is_box"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_clerk_column"
+        },
+        "relation": "contradicts_claim",
+        "strength": "strong",
+        "rule_ar": "ما في العمود هو رقم الحاوية لا رقم القطعة، فالفهم الأول للعمود لا يطابق السجلين.",
+        "skill_ko_refs": [
+          "KO-RS-05-014"
+        ]
+      }
+    ]
+  },
+  "character_knowledge": [
+    {
+      "character_id": "salim",
+      "knows": [
+        {
+          "fact_id": "f_numbering_design",
+          "access": "professional",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_donor_file",
+          "access": "professional",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_no_test",
+          "access": "professional",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    },
+    {
+      "character_id": "nuha",
+      "knows": [
+        {
+          "fact_id": "f_packing_attached",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_condition_sheet",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_clerk_compiled",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [
+        {
+          "fact_id": "f_column_from_box",
+          "reveal_when": {
+            "presented": {
+              "evidence_id": "ev_datafile",
+              "to_character": "nuha"
+            }
+          },
+          "cover_claim_id": null,
+          "reveal_line_id": "nh_admit"
+        }
+      ],
+      "believes": [
+        {
+          "claim_id": "cl_clerk_column",
+          "stance": "sincere"
+        }
+      ]
+    },
+    {
+      "character_id": "walid",
+      "knows": [
+        {
+          "fact_id": "f_reviewer_saw_image",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": [
+        {
+          "claim_id": "cl_reviewer_dup",
+          "stance": "sincere"
+        }
+      ]
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "h_fake",
+      "statement_ar": "إحدى القطعتين نسخة مزورة من الأخرى، فهما تحملان الرقم نفسه.",
+      "is_true": false,
+      "plausibility_at_start": "high"
+    },
+    {
+      "id": "h_confusion",
+      "statement_ar": "الرقم المتكرر هو رقم الصندوق لا رقم القطعة، والقطعتان مختلفتان؛ والتعارض ناتج من اختلاط الحقول.",
+      "is_true": true,
+      "plausibility_at_start": "medium",
+      "suspect_id": "nuha"
+    },
+    {
+      "id": "h_swap",
+      "statement_ar": "حدث استبدال لإحدى القطعتين داخل المتحف بعد الاستلام.",
+      "is_true": false,
+      "plausibility_at_start": "medium"
+    },
+    {
+      "id": "h_typo",
+      "statement_ar": "أحد السجلين يحمل رقم قطعة خاطئاً بسبب خطأ كتابي.",
+      "is_true": false,
+      "plausibility_at_start": "low"
+    }
+  ],
+  "misdirection_plan": [
+    {
+      "id": "rh_dup",
+      "points_to_hypothesis_id": "h_fake",
+      "planted_via_ar": "الجدول يُظهر القيمة 24 في صفين بوصف متطابق، فيبدو كأن لقطعتين الرقم نفسه.",
+      "evidence_ids": [
+        "ev_datafile"
+      ],
+      "refuted_by_inference_ids": [
+        "i_column",
+        "i_rule_fake"
+      ],
+      "fairness_note_ar": "السجلان الأصليان يذكران 24 رقماً للحاوية، ويذكران 19 و20 للقطعتين؛ والجدول المشتق لا يسمّي العمود."
+    },
+    {
+      "id": "rh_conflict",
+      "points_to_hypothesis_id": "h_swap",
+      "planted_via_ar": "سجل الوارد يذكر القطعة A-19 وبطاقة المتحف تذكر القطعة A-20 للحاوية نفسها، فيبدو كأن إحداهما حلّت محل الأخرى.",
+      "evidence_ids": [
+        "ev_ledger",
+        "ev_card"
+      ],
+      "refuted_by_inference_ids": [
+        "i_path_a",
+        "i_rule_swap"
+      ],
+      "fairness_note_ar": "سياسة الترقيم تجيز أن تضم الحاوية قطعتين وتسجّل لكل قطعة بنداً، ونموذج الحالة يصف القطعتين معاً عند الاستلام."
+    },
+    {
+      "id": "rh_review",
+      "points_to_hypothesis_id": "h_fake",
+      "planted_via_ar": "مراجع خارجي يقول إن الرقمين متطابقان وإن هذا يرجّح نسخة مزورة.",
+      "evidence_ids": [
+        "ev_reviewer_note"
+      ],
+      "refuted_by_inference_ids": [
+        "i_claim_reviewer",
+        "i_rule_fake"
+      ],
+      "fairness_note_ar": "المراجع لم يطّلع إلا على صورة الجدول، ومقدمته الشرطية (إن كان الرقم رقم الصندوق) هي نفسها ما يفسّر التطابق دون تزوير."
+    }
+  ],
+  "learning_objectives": [
+    {
+      "id": "lo_source",
+      "statement_ar": "يفرّق بين السجل الأصلي والجدول المشتق والتخمين، ويسأل ماذا يعني كل حقل.",
+      "skill_ko_ref": "KO-RS-05-001",
+      "observable_behaviors_ar": [
+        "يصنّف الجدول المشتق نسخة معروضة",
+        "يصنّف الملاحظة والإفادات أقوالاً"
+      ],
+      "evidence_sources": [
+        "evidence_board"
+      ]
+    },
+    {
+      "id": "lo_hyp",
+      "statement_ar": "يوازن بين فرضيات متنافسة ويستبعد ما تنقضه الأدلة.",
+      "skill_ko_ref": "KO-RS-05-002",
+      "observable_behaviors_ar": [
+        "يضيف أكثر من فرضية",
+        "يستبعد فرضية بدليل مرفق"
+      ],
+      "evidence_sources": [
+        "hypothesis_ledger"
+      ]
+    },
+    {
+      "id": "lo_diag",
+      "statement_ar": "يفرّق بين تطابق قيمة وتطابق كيان، ويقدّر ما يثبته كل دليل.",
+      "skill_ko_ref": "KO-RS-06-001",
+      "observable_behaviors_ar": [
+        "يربط الدليل بالفرضية باتجاه صحيح",
+        "لا يعامل تكرار القيمة تكراراً للكيان"
+      ],
+      "evidence_sources": [
+        "evidence_board",
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_calib",
+      "statement_ar": "يصوغ ثقته بحدودها ويحدد ما قد يغيّر رأيه.",
+      "skill_ko_ref": "KO-RS-06-021",
+      "observable_behaviors_ar": [
+        "يختار ثقة معقولة",
+        "يذكر حدوداً",
+        "يحدد دليلاً مغيّراً للرأي"
+      ],
+      "evidence_sources": [
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_revise",
+      "statement_ar": "يراجع رأيه الأول حين يظهر دليل أفضل.",
+      "skill_ko_ref": "KO-RS-06-009",
+      "observable_behaviors_ar": [
+        "يغيّر فرضيته الرائدة بدليل"
+      ],
+      "evidence_sources": [
+        "hypothesis_ledger",
+        "action_log"
+      ]
+    }
+  ],
+  "mechanics": {
+    "time_budget_units": 30,
+    "actions": [
+      {
+        "id": "a_open_ledger",
+        "type": "examine",
+        "label_ar": "افتح صفحة الاستلام في سجل الوارد",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_ledger"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_receiving",
+        "telemetry_code": "OPEN_LEDGER"
+      },
+      {
+        "id": "a_open_note",
+        "type": "examine",
+        "label_ar": "اقرأ ملاحظة المراجع الخارجي",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_reviewer_note"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "walid",
+        "telemetry_code": "OPEN_NOTE"
+      },
+      {
+        "id": "a_open_card",
+        "type": "examine",
+        "label_ar": "اطلب بطاقة المتحف للصندوق M-24",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_card"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_office",
+        "telemetry_code": "OPEN_CARD"
+      },
+      {
+        "id": "a_open_datafile",
+        "type": "examine",
+        "label_ar": "افتح ملف جمع بيانات الجرد",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_datafile"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "obj_datafile",
+        "telemetry_code": "OPEN_DATAFILE"
+      },
+      {
+        "id": "a_int_salim",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة سليم",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "salim",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "salim",
+        "telemetry_code": "INT_SALIM"
+      },
+      {
+        "id": "a_int_nuha",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة نهى",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "nuha",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "nuha",
+        "telemetry_code": "INT_NUHA"
+      },
+      {
+        "id": "a_int_walid",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة وليد",
+        "precondition": {
+          "has_evidence": "ev_reviewer_note"
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "walid",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "walid",
+        "telemetry_code": "INT_WALID"
+      },
+      {
+        "id": "a_get_policy",
+        "type": "examine",
+        "label_ar": "اطلب سياسة ترقيم المقتنيات",
+        "precondition": {
+          "fact_unlocked": "f_numbering_design"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_policy"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "salim",
+        "telemetry_code": "GET_POLICY"
+      },
+      {
+        "id": "a_get_donor",
+        "type": "examine",
+        "label_ar": "اطلب ملف الإهداء وجرد المتبرعة",
+        "precondition": {
+          "fact_unlocked": "f_donor_file"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_donor"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "salim",
+        "telemetry_code": "GET_DONOR"
+      },
+      {
+        "id": "a_get_packing",
+        "type": "examine",
+        "label_ar": "اطلب قائمة تعبئة الورثة",
+        "precondition": {
+          "fact_unlocked": "f_packing_attached"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_packing"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_receiving",
+        "telemetry_code": "GET_PACKING"
+      },
+      {
+        "id": "a_get_condition",
+        "type": "examine",
+        "label_ar": "اطلب نموذج فحص الحالة عند الاستلام",
+        "precondition": {
+          "fact_unlocked": "f_condition_sheet"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_condition"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_receiving",
+        "telemetry_code": "GET_CONDITION"
+      },
+      {
+        "id": "a_note_curator",
+        "type": "examine",
+        "label_ar": "دوّن إفادة سليم",
+        "precondition": {
+          "fact_unlocked": "f_no_test"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_curator_stmt"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "salim",
+        "telemetry_code": "NOTE_CURATOR"
+      },
+      {
+        "id": "a_note_clerk",
+        "type": "examine",
+        "label_ar": "دوّن إفادة نهى",
+        "precondition": {
+          "fact_unlocked": "f_clerk_compiled"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_clerk_stmt"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "nuha",
+        "telemetry_code": "NOTE_CLERK"
+      },
+      {
+        "id": "a_note_reviewer",
+        "type": "examine",
+        "label_ar": "دوّن إفادة وليد",
+        "precondition": {
+          "fact_unlocked": "f_reviewer_saw_image"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_reviewer_stmt"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "walid",
+        "telemetry_code": "NOTE_REVIEWER"
+      },
+      {
+        "id": "p_datafile_nuha",
+        "type": "present_evidence",
+        "label_ar": "اعرض ملف جمع البيانات على نهى",
+        "precondition": {
+          "presented": {
+            "evidence_id": "ev_datafile",
+            "to_character": "nuha"
+          }
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "PRESENTED_DATAFILE"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "nuha",
+        "telemetry_code": "P_DATAFILE_NUHA"
+      },
+      {
+        "id": "a_hint",
+        "type": "request_hint",
+        "label_ar": "اطلب تلميحاً",
+        "precondition": {
+          "always": true
+        },
+        "effects": [],
+        "time_cost_units": 0,
+        "telemetry_code": "REQUEST_HINT"
+      },
+      {
+        "id": "a_accuse",
+        "type": "final_accusation",
+        "label_ar": "قدّم الاستنتاج النهائي",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "SUBMIT"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "FINAL_ACCUSATION"
+      },
+      {
+        "id": "ask_salim_f_numbering_design",
+        "type": "interview",
+        "label_ar": "[نموذج] salim يذكر f_numbering_design",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_numbering_design"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "salim",
+        "telemetry_code": "ASK_SALIM_F_NUMBERING_DESIGN"
+      },
+      {
+        "id": "ask_salim_f_donor_file",
+        "type": "interview",
+        "label_ar": "[نموذج] salim يذكر f_donor_file",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_donor_file"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "salim",
+        "telemetry_code": "ASK_SALIM_F_DONOR_FILE"
+      },
+      {
+        "id": "ask_salim_f_no_test",
+        "type": "interview",
+        "label_ar": "[نموذج] salim يذكر f_no_test",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_no_test"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "salim",
+        "telemetry_code": "ASK_SALIM_F_NO_TEST"
+      },
+      {
+        "id": "ask_nuha_f_packing_attached",
+        "type": "interview",
+        "label_ar": "[نموذج] nuha يذكر f_packing_attached",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_packing_attached"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "nuha",
+        "telemetry_code": "ASK_NUHA_F_PACKING_ATTACHED"
+      },
+      {
+        "id": "ask_nuha_f_condition_sheet",
+        "type": "interview",
+        "label_ar": "[نموذج] nuha يذكر f_condition_sheet",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_condition_sheet"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "nuha",
+        "telemetry_code": "ASK_NUHA_F_CONDITION_SHEET"
+      },
+      {
+        "id": "ask_nuha_f_clerk_compiled",
+        "type": "interview",
+        "label_ar": "[نموذج] nuha يذكر f_clerk_compiled",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_clerk_compiled"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "nuha",
+        "telemetry_code": "ASK_NUHA_F_CLERK_COMPILED"
+      },
+      {
+        "id": "ask_nuha_f_column_from_box",
+        "type": "interview",
+        "label_ar": "[نموذج] nuha يكشف f_column_from_box",
+        "precondition": {
+          "all": [
+            {
+              "always": true
+            },
+            {
+              "presented": {
+                "evidence_id": "ev_datafile",
+                "to_character": "nuha"
+              }
+            }
+          ]
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_column_from_box"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "nuha",
+        "telemetry_code": "ASK_NUHA_F_COLUMN_FROM_BOX"
+      },
+      {
+        "id": "ask_walid_f_reviewer_saw_image",
+        "type": "interview",
+        "label_ar": "[نموذج] walid يذكر f_reviewer_saw_image",
+        "precondition": {
+          "has_evidence": "ev_reviewer_note"
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_reviewer_saw_image"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "walid",
+        "telemetry_code": "ASK_WALID_F_REVIEWER_SAW_IMAGE"
+      }
+    ]
+  },
+  "state_machine": {
+    "id": "c005",
+    "initial": "briefing",
+    "type": "compound",
+    "states": {
+      "briefing": {
+        "description_ar": "الإحاطة",
+        "type": "atomic",
+        "on": {
+          "START": {
+            "target": "investigating"
+          }
+        }
+      },
+      "investigating": {
+        "description_ar": "التحقيق",
+        "type": "compound",
+        "initial": "gathering",
+        "states": {
+          "gathering": {
+            "type": "atomic",
+            "on": {
+              "OPEN_DEDUCTION": {
+                "target": "deducing"
+              }
+            }
+          },
+          "deducing": {
+            "type": "atomic",
+            "on": {
+              "BACK": {
+                "target": "gathering"
+              }
+            }
+          }
+        },
+        "on": {
+          "SUBMIT": {
+            "target": "review"
+          }
+        }
+      },
+      "review": {
+        "description_ar": "مراجعة",
+        "type": "atomic",
+        "on": {
+          "CLOSE": {
+            "target": "resolved"
+          }
+        }
+      },
+      "resolved": {
+        "description_ar": "إغلاق",
+        "type": "final"
+      }
+    }
+  },
+  "dialogue": {
+    "max_turns_per_interview": 10,
+    "llm_enabled": false,
+    "topics": [
+      {
+        "id": "t_numbering",
+        "label_ar": "نظام ترقيم الصناديق والقطع",
+        "example_questions_ar": [
+          "كيف يُرقَّم الصندوق والقطعة؟",
+          "هل يتكرر رقم القطعة؟"
+        ],
+        "fact_ids": [
+          "f_numbering_design"
+        ]
+      },
+      {
+        "id": "t_donor",
+        "label_ar": "ملف الإهداء وجرد المتبرعة",
+        "example_questions_ar": [
+          "هل يوجد جرد من المتبرعة؟",
+          "ماذا في ملف الإهداء؟"
+        ],
+        "fact_ids": [
+          "f_donor_file"
+        ]
+      },
+      {
+        "id": "t_test",
+        "label_ar": "الفحص التقني للقطعتين",
+        "example_questions_ar": [
+          "هل أُجري فحص تقني؟",
+          "هل فُحص المعدن؟"
+        ],
+        "fact_ids": [
+          "f_no_test"
+        ]
+      },
+      {
+        "id": "t_packing",
+        "label_ar": "قائمة التعبئة المرفقة بالشحنة",
+        "example_questions_ar": [
+          "ماذا أُرفق بالشحنة؟",
+          "هل وصلت قائمة تعبئة؟"
+        ],
+        "fact_ids": [
+          "f_packing_attached"
+        ]
+      },
+      {
+        "id": "t_condition",
+        "label_ar": "فحص الحالة عند الاستلام",
+        "example_questions_ar": [
+          "كيف فحصت القطعتين؟",
+          "ماذا دوّنت عن كل قطعة؟"
+        ],
+        "fact_ids": [
+          "f_condition_sheet"
+        ]
+      },
+      {
+        "id": "t_datafile",
+        "label_ar": "إعداد ملف جمع البيانات",
+        "example_questions_ar": [
+          "من أعدّ الجدول؟",
+          "ماذا يعني عمود الرقم؟",
+          "من أين نقلت القيمة؟"
+        ],
+        "fact_ids": [
+          "f_clerk_compiled",
+          "f_column_from_box"
+        ],
+        "claim_ids": [
+          "cl_clerk_column"
+        ]
+      },
+      {
+        "id": "t_review",
+        "label_ar": "ما اطّلع عليه المراجع",
+        "example_questions_ar": [
+          "ماذا رأيت من السجلات؟",
+          "على ماذا بنيت تنبيهك؟"
+        ],
+        "fact_ids": [
+          "f_reviewer_saw_image"
+        ],
+        "claim_ids": [
+          "cl_reviewer_dup"
+        ]
+      }
+    ]
+  },
+  "rubric": {
+    "reference_answer_ar": "الرقم الذي ظنه المراجع علامة على نسخة مزورة هو رقم الحاوية M-24، لا رقم قطعة. القطعتان A-19 وA-20 مختلفتان وصلتا في صندوق واحد. ويثبت ذلك مساران مستقلان: سجل الوارد وبطاقة المتحف مع سياسة الترقيم، ثم قائمة تعبئة الورثة مع نموذج فحص الاستلام الذي يسجّل علامة حالة مختلفة لكل قطعة. أما عمود «الرقم» في الجدول المشتق فنُقل إليه رقم الحاوية من غير تسمية. حدود الاستنتاج: لم يُجرَ فحص تقني للمعدن، ووثائق الورثة لا تُثبت العمر، ولا دليل على سوء نية في الجدول.",
+    "criteria": [
+      {
+        "id": "c_source",
+        "name_ar": "تمييز الادعاء من المستند الأصلي",
+        "objective_ids": [
+          "lo_source"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.2,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يصنّف"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "أخطأ في الأغلب"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "نصف صحيح"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمه صحيح"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كله صحيح"
+          }
+        ]
+      },
+      {
+        "id": "c_links",
+        "name_ar": "ربط الأدلة بفرضيتين فأكثر",
+        "objective_ids": [
+          "lo_diag"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.2,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لا روابط"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "قليلة"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "نصفها صحيح"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمها"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كلها دقيقة"
+          }
+        ]
+      },
+      {
+        "id": "c_elimination",
+        "name_ar": "تفسير التعارض واستبعاد الفرضيات الخاطئة",
+        "objective_ids": [
+          "lo_hyp"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يستبعد"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "استبعد خطأً"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "فرضية بدليل"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "فرضيتين"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كل الخاطئة"
+          }
+        ]
+      },
+      {
+        "id": "c_uncertainty",
+        "name_ar": "درجة عدم اليقين والمعلومات الناقصة",
+        "objective_ids": [
+          "lo_calib"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "ثقة مفرطة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "حدود قليلة"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "جزئية"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معقولة"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "معايَرة كاملة"
+          }
+        ]
+      },
+      {
+        "id": "c_revision",
+        "name_ar": "تعديل الرأي عند ظهور دليل أفضل",
+        "objective_ids": [
+          "lo_revise"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "بقي على فرضية مرفوضة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "لم يعلن فرضية"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "ثبت على فرضية سليمة"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "غيّر بدليل"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "غيّر بدليل ووثّق"
+          }
+        ]
+      },
+      {
+        "id": "c_justification",
+        "name_ar": "جودة الحجة المكتوبة",
+        "objective_ids": [
+          "lo_diag",
+          "lo_hyp"
+        ],
+        "scored_by": "human",
+        "weight": 0.25,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لا حجة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "ادعاء بلا سند"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "أدلة دون ربط"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "ربط الأدلة بالاستنتاج"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "ربط مع البدائل والحدود"
+          }
+        ]
+      }
+    ]
+  },
+  "hint_ladder": [
+    {
+      "id": "hg1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "أين ينتهي ما شاهده الشخص وتبدأ طريقته في تفسيره؟",
+      "trigger": {
+        "always": true
+      },
+      "assessment_weight": 0.02
+    },
+    {
+      "id": "hg2",
+      "level": 2,
+      "kind": "focus_area",
+      "text_ar": "ضع كل معلومة في جدول: مصدر أصلي أم نسخة أم تعليق؟ وماذا يسمّي كل مصدر الرقم الذي يذكره؟",
+      "trigger": {
+        "has_evidence": "ev_datafile"
+      },
+      "assessment_weight": 0.04
+    },
+    {
+      "id": "hg3",
+      "level": 3,
+      "kind": "pointer",
+      "text_ar": "راجع تحديداً الدليل الذي يوضح معنى الرقم في كل وثيقة: هل هو للحاوية أم للقطعة؟",
+      "trigger": {
+        "has_evidence": "ev_datafile"
+      },
+      "assessment_weight": 0.06
+    },
+    {
+      "id": "ha1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "ما الفرق بين رقم يدل على الصندوق ورقم يدل على ما بداخله؟",
+      "trigger": {
+        "has_evidence": "ev_ledger"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_path_a"
+    },
+    {
+      "id": "ha2",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "اسأل من صمّم الترقيم عن القاعدة المكتوبة، ثم قارن بها البندين المسجَّلين في الوارد وفي البطاقة.",
+      "trigger": {
+        "has_evidence": "ev_card"
+      },
+      "assessment_weight": 0.06,
+      "targets_inference_id": "i_path_a"
+    },
+    {
+      "id": "ha3",
+      "level": 3,
+      "kind": "partial_reveal",
+      "text_ar": "في السجلين حقلان بدل حقل واحد: انظر أيهما يتكرر وأيهما يختلف.",
+      "trigger": {
+        "has_evidence": "ev_card"
+      },
+      "assessment_weight": 0.1,
+      "targets_inference_id": "i_path_a"
+    },
+    {
+      "id": "hb1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "هل توجد وثيقة تصف الشحنة قبل أن يعطيها المتحف أي رقم؟",
+      "trigger": {
+        "has_evidence": "ev_datafile"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_path_b"
+    },
+    {
+      "id": "hb2",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "اسأل موظفة الاستلام عمّا أُرفق بالشحنة وعمّا دوّنته عن كل قطعة عند فتح الصندوق.",
+      "trigger": {
+        "has_evidence": "ev_datafile"
+      },
+      "assessment_weight": 0.06,
+      "targets_inference_id": "i_path_b"
+    },
+    {
+      "id": "hb3",
+      "level": 3,
+      "kind": "partial_reveal",
+      "text_ar": "قارن حالة كل قطعة كما سجلها نموذج الاستلام بما وصفه الورثة.",
+      "trigger": {
+        "has_evidence": "ev_packing"
+      },
+      "assessment_weight": 0.1,
+      "targets_inference_id": "i_path_b"
+    }
+  ],
+  "fairness_test": {
+    "requirements": {
+      "min_disjoint_proof_paths": 2,
+      "max_inference_depth": 3,
+      "all_red_herrings_refutable": true,
+      "culprit_uniquely_entailed": true,
+      "no_hidden_fact_dependency": true,
+      "max_required_actions": 30
+    },
+    "runs": []
+  },
+  "ending_explanation": {
+    "steps": [
+      {
+        "order": 1,
+        "text_ar": "سجل الوارد وبطاقة المتحف يذكران حاوية واحدة برقمي قطعة مختلفين، وسياسة الترقيم تجعل رقم الحاوية هو ما يتكرر ورقم القطعة هو ما لا يتكرر.",
+        "uses_evidence_ids": [
+          "ev_ledger",
+          "ev_card",
+          "ev_policy"
+        ],
+        "inference_id": "i_path_a"
+      },
+      {
+        "order": 2,
+        "text_ar": "مسار ثانٍ لا يستعمل أرقام المتحف: قائمة الورثة تذكر صينيتين في صندوق واحد بعلامتين، ونموذج الاستلام يربط كل رقم بعلامته.",
+        "uses_evidence_ids": [
+          "ev_packing",
+          "ev_condition"
+        ],
+        "inference_id": "i_path_b"
+      },
+      {
+        "order": 3,
+        "text_ar": "القيمة 24 في الجدول المشتق تطابق رقم الحاوية في السجلين، لا رقمي القطعتين، فالعمود الذي لم يُعرَّف حمل رقم الحاوية.",
+        "uses_evidence_ids": [
+          "ev_datafile",
+          "ev_ledger",
+          "ev_card"
+        ],
+        "inference_id": "i_column"
+      },
+      {
+        "order": 4,
+        "text_ar": "جرد المتبرعة المؤرخ قبل الترقيم يذكر زوجاً بإصلاح قديم في إحدى الحافتين، فيتفق مع نموذج الاستلام من مصدر مستقل.",
+        "uses_evidence_ids": [
+          "ev_donor",
+          "ev_condition"
+        ],
+        "inference_id": "i_provenance"
+      },
+      {
+        "order": 5,
+        "text_ar": "إذن لا نسخة مزورة ولا استبدال ولا خطأ كتابي: هي قطعتان في صندوق واحد، والتشابه في رقم الحاوية لا في رقم القطعة.",
+        "uses_evidence_ids": [
+          "ev_condition",
+          "ev_policy"
+        ],
+        "inference_id": "i_support_confusion"
+      }
+    ],
+    "alternative_paths_ar": [
+      "يكفي المسار الأول وحده (السجلان والسياسة) أو المسار الثاني وحده (قائمة الورثة ونموذج الاستلام)؛ والأقوى أن يتقاطعا."
+    ],
+    "what_evidence_could_not_show_ar": [
+      "لم يُجرَ أي فحص تقني للمعدن أو العمر؛ فعدم وجود قرينة على التزييف ليس برهاناً فنياً على الأصالة.",
+      "لا يثبت إلا إفادة الموظفة كيف انتقلت القيمة إلى الجدول، ولا سجل آخر يبيّن ذلك.",
+      "وثائق الورثة وصف نصي لا يثبت عمر القطعتين."
+    ],
+    "science_notes_ar": [
+      "تطابق قيمة لا يعني تطابق كيان: القيمة نفسها قد تسمّي حاوية في وثيقة وعنصراً في أخرى.",
+      "قبل مطابقة السجلات اسأل ما الذي يعرّفه كل حقل، ومن يملك قاموس البيانات.",
+      "سلسلة العهدة تتتبع حركة كل قطعة، لا رقم الصندوق وحده."
+    ]
+  },
+  "expert_review": [
+    {
+      "role": "narrative_editor",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "scientific_reviewer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "learning_designer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "age_appropriateness",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "cultural_reviewer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "legal_rights",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "safety",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    }
+  ]
+}

@@ -1,0 +1,156 @@
+{
+  "case_id": "c010_rain_clear_night",
+  "accepted_conclusions": {
+    "h_majed_hose": {
+      "grade": 1,
+      "note_ar": "استنتاج متسق مع الأدلة ويتطلب ذكر حدوده (النية لا تثبت)."
+    },
+    "h_ziad_sabotage": {
+      "grade": 0,
+      "note_ar": "قائم على قراءة ساعة المحطة دون تصحيح وعلى صفة السترة المشتركة."
+    },
+    "h_real_rain": {
+      "grade": 0,
+      "note_ar": "تنقضه نشرة المرصد والبلل المحصور بين الصنبور والمقياس."
+    },
+    "h_sensor_fault": {
+      "grade": 0,
+      "note_ar": "في القارورة ماء حقيقي، فالقراءة ليست عطلاً."
+    }
+  },
+  "confidence_band": {
+    "h_majed_hose": [
+      65,
+      90
+    ],
+    "h_ziad_sabotage": [
+      0,
+      15
+    ],
+    "h_real_rain": [
+      0,
+      15
+    ],
+    "h_sensor_fault": [
+      0,
+      15
+    ]
+  },
+  "source_key": {
+    "ev_station_log": "primary_record",
+    "ev_lab_clock_offset": "primary_record",
+    "ev_chat_alerts": "primary_record",
+    "ev_city_bulletin": "public_document",
+    "ev_collector_bottle": "primary_record",
+    "ev_roof_photo": "primary_record",
+    "ev_gate_log": "primary_record",
+    "ev_workshop_signout": "primary_record",
+    "ev_roof_door_log": "primary_record",
+    "ev_timer_device": "primary_record",
+    "ev_majed_notebook": "primary_record",
+    "ev_wadad_testimony": "claim",
+    "ev_ziad_recording": "primary_record"
+  },
+  "link_key": {
+    "h_majed_hose": {
+      "ev_roof_door_log": "supports",
+      "ev_gate_log": "supports",
+      "ev_timer_device": "supports",
+      "ev_majed_notebook": "supports",
+      "ev_roof_photo": "supports",
+      "ev_chat_alerts": "supports",
+      "ev_lab_clock_offset": "supports",
+      "ev_workshop_signout": "supports",
+      "ev_ziad_recording": "neutral",
+      "ev_ziad_demeanour": "neutral",
+      "ev_city_bulletin": "neutral",
+      "ev_collector_bottle": "neutral"
+    },
+    "h_ziad_sabotage": {
+      "ev_gate_log": "weakens",
+      "ev_workshop_signout": "weakens",
+      "ev_chat_alerts": "weakens",
+      "ev_lab_clock_offset": "weakens",
+      "ev_wadad_testimony": "neutral",
+      "ev_ziad_demeanour": "neutral"
+    },
+    "h_real_rain": {
+      "ev_city_bulletin": "weakens",
+      "ev_roof_photo": "weakens",
+      "ev_collector_bottle": "neutral"
+    },
+    "h_sensor_fault": {
+      "ev_collector_bottle": "weakens",
+      "ev_roof_photo": "weakens"
+    }
+  },
+  "required_limits": [
+    "l_intent",
+    "l_identity",
+    "l_clock_now"
+  ],
+  "valid_mind_changers": [
+    "m_other_user",
+    "m_clock_fixed",
+    "m_timer_other_run",
+    "m_other_water"
+  ],
+  "invalid_limits": [
+    "l_invalid_demeanor",
+    "l_invalid_hoodie",
+    "l_invalid_lie"
+  ],
+  "decisive_evidence": [
+    "ev_roof_door_log",
+    "ev_gate_log",
+    "ev_timer_device",
+    "ev_chat_alerts",
+    "ev_lab_clock_offset"
+  ],
+  "lab_requirement": null,
+  "timeline_requirement": [
+    {
+      "evidence_id": "ev_station_log",
+      "utc_minute": 56,
+      "tol": 3
+    },
+    {
+      "evidence_id": "ev_chat_alerts",
+      "utc_minute": 56,
+      "tol": 3
+    },
+    {
+      "evidence_id": "ev_roof_door_log",
+      "utc_minute": 52,
+      "tol": 3
+    },
+    {
+      "evidence_id": "ev_gate_log",
+      "utc_minute": 48,
+      "tol": 3
+    },
+    {
+      "evidence_id": "ev_workshop_signout",
+      "utc_minute": 47,
+      "tol": 3
+    }
+  ],
+  "refuted_hypotheses": [
+    "h_ziad_sabotage",
+    "h_real_rain",
+    "h_sensor_fault"
+  ],
+  "criteria_map": {
+    "c_source": "source_typing",
+    "c_conflict": "conflict_resolution",
+    "c_links": "hypothesis_links",
+    "c_uncertainty": "uncertainty",
+    "c_revision": "revision",
+    "c_elimination": "elimination",
+    "c_justification": "justification_human"
+  },
+  "caps": {
+    "no_citations_max": 45,
+    "no_conflict_resolution_max": 70
+  }
+}

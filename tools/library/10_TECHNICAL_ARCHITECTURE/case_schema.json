@@ -1,0 +1,625 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://athar.example/schemas/case/0.1.0/case.schema.json",
+  "title": "ATHAR Case Package (draft 0.1.0)",
+  "description": "Draft schema for one ATHAR mystery case. Separates author truth, character knowledge scopes, and player-discoverable evidence. All prose fields are Arabic-first (_ar); optional _en fields support later localization. DRAFT — for research/design review, not production.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "case_id", "case_version", "meta", "premise", "entities", "truth", "timeline", "evidence", "evidence_graph", "character_knowledge", "hypotheses", "learning_objectives", "mechanics", "state_machine", "rubric", "hint_ladder", "fairness_test", "ending_explanation", "expert_review"],
+  "properties": {
+    "schema_version": { "const": "0.1.0" },
+    "case_id": { "$ref": "#/$defs/id" },
+    "case_version": { "type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$" },
+
+    "meta": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["title_ar", "age_band", "locale", "estimated_minutes", "difficulty", "content_flags", "authors"],
+      "properties": {
+        "title_ar": { "type": "string", "minLength": 1 },
+        "title_en": { "type": "string" },
+        "age_band": { "enum": ["13-15", "16-18", "18+", "all"] },
+        "locale": { "type": "string", "description": "BCP-47, e.g. ar or ar-LB", "default": "ar" },
+        "dialogue_register": { "enum": ["msa", "msa_light_dialect", "dialect"], "default": "msa" },
+        "estimated_minutes": { "type": "integer", "minimum": 5 },
+        "difficulty": { "type": "integer", "minimum": 1, "maximum": 5 },
+        "content_flags": {
+          "type": "array",
+          "items": { "enum": ["no_violence", "non_graphic_crime", "theft", "fraud", "missing_person", "historical", "science_lab", "requires_age_review"] }
+        },
+        "authors": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+        "knowledge_object_refs": { "type": "array", "items": { "$ref": "#/$defs/ko_ref" }, "description": "KO ids (narrative patterns, forensic concepts, reasoning skills) this case relies on." }
+      }
+    },
+
+    "premise": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["hook_ar", "player_role_ar", "setting_ar", "public_fact_ids"],
+      "properties": {
+        "hook_ar": { "type": "string" },
+        "player_role_ar": { "type": "string" },
+        "setting_ar": { "type": "string" },
+        "public_fact_ids": { "type": "array", "items": { "$ref": "#/$defs/id" }, "description": "Facts known to the player at start (subset of truth.facts)." },
+        "assumed_general_knowledge_ar": { "type": "array", "items": { "type": "string" }, "description": "Everyday knowledge the solution may rely on without in-game evidence; checked by reviewers for age/culture fairness." }
+      }
+    },
+
+    "entities": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["characters", "locations", "objects"],
+      "properties": {
+        "characters": { "type": "array", "items": { "$ref": "#/$defs/character" }, "minItems": 1 },
+        "locations": { "type": "array", "items": { "$ref": "#/$defs/named_entity" } },
+        "objects": { "type": "array", "items": { "$ref": "#/$defs/named_entity" } },
+        "organizations": { "type": "array", "items": { "$ref": "#/$defs/named_entity" } }
+      }
+    },
+
+    "truth": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "AUTHOR LAYER. Canonical, consistent facts. Never sent wholesale to any LLM.",
+      "required": ["solution", "facts"],
+      "properties": {
+        "solution": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["culprit_ids", "summary_ar", "key_fact_ids"],
+          "properties": {
+            "culprit_ids": { "type": "array", "items": { "$ref": "#/$defs/id" }, "minItems": 1 },
+            "summary_ar": { "type": "string" },
+            "key_fact_ids": { "type": "array", "items": { "$ref": "#/$defs/id" }, "minItems": 1 }
+          }
+        },
+        "facts": { "type": "array", "items": { "$ref": "#/$defs/fact" }, "minItems": 1 },
+        "claims": { "type": "array", "items": { "$ref": "#/$defs/claim" }, "description": "Non-true statements characters may assert (lies, mistakes, rumours). Each must be contradicted by discoverable evidence or explicitly marked unresolved." }
+      }
+    },
+
+    "timeline": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/timeline_event" },
+      "minItems": 1
+    },
+
+    "evidence": {
+      "type": "array",
+      "description": "Evidence register. Evidence is an engine-owned game object; dialogue can never create evidence.",
+      "items": { "$ref": "#/$defs/evidence_item" },
+      "minItems": 1
+    },
+
+    "evidence_graph": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["inferences"],
+      "properties": {
+        "inferences": { "type": "array", "items": { "$ref": "#/$defs/inference" }, "minItems": 1 }
+      }
+    },
+
+    "character_knowledge": {
+      "type": "array",
+      "description": "CHARACTER LAYER. One scope per character. Anything not listed is unknown to the character.",
+      "items": { "$ref": "#/$defs/knowledge_scope" }
+    },
+
+    "hypotheses": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/hypothesis" },
+      "minItems": 2
+    },
+
+    "misdirection_plan": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/red_herring" }
+    },
+
+    "learning_objectives": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/learning_objective" },
+      "minItems": 1
+    },
+
+    "mechanics": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["actions"],
+      "properties": {
+        "time_budget_units": { "type": "integer", "minimum": 0, "description": "Optional in-fiction time budget; 0 = unlimited." },
+        "actions": { "type": "array", "items": { "$ref": "#/$defs/action" }, "minItems": 1 }
+      }
+    },
+
+    "state_machine": {
+      "type": "object",
+      "description": "Statechart in an XState-compatible JSON shape (phases, parallel threads). Guards reference evidence/facts via the guard DSL.",
+      "additionalProperties": false,
+      "required": ["id", "initial", "states"],
+      "properties": {
+        "id": { "type": "string" },
+        "initial": { "type": "string" },
+        "type": { "enum": ["compound", "parallel"] },
+        "states": { "type": "object", "additionalProperties": { "$ref": "#/$defs/sm_state" } }
+      }
+    },
+
+    "dialogue": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "max_turns_per_interview": { "type": "integer", "minimum": 1, "default": 20 },
+        "llm_enabled": { "type": "boolean", "default": false, "description": "Off by default: dialogue is pre-authored unless a case explicitly enables bounded LLM surface dialogue (reconciliation 2026-10-27)" },
+        "topics": { "type": "array", "items": { "$ref": "#/$defs/topic" } }
+      }
+    },
+
+    "rubric": { "$ref": "#/$defs/rubric" },
+
+    "hint_ladder": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/hint" },
+      "minItems": 1
+    },
+
+    "fairness_test": { "$ref": "#/$defs/fairness_test" },
+
+    "ending_explanation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["steps", "science_notes_ar"],
+      "properties": {
+        "steps": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["order", "text_ar", "uses_evidence_ids", "inference_id"],
+            "properties": {
+              "order": { "type": "integer", "minimum": 1 },
+              "text_ar": { "type": "string" },
+              "uses_evidence_ids": { "type": "array", "items": { "$ref": "#/$defs/id" } },
+              "inference_id": { "$ref": "#/$defs/id" }
+            }
+          }
+        },
+        "alternative_paths_ar": { "type": "array", "items": { "type": "string" } },
+        "what_evidence_could_not_show_ar": { "type": "array", "items": { "type": "string" } },
+        "science_notes_ar": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+
+    "expert_review": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/review" },
+      "description": "Sign-offs bound to a content hash. Publishing requires all mandatory roles approved on the current hash."
+    }
+  },
+
+  "$defs": {
+    "id": { "type": "string", "pattern": "^[a-z][a-z0-9_]{1,63}$" },
+    "ko_ref": { "type": "string", "pattern": "^KO-[A-Z]{2}-[0-9]{2}[A-Z]?-[0-9]{3}$", "description": "Library code may carry a one-letter wave-2 suffix (e.g., 02H, 07B, 09C, 15M) — widened 2026-10-27" },
+    "time": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "In-fiction time as minutes from case epoch (t=0) to keep arithmetic checkable; display strings are derived.",
+      "required": ["start_min"],
+      "properties": {
+        "start_min": { "type": "integer" },
+        "end_min": { "type": "integer" },
+        "precision": { "enum": ["exact", "approx", "unknown"], "default": "exact" }
+      }
+    },
+    "guard": {
+      "description": "Small declarative guard DSL evaluated by the deterministic engine. No code.",
+      "oneOf": [
+        { "type": "object", "additionalProperties": false, "required": ["has_evidence"], "properties": { "has_evidence": { "$ref": "#/$defs/id" } } },
+        { "type": "object", "additionalProperties": false, "required": ["fact_unlocked"], "properties": { "fact_unlocked": { "$ref": "#/$defs/id" } } },
+        { "type": "object", "additionalProperties": false, "required": ["presented"], "properties": { "presented": { "type": "object", "additionalProperties": false, "required": ["evidence_id", "to_character"], "properties": { "evidence_id": { "$ref": "#/$defs/id" }, "to_character": { "$ref": "#/$defs/id" } } } } },
+        { "type": "object", "additionalProperties": false, "required": ["in_state"], "properties": { "in_state": { "type": "string" } } },
+        { "type": "object", "additionalProperties": false, "required": ["trust_at_least"], "properties": { "trust_at_least": { "type": "object", "additionalProperties": false, "required": ["character_id", "level"], "properties": { "character_id": { "$ref": "#/$defs/id" }, "level": { "type": "integer", "minimum": 0, "maximum": 5 } } } } },
+        { "type": "object", "additionalProperties": false, "required": ["all"], "properties": { "all": { "type": "array", "items": { "$ref": "#/$defs/guard" }, "minItems": 1 } } },
+        { "type": "object", "additionalProperties": false, "required": ["any"], "properties": { "any": { "type": "array", "items": { "$ref": "#/$defs/guard" }, "minItems": 1 } } },
+        { "type": "object", "additionalProperties": false, "required": ["not"], "properties": { "not": { "$ref": "#/$defs/guard" } } },
+        { "type": "object", "additionalProperties": false, "required": ["always"], "properties": { "always": { "const": true } } }
+      ]
+    },
+    "named_entity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "name_ar"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "name_ar": { "type": "string" },
+        "name_en": { "type": "string" },
+        "aliases_ar": { "type": "array", "items": { "type": "string" }, "description": "Spelling variants (hamza, al-, nicknames) used by the closed-world entity checker." },
+        "description_ar": { "type": "string" }
+      }
+    },
+    "character": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "name_ar", "role", "persona_ar", "motives_ar"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "name_ar": { "type": "string" },
+        "aliases_ar": { "type": "array", "items": { "type": "string" } },
+        "role": { "enum": ["suspect", "witness", "victim", "expert", "assistant", "authority", "bystander"] },
+        "age_descriptor_ar": { "type": "string" },
+        "persona_ar": { "type": "string", "description": "Voice, temperament, speech style. No facts here — facts live in knowledge scopes." },
+        "motives_ar": { "type": "array", "items": { "type": "string" } },
+        "speech_constraints": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "register": { "enum": ["msa", "msa_light_dialect", "dialect"] },
+            "max_sentences_per_turn": { "type": "integer", "minimum": 1, "maximum": 8, "default": 3 },
+            "forbidden_topics_ar": { "type": "array", "items": { "type": "string" } }
+          }
+        },
+        "authored_lines": {
+          "type": "array",
+          "description": "Pre-written lines used as fallback or for key beats.",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["line_id", "purpose", "text_ar"],
+            "properties": {
+              "line_id": { "$ref": "#/$defs/id" },
+              "purpose": { "enum": ["greeting", "deflect_unknown", "deflect_offtopic", "refuse_secret", "reveal", "lie", "break_down", "farewell", "safety_exit"] },
+              "text_ar": { "type": "string" },
+              "fact_ids": { "type": "array", "items": { "$ref": "#/$defs/id" } },
+              "claim_ids": { "type": "array", "items": { "$ref": "#/$defs/id" } }
+            }
+          }
+        }
+      }
+    },
+    "fact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "statement_ar", "kind", "subject_ids", "spoiler_level"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "statement_ar": { "type": "string" },
+        "statement_en": { "type": "string" },
+        "kind": { "enum": ["event", "state", "attribute", "relation", "absence"] },
+        "subject_ids": { "type": "array", "items": { "$ref": "#/$defs/id" }, "minItems": 1 },
+        "time": { "$ref": "#/$defs/time" },
+        "location_id": { "$ref": "#/$defs/id" },
+        "spoiler_level": { "type": "integer", "minimum": 0, "maximum": 3, "description": "0 public, 1 minor, 2 major, 3 solution-critical." },
+        "science_ko_refs": { "type": "array", "items": { "$ref": "#/$defs/ko_ref" } }
+      }
+    },
+    "claim": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "statement_ar", "kind", "held_by", "contradicted_by_evidence_ids"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "statement_ar": { "type": "string" },
+        "kind": { "enum": ["lie", "honest_mistake", "rumour", "half_truth"] },
+        "held_by": { "type": "array", "items": { "$ref": "#/$defs/id" }, "minItems": 1 },
+        "true_fact_id": { "$ref": "#/$defs/id", "description": "The fact this claim distorts, if any." },
+        "contradicted_by_evidence_ids": { "type": "array", "items": { "$ref": "#/$defs/id" } },
+        "unresolved_by_design": { "type": "boolean", "default": false }
+      }
+    },
+    "timeline_event": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "description_ar", "time", "actor_ids", "fact_ids"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "description_ar": { "type": "string" },
+        "time": { "$ref": "#/$defs/time" },
+        "location_id": { "$ref": "#/$defs/id" },
+        "actor_ids": { "type": "array", "items": { "$ref": "#/$defs/id" } },
+        "witness_ids": { "type": "array", "items": { "$ref": "#/$defs/id" } },
+        "fact_ids": { "type": "array", "items": { "$ref": "#/$defs/id" } },
+        "motivated_by_ar": { "type": "string", "description": "Why the actor did this (intentionality check)." },
+        "caused_by_event_ids": { "type": "array", "items": { "$ref": "#/$defs/id" } }
+      }
+    },
+    "evidence_item": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "title_ar", "kind", "content_ar", "acquired_by_action_ids", "supports_fact_ids", "reliability", "limits_ar"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "title_ar": { "type": "string" },
+        "kind": { "enum": ["physical", "documentary", "testimonial", "digital", "lab_result", "observation"] },
+        "content_ar": { "type": "string", "description": "What the player sees. Must not state the inference — only the observation." },
+        "media": { "type": "array", "items": { "type": "object", "additionalProperties": false, "required": ["uri", "alt_ar"], "properties": { "uri": { "type": "string" }, "alt_ar": { "type": "string" }, "bytes": { "type": "integer" } } } },
+        "acquired_by_action_ids": { "type": "array", "items": { "$ref": "#/$defs/id" }, "minItems": 1 },
+        "location_id": { "$ref": "#/$defs/id" },
+        "supports_fact_ids": { "type": "array", "items": { "$ref": "#/$defs/id" } },
+        "contradicts_claim_ids": { "type": "array", "items": { "$ref": "#/$defs/id" } },
+        "reliability": { "enum": ["strong", "moderate", "weak"] },
+        "limits_ar": { "type": "string", "description": "What this evidence cannot show (scientific limits)." },
+        "is_red_herring": { "type": "boolean", "default": false },
+        "forensic_ko_ref": { "$ref": "#/$defs/ko_ref" }
+      }
+    },
+    "inference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "premises", "conclusion", "relation", "rule_ar", "skill_ko_refs"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "premises": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["ref_type", "ref_id"],
+            "properties": {
+              "ref_type": { "enum": ["evidence", "fact", "inference", "general_knowledge"] },
+              "ref_id": { "type": "string" }
+            }
+          }
+        },
+        "conclusion": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["ref_type", "ref_id"],
+          "properties": {
+            "ref_type": { "enum": ["fact", "hypothesis", "claim"] },
+            "ref_id": { "$ref": "#/$defs/id" }
+          }
+        },
+        "relation": { "enum": ["supports", "establishes", "refutes", "rules_out", "contradicts_claim"] },
+        "strength": { "enum": ["conclusive", "strong", "suggestive"], "default": "strong" },
+        "rule_ar": { "type": "string", "description": "The reasoning step in plain Arabic, reviewed by scientific reviewer." },
+        "skill_ko_refs": { "type": "array", "items": { "$ref": "#/$defs/ko_ref" } }
+      }
+    },
+    "knowledge_scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["character_id", "knows", "hides", "believes"],
+      "properties": {
+        "character_id": { "$ref": "#/$defs/id" },
+        "knows": {
+          "type": "array",
+          "description": "Facts the character knows and will share when asked.",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["fact_id", "access"],
+            "properties": {
+              "fact_id": { "$ref": "#/$defs/id" },
+              "access": { "enum": ["witnessed", "told_by", "inferred", "common_knowledge", "professional"] },
+              "source_character_id": { "$ref": "#/$defs/id" },
+              "certainty": { "enum": ["certain", "fairly_sure", "unsure"], "default": "certain" },
+              "available_from_state": { "type": "string" }
+            }
+          }
+        },
+        "hides": {
+          "type": "array",
+          "description": "Facts known but withheld until reveal_when is true.",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["fact_id", "reveal_when", "cover_claim_id"],
+            "properties": {
+              "fact_id": { "$ref": "#/$defs/id" },
+              "reveal_when": { "$ref": "#/$defs/guard" },
+              "cover_claim_id": { "oneOf": [{ "$ref": "#/$defs/id" }, { "type": "null" }], "description": "Authored lie/deflection used until reveal; null = refuses to talk." },
+              "reveal_line_id": { "$ref": "#/$defs/id" }
+            }
+          }
+        },
+        "believes": {
+          "type": "array",
+          "description": "Claims (false or partial) the character sincerely holds or asserts.",
+          "items": { "type": "object", "additionalProperties": false, "required": ["claim_id", "stance"], "properties": { "claim_id": { "$ref": "#/$defs/id" }, "stance": { "enum": ["sincere", "deliberate_lie"] } } }
+        },
+        "opinions_ar": { "type": "array", "items": { "type": "string" }, "description": "Non-factual attitudes the character may voice (likes, suspicions) — never treated as evidence." }
+      }
+    },
+    "hypothesis": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "statement_ar", "is_true", "plausibility_at_start"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "statement_ar": { "type": "string" },
+        "is_true": { "type": "boolean" },
+        "plausibility_at_start": { "enum": ["high", "medium", "low"] },
+        "suspect_id": { "$ref": "#/$defs/id" }
+      }
+    },
+    "red_herring": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "points_to_hypothesis_id", "planted_via_ar", "refuted_by_inference_ids", "fairness_note_ar"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "points_to_hypothesis_id": { "$ref": "#/$defs/id" },
+        "planted_via_ar": { "type": "string" },
+        "evidence_ids": { "type": "array", "items": { "$ref": "#/$defs/id" } },
+        "refuted_by_inference_ids": { "type": "array", "items": { "$ref": "#/$defs/id" }, "minItems": 1 },
+        "fairness_note_ar": { "type": "string" }
+      }
+    },
+    "learning_objective": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "statement_ar", "skill_ko_ref", "observable_behaviors_ar", "evidence_sources"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "statement_ar": { "type": "string" },
+        "skill_ko_ref": { "$ref": "#/$defs/ko_ref" },
+        "observable_behaviors_ar": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+        "evidence_sources": { "type": "array", "items": { "enum": ["action_log", "evidence_board", "timeline_task", "hypothesis_ledger", "final_justification", "hint_usage"] }, "minItems": 1 }
+      }
+    },
+    "action": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "type", "label_ar", "precondition", "effects"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "type": { "enum": ["examine", "search_location", "interview", "present_evidence", "request_lab_test", "compare_evidence", "place_on_timeline", "link_on_board", "submit_hypothesis", "rule_out", "final_accusation", "request_hint"] },
+        "label_ar": { "type": "string" },
+        "target_id": { "$ref": "#/$defs/id" },
+        "precondition": { "$ref": "#/$defs/guard" },
+        "effects": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["op"],
+            "properties": {
+              "op": { "enum": ["grant_evidence", "unlock_fact", "raise_trust", "lower_trust", "emit_event", "advance_time"] },
+              "ref_id": { "type": "string" },
+              "amount": { "type": "integer" }
+            }
+          }
+        },
+        "time_cost_units": { "type": "integer", "minimum": 0, "default": 0 },
+        "telemetry_code": { "type": "string", "pattern": "^[A-Z][A-Z0-9_]{2,40}$" }
+      }
+    },
+    "sm_state": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "description_ar": { "type": "string" },
+        "type": { "enum": ["atomic", "compound", "parallel", "final", "history"] },
+        "initial": { "type": "string" },
+        "states": { "type": "object", "additionalProperties": { "$ref": "#/$defs/sm_state" } },
+        "on": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["target"],
+            "properties": { "target": { "type": "string" }, "guard": { "$ref": "#/$defs/guard" } }
+          }
+        }
+      }
+    },
+    "topic": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "label_ar", "fact_ids"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "label_ar": { "type": "string" },
+        "example_questions_ar": { "type": "array", "items": { "type": "string" } },
+        "fact_ids": { "type": "array", "items": { "$ref": "#/$defs/id" } },
+        "claim_ids": { "type": "array", "items": { "$ref": "#/$defs/id" } }
+      }
+    },
+    "rubric": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["criteria", "reference_answer_ar"],
+      "properties": {
+        "reference_answer_ar": { "type": "string" },
+        "criteria": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["id", "name_ar", "scored_by", "levels", "objective_ids"],
+            "properties": {
+              "id": { "$ref": "#/$defs/id" },
+              "name_ar": { "type": "string" },
+              "objective_ids": { "type": "array", "items": { "$ref": "#/$defs/id" } },
+              "scored_by": { "enum": ["deterministic", "llm_judge", "llm_judge_with_human_moderation", "human"] },
+              "weight": { "type": "number", "minimum": 0 },
+              "levels": {
+                "type": "array",
+                "minItems": 2,
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": ["score", "descriptor_ar"],
+                  "properties": {
+                    "score": { "type": "integer", "minimum": 0, "maximum": 4 },
+                    "descriptor_ar": { "type": "string" },
+                    "anchor_examples_ar": { "type": "array", "items": { "type": "string" } }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "hint": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "level", "kind", "text_ar", "trigger"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "level": { "type": "integer", "minimum": 1, "maximum": 5 },
+        "kind": { "enum": ["metacognitive", "focus_area", "pointer", "partial_reveal", "full_reveal"] },
+        "text_ar": { "type": "string" },
+        "trigger": { "$ref": "#/$defs/guard" },
+        "targets_inference_id": { "$ref": "#/$defs/id" },
+        "assessment_weight": { "type": "number", "minimum": 0, "maximum": 1, "description": "How much this hint reduces credit for the targeted inference." }
+      }
+    },
+    "fairness_test": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["requirements", "runs"],
+      "properties": {
+        "requirements": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["min_disjoint_proof_paths", "max_inference_depth", "all_red_herrings_refutable", "culprit_uniquely_entailed", "no_hidden_fact_dependency"],
+          "properties": {
+            "min_disjoint_proof_paths": { "type": "integer", "minimum": 1, "default": 2 },
+            "max_inference_depth": { "type": "integer", "minimum": 1 },
+            "all_red_herrings_refutable": { "const": true },
+            "culprit_uniquely_entailed": { "const": true },
+            "no_hidden_fact_dependency": { "const": true },
+            "max_required_actions": { "type": "integer", "minimum": 1 }
+          }
+        },
+        "runs": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["run_at", "content_hash", "tool", "result"],
+            "properties": {
+              "run_at": { "type": "string", "format": "date-time" },
+              "content_hash": { "type": "string" },
+              "tool": { "type": "string", "description": "e.g. clingo 5.x + athar-encoder 0.1" },
+              "result": { "enum": ["pass", "fail", "error"] },
+              "proof_paths_found": { "type": "integer", "minimum": 0 },
+              "failures": { "type": "array", "items": { "type": "string" } },
+              "simulated_conversations": { "type": "integer", "minimum": 0 },
+              "critical_violations": { "type": "integer", "minimum": 0 }
+            }
+          }
+        }
+      }
+    },
+    "review": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["role", "reviewer", "status", "content_hash", "date"],
+      "properties": {
+        "role": { "enum": ["narrative_editor", "scientific_reviewer", "learning_designer", "age_appropriateness", "cultural_reviewer", "legal_rights", "safety"] },
+        "reviewer": { "type": "string" },
+        "status": { "enum": ["pending", "changes_requested", "approved"] },
+        "content_hash": { "type": "string" },
+        "date": { "type": "string", "format": "date" },
+        "notes_ar": { "type": "string" }
+      }
+    }
+  }
+}
