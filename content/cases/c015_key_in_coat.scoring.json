@@ -1,0 +1,139 @@
+{
+  "case_id": "c015_key_in_coat",
+  "accepted_conclusions": {
+    "h_ramez": {
+      "grade": 1,
+      "note_ar": "استنتاج متسق مع الأدلة ويتطلب ذكر حدوده."
+    },
+    "h_mansour": {
+      "grade": 0,
+      "note_ar": "يخلط بين مكان العثور على المفتاح ومن وضعه، ويعدّ ثلاثة بلاغات من مصدرين ثلاثة أدلة."
+    },
+    "h_karam": {
+      "grade": 0,
+      "note_ar": "سجل الشباك وقارئا البابين يضعانه بعيداً عن المكتب والغرفة."
+    },
+    "h_chance": {
+      "grade": 0,
+      "note_ar": "المفتاح خرج من اللوحة بعد تعليق المعطف، فلا بد أن حمله شخص."
+    }
+  },
+  "confidence_band": {
+    "h_ramez": [
+      60,
+      88
+    ],
+    "h_mansour": [
+      0,
+      15
+    ],
+    "h_karam": [
+      0,
+      15
+    ],
+    "h_chance": [
+      0,
+      15
+    ]
+  },
+  "source_key": {
+    "ev_incident_report": "public_document",
+    "ev_sightings": "redisplay",
+    "ev_promo_notice": "public_document",
+    "ev_staff_door_log": "primary_record",
+    "ev_office_door_log": "primary_record",
+    "ev_cabinet_log": "primary_record",
+    "ev_round_scans": "primary_record",
+    "ev_cleaning_sheet": "primary_record",
+    "ev_ticket_desk_log": "primary_record",
+    "ev_curator_statement": "claim",
+    "ev_guide_statement": "claim",
+    "ev_ramez_statement": "claim",
+    "ev_karam_statement": "claim",
+    "ev_mansour_statement": "claim"
+  },
+  "link_key": {
+    "h_ramez": {
+      "ev_cabinet_log": "supports",
+      "ev_office_door_log": "supports",
+      "ev_staff_door_log": "supports",
+      "ev_curator_statement": "supports",
+      "ev_ramez_statement": "supports",
+      "ev_incident_report": "neutral"
+    },
+    "h_mansour": {
+      "ev_incident_report": "supports",
+      "ev_sightings": "supports",
+      "ev_round_scans": "weakens",
+      "ev_cleaning_sheet": "weakens",
+      "ev_staff_door_log": "weakens",
+      "ev_guide_statement": "weakens",
+      "ev_promo_notice": "weakens"
+    },
+    "h_karam": {
+      "ev_ticket_desk_log": "weakens",
+      "ev_staff_door_log": "weakens",
+      "ev_office_door_log": "weakens"
+    },
+    "h_chance": {
+      "ev_cabinet_log": "weakens",
+      "ev_cleaning_sheet": "weakens"
+    }
+  },
+  "required_limits": [
+    "l_tailgate",
+    "l_intent"
+  ],
+  "valid_mind_changers": [
+    "m_badge_shared",
+    "m_log_edit",
+    "m_coat_moved"
+  ],
+  "invalid_limits": [
+    "l_invalid_found",
+    "l_invalid_motive"
+  ],
+  "decisive_evidence": [
+    "ev_staff_door_log",
+    "ev_office_door_log",
+    "ev_cabinet_log",
+    "ev_round_scans",
+    "ev_cleaning_sheet"
+  ],
+  "lab_requirement": null,
+  "timeline_requirement": [
+    {
+      "evidence_id": "ev_cleaning_sheet",
+      "utc_minute": 30,
+      "tol": 15
+    },
+    {
+      "evidence_id": "ev_cabinet_log",
+      "utc_minute": 118,
+      "tol": 10
+    },
+    {
+      "evidence_id": "ev_incident_report",
+      "utc_minute": 165,
+      "tol": 10
+    }
+  ],
+  "refuted_hypotheses": [
+    "h_mansour",
+    "h_karam",
+    "h_chance"
+  ],
+  "criteria_map": {
+    "c_source": "source_typing",
+    "c_conflict": "conflict_resolution",
+    "c_links": "hypothesis_links",
+    "c_uncertainty": "uncertainty",
+    "c_revision": "revision",
+    "c_elimination": "elimination",
+    "c_justification": "justification_human"
+  },
+  "caps": {
+    "no_citations_max": 45,
+    "no_conflict_resolution_max": 70
+  }
+}

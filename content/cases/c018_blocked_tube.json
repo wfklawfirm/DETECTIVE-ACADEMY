@@ -1,0 +1,2315 @@
+{
+  "schema_version": "0.1.0",
+  "case_id": "c018_blocked_tube",
+  "case_version": "0.1.0",
+  "meta": {
+    "title_ar": "الضوء في مرآة المرصد",
+    "title_en": "The Light in the Observatory Mirror",
+    "age_band": "13-15",
+    "locale": "ar",
+    "dialogue_register": "msa",
+    "estimated_minutes": 30,
+    "difficulty": 2,
+    "content_flags": [
+      "no_violence",
+      "science_lab"
+    ],
+    "authors": [
+      "فريق أثر التحريري (مسودة بمساعدة الذكاء الاصطناعي، لم تُراجَع بشرياً بعد)"
+    ],
+    "knowledge_object_refs": [
+      "KO-RS-06-008",
+      "KO-RS-06-015",
+      "KO-RS-06-005",
+      "KO-RS-06-006",
+      "KO-RS-06-021",
+      "KO-RS-06-009"
+    ]
+  },
+  "premise": {
+    "hook_ar": "مقطع منتشر يقول إن مرآة المرصد تُظهر ضوءاً لا يفسره أحد، ويظهر كلما صفت السماء.",
+    "player_role_ar": "أنت متدرب في مختبر «المنظار» وطُلب منك أن تقول بالتجربة والسجلات ما الذي تُظهره هذه المرآة فعلاً.",
+    "setting_ar": "مرصد الأطلال ومختبر المنظار، وتاريخ الأحداث قبل أسبوعين وبعدها. أوقات السجلات بتوقيت المرصد.",
+    "public_fact_ids": [
+      "f_clip_viral",
+      "f_yazan_filmed",
+      "f_posts_circulate"
+    ],
+    "assumed_general_knowledge_ar": [
+      "النجوم تنتقل في الصورة مع دوران الأرض",
+      "الضوء ينتقل في خط مستقيم ويمكن حجبه"
+    ]
+  },
+  "entities": {
+    "characters": [
+      {
+        "id": "yazan",
+        "name_ar": "يزن العبدالله",
+        "role": "witness",
+        "age_descriptor_ar": "طالب في الصف التاسع، يهوى الفلك ونشر مقاطعه",
+        "persona_ar": "متحمس وصادق، يصدّق ما يصوّره بعينيه، ويتراجع بلا حرج إذا أراه أحد تجربة مضبوطة.",
+        "motives_ar": [
+          "أن يكون مقطعه اكتشافاً",
+          "ألا يُتّهم بالتزييف"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "yz_greet",
+            "purpose": "greeting",
+            "text_ar": "هل رأيت المقطع؟ ضوء غريب في المرآة، وفي الليالي الصافية فقط!"
+          },
+          {
+            "line_id": "yz_claim",
+            "purpose": "reveal",
+            "text_ar": "صوّرت اللقطتين بهاتفي المثبّت على العينية، الأولى عند الثامنة والعاشرة والثانية عند العاشرة وأربعين دقيقة، والضوء في الموضع نفسه، بينما النجوم تتحرك.",
+            "fact_ids": [
+              "f_clip_frames"
+            ],
+            "claim_ids": [
+              "cl_yazan_mystery"
+            ]
+          },
+          {
+            "line_id": "yz_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف، لم أفكر بهذا."
+          },
+          {
+            "line_id": "yz_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن المقطع نفسه."
+          },
+          {
+            "line_id": "yz_bye",
+            "purpose": "farewell",
+            "text_ar": "إن ثبت أنني مخطئ فسأنشر التصحيح بنفسي."
+          }
+        ]
+      },
+      {
+        "id": "hisham",
+        "name_ar": "هشام القاسم",
+        "role": "witness",
+        "age_descriptor_ar": "مشرف الرصد الليلي في مرصد الأطلال",
+        "persona_ar": "هادئ ودقيق، يدوّن كل ليلة في سجله ما رآه، ويكره التخمين فوق السجل.",
+        "motives_ar": [
+          "أن يبقى سجل الرصد سليماً",
+          "ألا يُنسب إلى المرصد ما لم يثبت"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "hs_greet",
+            "purpose": "greeting",
+            "text_ar": "أهلاً. سجل الرصد أمامي، وما فيه هو ما أستطيع قوله."
+          },
+          {
+            "line_id": "hs_log",
+            "purpose": "reveal",
+            "text_ar": "أدوّن كل ليلة رصد في سجل، وفيه حالة السماء وما لاحظناه في الصورة.",
+            "fact_ids": [
+              "f_log_exists"
+            ]
+          },
+          {
+            "line_id": "hs_posts",
+            "purpose": "reveal",
+            "text_ar": "نشر المرصد بيانين: أحدهما عن إغلاق القبة في الليالي الغائمة، والآخر عن إعادة تلبيس المرآة.",
+            "fact_ids": [
+              "f_posts_exist"
+            ]
+          },
+          {
+            "line_id": "hs_map",
+            "purpose": "reveal",
+            "text_ar": "عندنا مخطط الموقع الذي يبين اتجاه المنافذ الجانبية للأنبوب ومباني المدينة المقابلة.",
+            "fact_ids": [
+              "f_map_exists"
+            ]
+          },
+          {
+            "line_id": "hs_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "ليس في سجلي شيء عن هذا."
+          },
+          {
+            "line_id": "hs_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن الرصد وسجلاته."
+          },
+          {
+            "line_id": "hs_bye",
+            "purpose": "farewell",
+            "text_ar": "السجل يتكلم قبلي."
+          }
+        ]
+      },
+      {
+        "id": "lina",
+        "name_ar": "لينا الحاج",
+        "role": "expert",
+        "age_descriptor_ar": "فنية في مختبر «المنظار» للمحاكاة",
+        "persona_ar": "صبورة وتحب أن تغيّر شيئاً واحداً في كل مرة، وتقول دائماً إن المحاكاة تنبّه ولا تحكم.",
+        "motives_ar": [
+          "أن تُجرى التجربة بعامل واحد متغيّر",
+          "ألا يُبالغ في ما تثبته المحاكاة"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "ln_greet",
+            "purpose": "greeting",
+            "text_ar": "تفضّل إلى المنظار. عندنا نموذج مصغّر للمرصد."
+          },
+          {
+            "line_id": "ln_sim",
+            "purpose": "reveal",
+            "text_ar": "يمكنني تشغيل النموذج: أنبوب ومرآة ومنفذان جانبيان، ومصدر ضوء على سكة، وأكرر كل حالة مرتين على الأقل.",
+            "fact_ids": [
+              "f_sim_available"
+            ]
+          },
+          {
+            "line_id": "ln_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "المحاكاة لا تجيب عن هذا."
+          },
+          {
+            "line_id": "ln_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن النموذج وكيف يُشغَّل."
+          },
+          {
+            "line_id": "ln_bye",
+            "purpose": "farewell",
+            "text_ar": "غيّر عاملاً واحداً ثم كرّر."
+          }
+        ]
+      },
+      {
+        "id": "jamil",
+        "name_ar": "جميل الراشد",
+        "role": "suspect",
+        "age_descriptor_ar": "مدير مطعم «الشرفة» قرب المرصد",
+        "persona_ar": "ودود ومشغول، يخاف أن يُلام على إزعاج الجيران، ويظن أن إضاءة مطعمه لا تصل بعيداً.",
+        "motives_ar": [
+          "ألا يُنسب إلى مطعمه ضرر",
+          "أن يعرف الحقيقة إن كانت إضاءته السبب"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "jm_greet",
+            "purpose": "greeting",
+            "text_ar": "أهلاً. إن كنت تسأل عن إضاءة الواجهة فقد ركبناها لتجذب الزبائن، لا لتزعج أحداً."
+          },
+          {
+            "line_id": "jm_claim",
+            "purpose": "reveal",
+            "text_ar": "مطعمي بعيد، فلا أظن أن ضوءه يصل إلى المرصد.",
+            "claim_ids": [
+              "cl_jamil_far"
+            ]
+          },
+          {
+            "line_id": "jm_refuse",
+            "purpose": "refuse_secret",
+            "text_ar": "لا أريد الحديث عن أوراق الواجهة."
+          },
+          {
+            "line_id": "jm_permit",
+            "purpose": "reveal",
+            "text_ar": "نعم... ركّبنا واجهة زجاجية مضاءة قبل خمسة عشر يوماً، وتعمل بمؤقت من السابعة وخمسين دقيقة مساءً حتى الحادية عشرة وربع. ورخصة التركيب عندي.",
+            "fact_ids": [
+              "f_permit_exists"
+            ]
+          },
+          {
+            "line_id": "jm_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف."
+          },
+          {
+            "line_id": "jm_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن المطعم وإضاءته."
+          },
+          {
+            "line_id": "jm_bye",
+            "purpose": "farewell",
+            "text_ar": "إن كان ضوئي السبب فسأعدّله."
+          }
+        ]
+      }
+    ],
+    "locations": [
+      {
+        "id": "loc_obs",
+        "name_ar": "مرصد الأطلال",
+        "description_ar": "القبة والمرآة وسجل الرصد."
+      },
+      {
+        "id": "loc_lab",
+        "name_ar": "مختبر المنظار",
+        "description_ar": "نموذج المحاكاة والتجارب المكررة."
+      },
+      {
+        "id": "loc_resto",
+        "name_ar": "مطعم الشرفة",
+        "description_ar": "مطعم جديد الواجهة في الجهة الغربية من المدينة."
+      },
+      {
+        "id": "loc_web",
+        "name_ar": "منصة المقاطع",
+        "description_ar": "حيث نُشر المقطع وانتشر."
+      }
+    ],
+    "objects": [
+      {
+        "id": "obj_clip",
+        "name_ar": "المقطع المنتشر",
+        "description_ar": "مقطع قصير يُظهر بقعة ضوء في صورة مرآة المرصد."
+      },
+      {
+        "id": "obj_mirror",
+        "name_ar": "مرآة المرصد",
+        "description_ar": "المرآة الكبيرة في أنبوب المقراب."
+      }
+    ],
+    "organizations": [
+      {
+        "id": "org_obs",
+        "name_ar": "مرصد الأطلال",
+        "description_ar": "مرصد خيالي يفتح للجمهور ليالي محددة."
+      }
+    ]
+  },
+  "truth": {
+    "solution": {
+      "culprit_ids": [
+        "jamil"
+      ],
+      "summary_ar": "لا ضوء غامضاً. أضاءت واجهة جديدة في مطعم مجاور زجاجها كل مساء، فانعكس شعاعها في المنفذ الجانبي للأنبوب وصنع بقعة ثابتة في الصورة. لم يقصد مدير المطعم شيئاً من ذلك، وظلت منشورات المرصد صحيحة لكنها لم تكن تفسيراً.",
+      "key_fact_ids": [
+        "f_terrestrial_source",
+        "f_source_is_facade"
+      ]
+    },
+    "facts": [
+      {
+        "id": "f_clip_viral",
+        "statement_ar": "انتشر مقطع يزعم أن مرآة المرصد تُظهر «ضوءاً غامضاً» في الليالي الصافية.",
+        "kind": "event",
+        "subject_ids": [
+          "obj_clip",
+          "obj_mirror"
+        ],
+        "spoiler_level": 0
+      },
+      {
+        "id": "f_yazan_filmed",
+        "statement_ar": "صوّر يزن المقطع بهاتف مثبّت على عينية المقراب ونشره.",
+        "kind": "event",
+        "subject_ids": [
+          "yazan",
+          "obj_clip"
+        ],
+        "spoiler_level": 0
+      },
+      {
+        "id": "f_posts_circulate",
+        "statement_ar": "تتداول المنصة منشورين عن المرصد: أحدهما عن إغلاق القبة في الليالي الغائمة والآخر عن إعادة تلبيس المرآة.",
+        "kind": "state",
+        "subject_ids": [
+          "org_obs"
+        ],
+        "spoiler_level": 0
+      },
+      {
+        "id": "f_clip_frames",
+        "statement_ar": "اللقطتان 20:10 و22:40 تُظهران بقعة الضوء في الموضع نفسه من الصورة بينما تنتقل النجوم عبرها.",
+        "kind": "event",
+        "subject_ids": [
+          "yazan",
+          "obj_clip"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 130,
+          "precision": "exact",
+          "end_min": 280
+        },
+        "location_id": "loc_web"
+      },
+      {
+        "id": "f_log_exists",
+        "statement_ar": "للمرصد سجل رصد ليلي يدوّن حالة السماء وما لوحظ في الصورة.",
+        "kind": "state",
+        "subject_ids": [
+          "hisham",
+          "loc_obs"
+        ],
+        "spoiler_level": 1
+      },
+      {
+        "id": "f_posts_exist",
+        "statement_ar": "نشر المرصد بيانين رسميين يمكن الرجوع إليهما.",
+        "kind": "state",
+        "subject_ids": [
+          "org_obs"
+        ],
+        "spoiler_level": 1
+      },
+      {
+        "id": "f_map_exists",
+        "statement_ar": "للمرصد مخطط موقع يبيّن اتجاهات المنفذين الجانبيين وما يقابلهما من مبانٍ.",
+        "kind": "state",
+        "subject_ids": [
+          "loc_obs"
+        ],
+        "spoiler_level": 1
+      },
+      {
+        "id": "f_sim_available",
+        "statement_ar": "في مختبر المنظار نموذج محاكاة مصغّر يتيح تغيير عامل واحد وتكرار كل حالة.",
+        "kind": "state",
+        "subject_ids": [
+          "lina",
+          "loc_lab"
+        ],
+        "spoiler_level": 1
+      },
+      {
+        "id": "f_permit_exists",
+        "statement_ar": "لدى مدير المطعم رخصة تركيب واجهته المضاءة.",
+        "kind": "state",
+        "subject_ids": [
+          "jamil",
+          "loc_resto"
+        ],
+        "spoiler_level": 1
+      },
+      {
+        "id": "f_cloudy_closed",
+        "statement_ar": "تُغلق القبة في الليالي الغائمة فلا يسجَّل فيها رصد، فلا تُحصى ليلة غائمة بين ليالي ظهور الضوء.",
+        "kind": "relation",
+        "subject_ids": [
+          "org_obs",
+          "obj_clip"
+        ],
+        "spoiler_level": 1
+      },
+      {
+        "id": "f_recoat_before",
+        "statement_ar": "أُعيد تلبيس المرآة قبل ستة أسابيع، ومرت اثنتان وعشرون ليلة رصد صافية بعدها دون أي بقعة ضوء.",
+        "kind": "relation",
+        "subject_ids": [
+          "obj_mirror",
+          "hisham"
+        ],
+        "spoiler_level": 2,
+        "location_id": "loc_obs"
+      },
+      {
+        "id": "f_lights_installed",
+        "statement_ar": "ركّب المطعم واجهة زجاجية مضاءة قبل خمسة عشر يوماً، وتُضاء من 19:50 إلى 23:15 كل ليلة.",
+        "kind": "state",
+        "subject_ids": [
+          "jamil",
+          "loc_resto"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 110,
+          "precision": "exact",
+          "end_min": 315
+        },
+        "location_id": "loc_resto"
+      },
+      {
+        "id": "f_terrestrial_source",
+        "statement_ar": "مصدر الضوء أرضي يدخل من المنفذ الجانبي المواجه للمدينة، لا من السماء ولا من عيب في المرآة.",
+        "kind": "relation",
+        "subject_ids": [
+          "obj_clip",
+          "obj_mirror"
+        ],
+        "spoiler_level": 3,
+        "science_ko_refs": [
+          "KO-RS-06-008",
+          "KO-RS-06-015"
+        ]
+      },
+      {
+        "id": "f_source_is_facade",
+        "statement_ar": "مصدر البقعة هو انعكاس واجهة المطعم الزجاجية المضاءة حديثاً.",
+        "kind": "relation",
+        "subject_ids": [
+          "obj_clip",
+          "jamil",
+          "loc_resto"
+        ],
+        "spoiler_level": 3,
+        "time": {
+          "start_min": 130,
+          "precision": "exact",
+          "end_min": 315
+        },
+        "location_id": "loc_resto",
+        "science_ko_refs": [
+          "KO-RS-06-015",
+          "KO-RS-06-005"
+        ]
+      }
+    ],
+    "claims": [
+      {
+        "id": "cl_yazan_mystery",
+        "statement_ar": "الضوء يظهر في الليالي الصافية وحدها، فلا تفسير أرضياً له.",
+        "kind": "honest_mistake",
+        "held_by": [
+          "yazan"
+        ],
+        "true_fact_id": "f_cloudy_closed",
+        "contradicted_by_evidence_ids": [
+          "ev_post_cloudy",
+          "ev_obs_log",
+          "ev_run_move"
+        ]
+      },
+      {
+        "id": "cl_jamil_far",
+        "statement_ar": "مطعمي بعيد، فلا يصل ضوء واجهته إلى المرصد.",
+        "kind": "honest_mistake",
+        "held_by": [
+          "jamil"
+        ],
+        "true_fact_id": "f_source_is_facade",
+        "contradicted_by_evidence_ids": [
+          "ev_site_map",
+          "ev_run_baseline"
+        ]
+      }
+    ]
+  },
+  "timeline": [
+    {
+      "id": "te_lights_on",
+      "description_ar": "مؤقت الواجهة يضيء زجاج المطعم.",
+      "time": {
+        "start_min": 110,
+        "precision": "exact"
+      },
+      "location_id": "loc_resto",
+      "actor_ids": [
+        "jamil"
+      ],
+      "fact_ids": [
+        "f_lights_installed"
+      ],
+      "motivated_by_ar": "ضبط المؤقت ليجذب الزبائن مساءً"
+    },
+    {
+      "id": "te_spot_on",
+      "description_ar": "اللقطة الأولى في المقطع تُظهر البقعة.",
+      "time": {
+        "start_min": 130,
+        "precision": "exact"
+      },
+      "location_id": "loc_obs",
+      "actor_ids": [
+        "yazan"
+      ],
+      "fact_ids": [
+        "f_clip_frames"
+      ],
+      "motivated_by_ar": "صوّر الصورة عبر العينية في ليلة صافية"
+    },
+    {
+      "id": "te_spot_late",
+      "description_ar": "اللقطة الثانية تُظهر البقعة في الموضع نفسه والنجوم تحرّكت.",
+      "time": {
+        "start_min": 280,
+        "precision": "exact"
+      },
+      "location_id": "loc_obs",
+      "actor_ids": [
+        "yazan"
+      ],
+      "fact_ids": [
+        "f_clip_frames"
+      ],
+      "motivated_by_ar": "أكمل التصوير ليرى إن كان الضوء يتحرك"
+    },
+    {
+      "id": "te_lights_off",
+      "description_ar": "يطفئ المؤقت واجهة المطعم عند الإغلاق.",
+      "time": {
+        "start_min": 315,
+        "precision": "exact"
+      },
+      "location_id": "loc_resto",
+      "actor_ids": [
+        "jamil"
+      ],
+      "fact_ids": [
+        "f_lights_installed"
+      ],
+      "motivated_by_ar": "إغلاق المطعم آخر الليل"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_clip",
+      "title_ar": "المقطع المنتشر عن مرآة المرصد",
+      "kind": "digital",
+      "content_ar": "مقطع مدته 41 ثانية، التعليق: «ضوء غامض يظهر في مرآة المرصد في الليالي الصافية!»\nاللقطة الأولى (20:10): بقعة ضوء بيضاء في الربع السفلي الأيسر من الصورة.\nاللقطة الثانية (22:40): البقعة في الموضع نفسه، وقد انتقلت النجوم عن مواضعها.\nلا يذكر المقطع تاريخ التصوير ولا أي ليلة أخرى.",
+      "acquired_by_action_ids": [
+        "a_get_clip"
+      ],
+      "supports_fact_ids": [
+        "f_clip_frames"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "يعرض ما التقطته كاميرا واحدة في ليلة واحدة؛ العنوان استنتاج صاحب المقطع لا وصف للصورة.",
+      "is_red_herring": true,
+      "location_id": "loc_web"
+    },
+    {
+      "id": "ev_obs_log",
+      "title_ar": "سجل الرصد الليلي للمرصد",
+      "kind": "documentary",
+      "content_ar": "مرصد الأطلال — سجل الرصد (اختصار)\nقبل 15 يوماً وما سبقها: 22 ليلة رصد صافية، لا بقعة ضوء في أي منها.\nمنذ الليلة التالية لقبل 15 يوماً: 9 ليالٍ صافية رُصدت، وفي كل منها بقعة ضوء في الموضع نفسه من الصورة (بكسل 412 × 880)، تظهر نحو 20:10 وتختفي نحو 23:15.\n5 ليالٍ غائمة: القبة مغلقة، لا رصد.\nمواضع النجوم في الصورة تنتقل من ليلة إلى أخرى ومن ساعة إلى أخرى، أما البقعة فلا تنتقل.\nالبقعة ظهرت في كاميرا المرصد الرسمية وفي هاتف زائر ثانٍ، لا في هاتف واحد فقط.",
+      "acquired_by_action_ids": [
+        "a_get_log"
+      ],
+      "supports_fact_ids": [
+        "f_clip_frames",
+        "f_recoat_before",
+        "f_cloudy_closed"
+      ],
+      "reliability": "strong",
+      "limits_ar": "سجل يدوي لمشرف واحد؛ يبيّن متى ظهرت البقعة ولا يبيّن مصدرها، ويكتب «صافية» بتقدير الراصد.",
+      "forensic_ko_ref": "KO-RS-06-005",
+      "location_id": "loc_obs"
+    },
+    {
+      "id": "ev_post_cloudy",
+      "title_ar": "بيان المرصد: القبة مغلقة في الليالي الغائمة",
+      "kind": "documentary",
+      "content_ar": "بيان رسمي منشور من مرصد الأطلال\n«نغلق القبة في الليالي الغائمة ولا نسجّل رصداً فيها. وتقتصر أمسيات الجمهور على الليالي الصافية.»",
+      "acquired_by_action_ids": [
+        "a_get_posts"
+      ],
+      "supports_fact_ids": [
+        "f_cloudy_closed"
+      ],
+      "reliability": "strong",
+      "limits_ar": "بيان صحيح ومعلن من الجهة نفسها؛ يفسر لماذا لا تُسجَّل البقعة في الليالي الغائمة، ولا يتناول مصدر البقعة.",
+      "location_id": "loc_obs"
+    },
+    {
+      "id": "ev_post_recoat",
+      "title_ar": "بيان المرصد: إعادة تلبيس المرآة",
+      "kind": "documentary",
+      "content_ar": "بيان رسمي منشور من مرصد الأطلال\n«أُعيد تلبيس المرآة الرئيسة قبل ستة أسابيع بطبقة جديدة، وهي تعكس الضوء أفضل من قبل.»",
+      "acquired_by_action_ids": [
+        "a_get_posts"
+      ],
+      "supports_fact_ids": [
+        "f_recoat_before"
+      ],
+      "reliability": "strong",
+      "limits_ar": "بيان صحيح عن واقعة حقيقية؛ لا يقول إن لها أثراً في البقعة، ويُقاس أثرها بالسجل.",
+      "is_red_herring": true,
+      "location_id": "loc_obs"
+    },
+    {
+      "id": "ev_site_map",
+      "title_ar": "مخطط موقع المرصد",
+      "kind": "documentary",
+      "content_ar": "مخطط موقع مرصد الأطلال (مقياس مبسّط)\nالمنفذ الجانبي (أ): يواجه الاتجاه 245° (جهة المدينة).\nالمنفذ الجانبي (ب): يواجه الشمال 000°.\nعلى بعد 400 م في الاتجاه 247°: مطعم الشرفة، واجهته زجاجية مواجهة للمرصد.\nعلى بعد 900 م في الاتجاه 000°: برج مياه بلا إضاءة.",
+      "acquired_by_action_ids": [
+        "a_get_map"
+      ],
+      "supports_fact_ids": [
+        "f_terrestrial_source"
+      ],
+      "reliability": "strong",
+      "limits_ar": "مخطط من المرصد؛ يبيّن الاتجاهات والمسافات، لا يبيّن أن الضوء دخل من منفذ بعينه فعلاً.",
+      "contradicts_claim_ids": [
+        "cl_jamil_far"
+      ],
+      "location_id": "loc_obs"
+    },
+    {
+      "id": "ev_restaurant_permit",
+      "title_ar": "رخصة تركيب واجهة مطعم الشرفة",
+      "kind": "documentary",
+      "content_ar": "رخصة تركيب واجهة زجاجية مضاءة — بلدية الأطلال\nالمنشأة: مطعم الشرفة\nتاريخ التركيب: قبل 15 يوماً\nتشغيل الإضاءة بمؤقت: من 19:50 حتى 23:15 يومياً\nالمدير: جميل الراشد",
+      "acquired_by_action_ids": [
+        "a_get_permit"
+      ],
+      "supports_fact_ids": [
+        "f_lights_installed"
+      ],
+      "reliability": "strong",
+      "limits_ar": "وثيقة بلدية تثبت تاريخ التركيب وساعات التشغيل؛ لا تثبت أن ضوء الواجهة يصل إلى المرصد.",
+      "location_id": "loc_resto"
+    },
+    {
+      "id": "ev_run_baseline",
+      "title_ar": "تجربة المحاكاة: الحالة الأساسية",
+      "kind": "lab_result",
+      "content_ar": "مختبر المنظار — نموذج مصغّر للمرصد (محاكاة، لا مرصد حقيقي)\nالعامل المتغيّر: مصدر الضوء فقط، وكل ما عداه ثابت.\nالحالة 1: المصدر مطفأ — المحاولة الأولى: لا بقعة؛ الثانية: لا بقعة.\nالحالة 2: المصدر مضاء عند الاتجاه 247° وارتفاع منخفض — الأولى: بقعة بيضاء في الربع السفلي الأيسر؛ الثانية: البقعة في الموضع نفسه.\nالنجم الصناعي يدور في الحالتين والبقعة لا تدور معه.",
+      "acquired_by_action_ids": [
+        "a_run_baseline"
+      ],
+      "supports_fact_ids": [
+        "f_terrestrial_source"
+      ],
+      "reliability": "strong",
+      "limits_ar": "نموذج مصغّر لا يطابق المرصد في كل تفصيل؛ كل حالة مكررة مرتين فقط، فالنتيجة تنبيه إلى تفسير محتمل لا برهان عليه وحده.",
+      "forensic_ko_ref": "KO-RS-06-008",
+      "location_id": "loc_lab"
+    },
+    {
+      "id": "ev_run_shield",
+      "title_ar": "تجربة المحاكاة: سد المنفذ المواجه للمدينة",
+      "kind": "lab_result",
+      "content_ar": "مختبر المنظار — محاكاة\nالعامل المتغيّر: غطاء على المنفذ الجانبي (أ) فقط، والمصدر مضاء عند 247° في الحالات كلها.\nالحالة 1: الغطاء موضوع — الأولى: لا بقعة؛ الثانية: لا بقعة.\nالحالة 2: الغطاء مرفوع — الأولى: بقعة؛ الثانية: بقعة في الموضع نفسه.\nالغطاء على المنفذ (ب) وحده لا يغيّر شيئاً (مرتان).",
+      "acquired_by_action_ids": [
+        "a_run_shield"
+      ],
+      "supports_fact_ids": [
+        "f_terrestrial_source"
+      ],
+      "reliability": "strong",
+      "limits_ar": "اختبار كان يمكن أن يفشل ولم يفشل؛ لكنه جرى في نموذج، وبعدد محاولات قليل، ولا يثبت أن المنفذ (أ) في المرصد هو ما دخل منه الضوء ليلة التصوير.",
+      "forensic_ko_ref": "KO-RS-06-008",
+      "location_id": "loc_lab"
+    },
+    {
+      "id": "ev_run_lens",
+      "title_ar": "تجربة المحاكاة: تبديل الكاميرا والغطاء",
+      "kind": "lab_result",
+      "content_ar": "مختبر المنظار — محاكاة\nالعامل المتغيّر: الكاميرا فقط (كاميرا ثانية بغطاء عدسة واقٍ)، والمصدر مضاء عند 247°.\nالأولى: البقعة موجودة في الموضع نفسه.\nالثانية: البقعة موجودة في الموضع نفسه.",
+      "acquired_by_action_ids": [
+        "a_run_lens"
+      ],
+      "supports_fact_ids": [
+        "f_terrestrial_source"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "ينفي أن البقعة من عدسة كاميرا بعينها في النموذج؛ لا ينفي خللاً في هاتف يزن نفسه.",
+      "forensic_ko_ref": "KO-RS-06-008",
+      "location_id": "loc_lab"
+    },
+    {
+      "id": "ev_run_move",
+      "title_ar": "تجربة المحاكاة: تحريك مصدر الضوء على السكة",
+      "kind": "lab_result",
+      "content_ar": "مختبر المنظار — محاكاة\nالعامل المتغيّر: موضع المصدر على السكة فقط، والغطاء مرفوع.\n247° (موضع واجهة المطعم): بقعة في الربع السفلي الأيسر — مرتان.\n227°: البقعة تنزاح إلى الأعلى وتخفت — مرتان.\n000° (جهة برج الماء) والمصدر في السماء فوق الأنبوب: لا بقعة — مرتان لكل موضع.\nالنجم الصناعي لا يتأثر بتحريك المصدر.",
+      "acquired_by_action_ids": [
+        "a_run_move"
+      ],
+      "supports_fact_ids": [
+        "f_source_is_facade"
+      ],
+      "reliability": "strong",
+      "limits_ar": "تبيّن أن البقعة تتبع اتجاه المصدر الأرضي في النموذج؛ لا تحدد أي مبنى بعينه في الواقع إلا بربطها بالمخطط والسجلات.",
+      "contradicts_claim_ids": [
+        "cl_yazan_mystery"
+      ],
+      "forensic_ko_ref": "KO-RS-06-008",
+      "location_id": "loc_lab"
+    },
+    {
+      "id": "ev_yazan_statement",
+      "title_ar": "إفادة يزن العبدالله (ملخص)",
+      "kind": "testimonial",
+      "content_ar": "ملخص إفادة يزن العبدالله:\n«صورت اللقطتين بهاتفي على العينية في ليلة صافية. ظننت أن الضوء من السماء لأنني لا أراه في الليالي الغائمة.»",
+      "acquired_by_action_ids": [
+        "a_note_yazan"
+      ],
+      "supports_fact_ids": [
+        "f_clip_frames"
+      ],
+      "reliability": "weak",
+      "limits_ar": "إفادة صاحب المقطع؛ تصف ما صوّره وتضيف استنتاجه، ولا تقيس غياب الضوء في ليالٍ كان المرصد فيها مغلقاً.",
+      "location_id": "loc_web"
+    },
+    {
+      "id": "ev_hisham_statement",
+      "title_ar": "إفادة هشام القاسم (ملخص)",
+      "kind": "testimonial",
+      "content_ar": "ملخص إفادة هشام القاسم:\n«كل ما لاحظته مدوّن في السجل. لم أر البقعة قبل خمسة عشر يوماً، وأراها كل ليلة صافية منذ ذلك. لا أعرف مصدرها.»",
+      "acquired_by_action_ids": [
+        "a_note_hisham"
+      ],
+      "supports_fact_ids": [
+        "f_log_exists"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "إفادة المشرف نفسه؛ يؤيدها السجل ولا تتجاوزه إلى تفسير.",
+      "location_id": "loc_obs"
+    },
+    {
+      "id": "ev_lina_statement",
+      "title_ar": "إفادة لينا الحاج (ملخص)",
+      "kind": "testimonial",
+      "content_ar": "ملخص إفادة لينا الحاج:\n«غيّرنا عاملاً واحداً في كل مرة وكررنا كل حالة مرتين. المحاكاة تقول ما هو ممكن، وتحتاج إلى سجلات الواقع لتقول ما حدث.»",
+      "acquired_by_action_ids": [
+        "a_note_lina"
+      ],
+      "supports_fact_ids": [
+        "f_sim_available"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "إفادة خبيرة بالنموذج؛ تعرّف حدود المحاكاة ولا تفسّر ما جرى في المرصد.",
+      "location_id": "loc_lab"
+    },
+    {
+      "id": "ev_jamil_statement",
+      "title_ar": "إفادة جميل الراشد (ملخص)",
+      "kind": "testimonial",
+      "content_ar": "ملخص إفادة جميل الراشد:\n«ركبت الواجهة قبل خمسة عشر يوماً وضبطت المؤقت. لم أكن أعلم أن المرصد يقابلها.»",
+      "acquired_by_action_ids": [
+        "a_note_jamil"
+      ],
+      "supports_fact_ids": [
+        "f_permit_exists"
+      ],
+      "reliability": "weak",
+      "limits_ar": "إفادة صاحب المنشأة؛ يؤيدها بعضها في الرخصة، ولا تثبت وحدها أثر الواجهة في المرصد.",
+      "location_id": "loc_resto"
+    }
+  ],
+  "evidence_graph": {
+    "inferences": [
+      {
+        "id": "i_a_side",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_run_baseline"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_run_shield"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_terrestrial_source"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "حين غيّرنا الغطاء وحده اختفت البقعة مرتين وعادت مرتين، وحين أطفأنا المصدر اختفت؛ فالضوء يدخل من المنفذ المواجه للمدينة من مصدر أرضي.",
+        "skill_ko_refs": [
+          "KO-RS-06-008"
+        ]
+      },
+      {
+        "id": "i_a_facade",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_terrestrial_source"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_run_move"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_source_is_facade"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "حين حرّكنا المصدر وحده تبعته البقعة، وعند الاتجاه 247° وحده طابقت موضعها في الصورة؛ فالمصدر في اتجاه واجهة المطعم.",
+        "skill_ko_refs": [
+          "KO-RS-06-008",
+          "KO-RS-06-015"
+        ]
+      },
+      {
+        "id": "i_b_side",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_obs_log"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_site_map"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_terrestrial_source"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "البقعة ثابتة في الصورة بينما تتحرك النجوم، فهي مرتبطة بالأنبوب لا بالسماء؛ والمخطط يبيّن منفذاً جانبياً يقابل المدينة.",
+        "skill_ko_refs": [
+          "KO-RS-06-015"
+        ]
+      },
+      {
+        "id": "i_b_facade",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_restaurant_permit"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_obs_log"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_source_is_facade"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "ظهرت البقعة في أول ليلة صافية بعد تركيب الواجهة بعد اثنتين وعشرين ليلة بلا بقعة، وتظهر مع ساعات تشغيل الإضاءة وتختفي عند إطفائها.",
+        "skill_ko_refs": [
+          "KO-RS-06-015",
+          "KO-RS-06-005"
+        ]
+      },
+      {
+        "id": "i_lens",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_run_lens"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_lens"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "تبديل الكاميرا لم يغيّر الموضع ولا الشدة في المحاولتين؛ فالبقعة ليست وهج عدسة بعينها.",
+        "skill_ko_refs": [
+          "KO-RS-06-008"
+        ]
+      },
+      {
+        "id": "i_recoat",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_post_recoat"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_obs_log"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_recoat"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "التلبيس صحيح لكنه سبق الظاهرة بشهر ونصف، ومرت اثنتان وعشرون ليلة صافية بعده بلا بقعة؛ فالتوقيت لا يوافق.",
+        "skill_ko_refs": [
+          "KO-RS-06-015",
+          "KO-RS-06-005"
+        ]
+      },
+      {
+        "id": "i_rule_lens_b",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_terrestrial_source"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_lens"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "ضوء يدخل الأنبوب من منفذ جانبي تراه أجهزة مختلفة؛ أما وهج العدسة فيخص كاميرا واحدة ولا يزول بسد منفذ في الأنبوب.",
+        "skill_ko_refs": [
+          "KO-RS-06-008"
+        ]
+      },
+      {
+        "id": "i_rule_recoat_b",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_source_is_facade"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_recoat"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "إذا عُرف مصدر ضوء أرضي محدد تتبعه البقعة فلا حاجة إلى تغيير في طبقة المرآة تفسيراً، وتجاور الأحداث في الزمن لا يصنع سبباً.",
+        "skill_ko_refs": [
+          "KO-RS-06-015"
+        ]
+      },
+      {
+        "id": "i_rule_mystery",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_source_is_facade"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_mystery"
+        },
+        "relation": "rules_out",
+        "strength": "conclusive",
+        "rule_ar": "إذا عُرف مصدر أرضي محدد تتبعه البقعة، فلا حاجة إلى مصدر سماوي مجهول لتفسيرها.",
+        "skill_ko_refs": [
+          "KO-RS-06-008"
+        ]
+      },
+      {
+        "id": "i_rule_mystery_b",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_terrestrial_source"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_mystery"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "الضوء الداخل من منفذ جانبي ثابت في الصورة لا يتحرك مع النجوم؛ فليس من السماء.",
+        "skill_ko_refs": [
+          "KO-RS-06-008"
+        ]
+      },
+      {
+        "id": "i_support_refl",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_source_is_facade"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_reflection"
+        },
+        "relation": "supports",
+        "strength": "strong",
+        "rule_ar": "الواجهة المضاءة تفسر الموضع والتوقيت وغياب الظاهرة قبل التركيب، وتصمد أمام الاختبار المكذِّب.",
+        "skill_ko_refs": [
+          "KO-RS-06-015"
+        ]
+      },
+      {
+        "id": "i_claim_yazan",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_post_cloudy"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_obs_log"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_yazan_mystery"
+        },
+        "relation": "contradicts_claim",
+        "strength": "strong",
+        "rule_ar": "لا يُسجَّل رصد في الليالي الغائمة أصلاً؛ فغياب البقعة فيها لا يدل على أنها «صافية فقط» بل على أن القبة مغلقة.",
+        "skill_ko_refs": [
+          "KO-RS-06-005"
+        ]
+      },
+      {
+        "id": "i_claim_jamil",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_site_map"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_run_baseline"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_jamil_far"
+        },
+        "relation": "contradicts_claim",
+        "strength": "strong",
+        "rule_ar": "المطعم على بعد 400 م في الاتجاه المقابل للمنفذ، وفي النموذج أنتج المصدر عند ذلك الاتجاه البقعة؛ فالبعد لا يمنع وصول الضوء.",
+        "skill_ko_refs": [
+          "KO-RS-05-014"
+        ]
+      }
+    ]
+  },
+  "character_knowledge": [
+    {
+      "character_id": "yazan",
+      "knows": [
+        {
+          "fact_id": "f_clip_frames",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": [
+        {
+          "claim_id": "cl_yazan_mystery",
+          "stance": "sincere"
+        }
+      ]
+    },
+    {
+      "character_id": "hisham",
+      "knows": [
+        {
+          "fact_id": "f_log_exists",
+          "access": "professional",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_posts_exist",
+          "access": "professional",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_map_exists",
+          "access": "professional",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    },
+    {
+      "character_id": "lina",
+      "knows": [
+        {
+          "fact_id": "f_sim_available",
+          "access": "professional",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    },
+    {
+      "character_id": "jamil",
+      "knows": [],
+      "hides": [
+        {
+          "fact_id": "f_permit_exists",
+          "reveal_when": {
+            "presented": {
+              "evidence_id": "ev_clip",
+              "to_character": "jamil"
+            }
+          },
+          "cover_claim_id": "cl_jamil_far",
+          "reveal_line_id": "jm_permit"
+        }
+      ],
+      "believes": [
+        {
+          "claim_id": "cl_jamil_far",
+          "stance": "sincere"
+        }
+      ]
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "h_mystery",
+      "statement_ar": "الضوء مصدره الفضاء أو المرآة نفسها ولا تفسير أرضياً له.",
+      "is_true": false,
+      "plausibility_at_start": "high"
+    },
+    {
+      "id": "h_lens",
+      "statement_ar": "البقعة وهج في عدسة كاميرا يزن، لا ضوء دخل المقراب.",
+      "is_true": false,
+      "plausibility_at_start": "medium"
+    },
+    {
+      "id": "h_reflection",
+      "statement_ar": "البقعة انعكاس من واجهة المطعم المضاءة حديثاً يدخل من منفذ جانبي للأنبوب.",
+      "is_true": true,
+      "plausibility_at_start": "low",
+      "suspect_id": "jamil"
+    },
+    {
+      "id": "h_recoat",
+      "statement_ar": "إعادة تلبيس المرآة هي التي صنعت البقعة.",
+      "is_true": false,
+      "plausibility_at_start": "medium"
+    }
+  ],
+  "misdirection_plan": [
+    {
+      "id": "rh_clip",
+      "points_to_hypothesis_id": "h_mystery",
+      "planted_via_ar": "مقطع منتشر بتعليق مثير: ضوء في الليالي الصافية فقط.",
+      "evidence_ids": [
+        "ev_clip"
+      ],
+      "refuted_by_inference_ids": [
+        "i_rule_mystery",
+        "i_rule_mystery_b",
+        "i_claim_yazan"
+      ],
+      "fairness_note_ar": "المقطع نفسه يُظهر النجوم تتحرك والبقعة ثابتة، وبيان المرصد وسجله يفسران غياب الرصد في الليالي الغائمة، والتجارب المكررة متاحة للاعب."
+    },
+    {
+      "id": "rh_recoat",
+      "points_to_hypothesis_id": "h_recoat",
+      "planted_via_ar": "بيان صحيح عن مرآة أُعيد تلبيسها، فتبدو صلة زمنية.",
+      "evidence_ids": [
+        "ev_post_recoat"
+      ],
+      "refuted_by_inference_ids": [
+        "i_recoat",
+        "i_a_side",
+        "i_b_facade"
+      ],
+      "fairness_note_ar": "البيان صحيح ويبقى صحيحاً؛ لكن سجل الرصد يبيّن اثنتين وعشرين ليلة صافية بعد التلبيس بلا بقعة، فالتوقيت لا يوافق."
+    }
+  ],
+  "learning_objectives": [
+    {
+      "id": "lo_test",
+      "statement_ar": "يبحث عن اختبار قد يكذّب فرضيته، ويغيّر عاملاً واحداً في كل مرة ويكرر الملاحظة.",
+      "skill_ko_ref": "KO-RS-06-008",
+      "observable_behaviors_ar": [
+        "يشغّل تجارب المحاكاة",
+        "يربط التجربة بالفرضية"
+      ],
+      "evidence_sources": [
+        "action_log",
+        "evidence_board"
+      ]
+    },
+    {
+      "id": "lo_causal",
+      "statement_ar": "يفرّق بين الاقتران في الزمن والآلية السببية.",
+      "skill_ko_ref": "KO-RS-06-015",
+      "observable_behaviors_ar": [
+        "لا يربط التلبيس بالبقعة لمجرد تجاورهما",
+        "يطلب آلية"
+      ],
+      "evidence_sources": [
+        "evidence_board",
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_doubt",
+      "statement_ar": "يقبل المعلومة الصحيحة ويرفض المضللة دون شك شامل في كل شيء.",
+      "skill_ko_ref": "KO-RS-06-005",
+      "observable_behaviors_ar": [
+        "يقبل البيانين الصحيحين",
+        "لا يتهم كل المصادر"
+      ],
+      "evidence_sources": [
+        "evidence_board"
+      ]
+    },
+    {
+      "id": "lo_hyp",
+      "statement_ar": "يوازن بين فرضيات متنافسة ويستبعد ما تنقضه الأدلة.",
+      "skill_ko_ref": "KO-RS-06-006",
+      "observable_behaviors_ar": [
+        "يضيف فرضيات",
+        "يستبعد بدليل"
+      ],
+      "evidence_sources": [
+        "hypothesis_ledger"
+      ]
+    },
+    {
+      "id": "lo_calib",
+      "statement_ar": "يصوغ نسبة الترجيح بحدودها.",
+      "skill_ko_ref": "KO-RS-06-021",
+      "observable_behaviors_ar": [
+        "يختار ثقة معقولة",
+        "يذكر حدوداً"
+      ],
+      "evidence_sources": [
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_revise",
+      "statement_ar": "يراجع رأيه الأول حين يظهر ما يخالفه.",
+      "skill_ko_ref": "KO-RS-06-009",
+      "observable_behaviors_ar": [
+        "يغيّر فرضيته الرائدة بدليل"
+      ],
+      "evidence_sources": [
+        "hypothesis_ledger"
+      ]
+    }
+  ],
+  "mechanics": {
+    "time_budget_units": 40,
+    "actions": [
+      {
+        "id": "a_get_clip",
+        "type": "examine",
+        "label_ar": "شاهد المقطع المنتشر",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_clip"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_web",
+        "telemetry_code": "GET_CLIP"
+      },
+      {
+        "id": "a_int_yazan",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة يزن",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "yazan",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "yazan",
+        "telemetry_code": "INT_YAZAN"
+      },
+      {
+        "id": "a_int_hisham",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة هشام",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "hisham",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "hisham",
+        "telemetry_code": "INT_HISHAM"
+      },
+      {
+        "id": "a_int_lina",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة لينا",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "lina",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "lina",
+        "telemetry_code": "INT_LINA"
+      },
+      {
+        "id": "a_int_jamil",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة جميل",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "jamil",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "jamil",
+        "telemetry_code": "INT_JAMIL"
+      },
+      {
+        "id": "a_get_log",
+        "type": "examine",
+        "label_ar": "اطلب سجل الرصد الليلي",
+        "precondition": {
+          "fact_unlocked": "f_log_exists"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_obs_log"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_obs",
+        "telemetry_code": "GET_LOG"
+      },
+      {
+        "id": "a_get_posts",
+        "type": "examine",
+        "label_ar": "اقرأ بيانَي المرصد المنشورين",
+        "precondition": {
+          "fact_unlocked": "f_posts_exist"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_post_cloudy"
+          },
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_post_recoat"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_obs",
+        "telemetry_code": "GET_POSTS"
+      },
+      {
+        "id": "a_get_map",
+        "type": "examine",
+        "label_ar": "اطلب مخطط موقع المرصد",
+        "precondition": {
+          "fact_unlocked": "f_map_exists"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_site_map"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_obs",
+        "telemetry_code": "GET_MAP"
+      },
+      {
+        "id": "a_get_permit",
+        "type": "examine",
+        "label_ar": "اطلب رخصة الواجهة من جميل",
+        "precondition": {
+          "fact_unlocked": "f_permit_exists"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_restaurant_permit"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_resto",
+        "telemetry_code": "GET_PERMIT"
+      },
+      {
+        "id": "a_run_baseline",
+        "type": "request_lab_test",
+        "label_ar": "شغّل المحاكاة: مصدر مطفأ ثم مضاء (مرتان لكل حالة)",
+        "precondition": {
+          "fact_unlocked": "f_sim_available"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_run_baseline"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_lab",
+        "telemetry_code": "RUN_BASELINE"
+      },
+      {
+        "id": "a_run_shield",
+        "type": "request_lab_test",
+        "label_ar": "شغّل المحاكاة: غطِّ منفذاً جانبياً واحداً (مرتان)",
+        "precondition": {
+          "has_evidence": "ev_run_baseline"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_run_shield"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_lab",
+        "telemetry_code": "RUN_SHIELD"
+      },
+      {
+        "id": "a_run_lens",
+        "type": "request_lab_test",
+        "label_ar": "شغّل المحاكاة: بدّل الكاميرا فقط (مرتان)",
+        "precondition": {
+          "has_evidence": "ev_run_baseline"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_run_lens"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_lab",
+        "telemetry_code": "RUN_LENS"
+      },
+      {
+        "id": "a_run_move",
+        "type": "request_lab_test",
+        "label_ar": "شغّل المحاكاة: حرّك المصدر على السكة (مرتان لكل موضع)",
+        "precondition": {
+          "has_evidence": "ev_run_baseline"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_run_move"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_lab",
+        "telemetry_code": "RUN_MOVE"
+      },
+      {
+        "id": "a_note_yazan",
+        "type": "examine",
+        "label_ar": "دوّن إفادة يزن",
+        "precondition": {
+          "fact_unlocked": "f_clip_frames"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_yazan_statement"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "yazan",
+        "telemetry_code": "NOTE_YAZAN"
+      },
+      {
+        "id": "a_note_hisham",
+        "type": "examine",
+        "label_ar": "دوّن إفادة هشام",
+        "precondition": {
+          "fact_unlocked": "f_log_exists"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_hisham_statement"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "hisham",
+        "telemetry_code": "NOTE_HISHAM"
+      },
+      {
+        "id": "a_note_lina",
+        "type": "examine",
+        "label_ar": "دوّن إفادة لينا",
+        "precondition": {
+          "fact_unlocked": "f_sim_available"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_lina_statement"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "lina",
+        "telemetry_code": "NOTE_LINA"
+      },
+      {
+        "id": "a_note_jamil",
+        "type": "examine",
+        "label_ar": "دوّن إفادة جميل",
+        "precondition": {
+          "fact_unlocked": "f_permit_exists"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_jamil_statement"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "jamil",
+        "telemetry_code": "NOTE_JAMIL"
+      },
+      {
+        "id": "p_clip_jamil",
+        "type": "present_evidence",
+        "label_ar": "اعرض المقطع على جميل",
+        "precondition": {
+          "presented": {
+            "evidence_id": "ev_clip",
+            "to_character": "jamil"
+          }
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "PRESENTED_CLIP_JAMIL"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "jamil",
+        "telemetry_code": "P_CLIP_JAMIL"
+      },
+      {
+        "id": "a_hint",
+        "type": "request_hint",
+        "label_ar": "اطلب تلميحاً",
+        "precondition": {
+          "always": true
+        },
+        "effects": [],
+        "time_cost_units": 0,
+        "telemetry_code": "REQUEST_HINT"
+      },
+      {
+        "id": "a_accuse",
+        "type": "final_accusation",
+        "label_ar": "قدّم الاستنتاج النهائي",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "SUBMIT"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "FINAL_ACCUSATION"
+      },
+      {
+        "id": "ask_yazan_f_clip_frames",
+        "type": "interview",
+        "label_ar": "[نموذج] yazan يذكر f_clip_frames",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_clip_frames"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "yazan",
+        "telemetry_code": "ASK_YAZAN_F_CLIP_FRAMES"
+      },
+      {
+        "id": "ask_hisham_f_log_exists",
+        "type": "interview",
+        "label_ar": "[نموذج] hisham يذكر f_log_exists",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_log_exists"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "hisham",
+        "telemetry_code": "ASK_HISHAM_F_LOG_EXISTS"
+      },
+      {
+        "id": "ask_hisham_f_posts_exist",
+        "type": "interview",
+        "label_ar": "[نموذج] hisham يذكر f_posts_exist",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_posts_exist"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "hisham",
+        "telemetry_code": "ASK_HISHAM_F_POSTS_EXIST"
+      },
+      {
+        "id": "ask_hisham_f_map_exists",
+        "type": "interview",
+        "label_ar": "[نموذج] hisham يذكر f_map_exists",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_map_exists"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "hisham",
+        "telemetry_code": "ASK_HISHAM_F_MAP_EXISTS"
+      },
+      {
+        "id": "ask_lina_f_sim_available",
+        "type": "interview",
+        "label_ar": "[نموذج] lina يذكر f_sim_available",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_sim_available"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "lina",
+        "telemetry_code": "ASK_LINA_F_SIM_AVAILABLE"
+      },
+      {
+        "id": "ask_jamil_f_permit_exists",
+        "type": "interview",
+        "label_ar": "[نموذج] jamil يكشف f_permit_exists",
+        "precondition": {
+          "all": [
+            {
+              "always": true
+            },
+            {
+              "presented": {
+                "evidence_id": "ev_clip",
+                "to_character": "jamil"
+              }
+            }
+          ]
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_permit_exists"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "jamil",
+        "telemetry_code": "ASK_JAMIL_F_PERMIT_EXISTS"
+      }
+    ]
+  },
+  "state_machine": {
+    "id": "c018",
+    "initial": "briefing",
+    "type": "compound",
+    "states": {
+      "briefing": {
+        "description_ar": "الإحاطة",
+        "type": "atomic",
+        "on": {
+          "START": {
+            "target": "investigating"
+          }
+        }
+      },
+      "investigating": {
+        "description_ar": "التحقيق",
+        "type": "compound",
+        "initial": "gathering",
+        "states": {
+          "gathering": {
+            "type": "atomic",
+            "on": {
+              "OPEN_DEDUCTION": {
+                "target": "deducing"
+              }
+            }
+          },
+          "deducing": {
+            "type": "atomic",
+            "on": {
+              "BACK": {
+                "target": "gathering"
+              }
+            }
+          }
+        },
+        "on": {
+          "SUBMIT": {
+            "target": "review"
+          }
+        }
+      },
+      "review": {
+        "description_ar": "مراجعة",
+        "type": "atomic",
+        "on": {
+          "CLOSE": {
+            "target": "resolved"
+          }
+        }
+      },
+      "resolved": {
+        "description_ar": "إغلاق",
+        "type": "final"
+      }
+    }
+  },
+  "dialogue": {
+    "max_turns_per_interview": 10,
+    "llm_enabled": false,
+    "topics": [
+      {
+        "id": "t_clip",
+        "label_ar": "كيف صُوّر المقطع",
+        "example_questions_ar": [
+          "كيف صوّرت اللقطتين؟",
+          "لماذا ظننت أن الضوء من السماء؟"
+        ],
+        "fact_ids": [
+          "f_clip_frames"
+        ],
+        "claim_ids": [
+          "cl_yazan_mystery"
+        ]
+      },
+      {
+        "id": "t_records",
+        "label_ar": "سجلات المرصد",
+        "example_questions_ar": [
+          "هل يوجد سجل رصد؟",
+          "ما البيانان المنشوران؟",
+          "هل لديكم مخطط للموقع؟"
+        ],
+        "fact_ids": [
+          "f_log_exists",
+          "f_posts_exist",
+          "f_map_exists"
+        ]
+      },
+      {
+        "id": "t_sim",
+        "label_ar": "نموذج المحاكاة",
+        "example_questions_ar": [
+          "هل عندكم نموذج للمرصد؟",
+          "كيف تجرون التجربة؟"
+        ],
+        "fact_ids": [
+          "f_sim_available"
+        ]
+      },
+      {
+        "id": "t_facade",
+        "label_ar": "واجهة المطعم",
+        "example_questions_ar": [
+          "متى ركبتم الواجهة؟",
+          "هل تصل إضاءتها إلى المرصد؟"
+        ],
+        "fact_ids": [
+          "f_permit_exists"
+        ],
+        "claim_ids": [
+          "cl_jamil_far"
+        ]
+      }
+    ]
+  },
+  "rubric": {
+    "reference_answer_ar": "لا ضوء غامضاً في المرآة. البقعة انعكاس من واجهة زجاجية مضاءة حديثاً في مطعم قرب المرصد، يدخل من المنفذ الجانبي المواجه للمدينة. اجتمع على ذلك مساران مستقلان: تجارب محاكاة غيّرت عاملاً واحداً وكررت كل حالة (إطفاء المصدر، وسد المنفذ، وتحريك المصدر، وتبديل الكاميرا)، وسجلات تبيّن أن البقعة ثابتة بينما تدور النجوم، وأنها ظهرت بعد تركيب الواجهة وتختفي عند إطفائها. والبيانان الصحيحان عن المرصد يبقيان صحيحين: إغلاق القبة عند الغيم وإعادة تلبيس المرآة، لكنهما لا يفسران البقعة. حدود الاستنتاج: المحاكاة نموذج وعدد محاولاتها قليل، ولم يُطفأ المؤقت فعلياً ليلة اختبار في الموقع، ولا يثبت السجل شيئاً عن ليالٍ لم يُفتح فيها المرصد.",
+    "criteria": [
+      {
+        "id": "c_source",
+        "name_ar": "تصنيف المصادر",
+        "objective_ids": [
+          "lo_doubt"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يصنّف"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "أخطأ في الأغلب"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "نصف صحيح"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمه صحيح"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كله صحيح"
+          }
+        ]
+      },
+      {
+        "id": "c_conflict",
+        "name_ar": "ترتيب الأدلة على الخط الزمني",
+        "objective_ids": [
+          "lo_causal"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يضع شيئاً"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "وضع قليلاً"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "وضع نصفها صحيحاً"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمها"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كلها في موضعها"
+          }
+        ]
+      },
+      {
+        "id": "c_links",
+        "name_ar": "ربط الأدلة بالفرضيات",
+        "objective_ids": [
+          "lo_test",
+          "lo_causal"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.25,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لا روابط"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "قليلة"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "نصفها صحيح"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمها"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كلها دقيقة"
+          }
+        ]
+      },
+      {
+        "id": "c_uncertainty",
+        "name_ar": "معايرة الثقة",
+        "objective_ids": [
+          "lo_calib"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "ثقة مفرطة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "حدود قليلة"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "جزئية"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معقولة"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "معايَرة كاملة"
+          }
+        ]
+      },
+      {
+        "id": "c_revision",
+        "name_ar": "مراجعة الرأي",
+        "objective_ids": [
+          "lo_revise"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "بقي على فرضية مرفوضة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "لم يعلن فرضية"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "ثبت على فرضية سليمة"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "غيّر بدليل"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "غيّر بدليل ووثّق"
+          }
+        ]
+      },
+      {
+        "id": "c_elimination",
+        "name_ar": "استبعاد الفرضيات الخاطئة",
+        "objective_ids": [
+          "lo_hyp"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يستبعد"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "استبعد خطأً"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "فرضية بدليل"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "فرضيتين"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كل الخاطئة"
+          }
+        ]
+      },
+      {
+        "id": "c_justification",
+        "name_ar": "جودة الحجة المكتوبة",
+        "objective_ids": [
+          "lo_test",
+          "lo_hyp"
+        ],
+        "scored_by": "human",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لا حجة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "ادعاء بلا سند"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "أدلة دون ربط"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "ربط الأدلة بالاستنتاج"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "ربط مع البدائل والحدود"
+          }
+        ]
+      }
+    ]
+  },
+  "hint_ladder": [
+    {
+      "id": "hg1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "حين يتقدم تفسير مثير، اسأل: ما الاختبار الذي كان يمكن أن يكذّبه؟",
+      "trigger": {
+        "always": true
+      },
+      "assessment_weight": 0.02
+    },
+    {
+      "id": "hg2",
+      "level": 2,
+      "kind": "focus_area",
+      "text_ar": "اجمع ما يصح في المنشورات عن المرصد، ثم اسأل لكل منها: هل يفسر البقعة أم يكتفي بأنه صحيح؟",
+      "trigger": {
+        "has_evidence": "ev_clip"
+      },
+      "assessment_weight": 0.04
+    },
+    {
+      "id": "ha1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "إذا غيّرت عاملين معاً فكيف تعرف أيهما فعل؟",
+      "trigger": {
+        "has_evidence": "ev_run_baseline"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_a_side"
+    },
+    {
+      "id": "ha2",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "جرّب سد كل منفذ جانبي على حدة، وكرر كل حالة مرتين على الأقل.",
+      "trigger": {
+        "has_evidence": "ev_run_baseline"
+      },
+      "assessment_weight": 0.06,
+      "targets_inference_id": "i_a_side"
+    },
+    {
+      "id": "ha3",
+      "level": 3,
+      "kind": "partial_reveal",
+      "text_ar": "اطلب من لينا تجربة الغطاء ثم تجربة تحريك المصدر، وقارن مواضع البقعة.",
+      "trigger": {
+        "has_evidence": "ev_run_baseline"
+      },
+      "assessment_weight": 0.1,
+      "targets_inference_id": "i_a_side"
+    },
+    {
+      "id": "hb1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "متى ظهرت البقعة أول مرة؟ وما الذي تغيّر في المدينة قبل ذلك بقليل؟",
+      "trigger": {
+        "has_evidence": "ev_clip"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_b_facade"
+    },
+    {
+      "id": "hb2",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "اسأل هشام عن السجل والمخطط، واسأل صاحب المطعم عن أوراق واجهته.",
+      "trigger": {
+        "has_evidence": "ev_clip"
+      },
+      "assessment_weight": 0.06,
+      "targets_inference_id": "i_b_facade"
+    }
+  ],
+  "fairness_test": {
+    "requirements": {
+      "min_disjoint_proof_paths": 2,
+      "max_inference_depth": 3,
+      "all_red_herrings_refutable": true,
+      "culprit_uniquely_entailed": true,
+      "no_hidden_fact_dependency": true,
+      "max_required_actions": 40
+    },
+    "runs": []
+  },
+  "ending_explanation": {
+    "steps": [
+      {
+        "order": 1,
+        "text_ar": "بإطفاء المصدر في النموذج اختفت البقعة، وبسد المنفذ المواجه للمدينة وحده اختفت أيضاً، وعاد ظهورها برفع الغطاء؛ كل حالة كُررت مرتين.",
+        "uses_evidence_ids": [
+          "ev_run_baseline",
+          "ev_run_shield"
+        ],
+        "inference_id": "i_a_side"
+      },
+      {
+        "order": 2,
+        "text_ar": "حين حُرّك المصدر وحده تبعته البقعة، ومطابقتها لموضعها في المقطع جاءت عند اتجاه واجهة المطعم.",
+        "uses_evidence_ids": [
+          "ev_run_move"
+        ],
+        "inference_id": "i_a_facade"
+      },
+      {
+        "order": 3,
+        "text_ar": "مسار السجلات المستقل: البقعة ثابتة في الصورة بينما تتحرك النجوم، والمخطط يبيّن منفذاً جانبياً يقابل المدينة.",
+        "uses_evidence_ids": [
+          "ev_obs_log",
+          "ev_site_map"
+        ],
+        "inference_id": "i_b_side"
+      },
+      {
+        "order": 4,
+        "text_ar": "الرخصة تحدد تاريخ تركيب الواجهة وساعات تشغيلها، والسجل يضع ظهور البقعة بعد التركيب مباشرة واختفاءها مع إطفاء المؤقت.",
+        "uses_evidence_ids": [
+          "ev_restaurant_permit",
+          "ev_obs_log"
+        ],
+        "inference_id": "i_b_facade"
+      },
+      {
+        "order": 5,
+        "text_ar": "تبديل الكاميرا لم يغيّر شيئاً، فالبقعة ليست من العدسة.",
+        "uses_evidence_ids": [
+          "ev_run_lens"
+        ],
+        "inference_id": "i_lens"
+      },
+      {
+        "order": 6,
+        "text_ar": "البيانان الصحيحان قُبلا ولم يُفسرا أكثر مما يقولان: القبة مغلقة في الغيم، والتلبيس سبق الظاهرة بزمن طويل.",
+        "uses_evidence_ids": [
+          "ev_post_cloudy",
+          "ev_post_recoat",
+          "ev_obs_log"
+        ],
+        "inference_id": "i_recoat"
+      }
+    ],
+    "alternative_paths_ar": [
+      "يمكن الوصول إلى النتيجة من السجلات وحدها (سجل الرصد والمخطط والرخصة) دون تشغيل المحاكاة، لكنك حينئذ لم تجرّب ما كان يمكن أن يكذّب تفسيرك.",
+      "ويمكن الوصول إليها من التجارب المكررة وحدها، لكن الأقوى أن تتفق التجربة مع سجلات الواقع."
+    ],
+    "what_evidence_could_not_show_ar": [
+      "المحاكاة نموذج مصغّر وعدد محاولات كل حالة قليل، فتبين ما هو ممكن لا ما حدث بالضبط.",
+      "لم يُطفأ مؤقت الواجهة فعلياً في ليلة اختبار داخل الموقع؛ ذلك اختبار مقترح يعزز الاستنتاج.",
+      "لا يثبت السجل شيئاً عن ليالٍ لم يُفتح فيها المرصد."
+    ],
+    "science_notes_ar": [
+      "الاختبار المفيد هو الذي يمكن أن يفشل: سدّ المنفذ كان سيُبقي البقعة لو كان المصدر في السماء.",
+      "غيّر عاملاً واحداً في كل مرة وكرّر الملاحظة؛ فلا يُحكم بمحاولة وحيدة.",
+      "قبول البيانين الصحيحين جزء من الشك السليم: نرفض المضلل ونقبل الصحيح، ثم نسأل هل الصحيح يفسر الظاهرة.",
+      "كل ما استندنا إليه يمكن تتبّع أصله بسلسلة العهدة (سجل المرصد، رخصة البلدية، سجل التجربة)، وتُعلن نسبة الترجيح بحدودها.",
+      "بطاقة الأصل (خبر تراثي منسوب): تذكر الحكاية القديمة عالماً يسدّ أنبوباً ليختبر مسار الضوء، وقد أُعيدت صياغتها كلها في موقف خيالي دون نسبة «اختراع المنهج العلمي» إلى أحد."
+    ]
+  },
+  "expert_review": [
+    {
+      "role": "narrative_editor",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "scientific_reviewer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "learning_designer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "age_appropriateness",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "cultural_reviewer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "legal_rights",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "safety",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    }
+  ]
+}

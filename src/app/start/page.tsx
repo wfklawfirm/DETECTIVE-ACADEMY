@@ -1,6 +1,7 @@
 "use client";
-import Link from "next/link";
 import { useState } from "react";
+import { Button, LinkButton } from "@/components/ui/button";
+import { StepDots } from "@/components/ui/progress";
 
 const LINES = [
   "وصلتك رسالة بلا اسم مرسل:",
@@ -10,19 +11,21 @@ const LINES = [
 export default function Start() {
   const [n, setN] = useState(1);
   return (
-    <div className="wrap-narrow stack" style={{ paddingBlockStart: 32 }}>
-      <p className="kicker">رسالة مجهولة · ٠٣:١٢</p>
-      <div className="cold-open" aria-live="polite">
-        {LINES.slice(0, n).map((l, i) => <p key={i} style={{ animationDelay: "0s", opacity: 1 }}>{l}</p>)}
+    <section className="lantern stack-lg" style={{ padding: "1.5rem 1rem", minBlockSize: "70dvh", justifyContent: "space-between" }}>
+      <div className="stack-lg">
+        <div className="row row-between"><span className="stamp">رسالة مجهولة · ٠٣:١٢</span><StepDots total={LINES.length} current={n - 1} label={`الخطوة ${n} من ${LINES.length}`} /></div>
+        <div className="cold-open" aria-live="polite">
+          {LINES.slice(0, n).map((l, i) => <p key={i} className="reveal">{l}</p>)}
+        </div>
       </div>
       {n < LINES.length ? (
-        <button className="btn" onClick={() => setN(n + 1)}>التالي</button>
+        <Button variant="secondary" size="lg" block onClick={() => setN(n + 1)}>التالي</Button>
       ) : (
         <div className="stack">
-          <Link className="btn primary" href="/play/c000_lost_notebook">افتح الملف</Link>
+          <LinkButton variant="primary" size="lg" block href="/play/c000_lost_notebook">افتح الملف</LinkButton>
           <p className="small dim">لا حاجة إلى حساب الآن. تقدّمك يُحفظ على جهازك، ويمكنك إنشاء حساب بعد أن ترى النتيجة.</p>
         </div>
       )}
-    </div>
+    </section>
   );
 }

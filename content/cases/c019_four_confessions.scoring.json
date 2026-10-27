@@ -1,0 +1,129 @@
+{
+  "case_id": "c019_four_confessions",
+  "accepted_conclusions": {
+    "h_defect": {
+      "grade": 1,
+      "note_ar": "استنتاج متسق مع الأدلة ويتطلب ذكر حدوده."
+    },
+    "h_last": {
+      "grade": 0,
+      "note_ar": "يبني السبب على الترتيب الزمني وحده ويتجاهل بقاء المنحوتة بعد لمسته وخلو الورشة."
+    },
+    "h_sum": {
+      "grade": 0,
+      "note_ar": "الأفعال أصغر من أحمال يومية متكررة، ولم تتراكم لأن المنحوتة بقيت سليمة بعد كل منها."
+    }
+  },
+  "confidence_band": {
+    "h_defect": [
+      65,
+      90
+    ],
+    "h_last": [
+      0,
+      15
+    ],
+    "h_sum": [
+      0,
+      15
+    ]
+  },
+  "source_key": {
+    "ev_incident_report": "redisplay",
+    "ev_nour_statement": "claim",
+    "ev_basel_statement": "claim",
+    "ev_hala_statement": "claim",
+    "ev_jad_statement": "claim",
+    "ev_rita_statement": "claim",
+    "ev_thermal_log": "primary_record",
+    "ev_door_log": "primary_record",
+    "ev_signout_sheet": "primary_record",
+    "ev_vib_log": "primary_record",
+    "ev_ac_log": "primary_record",
+    "ev_crack_photo": "primary_record",
+    "ev_maintenance_ticket": "primary_record",
+    "ev_break_surface": "primary_record"
+  },
+  "link_key": {
+    "h_defect": {
+      "ev_thermal_log": "supports",
+      "ev_door_log": "supports",
+      "ev_vib_log": "supports",
+      "ev_signout_sheet": "supports",
+      "ev_crack_photo": "supports",
+      "ev_maintenance_ticket": "supports",
+      "ev_break_surface": "supports",
+      "ev_incident_report": "neutral"
+    },
+    "h_last": {
+      "ev_jad_statement": "supports",
+      "ev_thermal_log": "weakens",
+      "ev_door_log": "weakens",
+      "ev_vib_log": "weakens"
+    },
+    "h_sum": {
+      "ev_incident_report": "supports",
+      "ev_vib_log": "weakens",
+      "ev_ac_log": "weakens",
+      "ev_thermal_log": "weakens",
+      "ev_break_surface": "weakens"
+    }
+  },
+  "required_limits": [
+    "l_frame_gap",
+    "l_load"
+  ],
+  "valid_mind_changers": [
+    "m_late_entry",
+    "m_thermal_tilt",
+    "m_photo_date"
+  ],
+  "invalid_limits": [
+    "l_invalid_sincere",
+    "l_invalid_count"
+  ],
+  "decisive_evidence": [
+    "ev_thermal_log",
+    "ev_door_log",
+    "ev_vib_log",
+    "ev_signout_sheet",
+    "ev_crack_photo",
+    "ev_maintenance_ticket",
+    "ev_break_surface"
+  ],
+  "lab_requirement": null,
+  "timeline_requirement": [
+    {
+      "evidence_id": "ev_door_log",
+      "utc_minute": 90,
+      "tol": 3
+    },
+    {
+      "evidence_id": "ev_vib_log",
+      "utc_minute": 101,
+      "tol": 3
+    },
+    {
+      "evidence_id": "ev_rita_statement",
+      "utc_minute": 115,
+      "tol": 5
+    }
+  ],
+  "refuted_hypotheses": [
+    "h_last",
+    "h_sum"
+  ],
+  "criteria_map": {
+    "c_source": "source_typing",
+    "c_conflict": "conflict_resolution",
+    "c_links": "hypothesis_links",
+    "c_uncertainty": "uncertainty",
+    "c_revision": "revision",
+    "c_elimination": "elimination",
+    "c_justification": "justification_human"
+  },
+  "caps": {
+    "no_citations_max": 45,
+    "no_conflict_resolution_max": 70
+  }
+}

@@ -1,0 +1,123 @@
+{
+  "case_id": "c017_seagull_cipher",
+  "accepted_conclusions": {
+    "h_party": {
+      "grade": 1,
+      "note_ar": "استنتاج متسق مع الأدلة ويتطلب ذكر حدوده."
+    },
+    "h_cheat": {
+      "grade": 0,
+      "note_ar": "يخلط بين غموض الشكل ودليل الغش، ويتجاهل جدول الامتحانات والحجز."
+    },
+    "h_nonsense": {
+      "grade": 0,
+      "note_ar": "يهمل أن المراتب الأولى للتكرار توافق العربية وأن السجلات تعطي الرسالتين معنى."
+    }
+  },
+  "confidence_band": {
+    "h_party": [
+      65,
+      90
+    ],
+    "h_cheat": [
+      0,
+      15
+    ],
+    "h_nonsense": [
+      0,
+      15
+    ]
+  },
+  "source_key": {
+    "ev_cipher_sheet": "redisplay",
+    "ev_chat_msgs": "redisplay",
+    "ev_book_loan": "primary_record",
+    "ev_ref_freq": "public_document",
+    "ev_freq_table": "redisplay",
+    "ev_decoded": "redisplay",
+    "ev_hall_booking": "primary_record",
+    "ev_bakery_order": "primary_record",
+    "ev_print_receipt": "primary_record",
+    "ev_exam_schedule": "public_document",
+    "ev_maher_statement": "claim",
+    "ev_rima_statement": "claim",
+    "ev_adnan_statement": "claim",
+    "ev_sawsan_statement": "claim"
+  },
+  "link_key": {
+    "h_party": {
+      "ev_decoded": "supports",
+      "ev_freq_table": "supports",
+      "ev_ref_freq": "supports",
+      "ev_hall_booking": "supports",
+      "ev_bakery_order": "supports",
+      "ev_print_receipt": "supports",
+      "ev_exam_schedule": "supports",
+      "ev_book_loan": "supports",
+      "ev_chat_msgs": "neutral"
+    },
+    "h_cheat": {
+      "ev_chat_msgs": "supports",
+      "ev_exam_schedule": "weakens",
+      "ev_decoded": "weakens",
+      "ev_hall_booking": "weakens",
+      "ev_bakery_order": "weakens"
+    },
+    "h_nonsense": {
+      "ev_freq_table": "supports",
+      "ev_decoded": "weakens",
+      "ev_ref_freq": "weakens",
+      "ev_hall_booking": "weakens"
+    }
+  },
+  "required_limits": [
+    "l_short_sample",
+    "l_intent"
+  ],
+  "valid_mind_changers": [
+    "m_exam_notice",
+    "m_other_text",
+    "m_booking_fake"
+  ],
+  "invalid_limits": [
+    "l_invalid_secret",
+    "l_invalid_code"
+  ],
+  "decisive_evidence": [
+    "ev_decoded",
+    "ev_hall_booking",
+    "ev_bakery_order",
+    "ev_exam_schedule",
+    "ev_freq_table"
+  ],
+  "lab_requirement": null,
+  "timeline_requirement": [
+    {
+      "evidence_id": "ev_chat_msgs",
+      "utc_minute": 10,
+      "tol": 20
+    },
+    {
+      "evidence_id": "ev_book_loan",
+      "utc_minute": 90,
+      "tol": 5
+    }
+  ],
+  "refuted_hypotheses": [
+    "h_cheat",
+    "h_nonsense"
+  ],
+  "criteria_map": {
+    "c_source": "source_typing",
+    "c_conflict": "conflict_resolution",
+    "c_links": "hypothesis_links",
+    "c_uncertainty": "uncertainty",
+    "c_revision": "revision",
+    "c_elimination": "elimination",
+    "c_justification": "justification_human"
+  },
+  "caps": {
+    "no_citations_max": 45,
+    "no_conflict_resolution_max": 70
+  }
+}

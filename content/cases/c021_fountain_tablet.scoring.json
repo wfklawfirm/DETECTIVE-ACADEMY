@@ -1,0 +1,179 @@
+{
+  "case_id": "c021_fountain_tablet",
+  "accepted_conclusions": {
+    "h_nour": {
+      "grade": 1,
+      "note_ar": "استنتاج متسق مع الأدلة ويتطلب ذكر حدوده."
+    },
+    "h_karim": {
+      "grade": 0,
+      "note_ar": "يجعل الزلة إدانة، ويتجاهل أن الكلمة لها طرق بريئة وأن كريم كان في مختبر مغلق."
+    },
+    "h_invented": {
+      "grade": 0,
+      "note_ar": "خطأ في اسم المستلم لا يعني أن التسليم لم يحدث؛ سجلات الجهاز تؤكد حدوثه."
+    },
+    "h_clock": {
+      "grade": 0,
+      "note_ar": "الفرق انحراف ساعة معلوم يُصحَّح؛ لا يبطل السجلات."
+    }
+  },
+  "confidence_band": {
+    "h_nour": [
+      65,
+      90
+    ],
+    "h_karim": [
+      0,
+      15
+    ],
+    "h_invented": [
+      0,
+      15
+    ],
+    "h_clock": [
+      0,
+      20
+    ]
+  },
+  "source_key": {
+    "ev_complaint": "claim",
+    "ev_interview_note": "primary_record",
+    "ev_group_post": "primary_record",
+    "ev_friend_msg": "redisplay",
+    "ev_chat_log": "redisplay",
+    "ev_wifi_log": "primary_record",
+    "ev_tablet_history": "redisplay",
+    "ev_gate_log": "primary_record",
+    "ev_seat_booking": "primary_record",
+    "ev_lostfound": "primary_record",
+    "ev_lab_door": "primary_record",
+    "ev_lab_sheet": "primary_record",
+    "ev_karim_statement": "claim",
+    "ev_yazan_statement": "claim",
+    "ev_nour_statement": "claim"
+  },
+  "link_key": {
+    "h_nour": {
+      "ev_wifi_log": "supports",
+      "ev_lab_norm": "supports",
+      "ev_gate_log": "supports",
+      "ev_seat_booking": "supports",
+      "ev_lostfound": "supports",
+      "ev_lab_door": "supports",
+      "ev_lab_sheet": "supports",
+      "ev_nour_statement": "supports",
+      "ev_chat_log": "neutral",
+      "ev_group_post": "neutral"
+    },
+    "h_karim": {
+      "ev_complaint": "supports",
+      "ev_interview_note": "supports",
+      "ev_chat_log": "supports",
+      "ev_lab_door": "weakens",
+      "ev_lab_sheet": "weakens",
+      "ev_wifi_log": "weakens",
+      "ev_lostfound": "weakens",
+      "ev_seat_booking": "weakens",
+      "ev_group_post": "weakens",
+      "ev_friend_msg": "weakens",
+      "ev_gate_log": "supports"
+    },
+    "h_invented": {
+      "ev_tablet_history": "supports",
+      "ev_lab_norm": "weakens",
+      "ev_wifi_log": "weakens",
+      "ev_lostfound": "weakens"
+    },
+    "h_clock": {
+      "ev_tablet_history": "supports",
+      "ev_lab_norm": "weakens",
+      "ev_lostfound": "weakens"
+    }
+  },
+  "required_limits": [
+    "l_unknown_handover",
+    "l_phone_card"
+  ],
+  "valid_mind_changers": [
+    "m_karim_phone",
+    "m_tablet_other",
+    "m_skew_wrong"
+  ],
+  "invalid_limits": [
+    "l_invalid_slip",
+    "l_invalid_nervous",
+    "l_invalid_crowd"
+  ],
+  "decisive_evidence": [
+    "ev_wifi_log",
+    "ev_lab_norm",
+    "ev_gate_log",
+    "ev_lostfound",
+    "ev_seat_booking",
+    "ev_lab_door",
+    "ev_lab_sheet"
+  ],
+  "lab_requirement": {
+    "lab_id": "lab_skew",
+    "must_converge": true
+  },
+  "timeline_requirement": [
+    {
+      "evidence_id": "ev_tablet_history",
+      "utc_minute": 72,
+      "tol": 3
+    },
+    {
+      "evidence_id": "ev_wifi_log",
+      "utc_minute": 72,
+      "tol": 3
+    },
+    {
+      "evidence_id": "ev_gate_log",
+      "utc_minute": 98,
+      "tol": 4
+    },
+    {
+      "evidence_id": "ev_lostfound",
+      "utc_minute": 215,
+      "tol": 6
+    },
+    {
+      "evidence_id": "ev_group_post",
+      "utc_minute": 228,
+      "tol": 6
+    }
+  ],
+  "refuted_hypotheses": [
+    "h_karim",
+    "h_invented",
+    "h_clock"
+  ],
+  "criteria_map": {
+    "c_source": "source_typing",
+    "c_conflict": "conflict_resolution",
+    "c_links": "hypothesis_links",
+    "c_uncertainty": "uncertainty",
+    "c_revision": "revision",
+    "c_elimination": "elimination",
+    "c_justification": "justification_human"
+  },
+  "transfer_key": {
+    "valid": [
+      "o1",
+      "o2",
+      "o3",
+      "o4"
+    ],
+    "invalid": [
+      "o5",
+      "o6",
+      "o7"
+    ]
+  },
+  "caps": {
+    "no_citations_max": 45,
+    "no_conflict_resolution_max": 65
+  }
+}

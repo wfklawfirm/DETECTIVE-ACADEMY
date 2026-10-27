@@ -1,0 +1,126 @@
+{
+  "case_id": "c013_two_scarves",
+  "accepted_conclusions": {
+    "h_mazen": {
+      "grade": 1,
+      "note_ar": "استنتاج متسق مع الأدلة ويتطلب ذكر حدوده."
+    },
+    "h_yasser": {
+      "grade": 0,
+      "note_ar": "يخلط بين كثرة الألياف على القبعة والملكية، ويقبل وصلاً لوشاح آخر."
+    },
+    "h_undecided": {
+      "grade": 0,
+      "note_ar": "يتوقف عند الألياف ولا يستعمل الرقم التسلسلي والعلامة المطرزة اللذين يحسمان."
+    }
+  },
+  "confidence_band": {
+    "h_mazen": [
+      65,
+      90
+    ],
+    "h_yasser": [
+      0,
+      15
+    ],
+    "h_undecided": [
+      0,
+      20
+    ]
+  },
+  "source_key": {
+    "ev_cap_fibres": "primary_record",
+    "ev_seat_fibres": "primary_record",
+    "ev_bag_fibres": "primary_record",
+    "ev_fibre_lab": "primary_record",
+    "ev_mazen_receipt": "primary_record",
+    "ev_yasser_receipt": "primary_record",
+    "ev_scarf_tag": "primary_record",
+    "ev_scarf_patch": "primary_record",
+    "ev_departure_photo": "primary_record",
+    "ev_bus_log": "primary_record",
+    "ev_shop_count": "primary_record",
+    "ev_green_label": "primary_record",
+    "ev_mazen_statement": "claim",
+    "ev_yasser_statement": "claim",
+    "ev_layan_statement": "claim"
+  },
+  "link_key": {
+    "h_mazen": {
+      "ev_mazen_receipt": "supports",
+      "ev_scarf_tag": "supports",
+      "ev_departure_photo": "supports",
+      "ev_scarf_patch": "supports",
+      "ev_fibre_lab": "supports",
+      "ev_bus_log": "supports",
+      "ev_shop_count": "supports",
+      "ev_cap_fibres": "neutral"
+    },
+    "h_yasser": {
+      "ev_cap_fibres": "supports",
+      "ev_yasser_receipt": "supports",
+      "ev_scarf_tag": "weakens",
+      "ev_mazen_receipt": "weakens",
+      "ev_fibre_lab": "weakens",
+      "ev_scarf_patch": "weakens"
+    },
+    "h_undecided": {
+      "ev_cap_fibres": "supports",
+      "ev_yasser_receipt": "supports",
+      "ev_scarf_tag": "weakens",
+      "ev_mazen_receipt": "weakens",
+      "ev_scarf_patch": "weakens"
+    }
+  },
+  "required_limits": [
+    "l_receipt",
+    "l_illustrative"
+  ],
+  "valid_mind_changers": [
+    "m_serial",
+    "m_embroidery",
+    "m_loaned"
+  ],
+  "invalid_limits": [
+    "l_invalid_count",
+    "l_invalid_loud"
+  ],
+  "decisive_evidence": [
+    "ev_mazen_receipt",
+    "ev_scarf_tag",
+    "ev_departure_photo",
+    "ev_scarf_patch",
+    "ev_fibre_lab",
+    "ev_bus_log"
+  ],
+  "lab_requirement": null,
+  "timeline_requirement": [
+    {
+      "evidence_id": "ev_departure_photo",
+      "utc_minute": 42,
+      "tol": 3
+    },
+    {
+      "evidence_id": "ev_bus_log",
+      "utc_minute": 605,
+      "tol": 5
+    }
+  ],
+  "refuted_hypotheses": [
+    "h_yasser",
+    "h_undecided"
+  ],
+  "criteria_map": {
+    "c_source": "source_typing",
+    "c_conflict": "conflict_resolution",
+    "c_links": "hypothesis_links",
+    "c_uncertainty": "uncertainty",
+    "c_revision": "revision",
+    "c_elimination": "elimination",
+    "c_justification": "justification_human"
+  },
+  "caps": {
+    "no_citations_max": 45,
+    "no_conflict_resolution_max": 65
+  }
+}

@@ -1,0 +1,140 @@
+{
+  "case_id": "c016_garden_box",
+  "accepted_conclusions": {
+    "h_gardener": {
+      "grade": 1,
+      "note_ar": "استنتاج متسق مع الأدلة ويتطلب ذكر حدوده."
+    },
+    "h_buyer": {
+      "grade": 0,
+      "note_ar": "يحوّل معرفة المكان إلى دليل فعل، ويتجاهل أن الزبون لم يدخل المدرسة."
+    },
+    "h_member": {
+      "grade": 0,
+      "note_ar": "الصندوق بقي في موضعه حتى الحفر ثم حُفظ في الخزنة كاملاً."
+    },
+    "h_theft": {
+      "grade": 0,
+      "note_ar": "المال محفوظ كاملاً، فلم يُسرق شيء."
+    }
+  },
+  "confidence_band": {
+    "h_gardener": [
+      65,
+      90
+    ],
+    "h_buyer": [
+      0,
+      15
+    ],
+    "h_member": [
+      0,
+      15
+    ],
+    "h_theft": [
+      0,
+      15
+    ]
+  },
+  "source_key": {
+    "ev_club_note": "primary_record",
+    "ev_hole_note": "primary_record",
+    "ev_nursery_orders": "primary_record",
+    "ev_delivery_list": "primary_record",
+    "ev_gardener_log": "primary_record",
+    "ev_gate_log": "primary_record",
+    "ev_office_ledger": "primary_record",
+    "ev_count_slip": "primary_record",
+    "ev_gardener_statement": "claim",
+    "ev_clerk_statement": "claim",
+    "ev_buyer_statement": "claim",
+    "ev_ghassan_statement": "claim",
+    "ev_maha_statement": "claim"
+  },
+  "link_key": {
+    "h_gardener": {
+      "ev_nursery_orders": "supports",
+      "ev_delivery_list": "supports",
+      "ev_gardener_log": "supports",
+      "ev_office_ledger": "supports",
+      "ev_count_slip": "supports",
+      "ev_clerk_statement": "supports",
+      "ev_gardener_statement": "supports",
+      "ev_hole_note": "neutral"
+    },
+    "h_buyer": {
+      "ev_nursery_orders": "supports",
+      "ev_delivery_list": "weakens",
+      "ev_gate_log": "weakens",
+      "ev_office_ledger": "weakens",
+      "ev_buyer_statement": "neutral"
+    },
+    "h_member": {
+      "ev_hole_note": "supports",
+      "ev_office_ledger": "weakens",
+      "ev_count_slip": "weakens",
+      "ev_gardener_log": "weakens"
+    },
+    "h_theft": {
+      "ev_hole_note": "supports",
+      "ev_count_slip": "weakens",
+      "ev_office_ledger": "weakens"
+    }
+  },
+  "required_limits": [
+    "l_others",
+    "l_same_box"
+  ],
+  "valid_mind_changers": [
+    "m_ledger_late",
+    "m_other_digger",
+    "m_count_diff"
+  ],
+  "invalid_limits": [
+    "l_invalid_known",
+    "l_invalid_empty"
+  ],
+  "decisive_evidence": [
+    "ev_nursery_orders",
+    "ev_delivery_list",
+    "ev_office_ledger",
+    "ev_count_slip",
+    "ev_gardener_log"
+  ],
+  "lab_requirement": null,
+  "timeline_requirement": [
+    {
+      "evidence_id": "ev_gate_log",
+      "utc_minute": 90,
+      "tol": 10
+    },
+    {
+      "evidence_id": "ev_gardener_log",
+      "utc_minute": 100,
+      "tol": 15
+    },
+    {
+      "evidence_id": "ev_office_ledger",
+      "utc_minute": 145,
+      "tol": 10
+    }
+  ],
+  "refuted_hypotheses": [
+    "h_buyer",
+    "h_member",
+    "h_theft"
+  ],
+  "criteria_map": {
+    "c_source": "source_typing",
+    "c_conflict": "conflict_resolution",
+    "c_links": "hypothesis_links",
+    "c_uncertainty": "uncertainty",
+    "c_revision": "revision",
+    "c_elimination": "elimination",
+    "c_justification": "justification_human"
+  },
+  "caps": {
+    "no_citations_max": 45,
+    "no_conflict_resolution_max": 70
+  }
+}

@@ -24,3 +24,6 @@
 - رُقّيت `zod` إلى 4.6.7 و`ajv` إلى 8.20.0 و`vitest` إلى 3.2.7 لسدّ ثغرات معلنة.
 - يبقى 3 تنبيهات في سلسلة أدوات الاختبار فقط (`vitest/@vitest/mocker/tinypool`)، إصلاحها يتطلب ترقية major إلى vitest 4. لا تدخل في بناء الإنتاج؛ لا تشغّل واجهة vitest UI ولا ملفات اختبار غير موثوقة.
 - تحذير `allow-scripts` الخاص بـ esbuild في npm الحديث غير مؤثر على التشغيل (جُرّب على Windows).
+
+## النشر (GitHub / Vercel)
+لم يُنشر المشروع: رفض نظام الأذونات إنشاء مستودع `wfklawfirm/athar` من الجلسة، ولم يُلتفّ على الرفض. الخطوات الجاهزة: إنشاء مستودع خاص، دفع الفرع main، ربطه بـ Vercel، وضبط المتغيرات (`ATHAR_SECRET`, `ATHAR_ADMIN_EMAIL`, `ATHAR_ADMIN_PASSWORD`, `ATHAR_ALLOW_PREVIEW=1`، ويُفضَّل Turso لـ `ATHAR_DB_URL` لأن قاعدة /tmp على Vercel مؤقتة). التفاصيل في docs/DEPLOYMENT.md.

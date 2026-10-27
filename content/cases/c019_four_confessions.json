@@ -1,0 +1,2829 @@
+{
+  "schema_version": "0.1.0",
+  "case_id": "c019_four_confessions",
+  "case_version": "0.1.0",
+  "meta": {
+    "title_ar": "الكل يعترف ولا أحد فعلها",
+    "title_en": "Everyone Confessed and Nobody Did It",
+    "age_band": "16-18",
+    "locale": "ar",
+    "dialogue_register": "msa",
+    "estimated_minutes": 35,
+    "difficulty": 3,
+    "content_flags": [
+      "no_violence",
+      "science_lab"
+    ],
+    "authors": [
+      "فريق أثر التحريري (مسودة بمساعدة الذكاء الاصطناعي، لم تُراجَع بشرياً بعد)"
+    ],
+    "knowledge_object_refs": [
+      "KO-RS-05-009",
+      "KO-RS-06-015",
+      "KO-RS-06-009",
+      "KO-RS-06-001",
+      "KO-RS-05-005",
+      "KO-RS-05-002",
+      "KO-RS-06-021",
+      "KO-RS-05-014"
+    ]
+  },
+  "premise": {
+    "hook_ar": "سقطت منحوتة زجاجية قبل المعرض، وقال أربعة طلاب واحداً بعد الآخر إنهم السبب. كلٌّ منهم يظن أنه يحمي سواه.",
+    "player_role_ar": "أنت مراجع في ورشة فنون المرسى، وطُلب منك أن تقول ما تثبته السجلات قبل أن يُغلق الملف على الاعترافات.",
+    "setting_ar": "ورشة الفنون في المرسى، عصر يوم الخميس. أوقات الأجهزة وبطاقات الباب بتوقيت الورشة.",
+    "public_fact_ids": [
+      "f_sculpture_fell",
+      "f_four_confessed",
+      "f_voluntary"
+    ],
+    "assumed_general_knowledge_ar": [
+      "الاعتراف قول يحتاج إلى ما يؤيده",
+      "الجسم الساكن لا يسقط بلا سبب في لحظة محددة"
+    ]
+  },
+  "entities": {
+    "characters": [
+      {
+        "id": "nour",
+        "name_ar": "نور الفارس",
+        "role": "suspect",
+        "age_descriptor_ar": "طالبة في ورشة الفنون",
+        "persona_ar": "رقيقة ومسؤولة، تحمل همّ أي خطأ في الورشة، وتتحمّل اللوم بسرعة قبل أن تتحقق.",
+        "motives_ar": [
+          "ألا يتضرر عمل ريتا",
+          "أن تحمي رفاقها من اللوم"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "nr_greet",
+            "purpose": "greeting",
+            "text_ar": "أنا قلت ما أظنه صحيحاً. اسألني ما تريد."
+          },
+          {
+            "line_id": "nr_conf",
+            "purpose": "reveal",
+            "text_ar": "حين كنت أحمل صينية الألوان قرابة الرابعة وأربعين دقيقة لمس مرفقي جانب الرف. ظننت بعد ذلك أنني السبب فقلت ذلك في الاجتماع.",
+            "fact_ids": [
+              "f_nour_acts"
+            ],
+            "claim_ids": [
+              "cl_nour_bump"
+            ]
+          },
+          {
+            "line_id": "nr_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أذكر أكثر من ذلك."
+          },
+          {
+            "line_id": "nr_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عمّا فعلته في الورشة."
+          },
+          {
+            "line_id": "nr_bye",
+            "purpose": "farewell",
+            "text_ar": "أريد أن أعرف ما حدث فعلاً."
+          }
+        ]
+      },
+      {
+        "id": "basel",
+        "name_ar": "باسل المهنا",
+        "role": "suspect",
+        "age_descriptor_ar": "طالب في ورشة الفنون",
+        "persona_ar": "سريع الحماسة وكريم، يقدّم نفسه حين يظن أن زميلاً يُتّهم، ويصدّق أنه المسؤول.",
+        "motives_ar": [
+          "أن يحمي نور من اللوم",
+          "ألا يتضرر المعرض"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "bs_greet",
+            "purpose": "greeting",
+            "text_ar": "اعترفت لأنني لا أريد أن تُلام نور."
+          },
+          {
+            "line_id": "bs_conf",
+            "purpose": "reveal",
+            "text_ar": "أغلقت باب الورشة بقوة وأنا خارج قبيل الخامسة والربع. ظننت أن الاهتزاز هو الذي أسقط المنحوتة.",
+            "fact_ids": [
+              "f_basel_acts"
+            ],
+            "claim_ids": [
+              "cl_basel_door"
+            ]
+          },
+          {
+            "line_id": "bs_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف."
+          },
+          {
+            "line_id": "bs_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن الباب."
+          },
+          {
+            "line_id": "bs_bye",
+            "purpose": "farewell",
+            "text_ar": "إن كنت مخطئاً فسأرتاح."
+          }
+        ]
+      },
+      {
+        "id": "hala",
+        "name_ar": "هالة السيد",
+        "role": "suspect",
+        "age_descriptor_ar": "طالبة في ورشة الفنون",
+        "persona_ar": "عملية وهادئة، تتقدم حين ترى أن الحمل يقع على غيرها، وتبني تفسيرها على ما تعرف عن الأجهزة.",
+        "motives_ar": [
+          "أن يُنصَف زملاؤها",
+          "أن تفهم ما حدث لا أن تتحمل اللوم فقط"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "hl_greet",
+            "purpose": "greeting",
+            "text_ar": "ظننت أن التفسير عندي، فقلته."
+          },
+          {
+            "line_id": "hl_conf",
+            "purpose": "reveal",
+            "text_ar": "ضبطت المكيّف على أشد تبريد قرابة الخامسة وعشرين دقيقة. ظننت أن الاهتزاز الإضافي هو السبب.",
+            "fact_ids": [
+              "f_hala_acts"
+            ],
+            "claim_ids": [
+              "cl_hala_ac"
+            ]
+          },
+          {
+            "line_id": "hl_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف."
+          },
+          {
+            "line_id": "hl_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن المكيّف."
+          },
+          {
+            "line_id": "hl_bye",
+            "purpose": "farewell",
+            "text_ar": "المهم أن نعرف الحقيقة."
+          }
+        ]
+      },
+      {
+        "id": "jad",
+        "name_ar": "جاد الخوري",
+        "role": "suspect",
+        "age_descriptor_ar": "طالب في ورشة الفنون، آخر من غادر الورشة",
+        "persona_ar": "جاد الضمير وقلق، يميل إلى أن يلوم نفسه لأنه كان آخر من لمس المنحوتة.",
+        "motives_ar": [
+          "أن يتحمل مسؤولية ما فعله",
+          "ألا يُظلم زملاؤه"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "jd_greet",
+            "purpose": "greeting",
+            "text_ar": "كنت آخر من خرج، فأظن أن المسؤولية عليّ."
+          },
+          {
+            "line_id": "jd_conf",
+            "purpose": "reveal",
+            "text_ar": "أدرت قاعدة المنحوتة بضعة سنتيمترات نحو الضوء قرابة الخامسة وخمس وعشرين دقيقة، ثم خرجت في الخامسة والنصف. ظننت أنني أخللت بتوازنها.",
+            "fact_ids": [
+              "f_jad_acts"
+            ],
+            "claim_ids": [
+              "cl_jad_turn"
+            ]
+          },
+          {
+            "line_id": "jd_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أذكر."
+          },
+          {
+            "line_id": "jd_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عمّا فعلته قبل الخروج."
+          },
+          {
+            "line_id": "jd_bye",
+            "purpose": "farewell",
+            "text_ar": "سأقبل ما تقوله الأدلة."
+          }
+        ]
+      },
+      {
+        "id": "rita",
+        "name_ar": "ريتا العمر",
+        "role": "victim",
+        "age_descriptor_ar": "فنانة المنحوتة وطالبة في الورشة",
+        "persona_ar": "حزينة لكنها منصفة، لا تريد أن يُظلم أحد بسبب عملها، وتحتفظ بصور عملها.",
+        "motives_ar": [
+          "أن تفهم سبب سقوط عملها",
+          "ألا يُلام زملاؤها بغير حق"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "rt_greet",
+            "purpose": "greeting",
+            "text_ar": "عملٌ استغرق أشهراً… لكني لا أريد أن يتحمل أحد ذنباً لم يفعله."
+          },
+          {
+            "line_id": "rt_found",
+            "purpose": "reveal",
+            "text_ar": "وصلت إلى الورشة قرابة الخامسة وخمس وخمسين دقيقة فوجدت الحطام ولم يكن أحد هناك.",
+            "fact_ids": [
+              "f_rita_found"
+            ]
+          },
+          {
+            "line_id": "rt_photo",
+            "purpose": "reveal",
+            "text_ar": "عندي صور من معرض الفصل الماضي لعمل سابق لي، والرف نفسه يظهر في خلفيتها.",
+            "fact_ids": [
+              "f_photo_exists"
+            ]
+          },
+          {
+            "line_id": "rt_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف."
+          },
+          {
+            "line_id": "rt_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن المنحوتة وصورها."
+          },
+          {
+            "line_id": "rt_bye",
+            "purpose": "farewell",
+            "text_ar": "شكراً لأنك تسأل قبل أن تحكم."
+          }
+        ]
+      },
+      {
+        "id": "maysa",
+        "name_ar": "ميساء النجار",
+        "role": "suspect",
+        "age_descriptor_ar": "موظفة المرافق والصيانة في المدرسة",
+        "persona_ar": "مجتهدة ومثقلة بالطلبات، تؤجل ما تراه صغيراً، وتخشى أن تُلام فتقلل من شأن طلب قديم.",
+        "motives_ar": [
+          "ألا تُلام على تأجيل صيانة",
+          "أن تبقى سجلات الأجهزة سليمة"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "ms_greet",
+            "purpose": "greeting",
+            "text_ar": "أتولى الأجهزة والصيانة هنا. أستطيع أن أعرض لك سجلاتها."
+          },
+          {
+            "line_id": "ms_systems",
+            "purpose": "reveal",
+            "text_ar": "الورشة فيها كاميرا حرارية فوق الفرن، وقارئ بطاقات على الباب، ومسجّل اهتزاز على حائط الرف، ومتحكم في المكيّف، ولكل منها سجل.",
+            "fact_ids": [
+              "f_thermal_exists",
+              "f_door_log_exists",
+              "f_vib_exists",
+              "f_ac_log_exists"
+            ]
+          },
+          {
+            "line_id": "ms_claim",
+            "purpose": "lie",
+            "text_ar": "لا طلبات صيانة مفتوحة تخص الرف.",
+            "claim_ids": [
+              "cl_maysa_none"
+            ]
+          },
+          {
+            "line_id": "ms_refuse",
+            "purpose": "refuse_secret",
+            "text_ar": "لا أذكر شيئاً آخر عن الصيانة."
+          },
+          {
+            "line_id": "ms_ticket",
+            "purpose": "reveal",
+            "text_ar": "نعم... كان عندي طلب قديم عن صدع صغير في زاوية قاعدة الرف، صنّفته منخفض الأولوية وأجّلته إلى ما بعد المعرض. الطلب محفوظ عندي.",
+            "fact_ids": [
+              "f_ticket_exists"
+            ]
+          },
+          {
+            "line_id": "ms_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "ليس عندي شيء عن هذا."
+          },
+          {
+            "line_id": "ms_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن الأجهزة والصيانة."
+          },
+          {
+            "line_id": "ms_bye",
+            "purpose": "farewell",
+            "text_ar": "سأراجع طريقة تأجيل الطلبات."
+          }
+        ]
+      }
+    ],
+    "locations": [
+      {
+        "id": "loc_workshop",
+        "name_ar": "ورشة الفنون",
+        "description_ar": "الفرن والرف الزجاجي وطاولات العمل."
+      },
+      {
+        "id": "loc_door",
+        "name_ar": "باب الورشة",
+        "description_ar": "قارئ البطاقات وورقة التوقيع."
+      },
+      {
+        "id": "loc_office",
+        "name_ar": "مكتب المرافق",
+        "description_ar": "سجلات الأجهزة وطلبات الصيانة."
+      },
+      {
+        "id": "loc_hall",
+        "name_ar": "قاعة اجتماع الورشة",
+        "description_ar": "حيث قيلت الاعترافات في الاجتماع."
+      }
+    ],
+    "objects": [
+      {
+        "id": "obj_sculpture",
+        "name_ar": "المنحوتة الزجاجية",
+        "description_ar": "عمل ريتا المعدّ للمعرض."
+      },
+      {
+        "id": "obj_shelf",
+        "name_ar": "رف المنحوتة",
+        "description_ar": "رف خشبي بقاعدة معدنية قرب الفرن."
+      }
+    ],
+    "organizations": [
+      {
+        "id": "org_workshop",
+        "name_ar": "ورشة فنون المرسى",
+        "description_ar": "ورشة مدرسية خيالية تعرض أعمال طلابها."
+      }
+    ]
+  },
+  "truth": {
+    "solution": {
+      "culprit_ids": [
+        "maysa"
+      ],
+      "summary_ar": "لم يُسقط أحد المنحوتة. الأفعال الأربعة المعترف بها وقعت، لكن المنحوتة بقيت قائمة بعدها، وسقطت حين كانت الورشة خالية. انهارت القاعدة عند صدع قديم أُجِّل إصلاحه إدارياً، وكانت الاعترافات صادقة النية خاطئة في تحديد السبب.",
+      "key_fact_ids": [
+        "f_no_act_caused",
+        "f_shelf_defect"
+      ]
+    },
+    "facts": [
+      {
+        "id": "f_sculpture_fell",
+        "statement_ar": "سقطت منحوتة ريتا الزجاجية من الرف وتشظّت قبل المعرض بأيام، ولم يُصب أحد.",
+        "kind": "event",
+        "subject_ids": [
+          "obj_sculpture",
+          "obj_shelf",
+          "rita"
+        ],
+        "spoiler_level": 0
+      },
+      {
+        "id": "f_four_confessed",
+        "statement_ar": "اعترف أربعة طلاب واحداً بعد الآخر في اجتماع الورشة، وكل منهم يظن أن فعلاً صغيراً منه هو السبب.",
+        "kind": "event",
+        "subject_ids": [
+          "nour",
+          "basel",
+          "hala",
+          "jad"
+        ],
+        "spoiler_level": 0
+      },
+      {
+        "id": "f_voluntary",
+        "statement_ar": "قيلت الاعترافات طوعاً في اجتماع عام للورشة، من غير استجواب ولا ضغط على أحد.",
+        "kind": "state",
+        "subject_ids": [
+          "nour",
+          "basel",
+          "hala",
+          "jad",
+          "loc_hall"
+        ],
+        "spoiler_level": 0
+      },
+      {
+        "id": "f_nour_acts",
+        "statement_ar": "لمس مرفق نور جانب الرف نحو 16:40 وهي تحمل صينية.",
+        "kind": "event",
+        "subject_ids": [
+          "nour",
+          "obj_shelf"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 40,
+          "precision": "approx"
+        },
+        "location_id": "loc_workshop"
+      },
+      {
+        "id": "f_basel_acts",
+        "statement_ar": "أغلق باسل باب الورشة بقوة وهو يخرج نحو 17:12.",
+        "kind": "event",
+        "subject_ids": [
+          "basel",
+          "loc_door"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 72,
+          "precision": "approx"
+        },
+        "location_id": "loc_door"
+      },
+      {
+        "id": "f_hala_acts",
+        "statement_ar": "ضبطت هالة المكيّف على أشد تبريد نحو 17:20.",
+        "kind": "event",
+        "subject_ids": [
+          "hala"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 80,
+          "precision": "approx"
+        },
+        "location_id": "loc_workshop"
+      },
+      {
+        "id": "f_jad_acts",
+        "statement_ar": "أدار جاد قاعدة المنحوتة بضعة سنتيمترات نحو 17:25 وخرج 17:30.",
+        "kind": "event",
+        "subject_ids": [
+          "jad",
+          "obj_sculpture"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 85,
+          "precision": "approx",
+          "end_min": 90
+        },
+        "location_id": "loc_workshop"
+      },
+      {
+        "id": "f_rita_found",
+        "statement_ar": "وصلت ريتا نحو 17:55 فوجدت الحطام ولم يكن في الورشة أحد.",
+        "kind": "event",
+        "subject_ids": [
+          "rita",
+          "loc_workshop"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 115,
+          "precision": "approx"
+        },
+        "location_id": "loc_workshop"
+      },
+      {
+        "id": "f_photo_exists",
+        "statement_ar": "لدى ريتا صور من معرض الفصل الماضي يظهر الرف في خلفيتها.",
+        "kind": "state",
+        "subject_ids": [
+          "rita",
+          "obj_shelf"
+        ],
+        "spoiler_level": 1
+      },
+      {
+        "id": "f_thermal_exists",
+        "statement_ar": "في الورشة كاميرا حرارية فوق الفرن تغطي الرف المجاور ولها سجل لقطات.",
+        "kind": "state",
+        "subject_ids": [
+          "maysa",
+          "loc_workshop"
+        ],
+        "spoiler_level": 1
+      },
+      {
+        "id": "f_door_log_exists",
+        "statement_ar": "على باب الورشة قارئ بطاقات له سجل دخول وخروج.",
+        "kind": "state",
+        "subject_ids": [
+          "maysa",
+          "loc_door"
+        ],
+        "spoiler_level": 1
+      },
+      {
+        "id": "f_vib_exists",
+        "statement_ar": "على حائط الرف جهاز يسجّل الاهتزاز طوال اليوم.",
+        "kind": "state",
+        "subject_ids": [
+          "maysa",
+          "obj_shelf"
+        ],
+        "spoiler_level": 1
+      },
+      {
+        "id": "f_ac_log_exists",
+        "statement_ar": "للمكيّف متحكم يسجّل تغيّر الضبط وتشغيل الضاغط.",
+        "kind": "state",
+        "subject_ids": [
+          "maysa",
+          "loc_workshop"
+        ],
+        "spoiler_level": 1
+      },
+      {
+        "id": "f_ticket_exists",
+        "statement_ar": "في مكتب المرافق طلب صيانة قديم يخص الرف.",
+        "kind": "state",
+        "subject_ids": [
+          "maysa",
+          "loc_office"
+        ],
+        "spoiler_level": 1
+      },
+      {
+        "id": "f_ticket_postponed",
+        "statement_ar": "سُجّل قبل خمسة أشهر طلب إصلاح لصدع في زاوية قاعدة الرف، وصُنّف منخفض الأولوية وأُجّل إلى ما بعد المعرض.",
+        "kind": "event",
+        "subject_ids": [
+          "maysa",
+          "obj_shelf",
+          "loc_office"
+        ],
+        "spoiler_level": 2,
+        "location_id": "loc_office",
+        "science_ko_refs": [
+          "KO-RS-05-014"
+        ]
+      },
+      {
+        "id": "f_break_old_new",
+        "statement_ar": "سطح الكسر في زاوية القاعدة مظلم ومغبر في جزئه الأول وفاتح حديث في بقيته.",
+        "kind": "state",
+        "subject_ids": [
+          "obj_shelf"
+        ],
+        "spoiler_level": 1,
+        "location_id": "loc_workshop"
+      },
+      {
+        "id": "f_vib_quiet",
+        "statement_ar": "سجّل جهاز الاهتزاز هدوءاً تاماً من 17:30 حتى لحظة السقوط ثم نبضة واحدة كبيرة.",
+        "kind": "state",
+        "subject_ids": [
+          "obj_shelf"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 90,
+          "precision": "exact",
+          "end_min": 101
+        },
+        "location_id": "loc_workshop"
+      },
+      {
+        "id": "f_no_act_caused",
+        "statement_ar": "لم يكن أي فعل من الأفعال الأربعة المعترف بها هو سبب السقوط: بقيت المنحوتة سليمة بعد كل منها، وسقطت في وقت خلت فيه الورشة من الناس.",
+        "kind": "relation",
+        "subject_ids": [
+          "obj_sculpture",
+          "nour",
+          "basel",
+          "hala",
+          "jad"
+        ],
+        "spoiler_level": 3,
+        "time": {
+          "start_min": 90,
+          "precision": "exact",
+          "end_min": 102
+        },
+        "location_id": "loc_workshop",
+        "science_ko_refs": [
+          "KO-RS-05-009",
+          "KO-RS-06-015"
+        ]
+      },
+      {
+        "id": "f_shelf_defect",
+        "statement_ar": "كان في زاوية قاعدة الرف صدع سابق للحادث بأشهر، فالرف لم يكن سليماً حين وُضعت عليه المنحوتة.",
+        "kind": "relation",
+        "subject_ids": [
+          "obj_shelf"
+        ],
+        "spoiler_level": 3,
+        "location_id": "loc_workshop",
+        "science_ko_refs": [
+          "KO-RS-06-009",
+          "KO-RS-06-001"
+        ]
+      }
+    ],
+    "claims": [
+      {
+        "id": "cl_nour_bump",
+        "statement_ar": "سقطت المنحوتة بسبب أن مرفقي لمس الرف.",
+        "kind": "honest_mistake",
+        "held_by": [
+          "nour"
+        ],
+        "true_fact_id": "f_no_act_caused",
+        "contradicted_by_evidence_ids": [
+          "ev_thermal_log",
+          "ev_vib_log"
+        ]
+      },
+      {
+        "id": "cl_basel_door",
+        "statement_ar": "سقطت المنحوتة بسبب اهتزاز الباب الذي أغلقته.",
+        "kind": "honest_mistake",
+        "held_by": [
+          "basel"
+        ],
+        "true_fact_id": "f_no_act_caused",
+        "contradicted_by_evidence_ids": [
+          "ev_vib_log",
+          "ev_door_log"
+        ]
+      },
+      {
+        "id": "cl_hala_ac",
+        "statement_ar": "سقطت المنحوتة بسبب اهتزاز المكيّف الذي ضبطته.",
+        "kind": "honest_mistake",
+        "held_by": [
+          "hala"
+        ],
+        "true_fact_id": "f_no_act_caused",
+        "contradicted_by_evidence_ids": [
+          "ev_ac_log",
+          "ev_vib_log"
+        ]
+      },
+      {
+        "id": "cl_jad_turn",
+        "statement_ar": "سقطت المنحوتة لأنني أدرت قاعدتها قبل خروجي.",
+        "kind": "honest_mistake",
+        "held_by": [
+          "jad"
+        ],
+        "true_fact_id": "f_no_act_caused",
+        "contradicted_by_evidence_ids": [
+          "ev_thermal_log",
+          "ev_door_log"
+        ]
+      },
+      {
+        "id": "cl_maysa_none",
+        "statement_ar": "لا طلبات صيانة مفتوحة تخص الرف.",
+        "kind": "half_truth",
+        "held_by": [
+          "maysa"
+        ],
+        "true_fact_id": "f_ticket_postponed",
+        "contradicted_by_evidence_ids": [
+          "ev_maintenance_ticket",
+          "ev_break_surface"
+        ]
+      }
+    ]
+  },
+  "timeline": [
+    {
+      "id": "te_nour",
+      "description_ar": "مرفق نور يلمس جانب الرف وهي تحمل صينية الألوان.",
+      "time": {
+        "start_min": 40,
+        "precision": "approx"
+      },
+      "location_id": "loc_workshop",
+      "actor_ids": [
+        "nour"
+      ],
+      "fact_ids": [
+        "f_nour_acts"
+      ],
+      "motivated_by_ar": "كانت تنقل الألوان إلى الطاولة"
+    },
+    {
+      "id": "te_basel",
+      "description_ar": "باسل يغلق باب الورشة بقوة وهو يخرج.",
+      "time": {
+        "start_min": 72,
+        "precision": "approx"
+      },
+      "location_id": "loc_door",
+      "actor_ids": [
+        "basel"
+      ],
+      "fact_ids": [
+        "f_basel_acts"
+      ],
+      "motivated_by_ar": "كان متعجلاً للحاق بمحاضرته"
+    },
+    {
+      "id": "te_hala",
+      "description_ar": "هالة تضبط المكيّف على أشد تبريد.",
+      "time": {
+        "start_min": 80,
+        "precision": "approx"
+      },
+      "location_id": "loc_workshop",
+      "actor_ids": [
+        "hala"
+      ],
+      "fact_ids": [
+        "f_hala_acts"
+      ],
+      "motivated_by_ar": "اشتدت حرارة الورشة قرب الفرن"
+    },
+    {
+      "id": "te_jad",
+      "description_ar": "جاد يدير قاعدة المنحوتة بضعة سنتيمترات ثم يخرج 17:30.",
+      "time": {
+        "start_min": 85,
+        "precision": "approx",
+        "end_min": 90
+      },
+      "location_id": "loc_workshop",
+      "actor_ids": [
+        "jad"
+      ],
+      "fact_ids": [
+        "f_jad_acts"
+      ],
+      "motivated_by_ar": "أراد أن تواجه المنحوتة الضوء قبل أن يغادر"
+    },
+    {
+      "id": "te_fall",
+      "description_ar": "الرف يهبط والمنحوتة تسقط وتتشظى والورشة خالية.",
+      "time": {
+        "start_min": 101,
+        "precision": "approx",
+        "end_min": 102
+      },
+      "location_id": "loc_workshop",
+      "actor_ids": [],
+      "fact_ids": [
+        "f_no_act_caused",
+        "f_vib_quiet"
+      ]
+    },
+    {
+      "id": "te_found",
+      "description_ar": "ريتا تدخل الورشة وتجد الحطام.",
+      "time": {
+        "start_min": 115,
+        "precision": "approx"
+      },
+      "location_id": "loc_workshop",
+      "actor_ids": [
+        "rita"
+      ],
+      "fact_ids": [
+        "f_rita_found"
+      ],
+      "motivated_by_ar": "جاءت لتتفقد عملها قبل المعرض"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_incident_report",
+      "title_ar": "تقرير الحادثة الأول",
+      "kind": "documentary",
+      "content_ar": "تقرير مشرفة الورشة — مساء الخميس\n«سقطت منحوتة ريتا الزجاجية قبل المعرض. في اجتماع المساء قال أربعة طلاب واحداً بعد الآخر إنهم أسقطوها: نور بلمسة، وباسل بإغلاق الباب، وهالة بضبط المكيّف، وجاد بتحريك القاعدة. لم يُسأل أحد بعد عن الأدلة.»",
+      "acquired_by_action_ids": [
+        "a_read_report"
+      ],
+      "supports_fact_ids": [
+        "f_four_confessed"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "ملخص كتبته المشرفة من أقوال الطلاب؛ يسجّل ما قيل لا ما حدث، ولا يبيّن توقيت السقوط.",
+      "is_red_herring": true,
+      "location_id": "loc_hall"
+    },
+    {
+      "id": "ev_nour_statement",
+      "title_ar": "إفادة نور الفارس (ملخص)",
+      "kind": "testimonial",
+      "content_ar": "ملخص إفادة نور الفارس:\n«لمس مرفقي الرف وأنا أحمل الصينية قرابة الرابعة وأربعين دقيقة، وظننت أنني السبب. لا أعرف متى سقطت المنحوتة.»",
+      "acquired_by_action_ids": [
+        "a_note_nour"
+      ],
+      "supports_fact_ids": [
+        "f_nour_acts"
+      ],
+      "reliability": "weak",
+      "limits_ar": "إفادة صادقة في نية صاحبتها؛ تصف فعلاً حقيقياً وتضيف استنتاجاً عن سببه لا يقاس إلا بالسجلات.",
+      "location_id": "loc_hall"
+    },
+    {
+      "id": "ev_basel_statement",
+      "title_ar": "إفادة باسل المهنا (ملخص)",
+      "kind": "testimonial",
+      "content_ar": "ملخص إفادة باسل المهنا:\n«أغلقت الباب بقوة وأنا خارج. اعترفت لأحمي نور من اللوم، فأنا لا أعرف إن كان الباب هو السبب.»",
+      "acquired_by_action_ids": [
+        "a_note_basel"
+      ],
+      "supports_fact_ids": [
+        "f_basel_acts"
+      ],
+      "reliability": "weak",
+      "limits_ar": "إفادة تجمع وصف فعل مع دافع الحماية؛ لا تثبت أن للفعل أثراً في الرف.",
+      "location_id": "loc_hall"
+    },
+    {
+      "id": "ev_hala_statement",
+      "title_ar": "إفادة هالة السيد (ملخص)",
+      "kind": "testimonial",
+      "content_ar": "ملخص إفادة هالة السيد:\n«ضبطت المكيّف على أشد تبريد قرابة الخامسة وعشرين دقيقة، وظننت أن اهتزازه أسقط المنحوتة.»",
+      "acquired_by_action_ids": [
+        "a_note_hala"
+      ],
+      "supports_fact_ids": [
+        "f_hala_acts"
+      ],
+      "reliability": "weak",
+      "limits_ar": "إفادة صادقة في الفعل، والربط بالسقوط ظنّ لا قياس.",
+      "location_id": "loc_hall"
+    },
+    {
+      "id": "ev_jad_statement",
+      "title_ar": "إفادة جاد الخوري (ملخص)",
+      "kind": "testimonial",
+      "content_ar": "ملخص إفادة جاد الخوري:\n«أدرت القاعدة قليلاً قبل الخامسة والنصف وخرجت. كنت آخر من غادر، فظننت أن اللوم عليّ.»",
+      "acquired_by_action_ids": [
+        "a_note_jad"
+      ],
+      "supports_fact_ids": [
+        "f_jad_acts"
+      ],
+      "reliability": "weak",
+      "limits_ar": "كونه آخر من لمس المنحوتة لا يجعله سبب سقوطها؛ ما يقرره الترتيب الزمني ومدة ما بين اللمس والسقوط.",
+      "is_red_herring": true,
+      "location_id": "loc_hall"
+    },
+    {
+      "id": "ev_rita_statement",
+      "title_ar": "إفادة ريتا العمر (ملخص)",
+      "kind": "testimonial",
+      "content_ar": "ملخص إفادة ريتا العمر:\n«وصلت قرابة الخامسة وخمس وخمسين دقيقة فوجدت الحطام والورشة خالية. لا أعرف متى سقط.»",
+      "acquired_by_action_ids": [
+        "a_note_rita"
+      ],
+      "supports_fact_ids": [
+        "f_rita_found"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "شهادة على ما وجدته عند وصولها فقط، لا على لحظة السقوط.",
+      "location_id": "loc_workshop"
+    },
+    {
+      "id": "ev_thermal_log",
+      "title_ar": "سجل الكاميرا الحرارية فوق الفرن",
+      "kind": "digital",
+      "content_ar": "سجل لقطات الكاميرا الحرارية — ورشة الفنون (تغطي الفرن والرف المجاور)\n16:35 المنحوتة ظاهرة على الرف؛ شخص واحد قرب الفرن.\n16:45 المنحوتة ظاهرة؛ شخص واحد قرب الطاولة.\n17:10 المنحوتة ظاهرة؛ شخصان.\n17:25 المنحوتة ظاهرة؛ شخصان.\n17:30 المنحوتة ظاهرة؛ شخص واحد يتجه إلى الباب.\n17:35 المنحوتة ظاهرة؛ لا أحد في اللقطة.\n17:40 المنحوتة ظاهرة؛ لا أحد في اللقطة.\n17:42 (لقطة تغيّر مفاجئ) الرف مائل والمنحوتة غائبة وشظايا باردة على الأرض؛ لا أحد في اللقطة.\n17:55 دخول شخص إلى اللقطة.",
+      "acquired_by_action_ids": [
+        "a_get_thermal"
+      ],
+      "supports_fact_ids": [
+        "f_no_act_caused"
+      ],
+      "reliability": "strong",
+      "limits_ar": "لقطة كل خمس دقائق تقريباً، فلا تحدد لحظة السقوط بالثانية؛ والكاميرا لا ترى الباب، وتظهر الأشخاص بحرارتهم لا بأسمائهم.",
+      "forensic_ko_ref": "KO-RS-06-001",
+      "location_id": "loc_workshop"
+    },
+    {
+      "id": "ev_door_log",
+      "title_ar": "سجل بطاقات باب الورشة",
+      "kind": "digital",
+      "content_ar": "سجل قارئ البطاقات — ورشة الفنون\n15:48 دخول: نور\n16:52 خروج: نور\n17:03 دخول: باسل\n17:10 دخول: هالة\n17:12 خروج: باسل\n17:14 دخول: جاد\n17:28 خروج: هالة\n17:30 خروج: جاد\n(لا حركة بين 17:31 و17:54)\n17:55 دخول: ريتا",
+      "acquired_by_action_ids": [
+        "a_get_door"
+      ],
+      "supports_fact_ids": [
+        "f_no_act_caused"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يسجّل مرور البطاقات فقط؛ قد يدخل شخص خلف آخر دون تمرير بطاقته، ويؤيد ذلك أو ينفيه سجل آخر مستقل.",
+      "location_id": "loc_door"
+    },
+    {
+      "id": "ev_signout_sheet",
+      "title_ar": "ورقة الحضور المعلقة عند الباب",
+      "kind": "documentary",
+      "content_ar": "ورقة التوقيع اليدوية عند باب الورشة (يوقّع الطلاب أوقات الدخول والخروج)\nنور: 15:50 – 16:50\nباسل: 17:00 – 17:12\nهالة: 17:10 – 17:30\nجاد: 17:15 – 17:30\n(لا توقيعات أخرى حتى 17:55، ثم: ريتا 17:55)",
+      "acquired_by_action_ids": [
+        "a_read_signout"
+      ],
+      "supports_fact_ids": [
+        "f_no_act_caused"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "ورقة كتبها الطلاب بأنفسهم بأوقات تقريبية؛ لا تغني عن سجل مستقل، لكنها لا تتأثر بسجل البطاقات.",
+      "location_id": "loc_door"
+    },
+    {
+      "id": "ev_vib_log",
+      "title_ar": "سجل جهاز الاهتزاز على حائط الرف",
+      "kind": "digital",
+      "content_ar": "جهاز تسجيل الاهتزاز — حائط الرف (وحدة قياس اعتبارية من 0 إلى 10)\n16:40: 0.4\n17:12: 0.8\n17:20: 1.9 (بدء ضاغط المكيّف)\n17:25: 0.2\nمن 17:30 حتى 17:41: 0.1 ثابتة (هدوء)\n17:41: 6.5 (نبضة واحدة)\nملاحظة: بدء الضاغط يتكرر 6 إلى 8 مرات يومياً بقيمة نحو 1.9.",
+      "acquired_by_action_ids": [
+        "a_get_vib"
+      ],
+      "supports_fact_ids": [
+        "f_vib_quiet",
+        "f_no_act_caused"
+      ],
+      "reliability": "strong",
+      "limits_ar": "جهاز واحد على حائط واحد؛ يقيس الاهتزاز لا من تسبب فيه، ولا يقيس لمسة بطيئة هادئة.",
+      "forensic_ko_ref": "KO-RS-06-015",
+      "location_id": "loc_workshop"
+    },
+    {
+      "id": "ev_ac_log",
+      "title_ar": "سجل متحكم المكيّف",
+      "kind": "digital",
+      "content_ar": "سجل المكيّف — اليوم\n12:05 بدء الضاغط\n14:30 بدء الضاغط\n17:20 تغيير الضبط إلى 18 درجة ومروحة عالية (المستخدم: هالة)\n19:00 بدء الضاغط\nسجل الأسابيع السابقة: تغيّر الضبط ثلاث إلى أربع مرات يومياً.",
+      "acquired_by_action_ids": [
+        "a_get_ac"
+      ],
+      "supports_fact_ids": [
+        "f_ac_log_exists"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يثبت تغيير الضبط وتكراره المعتاد؛ لا يقيس أثره في الرف مباشرة.",
+      "location_id": "loc_workshop"
+    },
+    {
+      "id": "ev_crack_photo",
+      "title_ar": "صورة من معرض الفصل الماضي",
+      "kind": "digital",
+      "content_ar": "صورة لعمل سابق لريتا في معرض الفصل الماضي، ويظهر الرف نفسه في الخلفية.\nفي الزاوية اليسرى لقاعدة الرف خط شعري داكن.\nبيانات الصورة: مؤرخة قبل خمسة أشهر.",
+      "acquired_by_action_ids": [
+        "a_get_photo"
+      ],
+      "supports_fact_ids": [
+        "f_shelf_defect"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "تثبت أن علامة قديمة كانت على القاعدة قبل الحادثة؛ لا تقيس عمقها ولا مقدار ما كان الرف يتحمله، وتاريخ الصورة من بياناتها.",
+      "forensic_ko_ref": "KO-RS-06-009",
+      "location_id": "loc_workshop"
+    },
+    {
+      "id": "ev_maintenance_ticket",
+      "title_ar": "طلب صيانة الرف المؤجل",
+      "kind": "documentary",
+      "content_ar": "طلب صيانة رقم 3 — مكتب المرافق\nالتاريخ: قبل خمسة أشهر\nالموضع: رف الزجاج في ورشة الفنون\nالوصف: صدع شعري في الزاوية اليسرى لقاعدة الرف\nالأولوية: منخفضة\nالحالة: مؤجل إلى ما بعد المعرض\nالمسجِّلة: م. النجار",
+      "acquired_by_action_ids": [
+        "a_get_ticket"
+      ],
+      "supports_fact_ids": [
+        "f_ticket_postponed"
+      ],
+      "reliability": "strong",
+      "limits_ar": "سجل إداري يثبت وجود الصدع قبل الحادثة وتأجيل إصلاحه؛ لا يثبت وحده أنه سبب الانهيار.",
+      "contradicts_claim_ids": [
+        "cl_maysa_none"
+      ],
+      "location_id": "loc_office"
+    },
+    {
+      "id": "ev_break_surface",
+      "title_ar": "فحص موضع الكسر في الرف",
+      "kind": "physical",
+      "content_ar": "فحص عيني لحطام الرف بعد الحادثة\nسطح الكسر في الزاوية اليسرى لقاعدة الرف: الثلث الأول منه مظلم ومغبر وأملس، وبقيته فاتح وخشن حديث.\nلا علامة ضربة أو انبعاج على جانب الرف.",
+      "acquired_by_action_ids": [
+        "a_inspect_break"
+      ],
+      "supports_fact_ids": [
+        "f_break_old_new"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "فحص عيني دون مختبر؛ يدل على أن جزءاً من الكسر قديم ولا يحدد عمره بالأيام ولا حمل الانهيار.",
+      "contradicts_claim_ids": [
+        "cl_maysa_none"
+      ],
+      "location_id": "loc_workshop"
+    }
+  ],
+  "evidence_graph": {
+    "inferences": [
+      {
+        "id": "i_a_acts",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_thermal_log"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_door_log"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_no_act_caused"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "اللقطات تُظهر المنحوتة في مكانها بعد كل فعل معترف به حتى 17:40، وسجل الباب يثبت خلو الورشة منذ 17:30؛ فلم يكن أحد حاضراً لحظة السقوط.",
+        "skill_ko_refs": [
+          "KO-RS-05-009",
+          "KO-RS-06-015"
+        ]
+      },
+      {
+        "id": "i_a_defect",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_crack_photo"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_shelf_defect"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "صورة مؤرخة قبل خمسة أشهر تُظهر خطاً شعرياً في زاوية القاعدة؛ فالعيب سبق الحادثة بزمن طويل.",
+        "skill_ko_refs": [
+          "KO-RS-06-009"
+        ]
+      },
+      {
+        "id": "i_b_acts",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_vib_log"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_signout_sheet"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_no_act_caused"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "أكبر اهتزازات الأفعال المعترف بها (0.8) أصغر من بدء الضاغط المعتاد (1.9) الذي لا يُسقط شيئاً، ومن 17:30 إلى السقوط لا اهتزاز، وورقة التوقيع لا تذكر أحداً بعد 17:30؛ فسقطت المنحوتة بلا تدخل.",
+        "skill_ko_refs": [
+          "KO-RS-05-009",
+          "KO-RS-06-015"
+        ]
+      },
+      {
+        "id": "i_b_defect",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_maintenance_ticket"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_break_surface"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_shelf_defect"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "الطلب القديم يصف الصدع في الزاوية نفسها، وسطح الكسر مظلم مغبر في أوله فاتح في آخره؛ فبدأ الكسر من صدع قديم وانتهى بانهيار حديث.",
+        "skill_ko_refs": [
+          "KO-RS-06-009",
+          "KO-RS-06-001"
+        ]
+      },
+      {
+        "id": "i_claim_nour",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_thermal_log"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_vib_log"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_nour_bump"
+        },
+        "relation": "contradicts_claim",
+        "strength": "strong",
+        "rule_ar": "لمسة 16:40 سجّلت اهتزازاً صغيراً (0.4)، وبقيت المنحوتة ظاهرة في لقطات 16:45 وما بعدها بساعة تقريباً؛ فلم تُسقطها.",
+        "skill_ko_refs": [
+          "KO-RS-05-009",
+          "KO-RS-05-014"
+        ]
+      },
+      {
+        "id": "i_claim_basel",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_vib_log"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_door_log"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_basel_door"
+        },
+        "relation": "contradicts_claim",
+        "strength": "strong",
+        "rule_ar": "إغلاق الباب 17:12 سجّل 0.8 وهو دون اهتزاز المكيّف المعتاد، وبقيت المنحوتة بعده نحو ثلاثين دقيقة.",
+        "skill_ko_refs": [
+          "KO-RS-05-009",
+          "KO-RS-05-014"
+        ]
+      },
+      {
+        "id": "i_claim_hala",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_ac_log"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_vib_log"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_hala_ac"
+        },
+        "relation": "contradicts_claim",
+        "strength": "strong",
+        "rule_ar": "اهتزاز المكيّف 1.9 يتكرر كل يوم بلا سقوط، وبقيت المنحوتة بعده أكثر من عشرين دقيقة.",
+        "skill_ko_refs": [
+          "KO-RS-05-009",
+          "KO-RS-05-014"
+        ]
+      },
+      {
+        "id": "i_claim_jad",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_thermal_log"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_door_log"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_jad_turn"
+        },
+        "relation": "contradicts_claim",
+        "strength": "strong",
+        "rule_ar": "المنحوتة ظاهرة في لقطات 17:30 و17:35 و17:40 بعد تحريك القاعدة، وجاد خرج 17:30؛ فمرّ أكثر من عشر دقائق بين لمسته وسقوطها دون أن يكون أحد هناك.",
+        "skill_ko_refs": [
+          "KO-RS-05-009",
+          "KO-RS-06-015"
+        ]
+      },
+      {
+        "id": "i_claim_maysa",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_maintenance_ticket"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_maysa_none"
+        },
+        "relation": "contradicts_claim",
+        "strength": "strong",
+        "rule_ar": "الطلب المؤجل موجود ومسجّل باسمها، فلا صحة لقولها إن لا طلب مفتوحاً.",
+        "skill_ko_refs": [
+          "KO-RS-05-014"
+        ]
+      },
+      {
+        "id": "i_support_defect",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_no_act_caused"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_shelf_defect"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_defect"
+        },
+        "relation": "supports",
+        "strength": "strong",
+        "rule_ar": "إذا لم يسقطها أحد وكان في الرف عيب قديم، فانهيار الرف بعيبه هو التفسير الذي يجمع السجلات كلها.",
+        "skill_ko_refs": [
+          "KO-RS-06-009"
+        ]
+      },
+      {
+        "id": "i_rule_last",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_no_act_caused"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_last"
+        },
+        "relation": "rules_out",
+        "strength": "conclusive",
+        "rule_ar": "حتى لو كان جاد آخر من لمس المنحوتة، فقد بقيت سليمة بعد لمسته ثم سقطت والورشة خالية؛ فالتتابع لا يجعله السبب.",
+        "skill_ko_refs": [
+          "KO-RS-06-008"
+        ]
+      },
+      {
+        "id": "i_rule_sum",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_no_act_caused"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_sum"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "لو كان التراكم هو السبب لسقطت المنحوتة وقت أكبر الأحمال، لا بعد أحد عشر دقيقة من الهدوء التام.",
+        "skill_ko_refs": [
+          "KO-RS-06-015"
+        ]
+      },
+      {
+        "id": "i_rule_sum_b",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_vib_log"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_ac_log"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_sum"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "أحمال الأفعال الأربعة أصغر من أحمال يومية متكررة، ولم تتراكم لأن المنحوتة بقيت بعد كل فعل بدرجة سلامتها نفسها.",
+        "skill_ko_refs": [
+          "KO-RS-06-015"
+        ]
+      }
+    ]
+  },
+  "character_knowledge": [
+    {
+      "character_id": "nour",
+      "knows": [
+        {
+          "fact_id": "f_nour_acts",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": [
+        {
+          "claim_id": "cl_nour_bump",
+          "stance": "sincere"
+        }
+      ]
+    },
+    {
+      "character_id": "basel",
+      "knows": [
+        {
+          "fact_id": "f_basel_acts",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": [
+        {
+          "claim_id": "cl_basel_door",
+          "stance": "sincere"
+        }
+      ]
+    },
+    {
+      "character_id": "hala",
+      "knows": [
+        {
+          "fact_id": "f_hala_acts",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": [
+        {
+          "claim_id": "cl_hala_ac",
+          "stance": "sincere"
+        }
+      ]
+    },
+    {
+      "character_id": "jad",
+      "knows": [
+        {
+          "fact_id": "f_jad_acts",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": [
+        {
+          "claim_id": "cl_jad_turn",
+          "stance": "sincere"
+        }
+      ]
+    },
+    {
+      "character_id": "rita",
+      "knows": [
+        {
+          "fact_id": "f_rita_found",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_photo_exists",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    },
+    {
+      "character_id": "maysa",
+      "knows": [
+        {
+          "fact_id": "f_thermal_exists",
+          "access": "professional",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_door_log_exists",
+          "access": "professional",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_vib_exists",
+          "access": "professional",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_ac_log_exists",
+          "access": "professional",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [
+        {
+          "fact_id": "f_ticket_exists",
+          "reveal_when": {
+            "presented": {
+              "evidence_id": "ev_incident_report",
+              "to_character": "maysa"
+            }
+          },
+          "cover_claim_id": "cl_maysa_none",
+          "reveal_line_id": "ms_ticket"
+        }
+      ],
+      "believes": [
+        {
+          "claim_id": "cl_maysa_none",
+          "stance": "deliberate_lie"
+        }
+      ]
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "h_last",
+      "statement_ar": "أسقطها جاد، فهو آخر من لمس المنحوتة واعترافه الأقرب إلى لحظة السقوط.",
+      "is_true": false,
+      "plausibility_at_start": "high",
+      "suspect_id": "jad"
+    },
+    {
+      "id": "h_defect",
+      "statement_ar": "لم يسقطها أحد؛ انهار الرف لعيب قديم في قاعدته، وكل اعتراف كان خاطئاً بحسن نية.",
+      "is_true": true,
+      "plausibility_at_start": "low",
+      "suspect_id": "maysa"
+    },
+    {
+      "id": "h_sum",
+      "statement_ar": "تراكمت الأفعال الأربعة (اللمسة والباب والمكيّف والتحريك) حتى أسقطت المنحوتة.",
+      "is_true": false,
+      "plausibility_at_start": "medium"
+    }
+  ],
+  "misdirection_plan": [
+    {
+      "id": "rh_report",
+      "points_to_hypothesis_id": "h_sum",
+      "planted_via_ar": "أربعة اعترافات متتالية في تقرير واحد، فيبدو أن الأفعال كلها حقيقية وتجتمع.",
+      "evidence_ids": [
+        "ev_incident_report"
+      ],
+      "refuted_by_inference_ids": [
+        "i_rule_sum",
+        "i_rule_sum_b",
+        "i_a_acts"
+      ],
+      "fairness_note_ar": "الأفعال حقيقية لكنها لا تفسر السقوط: بقيت المنحوتة سليمة بعد كل فعل، وأحمالها أصغر من أحمال يومية، وسجلات الحساسات متاحة للاعب."
+    },
+    {
+      "id": "rh_jad",
+      "points_to_hypothesis_id": "h_last",
+      "planted_via_ar": "اعتراف جاد الأخير يطابق الأقرب زمناً إلى السقوط، وهو آخر من غادر.",
+      "evidence_ids": [
+        "ev_jad_statement"
+      ],
+      "refuted_by_inference_ids": [
+        "i_rule_last",
+        "i_claim_jad",
+        "i_b_acts"
+      ],
+      "fairness_note_ar": "الترتيب الزمني وحده لا يثبت سبباً: لقطات 17:30 و17:35 و17:40 تُظهر المنحوتة سليمة بعد لمسته، وخلت الورشة بعد خروجه."
+    }
+  ],
+  "learning_objectives": [
+    {
+      "id": "lo_confession",
+      "statement_ar": "يعامل الاعتراف ادعاءً يحتاج تأييداً مستقلاً ولا يعدّه إثباتاً بذاته.",
+      "skill_ko_ref": "KO-RS-05-009",
+      "observable_behaviors_ar": [
+        "يطلب سجلاً مستقلاً لكل اعتراف",
+        "لا يقيس الصدق بنبرة المعترف"
+      ],
+      "evidence_sources": [
+        "evidence_board",
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_causal",
+      "statement_ar": "يفرّق بين التتابع في الزمن والسببية، ويطلب آلية ومقداراً.",
+      "skill_ko_ref": "KO-RS-06-015",
+      "observable_behaviors_ar": [
+        "لا يحمّل آخر من لمس المنحوتة المسؤولية بسبب الترتيب",
+        "يقارن الأحمال بالمعتاد"
+      ],
+      "evidence_sources": [
+        "evidence_board",
+        "hypothesis_ledger"
+      ]
+    },
+    {
+      "id": "lo_revise",
+      "statement_ar": "يراجع الاعتقاد عند سقوط دليل، ولو كان في الأصل رواية متفقاً عليها.",
+      "skill_ko_ref": "KO-RS-06-009",
+      "observable_behaviors_ar": [
+        "يغيّر فرضيته الرائدة بدليل"
+      ],
+      "evidence_sources": [
+        "hypothesis_ledger"
+      ]
+    },
+    {
+      "id": "lo_hyp",
+      "statement_ar": "يوازن بين فرضيات متنافسة ويستبعد ما تنقضه الأدلة.",
+      "skill_ko_ref": "KO-RS-05-002",
+      "observable_behaviors_ar": [
+        "يضيف فرضيات",
+        "يستبعد بدليل"
+      ],
+      "evidence_sources": [
+        "hypothesis_ledger"
+      ]
+    },
+    {
+      "id": "lo_timeline",
+      "statement_ar": "يرتّب الأحداث على خط زمني ليكشف أن الأفعال سبقت السقوط بفواصل.",
+      "skill_ko_ref": "KO-RS-05-005",
+      "observable_behaviors_ar": [
+        "يضع الأدلة في أزمنتها"
+      ],
+      "evidence_sources": [
+        "timeline_task",
+        "action_log"
+      ]
+    },
+    {
+      "id": "lo_calib",
+      "statement_ar": "يصوغ نسبة الترجيح بحدودها.",
+      "skill_ko_ref": "KO-RS-06-021",
+      "observable_behaviors_ar": [
+        "يختار ثقة معقولة",
+        "يذكر حدوداً"
+      ],
+      "evidence_sources": [
+        "final_justification"
+      ]
+    }
+  ],
+  "mechanics": {
+    "time_budget_units": 45,
+    "actions": [
+      {
+        "id": "a_read_report",
+        "type": "examine",
+        "label_ar": "اقرأ تقرير المشرفة الأول",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_incident_report"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_hall",
+        "telemetry_code": "READ_REPORT"
+      },
+      {
+        "id": "a_read_signout",
+        "type": "examine",
+        "label_ar": "اقرأ ورقة الحضور عند باب الورشة",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_signout_sheet"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_door",
+        "telemetry_code": "READ_SIGNOUT"
+      },
+      {
+        "id": "a_inspect_break",
+        "type": "search_location",
+        "label_ar": "افحص موضع الكسر في قاعدة الرف",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_break_surface"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_workshop",
+        "telemetry_code": "INSPECT_BREAK"
+      },
+      {
+        "id": "a_int_nour",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة نور",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "nour",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "nour",
+        "telemetry_code": "INT_NOUR"
+      },
+      {
+        "id": "a_int_basel",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة باسل",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "basel",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "basel",
+        "telemetry_code": "INT_BASEL"
+      },
+      {
+        "id": "a_int_hala",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة هالة",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "hala",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "hala",
+        "telemetry_code": "INT_HALA"
+      },
+      {
+        "id": "a_int_jad",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة جاد",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "jad",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "jad",
+        "telemetry_code": "INT_JAD"
+      },
+      {
+        "id": "a_int_rita",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة ريتا",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "rita",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "rita",
+        "telemetry_code": "INT_RITA"
+      },
+      {
+        "id": "a_int_maysa",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة ميساء",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "maysa",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "maysa",
+        "telemetry_code": "INT_MAYSA"
+      },
+      {
+        "id": "a_get_thermal",
+        "type": "examine",
+        "label_ar": "اطلب سجل الكاميرا الحرارية",
+        "precondition": {
+          "fact_unlocked": "f_thermal_exists"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_thermal_log"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_office",
+        "telemetry_code": "GET_THERMAL"
+      },
+      {
+        "id": "a_get_door",
+        "type": "examine",
+        "label_ar": "اطلب سجل بطاقات الباب",
+        "precondition": {
+          "fact_unlocked": "f_door_log_exists"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_door_log"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_office",
+        "telemetry_code": "GET_DOOR"
+      },
+      {
+        "id": "a_get_vib",
+        "type": "examine",
+        "label_ar": "اطلب سجل جهاز الاهتزاز",
+        "precondition": {
+          "fact_unlocked": "f_vib_exists"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_vib_log"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_office",
+        "telemetry_code": "GET_VIB"
+      },
+      {
+        "id": "a_get_ac",
+        "type": "examine",
+        "label_ar": "اطلب سجل متحكم المكيّف",
+        "precondition": {
+          "fact_unlocked": "f_ac_log_exists"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_ac_log"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_office",
+        "telemetry_code": "GET_AC"
+      },
+      {
+        "id": "a_get_photo",
+        "type": "examine",
+        "label_ar": "اطلب صورة المعرض السابق من ريتا",
+        "precondition": {
+          "fact_unlocked": "f_photo_exists"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_crack_photo"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_workshop",
+        "telemetry_code": "GET_PHOTO"
+      },
+      {
+        "id": "a_get_ticket",
+        "type": "examine",
+        "label_ar": "اطلب طلب الصيانة القديم",
+        "precondition": {
+          "fact_unlocked": "f_ticket_exists"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_maintenance_ticket"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_office",
+        "telemetry_code": "GET_TICKET"
+      },
+      {
+        "id": "a_note_nour",
+        "type": "examine",
+        "label_ar": "دوّن إفادة نور",
+        "precondition": {
+          "fact_unlocked": "f_nour_acts"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_nour_statement"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "nour",
+        "telemetry_code": "NOTE_NOUR"
+      },
+      {
+        "id": "a_note_basel",
+        "type": "examine",
+        "label_ar": "دوّن إفادة باسل",
+        "precondition": {
+          "fact_unlocked": "f_basel_acts"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_basel_statement"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "basel",
+        "telemetry_code": "NOTE_BASEL"
+      },
+      {
+        "id": "a_note_hala",
+        "type": "examine",
+        "label_ar": "دوّن إفادة هالة",
+        "precondition": {
+          "fact_unlocked": "f_hala_acts"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_hala_statement"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "hala",
+        "telemetry_code": "NOTE_HALA"
+      },
+      {
+        "id": "a_note_jad",
+        "type": "examine",
+        "label_ar": "دوّن إفادة جاد",
+        "precondition": {
+          "fact_unlocked": "f_jad_acts"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_jad_statement"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "jad",
+        "telemetry_code": "NOTE_JAD"
+      },
+      {
+        "id": "a_note_rita",
+        "type": "examine",
+        "label_ar": "دوّن إفادة ريتا",
+        "precondition": {
+          "fact_unlocked": "f_rita_found"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_rita_statement"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "rita",
+        "telemetry_code": "NOTE_RITA"
+      },
+      {
+        "id": "p_report_maysa",
+        "type": "present_evidence",
+        "label_ar": "اعرض تقرير الحادثة على ميساء",
+        "precondition": {
+          "presented": {
+            "evidence_id": "ev_incident_report",
+            "to_character": "maysa"
+          }
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "PRESENTED_REPORT_MAYSA"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "maysa",
+        "telemetry_code": "P_REPORT_MAYSA"
+      },
+      {
+        "id": "a_hint",
+        "type": "request_hint",
+        "label_ar": "اطلب تلميحاً",
+        "precondition": {
+          "always": true
+        },
+        "effects": [],
+        "time_cost_units": 0,
+        "telemetry_code": "REQUEST_HINT"
+      },
+      {
+        "id": "a_accuse",
+        "type": "final_accusation",
+        "label_ar": "قدّم الاستنتاج النهائي",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "SUBMIT"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "FINAL_ACCUSATION"
+      },
+      {
+        "id": "ask_nour_f_nour_acts",
+        "type": "interview",
+        "label_ar": "[نموذج] nour يذكر f_nour_acts",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_nour_acts"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "nour",
+        "telemetry_code": "ASK_NOUR_F_NOUR_ACTS"
+      },
+      {
+        "id": "ask_basel_f_basel_acts",
+        "type": "interview",
+        "label_ar": "[نموذج] basel يذكر f_basel_acts",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_basel_acts"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "basel",
+        "telemetry_code": "ASK_BASEL_F_BASEL_ACTS"
+      },
+      {
+        "id": "ask_hala_f_hala_acts",
+        "type": "interview",
+        "label_ar": "[نموذج] hala يذكر f_hala_acts",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_hala_acts"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "hala",
+        "telemetry_code": "ASK_HALA_F_HALA_ACTS"
+      },
+      {
+        "id": "ask_jad_f_jad_acts",
+        "type": "interview",
+        "label_ar": "[نموذج] jad يذكر f_jad_acts",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_jad_acts"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "jad",
+        "telemetry_code": "ASK_JAD_F_JAD_ACTS"
+      },
+      {
+        "id": "ask_rita_f_rita_found",
+        "type": "interview",
+        "label_ar": "[نموذج] rita يذكر f_rita_found",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_rita_found"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "rita",
+        "telemetry_code": "ASK_RITA_F_RITA_FOUND"
+      },
+      {
+        "id": "ask_rita_f_photo_exists",
+        "type": "interview",
+        "label_ar": "[نموذج] rita يذكر f_photo_exists",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_photo_exists"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "rita",
+        "telemetry_code": "ASK_RITA_F_PHOTO_EXISTS"
+      },
+      {
+        "id": "ask_maysa_f_thermal_exists",
+        "type": "interview",
+        "label_ar": "[نموذج] maysa يذكر f_thermal_exists",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_thermal_exists"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "maysa",
+        "telemetry_code": "ASK_MAYSA_F_THERMAL_EXISTS"
+      },
+      {
+        "id": "ask_maysa_f_door_log_exists",
+        "type": "interview",
+        "label_ar": "[نموذج] maysa يذكر f_door_log_exists",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_door_log_exists"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "maysa",
+        "telemetry_code": "ASK_MAYSA_F_DOOR_LOG_EXISTS"
+      },
+      {
+        "id": "ask_maysa_f_vib_exists",
+        "type": "interview",
+        "label_ar": "[نموذج] maysa يذكر f_vib_exists",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_vib_exists"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "maysa",
+        "telemetry_code": "ASK_MAYSA_F_VIB_EXISTS"
+      },
+      {
+        "id": "ask_maysa_f_ac_log_exists",
+        "type": "interview",
+        "label_ar": "[نموذج] maysa يذكر f_ac_log_exists",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_ac_log_exists"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "maysa",
+        "telemetry_code": "ASK_MAYSA_F_AC_LOG_EXISTS"
+      },
+      {
+        "id": "ask_maysa_f_ticket_exists",
+        "type": "interview",
+        "label_ar": "[نموذج] maysa يكشف f_ticket_exists",
+        "precondition": {
+          "all": [
+            {
+              "always": true
+            },
+            {
+              "presented": {
+                "evidence_id": "ev_incident_report",
+                "to_character": "maysa"
+              }
+            }
+          ]
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_ticket_exists"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "maysa",
+        "telemetry_code": "ASK_MAYSA_F_TICKET_EXISTS"
+      }
+    ]
+  },
+  "state_machine": {
+    "id": "c019",
+    "initial": "briefing",
+    "type": "compound",
+    "states": {
+      "briefing": {
+        "description_ar": "الإحاطة",
+        "type": "atomic",
+        "on": {
+          "START": {
+            "target": "investigating"
+          }
+        }
+      },
+      "investigating": {
+        "description_ar": "التحقيق",
+        "type": "compound",
+        "initial": "gathering",
+        "states": {
+          "gathering": {
+            "type": "atomic",
+            "on": {
+              "OPEN_DEDUCTION": {
+                "target": "deducing"
+              }
+            }
+          },
+          "deducing": {
+            "type": "atomic",
+            "on": {
+              "BACK": {
+                "target": "gathering"
+              }
+            }
+          }
+        },
+        "on": {
+          "SUBMIT": {
+            "target": "review"
+          }
+        }
+      },
+      "review": {
+        "description_ar": "مراجعة",
+        "type": "atomic",
+        "on": {
+          "CLOSE": {
+            "target": "resolved"
+          }
+        }
+      },
+      "resolved": {
+        "description_ar": "إغلاق",
+        "type": "final"
+      }
+    }
+  },
+  "dialogue": {
+    "max_turns_per_interview": 10,
+    "llm_enabled": false,
+    "topics": [
+      {
+        "id": "t_nour",
+        "label_ar": "ما فعلته نور",
+        "example_questions_ar": [
+          "ماذا فعلتِ قرب الرف؟",
+          "لماذا اعترفتِ؟"
+        ],
+        "fact_ids": [
+          "f_nour_acts"
+        ],
+        "claim_ids": [
+          "cl_nour_bump"
+        ]
+      },
+      {
+        "id": "t_basel",
+        "label_ar": "ما فعله باسل",
+        "example_questions_ar": [
+          "ماذا فعلت عند الباب؟",
+          "لماذا اعترفت؟"
+        ],
+        "fact_ids": [
+          "f_basel_acts"
+        ],
+        "claim_ids": [
+          "cl_basel_door"
+        ]
+      },
+      {
+        "id": "t_hala",
+        "label_ar": "ما فعلته هالة",
+        "example_questions_ar": [
+          "ماذا فعلتِ بالمكيّف؟",
+          "لماذا اعترفتِ؟"
+        ],
+        "fact_ids": [
+          "f_hala_acts"
+        ],
+        "claim_ids": [
+          "cl_hala_ac"
+        ]
+      },
+      {
+        "id": "t_jad",
+        "label_ar": "ما فعله جاد",
+        "example_questions_ar": [
+          "ماذا فعلت قبل الخروج؟",
+          "لماذا اعترفت؟"
+        ],
+        "fact_ids": [
+          "f_jad_acts"
+        ],
+        "claim_ids": [
+          "cl_jad_turn"
+        ]
+      },
+      {
+        "id": "t_found",
+        "label_ar": "اكتشاف الحطام وصور الرف",
+        "example_questions_ar": [
+          "متى وجدتِ الحطام؟",
+          "هل لديكِ صور للرف؟"
+        ],
+        "fact_ids": [
+          "f_rita_found",
+          "f_photo_exists"
+        ]
+      },
+      {
+        "id": "t_devices",
+        "label_ar": "أجهزة الورشة",
+        "example_questions_ar": [
+          "ما الأجهزة التي تسجّل في الورشة؟",
+          "هل يوجد سجل لكل منها؟"
+        ],
+        "fact_ids": [
+          "f_thermal_exists",
+          "f_door_log_exists",
+          "f_vib_exists",
+          "f_ac_log_exists"
+        ]
+      },
+      {
+        "id": "t_repair",
+        "label_ar": "صيانة الرف",
+        "example_questions_ar": [
+          "هل هناك طلبات صيانة للرف؟",
+          "ماذا كان في الطلب القديم؟"
+        ],
+        "fact_ids": [
+          "f_ticket_exists"
+        ],
+        "claim_ids": [
+          "cl_maysa_none"
+        ]
+      }
+    ]
+  },
+  "rubric": {
+    "reference_answer_ar": "لم يُسقط أحد المنحوتة، وكل الاعترافات الأربعة صادقة في نيتها خاطئة في ربطها بالسقوط. الأفعال حدثت فعلاً (لمسة، وباب، ومكيّف، وتحريك قاعدة)، لكن لقطات الكاميرا الحرارية تُظهر المنحوتة في مكانها بعد كل منها حتى 17:40، وسجل البطاقات وورقة التوقيع يثبتان خلو الورشة بعد 17:30، وجهاز الاهتزاز يسجّل أصغر مما يسجّله المكيّف كل يوم ثم هدوءاً تاماً إلى لحظة السقوط. وفي الرف عيب قديم موثق: خط شعري في صورة قبل خمسة أشهر، وطلب صيانة مؤجل، وسطح كسر قديم في جزء منه. فالأرجح أن الرف انهار بعيبه. حدود الاستنتاج: اللقطات متباعدة نحو خمس دقائق، ولا نعرف حمل الرف بدقة، ولا يمكن نفي أثر ضئيل جداً لأي لمسة، ويبقى سبب تأجيل الإصلاح مسألة إدارية لا أكثر.",
+    "criteria": [
+      {
+        "id": "c_source",
+        "name_ar": "تصنيف المصادر",
+        "objective_ids": [
+          "lo_confession"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يصنّف"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "أخطأ في الأغلب"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "نصف صحيح"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمه صحيح"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كله صحيح"
+          }
+        ]
+      },
+      {
+        "id": "c_conflict",
+        "name_ar": "ترتيب الأفعال والسقوط على الخط الزمني",
+        "objective_ids": [
+          "lo_timeline"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.2,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يضع شيئاً"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "وضع قليلاً"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "وضع نصفها صحيحاً"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمها"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كلها في موضعها"
+          }
+        ]
+      },
+      {
+        "id": "c_links",
+        "name_ar": "ربط الأدلة بالفرضيات",
+        "objective_ids": [
+          "lo_causal",
+          "lo_confession"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.2,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لا روابط"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "قليلة"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "نصفها صحيح"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمها"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كلها دقيقة"
+          }
+        ]
+      },
+      {
+        "id": "c_uncertainty",
+        "name_ar": "معايرة الثقة",
+        "objective_ids": [
+          "lo_calib"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "ثقة مفرطة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "حدود قليلة"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "جزئية"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معقولة"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "معايَرة كاملة"
+          }
+        ]
+      },
+      {
+        "id": "c_revision",
+        "name_ar": "مراجعة الرأي",
+        "objective_ids": [
+          "lo_revise"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "بقي على فرضية مرفوضة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "لم يعلن فرضية"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "ثبت على فرضية سليمة"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "غيّر بدليل"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "غيّر بدليل ووثّق"
+          }
+        ]
+      },
+      {
+        "id": "c_elimination",
+        "name_ar": "استبعاد الفرضيات الخاطئة",
+        "objective_ids": [
+          "lo_hyp"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يستبعد"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "استبعد خطأً"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "فرضية بدليل"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "فرضيتين"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كل الخاطئة"
+          }
+        ]
+      },
+      {
+        "id": "c_justification",
+        "name_ar": "جودة الحجة المكتوبة",
+        "objective_ids": [
+          "lo_confession",
+          "lo_causal"
+        ],
+        "scored_by": "human",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لا حجة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "ادعاء بلا سند"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "أدلة دون ربط"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "ربط الأدلة بالاستنتاج"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "ربط مع البدائل والحدود"
+          }
+        ]
+      }
+    ]
+  },
+  "hint_ladder": [
+    {
+      "id": "hg1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "حين يقول أكثر من شخص إنه الفاعل، ما الذي يقيس صدق كل قول غير نبرة صاحبه؟",
+      "trigger": {
+        "always": true
+      },
+      "assessment_weight": 0.02
+    },
+    {
+      "id": "hg2",
+      "level": 2,
+      "kind": "focus_area",
+      "text_ar": "لكل اعتراف اسأل: ما الذي بقي في مكانه بعد الفعل، وكم دقيقة مرّت قبل السقوط؟",
+      "trigger": {
+        "has_evidence": "ev_incident_report"
+      },
+      "assessment_weight": 0.04
+    },
+    {
+      "id": "ha1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "ما الذي كانت حرارة الكاميرا تراه بعد كل فعل؟",
+      "trigger": {
+        "has_evidence": "ev_incident_report"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_a_acts"
+    },
+    {
+      "id": "ha2",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "اسأل ميساء عن أجهزة الورشة، ثم رتّب لقطات الكاميرا وسجل الباب على خط واحد.",
+      "trigger": {
+        "has_evidence": "ev_incident_report"
+      },
+      "assessment_weight": 0.06,
+      "targets_inference_id": "i_a_acts"
+    },
+    {
+      "id": "hb1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "هل اهتزاز الباب أكبر مما يحدث كل يوم أم أصغر؟",
+      "trigger": {
+        "has_evidence": "ev_incident_report"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_b_acts"
+    },
+    {
+      "id": "hb2",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "قارن أرقام جهاز الاهتزاز بأرقام المكيّف المعتادة، وانظر إلى ما بعد الخامسة والنصف.",
+      "trigger": {
+        "has_evidence": "ev_incident_report"
+      },
+      "assessment_weight": 0.06,
+      "targets_inference_id": "i_b_acts"
+    },
+    {
+      "id": "hd1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "ماذا لو كان الرف نفسه هو ما تغيّر قبل أشهر؟ أين يمكن أن يبقى أثر لذلك؟",
+      "trigger": {
+        "has_evidence": "ev_incident_report"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_b_defect"
+    },
+    {
+      "id": "hd2",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "افحص موضع الكسر بنفسك، واسأل ريتا عن صور الرف قبل الحادثة.",
+      "trigger": {
+        "has_evidence": "ev_incident_report"
+      },
+      "assessment_weight": 0.06,
+      "targets_inference_id": "i_b_defect"
+    }
+  ],
+  "fairness_test": {
+    "requirements": {
+      "min_disjoint_proof_paths": 2,
+      "max_inference_depth": 3,
+      "all_red_herrings_refutable": true,
+      "culprit_uniquely_entailed": true,
+      "no_hidden_fact_dependency": true,
+      "max_required_actions": 45
+    },
+    "runs": []
+  },
+  "ending_explanation": {
+    "steps": [
+      {
+        "order": 1,
+        "text_ar": "لا يكفي أن يتفق أربعة أقوال: كل اعتراف ادعاء يُقاس بسجل مستقل. وقد جُمعت سجلات ترى الورشة من جهات مختلفة.",
+        "uses_evidence_ids": [
+          "ev_incident_report",
+          "ev_thermal_log"
+        ],
+        "inference_id": "i_a_acts"
+      },
+      {
+        "order": 2,
+        "text_ar": "الكاميرا الحرارية تُظهر المنحوتة في مكانها بعد كل فعل حتى 17:40، وسجل الباب يثبت خلو الورشة منذ 17:30؛ فسقطت بلا حضور أحد.",
+        "uses_evidence_ids": [
+          "ev_thermal_log",
+          "ev_door_log"
+        ],
+        "inference_id": "i_a_acts"
+      },
+      {
+        "order": 3,
+        "text_ar": "مسار مستقل: جهاز الاهتزاز يسجّل لكل فعل معترف به أقل من بدء المكيّف اليومي، ثم هدوءاً تاماً قبل السقوط، وورقة الحضور تؤيد خلو الورشة.",
+        "uses_evidence_ids": [
+          "ev_vib_log",
+          "ev_signout_sheet"
+        ],
+        "inference_id": "i_b_acts"
+      },
+      {
+        "order": 4,
+        "text_ar": "ظن آخر المعترفين أنه السبب لأنه آخر من لمسها، لكن الترتيب الزمني لا يصنع سبباً: مرّت أكثر من عشر دقائق دون أحد.",
+        "uses_evidence_ids": [
+          "ev_thermal_log",
+          "ev_door_log"
+        ],
+        "inference_id": "i_rule_last"
+      },
+      {
+        "order": 5,
+        "text_ar": "العيب القديم: صورة قبل خمسة أشهر تُظهر خطاً في زاوية القاعدة.",
+        "uses_evidence_ids": [
+          "ev_crack_photo"
+        ],
+        "inference_id": "i_a_defect"
+      },
+      {
+        "order": 6,
+        "text_ar": "ومسار مستقل للعيب: طلب صيانة مؤجل يصف الصدع نفسه، وسطح كسر قديم في جزئه الأول.",
+        "uses_evidence_ids": [
+          "ev_maintenance_ticket",
+          "ev_break_surface"
+        ],
+        "inference_id": "i_b_defect"
+      },
+      {
+        "order": 7,
+        "text_ar": "إذن الأرجح أن الرف انهار لعيبه القديم؛ والمسؤولية مؤسسية: نظام تأجيل الطلبات بلا مراجعة، لا طالب بعينه.",
+        "uses_evidence_ids": [
+          "ev_maintenance_ticket",
+          "ev_break_surface"
+        ],
+        "inference_id": "i_support_defect"
+      }
+    ],
+    "alternative_paths_ar": [
+      "يمكن الوصول إلى النتيجة من الكاميرا الحرارية وسجل الباب وصورة الرف وحدها دون جهاز الاهتزاز، لكن من يفعل ذلك يترك أرقام الاهتزاز بلا تفسير أمام من يعترف بالباب أو المكيّف.",
+      "ويمكن الوصول إليها من جهاز الاهتزاز وورقة الحضور وطلب الصيانة وفحص الكسر وحدها، والأقوى أن يتفق المساران."
+    ],
+    "what_evidence_could_not_show_ar": [
+      "لقطات الكاميرا متباعدة نحو خمس دقائق، فلا تحدد لحظة السقوط بدقة ثوانٍ.",
+      "لا نعرف الحمل الذي كان يحتمله الرف بدقة، ولا يمكن نفي أثر ضئيل جداً لأي لمسة.",
+      "لا تثبت الأدلة لماذا صُنّف الطلب منخفض الأولوية، ولا أن تأجيله وحده هو سبب الانهيار."
+    ],
+    "science_notes_ar": [
+      "الاعتراف ادعاء يحتاج تأييداً مستقلاً كغيره: قد يكون صادق النية وخاطئ الوقائع لأسباب منها حسن النية والظن بالمسؤولية والرغبة في حماية الآخر. وهذه ظاهرة موثقة في البحث وراء حالات حقيقية خطيرة، فلا نهوّن منها هنا لأن قضيتنا خيالية صغيرة.",
+      "التتابع الزمني ليس سببية: يلزم أن نسأل عن الآلية وعن المقدار قياساً بالمعتاد.",
+      "صدق نبرة المعترف أو ارتباكه لا يدل على صحة اعترافه ولا على بطلانه؛ المقياس هو السجلات المستقلة وسلسلة العهدة لها، ثم نسبة الترجيح بحدودها.",
+      "بطاقة الأصل (حكاية شعبية عابرة للثقافات): استُلهمت بنية «سلسلة الاعترافات» فقط، وأُعيد بناء القضية كلها دون جسد ولا هويات ولا سخرية."
+    ]
+  },
+  "expert_review": [
+    {
+      "role": "narrative_editor",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "scientific_reviewer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "learning_designer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "age_appropriateness",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "cultural_reviewer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "legal_rights",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "safety",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    }
+  ]
+}

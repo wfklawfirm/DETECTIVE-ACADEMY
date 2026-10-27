@@ -1,0 +1,175 @@
+{
+  "case_id": "c020_museum_hearing",
+  "accepted_conclusions": {
+    "h_unit": {
+      "grade": 1,
+      "note_ar": "استنتاج متسق مع الأدلة ويتطلب ذكر حدوده."
+    },
+    "h_restorer": {
+      "grade": 0,
+      "note_ar": "يبني على الانطباع ولوحة المتوسطات، ويتجاهل سلامة الطقم عند الإيداع المختوم."
+    },
+    "h_sabotage": {
+      "grade": 0,
+      "note_ar": "يحوّل المصلحة المعلنة إلى فعل، ولا أثر للفعل في السجلات."
+    },
+    "h_nodata": {
+      "grade": 0,
+      "note_ar": "التعارض ظاهري ويزول بفهم دقة كل سجل؛ لا يعني بطلان السجلات."
+    }
+  },
+  "confidence_band": {
+    "h_unit": [
+      65,
+      90
+    ],
+    "h_restorer": [
+      0,
+      15
+    ],
+    "h_sabotage": [
+      0,
+      15
+    ],
+    "h_nodata": [
+      0,
+      20
+    ]
+  },
+  "source_key": {
+    "ev_restoration_report": "primary_record",
+    "ev_anon_report": "claim",
+    "ev_damage_record": "primary_record",
+    "ev_intake_receipt": "primary_record",
+    "ev_imaging_log": "primary_record",
+    "ev_door_log": "primary_record",
+    "ev_logger_raw": "primary_record",
+    "ev_dashboard": "redisplay",
+    "ev_paper_trace": "primary_record",
+    "ev_service_sheet": "primary_record",
+    "ev_work_order": "primary_record",
+    "ev_expert_review": "claim",
+    "ev_maher_statement": "claim",
+    "ev_laith_statement": "claim",
+    "ev_adel_statement": "claim",
+    "ev_murad_statement": "claim"
+  },
+  "link_key": {
+    "h_unit": {
+      "ev_restoration_report": "supports",
+      "ev_intake_receipt": "supports",
+      "ev_imaging_log": "supports",
+      "ev_door_log": "supports",
+      "ev_logger_raw": "supports",
+      "ev_paper_trace": "supports",
+      "ev_service_sheet": "supports",
+      "ev_work_order": "supports",
+      "ev_expert_review": "supports",
+      "ev_murad_statement": "supports",
+      "ev_dashboard": "neutral",
+      "ev_damage_record": "neutral"
+    },
+    "h_restorer": {
+      "ev_anon_report": "supports",
+      "ev_laith_statement": "supports",
+      "ev_adel_statement": "supports",
+      "ev_maher_statement": "supports",
+      "ev_dashboard": "supports",
+      "ev_intake_receipt": "weakens",
+      "ev_imaging_log": "weakens",
+      "ev_door_log": "weakens",
+      "ev_logger_raw": "weakens",
+      "ev_expert_review": "weakens",
+      "ev_restoration_report": "weakens"
+    },
+    "h_sabotage": {
+      "ev_maher_statement": "neutral",
+      "ev_anon_report": "neutral",
+      "ev_work_order": "weakens",
+      "ev_door_log": "weakens",
+      "ev_service_sheet": "weakens"
+    },
+    "h_nodata": {
+      "ev_dashboard": "supports",
+      "ev_logger_raw": "weakens",
+      "ev_paper_trace": "weakens",
+      "ev_service_sheet": "weakens"
+    }
+  },
+  "required_limits": [
+    "l_anon",
+    "l_onset"
+  ],
+  "valid_mind_changers": [
+    "m_seal",
+    "m_card",
+    "m_logger_fault"
+  ],
+  "invalid_limits": [
+    "l_invalid_nerves",
+    "l_invalid_first",
+    "l_invalid_motive"
+  ],
+  "decisive_evidence": [
+    "ev_intake_receipt",
+    "ev_restoration_report",
+    "ev_logger_raw",
+    "ev_service_sheet",
+    "ev_paper_trace",
+    "ev_door_log"
+  ],
+  "lab_requirement": null,
+  "timeline_requirement": [
+    {
+      "evidence_id": "ev_restoration_report",
+      "utc_minute": 850,
+      "tol": 6
+    },
+    {
+      "evidence_id": "ev_intake_receipt",
+      "utc_minute": 878,
+      "tol": 8
+    },
+    {
+      "evidence_id": "ev_service_sheet",
+      "utc_minute": 1205,
+      "tol": 10
+    },
+    {
+      "evidence_id": "ev_damage_record",
+      "utc_minute": 3860,
+      "tol": 12
+    }
+  ],
+  "refuted_hypotheses": [
+    "h_restorer",
+    "h_sabotage",
+    "h_nodata"
+  ],
+  "criteria_map": {
+    "c_source": "source_typing",
+    "c_conflict": "conflict_resolution",
+    "c_links": "hypothesis_links",
+    "c_uncertainty": "uncertainty",
+    "c_revision": "revision",
+    "c_elimination": "elimination",
+    "c_justification": "justification_human"
+  },
+  "transfer_key": {
+    "valid": [
+      "o1",
+      "o2",
+      "o3",
+      "o4"
+    ],
+    "invalid": [
+      "o5",
+      "o6",
+      "o7"
+    ]
+  },
+  "caps": {
+    "no_citations_max": 45,
+    "no_conflict_resolution_max": 65
+  }
+}

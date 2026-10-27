@@ -1,0 +1,2574 @@
+{
+  "schema_version": "0.1.0",
+  "case_id": "c016_garden_box",
+  "case_version": "0.1.0",
+  "meta": {
+    "title_ar": "الصندوق تحت شجيرة الفل",
+    "title_en": "The Box Under the Jasmine Shrub",
+    "age_band": "13-15",
+    "locale": "ar",
+    "dialogue_register": "msa",
+    "estimated_minutes": 30,
+    "difficulty": 2,
+    "content_flags": [
+      "no_violence"
+    ],
+    "authors": [
+      "فريق أثر التحريري (مسودة بمساعدة الذكاء الاصطناعي، لم تُراجَع بشرياً بعد)"
+    ],
+    "knowledge_object_refs": [
+      "KO-RS-05-001",
+      "KO-RS-05-003",
+      "KO-RS-05-005",
+      "KO-RS-05-002",
+      "KO-RS-05-004",
+      "KO-RS-06-001",
+      "KO-RS-06-009",
+      "KO-RS-06-021"
+    ]
+  },
+  "premise": {
+    "hook_ar": "صندوق نقود دُفن تحت نبتة نادرة ثم اختفى، ولا شهود ولا كسر. وعند هذه النبتة بالذات قصّ أحدهم عقلة هذا الأسبوع.",
+    "player_role_ar": "أنت متدرب في إدارة ثانوية الأطلال، وطلبت مشرفة نادي البيئة منك أن تتتبع السجلات المأذون بها لمعرفة ما جرى للصندوق.",
+    "setting_ar": "ثانوية الأطلال، صباح الجمعة. تطّلع بإذن مكتوب من مدير المدرسة على سجلات الإدارة والبوابة والبستاني ونسخة من سجلات المشتل المتصلة بالمدرسة، ولا تفتح غيرها.",
+    "public_fact_ids": [
+      "f_box_missing",
+      "f_no_witness",
+      "f_rare_plant"
+    ],
+    "assumed_general_knowledge_ar": [
+      "الأشياء التي تُسلَّم إلى مكتب المدرسة تُقيَّد في سجل",
+      "قص عقلة من نبتة قد يقتضي الحفر حول جذعها"
+    ]
+  },
+  "entities": {
+    "characters": [
+      {
+        "id": "jamil",
+        "name_ar": "جميل العلي",
+        "role": "suspect",
+        "age_descriptor_ar": "بستاني المدرسة",
+        "persona_ar": "هادئ وكثير العمل قليل الكتابة، يدوّن أعماله بإيجاز، ويفترض أن الإدارة تتولى إبلاغ أصحاب الأشياء.",
+        "motives_ar": [
+          "أن تبقى الحديقة سليمة",
+          "ألا يُظنّ أنه أخذ شيئاً ليس له"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "jm_greet",
+            "purpose": "greeting",
+            "text_ar": "أهلاً. أنا أعمل في الحديقة منذ سنوات، واسألني عمّا عملته."
+          },
+          {
+            "line_id": "jm_dug",
+            "purpose": "reveal",
+            "text_ar": "حفرت يوم الخميس حول جذع شجيرة الفل مع فني المشتل لقص العقلة، ثم رددت التربة وسوّيتها.",
+            "fact_ids": [
+              "f_jamil_dug"
+            ]
+          },
+          {
+            "line_id": "jm_refuse",
+            "purpose": "refuse_secret",
+            "text_ar": "لا أذكر شيئاً آخر مما وجدته."
+          },
+          {
+            "line_id": "jm_box",
+            "purpose": "reveal",
+            "text_ar": "نعم... ظهر عند الجذع صندوق معدني عليه ملصق، فظننت أن أحداً نسيه مدفوناً وسلمته لمكتب الإدارة نحو 10:25، ولم أدوّنه في سجلي.",
+            "fact_ids": [
+              "f_jamil_found"
+            ]
+          },
+          {
+            "line_id": "jm_claim",
+            "purpose": "reveal",
+            "text_ar": "ظننت أن المكتب سيبلغ صاحبه، فهذا عمل الإدارة.",
+            "claim_ids": [
+              "cl_jamil_assumed"
+            ]
+          },
+          {
+            "line_id": "jm_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف."
+          },
+          {
+            "line_id": "jm_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن الحديقة وعن الشجيرة."
+          },
+          {
+            "line_id": "jm_bye",
+            "purpose": "farewell",
+            "text_ar": "كان ينبغي أن أكتب كل شيء في سجلي."
+          }
+        ]
+      },
+      {
+        "id": "sanaa",
+        "name_ar": "سناء الراشد",
+        "role": "witness",
+        "age_descriptor_ar": "موظفة مكتب إدارة المدرسة",
+        "persona_ar": "منظمة وتحترم الإجراءات، تدوّن كل ما يُسلَّم إلى المكتب وتنتظر أن يسأل عنه أصحابه.",
+        "motives_ar": [
+          "أن تبقى سجلات المفقودات سليمة",
+          "ألا تُلام على انتظار صاحب الصندوق"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "sn_greet",
+            "purpose": "greeting",
+            "text_ar": "تفضّل. كل ما يُسلَّم إلى المكتب أدوّنه في سجل المفقودات."
+          },
+          {
+            "line_id": "sn_recv",
+            "purpose": "reveal",
+            "text_ar": "استلمت من جميل نحو 10:25 صندوقاً معدنياً صغيراً، دوّنته في السجل ووضعته في الخزنة دون أن أفتحه.",
+            "fact_ids": [
+              "f_sanaa_received"
+            ]
+          },
+          {
+            "line_id": "sn_label",
+            "purpose": "reveal",
+            "text_ar": "على الملصق حرفان فقط، فلم أعرف صاحبه، وانتظرت أن يسأل عنه أحد.",
+            "fact_ids": [
+              "f_sanaa_label"
+            ]
+          },
+          {
+            "line_id": "sn_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف أكثر مما دوّنته."
+          },
+          {
+            "line_id": "sn_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن سجل المفقودات."
+          },
+          {
+            "line_id": "sn_bye",
+            "purpose": "farewell",
+            "text_ar": "سنضيف خطوة إبلاغ للمشرفين بعد هذا."
+          }
+        ]
+      },
+      {
+        "id": "thaer",
+        "name_ar": "ثائر الحداد",
+        "role": "suspect",
+        "age_descriptor_ar": "ولي أمر طلب عقلة من المشتل",
+        "persona_ar": "ودود ويحب الحدائق، لا يعرف شيئاً عن النادي ولا عن الصندوق، ويتضايق حين يُظنّ أنه دخل المدرسة.",
+        "motives_ar": [
+          "أن يحصل على عقلته",
+          "ألا يُتّهم بما لا علاقة له به"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "th_greet",
+            "purpose": "greeting",
+            "text_ar": "أنا طلبت عقلة فقط. ما علاقتي بصندوق؟"
+          },
+          {
+            "line_id": "th_order",
+            "purpose": "reveal",
+            "text_ar": "طلبت عقلة من فل الفجر لحديقة بيتي، وتسلمتها من المشتل نحو 11:30 ووقعت على الاستلام.",
+            "fact_ids": [
+              "f_thaer_order"
+            ]
+          },
+          {
+            "line_id": "th_off_site",
+            "purpose": "reveal",
+            "text_ar": "لم أدخل المدرسة هذا الأسبوع إطلاقاً، فالقص يتم عند المدرسة وأنا أتسلم من المشتل.",
+            "fact_ids": [
+              "f_thaer_offsite"
+            ]
+          },
+          {
+            "line_id": "th_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف شيئاً عن ذلك."
+          },
+          {
+            "line_id": "th_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن العقلة فقط."
+          },
+          {
+            "line_id": "th_bye",
+            "purpose": "farewell",
+            "text_ar": "أتمنى أن يُعثر على الصندوق."
+          }
+        ]
+      },
+      {
+        "id": "ghassan",
+        "name_ar": "غسان الفارس",
+        "role": "witness",
+        "age_descriptor_ar": "أمين صندوق نادي البيئة (طالب)",
+        "persona_ar": "حريص على أموال الرحلة ومتأثر لضياعها، يميل إلى الظن بأن أحداً عرف الموضع وسرق، ويصحح ظنه إذا واجهته بسجل.",
+        "motives_ar": [
+          "أن تعود أموال الرحلة",
+          "أن يعرف النادي ما جرى"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "gh_greet",
+            "purpose": "greeting",
+            "text_ar": "أهلاً. أنا أمين الصندوق، والصندوق ضاع من تحت الشجيرة."
+          },
+          {
+            "line_id": "gh_buried",
+            "purpose": "reveal",
+            "text_ar": "دفنّا الصندوق يوم الاثنين عند جذع الشجيرة بعد عدّ المال، ولا يعرف الموضع غير ثلاثة منا.",
+            "fact_ids": [
+              "f_club_buried"
+            ]
+          },
+          {
+            "line_id": "gh_claim",
+            "purpose": "reveal",
+            "text_ar": "التربة مقلوبة والصندوق غير موجود؛ فمن المؤكد أن أحداً عرف الموضع وسرقه.",
+            "claim_ids": [
+              "cl_ghassan_theft"
+            ]
+          },
+          {
+            "line_id": "gh_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف ما جرى بعد دفننا له."
+          },
+          {
+            "line_id": "gh_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن الصندوق وما فيه."
+          },
+          {
+            "line_id": "gh_bye",
+            "purpose": "farewell",
+            "text_ar": "أريد أن أعرف أين المال."
+          }
+        ]
+      },
+      {
+        "id": "maha",
+        "name_ar": "مها القاسم",
+        "role": "expert",
+        "age_descriptor_ar": "منسقة طلبات مشتل الندى",
+        "persona_ar": "دقيقة ومنظمة، تشرح كيف يُباع هذا الصنف وكيف تُقص عقلته، ولا تعرف شيئاً عن النادي.",
+        "motives_ar": [
+          "أن يُفهم نظام الطلبات المسبقة",
+          "أن تبقى سجلات المشتل سليمة"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "mh_greet",
+            "purpose": "greeting",
+            "text_ar": "تفضّل. أستطيع أن أشرح كيف نبيع هذا الصنف، لا أكثر."
+          },
+          {
+            "line_id": "mh_process",
+            "purpose": "reveal",
+            "text_ar": "فل الفجر لا يُباع إلا بطلب مسبق، ونقص عقلته من النبتة الأم في حديقة المدرسة بموجب اتفاق مع الإدارة، ولا يدخل الحديقة غير فني المشتل والبستاني.",
+            "fact_ids": [
+              "f_maha_process"
+            ]
+          },
+          {
+            "line_id": "mh_records",
+            "purpose": "reveal",
+            "text_ar": "نسجل كل طلب وكل محطة توصيل واستلام، ولدينا نسخة بإذن من الإدارة.",
+            "fact_ids": [
+              "f_order_exists",
+              "f_delivery_exists"
+            ]
+          },
+          {
+            "line_id": "mh_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "هذا خارج ما أعرفه."
+          },
+          {
+            "line_id": "mh_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن الطلبات والتوصيل."
+          },
+          {
+            "line_id": "mh_bye",
+            "purpose": "farewell",
+            "text_ar": "السجل يجيب أفضل مني."
+          }
+        ]
+      }
+    ],
+    "locations": [
+      {
+        "id": "loc_garden",
+        "name_ar": "حديقة المدرسة",
+        "description_ar": "فيها شجيرة فل الفجر، النبتة الأم الوحيدة في المنطقة."
+      },
+      {
+        "id": "loc_office",
+        "name_ar": "إدارة المدرسة",
+        "description_ar": "فيها سجل المفقودات والخزنة."
+      },
+      {
+        "id": "loc_gate",
+        "name_ar": "بوابة المدرسة",
+        "description_ar": "سجل الدخول والخروج."
+      },
+      {
+        "id": "loc_nursery",
+        "name_ar": "مشتل الندى",
+        "description_ar": "مشتل يبيع النبتة بطلب مسبق ويحتفظ بسجل طلباته وتوصيله."
+      },
+      {
+        "id": "loc_clubroom",
+        "name_ar": "غرفة نادي البيئة",
+        "description_ar": "مدونة النادي وسجل أنشطته."
+      }
+    ],
+    "objects": [
+      {
+        "id": "obj_box",
+        "name_ar": "صندوق رحلة نادي البيئة",
+        "description_ar": "صندوق معدني صغير بقفل، عليه ملصق بحرفين."
+      },
+      {
+        "id": "obj_shrub",
+        "name_ar": "شجيرة فل الفجر",
+        "description_ar": "نبتة زينة نادرة (نوع خيالي) في حديقة المدرسة، لا تُباع إلا من مشتل الندى."
+      }
+    ],
+    "organizations": [
+      {
+        "id": "org_school",
+        "name_ar": "ثانوية الأطلال",
+        "description_ar": "مدرسة خيالية فيها نادي للبيئة."
+      },
+      {
+        "id": "org_nursery",
+        "name_ar": "مشتل الندى",
+        "description_ar": "مشتل خيالي يبيع نبتة نادرة بطلب مسبق."
+      }
+    ]
+  },
+  "truth": {
+    "solution": {
+      "culprit_ids": [
+        "jamil"
+      ],
+      "summary_ar": "لم يضع الصندوق في سرقة. نقله البستاني بحسن نية حين كان يحفر ليجهّز عقلة طلبها زبون، وظنه منسياً فأودعه مكتب الإدارة، ولم تصل الرسالة إلى النادي. المال محفوظ كاملاً، وصاحب الطلب لم يدخل المدرسة أصلاً.",
+      "key_fact_ids": [
+        "f_dug_thursday",
+        "f_box_in_office",
+        "f_buyer_off_site"
+      ]
+    },
+    "facts": [
+      {
+        "id": "f_box_missing",
+        "statement_ar": "وجد نادي البيئة موضع الدفن عند جذع الشجيرة مردوماً والصندوق غير موجود صباح الجمعة.",
+        "kind": "event",
+        "subject_ids": [
+          "obj_box",
+          "obj_shrub",
+          "ghassan"
+        ],
+        "spoiler_level": 0,
+        "time": {
+          "start_min": 1500,
+          "precision": "exact"
+        },
+        "location_id": "loc_garden"
+      },
+      {
+        "id": "f_no_witness",
+        "statement_ar": "لا شهود على ما جرى، ولا أثر لكسر في السور أو البوابة.",
+        "kind": "state",
+        "subject_ids": [
+          "loc_garden"
+        ],
+        "spoiler_level": 0
+      },
+      {
+        "id": "f_rare_plant",
+        "statement_ar": "الشجيرة نبتة نادرة لا يبيعها إلا مشتل الندى وبطلب مسبق.",
+        "kind": "attribute",
+        "subject_ids": [
+          "obj_shrub",
+          "org_nursery"
+        ],
+        "spoiler_level": 0
+      },
+      {
+        "id": "f_club_buried",
+        "statement_ar": "دفن النادي الصندوق يوم الاثنين عند جذع الشجيرة بعد عدّ المال، ولا يعرف الموضع غير ثلاثة أعضاء.",
+        "kind": "event",
+        "subject_ids": [
+          "ghassan",
+          "obj_box"
+        ],
+        "spoiler_level": 1,
+        "location_id": "loc_garden"
+      },
+      {
+        "id": "f_jamil_dug",
+        "statement_ar": "حفر البستاني مع فني المشتل حول جذع الشجيرة يوم الخميس لقص عقلة ثم ردّ التربة.",
+        "kind": "event",
+        "subject_ids": [
+          "jamil",
+          "obj_shrub"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 100,
+          "precision": "exact",
+          "end_min": 130
+        },
+        "location_id": "loc_garden"
+      },
+      {
+        "id": "f_jamil_found",
+        "statement_ar": "وجد البستاني عند الجذع صندوقاً معدنياً مدفوناً، فظنه منسياً وسلّمه لمكتب الإدارة نحو 10:25.",
+        "kind": "event",
+        "subject_ids": [
+          "jamil",
+          "obj_box"
+        ],
+        "spoiler_level": 3,
+        "time": {
+          "start_min": 145,
+          "precision": "approx"
+        },
+        "location_id": "loc_office",
+        "science_ko_refs": [
+          "KO-RS-05-005"
+        ]
+      },
+      {
+        "id": "f_sanaa_received",
+        "statement_ar": "استلمت موظفة المكتب الصندوق نحو 10:25 ودوّنته في سجل المفقودات ووضعته في الخزنة دون فتحه.",
+        "kind": "event",
+        "subject_ids": [
+          "sanaa",
+          "obj_box"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 145,
+          "precision": "approx"
+        },
+        "location_id": "loc_office"
+      },
+      {
+        "id": "f_sanaa_label",
+        "statement_ar": "الملصق على الصندوق حرفان فقط، فلم تعرف الموظفة صاحبه وانتظرت أن يسأل عنه أحد.",
+        "kind": "state",
+        "subject_ids": [
+          "sanaa",
+          "obj_box"
+        ],
+        "spoiler_level": 1,
+        "location_id": "loc_office"
+      },
+      {
+        "id": "f_thaer_order",
+        "statement_ar": "طلب ثائر عقلة من الصنف نفسه وتسلمها من المشتل نحو 11:30 ووقّع على الاستلام.",
+        "kind": "event",
+        "subject_ids": [
+          "thaer",
+          "org_nursery"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 210,
+          "precision": "approx"
+        },
+        "location_id": "loc_nursery"
+      },
+      {
+        "id": "f_thaer_offsite",
+        "statement_ar": "يقول ثائر إنه لم يدخل المدرسة هذا الأسبوع، وإن القص يتم عند المدرسة بيد فني المشتل.",
+        "kind": "attribute",
+        "subject_ids": [
+          "thaer"
+        ],
+        "spoiler_level": 1
+      },
+      {
+        "id": "f_maha_process",
+        "statement_ar": "يُقص هذا الصنف من النبتة الأم في حديقة المدرسة بموجب اتفاق، ولا يدخل الحديقة غير فني المشتل والبستاني.",
+        "kind": "state",
+        "subject_ids": [
+          "maha",
+          "org_nursery",
+          "obj_shrub"
+        ],
+        "spoiler_level": 1,
+        "location_id": "loc_nursery"
+      },
+      {
+        "id": "f_order_exists",
+        "statement_ar": "للمشتل سجل طلبات يحفظ كل طلب ومكان القص وموعده.",
+        "kind": "state",
+        "subject_ids": [
+          "org_nursery"
+        ],
+        "spoiler_level": 1,
+        "location_id": "loc_nursery"
+      },
+      {
+        "id": "f_delivery_exists",
+        "statement_ar": "للمشتل قائمة توصيل واستلام تحفظ كل محطة ووقتها وتوقيع المستلم.",
+        "kind": "state",
+        "subject_ids": [
+          "org_nursery"
+        ],
+        "spoiler_level": 1,
+        "location_id": "loc_nursery"
+      },
+      {
+        "id": "f_dug_thursday",
+        "statement_ar": "جرى حفر عند أصل الشجيرة صباح الخميس لقص عقلة طُلبت من المشتل، وهذا ما يفسّر الموضع المقلوب.",
+        "kind": "relation",
+        "subject_ids": [
+          "obj_shrub",
+          "jamil"
+        ],
+        "spoiler_level": 3,
+        "time": {
+          "start_min": 100,
+          "precision": "exact",
+          "end_min": 130
+        },
+        "location_id": "loc_garden",
+        "science_ko_refs": [
+          "KO-RS-05-005",
+          "KO-RS-06-004"
+        ]
+      },
+      {
+        "id": "f_box_in_office",
+        "statement_ar": "الصندوق ومعه المال كاملاً في خزنة إدارة المدرسة منذ الخميس 10:25 بعد أن سلّمه البستاني، ولم يُبلَّغ النادي.",
+        "kind": "relation",
+        "subject_ids": [
+          "obj_box",
+          "jamil",
+          "sanaa"
+        ],
+        "spoiler_level": 3,
+        "time": {
+          "start_min": 145,
+          "precision": "exact",
+          "end_min": 1500
+        },
+        "location_id": "loc_office",
+        "science_ko_refs": [
+          "KO-RS-05-005",
+          "KO-RS-06-001"
+        ]
+      },
+      {
+        "id": "f_buyer_off_site",
+        "statement_ar": "طالب العقلة لم يدخل المدرسة، وتسلم عقلته من المشتل بعد انتهاء القص.",
+        "kind": "relation",
+        "subject_ids": [
+          "thaer"
+        ],
+        "spoiler_level": 3,
+        "time": {
+          "start_min": 130,
+          "precision": "exact",
+          "end_min": 210
+        },
+        "science_ko_refs": [
+          "KO-RS-06-001",
+          "KO-RS-06-004"
+        ]
+      }
+    ],
+    "claims": [
+      {
+        "id": "cl_ghassan_theft",
+        "statement_ar": "التربة مقلوبة والصندوق غير موجود، فمن المؤكد أن أحداً عرف الموضع وسرقه.",
+        "kind": "honest_mistake",
+        "held_by": [
+          "ghassan"
+        ],
+        "true_fact_id": "f_box_in_office",
+        "contradicted_by_evidence_ids": [
+          "ev_office_ledger",
+          "ev_count_slip",
+          "ev_clerk_statement"
+        ]
+      },
+      {
+        "id": "cl_jamil_assumed",
+        "statement_ar": "المكتب سيبلغ صاحب الصندوق، فهذا عمل الإدارة.",
+        "kind": "honest_mistake",
+        "held_by": [
+          "jamil"
+        ],
+        "true_fact_id": "f_box_in_office",
+        "contradicted_by_evidence_ids": [
+          "ev_office_ledger"
+        ]
+      }
+    ]
+  },
+  "timeline": [
+    {
+      "id": "te_van",
+      "description_ar": "شاحنة المشتل تدخل البوابة.",
+      "time": {
+        "start_min": 90,
+        "precision": "exact"
+      },
+      "location_id": "loc_gate",
+      "actor_ids": [],
+      "fact_ids": [
+        "f_maha_process"
+      ]
+    },
+    {
+      "id": "te_dig",
+      "description_ar": "البستاني وفني المشتل يحفران حول جذع الشجيرة لقص العقلة ثم يردّان التربة.",
+      "time": {
+        "start_min": 100,
+        "precision": "exact",
+        "end_min": 130
+      },
+      "location_id": "loc_garden",
+      "actor_ids": [
+        "jamil"
+      ],
+      "fact_ids": [
+        "f_jamil_dug",
+        "f_dug_thursday"
+      ],
+      "motivated_by_ar": "طلب المشتل قص عقلة من النبتة الأم"
+    },
+    {
+      "id": "te_box",
+      "description_ar": "البستاني يسلّم الصندوق لموظفة المكتب، وتدوّنه في سجل المفقودات.",
+      "time": {
+        "start_min": 145,
+        "precision": "approx"
+      },
+      "location_id": "loc_office",
+      "actor_ids": [
+        "jamil",
+        "sanaa"
+      ],
+      "fact_ids": [
+        "f_jamil_found",
+        "f_sanaa_received",
+        "f_box_in_office"
+      ],
+      "motivated_by_ar": "ظنّ الصندوق منسياً فسلّمه لمن يحفظ المفقودات"
+    },
+    {
+      "id": "te_pickup",
+      "description_ar": "ثائر يتسلم عقلته من المشتل ويوقّع.",
+      "time": {
+        "start_min": 210,
+        "precision": "approx"
+      },
+      "location_id": "loc_nursery",
+      "actor_ids": [
+        "thaer"
+      ],
+      "fact_ids": [
+        "f_thaer_order",
+        "f_buyer_off_site"
+      ],
+      "motivated_by_ar": "أراد غرس العقلة في حديقة بيته"
+    },
+    {
+      "id": "te_club_visit",
+      "description_ar": "النادي يزور الموضع فيجده مردوماً والصندوق غير موجود.",
+      "time": {
+        "start_min": 1500,
+        "precision": "exact"
+      },
+      "location_id": "loc_garden",
+      "actor_ids": [
+        "ghassan"
+      ],
+      "fact_ids": [
+        "f_box_missing"
+      ],
+      "motivated_by_ar": "أراد النادي تفقد صندوق الرحلة قبل الرحلة"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_club_note",
+      "title_ar": "مدونة نادي البيئة",
+      "kind": "documentary",
+      "content_ar": "مدونة نادي البيئة — ثانوية الأطلال\nالاثنين: دفنّا صندوق نقود الرحلة (340 ديناراً بعد عدّها بحضور المشرفة) عند جذع شجيرة فل الفجر في حديقة المدرسة. على الصندوق ملصق بالحرفين «ن.ب» فقط. يعرف الموضع: غسان ولين وسلمان.\nالجمعة 09:00: فتحنا الموضع فوجدنا التربة مقلوبة والصندوق غير موجود.",
+      "acquired_by_action_ids": [
+        "a_get_club"
+      ],
+      "supports_fact_ids": [
+        "f_club_buried",
+        "f_box_missing"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "مدونة النادي نفسه؛ تثبت ما دفنه وما وجده، ولا تبيّن ما جرى بين اليومين.",
+      "location_id": "loc_clubroom"
+    },
+    {
+      "id": "ev_hole_note",
+      "title_ar": "محضر معاينة الموضع",
+      "kind": "observation",
+      "content_ar": "محضر مشرفة النادي، الجمعة 09:20:\nالتربة حول جذع الشجيرة مقلوبة وأُعيد ردمها وتسويتها، والصندوق غير موجود. لا أثر لكسر في السور أو قفل البوابة.",
+      "acquired_by_action_ids": [
+        "a_get_hole"
+      ],
+      "supports_fact_ids": [
+        "f_box_missing",
+        "f_no_witness"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "يصف حال الموضع يوم الجمعة فقط؛ لا يبيّن متى قُلبت التربة ولا من فعل ذلك.",
+      "is_red_herring": true,
+      "location_id": "loc_garden"
+    },
+    {
+      "id": "ev_nursery_orders",
+      "title_ar": "سجل طلبات مشتل الندى",
+      "kind": "documentary",
+      "content_ar": "سجل طلبات مشتل الندى (نسخة بإذن من إدارة المدرسة)\nالطلب 311: فل الفجر — عُقلة واحدة — الطالب: ثائر الحداد\nمكان القص: النبتة الأم في حديقة ثانوية الأطلال بموجب اتفاق مع الإدارة\nموعد القص: الخميس 09:40 | الاستلام: من المشتل بعد القص",
+      "acquired_by_action_ids": [
+        "a_get_orders"
+      ],
+      "supports_fact_ids": [
+        "f_dug_thursday",
+        "f_buyer_off_site",
+        "f_thaer_order"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يثبت من طلب العقلة وأين ومتى تُقص ومن أين تُستلم؛ لا يبيّن من حضر القص فعلاً.",
+      "is_red_herring": true,
+      "location_id": "loc_nursery"
+    },
+    {
+      "id": "ev_delivery_list",
+      "title_ar": "قائمة توصيل واستلام المشتل",
+      "kind": "documentary",
+      "content_ar": "قائمة توصيل واستلام مشتل الندى — الخميس\nالمحطة 3: ثانوية الأطلال — دخول الحديقة 09:40 — قص عقلة للطلب 311 — الانتهاء 10:10\nالمحطة 5: المشتل — تسليم عقلة الطلب 311 للطالب ثائر الحداد 11:30 — توقيع المستلم: ث. الحداد",
+      "acquired_by_action_ids": [
+        "a_get_delivery"
+      ],
+      "supports_fact_ids": [
+        "f_dug_thursday",
+        "f_buyer_off_site",
+        "f_thaer_order"
+      ],
+      "reliability": "strong",
+      "limits_ar": "تثبت مواعيد المحطات وتوقيع المستلم في المشتل؛ لا تبيّن ما وُجد في التربة ولا من كان في الحديقة غير فني المشتل.",
+      "location_id": "loc_nursery"
+    },
+    {
+      "id": "ev_gardener_log",
+      "title_ar": "سجل أعمال البستاني",
+      "kind": "documentary",
+      "content_ar": "سجل أعمال البستاني جميل العلي — الخميس\n09:40 إلى 10:10: حفر حول جذع شجيرة الفل بالتعاون مع فني المشتل لقص عقلة، ثم رد التربة وتسويتها.\n10:30: سقي العشب أمام المبنى.",
+      "acquired_by_action_ids": [
+        "a_get_gardener_log"
+      ],
+      "supports_fact_ids": [
+        "f_dug_thursday",
+        "f_jamil_dug"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "سجل مقتضب بخط صاحبه؛ يثبت أعماله المدوّنة ولا يذكر كل ما حدث أثناءها.",
+      "location_id": "loc_garden"
+    },
+    {
+      "id": "ev_gate_log",
+      "title_ar": "سجل بوابة المدرسة",
+      "kind": "documentary",
+      "content_ar": "سجل بوابة المدرسة — الخميس\n09:30 دخول: شاحنة مشتل الندى (الفني: ماهر)\n10:32 خروج: شاحنة مشتل الندى\nلا زوار غير المعتادين بين 08:00 و12:00، ولا اسم «ثائر الحداد» في سجل الزوار.",
+      "acquired_by_action_ids": [
+        "a_get_gate"
+      ],
+      "supports_fact_ids": [
+        "f_dug_thursday",
+        "f_buyer_off_site"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يسجل ما مرّ من البوابة الرئيسية؛ لا يرى من يدخل من منفذ آخر ولا يبيّن ما فعله الداخل.",
+      "location_id": "loc_gate"
+    },
+    {
+      "id": "ev_office_ledger",
+      "title_ar": "سجل المفقودات في إدارة المدرسة",
+      "kind": "documentary",
+      "content_ar": "سجل المفقودات — إدارة ثانوية الأطلال\nالخميس 10:25: صندوق معدني صغير بقفل، ملصق «ن.ب»، سلّمه البستاني جميل العلي، وجده مدفوناً عند جذع شجيرة في الحديقة.\nالحالة: محفوظ في خزنة الإدارة.\nإبلاغ صاحبه: لم يُبلَّغ بعد (لا اسم كامل على الملصق).\nالموظفة: سناء الراشد",
+      "acquired_by_action_ids": [
+        "a_get_ledger"
+      ],
+      "supports_fact_ids": [
+        "f_box_in_office"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يثبت أن الصندوق سُلّم وحُفظ، لا ما في داخله ولا هل هو صندوق النادي بعينه؛ ذلك تحسمه ورقة العدّ.",
+      "contradicts_claim_ids": [
+        "cl_ghassan_theft",
+        "cl_jamil_assumed"
+      ],
+      "location_id": "loc_office"
+    },
+    {
+      "id": "ev_count_slip",
+      "title_ar": "ورقة عدّ المحتويات",
+      "kind": "documentary",
+      "content_ar": "ورقة عدّ — إدارة ثانوية الأطلال، الجمعة 11:00\nفُتح الصندوق في حضور مشرفة النادي وموظفة المكتب.\nالعدّ: 340 ديناراً، مطابق لقيد النادي.\nلا نقص ولا زيادة.",
+      "acquired_by_action_ids": [
+        "a_get_count"
+      ],
+      "supports_fact_ids": [
+        "f_box_in_office"
+      ],
+      "reliability": "strong",
+      "limits_ar": "تثبت المبلغ عند الفتح يوم الجمعة وتطابقه مع قيد النادي؛ ولا تبيّن بنفسها متى دخل الصندوق الخزنة.",
+      "contradicts_claim_ids": [
+        "cl_ghassan_theft"
+      ],
+      "location_id": "loc_office"
+    },
+    {
+      "id": "ev_gardener_statement",
+      "title_ar": "إفادة جميل العلي (ملخص)",
+      "kind": "testimonial",
+      "content_ar": "ملخص إفادة جميل العلي:\n«حفرت مع فني المشتل حول جذع الفل لقص العقلة، فظهر صندوق معدني عليه ملصق، فظننت أن أحداً نسيه مدفوناً وسلمته إلى المكتب نحو 10:25. ظننت أن المكتب سيبلغ صاحبه، ولم أدوّنه في سجلي.»",
+      "acquired_by_action_ids": [
+        "a_note_gardener"
+      ],
+      "supports_fact_ids": [
+        "f_jamil_found",
+        "f_jamil_dug"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "إفادة صاحب الشأن عن فعله؛ تؤيدها سجلات المكتب والمشتل ولا تغني عنها.",
+      "location_id": "loc_garden"
+    },
+    {
+      "id": "ev_clerk_statement",
+      "title_ar": "إفادة سناء الراشد (ملخص)",
+      "kind": "testimonial",
+      "content_ar": "ملخص إفادة سناء الراشد:\n«استلمت الصندوق من جميل نحو 10:25، ودوّنته في سجل المفقودات، ووضعته في الخزنة دون أن أفتحه. لم أعرف صاحبه لأن الملصق حرفان فقط، وانتظرت أن يسأل عنه أحد.»",
+      "acquired_by_action_ids": [
+        "a_note_clerk"
+      ],
+      "supports_fact_ids": [
+        "f_sanaa_received",
+        "f_sanaa_label"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "إفادة موظفة المكتب عن ما استلمته؛ ولا تعرف ما جرى للصندوق قبل تسليمه.",
+      "contradicts_claim_ids": [
+        "cl_ghassan_theft"
+      ],
+      "location_id": "loc_office"
+    },
+    {
+      "id": "ev_buyer_statement",
+      "title_ar": "إفادة ثائر الحداد (ملخص)",
+      "kind": "testimonial",
+      "content_ar": "ملخص إفادة ثائر الحداد:\n«طلبت عقلة من فل الفجر لحديقة بيتي وتسلمتها من المشتل نحو 11:30 ووقعت. لم أدخل المدرسة هذا الأسبوع، ولا أعرف شيئاً عن صندوق.»",
+      "acquired_by_action_ids": [
+        "a_note_buyer"
+      ],
+      "supports_fact_ids": [
+        "f_thaer_order",
+        "f_thaer_offsite"
+      ],
+      "reliability": "weak",
+      "limits_ar": "إفادة من وُجّهت إليه الشبهة؛ تؤيدها قائمة المشتل وسجل البوابة ولا تغني عنهما.",
+      "location_id": "loc_nursery"
+    },
+    {
+      "id": "ev_ghassan_statement",
+      "title_ar": "إفادة غسان الفارس (ملخص)",
+      "kind": "testimonial",
+      "content_ar": "ملخص إفادة غسان الفارس، أمين صندوق النادي:\n«دفنّا الصندوق يوم الاثنين بعد عدّ المال، ولا يعرف الموضع غير ثلاثة منا. وجدنا الجمعة التربة مقلوبة والصندوق غير موجود، فظننت أن أحداً عرف الموضع وسرقه.»",
+      "acquired_by_action_ids": [
+        "a_note_ghassan"
+      ],
+      "supports_fact_ids": [
+        "f_club_buried"
+      ],
+      "reliability": "weak",
+      "limits_ar": "إفادة متضرر يفسّر ما رآه بظن؛ الظن يُقاس بالسجلات.",
+      "location_id": "loc_clubroom"
+    },
+    {
+      "id": "ev_maha_statement",
+      "title_ar": "إفادة مها القاسم (ملخص)",
+      "kind": "testimonial",
+      "content_ar": "ملخص إفادة مها القاسم، منسقة طلبات المشتل:\n«هذا الصنف لا يُباع إلا بطلب مسبق، ونقص عقلته من النبتة الأم في حديقة المدرسة بموجب اتفاق مع الإدارة، ولا يدخل الحديقة غير فني المشتل والبستاني.»",
+      "acquired_by_action_ids": [
+        "a_note_maha"
+      ],
+      "supports_fact_ids": [
+        "f_maha_process"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "تصف نظام المشتل لا ما جرى يوم الخميس.",
+      "location_id": "loc_nursery"
+    }
+  ],
+  "evidence_graph": {
+    "inferences": [
+      {
+        "id": "i_a_dug",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_nursery_orders"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_delivery_list"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_dug_thursday"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "الطلب 311 يحدد قص العقلة من النبتة الأم في المدرسة الخميس 09:40، وقائمة التوصيل تثبت دخول الحديقة 09:40 والانتهاء 10:10؛ فالحفر حول الجذع صباح الخميس له سبب مسجل.",
+        "skill_ko_refs": [
+          "KO-RS-05-005",
+          "KO-RS-06-004"
+        ]
+      },
+      {
+        "id": "i_a_box",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_office_ledger"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_count_slip"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_box_in_office"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "سجل المفقودات يقيّد صندوقاً مدفوناً سلّمه البستاني الخميس 10:25 وحُفظ في الخزنة، وورقة العدّ تُظهر المبلغ كاملاً مطابقاً لقيد النادي؛ فهو صندوق النادي ولم يُمسّ.",
+        "skill_ko_refs": [
+          "KO-RS-05-005",
+          "KO-RS-06-001"
+        ]
+      },
+      {
+        "id": "i_a_buyer",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_delivery_list"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_nursery_orders"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_buyer_off_site"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "الطلب ينص على أن الاستلام من المشتل بعد القص، والقائمة تسجل توقيع ثائر في المشتل 11:30 بعد انتهاء محطة المدرسة 10:10؛ فلا حاجة لحضوره الحديقة ولا دليل عليه.",
+        "skill_ko_refs": [
+          "KO-RS-06-001",
+          "KO-RS-06-004"
+        ]
+      },
+      {
+        "id": "i_b_dug",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_gardener_log"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_gate_log"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_dug_thursday"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "البستاني دوّن حفره حول الجذع 09:40 إلى 10:10 لقص عقلة، وسجل البوابة يضع دخول شاحنة المشتل 09:30؛ فالتربة قُلبت الخميس بسبب القص.",
+        "skill_ko_refs": [
+          "KO-RS-05-005",
+          "KO-RS-06-004"
+        ]
+      },
+      {
+        "id": "i_b_box",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_gardener_statement"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_clerk_statement"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_box_in_office"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "البستاني يقول إنه سلّم الصندوق، والموظفة تقول إنها استلمته 10:25 وحفظته دون فتحه؛ روايتان من شخصين مستقلين تتفقان في الوقت والمكان والفعل.",
+        "skill_ko_refs": [
+          "KO-RS-05-004",
+          "KO-RS-05-005"
+        ]
+      },
+      {
+        "id": "i_b_buyer",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_gate_log"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_buyer_statement"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_buyer_off_site"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "سجل البوابة لا يحتوي اسمه بين الزوار، وهو يقول إنه لم يدخل المدرسة؛ والاثنان لا يمرّان بسجلات المشتل.",
+        "skill_ko_refs": [
+          "KO-RS-06-001",
+          "KO-RS-05-007"
+        ]
+      },
+      {
+        "id": "i_support_jamil",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_dug_thursday"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_box_in_office"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_gardener"
+        },
+        "relation": "supports",
+        "strength": "strong",
+        "rule_ar": "الحفر الخميس له سبب مسجل، والصندوق في خزنة الإدارة منذ الخميس بمبلغه كاملاً؛ فأبسط تفسير أن البستاني وجده أثناء الحفر ونقله إلى المكتب ولم يبلَّغ النادي.",
+        "skill_ko_refs": [
+          "KO-RS-06-001"
+        ]
+      },
+      {
+        "id": "i_rule_theft",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_box_in_office"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_theft"
+        },
+        "relation": "rules_out",
+        "strength": "conclusive",
+        "rule_ar": "إذا كان الصندوق ومعه المال كاملاً محفوظاً في الخزنة فلم يُسرق منه شيء.",
+        "skill_ko_refs": [
+          "KO-RS-06-008"
+        ]
+      },
+      {
+        "id": "i_rule_buyer",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_buyer_off_site"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_box_in_office"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_buyer"
+        },
+        "relation": "rules_out",
+        "strength": "conclusive",
+        "rule_ar": "من لم يدخل الحديقة لا يصح أن يكون هو من حمل الصندوق، والصندوق وُجد وحُفظ بلا نقص؛ فمعرفة موضع الشجيرة بسبب الطلب لا تدل على فعل.",
+        "skill_ko_refs": [
+          "KO-RS-06-008"
+        ]
+      },
+      {
+        "id": "i_rule_member",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_box_in_office"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_dug_thursday"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_member"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "الصندوق بقي في موضعه حتى حُفر الخميس ثم صار في خزنة الإدارة بمبلغه كاملاً؛ فلم يأخذه عضو من النادي ولا حاجة لافتراض ذلك.",
+        "skill_ko_refs": [
+          "KO-RS-06-008"
+        ]
+      },
+      {
+        "id": "i_claim_ghassan",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_box_in_office"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_dug_thursday"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_ghassan_theft"
+        },
+        "relation": "contradicts_claim",
+        "strength": "strong",
+        "rule_ar": "التربة المقلوبة لها سبب مسجل غير السرقة، والصندوق سليم في الخزنة؛ فالاستنتاج من الموضع الفارغ إلى السرقة قفز فوق التفسير الأبسط.",
+        "skill_ko_refs": [
+          "KO-RS-05-001",
+          "KO-RS-06-004"
+        ]
+      },
+      {
+        "id": "i_claim_jamil",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_office_ledger"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_jamil_assumed"
+        },
+        "relation": "contradicts_claim",
+        "strength": "strong",
+        "rule_ar": "سجل المفقودات يقول إن صاحب الصندوق لم يُبلَّغ بعد؛ فالافتراض أن المكتب سيبلغه لم يتحقق.",
+        "skill_ko_refs": [
+          "KO-RS-05-014"
+        ]
+      }
+    ]
+  },
+  "character_knowledge": [
+    {
+      "character_id": "jamil",
+      "knows": [
+        {
+          "fact_id": "f_jamil_dug",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [
+        {
+          "fact_id": "f_jamil_found",
+          "reveal_when": {
+            "presented": {
+              "evidence_id": "ev_gardener_log",
+              "to_character": "jamil"
+            }
+          },
+          "cover_claim_id": null,
+          "reveal_line_id": "jm_box"
+        }
+      ],
+      "believes": [
+        {
+          "claim_id": "cl_jamil_assumed",
+          "stance": "sincere"
+        }
+      ]
+    },
+    {
+      "character_id": "sanaa",
+      "knows": [
+        {
+          "fact_id": "f_sanaa_received",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_sanaa_label",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    },
+    {
+      "character_id": "thaer",
+      "knows": [
+        {
+          "fact_id": "f_thaer_order",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_thaer_offsite",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    },
+    {
+      "character_id": "ghassan",
+      "knows": [
+        {
+          "fact_id": "f_club_buried",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": [
+        {
+          "claim_id": "cl_ghassan_theft",
+          "stance": "sincere"
+        }
+      ]
+    },
+    {
+      "character_id": "maha",
+      "knows": [
+        {
+          "fact_id": "f_maha_process",
+          "access": "professional",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_order_exists",
+          "access": "professional",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_delivery_exists",
+          "access": "professional",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "h_gardener",
+      "statement_ar": "وجد البستاني الصندوق أثناء الحفر لقص العقلة فنقله إلى مكتب الإدارة ولم يُبلَّغ النادي.",
+      "is_true": true,
+      "plausibility_at_start": "low",
+      "suspect_id": "jamil"
+    },
+    {
+      "id": "h_buyer",
+      "statement_ar": "ثائر الذي طلب العقلة عرف موضع الشجيرة حين جاء ليأخذها، فأخذ الصندوق.",
+      "is_true": false,
+      "plausibility_at_start": "high",
+      "suspect_id": "thaer"
+    },
+    {
+      "id": "h_member",
+      "statement_ar": "أخذ أحد الأعضاء الثلاثة الذين يعرفون الموضع الصندوق.",
+      "is_true": false,
+      "plausibility_at_start": "medium",
+      "suspect_id": "ghassan"
+    },
+    {
+      "id": "h_theft",
+      "statement_ar": "سرق شخص مجهول من خارج المدرسة الصندوق ومعه المال.",
+      "is_true": false,
+      "plausibility_at_start": "medium"
+    }
+  ],
+  "misdirection_plan": [
+    {
+      "id": "rh_order",
+      "points_to_hypothesis_id": "h_buyer",
+      "planted_via_ar": "شخص طلب عقلة من النبتة نفسها هذا الموسم، فيبدو أنه كان يعرف المكان.",
+      "evidence_ids": [
+        "ev_nursery_orders"
+      ],
+      "refuted_by_inference_ids": [
+        "i_rule_buyer",
+        "i_a_buyer",
+        "i_b_buyer"
+      ],
+      "fairness_note_ar": "الطلب نفسه يقول إن القص من النبتة الأم بيد فني المشتل وإن الاستلام من المشتل، وقائمة التوصيل وسجل البوابة تضعان الطالب خارج المدرسة؛ فمعرفة موضع النبتة لا تدل على دخوله."
+    },
+    {
+      "id": "rh_hole",
+      "points_to_hypothesis_id": "h_member",
+      "planted_via_ar": "الموضع مقلوب والصندوق غير موجود ولا شهود، فيبدو أن أحداً من العارفين بالموضع أخذه.",
+      "evidence_ids": [
+        "ev_hole_note"
+      ],
+      "refuted_by_inference_ids": [
+        "i_rule_member",
+        "i_rule_theft",
+        "i_claim_ghassan",
+        "i_a_dug",
+        "i_b_dug"
+      ],
+      "fairness_note_ar": "المحضر يصف حال الموضع يوم الجمعة فقط؛ وسجلات الحفر ليوم الخميس وسجل المفقودات يفسّران قلب التربة واختفاء الصندوق دون سرقة."
+    }
+  ],
+  "learning_objectives": [
+    {
+      "id": "lo_claim",
+      "statement_ar": "يفرّق بين الظن الذي يفسّر موضعاً فارغاً والسجل الذي يبيّن ما جرى، ويقيس القول بسجل.",
+      "skill_ko_ref": "KO-RS-05-001",
+      "observable_behaviors_ar": [
+        "يصنّف الإفادات أقوالاً",
+        "لا يعدّ الموضع الفارغ دليلاً على سرقة"
+      ],
+      "evidence_sources": [
+        "evidence_board"
+      ]
+    },
+    {
+      "id": "lo_timeline",
+      "statement_ar": "يرتّب سجلات الطلب والتوصيل والحفر والتسليم على خط زمني واحد.",
+      "skill_ko_ref": "KO-RS-05-005",
+      "observable_behaviors_ar": [
+        "يضع الدفن والحفر والتسليم والاكتشاف في أزمنتها"
+      ],
+      "evidence_sources": [
+        "timeline_task",
+        "action_log"
+      ]
+    },
+    {
+      "id": "lo_hyp",
+      "statement_ar": "يوازن بين عدة فرضيات ويستبعد ما تنقضه الأدلة، ويطلب الاختبار الذي يميّز بينها.",
+      "skill_ko_ref": "KO-RS-05-003",
+      "observable_behaviors_ar": [
+        "يضيف فرضيات",
+        "يستبعد بدليل",
+        "يختار السجل الذي يفرّق بين فرضيتين"
+      ],
+      "evidence_sources": [
+        "hypothesis_ledger"
+      ]
+    },
+    {
+      "id": "lo_diag",
+      "statement_ar": "يقدّر ما يثبته كل سجل وما لا يثبته، ويربط الدليل بالفرضية باتجاه صحيح.",
+      "skill_ko_ref": "KO-RS-06-001",
+      "observable_behaviors_ar": [
+        "لا يحوّل معرفة المكان إلى دليل فعل",
+        "يربط الدليل بالفرضية"
+      ],
+      "evidence_sources": [
+        "evidence_board",
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_calib",
+      "statement_ar": "يصوغ نسبة الترجيح بحدودها.",
+      "skill_ko_ref": "KO-RS-06-021",
+      "observable_behaviors_ar": [
+        "يختار ثقة معقولة",
+        "يذكر حدوداً"
+      ],
+      "evidence_sources": [
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_revise",
+      "statement_ar": "يراجع رأيه الأول حين يظهر ما يخالفه.",
+      "skill_ko_ref": "KO-RS-06-009",
+      "observable_behaviors_ar": [
+        "يغيّر فرضيته الرائدة بدليل"
+      ],
+      "evidence_sources": [
+        "hypothesis_ledger"
+      ]
+    }
+  ],
+  "mechanics": {
+    "time_budget_units": 40,
+    "actions": [
+      {
+        "id": "a_get_club",
+        "type": "examine",
+        "label_ar": "اقرأ مدونة نادي البيئة",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_club_note"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_clubroom",
+        "telemetry_code": "GET_CLUB"
+      },
+      {
+        "id": "a_get_hole",
+        "type": "examine",
+        "label_ar": "اقرأ محضر معاينة الموضع",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_hole_note"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_garden",
+        "telemetry_code": "GET_HOLE"
+      },
+      {
+        "id": "a_get_orders",
+        "type": "examine",
+        "label_ar": "اطلب سجل طلبات المشتل بإذن الإدارة",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_nursery_orders"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_nursery",
+        "telemetry_code": "GET_ORDERS"
+      },
+      {
+        "id": "a_get_delivery",
+        "type": "examine",
+        "label_ar": "اطلب قائمة التوصيل والاستلام بإذن الإدارة",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_delivery_list"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_nursery",
+        "telemetry_code": "GET_DELIVERY"
+      },
+      {
+        "id": "a_get_gardener_log",
+        "type": "examine",
+        "label_ar": "اطلب سجل أعمال البستاني بإذن الإدارة",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_gardener_log"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_garden",
+        "telemetry_code": "GET_GARDENER_LOG"
+      },
+      {
+        "id": "a_get_gate",
+        "type": "examine",
+        "label_ar": "اطلب سجل بوابة المدرسة بإذن الإدارة",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_gate_log"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_gate",
+        "telemetry_code": "GET_GATE"
+      },
+      {
+        "id": "a_get_ledger",
+        "type": "examine",
+        "label_ar": "اطلب سجل المفقودات بإذن الإدارة",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_office_ledger"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_office",
+        "telemetry_code": "GET_LEDGER"
+      },
+      {
+        "id": "a_get_count",
+        "type": "examine",
+        "label_ar": "اطلب ورقة عدّ المحتويات",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_count_slip"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_office",
+        "telemetry_code": "GET_COUNT"
+      },
+      {
+        "id": "a_int_jamil",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة جميل",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "jamil",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "jamil",
+        "telemetry_code": "INT_JAMIL"
+      },
+      {
+        "id": "a_int_sanaa",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة سناء",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "sanaa",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "sanaa",
+        "telemetry_code": "INT_SANAA"
+      },
+      {
+        "id": "a_int_thaer",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة ثائر",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "thaer",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "thaer",
+        "telemetry_code": "INT_THAER"
+      },
+      {
+        "id": "a_int_ghassan",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة غسان",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "ghassan",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "ghassan",
+        "telemetry_code": "INT_GHASSAN"
+      },
+      {
+        "id": "a_int_maha",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة مها",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "maha",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "maha",
+        "telemetry_code": "INT_MAHA"
+      },
+      {
+        "id": "a_note_gardener",
+        "type": "examine",
+        "label_ar": "دوّن إفادة جميل",
+        "precondition": {
+          "fact_unlocked": "f_jamil_found"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_gardener_statement"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "jamil",
+        "telemetry_code": "NOTE_GARDENER"
+      },
+      {
+        "id": "a_note_clerk",
+        "type": "examine",
+        "label_ar": "دوّن إفادة سناء",
+        "precondition": {
+          "fact_unlocked": "f_sanaa_received"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_clerk_statement"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "sanaa",
+        "telemetry_code": "NOTE_CLERK"
+      },
+      {
+        "id": "a_note_buyer",
+        "type": "examine",
+        "label_ar": "دوّن إفادة ثائر",
+        "precondition": {
+          "fact_unlocked": "f_thaer_offsite"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_buyer_statement"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "thaer",
+        "telemetry_code": "NOTE_BUYER"
+      },
+      {
+        "id": "a_note_ghassan",
+        "type": "examine",
+        "label_ar": "دوّن إفادة غسان",
+        "precondition": {
+          "fact_unlocked": "f_club_buried"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_ghassan_statement"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "ghassan",
+        "telemetry_code": "NOTE_GHASSAN"
+      },
+      {
+        "id": "a_note_maha",
+        "type": "examine",
+        "label_ar": "دوّن إفادة مها",
+        "precondition": {
+          "fact_unlocked": "f_maha_process"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_maha_statement"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "maha",
+        "telemetry_code": "NOTE_MAHA"
+      },
+      {
+        "id": "p_log_jamil",
+        "type": "present_evidence",
+        "label_ar": "اعرض سجل أعمال البستاني عليه",
+        "precondition": {
+          "presented": {
+            "evidence_id": "ev_gardener_log",
+            "to_character": "jamil"
+          }
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "PRESENTED_GARDENER_LOG"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "jamil",
+        "telemetry_code": "P_LOG_JAMIL"
+      },
+      {
+        "id": "a_hint",
+        "type": "request_hint",
+        "label_ar": "اطلب تلميحاً",
+        "precondition": {
+          "always": true
+        },
+        "effects": [],
+        "time_cost_units": 0,
+        "telemetry_code": "REQUEST_HINT"
+      },
+      {
+        "id": "a_accuse",
+        "type": "final_accusation",
+        "label_ar": "قدّم الاستنتاج النهائي",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "SUBMIT"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "FINAL_ACCUSATION"
+      },
+      {
+        "id": "ask_jamil_f_jamil_dug",
+        "type": "interview",
+        "label_ar": "[نموذج] jamil يذكر f_jamil_dug",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_jamil_dug"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "jamil",
+        "telemetry_code": "ASK_JAMIL_F_JAMIL_DUG"
+      },
+      {
+        "id": "ask_jamil_f_jamil_found",
+        "type": "interview",
+        "label_ar": "[نموذج] jamil يكشف f_jamil_found",
+        "precondition": {
+          "all": [
+            {
+              "always": true
+            },
+            {
+              "presented": {
+                "evidence_id": "ev_gardener_log",
+                "to_character": "jamil"
+              }
+            }
+          ]
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_jamil_found"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "jamil",
+        "telemetry_code": "ASK_JAMIL_F_JAMIL_FOUND"
+      },
+      {
+        "id": "ask_sanaa_f_sanaa_received",
+        "type": "interview",
+        "label_ar": "[نموذج] sanaa يذكر f_sanaa_received",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_sanaa_received"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "sanaa",
+        "telemetry_code": "ASK_SANAA_F_SANAA_RECEIVED"
+      },
+      {
+        "id": "ask_sanaa_f_sanaa_label",
+        "type": "interview",
+        "label_ar": "[نموذج] sanaa يذكر f_sanaa_label",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_sanaa_label"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "sanaa",
+        "telemetry_code": "ASK_SANAA_F_SANAA_LABEL"
+      },
+      {
+        "id": "ask_thaer_f_thaer_order",
+        "type": "interview",
+        "label_ar": "[نموذج] thaer يذكر f_thaer_order",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_thaer_order"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "thaer",
+        "telemetry_code": "ASK_THAER_F_THAER_ORDER"
+      },
+      {
+        "id": "ask_thaer_f_thaer_offsite",
+        "type": "interview",
+        "label_ar": "[نموذج] thaer يذكر f_thaer_offsite",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_thaer_offsite"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "thaer",
+        "telemetry_code": "ASK_THAER_F_THAER_OFFSITE"
+      },
+      {
+        "id": "ask_ghassan_f_club_buried",
+        "type": "interview",
+        "label_ar": "[نموذج] ghassan يذكر f_club_buried",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_club_buried"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "ghassan",
+        "telemetry_code": "ASK_GHASSAN_F_CLUB_BURIED"
+      },
+      {
+        "id": "ask_maha_f_maha_process",
+        "type": "interview",
+        "label_ar": "[نموذج] maha يذكر f_maha_process",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_maha_process"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "maha",
+        "telemetry_code": "ASK_MAHA_F_MAHA_PROCESS"
+      },
+      {
+        "id": "ask_maha_f_order_exists",
+        "type": "interview",
+        "label_ar": "[نموذج] maha يذكر f_order_exists",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_order_exists"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "maha",
+        "telemetry_code": "ASK_MAHA_F_ORDER_EXISTS"
+      },
+      {
+        "id": "ask_maha_f_delivery_exists",
+        "type": "interview",
+        "label_ar": "[نموذج] maha يذكر f_delivery_exists",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_delivery_exists"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "maha",
+        "telemetry_code": "ASK_MAHA_F_DELIVERY_EXISTS"
+      }
+    ]
+  },
+  "state_machine": {
+    "id": "c016",
+    "initial": "briefing",
+    "type": "compound",
+    "states": {
+      "briefing": {
+        "description_ar": "الإحاطة",
+        "type": "atomic",
+        "on": {
+          "START": {
+            "target": "investigating"
+          }
+        }
+      },
+      "investigating": {
+        "description_ar": "التحقيق",
+        "type": "compound",
+        "initial": "gathering",
+        "states": {
+          "gathering": {
+            "type": "atomic",
+            "on": {
+              "OPEN_DEDUCTION": {
+                "target": "deducing"
+              }
+            }
+          },
+          "deducing": {
+            "type": "atomic",
+            "on": {
+              "BACK": {
+                "target": "gathering"
+              }
+            }
+          }
+        },
+        "on": {
+          "SUBMIT": {
+            "target": "review"
+          }
+        }
+      },
+      "review": {
+        "description_ar": "مراجعة",
+        "type": "atomic",
+        "on": {
+          "CLOSE": {
+            "target": "resolved"
+          }
+        }
+      },
+      "resolved": {
+        "description_ar": "إغلاق",
+        "type": "final"
+      }
+    }
+  },
+  "dialogue": {
+    "max_turns_per_interview": 10,
+    "llm_enabled": false,
+    "topics": [
+      {
+        "id": "t_burial",
+        "label_ar": "دفن الصندوق",
+        "example_questions_ar": [
+          "أين دُفن الصندوق؟",
+          "من يعرف الموضع؟"
+        ],
+        "fact_ids": [
+          "f_club_buried"
+        ],
+        "claim_ids": [
+          "cl_ghassan_theft"
+        ]
+      },
+      {
+        "id": "t_digging",
+        "label_ar": "الحفر عند الشجيرة",
+        "example_questions_ar": [
+          "ماذا فعلت عند الشجيرة؟",
+          "هل حفرت حول الجذع؟"
+        ],
+        "fact_ids": [
+          "f_jamil_dug",
+          "f_jamil_found"
+        ],
+        "claim_ids": [
+          "cl_jamil_assumed"
+        ]
+      },
+      {
+        "id": "t_office",
+        "label_ar": "المكتب والمفقودات",
+        "example_questions_ar": [
+          "هل سُلّم إليك شيء؟",
+          "لماذا لم يُبلَّغ أحد؟"
+        ],
+        "fact_ids": [
+          "f_sanaa_received",
+          "f_sanaa_label"
+        ]
+      },
+      {
+        "id": "t_order",
+        "label_ar": "طلب العقلة",
+        "example_questions_ar": [
+          "ماذا طلبت؟",
+          "هل دخلت المدرسة؟"
+        ],
+        "fact_ids": [
+          "f_thaer_order",
+          "f_thaer_offsite"
+        ]
+      },
+      {
+        "id": "t_nursery",
+        "label_ar": "نظام المشتل وسجلاته",
+        "example_questions_ar": [
+          "كيف يُباع هذا الصنف؟",
+          "ما السجلات التي تحتفظون بها؟"
+        ],
+        "fact_ids": [
+          "f_maha_process",
+          "f_order_exists",
+          "f_delivery_exists"
+        ]
+      }
+    ]
+  },
+  "rubric": {
+    "reference_answer_ar": "لم يُسرق الصندوق. جرى الحفر عند أصل الشجيرة صباح الخميس لقص عقلة طلبها زبون من المشتل، وهذا مسجل في طلبات المشتل وقائمة توصيله وسجل البستاني والبوابة. وجد البستاني الصندوق أثناء الحفر فظنه منسياً وسلّمه لمكتب الإدارة نحو 10:25، فقيّدته الموظفة في سجل المفقودات وحفظته بمبلغه كاملاً، ولم يُبلَّغ النادي لأن الملصق لا يحمل اسماً كاملاً. وطالب العقلة لم يدخل المدرسة وتسلم عقلته من المشتل. حدود الاستنتاج: لا يبيّن أي سجل هل كان في الحفر أحد غير البستاني وفني المشتل، ولا يثبت أن ما وُجد هو الصندوق نفسه إلا بمطابقة المبلغ والملصق، ويبقى احتمال ضعيف لأمر لم تغطه السجلات.",
+    "criteria": [
+      {
+        "id": "c_source",
+        "name_ar": "تصنيف المصادر",
+        "objective_ids": [
+          "lo_claim"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يصنّف"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "أخطأ في الأغلب"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "نصف صحيح"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمه صحيح"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كله صحيح"
+          }
+        ]
+      },
+      {
+        "id": "c_conflict",
+        "name_ar": "ترتيب الأحداث على الخط الزمني",
+        "objective_ids": [
+          "lo_timeline"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.2,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يضع شيئاً"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "وضع قليلاً"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "وضع نصفها صحيحاً"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمها"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كلها في موضعها"
+          }
+        ]
+      },
+      {
+        "id": "c_links",
+        "name_ar": "ربط الأدلة بالفرضيات",
+        "objective_ids": [
+          "lo_diag"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.2,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لا روابط"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "قليلة"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "نصفها صحيح"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمها"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كلها دقيقة"
+          }
+        ]
+      },
+      {
+        "id": "c_uncertainty",
+        "name_ar": "معايرة الثقة",
+        "objective_ids": [
+          "lo_calib"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "ثقة مفرطة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "حدود قليلة"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "جزئية"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معقولة"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "معايَرة كاملة"
+          }
+        ]
+      },
+      {
+        "id": "c_revision",
+        "name_ar": "مراجعة الرأي",
+        "objective_ids": [
+          "lo_revise"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "بقي على فرضية مرفوضة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "لم يعلن فرضية"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "ثبت على فرضية سليمة"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "غيّر بدليل"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "غيّر بدليل ووثّق"
+          }
+        ]
+      },
+      {
+        "id": "c_elimination",
+        "name_ar": "استبعاد الفرضيات الخاطئة",
+        "objective_ids": [
+          "lo_hyp"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يستبعد"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "استبعد خطأً"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "فرضية بدليل"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "فرضيتين"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كل الخاطئة"
+          }
+        ]
+      },
+      {
+        "id": "c_justification",
+        "name_ar": "جودة الحجة المكتوبة",
+        "objective_ids": [
+          "lo_diag",
+          "lo_hyp"
+        ],
+        "scored_by": "human",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لا حجة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "ادعاء بلا سند"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "أدلة دون ربط"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "ربط الأدلة بالاستنتاج"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "ربط مع البدائل والحدود"
+          }
+        ]
+      }
+    ]
+  },
+  "hint_ladder": [
+    {
+      "id": "hg1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "حين يختفي شيء، اسأل أولاً: هل يوجد تفسير بلا سرقة؟ وما السجل الذي يميّز بين التفسيرين؟",
+      "trigger": {
+        "always": true
+      },
+      "assessment_weight": 0.02
+    },
+    {
+      "id": "hg2",
+      "level": 2,
+      "kind": "focus_area",
+      "text_ar": "اتبع السجلات بالترتيب: من طلب؟ من وصّل؟ من عمل في الحديقة؟ ثم أين ذهب ما وُجد؟",
+      "trigger": {
+        "has_evidence": "ev_hole_note"
+      },
+      "assessment_weight": 0.04
+    },
+    {
+      "id": "hg3",
+      "level": 3,
+      "kind": "pointer",
+      "text_ar": "ابحث عن سجل في الإدارة يدوّن ما يُسلَّم إليها، وقارنه بوقت الحفر.",
+      "trigger": {
+        "has_evidence": "ev_hole_note"
+      },
+      "assessment_weight": 0.08
+    },
+    {
+      "id": "hd1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "لماذا قُلب الموضع عند الشجيرة يوم الخميس؟ هل لذلك سبب مسجل؟",
+      "trigger": {
+        "has_evidence": "ev_nursery_orders"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_a_dug"
+    },
+    {
+      "id": "hd2",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "اقرأ في الطلب 311 مكان القص وموعده، ثم قارنهما بقائمة التوصيل.",
+      "trigger": {
+        "has_evidence": "ev_nursery_orders"
+      },
+      "assessment_weight": 0.06,
+      "targets_inference_id": "i_a_dug"
+    },
+    {
+      "id": "hd3",
+      "level": 3,
+      "kind": "partial_reveal",
+      "text_ar": "اسأل البستاني ماذا ظهر حين حفر، وانظر هل سجّل ذلك في دفتره.",
+      "trigger": {
+        "has_evidence": "ev_nursery_orders"
+      },
+      "assessment_weight": 0.1,
+      "targets_inference_id": "i_a_dug"
+    }
+  ],
+  "fairness_test": {
+    "requirements": {
+      "min_disjoint_proof_paths": 2,
+      "max_inference_depth": 3,
+      "all_red_herrings_refutable": true,
+      "culprit_uniquely_entailed": true,
+      "no_hidden_fact_dependency": true,
+      "max_required_actions": 40
+    },
+    "runs": []
+  },
+  "ending_explanation": {
+    "steps": [
+      {
+        "order": 1,
+        "text_ar": "الموضع المقلوب له سبب مسجل: الطلب 311 يحدد قص عقلة من النبتة الأم الخميس 09:40، وقائمة التوصيل تثبت دخول الحديقة والانتهاء 10:10.",
+        "uses_evidence_ids": [
+          "ev_nursery_orders",
+          "ev_delivery_list"
+        ],
+        "inference_id": "i_a_dug"
+      },
+      {
+        "order": 2,
+        "text_ar": "سجل البستاني وسجل البوابة يؤكدان الحفر حول الجذع في الوقت نفسه من مصدرين لا يمرّان بالمشتل.",
+        "uses_evidence_ids": [
+          "ev_gardener_log",
+          "ev_gate_log"
+        ],
+        "inference_id": "i_b_dug"
+      },
+      {
+        "order": 3,
+        "text_ar": "سجل المفقودات يقيّد صندوقاً مدفوناً سلّمه البستاني الخميس 10:25، وورقة العدّ تُظهر المبلغ كاملاً مطابقاً لقيد النادي.",
+        "uses_evidence_ids": [
+          "ev_office_ledger",
+          "ev_count_slip"
+        ],
+        "inference_id": "i_a_box"
+      },
+      {
+        "order": 4,
+        "text_ar": "إفادتا البستاني وموظفة المكتب، وهما مستقلتان، تتفقان في الوقت والمكان والفعل.",
+        "uses_evidence_ids": [
+          "ev_gardener_statement",
+          "ev_clerk_statement"
+        ],
+        "inference_id": "i_b_box"
+      },
+      {
+        "order": 5,
+        "text_ar": "الزبون الذي طلب العقلة لم يدخل المدرسة: تسلمها من المشتل بعد انتهاء القص، ولا اسم له في سجل البوابة.",
+        "uses_evidence_ids": [
+          "ev_delivery_list",
+          "ev_nursery_orders",
+          "ev_gate_log",
+          "ev_buyer_statement"
+        ],
+        "inference_id": "i_a_buyer"
+      },
+      {
+        "order": 6,
+        "text_ar": "إذن لم تقع سرقة: وجد البستاني الصندوق أثناء الحفر المسجل ونقله بحسن نية، وبقي النادي غير مبلَّغ.",
+        "uses_evidence_ids": [
+          "ev_office_ledger",
+          "ev_nursery_orders"
+        ],
+        "inference_id": "i_support_jamil"
+      }
+    ],
+    "alternative_paths_ar": [
+      "يمكن الوصول إلى النتيجة من سجل المفقودات وورقة العدّ مباشرة لو سأل اللاعب المكتب أولاً، لكنه يبقى بلا تفسير لقلب التربة ما لم يتبع الطلب والتوصيل.",
+      "ويمكن الوصول إليها من سجل البستاني وسجل البوابة وإفادتي البستاني وموظفة المكتب دون سجلات المشتل؛ والأقوى أن يتفق المساران."
+    ],
+    "what_evidence_could_not_show_ar": [
+      "لا يبيّن أي سجل هل كان في الحفر أحد غير البستاني وفني المشتل؛ يعتمد ذلك على اتفاق المشتل وإفادة البستاني.",
+      "لا تثبت ورقة العدّ بنفسها متى دخل الصندوق الخزنة؛ يثبته سجل المفقودات المؤرّخ قبلها.",
+      "لا تنفي السجلات أن يكون أحدهم قد حرّك الصندوق قبل الخميس؛ تنفي فقط أن يكون قد فُقد منه شيء."
+    ],
+    "science_notes_ar": [
+      "الموضع الفارغ والتربة المقلوبة ملاحظتان، أما «السرقة» فاستنتاج؛ افصل بين ما رأيته وما فسّرته به قبل أن تحكم.",
+      "اتّباع السجلات بالترتيب (الطلب ثم التوصيل ثم سجل العامل ثم سجل الاستلام) أقوى من تخمين من يعرف المكان، وهو شبيه بسلسلة العهدة.",
+      "معرفة شخص بمكان ما لا تدل على أنه فعل شيئاً فيه؛ تبقى نسبة الترجيح حكماً مبنياً على سجلات يمكن تتبعها."
+    ]
+  },
+  "expert_review": [
+    {
+      "role": "narrative_editor",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "scientific_reviewer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "learning_designer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "age_appropriateness",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "cultural_reviewer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "legal_rights",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "safety",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    }
+  ]
+}

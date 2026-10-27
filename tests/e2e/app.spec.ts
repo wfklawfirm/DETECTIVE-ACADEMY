@@ -61,19 +61,120 @@ test("onboarding → tutorial: first actions, interview, no hidden truth in netw
   expect(bodies.join("")).not.toContain("accepted_conclusions");
 });
 
-test("a11y: key public pages have no serious/critical axe violations", async ({ page }) => {
-  await page.goto("/"); await passGate(page);
-  for (const path of ["/", "/cases", "/academy", "/academy/A1", "/challenges", "/privacy", "/account", "/start", "/knowledge", "/knowledge/KO-RS-05-001", "/sources", "/labs", "/labs/SAFE_LABS-01", "/skills", "/gallery", "/credits"]) {
-    await page.goto(path);
-    await page.waitForLoadState("networkidle");
-    const res = await new AxeBuilder({ page }).withTags(["wcag2a", "wcag2aa"]).analyze();
-    const bad = res.violations.filter((v) => ["serious", "critical"].includes(v.impact ?? ""));
-    expect(bad.map((v) => `${path}: ${v.id} (${v.nodes.length})`), path).toEqual([]);
-    await noHScroll(page);
-  }
+const PAGES = ["/", "/start", "/home", "/cases", "/case/c000_lost_notebook", "/academy", "/academy/A1", "/challenges", "/profile", "/account", "/privacy", "/report", "/review/ABC123", "/knowledge", "/knowledge/KO-RS-05-001", "/sources", "/labs", "/labs/SAFE_LABS-01", "/skills", "/gallery", "/credits", "/studio", "/no-such-page"];
+const setTheme = (page: Page, t: "dark" | "light") => page.addInitScript((v) => { try { localStorage.setItem("athar.theme", v); } catch { /* */ } }, t);
+const serious = (res: { violations: { id: string; impact?: string | null; nodes: unknown[] }[] }) => res.violations.filter((v) => ["serious", "critical"].includes(v.impact ?? ""));
+
+for (const theme of ["dark", "light"] as const) {
+  test(`a11y (${theme}): every page has no serious/critical axe violations and no horizontal scroll`, async ({ page }) => {
+    await setTheme(page, theme);
+    await page.goto("/"); await passGate(page);
+    await expect(page.locator("html")).toHaveAttribute("data-theme", theme);
+    for (const path of PAGES) {
+      await page.goto(path);
+      await page.waitForLoadState("networkidle");
+      await page.waitForTimeout(250);
+      const res = await new AxeBuilder({ page }).withTags(["wcag2a", "wcag2aa"]).analyze();
+      expect(serious(res).map((v) => `${path}: ${v.id} (${v.nodes.length})`), `${theme} ${path}`).toEqual([]);
+      await noHScroll(page);
+    }
+  });
+}
+
+test("a11y: age gate sheet and open menu sheet", async ({ page }) => {
+  await page.goto("/");
+  const dlg = page.getByRole("dialog", { name: "قبل أن نبدأ" });
+  await expect(dlg).toBeVisible();
+  await expect(dlg).toHaveAttribute("aria-modal", "true");
+  expect(serious(await new AxeBuilder({ page }).withTags(["wcag2a", "wcag2aa"]).analyze()).map((v) => v.id)).toEqual([]);
+  await passGate(page);
+  await page.getByRole("button", { name: "القائمة" }).click();
+  await expect(page.getByRole("dialog", { name: "القائمة" })).toBeVisible();
+  expect(serious(await new AxeBuilder({ page }).withTags(["wcag2a", "wcag2aa"]).analyze()).map((v) => v.id)).toEqual([]);
 });
 
-test("a11y: the play workspace tabs", async ({ page }) => {
+test("mobile: no horizontal scroll at 320px on every page", async ({ page }) => {
+  await page.setViewportSize({ width: 320, height: 700 });
+  await page.goto("/"); await passGate(page);
+  for (const path of PAGES) { await page.goto(path); await page.waitForLoadState("networkidle"); await noHScroll(page); }
+  await page.goto("/play/c000_lost_notebook");
+  await expect(page.getByRole("tab", { name: /الأدلة/ })).toBeVisible();
+  for (const t of [/الملف/, /الأدلة/, /الشخصيات/, /اللوحة/, /الزمن/, /المفكرة/, /الاستنتاج/]) { await page.getByRole("tab", { name: t }).click(); await noHScroll(page); }
+});
+
+test("theme: toggle in the menu sheet switches data-theme and persists across reload (no flash)", async ({ page }) => {
+  await page.goto("/"); await passGate(page);
+  await expect(page.locator("html")).toHaveAttribute("data-theme", "dark");
+  await page.getByRole("button", { name: "القائمة" }).click();
+  await page.getByRole("radiogroup", { name: "السمة" }).getByRole("radio", { name: "فاتح" }).check();
+  await expect(page.locator("html")).toHaveAttribute("data-theme", "light");
+  const bg = await page.evaluate(() => getComputedStyle(document.body).backgroundColor);
+  expect(bg).toBe("rgb(242, 239, 232)");
+  await page.reload();
+  await expect(page.locator("html")).toHaveAttribute("data-theme", "light");
+  await page.getByRole("button", { name: "القائمة" }).click();
+  await page.getByRole("radiogroup", { name: "السمة" }).getByRole("radio", { name: "داكن" }).check();
+  await expect(page.locator("html")).toHaveAttribute("data-theme", "dark");
+});
+
+test("menu: large text and reduce-motion toggles set root attributes", async ({ page }) => {
+  await page.goto("/"); await passGate(page);
+  await page.getByRole("button", { name: "القائمة" }).click();
+  await page.getByRole("switch", { name: "نص أكبر" }).click();
+  await page.getByRole("switch", { name: "تقليل الحركة" }).click();
+  await expect(page.locator("html")).toHaveAttribute("data-text-size", "large");
+  await expect(page.locator("html")).toHaveAttribute("data-motion", "off");
+  await page.reload();
+  await expect(page.locator("html")).toHaveAttribute("data-text-size", "large");
+  const dur = await page.getByLabel("تلميح الدخول").evaluate((el) => getComputedStyle(el).animationDuration);
+  expect(parseFloat(dur)).toBeLessThan(0.01);
+});
+
+test("menu sheet: opens, traps focus, closes on Escape and restores focus; holds nav, footer links and sound toggle", async ({ page }) => {
+  await page.goto("/home"); await passGate(page);
+  const opener = page.getByRole("button", { name: "القائمة" });
+  await opener.click();
+  const dlg = page.getByRole("dialog", { name: "القائمة" });
+  await expect(dlg).toBeVisible();
+  for (const name of ["الرئيسية", "القضايا", "الأكاديمية", "الموسوعة", "مهاراتي", "مختبرات آمنة", "المصادر والحقوق", "معرض المراجع", "الاعتمادات", "الخصوصية والسلامة", "أبلِغ عن مشكلة"]) await expect(dlg.getByRole("link", { name: new RegExp(name) })).toBeVisible();
+  await expect(dlg.getByRole("switch", { name: "المؤثرات الصوتية" })).toBeVisible();
+  for (let i = 0; i < 40; i++) await page.keyboard.press("Tab");
+  expect(await page.evaluate(() => !!document.activeElement?.closest("[role=dialog]"))).toBe(true);
+  await page.keyboard.press("Escape");
+  await expect(dlg).toBeHidden();
+  await expect(opener).toBeFocused();
+});
+
+test("bottom nav: five destinations on top-level screens, navigates, hidden on landing, /start and /play", async ({ page }) => {
+  await page.goto("/"); await passGate(page);
+  await expect(page.getByRole("navigation", { name: "التنقل الرئيسي" })).toBeHidden();
+  await page.goto("/home");
+  const nav = page.getByRole("navigation", { name: "التنقل الرئيسي" });
+  await expect(nav.getByRole("link")).toHaveCount(5);
+  await expect(nav.getByRole("link", { name: "الرئيسية" })).toHaveAttribute("aria-current", "page");
+  for (const [name, url] of [["القضايا", /\/cases$/], ["الأكاديمية", /\/academy$/], ["الموسوعة", /\/knowledge$/], ["مهاراتي", /\/profile$/]] as const) {
+    await nav.getByRole("link", { name }).click();
+    await expect(page).toHaveURL(url);
+    await expect(nav.getByRole("link", { name })).toHaveAttribute("aria-current", "page");
+  }
+  await page.goto("/start");
+  await expect(page.getByRole("navigation", { name: "التنقل الرئيسي" })).toBeHidden();
+  await page.goto("/play/c000_lost_notebook");
+  await expect(page.getByRole("tab", { name: /الأدلة/ })).toBeVisible();
+  await expect(page.getByRole("navigation", { name: "التنقل الرئيسي" })).toBeHidden();
+  await expect(page.getByRole("tablist", { name: "أقسام التحقيق" })).toBeVisible();
+});
+
+test("manifest and icons are served", async ({ request }) => {
+  const m = await request.get("/manifest.webmanifest");
+  expect(m.ok()).toBe(true);
+  const j = await m.json();
+  expect(j.display).toBe("standalone"); expect(j.dir).toBe("rtl"); expect(j.lang).toBe("ar"); expect(j.theme_color).toBe("#0b1115");
+  for (const i of j.icons) expect((await request.get(i.src)).ok()).toBe(true);
+});
+
+for (const theme of ["dark", "light"] as const) test(`a11y (${theme}): the play workspace tabs`, async ({ page }) => {
+  await setTheme(page, theme);
   await page.goto("/"); await passGate(page);
   await page.goto("/play/c000_lost_notebook");
   await expect(page.getByRole("tab", { name: /الأدلة/ })).toBeVisible();

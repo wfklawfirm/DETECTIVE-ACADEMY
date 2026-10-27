@@ -1,0 +1,2886 @@
+{
+  "schema_version": "0.1.0",
+  "case_id": "c015_key_in_coat",
+  "case_version": "0.1.0",
+  "meta": {
+    "title_ar": "المفتاح في جيب المعطف",
+    "title_en": "The Key in the Coat Pocket",
+    "age_band": "13-15",
+    "locale": "ar",
+    "dialogue_register": "msa",
+    "estimated_minutes": 30,
+    "difficulty": 2,
+    "content_flags": [
+      "no_violence",
+      "theft"
+    ],
+    "authors": [
+      "فريق أثر التحريري (مسودة بمساعدة الذكاء الاصطناعي، لم تُراجَع بشرياً بعد)"
+    ],
+    "knowledge_object_refs": [
+      "KO-RS-05-001",
+      "KO-RS-05-004",
+      "KO-RS-05-005",
+      "KO-RS-05-002",
+      "KO-RS-06-002",
+      "KO-RS-06-001",
+      "KO-RS-06-009",
+      "KO-RS-06-021"
+    ]
+  },
+  "premise": {
+    "hook_ar": "مفتاح خزانة عرض وُجد في جيب حارس عمره في المتحف ثلاثون سنة، وثلاثة زملاء يقولون إنهم رأوه. لكن من أين جاءت هذه الأدلة؟",
+    "player_role_ar": "أنت متدرب في إدارة متحف الأثر، وطُلب منك أن تراجع الاتهام الموجّه إلى حارس القاعات.",
+    "setting_ar": "متحف الأثر في المرسى، صباح يوم عادي. بإذن مكتوب من الإدارة تطّلع على سجلات الأبواب واللوحة والجولة، ولا تفتح غيرها.",
+    "public_fact_ids": [
+      "f_key_missing",
+      "f_key_found_coat",
+      "f_three_saw"
+    ],
+    "assumed_general_knowledge_ar": [
+      "قارئ البطاقات يسجل البطاقة لا الشخص",
+      "من يعثر على شيء لا يلزم أن يكون هو من وضعه"
+    ]
+  },
+  "entities": {
+    "characters": [
+      {
+        "id": "mansour",
+        "name_ar": "منصور الأيوبي",
+        "role": "suspect",
+        "age_descriptor_ar": "حارس قاعات في المتحف منذ ثلاثين سنة",
+        "persona_ar": "حِرفي دقيق يدوّن كل جولة ويثق بالسجلات أكثر من الكلام، قليل الشكوى، ويجيب عمّا يُسأل عنه بلا زيادة.",
+        "motives_ar": [
+          "أن تُحسم المسألة بالسجلات",
+          "أن يواصل عمله بعد انتهاء التحقيق"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "mn_greet",
+            "purpose": "greeting",
+            "text_ar": "اسألني عمّا شئت. جولاتي كلها مدوّنة."
+          },
+          {
+            "line_id": "mn_coat",
+            "purpose": "reveal",
+            "text_ar": "وصلت الثامنة وخمس دقائق، وعلقت معطفي في غرفة الموظفين وخرجت بعد دقيقتين، ولم أعد إليها حتى استُدعيت.",
+            "fact_ids": [
+              "f_mansour_coat"
+            ]
+          },
+          {
+            "line_id": "mn_rounds",
+            "purpose": "reveal",
+            "text_ar": "جولتي تمرّ بست نقاط تفقد كل نصف ساعة، ونقطتي الرابعة عند خزانة العرض 4، فمروري بها أمر عادي في كل دورة.",
+            "fact_ids": [
+              "f_mansour_rounds"
+            ]
+          },
+          {
+            "line_id": "mn_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف كيف وصل المفتاح إلى معطفي."
+          },
+          {
+            "line_id": "mn_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "لنبقَ عند المفتاح والجولة."
+          },
+          {
+            "line_id": "mn_bye",
+            "purpose": "farewell",
+            "text_ar": "السجل أمامكم، فاقرؤوه."
+          }
+        ]
+      },
+      {
+        "id": "ramez",
+        "name_ar": "رامز السعدي",
+        "role": "suspect",
+        "age_descriptor_ar": "مساعد عرض في المتحف",
+        "persona_ar": "طموح وواثق، يعرض المعلومات بصيغة تدين غيره، ويتراجع إذا عُرض عليه سجل لا يستطيع تفسيره.",
+        "motives_ar": [
+          "أن يُنظر إليه كمن حمى المتحف",
+          "أن ينال رئاسة فريق القاعات"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "rm_greet",
+            "purpose": "greeting",
+            "text_ar": "أنا من وجد المفتاح وأبلغت فوراً. لا أظن أن الأمر يحتاج كل هذا البحث."
+          },
+          {
+            "line_id": "rm_found",
+            "purpose": "reveal",
+            "text_ar": "دخلت غرفة الموظفين مرتين: الأولى نحو 10:12 لآخذ جهاز اللاسلكي، والثانية نحو 10:41 لأتفقد المعاطف، فوجدت المفتاح في الجيب الخارجي لمعطف منصور وأبلغت 10:45.",
+            "fact_ids": [
+              "f_ramez_found"
+            ]
+          },
+          {
+            "line_id": "rm_claim",
+            "purpose": "reveal",
+            "text_ar": "رأيت منصور قرب الخزانة، والمفتاح وُجد في معطفه؛ فمن غيره يكون؟",
+            "claim_ids": [
+              "cl_ramez_inference"
+            ]
+          },
+          {
+            "line_id": "rm_refuse",
+            "purpose": "refuse_secret",
+            "text_ar": "لا أذكر شيئاً آخر عن الصباح."
+          },
+          {
+            "line_id": "rm_took",
+            "purpose": "break_down",
+            "text_ar": "نعم... سحبت وسم المفتاح من اللوحة 09:58 حين خرجت أمينة المتحف، ووضعته في معطف منصور وقت زيارتي الأولى، وأبلغت عنه بعد ذلك. خفت أن ينال هو الرئاسة، وأنا نادم.",
+            "fact_ids": [
+              "f_ramez_took"
+            ]
+          },
+          {
+            "line_id": "rm_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أذكر ذلك."
+          },
+          {
+            "line_id": "rm_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن المفتاح وعن بلاغي."
+          },
+          {
+            "line_id": "rm_bye",
+            "purpose": "farewell",
+            "text_ar": "أرجو أن ينتهي هذا قريباً."
+          }
+        ]
+      },
+      {
+        "id": "karam",
+        "name_ar": "كرم الحلبي",
+        "role": "witness",
+        "age_descriptor_ar": "أمين شباك التذاكر",
+        "persona_ar": "ودود ومتعجل في الاستنتاج، يصف ما رآه بصدق ثم يضيف إليه تفسيراً من عنده، ولا يخفي أنه متقدم لرئاسة الفريق.",
+        "motives_ar": [
+          "أن يُعامَل بإنصاف وهو أحد المتقدمين للرئاسة",
+          "ألا يُظنّ أنه يتآمر على زميله"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "kr_greet",
+            "purpose": "greeting",
+            "text_ar": "أهلاً. أنا أجلس خلف الشباك فلا أعرف الكثير عن غرفة المفاتيح."
+          },
+          {
+            "line_id": "kr_desk",
+            "purpose": "reveal",
+            "text_ar": "استلمت الشباك 09:30 وبقيت فيه حتى الحادية عشرة، وكنت أبيع التذاكر طوال الوقت.",
+            "fact_ids": [
+              "f_karam_desk"
+            ]
+          },
+          {
+            "line_id": "kr_saw",
+            "purpose": "reveal",
+            "text_ar": "رأيت منصور من نافذة الشباك يمرّ قرب الخزانة 4 نحو 09:55.",
+            "fact_ids": [
+              "f_karam_saw"
+            ]
+          },
+          {
+            "line_id": "kr_claim",
+            "purpose": "reveal",
+            "text_ar": "ظننت أن وجوده هناك لا بد أنه غير عادي، فأخبرت رامز ونادر.",
+            "claim_ids": [
+              "cl_karam_unusual"
+            ]
+          },
+          {
+            "line_id": "kr_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف أكثر من ذلك."
+          },
+          {
+            "line_id": "kr_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن الشباك وما رأيته منه."
+          },
+          {
+            "line_id": "kr_bye",
+            "purpose": "farewell",
+            "text_ar": "لم أقصد اتهام أحد."
+          }
+        ]
+      },
+      {
+        "id": "salwa",
+        "name_ar": "سلوى الحسيني",
+        "role": "witness",
+        "age_descriptor_ar": "أمينة المتحف",
+        "persona_ar": "منظمة وحريصة على مفاتيح المتحف، تعترف بأنها تركت اللوحة مفتوحة دقائق، وتفرّق بين ما رأته وما لم تره.",
+        "motives_ar": [
+          "أن تُفهم مسؤولية الإدارة عن لوحة المفاتيح",
+          "ألا يُظلم أحد من الموظفين"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "sw_greet",
+            "purpose": "greeting",
+            "text_ar": "تفضّل. أعترف أن اللوحة كانت مفتوحة دقائق، وهذا خطئي أنا."
+          },
+          {
+            "line_id": "sw_key",
+            "purpose": "reveal",
+            "text_ar": "أعدت وسم مفتاح الخزانة 4 إلى اللوحة 09:50، وخرجت من مكتبي 09:56، وعدت 10:05 فوجدت الوسم غائباً.",
+            "fact_ids": [
+              "f_key_returned",
+              "f_curator_away"
+            ]
+          },
+          {
+            "line_id": "sw_asked",
+            "purpose": "reveal",
+            "text_ar": "قبل خروجي بدقيقة جاءني رامز عند الباب يسأل عن المفتاح لفحص الخزانة 4، فقلت له إن ذلك يحتاج موافقة رئيس القاعات.",
+            "fact_ids": [
+              "f_ramez_asked"
+            ]
+          },
+          {
+            "line_id": "sw_mansour",
+            "purpose": "reveal",
+            "text_ar": "لم يأتِ منصور إلى مكتبي هذا الصباح إطلاقاً.",
+            "fact_ids": [
+              "f_mansour_not_office"
+            ]
+          },
+          {
+            "line_id": "sw_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لم أرَ ما جرى بعد خروجي."
+          },
+          {
+            "line_id": "sw_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن المفتاح واللوحة."
+          },
+          {
+            "line_id": "sw_bye",
+            "purpose": "farewell",
+            "text_ar": "سنراجع طريقة حفظ المفاتيح بعد هذا."
+          }
+        ]
+      },
+      {
+        "id": "yasmin",
+        "name_ar": "ياسمين الخطيب",
+        "role": "witness",
+        "age_descriptor_ar": "مرشدة زوار",
+        "persona_ar": "هادئة ودقيقة، لا تعرف شيئاً عن المفتاح ولا عن الترقية، وتحكي ما رأته مع مجموعتها فقط.",
+        "motives_ar": [
+          "أن تساعد بما رأته فقط"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "ys_greet",
+            "purpose": "greeting",
+            "text_ar": "أنا لا أعرف شيئاً عن المفتاح، لكن يمكنني أن أقول أين رأيت أحداً."
+          },
+          {
+            "line_id": "ys_saw",
+            "purpose": "reveal",
+            "text_ar": "كنت مع مجموعة مدرسية في القاعة 2، وفتح لنا منصور الباب نحو 10:10 ثم تابع جولته.",
+            "fact_ids": [
+              "f_guide_saw"
+            ]
+          },
+          {
+            "line_id": "ys_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف غير ذلك."
+          },
+          {
+            "line_id": "ys_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "هذا لا يخصّ ما رأيته مع مجموعتي."
+          },
+          {
+            "line_id": "ys_bye",
+            "purpose": "farewell",
+            "text_ar": "أتمنى أن يتضح الأمر."
+          }
+        ]
+      }
+    ],
+    "locations": [
+      {
+        "id": "loc_office",
+        "name_ar": "مكتب أمينة المتحف",
+        "description_ar": "فيه لوحة المفاتيح وقارئ الوسوم وقارئ باب المكتب."
+      },
+      {
+        "id": "loc_staff",
+        "name_ar": "غرفة الموظفين",
+        "description_ar": "فيها الشماعات وقارئ بطاقات على الباب."
+      },
+      {
+        "id": "loc_gallery",
+        "name_ar": "القاعات",
+        "description_ar": "مسار الجولة بنقاطه الست، ومنها القاعة 2 وخزانة العرض 4."
+      },
+      {
+        "id": "loc_desk",
+        "name_ar": "شباك التذاكر",
+        "description_ar": "قرب المدخل، بنافذة تطل على القاعة الأولى."
+      },
+      {
+        "id": "loc_admin",
+        "name_ar": "إدارة المتحف",
+        "description_ar": "تستقبل البلاغات والتقارير."
+      }
+    ],
+    "objects": [
+      {
+        "id": "obj_key",
+        "name_ar": "مفتاح خزانة العرض 4",
+        "description_ar": "مفتاح موسوم يُحفظ في لوحة مفاتيح مكتب أمينة المتحف."
+      },
+      {
+        "id": "obj_coat",
+        "name_ar": "معطف منصور الرمادي",
+        "description_ar": "معطف عليه بطاقة اسم، معلق في غرفة الموظفين."
+      }
+    ],
+    "organizations": [
+      {
+        "id": "org_museum",
+        "name_ar": "متحف الأثر",
+        "description_ar": "متحف خيالي في المرسى."
+      }
+    ]
+  },
+  "truth": {
+    "solution": {
+      "culprit_ids": [
+        "ramez"
+      ],
+      "summary_ar": "لم يخبئ منصور المفتاح. حمله مساعد العرض رامز من اللوحة بعد خروج الأمينة ووضعه في معطف علّقه صاحبه قبل ذلك بساعات، ثم قدّم نفسه بوصفه من عثر عليه. أما البلاغات الثلاثة فمرجعها شخصان يتنافسان على الرئاسة ذاتها، ولا تصف غير مرور اعتيادي.",
+      "key_fact_ids": [
+        "f_coat_early",
+        "f_mansour_elsewhere",
+        "f_ramez_only",
+        "f_karam_elsewhere"
+      ]
+    },
+    "facts": [
+      {
+        "id": "f_key_missing",
+        "statement_ar": "فُقد وسم مفتاح خزانة العرض 4 من لوحة المفاتيح في مكتب أمينة المتحف صباح اليوم.",
+        "kind": "event",
+        "subject_ids": [
+          "obj_key",
+          "loc_office"
+        ],
+        "spoiler_level": 0
+      },
+      {
+        "id": "f_key_found_coat",
+        "statement_ar": "وُجد المفتاح في الجيب الخارجي لمعطف الحارس منصور المعلق في غرفة الموظفين، وأُبلغ عنه الساعة 10:45.",
+        "kind": "event",
+        "subject_ids": [
+          "obj_key",
+          "obj_coat",
+          "mansour"
+        ],
+        "spoiler_level": 0
+      },
+      {
+        "id": "f_three_saw",
+        "statement_ar": "ثلاثة زملاء يقولون إنهم رأوا منصور قرب الخزانة 4، والإدارة تطلب حسم الأمر.",
+        "kind": "attribute",
+        "subject_ids": [
+          "mansour",
+          "ramez",
+          "karam"
+        ],
+        "spoiler_level": 0
+      },
+      {
+        "id": "f_mansour_coat",
+        "statement_ar": "علّق منصور معطفه في غرفة الموظفين نحو 08:05 وخرج بعد دقيقتين ولم يعد إليها حتى استُدعي.",
+        "kind": "event",
+        "subject_ids": [
+          "mansour",
+          "obj_coat"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 5,
+          "precision": "exact"
+        },
+        "location_id": "loc_staff"
+      },
+      {
+        "id": "f_mansour_rounds",
+        "statement_ar": "جولة منصور تمرّ بست نقاط كل نصف ساعة، ونقطتها الرابعة عند الخزانة 4.",
+        "kind": "state",
+        "subject_ids": [
+          "mansour"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 85,
+          "precision": "exact",
+          "end_min": 165
+        },
+        "location_id": "loc_gallery"
+      },
+      {
+        "id": "f_ramez_found",
+        "statement_ar": "دخل رامز غرفة الموظفين نحو 10:12 ثم نحو 10:41، وقال إنه وجد المفتاح في المرة الثانية وأبلغ 10:45.",
+        "kind": "event",
+        "subject_ids": [
+          "ramez",
+          "obj_key"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 132,
+          "precision": "approx",
+          "end_min": 165
+        },
+        "location_id": "loc_staff"
+      },
+      {
+        "id": "f_karam_desk",
+        "statement_ar": "جلس كرم في شباك التذاكر من 09:30 حتى نحو 11:00.",
+        "kind": "state",
+        "subject_ids": [
+          "karam",
+          "loc_desk"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 90,
+          "precision": "exact",
+          "end_min": 180
+        },
+        "location_id": "loc_desk"
+      },
+      {
+        "id": "f_karam_saw",
+        "statement_ar": "رأى كرم منصور يمرّ قرب الخزانة 4 نحو 09:55 من نافذة الشباك.",
+        "kind": "event",
+        "subject_ids": [
+          "karam",
+          "mansour"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 115,
+          "precision": "approx"
+        },
+        "location_id": "loc_gallery"
+      },
+      {
+        "id": "f_key_returned",
+        "statement_ar": "أعادت أمينة المتحف وسم المفتاح إلى اللوحة 09:50.",
+        "kind": "event",
+        "subject_ids": [
+          "salwa",
+          "obj_key"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 110,
+          "precision": "exact"
+        },
+        "location_id": "loc_office"
+      },
+      {
+        "id": "f_curator_away",
+        "statement_ar": "غادرت أمينة المتحف مكتبها 09:56 وتركت اللوحة مفتوحة، وعادت 10:05 فوجدت الوسم غائباً.",
+        "kind": "event",
+        "subject_ids": [
+          "salwa",
+          "obj_key"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 116,
+          "precision": "exact",
+          "end_min": 125
+        },
+        "location_id": "loc_office"
+      },
+      {
+        "id": "f_ramez_asked",
+        "statement_ar": "طلب رامز المفتاح من أمينة المتحف عند باب المكتب نحو 09:55 فأُحيل إلى رئيس القاعات.",
+        "kind": "event",
+        "subject_ids": [
+          "ramez",
+          "salwa"
+        ],
+        "spoiler_level": 2,
+        "time": {
+          "start_min": 115,
+          "precision": "approx"
+        },
+        "location_id": "loc_office"
+      },
+      {
+        "id": "f_mansour_not_office",
+        "statement_ar": "لم يأتِ منصور إلى مكتب أمينة المتحف صباح اليوم.",
+        "kind": "state",
+        "subject_ids": [
+          "mansour",
+          "salwa"
+        ],
+        "spoiler_level": 2,
+        "location_id": "loc_office"
+      },
+      {
+        "id": "f_guide_saw",
+        "statement_ar": "رأت المرشدة منصور يفتح باب القاعة 2 نحو 10:10 ويتابع جولته.",
+        "kind": "event",
+        "subject_ids": [
+          "yasmin",
+          "mansour"
+        ],
+        "spoiler_level": 2,
+        "time": {
+          "start_min": 130,
+          "precision": "approx"
+        },
+        "location_id": "loc_gallery"
+      },
+      {
+        "id": "f_ramez_took",
+        "statement_ar": "سحب رامز وسم المفتاح من اللوحة 09:58 ووضعه في جيب معطف منصور أثناء زيارته الأولى لغرفة الموظفين، ثم أبلغ عن «العثور» عليه.",
+        "kind": "event",
+        "subject_ids": [
+          "ramez",
+          "obj_key",
+          "obj_coat"
+        ],
+        "spoiler_level": 3,
+        "time": {
+          "start_min": 118,
+          "precision": "exact",
+          "end_min": 134
+        },
+        "location_id": "loc_staff",
+        "science_ko_refs": [
+          "KO-RS-05-005"
+        ]
+      },
+      {
+        "id": "f_coat_early",
+        "statement_ar": "كان معطف منصور معلقاً في غرفة الموظفين قبل أن يخرج المفتاح من اللوحة بنحو ساعة ونصف.",
+        "kind": "relation",
+        "subject_ids": [
+          "obj_coat",
+          "obj_key"
+        ],
+        "spoiler_level": 3,
+        "time": {
+          "start_min": 5,
+          "precision": "exact",
+          "end_min": 118
+        },
+        "science_ko_refs": [
+          "KO-RS-05-005",
+          "KO-RS-06-017"
+        ]
+      },
+      {
+        "id": "f_mansour_elsewhere",
+        "statement_ar": "كان منصور في جولته ولم يدخل مكتب أمينة المتحف ولا غرفة الموظفين بعد المعطف، لا وقت سحب الوسم ولا وقت زيارتي رامز.",
+        "kind": "relation",
+        "subject_ids": [
+          "mansour"
+        ],
+        "spoiler_level": 3,
+        "time": {
+          "start_min": 110,
+          "precision": "exact",
+          "end_min": 165
+        },
+        "science_ko_refs": [
+          "KO-RS-05-005",
+          "KO-RS-06-001"
+        ]
+      },
+      {
+        "id": "f_ramez_only",
+        "statement_ar": "رامز وحده من الموظفين دخل مكتب الأمينة حين سُحب الوسم، ثم دخل غرفة الموظفين قبل أن يُعثر على المفتاح.",
+        "kind": "relation",
+        "subject_ids": [
+          "ramez"
+        ],
+        "spoiler_level": 3,
+        "time": {
+          "start_min": 117,
+          "precision": "exact",
+          "end_min": 164
+        },
+        "science_ko_refs": [
+          "KO-RS-05-005",
+          "KO-RS-06-001"
+        ]
+      },
+      {
+        "id": "f_karam_elsewhere",
+        "statement_ar": "كان كرم في الشباك طوال الفترة، ولا أثر له عند المكتب أو في غرفة الموظفين بعد 09:24.",
+        "kind": "relation",
+        "subject_ids": [
+          "karam"
+        ],
+        "spoiler_level": 3,
+        "time": {
+          "start_min": 90,
+          "precision": "exact",
+          "end_min": 180
+        },
+        "science_ko_refs": [
+          "KO-RS-05-005"
+        ]
+      },
+      {
+        "id": "f_sightings_two_sources",
+        "statement_ar": "البلاغات الثلاثة عن رؤية منصور قرب الخزانة صادرة عن متقدمَين للرئاسة وعن سامع منهما، وكلها تصف مروراً عادياً في جولته.",
+        "kind": "relation",
+        "subject_ids": [
+          "mansour",
+          "ramez",
+          "karam"
+        ],
+        "spoiler_level": 2,
+        "science_ko_refs": [
+          "KO-RS-05-001",
+          "KO-RS-06-002"
+        ]
+      }
+    ],
+    "claims": [
+      {
+        "id": "cl_ramez_inference",
+        "statement_ar": "رأيته قرب الخزانة والمفتاح وُجد في معطفه، فهو من أخذه.",
+        "kind": "half_truth",
+        "held_by": [
+          "ramez"
+        ],
+        "true_fact_id": "f_ramez_only",
+        "contradicted_by_evidence_ids": [
+          "ev_round_scans",
+          "ev_staff_door_log",
+          "ev_cleaning_sheet"
+        ]
+      },
+      {
+        "id": "cl_karam_unusual",
+        "statement_ar": "وجود منصور قرب الخزانة وقت اختفاء المفتاح أمر غير عادي.",
+        "kind": "honest_mistake",
+        "held_by": [
+          "karam"
+        ],
+        "true_fact_id": "f_mansour_elsewhere",
+        "contradicted_by_evidence_ids": [
+          "ev_round_scans"
+        ]
+      }
+    ]
+  },
+  "timeline": [
+    {
+      "id": "te_coat",
+      "description_ar": "منصور يعلّق معطفه في غرفة الموظفين ويخرج.",
+      "time": {
+        "start_min": 5,
+        "precision": "exact",
+        "end_min": 7
+      },
+      "location_id": "loc_staff",
+      "actor_ids": [
+        "mansour"
+      ],
+      "fact_ids": [
+        "f_mansour_coat"
+      ],
+      "motivated_by_ar": "بدأ وردية الحراسة"
+    },
+    {
+      "id": "te_clean",
+      "description_ar": "عاملة التنظيف تنظف الغرفة وتدوّن أن المعطف معلق على الشماعة الثالثة.",
+      "time": {
+        "start_min": 15,
+        "precision": "exact",
+        "end_min": 30
+      },
+      "location_id": "loc_staff",
+      "actor_ids": [],
+      "fact_ids": [
+        "f_coat_early"
+      ]
+    },
+    {
+      "id": "te_rounds",
+      "description_ar": "منصور يمشي جولته على النقاط الست كل نصف ساعة.",
+      "time": {
+        "start_min": 85,
+        "precision": "exact",
+        "end_min": 165
+      },
+      "location_id": "loc_gallery",
+      "actor_ids": [
+        "mansour"
+      ],
+      "fact_ids": [
+        "f_mansour_rounds",
+        "f_mansour_elsewhere"
+      ],
+      "motivated_by_ar": "واجب الجولة الدورية"
+    },
+    {
+      "id": "te_desk",
+      "description_ar": "كرم في الشباك يبيع التذاكر.",
+      "time": {
+        "start_min": 90,
+        "precision": "exact",
+        "end_min": 180
+      },
+      "location_id": "loc_desk",
+      "actor_ids": [
+        "karam"
+      ],
+      "fact_ids": [
+        "f_karam_desk"
+      ],
+      "motivated_by_ar": "وردية الشباك"
+    },
+    {
+      "id": "te_return",
+      "description_ar": "أمينة المتحف تعيد وسم المفتاح إلى اللوحة.",
+      "time": {
+        "start_min": 110,
+        "precision": "exact"
+      },
+      "location_id": "loc_office",
+      "actor_ids": [
+        "salwa"
+      ],
+      "fact_ids": [
+        "f_key_returned"
+      ],
+      "motivated_by_ar": "انتهت من استعمال المفتاح"
+    },
+    {
+      "id": "te_ask",
+      "description_ar": "رامز يسأل الأمينة عن المفتاح عند باب المكتب، وتخرج الأمينة بعد دقيقة.",
+      "time": {
+        "start_min": 115,
+        "precision": "approx",
+        "end_min": 116
+      },
+      "location_id": "loc_office",
+      "actor_ids": [
+        "ramez",
+        "salwa"
+      ],
+      "fact_ids": [
+        "f_ramez_asked",
+        "f_curator_away"
+      ],
+      "motivated_by_ar": "قال إنه يريد فحص الخزانة 4"
+    },
+    {
+      "id": "te_pull",
+      "description_ar": "رامز يدخل المكتب ويسحب الوسم.",
+      "time": {
+        "start_min": 117,
+        "precision": "exact",
+        "end_min": 120
+      },
+      "location_id": "loc_office",
+      "actor_ids": [
+        "ramez"
+      ],
+      "fact_ids": [
+        "f_ramez_took",
+        "f_ramez_only"
+      ],
+      "motivated_by_ar": "أراد أن يوقع زميله في الشبهة قبل قرار الرئاسة"
+    },
+    {
+      "id": "te_missing",
+      "description_ar": "الأمينة تعود وتجد الوسم غائباً.",
+      "time": {
+        "start_min": 125,
+        "precision": "exact"
+      },
+      "location_id": "loc_office",
+      "actor_ids": [
+        "salwa"
+      ],
+      "fact_ids": [
+        "f_key_missing",
+        "f_curator_away"
+      ],
+      "motivated_by_ar": "عادت إلى مكتبها بعد استقبال المجموعة"
+    },
+    {
+      "id": "te_plant",
+      "description_ar": "رامز يدخل غرفة الموظفين دقيقتين.",
+      "time": {
+        "start_min": 132,
+        "precision": "exact",
+        "end_min": 134
+      },
+      "location_id": "loc_staff",
+      "actor_ids": [
+        "ramez"
+      ],
+      "fact_ids": [
+        "f_ramez_took",
+        "f_ramez_found"
+      ],
+      "motivated_by_ar": "قال إنه ذهب لأخذ جهاز اللاسلكي"
+    },
+    {
+      "id": "te_found",
+      "description_ar": "رامز يدخل ثانية ويخرج، ثم يبلّغ الإدارة بالعثور على المفتاح.",
+      "time": {
+        "start_min": 161,
+        "precision": "exact",
+        "end_min": 165
+      },
+      "location_id": "loc_staff",
+      "actor_ids": [
+        "ramez"
+      ],
+      "fact_ids": [
+        "f_ramez_found",
+        "f_key_found_coat"
+      ],
+      "motivated_by_ar": "قال إنه أراد تفقد المعاطف"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_incident_report",
+      "title_ar": "تقرير الحادث (الساعة 10:45)",
+      "kind": "documentary",
+      "content_ar": "متحف الأثر — تقرير حادث\n10:05: فُقد وسم مفتاح خزانة العرض 4 من لوحة المفاتيح في مكتب أمينة المتحف.\n10:45: أبلغ مساعد العرض رامز السعدي أنه وجد المفتاح في الجيب الخارجي لمعطف رمادي معلق في غرفة الموظفين، عليه بطاقة اسم «م. الأيوبي».\nحالة الخزانة 4: مغلقة وسليمة، ولم يُفقد شيء من محتوياتها.",
+      "acquired_by_action_ids": [
+        "a_get_report"
+      ],
+      "supports_fact_ids": [
+        "f_key_missing",
+        "f_key_found_coat"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يثبت أين وُجد المفتاح ومن أبلغ ومتى، ولا يثبت من وضعه في الجيب.",
+      "is_red_herring": true,
+      "location_id": "loc_admin"
+    },
+    {
+      "id": "ev_sightings",
+      "title_ar": "ملخص البلاغات الثلاثة",
+      "kind": "documentary",
+      "content_ar": "ملخص ما ورد إلى الإدارة عن رؤية منصور قرب الخزانة 4:\n1) رامز السعدي: «رأيت منصور واقفاً قرب الخزانة 4 نحو 09:55». المصدر: رآه بنفسه.\n2) كرم الحلبي: «رأيته يمرّ قرب الخزانة 4 نحو 09:55 من نافذة الشباك». المصدر: رآه بنفسه.\n3) نادر المصري (حارس القاعة 2): «سمعت أنه كان عند الخزانة وقت اختفاء المفتاح». المصدر: سمعه من كرم.",
+      "acquired_by_action_ids": [
+        "a_get_sightings"
+      ],
+      "supports_fact_ids": [
+        "f_three_saw"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "ملخص لأقوال ثلاثة أشخاص؛ يثبت أن مروراً بجانب الخزانة أُبلغ عنه، لا أن منصور فعل شيئاً.",
+      "is_red_herring": true,
+      "location_id": "loc_admin"
+    },
+    {
+      "id": "ev_promo_notice",
+      "title_ar": "إعلان شغور رئاسة فريق القاعات",
+      "kind": "documentary",
+      "content_ar": "إعلان داخلي رقم 7 — متحف الأثر\nشغور رئاسة فريق القاعات الأرضية.\nالمتقدمون: رامز السعدي، كرم الحلبي، منصور الأيوبي.\nآخر موعد: نهاية الشهر. القرار: لجنة الإدارة.",
+      "acquired_by_action_ids": [
+        "a_get_promo"
+      ],
+      "supports_fact_ids": [
+        "f_sightings_two_sources"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يبيّن أن المتقدمين ثلاثة؛ لا يبيّن أن أحداً منهم تصرف بدافع الترقية.",
+      "location_id": "loc_admin"
+    },
+    {
+      "id": "ev_staff_door_log",
+      "title_ar": "سجل قارئ باب غرفة الموظفين",
+      "kind": "digital",
+      "content_ar": "سجل قارئ بطاقات باب غرفة الموظفين — اليوم\n08:05 دخول: منصور الأيوبي | 08:07 خروج: منصور الأيوبي\n08:15 دخول: عاملة التنظيف | 08:30 خروج: عاملة التنظيف\n09:20 دخول: كرم الحلبي | 09:24 خروج: كرم الحلبي\n10:12 دخول: رامز السعدي | 10:14 خروج: رامز السعدي\n10:41 دخول: رامز السعدي | 10:44 خروج: رامز السعدي\n(لا قيود أخرى حتى 11:30)",
+      "acquired_by_action_ids": [
+        "a_get_staff_log"
+      ],
+      "supports_fact_ids": [
+        "f_mansour_coat",
+        "f_ramez_found",
+        "f_coat_early"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يسجل بطاقات الداخلين فقط؛ لا يرى من يدخل خلف حامل بطاقة أو والباب مفتوح، ولا يبيّن ما فعله أحد داخل الغرفة.",
+      "contradicts_claim_ids": [
+        "cl_ramez_inference"
+      ],
+      "location_id": "loc_staff"
+    },
+    {
+      "id": "ev_office_door_log",
+      "title_ar": "سجل قارئ باب مكتب أمينة المتحف",
+      "kind": "digital",
+      "content_ar": "سجل قارئ بطاقات باب مكتب أمينة المتحف — اليوم\n09:45 دخول: سلوى الحسيني | 09:56 خروج: سلوى الحسيني\n09:57 دخول: رامز السعدي | 10:00 خروج: رامز السعدي\n10:05 دخول: سلوى الحسيني\n(لا قيود أخرى بين 08:00 و11:00)",
+      "acquired_by_action_ids": [
+        "a_get_office_log"
+      ],
+      "supports_fact_ids": [
+        "f_ramez_asked",
+        "f_mansour_not_office"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يسجل البطاقات فقط ولا يبيّن ما فعله الداخل في المكتب؛ ويمكن لمن يدخل خلف غيره ألا يظهر فيه.",
+      "location_id": "loc_office"
+    },
+    {
+      "id": "ev_cabinet_log",
+      "title_ar": "سجل قارئ لوحة المفاتيح",
+      "kind": "digital",
+      "content_ar": "سجل قارئ لوحة المفاتيح في مكتب أمينة المتحف (لا يسجل هوية من يستعملها):\n09:50 وسم مفتاح الخزانة 4: إعادة\n09:58 وسم مفتاح الخزانة 4: سحب\n10:05 إنذار: وسم مفتاح الخزانة 4 غائب",
+      "acquired_by_action_ids": [
+        "a_get_cabinet"
+      ],
+      "supports_fact_ids": [
+        "f_key_returned",
+        "f_curator_away"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يثبت وقت الإعادة والسحب لا هوية الساحب، ولا ما جرى للمفتاح بعد سحبه.",
+      "location_id": "loc_office"
+    },
+    {
+      "id": "ev_round_scans",
+      "title_ar": "سجل نقاط جولة منصور",
+      "kind": "digital",
+      "content_ar": "سجل وسوم نقاط التفقد — منصور الأيوبي\nنقاط الجولة الست تتكرر كل نصف ساعة؛ النقطة 4 عند الخزانة 4، والنقطتان 1 و2 قرب القاعة 2.\n09:40 ن1 | 09:45 ن2 | 09:50 ن3 | 09:55 ن4 | 10:00 ن5 | 10:05 ن6\n10:10 ن1 | 10:15 ن2 | 10:20 ن3 | 10:25 ن4 | 10:30 ن5 | 10:35 ن6 | 10:40 ن1",
+      "acquired_by_action_ids": [
+        "a_get_rounds"
+      ],
+      "supports_fact_ids": [
+        "f_mansour_rounds",
+        "f_mansour_elsewhere"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يثبت مرور وسم منصور بالنقاط في هذه الأوقات، لا أنه حمل الوسم بنفسه في كل لحظة؛ والفراغ بين نقطتين خمس دقائق.",
+      "contradicts_claim_ids": [
+        "cl_karam_unusual",
+        "cl_ramez_inference"
+      ],
+      "location_id": "loc_gallery"
+    },
+    {
+      "id": "ev_cleaning_sheet",
+      "title_ar": "ورقة تنظيف غرفة الموظفين",
+      "kind": "documentary",
+      "content_ar": "ورقة تنظيف غرفة الموظفين — اليوم\nالبدء: 08:15 | الانتهاء: 08:30\nملاحظات العاملة: «معطف رمادي عليه بطاقة اسم م. الأيوبي معلق على الشماعة الثالثة. جيوبه مغلقة بالأزرار».",
+      "acquired_by_action_ids": [
+        "a_get_cleaning"
+      ],
+      "supports_fact_ids": [
+        "f_coat_early"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "ورقة مكتوبة بخط اليد من عاملة التنظيف؛ تثبت وجود المعطف 08:30 ولا تفحص ما في داخل جيوبه.",
+      "contradicts_claim_ids": [
+        "cl_ramez_inference"
+      ],
+      "location_id": "loc_staff"
+    },
+    {
+      "id": "ev_ticket_desk_log",
+      "title_ar": "سجل عمليات شباك التذاكر",
+      "kind": "digital",
+      "content_ar": "سجل عمليات شباك التذاكر — وردية كرم الحلبي (09:30 إلى 11:00)\nعمليات البيع: 09:36، 09:41، 09:47، 09:52، 09:58، 10:03، 10:09، 10:12، 10:19، 10:26، 10:33، 10:38، 10:41، 10:46، 10:52",
+      "acquired_by_action_ids": [
+        "a_get_desk"
+      ],
+      "supports_fact_ids": [
+        "f_karam_desk"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يثبت أن شباك التذاكر كان يعمل بحسابه في هذه الأوقات؛ لا يستبعد أن يغيب صاحبه دقيقة بين عمليتين.",
+      "location_id": "loc_desk"
+    },
+    {
+      "id": "ev_curator_statement",
+      "title_ar": "إفادة سلوى الحسيني (ملخص)",
+      "kind": "testimonial",
+      "content_ar": "ملخص إفادة سلوى الحسيني، أمينة المتحف:\n«أعدت وسم المفتاح 09:50. خرجت 09:56 لاستقبال مجموعة وتركت اللوحة مفتوحة دقائق. قبل خروجي بدقيقة جاءني رامز يسأل عن المفتاح لفحص الخزانة 4، فأحلته إلى رئيس القاعات. عدت 10:05 فوجدت الوسم غائباً. لم يأتِ منصور مكتبي هذا الصباح.»",
+      "acquired_by_action_ids": [
+        "a_note_curator"
+      ],
+      "supports_fact_ids": [
+        "f_key_returned",
+        "f_curator_away",
+        "f_ramez_asked",
+        "f_mansour_not_office"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "ذاكرة شاهدة عن أوقات قريبة؛ تحتاج إلى سجل يؤيد الترتيب، وهي تعترف بتقصيرها في ترك اللوحة مفتوحة.",
+      "location_id": "loc_office"
+    },
+    {
+      "id": "ev_guide_statement",
+      "title_ar": "إفادة ياسمين الخطيب (ملخص)",
+      "kind": "testimonial",
+      "content_ar": "ملخص إفادة ياسمين الخطيب، مرشدة الزوار:\n«كنت مع مجموعة مدرسية في القاعة 2 من 10:05 إلى 10:30. فتح لنا منصور الباب نحو 10:10 ثم تابع جولته. لا أعرف شيئاً عن المفتاح.»",
+      "acquired_by_action_ids": [
+        "a_note_guide"
+      ],
+      "supports_fact_ids": [
+        "f_guide_saw"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "شاهدة لا مصلحة لها في الترقية، لكن ذاكرتها عن الوقت تقريبية؛ وتصف ما رأته مع مجموعتها فقط.",
+      "location_id": "loc_gallery"
+    },
+    {
+      "id": "ev_ramez_statement",
+      "title_ar": "إفادة رامز السعدي (ملخص)",
+      "kind": "testimonial",
+      "content_ar": "ملخص إفادة رامز السعدي:\n«كنت قرب مكتب أمينة المتحف نحو العاشرة إلا خمس أنتظر رئيس القاعات. دخلت غرفة الموظفين نحو 10:12 لآخذ جهاز اللاسلكي، ثم نحو 10:41 لأتفقد المعاطف بعد أن أخبرني كرم أن منصور كان قرب الخزانة، فوجدت المفتاح في معطفه وأبلغت.»",
+      "acquired_by_action_ids": [
+        "a_note_ramez"
+      ],
+      "supports_fact_ids": [
+        "f_ramez_found"
+      ],
+      "reliability": "weak",
+      "limits_ar": "إفادة متقدم للرئاسة وصاحب البلاغ؛ تُقاس بسجلات الأبواب والوسوم.",
+      "location_id": "loc_admin"
+    },
+    {
+      "id": "ev_karam_statement",
+      "title_ar": "إفادة كرم الحلبي (ملخص)",
+      "kind": "testimonial",
+      "content_ar": "ملخص إفادة كرم الحلبي:\n«رأيت منصور من نافذة الشباك يمرّ قرب الخزانة 4 نحو 09:55 فظننت أن هذا غير عادي وأخبرت رامز ونادر. أنا في الشباك منذ 09:30.»",
+      "acquired_by_action_ids": [
+        "a_note_karam"
+      ],
+      "supports_fact_ids": [
+        "f_karam_saw",
+        "f_karam_desk"
+      ],
+      "reliability": "weak",
+      "limits_ar": "إفادة متقدم للرئاسة؛ تصف ما رآه وتضيف تفسيراً من عنده.",
+      "location_id": "loc_desk"
+    },
+    {
+      "id": "ev_mansour_statement",
+      "title_ar": "إفادة منصور الأيوبي (ملخص)",
+      "kind": "testimonial",
+      "content_ar": "ملخص إفادة منصور الأيوبي:\n«علقت معطفي 08:05 وخرجت. جولتي تمرّ بالخزانة 4 في كل دورة. لا أعرف كيف وصل المفتاح إلى جيبي.»",
+      "acquired_by_action_ids": [
+        "a_note_mansour"
+      ],
+      "supports_fact_ids": [
+        "f_mansour_coat",
+        "f_mansour_rounds"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "إفادة صاحب الاتهام؛ تؤيدها سجلات الأبواب والوسوم ولا تغني عنها.",
+      "location_id": "loc_gallery"
+    }
+  ],
+  "evidence_graph": {
+    "inferences": [
+      {
+        "id": "i_a_coat",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_staff_door_log"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_cabinet_log"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_coat_early"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "قارئ الغرفة يضع دخول منصور 08:05، وقارئ اللوحة يضع سحب الوسم 09:58؛ فالمعطف سبق خروج المفتاح بنحو ساعة ونصف.",
+        "skill_ko_refs": [
+          "KO-RS-05-005",
+          "KO-RS-06-017"
+        ]
+      },
+      {
+        "id": "i_a_mansour",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_round_scans"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_office_door_log"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_staff_door_log"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_mansour_elsewhere"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "وسوم الجولة كل خمس دقائق تغطي وقت سحب الوسم وزيارتي رامز، وقارئا البابين لا يسجلان لمنصور دخولاً بعد 08:07؛ فمنصور كان في جولته.",
+        "skill_ko_refs": [
+          "KO-RS-05-005",
+          "KO-RS-06-001"
+        ]
+      },
+      {
+        "id": "i_a_ramez",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_cabinet_log"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_office_door_log"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_staff_door_log"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_ramez_only"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "الوسم سُحب 09:58 وبطاقة رامز وحدها سجّلت دخول المكتب بين 09:57 و10:00، ثم سجّلت بطاقته وحدها دخول غرفة الموظفين 10:12 و10:41؛ فهو الوحيد الذي ربطته السجلات بالموضعين في الفترة.",
+        "skill_ko_refs": [
+          "KO-RS-05-005",
+          "KO-RS-06-001"
+        ]
+      },
+      {
+        "id": "i_a_karam",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_staff_door_log"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_office_door_log"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_karam_elsewhere"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "آخر دخول لكرم في أي من البابين 09:24 غرفة الموظفين، ولا قيد له في المكتب؛ فلا أثر لبطاقته في الفترة التي سُحب فيها الوسم ووُضع.",
+        "skill_ko_refs": [
+          "KO-RS-05-005"
+        ]
+      },
+      {
+        "id": "i_a_sources",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_sightings"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_promo_notice"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_sightings_two_sources"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "البلاغان المباشران من متقدمَين للرئاسة، والثالث سمعه صاحبه من أحدهما؛ فلا استقلال بين البلاغات الثلاثة، وكلها تصف مروراً.",
+        "skill_ko_refs": [
+          "KO-RS-05-001",
+          "KO-RS-06-002"
+        ]
+      },
+      {
+        "id": "i_b_coat",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_cleaning_sheet"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_curator_statement"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_coat_early"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "عاملة التنظيف سجلت المعطف معلقاً 08:30، والأمينة تقول إن الوسم بقي في اللوحة حتى خروجها 09:56؛ فالمعطف سبق خروج المفتاح.",
+        "skill_ko_refs": [
+          "KO-RS-05-005",
+          "KO-RS-06-017"
+        ]
+      },
+      {
+        "id": "i_b_mansour",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_guide_statement"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_curator_statement"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_mansour_elsewhere"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "مرشدة لا مصلحة لها رأت منصور يفتح باب القاعة 2 نحو 10:10، أي وقت دخول رامز الغرفة، والأمينة تقول إنه لم يأتِ مكتبها؛ فمنصور في جولته لا في المكتب ولا في الغرفة.",
+        "skill_ko_refs": [
+          "KO-RS-05-005",
+          "KO-RS-06-001"
+        ]
+      },
+      {
+        "id": "i_b_ramez",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_curator_statement"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_ramez_statement"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_ramez_only"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "الأمينة تقول إن رامز كان عند بابها قبل خروجها بدقيقة وطلب المفتاح، ورامز يقر بأنه دخل غرفة الموظفين مرتين قبل أن يُعثر على المفتاح؛ فهو مرتبط بالموضعين من أقواله هو.",
+        "skill_ko_refs": [
+          "KO-RS-05-014",
+          "KO-RS-06-001"
+        ]
+      },
+      {
+        "id": "i_b_karam",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_ticket_desk_log"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_karam_elsewhere"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "عمليات البيع متصلة من 09:36 إلى 10:52 وتشمل 09:58 و10:12 و10:41؛ فكرم كان خلف الشباك في الأوقات الثلاثة.",
+        "skill_ko_refs": [
+          "KO-RS-05-005"
+        ]
+      },
+      {
+        "id": "i_support_ramez",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_ramez_only"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_coat_early"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_ramez"
+        },
+        "relation": "supports",
+        "strength": "strong",
+        "rule_ar": "المعطف سبق خروج المفتاح، والمفتاح خرج من اللوحة ثم ظهر في غرفة الموظفين، ورامز وحده ارتبط بالمكانين في الفترة؛ فأرجح تفسير أنه حمله ووضعه ثم أبلغ.",
+        "skill_ko_refs": [
+          "KO-RS-06-001"
+        ]
+      },
+      {
+        "id": "i_rule_mansour",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_coat_early"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_mansour_elsewhere"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_mansour"
+        },
+        "relation": "rules_out",
+        "strength": "conclusive",
+        "rule_ar": "من علّق معطفه قبل خروج المفتاح بساعة ونصف وبقي في جولته ولم يدخل المكتب ولا الغرفة بعد ذلك لا يمكن أن يكون من نقل المفتاح إلى معطفه.",
+        "skill_ko_refs": [
+          "KO-RS-06-008"
+        ]
+      },
+      {
+        "id": "i_rule_karam",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_karam_elsewhere"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_karam"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "من لازم الشباك في الأوقات التي سُحب فيها الوسم ووُضع المفتاح، ولا أثر لبطاقته في البابين، لا يصح أن يكون هو من فعل ذلك.",
+        "skill_ko_refs": [
+          "KO-RS-06-008"
+        ]
+      },
+      {
+        "id": "i_rule_chance",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_coat_early"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_ramez_only"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_chance"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "المفتاح خرج من لوحة في مكتب إلى جيب مغلق في غرفة أخرى بعد أن عُلّق المعطف؛ فلا بد أن حمله شخص، ولا يُنسى مفتاح موسوم صدفة في معطف زميل بعد سحبه من اللوحة بقليل.",
+        "skill_ko_refs": [
+          "KO-RS-06-008"
+        ]
+      },
+      {
+        "id": "i_claim_ramez",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_coat_early"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_mansour_elsewhere"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_ramez_inference"
+        },
+        "relation": "contradicts_claim",
+        "strength": "strong",
+        "rule_ar": "وجود المفتاح في المعطف لا يدل على أن صاحبه وضعه؛ فالمعطف كان معلقاً قبل خروج المفتاح، وصاحبه كان في جولته.",
+        "skill_ko_refs": [
+          "KO-RS-05-001",
+          "KO-RS-06-004"
+        ]
+      },
+      {
+        "id": "i_claim_karam",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_mansour_elsewhere"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_karam_unusual"
+        },
+        "relation": "contradicts_claim",
+        "strength": "strong",
+        "rule_ar": "نقطة الجولة الرابعة عند الخزانة 4 في كل دورة؛ فمرور منصور بها 09:55 جزء من عمله لا شذوذ.",
+        "skill_ko_refs": [
+          "KO-RS-05-001"
+        ]
+      },
+      {
+        "id": "i_rule_mansour_src",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_sightings_two_sources"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_mansour"
+        },
+        "relation": "rules_out",
+        "strength": "suggestive",
+        "rule_ar": "البلاغات الثلاثة لا تعدّ ثلاثة أدلة مستقلة؛ هي مرور عادي رآه متقدمان للرئاسة وسامع منهما، فلا تحمل وزناً كبيراً ضد منصور.",
+        "skill_ko_refs": [
+          "KO-RS-05-004"
+        ]
+      }
+    ]
+  },
+  "character_knowledge": [
+    {
+      "character_id": "mansour",
+      "knows": [
+        {
+          "fact_id": "f_mansour_coat",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_mansour_rounds",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    },
+    {
+      "character_id": "ramez",
+      "knows": [
+        {
+          "fact_id": "f_ramez_found",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [
+        {
+          "fact_id": "f_ramez_took",
+          "reveal_when": {
+            "presented": {
+              "evidence_id": "ev_office_door_log",
+              "to_character": "ramez"
+            }
+          },
+          "cover_claim_id": "cl_ramez_inference",
+          "reveal_line_id": "rm_took"
+        }
+      ],
+      "believes": [
+        {
+          "claim_id": "cl_ramez_inference",
+          "stance": "deliberate_lie"
+        }
+      ]
+    },
+    {
+      "character_id": "karam",
+      "knows": [
+        {
+          "fact_id": "f_karam_desk",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_karam_saw",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": [
+        {
+          "claim_id": "cl_karam_unusual",
+          "stance": "sincere"
+        }
+      ]
+    },
+    {
+      "character_id": "salwa",
+      "knows": [
+        {
+          "fact_id": "f_key_returned",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_curator_away",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_ramez_asked",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_mansour_not_office",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    },
+    {
+      "character_id": "yasmin",
+      "knows": [
+        {
+          "fact_id": "f_guide_saw",
+          "access": "witnessed",
+          "certainty": "fairly_sure"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "h_ramez",
+      "statement_ar": "سحب رامز وسم المفتاح من اللوحة ووضعه في معطف منصور، ثم أبلغ عن «العثور» عليه.",
+      "is_true": true,
+      "plausibility_at_start": "low",
+      "suspect_id": "ramez"
+    },
+    {
+      "id": "h_mansour",
+      "statement_ar": "أخذ منصور المفتاح وأخفاه في جيب معطفه.",
+      "is_true": false,
+      "plausibility_at_start": "high",
+      "suspect_id": "mansour"
+    },
+    {
+      "id": "h_karam",
+      "statement_ar": "أخذ كرم المفتاح وألقاه في المعطف ليُتّهم منصور.",
+      "is_true": false,
+      "plausibility_at_start": "medium",
+      "suspect_id": "karam"
+    },
+    {
+      "id": "h_chance",
+      "statement_ar": "لم يتعمد أحد شيئاً؛ نسي أحدهم المفتاح في جيب المعطف مصادفة.",
+      "is_true": false,
+      "plausibility_at_start": "low"
+    }
+  ],
+  "misdirection_plan": [
+    {
+      "id": "rh_found",
+      "points_to_hypothesis_id": "h_mansour",
+      "planted_via_ar": "المفتاح وُجد في جيب معطف منصور، فيبدو أنه هو من خبّأه.",
+      "evidence_ids": [
+        "ev_incident_report"
+      ],
+      "refuted_by_inference_ids": [
+        "i_rule_mansour",
+        "i_a_coat",
+        "i_b_coat",
+        "i_claim_ramez"
+      ],
+      "fairness_note_ar": "التقرير يذكر مكان العثور لا من وضعه؛ وسجل الغرفة وورقة التنظيف يضعان المعطف معلقاً قبل خروج المفتاح من اللوحة، وسجلات الجولة تضع صاحبه بعيداً."
+    },
+    {
+      "id": "rh_sightings",
+      "points_to_hypothesis_id": "h_mansour",
+      "planted_via_ar": "ثلاثة زملاء يقولون إنهم رأوه قرب الخزانة، فيبدو أن الأمر متفق عليه.",
+      "evidence_ids": [
+        "ev_sightings"
+      ],
+      "refuted_by_inference_ids": [
+        "i_rule_mansour_src",
+        "i_a_sources",
+        "i_claim_karam",
+        "i_rule_mansour"
+      ],
+      "fairness_note_ar": "حقل «المصدر» في الملخص يبيّن أن اثنين رأيا مروراً والثالث سمع من أحدهما، وسجل الجولة يبيّن أن نقطة الخزانة جزء من مسار منصور في كل دورة."
+    }
+  ],
+  "learning_objectives": [
+    {
+      "id": "lo_claim",
+      "statement_ar": "يسأل من أين جاء كل دليل ومن المستفيد منه، ويفرّق بين مكان العثور على شيء ومن وضعه.",
+      "skill_ko_ref": "KO-RS-05-001",
+      "observable_behaviors_ar": [
+        "يصنّف الإفادات أقوالاً",
+        "يحدد مصدر كل بلاغ"
+      ],
+      "evidence_sources": [
+        "evidence_board"
+      ]
+    },
+    {
+      "id": "lo_timeline",
+      "statement_ar": "يرتّب سجلات الأبواب واللوحة والجولة على خط زمني ليعرف ما سبق ما.",
+      "skill_ko_ref": "KO-RS-05-005",
+      "observable_behaviors_ar": [
+        "يضع المعطف والسحب والبلاغ في أزمنتها"
+      ],
+      "evidence_sources": [
+        "timeline_task",
+        "action_log"
+      ]
+    },
+    {
+      "id": "lo_hyp",
+      "statement_ar": "يوازن بين عدة فرضيات ويستبعد ما تنقضه الأدلة.",
+      "skill_ko_ref": "KO-RS-05-002",
+      "observable_behaviors_ar": [
+        "يضيف فرضيات",
+        "يستبعد بدليل"
+      ],
+      "evidence_sources": [
+        "hypothesis_ledger"
+      ]
+    },
+    {
+      "id": "lo_diag",
+      "statement_ar": "يقدّر ما يثبته كل سجل وما لا يثبته، ويربط الدليل بالفرضية باتجاه صحيح.",
+      "skill_ko_ref": "KO-RS-06-002",
+      "observable_behaviors_ar": [
+        "يعرف حدود قارئ البطاقات",
+        "يربط الدليل بالفرضية"
+      ],
+      "evidence_sources": [
+        "evidence_board",
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_calib",
+      "statement_ar": "يصوغ نسبة الترجيح بحدودها.",
+      "skill_ko_ref": "KO-RS-06-021",
+      "observable_behaviors_ar": [
+        "يختار ثقة معقولة",
+        "يذكر حدوداً"
+      ],
+      "evidence_sources": [
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_revise",
+      "statement_ar": "يراجع رأيه الأول حين يظهر ما يخالفه.",
+      "skill_ko_ref": "KO-RS-06-009",
+      "observable_behaviors_ar": [
+        "يغيّر فرضيته الرائدة بدليل"
+      ],
+      "evidence_sources": [
+        "hypothesis_ledger"
+      ]
+    }
+  ],
+  "mechanics": {
+    "time_budget_units": 40,
+    "actions": [
+      {
+        "id": "a_get_report",
+        "type": "examine",
+        "label_ar": "اقرأ تقرير الحادث",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_incident_report"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_admin",
+        "telemetry_code": "GET_REPORT"
+      },
+      {
+        "id": "a_get_sightings",
+        "type": "examine",
+        "label_ar": "اطلب ملخص البلاغات الثلاثة",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_sightings"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_admin",
+        "telemetry_code": "GET_SIGHTINGS"
+      },
+      {
+        "id": "a_get_promo",
+        "type": "examine",
+        "label_ar": "اقرأ إعلان شغور رئاسة الفريق",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_promo_notice"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_admin",
+        "telemetry_code": "GET_PROMO"
+      },
+      {
+        "id": "a_get_staff_log",
+        "type": "examine",
+        "label_ar": "اطلب سجل باب غرفة الموظفين بإذن الإدارة",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_staff_door_log"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_staff",
+        "telemetry_code": "GET_STAFF_LOG"
+      },
+      {
+        "id": "a_get_office_log",
+        "type": "examine",
+        "label_ar": "اطلب سجل باب مكتب الأمينة بإذن الإدارة",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_office_door_log"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_office",
+        "telemetry_code": "GET_OFFICE_LOG"
+      },
+      {
+        "id": "a_get_cabinet",
+        "type": "examine",
+        "label_ar": "اطلب سجل قارئ لوحة المفاتيح بإذن الإدارة",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_cabinet_log"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_office",
+        "telemetry_code": "GET_CABINET"
+      },
+      {
+        "id": "a_get_rounds",
+        "type": "examine",
+        "label_ar": "اطلب سجل وسوم جولة التفقد",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_round_scans"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_gallery",
+        "telemetry_code": "GET_ROUNDS"
+      },
+      {
+        "id": "a_get_cleaning",
+        "type": "examine",
+        "label_ar": "اطلب ورقة تنظيف غرفة الموظفين",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_cleaning_sheet"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_staff",
+        "telemetry_code": "GET_CLEANING"
+      },
+      {
+        "id": "a_get_desk",
+        "type": "examine",
+        "label_ar": "اطلب سجل عمليات شباك التذاكر",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_ticket_desk_log"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_desk",
+        "telemetry_code": "GET_DESK"
+      },
+      {
+        "id": "a_int_mansour",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة منصور",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "mansour",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "mansour",
+        "telemetry_code": "INT_MANSOUR"
+      },
+      {
+        "id": "a_int_ramez",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة رامز",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "ramez",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "ramez",
+        "telemetry_code": "INT_RAMEZ"
+      },
+      {
+        "id": "a_int_karam",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة كرم",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "karam",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "karam",
+        "telemetry_code": "INT_KARAM"
+      },
+      {
+        "id": "a_int_salwa",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة سلوى",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "salwa",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "salwa",
+        "telemetry_code": "INT_SALWA"
+      },
+      {
+        "id": "a_int_yasmin",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة ياسمين",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "yasmin",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "yasmin",
+        "telemetry_code": "INT_YASMIN"
+      },
+      {
+        "id": "a_note_curator",
+        "type": "examine",
+        "label_ar": "دوّن إفادة سلوى",
+        "precondition": {
+          "fact_unlocked": "f_key_returned"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_curator_statement"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "salwa",
+        "telemetry_code": "NOTE_CURATOR"
+      },
+      {
+        "id": "a_note_guide",
+        "type": "examine",
+        "label_ar": "دوّن إفادة ياسمين",
+        "precondition": {
+          "fact_unlocked": "f_guide_saw"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_guide_statement"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "yasmin",
+        "telemetry_code": "NOTE_GUIDE"
+      },
+      {
+        "id": "a_note_ramez",
+        "type": "examine",
+        "label_ar": "دوّن إفادة رامز",
+        "precondition": {
+          "fact_unlocked": "f_ramez_found"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_ramez_statement"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "ramez",
+        "telemetry_code": "NOTE_RAMEZ"
+      },
+      {
+        "id": "a_note_karam",
+        "type": "examine",
+        "label_ar": "دوّن إفادة كرم",
+        "precondition": {
+          "fact_unlocked": "f_karam_saw"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_karam_statement"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "karam",
+        "telemetry_code": "NOTE_KARAM"
+      },
+      {
+        "id": "a_note_mansour",
+        "type": "examine",
+        "label_ar": "دوّن إفادة منصور",
+        "precondition": {
+          "fact_unlocked": "f_mansour_coat"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_mansour_statement"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "mansour",
+        "telemetry_code": "NOTE_MANSOUR"
+      },
+      {
+        "id": "p_office_ramez",
+        "type": "present_evidence",
+        "label_ar": "اعرض سجل باب مكتب الأمينة على رامز",
+        "precondition": {
+          "presented": {
+            "evidence_id": "ev_office_door_log",
+            "to_character": "ramez"
+          }
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "PRESENTED_OFFICE_LOG"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "ramez",
+        "telemetry_code": "P_OFFICE_RAMEZ"
+      },
+      {
+        "id": "a_hint",
+        "type": "request_hint",
+        "label_ar": "اطلب تلميحاً",
+        "precondition": {
+          "always": true
+        },
+        "effects": [],
+        "time_cost_units": 0,
+        "telemetry_code": "REQUEST_HINT"
+      },
+      {
+        "id": "a_accuse",
+        "type": "final_accusation",
+        "label_ar": "قدّم الاستنتاج النهائي",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "SUBMIT"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "FINAL_ACCUSATION"
+      },
+      {
+        "id": "ask_mansour_f_mansour_coat",
+        "type": "interview",
+        "label_ar": "[نموذج] mansour يذكر f_mansour_coat",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_mansour_coat"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "mansour",
+        "telemetry_code": "ASK_MANSOUR_F_MANSOUR_COAT"
+      },
+      {
+        "id": "ask_mansour_f_mansour_rounds",
+        "type": "interview",
+        "label_ar": "[نموذج] mansour يذكر f_mansour_rounds",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_mansour_rounds"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "mansour",
+        "telemetry_code": "ASK_MANSOUR_F_MANSOUR_ROUNDS"
+      },
+      {
+        "id": "ask_ramez_f_ramez_found",
+        "type": "interview",
+        "label_ar": "[نموذج] ramez يذكر f_ramez_found",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_ramez_found"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "ramez",
+        "telemetry_code": "ASK_RAMEZ_F_RAMEZ_FOUND"
+      },
+      {
+        "id": "ask_ramez_f_ramez_took",
+        "type": "interview",
+        "label_ar": "[نموذج] ramez يكشف f_ramez_took",
+        "precondition": {
+          "all": [
+            {
+              "always": true
+            },
+            {
+              "presented": {
+                "evidence_id": "ev_office_door_log",
+                "to_character": "ramez"
+              }
+            }
+          ]
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_ramez_took"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "ramez",
+        "telemetry_code": "ASK_RAMEZ_F_RAMEZ_TOOK"
+      },
+      {
+        "id": "ask_karam_f_karam_desk",
+        "type": "interview",
+        "label_ar": "[نموذج] karam يذكر f_karam_desk",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_karam_desk"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "karam",
+        "telemetry_code": "ASK_KARAM_F_KARAM_DESK"
+      },
+      {
+        "id": "ask_karam_f_karam_saw",
+        "type": "interview",
+        "label_ar": "[نموذج] karam يذكر f_karam_saw",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_karam_saw"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "karam",
+        "telemetry_code": "ASK_KARAM_F_KARAM_SAW"
+      },
+      {
+        "id": "ask_salwa_f_key_returned",
+        "type": "interview",
+        "label_ar": "[نموذج] salwa يذكر f_key_returned",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_key_returned"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "salwa",
+        "telemetry_code": "ASK_SALWA_F_KEY_RETURNED"
+      },
+      {
+        "id": "ask_salwa_f_curator_away",
+        "type": "interview",
+        "label_ar": "[نموذج] salwa يذكر f_curator_away",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_curator_away"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "salwa",
+        "telemetry_code": "ASK_SALWA_F_CURATOR_AWAY"
+      },
+      {
+        "id": "ask_salwa_f_ramez_asked",
+        "type": "interview",
+        "label_ar": "[نموذج] salwa يذكر f_ramez_asked",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_ramez_asked"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "salwa",
+        "telemetry_code": "ASK_SALWA_F_RAMEZ_ASKED"
+      },
+      {
+        "id": "ask_salwa_f_mansour_not_office",
+        "type": "interview",
+        "label_ar": "[نموذج] salwa يذكر f_mansour_not_office",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_mansour_not_office"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "salwa",
+        "telemetry_code": "ASK_SALWA_F_MANSOUR_NOT_OFFICE"
+      },
+      {
+        "id": "ask_yasmin_f_guide_saw",
+        "type": "interview",
+        "label_ar": "[نموذج] yasmin يذكر f_guide_saw",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_guide_saw"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "yasmin",
+        "telemetry_code": "ASK_YASMIN_F_GUIDE_SAW"
+      }
+    ]
+  },
+  "state_machine": {
+    "id": "c015",
+    "initial": "briefing",
+    "type": "compound",
+    "states": {
+      "briefing": {
+        "description_ar": "الإحاطة",
+        "type": "atomic",
+        "on": {
+          "START": {
+            "target": "investigating"
+          }
+        }
+      },
+      "investigating": {
+        "description_ar": "التحقيق",
+        "type": "compound",
+        "initial": "gathering",
+        "states": {
+          "gathering": {
+            "type": "atomic",
+            "on": {
+              "OPEN_DEDUCTION": {
+                "target": "deducing"
+              }
+            }
+          },
+          "deducing": {
+            "type": "atomic",
+            "on": {
+              "BACK": {
+                "target": "gathering"
+              }
+            }
+          }
+        },
+        "on": {
+          "SUBMIT": {
+            "target": "review"
+          }
+        }
+      },
+      "review": {
+        "description_ar": "مراجعة",
+        "type": "atomic",
+        "on": {
+          "CLOSE": {
+            "target": "resolved"
+          }
+        }
+      },
+      "resolved": {
+        "description_ar": "إغلاق",
+        "type": "final"
+      }
+    }
+  },
+  "dialogue": {
+    "max_turns_per_interview": 10,
+    "llm_enabled": false,
+    "topics": [
+      {
+        "id": "t_coat",
+        "label_ar": "المعطف والغرفة",
+        "example_questions_ar": [
+          "متى علّقت المعطف؟",
+          "هل عدت إلى غرفة الموظفين؟"
+        ],
+        "fact_ids": [
+          "f_mansour_coat",
+          "f_ramez_found"
+        ],
+        "claim_ids": [
+          "cl_ramez_inference"
+        ]
+      },
+      {
+        "id": "t_rounds",
+        "label_ar": "الجولة والخزانة 4",
+        "example_questions_ar": [
+          "أين كنت صباحاً؟",
+          "ماذا رأيت قرب الخزانة؟"
+        ],
+        "fact_ids": [
+          "f_mansour_rounds",
+          "f_karam_saw",
+          "f_guide_saw"
+        ],
+        "claim_ids": [
+          "cl_karam_unusual"
+        ]
+      },
+      {
+        "id": "t_key",
+        "label_ar": "المفتاح واللوحة",
+        "example_questions_ar": [
+          "متى أعيد المفتاح؟",
+          "من سأل عنه؟",
+          "هل جاء منصور إلى المكتب؟"
+        ],
+        "fact_ids": [
+          "f_key_returned",
+          "f_curator_away",
+          "f_ramez_asked",
+          "f_mansour_not_office"
+        ]
+      },
+      {
+        "id": "t_desk",
+        "label_ar": "الشباك",
+        "example_questions_ar": [
+          "أين كنت من 09:30؟"
+        ],
+        "fact_ids": [
+          "f_karam_desk"
+        ]
+      },
+      {
+        "id": "t_after",
+        "label_ar": "ما جرى للمفتاح",
+        "example_questions_ar": [
+          "كيف وصل المفتاح إلى المعطف؟"
+        ],
+        "fact_ids": [
+          "f_ramez_took"
+        ]
+      }
+    ]
+  },
+  "rubric": {
+    "reference_answer_ar": "منصور لم يأخذ المفتاح. معطفه كان معلقاً في غرفة الموظفين منذ 08:05 وأكدته ورقة التنظيف عند الثامنة والنصف، أي قبل خروج الوسم من اللوحة 09:58 بنحو ساعة ونصف، وهو كان طوال ذلك في جولته ووسومه تمرّ كل خمس دقائق، ولم يسجّل قارئ البابين دخوله بعد 08:07. أما رامز فهو الذي ارتبطت بطاقته بمكتب الأمينة حين سُحب الوسم وبغرفة الموظفين قبل «العثور»، وأقواله هو والأمينة تتفق مع ذلك. والبلاغات الثلاثة صادرة عن متقدمَين للرئاسة وسامع منهما وتصف مروراً عادياً. حدود الاستنتاج: قد يتجاوز القارئ شخصاً دخل في أثر غيره، ولا تثبت السجلات نية رامز ولا لحظة وضع المفتاح، وقد يوجد تفسير لم تغطه السجلات.",
+    "criteria": [
+      {
+        "id": "c_source",
+        "name_ar": "تصنيف المصادر",
+        "objective_ids": [
+          "lo_claim"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يصنّف"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "أخطأ في الأغلب"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "نصف صحيح"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمه صحيح"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كله صحيح"
+          }
+        ]
+      },
+      {
+        "id": "c_conflict",
+        "name_ar": "ترتيب الأحداث على الخط الزمني",
+        "objective_ids": [
+          "lo_timeline"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.2,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يضع شيئاً"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "وضع قليلاً"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "وضع نصفها صحيحاً"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمها"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كلها في موضعها"
+          }
+        ]
+      },
+      {
+        "id": "c_links",
+        "name_ar": "ربط الأدلة بالفرضيات",
+        "objective_ids": [
+          "lo_diag"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.2,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لا روابط"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "قليلة"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "نصفها صحيح"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمها"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كلها دقيقة"
+          }
+        ]
+      },
+      {
+        "id": "c_uncertainty",
+        "name_ar": "معايرة الثقة",
+        "objective_ids": [
+          "lo_calib"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "ثقة مفرطة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "حدود قليلة"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "جزئية"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معقولة"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "معايَرة كاملة"
+          }
+        ]
+      },
+      {
+        "id": "c_revision",
+        "name_ar": "مراجعة الرأي",
+        "objective_ids": [
+          "lo_revise"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "بقي على فرضية مرفوضة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "لم يعلن فرضية"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "ثبت على فرضية سليمة"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "غيّر بدليل"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "غيّر بدليل ووثّق"
+          }
+        ]
+      },
+      {
+        "id": "c_elimination",
+        "name_ar": "استبعاد الفرضيات الخاطئة",
+        "objective_ids": [
+          "lo_hyp"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يستبعد"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "استبعد خطأً"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "فرضية بدليل"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "فرضيتين"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كل الخاطئة"
+          }
+        ]
+      },
+      {
+        "id": "c_justification",
+        "name_ar": "جودة الحجة المكتوبة",
+        "objective_ids": [
+          "lo_diag",
+          "lo_hyp"
+        ],
+        "scored_by": "human",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لا حجة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "ادعاء بلا سند"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "أدلة دون ربط"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "ربط الأدلة بالاستنتاج"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "ربط مع البدائل والحدود"
+          }
+        ]
+      }
+    ]
+  },
+  "hint_ladder": [
+    {
+      "id": "hg1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "قبل أن تقرر من أخذ المفتاح، اسأل: من أين جاء كل دليل، وماذا يكسب صاحبه؟",
+      "trigger": {
+        "always": true
+      },
+      "assessment_weight": 0.02
+    },
+    {
+      "id": "hg2",
+      "level": 2,
+      "kind": "focus_area",
+      "text_ar": "ضع كل بلاغ في جدول: من قاله؟ هل رأى بنفسه أم سمع؟ وهل هو متقدم للرئاسة؟",
+      "trigger": {
+        "has_evidence": "ev_sightings"
+      },
+      "assessment_weight": 0.04
+    },
+    {
+      "id": "hg3",
+      "level": 3,
+      "kind": "pointer",
+      "text_ar": "ابحث عن سجلات لا مصلحة لأحد فيها: قارئات الأبواب واللوحة ووسوم الجولة.",
+      "trigger": {
+        "has_evidence": "ev_sightings"
+      },
+      "assessment_weight": 0.08
+    },
+    {
+      "id": "hc1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "متى عُلّق المعطف؟ ومتى خرج الوسم من اللوحة؟ أيهما سبق الآخر؟",
+      "trigger": {
+        "has_evidence": "ev_incident_report"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_a_coat"
+    },
+    {
+      "id": "hc2",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "قارن وقت دخول منصور غرفة الموظفين بوقت سحب الوسم في سجل اللوحة.",
+      "trigger": {
+        "has_evidence": "ev_incident_report"
+      },
+      "assessment_weight": 0.06,
+      "targets_inference_id": "i_a_coat"
+    },
+    {
+      "id": "hc3",
+      "level": 3,
+      "kind": "partial_reveal",
+      "text_ar": "اطلب سجل باب غرفة الموظفين وسجل لوحة المفاتيح وضعهما معاً على الخط الزمني، ثم انظر من دخل بعد 09:58.",
+      "trigger": {
+        "has_evidence": "ev_incident_report"
+      },
+      "assessment_weight": 0.1,
+      "targets_inference_id": "i_a_coat"
+    }
+  ],
+  "fairness_test": {
+    "requirements": {
+      "min_disjoint_proof_paths": 2,
+      "max_inference_depth": 3,
+      "all_red_herrings_refutable": true,
+      "culprit_uniquely_entailed": true,
+      "no_hidden_fact_dependency": true,
+      "max_required_actions": 40
+    },
+    "runs": []
+  },
+  "ending_explanation": {
+    "steps": [
+      {
+        "order": 1,
+        "text_ar": "المفتاح وُجد في معطف منصور، لكن مكان العثور لا يقول من وضعه؛ فسجل الغرفة يضع معطفه 08:05 وورقة التنظيف تؤيد ذلك 08:30، وسجل اللوحة يضع سحب الوسم 09:58.",
+        "uses_evidence_ids": [
+          "ev_staff_door_log",
+          "ev_cabinet_log",
+          "ev_cleaning_sheet"
+        ],
+        "inference_id": "i_a_coat"
+      },
+      {
+        "order": 2,
+        "text_ar": "منصور في جولته: وسومه كل خمس دقائق، وقارئا البابين لا يسجلان له دخولاً بعد 08:07، والمرشدة رأته في القاعة 2 نحو 10:10 والأمينة تقول إنه لم يأتِ مكتبها.",
+        "uses_evidence_ids": [
+          "ev_round_scans",
+          "ev_office_door_log",
+          "ev_staff_door_log",
+          "ev_guide_statement",
+          "ev_curator_statement"
+        ],
+        "inference_id": "i_a_mansour"
+      },
+      {
+        "order": 3,
+        "text_ar": "البلاغات الثلاثة ليست ثلاثة أدلة: اثنان رأيا مروراً والثالث سمع من أحدهما، وصاحبا البلاغين متقدمان للرئاسة نفسها.",
+        "uses_evidence_ids": [
+          "ev_sightings",
+          "ev_promo_notice"
+        ],
+        "inference_id": "i_a_sources"
+      },
+      {
+        "order": 4,
+        "text_ar": "كرم في الشباك طوال الفترة: عملياته متصلة، ولا أثر لبطاقته في البابين بعد 09:24.",
+        "uses_evidence_ids": [
+          "ev_ticket_desk_log",
+          "ev_staff_door_log",
+          "ev_office_door_log"
+        ],
+        "inference_id": "i_b_karam"
+      },
+      {
+        "order": 5,
+        "text_ar": "رامز وحده ارتبطت بطاقته بمكتب الأمينة حين سُحب الوسم وبغرفة الموظفين قبل بلاغه؛ وأقواله هو وأقوال الأمينة تتفق مع قارئي البابين.",
+        "uses_evidence_ids": [
+          "ev_cabinet_log",
+          "ev_office_door_log",
+          "ev_staff_door_log",
+          "ev_curator_statement",
+          "ev_ramez_statement"
+        ],
+        "inference_id": "i_a_ramez"
+      },
+      {
+        "order": 6,
+        "text_ar": "إذن لم ينسَ أحد المفتاح في المعطف: حمله شخص بعد سحبه، والأرجح أنه رامز، ثم أبلغ عن العثور عليه.",
+        "uses_evidence_ids": [
+          "ev_staff_door_log",
+          "ev_cabinet_log"
+        ],
+        "inference_id": "i_support_ramez"
+      }
+    ],
+    "alternative_paths_ar": [
+      "يمكن الوصول إلى النتيجة من سجلات الأبواب واللوحة والوسوم وحدها دون أن تسأل أحداً، لكن من يفعل ذلك قد يتجاهل أن الأمينة نفسها قصّرت بترك اللوحة مفتوحة.",
+      "ويمكن الوصول إليها من ورقة التنظيف وإفادات الأمينة والمرشدة وكرم ورامز وسجل الشباك دون قراءة قارئات الأبواب؛ والأقوى أن يتفق المساران."
+    ],
+    "what_evidence_could_not_show_ar": [
+      "لا تثبت السجلات لحظة وضع المفتاح في الجيب ولا نية رامز؛ تثبت الارتباط بالمكانين في الفترة فقط.",
+      "قارئ البطاقات لا يرى من يدخل خلف حامل بطاقة أو والباب مفتوح، فلا يستبعد وجود شخص لم تسجله البطاقات.",
+      "لا تبيّن السجلات هل استعمل رامز المفتاح قبل أن يضعه أم لا."
+    ],
+    "science_notes_ar": [
+      "مكان العثور على شيء لا يدل على من وضعه؛ اسأل: ما الذي سبق ما؟ ومن كان يستطيع الوصول؟",
+      "الدليل الذي يأتي من شخص له مصلحة في النتيجة يُقاس بسجل لا مصلحة لأحد فيه؛ وثلاثة أقوال من مصدرين ليست ثلاثة أدلة مستقلة.",
+      "تتبّع المفتاح بسجلات الأبواب واللوحة شبيه بسلسلة العهدة، ويبقى ما نسميه نسبة الترجيح حكماً قابلاً للمراجعة."
+    ]
+  },
+  "expert_review": [
+    {
+      "role": "narrative_editor",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "scientific_reviewer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "learning_designer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "age_appropriateness",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "cultural_reviewer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "legal_rights",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "safety",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    }
+  ]
+}

@@ -1,24 +1,33 @@
-import Link from "next/link";
+import { Badge } from "./ui/badge";
+import { MasteryMeter } from "./ui/badge";
+import { CardLink, Dossier } from "./ui/card";
+import { ChevronIcon } from "./ui/icons";
 
 export interface Card { case_id: string; title_ar: string; kicker_ar: string; tagline_ar: string; glyph: string; accent: string; minutes: number; difficulty: number; age_band: string; tutorial?: boolean; preview?: boolean }
 export interface Prog { case_id: string; title_ar: string; machine: string; done: boolean; evidence_count: number; locked_count: number; updated_at: string }
 
+/** A case cover: dossier tab (kicker) + full-width card. Status is a Badge; difficulty is segments + number + label. */
 export function CaseCard({ c, p }: { c: Card; p?: Prog }) {
   const href = p && !p.done ? `/play/${c.case_id}` : `/case/${c.case_id}`;
   return (
-    <Link href={href} className="card case-card" data-accent={c.accent}>
-      <span className="glyph" aria-hidden>{c.glyph}</span>
-      <span className="kicker">{c.kicker_ar}</span>
-      <h3 style={{ margin: 0 }}>{c.title_ar}</h3>
-      <p className="dim" style={{ margin: 0 }}>{c.tagline_ar}</p>
-      <div className="row small">
-        <span className="chip">{c.minutes} دقيقة</span>
-        <span className="chip">{"●".repeat(c.difficulty)}{"○".repeat(Math.max(0, 5 - c.difficulty))} <span className="sr-only">الصعوبة {c.difficulty} من 5</span></span>
-        {c.preview && <span className="chip amber">نسخة تجريبية قيد المراجعة</span>}
-        {p?.done && <span className="chip green">أُنجزت</span>}
-        {p && !p.done && <span className="chip cyan">قيد التحقيق · {p.evidence_count} دليلاً</span>}
-      </div>
-    </Link>
+    <Dossier tab={c.kicker_ar}>
+      <CardLink href={href} className="dossier-cover">
+        <span className="glyph" aria-hidden>{c.glyph}</span>
+        <div className="row" style={{ flexWrap: "nowrap", alignItems: "flex-start" }}>
+          <div className="stack-sm grow">
+            <h3 className="card-title">{c.title_ar}</h3>
+            <p className="small dim-2">{c.tagline_ar}</p>
+          </div>
+          <ChevronIcon className="chev" size={20} />
+        </div>
+        <div className="row small">
+          <Badge>{c.minutes} دقيقة</Badge>
+          {c.preview && <Badge tone="warning">نسخة تجريبية قيد المراجعة</Badge>}
+          {p?.done && <Badge tone="positive">أُنجزت</Badge>}
+          {p && !p.done && <Badge tone="brand">قيد التحقيق · {p.evidence_count} دليلاً</Badge>}
+        </div>
+        <MasteryMeter level={c.difficulty} max={5} label="الصعوبة" a11yLabel={`الصعوبة ${c.difficulty} من 5`} />
+      </CardLink>
+    </Dossier>
   );
 }
-

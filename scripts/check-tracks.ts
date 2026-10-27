@@ -22,7 +22,7 @@ const slots: Record<string, number> = { a: 0, b: 0, c: 0, d: 0 };
 const rows: Record<string, string | number>[] = [];
 
 for (const t of data.tracks) {
-  if (t.lessons.length !== 3) fail(`track ${t.id}: expected 3 lessons`);
+  if (t.lessons.length !== 6) fail(`track ${t.id}: expected 6 lessons`);
   for (const l of t.lessons) {
     if (!l.id.startsWith(t.id)) fail(`${l.id}: id prefix mismatch with track ${t.id}`);
     if (lessonIds.has(l.id)) fail(`duplicate lesson id ${l.id}`);
@@ -39,8 +39,8 @@ for (const t of data.tracks) {
   }
 }
 if (data.tracks.length !== 6) fail("expected 6 tracks");
-if (lessonIds.size !== 18) fail(`expected 18 lessons, got ${lessonIds.size}`);
-for (const [k, v] of Object.entries(slots)) if (v > 7) fail(`answer slot ${k} used ${v} times (>7)`);
+if (lessonIds.size !== 36) fail(`expected 36 lessons, got ${lessonIds.size}`);
+for (const [k, v] of Object.entries(slots)) if (v > 11) fail(`answer slot ${k} used ${v} times (>11)`);
 for (const k of ["c000_lost_notebook", "c001_last_observation"])
   if (!data.tracks.some((t) => t.lessons.some((l) => l.case_link === k))) fail(`no lesson links to ${k}`);
 
@@ -50,4 +50,4 @@ if (errors.length) {
   console.error("FAIL\n" + errors.map((e) => " - " + e).join("\n"));
   process.exit(1);
 }
-console.log("OK: 6 tracks, 18 lessons");
+console.log("OK: 6 tracks, 36 lessons");

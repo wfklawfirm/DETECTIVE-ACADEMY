@@ -1,0 +1,133 @@
+{
+  "case_id": "c012_newer_coin",
+  "accepted_conclusions": {
+    "h_maint": {
+      "grade": 1,
+      "note_ar": "استنتاج متسق مع الأدلة ويتطلب ذكر حدوده: فرصة منفردة لا إثبات فعل."
+    },
+    "h_guard": {
+      "grade": 0,
+      "note_ar": "يبني الاتهام على الحداثة والتوتر، ويتجاهل أن الحارس لا مفتاح له ولا فرصة."
+    },
+    "h_always": {
+      "grade": 0,
+      "note_ar": "يتجاهل أن القطع منقوشة بسنة 2024 وأن الإيداع كان في 2014."
+    }
+  },
+  "confidence_band": {
+    "h_maint": [
+      60,
+      88
+    ],
+    "h_guard": [
+      0,
+      15
+    ],
+    "h_always": [
+      0,
+      15
+    ]
+  },
+  "source_key": {
+    "ev_coin_mint": "primary_record",
+    "ev_deposit_receipt": "primary_record",
+    "ev_open_log": "primary_record",
+    "ev_mint_bulletin": "public_document",
+    "ev_seal_register": "primary_record",
+    "ev_seal_photo": "primary_record",
+    "ev_guard_hire": "primary_record",
+    "ev_vault_door_log": "primary_record",
+    "ev_key_register": "primary_record",
+    "ev_job_sheet": "primary_record",
+    "ev_custody_form": "primary_record",
+    "ev_bassam_statement": "claim",
+    "ev_guard_demeanour": "claim",
+    "ev_sabri_statement": "claim"
+  },
+  "link_key": {
+    "h_maint": {
+      "ev_coin_mint": "supports",
+      "ev_mint_bulletin": "supports",
+      "ev_open_log": "supports",
+      "ev_seal_register": "supports",
+      "ev_key_register": "supports",
+      "ev_vault_door_log": "supports",
+      "ev_job_sheet": "supports",
+      "ev_custody_form": "supports",
+      "ev_seal_photo": "neutral",
+      "ev_sabri_statement": "neutral"
+    },
+    "h_guard": {
+      "ev_guard_hire": "weakens",
+      "ev_vault_door_log": "weakens",
+      "ev_key_register": "weakens",
+      "ev_open_log": "weakens",
+      "ev_guard_demeanour": "neutral"
+    },
+    "h_always": {
+      "ev_coin_mint": "weakens",
+      "ev_mint_bulletin": "weakens",
+      "ev_deposit_receipt": "weakens",
+      "ev_seal_register": "weakens",
+      "ev_bassam_statement": "neutral"
+    }
+  },
+  "required_limits": [
+    "l_who",
+    "l_copy"
+  ],
+  "valid_mind_changers": [
+    "m_unlogged",
+    "m_guard_key",
+    "m_early_coin"
+  ],
+  "invalid_limits": [
+    "l_invalid_tension",
+    "l_invalid_new"
+  ],
+  "decisive_evidence": [
+    "ev_coin_mint",
+    "ev_deposit_receipt",
+    "ev_open_log",
+    "ev_mint_bulletin",
+    "ev_seal_register",
+    "ev_key_register",
+    "ev_vault_door_log",
+    "ev_custody_form"
+  ],
+  "lab_requirement": null,
+  "timeline_requirement": [
+    {
+      "evidence_id": "ev_key_register",
+      "utc_minute": 35,
+      "tol": 3
+    },
+    {
+      "evidence_id": "ev_job_sheet",
+      "utc_minute": 82,
+      "tol": 3
+    },
+    {
+      "evidence_id": "ev_vault_door_log",
+      "utc_minute": 286,
+      "tol": 3
+    }
+  ],
+  "refuted_hypotheses": [
+    "h_guard",
+    "h_always"
+  ],
+  "criteria_map": {
+    "c_source": "source_typing",
+    "c_conflict": "conflict_resolution",
+    "c_links": "hypothesis_links",
+    "c_uncertainty": "uncertainty",
+    "c_revision": "revision",
+    "c_elimination": "elimination",
+    "c_justification": "justification_human"
+  },
+  "caps": {
+    "no_citations_max": 45,
+    "no_conflict_resolution_max": 65
+  }
+}

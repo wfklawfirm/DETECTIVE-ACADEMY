@@ -1,15 +1,21 @@
 "use client";
 import { use, useEffect, useState } from "react";
+import { Card } from "@/components/ui/card";
+import { Callout, ErrorState, LoadingRegion } from "@/components/ui/feedback";
+import { Badge } from "@/components/ui/badge";
 import { api, ApiError } from "@/lib/client";
 
 export default function Review({ params }: { params: Promise<{ code: string }> }) {
   const { code } = use(params);
   const [t, setT] = useState<{ status: string; level: number | null; feedback_ar: string | null } | null>(null);
   const [err, setErr] = useState<string | null>(null);
-  useEffect(() => { void api<{ ticket: NonNullable<typeof t> }>(`/api/review/${code}`).then((r) => setT(r.ticket)).catch((e) => setErr(e instanceof ApiError ? e.message : "خطأ")); }, [code]);
+  useEffect(() => { api<{ ticket: NonNullable<typeof t> }>(`/api/review/${code}`).then((r) => setT(r.ticket)).catch((e) => setErr(e instanceof ApiError ? e.message : "خطأ")); }, [code]);
   return (
-    <div className="wrap-narrow stack"><h1>طلب مراجعة <span className="mono">{code}</span></h1>
-      {err ? <p role="alert" className="err">{err}</p> : !t ? <p className="dim">جارٍ التحميل…</p> : t.status === "pending" ? <p>ما زال طلبك بانتظار مراجع بشري. ارجع لاحقاً بالرمز نفسه.</p> : <><p>المستوى المقترح: <b>{t.level}</b> من ٤</p><div className="card">{t.feedback_ar}</div></>}
-    </div>
+    <>
+      <header className="page-head"><h1 className="text-page-title">طلب مراجعة <span className="mono">{code}</span></h1></header>
+      {err ? <ErrorState title="تعذّر فتح الطلب" body={err} /> : !t ? <LoadingRegion cards={1} /> : t.status === "pending" ? <Callout tone="warning" title="قيد الانتظار">ما زال طلبك بانتظار مراجع بشري. ارجع لاحقاً بالرمز نفسه.</Callout> : (
+        <Card><p>المستوى المقترح: <Badge tone="info">{t.level} من ٤</Badge></p><p>{t.feedback_ar}</p></Card>
+      )}
+    </>
   );
 }

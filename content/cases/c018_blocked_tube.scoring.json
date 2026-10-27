@@ -1,0 +1,138 @@
+{
+  "case_id": "c018_blocked_tube",
+  "accepted_conclusions": {
+    "h_reflection": {
+      "grade": 1,
+      "note_ar": "استنتاج متسق مع التجارب والسجلات ويتطلب ذكر حدوده."
+    },
+    "h_mystery": {
+      "grade": 0,
+      "note_ar": "يتجاهل أن البقعة ثابتة بينما تتحرك النجوم، وأن سد المنفذ أزالها."
+    },
+    "h_lens": {
+      "grade": 0,
+      "note_ar": "تبديل الكاميرا لم يغيّر البقعة."
+    },
+    "h_recoat": {
+      "grade": 0,
+      "note_ar": "يخلط بين التجاور في الزمن والسببية؛ مرّت اثنتان وعشرون ليلة صافية بعد التلبيس بلا بقعة."
+    }
+  },
+  "confidence_band": {
+    "h_reflection": [
+      65,
+      90
+    ],
+    "h_mystery": [
+      0,
+      15
+    ],
+    "h_lens": [
+      0,
+      15
+    ],
+    "h_recoat": [
+      0,
+      15
+    ]
+  },
+  "source_key": {
+    "ev_clip": "redisplay",
+    "ev_obs_log": "primary_record",
+    "ev_post_cloudy": "public_document",
+    "ev_post_recoat": "public_document",
+    "ev_site_map": "public_document",
+    "ev_restaurant_permit": "primary_record",
+    "ev_run_baseline": "primary_record",
+    "ev_run_shield": "primary_record",
+    "ev_run_lens": "primary_record",
+    "ev_run_move": "primary_record",
+    "ev_yazan_statement": "claim",
+    "ev_hisham_statement": "claim",
+    "ev_lina_statement": "claim",
+    "ev_jamil_statement": "claim"
+  },
+  "link_key": {
+    "h_reflection": {
+      "ev_run_baseline": "supports",
+      "ev_run_shield": "supports",
+      "ev_run_move": "supports",
+      "ev_obs_log": "supports",
+      "ev_site_map": "supports",
+      "ev_restaurant_permit": "supports",
+      "ev_post_recoat": "neutral",
+      "ev_clip": "neutral"
+    },
+    "h_mystery": {
+      "ev_clip": "supports",
+      "ev_run_shield": "weakens",
+      "ev_run_move": "weakens",
+      "ev_obs_log": "weakens",
+      "ev_restaurant_permit": "weakens",
+      "ev_post_cloudy": "weakens"
+    },
+    "h_lens": {
+      "ev_run_lens": "weakens",
+      "ev_obs_log": "weakens",
+      "ev_run_shield": "weakens"
+    },
+    "h_recoat": {
+      "ev_post_recoat": "supports",
+      "ev_obs_log": "weakens",
+      "ev_restaurant_permit": "weakens",
+      "ev_run_shield": "weakens"
+    }
+  },
+  "required_limits": [
+    "l_model",
+    "l_no_onsite"
+  ],
+  "valid_mind_changers": [
+    "m_onsite_off",
+    "m_cloudy_spot",
+    "m_old_spot"
+  ],
+  "invalid_limits": [
+    "l_invalid_posts",
+    "l_invalid_viral"
+  ],
+  "decisive_evidence": [
+    "ev_run_baseline",
+    "ev_run_shield",
+    "ev_run_move",
+    "ev_obs_log",
+    "ev_restaurant_permit",
+    "ev_site_map"
+  ],
+  "lab_requirement": null,
+  "timeline_requirement": [
+    {
+      "evidence_id": "ev_restaurant_permit",
+      "utc_minute": 110,
+      "tol": 5
+    },
+    {
+      "evidence_id": "ev_clip",
+      "utc_minute": 130,
+      "tol": 5
+    }
+  ],
+  "refuted_hypotheses": [
+    "h_mystery",
+    "h_lens",
+    "h_recoat"
+  ],
+  "criteria_map": {
+    "c_source": "source_typing",
+    "c_conflict": "conflict_resolution",
+    "c_links": "hypothesis_links",
+    "c_uncertainty": "uncertainty",
+    "c_revision": "revision",
+    "c_elimination": "elimination",
+    "c_justification": "justification_human"
+  },
+  "caps": {
+    "no_citations_max": 45,
+    "no_conflict_resolution_max": 70
+  }
+}

@@ -1,0 +1,2923 @@
+{
+  "schema_version": "0.1.0",
+  "case_id": "c014_receipt_two_numbers",
+  "case_version": "0.1.0",
+  "meta": {
+    "title_ar": "الوصل ذو الرقمين",
+    "title_en": "The Receipt with Two Numbers",
+    "age_band": "13-15",
+    "locale": "ar",
+    "dialogue_register": "msa",
+    "estimated_minutes": 30,
+    "difficulty": 2,
+    "content_flags": [
+      "no_violence",
+      "fraud"
+    ],
+    "authors": [
+      "فريق أثر التحريري (مسودة بمساعدة الذكاء الاصطناعي، لم تُراجَع بشرياً بعد)"
+    ],
+    "knowledge_object_refs": [
+      "KO-RS-06-002",
+      "KO-RS-06-004",
+      "KO-RS-05-001",
+      "KO-RS-05-004",
+      "KO-RS-05-005",
+      "KO-RS-05-002",
+      "KO-RS-06-001",
+      "KO-RS-06-009",
+      "KO-RS-06-021"
+    ]
+  },
+  "premise": {
+    "hook_ar": "وصل تبرع واحد يحمل رقمين، وشاهدان يتفقان على أحدهما بثقة. فهل اتفاقهما يكفي؟",
+    "player_role_ar": "أنت متدرب في دار السِّجِل، وكلّفتك إدارة الدار بمراجعة وصل تبرع اعترض عليه المتبرع.",
+    "setting_ar": "دار السِّجِل ومكتبة حيّ النخيل في القنطرة، خلال أيام معرض الكتاب. بإذن مكتوب من إدارة الدار ومجلس المكتبة تطّلع على الوصل وسجلاتهما فقط.",
+    "public_fact_ids": [
+      "f_dispute",
+      "f_council_claims",
+      "f_donor_recalls"
+    ],
+    "assumed_general_knowledge_ar": [
+      "الوصل الرسمي يُكتب مبلغه رقماً وحروفاً",
+      "السجل الذي لا يمرّ بالوثيقة المتنازع عليها يصلح للمقارنة بها"
+    ]
+  },
+  "entities": {
+    "characters": [
+      {
+        "id": "salem",
+        "name_ar": "سالم الخطيب",
+        "role": "witness",
+        "age_descriptor_ar": "متبرع من أهل الحي",
+        "persona_ar": "هادئ ويتحرّج من الجدال، يتذكر ما دفعه بدقة لأنه جمعه على مدى أسابيع، ولا يحب أن يُفهم كلامه على أنه اتهام.",
+        "motives_ar": [
+          "أن يُسجَّل تبرعه كما هو",
+          "ألا يتسبب في خلاف بين أعضاء المكتبة"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "sl_greet",
+            "purpose": "greeting",
+            "text_ar": "أهلاً بك. لا أريد خلافاً، أريد فقط أن يُكتب تبرعي كما كان."
+          },
+          {
+            "line_id": "sl_paid",
+            "purpose": "reveal",
+            "text_ar": "سلّمت أمينة الدار مائة وخمسين ديناراً، وكتبت الوصل أمامي وقيّدت المبلغ في دفترها.",
+            "fact_ids": [
+              "f_salem_paid"
+            ]
+          },
+          {
+            "line_id": "sl_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف ما جرى للوصل بعد أن غادرت الدار."
+          },
+          {
+            "line_id": "sl_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عمّا دفعته ومتى."
+          },
+          {
+            "line_id": "sl_bye",
+            "purpose": "farewell",
+            "text_ar": "شكراً لأنك تراجع الأوراق قبل أن تحكم."
+          }
+        ]
+      },
+      {
+        "id": "nabil",
+        "name_ar": "نبيل العاصي",
+        "role": "suspect",
+        "age_descriptor_ar": "عضو في مجلس مكتبة الحي",
+        "persona_ar": "متحمس لجمع التبرعات وسريع في الحكم، يميل إلى تذكّر الأرقام الكبيرة كما يتمنى لا كما سُجّلت، ويتراجع بلا عناد إذا واجهته بسجل.",
+        "motives_ar": [
+          "أن تحصل المكتبة على تبرع كبير",
+          "ألا يُظنّ أنه تعمّد خداع أحد"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "nb_greet",
+            "purpose": "greeting",
+            "text_ar": "أنا أمثّل المجلس. الرقم عندنا مكتوب وواضح، وشاهدان يؤكدانه."
+          },
+          {
+            "line_id": "nb_recall",
+            "purpose": "reveal",
+            "text_ar": "أبلغت المجلس في إحاطة اليوم الأول أن الأستاذ سالم تبرع بألف وخمسمائة دينار؛ هذا ما أذكره من وعده.",
+            "fact_ids": [
+              "f_nabil_recall"
+            ]
+          },
+          {
+            "line_id": "nb_pledge",
+            "purpose": "reveal",
+            "text_ar": "أنا متأكد من الرقم، فقد سمعته من المتبرع نفسه قبل يوم التسليم.",
+            "claim_ids": [
+              "cl_nabil_pledge"
+            ]
+          },
+          {
+            "line_id": "nb_refuse",
+            "purpose": "refuse_secret",
+            "text_ar": "لا أذكر شيئاً آخر عن الوصل بعد تسلّمي له."
+          },
+          {
+            "line_id": "nb_wrote",
+            "purpose": "reveal",
+            "text_ar": "نعم... رأيت خانة الأرقام تقول مائة وخمسين فظننتها سهواً من الموظفة، فكتبت الرقم كما أذكره بقلمي ولم أنتبه إلى سطر الحروف. لم أقصد خداع أحد.",
+            "fact_ids": [
+              "f_nabil_wrote"
+            ]
+          },
+          {
+            "line_id": "nb_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أذكر ذلك."
+          },
+          {
+            "line_id": "nb_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "ركّز على الوصل والمبلغ لو سمحت."
+          },
+          {
+            "line_id": "nb_bye",
+            "purpose": "farewell",
+            "text_ar": "أريد أن تُحسم المسألة بالسجلات."
+          }
+        ]
+      },
+      {
+        "id": "huda",
+        "name_ar": "هدى الصيرفي",
+        "role": "witness",
+        "age_descriptor_ar": "أمينة سر مجلس المكتبة",
+        "persona_ar": "منظمة وتحتفظ بمحاضر المجلس، تصدق ما سمعته في الاجتماعات ولا تفرّق دائماً بين ما رأته وما سمعته.",
+        "motives_ar": [
+          "أن تبقى محاضر المجلس سليمة",
+          "ألا تُتّهم بأنها تؤيد رقماً لا تعرف أصله"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "hd_greet",
+            "purpose": "greeting",
+            "text_ar": "تفضّل. المحاضر عندي، وأستطيع أن أحدّثك عمّا قيل في الاجتماعات."
+          },
+          {
+            "line_id": "hd_recall",
+            "purpose": "reveal",
+            "text_ar": "أتذكر أن التبرع كان ألفاً وخمسمائة دينار، وقد كتبت ذلك في إفادتي.",
+            "fact_ids": [
+              "f_huda_recall"
+            ]
+          },
+          {
+            "line_id": "hd_claim",
+            "purpose": "reveal",
+            "text_ar": "لا أنسى هذا الرقم، فقد تكرر أمامي مراراً.",
+            "claim_ids": [
+              "cl_huda_1500"
+            ]
+          },
+          {
+            "line_id": "hd_absent",
+            "purpose": "reveal",
+            "text_ar": "لم أحضر التسليم في دار السِّجِل، ولم أرَ الوصل إلا بعد أن اشتد الخلاف.",
+            "fact_ids": [
+              "f_huda_absent"
+            ]
+          },
+          {
+            "line_id": "hd_minutes",
+            "purpose": "reveal",
+            "text_ar": "محاضر الإحاطات اليومية محفوظة عندي، ويمكنك الاطلاع عليها.",
+            "fact_ids": [
+              "f_minutes_exist"
+            ]
+          },
+          {
+            "line_id": "hd_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف أكثر من ذلك."
+          },
+          {
+            "line_id": "hd_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن المحاضر وعن إفادتي."
+          },
+          {
+            "line_id": "hd_bye",
+            "purpose": "farewell",
+            "text_ar": "أرجو أن يتبيّن الأمر دون أن يُظلم أحد."
+          }
+        ]
+      },
+      {
+        "id": "adel",
+        "name_ar": "عادل المنصور",
+        "role": "witness",
+        "age_descriptor_ar": "عضو في مجلس المكتبة",
+        "persona_ar": "ودود ويحب التوافق، يميل إلى الموافقة على ما يردده زملاؤه ثم يتذكره كأنه رآه بنفسه.",
+        "motives_ar": [
+          "ألا يبدو أنه خالف زملاءه",
+          "أن تنتهي المسألة بسلام"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "ad_greet",
+            "purpose": "greeting",
+            "text_ar": "أهلاً. أظن أن الأمر بسيط، فالرقم واضح لنا جميعاً."
+          },
+          {
+            "line_id": "ad_recall",
+            "purpose": "reveal",
+            "text_ar": "أذكر أن المبلغ ألف وخمسمائة دينار، وهذا ما كتبته في الإفادة.",
+            "fact_ids": [
+              "f_adel_recall"
+            ]
+          },
+          {
+            "line_id": "ad_claim",
+            "purpose": "reveal",
+            "text_ar": "كلنا نعرف هذا الرقم منذ اليوم الأول، ولا مجال للخطأ فيه.",
+            "claim_ids": [
+              "cl_adel_1500"
+            ]
+          },
+          {
+            "line_id": "ad_absent",
+            "purpose": "reveal",
+            "text_ar": "لم أكن في دار السِّجِل يوم التسليم، ولم أرَ الوصل نفسه قبل الخلاف.",
+            "fact_ids": [
+              "f_adel_absent"
+            ]
+          },
+          {
+            "line_id": "ad_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أذكر شيئاً آخر."
+          },
+          {
+            "line_id": "ad_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "هذا لا يخصّ المبلغ. اسألني عن الإفادة."
+          },
+          {
+            "line_id": "ad_bye",
+            "purpose": "farewell",
+            "text_ar": "إن ظهر خطأ فمن الطبيعي أن نصححه."
+          }
+        ]
+      },
+      {
+        "id": "rana",
+        "name_ar": "رنا الفارس",
+        "role": "expert",
+        "age_descriptor_ar": "أمينة الصادر في دار السِّجِل",
+        "persona_ar": "دقيقة ومباشرة، تعرف أشكال وصولات الدار وسجلاتها جيداً، ولا تتكلم إلا فيما قيّدته أو شاهدته بنفسها.",
+        "motives_ar": [
+          "أن يُفهم كيف تُصدر الدار وصولاتها",
+          "أن تبقى سجلات الدار سليمة"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "rn_greet",
+            "purpose": "greeting",
+            "text_ar": "تفضّل. أستطيع أن أبيّن كيف نكتب الوصل ونقيّده، لكنني لا أعرف ما جرى له خارج الدار."
+          },
+          {
+            "line_id": "rn_issue",
+            "purpose": "reveal",
+            "text_ar": "أصدرت الوصل رقم 412 بعد أن دفع الأستاذ سالم، وكتبت المبلغ رقماً وحروفاً في الدقيقة نفسها وقيّدته في سجل الصادر.",
+            "fact_ids": [
+              "f_rana_issue"
+            ]
+          },
+          {
+            "line_id": "rn_records",
+            "purpose": "reveal",
+            "text_ar": "للدار سجل صادر، وسجل إيداع بالتعاون مع مكتبة الحي، وسجل تسليم الحاضرين.",
+            "fact_ids": [
+              "f_ledger_exists",
+              "f_deposit_exists",
+              "f_handover_exists"
+            ]
+          },
+          {
+            "line_id": "rn_custody",
+            "purpose": "reveal",
+            "text_ar": "نكتب على بطاقة العهدة كل مرة يغادر فيها الوصل الدار أو يعود إليها، مع حالته.",
+            "fact_ids": [
+              "f_custody_exists"
+            ]
+          },
+          {
+            "line_id": "rn_compare",
+            "purpose": "reveal",
+            "text_ar": "مكتب الصيانة عندنا يستطيع أن يعرض عشرة وصولات من الدفتر نفسه للمقارنة، وأن يفحص الحبر بالضوء المائل.",
+            "fact_ids": [
+              "f_ten_exists",
+              "f_exam_possible"
+            ]
+          },
+          {
+            "line_id": "rn_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "هذا خارج ما قيّدته."
+          },
+          {
+            "line_id": "rn_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن الوصولات وسجلاتها."
+          },
+          {
+            "line_id": "rn_bye",
+            "purpose": "farewell",
+            "text_ar": "السجل لا يجامل أحداً، فاقرأه كما هو."
+          }
+        ]
+      }
+    ],
+    "locations": [
+      {
+        "id": "loc_house",
+        "name_ar": "دار السِّجِل",
+        "description_ar": "دار تصدر الوصولات الرسمية وتحتفظ بسجلاتها."
+      },
+      {
+        "id": "loc_hall",
+        "name_ar": "قاعة مجلس مكتبة الحي",
+        "description_ar": "حيث تُعقد إحاطات المجلس اليومية خلال معرض الكتاب."
+      },
+      {
+        "id": "loc_desk",
+        "name_ar": "مكتب الصيانة في الدار",
+        "description_ar": "مكتب يفحص الوثائق ويقارنها."
+      }
+    ],
+    "objects": [
+      {
+        "id": "obj_receipt",
+        "name_ar": "الوصل رقم 412",
+        "description_ar": "وصل تبرع لمكتبة حيّ النخيل، يحمل رقمين مختلفين."
+      }
+    ],
+    "organizations": [
+      {
+        "id": "org_house",
+        "name_ar": "دار السِّجِل",
+        "description_ar": "مؤسسة خيالية تُصدر الوصولات وتحفظ سجلاتها."
+      },
+      {
+        "id": "org_library",
+        "name_ar": "مكتبة حيّ النخيل",
+        "description_ar": "مكتبة حيّ خيالية يديرها مجلس من الأهالي."
+      }
+    ]
+  },
+  "truth": {
+    "solution": {
+      "culprit_ids": [
+        "nabil"
+      ],
+      "summary_ar": "لم يتبرع سالم إلا بمائة وخمسين ديناراً. الرقم الأكبر لم يكن جزءا من الوصل يوم صدوره؛ أضافه عضو المجلس بعد استلامه، ظنا منه أنه يصحح خطأ، دون نية خداع. والشاهدان صادقان في ما يذكران لكن علمهما مسموع لا مرئي.",
+      "key_fact_ids": [
+        "f_issued_150",
+        "f_numeral_later",
+        "f_no_firsthand",
+        "f_figure_spread"
+      ]
+    },
+    "facts": [
+      {
+        "id": "f_dispute",
+        "statement_ar": "اختلف المتبرع ومجلس المكتبة على مبلغ التبرع المدوّن في الوصل رقم 412.",
+        "kind": "event",
+        "subject_ids": [
+          "obj_receipt",
+          "salem",
+          "org_library"
+        ],
+        "spoiler_level": 0
+      },
+      {
+        "id": "f_council_claims",
+        "statement_ar": "يتمسك المجلس بأن المبلغ ألف وخمسمائة دينار، ويقول إن شاهدين من أعضائه يذكران الرقم نفسه.",
+        "kind": "attribute",
+        "subject_ids": [
+          "nabil",
+          "huda",
+          "adel"
+        ],
+        "spoiler_level": 0
+      },
+      {
+        "id": "f_donor_recalls",
+        "statement_ar": "يذكر المتبرع أنه دفع مبلغاً أقل بكثير مما يقوله المجلس.",
+        "kind": "attribute",
+        "subject_ids": [
+          "salem"
+        ],
+        "spoiler_level": 0
+      },
+      {
+        "id": "f_salem_paid",
+        "statement_ar": "دفع سالم مائة وخمسين ديناراً لأمينة الصادر في دار السِّجِل.",
+        "kind": "event",
+        "subject_ids": [
+          "salem",
+          "rana"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 80,
+          "precision": "exact"
+        },
+        "location_id": "loc_house"
+      },
+      {
+        "id": "f_rana_issue",
+        "statement_ar": "أصدرت أمينة الصادر الوصل 412 وكتبت المبلغ رقماً وحروفاً وقيّدته في سجل الصادر.",
+        "kind": "event",
+        "subject_ids": [
+          "rana",
+          "obj_receipt"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 100,
+          "precision": "exact"
+        },
+        "location_id": "loc_house"
+      },
+      {
+        "id": "f_nabil_recall",
+        "statement_ar": "يذكر نبيل أن المتبرع وعد بألف وخمسمائة دينار، وأنه أبلغ المجلس بذلك في إحاطة اليوم الأول.",
+        "kind": "attribute",
+        "subject_ids": [
+          "nabil"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 480,
+          "precision": "exact"
+        },
+        "location_id": "loc_hall"
+      },
+      {
+        "id": "f_huda_recall",
+        "statement_ar": "تذكر هدى أن التبرع ألف وخمسمائة دينار وقد دوّنت ذلك في إفادتها.",
+        "kind": "attribute",
+        "subject_ids": [
+          "huda"
+        ],
+        "spoiler_level": 1
+      },
+      {
+        "id": "f_adel_recall",
+        "statement_ar": "يذكر عادل أن التبرع ألف وخمسمائة دينار وقد دوّن ذلك في إفادته.",
+        "kind": "attribute",
+        "subject_ids": [
+          "adel"
+        ],
+        "spoiler_level": 1
+      },
+      {
+        "id": "f_huda_absent",
+        "statement_ar": "لم تحضر هدى التسليم في دار السِّجِل ولم ترَ الوصل قبل الخلاف.",
+        "kind": "state",
+        "subject_ids": [
+          "huda"
+        ],
+        "spoiler_level": 2
+      },
+      {
+        "id": "f_adel_absent",
+        "statement_ar": "لم يحضر عادل التسليم في دار السِّجِل ولم ير الوصل قبل الخلاف.",
+        "kind": "state",
+        "subject_ids": [
+          "adel"
+        ],
+        "spoiler_level": 2
+      },
+      {
+        "id": "f_ledger_exists",
+        "statement_ar": "للدار سجل صادر يقيّد كل وصل بمبلغه وصاحبه ووقته.",
+        "kind": "state",
+        "subject_ids": [
+          "org_house"
+        ],
+        "spoiler_level": 1,
+        "location_id": "loc_house"
+      },
+      {
+        "id": "f_deposit_exists",
+        "statement_ar": "تودع الدار التبرعات في حساب المكتبة ويصدر عن ذلك إشعار إيداع.",
+        "kind": "state",
+        "subject_ids": [
+          "org_house",
+          "org_library"
+        ],
+        "spoiler_level": 1,
+        "location_id": "loc_house"
+      },
+      {
+        "id": "f_handover_exists",
+        "statement_ar": "للدار سجل يدوّن من حضر كل تسليم.",
+        "kind": "state",
+        "subject_ids": [
+          "org_house"
+        ],
+        "spoiler_level": 1,
+        "location_id": "loc_house"
+      },
+      {
+        "id": "f_custody_exists",
+        "statement_ar": "للدار بطاقة عهدة لكل وصل تدوّن من تسلّمه ومتى وفي أي حالة.",
+        "kind": "state",
+        "subject_ids": [
+          "org_house",
+          "obj_receipt"
+        ],
+        "spoiler_level": 1,
+        "location_id": "loc_house"
+      },
+      {
+        "id": "f_minutes_exist",
+        "statement_ar": "تحتفظ أمينة السر بمحاضر الإحاطات اليومية لمجلس المكتبة.",
+        "kind": "state",
+        "subject_ids": [
+          "huda"
+        ],
+        "spoiler_level": 1,
+        "location_id": "loc_hall"
+      },
+      {
+        "id": "f_ten_exists",
+        "statement_ar": "يستطيع مكتب الصيانة عرض عشرة وصولات من الدفتر نفسه للمقارنة.",
+        "kind": "state",
+        "subject_ids": [
+          "rana",
+          "loc_desk"
+        ],
+        "spoiler_level": 1,
+        "location_id": "loc_desk"
+      },
+      {
+        "id": "f_exam_possible",
+        "statement_ar": "يستطيع مكتب الصيانة فحص الحبر والورق بالضوء المائل وبالتكبير.",
+        "kind": "state",
+        "subject_ids": [
+          "rana",
+          "loc_desk"
+        ],
+        "spoiler_level": 1,
+        "location_id": "loc_desk"
+      },
+      {
+        "id": "f_nabil_wrote",
+        "statement_ar": "كتب نبيل الرقم 1500 في خانة الأرقام بقلمه بعد أن تسلّم الوصل، ظناً منه أن الموظفة سهت.",
+        "kind": "event",
+        "subject_ids": [
+          "nabil",
+          "obj_receipt"
+        ],
+        "spoiler_level": 3,
+        "time": {
+          "start_min": 300,
+          "precision": "approx",
+          "end_min": 3450
+        },
+        "location_id": "loc_hall",
+        "science_ko_refs": [
+          "KO-RS-05-014"
+        ]
+      },
+      {
+        "id": "f_issued_150",
+        "statement_ar": "صدر الوصل 412 بمبلغ مائة وخمسين ديناراً، وهذا هو المبلغ المدفوع والمقيّد.",
+        "kind": "relation",
+        "subject_ids": [
+          "obj_receipt",
+          "salem"
+        ],
+        "spoiler_level": 3,
+        "time": {
+          "start_min": 80,
+          "precision": "exact",
+          "end_min": 245
+        },
+        "science_ko_refs": [
+          "KO-RS-05-001",
+          "KO-RS-06-002"
+        ]
+      },
+      {
+        "id": "f_numeral_later",
+        "statement_ar": "الرقم 1500 في خانة الأرقام كُتب بعد صدور الوصل وبعد خروجه من الدار.",
+        "kind": "relation",
+        "subject_ids": [
+          "obj_receipt"
+        ],
+        "spoiler_level": 3,
+        "time": {
+          "start_min": 120,
+          "precision": "exact",
+          "end_min": 3450
+        },
+        "science_ko_refs": [
+          "KO-RS-06-004",
+          "KO-RS-05-005"
+        ]
+      },
+      {
+        "id": "f_no_firsthand",
+        "statement_ar": "لم يشهد الشاهدان دفع المبلغ ولم يريا الوصل قبل الخلاف، فمعرفتهما بالرقم منقولة لا مباشرة.",
+        "kind": "relation",
+        "subject_ids": [
+          "huda",
+          "adel"
+        ],
+        "spoiler_level": 3,
+        "science_ko_refs": [
+          "KO-RS-05-001",
+          "KO-RS-05-004"
+        ]
+      },
+      {
+        "id": "f_figure_spread",
+        "statement_ar": "تردد الرقم 1500 في الإحاطات اليومية على لسان عضو المجلس قبل أن يشك فيه أحد.",
+        "kind": "relation",
+        "subject_ids": [
+          "nabil",
+          "huda",
+          "adel"
+        ],
+        "spoiler_level": 2,
+        "time": {
+          "start_min": 480,
+          "precision": "exact",
+          "end_min": 3360
+        },
+        "location_id": "loc_hall",
+        "science_ko_refs": [
+          "KO-RS-05-004"
+        ]
+      }
+    ],
+    "claims": [
+      {
+        "id": "cl_nabil_pledge",
+        "statement_ar": "سمعت المتبرع بنفسي يعد بألف وخمسمائة دينار.",
+        "kind": "honest_mistake",
+        "held_by": [
+          "nabil"
+        ],
+        "true_fact_id": "f_issued_150",
+        "contradicted_by_evidence_ids": [
+          "ev_ledger",
+          "ev_deposit"
+        ]
+      },
+      {
+        "id": "cl_huda_1500",
+        "statement_ar": "أذكر الرقم ألفاً وخمسمائة بيقين لأنه تكرر أمامي كثيراً.",
+        "kind": "honest_mistake",
+        "held_by": [
+          "huda"
+        ],
+        "true_fact_id": "f_no_firsthand",
+        "contradicted_by_evidence_ids": [
+          "ev_ledger",
+          "ev_handover_log"
+        ]
+      },
+      {
+        "id": "cl_adel_1500",
+        "statement_ar": "كلنا نعرف الرقم منذ اليوم الأول ولا مجال للخطأ فيه.",
+        "kind": "honest_mistake",
+        "held_by": [
+          "adel"
+        ],
+        "true_fact_id": "f_no_firsthand",
+        "contradicted_by_evidence_ids": [
+          "ev_ledger",
+          "ev_handover_log"
+        ]
+      }
+    ]
+  },
+  "timeline": [
+    {
+      "id": "te_pay",
+      "description_ar": "سالم يسلّم المبلغ، وأمينة الصادر تكتب الوصل 412 رقماً وحروفاً.",
+      "time": {
+        "start_min": 80,
+        "precision": "exact"
+      },
+      "location_id": "loc_house",
+      "actor_ids": [
+        "salem",
+        "rana"
+      ],
+      "fact_ids": [
+        "f_salem_paid",
+        "f_rana_issue"
+      ],
+      "motivated_by_ar": "أراد التبرع للمكتبة وأن يحصل على وصل رسمي"
+    },
+    {
+      "id": "te_ledger",
+      "description_ar": "قيد الوصل في سجل الصادر.",
+      "time": {
+        "start_min": 100,
+        "precision": "exact"
+      },
+      "location_id": "loc_house",
+      "actor_ids": [
+        "rana"
+      ],
+      "fact_ids": [
+        "f_rana_issue"
+      ],
+      "motivated_by_ar": "قاعدة الدار أن يُقيَّد كل وصل فور إصداره"
+    },
+    {
+      "id": "te_custody",
+      "description_ar": "نبيل يتسلّم نسخة المجلس من الوصل لتوضع في ملف المجلس.",
+      "time": {
+        "start_min": 120,
+        "precision": "exact"
+      },
+      "location_id": "loc_house",
+      "actor_ids": [
+        "nabil",
+        "rana"
+      ],
+      "fact_ids": [
+        "f_custody_exists"
+      ],
+      "motivated_by_ar": "طلب المجلس نسخته من الوصل"
+    },
+    {
+      "id": "te_deposit",
+      "description_ar": "إيداع المبلغ في حساب المكتبة وصدور إشعار الإيداع.",
+      "time": {
+        "start_min": 245,
+        "precision": "exact"
+      },
+      "location_id": "loc_house",
+      "actor_ids": [],
+      "fact_ids": [
+        "f_deposit_exists"
+      ]
+    },
+    {
+      "id": "te_brief1",
+      "description_ar": "إحاطة المجلس الأولى: نبيل يذكر الرقم 1500.",
+      "time": {
+        "start_min": 480,
+        "precision": "exact"
+      },
+      "location_id": "loc_hall",
+      "actor_ids": [
+        "nabil",
+        "huda",
+        "adel"
+      ],
+      "fact_ids": [
+        "f_nabil_recall",
+        "f_figure_spread"
+      ],
+      "motivated_by_ar": "إطلاع المجلس على مستجدات التبرعات خلال المعرض"
+    },
+    {
+      "id": "te_brief3",
+      "description_ar": "إحاطة المجلس الثالثة: يتكرر الرقم عند صياغة لوحة الشكر.",
+      "time": {
+        "start_min": 3360,
+        "precision": "exact"
+      },
+      "location_id": "loc_hall",
+      "actor_ids": [
+        "nabil",
+        "huda",
+        "adel"
+      ],
+      "fact_ids": [
+        "f_figure_spread"
+      ],
+      "motivated_by_ar": "إعداد لوحة شكر للمتبرعين"
+    },
+    {
+      "id": "te_dispute",
+      "description_ar": "المتبرع يرى لوحة الشكر ويعترض على المبلغ.",
+      "time": {
+        "start_min": 3420,
+        "precision": "exact"
+      },
+      "location_id": "loc_hall",
+      "actor_ids": [
+        "salem"
+      ],
+      "fact_ids": [
+        "f_dispute"
+      ],
+      "motivated_by_ar": "أراد أن يُذكر تبرعه كما هو"
+    },
+    {
+      "id": "te_return",
+      "description_ar": "نبيل يعيد الوصل إلى الدار للفحص، وتُسجَّل حالته على بطاقة العهدة.",
+      "time": {
+        "start_min": 3450,
+        "precision": "exact"
+      },
+      "location_id": "loc_house",
+      "actor_ids": [
+        "nabil",
+        "rana"
+      ],
+      "fact_ids": [
+        "f_custody_exists"
+      ],
+      "motivated_by_ar": "طلب المجلس والمتبرع فحص الوصل"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_receipt",
+      "title_ar": "الوصل المتنازع عليه رقم 412",
+      "kind": "documentary",
+      "content_ar": "دار السِّجِل — وصل تبرع رقم 412 (نسخة المجلس)\nإلى: مكتبة حيّ النخيل\nالدافع: سالم الخطيب\nالمبلغ بالأرقام: 1500 (بحبر أزرق داكن)\nالمبلغ بالحروف: مائة وخمسون ديناراً فقط لا غير (بحبر أسود)\nالختم: ختم الدار أسفل النص\nتوقيع الموظفة: ر. الفارس",
+      "acquired_by_action_ids": [
+        "a_read_receipt"
+      ],
+      "supports_fact_ids": [
+        "f_issued_150"
+      ],
+      "reliability": "strong",
+      "limits_ar": "وثيقة واحدة تحمل رقمين، ولا تقول بنفسها أيّهما الأصلي ولا من كتب أحدهما ولا متى.",
+      "location_id": "loc_house"
+    },
+    {
+      "id": "ev_ink_note",
+      "title_ar": "مذكرة فحص مكتب الصيانة",
+      "kind": "documentary",
+      "content_ar": "مذكرة مكتب الصيانة بالدار — فحص الوصل 412 بالضوء المائل وبالتكبير\n1) سطر الحروف: حبر أسود يطابق حبر باقي النص.\n2) خانة الأرقام: حبر أزرق داكن، ولمعانه يختلف عن بقية الوصل.\n3) سطح الورق داخل الخانة أخشن من محيطه، وفيه أثر ضغط قلم تحت الحبر الأزرق.\nالوصف: كُتبت خانة الأرقام في حدث كتابة مختلف عن حدث كتابة بقية الوصل.",
+      "acquired_by_action_ids": [
+        "a_get_ink"
+      ],
+      "supports_fact_ids": [
+        "f_numeral_later"
+      ],
+      "reliability": "strong",
+      "limits_ar": "تصف خصائص فئوية للحبر والورق ولا تحدد من كتب الخانة ولا متى بالضبط ولا نيته.",
+      "forensic_ko_ref": "KO-FC-04B-004",
+      "location_id": "loc_desk"
+    },
+    {
+      "id": "ev_ten_receipts",
+      "title_ar": "عشرة وصولات من الدفتر نفسه",
+      "kind": "documentary",
+      "content_ar": "ورقة مقارنة من مكتب الصيانة: الوصولات 402 إلى 411 من الدفتر نفسه.\nفي كل منها: خانة الأرقام وسطر الحروف بحبر واحد وبقيمة واحدة.\nفي كل منها: ينتهي سطر الحروف بعبارة «فقط لا غير»، والختم أسفل النص.\nلا وصل منها يحمل رقمين مختلفين.",
+      "acquired_by_action_ids": [
+        "a_get_ten"
+      ],
+      "supports_fact_ids": [
+        "f_issued_150"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "عشرة وصولات تبيّن عادة الدار ولا تفرض قاعدة؛ ولا تقول شيئاً مباشراً عن الوصل 412.",
+      "location_id": "loc_desk"
+    },
+    {
+      "id": "ev_ledger",
+      "title_ar": "سجل الصادر في الدار",
+      "kind": "documentary",
+      "content_ar": "سجل الصادر — دار السِّجِل\nرقم الوصل: 412 | الوقت: 10:40 | الجهة: تبرع لمكتبة حيّ النخيل\nالدافع: سالم الخطيب | المبلغ: 150 ديناراً\nالموظفة: رنا الفارس | الحالة: مودَع",
+      "acquired_by_action_ids": [
+        "a_get_ledger"
+      ],
+      "supports_fact_ids": [
+        "f_issued_150"
+      ],
+      "reliability": "strong",
+      "limits_ar": "سجل صنعته الدار نفسها ولم يمرّ عبر الوصل؛ لا يثبت وحده أن المبلغ دُفع فعلاً، ويحتاج إلى سند مستقل مثل الإيداع.",
+      "contradicts_claim_ids": [
+        "cl_nabil_pledge",
+        "cl_huda_1500",
+        "cl_adel_1500"
+      ],
+      "location_id": "loc_house"
+    },
+    {
+      "id": "ev_deposit",
+      "title_ar": "إشعار إيداع في حساب المكتبة",
+      "kind": "documentary",
+      "content_ar": "إشعار إيداع — حساب مكتبة حيّ النخيل\nالتاريخ: يوم التسليم، 13:05\nالمبلغ: 150 ديناراً\nالمودِع: صندوق دار السِّجِل\nالمرجع: وصل 412",
+      "acquired_by_action_ids": [
+        "a_get_deposit"
+      ],
+      "supports_fact_ids": [
+        "f_issued_150"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يثبت دخول مبلغ إلى حساب المكتبة ومرجعه؛ لا يثبت من دفعه ولا ما كُتب في خانات الوصل.",
+      "contradicts_claim_ids": [
+        "cl_nabil_pledge"
+      ],
+      "location_id": "loc_house"
+    },
+    {
+      "id": "ev_custody_card",
+      "title_ar": "بطاقة العهدة للوصل 412",
+      "kind": "documentary",
+      "content_ar": "بطاقة العهدة — الوصل 412 (نسخة المجلس)\n10:20 صدر من الدار | الحالة: الرقمان بالأرقام والحروف 150 بحبر واحد | رنا الفارس\n11:00 سُلّم لنبيل العاصي لوضعه في ملف المجلس | الحالة: بلا تغيير\nاليوم الثالث 18:30 أُعيد إلى الدار للفحص بيد نبيل العاصي | الحالة: خانة الأرقام 1500، سطر الحروف مائة وخمسون | رنا الفارس\nاليوم الثالث 18:35 اطّلع عليه في حضور أمينة الصادر: هدى الصيرفي وعادل المنصور (أول اطلاع لهما)",
+      "acquired_by_action_ids": [
+        "a_get_custody"
+      ],
+      "supports_fact_ids": [
+        "f_numeral_later",
+        "f_no_firsthand"
+      ],
+      "reliability": "strong",
+      "limits_ar": "تسجّل من حمل الوصل وحالته عند كل تسليم، لكنها لا تبيّن ما حدث بين التسليمين ولا من كتب الرقم.",
+      "location_id": "loc_house"
+    },
+    {
+      "id": "ev_handover_log",
+      "title_ar": "سجل حضور التسليم",
+      "kind": "documentary",
+      "content_ar": "سجل الدار — حضور التسليم (رقم 412)\nالحاضرون: سالم الخطيب (المتبرع)، رنا الفارس (أمينة الصادر)، فادي الحداد (أمين صندوق الدار)\nالوقت: 10:20 إلى 10:40\nملاحظة: لم يحضر أحد من مجلس المكتبة.",
+      "acquired_by_action_ids": [
+        "a_get_handover"
+      ],
+      "supports_fact_ids": [
+        "f_no_firsthand"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يثبت من كان في الدار وقت التسليم ولا ينفي أن يكون أحدهم سمع بالمبلغ بطريق آخر.",
+      "contradicts_claim_ids": [
+        "cl_huda_1500",
+        "cl_adel_1500"
+      ],
+      "location_id": "loc_house"
+    },
+    {
+      "id": "ev_minutes",
+      "title_ar": "محاضر الإحاطات الثلاث",
+      "kind": "documentary",
+      "content_ar": "محاضر إحاطات مجلس مكتبة حيّ النخيل — معرض الكتاب\nالإحاطة 1 (17:00، يوم التسليم): بند التبرعات — «أبلغ نبيل العاصي بتبرع الأستاذ سالم بألف وخمسمائة دينار».\nالإحاطة 2 (17:00، اليوم التالي): «ذكّر نبيل العاصي بالتبرع الكبير وطلب لوحة شكر».\nالإحاطة 3 (17:00، اليوم الثالث): «اقترح نبيل العاصي أن تُكتب اللوحة: ألف وخمسمائة دينار».\nالحاضرون في الثلاث: نبيل العاصي، هدى الصيرفي، عادل المنصور.",
+      "acquired_by_action_ids": [
+        "a_get_minutes"
+      ],
+      "supports_fact_ids": [
+        "f_figure_spread"
+      ],
+      "reliability": "strong",
+      "limits_ar": "تثبت ما قيل في الاجتماعات ومن حضر، لا صحة ما قيل ولا من أين جاء به قائله.",
+      "location_id": "loc_hall"
+    },
+    {
+      "id": "ev_stamp_check",
+      "title_ar": "فحص الختم",
+      "kind": "documentary",
+      "content_ar": "تقرير مكتب الصيانة — الختم على الوصل 412\nالختم مطابق لختم الدار المعتمد في الشكل والموضع.\nلا أثر لختم ثانٍ أو لإعادة ختم.",
+      "acquired_by_action_ids": [
+        "a_get_stamp"
+      ],
+      "supports_fact_ids": [],
+      "reliability": "strong",
+      "limits_ar": "يثبت أن الورقة صدرت عن الدار فعلاً؛ لا يقول شيئاً عمّا كُتب فيها بعد الختم.",
+      "is_red_herring": true,
+      "location_id": "loc_desk"
+    },
+    {
+      "id": "ev_salem_statement",
+      "title_ar": "إفادة سالم الخطيب (ملخص)",
+      "kind": "testimonial",
+      "content_ar": "ملخص إفادة سالم الخطيب:\n«دفعت مائة وخمسين ديناراً لأمينة الدار في الدار نفسها. لم أرَ الوصل بعد ذلك حتى ظهرت لوحة الشكر.»",
+      "acquired_by_action_ids": [
+        "a_note_salem"
+      ],
+      "supports_fact_ids": [
+        "f_salem_paid"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "إفادة صاحب مصلحة في المبلغ؛ تؤيدها سجلات الدار ولا تغني عنها.",
+      "location_id": "loc_house"
+    },
+    {
+      "id": "ev_nabil_statement",
+      "title_ar": "إفادة نبيل العاصي (ملخص)",
+      "kind": "testimonial",
+      "content_ar": "ملخص إفادة نبيل العاصي:\n«سمعت من المتبرع قبل يوم التسليم أنه سيتبرع بألف وخمسمائة. أبلغت المجلس بذلك، والوصل في ملف المجلس يؤكد الرقم.»",
+      "acquired_by_action_ids": [
+        "a_note_nabil"
+      ],
+      "supports_fact_ids": [
+        "f_nabil_recall"
+      ],
+      "reliability": "weak",
+      "limits_ar": "ذاكرة صاحب مصلحة في الرقم الكبير؛ لا سجل يؤيد الوعد المزعوم، وتُقاس بسجلات الدار.",
+      "location_id": "loc_hall"
+    },
+    {
+      "id": "ev_huda_form",
+      "title_ar": "نموذج إفادة هدى الصيرفي",
+      "kind": "testimonial",
+      "content_ar": "نموذج إفادة (تملؤه الشاهدة) — هدى الصيرفي\nما المبلغ الذي تذكرينه؟ ألف وخمسمائة دينار.\nهل حضرتِ التسليم في الدار؟ لا.\nمتى رأيتِ الوصل أول مرة؟ بعد الخلاف.\nكيف عرفتِ المبلغ؟ سمعته في الإحاطات اليومية.",
+      "acquired_by_action_ids": [
+        "a_note_huda"
+      ],
+      "supports_fact_ids": [
+        "f_huda_recall",
+        "f_huda_absent"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "تصف مصدر معرفة الشاهدة بلسانها؛ تعبّر عن ذاكرتها لا عن صحة الرقم.",
+      "is_red_herring": true,
+      "location_id": "loc_hall"
+    },
+    {
+      "id": "ev_adel_form",
+      "title_ar": "نموذج إفادة عادل المنصور",
+      "kind": "testimonial",
+      "content_ar": "نموذج إفادة (يملؤه الشاهد) — عادل المنصور\nما المبلغ الذي تذكره؟ ألف وخمسمائة دينار.\nهل حضرت التسليم في الدار؟ لا.\nمتى رأيت الوصل أول مرة؟ بعد الخلاف.\nكيف عرفت المبلغ؟ سمعته في الإحاطات، وكان الجميع يذكره.",
+      "acquired_by_action_ids": [
+        "a_note_adel"
+      ],
+      "supports_fact_ids": [
+        "f_adel_recall",
+        "f_adel_absent"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "يصف مصدر معرفة الشاهد بلسانه؛ يعبّر عن ذاكرته لا عن صحة الرقم.",
+      "is_red_herring": true,
+      "location_id": "loc_hall"
+    },
+    {
+      "id": "ev_rana_statement",
+      "title_ar": "إفادة رنا الفارس (ملخص)",
+      "kind": "testimonial",
+      "content_ar": "ملخص إفادة رنا الفارس، أمينة الصادر:\n«كتبت المبلغ رقماً وحروفاً بحبر الدار في الدقيقة نفسها وقيّدته فور ذلك. لا أعرف ما جرى للوصل خارج الدار.»",
+      "acquired_by_action_ids": [
+        "a_note_rana"
+      ],
+      "supports_fact_ids": [
+        "f_rana_issue"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "إفادة موظفة الدار صاحبة الإصدار؛ تؤيدها سجلات الدار ولا تثبت ما جرى خارجها.",
+      "location_id": "loc_house"
+    }
+  ],
+  "evidence_graph": {
+    "inferences": [
+      {
+        "id": "i_a_later",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_receipt"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_ink_note"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_numeral_later"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "الحبر والورق في خانة الأرقام يختلفان عن بقية الوصل، وتحت الحبر أثر ضغط سابق؛ فالخانة كُتبت في حدث كتابة آخر غير الذي كُتب فيه سطر الحروف.",
+        "skill_ko_refs": [
+          "KO-RS-06-004"
+        ]
+      },
+      {
+        "id": "i_a_150",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_receipt"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_ink_note"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_ten_receipts"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_issued_150"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "في عشرة وصولات من الدفتر نفسه يتطابق السطران حبراً وقيمة؛ وهنا السطر الذي يطابق حبر الدار هو سطر الحروف، فما صدر أصلاً هو مائة وخمسون.",
+        "skill_ko_refs": [
+          "KO-RS-05-001",
+          "KO-RS-06-002"
+        ]
+      },
+      {
+        "id": "i_a_nofh",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_huda_form"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_adel_form"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_no_firsthand"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "الشاهدان يجيبان بأنفسهما أنهما لم يحضرا التسليم ولم يريا الوصل قبل الخلاف؛ فمعرفتهما بالرقم لا تأتي من معاينة.",
+        "skill_ko_refs": [
+          "KO-RS-05-001"
+        ]
+      },
+      {
+        "id": "i_a_spread",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_huda_form"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_adel_form"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_figure_spread"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "الشاهدان يذكران أن مصدر الرقم هو ما سمعاه في الإحاطات، ويقول أحدهما إن الجميع كان يذكره؛ فالرقم انتشر بالتكرار في المجلس.",
+        "skill_ko_refs": [
+          "KO-RS-05-004"
+        ]
+      },
+      {
+        "id": "i_b_150",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_ledger"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_deposit"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_issued_150"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "سجل الصادر وإشعار الإيداع جهتان مختلفتان، ولم يمرّ أيٌّ منهما بالوصل؛ وكلاهما يضع المبلغ مائة وخمسين.",
+        "skill_ko_refs": [
+          "KO-RS-06-002",
+          "KO-RS-05-004"
+        ]
+      },
+      {
+        "id": "i_b_later",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_custody_card"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_ledger"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_numeral_later"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "بطاقة العهدة تثبت أن الخانة كانت 150 عند الإصدار وعند التسليم الأول وصارت 1500 عند الإعادة، وسجل الصادر يوافق الحالة الأولى؛ فالتغيير جرى بعد خروج الوصل من الدار.",
+        "skill_ko_refs": [
+          "KO-RS-05-005",
+          "KO-RS-06-004"
+        ]
+      },
+      {
+        "id": "i_b_nofh",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_handover_log"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_custody_card"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_no_firsthand"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "سجل الحضور يخلو من أعضاء المجلس، وبطاقة العهدة تضع أول اطلاع لهما على الوصل بعد الخلاف؛ فلم يعاينا الدفع ولا الوصل.",
+        "skill_ko_refs": [
+          "KO-RS-05-001",
+          "KO-RS-05-004"
+        ]
+      },
+      {
+        "id": "i_b_spread",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_minutes"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_figure_spread"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "المحاضر تضع الرقم في الإحاطات الثلاث على لسان العضو نفسه، وبحضور الشاهدين، قبل أي اعتراض.",
+        "skill_ko_refs": [
+          "KO-RS-05-004"
+        ]
+      },
+      {
+        "id": "i_support_added",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_issued_150"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_numeral_later"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_added"
+        },
+        "relation": "supports",
+        "strength": "strong",
+        "rule_ar": "ما صدر وقُيّد هو مائة وخمسون، والرقم الأكبر ظهر لاحقاً في الخانة بعد خروج الوصل؛ فالرقم الأكبر إضافة لاحقة لا مبلغ مدفوع.",
+        "skill_ko_refs": [
+          "KO-RS-06-001"
+        ]
+      },
+      {
+        "id": "i_support_nabil",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_custody_card"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_added"
+        },
+        "relation": "supports",
+        "strength": "suggestive",
+        "rule_ar": "الوصل بقي في ملف المجلس بين التسليم الأول والإعادة، وعضو المجلس هو من سلّمه عند الإعادة؛ هذا يحصر الفترة والجهة التي تغيّرت فيها الخانة ولا يثبت من كتب.",
+        "skill_ko_refs": [
+          "KO-RS-06-001"
+        ]
+      },
+      {
+        "id": "i_rule_large",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_issued_150"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_numeral_later"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_large"
+        },
+        "relation": "rules_out",
+        "strength": "conclusive",
+        "rule_ar": "إذا كان المبلغ المدفوع والمقيّد مائة وخمسين وكان الرقم الأكبر لاحقاً للإصدار فلا يصح أن يكون المبلغ الحقيقي ألفاً وخمسمائة.",
+        "skill_ko_refs": [
+          "KO-RS-06-008"
+        ]
+      },
+      {
+        "id": "i_rule_lie",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_no_firsthand"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_figure_spread"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_lie"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "من لم يعاين الدفع ولا الوصل ويسمع رقماً يتكرر في كل إحاطة سيتذكره بثقة؛ هذا يفسّر اتفاق الشاهدين دون افتراض اتفاق مسبق على الكذب، وهما قالا مصدر معرفتهما بلا مواربة.",
+        "skill_ko_refs": [
+          "KO-RS-05-007",
+          "KO-RS-05-004"
+        ]
+      },
+      {
+        "id": "i_claim_nabil",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_issued_150"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_numeral_later"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_nabil_pledge"
+        },
+        "relation": "contradicts_claim",
+        "strength": "strong",
+        "rule_ar": "السجلان المستقلان يضعان المبلغ مائة وخمسين، وما يسنده من الوصل كُتب لاحقاً؛ فوعد الألف وخمسمائة لا سند له في أي سجل.",
+        "skill_ko_refs": [
+          "KO-RS-05-014"
+        ]
+      },
+      {
+        "id": "i_claim_witness",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_no_firsthand"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_huda_1500"
+        },
+        "relation": "contradicts_claim",
+        "strength": "strong",
+        "rule_ar": "ثقة الشاهدة في الرقم لا تدل على أنها رأته؛ وهي لم تحضر ولم ترَ الوصل.",
+        "skill_ko_refs": [
+          "KO-RS-05-001"
+        ]
+      },
+      {
+        "id": "i_claim_witness2",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_no_firsthand"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_adel_1500"
+        },
+        "relation": "contradicts_claim",
+        "strength": "strong",
+        "rule_ar": "إجماع المجلس على الرقم لا يقيس صحته إذا كان مصدره واحداً؛ والشاهد لم يحضر ولم ير الوصل.",
+        "skill_ko_refs": [
+          "KO-RS-05-004"
+        ]
+      }
+    ]
+  },
+  "character_knowledge": [
+    {
+      "character_id": "salem",
+      "knows": [
+        {
+          "fact_id": "f_salem_paid",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    },
+    {
+      "character_id": "nabil",
+      "knows": [
+        {
+          "fact_id": "f_nabil_recall",
+          "access": "inferred",
+          "certainty": "fairly_sure"
+        }
+      ],
+      "hides": [
+        {
+          "fact_id": "f_nabil_wrote",
+          "reveal_when": {
+            "presented": {
+              "evidence_id": "ev_custody_card",
+              "to_character": "nabil"
+            }
+          },
+          "cover_claim_id": "cl_nabil_pledge",
+          "reveal_line_id": "nb_wrote"
+        }
+      ],
+      "believes": [
+        {
+          "claim_id": "cl_nabil_pledge",
+          "stance": "sincere"
+        }
+      ]
+    },
+    {
+      "character_id": "huda",
+      "knows": [
+        {
+          "fact_id": "f_huda_recall",
+          "access": "told_by",
+          "certainty": "fairly_sure",
+          "source_character_id": "nabil"
+        },
+        {
+          "fact_id": "f_huda_absent",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_minutes_exist",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": [
+        {
+          "claim_id": "cl_huda_1500",
+          "stance": "sincere"
+        }
+      ]
+    },
+    {
+      "character_id": "adel",
+      "knows": [
+        {
+          "fact_id": "f_adel_recall",
+          "access": "told_by",
+          "certainty": "fairly_sure",
+          "source_character_id": "nabil"
+        },
+        {
+          "fact_id": "f_adel_absent",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": [
+        {
+          "claim_id": "cl_adel_1500",
+          "stance": "sincere"
+        }
+      ]
+    },
+    {
+      "character_id": "rana",
+      "knows": [
+        {
+          "fact_id": "f_rana_issue",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_ledger_exists",
+          "access": "professional",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_deposit_exists",
+          "access": "professional",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_handover_exists",
+          "access": "professional",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_custody_exists",
+          "access": "professional",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_ten_exists",
+          "access": "professional",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_exam_possible",
+          "access": "professional",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "h_added",
+      "statement_ar": "كُتب الرقم الكبير في خانة الأرقام بعد صدور الوصل ولا يمثل المبلغ المدفوع؛ والأرجح أن عضو المجلس كتبه ظناً منه أنه يصحح سهواً.",
+      "is_true": true,
+      "plausibility_at_start": "low",
+      "suspect_id": "nabil"
+    },
+    {
+      "id": "h_large",
+      "statement_ar": "المبلغ الحقيقي ألف وخمسمائة دينار والمتبرع هو الذي يخطئ في تذكر ما دفع.",
+      "is_true": false,
+      "plausibility_at_start": "high"
+    },
+    {
+      "id": "h_lie",
+      "statement_ar": "الشاهدان اتفقا عمداً على قول غير صحيح لتأييد المجلس.",
+      "is_true": false,
+      "plausibility_at_start": "medium"
+    }
+  ],
+  "misdirection_plan": [
+    {
+      "id": "rh_agree",
+      "points_to_hypothesis_id": "h_large",
+      "planted_via_ar": "شاهدان من المجلس يذكران الرقم نفسه بثقة، فيبدو أن اتفاقهما دليل على صحته.",
+      "evidence_ids": [
+        "ev_huda_form",
+        "ev_adel_form"
+      ],
+      "refuted_by_inference_ids": [
+        "i_rule_large",
+        "i_rule_lie",
+        "i_a_nofh",
+        "i_b_nofh"
+      ],
+      "fairness_note_ar": "نموذجا الإفادة نفسهما يقولان إن الشاهدين لم يحضرا ولم يريا الوصل وإن مصدرهما ما سمعاه في الإحاطات؛ والمحاضر وسجل الحضور يؤكدان ذلك دون الاعتماد عليهما."
+    },
+    {
+      "id": "rh_stamp",
+      "points_to_hypothesis_id": "h_large",
+      "planted_via_ar": "الختم سليم ومطابق، فيبدو أن الوصل صحيح بما فيه رقمه الكبير.",
+      "evidence_ids": [
+        "ev_stamp_check"
+      ],
+      "refuted_by_inference_ids": [
+        "i_rule_large",
+        "i_a_later",
+        "i_b_later"
+      ],
+      "fairness_note_ar": "سلامة الختم تثبت أن الورقة صدرت عن الدار، وسجل الصادر وبطاقة العهدة ومذكرة الفحص تبيّن أن تغييراً في خانة الأرقام وقع بعد الختم دون أن يمسّه."
+    }
+  ],
+  "learning_objectives": [
+    {
+      "id": "lo_claim",
+      "statement_ar": "يسأل «كيف عرف هذا الشخص؟» ويفرّق بين من رأى ومن سمع، ويقيس القول بسجل.",
+      "skill_ko_ref": "KO-RS-05-001",
+      "observable_behaviors_ar": [
+        "يصنّف الإفادات أقوالاً",
+        "يقرأ حقل مصدر المعرفة في نموذج الإفادة"
+      ],
+      "evidence_sources": [
+        "evidence_board"
+      ]
+    },
+    {
+      "id": "lo_timeline",
+      "statement_ar": "يرتّب أحداث الوصل على خط زمني ليعرف متى كان الرقم الأصلي ومتى ظهر الأكبر.",
+      "skill_ko_ref": "KO-RS-05-005",
+      "observable_behaviors_ar": [
+        "يضع التسليم والقيد والإيداع في أزمنتها"
+      ],
+      "evidence_sources": [
+        "timeline_task",
+        "action_log"
+      ]
+    },
+    {
+      "id": "lo_hyp",
+      "statement_ar": "يوازن بين فرضيتين على الأقل ويستبعد ما تنقضه الأدلة.",
+      "skill_ko_ref": "KO-RS-05-002",
+      "observable_behaviors_ar": [
+        "يضيف فرضيات",
+        "يستبعد بدليل"
+      ],
+      "evidence_sources": [
+        "hypothesis_ledger"
+      ]
+    },
+    {
+      "id": "lo_diag",
+      "statement_ar": "يقدّر ما يثبته كل دليل وما لا يثبته، ويتحقق من استقلال الأدلة قبل عدّها.",
+      "skill_ko_ref": "KO-RS-05-004",
+      "observable_behaviors_ar": [
+        "لا يعدّ اتفاق شاهدين مصدرهما واحد دليلين",
+        "يربط الدليل بالفرضية باتجاه صحيح"
+      ],
+      "evidence_sources": [
+        "evidence_board",
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_calib",
+      "statement_ar": "يصوغ نسبة الترجيح بحدودها.",
+      "skill_ko_ref": "KO-RS-06-021",
+      "observable_behaviors_ar": [
+        "يختار ثقة معقولة",
+        "يذكر حدوداً"
+      ],
+      "evidence_sources": [
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_revise",
+      "statement_ar": "يراجع رأيه الأول حين يظهر ما يخالفه.",
+      "skill_ko_ref": "KO-RS-06-009",
+      "observable_behaviors_ar": [
+        "يغيّر فرضيته الرائدة بدليل"
+      ],
+      "evidence_sources": [
+        "hypothesis_ledger"
+      ]
+    }
+  ],
+  "mechanics": {
+    "time_budget_units": 40,
+    "actions": [
+      {
+        "id": "a_read_receipt",
+        "type": "examine",
+        "label_ar": "افحص الوصل 412 بإذن مجلس المكتبة",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_receipt"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_house",
+        "telemetry_code": "READ_RECEIPT"
+      },
+      {
+        "id": "a_get_ink",
+        "type": "examine",
+        "label_ar": "اطلب مذكرة فحص مكتب الصيانة",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_ink_note"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_desk",
+        "telemetry_code": "GET_INK"
+      },
+      {
+        "id": "a_get_ten",
+        "type": "examine",
+        "label_ar": "اطلب ورقة مقارنة الوصولات العشرة",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_ten_receipts"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_desk",
+        "telemetry_code": "GET_TEN"
+      },
+      {
+        "id": "a_get_stamp",
+        "type": "examine",
+        "label_ar": "اطلب تقرير فحص الختم",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_stamp_check"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_desk",
+        "telemetry_code": "GET_STAMP"
+      },
+      {
+        "id": "a_get_ledger",
+        "type": "examine",
+        "label_ar": "اقرأ سجل الصادر بإذن إدارة الدار",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_ledger"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_house",
+        "telemetry_code": "GET_LEDGER"
+      },
+      {
+        "id": "a_get_deposit",
+        "type": "examine",
+        "label_ar": "اطلب إشعار الإيداع بإذن إدارة الدار",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_deposit"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_house",
+        "telemetry_code": "GET_DEPOSIT"
+      },
+      {
+        "id": "a_get_custody",
+        "type": "examine",
+        "label_ar": "اطلب بطاقة العهدة للوصل",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_custody_card"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_house",
+        "telemetry_code": "GET_CUSTODY"
+      },
+      {
+        "id": "a_get_handover",
+        "type": "examine",
+        "label_ar": "اقرأ سجل حضور التسليم",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_handover_log"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_house",
+        "telemetry_code": "GET_HANDOVER"
+      },
+      {
+        "id": "a_get_minutes",
+        "type": "examine",
+        "label_ar": "اطلب محاضر الإحاطات بإذن المجلس",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_minutes"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_hall",
+        "telemetry_code": "GET_MINUTES"
+      },
+      {
+        "id": "a_int_salem",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة سالم",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "salem",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "salem",
+        "telemetry_code": "INT_SALEM"
+      },
+      {
+        "id": "a_int_nabil",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة نبيل",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "nabil",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "nabil",
+        "telemetry_code": "INT_NABIL"
+      },
+      {
+        "id": "a_int_huda",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة هدى",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "huda",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "huda",
+        "telemetry_code": "INT_HUDA"
+      },
+      {
+        "id": "a_int_adel",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة عادل",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "adel",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "adel",
+        "telemetry_code": "INT_ADEL"
+      },
+      {
+        "id": "a_int_rana",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة رنا",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "rana",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "rana",
+        "telemetry_code": "INT_RANA"
+      },
+      {
+        "id": "a_note_salem",
+        "type": "examine",
+        "label_ar": "دوّن إفادة سالم",
+        "precondition": {
+          "fact_unlocked": "f_salem_paid"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_salem_statement"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "salem",
+        "telemetry_code": "NOTE_SALEM"
+      },
+      {
+        "id": "a_note_nabil",
+        "type": "examine",
+        "label_ar": "دوّن إفادة نبيل",
+        "precondition": {
+          "fact_unlocked": "f_nabil_recall"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_nabil_statement"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "nabil",
+        "telemetry_code": "NOTE_NABIL"
+      },
+      {
+        "id": "a_note_huda",
+        "type": "examine",
+        "label_ar": "اطلب نموذج إفادة هدى",
+        "precondition": {
+          "fact_unlocked": "f_huda_recall"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_huda_form"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "huda",
+        "telemetry_code": "NOTE_HUDA"
+      },
+      {
+        "id": "a_note_adel",
+        "type": "examine",
+        "label_ar": "اطلب نموذج إفادة عادل",
+        "precondition": {
+          "fact_unlocked": "f_adel_recall"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_adel_form"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "adel",
+        "telemetry_code": "NOTE_ADEL"
+      },
+      {
+        "id": "a_note_rana",
+        "type": "examine",
+        "label_ar": "دوّن إفادة رنا",
+        "precondition": {
+          "fact_unlocked": "f_rana_issue"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_rana_statement"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "rana",
+        "telemetry_code": "NOTE_RANA"
+      },
+      {
+        "id": "p_custody_nabil",
+        "type": "present_evidence",
+        "label_ar": "اعرض بطاقة العهدة على نبيل",
+        "precondition": {
+          "presented": {
+            "evidence_id": "ev_custody_card",
+            "to_character": "nabil"
+          }
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "PRESENTED_CUSTODY"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "nabil",
+        "telemetry_code": "P_CUSTODY_NABIL"
+      },
+      {
+        "id": "a_hint",
+        "type": "request_hint",
+        "label_ar": "اطلب تلميحاً",
+        "precondition": {
+          "always": true
+        },
+        "effects": [],
+        "time_cost_units": 0,
+        "telemetry_code": "REQUEST_HINT"
+      },
+      {
+        "id": "a_accuse",
+        "type": "final_accusation",
+        "label_ar": "قدّم الاستنتاج النهائي",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "SUBMIT"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "FINAL_ACCUSATION"
+      },
+      {
+        "id": "ask_salem_f_salem_paid",
+        "type": "interview",
+        "label_ar": "[نموذج] salem يذكر f_salem_paid",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_salem_paid"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "salem",
+        "telemetry_code": "ASK_SALEM_F_SALEM_PAID"
+      },
+      {
+        "id": "ask_nabil_f_nabil_recall",
+        "type": "interview",
+        "label_ar": "[نموذج] nabil يذكر f_nabil_recall",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_nabil_recall"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "nabil",
+        "telemetry_code": "ASK_NABIL_F_NABIL_RECALL"
+      },
+      {
+        "id": "ask_nabil_f_nabil_wrote",
+        "type": "interview",
+        "label_ar": "[نموذج] nabil يكشف f_nabil_wrote",
+        "precondition": {
+          "all": [
+            {
+              "always": true
+            },
+            {
+              "presented": {
+                "evidence_id": "ev_custody_card",
+                "to_character": "nabil"
+              }
+            }
+          ]
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_nabil_wrote"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "nabil",
+        "telemetry_code": "ASK_NABIL_F_NABIL_WROTE"
+      },
+      {
+        "id": "ask_huda_f_huda_recall",
+        "type": "interview",
+        "label_ar": "[نموذج] huda يذكر f_huda_recall",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_huda_recall"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "huda",
+        "telemetry_code": "ASK_HUDA_F_HUDA_RECALL"
+      },
+      {
+        "id": "ask_huda_f_huda_absent",
+        "type": "interview",
+        "label_ar": "[نموذج] huda يذكر f_huda_absent",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_huda_absent"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "huda",
+        "telemetry_code": "ASK_HUDA_F_HUDA_ABSENT"
+      },
+      {
+        "id": "ask_huda_f_minutes_exist",
+        "type": "interview",
+        "label_ar": "[نموذج] huda يذكر f_minutes_exist",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_minutes_exist"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "huda",
+        "telemetry_code": "ASK_HUDA_F_MINUTES_EXIST"
+      },
+      {
+        "id": "ask_adel_f_adel_recall",
+        "type": "interview",
+        "label_ar": "[نموذج] adel يذكر f_adel_recall",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_adel_recall"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "adel",
+        "telemetry_code": "ASK_ADEL_F_ADEL_RECALL"
+      },
+      {
+        "id": "ask_adel_f_adel_absent",
+        "type": "interview",
+        "label_ar": "[نموذج] adel يذكر f_adel_absent",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_adel_absent"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "adel",
+        "telemetry_code": "ASK_ADEL_F_ADEL_ABSENT"
+      },
+      {
+        "id": "ask_rana_f_rana_issue",
+        "type": "interview",
+        "label_ar": "[نموذج] rana يذكر f_rana_issue",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_rana_issue"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "rana",
+        "telemetry_code": "ASK_RANA_F_RANA_ISSUE"
+      },
+      {
+        "id": "ask_rana_f_ledger_exists",
+        "type": "interview",
+        "label_ar": "[نموذج] rana يذكر f_ledger_exists",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_ledger_exists"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "rana",
+        "telemetry_code": "ASK_RANA_F_LEDGER_EXISTS"
+      },
+      {
+        "id": "ask_rana_f_deposit_exists",
+        "type": "interview",
+        "label_ar": "[نموذج] rana يذكر f_deposit_exists",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_deposit_exists"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "rana",
+        "telemetry_code": "ASK_RANA_F_DEPOSIT_EXISTS"
+      },
+      {
+        "id": "ask_rana_f_handover_exists",
+        "type": "interview",
+        "label_ar": "[نموذج] rana يذكر f_handover_exists",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_handover_exists"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "rana",
+        "telemetry_code": "ASK_RANA_F_HANDOVER_EXISTS"
+      },
+      {
+        "id": "ask_rana_f_custody_exists",
+        "type": "interview",
+        "label_ar": "[نموذج] rana يذكر f_custody_exists",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_custody_exists"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "rana",
+        "telemetry_code": "ASK_RANA_F_CUSTODY_EXISTS"
+      },
+      {
+        "id": "ask_rana_f_ten_exists",
+        "type": "interview",
+        "label_ar": "[نموذج] rana يذكر f_ten_exists",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_ten_exists"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "rana",
+        "telemetry_code": "ASK_RANA_F_TEN_EXISTS"
+      },
+      {
+        "id": "ask_rana_f_exam_possible",
+        "type": "interview",
+        "label_ar": "[نموذج] rana يذكر f_exam_possible",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_exam_possible"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "rana",
+        "telemetry_code": "ASK_RANA_F_EXAM_POSSIBLE"
+      }
+    ]
+  },
+  "state_machine": {
+    "id": "c014",
+    "initial": "briefing",
+    "type": "compound",
+    "states": {
+      "briefing": {
+        "description_ar": "الإحاطة",
+        "type": "atomic",
+        "on": {
+          "START": {
+            "target": "investigating"
+          }
+        }
+      },
+      "investigating": {
+        "description_ar": "التحقيق",
+        "type": "compound",
+        "initial": "gathering",
+        "states": {
+          "gathering": {
+            "type": "atomic",
+            "on": {
+              "OPEN_DEDUCTION": {
+                "target": "deducing"
+              }
+            }
+          },
+          "deducing": {
+            "type": "atomic",
+            "on": {
+              "BACK": {
+                "target": "gathering"
+              }
+            }
+          }
+        },
+        "on": {
+          "SUBMIT": {
+            "target": "review"
+          }
+        }
+      },
+      "review": {
+        "description_ar": "مراجعة",
+        "type": "atomic",
+        "on": {
+          "CLOSE": {
+            "target": "resolved"
+          }
+        }
+      },
+      "resolved": {
+        "description_ar": "إغلاق",
+        "type": "final"
+      }
+    }
+  },
+  "dialogue": {
+    "max_turns_per_interview": 10,
+    "llm_enabled": false,
+    "topics": [
+      {
+        "id": "t_amount",
+        "label_ar": "المبلغ المتنازع عليه",
+        "example_questions_ar": [
+          "ما المبلغ الذي تذكره؟",
+          "كم دفعت أو كم سمعت؟"
+        ],
+        "fact_ids": [
+          "f_salem_paid",
+          "f_nabil_recall",
+          "f_huda_recall",
+          "f_adel_recall"
+        ],
+        "claim_ids": [
+          "cl_nabil_pledge",
+          "cl_huda_1500",
+          "cl_adel_1500"
+        ]
+      },
+      {
+        "id": "t_presence",
+        "label_ar": "الحضور ورؤية الوصل",
+        "example_questions_ar": [
+          "هل حضرت التسليم؟",
+          "متى رأيت الوصل أول مرة؟"
+        ],
+        "fact_ids": [
+          "f_huda_absent",
+          "f_adel_absent"
+        ]
+      },
+      {
+        "id": "t_issue",
+        "label_ar": "إصدار الوصل وتقييده",
+        "example_questions_ar": [
+          "كيف أُصدر الوصل؟",
+          "أين قُيّد؟"
+        ],
+        "fact_ids": [
+          "f_rana_issue",
+          "f_ledger_exists",
+          "f_deposit_exists",
+          "f_handover_exists",
+          "f_custody_exists"
+        ]
+      },
+      {
+        "id": "t_compare",
+        "label_ar": "المقارنة والفحص",
+        "example_questions_ar": [
+          "هل يمكن مقارنة الوصل بوصولات أخرى؟",
+          "هل يُفحص الحبر؟"
+        ],
+        "fact_ids": [
+          "f_ten_exists",
+          "f_exam_possible"
+        ]
+      },
+      {
+        "id": "t_minutes",
+        "label_ar": "محاضر المجلس",
+        "example_questions_ar": [
+          "أين محاضر الإحاطات؟"
+        ],
+        "fact_ids": [
+          "f_minutes_exist"
+        ]
+      },
+      {
+        "id": "t_after",
+        "label_ar": "ما جرى للوصل بعد تسلّمه",
+        "example_questions_ar": [
+          "هل غيّر أحد شيئاً في الوصل؟"
+        ],
+        "fact_ids": [
+          "f_nabil_wrote"
+        ]
+      }
+    ]
+  },
+  "rubric": {
+    "reference_answer_ar": "المبلغ المدفوع والمقيّد مائة وخمسون ديناراً: هذا ما في سطر الحروف بحبر الدار، وما في سجل الصادر، وما في إشعار الإيداع، وما سُجّل على بطاقة العهدة عند الإصدار. أما الرقم الأكبر فكُتب في خانة الأرقام بحبر آخر بعد خروج الوصل من الدار وأثناء وجوده في ملف المجلس. والشاهدان لم يكذبا: لم يحضرا الدفع ولم يريا الوصل، وإنما كرّرا ما سمعاه في الإحاطات. حدود الاستنتاج: لا تثبت الأدلة من كتب الرقم بيده ولا نيته ولا لحظته، والأرجح أن عضو المجلس كتبه ظناً منه أنه يصحح، ولا تنفي الأدلة أن يكون المتبرع قال كلاماً آخر في حديث لا سجل له.",
+    "criteria": [
+      {
+        "id": "c_source",
+        "name_ar": "تصنيف المصادر",
+        "objective_ids": [
+          "lo_claim"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يصنّف"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "أخطأ في الأغلب"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "نصف صحيح"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمه صحيح"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كله صحيح"
+          }
+        ]
+      },
+      {
+        "id": "c_conflict",
+        "name_ar": "ترتيب الأحداث على الخط الزمني",
+        "objective_ids": [
+          "lo_timeline"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.2,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يضع شيئاً"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "وضع قليلاً"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "وضع نصفها صحيحاً"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمها"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كلها في موضعها"
+          }
+        ]
+      },
+      {
+        "id": "c_links",
+        "name_ar": "ربط الأدلة بالفرضيات",
+        "objective_ids": [
+          "lo_diag"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.2,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لا روابط"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "قليلة"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "نصفها صحيح"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمها"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كلها دقيقة"
+          }
+        ]
+      },
+      {
+        "id": "c_uncertainty",
+        "name_ar": "معايرة الثقة",
+        "objective_ids": [
+          "lo_calib"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "ثقة مفرطة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "حدود قليلة"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "جزئية"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معقولة"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "معايَرة كاملة"
+          }
+        ]
+      },
+      {
+        "id": "c_revision",
+        "name_ar": "مراجعة الرأي",
+        "objective_ids": [
+          "lo_revise"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "بقي على فرضية مرفوضة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "لم يعلن فرضية"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "ثبت على فرضية سليمة"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "غيّر بدليل"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "غيّر بدليل ووثّق"
+          }
+        ]
+      },
+      {
+        "id": "c_elimination",
+        "name_ar": "استبعاد الفرضيات الخاطئة",
+        "objective_ids": [
+          "lo_hyp"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يستبعد"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "استبعد خطأً"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "فرضية بدليل"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "فرضيتين"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كل الخاطئة"
+          }
+        ]
+      },
+      {
+        "id": "c_justification",
+        "name_ar": "جودة الحجة المكتوبة",
+        "objective_ids": [
+          "lo_diag",
+          "lo_hyp"
+        ],
+        "scored_by": "human",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لا حجة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "ادعاء بلا سند"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "أدلة دون ربط"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "ربط الأدلة بالاستنتاج"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "ربط مع البدائل والحدود"
+          }
+        ]
+      }
+    ]
+  },
+  "hint_ladder": [
+    {
+      "id": "hg1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "حين يتفق شخصان على رقم، اسأل: كيف عرف كلٌّ منهما؟ هل رأى بنفسه أم سمع؟",
+      "trigger": {
+        "always": true
+      },
+      "assessment_weight": 0.02
+    },
+    {
+      "id": "hg2",
+      "level": 2,
+      "kind": "focus_area",
+      "text_ar": "اقرأ في كل إفادة السؤال عن «كيف عرفت؟» قبل أن تعدّ الإفادتين دليلين.",
+      "trigger": {
+        "has_evidence": "ev_huda_form"
+      },
+      "assessment_weight": 0.04
+    },
+    {
+      "id": "hg3",
+      "level": 3,
+      "kind": "pointer",
+      "text_ar": "ابحث عن سجلات لم يمرّ بها الوصل نفسه، وقارن أرقامها برقم الوصل.",
+      "trigger": {
+        "has_evidence": "ev_huda_form"
+      },
+      "assessment_weight": 0.08
+    },
+    {
+      "id": "hl1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "في الوصل رقمان؛ أيهما يطابق بقية الوصل في الحبر وفي عادة الدار؟",
+      "trigger": {
+        "has_evidence": "ev_receipt"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_a_150"
+    },
+    {
+      "id": "hl2",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "قارن الوصل بوصولات الدفتر نفسه، وانظر ماذا يقول مكتب الصيانة عن الحبر في كل خانة.",
+      "trigger": {
+        "has_evidence": "ev_receipt"
+      },
+      "assessment_weight": 0.06,
+      "targets_inference_id": "i_a_150"
+    },
+    {
+      "id": "hl3",
+      "level": 3,
+      "kind": "partial_reveal",
+      "text_ar": "اطلب سجل الصادر وإشعار الإيداع: ينبغي أن يتفقا مع أحد الرقمين دون أن يمرّا بالوصل.",
+      "trigger": {
+        "has_evidence": "ev_receipt"
+      },
+      "assessment_weight": 0.1,
+      "targets_inference_id": "i_a_150"
+    }
+  ],
+  "fairness_test": {
+    "requirements": {
+      "min_disjoint_proof_paths": 2,
+      "max_inference_depth": 3,
+      "all_red_herrings_refutable": true,
+      "culprit_uniquely_entailed": true,
+      "no_hidden_fact_dependency": true,
+      "max_required_actions": 40
+    },
+    "runs": []
+  },
+  "ending_explanation": {
+    "steps": [
+      {
+        "order": 1,
+        "text_ar": "في الوصل رقمان، لكن سطر الحروف يطابق حبر الدار، أما خانة الأرقام فحبرها وورقها مختلفان وتحتها أثر ضغط سابق؛ والوصولات العشرة من الدفتر نفسه لا يختلف فيها السطران.",
+        "uses_evidence_ids": [
+          "ev_receipt",
+          "ev_ink_note",
+          "ev_ten_receipts"
+        ],
+        "inference_id": "i_a_150"
+      },
+      {
+        "order": 2,
+        "text_ar": "سجل الصادر وإشعار الإيداع جهتان مختلفتان لم يمرّا بالوصل، وكلاهما يقول مائة وخمسين.",
+        "uses_evidence_ids": [
+          "ev_ledger",
+          "ev_deposit"
+        ],
+        "inference_id": "i_b_150"
+      },
+      {
+        "order": 3,
+        "text_ar": "بطاقة العهدة تضبط التغيير: الخانة كانت 150 عند الإصدار وعند أول تسليم، وصارت 1500 حين عاد الوصل من ملف المجلس.",
+        "uses_evidence_ids": [
+          "ev_custody_card",
+          "ev_ledger"
+        ],
+        "inference_id": "i_b_later"
+      },
+      {
+        "order": 4,
+        "text_ar": "الشاهدان أجابا بأنفسهما بأنهما لم يحضرا ولم يريا الوصل قبل الخلاف، وسجل الحضور وبطاقة العهدة يؤكدان ذلك من خارجهما.",
+        "uses_evidence_ids": [
+          "ev_huda_form",
+          "ev_adel_form",
+          "ev_handover_log",
+          "ev_custody_card"
+        ],
+        "inference_id": "i_a_nofh"
+      },
+      {
+        "order": 5,
+        "text_ar": "الرقم الكبير تردد في ثلاث إحاطات متتالية على لسان عضو واحد وبحضورهما؛ فاتفاقهما أثر التكرار لا استقلال شهادتين.",
+        "uses_evidence_ids": [
+          "ev_minutes"
+        ],
+        "inference_id": "i_b_spread"
+      },
+      {
+        "order": 6,
+        "text_ar": "إذن لا حاجة لافتراض كذب: تفسير بسيط يجمع كل شيء، فالمبلغ مائة وخمسون، والرقم الأكبر أُضيف لاحقاً.",
+        "uses_evidence_ids": [
+          "ev_ledger",
+          "ev_custody_card"
+        ],
+        "inference_id": "i_support_added"
+      }
+    ],
+    "alternative_paths_ar": [
+      "يمكن الوصول إلى النتيجة من سجل الصادر وإشعار الإيداع وبطاقة العهدة وحدها دون فحص الحبر؛ ومن يفعل ذلك يبقى عليه أن يفسّر لماذا يتفق شاهدان على الرقم الآخر.",
+      "ويمكن الوصول إليها من فحص الوصل نفسه ومقارنته بالدفتر ومن نموذجي الإفادة، لكن الأقوى أن يتفق المساران."
+    ],
+    "what_evidence_could_not_show_ar": [
+      "لا تثبت الأدلة من كتب الرقم بيده ولا لحظة كتابته بالدقيقة؛ تحصر الفترة فقط بين التسليم الأول والإعادة.",
+      "لا تثبت الأدلة نية أحد؛ إقرار صاحب الرقم بأنه ظنّ أنه يصحح لا يقاس بدليل مادي.",
+      "لا تنفي الأدلة أن المتبرع قال كلاماً آخر في حديث شفوي قبل التسليم؛ هي تنفي أن يكون المبلغ المدفوع غير مائة وخمسين."
+    ],
+    "science_notes_ar": [
+      "ذاكرة الشاهد تتشكّل بما يتكرر على مسامعه؛ قد يتذكر بثقة عالية شيئاً سمعه ولم يره، ولا يعني ذلك أنه يكذب.",
+      "اتفاق شاهدين لا يعني استقلالهما: اسأل عن مصدر معرفة كل منهما قبل أن تعدّ الإفادتين دليلين.",
+      "بطاقة العهدة (سلسلة العهدة) تتيح تتبّع من حمل الوثيقة ومتى وفي أي حالة؛ وتبقى نسبة الترجيح حكماً مبنياً على سجلات يمكن تتبعها."
+    ]
+  },
+  "expert_review": [
+    {
+      "role": "narrative_editor",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "scientific_reviewer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "learning_designer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "age_appropriateness",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "cultural_reviewer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "legal_rights",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "safety",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    }
+  ]
+}

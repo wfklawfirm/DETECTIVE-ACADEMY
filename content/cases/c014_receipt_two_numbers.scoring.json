@@ -1,0 +1,129 @@
+{
+  "case_id": "c014_receipt_two_numbers",
+  "accepted_conclusions": {
+    "h_added": {
+      "grade": 1,
+      "note_ar": "استنتاج متسق مع الأدلة ويتطلب ذكر حدوده."
+    },
+    "h_large": {
+      "grade": 0,
+      "note_ar": "يعدّ اتفاق شاهدين مصدرهما واحد دليلاً مستقلاً ويتجاهل سجلين لم يمرّا بالوصل."
+    },
+    "h_lie": {
+      "grade": 0,
+      "note_ar": "يقفز من الاتفاق إلى الكذب؛ التكرار يفسّر الاتفاق دون افتراض تواطؤ."
+    }
+  },
+  "confidence_band": {
+    "h_added": [
+      65,
+      90
+    ],
+    "h_large": [
+      0,
+      15
+    ],
+    "h_lie": [
+      0,
+      15
+    ]
+  },
+  "source_key": {
+    "ev_receipt": "primary_record",
+    "ev_ink_note": "primary_record",
+    "ev_ten_receipts": "primary_record",
+    "ev_ledger": "primary_record",
+    "ev_deposit": "primary_record",
+    "ev_custody_card": "primary_record",
+    "ev_handover_log": "primary_record",
+    "ev_minutes": "primary_record",
+    "ev_stamp_check": "primary_record",
+    "ev_salem_statement": "claim",
+    "ev_nabil_statement": "claim",
+    "ev_huda_form": "claim",
+    "ev_adel_form": "claim",
+    "ev_rana_statement": "claim"
+  },
+  "link_key": {
+    "h_added": {
+      "ev_receipt": "supports",
+      "ev_ink_note": "supports",
+      "ev_ten_receipts": "supports",
+      "ev_ledger": "supports",
+      "ev_deposit": "supports",
+      "ev_custody_card": "supports",
+      "ev_handover_log": "supports",
+      "ev_minutes": "supports",
+      "ev_stamp_check": "neutral"
+    },
+    "h_large": {
+      "ev_huda_form": "supports",
+      "ev_stamp_check": "supports",
+      "ev_ledger": "weakens",
+      "ev_deposit": "weakens",
+      "ev_ink_note": "weakens",
+      "ev_custody_card": "weakens"
+    },
+    "h_lie": {
+      "ev_huda_form": "weakens",
+      "ev_adel_form": "weakens",
+      "ev_minutes": "weakens",
+      "ev_handover_log": "weakens"
+    }
+  },
+  "required_limits": [
+    "l_who",
+    "l_oral"
+  ],
+  "valid_mind_changers": [
+    "m_other_record",
+    "m_witness_saw",
+    "m_custody_wrong"
+  ],
+  "invalid_limits": [
+    "l_invalid_confident",
+    "l_invalid_liar"
+  ],
+  "decisive_evidence": [
+    "ev_ledger",
+    "ev_deposit",
+    "ev_custody_card",
+    "ev_ink_note",
+    "ev_handover_log"
+  ],
+  "lab_requirement": null,
+  "timeline_requirement": [
+    {
+      "evidence_id": "ev_handover_log",
+      "utc_minute": 80,
+      "tol": 15
+    },
+    {
+      "evidence_id": "ev_ledger",
+      "utc_minute": 100,
+      "tol": 15
+    },
+    {
+      "evidence_id": "ev_deposit",
+      "utc_minute": 245,
+      "tol": 15
+    }
+  ],
+  "refuted_hypotheses": [
+    "h_large",
+    "h_lie"
+  ],
+  "criteria_map": {
+    "c_source": "source_typing",
+    "c_conflict": "conflict_resolution",
+    "c_links": "hypothesis_links",
+    "c_uncertainty": "uncertainty",
+    "c_revision": "revision",
+    "c_elimination": "elimination",
+    "c_justification": "justification_human"
+  },
+  "caps": {
+    "no_citations_max": 45,
+    "no_conflict_resolution_max": 70
+  }
+}

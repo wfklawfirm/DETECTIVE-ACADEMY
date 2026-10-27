@@ -1,5 +1,9 @@
 "use client";
 import { useState } from "react";
+import { Button } from "../ui/button";
+import { Callout } from "../ui/feedback";
+import { ChoiceGroup, Field } from "../ui/form";
+import { BackIcon } from "../ui/icons";
 import type { View } from "./usePlay";
 
 export function DeduceTab({ view, busy, send }: { view: View; busy: boolean; send: (r: Record<string, unknown>) => Promise<unknown> }) {
@@ -16,10 +20,10 @@ export function DeduceTab({ view, busy, send }: { view: View; busy: boolean; sen
   if (!open) {
     return (
       <div className="stack">
-        <h2>الاستنتاج النهائي</h2>
+        <h2 className="text-section-title">الاستنتاج النهائي</h2>
         <p>حين تشعر أن لديك ما يكفي، ستختار استنتاجك، وتذكر الأدلة التي تستند إليها، وما لا تستطيع أدلتك قوله، وما الذي قد يغيّر رأيك. لا يمكن التراجع بعد التقديم.</p>
         <p className="dim small">لديك الآن {view.evidence.length} دليلاً{view.locked_evidence_count > 0 ? ` و${view.locked_evidence_count} لم يُكشف` : ""}. لا بأس أن ترتاب في استنتاجك؛ قيّم ثقتك بصدق.</p>
-        <button className="btn primary" disabled={busy} onClick={() => send({ op: "deduce", open: true })}>ابدأ الاستنتاج النهائي</button>
+        <Button variant="primary" size="lg" block disabled={busy} onClick={() => send({ op: "deduce", open: true })}>ابدأ الاستنتاج النهائي</Button>
       </div>
     );
   }
@@ -31,13 +35,13 @@ export function DeduceTab({ view, busy, send }: { view: View; busy: boolean; sen
     await send({ op: "submit", conclusion_hypothesis_id: concl, confidence: conf, cited: list, limit_choice_ids: lim, would_change_mind_ids: mind, justification: just, share_for_review: share });
   };
   return (
-    <form className="stack" onSubmit={(e) => { e.preventDefault(); void submit(); }}>
-      <div className="row" style={{ justifyContent: "space-between" }}><h2 style={{ margin: 0 }}>الاستنتاج النهائي</h2><button type="button" className="btn ghost sm" disabled={busy} onClick={() => send({ op: "deduce", open: false })}>← عودة للتحقيق</button></div>
-      <fieldset className="card" style={{ border: "1px solid var(--line)" }}><legend>١. ما استنتاجك؟</legend>
-        {view.hypotheses.map((h) => <label key={h.id} style={{ display: "flex", gap: 12, alignItems: "flex-start", fontWeight: 400 }}><input type="radio" name="concl" checked={concl === h.id} onChange={() => setConcl(h.id)} /><span>{h.statement_ar}</span></label>)}
+    <form className="stack-lg" onSubmit={(e) => { e.preventDefault(); void submit(); }}>
+      <div className="row row-between"><h2 className="text-section-title">الاستنتاج النهائي</h2><Button type="button" variant="ghost" size="sm" disabled={busy} onClick={() => send({ op: "deduce", open: false })}><BackIcon size={20} />عودة للتحقيق</Button></div>
+      <fieldset className="card"><legend id="lg-concl">١. ما استنتاجك؟</legend>
+        <ChoiceGroup labelledBy="lg-concl" name="concl" value={concl} onChange={setConcl} options={view.hypotheses.map((h) => ({ value: h.id, label: h.statement_ar }))} />
       </fieldset>
-      <div className="card"><label htmlFor="fconf">٢. ما درجة ترجيحك لهذا الاستنتاج؟ <span className="mono">{conf}</span>٪</label><input id="fconf" type="range" min={0} max={100} step={5} value={conf} onChange={(e) => setConf(Number(e.target.value))} /><p className="small dim">ثقة عالية بلا أدلة كافية تُحاسَب كما تُحاسَب الثقة المنخفضة رغم أدلة قوية.</p></div>
-      <fieldset className="card" style={{ border: "1px solid var(--line)" }}><legend>٣. أي الأدلة تستند إليها؟ وكيف؟</legend>
+      <div className="card"><Field label={<>٢. ما درجة ترجيحك لهذا الاستنتاج؟ <span className="mono">{conf}</span>٪</>} hint="ثقة عالية بلا أدلة كافية تُحاسَب كما تُحاسَب الثقة المنخفضة رغم أدلة قوية.">{(p) => <input {...p} type="range" min={0} max={100} step={5} value={conf} onChange={(e) => setConf(Number(e.target.value))} />}</Field></div>
+      <fieldset className="card"><legend>٣. أي الأدلة تستند إليها؟ وكيف؟</legend>
         {view.evidence.map((e) => (
           <div key={e.id} className="board-row"><span>{e.title_ar}</span>
             <select aria-label={`علاقة ${e.title_ar} باستنتاجك`} value={cited[e.id] ?? ""} onChange={(ev) => setCited((s) => ({ ...s, [e.id]: ev.target.value as "supports" })) }>
@@ -45,17 +49,18 @@ export function DeduceTab({ view, busy, send }: { view: View; busy: boolean; sen
             </select></div>
         ))}
       </fieldset>
-      <fieldset className="card" style={{ border: "1px solid var(--line)" }}><legend>٤. ما الذي لا تستطيع أدلتك إثباته؟</legend>
-        {view.limit_menu.map((m) => <label key={m.id} style={{ display: "flex", gap: 12, fontWeight: 400 }}><input type="checkbox" checked={lim.includes(m.id)} onChange={() => tog(lim, setLim, m.id)} /><span>{m.label_ar}</span></label>)}
+      <fieldset className="card"><legend id="lg-lim">٤. ما الذي لا تستطيع أدلتك إثباته؟</legend>
+        <ChoiceGroup multiple labelledBy="lg-lim" name="lim" value={lim} onChange={(id) => tog(lim, setLim, id)} options={view.limit_menu.map((m) => ({ value: m.id, label: m.label_ar }))} />
       </fieldset>
-      <fieldset className="card" style={{ border: "1px solid var(--line)" }}><legend>٥. ما الذي قد يغيّر رأيك؟</legend>
-        {view.mind_change_menu.map((m) => <label key={m.id} style={{ display: "flex", gap: 12, fontWeight: 400 }}><input type="checkbox" checked={mind.includes(m.id)} onChange={() => tog(mind, setMind, m.id)} /><span>{m.label_ar}</span></label>)}
+      <fieldset className="card"><legend id="lg-mind">٥. ما الذي قد يغيّر رأيك؟</legend>
+        <ChoiceGroup multiple labelledBy="lg-mind" name="mind" value={mind} onChange={(id) => tog(mind, setMind, id)} options={view.mind_change_menu.map((m) => ({ value: m.id, label: m.label_ar }))} />
       </fieldset>
-      <div className="card"><label htmlFor="just">٦. حجتك بكلماتك (اختياري)</label><textarea id="just" value={just} maxLength={4000} onChange={(e) => setJust(e.target.value)} />
-        <p className="small dim">لا يُقيَّم الإسهاب ولا الأسلوب. يقرؤها مراجع بشري إن طلبت ذلك فقط؛ ولا تُحتسب آلياً.</p>
-        <label style={{ display: "flex", gap: 12, fontWeight: 400 }}><input type="checkbox" checked={share} onChange={(e) => setShare(e.target.checked)} /><span>أرسل حجتي لمراجعة بشرية (تحصل على رمز لمتابعة الملاحظات، دون الكشف عن هويتك)</span></label></div>
-      {err && <p role="alert" className="err">{err}</p>}
-      <button className="btn primary" disabled={busy}>قدّم الاستنتاج</button>
+      <div className="card">
+        <Field label="٦. حجتك بكلماتك (اختياري)" hint="لا يُقيَّم الإسهاب ولا الأسلوب. يقرؤها مراجع بشري إن طلبت ذلك فقط؛ ولا تُحتسب آلياً.">{(p) => <textarea {...p} className="textarea" value={just} maxLength={4000} onChange={(e) => setJust(e.target.value)} />}</Field>
+        <ChoiceGroup multiple label="مشاركة الحجة" name="share" value={share ? ["share"] : []} onChange={() => setShare(!share)} options={[{ value: "share", label: "أرسل حجتي لمراجعة بشرية (تحصل على رمز لمتابعة الملاحظات، دون الكشف عن هويتك)" }]} />
+      </div>
+      {err && <Callout tone="negative" role="alert">{err}</Callout>}
+      <Button type="submit" variant="primary" size="lg" block disabled={busy}>قدّم الاستنتاج</Button>
     </form>
   );
 }

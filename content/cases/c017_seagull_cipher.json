@@ -1,0 +1,2671 @@
+{
+  "schema_version": "0.1.0",
+  "case_id": "c017_seagull_cipher",
+  "case_version": "0.1.0",
+  "meta": {
+    "title_ar": "رسالة النوارس",
+    "title_en": "The Seagull Message",
+    "age_band": "13-15",
+    "locale": "ar",
+    "dialogue_register": "msa",
+    "estimated_minutes": 25,
+    "difficulty": 2,
+    "content_flags": [
+      "no_violence"
+    ],
+    "authors": [
+      "فريق أثر التحريري (مسودة بمساعدة الذكاء الاصطناعي، لم تُراجَع بشرياً بعد)"
+    ],
+    "knowledge_object_refs": [
+      "KO-RS-06-012",
+      "KO-RS-06-002",
+      "KO-RS-06-006",
+      "KO-RS-06-004",
+      "KO-RS-06-008",
+      "KO-RS-06-021",
+      "KO-RS-06-009",
+      "KO-RS-05-001"
+    ]
+  },
+  "premise": {
+    "hook_ar": "ورقة بحروف مبدلة وجدت بين صفحات كتاب معار، ورسالتان لا يفهمهما أحد. والمشرف مقتنع بأنها خطة غش.",
+    "player_role_ar": "أنت متدرب في دار السِّجِل، وطُلب منك أن تقرأ الورقة والرسالتين وتخبر المشرف بما يمكن قوله فعلاً.",
+    "setting_ar": "ثانوية القنطرة ومكتبة الجامعة المجاورة، صباح يوم اثنين. سجلات المكتبة والمكتب بتوقيت المبنى.",
+    "public_fact_ids": [
+      "f_sheet_found",
+      "f_msgs_posted",
+      "f_maher_suspects"
+    ],
+    "assumed_general_knowledge_ar": [
+      "في الإبدال الحرفي البسيط يقابل كل حرف حرفاً واحداً ثابتاً",
+      "الحروف العربية لا تتساوى في تكرارها"
+    ]
+  },
+  "entities": {
+    "characters": [
+      {
+        "id": "maher",
+        "name_ar": "ماهر الصيرفي",
+        "role": "witness",
+        "age_descriptor_ar": "مشرف الامتحانات في ثانوية القنطرة",
+        "persona_ar": "حازم ويقظ، يخشى الغش أكثر مما يخشى الخطأ في الظن، ويقرأ الغموض بما يتوقعه.",
+        "motives_ar": [
+          "أن يمنع الغش قبل وقوعه",
+          "ألا يُتّهم بالتساهل"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "mh_greet",
+            "purpose": "greeting",
+            "text_ar": "أهلاً بك. أمامنا ورقة غريبة ورسالتان لا تفسير لهما."
+          },
+          {
+            "line_id": "mh_claim",
+            "purpose": "reveal",
+            "text_ar": "أظن أن الورقة ورسالتي النوارس خطة لتبادل الإجابات في اختبار قريب. لم أراجع الجدول الرسمي قبل أن أقول هذا.",
+            "fact_ids": [
+              "f_maher_basis"
+            ],
+            "claim_ids": [
+              "cl_maher_cheat"
+            ]
+          },
+          {
+            "line_id": "mh_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف أكثر من ذلك."
+          },
+          {
+            "line_id": "mh_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "ركّز على الورقة والرسائل لو سمحت."
+          },
+          {
+            "line_id": "mh_bye",
+            "purpose": "farewell",
+            "text_ar": "أريد أن أعرف الحقيقة قبل أن أحكم على أحد."
+          }
+        ]
+      },
+      {
+        "id": "rima",
+        "name_ar": "ريما الحداد",
+        "role": "suspect",
+        "age_descriptor_ar": "طالبة في الصف التاسع",
+        "persona_ar": "ذكية ومتحمسة، تخاف أن يُساء فهمها وتصمت إذا اقترب أحد من سرّ تحبّ أن يبقى جميلاً.",
+        "motives_ar": [
+          "أن يبقى ما تحضّره مفاجأة",
+          "ألا يُظنّ بها سوء"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "rm_greet",
+            "purpose": "greeting",
+            "text_ar": "أنا لم أفعل شيئاً سيئاً. اسألني ما تريد."
+          },
+          {
+            "line_id": "rm_refuse",
+            "purpose": "refuse_secret",
+            "text_ar": "هذا الموضوع... أفضّل ألا أتحدث عنه الآن."
+          },
+          {
+            "line_id": "rm_codes",
+            "purpose": "reveal",
+            "text_ar": "عبارة «النوارس أورقت» تعني أن بطاقات الدعوة التي عليها رسم النورس طُبعت، و«القارب الأحمر» هو العلبة الحمراء التي سنضع فيها الكعكة. وإيصال الطباعة محفوظ عندي.",
+            "fact_ids": [
+              "f_codewords",
+              "f_print_exists"
+            ]
+          },
+          {
+            "line_id": "rm_wrote",
+            "purpose": "reveal",
+            "text_ar": "نعم... أنا كتبتها بحروف مبدلة لأتدرب على لعبة الشفرة، ثم نسيتها بين صفحات الكتاب وأعدته دون أن أنتبه.",
+            "fact_ids": [
+              "f_rima_wrote"
+            ]
+          },
+          {
+            "line_id": "rm_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أذكر."
+          },
+          {
+            "line_id": "rm_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن الورقة والرسائل."
+          },
+          {
+            "line_id": "rm_bye",
+            "purpose": "farewell",
+            "text_ar": "أرجو أن ينتهي هذا الالتباس قريباً."
+          }
+        ]
+      },
+      {
+        "id": "adnan",
+        "name_ar": "عدنان البيطار",
+        "role": "suspect",
+        "age_descriptor_ar": "طالب في الصف التاسع، صديق ريما",
+        "persona_ar": "مرح ومتحفظ، يلقي النكتة حين يريد أن يحمي سراً، ويتراجع إن رأى أن الصمت يضر غيره.",
+        "motives_ar": [
+          "حماية المفاجأة",
+          "ألا تُتّهم ريما بشيء لم تفعله"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "ad_greet",
+            "purpose": "greeting",
+            "text_ar": "أهلاً! إن كنت تبحث عن مؤامرة فأنت في المكان الخطأ."
+          },
+          {
+            "line_id": "ad_joke",
+            "purpose": "lie",
+            "text_ar": "هذه مجرد رسائل مزاح بيننا، ولا شيء وراءها.",
+            "claim_ids": [
+              "cl_adnan_joke"
+            ]
+          },
+          {
+            "line_id": "ad_refuse",
+            "purpose": "refuse_secret",
+            "text_ar": "لا أريد أن أفسد شيئاً."
+          },
+          {
+            "line_id": "ad_bakery",
+            "purpose": "reveal",
+            "text_ar": "حسناً... طلبتُ كعكة من مخبز «السنابل»، وإيصال الطلب عندي. السر ليس لسوء، بل ليبقى حفلاً مفاجئاً.",
+            "fact_ids": [
+              "f_bakery_exists",
+              "f_codewords"
+            ]
+          },
+          {
+            "line_id": "ad_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف."
+          },
+          {
+            "line_id": "ad_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن الرسائل."
+          },
+          {
+            "line_id": "ad_bye",
+            "purpose": "farewell",
+            "text_ar": "اعتذر لمن ظنّ بنا ظناً سيئاً."
+          }
+        ]
+      },
+      {
+        "id": "sawsan",
+        "name_ar": "سوسن الخطيب",
+        "role": "expert",
+        "age_descriptor_ar": "أمينة مكتبة جامعة القنطرة",
+        "persona_ar": "دقيقة وهادئة، تحب أن تعرض ما في السجلات والجداول وحده، ولا تعرف شيئاً عن غرض الورقة.",
+        "motives_ar": [
+          "أن يعود الكتاب إلى الجامعة سليماً",
+          "أن يُعرف الفرق بين فك الشفرة وفهم الغرض منها"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "sw_greet",
+            "purpose": "greeting",
+            "text_ar": "أهلاً. وجدت الورقة بين صفحات كتاب أُعيد إلينا اليوم."
+          },
+          {
+            "line_id": "sw_loan",
+            "purpose": "reveal",
+            "text_ar": "للكتاب سجل إعارة يبيّن من استعاره ومتى أُعيد.",
+            "fact_ids": [
+              "f_loan_record_exists"
+            ]
+          },
+          {
+            "line_id": "sw_ref",
+            "purpose": "reveal",
+            "text_ar": "في دار السِّجِل جدول مرجعي لتكرار الحروف في العربية، ويمكنك الرجوع إليه.",
+            "fact_ids": [
+              "f_ref_exists"
+            ]
+          },
+          {
+            "line_id": "sw_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "هذا خارج ما أعرفه."
+          },
+          {
+            "line_id": "sw_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن الكتاب وسجلاته."
+          },
+          {
+            "line_id": "sw_bye",
+            "purpose": "farewell",
+            "text_ar": "العدّ يحتاج عينة كافية قبل أن يُصدَّق."
+          }
+        ]
+      },
+      {
+        "id": "hanan",
+        "name_ar": "حنان الزين",
+        "role": "witness",
+        "age_descriptor_ar": "موظفة المكتب المدرسي",
+        "persona_ar": "منظمة ومحبة للتفاصيل، تحتفظ بكل نموذج حجز وتجيب عما في الأوراق فقط.",
+        "motives_ar": [
+          "أن تبقى سجلات الحجز مرتبة"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "hn_greet",
+            "purpose": "greeting",
+            "text_ar": "تفضّل. السجلات في ملف واحد."
+          },
+          {
+            "line_id": "hn_booking",
+            "purpose": "reveal",
+            "text_ar": "حجزت ريما وعدنان قاعة المكتبة الصغيرة يوم الخميس عند الخامسة، ونموذج الحجز محفوظ عندي.",
+            "fact_ids": [
+              "f_hall_booking_exists"
+            ]
+          },
+          {
+            "line_id": "hn_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "ليس عندي شيء عن هذا."
+          },
+          {
+            "line_id": "hn_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن حجز القاعات."
+          },
+          {
+            "line_id": "hn_bye",
+            "purpose": "farewell",
+            "text_ar": "مع السلامة."
+          }
+        ]
+      }
+    ],
+    "locations": [
+      {
+        "id": "loc_library",
+        "name_ar": "مكتبة جامعة القنطرة",
+        "description_ar": "الكتب المعارة وسجلات الإعارة."
+      },
+      {
+        "id": "loc_board",
+        "name_ar": "سلسلة نقاش الصف",
+        "description_ar": "منتدى الصف على بوابة المدرسة."
+      },
+      {
+        "id": "loc_office",
+        "name_ar": "المكتب المدرسي",
+        "description_ar": "نماذج الحجز وجداول الامتحانات."
+      },
+      {
+        "id": "loc_sijil",
+        "name_ar": "دار السِّجِل",
+        "description_ar": "أداة عدّ الحروف والجداول المرجعية."
+      }
+    ],
+    "objects": [
+      {
+        "id": "obj_sheet",
+        "name_ar": "الورقة ذات الحروف المبدلة",
+        "description_ar": "ورقة بخط اليد وُجدت بين صفحات كتاب معار."
+      },
+      {
+        "id": "obj_msgs",
+        "name_ar": "رسالتا النوارس",
+        "description_ar": "رسالتان نُشرتا في سلسلة نقاش الصف."
+      }
+    ],
+    "organizations": [
+      {
+        "id": "org_school",
+        "name_ar": "ثانوية القنطرة",
+        "description_ar": "مدرسة خيالية استعارت الكتاب من مكتبة الجامعة."
+      }
+    ]
+  },
+  "truth": {
+    "solution": {
+      "culprit_ids": [
+        "rima"
+      ],
+      "summary_ar": "لم تُدبَّر مخالفة. أما الورقة فكتبتها ريما للتدرب على لعبة رموز ونسيتها في كتاب معار، وكانت هي وعدنان يرتبان لقاء تكريم سرياً، فاستعملا عبارات اصطلاحية في رسالتين نُشرتا بالخطأ. ظن المشرف أنها خطة غش قبل أن يطّلع على محتوى أو جدول.",
+      "key_fact_ids": [
+        "f_party_plan",
+        "f_not_exam"
+      ]
+    },
+    "facts": [
+      {
+        "id": "f_sheet_found",
+        "statement_ar": "عثرت أمينة المكتبة على ورقة بحروف مبدلة بين صفحات كتاب أُعيد إلى مكتبة الجامعة صباح الاثنين.",
+        "kind": "event",
+        "subject_ids": [
+          "obj_sheet",
+          "sawsan"
+        ],
+        "spoiler_level": 0
+      },
+      {
+        "id": "f_msgs_posted",
+        "statement_ar": "ظهرت في سلسلة نقاش الصف رسالتان غامضتان بين ريما وعدنان: «النوارس أورقت» و«القارب الأحمر جاهز».",
+        "kind": "event",
+        "subject_ids": [
+          "obj_msgs",
+          "rima",
+          "adnan"
+        ],
+        "spoiler_level": 0
+      },
+      {
+        "id": "f_maher_suspects",
+        "statement_ar": "يظن مشرف الامتحانات أن الورقة والرسالتين خطة غش.",
+        "kind": "attribute",
+        "subject_ids": [
+          "maher"
+        ],
+        "spoiler_level": 0
+      },
+      {
+        "id": "f_maher_basis",
+        "statement_ar": "بنى مشرف الامتحانات ظنه على غموض الورقة والرسالتين، ولم يراجع جدول الامتحانات الرسمي.",
+        "kind": "attribute",
+        "subject_ids": [
+          "maher"
+        ],
+        "spoiler_level": 1
+      },
+      {
+        "id": "f_loan_record_exists",
+        "statement_ar": "للكتاب سجل إعارة في مكتبة الجامعة.",
+        "kind": "state",
+        "subject_ids": [
+          "sawsan",
+          "loc_library"
+        ],
+        "spoiler_level": 1
+      },
+      {
+        "id": "f_loan_returned",
+        "statement_ar": "استعارت ريما الكتاب أول أمس وأعادته صباح الاثنين الساعة 08:30، والورقة بين صفحاته.",
+        "kind": "event",
+        "subject_ids": [
+          "rima",
+          "obj_sheet"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 90,
+          "precision": "exact"
+        },
+        "location_id": "loc_library"
+      },
+      {
+        "id": "f_ref_exists",
+        "statement_ar": "لدار السِّجِل جدول مرجعي منشور يرتّب الحروف العربية بحسب تكرارها.",
+        "kind": "state",
+        "subject_ids": [
+          "loc_sijil"
+        ],
+        "spoiler_level": 1
+      },
+      {
+        "id": "f_hall_booking_exists",
+        "statement_ar": "في المكتب المدرسي نموذج حجز قاعة باسم ريما وعدنان.",
+        "kind": "state",
+        "subject_ids": [
+          "hanan",
+          "loc_office"
+        ],
+        "spoiler_level": 1
+      },
+      {
+        "id": "f_bakery_exists",
+        "statement_ar": "لدى عدنان إيصال طلب من مخبز.",
+        "kind": "state",
+        "subject_ids": [
+          "adnan"
+        ],
+        "spoiler_level": 1
+      },
+      {
+        "id": "f_print_exists",
+        "statement_ar": "لدى ريما إيصال طباعة بطاقات.",
+        "kind": "state",
+        "subject_ids": [
+          "rima"
+        ],
+        "spoiler_level": 1
+      },
+      {
+        "id": "f_codewords",
+        "statement_ar": "عبارتا الرسالتين اصطلاح بين الصديقين: «النوارس» هي بطاقات الدعوة المطبوعة، و«القارب الأحمر» هو علبة الكعكة.",
+        "kind": "relation",
+        "subject_ids": [
+          "rima",
+          "adnan",
+          "obj_msgs"
+        ],
+        "spoiler_level": 2
+      },
+      {
+        "id": "f_rima_wrote",
+        "statement_ar": "كتبت ريما الورقة تدرّباً على لعبة شفرة، ونسيتها بين صفحات الكتاب فلم تتعمد إخفاءها ولا تسليمها لأحد.",
+        "kind": "event",
+        "subject_ids": [
+          "rima",
+          "obj_sheet"
+        ],
+        "spoiler_level": 2,
+        "time": {
+          "start_min": 90,
+          "precision": "exact"
+        },
+        "location_id": "loc_library",
+        "science_ko_refs": [
+          "KO-RS-06-004"
+        ]
+      },
+      {
+        "id": "f_hall_booked",
+        "statement_ar": "حُجزت قاعة المكتبة الصغيرة يوم الخميس عند الخامسة باسم الطالبين لمناسبة تكريمية.",
+        "kind": "state",
+        "subject_ids": [
+          "rima",
+          "adnan",
+          "loc_office"
+        ],
+        "spoiler_level": 1
+      },
+      {
+        "id": "f_bakery_ordered",
+        "statement_ar": "طُلبت كعكة وعلبة حمراء تُسلَّم يوم الخميس عند الثالثة والنصف بعبارة تهنئة بالتقاعد.",
+        "kind": "state",
+        "subject_ids": [
+          "adnan"
+        ],
+        "spoiler_level": 1
+      },
+      {
+        "id": "f_exam_window",
+        "statement_ar": "الامتحانات انتهت قبل أسبوعين، ولا اختبار مقرر لصف الطالبين قبل خمسة أسابيع.",
+        "kind": "state",
+        "subject_ids": [
+          "loc_office"
+        ],
+        "spoiler_level": 1
+      },
+      {
+        "id": "f_key_fits",
+        "statement_ar": "ترتيب تكرار الحروف في الورقة يوافق في أعلاه ترتيب العربية، فالإبدال بسيط ثابت ويمكن فكه، مع الإقرار بأن العينة قصيرة.",
+        "kind": "relation",
+        "subject_ids": [
+          "obj_sheet",
+          "loc_sijil"
+        ],
+        "spoiler_level": 2,
+        "location_id": "loc_sijil",
+        "science_ko_refs": [
+          "KO-RS-06-012"
+        ]
+      },
+      {
+        "id": "f_party_plan",
+        "statement_ar": "موضوع الورقة والرسالتين ترتيب مناسبة سرية لتكريم معلمة تتقاعد، لا اختبار ولا إجابات.",
+        "kind": "relation",
+        "subject_ids": [
+          "obj_sheet",
+          "obj_msgs",
+          "rima",
+          "adnan"
+        ],
+        "spoiler_level": 3,
+        "science_ko_refs": [
+          "KO-RS-06-004",
+          "KO-RS-06-006"
+        ]
+      },
+      {
+        "id": "f_not_exam",
+        "statement_ar": "لا صلة للورقة ولا للرسالتين بأي امتحان، فلا شيء فيهما من أسئلة أو إجابات أو موعد اختبار.",
+        "kind": "relation",
+        "subject_ids": [
+          "obj_sheet",
+          "obj_msgs",
+          "maher"
+        ],
+        "spoiler_level": 3,
+        "science_ko_refs": [
+          "KO-RS-06-002",
+          "KO-RS-05-001"
+        ]
+      }
+    ],
+    "claims": [
+      {
+        "id": "cl_maher_cheat",
+        "statement_ar": "الورقة والرسالتان خطة لتبادل إجابات اختبار قريب.",
+        "kind": "honest_mistake",
+        "held_by": [
+          "maher"
+        ],
+        "true_fact_id": "f_not_exam",
+        "contradicted_by_evidence_ids": [
+          "ev_decoded",
+          "ev_exam_schedule",
+          "ev_hall_booking"
+        ]
+      },
+      {
+        "id": "cl_adnan_joke",
+        "statement_ar": "هذه رسائل مزاح بيننا، ولا شيء وراءها.",
+        "kind": "half_truth",
+        "held_by": [
+          "adnan"
+        ],
+        "true_fact_id": "f_codewords",
+        "contradicted_by_evidence_ids": [
+          "ev_bakery_order",
+          "ev_hall_booking"
+        ]
+      }
+    ]
+  },
+  "timeline": [
+    {
+      "id": "te_msg1",
+      "description_ar": "عدنان ينشر عبارة «النوارس أورقت» بدل أن يرسلها في محادثتهما الخاصة.",
+      "time": {
+        "start_min": 10,
+        "precision": "exact"
+      },
+      "location_id": "loc_board",
+      "actor_ids": [
+        "adnan"
+      ],
+      "fact_ids": [
+        "f_msgs_posted"
+      ],
+      "motivated_by_ar": "أراد أن يخبر ريما أن البطاقات صارت جاهزة"
+    },
+    {
+      "id": "te_msg2",
+      "description_ar": "ريما ترد بعبارة «القارب الأحمر جاهز» في السلسلة نفسها.",
+      "time": {
+        "start_min": 25,
+        "precision": "exact"
+      },
+      "location_id": "loc_board",
+      "actor_ids": [
+        "rima"
+      ],
+      "fact_ids": [
+        "f_msgs_posted",
+        "f_codewords"
+      ],
+      "motivated_by_ar": "أرادت أن تؤكد أن العلبة جاهزة"
+    },
+    {
+      "id": "te_return",
+      "description_ar": "ريما تعيد الكتاب إلى مكتبة الجامعة والورقة بين صفحاته.",
+      "time": {
+        "start_min": 90,
+        "precision": "exact"
+      },
+      "location_id": "loc_library",
+      "actor_ids": [
+        "rima"
+      ],
+      "fact_ids": [
+        "f_loan_returned",
+        "f_rima_wrote"
+      ],
+      "motivated_by_ar": "حان موعد إعادة الكتاب المعار"
+    },
+    {
+      "id": "te_found",
+      "description_ar": "أمينة المكتبة تجد الورقة بين الصفحات.",
+      "time": {
+        "start_min": 135,
+        "precision": "exact"
+      },
+      "location_id": "loc_library",
+      "actor_ids": [
+        "sawsan"
+      ],
+      "fact_ids": [
+        "f_sheet_found"
+      ],
+      "motivated_by_ar": "فحص روتيني للكتب المعادة"
+    },
+    {
+      "id": "te_maher",
+      "description_ar": "مشرف الامتحانات يطّلع على الورقة والرسالتين ويرفع الأمر.",
+      "time": {
+        "start_min": 165,
+        "precision": "exact"
+      },
+      "location_id": "loc_office",
+      "actor_ids": [
+        "maher"
+      ],
+      "fact_ids": [
+        "f_maher_suspects",
+        "f_maher_basis"
+      ],
+      "motivated_by_ar": "قلق من الغش في المدرسة"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_cipher_sheet",
+      "title_ar": "الورقة ذات الحروف المبدلة",
+      "kind": "physical",
+      "content_ar": "ورقة بخط اليد وُجدت بين صفحات كتاب معار، بلا عنوان ولا توقيع. أربعة أسطر:\nزنزاحزدل نغعك ححرزوم كطذ زنقذكا\nعخحذو هك رزول زنذشحغل رغن زنقزذال\nومعزع كبثت زنشوشل طتكذز حبثت زنموطزح\nنز حقغتطز زبمز هلك ذهزخزل نلز\n(بين الكلمات مسافات، ولا تظهر همزات ولا نقاط شكل.)",
+      "acquired_by_action_ids": [
+        "a_get_sheet"
+      ],
+      "supports_fact_ids": [
+        "f_sheet_found"
+      ],
+      "reliability": "strong",
+      "limits_ar": "تثبت وجود نص مكتوب بحروف مبدلة؛ لا تقول وحدها ما معناه ولا من كتبه ولا لماذا.",
+      "location_id": "loc_library"
+    },
+    {
+      "id": "ev_chat_msgs",
+      "title_ar": "رسالتا سلسلة النقاش",
+      "kind": "digital",
+      "content_ar": "سلسلة نقاش الصف — صباح الاثنين\n07:10 عدنان: «النوارس أورقت.»\n07:25 ريما: «والقارب الأحمر جاهز.»\n(لم يردّ أحد، وحُذفت الرسالتان من السلسلة ظهراً.)",
+      "acquired_by_action_ids": [
+        "a_get_chat"
+      ],
+      "supports_fact_ids": [
+        "f_msgs_posted"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "نصّان كُتبا بعبارات رمزية؛ يثبتان أن الصديقين تبادلا هذا الكلام، ولا يثبتان معناه ولا غرضه.",
+      "is_red_herring": true,
+      "location_id": "loc_board"
+    },
+    {
+      "id": "ev_book_loan",
+      "title_ar": "سجل إعارة الكتاب",
+      "kind": "documentary",
+      "content_ar": "سجل مكتبة جامعة القنطرة — الإعارة للمدارس\nالكتاب: «مبادئ في علم الحروف»\nالمستعير: ريما الحداد (ثانوية القنطرة)\nأُعير: الأحد 14:20\nأُعيد: الاثنين 08:30\nحالة الكتاب عند الإعادة: سليم، وُجدت ورقة بين الصفحات 41 و42",
+      "acquired_by_action_ids": [
+        "a_get_loan"
+      ],
+      "supports_fact_ids": [
+        "f_loan_returned"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يثبت من استعار الكتاب ومتى أعاده؛ لا يثبت من كتب الورقة ولا أنها وُضعت بقصد.",
+      "location_id": "loc_library"
+    },
+    {
+      "id": "ev_ref_freq",
+      "title_ar": "الجدول المرجعي لتكرار الحروف",
+      "kind": "documentary",
+      "content_ar": "دار السِّجِل — جدول تكرار الحروف في نصوص عربية منوعة (عينة 50 ألف حرف، بعد توحيد الهمزات والتاء المربوطة والألف المقصورة)\nالترتيب من الأكثر إلى الأقل:\nا ل ي م و ن ه ت ر ب ع ك د ف س ق ح ج\nملاحظة: الأحرف الخمسة الأولى تتقدم في معظم النصوص الطويلة، أما النصوص القصيرة فقد يتبدل الترتيب بعد المراتب الأولى.",
+      "acquired_by_action_ids": [
+        "a_get_ref"
+      ],
+      "supports_fact_ids": [
+        "f_ref_exists"
+      ],
+      "reliability": "strong",
+      "limits_ar": "جدول مرجعي لنصوص طويلة منوعة؛ لا يطابق بالضرورة ترتيب نص قصير بعينه.",
+      "location_id": "loc_sijil"
+    },
+    {
+      "id": "ev_freq_table",
+      "title_ar": "جدول عدّ حروف الورقة",
+      "kind": "lab_result",
+      "content_ar": "أداة العدّ في دار السِّجِل — الورقة ذات الحروف المبدلة\nأُعلن التوحيد قبل العدّ: الهمزات صارت ألفاً، والتاء المربوطة هاءً، والألف المقصورة ياءً، وأُهملت المسافات.\nعدد الأحرف المعدودة: ١١٠ حرفاً\nأعلى ثمانية أحرف:\nز: ٢١ مرة\nن: ١٠ مرة\nح: ٨ مرة\nل: ٨ مرة\nك: ٧ مرة\nذ: ٧ مرة\nو: ٦ مرة\nغ: ٤ مرة\nأقل الأحرف تكراراً مرّة أو مرتين: ٣ حرفاً.",
+      "acquired_by_action_ids": [
+        "a_count_letters"
+      ],
+      "supports_fact_ids": [
+        "f_key_fits"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "العينة قصيرة (نحو مئة حرف)؛ الفروق الصغيرة بين المراتب لا تدل على شيء، ولا يوثق إلا بالمراتب الأولى. والتوحيد قبل العد يغيّر الأعداد قليلاً.",
+      "is_red_herring": true,
+      "forensic_ko_ref": "KO-RS-06-012",
+      "location_id": "loc_sijil"
+    },
+    {
+      "id": "ev_decoded",
+      "title_ar": "ورقة الفك بعد المقارنة بالجدول",
+      "kind": "lab_result",
+      "content_ar": "ورقة الفك — مقارنة تكرار الورقة بالجدول المرجعي\nأبدلنا أولاً أكثر الأحرف تكراراً، ثم ثبّتنا الباقي بأنماط الكلمات (أداة التعريف في أول الكلمة وتكرار حرف في آخرها).\nجدول الإبدال:\nز ← ا  (مؤكد)\nن ← ل  (مؤكد)\nح ← ت  (مؤكد)\nل ← ه  (مؤكد)\nك ← ي  (مؤكد)\nذ ← م  (مؤكد)\nو ← ع  (مؤكد)\nغ ← ب  (مؤكد)\nع ← ن  (مؤكد)\nم ← د  (مؤكد)\nط ← و  (مؤكد)\nت ← ر  (مؤكد)\nا ← س  (مؤكد)\nر ← ق  (مؤكد)\nق ← خ  (مؤكد)\nه ← ف  (مؤكد)\nش ← ك  (مؤكد)\nب ← ح  (مؤكد)\nخ ← ج  (مرجّح من سياق الكلمة)\nث ← ض  (مرجّح من سياق الكلمة)\nد ← ذ  (مرجّح من سياق الكلمة)\nالنص بعد الفك (بعد التوحيد):\nالاستاذه لبني تتقاعد يوم الخميس\nنجتمع في قاعه المكتبه قبل الخامسه\nعدنان يحضر الكعكه وريما تحضر الدعوات\nلا تخبروا احدا فهي مفاجاه لها",
+      "acquired_by_action_ids": [
+        "a_decode_compare"
+      ],
+      "supports_fact_ids": [
+        "f_key_fits"
+      ],
+      "reliability": "strong",
+      "limits_ar": "نتيجة قراءة لنص قصير؛ الأحرف المرجّحة من السياق قد تحتمل غيرها، ونص الفك يخبر بما كُتب لا بمن كتبه أو ما يريده منه الآخرون.",
+      "contradicts_claim_ids": [
+        "cl_maher_cheat"
+      ],
+      "forensic_ko_ref": "KO-RS-06-012",
+      "location_id": "loc_sijil"
+    },
+    {
+      "id": "ev_hall_booking",
+      "title_ar": "نموذج حجز قاعة المكتبة الصغيرة",
+      "kind": "documentary",
+      "content_ar": "نموذج حجز قاعة — ثانوية القنطرة\nالحاجزان: ريما الحداد، عدنان البيطار\nالقاعة: المكتبة الصغيرة\nالموعد: الخميس 17:00\nالغرض: «لقاء تقدير لمعلمتنا السابقة الأستاذة لبنى»\nعدد الحضور المتوقع: 25\nموافقة: المكتب المدرسي",
+      "acquired_by_action_ids": [
+        "a_get_booking"
+      ],
+      "supports_fact_ids": [
+        "f_hall_booked"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يثبت حجزاً ومناسبة مكتوبة؛ لا يثبت أن الورقة تخص هذا اللقاء، ولا يكفي وحده لنفي كل احتمال آخر.",
+      "contradicts_claim_ids": [
+        "cl_maher_cheat",
+        "cl_adnan_joke"
+      ],
+      "location_id": "loc_office"
+    },
+    {
+      "id": "ev_bakery_order",
+      "title_ar": "إيصال طلب كعكة",
+      "kind": "documentary",
+      "content_ar": "مخبز «السنابل» — إيصال طلب\nكعكة كبيرة بالشوكولا في علبة حمراء\nالاستلام: الخميس 15:30\nالعبارة المطلوبة على الكعكة: «شكراً يا أستاذتنا، وهنيئاً بالتقاعد»\nالطالب: عدنان البيطار",
+      "acquired_by_action_ids": [
+        "a_get_bakery"
+      ],
+      "supports_fact_ids": [
+        "f_bakery_ordered"
+      ],
+      "reliability": "strong",
+      "limits_ar": "إيصال تجاري يبيّن الطلب والعبارة؛ لا يبيّن ما كُتب في الورقة، ولا يثبت أن الطلب يخص الرسالتين إلا بمقارنة الاصطلاح.",
+      "contradicts_claim_ids": [
+        "cl_adnan_joke"
+      ],
+      "location_id": "loc_office"
+    },
+    {
+      "id": "ev_print_receipt",
+      "title_ar": "إيصال طباعة بطاقات الدعوة",
+      "kind": "documentary",
+      "content_ar": "مطبعة الحي — إيصال\n30 بطاقة دعوة بشعار «نورس» أزرق\nتاريخ التسليم: الأحد\nصاحبة الطلب: ريما الحداد",
+      "acquired_by_action_ids": [
+        "a_get_print"
+      ],
+      "supports_fact_ids": [
+        "f_print_exists"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "يثبت طباعة بطاقات بشعار نورس؛ لا يثبت وحده أن عبارة الرسالة تعني هذه البطاقات.",
+      "location_id": "loc_office"
+    },
+    {
+      "id": "ev_exam_schedule",
+      "title_ar": "جدول الامتحانات المعلن",
+      "kind": "documentary",
+      "content_ar": "ثانوية القنطرة — لوحة الإعلانات\nانتهت امتحانات الفصل يوم الثلاثاء قبل الماضي.\nالاختبار القصير القادم لصف التاسع: بعد خمسة أسابيع من اليوم.\nلا اختبارات إضافية مقررة قبل ذلك.",
+      "acquired_by_action_ids": [
+        "a_get_exams"
+      ],
+      "supports_fact_ids": [
+        "f_exam_window"
+      ],
+      "reliability": "strong",
+      "limits_ar": "جدول رسمي معلن؛ لا يمنع في ذاته محاولة غش في اختبار غير معلن، لكن لا أثر لاختبار قريب.",
+      "location_id": "loc_office"
+    },
+    {
+      "id": "ev_maher_statement",
+      "title_ar": "إفادة ماهر الصيرفي (ملخص)",
+      "kind": "testimonial",
+      "content_ar": "ملخص إفادة ماهر الصيرفي:\n«رأيت ورقة بحروف غريبة ورسالتين غامضتين، فظننتها خطة غش. لم أراجع جدول الامتحانات الرسمي.»",
+      "acquired_by_action_ids": [
+        "a_note_maher"
+      ],
+      "supports_fact_ids": [
+        "f_maher_basis"
+      ],
+      "reliability": "weak",
+      "limits_ar": "ظن صاحبه من غموض النص؛ لا يقاس بالظن بل بالجدول والسجلات.",
+      "location_id": "loc_office"
+    },
+    {
+      "id": "ev_rima_statement",
+      "title_ar": "إفادة ريما الحداد (ملخص)",
+      "kind": "testimonial",
+      "content_ar": "ملخص إفادة ريما الحداد:\n«كتبت الورقة تدرباً على لعبة شفرة، ونسيتها في الكتاب. وعبارتا الرسالتين اصطلاح بيني وبين عدنان.»",
+      "acquired_by_action_ids": [
+        "a_note_rima"
+      ],
+      "supports_fact_ids": [
+        "f_rima_wrote"
+      ],
+      "reliability": "weak",
+      "limits_ar": "إفادة صاحبة الشأن؛ تؤيدها سجلات الإعارة والحجز ولا تغني عنها.",
+      "location_id": "loc_library"
+    },
+    {
+      "id": "ev_adnan_statement",
+      "title_ar": "إفادة عدنان البيطار (ملخص)",
+      "kind": "testimonial",
+      "content_ar": "ملخص إفادة عدنان البيطار:\n«قلت إنها مزحة لأني لم أرد أن أفسد المفاجأة. طلبت الكعكة بنفسي.»",
+      "acquired_by_action_ids": [
+        "a_note_adnan"
+      ],
+      "supports_fact_ids": [
+        "f_bakery_exists"
+      ],
+      "reliability": "weak",
+      "limits_ar": "إفادة صاحب مصلحة في بقاء السر؛ يعدّل قوله الأول بعد أن رأى الإيصالات.",
+      "location_id": "loc_office"
+    },
+    {
+      "id": "ev_sawsan_statement",
+      "title_ar": "إفادة سوسن الخطيب (ملخص)",
+      "kind": "testimonial",
+      "content_ar": "ملخص إفادة سوسن الخطيب:\n«وجدت الورقة بين الصفحتين 41 و42 حين فحصت الكتاب المعاد. لا أعرف شيئاً عن غرضها.»",
+      "acquired_by_action_ids": [
+        "a_note_sawsan"
+      ],
+      "supports_fact_ids": [
+        "f_loan_record_exists"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "شهادة على موضع الورقة فقط، ولا تقول شيئاً عن كاتبها أو غرضها.",
+      "location_id": "loc_library"
+    }
+  ],
+  "evidence_graph": {
+    "inferences": [
+      {
+        "id": "i_a_key",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_cipher_sheet"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_freq_table"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_ref_freq"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_key_fits"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "أكثر أحرف الورقة تكراراً تقابل أكثر حروف العربية تكراراً في الجدول المرجعي، فالإبدال ثابت ويمكن فكه، مع التنبيه إلى قصر العينة.",
+        "skill_ko_refs": [
+          "KO-RS-06-012"
+        ]
+      },
+      {
+        "id": "i_a_plan",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_key_fits"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_decoded"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_party_plan"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "النص الذي خرج من الفك متصل ومفهوم، وموضوعه تهيئة مناسبة سرية لمعلمة؛ فهذا ما تقوله الورقة.",
+        "skill_ko_refs": [
+          "KO-RS-06-004"
+        ]
+      },
+      {
+        "id": "i_a_noexam",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_key_fits"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_decoded"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_not_exam"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "لا ورد في النص المفكوك سؤال ولا مادة ولا موعد اختبار، فليس خطة لتبادل إجابات.",
+        "skill_ko_refs": [
+          "KO-RS-06-004",
+          "KO-RS-06-002"
+        ]
+      },
+      {
+        "id": "i_b_plan",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_hall_booking"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_bakery_order"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_party_plan"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "حجز القاعة بغرض تقدير معلمة وطلب كعكة بعبارة تهنئة بالتقاعد في اليوم نفسه يفسران الرسالتين دون الحاجة إلى فك الورقة.",
+        "skill_ko_refs": [
+          "KO-RS-06-006"
+        ]
+      },
+      {
+        "id": "i_b_noexam",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_exam_schedule"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_hall_booking"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_not_exam"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "الامتحانات انتهت ولا اختبار قبل خمسة أسابيع، والحجز مكتوب لمناسبة تقدير؛ فلا موضع لخطة غش في هذه الأيام.",
+        "skill_ko_refs": [
+          "KO-RS-06-002",
+          "KO-RS-05-001"
+        ]
+      },
+      {
+        "id": "i_wrote",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_book_loan"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_rima_statement"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_rima_wrote"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "سجل الإعارة يضع الكتاب بيد ريما وقت وجود الورقة، وإفادتها تقول إنها كتبتها تدرباً وسهت عنها؛ وهذا لا يدل على قصد الإخفاء.",
+        "skill_ko_refs": [
+          "KO-RS-06-004"
+        ]
+      },
+      {
+        "id": "i_codes",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_print_receipt"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_chat_msgs"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_codewords"
+        },
+        "relation": "supports",
+        "strength": "suggestive",
+        "rule_ar": "طباعة بطاقات بشعار نورس تقابل «النوارس أورقت»، لكنها لا تثبت المعنى وحدها.",
+        "skill_ko_refs": [
+          "KO-RS-06-006"
+        ]
+      },
+      {
+        "id": "i_claim_maher",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_not_exam"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_maher_cheat"
+        },
+        "relation": "contradicts_claim",
+        "strength": "strong",
+        "rule_ar": "ظن الغش جاء من غموض الشكل لا من محتوى؛ وحين وُجد المحتوى والجدول لم يبق للظن سند.",
+        "skill_ko_refs": [
+          "KO-RS-05-001",
+          "KO-RS-05-014"
+        ]
+      },
+      {
+        "id": "i_claim_adnan",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_bakery_order"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_hall_booking"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_adnan_joke"
+        },
+        "relation": "contradicts_claim",
+        "strength": "strong",
+        "rule_ar": "الإيصال والحجز يبيّنان تحضيراً حقيقياً؛ فكلام عدنان «مزاح» أخفى سراً لا مزحة، وإخفاء المفاجأة ليس إخفاء لذنب.",
+        "skill_ko_refs": [
+          "KO-RS-05-014"
+        ]
+      },
+      {
+        "id": "i_support_party",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_party_plan"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_party"
+        },
+        "relation": "supports",
+        "strength": "strong",
+        "rule_ar": "التكريم السري يفسر الورقة والرسالتين والحجز والإيصال معاً، ويفسر لماذا بقي المضمون مستوراً.",
+        "skill_ko_refs": [
+          "KO-RS-06-006"
+        ]
+      },
+      {
+        "id": "i_rule_cheat",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_not_exam"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_cheat"
+        },
+        "relation": "rules_out",
+        "strength": "conclusive",
+        "rule_ar": "لو كانت خطة غش لوُجد فيها ما يخص اختباراً قريباً؛ وليس في النص ولا في الجدول ما يدل على ذلك.",
+        "skill_ko_refs": [
+          "KO-RS-06-008"
+        ]
+      },
+      {
+        "id": "i_rule_cheat_b",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_party_plan"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_cheat"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "إذا كان للورقة موضوع آخر موثق بحجز وإيصال فلا يبقى لتفسير الغش حاجة.",
+        "skill_ko_refs": [
+          "KO-RS-06-008"
+        ]
+      },
+      {
+        "id": "i_rule_nonsense",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_key_fits"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_nonsense"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "تطابق مراتب التكرار مع الجدول وخروج نص مفهوم عند الفك يدلان على أن الورقة ليست حروفاً عشوائية.",
+        "skill_ko_refs": [
+          "KO-RS-06-012"
+        ]
+      },
+      {
+        "id": "i_rule_nonsense_b",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_party_plan"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_nonsense"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "الحجز والإيصال يربطان الرسالتين بحدث حقيقي، فليست بلا معنى.",
+        "skill_ko_refs": [
+          "KO-RS-06-008"
+        ]
+      }
+    ]
+  },
+  "character_knowledge": [
+    {
+      "character_id": "maher",
+      "knows": [
+        {
+          "fact_id": "f_maher_basis",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": [
+        {
+          "claim_id": "cl_maher_cheat",
+          "stance": "sincere"
+        }
+      ]
+    },
+    {
+      "character_id": "rima",
+      "knows": [
+        {
+          "fact_id": "f_loan_returned",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [
+        {
+          "fact_id": "f_codewords",
+          "reveal_when": {
+            "presented": {
+              "evidence_id": "ev_chat_msgs",
+              "to_character": "rima"
+            }
+          },
+          "cover_claim_id": null,
+          "reveal_line_id": "rm_codes"
+        },
+        {
+          "fact_id": "f_print_exists",
+          "reveal_when": {
+            "presented": {
+              "evidence_id": "ev_chat_msgs",
+              "to_character": "rima"
+            }
+          },
+          "cover_claim_id": null,
+          "reveal_line_id": "rm_codes"
+        },
+        {
+          "fact_id": "f_rima_wrote",
+          "reveal_when": {
+            "presented": {
+              "evidence_id": "ev_book_loan",
+              "to_character": "rima"
+            }
+          },
+          "cover_claim_id": null,
+          "reveal_line_id": "rm_wrote"
+        }
+      ],
+      "believes": []
+    },
+    {
+      "character_id": "adnan",
+      "knows": [],
+      "hides": [
+        {
+          "fact_id": "f_bakery_exists",
+          "reveal_when": {
+            "presented": {
+              "evidence_id": "ev_chat_msgs",
+              "to_character": "adnan"
+            }
+          },
+          "cover_claim_id": "cl_adnan_joke",
+          "reveal_line_id": "ad_bakery"
+        },
+        {
+          "fact_id": "f_codewords",
+          "reveal_when": {
+            "presented": {
+              "evidence_id": "ev_chat_msgs",
+              "to_character": "adnan"
+            }
+          },
+          "cover_claim_id": "cl_adnan_joke",
+          "reveal_line_id": "ad_bakery"
+        }
+      ],
+      "believes": [
+        {
+          "claim_id": "cl_adnan_joke",
+          "stance": "deliberate_lie"
+        }
+      ]
+    },
+    {
+      "character_id": "sawsan",
+      "knows": [
+        {
+          "fact_id": "f_loan_record_exists",
+          "access": "professional",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_ref_exists",
+          "access": "professional",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    },
+    {
+      "character_id": "hanan",
+      "knows": [
+        {
+          "fact_id": "f_hall_booking_exists",
+          "access": "professional",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "h_cheat",
+      "statement_ar": "الورقة والرسالتان خطة لتبادل إجابات في اختبار قريب.",
+      "is_true": false,
+      "plausibility_at_start": "high"
+    },
+    {
+      "id": "h_nonsense",
+      "statement_ar": "الورقة حروف عشوائية بلا معنى يمكن فكه، والرسالتان مزحة فارغة.",
+      "is_true": false,
+      "plausibility_at_start": "medium"
+    },
+    {
+      "id": "h_party",
+      "statement_ar": "الورقة والرسالتان تحضير لمناسبة تكريمية سرية، وبقيت الورقة في الكتاب سهواً.",
+      "is_true": true,
+      "plausibility_at_start": "low",
+      "suspect_id": "rima"
+    }
+  ],
+  "misdirection_plan": [
+    {
+      "id": "rh_chat",
+      "points_to_hypothesis_id": "h_cheat",
+      "planted_via_ar": "رسالتان غامضتان تتبادلهما طالبان صباح يوم دراسي مع ورقة مشفرة.",
+      "evidence_ids": [
+        "ev_chat_msgs"
+      ],
+      "refuted_by_inference_ids": [
+        "i_rule_cheat",
+        "i_rule_cheat_b",
+        "i_claim_maher"
+      ],
+      "fairness_note_ar": "الغموض ليس دليل غش؛ جدول الامتحانات المعلن وحجز القاعة وإيصال المخبز متاحة للاعب بلا مفاتيح خفية، ونص الفك متاح بالعدّ والمقارنة."
+    },
+    {
+      "id": "rh_freq",
+      "points_to_hypothesis_id": "h_nonsense",
+      "planted_via_ar": "جدول العدّ لعينة قصيرة تبدو فيه فروق صغيرة بين المراتب، فقد يظن اللاعب أن لا نمط.",
+      "evidence_ids": [
+        "ev_freq_table"
+      ],
+      "refuted_by_inference_ids": [
+        "i_rule_nonsense",
+        "i_rule_nonsense_b",
+        "i_a_key"
+      ],
+      "fairness_note_ar": "الجدول نفسه يعلن قصر العينة ويبيّن أن المراتب الأولى فقط يوثق بها، وهي تطابق الجدول المرجعي؛ والحجز والإيصال يؤكدان وجود معنى من خارج الورقة."
+    }
+  ],
+  "learning_objectives": [
+    {
+      "id": "lo_induct",
+      "statement_ar": "يقدّر ما تسمح به عينة قصيرة من الحروف، ويوثّق المراتب الأولى دون غيرها.",
+      "skill_ko_ref": "KO-RS-06-012",
+      "observable_behaviors_ar": [
+        "يشغّل العدّ ويقارنه بالمرجع",
+        "يذكر قصر العينة حداً"
+      ],
+      "evidence_sources": [
+        "action_log",
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_source",
+      "statement_ar": "يفرّق بين السجل الأصلي والنص المفكوك والقول، ويقيس القول بالسجل.",
+      "skill_ko_ref": "KO-RS-06-002",
+      "observable_behaviors_ar": [
+        "يصنّف المصادر",
+        "لا يبني على الظن"
+      ],
+      "evidence_sources": [
+        "evidence_board"
+      ]
+    },
+    {
+      "id": "lo_hyp",
+      "statement_ar": "يولّد فرضيات متعددة ويستبعد ما تنقضه الأدلة.",
+      "skill_ko_ref": "KO-RS-06-006",
+      "observable_behaviors_ar": [
+        "يضيف فرضيات",
+        "يستبعد بدليل"
+      ],
+      "evidence_sources": [
+        "hypothesis_ledger"
+      ]
+    },
+    {
+      "id": "lo_obs",
+      "statement_ar": "يفصل بين ما تقوله الورقة وما يُستنتج عن غرضها.",
+      "skill_ko_ref": "KO-RS-06-004",
+      "observable_behaviors_ar": [
+        "يربط الدليل بالفرضية باتجاه صحيح",
+        "يميز الفك من الغرض"
+      ],
+      "evidence_sources": [
+        "evidence_board",
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_calib",
+      "statement_ar": "يصوغ نسبة الترجيح بحدودها.",
+      "skill_ko_ref": "KO-RS-06-021",
+      "observable_behaviors_ar": [
+        "يختار ثقة معقولة",
+        "يذكر حدوداً"
+      ],
+      "evidence_sources": [
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_revise",
+      "statement_ar": "يراجع رأيه الأول حين يظهر ما يخالفه.",
+      "skill_ko_ref": "KO-RS-06-009",
+      "observable_behaviors_ar": [
+        "يغيّر فرضيته الرائدة بدليل"
+      ],
+      "evidence_sources": [
+        "hypothesis_ledger"
+      ]
+    }
+  ],
+  "mechanics": {
+    "time_budget_units": 40,
+    "actions": [
+      {
+        "id": "a_get_sheet",
+        "type": "examine",
+        "label_ar": "افحص الورقة التي وُجدت في الكتاب",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_cipher_sheet"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_library",
+        "telemetry_code": "GET_SHEET"
+      },
+      {
+        "id": "a_get_chat",
+        "type": "examine",
+        "label_ar": "افتح سلسلة نقاش الصف",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_chat_msgs"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_board",
+        "telemetry_code": "GET_CHAT"
+      },
+      {
+        "id": "a_get_exams",
+        "type": "examine",
+        "label_ar": "اقرأ جدول الامتحانات المعلن",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_exam_schedule"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_office",
+        "telemetry_code": "GET_EXAMS"
+      },
+      {
+        "id": "a_int_maher",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة ماهر",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "maher",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "maher",
+        "telemetry_code": "INT_MAHER"
+      },
+      {
+        "id": "a_int_rima",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة ريما",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "rima",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "rima",
+        "telemetry_code": "INT_RIMA"
+      },
+      {
+        "id": "a_int_adnan",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة عدنان",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "adnan",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "adnan",
+        "telemetry_code": "INT_ADNAN"
+      },
+      {
+        "id": "a_int_sawsan",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة سوسن",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "sawsan",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "sawsan",
+        "telemetry_code": "INT_SAWSAN"
+      },
+      {
+        "id": "a_int_hanan",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة حنان",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "hanan",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "hanan",
+        "telemetry_code": "INT_HANAN"
+      },
+      {
+        "id": "a_get_loan",
+        "type": "examine",
+        "label_ar": "اطلب سجل إعارة الكتاب",
+        "precondition": {
+          "fact_unlocked": "f_loan_record_exists"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_book_loan"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_library",
+        "telemetry_code": "GET_LOAN"
+      },
+      {
+        "id": "a_get_ref",
+        "type": "examine",
+        "label_ar": "اقرأ الجدول المرجعي لتكرار الحروف",
+        "precondition": {
+          "fact_unlocked": "f_ref_exists"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_ref_freq"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_sijil",
+        "telemetry_code": "GET_REF"
+      },
+      {
+        "id": "a_count_letters",
+        "type": "request_lab_test",
+        "label_ar": "اعدد حروف الورقة في دار السِّجِل",
+        "precondition": {
+          "has_evidence": "ev_cipher_sheet"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_freq_table"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_sijil",
+        "telemetry_code": "COUNT_LETTERS"
+      },
+      {
+        "id": "a_decode_compare",
+        "type": "request_lab_test",
+        "label_ar": "قارن العدّ بالجدول المرجعي وجرّب الفك",
+        "precondition": {
+          "all": [
+            {
+              "has_evidence": "ev_freq_table"
+            },
+            {
+              "has_evidence": "ev_ref_freq"
+            }
+          ]
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_decoded"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_sijil",
+        "telemetry_code": "DECODE_COMPARE"
+      },
+      {
+        "id": "a_get_booking",
+        "type": "examine",
+        "label_ar": "اطلب نموذج حجز القاعة",
+        "precondition": {
+          "fact_unlocked": "f_hall_booking_exists"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_hall_booking"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_office",
+        "telemetry_code": "GET_BOOKING"
+      },
+      {
+        "id": "a_get_bakery",
+        "type": "examine",
+        "label_ar": "اطلب إيصال المخبز من عدنان",
+        "precondition": {
+          "fact_unlocked": "f_bakery_exists"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_bakery_order"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_office",
+        "telemetry_code": "GET_BAKERY"
+      },
+      {
+        "id": "a_get_print",
+        "type": "examine",
+        "label_ar": "اطلب إيصال الطباعة من ريما",
+        "precondition": {
+          "fact_unlocked": "f_print_exists"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_print_receipt"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_office",
+        "telemetry_code": "GET_PRINT"
+      },
+      {
+        "id": "a_note_maher",
+        "type": "examine",
+        "label_ar": "دوّن إفادة ماهر",
+        "precondition": {
+          "fact_unlocked": "f_maher_basis"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_maher_statement"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "maher",
+        "telemetry_code": "NOTE_MAHER"
+      },
+      {
+        "id": "a_note_rima",
+        "type": "examine",
+        "label_ar": "دوّن إفادة ريما",
+        "precondition": {
+          "fact_unlocked": "f_rima_wrote"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_rima_statement"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "rima",
+        "telemetry_code": "NOTE_RIMA"
+      },
+      {
+        "id": "a_note_adnan",
+        "type": "examine",
+        "label_ar": "دوّن إفادة عدنان",
+        "precondition": {
+          "fact_unlocked": "f_bakery_exists"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_adnan_statement"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "adnan",
+        "telemetry_code": "NOTE_ADNAN"
+      },
+      {
+        "id": "a_note_sawsan",
+        "type": "examine",
+        "label_ar": "دوّن إفادة سوسن",
+        "precondition": {
+          "fact_unlocked": "f_loan_record_exists"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_sawsan_statement"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "sawsan",
+        "telemetry_code": "NOTE_SAWSAN"
+      },
+      {
+        "id": "p_chat_rima",
+        "type": "present_evidence",
+        "label_ar": "اعرض رسالتي النقاش على ريما",
+        "precondition": {
+          "presented": {
+            "evidence_id": "ev_chat_msgs",
+            "to_character": "rima"
+          }
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "PRESENTED_CHAT_RIMA"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "rima",
+        "telemetry_code": "P_CHAT_RIMA"
+      },
+      {
+        "id": "p_chat_adnan",
+        "type": "present_evidence",
+        "label_ar": "اعرض رسالتي النقاش على عدنان",
+        "precondition": {
+          "presented": {
+            "evidence_id": "ev_chat_msgs",
+            "to_character": "adnan"
+          }
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "PRESENTED_CHAT_ADNAN"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "adnan",
+        "telemetry_code": "P_CHAT_ADNAN"
+      },
+      {
+        "id": "p_loan_rima",
+        "type": "present_evidence",
+        "label_ar": "اعرض سجل الإعارة على ريما",
+        "precondition": {
+          "presented": {
+            "evidence_id": "ev_book_loan",
+            "to_character": "rima"
+          }
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "PRESENTED_LOAN_RIMA"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "rima",
+        "telemetry_code": "P_LOAN_RIMA"
+      },
+      {
+        "id": "a_hint",
+        "type": "request_hint",
+        "label_ar": "اطلب تلميحاً",
+        "precondition": {
+          "always": true
+        },
+        "effects": [],
+        "time_cost_units": 0,
+        "telemetry_code": "REQUEST_HINT"
+      },
+      {
+        "id": "a_accuse",
+        "type": "final_accusation",
+        "label_ar": "قدّم الاستنتاج النهائي",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "SUBMIT"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "FINAL_ACCUSATION"
+      },
+      {
+        "id": "ask_maher_f_maher_basis",
+        "type": "interview",
+        "label_ar": "[نموذج] maher يذكر f_maher_basis",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_maher_basis"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "maher",
+        "telemetry_code": "ASK_MAHER_F_MAHER_BASIS"
+      },
+      {
+        "id": "ask_rima_f_codewords",
+        "type": "interview",
+        "label_ar": "[نموذج] rima يكشف f_codewords",
+        "precondition": {
+          "all": [
+            {
+              "always": true
+            },
+            {
+              "presented": {
+                "evidence_id": "ev_chat_msgs",
+                "to_character": "rima"
+              }
+            }
+          ]
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_codewords"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "rima",
+        "telemetry_code": "ASK_RIMA_F_CODEWORDS"
+      },
+      {
+        "id": "ask_rima_f_print_exists",
+        "type": "interview",
+        "label_ar": "[نموذج] rima يكشف f_print_exists",
+        "precondition": {
+          "all": [
+            {
+              "always": true
+            },
+            {
+              "presented": {
+                "evidence_id": "ev_chat_msgs",
+                "to_character": "rima"
+              }
+            }
+          ]
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_print_exists"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "rima",
+        "telemetry_code": "ASK_RIMA_F_PRINT_EXISTS"
+      },
+      {
+        "id": "ask_rima_f_rima_wrote",
+        "type": "interview",
+        "label_ar": "[نموذج] rima يكشف f_rima_wrote",
+        "precondition": {
+          "all": [
+            {
+              "always": true
+            },
+            {
+              "presented": {
+                "evidence_id": "ev_book_loan",
+                "to_character": "rima"
+              }
+            }
+          ]
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_rima_wrote"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "rima",
+        "telemetry_code": "ASK_RIMA_F_RIMA_WROTE"
+      },
+      {
+        "id": "ask_adnan_f_bakery_exists",
+        "type": "interview",
+        "label_ar": "[نموذج] adnan يكشف f_bakery_exists",
+        "precondition": {
+          "all": [
+            {
+              "always": true
+            },
+            {
+              "presented": {
+                "evidence_id": "ev_chat_msgs",
+                "to_character": "adnan"
+              }
+            }
+          ]
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_bakery_exists"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "adnan",
+        "telemetry_code": "ASK_ADNAN_F_BAKERY_EXISTS"
+      },
+      {
+        "id": "ask_adnan_f_codewords",
+        "type": "interview",
+        "label_ar": "[نموذج] adnan يكشف f_codewords",
+        "precondition": {
+          "all": [
+            {
+              "always": true
+            },
+            {
+              "presented": {
+                "evidence_id": "ev_chat_msgs",
+                "to_character": "adnan"
+              }
+            }
+          ]
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_codewords"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "adnan",
+        "telemetry_code": "ASK_ADNAN_F_CODEWORDS"
+      },
+      {
+        "id": "ask_sawsan_f_loan_record_exists",
+        "type": "interview",
+        "label_ar": "[نموذج] sawsan يذكر f_loan_record_exists",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_loan_record_exists"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "sawsan",
+        "telemetry_code": "ASK_SAWSAN_F_LOAN_RECORD_EXISTS"
+      },
+      {
+        "id": "ask_sawsan_f_ref_exists",
+        "type": "interview",
+        "label_ar": "[نموذج] sawsan يذكر f_ref_exists",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_ref_exists"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "sawsan",
+        "telemetry_code": "ASK_SAWSAN_F_REF_EXISTS"
+      },
+      {
+        "id": "ask_hanan_f_hall_booking_exists",
+        "type": "interview",
+        "label_ar": "[نموذج] hanan يذكر f_hall_booking_exists",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_hall_booking_exists"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "hanan",
+        "telemetry_code": "ASK_HANAN_F_HALL_BOOKING_EXISTS"
+      }
+    ]
+  },
+  "state_machine": {
+    "id": "c017",
+    "initial": "briefing",
+    "type": "compound",
+    "states": {
+      "briefing": {
+        "description_ar": "الإحاطة",
+        "type": "atomic",
+        "on": {
+          "START": {
+            "target": "investigating"
+          }
+        }
+      },
+      "investigating": {
+        "description_ar": "التحقيق",
+        "type": "compound",
+        "initial": "gathering",
+        "states": {
+          "gathering": {
+            "type": "atomic",
+            "on": {
+              "OPEN_DEDUCTION": {
+                "target": "deducing"
+              }
+            }
+          },
+          "deducing": {
+            "type": "atomic",
+            "on": {
+              "BACK": {
+                "target": "gathering"
+              }
+            }
+          }
+        },
+        "on": {
+          "SUBMIT": {
+            "target": "review"
+          }
+        }
+      },
+      "review": {
+        "description_ar": "مراجعة",
+        "type": "atomic",
+        "on": {
+          "CLOSE": {
+            "target": "resolved"
+          }
+        }
+      },
+      "resolved": {
+        "description_ar": "إغلاق",
+        "type": "final"
+      }
+    }
+  },
+  "dialogue": {
+    "max_turns_per_interview": 10,
+    "llm_enabled": false,
+    "topics": [
+      {
+        "id": "t_suspicion",
+        "label_ar": "سبب الظن بالغش",
+        "example_questions_ar": [
+          "لماذا ظننت أنها خطة غش؟",
+          "هل راجعت جدول الامتحانات؟"
+        ],
+        "fact_ids": [
+          "f_maher_basis"
+        ],
+        "claim_ids": [
+          "cl_maher_cheat"
+        ]
+      },
+      {
+        "id": "t_book",
+        "label_ar": "الكتاب والورقة",
+        "example_questions_ar": [
+          "أين وجدت الورقة؟",
+          "هل للكتاب سجل إعارة؟",
+          "هل هناك جدول لتكرار الحروف؟",
+          "هل كتبتِ هذه الورقة؟"
+        ],
+        "fact_ids": [
+          "f_loan_record_exists",
+          "f_ref_exists",
+          "f_rima_wrote"
+        ]
+      },
+      {
+        "id": "t_messages",
+        "label_ar": "رسالتا النوارس",
+        "example_questions_ar": [
+          "ماذا تعني «النوارس أورقت»؟",
+          "وما «القارب الأحمر»؟",
+          "هل كانت مزحة؟"
+        ],
+        "fact_ids": [
+          "f_codewords",
+          "f_print_exists"
+        ],
+        "claim_ids": [
+          "cl_adnan_joke"
+        ]
+      },
+      {
+        "id": "t_prep",
+        "label_ar": "الحجز والطلبات",
+        "example_questions_ar": [
+          "هل حجزتما قاعة؟",
+          "هل طلبتَ شيئاً من مخبز؟"
+        ],
+        "fact_ids": [
+          "f_hall_booking_exists",
+          "f_bakery_exists"
+        ]
+      }
+    ]
+  },
+  "rubric": {
+    "reference_answer_ar": "فكّ الإبدال صحيح، لكن الواقع بريء: الورقة تدبير مناسبة سرية لتكريم معلمة متقاعدة، لا خطة غش. جدول العدّ لعينة قصيرة يوافق في مراتبه الأولى ترتيب العربية، والنص المفكوك متصل ولا يذكر اختباراً. ويتفق معه مسار مستقل من السجلات: حجز القاعة لمناسبة تقدير، وإيصال كعكة بعبارة تهنئة بالتقاعد، وجدول امتحانات لا يضم اختباراً قريباً. كتبت ريما الورقة تدرباً ونسيتها في كتاب معار. حدود الاستنتاج: العينة قصيرة وبعض الأحرف مرجّحة بالسياق، ولا يثبت الفك نية كاتبته، ولا نعرف إن كانت هناك أوراق أخرى.",
+    "criteria": [
+      {
+        "id": "c_source",
+        "name_ar": "تصنيف المصادر",
+        "objective_ids": [
+          "lo_source"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يصنّف"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "أخطأ في الأغلب"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "نصف صحيح"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمه صحيح"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كله صحيح"
+          }
+        ]
+      },
+      {
+        "id": "c_conflict",
+        "name_ar": "ترتيب الأدلة على الخط الزمني",
+        "objective_ids": [
+          "lo_obs"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.2,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يضع شيئاً"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "وضع قليلاً"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "وضع نصفها صحيحاً"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمها"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كلها في موضعها"
+          }
+        ]
+      },
+      {
+        "id": "c_links",
+        "name_ar": "ربط الأدلة بالفرضيات",
+        "objective_ids": [
+          "lo_induct",
+          "lo_obs"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.2,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لا روابط"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "قليلة"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "نصفها صحيح"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمها"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كلها دقيقة"
+          }
+        ]
+      },
+      {
+        "id": "c_uncertainty",
+        "name_ar": "معايرة الثقة",
+        "objective_ids": [
+          "lo_calib"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "ثقة مفرطة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "حدود قليلة"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "جزئية"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معقولة"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "معايَرة كاملة"
+          }
+        ]
+      },
+      {
+        "id": "c_revision",
+        "name_ar": "مراجعة الرأي",
+        "objective_ids": [
+          "lo_revise"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "بقي على فرضية مرفوضة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "لم يعلن فرضية"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "ثبت على فرضية سليمة"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "غيّر بدليل"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "غيّر بدليل ووثّق"
+          }
+        ]
+      },
+      {
+        "id": "c_elimination",
+        "name_ar": "استبعاد الفرضيات الخاطئة",
+        "objective_ids": [
+          "lo_hyp"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يستبعد"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "استبعد خطأً"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "فرضية بدليل"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "فرضيتين"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كل الخاطئة"
+          }
+        ]
+      },
+      {
+        "id": "c_justification",
+        "name_ar": "جودة الحجة المكتوبة",
+        "objective_ids": [
+          "lo_induct",
+          "lo_hyp"
+        ],
+        "scored_by": "human",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لا حجة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "ادعاء بلا سند"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "أدلة دون ربط"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "ربط الأدلة بالاستنتاج"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "ربط مع البدائل والحدود"
+          }
+        ]
+      }
+    ]
+  },
+  "hint_ladder": [
+    {
+      "id": "hg1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "ما الفرق بين أن تعرف ما كُتب وأن تعرف لماذا كُتب؟",
+      "trigger": {
+        "always": true
+      },
+      "assessment_weight": 0.02
+    },
+    {
+      "id": "hg2",
+      "level": 2,
+      "kind": "focus_area",
+      "text_ar": "حين تفحص الأدلة اسأل: هل وجودها في الملف يتعلق بما تقوله الورقة، أم بما يفعله أصحابها في اليوم نفسه؟",
+      "trigger": {
+        "has_evidence": "ev_chat_msgs"
+      },
+      "assessment_weight": 0.04
+    },
+    {
+      "id": "hk1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "كم حرفاً في عينتك؟ وهل يكفي لتثق بترتيب الأحرف كلها؟",
+      "trigger": {
+        "has_evidence": "ev_cipher_sheet"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_a_key"
+    },
+    {
+      "id": "hk2",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "قارن أعلى الأحرف تكراراً في الورقة بما يقابلها في جدول دار السِّجِل، ثم ثبّت الباقي بأنماط الكلمات.",
+      "trigger": {
+        "has_evidence": "ev_cipher_sheet"
+      },
+      "assessment_weight": 0.06,
+      "targets_inference_id": "i_a_key"
+    },
+    {
+      "id": "hk3",
+      "level": 3,
+      "kind": "partial_reveal",
+      "text_ar": "استعمل أداة العدّ في دار السِّجِل ثم قارنها بالجدول المرجعي وسترى أي الأحرف مؤكد وأيها مرجّح.",
+      "trigger": {
+        "has_evidence": "ev_cipher_sheet"
+      },
+      "assessment_weight": 0.1,
+      "targets_inference_id": "i_a_key"
+    },
+    {
+      "id": "hb1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "لو لم تفك الورقة أبداً، ما الذي في السجلات الرسمية يصلح لتفسير الرسالتين؟",
+      "trigger": {
+        "has_evidence": "ev_chat_msgs"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_b_plan"
+    },
+    {
+      "id": "hb2",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "اسأل المكتب المدرسي عن حجوزات الطالبين، واسأل عدنان عمّا طلبه.",
+      "trigger": {
+        "has_evidence": "ev_chat_msgs"
+      },
+      "assessment_weight": 0.06,
+      "targets_inference_id": "i_b_plan"
+    }
+  ],
+  "fairness_test": {
+    "requirements": {
+      "min_disjoint_proof_paths": 2,
+      "max_inference_depth": 3,
+      "all_red_herrings_refutable": true,
+      "culprit_uniquely_entailed": true,
+      "no_hidden_fact_dependency": true,
+      "max_required_actions": 40
+    },
+    "runs": []
+  },
+  "ending_explanation": {
+    "steps": [
+      {
+        "order": 1,
+        "text_ar": "عدّ حروف الورقة (نحو مئة حرف) يعطي مراتب أولى توافق ترتيب الحروف في الجدول المرجعي؛ فالإبدال ثابت وقابل للفك مع الاعتراف بقصر العينة.",
+        "uses_evidence_ids": [
+          "ev_cipher_sheet",
+          "ev_freq_table",
+          "ev_ref_freq"
+        ],
+        "inference_id": "i_a_key"
+      },
+      {
+        "order": 2,
+        "text_ar": "النص الذي ظهر عند الفك متصل، ويدور حول ترتيب مناسبة لمعلمة، ولا يحوي ما يخص امتحاناً.",
+        "uses_evidence_ids": [
+          "ev_decoded"
+        ],
+        "inference_id": "i_a_plan"
+      },
+      {
+        "order": 3,
+        "text_ar": "مسار مستقل لا يحتاج إلى فك: حجز القاعة لمناسبة تقدير وإيصال المخبز بعبارة التهنئة يفسران الرسالتين.",
+        "uses_evidence_ids": [
+          "ev_hall_booking",
+          "ev_bakery_order"
+        ],
+        "inference_id": "i_b_plan"
+      },
+      {
+        "order": 4,
+        "text_ar": "جدول الامتحانات يخلو من اختبار قريب، فظن الغش لم يستند إلى محتوى بل إلى غموض الشكل.",
+        "uses_evidence_ids": [
+          "ev_exam_schedule",
+          "ev_hall_booking"
+        ],
+        "inference_id": "i_b_noexam"
+      },
+      {
+        "order": 5,
+        "text_ar": "سجل الإعارة وإفادة ريما يبيّنان أنها كتبت الورقة تدرباً ونسيتها في الكتاب، ولم تقصد إخفاءها.",
+        "uses_evidence_ids": [
+          "ev_book_loan",
+          "ev_rima_statement"
+        ],
+        "inference_id": "i_wrote"
+      },
+      {
+        "order": 6,
+        "text_ar": "فك الشفرة أجاب عن سؤال «ماذا كُتب؟» فقط، أما «لماذا؟» فأجابت عنه السجلات من خارج الورقة.",
+        "uses_evidence_ids": [
+          "ev_decoded",
+          "ev_hall_booking"
+        ],
+        "inference_id": "i_rule_cheat"
+      }
+    ],
+    "alternative_paths_ar": [
+      "يمكن الوصول إلى النتيجة دون فك الورقة، من حجز القاعة وإيصال المخبز وجدول الامتحانات، لكن من يكتفي بذلك يترك الورقة نفسها بلا تفسير.",
+      "ويمكن الوصول إليها من عدّ الحروف ومقارنتها بالمرجع والفك وحده، لكن الأقوى أن يتفق المساران."
+    ],
+    "what_evidence_could_not_show_ar": [
+      "العينة قصيرة (نحو مئة حرف)، وبعض أحرف الفك مرجّح من سياق الكلمة لا من عدد التكرار.",
+      "لا تثبت الأدلة أنه لا توجد أوراق أخرى مكتوبة بالشفرة نفسها.",
+      "فك الشفرة لا يثبت نية الكاتبة؛ ما أثبتها هو الحجز والإيصال وإفادتها."
+    ],
+    "science_notes_ar": [
+      "تكرار الحروف يعمل جيداً مع نصوص طويلة؛ في النصوص القصيرة يوثق بالمراتب الأولى فقط وتُثبَّت البقية بأنماط الكلمات.",
+      "قبل العدّ تُوحَّد الهمزات والتاء المربوطة والألف المقصورة، ويجب إعلان ذلك لأنه يغيّر الأعداد.",
+      "السر ليس دليلاً على الذنب؛ يُقاس التفسير بسجلات مستقلة يمكن تتبّع أصلها (سلسلة العهدة)، ثم تُعلن نسبة الترجيح بحدودها.",
+      "بطاقة الأصل (خبر تراثي منسوب): تتصل الفكرة بما رُوي قديماً عن عدّ الحروف لقراءة المكتوب المغلق، وقد أُعيدت صياغتها كلها في موقف مدرسي خيالي، وليست هذه الحكاية «الأولى» في التاريخ."
+    ]
+  },
+  "expert_review": [
+    {
+      "role": "narrative_editor",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "scientific_reviewer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "learning_designer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "age_appropriateness",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "cultural_reviewer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "legal_rights",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "safety",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    }
+  ]
+}

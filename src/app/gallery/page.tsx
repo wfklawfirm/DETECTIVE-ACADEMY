@@ -1,4 +1,6 @@
 import { loadAssets } from "@/engine/assets";
+import { LinkButton } from "@/components/ui/button";
+import { PageHead } from "@/components/ui/card";
 
 export const metadata = { title: "معرض المراجع" };
 export const dynamic = "force-dynamic";
@@ -6,9 +8,8 @@ export const dynamic = "force-dynamic";
 export default function Gallery() {
   const imgs = loadAssets().filter((a) => a.kind === "image");
   return (
-    <div className="wrap stack">
-      <h1>معرض المراجع التاريخية</h1>
-      <p className="dim">صور لمخطوطات وأدوات ووثائق قديمة من مجموعات مفتوحة، نستلهم منها أجواء القضايا ومشاهدها. هي مراجع بصرية فقط؛ لا تظهر فيها شخصيات القصص ولا تُعدّ دليلاً في أي قضية. حقوق كل صورة مذكورة تحتها.</p>
+    <>
+      <PageHead title="معرض المراجع التاريخية" lead="صور لمخطوطات وأدوات ووثائق قديمة من مجموعات مفتوحة، نستلهم منها أجواء القضايا ومشاهدها. هي مراجع بصرية فقط؛ لا تظهر فيها شخصيات القصص ولا تُعدّ دليلاً في أي قضية. حقوق كل صورة مذكورة تحتها." />
       <ul className="gallery">
         {imgs.map((a) => (
           <li key={a.id}><figure>
@@ -18,7 +19,7 @@ export default function Gallery() {
           </figure></li>
         ))}
       </ul>
-      <p className="small"><a href="/credits">كل الاعتمادات والتراخيص</a></p>
-    </div>
+      <LinkButton variant="outline" block href="/credits">كل الاعتمادات والتراخيص</LinkButton>
+    </>
   );
 }

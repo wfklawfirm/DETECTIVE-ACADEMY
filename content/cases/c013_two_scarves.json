@@ -1,0 +1,2818 @@
+{
+  "schema_version": "0.1.0",
+  "case_id": "c013_two_scarves",
+  "case_version": "0.1.0",
+  "meta": {
+    "title_ar": "المشط والوشاح",
+    "title_en": "The Comb and the Scarf",
+    "age_band": "13-15",
+    "locale": "ar",
+    "dialogue_register": "msa",
+    "estimated_minutes": 30,
+    "difficulty": 2,
+    "content_flags": [
+      "no_violence",
+      "science_lab"
+    ],
+    "authors": [
+      "فريق أثر التحريري (مسودة بمساعدة الذكاء الاصطناعي، عن بذرة من قضايا التراث، لم تُراجَع بشرياً بعد)"
+    ],
+    "knowledge_object_refs": [
+      "KO-RS-06-001",
+      "KO-RS-06-015",
+      "KO-RS-06-004",
+      "KO-RS-05-002",
+      "KO-RS-06-009",
+      "KO-RS-06-021",
+      "KO-FC-04-018",
+      "KO-FC-04-011",
+      "KO-FC-04B-002",
+      "KO-NP-02H-006"
+    ]
+  },
+  "premise": {
+    "hook_ar": "وشاحان متشابهان على مقعد واحد، وطالبان يقول كل منهما إن الأزرق له. وعلى القبعتين خيوط صغيرة لا تقول من صاحبها.",
+    "player_role_ar": "أنت مراجع في لجنة الأمانات المدرسية، وطُلب منك أن تحسم لمن الوشاح الأزرق بالأدلة لا بأعلى الصوتين.",
+    "setting_ar": "مدرسة الأطلال، مساء يوم رحلة مدرسية إلى موقع الأطلال. كل الأوقات بتوقيت المدرسة.",
+    "public_fact_ids": [
+      "f_dispute",
+      "f_two_scarves",
+      "f_fibres_claim"
+    ],
+    "assumed_general_knowledge_ar": [
+      "الألياف تنتقل بالتلامس المباشر وغير المباشر",
+      "غياب الأثر لا يثبت غياب التلامس"
+    ]
+  },
+  "entities": {
+    "characters": [
+      {
+        "id": "mazen",
+        "name_ar": "مازن الحلبي",
+        "role": "victim",
+        "age_descriptor_ar": "14 سنة، طالب في الصف التاسع",
+        "persona_ar": "هادئ وواثق من وشاحه، لكنه يتحدث ببطء حين يُشكَّك فيه، ويفضّل أن يُري الأوراق على أن يجادل.",
+        "motives_ar": [
+          "استعادة وشاحه الذي اشتراه مع أمه",
+          "ألا يتحول الأمر إلى خصومة مع زميله"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "mz_greet",
+            "purpose": "greeting",
+            "text_ar": "الوشاح الأزرق وشاحي، وأمي تحتفظ بوصل شرائه."
+          },
+          {
+            "line_id": "mz_receipt",
+            "purpose": "reveal",
+            "text_ar": "اشترينا الوشاح من متجر المدرسة في نوفمبر، ووصل الشراء محفوظ عند أمي.",
+            "fact_ids": [
+              "f_mazen_receipt_exists"
+            ]
+          },
+          {
+            "line_id": "mz_embroidery",
+            "purpose": "reveal",
+            "text_ar": "طلبنا عند الشراء أن يُطرَّز حرف الميم بخيط برتقالي عند الهدب.",
+            "fact_ids": [
+              "f_mazen_embroidery"
+            ]
+          },
+          {
+            "line_id": "mz_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف، لم أنتبه لذلك."
+          },
+          {
+            "line_id": "mz_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "رجاءً، لنبقَ في موضوع الوشاحين."
+          },
+          {
+            "line_id": "mz_bye",
+            "purpose": "farewell",
+            "text_ar": "أريد أن يُحل الأمر دون أن يزعل أحد."
+          }
+        ]
+      },
+      {
+        "id": "yasser",
+        "name_ar": "ياسر العلي",
+        "role": "suspect",
+        "age_descriptor_ar": "14 سنة، طالب في الصف التاسع",
+        "persona_ar": "حماسي وسريع الجزم، يتمسك بأول دليل يخطر له، لكنه يعترف بالخطأ حين يرى سجلاً واضحاً.",
+        "motives_ar": [
+          "استعادة وشاح أزرق ظن أنه له",
+          "أن يُنصف في الخلاف"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "ys_greet",
+            "purpose": "greeting",
+            "text_ar": "الوشاح الأزرق لي، ومعي ما يثبت ذلك."
+          },
+          {
+            "line_id": "ys_receipt",
+            "purpose": "reveal",
+            "text_ar": "عندي وصل شراء لوشاح أزرق صوفي من متجر المدرسة، فهو وشاحي.",
+            "claim_ids": [
+              "cl_yasser_receipt"
+            ]
+          },
+          {
+            "line_id": "ys_receipt_exists",
+            "purpose": "reveal",
+            "text_ar": "وصل الشراء محفوظ في ملف أمي، وأستطيع أن أريه لك.",
+            "fact_ids": [
+              "f_yasser_receipt_exists"
+            ]
+          },
+          {
+            "line_id": "ys_fibres",
+            "purpose": "reveal",
+            "text_ar": "وقبعتي فيها ألياف زرقاء كثيرة، وهذا يثبت أنها لامست وشاحي الأزرق.",
+            "claim_ids": [
+              "cl_yasser_fibres"
+            ]
+          },
+          {
+            "line_id": "ys_green",
+            "purpose": "reveal",
+            "text_ar": "والوشاح الأخضر القطني عليه اسمي بخط أمي، وأنا أعرف أنه لي أيضاً.",
+            "fact_ids": [
+              "f_green_is_yassers"
+            ]
+          },
+          {
+            "line_id": "ys_refuse",
+            "purpose": "refuse_secret",
+            "text_ar": "قلت ما عندي: وصلي وقبعتي."
+          },
+          {
+            "line_id": "ys_realise",
+            "purpose": "reveal",
+            "text_ar": "انتظر... وصلي يذكر مقاس 150 سم ورقماً تسلسلياً آخر. ربما وشاحي الأزرق ما زال في البيت.",
+            "fact_ids": [
+              "f_yasser_realises"
+            ]
+          },
+          {
+            "line_id": "ys_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف، ولا أحب أن أخمّن."
+          },
+          {
+            "line_id": "ys_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "لنبقَ في موضوع الوشاحين."
+          },
+          {
+            "line_id": "ys_bye",
+            "purpose": "farewell",
+            "text_ar": "شكراً لأنك تنظر في الأوراق لا في الأصوات العالية."
+          }
+        ]
+      },
+      {
+        "id": "layan",
+        "name_ar": "ليان الخطيب",
+        "role": "suspect",
+        "age_descriptor_ar": "15 سنة، متطوعة لأمانات الحافلة",
+        "persona_ar": "مجتهدة وحريصة على أن تنتهي الرحلة بلا فقدان، فتجمع الأغراض بسرعة وتظن أنها لا تغيّر شيئاً.",
+        "motives_ar": [
+          "ألا يُنسب إليها إهمال في الأمانات",
+          "أن يستعيد كل طالب غرضه"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "ly_greet",
+            "purpose": "greeting",
+            "text_ar": "أنا من يجمع الأغراض المنسية في الحافلة، وعندي سجل بذلك."
+          },
+          {
+            "line_id": "ly_collect",
+            "purpose": "reveal",
+            "text_ar": "جمعت الوشاحين عند الخامسة وخمس دقائق مساء، أحدهما من المقعد التاسع والآخر من المقعد الرابع عشر.",
+            "fact_ids": [
+              "f_layan_collect"
+            ]
+          },
+          {
+            "line_id": "ly_log",
+            "purpose": "reveal",
+            "text_ar": "أدوّن في سجل الأمانات كل غرض أجمعه، وتراجعه المعلمة منى.",
+            "fact_ids": [
+              "f_bus_log_exists"
+            ]
+          },
+          {
+            "line_id": "ly_same",
+            "purpose": "reveal",
+            "text_ar": "تركت كل وشاح في مكانه كما وجدته، ولم أغيّر شيئاً.",
+            "claim_ids": [
+              "cl_layan_separate"
+            ]
+          },
+          {
+            "line_id": "ly_refuse",
+            "purpose": "refuse_secret",
+            "text_ar": "لا أذكر شيئاً آخر عن الوشاحين."
+          },
+          {
+            "line_id": "ly_pile",
+            "purpose": "reveal",
+            "text_ar": "حسناً... وضعتهما معاً على المقعد الرابع عشر بجانب حقيبتي لأحملهما إلى المعلمة، ولم أنتبه إلى أن ذلك قد يربك أصحابهما.",
+            "fact_ids": [
+              "f_layan_pile"
+            ]
+          },
+          {
+            "line_id": "ly_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف، لم أرَ أكثر من ذلك."
+          },
+          {
+            "line_id": "ly_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "أفضّل أن نتكلم عن الأمانات والوشاحين."
+          },
+          {
+            "line_id": "ly_bye",
+            "purpose": "farewell",
+            "text_ar": "آسفة إن كنت سبّبت التباساً دون قصد."
+          }
+        ]
+      },
+      {
+        "id": "mona",
+        "name_ar": "الأستاذة منى",
+        "role": "authority",
+        "age_descriptor_ar": "معلمة ومشرفة الرحلة",
+        "persona_ar": "حازمة وهادئة، تجمع الوثائق والصور وتترك للمحقق أن يستنتج.",
+        "motives_ar": [
+          "أن تنتهي الرحلة بخلاصة عادلة",
+          "أن تُحفظ سجلات الرحلة"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "mn_greet",
+            "purpose": "greeting",
+            "text_ar": "الرحلة موثّقة، وسأعطيك ما عندي من سجلات."
+          },
+          {
+            "line_id": "mn_photo",
+            "purpose": "reveal",
+            "text_ar": "التقطت صباحاً صورة للطلاب عند صعود الحافلة، وهي محفوظة بوقتها.",
+            "fact_ids": [
+              "f_departure_photo_exists"
+            ]
+          },
+          {
+            "line_id": "mn_log",
+            "purpose": "reveal",
+            "text_ar": "سجل أمانات الحافلة تكتبه ليان وأراجعه أنا في نهاية الرحلة.",
+            "fact_ids": [
+              "f_bus_log_exists"
+            ]
+          },
+          {
+            "line_id": "mn_samples",
+            "purpose": "reveal",
+            "text_ar": "وافق الطالبان على أخذ عينات لاصقة من قبعتيهما، ووافقت ليان على عينة من حقيبتها.",
+            "fact_ids": [
+              "f_samples_allowed"
+            ]
+          },
+          {
+            "line_id": "mn_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "هذا ليس عندي."
+          },
+          {
+            "line_id": "mn_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "لنبقَ في موضوع الرحلة والوشاحين."
+          },
+          {
+            "line_id": "mn_bye",
+            "purpose": "farewell",
+            "text_ar": "أريد أن يتعلم الطلاب كيف يُحسم الخلاف بالسجلات."
+          }
+        ]
+      },
+      {
+        "id": "karim",
+        "name_ar": "كريم الصباغ",
+        "role": "expert",
+        "age_descriptor_ar": "موظف متجر المدرسة",
+        "persona_ar": "منظم وواضح، يشرح طريقة تسجيل المبيعات ولا يحكم في ملكية أحد.",
+        "motives_ar": [
+          "أن يُفهم كيف تُسجَّل مبيعات المتجر"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "kr_greet",
+            "purpose": "greeting",
+            "text_ar": "أستطيع أن أشرح كيف نسجّل مبيعاتنا، ولا أحكم في خلاف بين طالبين."
+          },
+          {
+            "line_id": "kr_serial",
+            "purpose": "reveal",
+            "text_ar": "لكل وشاح صوفي مدرسي بطاقة برقم تسلسلي فريد، ونكتب الرقم نفسه في وصل الشراء.",
+            "fact_ids": [
+              "f_shop_serial"
+            ]
+          },
+          {
+            "line_id": "kr_ledger",
+            "purpose": "reveal",
+            "text_ar": "ونحتفظ بسجل يعدّ المبيعات حسب اللون والدفعة والطول.",
+            "fact_ids": [
+              "f_shop_ledger_exists"
+            ]
+          },
+          {
+            "line_id": "kr_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "ليس في سجلي."
+          },
+          {
+            "line_id": "kr_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن المتجر ومبيعاته."
+          },
+          {
+            "line_id": "kr_bye",
+            "purpose": "farewell",
+            "text_ar": "تفضّل بزيارتنا متى شئت."
+          }
+        ]
+      }
+    ],
+    "locations": [
+      {
+        "id": "loc_school",
+        "name_ar": "ساحة المدرسة",
+        "description_ar": "حيث صعد الطلاب إلى الحافلة صباحاً."
+      },
+      {
+        "id": "loc_bus",
+        "name_ar": "حافلة رحلة الأطلال",
+        "description_ar": "الحافلة التي عادت بعد الظهر."
+      },
+      {
+        "id": "loc_lab",
+        "name_ar": "مختبر المنظار",
+        "description_ar": "مختبر خيالي لفحص العينات المجهرية."
+      },
+      {
+        "id": "loc_shop",
+        "name_ar": "متجر المدرسة",
+        "description_ar": "حيث تُباع الأوشحة وتُسجَّل مبيعاتها."
+      }
+    ],
+    "objects": [
+      {
+        "id": "obj_blue",
+        "name_ar": "الوشاح الأزرق الصوفي",
+        "description_ar": "وشاح صوفي أزرق وُجد على المقعد الرابع عشر."
+      },
+      {
+        "id": "obj_green",
+        "name_ar": "الوشاح الأخضر القطني",
+        "description_ar": "وشاح قطني أخضر وُجد بجانب الأزرق."
+      }
+    ],
+    "organizations": [
+      {
+        "id": "org_school",
+        "name_ar": "مدرسة الأطلال",
+        "description_ar": "مدرسة خيالية نظمت رحلة إلى موقع الأطلال."
+      }
+    ]
+  },
+  "truth": {
+    "solution": {
+      "culprit_ids": [
+        "layan"
+      ],
+      "summary_ar": "لم يسرق أحد شيئاً. الوشاح الأزرق ملك مازن بحسب رقمه ومواصفاته وعلامته المطرزة، والوشاح الأخضر ملك ياسر. التبس الأمر لأن متطوعة الأمانات جمعت الوشاحين من مقعدين ووضعتهما معاً بحسن نية، فانتقلت الألياف بينهما وإلى ما حولهما، وصارت كثرتها على قبعة لا تدل على صاحبها.",
+      "key_fact_ids": [
+        "f_blue_is_mazens",
+        "f_fibres_not_discriminating"
+      ]
+    },
+    "facts": [
+      {
+        "id": "f_dispute",
+        "statement_ar": "بعد رحلة الأطلال يتنازع مازن وياسر وشاحين تُركا على مقعد في الحافلة، وكل منهما يقول إن الأزرق الصوفي له.",
+        "kind": "event",
+        "subject_ids": [
+          "mazen",
+          "yasser",
+          "obj_blue",
+          "obj_green"
+        ],
+        "spoiler_level": 0
+      },
+      {
+        "id": "f_two_scarves",
+        "statement_ar": "الوشاحان متشابهان من بعيد: أزرق صوفي وأخضر قطني.",
+        "kind": "state",
+        "subject_ids": [
+          "obj_blue",
+          "obj_green"
+        ],
+        "spoiler_level": 0
+      },
+      {
+        "id": "f_fibres_claim",
+        "statement_ar": "يقول ياسر إن الألياف الزرقاء الكثيرة على قبعته تثبت أن الوشاح الأزرق له.",
+        "kind": "attribute",
+        "subject_ids": [
+          "yasser"
+        ],
+        "spoiler_level": 0
+      },
+      {
+        "id": "f_departure_photo_exists",
+        "statement_ar": "التقطت المعلمة منى صورة للطلاب عند صعود الحافلة صباحاً.",
+        "kind": "state",
+        "subject_ids": [
+          "mona",
+          "loc_school"
+        ],
+        "spoiler_level": 1
+      },
+      {
+        "id": "f_bus_log_exists",
+        "statement_ar": "لحافلة الرحلة سجل أمانات تدوّن فيه ليان ما تجمعه وتراجعه المعلمة.",
+        "kind": "state",
+        "subject_ids": [
+          "layan",
+          "mona",
+          "loc_bus"
+        ],
+        "spoiler_level": 1
+      },
+      {
+        "id": "f_samples_allowed",
+        "statement_ar": "وافق الطالبان وليان على أخذ عينات لاصقة من قبعتيهما وحقيبتها لفحصها.",
+        "kind": "state",
+        "subject_ids": [
+          "mona"
+        ],
+        "spoiler_level": 1
+      },
+      {
+        "id": "f_layan_collect",
+        "statement_ar": "جمعت ليان الوشاحين عند 17:05، الأزرق من المقعد 9 والأخضر من المقعد 14.",
+        "kind": "event",
+        "subject_ids": [
+          "layan",
+          "obj_blue",
+          "obj_green"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 605,
+          "precision": "exact"
+        },
+        "location_id": "loc_bus"
+      },
+      {
+        "id": "f_layan_pile",
+        "statement_ar": "وضعت ليان الوشاحين معاً على المقعد 14 بجانب حقيبتها قبل حضور الطالبين.",
+        "kind": "event",
+        "subject_ids": [
+          "layan",
+          "obj_blue",
+          "obj_green"
+        ],
+        "spoiler_level": 2,
+        "time": {
+          "start_min": 606,
+          "precision": "approx",
+          "end_min": 620
+        },
+        "location_id": "loc_bus"
+      },
+      {
+        "id": "f_mazen_receipt_exists",
+        "statement_ar": "لدى أم مازن وصل شراء وشاحه من متجر المدرسة.",
+        "kind": "state",
+        "subject_ids": [
+          "mazen"
+        ],
+        "spoiler_level": 1
+      },
+      {
+        "id": "f_mazen_embroidery",
+        "statement_ar": "طُرّز حرف «م» بخيط برتقالي عند هدب وشاح مازن عند الشراء.",
+        "kind": "attribute",
+        "subject_ids": [
+          "mazen",
+          "obj_blue"
+        ],
+        "spoiler_level": 1
+      },
+      {
+        "id": "f_yasser_receipt_exists",
+        "statement_ar": "لدى أم ياسر وصل شراء وشاح أزرق صوفي لياسر.",
+        "kind": "state",
+        "subject_ids": [
+          "yasser"
+        ],
+        "spoiler_level": 1
+      },
+      {
+        "id": "f_green_is_yassers",
+        "statement_ar": "بطاقة الوشاح الأخضر القطني مكتوب عليها اسم ياسر بخط أمه.",
+        "kind": "attribute",
+        "subject_ids": [
+          "yasser",
+          "obj_green"
+        ],
+        "spoiler_level": 1
+      },
+      {
+        "id": "f_yasser_realises",
+        "statement_ar": "أدرك ياسر أن وصله لوشاح أزرق آخر بمقاس ورقم مختلفين.",
+        "kind": "event",
+        "subject_ids": [
+          "yasser"
+        ],
+        "spoiler_level": 2
+      },
+      {
+        "id": "f_shop_serial",
+        "statement_ar": "لكل وشاح صوفي مدرسي بطاقة برقم تسلسلي فريد يُدوَّن في وصل الشراء.",
+        "kind": "state",
+        "subject_ids": [
+          "loc_shop"
+        ],
+        "spoiler_level": 1
+      },
+      {
+        "id": "f_shop_ledger_exists",
+        "statement_ar": "للمتجر سجل مبيعات يعدّ الأوشحة حسب اللون والدفعة والطول.",
+        "kind": "state",
+        "subject_ids": [
+          "loc_shop"
+        ],
+        "spoiler_level": 1
+      },
+      {
+        "id": "f_fibres_traveled",
+        "statement_ar": "وُجدت ألياف زرقاء صوفية على القبعتين والمقعد وحقيبة ليان، وهذه الأخيرة لا تخص صاحب وشاح.",
+        "kind": "relation",
+        "subject_ids": [
+          "obj_blue"
+        ],
+        "spoiler_level": 2,
+        "location_id": "loc_bus",
+        "science_ko_refs": [
+          "KO-NP-02H-006"
+        ]
+      },
+      {
+        "id": "f_yasser_receipt_other",
+        "statement_ar": "وصل ياسر يخص وشاحاً أزرق آخر: الطول 150 سم، والدفعة B5، ورقم تسلسلي غير رقم الوشاح الموجود.",
+        "kind": "relation",
+        "subject_ids": [
+          "yasser",
+          "obj_blue"
+        ],
+        "spoiler_level": 2
+      },
+      {
+        "id": "f_blue_is_mazens",
+        "statement_ar": "الوشاح الأزرق الصوفي المحفوظ ملك مازن: رقمه التسلسلي في وصله، وحرفه المطرّز على هدبه، وصورة الصباح.",
+        "kind": "relation",
+        "subject_ids": [
+          "mazen",
+          "obj_blue"
+        ],
+        "spoiler_level": 3,
+        "science_ko_refs": [
+          "KO-RS-06-001"
+        ]
+      },
+      {
+        "id": "f_fibres_not_discriminating",
+        "statement_ar": "أعداد الألياف على القبعتين تتفق مع أي من الطالبين، فهي تدل على ملامسة لا على ملكية.",
+        "kind": "relation",
+        "subject_ids": [
+          "obj_blue",
+          "yasser",
+          "mazen"
+        ],
+        "spoiler_level": 3,
+        "science_ko_refs": [
+          "KO-FC-04-018",
+          "KO-FC-04-011"
+        ]
+      }
+    ],
+    "claims": [
+      {
+        "id": "cl_yasser_fibres",
+        "statement_ar": "الألياف الزرقاء الكثيرة على قبعتي تثبت أن الوشاح الأزرق لي.",
+        "kind": "honest_mistake",
+        "held_by": [
+          "yasser"
+        ],
+        "true_fact_id": "f_fibres_not_discriminating",
+        "contradicted_by_evidence_ids": [
+          "ev_fibre_lab",
+          "ev_shop_count",
+          "ev_bus_log"
+        ]
+      },
+      {
+        "id": "cl_yasser_receipt",
+        "statement_ar": "وصل الشراء الذي معي لوشاح أزرق، فالوشاح الأزرق هذا وشاحي.",
+        "kind": "honest_mistake",
+        "held_by": [
+          "yasser"
+        ],
+        "true_fact_id": "f_yasser_receipt_other",
+        "contradicted_by_evidence_ids": [
+          "ev_yasser_receipt",
+          "ev_scarf_tag"
+        ]
+      },
+      {
+        "id": "cl_layan_separate",
+        "statement_ar": "تركت كل وشاح في مكانه كما وجدته.",
+        "kind": "honest_mistake",
+        "held_by": [
+          "layan"
+        ],
+        "true_fact_id": "f_layan_pile",
+        "contradicted_by_evidence_ids": [
+          "ev_bus_log"
+        ]
+      }
+    ]
+  },
+  "timeline": [
+    {
+      "id": "te_depart",
+      "description_ar": "مازن وياسر يصعدان إلى الحافلة ومعهما وشاحاهما.",
+      "time": {
+        "start_min": 42,
+        "precision": "exact"
+      },
+      "location_id": "loc_school",
+      "actor_ids": [
+        "mazen",
+        "yasser"
+      ],
+      "fact_ids": [
+        "f_departure_photo_exists",
+        "f_green_is_yassers"
+      ],
+      "motivated_by_ar": "انطلاق الرحلة المدرسية صباحاً"
+    },
+    {
+      "id": "te_collect",
+      "description_ar": "ليان تجمع الوشاحين من المقعدين 9 و14.",
+      "time": {
+        "start_min": 605,
+        "precision": "exact"
+      },
+      "location_id": "loc_bus",
+      "actor_ids": [
+        "layan"
+      ],
+      "fact_ids": [
+        "f_layan_collect"
+      ],
+      "motivated_by_ar": "مهمتها جمع الأغراض المنسية قبل نزول الطلاب"
+    },
+    {
+      "id": "te_pile",
+      "description_ar": "ليان تضع الوشاحين معاً على المقعد 14 بجانب حقيبتها.",
+      "time": {
+        "start_min": 606,
+        "precision": "approx",
+        "end_min": 619
+      },
+      "location_id": "loc_bus",
+      "actor_ids": [
+        "layan"
+      ],
+      "fact_ids": [
+        "f_layan_pile"
+      ],
+      "motivated_by_ar": "أرادت حملهما معاً إلى المعلمة"
+    },
+    {
+      "id": "te_arrive",
+      "description_ar": "مازن وياسر يعودان إلى الحافلة ويجدان الوشاحين معاً.",
+      "time": {
+        "start_min": 620,
+        "precision": "exact"
+      },
+      "location_id": "loc_bus",
+      "actor_ids": [
+        "mazen",
+        "yasser"
+      ],
+      "fact_ids": [
+        "f_dispute"
+      ],
+      "motivated_by_ar": "عادا ليأخذا ما نسياه"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_cap_fibres",
+      "title_ar": "عينات الألياف من القبعتين",
+      "kind": "physical",
+      "content_ar": "فحص مجهري لعينات لاصقة أُخذت بموافقة صاحبيها (الأرقام توضيحية للتعلم)\nقبعة ياسر: 14 ليفاً أزرق صوفياً، و5 ألياف خضراء قطنية\nقبعة مازن: 6 ألياف زرقاء صوفية، ولا ألياف خضراء\nعينة لاصقة واحدة لكل قبعة",
+      "acquired_by_action_ids": [
+        "a_sample_fibres"
+      ],
+      "supports_fact_ids": [
+        "f_fibres_traveled"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "يبيّن وجود الألياف وعددها في عينة واحدة؛ لا يبيّن كيف وصلت ولا متى، وغياب لون لا يثبت غياب التلامس.",
+      "is_red_herring": true,
+      "location_id": "loc_lab"
+    },
+    {
+      "id": "ev_seat_fibres",
+      "title_ar": "عينة الألياف من مسند المقعد 14",
+      "kind": "physical",
+      "content_ar": "عينة لاصقة من مسند المقعد 14 (الأرقام توضيحية)\n30 ليفاً أزرق صوفياً\n12 ليفاً أخضر قطنياً",
+      "acquired_by_action_ids": [
+        "a_sample_fibres"
+      ],
+      "supports_fact_ids": [
+        "f_fibres_traveled"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "تدل على أن الوشاحين أو أحدهما مرّ بالمقعد؛ لا تدل على من لمسه ولا على صاحب أي منهما.",
+      "location_id": "loc_bus"
+    },
+    {
+      "id": "ev_bag_fibres",
+      "title_ar": "عينة الألياف من حقيبة ليان",
+      "kind": "physical",
+      "content_ar": "عينة لاصقة من حقيبة المتطوعة ليان، بموافقتها (الأرقام توضيحية)\n9 ألياف زرقاء صوفية\n4 ألياف خضراء قطنية",
+      "acquired_by_action_ids": [
+        "a_sample_fibres"
+      ],
+      "supports_fact_ids": [
+        "f_fibres_traveled"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "تدل على تلامس الحقيبة بالوشاحين أو بسطح لامسهما؛ لا تدل على أن الحقيبة تخص صاحب وشاح.",
+      "location_id": "loc_lab"
+    },
+    {
+      "id": "ev_fibre_lab",
+      "title_ar": "تقرير مختبر المنظار عن مدى الألياف",
+      "kind": "lab_result",
+      "content_ar": "تقرير مختبر المنظار (قاعدة انتشار خيالية، الأرقام توضيحية)\nقبعة لامست وشاحاً صوفياً خمس دقائق: 10–20 ليفاً\nارتداء وشاح صوفي ساعات قرب القبعة: 3–10 ألياف\nنقل ثانوي من مقعد أو يد إلى القبعة: 2–8 ألياف\nقبعة ياسر (14 ليفاً) ضمن مدى الملامسة القصيرة، وقبعة مازن (6 ألياف) ضمن مدى الارتداء ومدى النقل الثانوي. المدى متداخل.",
+      "acquired_by_action_ids": [
+        "a_request_fibre_lab"
+      ],
+      "supports_fact_ids": [
+        "f_fibres_not_discriminating"
+      ],
+      "reliability": "strong",
+      "limits_ar": "أرقامه توضيحية لغرض التعلم لا قياس حقيقي؛ ويبيّن ما يتسق مع ماذا لا من الفاعل، وغياب الألياف لا يثبت غياب التلامس ووجودها لا يثبت الملكية.",
+      "contradicts_claim_ids": [
+        "cl_yasser_fibres"
+      ],
+      "forensic_ko_ref": "KO-FC-04-018",
+      "location_id": "loc_lab"
+    },
+    {
+      "id": "ev_mazen_receipt",
+      "title_ar": "وصل شراء وشاح مازن",
+      "kind": "documentary",
+      "content_ar": "وصل شراء — متجر المدرسة\nالتاريخ: 03/11\nالصنف: وشاح صوف أزرق — الطول 180 سم — الدفعة B7 — الرقم التسلسلي S-0187\nخدمة إضافية: تطريز حرف «م» بخيط برتقالي عند الهدب\nالمشتري: ولي أمر الطالب مازن الحلبي (بطاقة الطالب 2315)",
+      "acquired_by_action_ids": [
+        "a_get_receipts"
+      ],
+      "supports_fact_ids": [
+        "f_mazen_receipt_exists",
+        "f_mazen_embroidery"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يثبت شراء وشاح بهذه المواصفات والرقم؛ لا يثبت أن المشتري أو ابنه ما زال صاحبه ولا أنه هو من تركه على المقعد.",
+      "location_id": "loc_shop"
+    },
+    {
+      "id": "ev_yasser_receipt",
+      "title_ar": "وصل شراء وشاح ياسر",
+      "kind": "documentary",
+      "content_ar": "وصل شراء — متجر المدرسة\nالتاريخ: 04/10\nالصنف: وشاح صوف أزرق — الطول 150 سم — الدفعة B5 — الرقم التسلسلي S-0121\nالمشتري: ولي أمر الطالب ياسر العلي (بطاقة الطالب 2290)",
+      "acquired_by_action_ids": [
+        "a_get_receipts"
+      ],
+      "supports_fact_ids": [
+        "f_yasser_receipt_exists"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يثبت شراء وشاح أزرق آخر؛ وصل لوشاح أزرق ليس وصلاً لهذا الوشاح بعينه ما لم تتطابق المواصفات والرقم.",
+      "is_red_herring": true,
+      "location_id": "loc_shop"
+    },
+    {
+      "id": "ev_scarf_tag",
+      "title_ar": "بطاقة الوشاح الأزرق المحفوظ",
+      "kind": "physical",
+      "content_ar": "صورة بطاقة الوشاح الأزرق المحفوظ عند أمانة الحافلة\nصوف 100%\nالطول: 180 سم\nالدفعة: B7\nالرقم التسلسلي: S-0187",
+      "acquired_by_action_ids": [
+        "a_photo_tag"
+      ],
+      "supports_fact_ids": [
+        "f_blue_is_mazens"
+      ],
+      "reliability": "strong",
+      "limits_ar": "تعرّف الوشاح بنموذجه ودفعته ورقمه؛ يتطابق الرقم مع وصل واحد في سجل المتجر، لكن البطاقة وحدها لا تبيّن من يملكه الآن.",
+      "contradicts_claim_ids": [
+        "cl_yasser_receipt"
+      ],
+      "location_id": "loc_bus"
+    },
+    {
+      "id": "ev_scarf_patch",
+      "title_ar": "صورة مقربة لهدب الوشاح الأزرق",
+      "kind": "physical",
+      "content_ar": "صورة مقربة لهدب الوشاح الأزرق المحفوظ: حرف «م» مطرّز بخيط برتقالي، حجمه نحو 3 سم.",
+      "acquired_by_action_ids": [
+        "a_photo_fringe"
+      ],
+      "supports_fact_ids": [
+        "f_blue_is_mazens",
+        "f_mazen_embroidery"
+      ],
+      "reliability": "strong",
+      "limits_ar": "حرف مطرّز علامة مميِّزة لكنها ليست فريدة بالضرورة؛ فقد يطلب غير مازن حرفاً مماثلاً.",
+      "location_id": "loc_bus"
+    },
+    {
+      "id": "ev_departure_photo",
+      "title_ar": "صورة صعود الحافلة صباحاً",
+      "kind": "digital",
+      "content_ar": "صورة التقطتها المعلمة منى عند صعود الحافلة (بياناتها الوصفية: 07:42)\nيظهر مازن بوشاح أزرق صوفي على هدبه علامة برتقالية صغيرة، ويظهر ياسر بوشاح أخضر قطني.",
+      "acquired_by_action_ids": [
+        "a_get_departure_photo"
+      ],
+      "supports_fact_ids": [
+        "f_green_is_yassers",
+        "f_blue_is_mazens"
+      ],
+      "reliability": "strong",
+      "limits_ar": "صورة صغيرة الحجم تعرض اللون والعلامة؛ لا تقرأ الأرقام التسلسلية ولا تبيّن من خلع وشاحه لاحقاً.",
+      "location_id": "loc_school"
+    },
+    {
+      "id": "ev_bus_log",
+      "title_ar": "سجل أمانات الحافلة",
+      "kind": "documentary",
+      "content_ar": "سجل أمانات الحافلة (توقيع ليان الخطيب، ومراجعة الأستاذة منى)\n17:05 — مقعد 9: وشاح أزرق صوفي — جُمع إلى الأمانات\n17:05 — مقعد 14: وشاح أخضر قطني — جُمع إلى الأمانات\n17:20 — عند حضور الطالبين: الوشاحان معاً على المقعد 14\nملاحظة: الجلوس كان حراً في هذه الرحلة ولا تخصيص للمقاعد.",
+      "acquired_by_action_ids": [
+        "a_get_bus_log"
+      ],
+      "supports_fact_ids": [
+        "f_layan_collect",
+        "f_layan_pile"
+      ],
+      "reliability": "strong",
+      "limits_ar": "سجل عهدة للأغراض المنسية؛ يبيّن موضع كل غرض ووقته، لا يبيّن من جلس في أي مقعد ولا لمن الغرض.",
+      "contradicts_claim_ids": [
+        "cl_layan_separate",
+        "cl_yasser_fibres"
+      ],
+      "forensic_ko_ref": "KO-FC-04B-002",
+      "location_id": "loc_bus"
+    },
+    {
+      "id": "ev_shop_count",
+      "title_ar": "سجل مبيعات متجر المدرسة",
+      "kind": "documentary",
+      "content_ar": "سجل مبيعات متجر المدرسة — الموسم الحالي\nأوشحة صوفية زرقاء مباعة: 31\n  الدفعة B7، الطول 180 سم: 9\n  الدفعة B5، الطول 150 سم: 22\nأوشحة قطنية خضراء مباعة: 14\nلكل وشاح صوفي بطاقة برقم تسلسلي فريد يُدوَّن في الوصل.",
+      "acquired_by_action_ids": [
+        "a_get_shop_ledger"
+      ],
+      "supports_fact_ids": [
+        "f_shop_serial",
+        "f_shop_ledger_exists"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يعدّ مبيعات المتجر المدرسي فقط ولا يشمل أوشحة اشتُريت من خارجه؛ ويبيّن كثرة الأوشحة المتشابهة لا صاحب أحدها.",
+      "contradicts_claim_ids": [
+        "cl_yasser_fibres"
+      ],
+      "forensic_ko_ref": "KO-FC-04-011",
+      "location_id": "loc_shop"
+    },
+    {
+      "id": "ev_green_label",
+      "title_ar": "بطاقة الوشاح الأخضر القطني",
+      "kind": "physical",
+      "content_ar": "صورة البطاقة الداخلية للوشاح القطني الأخضر: «ياسر ع.» بخط يدوي.",
+      "acquired_by_action_ids": [
+        "a_photo_green"
+      ],
+      "supports_fact_ids": [
+        "f_green_is_yassers"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "خط اليد يدل على من وسم الوشاح لا على من يملكه الآن؛ ولا علاقة له بالوشاح الأزرق.",
+      "location_id": "loc_bus"
+    },
+    {
+      "id": "ev_mazen_statement",
+      "title_ar": "إفادة مازن (ملخص)",
+      "kind": "testimonial",
+      "content_ar": "ملخص إفادة مازن الحلبي:\n«وشاحي الأزرق اشتريته مع أمي في نوفمبر، وطلبنا تطريز حرف الميم عند الهدب. خلعته قرب النافذة ونسيته.»",
+      "acquired_by_action_ids": [
+        "a_note_mazen"
+      ],
+      "supports_fact_ids": [
+        "f_mazen_receipt_exists",
+        "f_mazen_embroidery"
+      ],
+      "reliability": "weak",
+      "limits_ar": "إفادة صاحب مصلحة؛ يؤيدها الوصل والصورة ولا تغني عنهما.",
+      "location_id": "loc_bus"
+    },
+    {
+      "id": "ev_yasser_statement",
+      "title_ar": "إفادة ياسر (ملخص)",
+      "kind": "testimonial",
+      "content_ar": "ملخص إفادة ياسر العلي:\n«عندي وصل لوشاح أزرق صوفي، وقبعتي فيها ألياف زرقاء أكثر من قبعة مازن، فالأزرق لي.»",
+      "acquired_by_action_ids": [
+        "a_note_yasser"
+      ],
+      "supports_fact_ids": [
+        "f_yasser_receipt_exists"
+      ],
+      "reliability": "weak",
+      "limits_ar": "إفادة صاحب مصلحة تجمع دليلين لا يميّزان بين الطالبين؛ وتُقاس بالبطاقة الفعلية وبمدى الألياف.",
+      "location_id": "loc_bus"
+    },
+    {
+      "id": "ev_layan_statement",
+      "title_ar": "إفادة ليان (ملخص)",
+      "kind": "testimonial",
+      "content_ar": "ملخص إفادة ليان الخطيب:\n«جمعت الوشاحين عند الخامسة وخمس دقائق، وتركت كل وشاح في مكانه كما وجدته.»",
+      "acquired_by_action_ids": [
+        "a_note_layan"
+      ],
+      "supports_fact_ids": [
+        "f_layan_collect"
+      ],
+      "reliability": "weak",
+      "limits_ar": "تصف ما ظنت أنها فعلته؛ ويُقاس قولها «تركته في مكانه» بسجل الأمانات.",
+      "location_id": "loc_bus"
+    }
+  ],
+  "evidence_graph": {
+    "inferences": [
+      {
+        "id": "i_a_owner",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_mazen_receipt"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_scarf_tag"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_blue_is_mazens"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "الرقم التسلسلي والطول والدفعة على بطاقة الوشاح الأزرق تطابق ما في وصل مازن؛ والرقم فريد لوشاح واحد في سجل المتجر.",
+        "skill_ko_refs": [
+          "KO-RS-06-001",
+          "KO-NP-02H-006"
+        ]
+      },
+      {
+        "id": "i_b_owner",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_departure_photo"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_scarf_patch"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_blue_is_mazens"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "صورة الصباح تضع على وشاح مازن علامة برتقالية عند الهدب، والوشاح الأزرق المحفوظ عليه حرف مطرّز بالخيط نفسه في الموضع نفسه.",
+        "skill_ko_refs": [
+          "KO-RS-06-001",
+          "KO-RS-06-004"
+        ]
+      },
+      {
+        "id": "i_a_fibres",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_cap_fibres"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_fibre_lab"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_fibres_not_discriminating"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "عدد الألياف على كل قبعة يقع ضمن مدى تفسير بريء مختلف (ملامسة قصيرة أو ارتداء أو نقل ثانوي)، والمدى يتداخل؛ فالعدد لا يفرّق بين الطالبين.",
+        "skill_ko_refs": [
+          "KO-FC-04-018",
+          "KO-RS-06-015"
+        ]
+      },
+      {
+        "id": "i_b_fibres",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_bus_log"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_shop_count"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_fibres_not_discriminating"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "الوشاحان اجتمعا على مقعد واحد قبل حضور الطالبين، وفي المدرسة تسعة أوشحة من النوع نفسه على الأقل؛ فوجود الألياف لا يعيّن صاحبها.",
+        "skill_ko_refs": [
+          "KO-FC-04-011",
+          "KO-RS-06-015"
+        ]
+      },
+      {
+        "id": "i_transfer",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_seat_fibres"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_bag_fibres"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_cap_fibres"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_fibres_traveled"
+        },
+        "relation": "establishes",
+        "strength": "suggestive",
+        "rule_ar": "ألياف الوشاح موجودة على مقعد وحقيبة لا يملكان وشاحاً، إذن تنتقل الألياف بالتلامس غير المباشر فلا تدل على الملكية.",
+        "skill_ko_refs": [
+          "KO-NP-02H-006"
+        ]
+      },
+      {
+        "id": "i_mismatch",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_yasser_receipt"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_scarf_tag"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_yasser_receipt_other"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "وصل ياسر يذكر 150 سم والدفعة B5 والرقم S-0121، وبطاقة الوشاح الموجود تذكر 180 سم والدفعة B7 والرقم S-0187؛ فهما وشاحان مختلفان.",
+        "skill_ko_refs": [
+          "KO-RS-06-001"
+        ]
+      },
+      {
+        "id": "i_layan_mixed",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_bus_log"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_layan_pile"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "السجل يضع الوشاحين في مقعدين مختلفين عند الجمع ثم معاً على المقعد 14 عند الحضور؛ فلا بد أن أحداً نقل أحدهما.",
+        "skill_ko_refs": [
+          "KO-FC-04B-002",
+          "KO-RS-06-017"
+        ]
+      },
+      {
+        "id": "i_yasser_fibre_claim",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_fibres_not_discriminating"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_yasser_fibres"
+        },
+        "relation": "contradicts_claim",
+        "strength": "strong",
+        "rule_ar": "ما دامت الأعداد تتفق مع الملامسة القصيرة فالكثرة لا تثبت الملكية.",
+        "skill_ko_refs": [
+          "KO-RS-06-015",
+          "KO-RS-05-014"
+        ]
+      },
+      {
+        "id": "i_yasser_receipt_claim",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_yasser_receipt_other"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_yasser_receipt"
+        },
+        "relation": "contradicts_claim",
+        "strength": "strong",
+        "rule_ar": "وصله مطابق لوشاح آخر؛ والمطابقة تُطلب في الرقم والمواصفات لا في اللون وحده.",
+        "skill_ko_refs": [
+          "KO-RS-05-014"
+        ]
+      },
+      {
+        "id": "i_layan_claim",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_layan_pile"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_layan_separate"
+        },
+        "relation": "contradicts_claim",
+        "strength": "strong",
+        "rule_ar": "قولها إنها تركت كل وشاح في مكانه يخالف أن الوشاحين وُجدا معاً على مقعد واحد.",
+        "skill_ko_refs": [
+          "KO-RS-05-014"
+        ]
+      },
+      {
+        "id": "i_support_mazen",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_blue_is_mazens"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_fibres_not_discriminating"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_mazen"
+        },
+        "relation": "supports",
+        "strength": "strong",
+        "rule_ar": "وصل مطابق ببيانات فريدة، وألياف لا تفرّق بين الطالبين؛ فتفسير الملكية هو الوحيد المتسق مع السجلات كلها.",
+        "skill_ko_refs": [
+          "KO-RS-06-006"
+        ]
+      },
+      {
+        "id": "i_rule_yasser",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_blue_is_mazens"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_yasser"
+        },
+        "relation": "rules_out",
+        "strength": "conclusive",
+        "rule_ar": "إذا كان الوشاح الأزرق ملكاً لمازن بمطابقة وصف فريد، فلا يكون ملكاً لياسر.",
+        "skill_ko_refs": [
+          "KO-RS-06-008"
+        ]
+      },
+      {
+        "id": "i_rule_yasser_fibres",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_fibres_not_discriminating"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_yasser_receipt_other"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_yasser"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "الألياف تتفق مع ملامسة قصيرة، ووصله لا يطابق الوشاح؛ فلا يبقى لدعواه سند.",
+        "skill_ko_refs": [
+          "KO-RS-06-001"
+        ]
+      },
+      {
+        "id": "i_rule_undecided",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_blue_is_mazens"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_undecided"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "الأدلة تتسق بالألياف مع الطالبين، لكن الرقم التسلسلي والعلامة المطرزة يحسمان الملكية؛ فالقول بأن الحسم مستحيل غير صحيح.",
+        "skill_ko_refs": [
+          "KO-RS-06-008"
+        ]
+      }
+    ]
+  },
+  "character_knowledge": [
+    {
+      "character_id": "mazen",
+      "knows": [
+        {
+          "fact_id": "f_mazen_receipt_exists",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_mazen_embroidery",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    },
+    {
+      "character_id": "yasser",
+      "knows": [
+        {
+          "fact_id": "f_yasser_receipt_exists",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_green_is_yassers",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [
+        {
+          "fact_id": "f_yasser_realises",
+          "reveal_when": {
+            "presented": {
+              "evidence_id": "ev_scarf_tag",
+              "to_character": "yasser"
+            }
+          },
+          "cover_claim_id": "cl_yasser_receipt",
+          "reveal_line_id": "ys_realise"
+        }
+      ],
+      "believes": [
+        {
+          "claim_id": "cl_yasser_receipt",
+          "stance": "sincere"
+        },
+        {
+          "claim_id": "cl_yasser_fibres",
+          "stance": "sincere"
+        }
+      ]
+    },
+    {
+      "character_id": "layan",
+      "knows": [
+        {
+          "fact_id": "f_layan_collect",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_bus_log_exists",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [
+        {
+          "fact_id": "f_layan_pile",
+          "reveal_when": {
+            "presented": {
+              "evidence_id": "ev_bus_log",
+              "to_character": "layan"
+            }
+          },
+          "cover_claim_id": "cl_layan_separate",
+          "reveal_line_id": "ly_pile"
+        }
+      ],
+      "believes": [
+        {
+          "claim_id": "cl_layan_separate",
+          "stance": "sincere"
+        }
+      ]
+    },
+    {
+      "character_id": "mona",
+      "knows": [
+        {
+          "fact_id": "f_departure_photo_exists",
+          "access": "professional",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_bus_log_exists",
+          "access": "professional",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_samples_allowed",
+          "access": "professional",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    },
+    {
+      "character_id": "karim",
+      "knows": [
+        {
+          "fact_id": "f_shop_serial",
+          "access": "professional",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_shop_ledger_exists",
+          "access": "professional",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "h_yasser",
+      "statement_ar": "الوشاح الأزرق ملك ياسر، وكثرة الألياف على قبعته ووصله دليلان على ذلك.",
+      "is_true": false,
+      "plausibility_at_start": "high",
+      "suspect_id": "yasser"
+    },
+    {
+      "id": "h_undecided",
+      "statement_ar": "الأدلة تتسق مع الطالبين معاً، فلا سبيل إلى معرفة صاحب الوشاح الأزرق.",
+      "is_true": false,
+      "plausibility_at_start": "medium"
+    },
+    {
+      "id": "h_mazen",
+      "statement_ar": "الوشاح الأزرق ملك مازن، وقد التبس الأمر لأن الوشاحين جُمعا ووُضعا معاً دون قصد.",
+      "is_true": true,
+      "plausibility_at_start": "low",
+      "suspect_id": "layan"
+    }
+  ],
+  "misdirection_plan": [
+    {
+      "id": "rh_fibres",
+      "points_to_hypothesis_id": "h_yasser",
+      "planted_via_ar": "قبعة ياسر عليها ألياف زرقاء أكثر من ضعف ما على قبعة مازن.",
+      "evidence_ids": [
+        "ev_cap_fibres"
+      ],
+      "refuted_by_inference_ids": [
+        "i_rule_yasser",
+        "i_rule_yasser_fibres",
+        "i_yasser_fibre_claim"
+      ],
+      "fairness_note_ar": "تقرير المختبر يبيّن أن العددين يقعان ضمن تفسيرات بريئة متداخلة، وسجل الأمانات يبيّن أن الوشاحين اجتمعا على مقعد واحد، وسجل المتجر يبيّن كثرة الأوشحة المماثلة؛ وتنبيه «الأرقام توضيحية» ظاهر في الدليل."
+    },
+    {
+      "id": "rh_receipt",
+      "points_to_hypothesis_id": "h_undecided",
+      "planted_via_ar": "لكل من الطالبين وصل شراء لوشاح أزرق صوفي، فيبدو أن الأوراق لا تحسم.",
+      "evidence_ids": [
+        "ev_yasser_receipt"
+      ],
+      "refuted_by_inference_ids": [
+        "i_rule_undecided",
+        "i_mismatch",
+        "i_yasser_receipt_claim"
+      ],
+      "fairness_note_ar": "الوصلان يختلفان في الطول والدفعة والرقم التسلسلي، والبطاقة الفعلية للوشاح متاحة للمقارنة ولا تطابق إلا وصلاً واحداً."
+    }
+  ],
+  "learning_objectives": [
+    {
+      "id": "lo_corr",
+      "statement_ar": "يفرّق بين الارتباط والسببية: وجود الأثر على شيء يدل على ملامسة لا على ملكية، ويطلب آلية الانتقال.",
+      "skill_ko_ref": "KO-RS-06-015",
+      "observable_behaviors_ar": [
+        "لا يعدّ كثرة الألياف دليل ملكية",
+        "يسأل كيف وصلت الألياف"
+      ],
+      "evidence_sources": [
+        "evidence_board",
+        "hypothesis_ledger"
+      ]
+    },
+    {
+      "id": "lo_diag",
+      "statement_ar": "يقدّر القوة التشخيصية للدليل ويفضّل ما يحمل بيانات مميِّزة (رقم تسلسلي) على ما يشترك فيه كثيرون (اللون والنوع).",
+      "skill_ko_ref": "KO-RS-06-001",
+      "observable_behaviors_ar": [
+        "يربط الدليل بالفرضية باتجاه صحيح",
+        "يقارن الوصل بالبطاقة الفعلية"
+      ],
+      "evidence_sources": [
+        "evidence_board",
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_obs",
+      "statement_ar": "يفصل بين الملاحظة والاستنتاج في أعداد الألياف وفي أقوال الطالبين.",
+      "skill_ko_ref": "KO-RS-06-004",
+      "observable_behaviors_ar": [
+        "يصنّف الإفادات أقوالاً",
+        "يميّز العدّ من التفسير"
+      ],
+      "evidence_sources": [
+        "evidence_board"
+      ]
+    },
+    {
+      "id": "lo_hyp",
+      "statement_ar": "يوازن بين فرضيتين على الأقل ويستبعد ما تنقضه الأدلة.",
+      "skill_ko_ref": "KO-RS-05-002",
+      "observable_behaviors_ar": [
+        "يضيف فرضيات",
+        "يستبعد بدليل"
+      ],
+      "evidence_sources": [
+        "hypothesis_ledger"
+      ]
+    },
+    {
+      "id": "lo_calib",
+      "statement_ar": "يصوغ نسبة الترجيح بحدودها.",
+      "skill_ko_ref": "KO-RS-06-021",
+      "observable_behaviors_ar": [
+        "يختار ثقة معقولة",
+        "يذكر حدوداً"
+      ],
+      "evidence_sources": [
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_revise",
+      "statement_ar": "يراجع رأيه الأول حين يظهر ما يخالفه.",
+      "skill_ko_ref": "KO-RS-06-009",
+      "observable_behaviors_ar": [
+        "يغيّر فرضيته الرائدة بدليل"
+      ],
+      "evidence_sources": [
+        "hypothesis_ledger"
+      ]
+    }
+  ],
+  "mechanics": {
+    "time_budget_units": 40,
+    "actions": [
+      {
+        "id": "a_photo_tag",
+        "type": "examine",
+        "label_ar": "صوّر بطاقة الوشاح الأزرق المحفوظ",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_scarf_tag"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "obj_blue",
+        "telemetry_code": "PHOTO_TAG"
+      },
+      {
+        "id": "a_photo_fringe",
+        "type": "examine",
+        "label_ar": "صوّر هدب الوشاح الأزرق عن قرب",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_scarf_patch"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "obj_blue",
+        "telemetry_code": "PHOTO_FRINGE"
+      },
+      {
+        "id": "a_photo_green",
+        "type": "examine",
+        "label_ar": "افحص بطاقة الوشاح الأخضر القطني",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_green_label"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "obj_green",
+        "telemetry_code": "PHOTO_GREEN"
+      },
+      {
+        "id": "a_get_receipts",
+        "type": "examine",
+        "label_ar": "اطلب نسخ وصلات الشراء من متجر المدرسة",
+        "precondition": {
+          "all": [
+            {
+              "fact_unlocked": "f_shop_serial"
+            },
+            {
+              "any": [
+                {
+                  "fact_unlocked": "f_mazen_receipt_exists"
+                },
+                {
+                  "fact_unlocked": "f_yasser_receipt_exists"
+                }
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_mazen_receipt"
+          },
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_yasser_receipt"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_shop",
+        "telemetry_code": "GET_RECEIPTS"
+      },
+      {
+        "id": "a_get_shop_ledger",
+        "type": "examine",
+        "label_ar": "اطلب سجل المبيعات من المتجر",
+        "precondition": {
+          "fact_unlocked": "f_shop_ledger_exists"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_shop_count"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_shop",
+        "telemetry_code": "GET_SHOP_LEDGER"
+      },
+      {
+        "id": "a_get_departure_photo",
+        "type": "examine",
+        "label_ar": "اطلب صورة صعود الحافلة من الأستاذة منى",
+        "precondition": {
+          "fact_unlocked": "f_departure_photo_exists"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_departure_photo"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_school",
+        "telemetry_code": "GET_DEPARTURE_PHOTO"
+      },
+      {
+        "id": "a_get_bus_log",
+        "type": "examine",
+        "label_ar": "اطلب سجل أمانات الحافلة",
+        "precondition": {
+          "fact_unlocked": "f_bus_log_exists"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_bus_log"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_bus",
+        "telemetry_code": "GET_BUS_LOG"
+      },
+      {
+        "id": "a_sample_fibres",
+        "type": "examine",
+        "label_ar": "خذ عينات لاصقة (بموافقة أصحابها) من القبعتين والمقعد والحقيبة",
+        "precondition": {
+          "fact_unlocked": "f_samples_allowed"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_cap_fibres"
+          },
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_seat_fibres"
+          },
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_bag_fibres"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_lab",
+        "telemetry_code": "SAMPLE_FIBRES"
+      },
+      {
+        "id": "a_request_fibre_lab",
+        "type": "request_lab_test",
+        "label_ar": "اطلب من مختبر المنظار مقارنة أعداد الألياف بمدى التلامس الممكن",
+        "precondition": {
+          "has_evidence": "ev_cap_fibres"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_fibre_lab"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_lab",
+        "telemetry_code": "LAB_FIBRES"
+      },
+      {
+        "id": "a_int_mazen",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة مازن",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "mazen",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "mazen",
+        "telemetry_code": "INT_MAZEN"
+      },
+      {
+        "id": "a_int_yasser",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة ياسر",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "yasser",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "yasser",
+        "telemetry_code": "INT_YASSER"
+      },
+      {
+        "id": "a_int_layan",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة ليان",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "layan",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "layan",
+        "telemetry_code": "INT_LAYAN"
+      },
+      {
+        "id": "a_int_mona",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة الأستاذة منى",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "mona",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "mona",
+        "telemetry_code": "INT_MONA"
+      },
+      {
+        "id": "a_int_karim",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة كريم",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "karim",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "karim",
+        "telemetry_code": "INT_KARIM"
+      },
+      {
+        "id": "a_note_mazen",
+        "type": "examine",
+        "label_ar": "دوّن إفادة مازن",
+        "precondition": {
+          "fact_unlocked": "f_mazen_embroidery"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_mazen_statement"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "mazen",
+        "telemetry_code": "NOTE_MAZEN"
+      },
+      {
+        "id": "a_note_yasser",
+        "type": "examine",
+        "label_ar": "دوّن إفادة ياسر",
+        "precondition": {
+          "fact_unlocked": "f_yasser_receipt_exists"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_yasser_statement"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "yasser",
+        "telemetry_code": "NOTE_YASSER"
+      },
+      {
+        "id": "a_note_layan",
+        "type": "examine",
+        "label_ar": "دوّن إفادة ليان",
+        "precondition": {
+          "fact_unlocked": "f_layan_collect"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_layan_statement"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "layan",
+        "telemetry_code": "NOTE_LAYAN"
+      },
+      {
+        "id": "p_tag_yasser",
+        "type": "present_evidence",
+        "label_ar": "اعرض بطاقة الوشاح على ياسر",
+        "precondition": {
+          "presented": {
+            "evidence_id": "ev_scarf_tag",
+            "to_character": "yasser"
+          }
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "PRESENTED_TAG"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "yasser",
+        "telemetry_code": "P_TAG_YASSER"
+      },
+      {
+        "id": "p_log_layan",
+        "type": "present_evidence",
+        "label_ar": "اعرض سجل الأمانات على ليان",
+        "precondition": {
+          "presented": {
+            "evidence_id": "ev_bus_log",
+            "to_character": "layan"
+          }
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "PRESENTED_LOG"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "layan",
+        "telemetry_code": "P_LOG_LAYAN"
+      },
+      {
+        "id": "a_hint",
+        "type": "request_hint",
+        "label_ar": "اطلب تلميحاً",
+        "precondition": {
+          "always": true
+        },
+        "effects": [],
+        "time_cost_units": 0,
+        "telemetry_code": "REQUEST_HINT"
+      },
+      {
+        "id": "a_accuse",
+        "type": "final_accusation",
+        "label_ar": "قدّم الاستنتاج النهائي",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "SUBMIT"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "FINAL_ACCUSATION"
+      },
+      {
+        "id": "ask_mazen_f_mazen_receipt_exists",
+        "type": "interview",
+        "label_ar": "[نموذج] mazen يذكر f_mazen_receipt_exists",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_mazen_receipt_exists"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "mazen",
+        "telemetry_code": "ASK_MAZEN_F_MAZEN_RECEIPT_EXISTS"
+      },
+      {
+        "id": "ask_mazen_f_mazen_embroidery",
+        "type": "interview",
+        "label_ar": "[نموذج] mazen يذكر f_mazen_embroidery",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_mazen_embroidery"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "mazen",
+        "telemetry_code": "ASK_MAZEN_F_MAZEN_EMBROIDERY"
+      },
+      {
+        "id": "ask_yasser_f_yasser_receipt_exists",
+        "type": "interview",
+        "label_ar": "[نموذج] yasser يذكر f_yasser_receipt_exists",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_yasser_receipt_exists"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "yasser",
+        "telemetry_code": "ASK_YASSER_F_YASSER_RECEIPT_EXISTS"
+      },
+      {
+        "id": "ask_yasser_f_green_is_yassers",
+        "type": "interview",
+        "label_ar": "[نموذج] yasser يذكر f_green_is_yassers",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_green_is_yassers"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "yasser",
+        "telemetry_code": "ASK_YASSER_F_GREEN_IS_YASSERS"
+      },
+      {
+        "id": "ask_yasser_f_yasser_realises",
+        "type": "interview",
+        "label_ar": "[نموذج] yasser يكشف f_yasser_realises",
+        "precondition": {
+          "all": [
+            {
+              "always": true
+            },
+            {
+              "presented": {
+                "evidence_id": "ev_scarf_tag",
+                "to_character": "yasser"
+              }
+            }
+          ]
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_yasser_realises"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "yasser",
+        "telemetry_code": "ASK_YASSER_F_YASSER_REALISES"
+      },
+      {
+        "id": "ask_layan_f_layan_collect",
+        "type": "interview",
+        "label_ar": "[نموذج] layan يذكر f_layan_collect",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_layan_collect"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "layan",
+        "telemetry_code": "ASK_LAYAN_F_LAYAN_COLLECT"
+      },
+      {
+        "id": "ask_layan_f_bus_log_exists",
+        "type": "interview",
+        "label_ar": "[نموذج] layan يذكر f_bus_log_exists",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_bus_log_exists"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "layan",
+        "telemetry_code": "ASK_LAYAN_F_BUS_LOG_EXISTS"
+      },
+      {
+        "id": "ask_layan_f_layan_pile",
+        "type": "interview",
+        "label_ar": "[نموذج] layan يكشف f_layan_pile",
+        "precondition": {
+          "all": [
+            {
+              "always": true
+            },
+            {
+              "presented": {
+                "evidence_id": "ev_bus_log",
+                "to_character": "layan"
+              }
+            }
+          ]
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_layan_pile"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "layan",
+        "telemetry_code": "ASK_LAYAN_F_LAYAN_PILE"
+      },
+      {
+        "id": "ask_mona_f_departure_photo_exists",
+        "type": "interview",
+        "label_ar": "[نموذج] mona يذكر f_departure_photo_exists",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_departure_photo_exists"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "mona",
+        "telemetry_code": "ASK_MONA_F_DEPARTURE_PHOTO_EXISTS"
+      },
+      {
+        "id": "ask_mona_f_bus_log_exists",
+        "type": "interview",
+        "label_ar": "[نموذج] mona يذكر f_bus_log_exists",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_bus_log_exists"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "mona",
+        "telemetry_code": "ASK_MONA_F_BUS_LOG_EXISTS"
+      },
+      {
+        "id": "ask_mona_f_samples_allowed",
+        "type": "interview",
+        "label_ar": "[نموذج] mona يذكر f_samples_allowed",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_samples_allowed"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "mona",
+        "telemetry_code": "ASK_MONA_F_SAMPLES_ALLOWED"
+      },
+      {
+        "id": "ask_karim_f_shop_serial",
+        "type": "interview",
+        "label_ar": "[نموذج] karim يذكر f_shop_serial",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_shop_serial"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "karim",
+        "telemetry_code": "ASK_KARIM_F_SHOP_SERIAL"
+      },
+      {
+        "id": "ask_karim_f_shop_ledger_exists",
+        "type": "interview",
+        "label_ar": "[نموذج] karim يذكر f_shop_ledger_exists",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_shop_ledger_exists"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "karim",
+        "telemetry_code": "ASK_KARIM_F_SHOP_LEDGER_EXISTS"
+      }
+    ]
+  },
+  "state_machine": {
+    "id": "c013",
+    "initial": "briefing",
+    "type": "compound",
+    "states": {
+      "briefing": {
+        "description_ar": "الإحاطة",
+        "type": "atomic",
+        "on": {
+          "START": {
+            "target": "investigating"
+          }
+        }
+      },
+      "investigating": {
+        "description_ar": "التحقيق",
+        "type": "compound",
+        "initial": "gathering",
+        "states": {
+          "gathering": {
+            "type": "atomic",
+            "on": {
+              "OPEN_DEDUCTION": {
+                "target": "deducing"
+              }
+            }
+          },
+          "deducing": {
+            "type": "atomic",
+            "on": {
+              "BACK": {
+                "target": "gathering"
+              }
+            }
+          }
+        },
+        "on": {
+          "SUBMIT": {
+            "target": "review"
+          }
+        }
+      },
+      "review": {
+        "description_ar": "مراجعة",
+        "type": "atomic",
+        "on": {
+          "CLOSE": {
+            "target": "resolved"
+          }
+        }
+      },
+      "resolved": {
+        "description_ar": "إغلاق",
+        "type": "final"
+      }
+    }
+  },
+  "dialogue": {
+    "max_turns_per_interview": 10,
+    "llm_enabled": false,
+    "topics": [
+      {
+        "id": "t_mazen",
+        "label_ar": "شراء وشاح مازن",
+        "example_questions_ar": [
+          "كيف اشتريت وشاحك؟",
+          "هل فيه علامة خاصة؟"
+        ],
+        "fact_ids": [
+          "f_mazen_receipt_exists",
+          "f_mazen_embroidery"
+        ]
+      },
+      {
+        "id": "t_yasser",
+        "label_ar": "حجة ياسر",
+        "example_questions_ar": [
+          "لماذا تظن أن الأزرق لك؟",
+          "هل معك وصل؟",
+          "ما شأن الوشاح الأخضر؟"
+        ],
+        "fact_ids": [
+          "f_yasser_receipt_exists",
+          "f_green_is_yassers",
+          "f_yasser_realises"
+        ],
+        "claim_ids": [
+          "cl_yasser_receipt",
+          "cl_yasser_fibres"
+        ]
+      },
+      {
+        "id": "t_collect",
+        "label_ar": "جمع الأغراض في الحافلة",
+        "example_questions_ar": [
+          "متى جمعت الوشاحين؟",
+          "أين كان كل منهما؟",
+          "أين وضعتهما؟"
+        ],
+        "fact_ids": [
+          "f_layan_collect",
+          "f_bus_log_exists",
+          "f_layan_pile"
+        ],
+        "claim_ids": [
+          "cl_layan_separate"
+        ]
+      },
+      {
+        "id": "t_trip",
+        "label_ar": "سجلات الرحلة",
+        "example_questions_ar": [
+          "هل توجد صورة للصعود؟",
+          "هل أُخذت عينات؟",
+          "هل لدينا سجل للأمانات؟"
+        ],
+        "fact_ids": [
+          "f_departure_photo_exists",
+          "f_bus_log_exists",
+          "f_samples_allowed"
+        ]
+      },
+      {
+        "id": "t_shop",
+        "label_ar": "تسجيل مبيعات المتجر",
+        "example_questions_ar": [
+          "كيف تميّزون الأوشحة؟",
+          "هل لديكم سجل للمبيعات؟"
+        ],
+        "fact_ids": [
+          "f_shop_serial",
+          "f_shop_ledger_exists"
+        ]
+      }
+    ]
+  },
+  "rubric": {
+    "reference_answer_ar": "الوشاح الأزرق الصوفي ملك مازن. رقمه التسلسلي S-0187 وطوله ودفعته تطابق وصل مازن، وعند هدبه علامة الميم البرتقالية نفسها التي تظهر في صورة الصباح، أما وصل ياسر فلوشاح آخر بمقاس ورقم مختلفين. وكثرة الألياف على قبعة ياسر لا تثبت ملكيته: عدداها على القبعتين يتفقان مع ملامسة قصيرة أو ارتداء أو نقل ثانوي، والوشاحان اجتمعا على مقعد واحد حين جمعتهما ليان دون قصد. حدود الاستنتاج: الوصل يثبت الشراء لا أن الوشاح بقي عند صاحبه، أرقام المختبر توضيحية، ولا تنفي الأدلة أن يكون لياسر وشاح أزرق آخر في بيته.",
+    "criteria": [
+      {
+        "id": "c_source",
+        "name_ar": "تصنيف المصادر",
+        "objective_ids": [
+          "lo_obs"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يصنّف"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "أخطأ في الأغلب"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "نصف صحيح"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمه صحيح"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كله صحيح"
+          }
+        ]
+      },
+      {
+        "id": "c_conflict",
+        "name_ar": "ترتيب الأحداث على الخط الزمني",
+        "objective_ids": [
+          "lo_corr"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يضع شيئاً"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "وضع قليلاً"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "وضع نصفها صحيحاً"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمها"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كلها في موضعها"
+          }
+        ]
+      },
+      {
+        "id": "c_links",
+        "name_ar": "ربط الأدلة بالفرضيات",
+        "objective_ids": [
+          "lo_diag",
+          "lo_corr"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.25,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لا روابط"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "قليلة"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "نصفها صحيح"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمها"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كلها دقيقة"
+          }
+        ]
+      },
+      {
+        "id": "c_uncertainty",
+        "name_ar": "معايرة الثقة",
+        "objective_ids": [
+          "lo_calib"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "ثقة مفرطة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "حدود قليلة"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "جزئية"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معقولة"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "معايَرة كاملة"
+          }
+        ]
+      },
+      {
+        "id": "c_revision",
+        "name_ar": "مراجعة الرأي",
+        "objective_ids": [
+          "lo_revise"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "بقي على فرضية مرفوضة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "لم يعلن فرضية"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "ثبت على فرضية سليمة"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "غيّر بدليل"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "غيّر بدليل ووثّق"
+          }
+        ]
+      },
+      {
+        "id": "c_elimination",
+        "name_ar": "استبعاد الفرضيات الخاطئة",
+        "objective_ids": [
+          "lo_hyp"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يستبعد"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "استبعد خطأً"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "فرضية بدليل"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "فرضيتين"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كل الخاطئة"
+          }
+        ]
+      },
+      {
+        "id": "c_justification",
+        "name_ar": "جودة الحجة المكتوبة",
+        "objective_ids": [
+          "lo_diag",
+          "lo_hyp",
+          "lo_obs"
+        ],
+        "scored_by": "human",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لا حجة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "ادعاء بلا سند"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "أدلة دون ربط"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "ربط الأدلة بالاستنتاج"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "ربط مع البدائل والحدود"
+          }
+        ]
+      }
+    ]
+  },
+  "hint_ladder": [
+    {
+      "id": "hg1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "حين تجد أثراً على شيء، اسأل: هل يدل على أن صاحب الشيء لامس الأثر، أم أن أي أحد قد يكون لامسه؟",
+      "trigger": {
+        "always": true
+      },
+      "assessment_weight": 0.02
+    },
+    {
+      "id": "hg2",
+      "level": 2,
+      "kind": "focus_area",
+      "text_ar": "ضع الأدلة في عمودين: ما يتشابه فيه الطالبان، وما يختلف فيه ويميّز أحدهما.",
+      "trigger": {
+        "has_evidence": "ev_cap_fibres"
+      },
+      "assessment_weight": 0.04
+    },
+    {
+      "id": "hf1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "ما الذي يستطيع عدّ الألياف أن يقوله، وما الذي لا يستطيع؟",
+      "trigger": {
+        "has_evidence": "ev_cap_fibres"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_a_fibres"
+    },
+    {
+      "id": "hf2",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "اطلب من مختبر المنظار مقارنة العددين بمدى التلامس الممكن، وقارن المدى بكل قبعة.",
+      "trigger": {
+        "has_evidence": "ev_cap_fibres"
+      },
+      "assessment_weight": 0.05,
+      "targets_inference_id": "i_a_fibres"
+    },
+    {
+      "id": "hf3",
+      "level": 3,
+      "kind": "partial_reveal",
+      "text_ar": "المدى متداخل: عدد ياسر يناسب ملامسة قصيرة، وعدد مازن يناسب الارتداء أو النقل الثانوي.",
+      "trigger": {
+        "has_evidence": "ev_fibre_lab"
+      },
+      "assessment_weight": 0.08,
+      "targets_inference_id": "i_a_fibres"
+    },
+    {
+      "id": "ho1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "أي معلومة في الوصل تتفرد بوشاح واحد دون سائر الأوشحة الزرقاء؟",
+      "trigger": {
+        "has_evidence": "ev_yasser_receipt"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_a_owner"
+    },
+    {
+      "id": "ho2",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "قارن الطول والدفعة والرقم التسلسلي في كل وصل ببطاقة الوشاح الفعلي.",
+      "trigger": {
+        "has_evidence": "ev_yasser_receipt"
+      },
+      "assessment_weight": 0.05,
+      "targets_inference_id": "i_a_owner"
+    },
+    {
+      "id": "hb1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "من نقل الوشاحين، وأين كان كل منهما حين جُمع؟",
+      "trigger": {
+        "has_evidence": "ev_layan_statement"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_layan_mixed"
+    }
+  ],
+  "fairness_test": {
+    "requirements": {
+      "min_disjoint_proof_paths": 2,
+      "max_inference_depth": 3,
+      "all_red_herrings_refutable": true,
+      "culprit_uniquely_entailed": true,
+      "no_hidden_fact_dependency": true,
+      "max_required_actions": 40
+    },
+    "runs": []
+  },
+  "ending_explanation": {
+    "steps": [
+      {
+        "order": 1,
+        "text_ar": "بطاقة الوشاح الأزرق تحمل الرقم S-0187 والطول 180 سم والدفعة B7، وهذه المواصفات نفسها في وصل مازن؛ والرقم يخص وشاحاً واحداً في سجل المتجر.",
+        "uses_evidence_ids": [
+          "ev_scarf_tag",
+          "ev_mazen_receipt"
+        ],
+        "inference_id": "i_a_owner"
+      },
+      {
+        "order": 2,
+        "text_ar": "مسار مستقل يتفق معه: صورة الصباح تضع علامة برتقالية على هدب وشاح مازن، وعلى الوشاح المحفوظ حرف «م» مطرّز بالخيط نفسه.",
+        "uses_evidence_ids": [
+          "ev_departure_photo",
+          "ev_scarf_patch"
+        ],
+        "inference_id": "i_b_owner"
+      },
+      {
+        "order": 3,
+        "text_ar": "وصل ياسر لوشاح أزرق آخر بمقاس 150 سم ودفعة B5 ورقم مختلف؛ فتشابه اللون لا يعني تطابق الوصل.",
+        "uses_evidence_ids": [
+          "ev_yasser_receipt",
+          "ev_scarf_tag"
+        ],
+        "inference_id": "i_mismatch"
+      },
+      {
+        "order": 4,
+        "text_ar": "أعداد الألياف على القبعتين تقع ضمن مدى تفسيرات بريئة متداخلة، فلا تفرّق بين الطالبين.",
+        "uses_evidence_ids": [
+          "ev_cap_fibres",
+          "ev_fibre_lab"
+        ],
+        "inference_id": "i_a_fibres"
+      },
+      {
+        "order": 5,
+        "text_ar": "ومن جهة أخرى: الوشاحان اجتمعا على مقعد واحد قبل حضور الطالبين، وفي المدرسة أوشحة كثيرة من النوع نفسه، فوجود الألياف لا يعيّن صاحبها.",
+        "uses_evidence_ids": [
+          "ev_bus_log",
+          "ev_shop_count"
+        ],
+        "inference_id": "i_b_fibres"
+      },
+      {
+        "order": 6,
+        "text_ar": "وجود الألياف الزرقاء على المقعد وحقيبة ليان يبيّن أن الألياف تنتقل بالتلامس غير المباشر.",
+        "uses_evidence_ids": [
+          "ev_seat_fibres",
+          "ev_bag_fibres",
+          "ev_cap_fibres"
+        ],
+        "inference_id": "i_transfer"
+      },
+      {
+        "order": 7,
+        "text_ar": "ليان جمعت الوشاحين من مقعدين ثم وُجدا معاً، فالتبس الأمر دون قصد من أحد.",
+        "uses_evidence_ids": [
+          "ev_bus_log"
+        ],
+        "inference_id": "i_layan_mixed"
+      },
+      {
+        "order": 8,
+        "text_ar": "إذن الوشاح الأزرق لمازن، والوشاح الأخضر لياسر، ولم يُسرق شيء.",
+        "uses_evidence_ids": [
+          "ev_scarf_tag",
+          "ev_mazen_receipt",
+          "ev_green_label"
+        ],
+        "inference_id": "i_support_mazen"
+      }
+    ],
+    "alternative_paths_ar": [
+      "يمكن بلوغ النتيجة من الوصل والبطاقة وعينات القبعتين وتقرير المختبر وحدها.",
+      "ويمكن بلوغها من صورة الصباح وصورة الهدب وسجل الأمانات وسجل المتجر وحدها، دون المختبر؛ والأقوى أن يتفق المساران."
+    ],
+    "what_evidence_could_not_show_ar": [
+      "الوصل يثبت الشراء لا أن الوشاح بقي عند صاحبه؛ ولو أعاره مازن لغيره لما تغيّر الوصل.",
+      "أرقام المختبر توضيحية، وغياب الألياف لا يثبت غياب التلامس.",
+      "لا تنفي الأدلة أن يكون لياسر وشاح أزرق آخر في بيته."
+    ],
+    "science_notes_ar": [
+      "الألياف أثر تلامس، وقد تنتقل بالواسطة (مقعد أو يد أو حقيبة) فتكون خلفية لا دليل ملكية؛ وتبسيط مبدأ لوكار لا يعني أن كل أثر يدل على صاحب الشيء.",
+      "عندما تتفق الآثار الفيزيائية مع المتنازعين معاً، يُرجع إلى سجل وصفي يتفرد بالشيء: رقم تسلسلي أو علامة خاصة.",
+      "سجل الأمانات يحفظ سلسلة العهدة للأغراض المنسية، ويظهر أن نقل شيء بحسن نية قد يغيّر السياق الذي يقرأ به الناس الآثار.",
+      "تُختم القضية بمساءلة مؤسسية لا بتشهير: تضع المدرسة قاعدة بألا تُجمع الأغراض المنسية على مقعد واحد، وتكتب موضع كل غرض، وتعتذر ليان وياسر لبعضهما.",
+      "ما نسميه نسبة الترجيح حكم مبني على سجلات يمكن تتبّعها، لا على كثرة الآثار."
+    ]
+  },
+  "expert_review": [
+    {
+      "role": "narrative_editor",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "scientific_reviewer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "learning_designer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "age_appropriateness",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "cultural_reviewer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "legal_rights",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "safety",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    }
+  ]
+}

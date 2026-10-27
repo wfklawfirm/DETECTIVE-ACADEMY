@@ -1,0 +1,3050 @@
+{
+  "schema_version": "0.1.0",
+  "case_id": "c011_unseen_drone",
+  "case_version": "0.1.0",
+  "meta": {
+    "title_ar": "الطائرة التي لم يرها أحد",
+    "title_en": "The Aircraft Nobody Saw",
+    "age_band": "13-15",
+    "locale": "ar",
+    "dialogue_register": "msa",
+    "estimated_minutes": 28,
+    "difficulty": 2,
+    "content_flags": [
+      "no_violence"
+    ],
+    "authors": [
+      "فريق أثر التحريري (مسودة بمساعدة الذكاء الاصطناعي، عن بذرة من قضايا التراث، لم تُراجَع بشرياً بعد)"
+    ],
+    "knowledge_object_refs": [
+      "KO-RS-06-004",
+      "KO-RS-06-006",
+      "KO-RS-06-001",
+      "KO-RS-05-005",
+      "KO-RS-05-007",
+      "KO-RS-06-009",
+      "KO-RS-06-021",
+      "KO-FC-04-015",
+      "KO-FC-04-024",
+      "KO-NP-02H-001"
+    ]
+  },
+  "premise": {
+    "hook_ar": "طائرة صغيرة تضيع يوم الافتتاح، وطالب يصفها وصفاً لم يسمعه أحد قبله. هل يكفي أن تكون دقيقاً لتكون قد رأيت؟",
+    "player_role_ar": "أنت مراجع في لجنة معرض القافلة، وطُلب منك أن تحسم كيف عرف ورد تفاصيل الطائرة قبل أن يُحرم من المعرض.",
+    "setting_ar": "معرض القافلة وبستانه المجاور، صباح يوم الافتتاح. كل الأوقات بساعة المعرض وفرق الدقيقة تُذكر عند الحاجة.",
+    "public_fact_ids": [
+      "f_aircraft_missing",
+      "f_nader_accuses",
+      "f_warad_described"
+    ],
+    "assumed_general_knowledge_ar": [
+      "الريح تحمل الأجسام الخفيفة في اتجاه هبوبها",
+      "ما يُعلن بمكبّر الصوت يسمعه كل من في المعرض"
+    ]
+  },
+  "entities": {
+    "characters": [
+      {
+        "id": "nader",
+        "name_ar": "نادر الحمدان",
+        "role": "victim",
+        "age_descriptor_ar": "15 سنة، رئيس نادي التصوير وصاحب الطائرة",
+        "persona_ar": "قلق وسريع الحكم، يظن أن من يصف الشيء بدقة لا بد أنه رآه أو لمسه، ويتراجع إذا واجهته بسجل مكتوب.",
+        "motives_ar": [
+          "استعادة طائرة النادي قبل نهاية المعرض",
+          "ألا يُلام النادي على ضياع معدّاته"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "nd_greet",
+            "purpose": "greeting",
+            "text_ar": "أهلاً. طائرتنا اختفت يوم الافتتاح، وأريد أن أفهم كيف عرف ورد كل هذه التفاصيل."
+          },
+          {
+            "line_id": "nd_pilot",
+            "purpose": "reveal",
+            "text_ar": "سليم هو من طيّرها من مكتب التحكم عند العاشرة، وأنا طلبت منه ألّا يطيل التحليق.",
+            "fact_ids": [
+              "f_salim_flew"
+            ]
+          },
+          {
+            "line_id": "nd_only",
+            "purpose": "reveal",
+            "text_ar": "لا يقول هذا الوصف إلا من رآها أو حملها بيده، فهذا هو الاستنتاج الوحيد المعقول.",
+            "claim_ids": [
+              "cl_nader_witness"
+            ]
+          },
+          {
+            "line_id": "nd_open",
+            "purpose": "reveal",
+            "text_ar": "والبستان المجاور مفتوح لكل من يريد المرور، فربما التقطها أحد الزوار.",
+            "claim_ids": [
+              "cl_orchard_open"
+            ]
+          },
+          {
+            "line_id": "nd_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف. هذا بعيد عمّا كنت أراقبه."
+          },
+          {
+            "line_id": "nd_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "رجاءً، لنبقَ في موضوع الطائرة وما قيل عنها."
+          },
+          {
+            "line_id": "nd_bye",
+            "purpose": "farewell",
+            "text_ar": "أريد جواباً قبل أن ينتهي المعرض. شكراً لوقتك."
+          }
+        ]
+      },
+      {
+        "id": "warad",
+        "name_ar": "ورد الخطيب",
+        "role": "suspect",
+        "age_descriptor_ar": "14 سنة، متطوع في شبكة الأثر",
+        "persona_ar": "ملاحظ هادئ يربط التفاصيل الصغيرة، لكنه يتكلم بصيغة الجزم حين يتوتر فيبدو كأنه يروي ما شاهده بعينه.",
+        "motives_ar": [
+          "ألا يُحرم من إكمال التطوع في المعرض",
+          "أن يُفهم أنه قال ما قاله بنيّة المساعدة"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "wd_greet",
+            "purpose": "greeting",
+            "text_ar": "أنا لم آخذ الطائرة. اسألني عمّا قلته وكيف قلته."
+          },
+          {
+            "line_id": "wd_post",
+            "purpose": "reveal",
+            "text_ar": "كنت عند نقطة الماء الجنوبية من التاسعة وخمسين دقيقة إلى العاشرة وأربعين دقيقة، وبعدها مشيت إلى مكتب المنسّقة.",
+            "fact_ids": [
+              "f_warad_post"
+            ]
+          },
+          {
+            "line_id": "wd_route",
+            "purpose": "reveal",
+            "text_ar": "طريقي إلى المكتب يمرّ بممر البستان، ومررت بطرفه الشرقي بين العاشرة وخمس وأربعين والعاشرة وخمس وخمسين.",
+            "fact_ids": [
+              "f_warad_route"
+            ]
+          },
+          {
+            "line_id": "wd_marks",
+            "purpose": "reveal",
+            "text_ar": "هناك رأيت علامات على الأرض قرب الشبك، فصوّرتها بهاتفي لأعرضها على المنسّقة.",
+            "fact_ids": [
+              "f_warad_marks_place"
+            ]
+          },
+          {
+            "line_id": "wd_feather",
+            "purpose": "reveal",
+            "text_ar": "نعم، علقت بالطائرة ريشة، هذا ما قلته وأظنه صحيحاً.",
+            "claim_ids": [
+              "cl_warad_feather"
+            ]
+          },
+          {
+            "line_id": "wd_refuse",
+            "purpose": "refuse_secret",
+            "text_ar": "قلت كل ما عندي في هذه النقطة."
+          },
+          {
+            "line_id": "wd_admit",
+            "purpose": "reveal",
+            "text_ar": "حسناً... أنا لم أرَ الطائرة نفسها. رأيت الريشة على الشبك فافترضت أنها علقت بها، وقلتها كأنها مؤكدة.",
+            "fact_ids": [
+              "f_warad_admits"
+            ]
+          },
+          {
+            "line_id": "wd_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف، ولا أحب أن أخمّن."
+          },
+          {
+            "line_id": "wd_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "هذا بعيد عن موضوع الطائرة. اسألني عمّا حدث ذلك الصباح."
+          },
+          {
+            "line_id": "wd_bye",
+            "purpose": "farewell",
+            "text_ar": "شكراً لأنك تسأل عن مصدر كل تفصيل قبل أن تحكم."
+          }
+        ]
+      },
+      {
+        "id": "salim",
+        "name_ar": "سليم البغدادي",
+        "role": "suspect",
+        "age_descriptor_ar": "15 سنة، عضو في نادي التصوير وقائد الطائرة",
+        "persona_ar": "لطيف ويعتذر كثيراً، يميل إلى التقليل من شأن أخطائه الصغيرة، ويفضّل أن يعرض السجل على أن يشرح.",
+        "motives_ar": [
+          "أن تعود الطائرة سالمة",
+          "ألا يظن زملاؤه أنه أهمل في عمله"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "sl_greet",
+            "purpose": "greeting",
+            "text_ar": "أنا من كان يطيّرها. يمكنني أن أريك السجل الذي يحفظه التطبيق."
+          },
+          {
+            "line_id": "sl_app",
+            "purpose": "reveal",
+            "text_ar": "التطبيق يحتفظ بسجل لكل رحلة على هاتفي، ويمكنني تصدير نسخة منه لتقرأها.",
+            "fact_ids": [
+              "f_app_log_exists"
+            ]
+          },
+          {
+            "line_id": "sl_announce",
+            "purpose": "reveal",
+            "text_ar": "حين ظهر تنبيه البطارية طلبت من المنسّق أن يعلن للزوار أن الطائرة تعود لانخفاض بطاريتها.",
+            "fact_ids": [
+              "f_announce_asked"
+            ]
+          },
+          {
+            "line_id": "sl_east",
+            "purpose": "reveal",
+            "text_ar": "رأيتها تغيب خلف أشجار البستان نحو الشرق، ثم انقطع الاتصال في العاشرة واثنتي عشرة دقيقة.",
+            "fact_ids": [
+              "f_salim_saw_east"
+            ]
+          },
+          {
+            "line_id": "sl_refuse",
+            "purpose": "refuse_secret",
+            "text_ar": "بدأت الرحلة بالشكل المعتاد، ولا أذكر شيئاً آخر يخص الشحن."
+          },
+          {
+            "line_id": "sl_charge",
+            "purpose": "reveal",
+            "text_ar": "نعم... أقلعتُ وبطاريتها نحو خمسة وثلاثين في المئة لأن الشحن لم يكتمل، ولم أخبر نادر بذلك.",
+            "fact_ids": [
+              "f_start_battery"
+            ]
+          },
+          {
+            "line_id": "sl_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف، لم أرَ أكثر من ذلك."
+          },
+          {
+            "line_id": "sl_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "أفضّل أن نبقى في موضوع الرحلة."
+          },
+          {
+            "line_id": "sl_bye",
+            "purpose": "farewell",
+            "text_ar": "أتمنى أن تعود الطائرة، وأن يُفهم ما حدث."
+          }
+        ]
+      },
+      {
+        "id": "rami",
+        "name_ar": "رامي الشامي",
+        "role": "witness",
+        "age_descriptor_ar": "مشرف متطوع في نقطة الماء الجنوبية",
+        "persona_ar": "منظم ودقيق في التوقيع والتسليم، قليل الكلام، ويقول ما في دفتره فقط.",
+        "motives_ar": [
+          "أن يبقى سجل نقطة الماء سليماً",
+          "أن يُنصف المتطوعون الصغار"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "rm_greet",
+            "purpose": "greeting",
+            "text_ar": "تفضّل. سجل المناوبات أمامي، وأقرأ منه فقط."
+          },
+          {
+            "line_id": "rm_log",
+            "purpose": "reveal",
+            "text_ar": "عندنا سجل تسليم يوقّعه كل متطوع عند الاستلام وعند التسليم.",
+            "fact_ids": [
+              "f_water_log_exists"
+            ]
+          },
+          {
+            "line_id": "rm_warad",
+            "purpose": "reveal",
+            "text_ar": "ورد استلم المناوبة عند التاسعة وخمسين دقيقة، وسلّمها لي عند العاشرة وأربعين دقيقة.",
+            "fact_ids": [
+              "f_warad_post"
+            ]
+          },
+          {
+            "line_id": "rm_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "ليس في سجلي."
+          },
+          {
+            "line_id": "rm_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن نقطة الماء فقط."
+          },
+          {
+            "line_id": "rm_bye",
+            "purpose": "farewell",
+            "text_ar": "مع السلامة."
+          }
+        ]
+      },
+      {
+        "id": "jamil",
+        "name_ar": "جميل الأنصاري",
+        "role": "witness",
+        "age_descriptor_ar": "حارس البستان المجاور للمعرض",
+        "persona_ar": "هادئ ومتحفظ، يعتزّ بدفتر يومه ويكتب فيه كل ما يخص البوابة والري والصيانة.",
+        "motives_ar": [
+          "أن يبقى البستان سليماً",
+          "ألا يُنسب إليه إهمال في الحراسة"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "jm_greet",
+            "purpose": "greeting",
+            "text_ar": "أهلاً. البستان في عهدتي منذ الصباح، ودفتري يقول ما جرى."
+          },
+          {
+            "line_id": "jm_log",
+            "purpose": "reveal",
+            "text_ar": "أدوّن في دفتر اليوم كل ما يخص البوابة والري والجزّ ودخول العربات.",
+            "fact_ids": [
+              "f_orchard_log_exists"
+            ]
+          },
+          {
+            "line_id": "jm_closed",
+            "purpose": "reveal",
+            "text_ar": "أقفلت البوابة الرئيسية عند الثامنة ومفتاحها معي حتى الحادية عشرة، ولم تدخل عربات بعد الري.",
+            "fact_ids": [
+              "f_orchard_closed"
+            ]
+          },
+          {
+            "line_id": "jm_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعلم، ليس في دفتري."
+          },
+          {
+            "line_id": "jm_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن البستان وبوابته."
+          },
+          {
+            "line_id": "jm_bye",
+            "purpose": "farewell",
+            "text_ar": "تفضّل بزيارتنا متى شئت."
+          }
+        ]
+      }
+    ],
+    "locations": [
+      {
+        "id": "loc_fair",
+        "name_ar": "ساحة المعرض ومكتب التحكم",
+        "description_ar": "حيث يعمل مكتب التحكم ومكبّر الصوت."
+      },
+      {
+        "id": "loc_orchard",
+        "name_ar": "البستان المجاور",
+        "description_ar": "بستان بعشب ممتد يفصله شبك عن القناة."
+      },
+      {
+        "id": "loc_water",
+        "name_ar": "نقطة الماء الجنوبية",
+        "description_ar": "عند بوابة المعرض الجنوبية، وتبعد نحو ستمئة متر عن البستان."
+      },
+      {
+        "id": "loc_desk",
+        "name_ar": "مكتب المنسّقة",
+        "description_ar": "حيث يسجّل المتطوعون وصولهم."
+      },
+      {
+        "id": "loc_canal",
+        "name_ar": "ضفة القناة",
+        "description_ar": "حافة القناة خلف الشبك الشرقي للبستان."
+      }
+    ],
+    "objects": [
+      {
+        "id": "obj_aircraft",
+        "name_ar": "طائرة التصوير الصغيرة",
+        "description_ar": "طائرة خفيفة بعجلتي هبوط تملكها نادي التصوير."
+      }
+    ],
+    "organizations": [
+      {
+        "id": "org_club",
+        "name_ar": "نادي التصوير",
+        "description_ar": "نادٍ طلابي يشارك في معرض القافلة."
+      },
+      {
+        "id": "org_net",
+        "name_ar": "شبكة الأثر",
+        "description_ar": "شبكة متطوعين خيالية تساعد في تنظيم المعرض."
+      }
+    ]
+  },
+  "truth": {
+    "solution": {
+      "culprit_ids": [
+        "salim"
+      ],
+      "summary_ar": "لم تُؤخذ الطائرة. أقلعت ببطارية لم يكتمل شحنها، فانخفضت وانقطع الاتصال بها فوق طرف البستان، ثم دفعتها الرياح الغربية نحو القناة. ورد لم يرَها: كان بعيداً عند نقطة الماء، وأخذ تفاصيل وصفه من نداء عام ومن آثار في الأرض مرّ بها بعد ذلك.",
+      "key_fact_ids": [
+        "f_drifted_east",
+        "f_warad_far"
+      ]
+    },
+    "facts": [
+      {
+        "id": "f_aircraft_missing",
+        "statement_ar": "فُقد الاتصال بطائرة التصوير الصغيرة يوم افتتاح معرض القافلة ولم يُعثر عليها.",
+        "kind": "event",
+        "subject_ids": [
+          "obj_aircraft"
+        ],
+        "spoiler_level": 0
+      },
+      {
+        "id": "f_nader_accuses",
+        "statement_ar": "يتهم نادر ورد بأنه أخذ الطائرة لأنه وصفها بدقة.",
+        "kind": "attribute",
+        "subject_ids": [
+          "nader",
+          "warad"
+        ],
+        "spoiler_level": 0
+      },
+      {
+        "id": "f_warad_described",
+        "statement_ar": "وصف ورد الطائرة بأن بطاريتها منخفضة وأنها تميل إلى اليسار وأن ريشة علقت بها وأنها حطّت قرب الماء.",
+        "kind": "event",
+        "subject_ids": [
+          "warad",
+          "obj_aircraft"
+        ],
+        "spoiler_level": 0,
+        "time": {
+          "start_min": 58,
+          "precision": "exact"
+        },
+        "location_id": "loc_desk"
+      },
+      {
+        "id": "f_salim_flew",
+        "statement_ar": "أقلع سليم بالطائرة من مكتب التحكم عند الساعة 10:00 تقريباً.",
+        "kind": "event",
+        "subject_ids": [
+          "salim",
+          "obj_aircraft"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 0,
+          "precision": "exact"
+        },
+        "location_id": "loc_fair"
+      },
+      {
+        "id": "f_start_battery",
+        "statement_ar": "كانت بطارية الطائرة نحو 35% عند الإقلاع لأن الشحن لم يكتمل.",
+        "kind": "state",
+        "subject_ids": [
+          "salim",
+          "obj_aircraft"
+        ],
+        "spoiler_level": 2,
+        "time": {
+          "start_min": 0,
+          "precision": "exact"
+        },
+        "location_id": "loc_fair"
+      },
+      {
+        "id": "f_app_log_exists",
+        "statement_ar": "يحتفظ تطبيق التحكم بسجل لكل رحلة يمكن تصديره.",
+        "kind": "state",
+        "subject_ids": [
+          "salim"
+        ],
+        "spoiler_level": 1
+      },
+      {
+        "id": "f_announce_asked",
+        "statement_ar": "طلب سليم من المنسّق أن يعلن للزوار عودة الطائرة لانخفاض بطاريتها.",
+        "kind": "event",
+        "subject_ids": [
+          "salim"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 8,
+          "precision": "exact"
+        },
+        "location_id": "loc_fair"
+      },
+      {
+        "id": "f_battery_public",
+        "statement_ar": "أُعلن للزوار عبر مكبّر الصوت عند 10:09 أن بطارية الطائرة منخفضة وأنها تعود.",
+        "kind": "event",
+        "subject_ids": [
+          "obj_aircraft"
+        ],
+        "spoiler_level": 2,
+        "time": {
+          "start_min": 9,
+          "precision": "exact"
+        },
+        "location_id": "loc_fair"
+      },
+      {
+        "id": "f_salim_saw_east",
+        "statement_ar": "رأى سليم الطائرة تغيب خلف أشجار البستان نحو الشرق قبل أن ينقطع الاتصال عند 10:12.",
+        "kind": "event",
+        "subject_ids": [
+          "salim",
+          "obj_aircraft"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 12,
+          "precision": "exact"
+        },
+        "location_id": "loc_orchard"
+      },
+      {
+        "id": "f_warad_post",
+        "statement_ar": "كان ورد عند نقطة الماء الجنوبية من 09:50 إلى 10:40.",
+        "kind": "event",
+        "subject_ids": [
+          "warad",
+          "loc_water"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": -10,
+          "precision": "exact",
+          "end_min": 40
+        },
+        "location_id": "loc_water"
+      },
+      {
+        "id": "f_water_log_exists",
+        "statement_ar": "لنقطة الماء الجنوبية سجل تسليم يوقّعه كل متطوع.",
+        "kind": "state",
+        "subject_ids": [
+          "rami",
+          "loc_water"
+        ],
+        "spoiler_level": 1
+      },
+      {
+        "id": "f_warad_far",
+        "statement_ar": "كان ورد عند نقطة الماء الجنوبية، على بعد نحو 600 م من البستان، وقت انقطاع الاتصال، فلم يشهد الحدث.",
+        "kind": "relation",
+        "subject_ids": [
+          "warad",
+          "loc_water",
+          "obj_aircraft"
+        ],
+        "spoiler_level": 2,
+        "time": {
+          "start_min": 12,
+          "precision": "exact"
+        },
+        "location_id": "loc_water",
+        "science_ko_refs": [
+          "KO-RS-06-004"
+        ]
+      },
+      {
+        "id": "f_warad_route",
+        "statement_ar": "مرّ ورد بالطرف الشرقي للبستان بين 10:45 و10:55 وسجّل وصوله إلى مكتب المنسّقة عند 10:58.",
+        "kind": "event",
+        "subject_ids": [
+          "warad"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 45,
+          "precision": "approx",
+          "end_min": 55
+        },
+        "location_id": "loc_orchard"
+      },
+      {
+        "id": "f_warad_marks_place",
+        "statement_ar": "رأى ورد علامات على الأرض قرب الشبك عند الطرف الشرقي للبستان وصوّرها.",
+        "kind": "event",
+        "subject_ids": [
+          "warad",
+          "loc_orchard"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 50,
+          "precision": "approx"
+        },
+        "location_id": "loc_orchard"
+      },
+      {
+        "id": "f_orchard_log_exists",
+        "statement_ar": "لحارس البستان دفتر يومي يدوّن فيه البوابة والري والجزّ ودخول العربات.",
+        "kind": "state",
+        "subject_ids": [
+          "jamil",
+          "loc_orchard"
+        ],
+        "spoiler_level": 1
+      },
+      {
+        "id": "f_orchard_closed",
+        "statement_ar": "بوابة البستان الرئيسية مقفلة من 08:00 إلى 11:00، ولم يُجزّ العشب، ولم تدخل عربات بعد الري.",
+        "kind": "state",
+        "subject_ids": [
+          "jamil",
+          "loc_orchard"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": -120,
+          "precision": "exact",
+          "end_min": 60
+        },
+        "location_id": "loc_orchard"
+      },
+      {
+        "id": "f_wind_east",
+        "statement_ar": "كانت الرياح غربية وتشتد إلى نحو 22 كم/س بين 10:00 و10:30.",
+        "kind": "state",
+        "subject_ids": [
+          "loc_orchard"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 0,
+          "precision": "approx",
+          "end_min": 30
+        }
+      },
+      {
+        "id": "f_link_lost",
+        "statement_ar": "انقطع اتصال الطائرة عند 10:12 وهي فوق الطرف الشرقي للبستان متجهة شرقاً.",
+        "kind": "event",
+        "subject_ids": [
+          "obj_aircraft"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 12,
+          "precision": "exact"
+        },
+        "location_id": "loc_orchard"
+      },
+      {
+        "id": "f_gear_mark",
+        "statement_ar": "في تربة الطرف الشرقي للبستان أثران متوازيان لعجلتين، الأيسر أعمق من الأيمن.",
+        "kind": "state",
+        "subject_ids": [
+          "loc_orchard"
+        ],
+        "spoiler_level": 1,
+        "location_id": "loc_orchard",
+        "science_ko_refs": [
+          "KO-FC-04-015"
+        ]
+      },
+      {
+        "id": "f_mark_is_aircraft",
+        "statement_ar": "مسافة الأثرين تطابق عجلتي الطائرة، فالأثر لها لا لعربة، ويدل على ملامسة مائلة إلى اليسار.",
+        "kind": "relation",
+        "subject_ids": [
+          "obj_aircraft",
+          "loc_orchard"
+        ],
+        "spoiler_level": 2,
+        "location_id": "loc_orchard",
+        "science_ko_refs": [
+          "KO-FC-04-015"
+        ]
+      },
+      {
+        "id": "f_grass_strip",
+        "statement_ar": "العشب مائل نحو الشرق في شريط طوله نحو 25 م من الأثر إلى الشبك، بلا آثار أقدام.",
+        "kind": "state",
+        "subject_ids": [
+          "loc_orchard"
+        ],
+        "spoiler_level": 1,
+        "location_id": "loc_orchard"
+      },
+      {
+        "id": "f_grass_wind",
+        "statement_ar": "ميل العشب سببه الريح لا أقدام ولا جزّ ولا ري.",
+        "kind": "relation",
+        "subject_ids": [
+          "loc_orchard"
+        ],
+        "spoiler_level": 2,
+        "location_id": "loc_orchard",
+        "science_ko_refs": [
+          "KO-RS-06-015"
+        ]
+      },
+      {
+        "id": "f_feather",
+        "statement_ar": "ريشة طائر مائي عالقة بشبك الطرف الشرقي قرب القناة.",
+        "kind": "state",
+        "subject_ids": [
+          "loc_canal"
+        ],
+        "spoiler_level": 1,
+        "location_id": "loc_canal"
+      },
+      {
+        "id": "f_warad_admits",
+        "statement_ar": "لم يرَ ورد الطائرة، وافترض أن الريشة التي رآها على الشبك علقت بها.",
+        "kind": "attribute",
+        "subject_ids": [
+          "warad"
+        ],
+        "spoiler_level": 2
+      },
+      {
+        "id": "f_drifted_east",
+        "statement_ar": "فقدت الطائرة الاتصال بعد انخفاض بطاريتها، وحملتها الرياح الغربية شرقاً نحو ضفة القناة.",
+        "kind": "event",
+        "subject_ids": [
+          "obj_aircraft",
+          "loc_canal"
+        ],
+        "spoiler_level": 3,
+        "time": {
+          "start_min": 12,
+          "precision": "approx",
+          "end_min": 20
+        },
+        "location_id": "loc_canal",
+        "science_ko_refs": [
+          "KO-NP-02H-001"
+        ]
+      },
+      {
+        "id": "f_details_sourced",
+        "statement_ar": "لكل تفصيل في وصف ورد مصدر غير رؤية الطائرة: نداء عام عن البطارية، وأثر العجلتين، وميل العشب، وريشة على الشبك.",
+        "kind": "relation",
+        "subject_ids": [
+          "warad",
+          "obj_aircraft"
+        ],
+        "spoiler_level": 3,
+        "science_ko_refs": [
+          "KO-RS-06-004",
+          "KO-NP-02H-001"
+        ]
+      }
+    ],
+    "claims": [
+      {
+        "id": "cl_nader_witness",
+        "statement_ar": "لا يصف الطائرة بهذه التفاصيل إلا من رآها أو حملها.",
+        "kind": "half_truth",
+        "held_by": [
+          "nader"
+        ],
+        "true_fact_id": "f_details_sourced",
+        "contradicted_by_evidence_ids": [
+          "ev_announce_sheet",
+          "ev_gear_photo",
+          "ev_grass_photo",
+          "ev_water_log"
+        ]
+      },
+      {
+        "id": "cl_orchard_open",
+        "statement_ar": "البستان مفتوح لكل من يريد المرور فيه.",
+        "kind": "rumour",
+        "held_by": [
+          "nader"
+        ],
+        "true_fact_id": "f_orchard_closed",
+        "contradicted_by_evidence_ids": [
+          "ev_orchard_log",
+          "ev_security_round"
+        ]
+      },
+      {
+        "id": "cl_warad_feather",
+        "statement_ar": "علقت بالطائرة ريشة.",
+        "kind": "honest_mistake",
+        "held_by": [
+          "warad"
+        ],
+        "true_fact_id": "f_feather",
+        "contradicted_by_evidence_ids": [
+          "ev_feather_photo"
+        ]
+      }
+    ]
+  },
+  "timeline": [
+    {
+      "id": "te_water_post",
+      "description_ar": "ورد يعمل في نقطة الماء الجنوبية.",
+      "time": {
+        "start_min": -10,
+        "precision": "exact",
+        "end_min": 40
+      },
+      "location_id": "loc_water",
+      "actor_ids": [
+        "warad"
+      ],
+      "fact_ids": [
+        "f_warad_post"
+      ],
+      "motivated_by_ar": "مناوبته المحددة في جدول المتطوعين"
+    },
+    {
+      "id": "te_launch",
+      "description_ar": "سليم يقلع بالطائرة من مكتب التحكم.",
+      "time": {
+        "start_min": 0,
+        "precision": "exact"
+      },
+      "location_id": "loc_fair",
+      "actor_ids": [
+        "salim"
+      ],
+      "fact_ids": [
+        "f_salim_flew",
+        "f_start_battery"
+      ],
+      "motivated_by_ar": "أراد تصوير افتتاح المعرض من الجو"
+    },
+    {
+      "id": "te_announce",
+      "description_ar": "النداء العام عن انخفاض البطارية وعودة الطائرة.",
+      "time": {
+        "start_min": 9,
+        "precision": "exact"
+      },
+      "location_id": "loc_fair",
+      "actor_ids": [
+        "salim"
+      ],
+      "fact_ids": [
+        "f_announce_asked",
+        "f_battery_public"
+      ],
+      "motivated_by_ar": "طلب من المنسّق تنبيه الزوار بعد ظهور تحذير البطارية"
+    },
+    {
+      "id": "te_lost",
+      "description_ar": "انقطاع اتصال الطائرة فوق الطرف الشرقي للبستان.",
+      "time": {
+        "start_min": 12,
+        "precision": "exact"
+      },
+      "location_id": "loc_orchard",
+      "actor_ids": [],
+      "fact_ids": [
+        "f_link_lost",
+        "f_salim_saw_east",
+        "f_wind_east"
+      ]
+    },
+    {
+      "id": "te_walk",
+      "description_ar": "ورد يمرّ بالطرف الشرقي للبستان ويصوّر العلامات.",
+      "time": {
+        "start_min": 45,
+        "precision": "approx",
+        "end_min": 55
+      },
+      "location_id": "loc_orchard",
+      "actor_ids": [
+        "warad"
+      ],
+      "fact_ids": [
+        "f_warad_route",
+        "f_warad_marks_place"
+      ],
+      "motivated_by_ar": "طريقه المعتاد إلى مكتب المنسّقة بعد انتهاء المناوبة"
+    },
+    {
+      "id": "te_desk",
+      "description_ar": "ورد يصل مكتب المنسّقة ويصف ما استنتجه.",
+      "time": {
+        "start_min": 58,
+        "precision": "exact"
+      },
+      "location_id": "loc_desk",
+      "actor_ids": [
+        "warad"
+      ],
+      "fact_ids": [
+        "f_warad_described"
+      ],
+      "motivated_by_ar": "أراد مساعدة النادي بما لاحظه في الطريق"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_app_log",
+      "title_ar": "سجل رحلة طائرة التحكم",
+      "kind": "digital",
+      "content_ar": "سجل التطبيق المصدَّر من هاتف سليم (الأوقات بساعة هاتفه)\n10:00 إقلاع — البطارية 35%\n10:08 تنبيه: البطارية منخفضة 14%\n10:11 بدء العودة التلقائية — البطارية 9%\n10:12 انقطع الاتصال — آخر موضع معروف: الطرف الشرقي للبستان، الاتجاه شرقاً، نحو 40 م من ضفة القناة",
+      "acquired_by_action_ids": [
+        "a_get_app"
+      ],
+      "supports_fact_ids": [
+        "f_link_lost",
+        "f_start_battery"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يثبت آخر موضع أبلغت عنه الطائرة قبل انقطاع الاتصال، لا موضع هبوطها ولا ما جرى بعد ذلك؛ وساعة الهاتف لم تُقارن بساعة المعرض.",
+      "location_id": "loc_fair"
+    },
+    {
+      "id": "ev_weather_board",
+      "title_ar": "لوحة الطقس عند مدخل المعرض",
+      "kind": "documentary",
+      "content_ar": "لوحة الطقس (تُحدَّث كل عشر دقائق)\n10:00 — رياح غربية 14 كم/س\n10:10 — رياح غربية 22 كم/س، هبّات متقطعة\n10:20 — رياح غربية 20 كم/س",
+      "acquired_by_action_ids": [
+        "a_read_weather"
+      ],
+      "supports_fact_ids": [
+        "f_wind_east"
+      ],
+      "reliability": "strong",
+      "limits_ar": "قراءة عند مدخل المعرض على بعد نحو 300 م من البستان؛ لا تقيس الريح فوق الطرف الشرقي للبستان نفسه.",
+      "location_id": "loc_fair"
+    },
+    {
+      "id": "ev_announce_sheet",
+      "title_ar": "ورقة نداءات المعرض",
+      "kind": "documentary",
+      "content_ar": "ورقة النداءات (يقرؤها المنسّق عبر مكبّر الصوت)\n10:09 — «تنبيه للزوار: طائرة التصوير تعود إلى مكتب التحكم لانخفاض بطاريتها. نرجو إبقاء الساحة الشرقية خالية.»\n10:15 — «افتتاح معرض القافلة، تفضّلوا إلى قاعة الصور.»",
+      "acquired_by_action_ids": [
+        "a_read_announce"
+      ],
+      "supports_fact_ids": [
+        "f_battery_public"
+      ],
+      "reliability": "strong",
+      "limits_ar": "تثبت أن النداء أُعلن في ذلك الوقت؛ لا تثبت أن ورد سمعه ولا أين انتهت الطائرة.",
+      "contradicts_claim_ids": [
+        "cl_nader_witness"
+      ],
+      "location_id": "loc_fair"
+    },
+    {
+      "id": "ev_spec_sheet",
+      "title_ar": "بطاقة جرد طائرة النادي",
+      "kind": "documentary",
+      "content_ar": "بطاقة جرد النادي — طائرة التصوير الصغيرة\nالوزن: 900 غ\nعدد عجلات الهبوط: 2\nالمسافة بين مركزي العجلتين: 18 سم\nقطر العجلة: 2 سم",
+      "acquired_by_action_ids": [
+        "a_read_spec"
+      ],
+      "supports_fact_ids": [
+        "f_mark_is_aircraft"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "بيانات عامة عن نموذج الطائرة، ولا تدل على أن هذه الطائرة بعينها هي التي ترك أثرها؛ عجلات أخرى قد تتشابه معها في القياس.",
+      "location_id": "loc_fair"
+    },
+    {
+      "id": "ev_gear_photo",
+      "title_ar": "صورة أثر العجلتين",
+      "kind": "physical",
+      "content_ar": "صورة بمسطرة لأثرين متوازيين في تربة الطرف الشرقي للبستان (الاتجاه من الغرب إلى الشرق)\nالأثر الأيسر: عمق نحو 2.5 سم\nالأثر الأيمن: عمق نحو 0.8 سم\nالمسافة بين مركزي الأثرين: 18 سم\nقطر كل أثر: نحو 2 سم",
+      "acquired_by_action_ids": [
+        "a_search_orchard"
+      ],
+      "supports_fact_ids": [
+        "f_gear_mark"
+      ],
+      "reliability": "strong",
+      "limits_ar": "تدل على ملامسة عجلتين بهذه المسافة وبهذا الفرق في العمق؛ لا تدل على وقت الملامسة ولا على بقاء الطائرة هناك، وهي خصائص فئوية لا تفرّد جسماً بعينه.",
+      "forensic_ko_ref": "KO-FC-04-015",
+      "location_id": "loc_orchard"
+    },
+    {
+      "id": "ev_grass_photo",
+      "title_ar": "صورة شريط العشب المائل",
+      "kind": "physical",
+      "content_ar": "صورتان لشريط العشب بين الأثرين وشبك القناة: السيقان مائلة نحو الشرق على امتداد نحو 25 م، وبعرض نحو نصف متر. لا آثار أقدام داخل الشريط ولا آثار عجلات عربات.",
+      "acquired_by_action_ids": [
+        "a_search_orchard"
+      ],
+      "supports_fact_ids": [
+        "f_grass_strip"
+      ],
+      "reliability": "strong",
+      "limits_ar": "تبيّن اتجاه الميل وخلوّه من آثار الأقدام؛ لا تبيّن ما الذي أمال العشب ولا متى، والعشب قد يرتد بعد ساعات.",
+      "location_id": "loc_orchard"
+    },
+    {
+      "id": "ev_feather_photo",
+      "title_ar": "صورة الريشة على الشبك",
+      "kind": "physical",
+      "content_ar": "صورة لريشة رمادية بيضاء طولها نحو 12 سم عالقة بشبك السياج الشرقي قرب القناة. لم يُعثر على ريش مشابه في الشريط ولا في ممر البستان.",
+      "acquired_by_action_ids": [
+        "a_search_orchard"
+      ],
+      "supports_fact_ids": [
+        "f_feather"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "تدل على وجود ريشة على الشبك؛ لا تدل على أنها لامست الطائرة، فالطيور المائية تُسقط ريشها قرب الماء كل يوم.",
+      "contradicts_claim_ids": [
+        "cl_warad_feather"
+      ],
+      "location_id": "loc_canal"
+    },
+    {
+      "id": "ev_orchard_log",
+      "title_ar": "دفتر حارس البستان",
+      "kind": "documentary",
+      "content_ar": "دفتر الحارس — يوم الافتتاح\n08:00 — أُقفلت البوابة الرئيسية بالمفتاح، والمفتاح معي.\n08:30 — ريّ العشب بالرشاش (انتهى 09:00).\nلا جزّ اليوم. لا دخول لعربات الخدمة بعد الري.\n11:00 — فُتحت البوابة لدخول فريق المعرض.",
+      "acquired_by_action_ids": [
+        "a_get_orchard_log"
+      ],
+      "supports_fact_ids": [
+        "f_orchard_closed"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يخص البوابة الرئيسية فقط؛ لا يشمل الشبك الشرقي المطل على القناة، ولا يثبت أن أحداً لم يقترب من الضفة نفسها.",
+      "contradicts_claim_ids": [
+        "cl_orchard_open"
+      ],
+      "location_id": "loc_orchard"
+    },
+    {
+      "id": "ev_water_log",
+      "title_ar": "سجل تسليم نقطة الماء",
+      "kind": "documentary",
+      "content_ar": "سجل تسليم نقطة الماء الجنوبية\n09:50 — ورد (متطوع رقم 27) استلم المناوبة\n10:05 — استلام 12 قارورة ماء مثلجة، التوقيع: ورد\n10:40 — انتهاء مناوبة ورد، وتوقيع رامي بالتسلّم",
+      "acquired_by_action_ids": [
+        "a_get_water_log"
+      ],
+      "supports_fact_ids": [
+        "f_warad_post"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يثبت توقيعاً عند الاستلام وعند التسليم؛ لا يثبت أن ورد لم يبتعد دقائق بين التوقيعين.",
+      "contradicts_claim_ids": [
+        "cl_nader_witness"
+      ],
+      "location_id": "loc_water"
+    },
+    {
+      "id": "ev_duty_sheet",
+      "title_ar": "جدول متطوعي شبكة الأثر",
+      "kind": "documentary",
+      "content_ar": "جدول متطوعي شبكة الأثر ليوم الافتتاح\nمتطوع 27 (ورد): نقطة الماء الجنوبية 09:50–10:40، ثم التوجه إلى مكتب المنسّقة عبر ممر البستان.\nمسافة نقطة الماء إلى الطرف الشرقي للبستان: نحو 600 م.\nتسجيل الوصول إلى مكتب المنسّقة: 10:58 (توقيع المنسّقة).",
+      "acquired_by_action_ids": [
+        "a_read_duty"
+      ],
+      "supports_fact_ids": [
+        "f_warad_post",
+        "f_warad_route"
+      ],
+      "reliability": "strong",
+      "limits_ar": "جدول مخطّط وتوقيع وصول؛ لا يتتبع خطوات ورد بين المحطتين ولا يقول أين وقف.",
+      "location_id": "loc_desk"
+    },
+    {
+      "id": "ev_fair_photo",
+      "title_ar": "صورة مصوّر المعرض عند نقطة الماء",
+      "kind": "digital",
+      "content_ar": "صورة من مصوّر المعرض الرسمي — بياناتها الوصفية: 10:14:20، الموقع: نقطة الماء الجنوبية.\nفي الصورة متطوع بسترة رقم 27 يسكب الماء من قارورة خلف الطاولة، وخلفه لافتة «البوابة الجنوبية».",
+      "acquired_by_action_ids": [
+        "a_get_fair_photo"
+      ],
+      "supports_fact_ids": [
+        "f_warad_far"
+      ],
+      "reliability": "strong",
+      "limits_ar": "لحظة واحدة في الصورة؛ لا تتبع حركة المتطوع قبلها أو بعدها، ورقم السترة لا يغني عن التحقق من لابسها.",
+      "location_id": "loc_water"
+    },
+    {
+      "id": "ev_radio_log",
+      "title_ar": "سجل لاسلكي مكتب المنسّقة",
+      "kind": "documentary",
+      "content_ar": "سجل الاتصال اللاسلكي — مكتب المنسّقة\n10:13 — من نقطة الماء الجنوبية: «هنا المتطوع 27، ورد، نحتاج ثلجاً إضافياً.»\n10:58 — المتطوع 27: «وصلتُ المكتب، ولدي ملاحظة عن علامات في أرض البستان.»",
+      "acquired_by_action_ids": [
+        "a_read_radio"
+      ],
+      "supports_fact_ids": [
+        "f_warad_far",
+        "f_warad_route"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يثبت ما قيل وبأي وقت؛ لا يثبت موقع المتكلم بذاته، ويحتاج إلى مصدر آخر يؤيد المكان.",
+      "location_id": "loc_desk"
+    },
+    {
+      "id": "ev_nader_statement",
+      "title_ar": "إفادة نادر (ملخص)",
+      "kind": "testimonial",
+      "content_ar": "ملخص إفادة نادر الحمدان:\n«ورد وصف الطائرة: بطاريتها منخفضة، وهي تميل إلى اليسار، وعلقت بها ريشة، وحطّت قرب الماء. لا يقول هذا إلا من رآها أو حملها. والبستان مفتوح لأي زائر.»",
+      "acquired_by_action_ids": [
+        "a_note_nader"
+      ],
+      "supports_fact_ids": [
+        "f_nader_accuses"
+      ],
+      "reliability": "weak",
+      "limits_ar": "إفادة صاحب الطائرة وهو قلق؛ عبارة «لا يقول هذا إلا من رآها» رأي لا ملاحظة، وقوله عن البستان يُقاس بدفتر الحارس.",
+      "location_id": "loc_desk"
+    },
+    {
+      "id": "ev_warad_said",
+      "title_ar": "ما قاله ورد عند مكتب المنسّقة",
+      "kind": "testimonial",
+      "content_ar": "نقل ما قاله ورد لنادر عند 10:58:\n«بطارية الطائرة منخفضة، وهي تميل إلى اليسار، وعلقت بها ريشة، وحطّت قرب الماء.»",
+      "acquired_by_action_ids": [
+        "a_note_warad"
+      ],
+      "supports_fact_ids": [
+        "f_warad_described"
+      ],
+      "reliability": "weak",
+      "limits_ar": "عبارة قيلت بصيغة الجزم دون ذكر المصدر؛ ولم تُسجَّل أسئلة تتبعها، فلا تفرّق بين ما شُوهد وما استُنتج.",
+      "is_red_herring": true,
+      "location_id": "loc_desk"
+    },
+    {
+      "id": "ev_security_round",
+      "title_ar": "سجل جولة أمن المعرض",
+      "kind": "documentary",
+      "content_ar": "سجل جولة أمن المعرض على بوابة البستان (توقيع الحارس المناوب)\n09:30 — البوابة مقفلة بقفلها، لا أحد عندها.\n10:00 — البوابة مقفلة بقفلها، لا أحد عندها.\n10:20 — البوابة مقفلة بقفلها، لا أحد عندها.\n10:40 — البوابة مقفلة بقفلها، لا أحد عندها.",
+      "acquired_by_action_ids": [
+        "a_read_security"
+      ],
+      "supports_fact_ids": [
+        "f_orchard_closed"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يثبت أن البوابة كانت مقفلة عند كل مرور؛ لا يغطي الدقائق بين المرورين ولا الشبك المطل على القناة.",
+      "contradicts_claim_ids": [
+        "cl_orchard_open"
+      ],
+      "location_id": "loc_orchard"
+    }
+  ],
+  "evidence_graph": {
+    "inferences": [
+      {
+        "id": "i_a_drift",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_app_log"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_weather_board"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_drifted_east"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "آخر موضع للطائرة كان فوق طرف البستان متجهة شرقاً على بعد نحو 40 م من الضفة، والرياح غربية وتشتد إلى 22 كم/س؛ فالتفسير الأقرب أن الريح حملتها شرقاً بعد انقطاع الاتصال.",
+        "skill_ko_refs": [
+          "KO-FC-04-024",
+          "KO-RS-06-001"
+        ]
+      },
+      {
+        "id": "i_b_mark",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_gear_photo"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_spec_sheet"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_mark_is_aircraft"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "مسافة 18 سم بين مركزي الأثرين تطابق عجلتي هذا النموذج، والأثر الأيسر أعمق؛ فالجسم الذي لامس التربة كان من هذه الفئة ومائلاً إلى اليسار لحظتها.",
+        "skill_ko_refs": [
+          "KO-FC-04-015"
+        ]
+      },
+      {
+        "id": "i_b_grass",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_grass_photo"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_orchard_log"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_grass_wind"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "الشريط مائل بانتظام ولا فيه أقدام، والبستان مقفل بلا جزّ ولا عربات بعد الري؛ فالريح هي السبب الباقي لميل العشب نحو الشرق.",
+        "skill_ko_refs": [
+          "KO-RS-06-015"
+        ]
+      },
+      {
+        "id": "i_b_drift",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_mark_is_aircraft"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_grass_wind"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_drifted_east"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "ملامسة الطائرة للتربة ثم ميل العشب بالريح من الأثر نحو شبك القناة يوافقان حركة شرقية بالريح، وتؤكدها أن الأثر يقع في آخر موضع معروف لها.",
+        "skill_ko_refs": [
+          "KO-RS-06-007"
+        ]
+      },
+      {
+        "id": "i_a_far",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_water_log"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_duty_sheet"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_warad_far"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "السجل يضع توقيع ورد عند نقطة الماء 10:05 و10:40، والجدول يجعل مناوبته هناك بين 09:50 و10:40 على بعد نحو 600 م من البستان؛ فلم يكن حاضراً حين انقطع الاتصال عند 10:12.",
+        "skill_ko_refs": [
+          "KO-RS-06-017"
+        ]
+      },
+      {
+        "id": "i_b_far",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_fair_photo"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_radio_log"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_warad_far"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "نداء 10:13 اللاسلكي من نقطة الماء وصورة المصوّر 10:14 عند الطاولة نفسها بسترة رقم 27 يتفقان من مصدرين مستقلين على أن ورد كان بعيداً عن البستان بعد الانقطاع بدقيقة.",
+        "skill_ko_refs": [
+          "KO-RS-06-017",
+          "KO-RS-05-004"
+        ]
+      },
+      {
+        "id": "i_src_battery",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_announce_sheet"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_battery_public"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "ما أُعلن بمكبّر الصوت يسمعه من في المعرض، فمعرفة انخفاض البطارية لا تستلزم رؤية الطائرة.",
+        "skill_ko_refs": [
+          "KO-RS-06-004"
+        ]
+      },
+      {
+        "id": "i_src_all",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_battery_public"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_mark_is_aircraft"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_grass_wind"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_feather_photo"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_details_sourced"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "البطارية من النداء، والميل إلى اليسار من عمق الأثر الأيسر، والقرب من الماء من اتجاه العشب نحو القناة، والريشة وُجدت على الشبك؛ فلكل تفصيل مصدر سوى رؤية الطائرة.",
+        "skill_ko_refs": [
+          "KO-RS-06-004",
+          "KO-NP-02H-001"
+        ]
+      },
+      {
+        "id": "i_nader_claim",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_details_sourced"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_warad_far"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_nader_witness"
+        },
+        "relation": "contradicts_claim",
+        "strength": "strong",
+        "rule_ar": "من وصف الطائرة قد يكون استنتج تفاصيلها من آثار ونداء عام، وورد كان بعيداً عنها؛ فاحتمال الرؤية أو الحمل ليس التفسير الوحيد.",
+        "skill_ko_refs": [
+          "KO-RS-06-004",
+          "KO-RS-05-014"
+        ]
+      },
+      {
+        "id": "i_orchard_claim",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_orchard_log"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_security_round"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_orchard_open"
+        },
+        "relation": "contradicts_claim",
+        "strength": "strong",
+        "rule_ar": "دفتر الحارس وسجل جولة الأمن، وهما مصدران مستقلان، يسجلان إقفال البوابة الرئيسية في الفترة كلها.",
+        "skill_ko_refs": [
+          "KO-RS-05-014"
+        ]
+      },
+      {
+        "id": "i_feather_claim",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_feather_photo"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_warad_feather"
+        },
+        "relation": "contradicts_claim",
+        "strength": "suggestive",
+        "rule_ar": "الريشة مصوّرة على الشبك لا على الطائرة، والطيور المائية تُسقط ريشها قرب القناة؛ فالقول بأنها علقت بها فرض بلا سند.",
+        "skill_ko_refs": [
+          "KO-RS-06-004"
+        ]
+      },
+      {
+        "id": "i_support_drift",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_drifted_east"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_drift"
+        },
+        "relation": "supports",
+        "strength": "strong",
+        "rule_ar": "انجراف الطائرة بالريح يفسّر غيابها عن الموضع الذي انقطع فيه الاتصال ويتفق مع كل ما سُجّل عنها.",
+        "skill_ko_refs": [
+          "KO-RS-06-006"
+        ]
+      },
+      {
+        "id": "i_rule_took",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_warad_far"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_took"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "من كان بعيداً عن البستان لحظة انقطاع الاتصال لا يمكن أن يكون أخذ الطائرة عند هبوطها فيه؛ ودقة وصفه لا تعوّض غيابه.",
+        "skill_ko_refs": [
+          "KO-RS-06-008",
+          "KO-RS-05-007"
+        ]
+      },
+      {
+        "id": "i_rule_took_src",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_details_sourced"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_took"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "إذا كان لكل تفصيل في الوصف مصدر غير الحمل، فدقة الوصف لا تدعم فرضية الأخذ أكثر مما تدعم أي فرضية أخرى.",
+        "skill_ko_refs": [
+          "KO-RS-06-001"
+        ]
+      },
+      {
+        "id": "i_rule_outsider_a",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_security_round"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_outsider"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "جولة الأمن وجدت البوابة مقفلة في كل مرور من 09:30 إلى 10:40، فلم يدخل زائر عبرها إلى البستان في الفترة التي هبطت فيها الطائرة.",
+        "skill_ko_refs": [
+          "KO-RS-06-008"
+        ]
+      },
+      {
+        "id": "i_rule_outsider_b",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_orchard_log"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_grass_photo"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_outsider"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "الحارس يسجّل الإقفال، وشريط العشب بين موضع الملامسة والشبك بلا آثار أقدام؛ فلا أثر لزائر اقترب من الموضع.",
+        "skill_ko_refs": [
+          "KO-RS-06-008"
+        ]
+      }
+    ]
+  },
+  "character_knowledge": [
+    {
+      "character_id": "nader",
+      "knows": [
+        {
+          "fact_id": "f_salim_flew",
+          "access": "common_knowledge",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": [
+        {
+          "claim_id": "cl_nader_witness",
+          "stance": "sincere"
+        },
+        {
+          "claim_id": "cl_orchard_open",
+          "stance": "sincere"
+        }
+      ]
+    },
+    {
+      "character_id": "warad",
+      "knows": [
+        {
+          "fact_id": "f_warad_post",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_warad_route",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_warad_marks_place",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [
+        {
+          "fact_id": "f_warad_admits",
+          "reveal_when": {
+            "presented": {
+              "evidence_id": "ev_feather_photo",
+              "to_character": "warad"
+            }
+          },
+          "cover_claim_id": "cl_warad_feather",
+          "reveal_line_id": "wd_admit"
+        }
+      ],
+      "believes": [
+        {
+          "claim_id": "cl_warad_feather",
+          "stance": "sincere"
+        }
+      ]
+    },
+    {
+      "character_id": "salim",
+      "knows": [
+        {
+          "fact_id": "f_app_log_exists",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_announce_asked",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_salim_saw_east",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [
+        {
+          "fact_id": "f_start_battery",
+          "reveal_when": {
+            "presented": {
+              "evidence_id": "ev_app_log",
+              "to_character": "salim"
+            }
+          },
+          "cover_claim_id": null,
+          "reveal_line_id": "sl_charge"
+        }
+      ],
+      "believes": []
+    },
+    {
+      "character_id": "rami",
+      "knows": [
+        {
+          "fact_id": "f_water_log_exists",
+          "access": "professional",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_warad_post",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    },
+    {
+      "character_id": "jamil",
+      "knows": [
+        {
+          "fact_id": "f_orchard_log_exists",
+          "access": "professional",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_orchard_closed",
+          "access": "professional",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "h_took",
+      "statement_ar": "أخذ ورد الطائرة حين هبطت ثم أخفاها، ودقة وصفه لها دليل على ذلك.",
+      "is_true": false,
+      "plausibility_at_start": "high",
+      "suspect_id": "warad"
+    },
+    {
+      "id": "h_outsider",
+      "statement_ar": "التقط أحد الزوار الطائرة من أرض البستان بعد هبوطها فيه.",
+      "is_true": false,
+      "plausibility_at_start": "medium"
+    },
+    {
+      "id": "h_drift",
+      "statement_ar": "انخفضت بطارية الطائرة وفُقد الاتصال بها فحملتها الرياح نحو القناة، وعرف ورد تفاصيلها من آثار ونداء عام لا من رؤيتها.",
+      "is_true": true,
+      "plausibility_at_start": "low",
+      "suspect_id": "salim"
+    }
+  ],
+  "misdirection_plan": [
+    {
+      "id": "rh_precise",
+      "points_to_hypothesis_id": "h_took",
+      "planted_via_ar": "ورد قال أربع تفاصيل متتابعة بصيغة الجزم، منها الريشة التي لم يذكرها أحد غيره.",
+      "evidence_ids": [
+        "ev_warad_said",
+        "ev_nader_statement"
+      ],
+      "refuted_by_inference_ids": [
+        "i_rule_took",
+        "i_rule_took_src",
+        "i_nader_claim",
+        "i_src_all"
+      ],
+      "fairness_note_ar": "كل تفصيل له مصدر متاح للاعب (نداء مدوّن، وأثر مصوّر، واتجاه عشب، وريشة على الشبك)، وسجلان مستقلان يضعان ورد بعيداً عن البستان وقت الانقطاع؛ وتوتر ورد في المقابلة لا يُحسب دليلاً."
+    },
+    {
+      "id": "rh_open_gate",
+      "points_to_hypothesis_id": "h_outsider",
+      "planted_via_ar": "نادر يقول إن البستان مفتوح لكل زائر.",
+      "evidence_ids": [
+        "ev_nader_statement"
+      ],
+      "refuted_by_inference_ids": [
+        "i_orchard_claim",
+        "i_rule_outsider_a",
+        "i_rule_outsider_b"
+      ],
+      "fairness_note_ar": "دفتر الحارس متاح ويسجّل الإقفال، وصورة العشب تظهر شريطاً بلا آثار أقدام؛ ويبقى حد الأدلة مذكوراً في قائمة الحدود: لا تنفي من يلتقط الطائرة من ضفة القناة."
+    }
+  ],
+  "learning_objectives": [
+    {
+      "id": "lo_obs",
+      "statement_ar": "يفصل بين ما شاهده الشخص وما استنتجه، ويسأل عن مصدر كل تفصيل في الوصف.",
+      "skill_ko_ref": "KO-RS-06-004",
+      "observable_behaviors_ar": [
+        "يصنّف إفادة ورد قولاً لا سجلاً",
+        "يربط كل تفصيل بمصدره"
+      ],
+      "evidence_sources": [
+        "evidence_board",
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_hyp",
+      "statement_ar": "يولّد فرضيات متعددة ويستبعد ما تنقضه الأدلة.",
+      "skill_ko_ref": "KO-RS-06-006",
+      "observable_behaviors_ar": [
+        "يضيف فرضيات",
+        "يستبعد بدليل"
+      ],
+      "evidence_sources": [
+        "hypothesis_ledger"
+      ]
+    },
+    {
+      "id": "lo_diag",
+      "statement_ar": "يقدّر القوة التشخيصية للأثر الفئوي، ويعرف أنه لا يفرّد جسماً بعينه.",
+      "skill_ko_ref": "KO-RS-06-001",
+      "observable_behaviors_ar": [
+        "يربط الدليل بالفرضية باتجاه صحيح",
+        "يذكر حد الأثر في الحجة"
+      ],
+      "evidence_sources": [
+        "evidence_board",
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_timeline",
+      "statement_ar": "يرتّب سجلات الأوقات المستقلة على خط واحد ليختبر من كان حاضراً.",
+      "skill_ko_ref": "KO-RS-05-005",
+      "observable_behaviors_ar": [
+        "يضع الأدلة في أزمنتها"
+      ],
+      "evidence_sources": [
+        "timeline_task",
+        "action_log"
+      ]
+    },
+    {
+      "id": "lo_calib",
+      "statement_ar": "يصوغ نسبة الترجيح بحدودها.",
+      "skill_ko_ref": "KO-RS-06-021",
+      "observable_behaviors_ar": [
+        "يختار ثقة معقولة",
+        "يذكر حدوداً"
+      ],
+      "evidence_sources": [
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_revise",
+      "statement_ar": "يراجع رأيه الأول حين يظهر ما يخالفه.",
+      "skill_ko_ref": "KO-RS-06-009",
+      "observable_behaviors_ar": [
+        "يغيّر فرضيته الرائدة بدليل"
+      ],
+      "evidence_sources": [
+        "hypothesis_ledger"
+      ]
+    }
+  ],
+  "mechanics": {
+    "time_budget_units": 40,
+    "actions": [
+      {
+        "id": "a_read_weather",
+        "type": "examine",
+        "label_ar": "اقرأ لوحة الطقس عند مدخل المعرض",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_weather_board"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_fair",
+        "telemetry_code": "READ_WEATHER"
+      },
+      {
+        "id": "a_read_announce",
+        "type": "examine",
+        "label_ar": "اطلب ورقة نداءات المنسّق",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_announce_sheet"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_fair",
+        "telemetry_code": "READ_ANNOUNCE"
+      },
+      {
+        "id": "a_read_spec",
+        "type": "examine",
+        "label_ar": "اطلع على بطاقة جرد طائرة النادي",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_spec_sheet"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "obj_aircraft",
+        "telemetry_code": "READ_SPEC"
+      },
+      {
+        "id": "a_read_duty",
+        "type": "examine",
+        "label_ar": "اطلب جدول متطوعي شبكة الأثر",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_duty_sheet"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_desk",
+        "telemetry_code": "READ_DUTY"
+      },
+      {
+        "id": "a_read_security",
+        "type": "examine",
+        "label_ar": "اطلب سجل جولة الأمن على بوابة البستان",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_security_round"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_orchard",
+        "telemetry_code": "READ_SECURITY"
+      },
+      {
+        "id": "a_read_radio",
+        "type": "examine",
+        "label_ar": "اطلب سجل اللاسلكي من مكتب المنسّقة",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_radio_log"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_desk",
+        "telemetry_code": "READ_RADIO"
+      },
+      {
+        "id": "a_get_fair_photo",
+        "type": "examine",
+        "label_ar": "اطلب إطار مصوّر المعرض الرسمي الأقرب إلى 10:14",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_fair_photo"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_water",
+        "telemetry_code": "GET_FAIR_PHOTO"
+      },
+      {
+        "id": "a_int_nader",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة نادر",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "nader",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "nader",
+        "telemetry_code": "INT_NADER"
+      },
+      {
+        "id": "a_int_warad",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة ورد",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "warad",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "warad",
+        "telemetry_code": "INT_WARAD"
+      },
+      {
+        "id": "a_int_salim",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة سليم",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "salim",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "salim",
+        "telemetry_code": "INT_SALIM"
+      },
+      {
+        "id": "a_int_rami",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة رامي",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "rami",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "rami",
+        "telemetry_code": "INT_RAMI"
+      },
+      {
+        "id": "a_int_jamil",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة جميل",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "jamil",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "jamil",
+        "telemetry_code": "INT_JAMIL"
+      },
+      {
+        "id": "a_get_app",
+        "type": "examine",
+        "label_ar": "اطلب تصدير سجل رحلة التطبيق",
+        "precondition": {
+          "fact_unlocked": "f_app_log_exists"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_app_log"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "salim",
+        "telemetry_code": "GET_APP"
+      },
+      {
+        "id": "a_get_water_log",
+        "type": "examine",
+        "label_ar": "اطلب سجل تسليم نقطة الماء",
+        "precondition": {
+          "fact_unlocked": "f_water_log_exists"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_water_log"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "rami",
+        "telemetry_code": "GET_WATER_LOG"
+      },
+      {
+        "id": "a_get_orchard_log",
+        "type": "examine",
+        "label_ar": "اطلب دفتر حارس البستان",
+        "precondition": {
+          "fact_unlocked": "f_orchard_log_exists"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_orchard_log"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "jamil",
+        "telemetry_code": "GET_ORCHARD_LOG"
+      },
+      {
+        "id": "a_search_orchard",
+        "type": "search_location",
+        "label_ar": "تفقّد الطرف الشرقي للبستان مع الحارس",
+        "precondition": {
+          "fact_unlocked": "f_warad_marks_place"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_gear_photo"
+          },
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_grass_photo"
+          },
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_feather_photo"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_orchard",
+        "telemetry_code": "SEARCH_ORCHARD"
+      },
+      {
+        "id": "a_note_nader",
+        "type": "examine",
+        "label_ar": "دوّن إفادة نادر",
+        "precondition": {
+          "fact_unlocked": "f_salim_flew"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_nader_statement"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "nader",
+        "telemetry_code": "NOTE_NADER"
+      },
+      {
+        "id": "a_note_warad",
+        "type": "examine",
+        "label_ar": "دوّن ما قاله ورد عند المكتب",
+        "precondition": {
+          "fact_unlocked": "f_warad_described"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_warad_said"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "warad",
+        "telemetry_code": "NOTE_WARAD"
+      },
+      {
+        "id": "p_feather_warad",
+        "type": "present_evidence",
+        "label_ar": "اعرض صورة الريشة على ورد",
+        "precondition": {
+          "presented": {
+            "evidence_id": "ev_feather_photo",
+            "to_character": "warad"
+          }
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "PRESENTED_FEATHER"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "warad",
+        "telemetry_code": "P_FEATHER_WARAD"
+      },
+      {
+        "id": "p_app_salim",
+        "type": "present_evidence",
+        "label_ar": "اعرض سجل الرحلة على سليم",
+        "precondition": {
+          "presented": {
+            "evidence_id": "ev_app_log",
+            "to_character": "salim"
+          }
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "PRESENTED_APP"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "salim",
+        "telemetry_code": "P_APP_SALIM"
+      },
+      {
+        "id": "p_orchard_nader",
+        "type": "present_evidence",
+        "label_ar": "اعرض دفتر الحارس على نادر",
+        "precondition": {
+          "presented": {
+            "evidence_id": "ev_orchard_log",
+            "to_character": "nader"
+          }
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "PRESENTED_ORCHARD"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "nader",
+        "telemetry_code": "P_ORCHARD_NADER"
+      },
+      {
+        "id": "a_hint",
+        "type": "request_hint",
+        "label_ar": "اطلب تلميحاً",
+        "precondition": {
+          "always": true
+        },
+        "effects": [],
+        "time_cost_units": 0,
+        "telemetry_code": "REQUEST_HINT"
+      },
+      {
+        "id": "a_accuse",
+        "type": "final_accusation",
+        "label_ar": "قدّم الاستنتاج النهائي",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "SUBMIT"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "FINAL_ACCUSATION"
+      },
+      {
+        "id": "ask_nader_f_salim_flew",
+        "type": "interview",
+        "label_ar": "[نموذج] nader يذكر f_salim_flew",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_salim_flew"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "nader",
+        "telemetry_code": "ASK_NADER_F_SALIM_FLEW"
+      },
+      {
+        "id": "ask_warad_f_warad_post",
+        "type": "interview",
+        "label_ar": "[نموذج] warad يذكر f_warad_post",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_warad_post"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "warad",
+        "telemetry_code": "ASK_WARAD_F_WARAD_POST"
+      },
+      {
+        "id": "ask_warad_f_warad_route",
+        "type": "interview",
+        "label_ar": "[نموذج] warad يذكر f_warad_route",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_warad_route"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "warad",
+        "telemetry_code": "ASK_WARAD_F_WARAD_ROUTE"
+      },
+      {
+        "id": "ask_warad_f_warad_marks_place",
+        "type": "interview",
+        "label_ar": "[نموذج] warad يذكر f_warad_marks_place",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_warad_marks_place"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "warad",
+        "telemetry_code": "ASK_WARAD_F_WARAD_MARKS_PLACE"
+      },
+      {
+        "id": "ask_warad_f_warad_admits",
+        "type": "interview",
+        "label_ar": "[نموذج] warad يكشف f_warad_admits",
+        "precondition": {
+          "all": [
+            {
+              "always": true
+            },
+            {
+              "presented": {
+                "evidence_id": "ev_feather_photo",
+                "to_character": "warad"
+              }
+            }
+          ]
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_warad_admits"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "warad",
+        "telemetry_code": "ASK_WARAD_F_WARAD_ADMITS"
+      },
+      {
+        "id": "ask_salim_f_app_log_exists",
+        "type": "interview",
+        "label_ar": "[نموذج] salim يذكر f_app_log_exists",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_app_log_exists"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "salim",
+        "telemetry_code": "ASK_SALIM_F_APP_LOG_EXISTS"
+      },
+      {
+        "id": "ask_salim_f_announce_asked",
+        "type": "interview",
+        "label_ar": "[نموذج] salim يذكر f_announce_asked",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_announce_asked"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "salim",
+        "telemetry_code": "ASK_SALIM_F_ANNOUNCE_ASKED"
+      },
+      {
+        "id": "ask_salim_f_salim_saw_east",
+        "type": "interview",
+        "label_ar": "[نموذج] salim يذكر f_salim_saw_east",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_salim_saw_east"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "salim",
+        "telemetry_code": "ASK_SALIM_F_SALIM_SAW_EAST"
+      },
+      {
+        "id": "ask_salim_f_start_battery",
+        "type": "interview",
+        "label_ar": "[نموذج] salim يكشف f_start_battery",
+        "precondition": {
+          "all": [
+            {
+              "always": true
+            },
+            {
+              "presented": {
+                "evidence_id": "ev_app_log",
+                "to_character": "salim"
+              }
+            }
+          ]
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_start_battery"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "salim",
+        "telemetry_code": "ASK_SALIM_F_START_BATTERY"
+      },
+      {
+        "id": "ask_rami_f_water_log_exists",
+        "type": "interview",
+        "label_ar": "[نموذج] rami يذكر f_water_log_exists",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_water_log_exists"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "rami",
+        "telemetry_code": "ASK_RAMI_F_WATER_LOG_EXISTS"
+      },
+      {
+        "id": "ask_rami_f_warad_post",
+        "type": "interview",
+        "label_ar": "[نموذج] rami يذكر f_warad_post",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_warad_post"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "rami",
+        "telemetry_code": "ASK_RAMI_F_WARAD_POST"
+      },
+      {
+        "id": "ask_jamil_f_orchard_log_exists",
+        "type": "interview",
+        "label_ar": "[نموذج] jamil يذكر f_orchard_log_exists",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_orchard_log_exists"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "jamil",
+        "telemetry_code": "ASK_JAMIL_F_ORCHARD_LOG_EXISTS"
+      },
+      {
+        "id": "ask_jamil_f_orchard_closed",
+        "type": "interview",
+        "label_ar": "[نموذج] jamil يذكر f_orchard_closed",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_orchard_closed"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "jamil",
+        "telemetry_code": "ASK_JAMIL_F_ORCHARD_CLOSED"
+      }
+    ]
+  },
+  "state_machine": {
+    "id": "c011",
+    "initial": "briefing",
+    "type": "compound",
+    "states": {
+      "briefing": {
+        "description_ar": "الإحاطة",
+        "type": "atomic",
+        "on": {
+          "START": {
+            "target": "investigating"
+          }
+        }
+      },
+      "investigating": {
+        "description_ar": "التحقيق",
+        "type": "compound",
+        "initial": "gathering",
+        "states": {
+          "gathering": {
+            "type": "atomic",
+            "on": {
+              "OPEN_DEDUCTION": {
+                "target": "deducing"
+              }
+            }
+          },
+          "deducing": {
+            "type": "atomic",
+            "on": {
+              "BACK": {
+                "target": "gathering"
+              }
+            }
+          }
+        },
+        "on": {
+          "SUBMIT": {
+            "target": "review"
+          }
+        }
+      },
+      "review": {
+        "description_ar": "مراجعة",
+        "type": "atomic",
+        "on": {
+          "CLOSE": {
+            "target": "resolved"
+          }
+        }
+      },
+      "resolved": {
+        "description_ar": "إغلاق",
+        "type": "final"
+      }
+    }
+  },
+  "dialogue": {
+    "max_turns_per_interview": 10,
+    "llm_enabled": false,
+    "topics": [
+      {
+        "id": "t_nader",
+        "label_ar": "الطيران واتهام ورد",
+        "example_questions_ar": [
+          "من كان يطيّر الطائرة؟",
+          "لماذا تظن أن ورد أخذها؟"
+        ],
+        "fact_ids": [
+          "f_salim_flew"
+        ],
+        "claim_ids": [
+          "cl_nader_witness",
+          "cl_orchard_open"
+        ]
+      },
+      {
+        "id": "t_post",
+        "label_ar": "أين كنت صباح الافتتاح؟",
+        "example_questions_ar": [
+          "أين كنت وقت اختفاء الطائرة؟",
+          "ما طريقك إلى مكتب المنسّقة؟"
+        ],
+        "fact_ids": [
+          "f_warad_post",
+          "f_warad_route"
+        ]
+      },
+      {
+        "id": "t_marks",
+        "label_ar": "العلامات على الأرض",
+        "example_questions_ar": [
+          "ماذا رأيت في البستان؟",
+          "هل علقت بالطائرة ريشة حقاً؟"
+        ],
+        "fact_ids": [
+          "f_warad_marks_place",
+          "f_warad_admits"
+        ],
+        "claim_ids": [
+          "cl_warad_feather"
+        ]
+      },
+      {
+        "id": "t_flight",
+        "label_ar": "الرحلة والعودة",
+        "example_questions_ar": [
+          "كيف بدأت الرحلة؟",
+          "ماذا رأيت قبل انقطاع الاتصال؟",
+          "هل يحفظ التطبيق سجلاً؟"
+        ],
+        "fact_ids": [
+          "f_app_log_exists",
+          "f_announce_asked",
+          "f_salim_saw_east",
+          "f_start_battery"
+        ]
+      },
+      {
+        "id": "t_water",
+        "label_ar": "نقطة الماء",
+        "example_questions_ar": [
+          "من وقّع عندك صباح الافتتاح؟",
+          "هل لديكم سجل تسليم؟"
+        ],
+        "fact_ids": [
+          "f_water_log_exists",
+          "f_warad_post"
+        ]
+      },
+      {
+        "id": "t_orchard",
+        "label_ar": "بوابة البستان",
+        "example_questions_ar": [
+          "هل دخل أحد البستان؟",
+          "هل لديك دفتر يومي؟"
+        ],
+        "fact_ids": [
+          "f_orchard_log_exists",
+          "f_orchard_closed"
+        ]
+      }
+    ]
+  },
+  "rubric": {
+    "reference_answer_ar": "لا دليل على أن ورد أخذ الطائرة. كان عند نقطة الماء الجنوبية حين انقطع اتصال الطائرة 10:12 (سجل التسليم والجدول، أو سجل اللاسلكي وصورة المصوّر)، ولكل تفصيل في وصفه مصدر آخر: النداء العام عن البطارية، وعمق الأثر الأيسر للميل، واتجاه العشب نحو القناة، والريشة على الشبك. الأرجح أن الطائرة فقدت الاتصال بعد انخفاض بطاريتها فحملتها الرياح الغربية شرقاً نحو الضفة. حدود الاستنتاج: لم يُعثر على الطائرة، والريشة لا تثبت ملامستها، ولا تنفي الأدلة أن يلتقطها أحد من جهة القناة.",
+    "criteria": [
+      {
+        "id": "c_source",
+        "name_ar": "تصنيف المصادر",
+        "objective_ids": [
+          "lo_obs"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يصنّف"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "أخطأ في الأغلب"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "نصف صحيح"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمه صحيح"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كله صحيح"
+          }
+        ]
+      },
+      {
+        "id": "c_conflict",
+        "name_ar": "ترتيب الأوقات على الخط الزمني",
+        "objective_ids": [
+          "lo_timeline"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.2,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يضع شيئاً"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "وضع قليلاً"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "وضع نصفها صحيحاً"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمها"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كلها في موضعها"
+          }
+        ]
+      },
+      {
+        "id": "c_links",
+        "name_ar": "ربط الأدلة بالفرضيات",
+        "objective_ids": [
+          "lo_diag"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.2,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لا روابط"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "قليلة"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "نصفها صحيح"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمها"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كلها دقيقة"
+          }
+        ]
+      },
+      {
+        "id": "c_uncertainty",
+        "name_ar": "معايرة الثقة",
+        "objective_ids": [
+          "lo_calib"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "ثقة مفرطة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "حدود قليلة"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "جزئية"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معقولة"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "معايَرة كاملة"
+          }
+        ]
+      },
+      {
+        "id": "c_revision",
+        "name_ar": "مراجعة الرأي",
+        "objective_ids": [
+          "lo_revise"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "بقي على فرضية مرفوضة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "لم يعلن فرضية"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "ثبت على فرضية سليمة"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "غيّر بدليل"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "غيّر بدليل ووثّق"
+          }
+        ]
+      },
+      {
+        "id": "c_elimination",
+        "name_ar": "استبعاد الفرضيات الخاطئة",
+        "objective_ids": [
+          "lo_hyp"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يستبعد"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "استبعد خطأً"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "فرضية بدليل"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "فرضيتين"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كل الخاطئة"
+          }
+        ]
+      },
+      {
+        "id": "c_justification",
+        "name_ar": "جودة الحجة المكتوبة",
+        "objective_ids": [
+          "lo_diag",
+          "lo_hyp",
+          "lo_obs"
+        ],
+        "scored_by": "human",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لا حجة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "ادعاء بلا سند"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "أدلة دون ربط"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "ربط الأدلة بالاستنتاج"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "ربط مع البدائل والحدود"
+          }
+        ]
+      }
+    ]
+  },
+  "hint_ladder": [
+    {
+      "id": "hg1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "حين يصف شخص شيئاً بدقة، اسأل: ما مصدر كل تفصيل؟ أرأى بعينه أم قرأ أثراً أم سمع من غيره؟",
+      "trigger": {
+        "always": true
+      },
+      "assessment_weight": 0.02
+    },
+    {
+      "id": "hg2",
+      "level": 2,
+      "kind": "focus_area",
+      "text_ar": "اكتب تفاصيل وصف ورد الأربعة في عمود، وضع بجانب كل واحد ما يمكن أن يكون مصدره غير الرؤية.",
+      "trigger": {
+        "has_evidence": "ev_warad_said"
+      },
+      "assessment_weight": 0.04
+    },
+    {
+      "id": "hf1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "أين كان ورد حين انقطع الاتصال بالطائرة؟ وهل يوجد سجلان يخبرانك بذلك بلا علاقة بينهما؟",
+      "trigger": {
+        "has_evidence": "ev_nader_statement"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_a_far"
+    },
+    {
+      "id": "hf2",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "قارن توقيع نقطة الماء وجدول المتطوعين بوقت الانقطاع في سجل التطبيق.",
+      "trigger": {
+        "has_evidence": "ev_nader_statement"
+      },
+      "assessment_weight": 0.05,
+      "targets_inference_id": "i_a_far"
+    },
+    {
+      "id": "hd1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "ما الذي يستطيع أثر عجلتين أن يقوله عن الجسم الذي تركه، وما الذي لا يستطيع؟",
+      "trigger": {
+        "has_evidence": "ev_gear_photo"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_b_mark"
+    },
+    {
+      "id": "hd2",
+      "level": 2,
+      "kind": "focus_area",
+      "text_ar": "قارن المسافة بين الأثرين ببطاقة جرد النادي، ثم قارن عمق الأثرين.",
+      "trigger": {
+        "has_evidence": "ev_gear_photo"
+      },
+      "assessment_weight": 0.05,
+      "targets_inference_id": "i_b_mark"
+    },
+    {
+      "id": "hd3",
+      "level": 1,
+      "kind": "focus_area",
+      "text_ar": "قبل أن تنسب ميل العشب إلى الريح، ابحث عن دليل يستبعد الأقدام والجزّ والعربات.",
+      "trigger": {
+        "has_evidence": "ev_grass_photo"
+      },
+      "assessment_weight": 0.06,
+      "targets_inference_id": "i_b_grass"
+    }
+  ],
+  "fairness_test": {
+    "requirements": {
+      "min_disjoint_proof_paths": 2,
+      "max_inference_depth": 3,
+      "all_red_herrings_refutable": true,
+      "culprit_uniquely_entailed": true,
+      "no_hidden_fact_dependency": true,
+      "max_required_actions": 40
+    },
+    "runs": []
+  },
+  "ending_explanation": {
+    "steps": [
+      {
+        "order": 1,
+        "text_ar": "ورد وقّع عند نقطة الماء 10:05 و10:40، وجدول المتطوعين يضع مناوبته هناك، على بعد نحو 600 م من البستان وقت انقطاع الاتصال.",
+        "uses_evidence_ids": [
+          "ev_water_log",
+          "ev_duty_sheet"
+        ],
+        "inference_id": "i_a_far"
+      },
+      {
+        "order": 2,
+        "text_ar": "مسار مستقل يؤدي إلى النتيجة نفسها: نداء ورد اللاسلكي 10:13 وصورة المصوّر 10:14 عند الطاولة ذاتها بسترة رقم 27.",
+        "uses_evidence_ids": [
+          "ev_fair_photo",
+          "ev_radio_log"
+        ],
+        "inference_id": "i_b_far"
+      },
+      {
+        "order": 3,
+        "text_ar": "سجل التطبيق يضع آخر موضع للطائرة فوق طرف البستان متجهة شرقاً، ولوحة الطقس تسجّل رياحاً غربية متصاعدة: الأرجح أنها انجرفت نحو الضفة.",
+        "uses_evidence_ids": [
+          "ev_app_log",
+          "ev_weather_board"
+        ],
+        "inference_id": "i_a_drift"
+      },
+      {
+        "order": 4,
+        "text_ar": "مسار الآثار يوافقه: أثر العجلتين بالمسافة المعروفة وعمق أيسر أكبر، ثم ميل العشب بالريح نحو القناة بعد أن استُبعد المشي والجزّ والعربات.",
+        "uses_evidence_ids": [
+          "ev_gear_photo",
+          "ev_spec_sheet",
+          "ev_grass_photo",
+          "ev_orchard_log"
+        ],
+        "inference_id": "i_b_drift"
+      },
+      {
+        "order": 5,
+        "text_ar": "الآن يظهر مصدر كل تفصيل في وصف ورد: نداء البطارية، وعمق الأثر الأيسر، واتجاه العشب نحو الماء، وريشة وجدت على الشبك لا على الطائرة.",
+        "uses_evidence_ids": [
+          "ev_announce_sheet",
+          "ev_gear_photo",
+          "ev_grass_photo",
+          "ev_feather_photo"
+        ],
+        "inference_id": "i_src_all"
+      },
+      {
+        "order": 6,
+        "text_ar": "إذن لا تدل دقة الوصف على أن صاحبه حمل الطائرة: لم يكن حاضراً عند هبوطها، وما قاله استنتاج قرأه من الأرض ومن نداء سمعه الجميع.",
+        "uses_evidence_ids": [
+          "ev_water_log",
+          "ev_duty_sheet"
+        ],
+        "inference_id": "i_rule_took"
+      },
+      {
+        "order": 7,
+        "text_ar": "ولا أثر لزائر اقترب من موضع الملامسة: بوابة البستان مقفلة في سجلين مستقلين، وشريط العشب بلا أقدام.",
+        "uses_evidence_ids": [
+          "ev_security_round",
+          "ev_orchard_log",
+          "ev_grass_photo"
+        ],
+        "inference_id": "i_rule_outsider_a"
+      }
+    ],
+    "alternative_paths_ar": [
+      "يمكن بلوغ النتيجة من السجلات وحدها: سجل التطبيق ولوحة الطقس للاتجاه، وسجل نقطة الماء وجدول المتطوعين لغياب ورد.",
+      "ويمكن بلوغها من الآثار والصورة والسجل اللاسلكي وحدها، دون سجل التطبيق؛ والأقوى أن يتفق المساران."
+    ],
+    "what_evidence_could_not_show_ar": [
+      "لم يُعثر على الطائرة؛ الأدلة ترجّح اتجاهها ولا تثبت موضعها الآن.",
+      "الريشة على الشبك لا تثبت أنها لامست الطائرة، ولا تنفي الأدلة أن يلتقطها أحد من جهة القناة بعد وصولها.",
+      "لا تبيّن الأدلة لماذا قال ورد ما قاله بصيغة الجزم."
+    ],
+    "science_notes_ar": [
+      "أثر العجلتين خاصية فئوية: يدل على نوع الجسم الذي لامس التربة (مسافة وقطر وعمق) ولا يفرّد جسماً بعينه، ولا يحدد وقت الملامسة.",
+      "الفصل بين الملاحظة والاستنتاج: وصف دقيق لا يعني أن صاحبه رأى. اسأل دائماً من أين جاء كل تفصيل، ثم قارنه بسجل.",
+      "سجل رحلة التطبيق نسخة مصدَّرة من هاتف؛ يبقى الحفاظ على سلسلة العهدة من الهاتف إلى المحقق شرطاً لوزنه.",
+      "تختم القضية بمساءلة مؤسسية لا بتشهير: يعتذر النادي لورد، ويعتمد قائمة فحص للبطارية قبل كل إقلاع، ويبلّغ إدارة المعرض للبحث عند الضفة.",
+      "ما نسميه نسبة الترجيح حكم مبني على سجلات يمكن تتبّعها، وليس ثقة بمجرد أن الوصف دقيق."
+    ]
+  },
+  "expert_review": [
+    {
+      "role": "narrative_editor",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "scientific_reviewer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "learning_designer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "age_appropriateness",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "cultural_reviewer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "legal_rights",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "safety",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    }
+  ]
+}

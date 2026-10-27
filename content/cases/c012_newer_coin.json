@@ -1,0 +1,3144 @@
+{
+  "schema_version": "0.1.0",
+  "case_id": "c012_newer_coin",
+  "case_version": "0.1.0",
+  "meta": {
+    "title_ar": "العملة الأحدث من الوديعة",
+    "title_en": "The Coin Newer Than the Deposit",
+    "age_band": "13-15",
+    "locale": "ar",
+    "dialogue_register": "msa",
+    "estimated_minutes": 30,
+    "difficulty": 2,
+    "content_flags": [
+      "no_violence",
+      "theft"
+    ],
+    "authors": [
+      "فريق أثر التحريري (مسودة بمساعدة الذكاء الاصطناعي، عن بذرة من قضايا التراث، لم تُراجَع بشرياً بعد)"
+    ],
+    "knowledge_object_refs": [
+      "KO-RS-06-017",
+      "KO-RS-06-001",
+      "KO-RS-05-007",
+      "KO-RS-05-002",
+      "KO-RS-06-009",
+      "KO-RS-06-021",
+      "KO-FC-04-024",
+      "KO-FC-04-026",
+      "KO-NP-02H-002"
+    ]
+  },
+  "premise": {
+    "hook_ar": "ست سبائك فضة تحوّلت إلى ست قطع تذكارية، والجميع يشير إلى الحارس الجديد. لكن على حافة إحدى القطع تاريخاً يحكي قصة أخرى.",
+    "player_role_ar": "أنت مراجع في لجنة مراجعة الأمانات بميناء المرسى، وطُلب منك أن تحسم متى جرى تبديل محتويات الخزانة وما الذي تثبته السجلات.",
+    "setting_ar": "فرع المرسى لخزائن الأمانات، في ميناء المرسى. تتابع الأحداث على سنوات، ويوم الصيانة وحده مسجَّل بالساعة.",
+    "public_fact_ids": [
+      "f_coins_found",
+      "f_clerk_swears",
+      "f_guard_suspected"
+    ],
+    "assumed_general_knowledge_ar": [
+      "العملة لا توجد قبل سنة سكّها",
+      "يُستبدل ختم الخزانة عند كل فتح"
+    ]
+  },
+  "entities": {
+    "characters": [
+      {
+        "id": "luay",
+        "name_ar": "لؤي الحداد",
+        "role": "victim",
+        "age_descriptor_ar": "14 سنة، حفيد صاحبة الخزانة وأحد حامليها الجدد",
+        "persona_ar": "فضولي ومهذب، يريد أن يعرف ماذا حدث لسبائك جدته، ويميل إلى تصديق ما يردده الكبار عن الحارس الجديد.",
+        "motives_ar": [
+          "أن يعرف أين ذهبت سبائك جدته",
+          "ألا يُظلم أحد في الفرع بسبب ظن"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "ly_greet",
+            "purpose": "greeting",
+            "text_ar": "أهلاً. جدتي تنازلت لنا عن الخزانة هذا الشهر، وعندما فتحناها وجدنا عملات بدل السبائك."
+          },
+          {
+            "line_id": "ly_silver",
+            "purpose": "reveal",
+            "text_ar": "جدتي تقول إنها أودعت ست سبائك فضة صغيرة قبل اثنتي عشرة سنة، وهذا مكتوب في عقدها.",
+            "fact_ids": [
+              "f_deposit_2014"
+            ]
+          },
+          {
+            "line_id": "ly_guard",
+            "purpose": "reveal",
+            "text_ar": "الجميع في الفرع يقولون إن الحارس الليلي الجديد هو الفاعل، فهو الوحيد الغريب هنا.",
+            "claim_ids": [
+              "cl_guard_stranger"
+            ]
+          },
+          {
+            "line_id": "ly_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف، كنت صغيراً عندما أودعت جدتي أغراضها."
+          },
+          {
+            "line_id": "ly_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "رجاءً، لنعد إلى موضوع الخزانة."
+          },
+          {
+            "line_id": "ly_bye",
+            "purpose": "farewell",
+            "text_ar": "شكراً لأنك تبحث عن الحقيقة قبل أن نحكم على أحد."
+          }
+        ]
+      },
+      {
+        "id": "bassam",
+        "name_ar": "بسام العيسى",
+        "role": "witness",
+        "age_descriptor_ar": "موظف الخزائن الحالي في فرع المرسى",
+        "persona_ar": "حريص على الإجراءات ويقسم بما رآه بعينه، لكنه يعمّم ما رآه اليوم على ما جرى في الماضي.",
+        "motives_ar": [
+          "أن يُثبت أن عمله سليم",
+          "ألا يُنسب إلى الفرع إهمال في الحراسة"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "bs_greet",
+            "purpose": "greeting",
+            "text_ar": "أقسم أنني فحصت الختم صباح اليوم أمام الحفيدين، وهو سليم."
+          },
+          {
+            "line_id": "bs_seal",
+            "purpose": "reveal",
+            "text_ar": "الختم على الباب كما هو لم يُقطع ولم يُمسّ، فلا يمكن أن يكون أحد فتح الخزانة منذ الإيداع.",
+            "fact_ids": [
+              "f_seal_checked"
+            ],
+            "claim_ids": [
+              "cl_bassam_seal"
+            ]
+          },
+          {
+            "line_id": "bs_register",
+            "purpose": "reveal",
+            "text_ar": "عندنا سجل لمخزون الأختام يدوّن رقم كل ختم وتاريخ تركيبه.",
+            "fact_ids": [
+              "f_seal_register_exists"
+            ]
+          },
+          {
+            "line_id": "bs_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "هذا قبل مجيئي إلى الفرع."
+          },
+          {
+            "line_id": "bs_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن الختم والإجراءات."
+          },
+          {
+            "line_id": "bs_bye",
+            "purpose": "farewell",
+            "text_ar": "الإجراءات كلها مكتوبة، فاقرأها."
+          }
+        ]
+      },
+      {
+        "id": "nabil",
+        "name_ar": "نبيل العمر",
+        "role": "suspect",
+        "age_descriptor_ar": "23 سنة، الحارس الليلي الجديد في الفرع",
+        "persona_ar": "متحمس وقليل الخبرة، يتكلم بسرعة حين يشعر أن الجميع يتهمه، ويكرر أنه لا يعرف الخزائن.",
+        "motives_ar": [
+          "ألا يفقد عمله الجديد",
+          "أن يُعرف أنه لم يقترب من غرفة الخزائن"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "nb_greet",
+            "purpose": "greeting",
+            "text_ar": "أنا لم ألمس شيئاً. أحرس البوابة والممر فقط، واسألني عن عملي."
+          },
+          {
+            "line_id": "nb_start",
+            "purpose": "reveal",
+            "text_ar": "باشرت العمل في الثاني من فبراير هذا العام، ومهمتي البوابة والممر الخارجي وجولة كل ساعتين.",
+            "fact_ids": [
+              "f_guard_start"
+            ]
+          },
+          {
+            "line_id": "nb_key",
+            "purpose": "reveal",
+            "text_ar": "سلّموني مفتاح باب الموظفين فقط، ولا أملك بطاقة لدخول غرفة الخزائن.",
+            "fact_ids": [
+              "f_guard_key"
+            ]
+          },
+          {
+            "line_id": "nb_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف، لم أكن هنا حينها."
+          },
+          {
+            "line_id": "nb_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن عملي في البوابة."
+          },
+          {
+            "line_id": "nb_bye",
+            "purpose": "farewell",
+            "text_ar": "أرجو أن يعرفوا أنني لم أفعل شيئاً."
+          }
+        ]
+      },
+      {
+        "id": "sabri",
+        "name_ar": "صبري المناصرة",
+        "role": "suspect",
+        "age_descriptor_ar": "موظف الخزائن الأقدم في الفرع، حامل المفتاح الاحتياطي",
+        "persona_ar": "وقور ومنظم الكلام، يستشهد بخبرته الطويلة، ويقلّل من شأن أي خروج عن الإجراء.",
+        "motives_ar": [
+          "أن تبقى سمعته في الفرع سليمة",
+          "أن تُغلق القضية دون مراجعة فتحة الصيانة"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "sb_greet",
+            "purpose": "greeting",
+            "text_ar": "أعمل في هذه الخزائن منذ سنوات، وأعرف كل ما فيها من إجراءات."
+          },
+          {
+            "line_id": "sb_opened",
+            "purpose": "reveal",
+            "text_ar": "نعم، فتحت الخزانة رقم 218 يوم أُجريت صيانة باب القفص أمامها.",
+            "fact_ids": [
+              "f_sabri_opened"
+            ]
+          },
+          {
+            "line_id": "sb_short",
+            "purpose": "reveal",
+            "text_ar": "فتحتها دقائق قليلة فقط لاختبار الباب بعد تغيير المفصلة، ثم أغلقتها وختمتها.",
+            "claim_ids": [
+              "cl_sabri_short"
+            ]
+          },
+          {
+            "line_id": "sb_refuse",
+            "purpose": "refuse_secret",
+            "text_ar": "قلت ما عندي عن تلك الفتحة، ولا أرى حاجة إلى المزيد."
+          },
+          {
+            "line_id": "sb_stayed",
+            "purpose": "reveal",
+            "text_ar": "حسناً... بقيت في الغرفة أكثر مما قلت، حتى الثامنة وست وأربعين دقيقة، والمفتاح معي. لكنني لم أُخرج شيئاً من الخزانة.",
+            "fact_ids": [
+              "f_sabri_stayed"
+            ]
+          },
+          {
+            "line_id": "sb_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أذكر ذلك."
+          },
+          {
+            "line_id": "sb_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "لنبقَ في موضوع الخزانة 218."
+          },
+          {
+            "line_id": "sb_bye",
+            "purpose": "farewell",
+            "text_ar": "أرجو أن تُراجع السجلات بإنصاف."
+          }
+        ]
+      },
+      {
+        "id": "idris",
+        "name_ar": "إدريس القاسم",
+        "role": "witness",
+        "age_descriptor_ar": "فني صيانة متعاقد مع الفرع",
+        "persona_ar": "عملي ودقيق، يكتب كل ما يخص أمر العمل ولا يخمّن في غير اختصاصه.",
+        "motives_ar": [
+          "أن يبقى أمر العمل موثقاً بصورته الصحيحة"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "id_greet",
+            "purpose": "greeting",
+            "text_ar": "أمر العمل عندي، وأقرأ منه ما كُلفت به فقط."
+          },
+          {
+            "line_id": "id_scope",
+            "purpose": "reveal",
+            "text_ar": "كُلفت باستبدال مفصلة باب القفص أمام الخزانة 218، وانتهيت قبل الخامسة والنصف وسلّمت المكان للسيد صبري. لم أفتح الخزانة.",
+            "fact_ids": [
+              "f_tech_scope"
+            ]
+          },
+          {
+            "line_id": "id_witness",
+            "purpose": "reveal",
+            "text_ar": "أبلغت الفرع في أمر العمل بأن فتح الخزانة يلزمه شاهد ثانٍ، ولم يوقّع أحد.",
+            "fact_ids": [
+              "f_witness_asked"
+            ]
+          },
+          {
+            "line_id": "id_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "ليس من اختصاصي."
+          },
+          {
+            "line_id": "id_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن أمر العمل فقط."
+          },
+          {
+            "line_id": "id_bye",
+            "purpose": "farewell",
+            "text_ar": "مع السلامة."
+          }
+        ]
+      },
+      {
+        "id": "sanaa",
+        "name_ar": "سناء الفارس",
+        "role": "authority",
+        "age_descriptor_ar": "مديرة فرع المرسى وأمينة السجلات",
+        "persona_ar": "هادئة ورسمية، تعطي المحقق السجلات المتاحة وتشرح ما يعنيه كل سجل دون تأويل.",
+        "motives_ar": [
+          "أن تُعرض السجلات كما هي",
+          "أن تُراجع الإجراءات إن ثبت خلل"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "sn_greet",
+            "purpose": "greeting",
+            "text_ar": "السجلات متاحة لك، وسأشرح لك ما يعنيه كل سجل ولا أفسّر ما لا يقوله."
+          },
+          {
+            "line_id": "sn_open",
+            "purpose": "reveal",
+            "text_ar": "للخزائن سجل فتح يدوّن كل فتحة، وللأختام سجل مخزون يدوّن كل ختم ركّب.",
+            "fact_ids": [
+              "f_open_log_exists",
+              "f_seal_register_exists"
+            ]
+          },
+          {
+            "line_id": "sn_contract",
+            "purpose": "reveal",
+            "text_ar": "عقد الخزانة 218 محفوظ، وفيه وصف المحتويات عند الإيداع في الثاني عشر من مارس 2014.",
+            "fact_ids": [
+              "f_deposit_2014"
+            ]
+          },
+          {
+            "line_id": "sn_keys",
+            "purpose": "reveal",
+            "text_ar": "للمفاتيح سجل عهدة، ولباب غرفة الخزائن سجل بطاقات إلكتروني.",
+            "fact_ids": [
+              "f_key_register_exists",
+              "f_door_log_exists"
+            ]
+          },
+          {
+            "line_id": "sn_custody",
+            "purpose": "reveal",
+            "text_ar": "ولكل خزانة نموذج جرد وعهدة توقّع فيه الأطراف عند كل فتحة.",
+            "fact_ids": [
+              "f_custody_form_exists"
+            ]
+          },
+          {
+            "line_id": "sn_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "ليس في السجلات."
+          },
+          {
+            "line_id": "sn_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن سجلات الفرع."
+          },
+          {
+            "line_id": "sn_bye",
+            "purpose": "farewell",
+            "text_ar": "سنراجع الإجراءات مهما كانت النتيجة."
+          }
+        ]
+      }
+    ],
+    "locations": [
+      {
+        "id": "loc_vault",
+        "name_ar": "غرفة الخزائن",
+        "description_ar": "غرفة الخزائن وخزانة المفاتيح عند مدخلها."
+      },
+      {
+        "id": "loc_office",
+        "name_ar": "مكتب مديرة الفرع",
+        "description_ar": "حيث تُحفظ السجلات والعقود."
+      },
+      {
+        "id": "loc_gate",
+        "name_ar": "بوابة الفرع والممر الخارجي",
+        "description_ar": "منطقة عمل الحارس الليلي."
+      }
+    ],
+    "objects": [
+      {
+        "id": "obj_locker",
+        "name_ar": "الخزانة رقم 218",
+        "description_ar": "خزانة أمانات صغيرة عليها ختم يُستبدل عند كل فتح."
+      },
+      {
+        "id": "obj_coins",
+        "name_ar": "القطع التذكارية الست",
+        "description_ar": "قطع فضية اللون وُجدت داخل الخزانة."
+      }
+    ],
+    "organizations": [
+      {
+        "id": "org_branch",
+        "name_ar": "خزائن المرسى للأمانات",
+        "description_ar": "مؤسسة خيالية لتأجير خزائن الأمانات في ميناء المرسى."
+      },
+      {
+        "id": "org_mint",
+        "name_ar": "دار سك المرسى",
+        "description_ar": "دار خيالية تصدر قطعاً تذكارية."
+      }
+    ]
+  },
+  "truth": {
+    "solution": {
+      "culprit_ids": [
+        "sabri"
+      ],
+      "summary_ar": "التبديل لم يحدث على يد الحارس. جاءت القطع بعد صدورها في 2024، ولم تُفتح الخزانة بعد ذلك إلا مرة واحدة هي فتحة الصيانة، وفيها انفرد بها حامل المفتاح الاحتياطي ساعات بلا شاهد ولا جرد، ثم رُكّب ختم جديد يبدو سليماً. تثبت الأدلة الفرصة وانقطاع العهدة، ولا تثبت وجهة السبائك.",
+      "key_fact_ids": [
+        "f_swap_at_maint",
+        "f_sabri_sole",
+        "f_guard_out"
+      ]
+    },
+    "facts": [
+      {
+        "id": "f_coins_found",
+        "statement_ar": "حين فتح الحفيدان الخزانة رقم 218 هذا الشهر وجدا ست قطع تذكارية بدل ست سبائك فضة صغيرة.",
+        "kind": "event",
+        "subject_ids": [
+          "obj_locker",
+          "obj_coins",
+          "luay"
+        ],
+        "spoiler_level": 0
+      },
+      {
+        "id": "f_clerk_swears",
+        "statement_ar": "يقسم موظف الخزائن بسام أن ختم الخزانة سليم لم يُمس.",
+        "kind": "attribute",
+        "subject_ids": [
+          "bassam",
+          "obj_locker"
+        ],
+        "spoiler_level": 0
+      },
+      {
+        "id": "f_guard_suspected",
+        "statement_ar": "يشتبه كثيرون في الحارس الليلي الجديد.",
+        "kind": "attribute",
+        "subject_ids": [
+          "nabil"
+        ],
+        "spoiler_level": 0
+      },
+      {
+        "id": "f_deposit_2014",
+        "statement_ar": "أودعت صاحبة الخزانة ست سبائك فضة صغيرة في الثاني عشر من مارس 2014، وسُجّل ذلك في عقد الخزانة.",
+        "kind": "event",
+        "subject_ids": [
+          "obj_locker"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 0,
+          "precision": "unknown"
+        }
+      },
+      {
+        "id": "f_coin_year",
+        "statement_ar": "تحمل القطع الست على حافتها سنة 2024 وعبارة «مئوية ميناء المرسى».",
+        "kind": "state",
+        "subject_ids": [
+          "obj_coins"
+        ],
+        "spoiler_level": 1
+      },
+      {
+        "id": "f_issue_date",
+        "statement_ar": "بدأ بيع مجموعة «مئوية ميناء المرسى» التذكارية في 20 مارس 2024 ولم تُسكّ قطعة منها قبل ذلك.",
+        "kind": "event",
+        "subject_ids": [
+          "obj_coins",
+          "org_mint"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 0,
+          "precision": "unknown"
+        }
+      },
+      {
+        "id": "f_coins_postdate",
+        "statement_ar": "القطع التذكارية لم تكن موجودة وقت الإيداع في 2014، فلا يصح أنها كانت في الخزانة منذئذ.",
+        "kind": "relation",
+        "subject_ids": [
+          "obj_coins",
+          "obj_locker"
+        ],
+        "spoiler_level": 2,
+        "time": {
+          "start_min": 0,
+          "precision": "unknown"
+        },
+        "science_ko_refs": [
+          "KO-NP-02H-002"
+        ]
+      },
+      {
+        "id": "f_seal_checked",
+        "statement_ar": "الختم الذي رآه بسام على الباب اليوم سليم غير مقطوع.",
+        "kind": "state",
+        "subject_ids": [
+          "bassam",
+          "obj_locker"
+        ],
+        "spoiler_level": 1
+      },
+      {
+        "id": "f_seal_register_exists",
+        "statement_ar": "للفرع سجل مخزون أختام يدوّن رقم كل ختم وتاريخ تركيبه.",
+        "kind": "state",
+        "subject_ids": [
+          "org_branch"
+        ],
+        "spoiler_level": 1
+      },
+      {
+        "id": "f_seal_new",
+        "statement_ar": "الختم الحالي على الخزانة ركّب في 14 أغسطس 2024 وهو غير ختم الإيداع.",
+        "kind": "relation",
+        "subject_ids": [
+          "obj_locker"
+        ],
+        "spoiler_level": 2,
+        "time": {
+          "start_min": 0,
+          "precision": "unknown"
+        }
+      },
+      {
+        "id": "f_open_log_exists",
+        "statement_ar": "للفرع سجل يدوّن كل فتحة لكل خزانة.",
+        "kind": "state",
+        "subject_ids": [
+          "org_branch"
+        ],
+        "spoiler_level": 1
+      },
+      {
+        "id": "f_key_register_exists",
+        "statement_ar": "للفرع سجل عهدة للمفاتيح.",
+        "kind": "state",
+        "subject_ids": [
+          "org_branch"
+        ],
+        "spoiler_level": 1
+      },
+      {
+        "id": "f_door_log_exists",
+        "statement_ar": "لباب غرفة الخزائن سجل بطاقات إلكتروني.",
+        "kind": "state",
+        "subject_ids": [
+          "loc_vault"
+        ],
+        "spoiler_level": 1
+      },
+      {
+        "id": "f_custody_form_exists",
+        "statement_ar": "لكل خزانة نموذج جرد وعهدة يوقّعه الأطراف عند كل فتحة.",
+        "kind": "state",
+        "subject_ids": [
+          "org_branch"
+        ],
+        "spoiler_level": 1
+      },
+      {
+        "id": "f_maint_open",
+        "statement_ar": "فُتحت الخزانة 218 مرة واحدة منذ صدور القطع التذكارية: فتحة الصيانة في 14 أغسطس 2024.",
+        "kind": "event",
+        "subject_ids": [
+          "obj_locker",
+          "sabri"
+        ],
+        "spoiler_level": 2,
+        "time": {
+          "start_min": 35,
+          "precision": "exact",
+          "end_min": 286
+        },
+        "location_id": "loc_vault"
+      },
+      {
+        "id": "f_swap_at_maint",
+        "statement_ar": "استُبدلت محتويات الخزانة في فتحة الصيانة يوم 14 أغسطس 2024، لأنها الفتحة الوحيدة بعد صدور القطع.",
+        "kind": "event",
+        "subject_ids": [
+          "obj_locker",
+          "obj_coins"
+        ],
+        "spoiler_level": 3,
+        "time": {
+          "start_min": 35,
+          "precision": "exact",
+          "end_min": 286
+        },
+        "location_id": "loc_vault",
+        "science_ko_refs": [
+          "KO-NP-02H-002"
+        ]
+      },
+      {
+        "id": "f_guard_start",
+        "statement_ar": "باشر الحارس نبيل العمل في 2 فبراير 2026، ومهامه البوابة والممر الخارجي وجولة كل ساعتين.",
+        "kind": "event",
+        "subject_ids": [
+          "nabil"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 0,
+          "precision": "unknown"
+        },
+        "location_id": "loc_gate"
+      },
+      {
+        "id": "f_guard_key",
+        "statement_ar": "لا يملك الحارس نبيل إلا مفتاح باب الموظفين ولا بطاقة لدخول غرفة الخزائن.",
+        "kind": "state",
+        "subject_ids": [
+          "nabil"
+        ],
+        "spoiler_level": 1
+      },
+      {
+        "id": "f_guard_out",
+        "statement_ar": "الحارس نبيل التحق بعد فتحة الصيانة الوحيدة، ولا مفتاح له ولم تدخل بطاقته غرفة الخزائن، فلا فرصة له في التبديل.",
+        "kind": "relation",
+        "subject_ids": [
+          "nabil",
+          "obj_locker"
+        ],
+        "spoiler_level": 2,
+        "time": {
+          "start_min": 0,
+          "precision": "unknown"
+        },
+        "science_ko_refs": [
+          "KO-RS-05-007"
+        ]
+      },
+      {
+        "id": "f_guard_nervous",
+        "statement_ar": "بدا الحارس نبيل متوتراً أثناء أسئلة المحقق.",
+        "kind": "attribute",
+        "subject_ids": [
+          "nabil"
+        ],
+        "spoiler_level": 1
+      },
+      {
+        "id": "f_sabri_opened",
+        "statement_ar": "فتح صبري الخزانة 218 بنفسه يوم صيانة باب القفص.",
+        "kind": "event",
+        "subject_ids": [
+          "sabri",
+          "obj_locker"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 35,
+          "precision": "approx",
+          "end_min": 286
+        },
+        "location_id": "loc_vault"
+      },
+      {
+        "id": "f_sabri_stayed",
+        "statement_ar": "بقي صبري في غرفة الخزائن حتى 20:46 والمفتاح الاحتياطي معه حتى 20:50.",
+        "kind": "event",
+        "subject_ids": [
+          "sabri"
+        ],
+        "spoiler_level": 2,
+        "time": {
+          "start_min": 82,
+          "precision": "exact",
+          "end_min": 290
+        },
+        "location_id": "loc_vault"
+      },
+      {
+        "id": "f_tech_scope",
+        "statement_ar": "اقتصر عمل الفني إدريس على مفصلة باب القفص، وانصرف 17:22 دون أن يفتح الخزانة.",
+        "kind": "event",
+        "subject_ids": [
+          "idris",
+          "loc_vault"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 38,
+          "precision": "exact",
+          "end_min": 82
+        },
+        "location_id": "loc_vault"
+      },
+      {
+        "id": "f_witness_asked",
+        "statement_ar": "طلب الفني في أمر العمل حضور شاهد ثانٍ عند فتح الخزانة ولم يوقّع أحد.",
+        "kind": "event",
+        "subject_ids": [
+          "idris"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 82,
+          "precision": "exact"
+        },
+        "location_id": "loc_vault"
+      },
+      {
+        "id": "f_sabri_sole",
+        "statement_ar": "فتح حامل المفتاح الاحتياطي الخزانة في الصيانة بنفسه وبلا شاهد ثانٍ.",
+        "kind": "relation",
+        "subject_ids": [
+          "sabri",
+          "obj_locker"
+        ],
+        "spoiler_level": 2,
+        "time": {
+          "start_min": 35,
+          "precision": "exact",
+          "end_min": 286
+        },
+        "location_id": "loc_vault",
+        "science_ko_refs": [
+          "KO-FC-04B-002"
+        ]
+      },
+      {
+        "id": "f_custody_gap",
+        "statement_ar": "لم يُجرَ جرد لمحتويات الخزانة ولم يُوقّع شاهد في فتحة الصيانة؛ انقطعت سلسلة العهدة عندها.",
+        "kind": "relation",
+        "subject_ids": [
+          "obj_locker"
+        ],
+        "spoiler_level": 2,
+        "time": {
+          "start_min": 0,
+          "precision": "unknown"
+        },
+        "science_ko_refs": [
+          "KO-FC-04-026"
+        ]
+      }
+    ],
+    "claims": [
+      {
+        "id": "cl_guard_stranger",
+        "statement_ar": "الحارس الجديد هو الوحيد الغريب في الفرع، فلا بد أنه الفاعل.",
+        "kind": "rumour",
+        "held_by": [
+          "luay"
+        ],
+        "true_fact_id": "f_guard_out",
+        "contradicted_by_evidence_ids": [
+          "ev_guard_hire",
+          "ev_open_log",
+          "ev_vault_door_log",
+          "ev_key_register"
+        ]
+      },
+      {
+        "id": "cl_bassam_seal",
+        "statement_ar": "الختم سليم، فلا يمكن أن يكون أحد فتح الخزانة منذ الإيداع.",
+        "kind": "honest_mistake",
+        "held_by": [
+          "bassam"
+        ],
+        "true_fact_id": "f_seal_new",
+        "contradicted_by_evidence_ids": [
+          "ev_seal_register",
+          "ev_seal_photo",
+          "ev_deposit_receipt"
+        ]
+      },
+      {
+        "id": "cl_sabri_short",
+        "statement_ar": "فتحت الخزانة دقائق قليلة فقط لاختبار الباب.",
+        "kind": "lie",
+        "held_by": [
+          "sabri"
+        ],
+        "true_fact_id": "f_sabri_stayed",
+        "contradicted_by_evidence_ids": [
+          "ev_vault_door_log",
+          "ev_key_register"
+        ]
+      }
+    ]
+  },
+  "timeline": [
+    {
+      "id": "te_deposit",
+      "description_ar": "الإيداع: ست سبائك فضة صغيرة، وتركيب الختم الأول.",
+      "time": {
+        "start_min": 0,
+        "precision": "unknown"
+      },
+      "actor_ids": [],
+      "fact_ids": [
+        "f_deposit_2014"
+      ]
+    },
+    {
+      "id": "te_issue",
+      "description_ar": "بدء بيع مجموعة «مئوية ميناء المرسى» التذكارية.",
+      "time": {
+        "start_min": 0,
+        "precision": "unknown"
+      },
+      "actor_ids": [],
+      "fact_ids": [
+        "f_issue_date"
+      ]
+    },
+    {
+      "id": "te_key_out",
+      "description_ar": "صبري يخرج المفتاح الاحتياطي ويدخل غرفة الخزائن.",
+      "time": {
+        "start_min": 35,
+        "precision": "exact"
+      },
+      "location_id": "loc_vault",
+      "actor_ids": [
+        "sabri"
+      ],
+      "fact_ids": [
+        "f_sabri_opened"
+      ],
+      "motivated_by_ar": "كُلّف بمرافقة أمر الصيانة"
+    },
+    {
+      "id": "te_tech",
+      "description_ar": "الفني إدريس يستبدل مفصلة باب القفص.",
+      "time": {
+        "start_min": 38,
+        "precision": "exact",
+        "end_min": 82
+      },
+      "location_id": "loc_vault",
+      "actor_ids": [
+        "idris"
+      ],
+      "fact_ids": [
+        "f_tech_scope"
+      ],
+      "motivated_by_ar": "أمر عمل الصيانة رقم 77"
+    },
+    {
+      "id": "te_alone",
+      "description_ar": "صبري وحده في غرفة الخزائن والخزانة مفتوحة، بلا جرد ولا شاهد ثانٍ.",
+      "time": {
+        "start_min": 82,
+        "precision": "exact",
+        "end_min": 280
+      },
+      "location_id": "loc_vault",
+      "actor_ids": [
+        "sabri"
+      ],
+      "fact_ids": [
+        "f_sabri_sole",
+        "f_sabri_stayed",
+        "f_custody_gap",
+        "f_witness_asked"
+      ],
+      "motivated_by_ar": "قال إنه يختبر باب الخزانة بعد تغيير المفصلة"
+    },
+    {
+      "id": "te_seal",
+      "description_ar": "تركيب الختم الجديد 9026 على الخزانة.",
+      "time": {
+        "start_min": 280,
+        "precision": "approx"
+      },
+      "location_id": "loc_vault",
+      "actor_ids": [
+        "sabri"
+      ],
+      "fact_ids": [
+        "f_seal_new"
+      ],
+      "motivated_by_ar": "الإجراء يوجب تركيب ختم جديد عند كل فتح"
+    },
+    {
+      "id": "te_key_back",
+      "description_ar": "صبري يعيد المفتاح الاحتياطي ويوقّع.",
+      "time": {
+        "start_min": 290,
+        "precision": "exact"
+      },
+      "location_id": "loc_office",
+      "actor_ids": [
+        "sabri"
+      ],
+      "fact_ids": [
+        "f_sabri_stayed"
+      ],
+      "motivated_by_ar": "إغلاق دورة عهدة المفتاح"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_coin_mint",
+      "title_ar": "صورة القطع الست المكتشفة",
+      "kind": "physical",
+      "content_ar": "صورة مكبّرة لوجهي إحدى القطع الست:\nالوجه: «مئوية ميناء المرسى»\nالحافة: «2024»\nالوزن: نحو 8 غ لكل قطعة\nالمعدن: طلاء فضي اللون على قاعدة معدنية رخيصة\nالقطع الست متطابقة النقش",
+      "acquired_by_action_ids": [
+        "a_examine_coins"
+      ],
+      "supports_fact_ids": [
+        "f_coin_year"
+      ],
+      "reliability": "strong",
+      "limits_ar": "السنة المنقوشة تحدد أقدم زمن ممكن لوجود القطعة، لا زمن وضعها في الخزانة؛ ولا تدل على من وضعها.",
+      "location_id": "loc_vault"
+    },
+    {
+      "id": "ev_deposit_receipt",
+      "title_ar": "عقد الخزانة رقم 218",
+      "kind": "documentary",
+      "content_ar": "عقد استئجار خزانة أمانات رقم 218 — فرع المرسى\nتاريخ العقد: 12/03/2014\nالمستأجرة: السيدة نوال الحداد\nوصف المحتويات المودعة (بخط الموظف وتوقيع المستأجرة): ست سبائك فضة صغيرة، وزن كل منها 50 غ\nالختم المركّب: 4471\nتوقيع الموظف المسؤول: ي. الرفاعي",
+      "acquired_by_action_ids": [
+        "a_read_contract"
+      ],
+      "supports_fact_ids": [
+        "f_deposit_2014"
+      ],
+      "reliability": "strong",
+      "limits_ar": "وصف كتبه الموظف عند الإيداع؛ لا يثبت وجود السبائك بذاتها ولا يغطي ما جرى بعد توقيع العقد.",
+      "location_id": "loc_office"
+    },
+    {
+      "id": "ev_open_log",
+      "title_ar": "سجل فتح الخزانة 218",
+      "kind": "documentary",
+      "content_ar": "سجل فتح خزائن الأمانات — الخزانة 218 (نسخة الفرع)\n12/03/2014 — إيداع — بحضور المستأجرة\n04/05/2017 — زيارة — بحضور المستأجرة وموظف الخزائن\n19/06/2020 — زيارة — بحضور المستأجرة وموظف الخزائن\n08/11/2023 — زيارة — بحضور المستأجرة وموظف الخزائن\n14/08/2024 — فتح للصيانة — ص. المناصرة (حامل المفتاح الاحتياطي)\nلا فتحات مسجلة بعد ذلك حتى يوم الاكتشاف",
+      "acquired_by_action_ids": [
+        "a_get_open_log"
+      ],
+      "supports_fact_ids": [
+        "f_maint_open"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يدوّن الفتحات المسجلة فقط؛ فتحة غير مسجلة لا تظهر فيه، ولا يبيّن ما دار داخل الخزانة.",
+      "location_id": "loc_office"
+    },
+    {
+      "id": "ev_mint_bulletin",
+      "title_ar": "نشرة دار سك المرسى",
+      "kind": "documentary",
+      "content_ar": "نشرة دار سك المرسى (وثيقة منشورة)\nإصدار «مجموعة مئوية ميناء المرسى» — ست قطع تذكارية بطلاء فضي اللون\nبدء البيع في متجر الميناء: 20/03/2024\nلم تُسكّ أي قطعة من المجموعة قبل هذا التاريخ",
+      "acquired_by_action_ids": [
+        "a_read_bulletin"
+      ],
+      "supports_fact_ids": [
+        "f_issue_date"
+      ],
+      "reliability": "strong",
+      "limits_ar": "تؤرّخ لإصدار المجموعة لا لمن اشتراها ولا لمكان وضعها.",
+      "location_id": "loc_office"
+    },
+    {
+      "id": "ev_seal_register",
+      "title_ar": "سجل مخزون الأختام",
+      "kind": "documentary",
+      "content_ar": "سجل مخزون الأختام وتركيبها — فرع المرسى (الخزانة 218)\n4471 — ركّب 12/03/2014 عند الإيداع\n4802 — ركّب 04/05/2017\n5530 — ركّب 19/06/2020\n6015 — ركّب 08/11/2023\n9026 — ركّب 14/08/2024 (فتح للصيانة) — مركّبه: ص. المناصرة\nلا ختم لاحق",
+      "acquired_by_action_ids": [
+        "a_get_seal_register"
+      ],
+      "supports_fact_ids": [
+        "f_seal_new",
+        "f_maint_open"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يدل على مواعيد استبدال الختم عند كل فتح؛ لا يدل على ما في الخزانة، ويصحّ فقط إن سُجّل كل ختم عند تركيبه.",
+      "contradicts_claim_ids": [
+        "cl_bassam_seal"
+      ],
+      "location_id": "loc_office"
+    },
+    {
+      "id": "ev_seal_photo",
+      "title_ar": "صورة الختم الحالي",
+      "kind": "physical",
+      "content_ar": "صورة الختم على باب الخزانة 218: الرقم 9026، سليم غير مقطوع، وعليه تاريخ التركيب 14/08/2024.",
+      "acquired_by_action_ids": [
+        "a_photo_seal"
+      ],
+      "supports_fact_ids": [
+        "f_seal_checked",
+        "f_seal_new"
+      ],
+      "reliability": "strong",
+      "limits_ar": "تثبت سلامة الختم الحالي منذ تركيبه؛ لا تثبت ما كان في الخزانة قبل تركيبه.",
+      "contradicts_claim_ids": [
+        "cl_bassam_seal"
+      ],
+      "location_id": "loc_vault"
+    },
+    {
+      "id": "ev_guard_hire",
+      "title_ar": "ملف توظيف الحارس الليلي",
+      "kind": "documentary",
+      "content_ar": "ملف توظيف — الحارس الليلي نبيل العمر\nتاريخ المباشرة: 02/02/2026\nالمهام: بوابة الفرع والممر الخارجي وجولة كل ساعتين\nالمفاتيح المسلّمة: مفتاح باب الموظفين فقط\nلا صلاحية لدخول غرفة الخزائن",
+      "acquired_by_action_ids": [
+        "a_get_hire"
+      ],
+      "supports_fact_ids": [
+        "f_guard_start",
+        "f_guard_key"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يحدد ما أُسند إليه من مهام ومفاتيح؛ لا يثبت ما فعله فعلاً.",
+      "contradicts_claim_ids": [
+        "cl_guard_stranger"
+      ],
+      "location_id": "loc_office"
+    },
+    {
+      "id": "ev_vault_door_log",
+      "title_ar": "سجل بطاقات باب غرفة الخزائن",
+      "kind": "digital",
+      "content_ar": "سجل بطاقات باب غرفة الخزائن (من نظام القفل الإلكتروني)\n14/08/2024 — 16:35 دخول: ص. المناصرة\n14/08/2024 — 16:38 دخول: إدريس (بطاقة زائر)\n14/08/2024 — 17:22 خروج: إدريس\n14/08/2024 — 20:46 خروج: ص. المناصرة\nمن 02/02/2026 إلى يوم الاكتشاف: لا دخول ببطاقة الحارس نبيل العمر",
+      "acquired_by_action_ids": [
+        "a_get_door_log"
+      ],
+      "supports_fact_ids": [
+        "f_sabri_stayed",
+        "f_guard_key"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يبيّن دخول البطاقات وخروجها لا ما فعله حاملها داخل الغرفة؛ وقد يدخل شخص خلف آخر دون مسح بطاقته.",
+      "contradicts_claim_ids": [
+        "cl_sabri_short"
+      ],
+      "forensic_ko_ref": "KO-FC-04-024",
+      "location_id": "loc_vault"
+    },
+    {
+      "id": "ev_key_register",
+      "title_ar": "سجل عهدة المفاتيح",
+      "kind": "documentary",
+      "content_ar": "سجل عهدة المفاتيح — فرع المرسى\nالمفتاح الاحتياطي رقم 2 لخزائن القسم (ج): الحامل الدائم: ص. المناصرة\n14/08/2024 — خرج 16:35 — ص. المناصرة — عاد 20:50 — ص. المناصرة\nحاملو مفاتيح الغرفة: ص. المناصرة، ب. العيسى\nالحارس نبيل العمر غير مدرج",
+      "acquired_by_action_ids": [
+        "a_get_key_register"
+      ],
+      "supports_fact_ids": [
+        "f_sabri_stayed",
+        "f_guard_key",
+        "f_sabri_opened"
+      ],
+      "reliability": "strong",
+      "limits_ar": "سجل ورقي يملؤه حامل المفتاح نفسه؛ لا يثبت أن المفتاح لم يُنسخ.",
+      "contradicts_claim_ids": [
+        "cl_sabri_short"
+      ],
+      "location_id": "loc_office"
+    },
+    {
+      "id": "ev_job_sheet",
+      "title_ar": "أمر عمل الصيانة رقم 77",
+      "kind": "documentary",
+      "content_ar": "أمر عمل صيانة رقم 77 — 14/08/2024\nالعمل: استبدال مفصلة باب القفص أمام الخزانة 218\nالفني: إدريس القاسم — بدأ 16:38 — أنهى 17:20\nنطاق العمل: باب القفص فقط، ولم يُطلب منه فتح الخزانة.\nسُلّم القفص مفتوحاً والخزانة مغلقة إلى: ص. المناصرة 17:22\nملاحظة الفني: فتح الخزانة يلزمه شاهد ثانٍ — [توقيع الشاهد: فارغ]",
+      "acquired_by_action_ids": [
+        "a_get_job_sheet"
+      ],
+      "supports_fact_ids": [
+        "f_tech_scope",
+        "f_witness_asked"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يثبت نطاق عمل الفني ومن تسلّم المكان؛ لا يثبت ما جرى بعد التسليم.",
+      "location_id": "loc_vault"
+    },
+    {
+      "id": "ev_custody_form",
+      "title_ar": "نموذج جرد وعهدة الخزانة 218",
+      "kind": "documentary",
+      "content_ar": "نموذج جرد وعهدة محتويات الخزانة 218\n1) 12/03/2014 — جرد عند الإيداع: ست سبائك فضة — توقيع المستأجرة والموظف\n2–4) زيارات 2017 و2020 و2023 — مراجعة المحتويات بحضور موظف: «سليمة» — توقيع المستأجرة والموظف\n5) 14/08/2024 — فتح للصيانة — جرد المحتويات: [فارغ] — توقيع شاهد ثانٍ: [فارغ]\n6) يوم الاكتشاف — فتح بحضور الحفيدين: ست قطع تذكارية",
+      "acquired_by_action_ids": [
+        "a_get_custody"
+      ],
+      "supports_fact_ids": [
+        "f_custody_gap",
+        "f_sabri_sole"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يبيّن موضع انقطاع الجرد والتوقيع لا ما جرى في ذلك الموضع.",
+      "forensic_ko_ref": "KO-FC-04-026",
+      "location_id": "loc_office"
+    },
+    {
+      "id": "ev_bassam_statement",
+      "title_ar": "إفادة بسام (ملخص)",
+      "kind": "testimonial",
+      "content_ar": "ملخص إفادة بسام العيسى:\n«فحصت الختم بنفسي أمام الحفيدين فوجدته سليماً. إن كان الختم سليماً فلا يمكن أن يكون أحد فتح الخزانة منذ الإيداع.»",
+      "acquired_by_action_ids": [
+        "a_note_bassam"
+      ],
+      "supports_fact_ids": [
+        "f_seal_checked"
+      ],
+      "reliability": "weak",
+      "limits_ar": "يصف ختماً سليماً اليوم ثم يعمّم على الماضي كله؛ والختم المركّب حديثاً يكون سليماً مهما جرى قبله.",
+      "is_red_herring": true,
+      "location_id": "loc_vault"
+    },
+    {
+      "id": "ev_guard_demeanour",
+      "title_ar": "ملاحظة عن سلوك الحارس في المقابلة",
+      "kind": "observation",
+      "content_ar": "ملاحظة المحقق: كان الحارس نبيل يتكلم بسرعة، ويكرر «لم ألمس شيئاً»، وتردّد قبل أن يجيب عن مفاتيحه.",
+      "acquired_by_action_ids": [
+        "a_note_nabil_manner"
+      ],
+      "supports_fact_ids": [
+        "f_guard_nervous"
+      ],
+      "reliability": "weak",
+      "limits_ar": "التوتر في المقابلة ملاحظة لا دليل؛ قد يشعر به كل من يعرف أن الجميع يشتبه به، ولا يفرّق بين البريء وغيره.",
+      "is_red_herring": true,
+      "location_id": "loc_gate"
+    },
+    {
+      "id": "ev_sabri_statement",
+      "title_ar": "إفادة صبري (ملخص)",
+      "kind": "testimonial",
+      "content_ar": "ملخص إفادة صبري المناصرة:\n«فتحت الخزانة دقائق قليلة لأختبر الباب بعد تغيير المفصلة، ثم أغلقتها وركّبت الختم. لم أُخرج منها شيئاً.»",
+      "acquired_by_action_ids": [
+        "a_note_sabri"
+      ],
+      "supports_fact_ids": [
+        "f_sabri_opened"
+      ],
+      "reliability": "weak",
+      "limits_ar": "إفادة صاحب مصلحة في بقاء سمعته؛ تُقاس بسجل البطاقات وسجل المفاتيح لا بنبرتها.",
+      "location_id": "loc_vault"
+    }
+  ],
+  "evidence_graph": {
+    "inferences": [
+      {
+        "id": "i_a_post",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_coin_mint"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_deposit_receipt"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_coins_postdate"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "العقد يؤرّخ الإيداع بسنة 2014، والقطع منقوشة بسنة 2024؛ فالقطع لم توجد وقت الإيداع.",
+        "skill_ko_refs": [
+          "KO-NP-02H-002",
+          "KO-RS-06-017"
+        ]
+      },
+      {
+        "id": "i_b_post",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_mint_bulletin"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_seal_register"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_coins_postdate"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "النشرة تجعل بداية البيع 20/03/2024 وسجل الأختام يجعل الإيداع في 2014؛ فالقطع جاءت بعد الإيداع بعشر سنوات.",
+        "skill_ko_refs": [
+          "KO-NP-02H-002",
+          "KO-RS-06-017"
+        ]
+      },
+      {
+        "id": "i_a_swap",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_coin_mint"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_deposit_receipt"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_open_log"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_swap_at_maint"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "القطع منقوشة بسنة 2024 والإيداع في 2014، وسجل الفتح لا يذكر منذ بداية 2024 إلا فتحة الصيانة؛ فلا تبديل ممكناً قبلها ولا بعدها.",
+        "skill_ko_refs": [
+          "KO-RS-06-017",
+          "KO-NP-02H-002"
+        ]
+      },
+      {
+        "id": "i_b_swap",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_mint_bulletin"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_seal_register"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_swap_at_maint"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "الأختام تُستبدل عند كل فتح، وبعد 20/03/2024 لا يظهر في سجلها إلا الختم 9026 المركّب في 14/08/2024؛ فتلك هي الفتحة الوحيدة بعد صدور القطع.",
+        "skill_ko_refs": [
+          "KO-RS-06-017",
+          "KO-FC-04-026"
+        ]
+      },
+      {
+        "id": "i_a_guard",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_guard_hire"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_open_log"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_guard_out"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "الحارس باشر العمل في 2026، ولا مفتاح غرفة بيده، وسجل الفتح لا يذكر فتحة بعد 14/08/2024؛ فلا فرصة لديه في التبديل.",
+        "skill_ko_refs": [
+          "KO-RS-05-007",
+          "KO-RS-06-001"
+        ]
+      },
+      {
+        "id": "i_b_guard",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_vault_door_log"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_key_register"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_guard_out"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "سجل البطاقات لا يذكر دخولاً بطاقته إلى الغرفة، وسجل المفاتيح لا يدرجه بين الحاملين؛ فلا مفتاح ولا دخول.",
+        "skill_ko_refs": [
+          "KO-RS-05-007",
+          "KO-RS-06-001"
+        ]
+      },
+      {
+        "id": "i_a_sole",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_job_sheet"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_custody_form"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_sabri_sole"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "الفني لم يفتح الخزانة وسلّم المكان لصبري، ونموذج العهدة يخلو من توقيع شاهد وجرد في ذلك السطر؛ فالفتح كان بيد حامل المفتاح وحده.",
+        "skill_ko_refs": [
+          "KO-FC-04-026",
+          "KO-RS-06-017"
+        ]
+      },
+      {
+        "id": "i_b_sole",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_key_register"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_vault_door_log"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_sabri_sole"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "المفتاح الاحتياطي خرج مع صبري 16:35 وعاد معه 20:50، وبعد خروج الفني 17:22 لم يبقَ في الغرفة غيره حتى 20:46؛ فالفتح كان بيده وحده بلا شاهد.",
+        "skill_ko_refs": [
+          "KO-FC-04-026",
+          "KO-RS-06-017"
+        ]
+      },
+      {
+        "id": "i_gap",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_custody_form"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_custody_gap"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "السطر الخاص بفتحة الصيانة بلا جرد وبلا توقيع شاهد، بينما كل سطر قبله موقّع؛ فهذه هي الحلقة المكسورة في سلسلة العهدة.",
+        "skill_ko_refs": [
+          "KO-FC-04-026"
+        ]
+      },
+      {
+        "id": "i_seal_claim",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_seal_register"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_seal_photo"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_bassam_seal"
+        },
+        "relation": "contradicts_claim",
+        "strength": "strong",
+        "rule_ar": "الختم الحالي رقمه 9026 وتاريخ تركيبه 14/08/2024، وختم الإيداع كان 4471؛ فسلامة الختم الحالي لا تعني أن الخزانة لم تُفتح منذ الإيداع.",
+        "skill_ko_refs": [
+          "KO-RS-05-014",
+          "KO-RS-06-001"
+        ]
+      },
+      {
+        "id": "i_sabri_claim",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_vault_door_log"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_key_register"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_sabri_short"
+        },
+        "relation": "contradicts_claim",
+        "strength": "strong",
+        "rule_ar": "البطاقة تسجّل خروجه 20:46 والمفتاح عاد 20:50، أي بعد انصراف الفني بنحو ثلاث ساعات ونصف، لا بدقائق.",
+        "skill_ko_refs": [
+          "KO-RS-05-014",
+          "KO-RS-06-017"
+        ]
+      },
+      {
+        "id": "i_guard_claim",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_guard_out"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_guard_stranger"
+        },
+        "relation": "contradicts_claim",
+        "strength": "strong",
+        "rule_ar": "كونه الأحدث التحاقاً لا يمنحه فرصة؛ الفرصة تُقاس بالمفتاح والدخول والزمن.",
+        "skill_ko_refs": [
+          "KO-RS-05-014"
+        ]
+      },
+      {
+        "id": "i_support_maint",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_swap_at_maint"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_sabri_sole"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_maint"
+        },
+        "relation": "supports",
+        "strength": "strong",
+        "rule_ar": "الفتحة الوحيدة بعد صدور القطع كانت فتحة الصيانة، وفيها انفرد حامل المفتاح الاحتياطي بالخزانة بلا شاهد ولا جرد؛ فهذا التفسير يجمع الأزمنة والسجلات كلها.",
+        "skill_ko_refs": [
+          "KO-RS-06-007"
+        ]
+      },
+      {
+        "id": "i_rule_guard",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_guard_out"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_guard"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "من التحق بعد الفتحة الوحيدة ولا مفتاح ولا دخول له لا يمكن أن يكون مبدّل المحتويات.",
+        "skill_ko_refs": [
+          "KO-RS-06-008",
+          "KO-RS-05-007"
+        ]
+      },
+      {
+        "id": "i_rule_always",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_coins_postdate"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_always"
+        },
+        "relation": "rules_out",
+        "strength": "conclusive",
+        "rule_ar": "قطعة صُكّت في 2024 لا يمكن أن تكون في الخزانة منذ 2014.",
+        "skill_ko_refs": [
+          "KO-RS-06-008"
+        ]
+      }
+    ]
+  },
+  "character_knowledge": [
+    {
+      "character_id": "luay",
+      "knows": [
+        {
+          "fact_id": "f_deposit_2014",
+          "access": "common_knowledge",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": [
+        {
+          "claim_id": "cl_guard_stranger",
+          "stance": "sincere"
+        }
+      ]
+    },
+    {
+      "character_id": "bassam",
+      "knows": [
+        {
+          "fact_id": "f_seal_checked",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_seal_register_exists",
+          "access": "professional",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": [
+        {
+          "claim_id": "cl_bassam_seal",
+          "stance": "sincere"
+        }
+      ]
+    },
+    {
+      "character_id": "nabil",
+      "knows": [
+        {
+          "fact_id": "f_guard_start",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_guard_key",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    },
+    {
+      "character_id": "sabri",
+      "knows": [
+        {
+          "fact_id": "f_sabri_opened",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [
+        {
+          "fact_id": "f_sabri_stayed",
+          "reveal_when": {
+            "any": [
+              {
+                "presented": {
+                  "evidence_id": "ev_vault_door_log",
+                  "to_character": "sabri"
+                }
+              },
+              {
+                "presented": {
+                  "evidence_id": "ev_key_register",
+                  "to_character": "sabri"
+                }
+              }
+            ]
+          },
+          "cover_claim_id": "cl_sabri_short",
+          "reveal_line_id": "sb_stayed"
+        }
+      ],
+      "believes": [
+        {
+          "claim_id": "cl_sabri_short",
+          "stance": "deliberate_lie"
+        }
+      ]
+    },
+    {
+      "character_id": "idris",
+      "knows": [
+        {
+          "fact_id": "f_tech_scope",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_witness_asked",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    },
+    {
+      "character_id": "sanaa",
+      "knows": [
+        {
+          "fact_id": "f_open_log_exists",
+          "access": "professional",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_seal_register_exists",
+          "access": "professional",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_deposit_2014",
+          "access": "professional",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_key_register_exists",
+          "access": "professional",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_door_log_exists",
+          "access": "professional",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_custody_form_exists",
+          "access": "professional",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "h_guard",
+      "statement_ar": "بدّل الحارس الليلي الجديد محتويات الخزانة.",
+      "is_true": false,
+      "plausibility_at_start": "high",
+      "suspect_id": "nabil"
+    },
+    {
+      "id": "h_always",
+      "statement_ar": "لم تكن في الخزانة سبائك أصلاً، وكانت القطع فيها منذ الإيداع.",
+      "is_true": false,
+      "plausibility_at_start": "medium"
+    },
+    {
+      "id": "h_maint",
+      "statement_ar": "جرى التبديل أثناء فتحة الصيانة يوم 14 أغسطس 2024، حين انفرد بالخزانة حامل المفتاح الاحتياطي بلا شاهد ولا جرد.",
+      "is_true": true,
+      "plausibility_at_start": "low",
+      "suspect_id": "sabri"
+    }
+  ],
+  "misdirection_plan": [
+    {
+      "id": "rh_nerves",
+      "points_to_hypothesis_id": "h_guard",
+      "planted_via_ar": "الحارس الجديد غريب عن الفرع، ويتوتر ويتكلم بسرعة حين يُسأل عن مفاتيحه.",
+      "evidence_ids": [
+        "ev_guard_demeanour"
+      ],
+      "refuted_by_inference_ids": [
+        "i_rule_guard",
+        "i_guard_claim"
+      ],
+      "fairness_note_ar": "ملف التوظيف وسجل البطاقات وسجل المفاتيح تثبت كلها غياب المفتاح والدخول؛ والتوتر معلَّم في الواجهة «ملاحظة لا دليل» ويُفسَّر بأن الجميع يشتبه به."
+    },
+    {
+      "id": "rh_seal",
+      "points_to_hypothesis_id": "h_always",
+      "planted_via_ar": "بسام يقسم أن الختم سليم، فيبدو أن الخزانة لم تُفتح قط وأن القطع كانت فيها دائماً.",
+      "evidence_ids": [
+        "ev_bassam_statement"
+      ],
+      "refuted_by_inference_ids": [
+        "i_seal_claim",
+        "i_rule_always"
+      ],
+      "fairness_note_ar": "الختم الحالي مركّب في 2024 حسب سجل الأختام وصورة الختم، وختم الإيداع رقمه 4471؛ وسنة 2024 على القطع تنقض أنها وُجدت وقت الإيداع."
+    }
+  ],
+  "learning_objectives": [
+    {
+      "id": "lo_time",
+      "statement_ar": "يتحقق من اتساق السرد والخط الزمني، فيستخدم تاريخ الصنع حداً أدنى لزمن الوجود لا زمناً للوصول.",
+      "skill_ko_ref": "KO-RS-06-017",
+      "observable_behaviors_ar": [
+        "يضع الأدلة في أزمنتها",
+        "يحدد الفتحة الوحيدة بعد صدور القطع"
+      ],
+      "evidence_sources": [
+        "timeline_task",
+        "action_log"
+      ]
+    },
+    {
+      "id": "lo_diag",
+      "statement_ar": "يقدّر القوة التشخيصية للدليل، فيعرف أن ختماً سليماً اليوم لا يخبر عن الماضي.",
+      "skill_ko_ref": "KO-RS-06-001",
+      "observable_behaviors_ar": [
+        "يربط الدليل بالفرضية باتجاه صحيح",
+        "يذكر حد السجل في الحجة"
+      ],
+      "evidence_sources": [
+        "evidence_board",
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_lie_cues",
+      "statement_ar": "يرفض إشارات السلوك دليلاً على الكذب، ويستبدلها بمطابقة الإفادة مع السجل.",
+      "skill_ko_ref": "KO-RS-05-007",
+      "observable_behaviors_ar": [
+        "لا يعدّ توتر الحارس دليلاً",
+        "يقابل قول صبري بسجل البطاقات"
+      ],
+      "evidence_sources": [
+        "action_log",
+        "evidence_board",
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_hyp",
+      "statement_ar": "يوازن بين فرضيتين على الأقل ويستبعد ما تنقضه الأدلة.",
+      "skill_ko_ref": "KO-RS-05-002",
+      "observable_behaviors_ar": [
+        "يضيف فرضيات",
+        "يستبعد بدليل"
+      ],
+      "evidence_sources": [
+        "hypothesis_ledger"
+      ]
+    },
+    {
+      "id": "lo_calib",
+      "statement_ar": "يصوغ نسبة الترجيح بحدودها.",
+      "skill_ko_ref": "KO-RS-06-021",
+      "observable_behaviors_ar": [
+        "يختار ثقة معقولة",
+        "يذكر حدوداً"
+      ],
+      "evidence_sources": [
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_revise",
+      "statement_ar": "يراجع رأيه الأول حين يظهر ما يخالفه.",
+      "skill_ko_ref": "KO-RS-06-009",
+      "observable_behaviors_ar": [
+        "يغيّر فرضيته الرائدة بدليل"
+      ],
+      "evidence_sources": [
+        "hypothesis_ledger"
+      ]
+    }
+  ],
+  "mechanics": {
+    "time_budget_units": 40,
+    "actions": [
+      {
+        "id": "a_examine_coins",
+        "type": "examine",
+        "label_ar": "افحص القطع الست المكتشفة",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_coin_mint"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "obj_coins",
+        "telemetry_code": "EXAMINE_COINS"
+      },
+      {
+        "id": "a_read_bulletin",
+        "type": "examine",
+        "label_ar": "اقرأ نشرة دار سك المرسى",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_mint_bulletin"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "org_mint",
+        "telemetry_code": "READ_BULLETIN"
+      },
+      {
+        "id": "a_photo_seal",
+        "type": "examine",
+        "label_ar": "صوّر الختم الحالي على باب الخزانة",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_seal_photo"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_vault",
+        "telemetry_code": "PHOTO_SEAL"
+      },
+      {
+        "id": "a_read_contract",
+        "type": "examine",
+        "label_ar": "اطلب عقد الخزانة 218",
+        "precondition": {
+          "fact_unlocked": "f_deposit_2014"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_deposit_receipt"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_office",
+        "telemetry_code": "READ_CONTRACT"
+      },
+      {
+        "id": "a_get_open_log",
+        "type": "examine",
+        "label_ar": "اطلب سجل فتح الخزانة 218",
+        "precondition": {
+          "fact_unlocked": "f_open_log_exists"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_open_log"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_office",
+        "telemetry_code": "GET_OPEN_LOG"
+      },
+      {
+        "id": "a_get_seal_register",
+        "type": "examine",
+        "label_ar": "اطلب سجل مخزون الأختام",
+        "precondition": {
+          "fact_unlocked": "f_seal_register_exists"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_seal_register"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_office",
+        "telemetry_code": "GET_SEAL_REGISTER"
+      },
+      {
+        "id": "a_get_key_register",
+        "type": "examine",
+        "label_ar": "اطلب سجل عهدة المفاتيح",
+        "precondition": {
+          "fact_unlocked": "f_key_register_exists"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_key_register"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_office",
+        "telemetry_code": "GET_KEY_REGISTER"
+      },
+      {
+        "id": "a_get_door_log",
+        "type": "examine",
+        "label_ar": "اطلب سجل بطاقات باب غرفة الخزائن",
+        "precondition": {
+          "fact_unlocked": "f_door_log_exists"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_vault_door_log"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_vault",
+        "telemetry_code": "GET_DOOR_LOG"
+      },
+      {
+        "id": "a_get_custody",
+        "type": "examine",
+        "label_ar": "اطلب نموذج جرد وعهدة الخزانة 218",
+        "precondition": {
+          "fact_unlocked": "f_custody_form_exists"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_custody_form"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_office",
+        "telemetry_code": "GET_CUSTODY"
+      },
+      {
+        "id": "a_get_hire",
+        "type": "examine",
+        "label_ar": "اطلب ملف توظيف الحارس الليلي",
+        "precondition": {
+          "fact_unlocked": "f_guard_start"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_guard_hire"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_office",
+        "telemetry_code": "GET_HIRE"
+      },
+      {
+        "id": "a_get_job_sheet",
+        "type": "examine",
+        "label_ar": "اطلب أمر عمل الصيانة من الفني",
+        "precondition": {
+          "fact_unlocked": "f_tech_scope"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_job_sheet"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "idris",
+        "telemetry_code": "GET_JOB_SHEET"
+      },
+      {
+        "id": "a_int_luay",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة لؤي",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "luay",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "luay",
+        "telemetry_code": "INT_LUAY"
+      },
+      {
+        "id": "a_int_bassam",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة بسام",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "bassam",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "bassam",
+        "telemetry_code": "INT_BASSAM"
+      },
+      {
+        "id": "a_int_nabil",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة نبيل",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "nabil",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "nabil",
+        "telemetry_code": "INT_NABIL"
+      },
+      {
+        "id": "a_int_sabri",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة صبري",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "sabri",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "sabri",
+        "telemetry_code": "INT_SABRI"
+      },
+      {
+        "id": "a_int_idris",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة إدريس",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "idris",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "idris",
+        "telemetry_code": "INT_IDRIS"
+      },
+      {
+        "id": "a_int_sanaa",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة السيدة سناء",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "sanaa",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "sanaa",
+        "telemetry_code": "INT_SANAA"
+      },
+      {
+        "id": "a_note_bassam",
+        "type": "examine",
+        "label_ar": "دوّن إفادة بسام",
+        "precondition": {
+          "fact_unlocked": "f_seal_checked"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_bassam_statement"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "bassam",
+        "telemetry_code": "NOTE_BASSAM"
+      },
+      {
+        "id": "a_note_nabil_manner",
+        "type": "examine",
+        "label_ar": "دوّن ملاحظة عن سلوك الحارس في المقابلة",
+        "precondition": {
+          "fact_unlocked": "f_guard_start"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_guard_demeanour"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "nabil",
+        "telemetry_code": "NOTE_NABIL_MANNER"
+      },
+      {
+        "id": "a_note_sabri",
+        "type": "examine",
+        "label_ar": "دوّن إفادة صبري",
+        "precondition": {
+          "fact_unlocked": "f_sabri_opened"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_sabri_statement"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "sabri",
+        "telemetry_code": "NOTE_SABRI"
+      },
+      {
+        "id": "p_door_sabri",
+        "type": "present_evidence",
+        "label_ar": "اعرض سجل البطاقات على صبري",
+        "precondition": {
+          "presented": {
+            "evidence_id": "ev_vault_door_log",
+            "to_character": "sabri"
+          }
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "PRESENTED_DOOR"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "sabri",
+        "telemetry_code": "P_DOOR_SABRI"
+      },
+      {
+        "id": "p_keys_sabri",
+        "type": "present_evidence",
+        "label_ar": "اعرض سجل المفاتيح على صبري",
+        "precondition": {
+          "presented": {
+            "evidence_id": "ev_key_register",
+            "to_character": "sabri"
+          }
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "PRESENTED_KEYS"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "sabri",
+        "telemetry_code": "P_KEYS_SABRI"
+      },
+      {
+        "id": "p_register_bassam",
+        "type": "present_evidence",
+        "label_ar": "اعرض سجل الأختام على بسام",
+        "precondition": {
+          "presented": {
+            "evidence_id": "ev_seal_register",
+            "to_character": "bassam"
+          }
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "PRESENTED_REGISTER"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "bassam",
+        "telemetry_code": "P_REGISTER_BASSAM"
+      },
+      {
+        "id": "a_hint",
+        "type": "request_hint",
+        "label_ar": "اطلب تلميحاً",
+        "precondition": {
+          "always": true
+        },
+        "effects": [],
+        "time_cost_units": 0,
+        "telemetry_code": "REQUEST_HINT"
+      },
+      {
+        "id": "a_accuse",
+        "type": "final_accusation",
+        "label_ar": "قدّم الاستنتاج النهائي",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "SUBMIT"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "FINAL_ACCUSATION"
+      },
+      {
+        "id": "ask_luay_f_deposit_2014",
+        "type": "interview",
+        "label_ar": "[نموذج] luay يذكر f_deposit_2014",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_deposit_2014"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "luay",
+        "telemetry_code": "ASK_LUAY_F_DEPOSIT_2014"
+      },
+      {
+        "id": "ask_bassam_f_seal_checked",
+        "type": "interview",
+        "label_ar": "[نموذج] bassam يذكر f_seal_checked",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_seal_checked"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "bassam",
+        "telemetry_code": "ASK_BASSAM_F_SEAL_CHECKED"
+      },
+      {
+        "id": "ask_bassam_f_seal_register_exists",
+        "type": "interview",
+        "label_ar": "[نموذج] bassam يذكر f_seal_register_exists",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_seal_register_exists"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "bassam",
+        "telemetry_code": "ASK_BASSAM_F_SEAL_REGISTER_EXISTS"
+      },
+      {
+        "id": "ask_nabil_f_guard_start",
+        "type": "interview",
+        "label_ar": "[نموذج] nabil يذكر f_guard_start",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_guard_start"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "nabil",
+        "telemetry_code": "ASK_NABIL_F_GUARD_START"
+      },
+      {
+        "id": "ask_nabil_f_guard_key",
+        "type": "interview",
+        "label_ar": "[نموذج] nabil يذكر f_guard_key",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_guard_key"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "nabil",
+        "telemetry_code": "ASK_NABIL_F_GUARD_KEY"
+      },
+      {
+        "id": "ask_sabri_f_sabri_opened",
+        "type": "interview",
+        "label_ar": "[نموذج] sabri يذكر f_sabri_opened",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_sabri_opened"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "sabri",
+        "telemetry_code": "ASK_SABRI_F_SABRI_OPENED"
+      },
+      {
+        "id": "ask_sabri_f_sabri_stayed",
+        "type": "interview",
+        "label_ar": "[نموذج] sabri يكشف f_sabri_stayed",
+        "precondition": {
+          "all": [
+            {
+              "always": true
+            },
+            {
+              "any": [
+                {
+                  "presented": {
+                    "evidence_id": "ev_vault_door_log",
+                    "to_character": "sabri"
+                  }
+                },
+                {
+                  "presented": {
+                    "evidence_id": "ev_key_register",
+                    "to_character": "sabri"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_sabri_stayed"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "sabri",
+        "telemetry_code": "ASK_SABRI_F_SABRI_STAYED"
+      },
+      {
+        "id": "ask_idris_f_tech_scope",
+        "type": "interview",
+        "label_ar": "[نموذج] idris يذكر f_tech_scope",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_tech_scope"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "idris",
+        "telemetry_code": "ASK_IDRIS_F_TECH_SCOPE"
+      },
+      {
+        "id": "ask_idris_f_witness_asked",
+        "type": "interview",
+        "label_ar": "[نموذج] idris يذكر f_witness_asked",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_witness_asked"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "idris",
+        "telemetry_code": "ASK_IDRIS_F_WITNESS_ASKED"
+      },
+      {
+        "id": "ask_sanaa_f_open_log_exists",
+        "type": "interview",
+        "label_ar": "[نموذج] sanaa يذكر f_open_log_exists",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_open_log_exists"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "sanaa",
+        "telemetry_code": "ASK_SANAA_F_OPEN_LOG_EXISTS"
+      },
+      {
+        "id": "ask_sanaa_f_seal_register_exists",
+        "type": "interview",
+        "label_ar": "[نموذج] sanaa يذكر f_seal_register_exists",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_seal_register_exists"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "sanaa",
+        "telemetry_code": "ASK_SANAA_F_SEAL_REGISTER_EXISTS"
+      },
+      {
+        "id": "ask_sanaa_f_deposit_2014",
+        "type": "interview",
+        "label_ar": "[نموذج] sanaa يذكر f_deposit_2014",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_deposit_2014"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "sanaa",
+        "telemetry_code": "ASK_SANAA_F_DEPOSIT_2014"
+      },
+      {
+        "id": "ask_sanaa_f_key_register_exists",
+        "type": "interview",
+        "label_ar": "[نموذج] sanaa يذكر f_key_register_exists",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_key_register_exists"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "sanaa",
+        "telemetry_code": "ASK_SANAA_F_KEY_REGISTER_EXISTS"
+      },
+      {
+        "id": "ask_sanaa_f_door_log_exists",
+        "type": "interview",
+        "label_ar": "[نموذج] sanaa يذكر f_door_log_exists",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_door_log_exists"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "sanaa",
+        "telemetry_code": "ASK_SANAA_F_DOOR_LOG_EXISTS"
+      },
+      {
+        "id": "ask_sanaa_f_custody_form_exists",
+        "type": "interview",
+        "label_ar": "[نموذج] sanaa يذكر f_custody_form_exists",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_custody_form_exists"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "sanaa",
+        "telemetry_code": "ASK_SANAA_F_CUSTODY_FORM_EXISTS"
+      }
+    ]
+  },
+  "state_machine": {
+    "id": "c012",
+    "initial": "briefing",
+    "type": "compound",
+    "states": {
+      "briefing": {
+        "description_ar": "الإحاطة",
+        "type": "atomic",
+        "on": {
+          "START": {
+            "target": "investigating"
+          }
+        }
+      },
+      "investigating": {
+        "description_ar": "التحقيق",
+        "type": "compound",
+        "initial": "gathering",
+        "states": {
+          "gathering": {
+            "type": "atomic",
+            "on": {
+              "OPEN_DEDUCTION": {
+                "target": "deducing"
+              }
+            }
+          },
+          "deducing": {
+            "type": "atomic",
+            "on": {
+              "BACK": {
+                "target": "gathering"
+              }
+            }
+          }
+        },
+        "on": {
+          "SUBMIT": {
+            "target": "review"
+          }
+        }
+      },
+      "review": {
+        "description_ar": "مراجعة",
+        "type": "atomic",
+        "on": {
+          "CLOSE": {
+            "target": "resolved"
+          }
+        }
+      },
+      "resolved": {
+        "description_ar": "إغلاق",
+        "type": "final"
+      }
+    }
+  },
+  "dialogue": {
+    "max_turns_per_interview": 10,
+    "llm_enabled": false,
+    "topics": [
+      {
+        "id": "t_locker",
+        "label_ar": "الخزانة والسبائك",
+        "example_questions_ar": [
+          "ماذا أودعت جدتك؟",
+          "من تشك فيه ولماذا؟"
+        ],
+        "fact_ids": [
+          "f_deposit_2014"
+        ],
+        "claim_ids": [
+          "cl_guard_stranger"
+        ]
+      },
+      {
+        "id": "t_seal",
+        "label_ar": "الختم",
+        "example_questions_ar": [
+          "هل الختم سليم؟",
+          "هل يوجد سجل للأختام؟"
+        ],
+        "fact_ids": [
+          "f_seal_checked",
+          "f_seal_register_exists"
+        ],
+        "claim_ids": [
+          "cl_bassam_seal"
+        ]
+      },
+      {
+        "id": "t_guard",
+        "label_ar": "عمل الحارس",
+        "example_questions_ar": [
+          "متى باشرت العمل؟",
+          "أي مفاتيح لديك؟"
+        ],
+        "fact_ids": [
+          "f_guard_start",
+          "f_guard_key"
+        ]
+      },
+      {
+        "id": "t_open",
+        "label_ar": "فتحة الصيانة",
+        "example_questions_ar": [
+          "هل فتحت الخزانة يوم الصيانة؟",
+          "كم بقيت في الغرفة؟"
+        ],
+        "fact_ids": [
+          "f_sabri_opened",
+          "f_sabri_stayed"
+        ],
+        "claim_ids": [
+          "cl_sabri_short"
+        ]
+      },
+      {
+        "id": "t_tech",
+        "label_ar": "عمل الصيانة",
+        "example_questions_ar": [
+          "ما نطاق أمر العمل؟",
+          "هل طلبت شاهداً؟"
+        ],
+        "fact_ids": [
+          "f_tech_scope",
+          "f_witness_asked"
+        ]
+      },
+      {
+        "id": "t_records",
+        "label_ar": "سجلات الفرع",
+        "example_questions_ar": [
+          "ما السجلات المتاحة؟",
+          "هل يوجد سجل للمفاتيح؟",
+          "ماذا يوقّع الأطراف عند كل فتحة؟"
+        ],
+        "fact_ids": [
+          "f_open_log_exists",
+          "f_seal_register_exists",
+          "f_key_register_exists",
+          "f_door_log_exists",
+          "f_custody_form_exists",
+          "f_deposit_2014"
+        ]
+      }
+    ]
+  },
+  "rubric": {
+    "reference_answer_ar": "لم يبدّل الحارس شيئاً. القطع منقوشة بسنة 2024 وبيعها بدأ في 20 مارس 2024، فلا يمكن أن تكون في الخزانة منذ إيداع 2014. والفتحة الوحيدة المسجلة بعد ذلك هي فتحة الصيانة في 14 أغسطس 2024، وفيها انفرد حامل المفتاح الاحتياطي بالخزانة نحو ثلاث ساعات ونصف بلا شاهد ولا جرد، والختم الحالي رُكّب بعدها (رقمه 9026) فهو سليم دون أن يدل على شيء عما قبله. أما الحارس فباشر العمل في 2026، ولا مفتاح له ولم تدخل بطاقته الغرفة. حدود الاستنتاج: تثبت الأدلة الفرصة المنفردة وانقطاع العهدة، ولا تثبت من أخذ السبائك ولا أين هي، ولا تنفي وجود نسخة أخرى من المفتاح.",
+    "criteria": [
+      {
+        "id": "c_source",
+        "name_ar": "تصنيف المصادر",
+        "objective_ids": [
+          "lo_diag"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يصنّف"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "أخطأ في الأغلب"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "نصف صحيح"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمه صحيح"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كله صحيح"
+          }
+        ]
+      },
+      {
+        "id": "c_conflict",
+        "name_ar": "ترتيب الأزمنة على الخط الزمني",
+        "objective_ids": [
+          "lo_time"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.2,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يضع شيئاً"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "وضع قليلاً"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "وضع نصفها صحيحاً"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمها"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كلها في موضعها"
+          }
+        ]
+      },
+      {
+        "id": "c_links",
+        "name_ar": "ربط الأدلة بالفرضيات",
+        "objective_ids": [
+          "lo_diag",
+          "lo_lie_cues"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.2,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لا روابط"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "قليلة"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "نصفها صحيح"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمها"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كلها دقيقة"
+          }
+        ]
+      },
+      {
+        "id": "c_uncertainty",
+        "name_ar": "معايرة الثقة",
+        "objective_ids": [
+          "lo_calib"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "ثقة مفرطة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "حدود قليلة"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "جزئية"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معقولة"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "معايَرة كاملة"
+          }
+        ]
+      },
+      {
+        "id": "c_revision",
+        "name_ar": "مراجعة الرأي",
+        "objective_ids": [
+          "lo_revise"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "بقي على فرضية مرفوضة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "لم يعلن فرضية"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "ثبت على فرضية سليمة"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "غيّر بدليل"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "غيّر بدليل ووثّق"
+          }
+        ]
+      },
+      {
+        "id": "c_elimination",
+        "name_ar": "استبعاد الفرضيات الخاطئة",
+        "objective_ids": [
+          "lo_hyp"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يستبعد"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "استبعد خطأً"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "فرضية بدليل"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "فرضيتين"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كل الخاطئة"
+          }
+        ]
+      },
+      {
+        "id": "c_justification",
+        "name_ar": "جودة الحجة المكتوبة",
+        "objective_ids": [
+          "lo_diag",
+          "lo_hyp",
+          "lo_time"
+        ],
+        "scored_by": "human",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لا حجة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "ادعاء بلا سند"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "أدلة دون ربط"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "ربط الأدلة بالاستنتاج"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "ربط مع البدائل والحدود"
+          }
+        ]
+      }
+    ]
+  },
+  "hint_ladder": [
+    {
+      "id": "hg1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "التاريخ المنقوش على شيء يخبرك متى يمكن أن يكون قد وُجد، لا متى وصل إلى مكانه. ماذا يعني ذلك هنا؟",
+      "trigger": {
+        "always": true
+      },
+      "assessment_weight": 0.02
+    },
+    {
+      "id": "hg2",
+      "level": 2,
+      "kind": "focus_area",
+      "text_ar": "رتّب على خط واحد: الإيداع، وصدور القطع، وكل فتحة للخزانة، والتحاق الحارس.",
+      "trigger": {
+        "has_evidence": "ev_coin_mint"
+      },
+      "assessment_weight": 0.04
+    },
+    {
+      "id": "hs1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "إن كان الختم الحالي سليماً، فمتى رُكّب هذا الختم؟",
+      "trigger": {
+        "has_evidence": "ev_bassam_statement"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_seal_claim"
+    },
+    {
+      "id": "hs2",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "قارن رقم الختم في العقد برقم الختم الحالي في سجل مخزون الأختام.",
+      "trigger": {
+        "has_evidence": "ev_bassam_statement"
+      },
+      "assessment_weight": 0.05,
+      "targets_inference_id": "i_seal_claim"
+    },
+    {
+      "id": "hk1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "من كان معه المفتاح، ومن كان في الغرفة، ومتى خرج كل منهما؟",
+      "trigger": {
+        "has_evidence": "ev_sabri_statement"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_b_sole"
+    },
+    {
+      "id": "hk2",
+      "level": 2,
+      "kind": "focus_area",
+      "text_ar": "قابل قول صبري «دقائق قليلة» بوقت خروجه في سجل البطاقات ووقت عودة المفتاح.",
+      "trigger": {
+        "has_evidence": "ev_sabri_statement"
+      },
+      "assessment_weight": 0.05,
+      "targets_inference_id": "i_b_sole"
+    },
+    {
+      "id": "hn1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "التوتر يحتاج تفسيراً، لكنه ليس دليلاً. ما الذي يمنح شخصاً فرصة فعلية لفتح خزانة؟",
+      "trigger": {
+        "has_evidence": "ev_guard_demeanour"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_a_guard"
+    },
+    {
+      "id": "hn2",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "ابحث عن تاريخ مباشرة الحارس العمل وعن المفاتيح التي سُلّمت له.",
+      "trigger": {
+        "has_evidence": "ev_guard_demeanour"
+      },
+      "assessment_weight": 0.05,
+      "targets_inference_id": "i_a_guard"
+    }
+  ],
+  "fairness_test": {
+    "requirements": {
+      "min_disjoint_proof_paths": 2,
+      "max_inference_depth": 3,
+      "all_red_herrings_refutable": true,
+      "culprit_uniquely_entailed": true,
+      "no_hidden_fact_dependency": true,
+      "max_required_actions": 40
+    },
+    "runs": []
+  },
+  "ending_explanation": {
+    "steps": [
+      {
+        "order": 1,
+        "text_ar": "القطع منقوشة بسنة 2024 وبدأ بيعها في 20 مارس 2024، بينما أُودعت السبائك في 2014: فلم تكن القطع موجودة وقت الإيداع، ولم تكن في الخزانة قط قبل 2024.",
+        "uses_evidence_ids": [
+          "ev_coin_mint",
+          "ev_deposit_receipt",
+          "ev_mint_bulletin"
+        ],
+        "inference_id": "i_a_post"
+      },
+      {
+        "order": 2,
+        "text_ar": "بعد 2024 لا يذكر سجل الفتح إلا فتحة الصيانة يوم 14 أغسطس، ويتفق معه سجل الأختام المستقل الذي لا يحمل بعد صدور القطع إلا الختم 9026.",
+        "uses_evidence_ids": [
+          "ev_open_log",
+          "ev_seal_register",
+          "ev_mint_bulletin"
+        ],
+        "inference_id": "i_b_swap"
+      },
+      {
+        "order": 3,
+        "text_ar": "سلامة الختم الحالي لا تدل على شيء قبله: رُكّب في تلك الفتحة نفسها، وختم الإيداع كان رقماً آخر.",
+        "uses_evidence_ids": [
+          "ev_seal_photo",
+          "ev_seal_register",
+          "ev_deposit_receipt"
+        ],
+        "inference_id": "i_seal_claim"
+      },
+      {
+        "order": 4,
+        "text_ar": "في تلك الفتحة سلّم الفني المكان لصبري ولم يفتح الخزانة، ونموذج العهدة خالٍ من الجرد ومن توقيع الشاهد: هنا الحلقة المكسورة.",
+        "uses_evidence_ids": [
+          "ev_job_sheet",
+          "ev_custody_form"
+        ],
+        "inference_id": "i_a_sole"
+      },
+      {
+        "order": 5,
+        "text_ar": "ومن مسار مستقل: المفتاح الاحتياطي معه من 16:35 إلى 20:50، وسجل البطاقات يُبقيه وحده في الغرفة بعد 17:22 إلى 20:46، وهذا يخالف قوله إنه بقي دقائق.",
+        "uses_evidence_ids": [
+          "ev_key_register",
+          "ev_vault_door_log"
+        ],
+        "inference_id": "i_b_sole"
+      },
+      {
+        "order": 6,
+        "text_ar": "أما الحارس فالتحق في 2026 بلا مفتاح ولا بطاقة دخول، ولم تُفتح الخزانة بعد فتحة الصيانة؛ فلا فرصة لديه، وتوتره لا يغيّر ذلك.",
+        "uses_evidence_ids": [
+          "ev_guard_hire",
+          "ev_open_log"
+        ],
+        "inference_id": "i_a_guard"
+      },
+      {
+        "order": 7,
+        "text_ar": "إذن حدث التبديل في فتحة الصيانة وحدها: الأدلة تثبت الفرصة المنفردة وانقطاع العهدة، وتترك للجهة المختصة أن تحدد ما جرى للسبائك.",
+        "uses_evidence_ids": [
+          "ev_key_register",
+          "ev_vault_door_log",
+          "ev_custody_form"
+        ],
+        "inference_id": "i_support_maint"
+      }
+    ],
+    "alternative_paths_ar": [
+      "يمكن بلوغ النتيجة من العقد والقطع وسجل الفتح وأمر العمل ونموذج العهدة وملف الحارس، أي من المسار المكتوب وحده.",
+      "ويمكن بلوغها من نشرة الدار وسجل الأختام وسجل المفاتيح وسجل البطاقات وحدها، دون العقد؛ والأقوى أن يتفق المساران."
+    ],
+    "what_evidence_could_not_show_ar": [
+      "لا تثبت الأدلة من أخذ السبائك ولا أين هي الآن؛ هي تثبت متى كان التبديل ممكناً ومن انفرد بالخزانة حينها.",
+      "لا تنفي الأدلة وجود نسخة أخرى من المفتاح، وقد يدخل شخص خلف آخر دون مسح بطاقته.",
+      "نموذج العهدة لا يخبرنا بما كان في الخزانة بعد زيارة 2023 إلا بالوصف الذي كُتب عندها."
+    ],
+    "science_notes_ar": [
+      "تاريخ الصنع المنقوش على شيء هو أقدم زمن ممكن لوجوده، لا زمن وصوله؛ ويكفي وجوده لنفي أنه كان في المكان قبل ذلك.",
+      "الختم السليم اليوم لا يخبر عن فتحات سابقة؛ تحقق من تاريخ تركيبه ورقمه في سجل مستقل.",
+      "الحلقة المكسورة في سلسلة العهدة هي الموضع الذي لا جرد فيه ولا شاهد ولا توقيع؛ عندها يضعف الاستدلال عمّا حدث للمحتويات ويقوى السؤال عن الإجراء.",
+      "تُختم القضية بمساءلة مؤسسية لا بتشهير: يحيل الفرع الأمر إلى الجهة المختصة، ويعتمد قاعدة شاهدين وجرداً مكتوباً لكل فتحة، ويعتذر للحارس عن الاتهام السابق.",
+      "ما نسميه نسبة الترجيح حكم مبني على سجلات يمكن تتبّعها، لا على ثقة بمجرد أن الشخص قديم أو جديد."
+    ]
+  },
+  "expert_review": [
+    {
+      "role": "narrative_editor",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "scientific_reviewer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "learning_designer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "age_appropriateness",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "cultural_reviewer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "legal_rights",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "safety",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    }
+  ]
+}

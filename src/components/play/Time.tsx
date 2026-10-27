@@ -1,5 +1,10 @@
 "use client";
 import { useState } from "react";
+import { Button } from "../ui/button";
+import { Card, CardTitle } from "../ui/card";
+import { Callout } from "../ui/feedback";
+import { Field } from "../ui/form";
+import { FlaskIcon } from "../ui/icons";
 import type { Resp, View } from "./usePlay";
 
 type Send = (r: Record<string, unknown>) => Promise<Resp | null>;
@@ -24,23 +29,24 @@ export function TimeTab({ view, busy, send, last }: { view: View; busy: boolean;
   const sorted = [...view.timeline].sort((a, b) => a.utc_minute - b.utc_minute);
   const title = (id: string) => view.evidence.find((e) => e.id === id)?.title_ar ?? id;
   return (
-    <div className="stack">
-      <h2>الخط الزمني</h2>
-      <p className="dim small">ضع الأدلة على محور واحد. قبل المقارنة تأكد أن كل الأوقات بمرجع واحد: <b>{view.clock.zone_label_ar}</b>. الصفر عند {view.clock.epoch_hhmm}.</p>
-      <div className="card stack">
-        <label htmlFor="tl-ev">الدليل</label>
-        <select id="tl-ev" value={ev} onChange={(e) => setEv(e.target.value)}><option value="">— اختر —</option>{view.evidence.map((e) => <option key={e.id} value={e.id}>{e.title_ar}</option>)}</select>
-        <div className="field-row">
-          <div style={{ flex: "1 1 120px" }}><label htmlFor="tl-t">الوقت ({view.clock.zone_label_ar})</label><input id="tl-t" className="mono" inputMode="numeric" placeholder="21:10" value={time} onChange={(e) => setTime(e.target.value)} /></div>
-          <div style={{ flex: "1 1 120px" }}><label htmlFor="tl-d">اليوم</label><select id="tl-d" value={day} onChange={(e) => setDay(Number(e.target.value))}>{[-1, 0, 1, 2].map((d) => <option key={d} value={d}>{d === 0 ? "اليوم الأول" : d > 0 ? `بعد ${d} يوم` : "قبل يوم"}</option>)}</select></div>
-        </div>
-        <label htmlFor="tl-n">ملاحظة (اختياري)</label><input id="tl-n" value={note} maxLength={200} onChange={(e) => setNote(e.target.value)} />
-        {err && <p role="alert" className="err">{err}</p>}
-        <button className="btn primary" onClick={place} disabled={busy}>ضعه على الخط</button>
+    <div className="stack-lg">
+      <div className="stack-sm">
+        <h2 className="text-section-title">الخط الزمني</h2>
+        <p className="dim small">ضع الأدلة على محور واحد. قبل المقارنة تأكد أن كل الأوقات بمرجع واحد: <b>{view.clock.zone_label_ar}</b>. الصفر عند {view.clock.epoch_hhmm}.</p>
       </div>
+      <Card>
+        <Field label="الدليل">{(p) => <select {...p} value={ev} onChange={(e) => setEv(e.target.value)}><option value="">— اختر —</option>{view.evidence.map((e) => <option key={e.id} value={e.id}>{e.title_ar}</option>)}</select>}</Field>
+        <div className="row" style={{ alignItems: "flex-start" }}>
+          <Field className="grow" label={`الوقت (${view.clock.zone_label_ar})`}>{(p) => <input {...p} className="input input-ltr" inputMode="numeric" placeholder="21:10" value={time} onChange={(e) => setTime(e.target.value)} />}</Field>
+          <Field className="grow" label="اليوم">{(p) => <select {...p} value={day} onChange={(e) => setDay(Number(e.target.value))}>{[-1, 0, 1, 2].map((d) => <option key={d} value={d}>{d === 0 ? "اليوم الأول" : d > 0 ? `بعد ${d} يوم` : "قبل يوم"}</option>)}</select>}</Field>
+        </div>
+        <Field label="ملاحظة (اختياري)">{(p) => <input {...p} className="input" value={note} maxLength={200} onChange={(e) => setNote(e.target.value)} />}</Field>
+        {err && <p role="alert" className="field-error">{err}</p>}
+        <Button variant="secondary" onClick={place} disabled={busy}>ضعه على الخط</Button>
+      </Card>
       {sorted.length > 0 && (
-        <ol className="stack" style={{ listStyle: "none", padding: 0 }} aria-label="الأدلة مرتبة زمنياً">
-          {sorted.map((t) => <li key={t.evidence_id} className="card row" style={{ justifyContent: "space-between" }}><span className="mono">{hm(t.utc_minute, epochMin)}</span><span style={{ flex: 1 }}>{title(t.evidence_id)}{t.note ? ` — ${t.note}` : ""}</span></li>)}
+        <ol className="list" aria-label="الأدلة مرتبة زمنياً">
+          {sorted.map((t) => <li key={t.evidence_id}><Card flat><div className="row" style={{ flexWrap: "nowrap", alignItems: "flex-start" }}><span className="mono num" style={{ fontWeight: 600 }}>{hm(t.utc_minute, epochMin)}</span><span className="grow">{title(t.evidence_id)}{t.note ? ` — ${t.note}` : ""}</span></div></Card></li>)}
         </ol>
       )}
       {view.labs.map((lab) => <Lab key={lab.id} lab={lab} busy={busy} send={send} last={last} />)}
@@ -58,12 +64,12 @@ function Lab({ lab, busy, send, last }: { lab: View["labs"][number]; busy: boole
   };
   const lastRun = lab.runs[lab.runs.length - 1];
   const out = lastRun?.output as { rows?: { evidence_id: string; utc_min: number; label: string }[]; spread_min?: number; converged?: boolean } | undefined;
-  if (lab.items.length < 2) return <div className="card"><h3>{lab.title_ar}</h3><p className="dim">يحتاج هذا المختبر أدلة لم تحصل عليها بعد.</p></div>;
+  if (lab.items.length < 2) return <Card><CardTitle level={3}>{lab.title_ar}</CardTitle><p className="dim">يحتاج هذا المختبر أدلة لم تحصل عليها بعد.</p></Card>;
   return (
-    <section className="card stack" aria-labelledby={`lab-${lab.id}`}>
-      <h3 id={`lab-${lab.id}`}>🔬 {lab.title_ar}</h3>
+    <Card as="section" aria-labelledby={`lab-${lab.id}`}>
+      <h3 id={`lab-${lab.id}`} className="card-title row" style={{ flexWrap: "nowrap" }}><FlaskIcon size={22} />{lab.title_ar}</h3>
       <p className="dim small">{lab.intro_ar}</p>
-      <div className="scroll-x"><table className="lab-table">
+      <div className="table-wrap"><table className="lab-table">
         <thead><tr><th>الدليل</th><th>الوقت الظاهر</th><th>فرق التوقيت (ساعات)</th><th>انحراف الساعة (دقائق)</th></tr></thead>
         <tbody>{lab.items.map((it) => (
           <tr key={it.evidence_id}>
@@ -74,14 +80,14 @@ function Lab({ lab, busy, send, last }: { lab: View["labs"][number]; busy: boole
           </tr>))}</tbody>
       </table></div>
       <p className="small dim">القاعدة: الوقت الموحَّد = الوقت الظاهر − فرق التوقيت + انحراف الساعة (موجب إن كانت الساعة <b>متأخرة</b>).</p>
-      <button className="btn primary" onClick={run} disabled={busy}>شغّل المقارنة</button>
+      <Button variant="secondary" onClick={run} disabled={busy}>شغّل المقارنة</Button>
       {out?.rows && (
         <div role="status" aria-live="polite" className="stack">
           <table className="simple"><tbody>{out.rows.map((r) => <tr key={r.evidence_id}><td>{r.label}</td><td className="mono">{r.utc_min >= 0 ? "+" : ""}{r.utc_min} د</td></tr>)}</tbody></table>
-          <p className={out.converged ? "ok" : "err"}>{out.converged ? "تطابقت الأوقات ضمن هامش التسامح — حصلت على نتيجة جديدة." : `ما زال الفارق ${out.spread_min} دقيقة؛ راجع المدخلات.`}</p>
-          {last?.lab?.granted?.length ? <p className="ok">أُضيف دليل جديد إلى الخزانة.</p> : null}
+          <Callout tone={out.converged ? "positive" : "warning"}>{out.converged ? "تطابقت الأوقات ضمن هامش التسامح — حصلت على نتيجة جديدة." : `ما زال الفارق ${out.spread_min} دقيقة؛ راجع المدخلات.`}</Callout>
+          {last?.lab?.granted?.length ? <p className="small ok">أُضيف دليل جديد إلى الخزانة.</p> : null}
         </div>
       )}
-    </section>
+    </Card>
   );
 }

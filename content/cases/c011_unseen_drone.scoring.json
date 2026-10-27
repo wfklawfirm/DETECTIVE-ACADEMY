@@ -1,0 +1,137 @@
+{
+  "case_id": "c011_unseen_drone",
+  "accepted_conclusions": {
+    "h_drift": {
+      "grade": 1,
+      "note_ar": "استنتاج متسق مع الأدلة ويتطلب ذكر حدوده."
+    },
+    "h_took": {
+      "grade": 0,
+      "note_ar": "يعدّ دقة الوصف دليل رؤية أو حمل، ويتجاهل أن لكل تفصيل مصدراً وأن ورد كان بعيداً."
+    },
+    "h_outsider": {
+      "grade": 0,
+      "note_ar": "يتجاهل إقفال البوابة وخلوّ شريط العشب من آثار الأقدام."
+    }
+  },
+  "confidence_band": {
+    "h_drift": [
+      60,
+      88
+    ],
+    "h_took": [
+      0,
+      15
+    ],
+    "h_outsider": [
+      0,
+      20
+    ]
+  },
+  "source_key": {
+    "ev_app_log": "primary_record",
+    "ev_weather_board": "public_document",
+    "ev_announce_sheet": "public_document",
+    "ev_spec_sheet": "public_document",
+    "ev_gear_photo": "primary_record",
+    "ev_grass_photo": "primary_record",
+    "ev_feather_photo": "primary_record",
+    "ev_orchard_log": "primary_record",
+    "ev_water_log": "primary_record",
+    "ev_duty_sheet": "primary_record",
+    "ev_fair_photo": "primary_record",
+    "ev_radio_log": "primary_record",
+    "ev_nader_statement": "claim",
+    "ev_warad_said": "claim",
+    "ev_security_round": "primary_record"
+  },
+  "link_key": {
+    "h_drift": {
+      "ev_app_log": "supports",
+      "ev_weather_board": "supports",
+      "ev_gear_photo": "supports",
+      "ev_grass_photo": "supports",
+      "ev_spec_sheet": "supports",
+      "ev_orchard_log": "supports",
+      "ev_announce_sheet": "supports",
+      "ev_water_log": "supports",
+      "ev_feather_photo": "neutral"
+    },
+    "h_took": {
+      "ev_water_log": "weakens",
+      "ev_duty_sheet": "weakens",
+      "ev_fair_photo": "weakens",
+      "ev_radio_log": "weakens",
+      "ev_announce_sheet": "weakens",
+      "ev_gear_photo": "weakens",
+      "ev_warad_said": "neutral"
+    },
+    "h_outsider": {
+      "ev_orchard_log": "weakens",
+      "ev_security_round": "weakens",
+      "ev_grass_photo": "weakens",
+      "ev_nader_statement": "neutral"
+    }
+  },
+  "required_limits": [
+    "l_not_found",
+    "l_feather"
+  ],
+  "valid_mind_changers": [
+    "m_elsewhere",
+    "m_leave_post",
+    "m_gate_open"
+  ],
+  "invalid_limits": [
+    "l_invalid_tension",
+    "l_invalid_detail"
+  ],
+  "decisive_evidence": [
+    "ev_app_log",
+    "ev_weather_board",
+    "ev_water_log",
+    "ev_duty_sheet",
+    "ev_gear_photo",
+    "ev_announce_sheet"
+  ],
+  "lab_requirement": null,
+  "timeline_requirement": [
+    {
+      "evidence_id": "ev_announce_sheet",
+      "utc_minute": 9,
+      "tol": 3
+    },
+    {
+      "evidence_id": "ev_app_log",
+      "utc_minute": 12,
+      "tol": 3
+    },
+    {
+      "evidence_id": "ev_radio_log",
+      "utc_minute": 13,
+      "tol": 3
+    },
+    {
+      "evidence_id": "ev_fair_photo",
+      "utc_minute": 14,
+      "tol": 3
+    }
+  ],
+  "refuted_hypotheses": [
+    "h_took",
+    "h_outsider"
+  ],
+  "criteria_map": {
+    "c_source": "source_typing",
+    "c_conflict": "conflict_resolution",
+    "c_links": "hypothesis_links",
+    "c_uncertainty": "uncertainty",
+    "c_revision": "revision",
+    "c_elimination": "elimination",
+    "c_justification": "justification_human"
+  },
+  "caps": {
+    "no_citations_max": 45,
+    "no_conflict_resolution_max": 65
+  }
+}
