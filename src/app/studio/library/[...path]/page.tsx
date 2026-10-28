@@ -5,7 +5,7 @@ import { Markdown } from "@/components/research/Markdown";
 import { Badge } from "@/components/ui/badge";
 import { LinkButton } from "@/components/ui/button";
 import { Callout, EmptyState } from "@/components/ui/feedback";
-import { Card, PageHead } from "@/components/ui/card";
+import { Card } from "@/components/ui/card";
 import { STATUS_AR, findEntry, firstJsonRecords, humanSize, parseCsvPage, readDoc, relatedRows } from "@/engine/research";
 
 export const dynamic = "force-dynamic";
@@ -24,7 +24,11 @@ export default async function Doc({ params, searchParams }: { params: Promise<{ 
       const head = (
         <>
           <p className="small"><Link href="/studio/library">← المكتبة</Link></p>
-          <PageHead kicker={<span className="mono">{e.folder}</span>} title={<span dir="auto">{e.desc && e.type === "md" ? e.desc : e.path.split("/").pop()}</span>} lead="للقراءة فقط · للمدير فقط." />
+          <div className="ref-hero">
+            <p className="ref-hero-kicker"><span className="mono">{e.folder}</span></p>
+            <h1 className="ref-hero-title" dir="auto">{e.desc && e.type === "md" ? e.desc : e.path.split("/").pop()}</h1>
+            <p className="ref-hero-hook">للقراءة فقط · للمدير فقط.</p>
+          </div>
           <div className="row"><Badge outline latin>{e.type}</Badge><Badge outline latin>{humanSize(e.size)}</Badge><Badge tone={e.status === "copied" ? "positive" : "warning"}>{STATUS_AR[e.status]}</Badge>{e.sensitive && <Badge tone="negative">داخلي حساس</Badge>}<Badge outline latin>{e.pack}</Badge></div>
           <p className="small dim mono" style={{ overflowWrap: "anywhere" }}>{e.path} · sha256 {e.sha256.slice(0, 16)}…</p>
         </>

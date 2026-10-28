@@ -1,6 +1,6 @@
 import { getActorFromCookies } from "@/server/auth";
 import { drillsFor, loadBooks } from "@/engine/books";
-import { BooksHead } from "@/components/books/parts";
+
 import { DrillRunner } from "@/components/books/DrillRunner";
 
 export const metadata = { title: "تمارين استدلال المشهد" };
@@ -12,7 +12,11 @@ export default async function Drills() {
   const items = drillsFor(drills, a.ageBand).map(({ id, skill, scenario_ar, question_ar, options, answer_id, explanation_ar }) => ({ id, skill, scenario_ar, question_ar, options, answer_id, explanation_ar }));
   return (
     <>
-      <BooksHead title="تمارين استدلال المشهد" hook="مشاهد خيالية قصيرة، وجواب واحد هو الأدق: افحص ما تراه قبل أن تحكم." kicker="تمرين" />
+      <div className="ref-hero">
+        <p className="ref-hero-kicker">تمرين</p>
+        <h1 className="ref-hero-title">تمارين استدلال المشهد</h1>
+        <p className="ref-hero-hook">مشاهد خيالية قصيرة، وجواب واحد هو الأدق: افحص ما تراه قبل أن تحكم.</p>
+      </div>
       <DrillRunner drills={items} />
     </>
   );

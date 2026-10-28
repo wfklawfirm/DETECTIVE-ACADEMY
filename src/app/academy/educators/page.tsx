@@ -4,7 +4,7 @@ import { loadResolvedSeason } from "@/engine/seasons-load";
 import koNames from "../../../../content/knowledge/ko_names.json";
 import { Badge } from "@/components/ui/badge";
 import { Callout } from "@/components/ui/feedback";
-import { Card, PageHead } from "@/components/ui/card";
+import { Card } from "@/components/ui/card";
 import { SearchIcon } from "@/components/ui/icons";
 
 export const metadata = { title: "دليل المعلّم" };
@@ -26,7 +26,11 @@ export default function Educators() {
   const { season, episodes } = loadResolvedSeason();
   return (
     <>
-      <PageHead kicker="للمعلّمين والمشرفين" title="دليل المعلّم" lead={`كيف تستعمل «${season.title_ar}» مع مجموعة؟ نعرض المنهج فقط، لا بيانات أي طالب.`} />
+      <div className="ref-hero">
+        <p className="ref-hero-kicker">للمعلّمين والمشرفين</p>
+        <h1 className="ref-hero-title">دليل المعلّم</h1>
+        <p className="ref-hero-hook">كيف تستعمل «{season.title_ar}» مع مجموعة؟ نعرض المنهج فقط، لا بيانات أي طالب.</p>
+      </div>
       <aside className="lead-card" aria-label="تلميح">
         <span className="mark"><SearchIcon size={18} />سؤال للصف</span>
         <p>اعرضوا على الصف ملفاً فيه شاهدان يتفقان بثقة، ثم اسألوهم: ما الذي سيجعلنا نصدّقهما؟</p>

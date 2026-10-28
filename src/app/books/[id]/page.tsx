@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import { getActorFromCookies } from "@/server/auth";
 import { loadBooks, visibleBooks, visibleConcepts, INCLUSION_LABEL, REASON_LABEL } from "@/engine/books";
-import { BooksHead } from "@/components/books/parts";
+
 import { ConceptBrowser } from "@/components/books/ConceptBrowser";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardTitle } from "@/components/ui/card";
@@ -18,7 +18,11 @@ export default async function BookPage({ params }: { params: Promise<{ id: strin
     .map(({ id, book_id, section_id, section_title_ar, ref_ar, title_ar, summary_ar, age_band, safety_level, skill }) => ({ id, book_id, section_id, section_title_ar, ref_ar, title_ar, summary_ar, age_band, safety_level, skill }));
   return (
     <>
-      <BooksHead title={b.title_ar} hook={b.hook_ar} kicker={b.authors_ar.join("، ") + (b.year ? ` · ${b.year}` : "")} />
+      <div className="ref-hero">
+        <p className="ref-hero-kicker">{b.authors_ar.join("، ")}{b.year ? ` · ${b.year}` : ""}</p>
+        <h1 className="ref-hero-title">{b.title_ar}</h1>
+        <p className="ref-hero-hook">{b.hook_ar}</p>
+      </div>
       <Card as="section"><CardTitle level={2}>الحقوق</CardTitle><p className="small">{b.rights_note_ar}</p></Card>
       <section className="stack" aria-labelledby="outline-h">
         <h2 id="outline-h" className="text-label section-title">مخطط الكتاب وما أخذنا منه</h2>

@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import { getActorFromCookies } from "@/server/auth";
 import { loadBooks, visibleConcepts, AGE_LABEL, SAFETY_LABEL, SKILL_LABEL } from "@/engine/books";
 import { loadKnowledge } from "@/engine/knowledge";
-import { BooksHead } from "@/components/books/parts";
+
 import { Badge } from "@/components/ui/badge";
 import { Card, CardTitle, RowLink } from "@/components/ui/card";
 
@@ -20,7 +20,11 @@ export default async function ConceptPage({ params }: { params: Promise<{ cid: s
   const linked = c.linked_ko_ids.map((k) => kos.find((x) => x.ko_id === k)).filter((k): k is NonNullable<typeof k> => !!k && k.audience === "player");
   return (
     <article className="stack-lg">
-      <BooksHead title={c.title_ar} hook={`سطر واحد من ملف «${book.title_ar}» يستحق أن نقرأه بعين المحقق.`} kicker={SKILL_LABEL[c.skill]} />
+      <div className="ref-hero">
+        <p className="ref-hero-kicker">{SKILL_LABEL[c.skill]}</p>
+        <h1 className="ref-hero-title">{c.title_ar}</h1>
+        <p className="ref-hero-hook">سطر واحد من ملف «{book.title_ar}» يستحق أن نقرأه بعين المحقق.</p>
+      </div>
       <p className="narrative">{c.summary_ar}</p>
       <div className="row"><Badge>{SKILL_LABEL[c.skill]}</Badge><Badge outline>{AGE_LABEL[c.age_band]}</Badge><Badge outline>{SAFETY_LABEL[c.safety_level]}</Badge></div>
       <Card as="section"><CardTitle level={2}>كيف تستخدمه في التحقيق</CardTitle><p>{c.investigation_use_ar}</p></Card>

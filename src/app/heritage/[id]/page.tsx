@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Badge } from "@/components/ui/badge";
 import { Callout } from "@/components/ui/feedback";
-import { Card, PageHead } from "@/components/ui/card";
+import { Card } from "@/components/ui/card";
 import { RIGHTS_LABEL, dirFor, excerptsFor, loadHeritage, safeUrl, showable } from "@/engine/heritage";
 
 export const dynamicParams = false;
@@ -23,7 +23,11 @@ export default async function HeritageText({ params }: { params: Promise<{ id: s
   return (
     <article className="stack-lg">
       <p className="small"><Link href="/heritage">← مكتبة التراث</Link></p>
-      <PageHead kicker={t.lang_ar} title={t.title_ar} lead={ex.length ? "اقرأ المقطع أولاً، ثم اسأل نفسك السؤال الموجّه قبل أن تقرأ الشرح." : "نص مسجّل للمرجع فقط، بلا مقاطع."} />
+      <div className="ref-hero">
+        <p className="ref-hero-kicker">{t.lang_ar}</p>
+        <h1 className="ref-hero-title">{t.title_ar}</h1>
+        <p className="ref-hero-hook">{ex.length ? "اقرأ المقطع أولاً، ثم اسأل نفسك السؤال الموجّه قبل أن تقرأ الشرح." : "نص مسجّل للمرجع فقط، بلا مقاطع."}</p>
+      </div>
       <p className="small dim" lang={t.lang === "ar" ? "ar" : "en"} dir={t.lang === "ar" ? "rtl" : "ltr"} style={{ textAlign: "start" }}>{t.title} — {t.author}</p>
       <div className="row"><Badge tone={t.rights === "cc_by_nc_ref" ? "warning" : "positive"}>{RIGHTS_LABEL[t.rights]}</Badge><Badge outline>{t.era_ar}</Badge><Badge outline>{t.author_ar}</Badge></div>
 

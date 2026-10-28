@@ -1,12 +1,15 @@
 import { Callout } from "@/components/ui/feedback";
 import { LinkButton } from "@/components/ui/button";
-import { PageHead } from "@/components/ui/card";
+
 
 export const metadata = { title: "الخصوصية والسلامة" };
 export default function Privacy() {
   return (
     <>
-      <PageHead title="الخصوصية والسلامة" />
+      <div className="ref-hero">
+        <p className="ref-hero-kicker">سياسة</p>
+        <h1 className="ref-hero-title">الخصوصية والسلامة</h1>
+      </div>
       <Callout tone="info">نص تشغيلي مختصر للنموذج التجريبي، وليس مراجعة قانونية نهائية.</Callout>
       <section className="stack"><h2 className="text-section-title">ما نجمعه</h2>
         <ul>

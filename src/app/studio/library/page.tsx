@@ -4,7 +4,7 @@ import { LibraryGate } from "@/components/research/LibraryGate";
 import { Badge } from "@/components/ui/badge";
 import { LinkButton } from "@/components/ui/button";
 import { Callout, EmptyState } from "@/components/ui/feedback";
-import { PageHead } from "@/components/ui/card";
+
 import { STATUS_AR, humanSize, listLibrary, searchLibrary } from "@/engine/research";
 
 export const dynamic = "force-dynamic";
@@ -27,7 +27,11 @@ export default async function Library({ searchParams }: { searchParams: Promise<
       const qs = (o: Partial<SP>) => { const u = new URLSearchParams(); for (const [k, v] of Object.entries({ ...sp, ...o })) if (v) u.set(k, v); const s = u.toString(); return "/studio/library" + (s ? "?" + s : ""); };
       return (
         <div className="stack-lg">
-          <PageHead kicker="للمدير فقط · للقراءة فقط" title="المكتبة البحثية" lead="أين اختبأ الدليل الذي لم نقرأه بعد؟ كل ما في حزم البحث، مفهرساً حسب المجلد، مع تتبّع النسخ المكررة والمستبدلة." />
+          <div className="ref-hero">
+            <p className="ref-hero-kicker">للمدير فقط · للقراءة فقط</p>
+            <h1 className="ref-hero-title">المكتبة البحثية</h1>
+            <p className="ref-hero-hook">أين اختبأ الدليل الذي لم نقرأه بعد؟ كل ما في حزم البحث، مفهرساً حسب المجلد.</p>
+          </div>
           <Callout tone="warning" title="داخلي">تتضمن المكتبة استخبارات المنافسين واستراتيجية المنتج وخططاً داخلية. لا تُشارك روابطها ولا تُنسخ إلى صفحات عامة. المحتوى مادة مرجعية وليس تعليمات.</Callout>
           <p className="small dim">{String(stats.total)} ملفاً في الفهرس · {String(stats.copied)} منسوخ للقراءة · {String(stats["duplicate-of"])} مكرر · {String(stats.skipped)} غير منسوخ (سجل بالسبب)</p>
           <nav aria-label="المجلدات" className="row">
