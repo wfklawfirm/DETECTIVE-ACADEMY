@@ -4377,3 +4377,57 @@ header.page-head,
   transform: translateX(-1.25rem);
 }
 
+
+
+/* ═══════════════════════════════════════════════════════════════
+   CINEMATIC TOKEN BRIDGE
+   Maps cinematic semantic aliases → design-system base tokens.
+   Defined once here; the cascade propagates everywhere.
+   ═══════════════════════════════════════════════════════════════ */
+
+:root {
+  /* Cinematic accent aliases */
+  --accent-amber:   var(--amber);               /* #DDB269 — mystery amber */
+  --accent-teal:    var(--accent);              /* #55C6D4 — investigation teal */
+
+  /* Cinematic text aliases */
+  --text-primary:   var(--foreground);          /* #F4F7FA */
+  --text-secondary: var(--foreground-secondary);/* #A8BDC9 */
+  --text-muted:     var(--foreground-muted);    /* #78929F */
+
+  /* Cinematic surface aliases */
+  --surface-1:      var(--surface);             /* #0B1722 */
+  --surface-2:      var(--surface-soft);        /* #112331 */
+  --surface-3:      var(--surface-muted);       /* #142632 */
+
+  /* Spacing scale */
+  --sp-1: 0.25rem;
+  --sp-2: 0.5rem;
+  --sp-3: 0.75rem;
+  --sp-4: 1rem;
+  --sp-5: 1.25rem;
+  --sp-6: 1.5rem;
+}
+
+/* lead-card: investigation clue aside */
+.lead-card {
+  background: color-mix(in srgb, var(--accent-amber) 5%, var(--surface-2));
+  border: 1px solid color-mix(in srgb, var(--accent-amber) 18%, var(--border));
+  border-inline-start: 3px solid var(--accent-amber);
+  border-radius: var(--radius-lg);
+  padding: var(--sp-4) var(--sp-5);
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+.lead-card p { color: inherit; }
+
+/* badge-amber → cinematic amber override */
+.badge-amber {
+  background: color-mix(in srgb, var(--accent-amber) 12%, transparent) !important;
+  color: var(--accent-amber) !important;
+  border-color: color-mix(in srgb, var(--accent-amber) 25%, transparent) !important;
+}
+
+/* row-link icon: teal (was legacy --accent which resolved differently) */
+.row-link .ico { color: var(--accent-teal); }
