@@ -2488,3 +2488,346 @@ pre code { background: none; border: none; padding: 0; font-size: 0.875rem; }
     block-size: 4rem;
   }
 }
+
+/* ═══════════════════════════════════════════════════════════════
+   PROFILE PAGE — Investigator Dossier
+   ═══════════════════════════════════════════════════════════════ */
+
+.profile-hero {
+  padding-block: var(--sp-7) var(--sp-5);
+  border-block-end: 1px solid var(--border);
+  margin-block-end: var(--sp-5);
+}
+.profile-hero-inner {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--sp-4);
+  margin-block-end: var(--sp-4);
+}
+.profile-hero-avatar {
+  flex-shrink: 0;
+  inline-size: 3.5rem;
+  block-size: 3.5rem;
+  border-radius: 50%;
+  background: linear-gradient(135deg,
+    color-mix(in srgb, var(--accent-teal) 20%, transparent),
+    color-mix(in srgb, var(--accent-amber) 12%, transparent));
+  border: 1px solid color-mix(in srgb, var(--accent-teal) 25%, transparent);
+  display: grid;
+  place-items: center;
+  color: var(--accent-teal);
+}
+.profile-hero-info { flex: 1; min-inline-size: 0; }
+.profile-hero-kicker {
+  font-size: .7rem;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  margin-block-end: .2rem;
+}
+.profile-hero-name {
+  font-size: clamp(1.4rem, 4vw, 2rem);
+  font-weight: 800;
+  letter-spacing: -.025em;
+  color: var(--text-primary);
+  margin-block-end: var(--sp-2);
+  line-height: 1.15;
+}
+.profile-rank-row {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  flex-wrap: wrap;
+}
+.profile-rank-icon { font-size: 1.1rem; line-height: 1; }
+.profile-rank-ar   { font-size: .88rem; font-weight: 700; color: var(--accent-amber); }
+.profile-rank-en   { font-size: .75rem; color: var(--text-secondary); }
+
+/* Rank pips */
+.rank-pips { display: flex; gap: 3px; }
+.rank-pip  {
+  inline-size: .5rem;
+  block-size: .5rem;
+  border-radius: 2px;
+  background: color-mix(in srgb, var(--text-secondary) 18%, transparent);
+}
+.rank-pip--active { background: var(--accent-amber); }
+
+/* Settings btn */
+.profile-account-btn {
+  flex-shrink: 0;
+  inline-size: 2rem;
+  block-size: 2rem;
+  border-radius: 50%;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  display: grid;
+  place-items: center;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: background .15s, border-color .15s;
+}
+.profile-account-btn:hover {
+  background: var(--surface-3);
+  border-color: color-mix(in srgb, var(--text-secondary) 30%, transparent);
+}
+
+/* Stats strip */
+.profile-stats-strip {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-4);
+  flex-wrap: wrap;
+}
+.profile-stat { display: flex; flex-direction: column; gap: 1px; }
+.profile-stat-value {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1;
+}
+.profile-stat-value--strong { color: var(--accent-teal); }
+.profile-stat-label { font-size: .7rem; color: var(--text-secondary); font-weight: 500; }
+.profile-stat-sep {
+  inline-size: 1px;
+  block-size: 1.8rem;
+  background: var(--border);
+  align-self: center;
+}
+
+/* Question card */
+.profile-question-card {
+  padding: var(--sp-4);
+  background: color-mix(in srgb, var(--accent-teal) 6%, var(--surface-2));
+  border: 1px solid color-mix(in srgb, var(--accent-teal) 18%, transparent);
+  border-radius: var(--radius-lg);
+  margin-block-end: var(--sp-5);
+}
+.profile-question-mark {
+  display: flex;
+  align-items: center;
+  gap: .35rem;
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--accent-teal);
+  margin-block-end: var(--sp-2);
+}
+.profile-question-text {
+  font-size: .9rem;
+  color: var(--text-secondary);
+  font-style: italic;
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* Disclaimer strip */
+.profile-disclaimer {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--sp-2);
+  padding: var(--sp-3) var(--sp-4);
+  background: color-mix(in srgb, var(--text-secondary) 5%, transparent);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  margin-block-end: var(--sp-5);
+}
+.profile-disclaimer-icon { font-size: .9rem; flex-shrink: 0; margin-block-start: 2px; }
+.profile-disclaimer p    { font-size: .8rem; color: var(--text-secondary); margin: 0; line-height: 1.55; }
+
+/* Next card */
+.profile-next-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  padding: var(--sp-5);
+  background: var(--surface-2);
+  border: 1px solid color-mix(in srgb, var(--accent-amber) 25%, transparent);
+  border-radius: var(--radius-lg);
+  margin-block-end: var(--sp-5);
+}
+.profile-next-kicker {
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--accent-amber);
+}
+.profile-next-title { font-size: 1.05rem; font-weight: 800; color: var(--text-primary); margin: 0; }
+.profile-next-body  { font-size: .82rem; color: var(--text-secondary); margin: 0; line-height: 1.55; }
+
+/* Skills section */
+.profile-skills-header { margin-block-end: var(--sp-3); }
+.profile-skills-title  { font-size: 1.1rem; font-weight: 800; color: var(--text-primary); margin-block-end: .2rem; }
+.profile-skills-note   { font-size: .78rem; color: var(--text-secondary); margin: 0; }
+.profile-skills-list   { display: flex; flex-direction: column; gap: var(--sp-2); padding: 0; margin: 0; }
+.profile-skill-item    { display: flex; flex-direction: column; gap: .25rem; }
+
+
+/* ═══════════════════════════════════════════════════════════════
+   SEASON PAGE — Cinematic Series View
+   ═══════════════════════════════════════════════════════════════ */
+
+.season-hero {
+  padding-block: var(--sp-8) var(--sp-5);
+  border-block-end: 1px solid var(--border);
+  margin-block-end: var(--sp-5);
+}
+.season-hero-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-4);
+  margin-block-end: var(--sp-4);
+}
+.season-hero-text { flex: 1; min-inline-size: 0; }
+.season-hero-kicker {
+  font-size: .7rem;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--accent-teal);
+  margin-block-end: var(--sp-2);
+}
+.season-hero-title {
+  font-size: clamp(1.8rem, 4.5vw, 2.8rem);
+  font-weight: 800;
+  letter-spacing: -.03em;
+  line-height: 1.08;
+  color: var(--text-primary);
+  margin-block-end: var(--sp-2);
+}
+.season-hero-sub { font-size: .9rem; color: var(--text-secondary); line-height: 1.55; margin: 0; }
+.season-hero-badge {
+  flex-shrink: 0;
+  inline-size: 4.5rem;
+  block-size: 4.5rem;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(135deg,
+    color-mix(in srgb, var(--accent-teal) 18%, transparent),
+    color-mix(in srgb, var(--accent-amber) 10%, transparent));
+  border: 1px solid color-mix(in srgb, var(--accent-teal) 22%, transparent);
+  display: grid;
+  place-items: center;
+}
+.season-hero-glyph { font-size: 2rem; }
+
+/* Progress strip */
+.season-hero-progress { display: flex; flex-direction: column; gap: var(--sp-2); }
+.season-progress-stats { display: flex; align-items: baseline; gap: .3rem; }
+.season-progress-done  { font-size: 1.6rem; font-weight: 800; color: var(--accent-teal); line-height: 1; }
+.season-progress-sep   { font-size: 1rem; color: var(--text-secondary); }
+.season-progress-total { font-size: 1rem; font-weight: 600; color: var(--text-secondary); }
+.season-progress-label { font-size: .75rem; color: var(--text-secondary); margin-inline-start: .3rem; }
+
+/* Hook card */
+.season-hook-card {
+  padding: var(--sp-4);
+  background: color-mix(in srgb, var(--accent-teal) 5%, var(--surface-2));
+  border: 1px solid color-mix(in srgb, var(--accent-teal) 16%, transparent);
+  border-radius: var(--radius-lg);
+  margin-block-end: var(--sp-4);
+}
+.season-hook-mark {
+  display: flex;
+  align-items: center;
+  gap: .3rem;
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--accent-teal);
+  margin-block-end: var(--sp-2);
+}
+.season-hook-text {
+  font-size: .88rem;
+  color: var(--text-secondary);
+  font-style: italic;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Note strip */
+.season-note-strip {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--sp-2);
+  padding: var(--sp-3) var(--sp-4);
+  background: color-mix(in srgb, var(--accent-amber) 5%, var(--surface-2));
+  border: 1px solid color-mix(in srgb, var(--accent-amber) 16%, transparent);
+  border-radius: var(--radius-md);
+  margin-block-end: var(--sp-5);
+}
+.season-note-icon { font-size: .9rem; flex-shrink: 0; margin-block-start: 2px; }
+.season-note-strip p { font-size: .8rem; color: var(--text-secondary); margin: 0; line-height: 1.55; }
+
+/* Episode list */
+.season-ep-list { display: flex; flex-direction: column; gap: var(--sp-3); }
+
+/* Episode card */
+.season-ep {
+  padding: var(--sp-4);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+  transition: border-color .18s;
+}
+.season-ep--rec {
+  border-color: color-mix(in srgb, var(--accent-teal) 40%, transparent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent-teal) 8%, transparent);
+}
+.season-ep--done { opacity: .75; }
+.season-ep--locked { opacity: .55; }
+
+.season-ep-header { display: flex; gap: var(--sp-3); align-items: flex-start; }
+.season-ep-glyph  { font-size: 1.6rem; line-height: 1; flex-shrink: 0; }
+.season-ep-meta   { flex: 1; min-inline-size: 0; }
+
+.season-ep-toprow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--sp-2);
+  margin-block-end: var(--sp-1);
+  flex-wrap: wrap;
+}
+.season-ep-title {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1.25;
+  margin: 0;
+  flex: 1;
+}
+.season-ep-chip {
+  display: inline-flex;
+  padding: .15rem .55rem;
+  border-radius: 999px;
+  font-size: .68rem;
+  font-weight: 700;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.season-ep-chip--neutral  { background: color-mix(in srgb, var(--text-secondary) 10%, transparent); color: var(--text-secondary); }
+.season-ep-chip--positive { background: color-mix(in srgb, var(--accent-teal) 12%, transparent);  color: var(--accent-teal); }
+.season-ep-chip--brand    { background: color-mix(in srgb, var(--accent-amber) 12%, transparent); color: var(--accent-amber); }
+.season-ep-chip--warning  { background: color-mix(in srgb, #ef4444 10%, transparent);              color: #ef4444; }
+.season-ep-chip--info     { background: color-mix(in srgb, #60a5fa 10%, transparent);              color: #60a5fa; }
+
+.season-ep-hook {
+  font-size: .82rem;
+  color: var(--text-secondary);
+  font-style: italic;
+  line-height: 1.5;
+  margin: 0 0 var(--sp-1);
+}
+.season-ep-principle        { font-size: .8rem; color: var(--text-secondary); margin: 0; line-height: 1.5; }
+.season-ep-principle-label  { font-weight: 700; color: var(--text-primary); }
+
+.season-ep-actions  { display: flex; flex-direction: column; gap: var(--sp-2); }
+.season-ep-pending  { font-size: .75rem; color: var(--text-secondary); margin: 0; }
