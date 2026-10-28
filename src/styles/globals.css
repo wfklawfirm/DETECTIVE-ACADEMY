@@ -4471,3 +4471,101 @@ header.page-head,
 /* ico (icon inline helper) — ensure teal for all row icons */
 .row-link .ico,
 .ico { color: var(--accent-teal); }
+
+
+/* ═══════════════════════════════════════════════════════════════
+   CINEMATIC FINAL SWEEP
+   .mark, .lab-meta, callout[data-tone], meter amber, callout amber
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ── .mark — inline icon+label chip inside lead-card ─────────── */
+.mark {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-amber);
+  margin-block-end: var(--sp-2);
+}
+.mark svg { flex-shrink: 0; }
+
+/* ── .lab-meta — badge row below lab hero ─────────────────────── */
+.lab-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--sp-2);
+  margin-block-end: var(--sp-4);
+}
+
+/* ── callout[data-tone] attribute selectors ───────────────────── */
+.callout[data-tone="negative"] {
+  border-inline-start-color: var(--negative);
+  background: var(--negative-tint);
+}
+.callout[data-tone="positive"] {
+  border-inline-start-color: var(--positive);
+  background: var(--positive-tint);
+}
+.callout[data-tone="warning"] {
+  border-inline-start-color: var(--warning);
+  background: var(--warning-tint);
+}
+.callout[data-tone="info"] {
+  border-inline-start-color: var(--info);
+  background: var(--info-tint);
+}
+.callout[data-tone="brand"] {
+  border-inline-start-color: var(--accent-amber);
+  background: color-mix(in srgb, var(--accent-amber) 8%, transparent);
+}
+
+/* ── MasteryMeter — filled segments → amber ───────────────────── */
+.meter-segs i[data-on="true"] {
+  background: var(--accent-amber);
+  border-color: var(--accent-amber);
+  box-shadow: 0 0 4px color-mix(in srgb, var(--accent-amber) 45%, transparent);
+}
+
+/* ── badge-brand cinematic: amber instead of raw teal ────────── */
+.badge-brand {
+  background: color-mix(in srgb, var(--accent-amber) 10%, transparent);
+  color: var(--accent-amber);
+  border-color: color-mix(in srgb, var(--accent-amber) 25%, transparent);
+}
+
+/* ── Cinematic hero badge glow (cases, challenges, academy, knowledge) */
+.cases-hero-badge,
+.challenges-hero-badge,
+.academy-hero-badge,
+.knowledge-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent-amber);
+  background: color-mix(in srgb, var(--accent-amber) 7%, transparent);
+  border: 1px solid color-mix(in srgb, var(--accent-amber) 22%, transparent);
+  border-radius: var(--radius-pill);
+  padding: 0.2rem 0.65rem;
+}
+
+/* ── rank-badge (home + profile) ─────────────────────────────── */
+.rank-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.25rem 0.7rem;
+  background: color-mix(in srgb, var(--accent-amber) 10%, var(--surface-2));
+  border: 1px solid color-mix(in srgb, var(--accent-amber) 22%, transparent);
+  border-radius: var(--radius-pill);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--accent-amber);
+}
