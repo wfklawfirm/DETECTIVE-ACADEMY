@@ -8,24 +8,42 @@ const LINES = [
   "«دفتر التجربة اختفى. الجميع يقول إن هادي أخذه. السجلات تقول شيئاً آخر. تحقق قبل أن تحكم.»",
   "لا أحد سيخبرك بالنتيجة. لديك ملف، وسجلات، وبضعة شهود.",
 ];
+
 export default function Start() {
   const [n, setN] = useState(1);
+
   return (
-    <section className="lantern stack-lg" style={{ padding: "1.5rem 1rem", minBlockSize: "70dvh", justifyContent: "space-between" }}>
-      <div className="stack-lg">
-        <div className="row row-between"><span className="stamp">رسالة مجهولة · ٠٣:١٢</span><StepDots total={LINES.length} current={n - 1} label={`الخطوة ${n} من ${LINES.length}`} /></div>
-        <div className="cold-open" aria-live="polite">
-          {LINES.slice(0, n).map((l, i) => <p key={i} className="reveal">{l}</p>)}
-        </div>
+    <section className="start-screen" aria-label="مشهد الافتتاح">
+      {/* Top bar */}
+      <div className="start-topbar">
+        <span className="start-stamp">رسالة مجهولة · ٠٣:١٢</span>
+        <StepDots total={LINES.length} current={n - 1} label={`الخطوة ${n} من ${LINES.length}`} />
       </div>
-      {n < LINES.length ? (
-        <Button variant="secondary" size="lg" block onClick={() => setN(n + 1)}>التالي</Button>
-      ) : (
-        <div className="stack">
-          <LinkButton variant="primary" size="lg" block href="/play/c000_lost_notebook">افتح الملف</LinkButton>
-          <p className="small dim">لا حاجة إلى حساب الآن. تقدّمك يُحفظ على جهازك، ويمكنك إنشاء حساب بعد أن ترى النتيجة.</p>
-        </div>
-      )}
+
+      {/* Cold open */}
+      <div className="start-cold-open" aria-live="polite">
+        {LINES.slice(0, n).map((l, i) => (
+          <p key={i} className={`start-line${i === n - 1 ? " start-line--new" : ""}`}>{l}</p>
+        ))}
+      </div>
+
+      {/* CTA */}
+      <div className="start-cta">
+        {n < LINES.length ? (
+          <Button variant="secondary" size="lg" block onClick={() => setN(n + 1)}>
+            التالي
+          </Button>
+        ) : (
+          <>
+            <LinkButton variant="primary" size="lg" block href="/play/c000_lost_notebook">
+              افتح الملف
+            </LinkButton>
+            <p className="start-note">
+              لا حاجة إلى حساب الآن. تقدّمك يُحفظ على جهازك، ويمكنك إنشاء حساب بعد أن ترى النتيجة.
+            </p>
+          </>
+        )}
+      </div>
     </section>
   );
 }
