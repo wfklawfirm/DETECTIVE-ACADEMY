@@ -4229,3 +4229,151 @@ header.page-head,
 .dots i[data-state="done"]    { background: var(--accent-teal); }
 .dots i[data-state="current"] { background: var(--accent-amber); transform: scale(1.35); box-shadow: 0 0 6px color-mix(in srgb, var(--accent-amber) 50%, transparent); }
 
+
+/* ═══════════════════════════════════════════════════════════════
+   CINEMATIC FORM CONTROLS
+   ChoiceGroup, SegmentedControl, Toggle — amber/teal accent system
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ── ChoiceGroup ──────────────────────────────────────────────── */
+.choices {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+
+.choice {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--sp-3);
+  padding: var(--sp-3) var(--sp-4);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease;
+  position: relative;
+}
+.choice input {
+  margin-block-start: 0.15em;
+  flex-shrink: 0;
+  accent-color: var(--accent-amber);
+}
+.choice:has(input:checked) {
+  background: color-mix(in srgb, var(--accent-amber) 7%, var(--surface-2));
+  border-color: color-mix(in srgb, var(--accent-amber) 40%, var(--border));
+}
+.choice:has(input:checked)::before {
+  content: "";
+  position: absolute;
+  inset-block: 0;
+  inset-inline-start: 0;
+  inline-size: 3px;
+  border-radius: 0 2px 2px 0;
+  background: var(--accent-amber);
+}
+.choice:hover:not(:has(input:checked)) {
+  border-color: color-mix(in srgb, var(--accent-amber) 20%, var(--border));
+  background: color-mix(in srgb, var(--accent-amber) 3%, var(--surface-2));
+}
+
+/* Feedback states */
+.choice[data-state="correct"] {
+  background: color-mix(in srgb, var(--accent-teal) 8%, var(--surface-2));
+  border-color: color-mix(in srgb, var(--accent-teal) 40%, var(--border));
+}
+.choice[data-state="correct"]::before {
+  background: var(--accent-teal);
+}
+.choice[data-state="wrong"] {
+  background: color-mix(in srgb, #ef4444 6%, var(--surface-2));
+  border-color: color-mix(in srgb, #ef4444 30%, var(--border));
+}
+
+/* ── SegmentedControl ─────────────────────────────────────────── */
+.seg {
+  display: inline-flex;
+  background: var(--surface-3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-control);
+  padding: 3px;
+  gap: 2px;
+  flex-wrap: wrap;
+}
+.seg-opt {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-1);
+  padding: 0.3rem 0.75rem;
+  border-radius: calc(var(--radius-control) - 3px);
+  cursor: pointer;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  transition: background 0.12s ease, color 0.12s ease;
+  white-space: nowrap;
+}
+.seg-opt input { position: absolute; opacity: 0; pointer-events: none; }
+.seg-opt:has(input:checked) {
+  background: var(--surface-1, var(--background));
+  color: var(--accent-amber);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+}
+.seg-opt[data-tone="positive"]:has(input:checked) { color: var(--accent-teal); }
+.seg-opt:hover:not(:has(input:checked)) {
+  background: color-mix(in srgb, var(--accent-amber) 6%, var(--surface-3));
+  color: var(--text-primary);
+}
+
+/* ── Toggle ───────────────────────────────────────────────────── */
+.toggle-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-4);
+  padding: var(--sp-3) 0;
+}
+.toggle-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  flex: 1;
+  min-inline-size: 0;
+}
+.toggle-text b { font-size: 0.9375rem; font-weight: 600; color: var(--text-primary); }
+
+.toggle {
+  flex-shrink: 0;
+  inline-size: 2.75rem;
+  block-size: 1.5rem;
+  border-radius: var(--radius-pill);
+  background: var(--surface-3);
+  border: 1px solid var(--border);
+  position: relative;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+  padding: 0;
+}
+.toggle::after {
+  content: "";
+  position: absolute;
+  inset-block-start: 3px;
+  inset-inline-start: 3px;
+  inline-size: 16px;
+  block-size: 16px;
+  border-radius: 50%;
+  background: var(--text-secondary);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+.toggle[aria-checked="true"] {
+  background: var(--accent-amber);
+  border-color: var(--accent-amber);
+}
+.toggle[aria-checked="true"]::after {
+  transform: translateX(1.25rem);
+  background: #1a0f00;
+}
+[dir="rtl"] .toggle[aria-checked="true"]::after {
+  transform: translateX(-1.25rem);
+}
+
