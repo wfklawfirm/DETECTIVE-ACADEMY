@@ -96,7 +96,7 @@ export default function Profile() {
           <div className="profile-stat-divider" />
           <div className="profile-stat">
             <span className="profile-stat-value">
-              {d.skills.filter((s: SkillItem) => s.level >= 3).length}
+              {d.skills.filter((s: SkillItem) => s.certainty >= 2).length}
             </span>
             <span className="profile-stat-label">مهارة قوية</span>
           </div>
@@ -163,7 +163,7 @@ export default function Profile() {
           <ul className="profile-skills-list list">
             {d.skills.map((s: SkillItem) => (
               <li key={s.ko_id} className="profile-skill-item">
-                <SkillMeter value={s.level ?? 0} />
+                <SkillMeter value={s.certainty} max={2} />
                 <SkillCard s={s} />
               </li>
             ))}
