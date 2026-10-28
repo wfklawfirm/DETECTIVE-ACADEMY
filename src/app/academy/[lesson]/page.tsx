@@ -16,7 +16,7 @@ export default async function Lesson({ params }: { params: Promise<{ lesson: str
   const next = track.lessons[idx + 1];
   return (
     <article className="stack-lg">
-      <header className="page-head">
+      <header className="ref-hero academy-hero">
         <p className="kicker">المسار {track.id} · {track.title_ar} · {l.minutes} دقائق</p>
         <h1 className="text-page-title">{l.title_ar}</h1>
       </header>

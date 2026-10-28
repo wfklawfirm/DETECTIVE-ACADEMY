@@ -21,7 +21,7 @@ export default async function LabPage({ params }: { params: Promise<{ id: string
   const related = lab.ko_ids.filter((k) => shown.has(k) && names[k]);
   return (
     <>
-      <header className="page-head"><p className="kicker">{lab.skill_ar}</p><h1 className="text-page-title">{lab.title_ar}</h1></header>
+      <header className="ref-hero labs-hero"><p className="kicker">{lab.skill_ar}</p><h1 className="text-page-title">{lab.title_ar}</h1></header>
       <div className="lab-meta"><Badge>{KIND_LABEL[lab.kind]}</Badge><Badge outline>{DIFFICULTY_LABEL[lab.difficulty]}</Badge><Badge outline>نحو {lab.minutes} د</Badge><Badge tone="warning">محاكاة خيالية · تتطلب مراجعة خبراء</Badge></div>
       <aside className="lead-card" aria-label="سؤال الدخول"><p>{lab.hook_ar}</p></aside>
       <p className="dim-2">{lab.intro_ar}</p>

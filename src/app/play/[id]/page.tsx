@@ -50,7 +50,7 @@ export default function Play({ params }: { params: Promise<{ id: string }> }) {
   return (
     <>
       <EntryHook surface="case_return" caseId={id} />
-      <header className="page-head">
+      <header className="ref-hero play-hero">
         <div className="row row-between"><span className="kicker">{view.tutorial ? "ملف تمهيدي" : "قضية"}</span>{view.preview && <Badge tone="warning" title="هذه القضية لم تكتمل مراجعتها الخبيرة بعد">نسخة تجريبية</Badge>}</div>
         <h1 className="text-page-title">{view.title_ar}</h1>
       </header>

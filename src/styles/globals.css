@@ -3900,3 +3900,41 @@ header.page-head,
     block-size: 4.5rem;
   }
 }
+
+/* ── CINEMATIC HERO VARIANTS ─────────────────────────────────────────────────
+   labs-hero, play-hero get their own accent tints while sharing the
+   base .ref-hero amber border + heroIn animation.
+   academy-hero and knowledge-hero already share the .academy-hero /
+   .knowledge-hero classes defined in CINEMATIC CARDS POLISH above.
+   ─────────────────────────────────────────────────────────────────────────── */
+
+/* Labs hero — teal accent (skills / experimentation) */
+.labs-hero {
+  border-inline-start-color: var(--accent-teal);
+  background: linear-gradient(
+    155deg,
+    color-mix(in srgb, var(--accent-teal) 6%, var(--surface-2)) 0%,
+    var(--surface-2) 55%,
+    color-mix(in srgb, var(--accent-amber) 3%, var(--surface-2)) 100%
+  );
+}
+.labs-hero::before {
+  background: linear-gradient(
+    to inline-end,
+    color-mix(in srgb, var(--accent-teal) 14%, transparent),
+    transparent 72%
+  );
+}
+
+/* Play hero — minimal amber-teal, no heavy background (immersive game) */
+.play-hero {
+  padding-block: var(--sp-3) var(--sp-2);
+  background: color-mix(in srgb, var(--surface-2) 60%, transparent);
+}
+.play-hero::before {
+  background: linear-gradient(
+    to inline-end,
+    color-mix(in srgb, var(--accent-amber) 8%, transparent),
+    transparent 55%
+  );
+}

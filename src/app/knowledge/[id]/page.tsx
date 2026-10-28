@@ -27,7 +27,7 @@ export default async function Ko({ params }: { params: Promise<{ id: string }> }
   const extras = EN_KEYS.filter((key) => k.extra[key] !== undefined);
   return (
     <article className="stack-lg">
-      <header className="page-head">
+      <header className="ref-hero knowledge-hero">
         <p className="kicker">{TYPE_LABEL[k.type]}</p>
         <h1 className="text-page-title">{k.name_ar}</h1>
         <p className="small dim" lang="en" dir="ltr" style={{ textAlign: "start" }}>{k.name}</p>
