@@ -3594,3 +3594,147 @@ header.page-head,
 .case-detail-disclaimer--teal .case-detail-disclaimer-mark {
   color: var(--accent-teal);
 }
+
+/* ═══════════════════════════════════════════════════════════════
+   CINEMATIC NAVIGATION CHROME
+   Depth, amber/teal accents, micro-animations for sidebar,
+   header, brand, and bottom-nav active indicators
+═══════════════════════════════════════════════════════════════ */
+
+/* ── DESKTOP SIDEBAR CINEMATIC ───────────────────────────────── */
+@media (min-width: 1280px) {
+  /* Deeper surface with subtle gradient texture */
+  .desktop-sidebar {
+    background: linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--surface-2) 60%, var(--surface)) 0%,
+      var(--surface) 100%
+    );
+    border-inline-end: 1px solid var(--border);
+    /* Amber vignette accent at the top */
+    box-shadow: inset -1px 0 0 var(--border),
+                4px 0 24px color-mix(in srgb, var(--accent-amber) 4%, transparent);
+  }
+
+  /* Active nav item — amber left bar + amber text */
+  .desktop-sidebar .sidebar-nav a[aria-current="page"] {
+    background: color-mix(in srgb, var(--accent-amber) 9%, transparent);
+    color: var(--accent-amber);
+    font-weight: 700;
+    position: relative;
+  }
+  .desktop-sidebar .sidebar-nav a[aria-current="page"]::before {
+    content: "";
+    position: absolute;
+    inset-block: 20%;
+    inset-inline-start: 0;
+    inline-size: 3px;
+    border-radius: 0 2px 2px 0;
+    background: var(--accent-amber);
+  }
+  .desktop-sidebar .sidebar-nav a[aria-current="page"] svg {
+    color: var(--accent-amber);
+  }
+
+  /* Hover: teal tint instead of plain surface-soft */
+  .desktop-sidebar .sidebar-nav a:hover:not([aria-current="page"]) {
+    background: color-mix(in srgb, var(--accent-teal) 7%, transparent);
+    color: var(--accent-teal);
+  }
+  .desktop-sidebar .sidebar-nav a:hover:not([aria-current="page"]) svg {
+    color: var(--accent-teal);
+  }
+
+  /* Smooth icon transition */
+  .desktop-sidebar .sidebar-nav a svg {
+    transition: color var(--transition-fast), transform 0.2s ease;
+  }
+  .desktop-sidebar .sidebar-nav a:hover svg {
+    transform: scale(1.1);
+  }
+
+  /* Footer: softer amber tint for version text */
+  .desktop-sidebar .sidebar-footer {
+    border-block-start: 1px solid color-mix(in srgb, var(--accent-amber) 15%, var(--border));
+    color: color-mix(in srgb, var(--text-secondary) 80%, var(--accent-amber));
+  }
+}
+
+/* ── BRAND CINEMATIC ─────────────────────────────────────────── */
+.brand-name {
+  transition: color 0.2s ease;
+}
+.brand:hover .brand-name {
+  color: var(--accent-amber);
+}
+.brand:hover .brand-mark {
+  color: var(--accent-amber);
+  filter: drop-shadow(0 0 6px color-mix(in srgb, var(--accent-amber) 35%, transparent));
+}
+.brand-mark {
+  transition: color 0.2s ease, filter 0.2s ease;
+}
+/* Subtle animated underline on brand-latin on hover */
+.brand-latin {
+  position: relative;
+  transition: color 0.2s ease;
+}
+.brand:hover .brand-latin {
+  color: color-mix(in srgb, var(--accent-amber) 70%, var(--text-secondary));
+}
+
+/* ── APP HEADER CINEMATIC ────────────────────────────────────── */
+.app-header {
+  /* Stronger amber-tinged glass effect */
+  background: color-mix(in srgb, var(--surface) 80%, transparent);
+  border-block-end: 1px solid color-mix(in srgb, var(--accent-amber) 12%, var(--border));
+  /* Warm shadow instead of plain line */
+  box-shadow: 0 1px 0 color-mix(in srgb, var(--accent-amber) 8%, transparent),
+              0 2px 12px color-mix(in srgb, var(--surface) 60%, transparent);
+}
+
+/* Title in header picks up amber on deep/case screens */
+.app-header-title {
+  letter-spacing: -0.01em;
+}
+
+/* ── BOTTOM NAV CINEMATIC ────────────────────────────────────── */
+/* Deeper glass background */
+.bottom-nav {
+  background: color-mix(in srgb, var(--surface) 88%, transparent);
+  border-block-start: 1px solid color-mix(in srgb, var(--accent-amber) 10%, var(--border));
+  box-shadow: 0 -1px 0 color-mix(in srgb, var(--accent-amber) 6%, transparent),
+              0 -4px 20px color-mix(in srgb, var(--surface) 50%, transparent);
+}
+
+/* Active item: amber accent bar at TOP (already exists as ::before — upgrade color) */
+.bottom-nav a[aria-current="page"] {
+  color: var(--accent-amber);
+}
+.bottom-nav a[aria-current="page"]::before {
+  background: var(--accent-amber);
+  block-size: 2px;
+  /* Glow */
+  box-shadow: 0 0 8px var(--accent-amber);
+}
+
+/* Hover: teal flash */
+.bottom-nav a:hover:not([aria-current="page"]) {
+  color: var(--accent-teal);
+}
+
+/* Icon scale on active */
+.bottom-nav a[aria-current="page"] svg {
+  filter: drop-shadow(0 0 4px color-mix(in srgb, var(--accent-amber) 50%, transparent));
+}
+
+/* ── NAV ENTRANCE ANIMATION ──────────────────────────────────── */
+@media (min-width: 1280px) {
+  @keyframes sidebarIn {
+    from { opacity: 0; transform: translateX(-8px); }
+    to   { opacity: 1; transform: translateX(0); }
+  }
+  .desktop-sidebar {
+    animation: sidebarIn 0.3s ease both;
+  }
+}
