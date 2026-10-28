@@ -9,7 +9,7 @@ export default function Icons() {
   const { sets, icons } = loadIcons();
   return (
     <>
-      <PageHead title="مكتبة الأيقونات" lead={`${icons.length} أيقونة خطية من ست مكتبات مفتوحة المصدر، محفوظة هنا مع نص ترخيص كل مكتبة. واجهة أثر نفسها تستعمل عائلة أيقونات واحدة؛ هذه المكتبة مرجع لمن يصمّم قضايا وأدوات جديدة.`} />
+      <PageHead title="مكتبة الأيقونات" lead={`${icons.length} أيقونة خطية من ست مكتبات مفتوحة المصدر، محفوظة هنا مع نص ترخيص كل مكتبة. واجهة Detective Academy نفسها تستعمل عائلة أيقونات واحدة؛ هذه المكتبة مرجع لمن يصمّم قضايا وأدوات جديدة.`} />
       {sets.map((s) => (
         <section key={s.key} className="stack" aria-label={s.name}>
           <h2 className="text-label section-title" lang="en" dir="ltr">{s.name} · <Badge latin>{s.license}</Badge> · {s.count} · <a href={s.license_file}>license</a></h2>

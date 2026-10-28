@@ -12,7 +12,7 @@ export default function Sources() {
   const cited = src.filter((s) => s.cited);
   return (
     <>
-      <PageHead title="المصادر والحقوق" lead={`سجل مصادر مكتبة أثر البحثية: ${src.length} مصدراً، منها ${cited.length} يستند إليه محتوى الموسوعة (${kos.length} كائن معرفي). نعرض حالة الحقوق كما سُجّلت، ولا نقتبس من محمي بحقوق النشر؛ نحيل إليه فقط.`} />
+      <PageHead title="المصادر والحقوق" lead={`سجل مصادر مكتبة Detective Academy البحثية: ${src.length} مصدراً، منها ${cited.length} يستند إليه محتوى الموسوعة (${kos.length} كائن معرفي). نعرض حالة الحقوق كما سُجّلت، ولا نقتبس من محمي بحقوق النشر؛ نحيل إليه فقط.`} />
       <Card as="section"><CardTitle level={2}>حالة الحقوق</CardTitle>
         <table className="simple"><tbody>{Object.entries(by).sort((a, b) => b[1] - a[1]).map(([k, n]) => <tr key={k}><th scope="row">{RIGHTS_LABEL[k] ?? k}</th><td className="num">{n}</td></tr>)}</tbody></table>
         <p className="small dim">«غير محسوم» تعني أن الحالة لم تُحسم بعد ونعاملها معاملة المحمي حتى يثبت غير ذلك. هذا سجل عملي وليس رأياً قانونياً.</p></Card>

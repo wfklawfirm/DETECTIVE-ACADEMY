@@ -15,7 +15,7 @@ export default async function Knowledge() {
   const items = visibleKos(kos, a.ageBand).map(({ ko_id, type, name_ar, summary_ar, confidence, status, tags }) => ({ ko_id, type, name_ar, summary_ar, confidence, status, tags }));
   return (
     <>
-      <PageHead title="موسوعة المحقق" lead="مفاهيم من علم الأدلة، ومهارات الاستدلال، وأنماط الألغاز، مأخوذة من مكتبة أثر البحثية." />
+      <PageHead title="موسوعة المحقق" lead="مفاهيم من علم الأدلة، ومهارات الاستدلال، وأنماط الألغاز، مأخوذة من مكتبة Detective Academy البحثية." />
       <Callout tone="warning" title="مادة أولية">كل مادة تُظهر درجة الثقة وحالتها: «مبني على أدلة» أو «فرضية تصميم» أو «ممارسة مهنية». لم تُراجَع بعدُ من خبراء مستقلين، فاعتبرها مادة تعليمية أولية لا مرجعاً علمياً نهائياً.</Callout>
       <ul className="list" aria-label="روابط الموسوعة">
         <li><RowLink href="/labs" icon={<FlaskIcon size={22} />} title="مختبرات آمنة" hint="تمارين قصيرة بسجلات خيالية" /></li>

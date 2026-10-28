@@ -54,7 +54,7 @@ export default function Rulebook() {
         </ol>
         <h3 className="text-label">قواعد السلّم</h3>
         <ul className="stack-sm">{r.hints.rules_ar.map((x) => <li key={x} className="small">{x}</li>)}</ul>
-        <Callout tone="info" title="في أثر">{r.hints.product_note_ar}</Callout>
+        <Callout tone="info" title="في Detective Academy">{r.hints.product_note_ar}</Callout>
         <SourcesBox ids={r.hints.src_ids} />
       </Section>
       <MoreReference current="/rulebook" />

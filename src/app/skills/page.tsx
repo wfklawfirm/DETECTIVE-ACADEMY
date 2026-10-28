@@ -10,7 +10,7 @@ export default function Skills() {
   const f = JSON.parse(readFileSync(join(process.cwd(), "content/knowledge/skills_patterns.json"), "utf8")) as F;
   return (
     <>
-      <PageHead title="المهارات وأنماط الألغاز" lead={`هذا هو الإطار الذي نبني عليه القضايا: ${f.skills.length} مهارة تحقيق، و${f.patterns.length} نمطاً من الألغاز العادلة. مسودة تحريرية أصلية من فريق أثر، لم تُراجع من خبراء بعد.`} />
+      <PageHead title="المهارات وأنماط الألغاز" lead={`هذا هو الإطار الذي نبني عليه القضايا: ${f.skills.length} مهارة تحقيق، و${f.patterns.length} نمطاً من الألغاز العادلة. مسودة تحريرية أصلية من فريق Detective Academy، لم تُراجع من خبراء بعد.`} />
       <section className="stack"><h2 className="text-section-title">المهارات ({f.skills.length})</h2>
       <ul className="list grid-2" style={{ display: "grid" }}>
         {f.skills.map((s) => (

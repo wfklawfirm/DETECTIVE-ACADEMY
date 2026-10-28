@@ -10,7 +10,7 @@ export default function Credits() {
   const imgs = all.filter((a) => a.kind === "image").length, snd = all.filter((a) => a.kind === "audio").length;
   return (
     <>
-      <PageHead title="الاعتمادات والتراخيص" lead={`لا ندرج في أثر صورة ولا صوتاً إلا إذا سجّلت مكتبتنا أنه ملكية عامة أو بترخيص مفتوح يسمح بالاستخدام. وهذه قائمتها كاملة (${imgs} صورة و${snd} مقطعاً صوتياً)؛ الذكر هنا واجب في بعضها (CC BY) وتطوّع في الباقي.`} />
+      <PageHead title="الاعتمادات والتراخيص" lead={`لا ندرج في Detective Academy صورة ولا صوتاً إلا إذا سجّلت مكتبتنا أنه ملكية عامة أو بترخيص مفتوح يسمح بالاستخدام. وهذه قائمتها كاملة (${imgs} صورة و${snd} مقطعاً صوتياً)؛ الذكر هنا واجب في بعضها (CC BY) وتطوّع في الباقي.`} />
       {[...new Set(all.map((a) => `${a.kind}:${a.collection ?? "core"}`))].sort().map((g) => (
         <details key={g} className="card">
           <summary lang="en" dir="ltr">{g.replace(":", " · ").replace(/_/g, " ")} ({all.filter((a) => `${a.kind}:${a.collection ?? "core"}` === g).length})</summary>

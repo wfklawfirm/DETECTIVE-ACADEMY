@@ -72,7 +72,7 @@ export default async function Reasoning() {
         <p className="small dim">هذا سلّم مقترح مستعار من سياق التحليل الاستخباري وترجمته العربية لم تُختبر على قرّاء بعد.</p>
       </Section>
 
-      <Section id="ethics" title="مبادئ التحقيق الأخلاقي" hook="تحقيق يربح القضية ويخسر الإنصاف تحقيق فاشل. هذه مبادئ سبعة تلتزم بها قضايا أثر.">
+      <Section id="ethics" title="مبادئ التحقيق الأخلاقي" hook="تحقيق يربح القضية ويخسر الإنصاف تحقيق فاشل. هذه مبادئ سبعة تلتزم بها قضايا Detective Academy.">
         <ul className="list">
           {r.ethics.map((e) => (
             <li key={e.n}>
@@ -80,7 +80,7 @@ export default async function Reasoning() {
                 <CardTitle level={3} id={`eth-${e.n}`}>{e.n}. {e.name_ar}{e.name_en && <span className="small dim" lang="en" dir="ltr"> ({e.name_en})</span>}</CardTitle>
                 <p><b>ما تتعلمه: </b>{e.learn_ar}</p>
                 {e.commitments_ar.length > 0 && (
-                  <details><summary>ما تلتزم به أثر في قضاياها</summary><ul className="stack-sm">{e.commitments_ar.map((c) => <li key={c} className="small">{c}</li>)}</ul><SourcesBox ids={e.src_ids} /></details>
+                  <details><summary>ما تلتزم به Detective Academy في قضاياها</summary><ul className="stack-sm">{e.commitments_ar.map((c) => <li key={c} className="small">{c}</li>)}</ul><SourcesBox ids={e.src_ids} /></details>
                 )}
               </Card>
             </li>

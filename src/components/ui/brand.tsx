@@ -13,12 +13,12 @@ export function AtharMark({ size = 32, className }: { size?: number; className?:
   );
 }
 
-/** Header lockup: mark + «أَثَر» (Reem Kufi) with small ATHAR beneath. */
+/** Header lockup: mark + «Detective Academy» wordmark. */
 export function BrandWordmark({ href = "/home" }: { href?: string }) {
   return (
-    <Link href={href} className="brand" aria-label="أثر — الرئيسية">
+    <Link href={href} className="brand" aria-label="Detective Academy — الرئيسية">
       <AtharMark className="brand-mark" size={30} />
-      <span className="brand-text" aria-hidden><span className="brand-name">أَثَر</span><span className="brand-latin">ATHAR</span></span>
+      <span className="brand-text" aria-hidden><span className="brand-name">Detective</span><span className="brand-latin">Academy</span></span>
     </Link>
   );
 }

@@ -12,11 +12,11 @@ import { Shell } from "@/components/Shell";
 import { NO_FLASH_SCRIPT } from "@/components/ui/prefs";
 
 export const metadata: Metadata = {
-  title: { default: "أَثَر — تحقيقات تتعلّم منها", template: "%s · أَثَر" },
+  title: { default: "Detective Academy — تحقيقات تتعلّم منها", template: "%s · Detective Academy" },
   description: "منصة عربية للألغاز التحقيقية القائمة على الأدلة: تقرأ الملفات، تستجوب الشهود، وتتعلّم كيف تعرف ما الذي تثبته الأدلة فعلاً.",
   robots: { index: false, follow: false },
-  applicationName: "أثر",
-  appleWebApp: { capable: true, title: "أثر", statusBarStyle: "black-translucent" },
+  applicationName: "Detective Academy",
+  appleWebApp: { capable: true, title: "Detective Academy", statusBarStyle: "black-translucent" },
 };
 export const viewport: Viewport = { width: "device-width", initialScale: 1, themeColor: "#0b1115", colorScheme: "dark light" };
 

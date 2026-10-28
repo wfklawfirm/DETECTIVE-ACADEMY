@@ -54,7 +54,7 @@ export default async function Methods() {
         <p className="small"><b>كيف نقرأ التصنيف؟</b> هو تبسيط تعليمي لما خلصت إليه مراجعات منشورة (مثل PCAST عام 2016 وتقارير NIST)، وليس حكماً نهائياً على الطريقة. الطريقة «الراسخة» تبقى قابلة للخطأ، و«غير المدعومة» قد تُستعمل في المحاكم أحياناً.</p>
         <ul className="row" style={{ listStyle: "none", padding: 0, margin: 0 }}>{TIER_ORDER.map((t) => <li key={t}><Badge tone={TIER_TONE[t]}>{TIER_LABEL[t]}</Badge></li>)}</ul>
       </Card>
-      <p className="small dim-2">{items.length} طريقة.{hidden > 0 && ` أُخفيت ${hidden} طرق مخصصة للبالغين لأنها تتصل بالأسلحة أو الوفاة أو الخلائط المعقدة.`} أثر لا تعلّم تنفيذ أي إجراء؛ نتحدث عن المفهوم وحدوده فقط.</p>
+      <p className="small dim-2">{items.length} طريقة.{hidden > 0 && ` أُخفيت ${hidden} طرق مخصصة للبالغين لأنها تتصل بالأسلحة أو الوفاة أو الخلائط المعقدة.`} Detective Academy لا تعلّم تنفيذ أي إجراء؛ نتحدث عن المفهوم وحدوده فقط.</p>
       <RefBrowser items={refs} noun="طريقة" searchLabel="ابحث في الطرق" placeholder="مثلاً: بصمة، شعر، رقمي، معدل الخطأ"
         facets={[
           { key: "tier", label: "درجة الدعم العلمي", display: "select", allLabel: "كل الدرجات", options: TIER_ORDER.filter((t) => items.some((m) => m.tier === t)).map((t) => ({ value: t, label: `${TIER_LABEL[t]} (${items.filter((m) => m.tier === t).length})` })) },

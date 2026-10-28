@@ -21,7 +21,7 @@ export function AgeGate({ onDone }: { onDone: () => Promise<void> }) {
     <Sheet open onClose={() => {}} dismissible={false} title="قبل أن نبدأ">
       {msg ? <Callout tone="warning" role="alert">{msg}</Callout> : (
         <>
-          <p>أثر موجّهة لمن هم في السادسة عشرة فأكثر. اختر فئتك العمرية لنعرض لك ما يناسبك. لا نسأل عن تاريخ ميلادك ولا عن هويتك، ونحفظ الفئة فقط على جهازك.</p>
+          <p>Detective Academy موجّهة لمن هم في السادسة عشرة فأكثر. اختر فئتك العمرية لنعرض لك ما يناسبك. لا نسأل عن تاريخ ميلادك ولا عن هويتك، ونحفظ الفئة فقط على جهازك.</p>
           <div className="stack-sm">
             <Button variant="outline" block disabled={busy} onClick={() => pick("16-17")}>عمري بين 16 و17 سنة</Button>
             <Button variant="outline" block disabled={busy} onClick={() => pick("18+")}>عمري 18 سنة أو أكثر</Button>

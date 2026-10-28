@@ -1,8 +1,8 @@
 {
-  "name": "athar",
+  "name": "detective-academy",
   "version": "0.1.0",
   "private": true,
-  "description": "ATHAR | أَثَر — Arabic-first interactive mystery & investigative learning platform (pilot-ready vertical slice)",
+  "description": "Detective Academy — Arabic-first interactive mystery & investigative learning platform (pilot-ready vertical slice)",
   "type": "module",
   "scripts": {
     "dev": "next dev -p 3100",

@@ -50,7 +50,7 @@ export default async function Glossary() {
   return (
     <>
       <RefHead title="المسرد الجنائي" hook={g.hook_ar} />
-      <p className="small dim-2">{items.length} مصطلحاً عربياً مع مقابلها الإنجليزي. «سلسلة العهدة» و«نسبة الترجيح» هما المصطلحان المعتمدان في واجهة أثر.{hidden > 0 && ` أُخفي ${hidden} مصطلحاً مخصصاً للبالغين.`}</p>
+      <p className="small dim-2">{items.length} مصطلحاً عربياً مع مقابلها الإنجليزي. «سلسلة العهدة» و«نسبة الترجيح» هما المصطلحان المعتمدان في واجهة Detective Academy.{hidden > 0 && ` أُخفي ${hidden} مصطلحاً مخصصاً للبالغين.`}</p>
       <RefBrowser items={refs} noun="مصطلح" searchLabel="ابحث في المسرد" placeholder="مثلاً: عهدة، بصمة، ترجيح، chain of custody"
         facets={[
           { key: "letter", label: "الحرف الأول", display: "chips", options: letters.map((l) => ({ value: l, label: l })), allLabel: "الكل" },

@@ -28,7 +28,7 @@ export default function Landing() {
         <LinkButton variant="ghost" block href="/cases">تصفّح القضايا</LinkButton>
       </section>
       <section className="stack" aria-labelledby="how-h">
-        <h2 id="how-h" className="text-label section-title">كيف تعمل أثر</h2>
+        <h2 id="how-h" className="text-label section-title">كيف تعمل Detective Academy</h2>
         <ul className="list">
           {POINTS.map(({ Icon, t, d }) => (
             <li key={t}><Card as="div" flat><div className="row" style={{ flexWrap: "nowrap", alignItems: "flex-start" }}><span className="ico" style={{ color: "var(--foreground-secondary)", marginBlockStart: "0.2rem" }}><Icon size={24} /></span><div className="stack-sm grow"><h3 className="card-title">{t}</h3><p className="small dim-2">{d}</p></div></div></Card></li>

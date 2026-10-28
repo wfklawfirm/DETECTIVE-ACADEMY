@@ -2,8 +2,8 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "أثر — تحقيقات تتعلّم منها",
-    short_name: "أثر",
+    name: "Detective Academy — تحقيقات تتعلّم منها",
+    short_name: "Detective Academy",
     description: "منصة عربية للألغاز التحقيقية القائمة على الأدلة (نموذج تجريبي).",
     id: "/",
     start_url: "/home",

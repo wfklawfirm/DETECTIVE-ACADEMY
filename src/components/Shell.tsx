@@ -77,7 +77,7 @@ function Inner({ children }: { children: ReactNode }) {
           </div>
         </header>
         <main id="main" className={`page${playing ? " with-tabs" : ""}`} tabIndex={-1}>{children}</main>
-        {!playing && <footer className="page small dim" style={{ flex: "none", paddingBlock: 0, paddingBlockEnd: showNav ? "calc(var(--bottom-nav-height) + env(safe-area-inset-bottom) + 1rem)" : "1.5rem" }}>أثر · نموذج تجريبي. القصص كلها من تأليفنا وشخصياتها خيالية.</footer>}
+        {!playing && <footer className="page small dim" style={{ flex: "none", paddingBlock: 0, paddingBlockEnd: showNav ? "calc(var(--bottom-nav-height) + env(safe-area-inset-bottom) + 1rem)" : "1.5rem" }}>Detective Academy · نموذج تجريبي. القصص كلها من تأليفنا وشخصياتها خيالية.</footer>}
         {showNav && (
           <nav className="bottom-nav" aria-label="التنقل الرئيسي">
             <ul>{NAV.map(({ href, label, Icon, match }) => {

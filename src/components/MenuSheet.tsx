@@ -51,7 +51,7 @@ export function MenuSheet({ open, onClose, path, me, staff }: { open: boolean; o
         <li><Link href="/privacy" aria-current={cur("/privacy")}><ShieldIcon size={22} />الخصوصية والسلامة</Link></li>
         <li><Link href="/report" aria-current={cur("/report")}><FlagIcon size={22} />أبلِغ عن مشكلة</Link></li>
       </ul>
-      <p className="small dim">أثر · نموذج تجريبي. القصص كلها من تأليفنا وشخصياتها خيالية.</p>
+      <p className="small dim">Detective Academy · نموذج تجريبي. القصص كلها من تأليفنا وشخصياتها خيالية.</p>
     </Sheet>
   );
 }

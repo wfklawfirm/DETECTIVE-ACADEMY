@@ -20,7 +20,7 @@ export const LEVEL_LABEL: Record<string, string> = { "13-15": "مستوى 13–1
 export const GLOSSARY_STATUS_LABEL: Record<GlossaryStatus, string> = {
   sourced: "مصطلح موثّق في مصدر معتمد",
   variant: "موثّق مع صيغ بديلة",
-  proposed: "مصطلح مقترح من فريق أثر ولم يُعتمد من جهة رسمية",
+  proposed: "مصطلح مقترح من فريق Detective Academy ولم يُعتمد من جهة رسمية",
 };
 export const GLOSSARY_STATUS_TONE: Record<GlossaryStatus, Tone> = { sourced: "positive", variant: "info", proposed: "warning" };
 
@@ -30,7 +30,7 @@ export const AGE_BAND_LABEL: Record<string, string> = { "13-15": "13–15 سنة
 export const PATTERN_AGE_TONE: Record<string, Tone> = { "مناسب": "positive", "بشروط": "warning", "غير مناسب": "negative" };
 
 /** Honest provenance line used on every reference page. */
-export const UNREVIEWED_NOTE = "صياغة أولية من مكتبة أثر البحثية بمساعدة الذكاء الاصطناعي. لم يراجعها خبير مستقل بعد، ولم تُختبر مع طلاب، فاعتبرها مادة تعليمية أولية لا مرجعاً علمياً نهائياً.";
+export const UNREVIEWED_NOTE = "صياغة أولية من مكتبة Detective Academy البحثية بمساعدة الذكاء الاصطناعي. لم يراجعها خبير مستقل بعد، ولم تُختبر مع طلاب، فاعتبرها مادة تعليمية أولية لا مرجعاً علمياً نهائياً.";
 
 export const REFERENCE_PAGES = [
   { href: "/glossary", title: "المسرد الجنائي", hint: "248 مصطلحاً عربياً بتعريفات مختصرة" },
