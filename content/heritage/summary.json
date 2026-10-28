@@ -1,0 +1,19 @@
+{
+ "texts": 82,
+ "excerpted": 65,
+ "reference_only": 17,
+ "reference_cc_by_nc": 11,
+ "reference_other": 6,
+ "excerpts": 148,
+ "excerpt_words": 8556,
+ "excerpt_words_latin": 6831,
+ "excerpt_words_cjk_halfchars": 1725,
+ "max_words": 110,
+ "by_lang": {
+  "en": 48,
+  "fr": 6,
+  "ar": 11,
+  "zh": 5,
+  "ja": 12
+ }
+}

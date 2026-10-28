@@ -12,7 +12,7 @@ export function playSfx(s: Sfx): void {
   if (typeof window === "undefined" || !sfxOn()) return;
   try {
     let a = cache.get(s);
-    if (!a) { a = new Audio(`/assets/sfx/${FILE[s]}.ogg`); a.volume = 0.35; a.preload = "auto"; cache.set(s, a); }
+    if (!a) { a = new Audio(`/assets/audio/${FILE[s]}.m4a`); a.volume = 0.35; a.preload = "auto"; cache.set(s, a); }
     a.currentTime = 0; void a.play().catch(() => { /* autoplay blocked: stay silent */ });
   } catch { /* no audio support */ }
 }

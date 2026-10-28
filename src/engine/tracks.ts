@@ -25,7 +25,7 @@ export const LessonSchema = z
       answer_id: z.enum(["a", "b", "c", "d"]),
       explanation_ar: z.string().min(1),
     }),
-    case_link: z.enum(["c000_lost_notebook", "c001_last_observation"]).optional(),
+    case_link: z.string().regex(/^c\d{3}_[a-z0-9_]+$/).optional(),
   })
   .superRefine((l, ctx) => {
     const ids = l.practice.options.map((o) => o.id).sort().join("");

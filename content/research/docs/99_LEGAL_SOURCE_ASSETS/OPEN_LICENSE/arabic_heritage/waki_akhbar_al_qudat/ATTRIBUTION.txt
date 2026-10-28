@@ -1,0 +1,9 @@
+Title: Akhbar al-qudat
+Author: Waki' Muhammad ibn Khalaf
+Digital source: Open Islamicate Texts Initiative (OpenITI), file 0306Wakic.AkhbarQudat.JK007001-ara1.completed
+URL: https://raw.githubusercontent.com/OpenITI/0325AH/master/data/0306Wakic/0306Wakic.AkhbarQudat/0306Wakic.AkhbarQudat.JK007001-ara1.completed
+Licence: CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/)
+Attribution text: "Text from the OpenITI corpus (Romanov, Savant, Seydi, Verkinderen, Nigst et al.), release on Zenodo doi:10.5281/zenodo.3082463, licensed CC BY-NC-SA 4.0."
+Use limits for ATHAR: internal research only (non-commercial). Do not ship this file or substantial extracts in a paid product; commercial ATHAR stories must be our own retellings. File unchanged (byte-identical to source).
+Notes: OpenITI quality tags: RANDOM_CHARS, MISSING_PARTS, EDITORIAL_SECTIONS (section headings in parentheses are editorial).
+Stored by W2-HERITAGE on 2026-10-27.

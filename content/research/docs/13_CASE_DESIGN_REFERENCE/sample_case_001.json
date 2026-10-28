@@ -1,0 +1,2935 @@
+{
+ "schema_version": "0.1.0",
+ "case_id": "s001_rain_clear_night",
+ "case_version": "0.1.0",
+ "meta": {
+  "title_ar": "مطرٌ في ليلة صافية",
+  "title_en": "Rain on a Clear Night",
+  "age_band": "13-15",
+  "locale": "ar",
+  "dialogue_register": "msa_light_dialect",
+  "estimated_minutes": 30,
+  "difficulty": 2,
+  "content_flags": [
+   "no_violence",
+   "science_lab"
+  ],
+  "authors": [
+   "ATHAR 13_CASE_DESIGN_REFERENCE — sample (unreviewed draft)"
+  ],
+  "knowledge_object_refs": [
+   "KO-NP-02-021",
+   "KO-NP-02-002",
+   "KO-NP-02-029",
+   "KO-NP-08-004",
+   "KO-NP-02-001",
+   "KO-RS-06-017",
+   "KO-RS-06-001",
+   "KO-RS-05-007",
+   "KO-RS-05-005",
+   "KO-RS-05-002",
+   "KO-FC-04-024",
+   "KO-FC-04-011",
+   "KO-FC-04-029",
+   "KO-CD-05-005",
+   "KO-CD-02-001",
+   "KO-CD-10-003",
+   "KO-CD-10-002",
+   "KO-CD-02-007",
+   "KO-CD-10-005",
+   "KO-LA-07-002",
+   "KO-LA-10-001",
+   "KO-LA-07-011",
+   "KO-CM-10-004",
+   "KO-CM-10-005",
+   "KO-CM-10-006",
+   "KO-CM-03-030",
+   "KO-CM-03-014",
+   "KO-CM-03-037",
+   "KO-CM-03-036",
+   "KO-CM-03-023",
+   "KO-CM-03-007"
+  ]
+ },
+ "premise": {
+  "hook_ar": "سجّلت محطة الرصد على سطح المدرسة نحو 12 ملم من المطر ليلة الأربعاء، مع أن السماء كانت صافية فوق القنطرة كلها. وبيانات الشهر يجب أن تُسلَّم إلى مختبر «المنظار» في العاشرة صباحاً. لمى، قائدة الفريق، تشك في فريق مدرسة منافسة. والمطلوب: ماذا حدث فعلاً، ومن المسؤول، وما الذي نفعله بالبيانات؟",
+  "player_role_ar": "متدرّب/ة في «شبكة الأثر» التطوعية، يعمل/تعمل مع نادي العلوم في المدرسة، بلا أي صلاحيات تأديبية أو أمنية",
+  "setting_ar": "مدينة «القنطرة» المتخيّلة؛ «مدرسة ضفاف القنطرة الإعدادية» (متخيّلة)، صباح الخميس، بعد ورشة علمية مسائية مشتركة مع فريق «مدرسة النخيل» (متخيّلة). للمدرسة ليلاً بوابة واحدة تعمل بالبطاقات.",
+  "public_fact_ids": [
+   "f_rain_recorded",
+   "f_roof_rule",
+   "f_single_gate",
+   "f_deadline"
+  ],
+  "assumed_general_knowledge_ar": [
+   "المطر الحقيقي يبلّل السطح المكشوف كله تقريباً، لا بقعة صغيرة حول صنبور ماء.",
+   "الأجهزة المختلفة قد تحمل ساعات غير متطابقة، والساعة الشبكية للخادم هي المرجع داخل القضية (يُشرح في المختبر).",
+   "من خرج من البوابة الوحيدة ولم يدخل بعدها لم يعد في المبنى."
+  ]
+ },
+ "entities": {
+  "characters": [
+   {
+    "id": "ch_lama",
+    "name_ar": "لمى",
+    "role": "witness",
+    "age_descriptor_ar": "15 سنة، قائدة فريق محطة الرصد",
+    "persona_ar": "منظمة وسريعة الحماس، تتكلم بجمل قصيرة واثقة، وتميل إلى الدفاع عن فريقها.",
+    "motives_ar": [
+     "إنقاذ مشاركة الفريق في المسابقة",
+     "تخشى أن يُتّهم فريقها بالتلاعب بالبيانات"
+    ],
+    "speech_constraints": {
+     "register": "msa_light_dialect",
+     "max_sentences_per_turn": 3,
+     "forbidden_topics_ar": [
+      "حياة اللاعب الشخصية خارج القضية"
+     ]
+    },
+    "authored_lines": [
+     {
+      "line_id": "l_lama_greet",
+      "purpose": "greeting",
+      "text_ar": "أخيراً! المحطة تقول إنها أمطرت أمس، وأنا كنت أنظر إلى النجوم بنفسي. التسليم الساعة العاشرة.",
+      "fact_ids": [
+       "f_rain_recorded",
+       "f_deadline"
+      ]
+     },
+     {
+      "line_id": "l_lama_unknown",
+      "purpose": "deflect_unknown",
+      "text_ar": "لا أعرف؛ خرجت قبل الجميع تقريباً، في التاسعة والربع.",
+      "fact_ids": [
+       "f_lama_left"
+      ]
+     },
+     {
+      "line_id": "l_lama_safety",
+      "purpose": "safety_exit",
+      "text_ar": "(خارج القصة) يبدو أن هذا موضوع مهم خارج اللعبة. سنعرض عليك الآن جهة يمكنك التحدث إليها."
+     }
+    ]
+   },
+   {
+    "id": "ch_majed",
+    "name_ar": "ماجد",
+    "role": "suspect",
+    "age_descriptor_ar": "14 سنة، مسؤول صيانة المحطة في الفريق نفسه",
+    "persona_ar": "لطيف ومتعاون، يعرض المساعدة كثيراً ويقترح أين يجب أن يبحث المحقق؛ هادئ الصوت.",
+    "motives_ar": [
+     "صنع مؤقت سقاية لحديقة المدرسة ويريد مفاجأة الفريق به",
+     "يخاف أن يُستبعد الفريق لأنه صعد السطح بعد السادسة دون إذن"
+    ],
+    "speech_constraints": {
+     "register": "msa_light_dialect",
+     "max_sentences_per_turn": 3,
+     "forbidden_topics_ar": [
+      "أي طريقة لإخفاء الآثار أو تعديل السجلات"
+     ]
+    },
+    "authored_lines": [
+     {
+      "line_id": "l_majed_greet",
+      "purpose": "greeting",
+      "text_ar": "أي شيء تحتاجه من المحطة أنا جاهز. ربما تبدأ بفريق مدرسة النخيل؟"
+     },
+     {
+      "line_id": "l_majed_cover",
+      "purpose": "lie",
+      "text_ar": "بقيت في غرفة النادي أرتّب الأجهزة، ثم خرجت نحو التاسعة والنصف. لم أصعد إلى السطح أصلاً.",
+      "claim_ids": [
+       "cl_majed_club_room"
+      ]
+     },
+     {
+      "line_id": "l_majed_reveal",
+      "purpose": "reveal",
+      "text_ar": "...صحيح. صعدت لأجرب مؤقت السقاية الذي صنعته، ولم أنتبه أن الرذاذ يصل إلى المقياس. خفت أن يُستبعد الفريق لأني صعدت دون إذن.",
+      "fact_ids": [
+       "f_majed_on_roof",
+       "f_hose_majed"
+      ]
+     },
+     {
+      "line_id": "l_majed_unknown",
+      "purpose": "deflect_unknown",
+      "text_ar": "لا أعرف شيئاً عن ذلك."
+     },
+     {
+      "line_id": "l_majed_safety",
+      "purpose": "safety_exit",
+      "text_ar": "(خارج القصة) سنتوقف قليلاً عن القضية ونعرض عليك جهة دعم موثوقة."
+     }
+    ]
+   },
+   {
+    "id": "ch_ziad",
+    "name_ar": "زياد",
+    "role": "suspect",
+    "age_descriptor_ar": "14 سنة، عضو فريق «مدرسة النخيل» المشارك في الورشة",
+    "persona_ar": "خجول، يجيب باختصار، ويقلق من إبلاغ أهله؛ يصبح أكثر انفتاحاً حين يُسأل باحترام وبأسئلة مفتوحة.",
+    "motives_ar": [
+     "يريد الفوز بالمسابقة بعرض جيد",
+     "يخفي أنه ترك قاعة الورشة ليتدرّب وحده لأنه يخجل من التحدث أمام الناس"
+    ],
+    "speech_constraints": {
+     "register": "msa_light_dialect",
+     "max_sentences_per_turn": 2,
+     "forbidden_topics_ar": [
+      "حياة اللاعب الشخصية خارج القضية"
+     ]
+    },
+    "authored_lines": [
+     {
+      "line_id": "l_ziad_cover",
+      "purpose": "lie",
+      "text_ar": "كنت في قاعة الورشة طوال الوقت، ثم خرجت مع أبي. هل ستخبرون أهلي؟",
+      "claim_ids": [
+       "cl_ziad_whole_time"
+      ]
+     },
+     {
+      "line_id": "l_ziad_reveal",
+      "purpose": "reveal",
+      "text_ar": "هذا صوتي... كنت أتدرب على العرض في غرفة الموسيقى. لم أرد أن يعرف فريقي أني خائف من الكلام أمام اللجنة.",
+      "fact_ids": [
+       "f_ziad_rehearsal"
+      ]
+     },
+     {
+      "line_id": "l_ziad_unknown",
+      "purpose": "deflect_unknown",
+      "text_ar": "لم أرَ السطح، لا أعرف."
+     },
+     {
+      "line_id": "l_ziad_safety",
+      "purpose": "safety_exit",
+      "text_ar": "(خارج القصة) سنتوقف قليلاً ونعرض عليك جهة دعم موثوقة."
+     }
+    ]
+   },
+   {
+    "id": "ch_wadad",
+    "name_ar": "السيدة وداد",
+    "role": "witness",
+    "age_descriptor_ar": "قيّمة المدرسة منذ سنوات",
+    "persona_ar": "دقيقة في التفاصيل المادية، تعرف كل باب وصنبور في المبنى، وتصرّح حين لا تكون متأكدة.",
+    "motives_ar": [
+     "تريد إبلاغ الصيانة بالبقعة المبللة",
+     "تحرص على أن يبقى السطح مغلقاً بأمان"
+    ],
+    "speech_constraints": {
+     "register": "msa_light_dialect",
+     "max_sentences_per_turn": 3
+    },
+    "authored_lines": [
+     {
+      "line_id": "l_wadad_account",
+      "purpose": "reveal",
+      "text_ar": "وأنا أنظف ممر الطابق الأخير سمعت صوت ماء فوق السقف، ثم رأيت شاباً بسترة الورشة الزرقاء ينزل من درج السطح. كان ذلك قرابة العاشرة والنصف، على ما أظن.",
+      "fact_ids": [
+       "f_wadad_heard",
+       "f_wadad_saw"
+      ],
+      "claim_ids": [
+       "cl_wadad_time"
+      ]
+     },
+     {
+      "line_id": "l_wadad_unknown",
+      "purpose": "deflect_unknown",
+      "text_ar": "لم أرَ وجهه؛ كل المشاركين لبسوا السترة نفسها."
+     },
+     {
+      "line_id": "l_wadad_safety",
+      "purpose": "safety_exit",
+      "text_ar": "(خارج القصة) سنتوقف قليلاً ونعرض عليك جهة دعم موثوقة."
+     }
+    ]
+   },
+   {
+    "id": "ch_noor",
+    "name_ar": "م. نور",
+    "role": "expert",
+    "age_descriptor_ar": "مهندسة في مختبر «المنظار»",
+    "persona_ar": "هادئة ومتواضعة معرفياً؛ تشرح بتشبيه قصير، وتذكر دائماً حدّاً واحداً على الأقل لما يثبته الدليل.",
+    "motives_ar": [
+     "أن تُسلَّم بيانات صادقة حتى لو كانت ناقصة"
+    ],
+    "speech_constraints": {
+     "register": "msa",
+     "max_sentences_per_turn": 3,
+     "forbidden_topics_ar": [
+      "طرق تعديل الطوابع الزمنية أو حذف السجلات",
+      "أي حكم بالذنب على شخص"
+     ]
+    },
+    "authored_lines": [
+     {
+      "line_id": "l_noor_limits",
+      "purpose": "deflect_unknown",
+      "text_ar": "هذا الفرق قسناه اليوم. هل كان هو نفسه ليلة الأربعاء؟ نحتاج مصدراً مستقلاً بتوقيت مختلف."
+     },
+     {
+      "line_id": "l_noor_safety",
+      "purpose": "safety_exit",
+      "text_ar": "(خارج القصة) سنتوقف قليلاً ونعرض عليك جهة دعم موثوقة."
+     }
+    ]
+   },
+   {
+    "id": "ch_yusuf",
+    "name_ar": "يوسف",
+    "role": "assistant",
+    "age_descriptor_ar": "متطوع شاب في وحدة «تحقّق» التابعة لشبكة الأثر",
+    "persona_ar": "سريع وفضولي، يفكر بصوت عالٍ ويتسرّع أحياناً، ثم يعترف بخطئه حين يُعرض عليه دليل.",
+    "motives_ar": [
+     "أن يتعلم المتدرّب المنهج لا الحل فقط"
+    ],
+    "speech_constraints": {
+     "register": "msa_light_dialect",
+     "max_sentences_per_turn": 2,
+     "forbidden_topics_ar": [
+      "ذكر الحل أو أي حقيقة لم يكتشفها اللاعب"
+     ]
+    },
+    "authored_lines": [
+     {
+      "line_id": "l_yusuf_hasty",
+      "purpose": "greeting",
+      "text_ar": "زياد كان متوتراً جداً... أليس هذا كافياً؟ لا، انتظر — هذه ملاحظة عن سلوكه، لا دليل على فعل. ماذا نحتاج لنعرف؟"
+     },
+     {
+      "line_id": "l_yusuf_safety",
+      "purpose": "safety_exit",
+      "text_ar": "(خارج القصة) أنا شخصية ذكاء اصطناعي داخل اللعبة. سنعرض عليك الآن جهة دعم حقيقية."
+     }
+    ]
+   }
+  ],
+  "locations": [
+   {
+    "id": "loc_roof",
+    "name_ar": "سطح المدرسة",
+    "aliases_ar": [
+     "السطح"
+    ],
+    "description_ar": "عليه محطة الرصد ومقياس المطر، وصنبور لحديقة السطح على بعد نحو ثلاثة أمتار."
+   },
+   {
+    "id": "loc_club_room",
+    "name_ar": "غرفة نادي العلوم",
+    "aliases_ar": [
+     "غرفة النادي"
+    ]
+   },
+   {
+    "id": "loc_music_room",
+    "name_ar": "غرفة الموسيقى",
+    "aliases_ar": [
+     "قاعة الموسيقى"
+    ]
+   },
+   {
+    "id": "loc_hall",
+    "name_ar": "قاعة الورشة",
+    "aliases_ar": [
+     "القاعة"
+    ]
+   },
+   {
+    "id": "loc_gate",
+    "name_ar": "البوابة الرئيسية",
+    "aliases_ar": [
+     "البوابة"
+    ]
+   },
+   {
+    "id": "loc_top_corridor",
+    "name_ar": "ممر الطابق الأخير",
+    "aliases_ar": [
+     "الممر العلوي",
+     "درج السطح"
+    ]
+   }
+  ],
+  "objects": [
+   {
+    "id": "obj_station",
+    "name_ar": "محطة الرصد",
+    "aliases_ar": [
+     "المحطة",
+     "محطة الطقس"
+    ]
+   },
+   {
+    "id": "obj_gauge",
+    "name_ar": "مقياس المطر",
+    "aliases_ar": [
+     "المقياس"
+    ]
+   },
+   {
+    "id": "obj_timer",
+    "name_ar": "مؤقت السقاية",
+    "aliases_ar": [
+     "المؤقت"
+    ]
+   },
+   {
+    "id": "obj_hose",
+    "name_ar": "خرطوم السطح",
+    "aliases_ar": [
+     "الخرطوم"
+    ]
+   },
+   {
+    "id": "obj_tablet",
+    "name_ar": "الجهاز اللوحي لغرفة الموسيقى",
+    "aliases_ar": [
+     "اللوحي",
+     "التابلت"
+    ]
+   },
+   {
+    "id": "obj_hoodie",
+    "name_ar": "سترة الورشة الزرقاء",
+    "aliases_ar": [
+     "السترة الزرقاء"
+    ]
+   }
+  ],
+  "organizations": [
+   {
+    "id": "org_school",
+    "name_ar": "مدرسة ضفاف القنطرة الإعدادية"
+   },
+   {
+    "id": "org_rival_school",
+    "name_ar": "مدرسة النخيل"
+   },
+   {
+    "id": "org_manzar",
+    "name_ar": "مختبر المنظار"
+   },
+   {
+    "id": "org_observatory",
+    "name_ar": "مرصد القنطرة"
+   },
+   {
+    "id": "org_athar_network",
+    "name_ar": "شبكة الأثر"
+   }
+  ]
+ },
+ "truth": {
+  "solution": {
+   "culprit_ids": [
+    "ch_majed"
+   ],
+   "summary_ar": "لم تمطر. صعد ماجد إلى السطح برمز الصيانة الساعة 21:52 دون إذن المشرف ليجرّب مؤقت سقاية صنعه، فشغّل خرطوم الصنبور 18 دقيقة (21:56–22:14 بتوقيت الشبكة)، ووصل الرذاذ إلى مقياس المطر. ساعة المحطة متأخرة 25 دقيقة منذ انقطاع كهرباء يوم الاثنين، فسجّلت «المطر» بين 21:31 و21:49، وهي فترة كان زياد فيها داخل المبنى، فبدا الأمر كأنه فعله. لم يقصد ماجد التخريب، لكنه كذب خوفاً من استبعاد الفريق. زياد بريء: انصرف 21:47 وخرج 21:48، وتوتره سببه أنه كان يتدرّب سراً على العرض.",
+   "key_fact_ids": [
+    "f_hose_majed",
+    "f_true_window",
+    "f_majed_on_roof"
+   ]
+  },
+  "facts": [
+   {
+    "id": "f_rain_recorded",
+    "statement_ar": "محطة الرصد سجّلت نحو 12 ملم من الهطول ليلة الأربعاء، والسماء كانت صافية.",
+    "kind": "state",
+    "subject_ids": [
+     "obj_station"
+    ],
+    "spoiler_level": 0
+   },
+   {
+    "id": "f_roof_rule",
+    "statement_ar": "قواعد النادي تمنع الصعود إلى السطح بعد السادسة مساءً دون إذن المشرف.",
+    "kind": "state",
+    "subject_ids": [
+     "loc_roof"
+    ],
+    "spoiler_level": 0
+   },
+   {
+    "id": "f_single_gate",
+    "statement_ar": "بعد الثامنة مساءً تُغلق كل الأبواب عدا البوابة الرئيسية التي تسجّل الدخول والخروج بالبطاقات.",
+    "kind": "state",
+    "subject_ids": [
+     "loc_gate"
+    ],
+    "spoiler_level": 0
+   },
+   {
+    "id": "f_deadline",
+    "statement_ar": "يجب تسليم بيانات الشهر إلى مختبر المنظار الساعة العاشرة صباح الخميس.",
+    "kind": "state",
+    "subject_ids": [
+     "org_manzar"
+    ],
+    "spoiler_level": 0
+   },
+   {
+    "id": "f_power_cut",
+    "statement_ar": "انقطعت الكهرباء عن المدرسة 25 دقيقة مساء الاثنين.",
+    "kind": "event",
+    "subject_ids": [
+     "obj_station"
+    ],
+    "spoiler_level": 1,
+    "time": {
+     "start_min": -3060,
+     "end_min": -3035,
+     "precision": "exact"
+    }
+   },
+   {
+    "id": "f_station_clock_lag",
+    "statement_ar": "ساعة المحطة متوقفة 25 دقيقة منذ انقطاع الاثنين ولم تُضبط، فهي متأخرة 25 دقيقة عن توقيت الشبكة.",
+    "kind": "state",
+    "subject_ids": [
+     "obj_station"
+    ],
+    "spoiler_level": 2,
+    "science_ko_refs": [
+     "KO-FC-04-024"
+    ]
+   },
+   {
+    "id": "f_true_window",
+    "statement_ar": "دخل الماء مقياس المطر بين 21:56 و22:14 بتوقيت الشبكة.",
+    "kind": "event",
+    "subject_ids": [
+     "obj_gauge"
+    ],
+    "spoiler_level": 2,
+    "time": {
+     "start_min": 56,
+     "end_min": 74,
+     "precision": "exact"
+    },
+    "location_id": "loc_roof",
+    "science_ko_refs": [
+     "KO-FC-04-024"
+    ]
+   },
+   {
+    "id": "f_lama_left",
+    "statement_ar": "خرجت لمى من البوابة الساعة 21:15.",
+    "kind": "event",
+    "subject_ids": [
+     "ch_lama"
+    ],
+    "spoiler_level": 1,
+    "time": {
+     "start_min": 15,
+     "precision": "exact"
+    },
+    "location_id": "loc_gate"
+   },
+   {
+    "id": "f_participants_left",
+    "statement_ar": "خرج بقية مشاركي الورشة بين 21:45 و21:50، ولم يدخل أحد بعد 20:30.",
+    "kind": "event",
+    "subject_ids": [
+     "loc_hall"
+    ],
+    "spoiler_level": 1,
+    "time": {
+     "start_min": 45,
+     "end_min": 50,
+     "precision": "exact"
+    },
+    "location_id": "loc_gate"
+   },
+   {
+    "id": "f_hoodie_common",
+    "statement_ar": "وُزّعت سترة الورشة الزرقاء على المشاركين الثلاثين كلهم، ومنهم ماجد وزياد.",
+    "kind": "attribute",
+    "subject_ids": [
+     "obj_hoodie"
+    ],
+    "spoiler_level": 0,
+    "science_ko_refs": [
+     "KO-FC-04-011"
+    ]
+   },
+   {
+    "id": "f_ziad_rehearsal",
+    "statement_ar": "تدرّب زياد وحده على عرض فريقه في غرفة الموسيقى بين 21:20 و21:44.",
+    "kind": "event",
+    "subject_ids": [
+     "ch_ziad"
+    ],
+    "spoiler_level": 1,
+    "time": {
+     "start_min": 20,
+     "end_min": 44,
+     "precision": "exact"
+    },
+    "location_id": "loc_music_room"
+   },
+   {
+    "id": "f_ziad_left",
+    "statement_ar": "انصرف زياد من قاعة الورشة مع والده 21:47 وخرج من البوابة 21:48.",
+    "kind": "event",
+    "subject_ids": [
+     "ch_ziad"
+    ],
+    "spoiler_level": 1,
+    "time": {
+     "start_min": 47,
+     "end_min": 48,
+     "precision": "exact"
+    },
+    "location_id": "loc_gate"
+   },
+   {
+    "id": "f_roof_opened_code",
+    "statement_ar": "فُتح باب السطح برمز الصيانة 21:52 وأُغلق 22:17؛ الرمز مسجل للمى وماجد.",
+    "kind": "event",
+    "subject_ids": [
+     "loc_roof"
+    ],
+    "spoiler_level": 2,
+    "time": {
+     "start_min": 52,
+     "end_min": 77,
+     "precision": "exact"
+    },
+    "location_id": "loc_roof"
+   },
+   {
+    "id": "f_majed_on_roof",
+    "statement_ar": "كان ماجد على السطح من 21:52 إلى 22:17.",
+    "kind": "event",
+    "subject_ids": [
+     "ch_majed"
+    ],
+    "spoiler_level": 2,
+    "time": {
+     "start_min": 52,
+     "end_min": 77,
+     "precision": "exact"
+    },
+    "location_id": "loc_roof"
+   },
+   {
+    "id": "f_majed_plan",
+    "statement_ar": "كتب ماجد في دفتره خطة «تجربة رشّ ليلية لمؤقت السقاية — 9:50 — صنبور السطح».",
+    "kind": "state",
+    "subject_ids": [
+     "ch_majed"
+    ],
+    "spoiler_level": 1
+   },
+   {
+    "id": "f_timer_installed",
+    "statement_ar": "مؤقت سقاية يحمل اسم ماجد مركّب على صنبور السطح، وشاشته تعرض أن آخر تشغيل استمر 18 دقيقة.",
+    "kind": "state",
+    "subject_ids": [
+     "obj_timer"
+    ],
+    "spoiler_level": 1,
+    "location_id": "loc_roof"
+   },
+   {
+    "id": "f_hose_majed",
+    "statement_ar": "شغّل ماجد خرطوم الصنبور عبر مؤقته 18 دقيقة، ووصل الرذاذ إلى مقياس المطر.",
+    "kind": "event",
+    "subject_ids": [
+     "ch_majed",
+     "obj_timer",
+     "obj_gauge"
+    ],
+    "spoiler_level": 3,
+    "time": {
+     "start_min": 56,
+     "end_min": 74,
+     "precision": "exact"
+    },
+    "location_id": "loc_roof"
+   },
+   {
+    "id": "f_majed_exit",
+    "statement_ar": "خرج ماجد من البوابة الساعة 22:21.",
+    "kind": "event",
+    "subject_ids": [
+     "ch_majed"
+    ],
+    "spoiler_level": 1,
+    "time": {
+     "start_min": 81,
+     "precision": "exact"
+    },
+    "location_id": "loc_gate"
+   },
+   {
+    "id": "f_no_city_rain",
+    "statement_ar": "لم تسجل أي من محطات مرصد القنطرة الاثنتي عشرة هطولاً ليلة الأربعاء، والسماء صافية.",
+    "kind": "state",
+    "subject_ids": [
+     "org_observatory"
+    ],
+    "spoiler_level": 1
+   },
+   {
+    "id": "f_water_in_bottle",
+    "statement_ar": "قارورة التجميع أسفل المقياس فيها ماء حقيقي حتى علامة 12 ملم تقريباً.",
+    "kind": "state",
+    "subject_ids": [
+     "obj_gauge"
+    ],
+    "spoiler_level": 1
+   },
+   {
+    "id": "f_wet_patch",
+    "statement_ar": "في 22:31 كانت أرضية السطح جافة إلا بقعة مبللة تمتد من الصنبور إلى قاعدة المقياس.",
+    "kind": "state",
+    "subject_ids": [
+     "loc_roof"
+    ],
+    "spoiler_level": 1,
+    "time": {
+     "start_min": 91,
+     "precision": "exact"
+    },
+    "location_id": "loc_roof"
+   },
+   {
+    "id": "f_wadad_heard",
+    "statement_ar": "سمعت السيدة وداد صوت ماء فوق السقف وهي في ممر الطابق الأخير.",
+    "kind": "event",
+    "subject_ids": [
+     "ch_wadad"
+    ],
+    "spoiler_level": 1,
+    "time": {
+     "start_min": 65,
+     "precision": "exact"
+    },
+    "location_id": "loc_top_corridor"
+   },
+   {
+    "id": "f_wadad_saw",
+    "statement_ar": "رأت السيدة وداد شاباً بسترة الورشة الزرقاء ينزل من درج السطح نحو 22:18.",
+    "kind": "event",
+    "subject_ids": [
+     "ch_wadad",
+     "ch_majed"
+    ],
+    "spoiler_level": 1,
+    "time": {
+     "start_min": 78,
+     "precision": "exact"
+    },
+    "location_id": "loc_top_corridor"
+   },
+   {
+    "id": "f_wadad_exit",
+    "statement_ar": "خرجت السيدة وداد من البوابة الساعة 22:40.",
+    "kind": "event",
+    "subject_ids": [
+     "ch_wadad"
+    ],
+    "spoiler_level": 1,
+    "time": {
+     "start_min": 100,
+     "precision": "exact"
+    },
+    "location_id": "loc_gate"
+   }
+  ],
+  "claims": [
+   {
+    "id": "cl_majed_club_room",
+    "statement_ar": "بقيت في غرفة النادي أرتّب الأجهزة ثم خرجت نحو التاسعة والنصف، ولم أصعد إلى السطح.",
+    "kind": "lie",
+    "held_by": [
+     "ch_majed"
+    ],
+    "true_fact_id": "f_majed_on_roof",
+    "contradicted_by_evidence_ids": [
+     "ev_gate_log",
+     "ev_roof_door_log",
+     "ev_majed_notebook",
+     "ev_workshop_signout"
+    ]
+   },
+   {
+    "id": "cl_ziad_whole_time",
+    "statement_ar": "كنت في قاعة الورشة طوال الوقت حتى خرجت مع أبي.",
+    "kind": "half_truth",
+    "held_by": [
+     "ch_ziad"
+    ],
+    "true_fact_id": "f_ziad_rehearsal",
+    "contradicted_by_evidence_ids": [
+     "ev_ziad_recording"
+    ]
+   },
+   {
+    "id": "cl_wadad_time",
+    "statement_ar": "سمعت الماء ورأيت الشاب ينزل قرابة العاشرة والنصف.",
+    "kind": "honest_mistake",
+    "held_by": [
+     "ch_wadad"
+    ],
+    "true_fact_id": "f_wadad_saw",
+    "contradicted_by_evidence_ids": [
+     "ev_chat_alerts",
+     "ev_roof_door_log"
+    ]
+   }
+  ]
+ },
+ "timeline": [
+  {
+   "id": "t_power_cut",
+   "description_ar": "انقطاع كهرباء عام في الحي مساء الاثنين؛ تتوقف ساعة المحطة 25 دقيقة.",
+   "time": {
+    "start_min": -3060,
+    "end_min": -3035
+   },
+   "actor_ids": [],
+   "fact_ids": [
+    "f_power_cut",
+    "f_station_clock_lag"
+   ]
+  },
+  {
+   "id": "t_lama_exit",
+   "description_ar": "لمى تخرج من البوابة.",
+   "time": {
+    "start_min": 15
+   },
+   "location_id": "loc_gate",
+   "actor_ids": [
+    "ch_lama"
+   ],
+   "fact_ids": [
+    "f_lama_left"
+   ],
+   "motivated_by_ar": "أنهت مهمتها في الورشة وعادت إلى البيت."
+  },
+  {
+   "id": "t_ziad_rehearse",
+   "description_ar": "زياد يتدرّب وحده على العرض ويسجّل صوته على اللوحي.",
+   "time": {
+    "start_min": 20,
+    "end_min": 44
+   },
+   "location_id": "loc_music_room",
+   "actor_ids": [
+    "ch_ziad"
+   ],
+   "fact_ids": [
+    "f_ziad_rehearsal"
+   ],
+   "motivated_by_ar": "يخجل من التحدث أمام اللجنة ولا يريد أن يراه أحد وهو يتدرب."
+  },
+  {
+   "id": "t_participants_exit",
+   "description_ar": "بقية المشاركين يخرجون من البوابة.",
+   "time": {
+    "start_min": 45,
+    "end_min": 50
+   },
+   "location_id": "loc_gate",
+   "actor_ids": [],
+   "fact_ids": [
+    "f_participants_left"
+   ]
+  },
+  {
+   "id": "t_ziad_signout",
+   "description_ar": "زياد يوقّع ورقة الانصراف ويستلمه والده.",
+   "time": {
+    "start_min": 47
+   },
+   "location_id": "loc_hall",
+   "actor_ids": [
+    "ch_ziad"
+   ],
+   "fact_ids": [
+    "f_ziad_left"
+   ],
+   "motivated_by_ar": "وصل والده لاصطحابه."
+  },
+  {
+   "id": "t_ziad_exit",
+   "description_ar": "زياد يخرج من البوابة.",
+   "time": {
+    "start_min": 48
+   },
+   "location_id": "loc_gate",
+   "actor_ids": [
+    "ch_ziad"
+   ],
+   "fact_ids": [
+    "f_ziad_left"
+   ],
+   "motivated_by_ar": "يغادر مع والده."
+  },
+  {
+   "id": "t_majed_opens_roof",
+   "description_ar": "ماجد يفتح باب السطح برمز الصيانة.",
+   "time": {
+    "start_min": 52
+   },
+   "location_id": "loc_roof",
+   "actor_ids": [
+    "ch_majed"
+   ],
+   "fact_ids": [
+    "f_roof_opened_code",
+    "f_majed_on_roof"
+   ],
+   "motivated_by_ar": "أراد تجربة مؤقت السقاية الذي صنعه قبل أن يعرضه على الفريق."
+  },
+  {
+   "id": "t_hose_run",
+   "description_ar": "ماجد يشغّل الخرطوم عبر المؤقت 18 دقيقة؛ الرذاذ يصل إلى المقياس دون أن ينتبه.",
+   "time": {
+    "start_min": 56,
+    "end_min": 74
+   },
+   "location_id": "loc_roof",
+   "actor_ids": [
+    "ch_majed"
+   ],
+   "fact_ids": [
+    "f_hose_majed",
+    "f_true_window"
+   ],
+   "motivated_by_ar": "تجربة يدوية لمدى رشّ المؤقت.",
+   "caused_by_event_ids": [
+    "t_majed_opens_roof"
+   ]
+  },
+  {
+   "id": "t_station_records",
+   "description_ar": "المحطة تسجّل «هطولاً» بساعتها المتأخرة (21:31–21:49) وترسل تنبيهين إلى دردشة الفريق بتوقيت الخادم (21:56 و22:14).",
+   "time": {
+    "start_min": 56,
+    "end_min": 74
+   },
+   "location_id": "loc_roof",
+   "actor_ids": [],
+   "fact_ids": [
+    "f_rain_recorded"
+   ],
+   "caused_by_event_ids": [
+    "t_hose_run",
+    "t_power_cut"
+   ]
+  },
+  {
+   "id": "t_wadad_hears",
+   "description_ar": "السيدة وداد تسمع صوت ماء فوق السقف.",
+   "time": {
+    "start_min": 65
+   },
+   "location_id": "loc_top_corridor",
+   "actor_ids": [],
+   "witness_ids": [
+    "ch_wadad"
+   ],
+   "fact_ids": [
+    "f_wadad_heard"
+   ]
+  },
+  {
+   "id": "t_majed_closes_roof",
+   "description_ar": "ماجد يغلق باب السطح.",
+   "time": {
+    "start_min": 77
+   },
+   "location_id": "loc_roof",
+   "actor_ids": [
+    "ch_majed"
+   ],
+   "fact_ids": [
+    "f_roof_opened_code"
+   ],
+   "motivated_by_ar": "انتهى من التجربة."
+  },
+  {
+   "id": "t_majed_descends",
+   "description_ar": "ماجد ينزل من درج السطح بسترة الورشة، وتراه وداد من الخلف.",
+   "time": {
+    "start_min": 78
+   },
+   "location_id": "loc_top_corridor",
+   "actor_ids": [
+    "ch_majed"
+   ],
+   "witness_ids": [
+    "ch_wadad"
+   ],
+   "fact_ids": [
+    "f_wadad_saw"
+   ],
+   "motivated_by_ar": "النزول بعد إنهاء التجربة."
+  },
+  {
+   "id": "t_majed_exit",
+   "description_ar": "ماجد يخرج من البوابة.",
+   "time": {
+    "start_min": 81
+   },
+   "location_id": "loc_gate",
+   "actor_ids": [
+    "ch_majed"
+   ],
+   "fact_ids": [
+    "f_majed_exit"
+   ],
+   "motivated_by_ar": "العودة إلى البيت."
+  },
+  {
+   "id": "t_wadad_photo",
+   "description_ar": "وداد تفتح السطح ببطاقتها في جولة الإغلاق وتصوّر البقعة المبللة لتبلغ الصيانة.",
+   "time": {
+    "start_min": 90,
+    "end_min": 93
+   },
+   "location_id": "loc_roof",
+   "actor_ids": [
+    "ch_wadad"
+   ],
+   "fact_ids": [
+    "f_wet_patch"
+   ],
+   "motivated_by_ar": "جولة الإغلاق المعتادة، وأرادت إبلاغ الصيانة بتسرّب محتمل."
+  },
+  {
+   "id": "t_wadad_exit",
+   "description_ar": "وداد تخرج من البوابة.",
+   "time": {
+    "start_min": 100
+   },
+   "location_id": "loc_gate",
+   "actor_ids": [
+    "ch_wadad"
+   ],
+   "fact_ids": [
+    "f_wadad_exit"
+   ],
+   "motivated_by_ar": "انتهاء دوامها."
+  },
+  {
+   "id": "t_morning_discovery",
+   "description_ar": "لمى تكتشف «المطر» في البيانات صباح الخميس.",
+   "time": {
+    "start_min": 630
+   },
+   "location_id": "loc_club_room",
+   "actor_ids": [
+    "ch_lama"
+   ],
+   "fact_ids": [
+    "f_rain_recorded"
+   ],
+   "motivated_by_ar": "تفقّد البيانات قبل التسليم."
+  },
+  {
+   "id": "t_majed_denies",
+   "description_ar": "ماجد يقول للمى إنه غادر نحو التاسعة والنصف ولم يصعد السطح.",
+   "time": {
+    "start_min": 640
+   },
+   "location_id": "loc_club_room",
+   "actor_ids": [
+    "ch_majed"
+   ],
+   "fact_ids": [],
+   "motivated_by_ar": "خاف أن يُستبعد الفريق لأنه خالف قاعدة السطح."
+  }
+ ],
+ "evidence": [
+  {
+   "id": "ev_station_log",
+   "title_ar": "سجل محطة الرصد",
+   "kind": "digital",
+   "content_ar": "قراءات هطول متتالية بحسب ساعة المحطة من 21:31 إلى 21:49، مجموعها نحو 12 ملم. بقية الليلة صفر. لا يوجد في السجل ما يدل على مصدر الماء.",
+   "acquired_by_action_ids": [
+    "a_open_station_log"
+   ],
+   "supports_fact_ids": [
+    "f_rain_recorded"
+   ],
+   "reliability": "strong",
+   "limits_ar": "يسجل ما قاسه الجهاز بحسب ساعته الداخلية؛ لا يحدد مصدر الماء ولا من كان قرب المقياس، ولا يضمن أن ساعة الجهاز مضبوطة.",
+   "location_id": "loc_club_room",
+   "forensic_ko_ref": "KO-FC-04-024"
+  },
+  {
+   "id": "ev_lab_clock_offset",
+   "title_ar": "نتيجة مختبر الخط الزمني الرقمي",
+   "kind": "lab_result",
+   "content_ar": "مقارنة ساعة المحطة اليوم بساعة الشبكة: المحطة متأخرة 25 دقيقة (±1 دقيقة). سجل أعطال المحطة يذكر انقطاع كهرباء 25 دقيقة مساء الاثنين، ولا يذكر ضبطاً للساعة بعده. (بيانات خيالية)",
+   "acquired_by_action_ids": [
+    "a_request_clock_lab"
+   ],
+   "supports_fact_ids": [
+    "f_station_clock_lag",
+    "f_power_cut"
+   ],
+   "reliability": "strong",
+   "limits_ar": "يقيس الفرق اليوم فقط؛ افتراض أن الفرق كان نفسه ليلة الأربعاء يحتاج تأكيداً من مصدر مستقل يحمل توقيتاً آخر. ولا يقول شيئاً عمّن كان على السطح.",
+   "location_id": "loc_club_room",
+   "forensic_ko_ref": "KO-FC-04-024"
+  },
+  {
+   "id": "ev_chat_alerts",
+   "title_ar": "تنبيهات المحطة في دردشة الفريق",
+   "kind": "digital",
+   "content_ar": "رسالتان آليتان من حساب المحطة في مجموعة الفريق: «بدء هطول» بتوقيت الخادم 21:56، و«توقف الهطول» 22:14.",
+   "acquired_by_action_ids": [
+    "a_read_club_chat"
+   ],
+   "supports_fact_ids": [
+    "f_true_window"
+   ],
+   "reliability": "strong",
+   "limits_ar": "توقيت الخادم يبيّن متى وصلت الرسالة لا ما سبّب القراءة؛ وقد يتأخر الإرسال قليلاً إن ضعف الاتصال.",
+   "contradicts_claim_ids": [
+    "cl_wadad_time"
+   ],
+   "forensic_ko_ref": "KO-FC-04-024"
+  },
+  {
+   "id": "ev_city_bulletin",
+   "title_ar": "نشرة مرصد القنطرة",
+   "kind": "documentary",
+   "content_ar": "من محرك البحث داخل القضية: نشرة مرصد القنطرة ليوم الخميس — «لا هطول في أي من محطاتنا الاثنتي عشرة ليلة الأربعاء، وسماء صافية فوق المدينة».",
+   "acquired_by_action_ids": [
+    "a_search_city_bulletin"
+   ],
+   "supports_fact_ids": [
+    "f_no_city_rain"
+   ],
+   "reliability": "strong",
+   "limits_ar": "تغطي محطات المرصد لا سطح المدرسة نفسه؛ تجعل المطر فوق المدرسة بعيداً جداً لكنها لا تقيسه مباشرة."
+  },
+  {
+   "id": "ev_collector_bottle",
+   "title_ar": "قارورة التجميع",
+   "kind": "physical",
+   "content_ar": "القارورة الشفافة أسفل المقياس فيها ماء حتى علامة 12 ملم تقريباً، وعلى جدارها الخارجي قطرات جافة الأثر.",
+   "acquired_by_action_ids": [
+    "a_examine_gauge"
+   ],
+   "supports_fact_ids": [
+    "f_water_in_bottle"
+   ],
+   "reliability": "strong",
+   "limits_ar": "يثبت أن ماءً حقيقياً دخل المقياس، ولا يحدد مصدره ولا وقت دخوله.",
+   "location_id": "loc_roof"
+  },
+  {
+   "id": "ev_roof_photo",
+   "title_ar": "صورة السطح من هاتف وداد",
+   "kind": "digital",
+   "content_ar": "صورة بتوقيت الشبكة 22:31: أرضية السطح جافة إلا بقعة مبللة تمتد من صنبور الحديقة إلى قاعدة المقياس؛ خرطوم ملفوف بجوار الصنبور، والقارورة الشفافة أسفل المقياس فيها ماء ظاهر.",
+   "acquired_by_action_ids": [
+    "a_ask_wadad_photo"
+   ],
+   "supports_fact_ids": [
+    "f_wet_patch",
+    "f_water_in_bottle"
+   ],
+   "reliability": "strong",
+   "limits_ar": "تُظهر لحظة 22:31 فقط؛ لا تُظهر من شغّل الخرطوم ولا متى بدأ البلل.",
+   "location_id": "loc_roof"
+  },
+  {
+   "id": "ev_gate_log",
+   "title_ar": "سجل بطاقات البوابة",
+   "kind": "digital",
+   "content_ar": "سجل متزامن آلياً مع الشبكة: لا دخول بعد 20:30. خروج: لمى 21:15 — مشاركو الورشة بين 21:45 و21:50 (منهم زياد 21:48) — ماجد 22:21 — وداد 22:40.",
+   "acquired_by_action_ids": [
+    "a_request_gate_log"
+   ],
+   "supports_fact_ids": [
+    "f_lama_left",
+    "f_participants_left",
+    "f_ziad_left",
+    "f_majed_exit",
+    "f_wadad_exit"
+   ],
+   "reliability": "strong",
+   "limits_ar": "يثبت استخدام البطاقة لا هوية حاملها؛ ولا يقول شيئاً عمّا فعله أحد داخل المبنى.",
+   "location_id": "loc_gate",
+   "contradicts_claim_ids": [
+    "cl_majed_club_room"
+   ],
+   "forensic_ko_ref": "KO-FC-04-024"
+  },
+  {
+   "id": "ev_workshop_signout",
+   "title_ar": "ورقة انصراف الورشة",
+   "kind": "documentary",
+   "content_ar": "ورقة يدوية بتوقيع منسق الورشة: «تسلّم المشاركون الثلاثون سترة الورشة الزرقاء». في الانصراف: «زياد — 9:47 — استلمه والده»، وآخر توقيع 9:50، وملاحظة: «ماجد (الفريق المضيف) بقي لترتيب الأجهزة».",
+   "acquired_by_action_ids": [
+    "a_examine_signout"
+   ],
+   "supports_fact_ids": [
+    "f_ziad_left",
+    "f_hoodie_common",
+    "f_participants_left"
+   ],
+   "reliability": "moderate",
+   "limits_ar": "الأوقات مكتوبة بخط اليد وتعتمد على ساعة المنسق؛ تثبت الانصراف من القاعة كما سجله المنسق، لا ما حدث بعده.",
+   "location_id": "loc_hall",
+   "contradicts_claim_ids": [
+    "cl_majed_club_room"
+   ]
+  },
+  {
+   "id": "ev_roof_door_log",
+   "title_ar": "سجل قفل باب السطح",
+   "kind": "digital",
+   "content_ar": "قفل إلكتروني متزامن مع الشبكة: فتح برمز الصيانة 21:52 — إغلاق 22:17 — فتح ببطاقة القيّمة 22:30 — إغلاق 22:33. رمز الصيانة مسجل لفريق المحطة: لمى وماجد.",
+   "acquired_by_action_ids": [
+    "a_request_roof_log"
+   ],
+   "supports_fact_ids": [
+    "f_roof_opened_code"
+   ],
+   "reliability": "strong",
+   "limits_ar": "يثبت استخدام الرمز لا هوية مستخدمه؛ من يعرف الرمز قد يكون أخبر به غيره.",
+   "location_id": "loc_roof",
+   "contradicts_claim_ids": [
+    "cl_majed_club_room",
+    "cl_wadad_time"
+   ],
+   "forensic_ko_ref": "KO-FC-04-024"
+  },
+  {
+   "id": "ev_timer_device",
+   "title_ar": "مؤقت السقاية على صنبور السطح",
+   "kind": "physical",
+   "content_ar": "جهاز صغير مركّب على صنبور السطح وموصول بالخرطوم، عليه ملصق «مشروع سقاية الحديقة — ماجد»، وشاشته تعرض «آخر تشغيل: 18 دقيقة».",
+   "acquired_by_action_ids": [
+    "a_search_roof"
+   ],
+   "supports_fact_ids": [
+    "f_timer_installed",
+    "f_hose_majed"
+   ],
+   "reliability": "strong",
+   "limits_ar": "الملصق يدل على صاحب الجهاز لا على من شغّله؛ ومدة التشغيل لا تحدد وقته.",
+   "location_id": "loc_roof"
+  },
+  {
+   "id": "ev_majed_notebook",
+   "title_ar": "صفحة من دفتر ماجد",
+   "kind": "documentary",
+   "content_ar": "في دفتر مشاريع ماجد بغرفة النادي: «تجربة رشّ ليلية لمؤقت السقاية — 9:50 — صنبور السطح — المدى 3 أمتار؟»",
+   "acquired_by_action_ids": [
+    "a_search_club_room"
+   ],
+   "supports_fact_ids": [
+    "f_majed_plan",
+    "f_hose_majed"
+   ],
+   "reliability": "moderate",
+   "limits_ar": "الدفتر يثبت خطة لا تنفيذاً؛ الخطط قد تتغير أو تُؤجَّل.",
+   "location_id": "loc_club_room",
+   "contradicts_claim_ids": [
+    "cl_majed_club_room"
+   ]
+  },
+  {
+   "id": "ev_wadad_testimony",
+   "title_ar": "إفادة السيدة وداد",
+   "kind": "testimonial",
+   "content_ar": "«وأنا أنظف ممر الطابق الأخير سمعت صوت ماء فوق السقف، ثم رأيت شاباً بسترة الورشة الزرقاء ينزل من درج السطح، قرابة العاشرة والنصف على ما أظن. لم أرَ وجهه.»",
+   "acquired_by_action_ids": [
+    "a_interview_wadad"
+   ],
+   "supports_fact_ids": [
+    "f_wadad_heard",
+    "f_wadad_saw"
+   ],
+   "reliability": "moderate",
+   "limits_ar": "الوقت تقدير من الذاكرة دون ساعة؛ ولم ترَ الوجه، والسترة لبسها المشاركون الثلاثون كلهم.",
+   "location_id": "loc_top_corridor"
+  },
+  {
+   "id": "ev_ziad_demeanour",
+   "title_ar": "ملاحظة: سلوك زياد في المقابلة",
+   "kind": "observation",
+   "content_ar": "يجيب زياد باختصار، ويتجنب النظر، ويسأل مرتين إن كان «سيُبلَّغ أهله».",
+   "acquired_by_action_ids": [
+    "a_interview_ziad"
+   ],
+   "supports_fact_ids": [],
+   "reliability": "weak",
+   "limits_ar": "السلوك أثناء المقابلة ليس دليلاً على الصدق أو الكذب؛ للتوتر أسباب كثيرة لا علاقة لها بالحادثة.",
+   "is_red_herring": true
+  },
+  {
+   "id": "ev_ziad_recording",
+   "title_ar": "ملف صوتي على لوحي غرفة الموسيقى",
+   "kind": "digital",
+   "content_ar": "ملف «تدريب_العرض» أُنشئ 21:20 وانتهى 21:44 بتوقيت الشبكة، فيه صوت يتدرّب على عرض مشروع «مدرسة النخيل».",
+   "acquired_by_action_ids": [
+    "a_examine_music_tablet"
+   ],
+   "supports_fact_ids": [
+    "f_ziad_rehearsal"
+   ],
+   "reliability": "moderate",
+   "limits_ar": "وجود الملف على الجهاز لا يثبت وحده من سجّله؛ والتعرف على الصوت بالأذن حكم تقريبي لا يقين.",
+   "location_id": "loc_music_room",
+   "contradicts_claim_ids": [
+    "cl_ziad_whole_time"
+   ],
+   "forensic_ko_ref": "KO-FC-04-024"
+  }
+ ],
+ "evidence_graph": {
+  "inferences": [
+   {
+    "id": "i_offset_window",
+    "premises": [
+     {
+      "ref_type": "evidence",
+      "ref_id": "ev_station_log"
+     },
+     {
+      "ref_type": "evidence",
+      "ref_id": "ev_lab_clock_offset"
+     }
+    ],
+    "conclusion": {
+     "ref_type": "fact",
+     "ref_id": "f_true_window"
+    },
+    "relation": "establishes",
+    "strength": "strong",
+    "rule_ar": "إذا كانت ساعة المحطة متأخرة 25 دقيقة فالقراءات المسجلة 21:31–21:49 حدثت فعلاً بين 21:56 و22:14 بتوقيت الشبكة.",
+    "skill_ko_refs": [
+     "KO-RS-06-017",
+     "KO-RS-05-005"
+    ]
+   },
+   {
+    "id": "i_chat_window",
+    "premises": [
+     {
+      "ref_type": "evidence",
+      "ref_id": "ev_chat_alerts"
+     }
+    ],
+    "conclusion": {
+     "ref_type": "fact",
+     "ref_id": "f_true_window"
+    },
+    "relation": "establishes",
+    "strength": "strong",
+    "rule_ar": "رسالتا المحطة تحملان توقيت الخادم المضبوط، فالهطول المسجل بدأ 21:56 وتوقف 22:14.",
+    "skill_ko_refs": [
+     "KO-RS-06-017"
+    ]
+   },
+   {
+    "id": "i_no_city_rain",
+    "premises": [
+     {
+      "ref_type": "evidence",
+      "ref_id": "ev_city_bulletin"
+     }
+    ],
+    "conclusion": {
+     "ref_type": "hypothesis",
+     "ref_id": "h_real_rain"
+    },
+    "relation": "rules_out",
+    "strength": "strong",
+    "rule_ar": "لا مطر في أي محطة بالمدينة والسماء صافية، فالمطر الحقيقي فوق المدرسة مستبعد جداً.",
+    "skill_ko_refs": [
+     "KO-RS-06-001"
+    ]
+   },
+   {
+    "id": "i_dry_roof",
+    "premises": [
+     {
+      "ref_type": "evidence",
+      "ref_id": "ev_roof_photo"
+     },
+     {
+      "ref_type": "general_knowledge",
+      "ref_id": "gk_rain_wets_open_roof"
+     }
+    ],
+    "conclusion": {
+     "ref_type": "hypothesis",
+     "ref_id": "h_real_rain"
+    },
+    "relation": "rules_out",
+    "strength": "strong",
+    "rule_ar": "المطر يبلّل السطح المكشوف كله، والصورة تُظهر بللاً محصوراً بين الصنبور والمقياس.",
+    "skill_ko_refs": [
+     "KO-RS-06-001"
+    ]
+   },
+   {
+    "id": "i_real_water",
+    "premises": [
+     {
+      "ref_type": "evidence",
+      "ref_id": "ev_collector_bottle"
+     }
+    ],
+    "conclusion": {
+     "ref_type": "hypothesis",
+     "ref_id": "h_sensor_fault"
+    },
+    "relation": "rules_out",
+    "strength": "strong",
+    "rule_ar": "في القارورة ماء حقيقي بقدر القراءة تقريباً، فالقراءة ليست خللاً إلكترونياً اخترع مطراً.",
+    "skill_ko_refs": [
+     "KO-RS-06-001"
+    ]
+   },
+   {
+    "id": "i_wet_gauge",
+    "premises": [
+     {
+      "ref_type": "evidence",
+      "ref_id": "ev_roof_photo"
+     }
+    ],
+    "conclusion": {
+     "ref_type": "hypothesis",
+     "ref_id": "h_sensor_fault"
+    },
+    "relation": "rules_out",
+    "strength": "strong",
+    "rule_ar": "الصورة تُظهر ماءً في القارورة وبللاً عند قاعدة المقياس قبل الصباح، فالماء كان حاضراً فعلاً.",
+    "skill_ko_refs": [
+     "KO-RS-06-001"
+    ]
+   },
+   {
+    "id": "i_ziad_left_gate",
+    "premises": [
+     {
+      "ref_type": "evidence",
+      "ref_id": "ev_gate_log"
+     },
+     {
+      "ref_type": "fact",
+      "ref_id": "f_true_window"
+     }
+    ],
+    "conclusion": {
+     "ref_type": "hypothesis",
+     "ref_id": "h_ziad_sabotage"
+    },
+    "relation": "rules_out",
+    "strength": "strong",
+    "rule_ar": "خرج زياد من البوابة الوحيدة 21:48 ولم يدخل أحد بعدها، والماء دخل المقياس من 21:56؛ فلم يكن في المبنى وقتها.",
+    "skill_ko_refs": [
+     "KO-RS-06-017",
+     "KO-RS-05-005"
+    ]
+   },
+   {
+    "id": "i_ziad_signed_out",
+    "premises": [
+     {
+      "ref_type": "evidence",
+      "ref_id": "ev_workshop_signout"
+     },
+     {
+      "ref_type": "fact",
+      "ref_id": "f_true_window"
+     }
+    ],
+    "conclusion": {
+     "ref_type": "hypothesis",
+     "ref_id": "h_ziad_sabotage"
+    },
+    "relation": "rules_out",
+    "strength": "strong",
+    "rule_ar": "انصرف زياد مع والده 9:47 بحسب المنسق، أي قبل بدء الهطول الفعلي 21:56 بتسع دقائق.",
+    "skill_ko_refs": [
+     "KO-RS-06-017"
+    ]
+   },
+   {
+    "id": "i_codeholder",
+    "premises": [
+     {
+      "ref_type": "evidence",
+      "ref_id": "ev_roof_door_log"
+     },
+     {
+      "ref_type": "evidence",
+      "ref_id": "ev_gate_log"
+     }
+    ],
+    "conclusion": {
+     "ref_type": "fact",
+     "ref_id": "f_majed_on_roof"
+    },
+    "relation": "establishes",
+    "strength": "strong",
+    "rule_ar": "الرمز للمى وماجد؛ لمى خرجت 21:15 قبل فتح الباب 21:52، ولم يبقَ في المبنى بعد 21:50 إلا ماجد والقيّمة التي تفتح ببطاقتها لا بالرمز.",
+    "skill_ko_refs": [
+     "KO-RS-05-005",
+     "KO-RS-05-002"
+    ]
+   },
+   {
+    "id": "i_hose_majed_a",
+    "premises": [
+     {
+      "ref_type": "fact",
+      "ref_id": "f_majed_on_roof"
+     },
+     {
+      "ref_type": "evidence",
+      "ref_id": "ev_timer_device"
+     },
+     {
+      "ref_type": "fact",
+      "ref_id": "f_true_window"
+     }
+    ],
+    "conclusion": {
+     "ref_type": "hypothesis",
+     "ref_id": "h_majed_hose"
+    },
+    "relation": "supports",
+    "strength": "strong",
+    "rule_ar": "ماجد وحده كان على السطح، ومؤقته على الصنبور عمل 18 دقيقة، وهي مدة الهطول المسجل نفسها (21:56–22:14).",
+    "skill_ko_refs": [
+     "KO-RS-06-001",
+     "KO-RS-06-017"
+    ]
+   },
+   {
+    "id": "i_hose_majed_b",
+    "premises": [
+     {
+      "ref_type": "evidence",
+      "ref_id": "ev_majed_notebook"
+     },
+     {
+      "ref_type": "evidence",
+      "ref_id": "ev_roof_photo"
+     },
+     {
+      "ref_type": "fact",
+      "ref_id": "f_true_window"
+     }
+    ],
+    "conclusion": {
+     "ref_type": "hypothesis",
+     "ref_id": "h_majed_hose"
+    },
+    "relation": "supports",
+    "strength": "strong",
+    "rule_ar": "خطة ماجد لتجربة رشّ من صنبور السطح نحو 9:50، والبلل يمتد من الصنبور إلى المقياس، والهطول بدأ 21:56؛ فالماء جاء من خرطوم تجربته.",
+    "skill_ko_refs": [
+     "KO-RS-06-001"
+    ]
+   },
+   {
+    "id": "i_lure_ziad",
+    "premises": [
+     {
+      "ref_type": "evidence",
+      "ref_id": "ev_station_log"
+     },
+     {
+      "ref_type": "evidence",
+      "ref_id": "ev_wadad_testimony"
+     }
+    ],
+    "conclusion": {
+     "ref_type": "hypothesis",
+     "ref_id": "h_ziad_sabotage"
+    },
+    "relation": "supports",
+    "strength": "suggestive",
+    "rule_ar": "القراءة الساذجة: «المطر» بحسب ساعة المحطة 21:31–21:49 حين كان زياد ما يزال في المبنى، ووداد رأت شاباً بسترة الورشة؛ استدلال مغرٍ يسقط عند تصحيح الساعة وعند ملاحظة أن السترة لبسها ثلاثون.",
+    "skill_ko_refs": [
+     "KO-RS-06-001",
+     "KO-RS-06-017"
+    ]
+   },
+   {
+    "id": "i_majed_claim_false",
+    "premises": [
+     {
+      "ref_type": "evidence",
+      "ref_id": "ev_gate_log"
+     }
+    ],
+    "conclusion": {
+     "ref_type": "claim",
+     "ref_id": "cl_majed_club_room"
+    },
+    "relation": "contradicts_claim",
+    "strength": "conclusive",
+    "rule_ar": "ماجد قال إنه خرج نحو 21:30، والبوابة سجلت خروجه 22:21.",
+    "skill_ko_refs": [
+     "KO-RS-05-007"
+    ]
+   },
+   {
+    "id": "i_ziad_claim_false",
+    "premises": [
+     {
+      "ref_type": "evidence",
+      "ref_id": "ev_ziad_recording"
+     }
+    ],
+    "conclusion": {
+     "ref_type": "claim",
+     "ref_id": "cl_ziad_whole_time"
+    },
+    "relation": "contradicts_claim",
+    "strength": "strong",
+    "rule_ar": "زياد قال إنه بقي في القاعة، والملف يضعه في غرفة الموسيقى 21:20–21:44؛ كذبته تخص التدريب لا المقياس.",
+    "skill_ko_refs": [
+     "KO-RS-05-007"
+    ]
+   },
+   {
+    "id": "i_wadad_time_off",
+    "premises": [
+     {
+      "ref_type": "evidence",
+      "ref_id": "ev_chat_alerts"
+     }
+    ],
+    "conclusion": {
+     "ref_type": "claim",
+     "ref_id": "cl_wadad_time"
+    },
+    "relation": "contradicts_claim",
+    "strength": "strong",
+    "rule_ar": "الماء توقف 22:14 بحسب الخادم، فتقدير «العاشرة والنصف» متأخر؛ خطأ صادق في تقدير الوقت لا كذب.",
+    "skill_ko_refs": [
+     "KO-RS-05-005"
+    ]
+   }
+  ]
+ },
+ "character_knowledge": [
+  {
+   "character_id": "ch_lama",
+   "knows": [
+    {
+     "fact_id": "f_rain_recorded",
+     "access": "witnessed"
+    },
+    {
+     "fact_id": "f_lama_left",
+     "access": "witnessed"
+    },
+    {
+     "fact_id": "f_deadline",
+     "access": "common_knowledge"
+    },
+    {
+     "fact_id": "f_roof_rule",
+     "access": "common_knowledge"
+    },
+    {
+     "fact_id": "f_hoodie_common",
+     "access": "witnessed"
+    }
+   ],
+   "hides": [],
+   "believes": [],
+   "opinions_ar": [
+    "أظن أن فريق مدرسة النخيل يغار منا."
+   ]
+  },
+  {
+   "character_id": "ch_majed",
+   "knows": [
+    {
+     "fact_id": "f_roof_rule",
+     "access": "common_knowledge"
+    },
+    {
+     "fact_id": "f_majed_exit",
+     "access": "witnessed"
+    },
+    {
+     "fact_id": "f_majed_plan",
+     "access": "witnessed"
+    },
+    {
+     "fact_id": "f_hoodie_common",
+     "access": "witnessed"
+    }
+   ],
+   "hides": [
+    {
+     "fact_id": "f_majed_on_roof",
+     "reveal_when": {
+      "any": [
+       {
+        "presented": {
+         "evidence_id": "ev_roof_door_log",
+         "to_character": "ch_majed"
+        }
+       },
+       {
+        "presented": {
+         "evidence_id": "ev_majed_notebook",
+         "to_character": "ch_majed"
+        }
+       },
+       {
+        "presented": {
+         "evidence_id": "ev_gate_log",
+         "to_character": "ch_majed"
+        }
+       }
+      ]
+     },
+     "cover_claim_id": "cl_majed_club_room",
+     "reveal_line_id": "l_majed_reveal"
+    },
+    {
+     "fact_id": "f_hose_majed",
+     "reveal_when": {
+      "any": [
+       {
+        "presented": {
+         "evidence_id": "ev_roof_door_log",
+         "to_character": "ch_majed"
+        }
+       },
+       {
+        "presented": {
+         "evidence_id": "ev_majed_notebook",
+         "to_character": "ch_majed"
+        }
+       }
+      ]
+     },
+     "cover_claim_id": "cl_majed_club_room",
+     "reveal_line_id": "l_majed_reveal"
+    }
+   ],
+   "believes": [
+    {
+     "claim_id": "cl_majed_club_room",
+     "stance": "deliberate_lie"
+    }
+   ],
+   "opinions_ar": [
+    "ربما فعلها أحد من فريق النخيل."
+   ]
+  },
+  {
+   "character_id": "ch_ziad",
+   "knows": [
+    {
+     "fact_id": "f_ziad_left",
+     "access": "witnessed"
+    },
+    {
+     "fact_id": "f_hoodie_common",
+     "access": "witnessed"
+    }
+   ],
+   "hides": [
+    {
+     "fact_id": "f_ziad_rehearsal",
+     "reveal_when": {
+      "presented": {
+       "evidence_id": "ev_ziad_recording",
+       "to_character": "ch_ziad"
+      }
+     },
+     "cover_claim_id": "cl_ziad_whole_time",
+     "reveal_line_id": "l_ziad_reveal"
+    }
+   ],
+   "believes": [
+    {
+     "claim_id": "cl_ziad_whole_time",
+     "stance": "deliberate_lie"
+    }
+   ]
+  },
+  {
+   "character_id": "ch_wadad",
+   "knows": [
+    {
+     "fact_id": "f_wadad_heard",
+     "access": "witnessed",
+     "certainty": "certain"
+    },
+    {
+     "fact_id": "f_wadad_saw",
+     "access": "witnessed",
+     "certainty": "fairly_sure"
+    },
+    {
+     "fact_id": "f_wet_patch",
+     "access": "witnessed"
+    },
+    {
+     "fact_id": "f_wadad_exit",
+     "access": "witnessed"
+    },
+    {
+     "fact_id": "f_single_gate",
+     "access": "professional"
+    }
+   ],
+   "hides": [],
+   "believes": [
+    {
+     "claim_id": "cl_wadad_time",
+     "stance": "sincere"
+    }
+   ]
+  },
+  {
+   "character_id": "ch_noor",
+   "knows": [
+    {
+     "fact_id": "f_rain_recorded",
+     "access": "told_by",
+     "source_character_id": "ch_lama"
+    },
+    {
+     "fact_id": "f_deadline",
+     "access": "professional"
+    }
+   ],
+   "hides": [],
+   "believes": []
+  },
+  {
+   "character_id": "ch_yusuf",
+   "knows": [
+    {
+     "fact_id": "f_rain_recorded",
+     "access": "common_knowledge"
+    },
+    {
+     "fact_id": "f_deadline",
+     "access": "common_knowledge"
+    }
+   ],
+   "hides": [],
+   "believes": [],
+   "opinions_ar": [
+    "زياد بدا متوتراً جداً — هل هذا يعني شيئاً؟ (فرضية لا دليل)"
+   ]
+  }
+ ],
+ "hypotheses": [
+  {
+   "id": "h_ziad_sabotage",
+   "statement_ar": "زياد صبّ ماءً في المقياس ليُفسد بيانات فريق منافس.",
+   "is_true": false,
+   "plausibility_at_start": "high",
+   "suspect_id": "ch_ziad"
+  },
+  {
+   "id": "h_real_rain",
+   "statement_ar": "أمطرت فعلاً فوق المدرسة وحدها.",
+   "is_true": false,
+   "plausibility_at_start": "medium"
+  },
+  {
+   "id": "h_sensor_fault",
+   "statement_ar": "عطل إلكتروني في الحساس سجّل مطراً لم يحدث.",
+   "is_true": false,
+   "plausibility_at_start": "medium"
+  },
+  {
+   "id": "h_majed_hose",
+   "statement_ar": "الماء جاء من خرطوم صنبور السطح الذي شغّله ماجد في تجربة مؤقته.",
+   "is_true": true,
+   "plausibility_at_start": "low",
+   "suspect_id": "ch_majed"
+  }
+ ],
+ "misdirection_plan": [
+  {
+   "id": "rh_ziad_nervous",
+   "points_to_hypothesis_id": "h_ziad_sabotage",
+   "planted_via_ar": "زياد منافس، ويبدو متوتراً ويكذب بشأن مكانه، وساعة المحطة غير المصححة تضع «المطر» في وقت كان فيه داخل المبنى.",
+   "evidence_ids": [
+    "ev_ziad_demeanour",
+    "ev_station_log"
+   ],
+   "refuted_by_inference_ids": [
+    "i_ziad_left_gate",
+    "i_ziad_signed_out"
+   ],
+   "fairness_note_ar": "المعلومة الظاهرة (توقيت المحطة) تُساء قراءتها ولا تُحجب (FP-08)؛ تصحيح الساعة متاح بطريقين، وكذبة زياد لها دافع بريء يُكشف بالملف الصوتي (NR-03)، والتوتر مُعلَّم في الواجهة «ملاحظة لا دليل»."
+  },
+  {
+   "id": "rh_hoodie",
+   "points_to_hypothesis_id": "h_ziad_sabotage",
+   "planted_via_ar": "وداد رأت «شاباً بسترة الورشة الزرقاء»، وزياد كان يلبسها.",
+   "evidence_ids": [
+    "ev_wadad_testimony"
+   ],
+   "refuted_by_inference_ids": [
+    "i_ziad_left_gate",
+    "i_ziad_signed_out"
+   ],
+   "fairness_note_ar": "السترة صفة مشتركة بين ثلاثين مشاركاً (المعدل الأساسي مذكور في ورقة الانصراف)، فهي غير مميِّزة؛ ووقت الرؤية الفعلي بعد خروج زياد."
+  }
+ ],
+ "learning_objectives": [
+  {
+   "id": "lo_timeline",
+   "statement_ar": "يعيد بناء الخط الزمني بتصحيح فرق ساعة جهاز، ويكشف التعارض بين مصدرين زمنيين قبل أن يحكم.",
+   "skill_ko_ref": "KO-RS-06-017",
+   "observable_behaviors_ar": [
+    "يضع نافذة الهطول المصححة (21:56–22:14) على الخط الزمني",
+    "يوسم تعارض «ساعة المحطة مقابل توقيت الخادم» أو «تقدير وداد مقابل الخادم» دون تلميح",
+    "يستبعد زياد بربط خروجه بالنافذة المصححة"
+   ],
+   "evidence_sources": [
+    "timeline_task",
+    "evidence_board",
+    "hypothesis_ledger"
+   ]
+  },
+  {
+   "id": "lo_diagnostic",
+   "statement_ar": "يميز الدليل المميِّز من غير المميِّز، فلا يبني الاتهام على صفة يشترك فيها كثيرون.",
+   "skill_ko_ref": "KO-RS-06-001",
+   "observable_behaviors_ar": [
+    "يوسم إفادة السترة بأنها «لا تميّز بين المشتبه بهم» مع ذكر عدد من يلبسونها",
+    "لا يرفق السترة بدعم أي فرضية في التقرير الختامي",
+    "يستشهد بدليل مميِّز (المؤقت 18 دقيقة، سجل الباب، الدفتر) لدعم الفرضية الصحيحة"
+   ],
+   "evidence_sources": [
+    "evidence_board",
+    "final_justification"
+   ]
+  },
+  {
+   "id": "lo_lie_cues",
+   "statement_ar": "يرفض استخدام التوتر دليلاً على الكذب، ويحوّل الشك إلى مطابقة الإفادة بدليل مستقل.",
+   "skill_ko_ref": "KO-RS-05-007",
+   "observable_behaviors_ar": [
+    "لا يثبّت ملاحظة سلوك زياد دليلاً داعماً",
+    "يعرض دليلاً مستقلاً على زياد أو ماجد (الملف الصوتي، سجل البوابة) بدل الضغط",
+    "يفسّر كذبتي ماجد وزياد بدافعيهما دون أن يعدّ الكذبة وحدها دليل فعل"
+   ],
+   "evidence_sources": [
+    "action_log",
+    "evidence_board",
+    "final_justification"
+   ]
+  }
+ ],
+ "mechanics": {
+  "time_budget_units": 0,
+  "actions": [
+   {
+    "id": "a_open_station_log",
+    "type": "examine",
+    "label_ar": "افتح سجل المحطة",
+    "precondition": {
+     "always": true
+    },
+    "effects": [
+     {
+      "op": "grant_evidence",
+      "ref_id": "ev_station_log"
+     }
+    ],
+    "time_cost_units": 0,
+    "target_id": "obj_station",
+    "telemetry_code": "OPEN_STATION_LOG"
+   },
+   {
+    "id": "a_request_clock_lab",
+    "type": "request_lab_test",
+    "label_ar": "اطلب من مختبر المنظار مقارنة ساعة المحطة بساعة الشبكة",
+    "precondition": {
+     "has_evidence": "ev_station_log"
+    },
+    "effects": [
+     {
+      "op": "grant_evidence",
+      "ref_id": "ev_lab_clock_offset"
+     },
+     {
+      "op": "emit_event",
+      "ref_id": "LAB_DONE"
+     }
+    ],
+    "time_cost_units": 0,
+    "target_id": "obj_station",
+    "telemetry_code": "LAB_CLOCK_OFFSET"
+   },
+   {
+    "id": "a_read_club_chat",
+    "type": "examine",
+    "label_ar": "اقرأ دردشة الفريق (بإذن لمى)",
+    "precondition": {
+     "always": true
+    },
+    "effects": [
+     {
+      "op": "grant_evidence",
+      "ref_id": "ev_chat_alerts"
+     }
+    ],
+    "time_cost_units": 0,
+    "target_id": "ch_lama",
+    "telemetry_code": "READ_CLUB_CHAT"
+   },
+   {
+    "id": "a_search_city_bulletin",
+    "type": "examine",
+    "label_ar": "ابحث في أرشيف مرصد القنطرة",
+    "precondition": {
+     "always": true
+    },
+    "effects": [
+     {
+      "op": "grant_evidence",
+      "ref_id": "ev_city_bulletin"
+     }
+    ],
+    "time_cost_units": 0,
+    "target_id": "org_observatory",
+    "telemetry_code": "SEARCH_CITY_BULLETIN"
+   },
+   {
+    "id": "a_examine_gauge",
+    "type": "examine",
+    "label_ar": "افحص مقياس المطر وقارورته",
+    "precondition": {
+     "always": true
+    },
+    "effects": [
+     {
+      "op": "grant_evidence",
+      "ref_id": "ev_collector_bottle"
+     }
+    ],
+    "time_cost_units": 0,
+    "target_id": "obj_gauge",
+    "telemetry_code": "EXAMINE_GAUGE"
+   },
+   {
+    "id": "a_search_roof",
+    "type": "search_location",
+    "label_ar": "تفقّد السطح مع السيدة وداد",
+    "precondition": {
+     "always": true
+    },
+    "effects": [
+     {
+      "op": "grant_evidence",
+      "ref_id": "ev_timer_device"
+     }
+    ],
+    "time_cost_units": 0,
+    "target_id": "loc_roof",
+    "telemetry_code": "SEARCH_ROOF"
+   },
+   {
+    "id": "a_search_club_room",
+    "type": "search_location",
+    "label_ar": "تفقّد غرفة النادي",
+    "precondition": {
+     "always": true
+    },
+    "effects": [
+     {
+      "op": "grant_evidence",
+      "ref_id": "ev_majed_notebook"
+     }
+    ],
+    "time_cost_units": 0,
+    "target_id": "loc_club_room",
+    "telemetry_code": "SEARCH_CLUB_ROOM"
+   },
+   {
+    "id": "a_examine_signout",
+    "type": "examine",
+    "label_ar": "اطلع على ورقة انصراف الورشة",
+    "precondition": {
+     "always": true
+    },
+    "effects": [
+     {
+      "op": "grant_evidence",
+      "ref_id": "ev_workshop_signout"
+     }
+    ],
+    "time_cost_units": 0,
+    "target_id": "loc_hall",
+    "telemetry_code": "EXAMINE_SIGNOUT"
+   },
+   {
+    "id": "a_request_gate_log",
+    "type": "examine",
+    "label_ar": "اطلب سجل بطاقات البوابة من الإدارة",
+    "precondition": {
+     "always": true
+    },
+    "effects": [
+     {
+      "op": "grant_evidence",
+      "ref_id": "ev_gate_log"
+     }
+    ],
+    "time_cost_units": 0,
+    "target_id": "loc_gate",
+    "telemetry_code": "REQUEST_GATE_LOG"
+   },
+   {
+    "id": "a_interview_wadad",
+    "type": "interview",
+    "label_ar": "تحدث مع السيدة وداد",
+    "precondition": {
+     "always": true
+    },
+    "effects": [
+     {
+      "op": "grant_evidence",
+      "ref_id": "ev_wadad_testimony"
+     }
+    ],
+    "time_cost_units": 0,
+    "target_id": "ch_wadad",
+    "telemetry_code": "INTERVIEW_WADAD"
+   },
+   {
+    "id": "a_ask_wadad_photo",
+    "type": "interview",
+    "label_ar": "اسأل وداد إن كانت وثّقت ما رأته",
+    "precondition": {
+     "has_evidence": "ev_wadad_testimony"
+    },
+    "effects": [
+     {
+      "op": "grant_evidence",
+      "ref_id": "ev_roof_photo"
+     }
+    ],
+    "time_cost_units": 0,
+    "target_id": "ch_wadad",
+    "telemetry_code": "ASK_WADAD_PHOTO"
+   },
+   {
+    "id": "a_request_roof_log",
+    "type": "examine",
+    "label_ar": "اطلب من القيّمة سجل قفل باب السطح",
+    "precondition": {
+     "any": [
+      {
+       "has_evidence": "ev_station_log"
+      },
+      {
+       "has_evidence": "ev_timer_device"
+      },
+      {
+       "has_evidence": "ev_wadad_testimony"
+      }
+     ]
+    },
+    "effects": [
+     {
+      "op": "grant_evidence",
+      "ref_id": "ev_roof_door_log"
+     }
+    ],
+    "time_cost_units": 0,
+    "target_id": "ch_wadad",
+    "telemetry_code": "REQUEST_ROOF_LOG"
+   },
+   {
+    "id": "a_interview_ziad",
+    "type": "interview",
+    "label_ar": "تحدث مع زياد",
+    "precondition": {
+     "always": true
+    },
+    "effects": [
+     {
+      "op": "grant_evidence",
+      "ref_id": "ev_ziad_demeanour"
+     }
+    ],
+    "time_cost_units": 0,
+    "target_id": "ch_ziad",
+    "telemetry_code": "INTERVIEW_ZIAD"
+   },
+   {
+    "id": "a_examine_music_tablet",
+    "type": "search_location",
+    "label_ar": "تفقّد غرفة الموسيقى",
+    "precondition": {
+     "any": [
+      {
+       "has_evidence": "ev_ziad_demeanour"
+      },
+      {
+       "has_evidence": "ev_workshop_signout"
+      }
+     ]
+    },
+    "effects": [
+     {
+      "op": "grant_evidence",
+      "ref_id": "ev_ziad_recording"
+     }
+    ],
+    "time_cost_units": 0,
+    "target_id": "loc_music_room",
+    "telemetry_code": "EXAMINE_MUSIC_TABLET"
+   },
+   {
+    "id": "a_present_recording_ziad",
+    "type": "present_evidence",
+    "label_ar": "اعرض الملف الصوتي على زياد",
+    "precondition": {
+     "presented": {
+      "evidence_id": "ev_ziad_recording",
+      "to_character": "ch_ziad"
+     }
+    },
+    "effects": [
+     {
+      "op": "unlock_fact",
+      "ref_id": "f_ziad_rehearsal"
+     },
+     {
+      "op": "raise_trust",
+      "ref_id": "ch_ziad"
+     }
+    ],
+    "time_cost_units": 0,
+    "target_id": "ch_ziad",
+    "telemetry_code": "PRESENT_RECORDING_ZIAD"
+   },
+   {
+    "id": "a_interview_majed",
+    "type": "interview",
+    "label_ar": "تحدث مع ماجد",
+    "precondition": {
+     "always": true
+    },
+    "effects": [
+     {
+      "op": "emit_event",
+      "ref_id": "MAJED_COVER_HEARD"
+     }
+    ],
+    "time_cost_units": 0,
+    "target_id": "ch_majed",
+    "telemetry_code": "INTERVIEW_MAJED"
+   },
+   {
+    "id": "a_present_to_majed",
+    "type": "present_evidence",
+    "label_ar": "اعرض على ماجد دليلاً يناقض روايته",
+    "precondition": {
+     "any": [
+      {
+       "presented": {
+        "evidence_id": "ev_roof_door_log",
+        "to_character": "ch_majed"
+       }
+      },
+      {
+       "presented": {
+        "evidence_id": "ev_majed_notebook",
+        "to_character": "ch_majed"
+       }
+      },
+      {
+       "presented": {
+        "evidence_id": "ev_gate_log",
+        "to_character": "ch_majed"
+       }
+      }
+     ]
+    },
+    "effects": [
+     {
+      "op": "unlock_fact",
+      "ref_id": "f_majed_on_roof"
+     },
+     {
+      "op": "emit_event",
+      "ref_id": "MAJED_REVEAL"
+     }
+    ],
+    "time_cost_units": 0,
+    "target_id": "ch_majed",
+    "telemetry_code": "PRESENT_TO_MAJED"
+   },
+   {
+    "id": "a_place_timeline",
+    "type": "place_on_timeline",
+    "label_ar": "ضع حدثاً على الخط الزمني",
+    "precondition": {
+     "always": true
+    },
+    "effects": [
+     {
+      "op": "emit_event",
+      "ref_id": "TIMELINE_UPDATED"
+     }
+    ],
+    "time_cost_units": 0,
+    "telemetry_code": "PLACE_TIMELINE"
+   },
+   {
+    "id": "a_link_board",
+    "type": "link_on_board",
+    "label_ar": "اربط دليلاً بفرضية (يدعم / يضعف / لا يميّز)",
+    "precondition": {
+     "always": true
+    },
+    "effects": [
+     {
+      "op": "emit_event",
+      "ref_id": "BOARD_LINK"
+     }
+    ],
+    "time_cost_units": 0,
+    "telemetry_code": "BOARD_LINK"
+   },
+   {
+    "id": "a_submit_hypothesis",
+    "type": "submit_hypothesis",
+    "label_ar": "أضف فرضية إلى اللوحة",
+    "precondition": {
+     "always": true
+    },
+    "effects": [
+     {
+      "op": "emit_event",
+      "ref_id": "HYPOTHESIS_ADDED"
+     }
+    ],
+    "time_cost_units": 0,
+    "telemetry_code": "HYPOTHESIS_ADDED"
+   },
+   {
+    "id": "a_rule_out",
+    "type": "rule_out",
+    "label_ar": "استبعد فرضية وأرفق الدليل",
+    "precondition": {
+     "always": true
+    },
+    "effects": [
+     {
+      "op": "emit_event",
+      "ref_id": "HYPOTHESIS_RULED_OUT"
+     }
+    ],
+    "time_cost_units": 0,
+    "telemetry_code": "RULE_OUT"
+   },
+   {
+    "id": "a_request_hint",
+    "type": "request_hint",
+    "label_ar": "أحتاج مساعدة",
+    "precondition": {
+     "always": true
+    },
+    "effects": [
+     {
+      "op": "emit_event",
+      "ref_id": "HINT_REQUESTED"
+     }
+    ],
+    "time_cost_units": 0,
+    "telemetry_code": "REQUEST_HINT"
+   },
+   {
+    "id": "a_present_case",
+    "type": "final_accusation",
+    "label_ar": "قدّم تقريرك في «غرفة التحرير»",
+    "precondition": {
+     "has_evidence": "ev_station_log"
+    },
+    "effects": [
+     {
+      "op": "emit_event",
+      "ref_id": "ACCUSE"
+     }
+    ],
+    "time_cost_units": 0,
+    "telemetry_code": "FINAL_PRESENTATION"
+   }
+  ]
+ },
+ "state_machine": {
+  "id": "s001_rain_clear_night",
+  "initial": "briefing",
+  "type": "compound",
+  "states": {
+   "briefing": {
+    "description_ar": "لمى تعرض المشكلة والمهلة.",
+    "on": {
+     "START": {
+      "target": "investigating"
+     }
+    }
+   },
+   "investigating": {
+    "description_ar": "تحقيق حر بأي ترتيب؛ المختبر يُفتح بعد سجل المحطة.",
+    "type": "compound",
+    "initial": "open",
+    "states": {
+     "open": {
+      "on": {
+       "LAB_DONE": {
+        "target": "lab_done"
+       }
+      }
+     },
+     "lab_done": {
+      "description_ar": "نتيجة فرق الساعة متاحة."
+     }
+    },
+    "on": {
+     "OPEN_PRESENTATION": {
+      "target": "presentation",
+      "guard": {
+       "has_evidence": "ev_station_log"
+      }
+     }
+    }
+   },
+   "presentation": {
+    "description_ar": "غرفة التحرير: من؟ كيف؟ متى؟ لماذا؟ ما الدليل؟ ما درجة يقينك؟",
+    "on": {
+     "ACCUSE": {
+      "target": "review"
+     },
+     "BACK": {
+      "target": "investigating"
+     }
+    }
+   },
+   "review": {
+    "description_ar": "ملاحظات المحرر وشاشة «إعادة القراءة» وسؤال البيانات غير المقيَّم.",
+    "on": {
+     "CLOSE": {
+      "target": "resolved"
+     }
+    }
+   },
+   "resolved": {
+    "type": "final"
+   }
+  }
+ },
+ "dialogue": {
+  "max_turns_per_interview": 12,
+  "llm_enabled": false,
+  "topics": [
+   {
+    "id": "tp_last_night",
+    "label_ar": "أين كنت مساء الأربعاء؟",
+    "example_questions_ar": [
+     "احكِ لي ما فعلته بعد الورشة من البداية.",
+     "متى غادرت المدرسة؟"
+    ],
+    "fact_ids": [
+     "f_lama_left",
+     "f_ziad_left",
+     "f_majed_exit",
+     "f_wadad_exit"
+    ],
+    "claim_ids": [
+     "cl_majed_club_room",
+     "cl_ziad_whole_time"
+    ]
+   },
+   {
+    "id": "tp_roof",
+    "label_ar": "السطح ومقياس المطر",
+    "example_questions_ar": [
+     "من يستطيع فتح باب السطح؟",
+     "ماذا يوجد قرب المقياس؟"
+    ],
+    "fact_ids": [
+     "f_roof_rule",
+     "f_wet_patch"
+    ],
+    "claim_ids": []
+   },
+   {
+    "id": "tp_heard_saw",
+    "label_ar": "ما رأته وسمعته وداد",
+    "example_questions_ar": [
+     "ماذا سمعتِ بالضبط؟",
+     "كيف عرفتِ الوقت؟"
+    ],
+    "fact_ids": [
+     "f_wadad_heard",
+     "f_wadad_saw"
+    ],
+    "claim_ids": [
+     "cl_wadad_time"
+    ]
+   },
+   {
+    "id": "tp_hoodie",
+    "label_ar": "سترة الورشة",
+    "example_questions_ar": [
+     "كم شخصاً لبس هذه السترة؟"
+    ],
+    "fact_ids": [
+     "f_hoodie_common"
+    ],
+    "claim_ids": []
+   },
+   {
+    "id": "tp_lab",
+    "label_ar": "ساعة المحطة وحدود الأدلة الرقمية",
+    "example_questions_ar": [
+     "هل ساعة المحطة مضبوطة؟",
+     "ماذا لا يستطيع سجل البوابة أن يثبت؟"
+    ],
+    "fact_ids": [
+     "f_power_cut"
+    ],
+    "claim_ids": []
+   }
+  ]
+ },
+ "rubric": {
+  "reference_answer_ar": "لم تمطر. ساعة المحطة متأخرة 25 دقيقة، فالهطول الحقيقي كان 21:56–22:14 (يؤكده المختبر مع سجل المحطة، أو تنبيهات الخادم وحدها). زياد خرج 21:48 قبل ذلك (البوابة، أو ورقة الانصراف)، والسترة صفة مشتركة والتوتر ليس دليلاً. باب السطح فُتح برمز لمى وماجد 21:52 ولمى كانت قد خرجت، ومؤقت ماجد عمل 18 دقيقة بمقدار نافذة الهطول نفسها (أو: دفتر خطته مع صورة البلل من الصنبور). نشرة المرصد وصورة السطح تستبعدان المطر، والقارورة تستبعد العطل. درجة اليقين: مرجّح جداً. ما لا تثبته الأدلة: نية التخريب — الأرجح أنها تجربة غير مقصودة.",
+  "criteria": [
+   {
+    "id": "r_window",
+    "name_ar": "تصحيح نافذة الزمن",
+    "objective_ids": [
+     "lo_timeline"
+    ],
+    "scored_by": "deterministic",
+    "weight": 0.25,
+    "levels": [
+     {
+      "score": 0,
+      "descriptor_ar": "لم يضع نافذة الهطول، أو اعتمد توقيت المحطة غير المصحح."
+     },
+     {
+      "score": 2,
+      "descriptor_ar": "وضع النافذة المصححة (±2 دقيقة) بعد تلميح من المستوى 3 أو أعلى."
+     },
+     {
+      "score": 4,
+      "descriptor_ar": "وضع النافذة المصححة ووسم تعارض المصدرين الزمنيين دون تلميح فوق المستوى 2."
+     }
+    ]
+   },
+   {
+    "id": "r_elimination",
+    "name_ar": "استبعاد البديل الرئيسي بدليل",
+    "objective_ids": [
+     "lo_timeline",
+     "lo_lie_cues"
+    ],
+    "scored_by": "deterministic",
+    "weight": 0.25,
+    "levels": [
+     {
+      "score": 0,
+      "descriptor_ar": "لم يستبعد زياد، أو استبعده دون دليل، أو اتهمه."
+     },
+     {
+      "score": 2,
+      "descriptor_ar": "استبعده بدليل صحيح (البوابة أو ورقة الانصراف) دون ربطه بالنافذة المصححة."
+     },
+     {
+      "score": 4,
+      "descriptor_ar": "استبعده بدليل صحيح مربوط بالنافذة المصححة."
+     }
+    ]
+   },
+   {
+    "id": "r_diagnostic",
+    "name_ar": "التمييز بين الدليل المميِّز وغير المميِّز",
+    "objective_ids": [
+     "lo_diagnostic",
+     "lo_lie_cues"
+    ],
+    "scored_by": "deterministic",
+    "weight": 0.2,
+    "levels": [
+     {
+      "score": 0,
+      "descriptor_ar": "أرفق السترة أو توتر زياد دعماً لفرضية."
+     },
+     {
+      "score": 2,
+      "descriptor_ar": "لم يرفق أياً منهما دعماً، دون وسم صريح."
+     },
+     {
+      "score": 4,
+      "descriptor_ar": "وسم السترة «لا تميّز» مع ذكر شيوعها، ووسم التوتر «ملاحظة لا دليل»."
+     }
+    ]
+   },
+   {
+    "id": "r_justification",
+    "name_ar": "جودة التبرير (سلّم O10 بعد استخراج الحجة)",
+    "objective_ids": [
+     "lo_timeline",
+     "lo_diagnostic",
+     "lo_lie_cues"
+    ],
+    "scored_by": "llm_judge_with_human_moderation",
+    "weight": 0.3,
+    "levels": [
+     {
+      "score": 0,
+      "descriptor_ar": "لا ادعاء، أو لا استشهاد بأي دليل صحيح.",
+      "anchor_examples_ar": [
+       "«واضح إنه زياد، كان مرتبك.»"
+      ]
+     },
+     {
+      "score": 1,
+      "descriptor_ar": "ادعاء صحيح مع دليل داعم غير حاسم أو غير ذي صلة.",
+      "anchor_examples_ar": [
+       "«ماجد، لأنه كذب.»"
+      ]
+     },
+     {
+      "score": 2,
+      "descriptor_ar": "ادعاء صحيح مع دليل حاسم واحد على الأقل.",
+      "anchor_examples_ar": [
+       "«ماجد؛ المؤقت تبعه اشتغل 18 دقيقة.»"
+      ]
+     },
+     {
+      "score": 3,
+      "descriptor_ar": "ادعاء صحيح مع دليل حاسم، واستبعاد البديل الرئيسي بدليل صحيح.",
+      "anchor_examples_ar": [
+       "«ماجد. الساعة متأخرة 25 دقيقة يعني الرش 9:56، وزياد طلع 9:48 حسب البوابة.»"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ "hint_ladder": [
+  {
+   "id": "hn_general_1",
+   "level": 1,
+   "kind": "metacognitive",
+   "text_ar": "ما الذي تعرفه بالمشاهدة، وما الذي استنتجته؟ اكتب الاثنين منفصلين.",
+   "trigger": {
+    "always": true
+   },
+   "assessment_weight": 0
+  },
+  {
+   "id": "hn_win_1",
+   "level": 1,
+   "kind": "metacognitive",
+   "text_ar": "كل جهاز يحمل ساعته الخاصة. هل كل الساعات في هذه القضية تقول الشيء نفسه؟",
+   "trigger": {
+    "has_evidence": "ev_station_log"
+   },
+   "targets_inference_id": "i_offset_window",
+   "assessment_weight": 0
+  },
+  {
+   "id": "hn_win_2",
+   "level": 2,
+   "kind": "focus_area",
+   "text_ar": "قارن وقت «المطر» في سجل المحطة بوقت أي مصدر آخر يحمل توقيت الشبكة.",
+   "trigger": {
+    "not": {
+     "has_evidence": "ev_lab_clock_offset"
+    }
+   },
+   "targets_inference_id": "i_offset_window",
+   "assessment_weight": 0.1
+  },
+  {
+   "id": "hn_win_3",
+   "level": 3,
+   "kind": "pointer",
+   "text_ar": "مختبر المنظار يستطيع مقارنة ساعة المحطة بساعة الشبكة. وتنبيهات المحطة في دردشة الفريق تحمل توقيت الخادم.",
+   "trigger": {
+    "has_evidence": "ev_station_log"
+   },
+   "targets_inference_id": "i_offset_window",
+   "assessment_weight": 0.3
+  },
+  {
+   "id": "hn_win_4",
+   "level": 4,
+   "kind": "partial_reveal",
+   "text_ar": "ساعة المحطة متأخرة 25 دقيقة. أضفها إلى كل قراءة: متى حدث «المطر» فعلاً؟",
+   "trigger": {
+    "has_evidence": "ev_station_log"
+   },
+   "targets_inference_id": "i_offset_window",
+   "assessment_weight": 0.6
+  },
+  {
+   "id": "hn_win_5",
+   "level": 5,
+   "kind": "full_reveal",
+   "text_ar": "الهطول الفعلي كان بين 21:56 و22:14 بتوقيت الشبكة، لأن ساعة المحطة توقفت 25 دقيقة يوم الاثنين ولم تُضبط.",
+   "trigger": {
+    "has_evidence": "ev_station_log"
+   },
+   "targets_inference_id": "i_offset_window",
+   "assessment_weight": 1.0
+  },
+  {
+   "id": "hn_ziad_1",
+   "level": 1,
+   "kind": "metacognitive",
+   "text_ar": "التوتر يحتاج تفسيراً، لكنه ليس دليلاً. ما الذي يضع شخصاً في مكان ما في وقت ما؟",
+   "trigger": {
+    "has_evidence": "ev_ziad_demeanour"
+   },
+   "targets_inference_id": "i_ziad_left_gate",
+   "assessment_weight": 0
+  },
+  {
+   "id": "hn_ziad_2",
+   "level": 2,
+   "kind": "focus_area",
+   "text_ar": "للمدرسة ليلاً بوابة واحدة. أي سجل يعرف متى خرج كل شخص؟",
+   "trigger": {
+    "not": {
+     "has_evidence": "ev_gate_log"
+    }
+   },
+   "targets_inference_id": "i_ziad_left_gate",
+   "assessment_weight": 0.1
+  },
+  {
+   "id": "hn_ziad_3",
+   "level": 3,
+   "kind": "pointer",
+   "text_ar": "ضع خروج زياد ونافذة الهطول المصححة على الخط الزمني نفسه.",
+   "trigger": {
+    "has_evidence": "ev_gate_log"
+   },
+   "targets_inference_id": "i_ziad_left_gate",
+   "assessment_weight": 0.3
+  },
+  {
+   "id": "hn_code_1",
+   "level": 1,
+   "kind": "metacognitive",
+   "text_ar": "من كان يستطيع الوصول إلى السطح في نافذة الهطول، لا من كان يرغب في ذلك؟",
+   "trigger": {
+    "always": true
+   },
+   "targets_inference_id": "i_codeholder",
+   "assessment_weight": 0
+  },
+  {
+   "id": "hn_code_2",
+   "level": 2,
+   "kind": "focus_area",
+   "text_ar": "باب السطح إلكتروني. القيّمة تعرف أين يُحفظ سجله.",
+   "trigger": {
+    "not": {
+     "has_evidence": "ev_roof_door_log"
+    }
+   },
+   "targets_inference_id": "i_codeholder",
+   "assessment_weight": 0.1
+  },
+  {
+   "id": "hn_code_3",
+   "level": 3,
+   "kind": "pointer",
+   "text_ar": "الرمز لشخصين فقط. قارن وقت فتح الباب بأوقات خروجهما من البوابة.",
+   "trigger": {
+    "has_evidence": "ev_roof_door_log"
+   },
+   "targets_inference_id": "i_codeholder",
+   "assessment_weight": 0.3
+  }
+ ],
+ "fairness_test": {
+  "requirements": {
+   "min_disjoint_proof_paths": 2,
+   "max_inference_depth": 2,
+   "all_red_herrings_refutable": true,
+   "culprit_uniquely_entailed": true,
+   "no_hidden_fact_dependency": true,
+   "max_required_actions": 9
+  },
+  "runs": [
+   {
+    "run_at": "2026-10-27T01:44:37Z",
+    "content_hash": "sha256:0e04223fd6e50baac97f8ec78bf39285f25139dcec45d52ba53aab4196670930",
+    "tool": "13_CASE_DESIGN_REFERENCE/tools/check_case.py (jsonschema 4.26 + vendored library-10 prototype fairness_check.py + clingo 5.8.2 guard-aware encoding)",
+    "result": "pass",
+    "proof_paths_found": 2,
+    "failures": [
+     "prototype greedy disjoint count = 1 (< 2); exact over prototype sets = 2; see ASP for guard-aware count"
+    ],
+    "simulated_conversations": 0,
+    "critical_violations": 0
+   }
+  ]
+ },
+ "ending_explanation": {
+  "steps": [
+   {
+    "order": 1,
+    "text_ar": "نشرة المرصد: لا مطر في المدينة كلها. وصورة وداد: البلل محصور بين الصنبور والمقياس. إذن لم تمطر.",
+    "uses_evidence_ids": [
+     "ev_city_bulletin",
+     "ev_roof_photo"
+    ],
+    "inference_id": "i_no_city_rain"
+   },
+   {
+    "order": 2,
+    "text_ar": "القارورة فيها ماء حقيقي بقدر القراءة؛ فليست القراءة عطلاً اخترع مطراً.",
+    "uses_evidence_ids": [
+     "ev_collector_bottle"
+    ],
+    "inference_id": "i_real_water"
+   },
+   {
+    "order": 3,
+    "text_ar": "ساعة المحطة متأخرة 25 دقيقة منذ انقطاع الاثنين: «21:31–21:49» تعني فعلاً 21:56–22:14. وتنبيهات الخادم تقول الشيء نفسه من طريق مستقل.",
+    "uses_evidence_ids": [
+     "ev_station_log",
+     "ev_lab_clock_offset",
+     "ev_chat_alerts"
+    ],
+    "inference_id": "i_offset_window"
+   },
+   {
+    "order": 4,
+    "text_ar": "زياد خرج 21:48، قبل بدء الرش بثماني دقائق. توتره وكذبته كانا عن تدريبه السري، لا عن المقياس.",
+    "uses_evidence_ids": [
+     "ev_gate_log",
+     "ev_workshop_signout",
+     "ev_ziad_recording"
+    ],
+    "inference_id": "i_ziad_left_gate"
+   },
+   {
+    "order": 5,
+    "text_ar": "باب السطح فُتح برمز لمى وماجد 21:52، ولمى خرجت 21:15؛ لم يبقَ إلا ماجد.",
+    "uses_evidence_ids": [
+     "ev_roof_door_log",
+     "ev_gate_log"
+    ],
+    "inference_id": "i_codeholder"
+   },
+   {
+    "order": 6,
+    "text_ar": "مؤقت ماجد عمل 18 دقيقة، وهي مدة الهطول نفسها؛ ودفتره يخطط لتجربة رشّ من صنبور السطح.",
+    "uses_evidence_ids": [
+     "ev_timer_device",
+     "ev_majed_notebook"
+    ],
+    "inference_id": "i_hose_majed_a"
+   }
+  ],
+  "alternative_paths_ar": [
+   "المسار (ب) دون المختبر: تنبيهات الخادم + ورقة الانصراف + دفتر ماجد + صورة وداد تكفي للحل بثقة «مرجّح جداً».",
+   "لاعب بدأ بالمختبر أولاً يصل إلى النافذة المصححة قبل أن يقابل أحداً؛ هذا ترتيب مقبول بالكامل."
+  ],
+  "what_evidence_could_not_show_ar": [
+   "لا يثبت أي دليل أن ماجد قصد التخريب؛ الأدلة تتسق أكثر مع تجربة غير مقصودة.",
+   "سجل البوابة وسجل الباب يثبتان استخدام بطاقة ورمز، لا هوية صاحب اليد؛ القوة جاءت من اجتماع الأدلة.",
+   "السترة الزرقاء لم تميّز أحداً: لبسها ثلاثون شخصاً."
+  ],
+  "science_notes_ar": [
+   "الأدلة الرقمية موثوقة عند التطبيق السليم، لكن ساعة الجهاز قد تكون خاطئة، ووجود السجل لا يثبت من استخدم الجهاز [KO-FC-04-024].",
+   "مقارنة مصدرين مستقلين بتوقيتين مختلفين (المختبر والخادم) أقوى من مصدر واحد.",
+   "القرار العلمي الصحيح للفريق: وسم قراءات 21:56–22:14 بأنها ملوّثة وشرح السبب، لا حذفها بصمت ولا الإبقاء عليها."
+  ]
+ },
+ "expert_review": [
+  {
+   "role": "narrative_editor",
+   "reviewer": "unassigned",
+   "status": "pending",
+   "content_hash": "sha256:0e04223fd6e50baac97f8ec78bf39285f25139dcec45d52ba53aab4196670930",
+   "date": "2026-10-27",
+   "notes_ar": "مسودة مرجعية لم يراجعها أي خبير بشري؛ لا تُنشر."
+  },
+  {
+   "role": "scientific_reviewer",
+   "reviewer": "unassigned",
+   "status": "pending",
+   "content_hash": "sha256:0e04223fd6e50baac97f8ec78bf39285f25139dcec45d52ba53aab4196670930",
+   "date": "2026-10-27",
+   "notes_ar": "مسودة مرجعية لم يراجعها أي خبير بشري؛ لا تُنشر."
+  },
+  {
+   "role": "learning_designer",
+   "reviewer": "unassigned",
+   "status": "pending",
+   "content_hash": "sha256:0e04223fd6e50baac97f8ec78bf39285f25139dcec45d52ba53aab4196670930",
+   "date": "2026-10-27",
+   "notes_ar": "مسودة مرجعية لم يراجعها أي خبير بشري؛ لا تُنشر."
+  },
+  {
+   "role": "age_appropriateness",
+   "reviewer": "unassigned",
+   "status": "pending",
+   "content_hash": "sha256:0e04223fd6e50baac97f8ec78bf39285f25139dcec45d52ba53aab4196670930",
+   "date": "2026-10-27",
+   "notes_ar": "مسودة مرجعية لم يراجعها أي خبير بشري؛ لا تُنشر."
+  },
+  {
+   "role": "cultural_reviewer",
+   "reviewer": "unassigned",
+   "status": "pending",
+   "content_hash": "sha256:0e04223fd6e50baac97f8ec78bf39285f25139dcec45d52ba53aab4196670930",
+   "date": "2026-10-27",
+   "notes_ar": "مسودة مرجعية لم يراجعها أي خبير بشري؛ لا تُنشر."
+  },
+  {
+   "role": "legal_rights",
+   "reviewer": "unassigned",
+   "status": "pending",
+   "content_hash": "sha256:0e04223fd6e50baac97f8ec78bf39285f25139dcec45d52ba53aab4196670930",
+   "date": "2026-10-27",
+   "notes_ar": "مسودة مرجعية لم يراجعها أي خبير بشري؛ لا تُنشر."
+  },
+  {
+   "role": "safety",
+   "reviewer": "unassigned",
+   "status": "pending",
+   "content_hash": "sha256:0e04223fd6e50baac97f8ec78bf39285f25139dcec45d52ba53aab4196670930",
+   "date": "2026-10-27",
+   "notes_ar": "مسودة مرجعية لم يراجعها أي خبير بشري؛ لا تُنشر."
+  }
+ ]
+}

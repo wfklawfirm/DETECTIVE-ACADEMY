@@ -1,0 +1,867 @@
+{
+ "version": 1,
+ "expert_review": "pending",
+ "books": [
+  {
+   "id": "BK-741",
+   "title_ar": "الطب الشرعي ومسرح الجريمة والبحث الجنائي",
+   "authors_ar": [
+    "أحمد بسيوني أبو الروس",
+    "مديحة الخضري"
+   ],
+   "year": 2008,
+   "edition_ar": "الطبعة الثانية",
+   "hook_ar": "بين جثة صامتة ومسرح مبعثر، من يقرأ الأثر أولاً يكسب القضية.",
+   "rights": "protected",
+   "use": "concept-notes-only",
+   "rights_note_ar": "كتاب محمي بحقوق النشر. لا يُخزَّن نصه في المنصة؛ نكتب ملاحظات مفاهيم بصياغتنا مع إحالة إلى موضع الفكرة في الكتاب.",
+   "teen_facing": true,
+   "sections": [
+    {
+     "id": "S00",
+     "title_ar": "الغلاف والفهرس الأولي",
+     "line_start": 1,
+     "line_end": 69,
+     "inclusion": "excluded",
+     "reason_code": "front_back_matter",
+     "reason_ar": "بيانات نشر وتمهيد لا مادة تعليمية فيها.",
+     "note_count": 0
+    },
+    {
+     "id": "S01",
+     "title_ar": "الموت وعلاماته",
+     "line_start": 70,
+     "line_end": 251,
+     "inclusion": "included",
+     "reason_code": "ok",
+     "reason_ar": "مفاهيم التعرف على الوفاة وتغيّرات ما بعدها، تُعرض بلا تفصيل صادم.",
+     "note_count": 22
+    },
+    {
+     "id": "S02",
+     "title_ar": "الاختناق",
+     "line_start": 252,
+     "line_end": 600,
+     "inclusion": "included",
+     "reason_code": "conceptual_only",
+     "reason_ar": "تُعرض مبادئ الاستدلال فقط، ولا تُعرض تفاصيل الطرائق.",
+     "note_count": 21
+    },
+    {
+     "id": "S03",
+     "title_ar": "الموت المفاجئ",
+     "line_start": 601,
+     "line_end": 922,
+     "inclusion": "included",
+     "reason_code": "ok",
+     "reason_ar": "التمييز بين الأسباب الطبيعية والعارضة منطق مفيد للتحقيق.",
+     "note_count": 11
+    },
+    {
+     "id": "S04",
+     "title_ar": "جرائم الاعتداء الجنسي",
+     "line_start": 923,
+     "line_end": 1006,
+     "inclusion": "excluded",
+     "reason_code": "out_of_scope_teens",
+     "reason_ar": "موضوع حساس لا يناسب الفئة العمرية ولا حاجة له لأهداف المنصة.",
+     "note_count": 0
+    },
+    {
+     "id": "S05",
+     "title_ar": "الجروح والإصابات",
+     "line_start": 1007,
+     "line_end": 1471,
+     "inclusion": "included",
+     "reason_code": "conceptual_only",
+     "reason_ar": "تُعرض أنواع الإصابات من حيث الدلالة والتوثيق دون وصف مصوَّر.",
+     "note_count": 47
+    },
+    {
+     "id": "S06",
+     "title_ar": "الإجهاض وقتل الأطفال",
+     "line_start": 1472,
+     "line_end": 1894,
+     "inclusion": "excluded",
+     "reason_code": "out_of_scope_teens",
+     "reason_ar": "موضوع حساس خارج نطاق الفئة العمرية.",
+     "note_count": 0
+    },
+    {
+     "id": "S07",
+     "title_ar": "العاهات المستديمة",
+     "line_start": 1895,
+     "line_end": 1959,
+     "inclusion": "included",
+     "reason_code": "ok",
+     "reason_ar": "مفاهيم التقدير والتقرير الطبي.",
+     "note_count": 5
+    },
+    {
+     "id": "S08",
+     "title_ar": "الحروق",
+     "line_start": 1960,
+     "line_end": 2058,
+     "inclusion": "included",
+     "reason_code": "conceptual_only",
+     "reason_ar": "التمييز بين أنماط الحروق من حيث الدلالة، دون تفاصيل الأذى.",
+     "note_count": 9
+    },
+    {
+     "id": "S09",
+     "title_ar": "الإصابات النارية",
+     "line_start": 2059,
+     "line_end": 2425,
+     "inclusion": "included",
+     "reason_code": "conceptual_only",
+     "reason_ar": "استدلال عام على التمييز بين المدخل والمخرج والمسافة، ولا ينقل أي معلومة تشغيلية.",
+     "note_count": 23
+    },
+    {
+     "id": "S10",
+     "title_ar": "السموم",
+     "line_start": 2426,
+     "line_end": 2927,
+     "inclusion": "included",
+     "reason_code": "principles_only",
+     "reason_ar": "مبادئ أخذ العينات والتحليل وحدود الفحص فقط، ولا مقادير ولا طرائق.",
+     "note_count": 6
+    },
+    {
+     "id": "S11",
+     "title_ar": "الكسور",
+     "line_start": 2928,
+     "line_end": 3055,
+     "inclusion": "included",
+     "reason_code": "ok",
+     "reason_ar": "مفاهيم التعرف على الإصابة العظمية وتوثيقها.",
+     "note_count": 4
+    },
+    {
+     "id": "S12",
+     "title_ar": "تحقيق الشخصية",
+     "line_start": 3056,
+     "line_end": 3413,
+     "inclusion": "included",
+     "reason_code": "ok",
+     "reason_ar": "طرائق التعرف على الهوية وحدودها.",
+     "note_count": 22
+    },
+    {
+     "id": "S13",
+     "title_ar": "الأطباء الشرعيون والتعليمات وقواعد النيابة",
+     "line_start": 3414,
+     "line_end": 3716,
+     "inclusion": "included",
+     "reason_code": "ok",
+     "reason_ar": "الإطار المهني والإجرائي.",
+     "note_count": 25
+    },
+    {
+     "id": "S14",
+     "title_ar": "التزوير والتزييف",
+     "line_start": 3717,
+     "line_end": 3986,
+     "inclusion": "included",
+     "reason_code": "conceptual_only",
+     "reason_ar": "علامات الكشف عن التزوير، لا طرائق صناعته.",
+     "note_count": 9
+    },
+    {
+     "id": "S15",
+     "title_ar": "فحص المستندات",
+     "line_start": 3987,
+     "line_end": 4252,
+     "inclusion": "included",
+     "reason_code": "ok",
+     "reason_ar": "مفاهيم فحص الوثائق وأدواته.",
+     "note_count": 15
+    },
+    {
+     "id": "S16",
+     "title_ar": "فحص الخطوط",
+     "line_start": 4253,
+     "line_end": 4704,
+     "inclusion": "included",
+     "reason_code": "ok",
+     "reason_ar": "مبادئ مقارنة الخطوط وحدودها.",
+     "note_count": 22
+    },
+    {
+     "id": "S17",
+     "title_ar": "تاريخ المستند والكتابة الخفية",
+     "line_start": 4705,
+     "line_end": 4936,
+     "inclusion": "included",
+     "reason_code": "conceptual_only",
+     "reason_ar": "حدود تقدير عمر المستند، دون وصفات.",
+     "note_count": 8
+    },
+    {
+     "id": "S18",
+     "title_ar": "الأرقام والكتابات المطموسة",
+     "line_start": 4937,
+     "line_end": 5014,
+     "inclusion": "included",
+     "reason_code": "ok",
+     "reason_ar": "فكرة استعادة المطموس بوصفها مفهوماً.",
+     "note_count": 2
+    },
+    {
+     "id": "S19",
+     "title_ar": "المحقق الجنائي",
+     "line_start": 5015,
+     "line_end": 5125,
+     "inclusion": "included",
+     "reason_code": "ok",
+     "reason_ar": "مهارات المحقق وسلوكه المهني.",
+     "note_count": 6
+    },
+    {
+     "id": "S20",
+     "title_ar": "مسرح الجريمة والآثار",
+     "line_start": 5126,
+     "line_end": 5598,
+     "inclusion": "included",
+     "reason_code": "ok",
+     "reason_ar": "صلب المادة التعليمية: حماية المسرح وجمع الآثار.",
+     "note_count": 21
+    },
+    {
+     "id": "S21",
+     "title_ar": "التصوير الجنائي",
+     "line_start": 5599,
+     "line_end": 5957,
+     "inclusion": "included",
+     "reason_code": "ok",
+     "reason_ar": "قواعد التصوير التوثيقي.",
+     "note_count": 4
+    },
+    {
+     "id": "S22",
+     "title_ar": "أحكام قضائية في الخبرة",
+     "line_start": 5958,
+     "line_end": 7076,
+     "inclusion": "included",
+     "reason_code": "ok",
+     "reason_ar": "مبادئ قضائية بشأن تقرير الخبير، تُلخص بأفكار عامة دون نسخ الأحكام.",
+     "note_count": 8
+    },
+    {
+     "id": "S23",
+     "title_ar": "قانون الخبراء",
+     "line_start": 7077,
+     "line_end": 7386,
+     "inclusion": "included",
+     "reason_code": "ok",
+     "reason_ar": "الإطار القانوني للخبرة.",
+     "note_count": 3
+    },
+    {
+     "id": "S24",
+     "title_ar": "الفهرس الختامي",
+     "line_start": 7387,
+     "line_end": 7788,
+     "inclusion": "excluded",
+     "reason_code": "front_back_matter",
+     "reason_ar": "فهرس لا مادة تعليمية فيه.",
+     "note_count": 0
+    }
+   ],
+   "section_count": 25,
+   "included_count": 21,
+   "excluded_count": 4,
+   "note_count": 293
+  },
+  {
+   "id": "BK-853",
+   "title_ar": "الطب الشرعي العملي (الجزء الأول)",
+   "authors_ar": [
+    "إلياس الصائغ"
+   ],
+   "year": 1997,
+   "edition_ar": "الجزء الأول",
+   "hook_ar": "ملفات قديمة تحمل حالات حقيقية مجهولة الأسماء: ماذا كان يمكن أن يخبرنا الجسد؟",
+   "rights": "protected",
+   "use": "concept-notes-only",
+   "rights_note_ar": "كتاب محمي بحقوق النشر. لا يُخزَّن نصه في المنصة؛ نكتب ملاحظات مفاهيم بصياغتنا مع إحالة إلى موضع الفكرة في الكتاب.",
+   "teen_facing": true,
+   "sections": [
+    {
+     "id": "C00",
+     "title_ar": "الغلاف والتقديم",
+     "line_start": 1,
+     "line_end": 8,
+     "inclusion": "excluded",
+     "reason_code": "front_back_matter",
+     "reason_ar": "بيانات نشر.",
+     "note_count": 0
+    },
+    {
+     "id": "C01",
+     "title_ar": "مقدمة",
+     "line_start": 9,
+     "line_end": 24,
+     "inclusion": "included",
+     "reason_code": "ok",
+     "reason_ar": "تعريف عام بالمجال.",
+     "note_count": 1
+    },
+    {
+     "id": "C02",
+     "title_ar": "دور الطب الشرعي",
+     "line_start": 25,
+     "line_end": 33,
+     "inclusion": "included",
+     "reason_code": "ok",
+     "reason_ar": "وظيفة الطب الشرعي في العدالة.",
+     "note_count": 2
+    },
+    {
+     "id": "C03",
+     "title_ar": "الرضوض وأنواع الجروح",
+     "line_start": 34,
+     "line_end": 339,
+     "inclusion": "included",
+     "reason_code": "conceptual_only",
+     "reason_ar": "التصنيف والدلالة والتوثيق دون وصف مصوَّر.",
+     "note_count": 9
+    },
+    {
+     "id": "C05",
+     "title_ar": "جروح الرأس",
+     "line_start": 340,
+     "line_end": 463,
+     "inclusion": "included",
+     "reason_code": "conceptual_only",
+     "reason_ar": "الاستدلال على الآلية والتوقيت بلغة غير صادمة.",
+     "note_count": 6
+    },
+    {
+     "id": "C06",
+     "title_ar": "الجروح النارية",
+     "line_start": 464,
+     "line_end": 522,
+     "inclusion": "included",
+     "reason_code": "conceptual_only",
+     "reason_ar": "مفاهيم عامة فقط.",
+     "note_count": 8
+    },
+    {
+     "id": "C07",
+     "title_ar": "الانتحار والقتل: منطق التمييز",
+     "line_start": 523,
+     "line_end": 630,
+     "inclusion": "included",
+     "reason_code": "conceptual_only",
+     "reason_ar": "الاستدلال على الظروف دون أي ذكر لطرائق، وبحذر مناسب للفئة العمرية.",
+     "note_count": 7
+    },
+    {
+     "id": "C08",
+     "title_ar": "حالات القتل",
+     "line_start": 631,
+     "line_end": 774,
+     "inclusion": "included",
+     "reason_code": "conceptual_only",
+     "reason_ar": "دروس الاستدلال من حالات مبسّطة.",
+     "note_count": 7
+    },
+    {
+     "id": "C09",
+     "title_ar": "بنادق الصيد",
+     "line_start": 775,
+     "line_end": 902,
+     "inclusion": "included",
+     "reason_code": "conceptual_only",
+     "reason_ar": "دروس استدلال من حوادث، دون أي تفصيل عن السلاح.",
+     "note_count": 8
+    },
+    {
+     "id": "C10",
+     "title_ar": "الحروق",
+     "line_start": 903,
+     "line_end": 1000,
+     "inclusion": "included",
+     "reason_code": "conceptual_only",
+     "reason_ar": "الدلالة والتمييز.",
+     "note_count": 7
+    },
+    {
+     "id": "C11",
+     "title_ar": "الكهرباء",
+     "line_start": 1001,
+     "line_end": 1050,
+     "inclusion": "included",
+     "reason_code": "conceptual_only",
+     "reason_ar": "مبادئ التمييز بين الحادث والعمد.",
+     "note_count": 4
+    },
+    {
+     "id": "C12",
+     "title_ar": "انضغاط الصدر",
+     "line_start": 1051,
+     "line_end": 1121,
+     "inclusion": "included",
+     "reason_code": "conceptual_only",
+     "reason_ar": "منطق الاستدلال.",
+     "note_count": 11
+    },
+    {
+     "id": "C13",
+     "title_ar": "الشنق والخنق",
+     "line_start": 1122,
+     "line_end": 1131,
+     "inclusion": "included",
+     "reason_code": "conceptual_only",
+     "reason_ar": "علامات الدلالة فقط.",
+     "note_count": 1
+    },
+    {
+     "id": "C14",
+     "title_ar": "الغرق",
+     "line_start": 1132,
+     "line_end": 1210,
+     "inclusion": "included",
+     "reason_code": "conceptual_only",
+     "reason_ar": "علامات الدلالة وحدودها.",
+     "note_count": 6
+    },
+    {
+     "id": "C15",
+     "title_ar": "تقدير العمر",
+     "line_start": 1211,
+     "line_end": 1327,
+     "inclusion": "included",
+     "reason_code": "ok",
+     "reason_ar": "طرائق التقدير وهوامش الخطأ.",
+     "note_count": 5
+    },
+    {
+     "id": "C16",
+     "title_ar": "الأعضاء التناسلية الأنثوية",
+     "line_start": 1328,
+     "line_end": 1477,
+     "inclusion": "excluded",
+     "reason_code": "out_of_scope_teens",
+     "reason_ar": "موضوع حساس خارج نطاق الفئة العمرية.",
+     "note_count": 0
+    },
+    {
+     "id": "C17",
+     "title_ar": "الاغتصاب",
+     "line_start": 1478,
+     "line_end": 1528,
+     "inclusion": "excluded",
+     "reason_code": "out_of_scope_teens",
+     "reason_ar": "موضوع حساس.",
+     "note_count": 0
+    },
+    {
+     "id": "C18",
+     "title_ar": "العنّة والعقم",
+     "line_start": 1529,
+     "line_end": 1579,
+     "inclusion": "excluded",
+     "reason_code": "out_of_scope_teens",
+     "reason_ar": "موضوع حساس خارج رسالة المنصة.",
+     "note_count": 0
+    },
+    {
+     "id": "C19",
+     "title_ar": "اللواط",
+     "line_start": 1580,
+     "line_end": 1641,
+     "inclusion": "excluded",
+     "reason_code": "out_of_scope_teens",
+     "reason_ar": "موضوع حساس خارج نطاق الفئة العمرية.",
+     "note_count": 0
+    },
+    {
+     "id": "C20",
+     "title_ar": "الصرع",
+     "line_start": 1642,
+     "line_end": 1735,
+     "inclusion": "included",
+     "reason_code": "ok",
+     "reason_ar": "الأعراض والأهلية والمسؤولية.",
+     "note_count": 5
+    },
+    {
+     "id": "C21",
+     "title_ar": "التسمم",
+     "line_start": 1736,
+     "line_end": 2016,
+     "inclusion": "included",
+     "reason_code": "principles_only",
+     "reason_ar": "مفاهيم عامة ولا مقادير ولا طرائق.",
+     "note_count": 8
+    },
+    {
+     "id": "C22",
+     "title_ar": "الخرف والأهلية",
+     "line_start": 2017,
+     "line_end": 2169,
+     "inclusion": "included",
+     "reason_code": "ok",
+     "reason_ar": "تقدير الأهلية القانونية.",
+     "note_count": 8
+    },
+    {
+     "id": "C23",
+     "title_ar": "إصابات العمل",
+     "line_start": 2170,
+     "line_end": 2397,
+     "inclusion": "included",
+     "reason_code": "ok",
+     "reason_ar": "علاقة السبب بالنتيجة وتقدير العجز.",
+     "note_count": 12
+    },
+    {
+     "id": "C24",
+     "title_ar": "التشوهات",
+     "line_start": 2398,
+     "line_end": 2513,
+     "inclusion": "included",
+     "reason_code": "ok",
+     "reason_ar": "التوثيق والتقدير.",
+     "note_count": 7
+    },
+    {
+     "id": "C25",
+     "title_ar": "الوفاة",
+     "line_start": 2514,
+     "line_end": 2731,
+     "inclusion": "included",
+     "reason_code": "ok",
+     "reason_ar": "تحديد الوفاة وأحكامها.",
+     "note_count": 16
+    },
+    {
+     "id": "C26",
+     "title_ar": "الفهرس",
+     "line_start": 2732,
+     "line_end": 2775,
+     "inclusion": "excluded",
+     "reason_code": "front_back_matter",
+     "reason_ar": "فهرس.",
+     "note_count": 0
+    }
+   ],
+   "section_count": 26,
+   "included_count": 20,
+   "excluded_count": 6,
+   "note_count": 138
+  },
+  {
+   "id": "BK-843",
+   "title_ar": "الأسلحة النارية في الطب الشرعي",
+   "authors_ar": [
+    "حسين شحرور"
+   ],
+   "year": 2004,
+   "edition_ar": "",
+   "hook_ar": "الأثر يخبرك بما حدث، لا بمن فعله: تعلّم الفرق قبل أن تتهم أحداً.",
+   "rights": "protected",
+   "use": "concept-notes-only",
+   "rights_note_ar": "كتاب محمي بحقوق النشر. لا يُخزَّن نصه في المنصة؛ نكتب ملاحظات مفاهيم بصياغتنا مع إحالة إلى موضع الفكرة في الكتاب.",
+   "teen_facing": true,
+   "sections": [
+    {
+     "id": "D00",
+     "title_ar": "الغلاف والمقدمات",
+     "line_start": 1,
+     "line_end": 39,
+     "inclusion": "excluded",
+     "reason_code": "front_back_matter",
+     "reason_ar": "بيانات نشر.",
+     "note_count": 0
+    },
+    {
+     "id": "D01",
+     "title_ar": "المقدمة وأسئلة التحقيق",
+     "line_start": 40,
+     "line_end": 154,
+     "inclusion": "included",
+     "reason_code": "ok",
+     "reason_ar": "الأسئلة التي يجيب عنها فحص الأسلحة النارية.",
+     "note_count": 6
+    },
+    {
+     "id": "D02",
+     "title_ar": "التاريخ",
+     "line_start": 155,
+     "line_end": 191,
+     "inclusion": "excluded",
+     "reason_code": "outside_mission",
+     "reason_ar": "تاريخ عام خارج الحاجة.",
+     "note_count": 0
+    },
+    {
+     "id": "D03",
+     "title_ar": "الأسلحة والذخائر",
+     "line_start": 192,
+     "line_end": 479,
+     "inclusion": "excluded",
+     "reason_code": "weapon_operational",
+     "reason_ar": "تفاصيل الأسلحة والذخائر تشغيلية، فلا تُنقل.",
+     "note_count": 0
+    },
+    {
+     "id": "D04",
+     "title_ar": "الوجه الشرعي للمقاذيف",
+     "line_start": 480,
+     "line_end": 584,
+     "inclusion": "included",
+     "reason_code": "conceptual_only",
+     "reason_ar": "الفرق بين علامات الصنف وعلامات الفرد وحدودها، دون تفاصيل.",
+     "note_count": 5
+    },
+    {
+     "id": "D05",
+     "title_ar": "كيفية الإطلاق",
+     "line_start": 585,
+     "line_end": 697,
+     "inclusion": "excluded",
+     "reason_code": "weapon_operational",
+     "reason_ar": "وصف آلية تشغيلية.",
+     "note_count": 0
+    },
+    {
+     "id": "D06",
+     "title_ar": "تصنيف الجروح",
+     "line_start": 698,
+     "line_end": 827,
+     "inclusion": "included",
+     "reason_code": "conceptual_only",
+     "reason_ar": "التصنيف بمنطق الاستدلال.",
+     "note_count": 3
+    },
+    {
+     "id": "D07",
+     "title_ar": "مقارنة المدخل والمخرج",
+     "line_start": 828,
+     "line_end": 1063,
+     "inclusion": "included",
+     "reason_code": "conceptual_only",
+     "reason_ar": "علامات التمييز وأشباهها.",
+     "note_count": 5
+    },
+    {
+     "id": "D08",
+     "title_ar": "جروح المسدسات",
+     "line_start": 1064,
+     "line_end": 1314,
+     "inclusion": "included",
+     "reason_code": "conceptual_only",
+     "reason_ar": "مبادئ التقدير والتوثيق بلا تفاصيل.",
+     "note_count": 6
+    },
+    {
+     "id": "D09",
+     "title_ar": "النزف",
+     "line_start": 1315,
+     "line_end": 1417,
+     "inclusion": "included",
+     "reason_code": "ok",
+     "reason_ar": "علاقته بالتوقيت والملابس.",
+     "note_count": 3
+    },
+    {
+     "id": "D10",
+     "title_ar": "التصوير الشعاعي",
+     "line_start": 1418,
+     "line_end": 1461,
+     "inclusion": "included",
+     "reason_code": "ok",
+     "reason_ar": "فائدة الأشعة وحدودها.",
+     "note_count": 2
+    },
+    {
+     "id": "D11",
+     "title_ar": "كشف البقايا والملابس والمسافة وقواعد المشهد",
+     "line_start": 1462,
+     "line_end": 1624,
+     "inclusion": "included",
+     "reason_code": "conceptual_only",
+     "reason_ar": "مبادئ الكشف وحدودها وقواعد المشهد.",
+     "note_count": 8
+    },
+    {
+     "id": "D12",
+     "title_ar": "أسلحة الصيد",
+     "line_start": 1625,
+     "line_end": 1891,
+     "inclusion": "excluded",
+     "reason_code": "weapon_operational",
+     "reason_ar": "تفاصيل الأسلحة.",
+     "note_count": 0
+    },
+    {
+     "id": "D13",
+     "title_ar": "الانتحار: استدلال الأدلة",
+     "line_start": 1892,
+     "line_end": 2021,
+     "inclusion": "included",
+     "reason_code": "conceptual_only",
+     "reason_ar": "منطق الأدلة فقط؛ تُستبعد الإحصاءات وأفضلية الطرائق.",
+     "note_count": 5
+    },
+    {
+     "id": "D14",
+     "title_ar": "الوصف التشريحي",
+     "line_start": 2022,
+     "line_end": 2036,
+     "inclusion": "included",
+     "reason_code": "ok",
+     "reason_ar": "قواعد الوصف.",
+     "note_count": 1
+    },
+    {
+     "id": "D15",
+     "title_ar": "التقرير الطبي",
+     "line_start": 2037,
+     "line_end": 2085,
+     "inclusion": "included",
+     "reason_code": "ok",
+     "reason_ar": "بنية التقرير.",
+     "note_count": 5
+    },
+    {
+     "id": "D16",
+     "title_ar": "أمثلة",
+     "line_start": 2086,
+     "line_end": 2137,
+     "inclusion": "included",
+     "reason_code": "ok",
+     "reason_ar": "نماذج توضيحية.",
+     "note_count": 1
+    },
+    {
+     "id": "D17",
+     "title_ar": "المراجع والسيرة",
+     "line_start": 2138,
+     "line_end": 2180,
+     "inclusion": "excluded",
+     "reason_code": "front_back_matter",
+     "reason_ar": "مراجع وسيرة.",
+     "note_count": 0
+    },
+    {
+     "id": "D18",
+     "title_ar": "الفهرس",
+     "line_start": 2181,
+     "line_end": 2218,
+     "inclusion": "excluded",
+     "reason_code": "front_back_matter",
+     "reason_ar": "فهرس.",
+     "note_count": 0
+    }
+   ],
+   "section_count": 19,
+   "included_count": 12,
+   "excluded_count": 7,
+   "note_count": 50
+  },
+  {
+   "id": "BK-04425",
+   "title_ar": "طرق الإنجاب في الطب الحديث وحكمها الشرعي",
+   "authors_ar": [
+    "بكر أبو زيد"
+   ],
+   "year": null,
+   "edition_ar": "",
+   "hook_ar": "كتاب مغلق في ملفنا: لماذا نبقيه خارج واجهة المراهقين؟",
+   "rights": "protected",
+   "use": "concept-notes-only",
+   "rights_note_ar": "كتاب محمي بحقوق النشر. لا يُخزَّن نصه في المنصة؛ نكتب ملاحظات مفاهيم بصياغتنا مع إحالة إلى موضع الفكرة في الكتاب.",
+   "teen_facing": false,
+   "sections": [
+    {
+     "id": "R00",
+     "title_ar": "التقديم والفهرس",
+     "line_start": 1,
+     "line_end": 39,
+     "inclusion": "excluded",
+     "reason_code": "front_back_matter",
+     "reason_ar": "بيانات نشر وفهرس.",
+     "note_count": 0
+    },
+    {
+     "id": "R01",
+     "title_ar": "الأدبيات",
+     "line_start": 40,
+     "line_end": 76,
+     "inclusion": "excluded",
+     "reason_code": "outside_mission",
+     "reason_ar": "سرد أدبي فقهي خارج رسالة المنصة.",
+     "note_count": 0
+    },
+    {
+     "id": "R02",
+     "title_ar": "قواعد الشريعة",
+     "line_start": 77,
+     "line_end": 158,
+     "inclusion": "excluded",
+     "reason_code": "outside_mission",
+     "reason_ar": "أحكام فقهية في الإنجاب المساعد، وهي خارج رسالة المنصة وموضوعها تناسلي.",
+     "note_count": 0
+    },
+    {
+     "id": "R03",
+     "title_ar": "المصطلحات الطبية",
+     "line_start": 159,
+     "line_end": 211,
+     "inclusion": "excluded",
+     "reason_code": "out_of_scope_teens",
+     "reason_ar": "موضوع تناسلي لا يناسب الفئة العمرية.",
+     "note_count": 0
+    },
+    {
+     "id": "R04",
+     "title_ar": "التاريخ",
+     "line_start": 212,
+     "line_end": 242,
+     "inclusion": "excluded",
+     "reason_code": "outside_mission",
+     "reason_ar": "تاريخي فقهي.",
+     "note_count": 0
+    },
+    {
+     "id": "R05",
+     "title_ar": "الأصول",
+     "line_start": 243,
+     "line_end": 246,
+     "inclusion": "excluded",
+     "reason_code": "outside_mission",
+     "reason_ar": "تمهيد.",
+     "note_count": 0
+    },
+    {
+     "id": "R06",
+     "title_ar": "الصور",
+     "line_start": 247,
+     "line_end": 300,
+     "inclusion": "excluded",
+     "reason_code": "out_of_scope_teens",
+     "reason_ar": "وصف طرائق تناسلية لا يناسب الفئة العمرية.",
+     "note_count": 0
+    },
+    {
+     "id": "R07",
+     "title_ar": "الحكم الشرعي: مخاطر الخلط في العينات والحافز المالي",
+     "line_start": 301,
+     "line_end": 392,
+     "inclusion": "excluded",
+     "reason_code": "outside_mission",
+     "reason_ar": "الكتاب مستبعد من واجهة المراهقين؛ استُخرجت منه ملاحظتان محايدتان عن توثيق الهوية فقط.",
+     "note_count": 2
+    }
+   ],
+   "section_count": 8,
+   "included_count": 0,
+   "excluded_count": 8,
+   "note_count": 2
+  }
+ ]
+}

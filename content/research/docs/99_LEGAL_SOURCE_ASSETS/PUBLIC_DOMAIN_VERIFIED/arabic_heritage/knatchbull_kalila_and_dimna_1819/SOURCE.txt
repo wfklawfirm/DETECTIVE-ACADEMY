@@ -1,0 +1,8 @@
+Title: Kalila and Dimna; or, The Fables of Bidpai. Translated from the Arabic by the Rev. Wyndham Knatchbull (Oxford: W. Baxter for J. Parker, 1819)
+Source text: Arabic edition of A. I. Silvestre de Sacy (Paris, 1816), per the translator's preface.
+Digitization: Internet Archive item bub_gb_Mx4W0HHMJAYC (Google Books scan of a Harvard University copy); file = IA-generated OCR text (_djvu.txt), unchanged.
+URL: https://archive.org/details/bub_gb_Mx4W0HHMJAYC
+IA licence field: Public Domain Mark 1.0
+PD basis: published 1819; translator d. 1868 -> PD in US, UK/EU (life+70 ended 1938), Arab life+50 states.
+Contents of interest: ch. VI 'Investigation of the conduct of Dimna' (book p.160 ff.) - English counterpart of ATH-SRC-1205's Bab al-fahs.
+OCR quality: uncorrected machine OCR (noise such as 'Gopgle'). Stored by W2-HERITAGE 2026-10-27. sha256 8ff91cc939834057d2c1010d84415a85e717a5995d78e79a724a0f0d52bed92e

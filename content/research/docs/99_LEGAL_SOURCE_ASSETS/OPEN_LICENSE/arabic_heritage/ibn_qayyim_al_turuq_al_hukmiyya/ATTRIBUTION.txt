@@ -1,0 +1,9 @@
+Title: al-Turuq al-hukmiyya fi al-siyasa al-shar'iyya
+Author: Ibn Qayyim al-Jawziyya
+Digital source: Open Islamicate Texts Initiative (OpenITI), file 0751IbnQayyimJawziyya.TuruqHukmiyya.JK000104-ara1
+URL: https://raw.githubusercontent.com/OpenITI/0775AH/master/data/0751IbnQayyimJawziyya/0751IbnQayyimJawziyya.TuruqHukmiyya/0751IbnQayyimJawziyya.TuruqHukmiyya.JK000104-ara1
+Licence: CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/)
+Attribution text: "Text from the OpenITI corpus (Romanov, Savant, Seydi, Verkinderen, Nigst et al.), release on Zenodo doi:10.5281/zenodo.3082463, licensed CC BY-NC-SA 4.0."
+Use limits for ATHAR: internal research only (non-commercial). Do not ship this file or substantial extracts in a paid product; commercial ATHAR stories must be our own retellings. File unchanged (byte-identical to source).
+Notes: Inline variant readings in triple brackets are part of the OpenITI file.
+Stored by W2-HERITAGE on 2026-10-27.

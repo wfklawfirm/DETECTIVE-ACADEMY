@@ -1,0 +1,462 @@
+{
+ "chapbook_default": {
+  "start": {
+   "html_dir": null,
+   "html_lang": null,
+   "body_dir": "ltr",
+   "s1": {
+    "text": "قال سمير: «غادرت في الرابعة والنصف»، فهل تصدقه؟",
+    "dir": "ltr",
+    "align": "start"
+   },
+   "s2": {
+    "text": "لديك 2 دليل. (EN var: 2)",
+    "dir": "ltr",
+    "align": "start"
+   },
+   "s3": {
+    "text": "المفتاح رقم 3 أعيد الساعة 18:47 (EV-014).",
+    "dir": "ltr",
+    "align": "start"
+   },
+   "links": [
+    {
+     "text": "افحص كاميرا 3 (CCTV)",
+     "dir": "ltr",
+     "align": "start"
+    },
+    {
+     "text": "switch theme",
+     "dir": "ltr",
+     "align": "right"
+    },
+    {
+     "text": "restart",
+     "dir": "ltr",
+     "align": "right"
+    }
+   ],
+   "title": "اختبار RTL",
+   "body_text_sample": "قال سمير: «غادرت في الرابعة والنصف»، فهل تصدقه؟\n\nلديك 2 دليل. (EN var: 2)\n\nالمفتاح رقم 3 أعيد الساعة 18:47 (EV-014).\n\nافحص كاميرا 3 (CCTV)\n\nاختبار RTL\n\nswitch theme restart"
+  },
+  "errors": [],
+  "after_click": {
+   "html_dir": null,
+   "html_lang": null,
+   "body_dir": "ltr",
+   "s1": {
+    "text": "سجل المفاتيح: أعيد المفتاح بعد إطفاء الأنوار.",
+    "dir": "ltr",
+    "align": "start"
+   },
+   "s2": null,
+   "s3": null,
+   "links": [
+    {
+     "text": "switch theme",
+     "dir": "ltr",
+     "align": "right"
+    },
+    {
+     "text": "restart",
+     "dir": "ltr",
+     "align": "right"
+    }
+   ],
+   "title": "اختبار RTL",
+   "body_text_sample": "سجل المفاتيح: أعيد المفتاح بعد إطفاء الأنوار.\n\nاختبار RTL\n\nswitch theme restart"
+  }
+ },
+ "chapbook_rtlcss": {
+  "start": {
+   "html_dir": null,
+   "html_lang": null,
+   "body_dir": "rtl",
+   "s1": {
+    "text": "قال سمير: «غادرت في الرابعة والنصف»، فهل تصدقه؟",
+    "dir": "rtl",
+    "align": "start"
+   },
+   "s2": {
+    "text": "لديك 2 دليل. (EN var: 2)",
+    "dir": "rtl",
+    "align": "start"
+   },
+   "s3": {
+    "text": "المفتاح رقم 3 أعيد الساعة 18:47 (EV-014).",
+    "dir": "rtl",
+    "align": "start"
+   },
+   "links": [
+    {
+     "text": "افحص كاميرا 3 (CCTV)",
+     "dir": "rtl",
+     "align": "start"
+    },
+    {
+     "text": "switch theme",
+     "dir": "rtl",
+     "align": "right"
+    },
+    {
+     "text": "restart",
+     "dir": "rtl",
+     "align": "right"
+    }
+   ],
+   "title": "اختبار RTL",
+   "body_text_sample": "قال سمير: «غادرت في الرابعة والنصف»، فهل تصدقه؟\n\nلديك 2 دليل. (EN var: 2)\n\nالمفتاح رقم 3 أعيد الساعة 18:47 (EV-014).\n\nافحص كاميرا 3 (CCTV)\n\nاختبار RTL\n\nswitch theme restart"
+  },
+  "errors": [],
+  "after_click": {
+   "html_dir": null,
+   "html_lang": null,
+   "body_dir": "rtl",
+   "s1": {
+    "text": "سجل المفاتيح: أعيد المفتاح بعد إطفاء الأنوار.",
+    "dir": "rtl",
+    "align": "start"
+   },
+   "s2": null,
+   "s3": null,
+   "links": [
+    {
+     "text": "switch theme",
+     "dir": "rtl",
+     "align": "right"
+    },
+    {
+     "text": "restart",
+     "dir": "rtl",
+     "align": "right"
+    }
+   ],
+   "title": "اختبار RTL",
+   "body_text_sample": "سجل المفاتيح: أعيد المفتاح بعد إطفاء الأنوار.\n\nاختبار RTL\n\nswitch theme restart"
+  }
+ },
+ "harlowe_default": {
+  "start": {
+   "html_dir": null,
+   "html_lang": null,
+   "body_dir": "ltr",
+   "s1": {
+    "text": "قال سمير: «غادرت في الرابعة والنصف»، فهل تصدقه؟",
+    "dir": "ltr",
+    "align": "start"
+   },
+   "s2": {
+    "text": "لديك $عدد_الأدلة دليل. (EN var: 2)",
+    "dir": "ltr",
+    "align": "start"
+   },
+   "s3": {
+    "text": "المفتاح رقم 3 أعيد الساعة 18:47 (EV-014).",
+    "dir": "ltr",
+    "align": "start"
+   },
+   "links": [
+    {
+     "text": "افحص كاميرا 3 (CCTV)",
+     "dir": "ltr",
+     "align": "start"
+    }
+   ],
+   "title": "اختبار RTL",
+   "body_text_sample": "\"$عدد_الأدلة to \" isn't valid Harlowe syntax for the inside of a macro call.\n\n\nقال سمير: «غادرت في الرابعة والنصف»، فهل تصدقه؟\n\n\n\n\nلديك $عدد_الأدلة دليل. (EN var: 2)\n\n\n\n\nالمفتاح رقم 3 أعيد الساعة 18:47 (EV-014).\n\n\nافحص كاميرا 3 (CCTV)"
+  },
+  "errors": [],
+  "after_click": {
+   "html_dir": null,
+   "html_lang": null,
+   "body_dir": "ltr",
+   "s1": {
+    "text": "سجل المفاتيح: أعيد المفتاح بعد إطفاء الأنوار.",
+    "dir": "ltr",
+    "align": "start"
+   },
+   "s2": null,
+   "s3": null,
+   "links": [],
+   "title": "اختبار RTL",
+   "body_text_sample": "↶\n\nسجل المفاتيح: أعيد المفتاح بعد إطفاء الأنوار."
+  }
+ },
+ "harlowe_rtlcss": {
+  "start": {
+   "html_dir": null,
+   "html_lang": null,
+   "body_dir": "rtl",
+   "s1": {
+    "text": "قال سمير: «غادرت في الرابعة والنصف»، فهل تصدقه؟",
+    "dir": "rtl",
+    "align": "start"
+   },
+   "s2": {
+    "text": "لديك $عدد_الأدلة دليل. (EN var: 2)",
+    "dir": "rtl",
+    "align": "start"
+   },
+   "s3": {
+    "text": "المفتاح رقم 3 أعيد الساعة 18:47 (EV-014).",
+    "dir": "rtl",
+    "align": "start"
+   },
+   "links": [
+    {
+     "text": "افحص كاميرا 3 (CCTV)",
+     "dir": "rtl",
+     "align": "start"
+    }
+   ],
+   "title": "اختبار RTL",
+   "body_text_sample": "\"$عدد_الأدلة to \" isn't valid Harlowe syntax for the inside of a macro call.\n\n\nقال سمير: «غادرت في الرابعة والنصف»، فهل تصدقه؟\n\n\n\n\nلديك $عدد_الأدلة دليل. (EN var: 2)\n\n\n\n\nالمفتاح رقم 3 أعيد الساعة 18:47 (EV-014).\n\n\nافحص كاميرا 3 (CCTV)"
+  },
+  "errors": [],
+  "after_click": {
+   "html_dir": null,
+   "html_lang": null,
+   "body_dir": "rtl",
+   "s1": {
+    "text": "سجل المفاتيح: أعيد المفتاح بعد إطفاء الأنوار.",
+    "dir": "rtl",
+    "align": "start"
+   },
+   "s2": null,
+   "s3": null,
+   "links": [],
+   "title": "اختبار RTL",
+   "body_text_sample": "↶\n\nسجل المفاتيح: أعيد المفتاح بعد إطفاء الأنوار."
+  }
+ },
+ "snowman_default": {
+  "start": {
+   "html_dir": null,
+   "html_lang": null,
+   "body_dir": "ltr",
+   "s1": {
+    "text": "قال سمير: «غادرت في الرابعة والنصف»، فهل تصدقه؟",
+    "dir": "ltr",
+    "align": "start"
+   },
+   "s2": {
+    "text": "لديك 2 دليل. (EN var: 2)",
+    "dir": "ltr",
+    "align": "start"
+   },
+   "s3": {
+    "text": "المفتاح رقم 3 أعيد الساعة 18:47 (EV-014).",
+    "dir": "ltr",
+    "align": "start"
+   },
+   "links": [
+    {
+     "text": "افحص كاميرا 3 (CCTV)",
+     "dir": "ltr",
+     "align": "start"
+    }
+   ],
+   "title": "اختبار RTL",
+   "body_text_sample": "قال سمير: «غادرت في الرابعة والنصف»، فهل تصدقه؟\n\nلديك 2 دليل. (EN var: 2)\n\nالمفتاح رقم 3 أعيد الساعة 18:47 (EV-014).\n\nافحص كاميرا 3 (CCTV)"
+  },
+  "errors": [],
+  "after_click": {
+   "html_dir": null,
+   "html_lang": null,
+   "body_dir": "ltr",
+   "s1": {
+    "text": "سجل المفاتيح: أعيد المفتاح بعد إطفاء الأنوار.",
+    "dir": "ltr",
+    "align": "start"
+   },
+   "s2": null,
+   "s3": null,
+   "links": [],
+   "title": "اختبار RTL",
+   "body_text_sample": "سجل المفاتيح: أعيد المفتاح بعد إطفاء الأنوار."
+  }
+ },
+ "snowman_rtlcss": {
+  "start": {
+   "html_dir": null,
+   "html_lang": null,
+   "body_dir": "rtl",
+   "s1": {
+    "text": "قال سمير: «غادرت في الرابعة والنصف»، فهل تصدقه؟",
+    "dir": "rtl",
+    "align": "start"
+   },
+   "s2": {
+    "text": "لديك 2 دليل. (EN var: 2)",
+    "dir": "rtl",
+    "align": "start"
+   },
+   "s3": {
+    "text": "المفتاح رقم 3 أعيد الساعة 18:47 (EV-014).",
+    "dir": "rtl",
+    "align": "start"
+   },
+   "links": [
+    {
+     "text": "افحص كاميرا 3 (CCTV)",
+     "dir": "rtl",
+     "align": "start"
+    }
+   ],
+   "title": "اختبار RTL",
+   "body_text_sample": "قال سمير: «غادرت في الرابعة والنصف»، فهل تصدقه؟\n\nلديك 2 دليل. (EN var: 2)\n\nالمفتاح رقم 3 أعيد الساعة 18:47 (EV-014).\n\nافحص كاميرا 3 (CCTV)"
+  },
+  "errors": [],
+  "after_click": {
+   "html_dir": null,
+   "html_lang": null,
+   "body_dir": "rtl",
+   "s1": {
+    "text": "سجل المفاتيح: أعيد المفتاح بعد إطفاء الأنوار.",
+    "dir": "rtl",
+    "align": "start"
+   },
+   "s2": null,
+   "s3": null,
+   "links": [],
+   "title": "اختبار RTL",
+   "body_text_sample": "سجل المفاتيح: أعيد المفتاح بعد إطفاء الأنوار."
+  }
+ },
+ "sugarcube_default": {
+  "start": {
+   "html_dir": null,
+   "html_lang": null,
+   "body_dir": "ltr",
+   "s1": {
+    "text": "قال سمير: «غادرت في الرابعة والنصف»، فهل تصدقه؟",
+    "dir": "ltr",
+    "align": "left"
+   },
+   "s2": {
+    "text": "لديك $عدد_الأدلة دليل. (EN var: 2)",
+    "dir": "ltr",
+    "align": "left"
+   },
+   "s3": {
+    "text": "المفتاح رقم 3 أعيد الساعة 18:47 (EV-014).",
+    "dir": "ltr",
+    "align": "left"
+   },
+   "links": [
+    {
+     "text": "",
+     "dir": "ltr",
+     "align": "center"
+    },
+    {
+     "text": "",
+     "dir": "ltr",
+     "align": "center"
+    },
+    {
+     "text": "افحص كاميرا 3 (CCTV)",
+     "dir": "ltr",
+     "align": "left"
+    }
+   ],
+   "title": "اختبار RTL",
+   "body_text_sample": "Error: <<set>>: bad evaluation: $عدد_الأدلة is not defined\n\n\nقال سمير: «غادرت في الرابعة والنصف»، فهل تصدقه؟\n\n\n\n\nلديك $عدد_الأدلة دليل. (EN var: 2)\n\n\n\n\nالمفتاح رقم 3 أعيد الساعة 18:47 (EV-014).\n\n\nافحص كاميرا 3 (CCTV)"
+  },
+  "errors": [],
+  "after_click": {
+   "html_dir": null,
+   "html_lang": null,
+   "body_dir": "ltr",
+   "s1": {
+    "text": "سجل المفاتيح: أعيد المفتاح بعد إطفاء الأنوار.",
+    "dir": "ltr",
+    "align": "left"
+   },
+   "s2": null,
+   "s3": null,
+   "links": [
+    {
+     "text": "",
+     "dir": "ltr",
+     "align": "center"
+    },
+    {
+     "text": "",
+     "dir": "ltr",
+     "align": "center"
+    }
+   ],
+   "title": "اختبار RTL",
+   "body_text_sample": "سجل المفاتيح: أعيد المفتاح بعد إطفاء الأنوار."
+  }
+ },
+ "sugarcube_rtlcss": {
+  "start": {
+   "html_dir": null,
+   "html_lang": null,
+   "body_dir": "rtl",
+   "s1": {
+    "text": "قال سمير: «غادرت في الرابعة والنصف»، فهل تصدقه؟",
+    "dir": "rtl",
+    "align": "left"
+   },
+   "s2": {
+    "text": "لديك $عدد_الأدلة دليل. (EN var: 2)",
+    "dir": "rtl",
+    "align": "left"
+   },
+   "s3": {
+    "text": "المفتاح رقم 3 أعيد الساعة 18:47 (EV-014).",
+    "dir": "rtl",
+    "align": "left"
+   },
+   "links": [
+    {
+     "text": "",
+     "dir": "rtl",
+     "align": "center"
+    },
+    {
+     "text": "",
+     "dir": "rtl",
+     "align": "center"
+    },
+    {
+     "text": "افحص كاميرا 3 (CCTV)",
+     "dir": "rtl",
+     "align": "left"
+    }
+   ],
+   "title": "اختبار RTL",
+   "body_text_sample": "Error: <<set>>: bad evaluation: $عدد_الأدلة is not defined\n\n\nقال سمير: «غادرت في الرابعة والنصف»، فهل تصدقه؟\n\n\n\n\nلديك $عدد_الأدلة دليل. (EN var: 2)\n\n\n\n\nالمفتاح رقم 3 أعيد الساعة 18:47 (EV-014).\n\n\nافحص كاميرا 3 (CCTV)"
+  },
+  "errors": [],
+  "after_click": {
+   "html_dir": null,
+   "html_lang": null,
+   "body_dir": "rtl",
+   "s1": {
+    "text": "سجل المفاتيح: أعيد المفتاح بعد إطفاء الأنوار.",
+    "dir": "rtl",
+    "align": "left"
+   },
+   "s2": null,
+   "s3": null,
+   "links": [
+    {
+     "text": "",
+     "dir": "rtl",
+     "align": "center"
+    },
+    {
+     "text": "",
+     "dir": "rtl",
+     "align": "center"
+    }
+   ],
+   "title": "اختبار RTL",
+   "body_text_sample": "سجل المفاتيح: أعيد المفتاح بعد إطفاء الأنوار."
+  }
+ }
+}

@@ -1,0 +1,172 @@
+{
+  "accepted_conclusions": {
+    "h_firas": {
+      "grade": 1,
+      "note_ar": "استنتاج متسق مع الأدلة ويتطلب ذكر حدوده."
+    },
+    "h_genuine": {
+      "grade": 0,
+      "note_ar": "يأخذ الأصالة من المظهر ويتجاهل غياب القيد والختم والمديرة."
+    },
+    "h_wael": {
+      "grade": 0,
+      "note_ar": "يبني على المصلحة وحدها، والملف وصله من غيره."
+    },
+    "h_nabil": {
+      "grade": 0,
+      "note_ar": "إمكان فتح الخزنة ليس استعمالاً لها، وسجل الختم يخلو من أي استعمال."
+    }
+  },
+  "confidence_band": {
+    "h_firas": [
+      65,
+      90
+    ],
+    "h_genuine": [
+      0,
+      15
+    ],
+    "h_wael": [
+      0,
+      20
+    ],
+    "h_nabil": [
+      0,
+      15
+    ]
+  },
+  "source_key": {
+    "ev_letter": "claim",
+    "ev_file_properties": "redisplay",
+    "ev_chat_log": "redisplay",
+    "ev_club_room_log": "primary_record",
+    "ev_print_log": "primary_record",
+    "ev_outgoing_register": "primary_record",
+    "ev_seal_log": "primary_record",
+    "ev_safe_keys": "primary_record",
+    "ev_leave_notice": "primary_record",
+    "ev_template_samples": "template",
+    "ev_wael_stmt": "claim",
+    "ev_nabil_stmt": "claim",
+    "ev_firas_stmt": "claim"
+  },
+  "link_key": {
+    "h_firas": {
+      "ev_print_log": "supports",
+      "ev_file_properties": "supports",
+      "ev_chat_log": "supports",
+      "ev_club_room_log": "supports",
+      "ev_outgoing_register": "supports",
+      "ev_seal_log": "supports",
+      "ev_leave_notice": "supports",
+      "ev_template_samples": "supports",
+      "ev_firas_stmt": "supports"
+    },
+    "h_genuine": {
+      "ev_letter": "supports",
+      "ev_outgoing_register": "weakens",
+      "ev_seal_log": "weakens",
+      "ev_leave_notice": "weakens",
+      "ev_template_samples": "weakens"
+    },
+    "h_wael": {
+      "ev_wael_stmt": "supports",
+      "ev_letter": "neutral",
+      "ev_chat_log": "weakens",
+      "ev_club_room_log": "weakens",
+      "ev_print_log": "weakens",
+      "ev_file_properties": "weakens"
+    },
+    "h_nabil": {
+      "ev_safe_keys": "supports",
+      "ev_nabil_stmt": "neutral",
+      "ev_seal_log": "weakens",
+      "ev_outgoing_register": "weakens",
+      "ev_print_log": "weakens"
+    }
+  },
+  "required_limits": [
+    "l_who_alone",
+    "l_account_person"
+  ],
+  "valid_mind_changers": [
+    "m_register_entry",
+    "m_delegation",
+    "m_account_shared"
+  ],
+  "invalid_limits": [
+    "l_invalid_tone",
+    "l_invalid_benefit",
+    "l_invalid_keys"
+  ],
+  "decisive_evidence": [
+    "ev_outgoing_register",
+    "ev_seal_log",
+    "ev_template_samples",
+    "ev_leave_notice",
+    "ev_print_log",
+    "ev_file_properties",
+    "ev_chat_log",
+    "ev_club_room_log"
+  ],
+  "timeline_requirement": [
+    {
+      "evidence_id": "ev_outgoing_register",
+      "utc_minute": 130,
+      "tol": 8
+    },
+    {
+      "evidence_id": "ev_club_room_log",
+      "utc_minute": 450,
+      "tol": 5
+    },
+    {
+      "evidence_id": "ev_print_log",
+      "utc_minute": 482,
+      "tol": 4
+    },
+    {
+      "evidence_id": "ev_chat_log",
+      "utc_minute": 510,
+      "tol": 4
+    },
+    {
+      "evidence_id": "ev_letter",
+      "utc_minute": 3000,
+      "tol": 30
+    }
+  ],
+  "refuted_hypotheses": [
+    "h_genuine",
+    "h_wael",
+    "h_nabil"
+  ],
+  "transfer_key": {
+    "valid": [
+      "o1",
+      "o2",
+      "o3",
+      "o4"
+    ],
+    "invalid": [
+      "o5",
+      "o6",
+      "o7"
+    ]
+  },
+  "case_id": "c028_emphatic_letter",
+  "lab_requirement": null,
+  "criteria_map": {
+    "c_source": "source_typing",
+    "c_conflict": "conflict_resolution",
+    "c_links": "hypothesis_links",
+    "c_uncertainty": "uncertainty",
+    "c_revision": "revision",
+    "c_elimination": "elimination",
+    "c_justification": "justification_human"
+  },
+  "caps": {
+    "no_citations_max": 45,
+    "no_conflict_resolution_max": 65
+  }
+}

@@ -1,0 +1,86 @@
+[
+  {
+    "case_id": "CASE-04",
+    "title": "شهادة الصورة الصامتة",
+    "genre": "تحقق بصري ومعلوماتي",
+    "skill": "التمييز بين أصالة الصورة وصحة سياقها",
+    "evidence_ids": [
+      "E1",
+      "E2",
+      "E3",
+      "E4",
+      "E5"
+    ],
+    "status": "draft_original_pending_review"
+  },
+  {
+    "case_id": "CASE-05",
+    "title": "الصندوق ذو الرقمين",
+    "genre": "منطق حسابي وسلسلة توثيق",
+    "skill": "تحليل جودة البيانات وتمييز الكيانات",
+    "evidence_ids": [
+      "E1",
+      "E2",
+      "E3",
+      "E4",
+      "E5"
+    ],
+    "status": "draft_original_pending_review"
+  },
+  {
+    "case_id": "CASE-06",
+    "title": "خريطة بلا شمال",
+    "genre": "استدلال مكاني ومصادر",
+    "skill": "المنظور وإطارات الإشارة",
+    "evidence_ids": [
+      "E1",
+      "E2",
+      "E3",
+      "E4",
+      "E5"
+    ],
+    "status": "draft_original_pending_review"
+  },
+  {
+    "case_id": "CASE-07",
+    "title": "مذكّرة المختبر الناقصة",
+    "genre": "علم القياس وحدود الاستنتاج",
+    "skill": "القياس والتحويل وعدم اليقين",
+    "evidence_ids": [
+      "E1",
+      "E2",
+      "E3",
+      "E4",
+      "E5"
+    ],
+    "status": "draft_original_pending_review"
+  },
+  {
+    "case_id": "CASE-08",
+    "title": "رسالة وصلت مبكراً",
+    "genre": "منطق زمني وتواصل",
+    "skill": "ترتيب الأحداث وربط التسميات بالقياسات",
+    "evidence_ids": [
+      "E1",
+      "E2",
+      "E3",
+      "E4",
+      "E5"
+    ],
+    "status": "draft_original_pending_review"
+  },
+  {
+    "case_id": "CASE-09",
+    "title": "المخطوطة والاقتباس المقلوب",
+    "genre": "تحقيق تاريخي وتوثيق",
+    "skill": "نقد المصادر والتوثيق والتحقق من الاقتباسات",
+    "evidence_ids": [
+      "E1",
+      "E2",
+      "E3",
+      "E4",
+      "E5"
+    ],
+    "status": "draft_original_pending_review"
+  }
+]

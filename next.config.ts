@@ -1,4 +1,11 @@
+import { readdirSync, statSync } from "node:fs";
 import type { NextConfig } from "next";
+
+// Everything under content/ is bundled for runtime reads EXCEPT the (large, admin-only) research library,
+// which is added only to the routes that read it. Computed from the directory so new content folders are picked up.
+const contentGlobs = readdirSync("./content")
+  .filter((n) => n !== "research")
+  .map((n) => (statSync(`./content/${n}`).isDirectory() ? `./content/${n}/**/*` : `./content/${n}`));
 
 const securityHeaders = [
   { key: "X-Content-Type-Options", value: "nosniff" },
@@ -17,7 +24,11 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
   serverExternalPackages: ["@libsql/client"],
   // runtime reads of content and migrations must be bundled into the serverless output
-  outputFileTracingIncludes: { "/**": ["./content/**/*", "./migrations/**/*"] },
+  outputFileTracingIncludes: {
+    "/**": [...contentGlobs, "./migrations/**/*"],
+    "/studio/library": ["./content/research/**/*"],
+    "/studio/library/[...path]": ["./content/research/**/*"],
+  },
   async headers() {
     return [{ source: "/:path*", headers: securityHeaders }];
   },

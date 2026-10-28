@@ -1,0 +1,214 @@
+{
+ "fetched_at": "2026-10-27T07:30:46Z",
+ "models": [
+  {
+   "label": "qwen2.5",
+   "repo": "Qwen/Qwen2.5-7B-Instruct",
+   "file": "tokenizer.json",
+   "sha": "a09a35458c702b33eeacc393d103063234e8bc28",
+   "gated": false,
+   "license": "apache-2.0",
+   "status": "downloaded",
+   "bytes": 7031645,
+   "sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+   "url": "https://huggingface.co/Qwen/Qwen2.5-7B-Instruct/resolve/a09a35458c702b33eeacc393d103063234e8bc28/tokenizer.json"
+  },
+  {
+   "label": "qwen3",
+   "repo": "Qwen/Qwen3-8B",
+   "file": "tokenizer.json",
+   "sha": "b968826d9c46dd6066d109eabc6255188de91218",
+   "gated": false,
+   "license": "apache-2.0",
+   "status": "downloaded",
+   "bytes": 11422654,
+   "sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4",
+   "url": "https://huggingface.co/Qwen/Qwen3-8B/resolve/b968826d9c46dd6066d109eabc6255188de91218/tokenizer.json"
+  },
+  {
+   "label": "deepseek-v3.1",
+   "repo": "deepseek-ai/DeepSeek-V3.1",
+   "file": "tokenizer.json",
+   "sha": "c0781d039fb7a1ba2abc4add0bdc293e92d2b8db",
+   "gated": false,
+   "license": "mit",
+   "status": "downloaded",
+   "bytes": 7847578,
+   "sha256": "32b34a41212e92f62e859cbbea121ae705a1fabbf157d9acf22d134ecd8dcf70",
+   "url": "https://huggingface.co/deepseek-ai/DeepSeek-V3.1/resolve/c0781d039fb7a1ba2abc4add0bdc293e92d2b8db/tokenizer.json"
+  },
+  {
+   "label": "mistral-nemo(tekken)",
+   "repo": "mistralai/Mistral-Nemo-Instruct-2407",
+   "file": "tokenizer.json",
+   "sha": "04d8a90549d23fc6bd7f642064003592df51e9b3",
+   "gated": false,
+   "license": "apache-2.0",
+   "status": "downloaded",
+   "bytes": 9264445,
+   "sha256": "e11c71726323d33da7b8d6f6f269f1988931c0a52b7122bcdd8c05042974e0db",
+   "url": "https://huggingface.co/mistralai/Mistral-Nemo-Instruct-2407/resolve/04d8a90549d23fc6bd7f642064003592df51e9b3/tokenizer.json"
+  },
+  {
+   "label": "phi-4",
+   "repo": "microsoft/phi-4",
+   "file": "tokenizer.json",
+   "sha": "2db69c1c3e91a05d2c64a3185acfbaf36f744e25",
+   "gated": false,
+   "license": "mit",
+   "status": "downloaded",
+   "bytes": 4253055,
+   "sha256": "9f38d05d9d25756bb2f181ab5a0cebcd59e638df10336fc7ed1010f7296d0298",
+   "url": "https://huggingface.co/microsoft/phi-4/resolve/2db69c1c3e91a05d2c64a3185acfbaf36f744e25/tokenizer.json"
+  },
+  {
+   "label": "gpt-oss-20b",
+   "repo": "openai/gpt-oss-20b",
+   "file": "tokenizer.json",
+   "sha": "6cee5e81ee83917806bbde320786a8fb61efebee",
+   "gated": false,
+   "license": "apache-2.0",
+   "status": "downloaded",
+   "bytes": 27868174,
+   "sha256": "0614fe83cadab421296e664e1f48f4261fa8fef6e03e63bb75c20f38e37d07d3",
+   "url": "https://huggingface.co/openai/gpt-oss-20b/resolve/6cee5e81ee83917806bbde320786a8fb61efebee/tokenizer.json"
+  },
+  {
+   "label": "jais-family-13b",
+   "repo": "inception42/jais-family-13b-chat",
+   "file": "tokenizer.json",
+   "sha": "0ef8b4f80429609890816d912b331d3b95864707",
+   "gated": false,
+   "license": "apache-2.0",
+   "status": "downloaded",
+   "bytes": 4851232,
+   "sha256": "da4510dd0c1e0c27ff4cd25cc20ac65cb19a05c97ea05fc095a131174d5fed3a",
+   "url": "https://huggingface.co/inception42/jais-family-13b-chat/resolve/0ef8b4f80429609890816d912b331d3b95864707/tokenizer.json"
+  },
+  {
+   "label": "jais-3-32b",
+   "repo": "inception42/Jais-3-32B",
+   "file": "tokenizer.json",
+   "sha": "170144803abac94000f966ec215596d78a9bbcd8",
+   "gated": false,
+   "license": "apache-2.0",
+   "status": "downloaded",
+   "bytes": 29197477,
+   "sha256": "2fa69519ff1ee3ee55ac50927b00058e88b9eb90802fabaf3c6b05804601c53b",
+   "url": "https://huggingface.co/inception42/Jais-3-32B/resolve/170144803abac94000f966ec215596d78a9bbcd8/tokenizer.json"
+  },
+  {
+   "label": "allam-7b",
+   "repo": "humain-ai/ALLaM-7B-Instruct-preview",
+   "file": "tokenizer.model",
+   "sha": "a28dd1e67420cde72d3629c8633a974cf7d9c366",
+   "gated": false,
+   "license": "apache-2.0",
+   "status": "downloaded",
+   "bytes": 1228714,
+   "sha256": "feff3deb3537c4a47b77585053ad2aa00484da7907b188e0111cbed1f4592e67",
+   "url": "https://huggingface.co/humain-ai/ALLaM-7B-Instruct-preview/resolve/a28dd1e67420cde72d3629c8633a974cf7d9c366/tokenizer.model"
+  },
+  {
+   "label": "fanar-1-9b",
+   "repo": "QCRI/Fanar-1-9B-Instruct",
+   "file": "tokenizer.json",
+   "sha": "d30938d0efb1fd251727ee96df6987802ff84662",
+   "gated": false,
+   "license": "apache-2.0",
+   "status": "downloaded",
+   "bytes": 18068035,
+   "sha256": "21cf92b1210853eb91fb856a67b6062b06578194cac590326c8e56af7ec71d88",
+   "url": "https://huggingface.co/QCRI/Fanar-1-9B-Instruct/resolve/d30938d0efb1fd251727ee96df6987802ff84662/tokenizer.json"
+  },
+  {
+   "label": "fanar-2-27b",
+   "repo": "QCRI/Fanar-2-27B-Instruct",
+   "file": "tokenizer.json",
+   "sha": "074005040e9c3511b1c43b4298bef09908285534",
+   "gated": false,
+   "license": "apache-2.0",
+   "status": "downloaded",
+   "bytes": 33384568,
+   "sha256": "4667f2089529e8e7657cfb6d1c19910ae71ff5f28aa7ab2ff2763330affad795",
+   "url": "https://huggingface.co/QCRI/Fanar-2-27B-Instruct/resolve/074005040e9c3511b1c43b4298bef09908285534/tokenizer.json"
+  },
+  {
+   "label": "llama-3.1-8b",
+   "repo": "meta-llama/Llama-3.1-8B-Instruct",
+   "file": "tokenizer.json",
+   "sha": "0e9e39f249a16976918f6564b8830bc894c89659",
+   "gated": "manual",
+   "license": "llama3.1",
+   "status": "gated_not_downloaded"
+  },
+  {
+   "label": "llama-4-scout",
+   "repo": "meta-llama/Llama-4-Scout-17B-16E-Instruct",
+   "file": "tokenizer.json",
+   "sha": "92f3b1597a195b523d8d9e5700e57e4fbb8f20d3",
+   "gated": "manual",
+   "license": "other",
+   "status": "gated_not_downloaded"
+  },
+  {
+   "label": "gemma-2-9b",
+   "repo": "google/gemma-2-9b-it",
+   "file": "tokenizer.json",
+   "sha": "11c9b309abf73637e4b6f9a3fa1e92e615547819",
+   "gated": "manual",
+   "license": "gemma",
+   "status": "gated_not_downloaded"
+  },
+  {
+   "label": "gemma-3-27b",
+   "repo": "google/gemma-3-27b-it",
+   "file": "tokenizer.json",
+   "sha": "005ad3404e59d6023443cb575daa05336842228a",
+   "gated": "manual",
+   "license": "gemma",
+   "status": "gated_not_downloaded"
+  },
+  {
+   "label": "jais-2-8b",
+   "repo": "inception42/Jais-2-8B-Chat",
+   "file": "tokenizer.json",
+   "sha": "da0e1639cd92b508b24120f7f77f5270a8465dc4",
+   "gated": "auto",
+   "license": "apache-2.0",
+   "status": "gated_not_downloaded"
+  },
+  {
+   "label": "command-r7b-arabic",
+   "repo": "CohereLabs/c4ai-command-r7b-arabic-02-2025",
+   "file": "tokenizer.json",
+   "sha": "2d5440c7cea22410006fb461a1b24c067683da77",
+   "gated": "auto",
+   "license": "cc-by-nc-4.0",
+   "status": "gated_not_downloaded"
+  },
+  {
+   "label": "aya-expanse-8b",
+   "repo": "CohereLabs/aya-expanse-8b",
+   "file": "tokenizer.json",
+   "sha": "5062468bf9bc0c6035fd64e06274333ec127d980",
+   "gated": "auto",
+   "license": "cc-by-nc-4.0",
+   "status": "gated_not_downloaded"
+  }
+ ],
+ "tiktoken": {
+  "package": "tiktoken 0.14.0",
+  "encodings": [
+   "o200k_base",
+   "cl100k_base"
+  ],
+  "source": "openaipublic.blob.core.windows.net (BPE rank files, data only)"
+ },
+ "libraries": {
+  "tokenizers": "0.23.3",
+  "sentencepiece": "0.2.2",
+  "python": "3.13.17"
+ },
+ "counting_convention": "add_special_tokens=False; raw stored text; no chat template"
+}

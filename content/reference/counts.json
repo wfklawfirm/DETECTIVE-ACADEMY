@@ -1,0 +1,99 @@
+{
+ "version": "1.0.0",
+ "counts": {
+  "glossary": {
+   "terms": {
+    "in": 248,
+    "out": 248
+   },
+   "csv_terms_found_in_md": {
+    "in": 248,
+    "out": 248
+   }
+  },
+  "methods": {
+   "methods": {
+    "in": 24,
+    "out": 24
+   },
+   "adult_gated": {
+    "in": 0,
+    "out": 4
+   }
+  },
+  "biases": {
+   "bias_cards": {
+    "in": 17,
+    "out": 17
+   }
+  },
+  "reasoning": {
+   "reasoning_errors": {
+    "in": 14,
+    "out": 14
+   },
+   "evidence_criteria": {
+    "in": 5,
+    "out": 5
+   },
+   "pocket_questions": {
+    "in": 7,
+    "out": 7
+   },
+   "ethics_principles": {
+    "in": 7,
+    "out": 7
+   },
+   "skills": {
+    "in": 24,
+    "out": 24
+   },
+   "assessment_notes": {
+    "in": 7,
+    "out": 7
+   }
+  },
+  "rulebook": {
+   "fair_play_rules": {
+    "in": 46,
+    "out": 46
+   }
+  },
+  "atlas": {
+   "principles": {
+    "in": 50,
+    "out": 50
+   },
+   "world_ya_principles": {
+    "in": 24,
+    "out": 24
+   },
+   "heritage_corpus": {
+    "in": 14,
+    "out": 14
+   },
+   "heritage_principles": {
+    "in": 20,
+    "out": 20
+   },
+   "plot_patterns": {
+    "in": 26,
+    "out": 26
+   },
+   "rights_register_rows": {
+    "in": 105,
+    "out": 99
+   }
+  },
+  "archetypes": {
+   "archetypes": {
+    "in": 40,
+    "out": 40
+   },
+   "adult_gated": {
+    "in": 0,
+    "out": 1
+   }
+  }
+ }
+}

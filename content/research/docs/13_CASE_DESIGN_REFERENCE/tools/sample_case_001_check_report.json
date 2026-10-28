@@ -1,0 +1,319 @@
+{
+ "schema_errors": [],
+ "prototype_integrity_errors": [],
+ "prototype_fairness": {
+  "reachable_evidence": [
+   "ev_chat_alerts",
+   "ev_city_bulletin",
+   "ev_collector_bottle",
+   "ev_gate_log",
+   "ev_lab_clock_offset",
+   "ev_majed_notebook",
+   "ev_roof_door_log",
+   "ev_roof_photo",
+   "ev_station_log",
+   "ev_timer_device",
+   "ev_wadad_testimony",
+   "ev_workshop_signout",
+   "ev_ziad_demeanour",
+   "ev_ziad_recording"
+  ],
+  "unreachable_evidence": [],
+  "solvable": true,
+  "minimal_evidence_sets": [
+   [
+    "ev_chat_alerts",
+    "ev_gate_log",
+    "ev_majed_notebook",
+    "ev_roof_photo"
+   ],
+   [
+    "ev_chat_alerts",
+    "ev_majed_notebook",
+    "ev_roof_photo",
+    "ev_workshop_signout"
+   ],
+   [
+    "ev_chat_alerts",
+    "ev_gate_log",
+    "ev_roof_door_log",
+    "ev_roof_photo",
+    "ev_timer_device"
+   ],
+   [
+    "ev_gate_log",
+    "ev_lab_clock_offset",
+    "ev_majed_notebook",
+    "ev_roof_photo",
+    "ev_station_log"
+   ],
+   [
+    "ev_lab_clock_offset",
+    "ev_majed_notebook",
+    "ev_roof_photo",
+    "ev_station_log",
+    "ev_workshop_signout"
+   ],
+   [
+    "ev_chat_alerts",
+    "ev_city_bulletin",
+    "ev_collector_bottle",
+    "ev_gate_log",
+    "ev_roof_door_log",
+    "ev_timer_device"
+   ],
+   [
+    "ev_gate_log",
+    "ev_lab_clock_offset",
+    "ev_roof_door_log",
+    "ev_roof_photo",
+    "ev_station_log",
+    "ev_timer_device"
+   ],
+   [
+    "ev_city_bulletin",
+    "ev_collector_bottle",
+    "ev_gate_log",
+    "ev_lab_clock_offset",
+    "ev_roof_door_log",
+    "ev_station_log",
+    "ev_timer_device"
+   ]
+  ],
+  "disjoint_paths": 1,
+  "meets_min_disjoint_paths": false
+ },
+ "prototype_sets_exact_max_disjoint": 2,
+ "extended_errors": [],
+ "extended_warnings": [],
+ "publish_gate": {
+  "content_hash": "sha256:0e04223fd6e50baac97f8ec78bf39285f25139dcec45d52ba53aab4196670930",
+  "missing_approvals": [
+   "narrative_editor",
+   "scientific_reviewer",
+   "learning_designer",
+   "age_appropriateness",
+   "cultural_reviewer",
+   "legal_rights",
+   "safety"
+  ],
+  "publish_allowed": false
+ },
+ "inference_depth": {
+  "i_offset_window": 1,
+  "i_chat_window": 1,
+  "i_no_city_rain": 1,
+  "i_dry_roof": 1,
+  "i_real_water": 1,
+  "i_wet_gauge": 1,
+  "i_ziad_left_gate": 2,
+  "i_ziad_signed_out": 2,
+  "i_codeholder": 1,
+  "i_hose_majed_a": 2,
+  "i_hose_majed_b": 2,
+  "i_lure_ziad": 1,
+  "i_majed_claim_false": 1,
+  "i_ziad_claim_false": 1,
+  "i_wadad_time_off": 1
+ },
+ "asp": {
+  "available": true,
+  "clingo": "5.8.2",
+  "reachable_evidence": [
+   "ev_chat_alerts",
+   "ev_city_bulletin",
+   "ev_collector_bottle",
+   "ev_gate_log",
+   "ev_lab_clock_offset",
+   "ev_majed_notebook",
+   "ev_roof_door_log",
+   "ev_roof_photo",
+   "ev_station_log",
+   "ev_timer_device",
+   "ev_wadad_testimony",
+   "ev_workshop_signout",
+   "ev_ziad_demeanour",
+   "ev_ziad_recording"
+  ],
+  "unreachable_evidence": [],
+  "unrefuted_false_hypotheses": [],
+  "true_hypotheses_unsupported": [],
+  "subset_minimal_solving_sets": [
+   [
+    "ev_chat_alerts",
+    "ev_gate_log",
+    "ev_majed_notebook",
+    "ev_roof_photo",
+    "ev_wadad_testimony"
+   ],
+   [
+    "ev_chat_alerts",
+    "ev_majed_notebook",
+    "ev_roof_photo",
+    "ev_wadad_testimony",
+    "ev_workshop_signout"
+   ],
+   [
+    "ev_chat_alerts",
+    "ev_city_bulletin",
+    "ev_collector_bottle",
+    "ev_gate_log",
+    "ev_roof_door_log",
+    "ev_timer_device"
+   ],
+   [
+    "ev_chat_alerts",
+    "ev_gate_log",
+    "ev_roof_door_log",
+    "ev_roof_photo",
+    "ev_timer_device",
+    "ev_wadad_testimony"
+   ],
+   [
+    "ev_gate_log",
+    "ev_lab_clock_offset",
+    "ev_majed_notebook",
+    "ev_roof_photo",
+    "ev_station_log",
+    "ev_wadad_testimony"
+   ],
+   [
+    "ev_lab_clock_offset",
+    "ev_majed_notebook",
+    "ev_roof_photo",
+    "ev_station_log",
+    "ev_wadad_testimony",
+    "ev_workshop_signout"
+   ],
+   [
+    "ev_city_bulletin",
+    "ev_collector_bottle",
+    "ev_gate_log",
+    "ev_lab_clock_offset",
+    "ev_roof_door_log",
+    "ev_station_log",
+    "ev_timer_device"
+   ],
+   [
+    "ev_gate_log",
+    "ev_lab_clock_offset",
+    "ev_roof_door_log",
+    "ev_roof_photo",
+    "ev_station_log",
+    "ev_timer_device",
+    "ev_wadad_testimony"
+   ]
+  ],
+  "max_disjoint_proof_paths": 2,
+  "disjoint_paths_example": [
+   [
+    "ev_chat_alerts",
+    "ev_majed_notebook",
+    "ev_roof_photo",
+    "ev_wadad_testimony",
+    "ev_workshop_signout"
+   ],
+   [
+    "ev_city_bulletin",
+    "ev_collector_bottle",
+    "ev_gate_log",
+    "ev_lab_clock_offset",
+    "ev_roof_door_log",
+    "ev_station_log",
+    "ev_timer_device"
+   ]
+  ],
+  "false_stop_points": [
+   {
+    "false_hypotheses": [
+     "h_ziad_sabotage"
+    ],
+    "evidence": [
+     "ev_station_log",
+     "ev_wadad_testimony"
+    ]
+   }
+  ]
+ },
+ "advisories": [
+  "prototype greedy disjoint count = 1 (< 2); exact over prototype sets = 2; see ASP for guard-aware count"
+ ],
+ "min_actions_estimate": 6,
+ "blocking": [],
+ "result": "pass",
+ "mutation_tests": [
+  {
+   "mutant": "M1 gate the server-time alerts behind the lab result (paths no longer independent)",
+   "result": "fail",
+   "blocking": [
+    "ASP: fewer disjoint proof paths than required"
+   ]
+  },
+  {
+   "mutant": "M2 add a supported-but-never-refuted false suspect",
+   "result": "fail",
+   "blocking": [
+    "prototype: case not solvable from reachable evidence",
+    "ASP: unique entailment fails",
+    "ASP: fewer disjoint proof paths than required"
+   ]
+  },
+  {
+   "mutant": "M3 make a lie undetectable (no contradicting evidence)",
+   "result": "fail",
+   "blocking": [
+    "prototype integrity errors",
+    "1 extended rule violation(s)"
+   ]
+  },
+  {
+   "mutant": "M4 make the culprit the assistant (NR-07)",
+   "result": "fail",
+   "blocking": [
+    "2 extended rule violation(s)"
+   ]
+  },
+  {
+   "mutant": "M5 leak the solution-critical fact into public facts",
+   "result": "fail",
+   "blocking": [
+    "1 extended rule violation(s)"
+   ]
+  },
+  {
+   "mutant": "M6 strip the limits statement from the lab result (SC-03)",
+   "result": "fail",
+   "blocking": [
+    "2 extended rule violation(s)"
+   ]
+  },
+  {
+   "mutant": "M7 use the deprecated term «نسبة الأرجحية» for a likelihood ratio (X24; C13)",
+   "result": "fail",
+   "blocking": [
+    "1 extended rule violation(s)"
+   ]
+  },
+  {
+   "mutant": "M8 inject a bidi control and a presentation-form letter (X25; 10/RTL §6)",
+   "result": "fail",
+   "blocking": [
+    "1 extended rule violation(s)"
+   ]
+  },
+  {
+   "mutant": "M9 attach an unregistered media asset (X26 asset licensing gate)",
+   "result": "fail",
+   "blocking": [
+    "1 extended rule violation(s)"
+   ]
+  },
+  {
+   "mutant": "M10 let a supporting inference rest on body language (X28; HER-02)",
+   "result": "fail",
+   "blocking": [
+    "1 extended rule violation(s)"
+   ]
+  }
+ ]
+}

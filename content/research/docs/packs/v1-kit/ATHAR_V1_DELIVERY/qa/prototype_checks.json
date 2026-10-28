@@ -1,0 +1,15 @@
+{
+  "generated_utc": "2026-10-27T18:12:13.415845+00:00",
+  "checks": {
+    "file_exists": true,
+    "utf8_arabic": true,
+    "document_rtl": true,
+    "evidence_count": true,
+    "tabs_count": true,
+    "has_logic": true,
+    "not_remote_dependencies": true,
+    "explains_limitations": true,
+    "nine_case_files": true
+  },
+  "note": "Static checks only; not browser E2E tests or external scientific review."
+}

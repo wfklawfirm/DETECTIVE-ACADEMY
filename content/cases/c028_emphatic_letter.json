@@ -1,0 +1,2822 @@
+{
+  "schema_version": "0.1.0",
+  "case_id": "c028_emphatic_letter",
+  "case_version": "0.1.0",
+  "meta": {
+    "title_ar": "الخطاب الذي بالغ في التوكيد",
+    "title_en": "The Over-Emphatic Letter",
+    "age_band": "16-18",
+    "estimated_minutes": 30,
+    "difficulty": 3,
+    "content_flags": [
+      "no_violence",
+      "fraud"
+    ],
+    "knowledge_object_refs": [
+      "KO-RS-06-002",
+      "KO-FC-04B-004",
+      "KO-FC-04-026",
+      "KO-FC-04-024",
+      "KO-RS-05-004",
+      "KO-RS-05-001",
+      "KO-RS-05-014",
+      "KO-RS-06-001",
+      "KO-RS-06-008",
+      "KO-RS-06-021",
+      "KO-RS-06-009",
+      "KO-RS-05-002",
+      "KO-RS-05-005"
+    ],
+    "locale": "ar",
+    "dialogue_register": "msa",
+    "authors": [
+      "فريق أثر التحريري (مسودة بمساعدة الذكاء الاصطناعي، لم تُراجَع بشرياً بعد)"
+    ]
+  },
+  "premise": {
+    "hook_ar": "خطاب ترشيح سليم الشكل، لكن لغته أشد حماسة من كل ما كتبته المديرة. فهل يكفي الشك في النبرة؟",
+    "player_role_ar": "أنت طالب متدرب في لجنة التحقق بدار السِّجِل، وطُلب منك رأي معلّل في أصالة خطاب ترشيح، دون اتهام أحد قبل أن تثبت السجلات شيئاً.",
+    "setting_ar": "دار السِّجِل في مدينة «القنطرة»، من الاثنين إلى الأربعاء. الأوقات بساعة الدار.",
+    "public_fact_ids": [
+      "f_letter_received",
+      "f_letter_doubted"
+    ],
+    "assumed_general_knowledge_ar": [
+      "الوثيقة السليمة الشكل قد لا تكون صادرة عن الجهة المنسوبة إليها",
+      "اختلاف الأسلوب قرينة ضعيفة وحده",
+      "لا يُنسب خط عربي إلى كاتب بلا معدلات خطأ مقيسة"
+    ]
+  },
+  "entities": {
+    "characters": [
+      {
+        "id": "wael",
+        "name_ar": "وائل الحداد",
+        "role": "suspect",
+        "age_descriptor_ar": "طالب في الصف الثاني عشر يتقدم إلى ورشة الترميم",
+        "persona_ar": "متحمس ومجتهد وقليل الشك، تسلّم الخطاب من صديقه فصدّقه. يتألم من فكرة أن يكون مصدره غير ما ظن، ويتعاون في تقديم هاتفه وملفاته.",
+        "motives_ar": [
+          "أن يُقبل في الورشة بجهده",
+          "ألا يُتّهم بما لم يفعله"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "wl_greet",
+            "purpose": "greeting",
+            "text_ar": "أنا قدّمت الخطاب كما استلمته. لم أكتب فيه حرفاً."
+          },
+          {
+            "line_id": "wl_office",
+            "purpose": "reveal",
+            "text_ar": "أعطاني فراس الخطاب مساء الاثنين وقال إنه من مكتب المديرة، فطبعته نسخة أخرى وقدّمته للمنسقة يوم الأربعاء.",
+            "fact_ids": [
+              "f_wael_says_office"
+            ]
+          },
+          {
+            "line_id": "wl_chat",
+            "purpose": "reveal",
+            "text_ar": "عندي رسالة فراس على هاتفي، وسأريك إياها وأسمح لك بنسخها.",
+            "fact_ids": [
+              "f_chat_exists"
+            ]
+          },
+          {
+            "line_id": "wl_file",
+            "purpose": "reveal",
+            "text_ar": "وصلني الخطاب ملفاً إلكترونياً، وما زال عندي كما استلمته.",
+            "fact_ids": [
+              "f_file_exists"
+            ]
+          },
+          {
+            "line_id": "wl_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف أكثر من هذا."
+          },
+          {
+            "line_id": "wl_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن الورشة والخطاب."
+          },
+          {
+            "line_id": "wl_bye",
+            "purpose": "farewell",
+            "text_ar": "أريد أن أعرف الحقيقة قبل أي شيء."
+          }
+        ]
+      },
+      {
+        "id": "nabil",
+        "name_ar": "نبيل الحلبي",
+        "role": "suspect",
+        "age_descriptor_ar": "كاتب مكتب المديرة وحافظ سجل الصادر",
+        "persona_ar": "دقيق ومنظم ويحمل مفتاح خزنة الختم، ويتحرج إذا لمّح أحد إلى أنه فرّط. يجيب بما في السجل ويرفض التخمين.",
+        "motives_ar": [
+          "أن يبقى السجل سليماً",
+          "ألا يُنسب إليه خطاب لم يكتبه"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "nb_greet",
+            "purpose": "greeting",
+            "text_ar": "سجل الصادر عندي، وكل ما يخرج يُرقَّم فيه."
+          },
+          {
+            "line_id": "nb_says",
+            "purpose": "reveal",
+            "text_ar": "لم أكتب هذا الخطاب ولم أره قبل أن يُعرض علينا.",
+            "fact_ids": [
+              "f_nabil_says"
+            ]
+          },
+          {
+            "line_id": "nb_register",
+            "purpose": "reveal",
+            "text_ar": "كل كتاب يصدر من المكتب يُقيَّد في سجل الصادر برقمه وتاريخه وجهته قبل أن يخرج.",
+            "fact_ids": [
+              "f_register_exists"
+            ]
+          },
+          {
+            "line_id": "nb_seal",
+            "purpose": "reveal",
+            "text_ar": "الختم في الخزنة، وكل استعمال له يُكتب في سجل الختم مع رقم الكتاب والتوقيع.",
+            "fact_ids": [
+              "f_seal_log_exists"
+            ]
+          },
+          {
+            "line_id": "nb_keys",
+            "purpose": "reveal",
+            "text_ar": "مفتاح الخزنة معي ومع المديرة فقط.",
+            "fact_ids": [
+              "f_safe_keys"
+            ]
+          },
+          {
+            "line_id": "nb_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "هذا خارج السجل."
+          },
+          {
+            "line_id": "nb_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن السجل والختم."
+          },
+          {
+            "line_id": "nb_bye",
+            "purpose": "farewell",
+            "text_ar": "السجل يتكلم عني."
+          }
+        ]
+      },
+      {
+        "id": "firas",
+        "name_ar": "فراس الرفاعي",
+        "role": "suspect",
+        "age_descriptor_ar": "طالب في الصف الثاني عشر، صديق وائل، عضو نادي الطباعة",
+        "persona_ar": "ودود وسريع الحماس، يعمل بقلب طيب ويؤجل التفكير في العواقب. يسكت إذا خاف، ويقول الحقيقة حين يرى أن السجلات قالتها.",
+        "motives_ar": [
+          "أن يساعد صديقه",
+          "ألا يخسر ثقة النادي"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "fr_greet",
+            "purpose": "greeting",
+            "text_ar": "أنا أحب أن أساعد أصدقائي."
+          },
+          {
+            "line_id": "fr_deny",
+            "purpose": "reveal",
+            "text_ar": "أخذت الخطاب من مكتب المديرة وسلّمته لوائل كما هو.",
+            "claim_ids": [
+              "cl_firas_office"
+            ]
+          },
+          {
+            "line_id": "fr_refuse",
+            "purpose": "refuse_secret",
+            "text_ar": "أفضّل ألا أخوض في هذا الآن."
+          },
+          {
+            "line_id": "fr_made",
+            "purpose": "reveal",
+            "text_ar": "كتبت الخطاب بنفسي في غرفة النادي وطبعته في مكتبة الدار، لأن وائل يستحق المقعد وأردت أن أساعده؛ ثم قلت له إنه من المكتب. لم أقصد أذى أحد، ولم أفكر أن اسم المديرة سيُسأل عنه.",
+            "fact_ids": [
+              "f_firas_made"
+            ]
+          },
+          {
+            "line_id": "fr_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أذكر."
+          },
+          {
+            "line_id": "fr_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن النادي."
+          },
+          {
+            "line_id": "fr_bye",
+            "purpose": "farewell",
+            "text_ar": "كان عليّ أن أسأل قبل أن أفعل."
+          }
+        ]
+      },
+      {
+        "id": "hana",
+        "name_ar": "هناء الصباغ",
+        "role": "authority",
+        "age_descriptor_ar": "مديرة دار السِّجِل",
+        "persona_ar": "رصينة ومختصرة، تعتمد على أوراقها ولا تحكم على طالب. لا تذكر ما لم تكتبه.",
+        "motives_ar": [
+          "أن تبقى كتب الدار موثوقة",
+          "أن يُعامَل الطلاب بإنصاف"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "hn_greet",
+            "purpose": "greeting",
+            "text_ar": "أجيب عمّا يخصّ كتبي وأوراقي."
+          },
+          {
+            "line_id": "hn_leave",
+            "purpose": "reveal",
+            "text_ar": "كنت في مؤتمر خارج المدينة من مساء الأحد إلى ظهر الأربعاء، وتركت إشعاراً بأن لا يصدر شيء باسمي في غيابي.",
+            "fact_ids": [
+              "f_leave_notice_exists"
+            ]
+          },
+          {
+            "line_id": "hn_samples",
+            "purpose": "reveal",
+            "text_ar": "عند المكتب نسخ من آخر كتبي الصادرة قبل أسابيع، وأسلوبي فيها معروف: ترشيح هادئ ينتهي بعبارة تقدير ثابتة.",
+            "fact_ids": [
+              "f_samples_exist"
+            ]
+          },
+          {
+            "line_id": "hn_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف."
+          },
+          {
+            "line_id": "hn_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن كتبي."
+          },
+          {
+            "line_id": "hn_bye",
+            "purpose": "farewell",
+            "text_ar": "ما لم يُقيَّد عندنا لم يصدر منا."
+          }
+        ]
+      },
+      {
+        "id": "sarah",
+        "name_ar": "سارة العلي",
+        "role": "witness",
+        "age_descriptor_ar": "منسقة ورشة الترميم",
+        "persona_ar": "منصفة وحذرة، لاحظت أن نبرة الخطاب تختلف عن المعتاد لكنها تعرف أن النبرة وحدها لا تكفي. تريد قراراً مبنياً على سجل.",
+        "motives_ar": [
+          "أن يُقبل المستحق",
+          "ألا تظلم أحداً"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "sr_greet",
+            "purpose": "greeting",
+            "text_ar": "أريد قراراً أستطيع الدفاع عنه."
+          },
+          {
+            "line_id": "sr_note",
+            "purpose": "reveal",
+            "text_ar": "استلمت الخطاب من وائل الأربعاء، ولاحظت أن لغته أشد حماسة من كل ما أعرفه عن كتب المديرة، لكنني لا أعدّ ذلك دليلاً.",
+            "fact_ids": [
+              "f_letter_doubted"
+            ]
+          },
+          {
+            "line_id": "sr_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف أكثر."
+          },
+          {
+            "line_id": "sr_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن الورشة."
+          },
+          {
+            "line_id": "sr_bye",
+            "purpose": "farewell",
+            "text_ar": "سأنتظر السجلات."
+          }
+        ]
+      },
+      {
+        "id": "labiba",
+        "name_ar": "لبنى الدويك",
+        "role": "witness",
+        "age_descriptor_ar": "أمينة مكتبة الدار ومسؤولة الطباعة",
+        "persona_ar": "منظمة وتحتفظ بسجل الطباعة، لا تعرف أصحاب المستندات ولا تقرؤها.",
+        "motives_ar": [
+          "أن يبقى سجل الطباعة سليماً"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "lb_greet",
+            "purpose": "greeting",
+            "text_ar": "أقرأ من سجل الطباعة."
+          },
+          {
+            "line_id": "lb_log",
+            "purpose": "reveal",
+            "text_ar": "طابعة المكتبة تسجّل حساب كل من يطبع واسم الملف وعدد الصفحات والوقت، ولا تسجّل نص المستند.",
+            "fact_ids": [
+              "f_print_log_exists"
+            ]
+          },
+          {
+            "line_id": "lb_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "هذا ليس في السجل."
+          },
+          {
+            "line_id": "lb_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن الطباعة."
+          },
+          {
+            "line_id": "lb_bye",
+            "purpose": "farewell",
+            "text_ar": "السجل كما هو."
+          }
+        ]
+      },
+      {
+        "id": "adel",
+        "name_ar": "عادل السقا",
+        "role": "witness",
+        "age_descriptor_ar": "مشرف نادي الطباعة",
+        "persona_ar": "عملي وهادئ، يقرأ من قارئ بطاقات الغرفة ولا يخمّن.",
+        "motives_ar": [
+          "أن تبقى غرفة النادي منظمة"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "ad_greet",
+            "purpose": "greeting",
+            "text_ar": "أشرف على غرفة النادي."
+          },
+          {
+            "line_id": "ad_log",
+            "purpose": "reveal",
+            "text_ar": "باب غرفة النادي يسجّل بطاقة كل داخل وخارج بوقتها.",
+            "fact_ids": [
+              "f_club_log_exists"
+            ]
+          },
+          {
+            "line_id": "ad_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف."
+          },
+          {
+            "line_id": "ad_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن الغرفة."
+          },
+          {
+            "line_id": "ad_bye",
+            "purpose": "farewell",
+            "text_ar": "القارئ لا ينسى."
+          }
+        ]
+      }
+    ],
+    "locations": [
+      {
+        "id": "loc_office",
+        "name_ar": "مكتب المديرة",
+        "description_ar": "مكتب فيه سجل الصادر وخزنة الختم."
+      },
+      {
+        "id": "loc_library",
+        "name_ar": "مكتبة الدار",
+        "description_ar": "فيها طابعة بسجل حسابات."
+      },
+      {
+        "id": "loc_club",
+        "name_ar": "غرفة نادي الطباعة",
+        "description_ar": "غرفة بباب بقارئ بطاقات."
+      },
+      {
+        "id": "loc_workshop",
+        "name_ar": "ورشة الترميم",
+        "description_ar": "ورشة تقبل طلاباً بترشيح وشروط."
+      }
+    ],
+    "objects": [
+      {
+        "id": "obj_letter",
+        "name_ar": "خطاب الترشيح",
+        "description_ar": "صفحة بتاريخ 10 آذار ورقم صادر 41/2026 باسم المديرة."
+      }
+    ],
+    "organizations": [
+      {
+        "id": "org_dar",
+        "name_ar": "دار السِّجِل",
+        "description_ar": "دار خيالية للسجلات والمخطوطات في مدينة «القنطرة»."
+      }
+    ]
+  },
+  "truth": {
+    "solution": {
+      "culprit_ids": [
+        "firas"
+      ],
+      "summary_ar": "لم يصدر الخطاب من الدار. أعدّه فراس وطبعه بحسابه في غرفة ناديه ليساعد صديقه، وسلّمه لوائل على أنه من المكتب، فصدّق وائل وقدّمه، ولم يتعمد أحدهما أذى.",
+      "key_fact_ids": [
+        "f_not_issued",
+        "f_firas_made"
+      ]
+    },
+    "facts": [
+      {
+        "id": "f_letter_received",
+        "statement_ar": "قدّم الطالب وائل إلى منسقة ورشة الترميم خطاب ترشيح بتاريخ 10 آذار ورقم 41/2026 باسم مديرة الدار.",
+        "kind": "event",
+        "subject_ids": [
+          "wael",
+          "obj_letter"
+        ],
+        "spoiler_level": 0,
+        "time": {
+          "start_min": 3000,
+          "precision": "exact"
+        }
+      },
+      {
+        "id": "f_letter_doubted",
+        "statement_ar": "لاحظت المنسقة أن أسلوب الخطاب أشد حماسة من كتب المديرة المعتادة.",
+        "kind": "attribute",
+        "subject_ids": [
+          "sarah",
+          "obj_letter"
+        ],
+        "spoiler_level": 0
+      },
+      {
+        "id": "f_wael_says_office",
+        "statement_ar": "يقول وائل إن صديقه فراس سلّمه الخطاب على أنه من مكتب المديرة.",
+        "kind": "attribute",
+        "subject_ids": [
+          "wael",
+          "firas"
+        ],
+        "spoiler_level": 1
+      },
+      {
+        "id": "f_chat_exists",
+        "statement_ar": "عند وائل محادثة مع فراس على هاتفه تتضمن إرسال الملف.",
+        "kind": "state",
+        "subject_ids": [
+          "wael"
+        ],
+        "spoiler_level": 1
+      },
+      {
+        "id": "f_file_exists",
+        "statement_ar": "عند وائل الملف الإلكتروني كما وصله، وفيه بيانات الملف.",
+        "kind": "state",
+        "subject_ids": [
+          "wael",
+          "obj_letter"
+        ],
+        "spoiler_level": 1
+      },
+      {
+        "id": "f_nabil_says",
+        "statement_ar": "ينفي نبيل أنه كتب الخطاب أو رآه قبل عرضه.",
+        "kind": "attribute",
+        "subject_ids": [
+          "nabil"
+        ],
+        "spoiler_level": 1
+      },
+      {
+        "id": "f_register_exists",
+        "statement_ar": "يُقيَّد كل كتاب صادر من الدار في سجل الصادر برقمه وتاريخه وجهته قبل خروجه.",
+        "kind": "state",
+        "subject_ids": [
+          "nabil"
+        ],
+        "spoiler_level": 1,
+        "location_id": "loc_office"
+      },
+      {
+        "id": "f_seal_log_exists",
+        "statement_ar": "يُكتب كل استعمال لختم الدار في سجل الختم مع رقم الكتاب والتوقيع.",
+        "kind": "state",
+        "subject_ids": [
+          "nabil"
+        ],
+        "spoiler_level": 1,
+        "location_id": "loc_office"
+      },
+      {
+        "id": "f_safe_keys",
+        "statement_ar": "مفتاح خزنة الختم مع كاتب المكتب ومع المديرة فقط.",
+        "kind": "state",
+        "subject_ids": [
+          "nabil",
+          "hana"
+        ],
+        "spoiler_level": 1,
+        "location_id": "loc_office"
+      },
+      {
+        "id": "f_leave_notice_exists",
+        "statement_ar": "علّقت المديرة إشعار غياب بأن لا يصدر شيء باسمها أثناء مؤتمرها.",
+        "kind": "event",
+        "subject_ids": [
+          "hana"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": -840,
+          "precision": "exact",
+          "end_min": 3300
+        }
+      },
+      {
+        "id": "f_samples_exist",
+        "statement_ar": "يحتفظ المكتب بنسخ من آخر كتب المديرة الصادرة، ولها قالب ثابت في الأسلوب والتخطيط.",
+        "kind": "state",
+        "subject_ids": [
+          "hana"
+        ],
+        "spoiler_level": 1,
+        "location_id": "loc_office"
+      },
+      {
+        "id": "f_print_log_exists",
+        "statement_ar": "تسجّل طابعة المكتبة حساب الطابع واسم الملف وعدد الصفحات والوقت.",
+        "kind": "state",
+        "subject_ids": [
+          "labiba"
+        ],
+        "spoiler_level": 1,
+        "location_id": "loc_library"
+      },
+      {
+        "id": "f_club_log_exists",
+        "statement_ar": "يسجّل باب غرفة نادي الطباعة بطاقة كل داخل وخارج بوقتها.",
+        "kind": "state",
+        "subject_ids": [
+          "adel"
+        ],
+        "spoiler_level": 1,
+        "location_id": "loc_club"
+      },
+      {
+        "id": "f_not_issued",
+        "statement_ar": "لم يمرّ الخطاب بأي قناة رسمية في الدار، فهو ليس من إنتاج المكتب ولا بتفويض المديرة.",
+        "kind": "relation",
+        "subject_ids": [
+          "obj_letter",
+          "hana",
+          "nabil"
+        ],
+        "spoiler_level": 3,
+        "time": {
+          "start_min": -840,
+          "precision": "exact",
+          "end_min": 3300
+        },
+        "location_id": "loc_office",
+        "science_ko_refs": [
+          "KO-RS-06-002",
+          "KO-RS-05-004"
+        ]
+      },
+      {
+        "id": "f_firas_made",
+        "statement_ar": "أُعدّ الخطاب وطُبع من حساب فراس في غرفة النادي والمكتبة بينما كان وائل غائباً، ثم سلّمه فراس لوائل بوصفه خطاب المكتب.",
+        "kind": "relation",
+        "subject_ids": [
+          "firas",
+          "obj_letter",
+          "wael"
+        ],
+        "spoiler_level": 3,
+        "time": {
+          "start_min": 450,
+          "precision": "exact",
+          "end_min": 510
+        },
+        "location_id": "loc_club",
+        "science_ko_refs": [
+          "KO-RS-06-002",
+          "KO-RS-05-004"
+        ]
+      }
+    ],
+    "claims": [
+      {
+        "id": "cl_firas_office",
+        "statement_ar": "أخذت الخطاب من مكتب المديرة كما هو.",
+        "kind": "lie",
+        "held_by": [
+          "firas"
+        ],
+        "true_fact_id": "f_firas_made",
+        "contradicted_by_evidence_ids": [
+          "ev_print_log",
+          "ev_file_properties",
+          "ev_chat_log",
+          "ev_club_room_log"
+        ]
+      },
+      {
+        "id": "cl_letter_genuine",
+        "statement_ar": "الخطاب سليم الشكل ويحمل رقماً وختماً، فهو من الدار.",
+        "kind": "honest_mistake",
+        "held_by": [
+          "wael"
+        ],
+        "true_fact_id": "f_not_issued",
+        "contradicted_by_evidence_ids": [
+          "ev_outgoing_register",
+          "ev_seal_log",
+          "ev_leave_notice"
+        ]
+      }
+    ]
+  },
+  "timeline": [
+    {
+      "id": "te_leave",
+      "description_ar": "المديرة في مؤتمر خارج المدينة.",
+      "time": {
+        "start_min": -840,
+        "precision": "exact",
+        "end_min": 3300
+      },
+      "actor_ids": [
+        "hana"
+      ],
+      "fact_ids": [
+        "f_leave_notice_exists"
+      ],
+      "motivated_by_ar": "حضور مؤتمر السجلات"
+    },
+    {
+      "id": "te_register",
+      "description_ar": "نبيل يقيّد الكتاب 42 في سجل الصادر ويسجّل استعمال الختم.",
+      "time": {
+        "start_min": 130,
+        "precision": "exact"
+      },
+      "location_id": "loc_office",
+      "actor_ids": [
+        "nabil"
+      ],
+      "fact_ids": [
+        "f_register_exists"
+      ],
+      "motivated_by_ar": "إصدار تعميم الأسبوع"
+    },
+    {
+      "id": "te_club",
+      "description_ar": "فراس في غرفة النادي.",
+      "time": {
+        "start_min": 450,
+        "precision": "exact",
+        "end_min": 495
+      },
+      "location_id": "loc_club",
+      "actor_ids": [
+        "firas"
+      ],
+      "fact_ids": [
+        "f_firas_made"
+      ],
+      "motivated_by_ar": "أراد مساعدة صديقه"
+    },
+    {
+      "id": "te_print",
+      "description_ar": "طباعة الخطاب من حساب فراس في المكتبة.",
+      "time": {
+        "start_min": 482,
+        "precision": "exact"
+      },
+      "location_id": "loc_library",
+      "actor_ids": [],
+      "fact_ids": [
+        "f_print_log_exists"
+      ]
+    },
+    {
+      "id": "te_chat",
+      "description_ar": "فراس يرسل الملف لوائل.",
+      "time": {
+        "start_min": 510,
+        "precision": "exact"
+      },
+      "actor_ids": [
+        "firas",
+        "wael"
+      ],
+      "fact_ids": [
+        "f_wael_says_office"
+      ],
+      "motivated_by_ar": "أراد أن يقدّم وائل الخطاب"
+    },
+    {
+      "id": "te_wael_club",
+      "description_ar": "وائل يدخل غرفة النادي بعد خروج فراس.",
+      "time": {
+        "start_min": 550,
+        "precision": "exact"
+      },
+      "location_id": "loc_club",
+      "actor_ids": [
+        "wael"
+      ],
+      "fact_ids": [
+        "f_club_log_exists"
+      ],
+      "motivated_by_ar": "جاء ليأخذ نسخة مطبوعة"
+    },
+    {
+      "id": "te_submit",
+      "description_ar": "وائل يقدّم الخطاب للمنسقة.",
+      "time": {
+        "start_min": 3000,
+        "precision": "exact"
+      },
+      "location_id": "loc_workshop",
+      "actor_ids": [
+        "wael",
+        "sarah"
+      ],
+      "fact_ids": [
+        "f_letter_received"
+      ],
+      "motivated_by_ar": "موعد تقديم طلبات الورشة"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_letter",
+      "title_ar": "خطاب الترشيح المقدَّم",
+      "kind": "documentary",
+      "content_ar": "دار السِّجِل — مكتب المديرة\nالرقم: 41/2026 (أعلى الصفحة، يمين) · التاريخ: 10 آذار\nإلى: منسقة ورشة الترميم\n«أوصي بأشد العبارات وبأقصى ما تسمح به اللغة من حرارة بقبول الطالب وائل الحداد فوراً دون أي اختبار أو انتظار، وأتحمل المسؤولية الكاملة عن هذا الطلب.»\nأعلى الصفحة مسافة بيضاء كبيرة · الختم مطبوع فوق التوقيع · الاسم: د. هناء الصباغ",
+      "acquired_by_action_ids": [
+        "a_read_letter"
+      ],
+      "supports_fact_ids": [
+        "f_letter_received",
+        "f_letter_doubted"
+      ],
+      "reliability": "weak",
+      "limits_ar": "وثيقة موضوع التحقيق نفسها؛ تبدو سليمة الشكل، وغرابة أسلوبها لا تقول من أنتجها ولا أنها غير سليمة قبل مقارنتها بسجلات.",
+      "is_red_herring": true,
+      "location_id": "loc_workshop"
+    },
+    {
+      "id": "ev_file_properties",
+      "title_ar": "بيانات الملف الإلكتروني للخطاب",
+      "kind": "digital",
+      "content_ar": "نسخة الملف من هاتف وائل — بيانات الملف\nالاسم: letter_wael.docx\nالمُنشئ: f_rifai · الحفظ الأخير: الاثنين 15:58 (وقت الجهاز المتصل بالشبكة)\nالقالب المستعمل: club_letterhead.dotx",
+      "acquired_by_action_ids": [
+        "a_get_file_properties"
+      ],
+      "supports_fact_ids": [
+        "f_file_exists",
+        "f_firas_made"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "بيانات الملف تُعدَّل ولا تثبت وحدها هوية الفاعل؛ تقوى حين يوافقها سجل طباعة لا يعتمد عليها.",
+      "location_id": "loc_club"
+    },
+    {
+      "id": "ev_chat_log",
+      "title_ar": "محادثة فراس ووائل",
+      "kind": "digital",
+      "content_ar": "محادثة خاصة (نسخة من هاتف وائل بموافقته)\nالاثنين 16:30 — فراس: «جهّزت لك خطاب المديرة. اطبعه وقدّمه للمنسقة، لا تقل إنني أنا الذي أحضرته.»\n(مرفق ملف: letter_wael.docx)\nالاثنين 16:41 — وائل: «شكراً! سأطبعه الليلة.»",
+      "acquired_by_action_ids": [
+        "a_get_chat_log"
+      ],
+      "supports_fact_ids": [
+        "f_chat_exists",
+        "f_wael_says_office",
+        "f_firas_made"
+      ],
+      "reliability": "strong",
+      "limits_ar": "سجل مراسلة بين صديقين؛ يبيّن من أرسل الملف وبأي صيغة، ولا يبيّن من كتبه ولا أين.",
+      "location_id": "loc_workshop"
+    },
+    {
+      "id": "ev_club_room_log",
+      "title_ar": "سجل باب غرفة نادي الطباعة",
+      "kind": "digital",
+      "content_ar": "غرفة نادي الطباعة — قارئ البطاقات — الاثنين\n15:30 دخول: ف. الرفاعي\n16:15 خروج: ف. الرفاعي\n17:10 دخول: و. الحداد\n17:25 خروج: و. الحداد\nلا بطاقات أخرى بين 15:30 و17:10.",
+      "acquired_by_action_ids": [
+        "a_get_club_room_log"
+      ],
+      "supports_fact_ids": [
+        "f_club_log_exists",
+        "f_firas_made"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يسجّل مرور البطاقة لا الشخص؛ وقوته أنه يتفق مع سجل الطباعة ومع وقت الرسالة.",
+      "location_id": "loc_club"
+    },
+    {
+      "id": "ev_print_log",
+      "title_ar": "سجل طباعة المكتبة",
+      "kind": "digital",
+      "content_ar": "مكتبة الدار — سجل الطباعة — الاثنين\n16:02 الحساب: f_rifai · الملف: letter_wael.docx · صفحة واحدة · ملوّنة\nلا طباعة أخرى لهذا الملف في اليوم.",
+      "acquired_by_action_ids": [
+        "a_get_print_log"
+      ],
+      "supports_fact_ids": [
+        "f_print_log_exists",
+        "f_firas_made"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يسجّل الحساب والملف والوقت دون نص المستند؛ والحساب قد يُستعمل من غير صاحبه، فيحتاج إلى سجل ثانٍ يوافقه.",
+      "location_id": "loc_library"
+    },
+    {
+      "id": "ev_outgoing_register",
+      "title_ar": "صفحة سجل الصادر",
+      "kind": "documentary",
+      "content_ar": "دار السِّجِل — سجل الصادر 2026 (صفحة آذار)\n40/2026 — 4 آذار — إلى الأقسام — تعميم الدوام\n41/2026 — 5 آذار — إلى المخزن — طلب أحبار\n42/2026 — 9 آذار — إلى الأقسام — تعميم الأسبوع\n43/2026 — 11 آذار — إلى مدرسة القنطرة — تأكيد زيارة\nالأرقام متسلسلة بتوقيع الكاتب، ولا قيد في آذار بخطاب إلى ورشة الترميم.",
+      "acquired_by_action_ids": [
+        "a_get_outgoing_register"
+      ],
+      "supports_fact_ids": [
+        "f_register_exists",
+        "f_not_issued"
+      ],
+      "reliability": "strong",
+      "limits_ar": "سجل يحفظه كاتب واحد؛ يثبت ما قُيّد لا ما لم يُكتب خارجه، فيقوى حين يوافقه سجل الختم.",
+      "forensic_ko_ref": "KO-RS-06-002",
+      "location_id": "loc_office"
+    },
+    {
+      "id": "ev_seal_log",
+      "title_ar": "سجل استعمال الختم",
+      "kind": "documentary",
+      "content_ar": "دار السِّجِل — سجل الختم — آذار\n9 آذار — الكتاب 42/2026 — توقيع: ن. الحلبي\n11 آذار — الكتاب 43/2026 — توقيع: ن. الحلبي\nلا استعمال للختم في 10 آذار.",
+      "acquired_by_action_ids": [
+        "a_get_seal_log"
+      ],
+      "supports_fact_ids": [
+        "f_seal_log_exists",
+        "f_not_issued"
+      ],
+      "reliability": "strong",
+      "limits_ar": "سجل منفصل عن سجل الصادر، يكتبه الكاتب نفسه؛ ولا يمنع ختماً مصنوعاً خارج الخزنة، لكنه يبيّن أن الختم الحقيقي لم يُستعمل.",
+      "location_id": "loc_office"
+    },
+    {
+      "id": "ev_safe_keys",
+      "title_ar": "قائمة حملة مفتاح الخزنة",
+      "kind": "documentary",
+      "content_ar": "مكتب المديرة — قائمة المفاتيح\nخزنة الختم: ن. الحلبي (الكاتب) · د. الصباغ (المديرة)",
+      "acquired_by_action_ids": [
+        "a_get_safe_keys"
+      ],
+      "supports_fact_ids": [
+        "f_safe_keys"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "تبيّن من يستطيع فتح الخزنة لا من فتحها؛ والإمكان ليس فعلاً، ولا قيد في سجل الختم يوافقه.",
+      "is_red_herring": true,
+      "location_id": "loc_office"
+    },
+    {
+      "id": "ev_leave_notice",
+      "title_ar": "إشعار غياب المديرة",
+      "kind": "documentary",
+      "content_ar": "إشعار معلّق في لوحة الدار — بخط المديرة وتوقيعها\nأغيب في مؤتمر خارج المدينة من الأحد 18:00 إلى الأربعاء 14:00. لا يصدر باسمي أي كتاب أو ترشيح في غيابي؛ والمستعجل يحال إلى نائب المدير.\nشهادة الحضور من المؤتمر مرفقة.",
+      "acquired_by_action_ids": [
+        "a_get_leave_notice"
+      ],
+      "supports_fact_ids": [
+        "f_leave_notice_exists",
+        "f_not_issued"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يثبت غيابها وتعليمتها، ولا يستبعد وحده أن تكون فوّضت أحداً شفوياً؛ ويقوى بالمقارنة مع نماذج كتبها.",
+      "location_id": "loc_office"
+    },
+    {
+      "id": "ev_template_samples",
+      "title_ar": "جدول مقارنة الخطاب بكتب المديرة الصادرة",
+      "kind": "documentary",
+      "content_ar": "مكتب المديرة — ثلاثة كتب ترشيح صادرة (شباط) مقابل الخطاب المتنازع عليه\nالعبارة الافتتاحية: «نرشّح للنظر في قبوله وفق الشروط المعتمدة» (الكتب الثلاثة) · «أوصي بأشد العبارات... فوراً دون أي اختبار» (الخطاب)\nعبارة الختام: «مع وافر التقدير» (الثلاثة) · غائبة (الخطاب)\nموضع رقم الصادر: أعلى اليسار (الثلاثة) · أعلى اليمين (الخطاب)\nموضع الختم: مربع أسفل اليسار بعيداً عن التوقيع (الثلاثة) · فوق التوقيع (الخطاب)\nالمسافة البيضاء أعلى الصفحة: 3 سم (الثلاثة) · 6 سم (الخطاب)",
+      "acquired_by_action_ids": [
+        "a_get_template_samples"
+      ],
+      "supports_fact_ids": [
+        "f_samples_exist",
+        "f_not_issued"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "مقارنة بنماذج يحتفظ بها المكتب نفسه، ولا تنسب الخطاب لخط أحد؛ وفروق الأسلوب والتخطيط وحدها قرائن ضعيفة، تقوى حين يوافقها غياب المديرة.",
+      "forensic_ko_ref": "KO-FC-04B-004",
+      "location_id": "loc_office"
+    },
+    {
+      "id": "ev_wael_stmt",
+      "title_ar": "إفادة وائل (ملخص)",
+      "kind": "testimonial",
+      "content_ar": "ملخص إفادة وائل الحداد:\n«استلمت الملف من فراس وقال لي إنه صادر عن المكتب، وطبعته مرة ثانية وقدمته. لم أكتب فيه شيئاً ولم أسأل المكتب.»",
+      "acquired_by_action_ids": [
+        "a_note_wael"
+      ],
+      "supports_fact_ids": [
+        "f_wael_says_office"
+      ],
+      "reliability": "weak",
+      "limits_ar": "إفادة المستفيد من الخطاب؛ تُقاس بالمراسلة والسجلات لا بنبرتها.",
+      "location_id": "loc_workshop"
+    },
+    {
+      "id": "ev_nabil_stmt",
+      "title_ar": "إفادة نبيل (ملخص)",
+      "kind": "testimonial",
+      "content_ar": "ملخص إفادة نبيل الحلبي:\n«لم أكتب هذا الخطاب ولم أره قبل أن يُعرض علينا. الختم لم يُفتح له.»",
+      "acquired_by_action_ids": [
+        "a_note_nabil"
+      ],
+      "supports_fact_ids": [
+        "f_nabil_says"
+      ],
+      "reliability": "weak",
+      "limits_ar": "إفادة صاحب الشأن عن نفسه؛ يؤيدها سجل الختم ولا تغني عنه.",
+      "location_id": "loc_office"
+    },
+    {
+      "id": "ev_firas_stmt",
+      "title_ar": "إفادة فراس بعد المواجهة (ملخص)",
+      "kind": "testimonial",
+      "content_ar": "ملخص إفادة فراس الرفاعي:\n«كتبت الخطاب وطبعته بنفسي، وأخبرت وائل أنه من المكتب. أخطأت ولم أقصد إيذاء أحد.»",
+      "acquired_by_action_ids": [
+        "a_note_firas"
+      ],
+      "supports_fact_ids": [
+        "f_firas_made"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "اعتراف بعد عرض سجل عليه؛ يؤيد سجلات سبقته ولا يغني عنها.",
+      "location_id": "loc_club"
+    }
+  ],
+  "evidence_graph": {
+    "inferences": [
+      {
+        "id": "i_issued_a",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_outgoing_register"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_seal_log"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_not_issued"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "رقم الصادر 41 مأخوذ لكتاب آخر في تاريخ آخر، ولا قيد لهذا الخطاب في سجل الصادر؛ وسجل الختم لا يذكر استعمالاً في يوم التاريخ المكتوب. سجلان منفصلان يتفقان.",
+        "skill_ko_refs": [
+          "KO-RS-06-002",
+          "KO-RS-05-004"
+        ]
+      },
+      {
+        "id": "i_issued_b",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_template_samples"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_leave_notice"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_not_issued"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "اختلاف الافتتاح والختام وموضع الرقم والختم عن ثلاثة كتب سابقة، قرينة ضعيفة وحدها؛ ويقويها إشعار موقّع بأن لا يصدر شيء باسمها أيام التاريخ.",
+        "skill_ko_refs": [
+          "KO-RS-06-002",
+          "KO-FC-04B-004"
+        ]
+      },
+      {
+        "id": "i_made_a",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_print_log"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_file_properties"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_firas_made"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "الطباعة جرت من حساب فراس بعد دقائق من حفظ ملف باسمه وبقالب النادي؛ مصدران منفصلان، أحدهما نظام المكتبة والآخر الملف نفسه.",
+        "skill_ko_refs": [
+          "KO-RS-05-004",
+          "KO-FC-04-026"
+        ]
+      },
+      {
+        "id": "i_made_b",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_chat_log"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_club_room_log"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_firas_made"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "الرسالة التي أرسلت الملف خرجت بعد خروج فراس من غرفة لم يدخلها غيره، ووائل لم يدخلها إلا بعد الرسالة بساعة؛ فالملف لم يكن من عند وائل.",
+        "skill_ko_refs": [
+          "KO-RS-05-004",
+          "KO-FC-04-024"
+        ]
+      },
+      {
+        "id": "i_cl_firas",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_firas_made"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_firas_office"
+        },
+        "relation": "contradicts_claim",
+        "strength": "strong",
+        "rule_ar": "كان الخطاب على حسابه في الغرفة وفي الطابعة، لا في المكتب.",
+        "skill_ko_refs": [
+          "KO-RS-05-014"
+        ]
+      },
+      {
+        "id": "i_cl_wael",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_not_issued"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_letter_genuine"
+        },
+        "relation": "contradicts_claim",
+        "strength": "strong",
+        "rule_ar": "الرقم والختم والاسم شكل يمكن نسخه؛ والأصالة تقاس بالقيد والسجل لا بالمظهر.",
+        "skill_ko_refs": [
+          "KO-RS-06-002",
+          "KO-RS-05-014"
+        ]
+      },
+      {
+        "id": "i_support_firas",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_not_issued"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_firas_made"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_firas"
+        },
+        "relation": "supports",
+        "strength": "strong",
+        "rule_ar": "الخطاب لم يخرج من الدار، وقد أُعدّ وأُرسل من حساب فراس وفي غرفته؛ فهذه الفرضية تفسّر السجلات الأربعة.",
+        "skill_ko_refs": [
+          "KO-RS-06-007"
+        ]
+      },
+      {
+        "id": "i_rule_genuine",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_not_issued"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_firas_made"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_genuine"
+        },
+        "relation": "rules_out",
+        "strength": "conclusive",
+        "rule_ar": "خطاب لا قيد له ولا ختم ولا تفويض، أُعدّ خارج الدار؛ فمهما بدا حاراً لا يكون من المديرة.",
+        "skill_ko_refs": [
+          "KO-RS-06-008"
+        ]
+      },
+      {
+        "id": "i_rule_wael",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_firas_made"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_not_issued"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_wael"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "الملف خرج من حساب غيره وغرفة لم يكن فيها وقت الإعداد، ووصله على أنه من المكتب؛ فالاستفادة من الخطاب لا تجعله صانعه.",
+        "skill_ko_refs": [
+          "KO-RS-06-008"
+        ]
+      },
+      {
+        "id": "i_rule_nabil",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_not_issued"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_firas_made"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_nabil"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "من يملك مفتاح الخزنة لم يفتحها في تلك الأيام، والخطاب لم يمرّ بقيده ولا بختمه؛ والملف خرج من حساب آخر.",
+        "skill_ko_refs": [
+          "KO-RS-06-008"
+        ]
+      }
+    ]
+  },
+  "character_knowledge": [
+    {
+      "character_id": "wael",
+      "knows": [
+        {
+          "fact_id": "f_wael_says_office",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_chat_exists",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_file_exists",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": [
+        {
+          "claim_id": "cl_letter_genuine",
+          "stance": "sincere"
+        }
+      ]
+    },
+    {
+      "character_id": "nabil",
+      "knows": [
+        {
+          "fact_id": "f_nabil_says",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_register_exists",
+          "access": "professional",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_seal_log_exists",
+          "access": "professional",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_safe_keys",
+          "access": "professional",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    },
+    {
+      "character_id": "firas",
+      "knows": [],
+      "hides": [
+        {
+          "fact_id": "f_firas_made",
+          "reveal_when": {
+            "presented": {
+              "evidence_id": "ev_print_log",
+              "to_character": "firas"
+            }
+          },
+          "cover_claim_id": "cl_firas_office",
+          "reveal_line_id": "fr_made"
+        }
+      ],
+      "believes": [
+        {
+          "claim_id": "cl_firas_office",
+          "stance": "deliberate_lie"
+        }
+      ]
+    },
+    {
+      "character_id": "hana",
+      "knows": [
+        {
+          "fact_id": "f_leave_notice_exists",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_samples_exist",
+          "access": "professional",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    },
+    {
+      "character_id": "sarah",
+      "knows": [
+        {
+          "fact_id": "f_letter_doubted",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    },
+    {
+      "character_id": "labiba",
+      "knows": [
+        {
+          "fact_id": "f_print_log_exists",
+          "access": "professional",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    },
+    {
+      "character_id": "adel",
+      "knows": [
+        {
+          "fact_id": "f_club_log_exists",
+          "access": "professional",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "h_genuine",
+      "statement_ar": "الخطاب سليم وصدر من المديرة، وكانت فقط شديدة الحماسة هذه المرة.",
+      "is_true": false,
+      "plausibility_at_start": "high"
+    },
+    {
+      "id": "h_wael",
+      "statement_ar": "كتب وائل الخطاب بنفسه ليُقبل في الورشة.",
+      "is_true": false,
+      "plausibility_at_start": "medium",
+      "suspect_id": "wael"
+    },
+    {
+      "id": "h_nabil",
+      "statement_ar": "أصدر كاتب المكتب الخطاب خارج الأصول لأنه يملك الختم.",
+      "is_true": false,
+      "plausibility_at_start": "medium",
+      "suspect_id": "nabil"
+    },
+    {
+      "id": "h_firas",
+      "statement_ar": "أعدّ فراس الخطاب خارج الدار وأعطاه لوائل على أنه من المكتب.",
+      "is_true": true,
+      "plausibility_at_start": "low",
+      "suspect_id": "firas"
+    }
+  ],
+  "misdirection_plan": [
+    {
+      "id": "rh_form",
+      "points_to_hypothesis_id": "h_genuine",
+      "planted_via_ar": "الخطاب يحمل رقماً وتاريخاً واسماً وختماً.",
+      "evidence_ids": [
+        "ev_letter"
+      ],
+      "refuted_by_inference_ids": [
+        "i_issued_a",
+        "i_issued_b",
+        "i_rule_genuine"
+      ],
+      "fairness_note_ar": "سجل الصادر وسجل الختم وإشعار الغياب كلها بيد اللاعب، وتبيّن أن الأصالة لا تؤخذ من المظهر."
+    },
+    {
+      "id": "rh_keys",
+      "points_to_hypothesis_id": "h_nabil",
+      "planted_via_ar": "الكاتب يحمل مفتاح الخزنة ويستطيع فتحها.",
+      "evidence_ids": [
+        "ev_safe_keys"
+      ],
+      "refuted_by_inference_ids": [
+        "i_rule_nabil",
+        "i_issued_a"
+      ],
+      "fairness_note_ar": "سجل الختم لا يذكر فتحاً في تلك الأيام، والإمكان وحده لا يكفي لإثبات الفعل."
+    },
+    {
+      "id": "rh_benefit",
+      "points_to_hypothesis_id": "h_wael",
+      "planted_via_ar": "وائل هو المستفيد المباشر من الخطاب.",
+      "evidence_ids": [
+        "ev_wael_stmt",
+        "ev_letter"
+      ],
+      "refuted_by_inference_ids": [
+        "i_rule_wael",
+        "i_made_a",
+        "i_made_b"
+      ],
+      "fairness_note_ar": "المراسلة وسجل الغرفة يبيّنان أن الملف وصله ولم يخرج منه، والمصلحة ليست دليلاً على الفعل."
+    }
+  ],
+  "learning_objectives": [
+    {
+      "id": "lo_claim",
+      "statement_ar": "يصنّف الأدلة بحسب نوع مصدرها ويعامل الأقوال ادعاءات تحتاج تأييداً.",
+      "skill_ko_ref": "KO-RS-05-001",
+      "observable_behaviors_ar": [
+        "يصنّف الإفادات أقوالاً",
+        "يميز السجل الأصلي من النسخة"
+      ],
+      "evidence_sources": [
+        "evidence_board"
+      ]
+    },
+    {
+      "id": "lo_timeline",
+      "statement_ar": "يرتّب الأحداث على خط زمني واحد ليكشف ما يتعارض.",
+      "skill_ko_ref": "KO-RS-05-005",
+      "observable_behaviors_ar": [
+        "يضع الأدلة في أزمنتها"
+      ],
+      "evidence_sources": [
+        "timeline_task",
+        "action_log"
+      ]
+    },
+    {
+      "id": "lo_indep",
+      "statement_ar": "يتحقق من استقلال الأدلة ويقدّم مسارين لا يشتركان في مصدر.",
+      "skill_ko_ref": "KO-RS-05-004",
+      "observable_behaviors_ar": [
+        "يميز بين مصادر لا تشترك في أصل"
+      ],
+      "evidence_sources": [
+        "evidence_board",
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_main",
+      "statement_ar": "يحكم على أصالة الوثيقة بمسارها لا بمظهرها: قيد في سجل الصادر، واستعمال للختم، وحضور الموقِّع؛ ويعامل فروق الأسلوب والتخطيط قرائن ضعيفة تحتاج دليلاً مستقلاً.",
+      "skill_ko_ref": "KO-RS-06-002",
+      "observable_behaviors_ar": [
+        "يقابل الوثيقة بسجل الصادر",
+        "لا يعدّ النبرة وحدها دليلاً",
+        "لا ينسب خطاً إلى كاتب"
+      ],
+      "evidence_sources": [
+        "evidence_board",
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_hyp",
+      "statement_ar": "يوازن بين فرضيتين على الأقل ويستبعد ما تنقضه الأدلة.",
+      "skill_ko_ref": "KO-RS-05-002",
+      "observable_behaviors_ar": [
+        "يضيف فرضيات",
+        "يستبعد بدليل"
+      ],
+      "evidence_sources": [
+        "hypothesis_ledger"
+      ]
+    },
+    {
+      "id": "lo_diag",
+      "statement_ar": "يقدّر ما يثبته كل دليل وما لا يثبته ويربطه بالفرضية باتجاه صحيح.",
+      "skill_ko_ref": "KO-RS-06-001",
+      "observable_behaviors_ar": [
+        "يربط الدليل بالفرضية"
+      ],
+      "evidence_sources": [
+        "evidence_board",
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_calib",
+      "statement_ar": "يصوغ نسبة الترجيح بحدودها.",
+      "skill_ko_ref": "KO-RS-06-021",
+      "observable_behaviors_ar": [
+        "يختار ثقة معقولة",
+        "يذكر حدوداً"
+      ],
+      "evidence_sources": [
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_revise",
+      "statement_ar": "يراجع رأيه الأول حين يظهر ما يخالفه.",
+      "skill_ko_ref": "KO-RS-06-009",
+      "observable_behaviors_ar": [
+        "يغيّر فرضيته الرائدة بدليل"
+      ],
+      "evidence_sources": [
+        "hypothesis_ledger"
+      ]
+    }
+  ],
+  "mechanics": {
+    "time_budget_units": 50,
+    "actions": [
+      {
+        "id": "a_read_letter",
+        "type": "examine",
+        "label_ar": "اقرأ الخطاب المقدَّم",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_letter"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_workshop",
+        "telemetry_code": "READ_LETTER"
+      },
+      {
+        "id": "a_int_wael",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة وائل",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "wael",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "wael",
+        "telemetry_code": "INT_WAEL"
+      },
+      {
+        "id": "a_int_nabil",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة نبيل",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "nabil",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "nabil",
+        "telemetry_code": "INT_NABIL"
+      },
+      {
+        "id": "a_int_firas",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة فراس",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "firas",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "firas",
+        "telemetry_code": "INT_FIRAS"
+      },
+      {
+        "id": "a_int_hana",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة هناء",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "hana",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "hana",
+        "telemetry_code": "INT_HANA"
+      },
+      {
+        "id": "a_int_sarah",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة سارة",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "sarah",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "sarah",
+        "telemetry_code": "INT_SARAH"
+      },
+      {
+        "id": "a_int_labiba",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة لبنى",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "labiba",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "labiba",
+        "telemetry_code": "INT_LABIBA"
+      },
+      {
+        "id": "a_int_adel",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة عادل",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "adel",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "adel",
+        "telemetry_code": "INT_ADEL"
+      },
+      {
+        "id": "a_get_chat_log",
+        "type": "examine",
+        "label_ar": "اطلب نسخة محادثة وائل وفراس",
+        "precondition": {
+          "fact_unlocked": "f_chat_exists"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_chat_log"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_workshop",
+        "telemetry_code": "GET_CHAT_LOG"
+      },
+      {
+        "id": "a_get_file_properties",
+        "type": "examine",
+        "label_ar": "اطلب بيانات الملف الإلكتروني",
+        "precondition": {
+          "fact_unlocked": "f_file_exists"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_file_properties"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_club",
+        "telemetry_code": "GET_FILE_PROPERTIES"
+      },
+      {
+        "id": "a_get_outgoing_register",
+        "type": "examine",
+        "label_ar": "اطلب صفحة سجل الصادر",
+        "precondition": {
+          "fact_unlocked": "f_register_exists"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_outgoing_register"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_office",
+        "telemetry_code": "GET_REGISTER"
+      },
+      {
+        "id": "a_get_seal_log",
+        "type": "examine",
+        "label_ar": "اطلب سجل استعمال الختم",
+        "precondition": {
+          "fact_unlocked": "f_seal_log_exists"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_seal_log"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_office",
+        "telemetry_code": "GET_SEAL_LOG"
+      },
+      {
+        "id": "a_get_safe_keys",
+        "type": "examine",
+        "label_ar": "اطلب قائمة حملة مفتاح الخزنة",
+        "precondition": {
+          "fact_unlocked": "f_safe_keys"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_safe_keys"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_office",
+        "telemetry_code": "GET_SAFE_KEYS"
+      },
+      {
+        "id": "a_get_leave_notice",
+        "type": "examine",
+        "label_ar": "اطلب إشعار غياب المديرة",
+        "precondition": {
+          "fact_unlocked": "f_leave_notice_exists"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_leave_notice"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_office",
+        "telemetry_code": "GET_LEAVE_NOTICE"
+      },
+      {
+        "id": "a_get_template_samples",
+        "type": "examine",
+        "label_ar": "اطلب مقارنة الخطاب بكتب المديرة السابقة",
+        "precondition": {
+          "fact_unlocked": "f_samples_exist"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_template_samples"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_office",
+        "telemetry_code": "GET_SAMPLES"
+      },
+      {
+        "id": "a_get_print_log",
+        "type": "examine",
+        "label_ar": "اطلب سجل طباعة المكتبة",
+        "precondition": {
+          "fact_unlocked": "f_print_log_exists"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_print_log"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_library",
+        "telemetry_code": "GET_PRINT_LOG"
+      },
+      {
+        "id": "a_get_club_room_log",
+        "type": "examine",
+        "label_ar": "اطلب سجل باب غرفة النادي",
+        "precondition": {
+          "fact_unlocked": "f_club_log_exists"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_club_room_log"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_club",
+        "telemetry_code": "GET_CLUB_LOG"
+      },
+      {
+        "id": "a_note_wael",
+        "type": "examine",
+        "label_ar": "دوّن إفادة وائل",
+        "precondition": {
+          "fact_unlocked": "f_wael_says_office"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_wael_stmt"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "wael",
+        "telemetry_code": "NOTE_WAEL"
+      },
+      {
+        "id": "a_note_nabil",
+        "type": "examine",
+        "label_ar": "دوّن إفادة نبيل",
+        "precondition": {
+          "fact_unlocked": "f_nabil_says"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_nabil_stmt"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "nabil",
+        "telemetry_code": "NOTE_NABIL"
+      },
+      {
+        "id": "a_note_firas",
+        "type": "examine",
+        "label_ar": "دوّن إفادة فراس",
+        "precondition": {
+          "fact_unlocked": "f_firas_made"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_firas_stmt"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "firas",
+        "telemetry_code": "NOTE_FIRAS"
+      },
+      {
+        "id": "p_print_firas",
+        "type": "present_evidence",
+        "label_ar": "اعرض سجل الطباعة على فراس",
+        "precondition": {
+          "presented": {
+            "evidence_id": "ev_print_log",
+            "to_character": "firas"
+          }
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "PRESENTED_PRINT"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "firas",
+        "telemetry_code": "P_PRINT_FIRAS"
+      },
+      {
+        "id": "a_hint",
+        "type": "request_hint",
+        "label_ar": "اطلب تلميحاً",
+        "precondition": {
+          "always": true
+        },
+        "effects": [],
+        "time_cost_units": 0,
+        "telemetry_code": "REQUEST_HINT"
+      },
+      {
+        "id": "a_accuse",
+        "type": "final_accusation",
+        "label_ar": "قدّم الرأي المعلّل النهائي",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "SUBMIT"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "FINAL_ACCUSATION"
+      },
+      {
+        "id": "ask_wael_f_wael_says_office",
+        "type": "interview",
+        "label_ar": "[نموذج] wael يذكر f_wael_says_office",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_wael_says_office"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "wael",
+        "telemetry_code": "ASK_WAEL_F_WAEL_SAYS_OFFICE"
+      },
+      {
+        "id": "ask_wael_f_chat_exists",
+        "type": "interview",
+        "label_ar": "[نموذج] wael يذكر f_chat_exists",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_chat_exists"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "wael",
+        "telemetry_code": "ASK_WAEL_F_CHAT_EXISTS"
+      },
+      {
+        "id": "ask_wael_f_file_exists",
+        "type": "interview",
+        "label_ar": "[نموذج] wael يذكر f_file_exists",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_file_exists"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "wael",
+        "telemetry_code": "ASK_WAEL_F_FILE_EXISTS"
+      },
+      {
+        "id": "ask_nabil_f_nabil_says",
+        "type": "interview",
+        "label_ar": "[نموذج] nabil يذكر f_nabil_says",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_nabil_says"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "nabil",
+        "telemetry_code": "ASK_NABIL_F_NABIL_SAYS"
+      },
+      {
+        "id": "ask_nabil_f_register_exists",
+        "type": "interview",
+        "label_ar": "[نموذج] nabil يذكر f_register_exists",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_register_exists"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "nabil",
+        "telemetry_code": "ASK_NABIL_F_REGISTER_EXISTS"
+      },
+      {
+        "id": "ask_nabil_f_seal_log_exists",
+        "type": "interview",
+        "label_ar": "[نموذج] nabil يذكر f_seal_log_exists",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_seal_log_exists"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "nabil",
+        "telemetry_code": "ASK_NABIL_F_SEAL_LOG_EXISTS"
+      },
+      {
+        "id": "ask_nabil_f_safe_keys",
+        "type": "interview",
+        "label_ar": "[نموذج] nabil يذكر f_safe_keys",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_safe_keys"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "nabil",
+        "telemetry_code": "ASK_NABIL_F_SAFE_KEYS"
+      },
+      {
+        "id": "ask_firas_f_firas_made",
+        "type": "interview",
+        "label_ar": "[نموذج] firas يكشف f_firas_made",
+        "precondition": {
+          "all": [
+            {
+              "always": true
+            },
+            {
+              "presented": {
+                "evidence_id": "ev_print_log",
+                "to_character": "firas"
+              }
+            }
+          ]
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_firas_made"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "firas",
+        "telemetry_code": "ASK_FIRAS_F_FIRAS_MADE"
+      },
+      {
+        "id": "ask_hana_f_leave_notice_exists",
+        "type": "interview",
+        "label_ar": "[نموذج] hana يذكر f_leave_notice_exists",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_leave_notice_exists"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "hana",
+        "telemetry_code": "ASK_HANA_F_LEAVE_NOTICE_EXISTS"
+      },
+      {
+        "id": "ask_hana_f_samples_exist",
+        "type": "interview",
+        "label_ar": "[نموذج] hana يذكر f_samples_exist",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_samples_exist"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "hana",
+        "telemetry_code": "ASK_HANA_F_SAMPLES_EXIST"
+      },
+      {
+        "id": "ask_sarah_f_letter_doubted",
+        "type": "interview",
+        "label_ar": "[نموذج] sarah يذكر f_letter_doubted",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_letter_doubted"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "sarah",
+        "telemetry_code": "ASK_SARAH_F_LETTER_DOUBTED"
+      },
+      {
+        "id": "ask_labiba_f_print_log_exists",
+        "type": "interview",
+        "label_ar": "[نموذج] labiba يذكر f_print_log_exists",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_print_log_exists"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "labiba",
+        "telemetry_code": "ASK_LABIBA_F_PRINT_LOG_EXISTS"
+      },
+      {
+        "id": "ask_adel_f_club_log_exists",
+        "type": "interview",
+        "label_ar": "[نموذج] adel يذكر f_club_log_exists",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_club_log_exists"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "adel",
+        "telemetry_code": "ASK_ADEL_F_CLUB_LOG_EXISTS"
+      }
+    ]
+  },
+  "state_machine": {
+    "id": "c028",
+    "initial": "briefing",
+    "type": "compound",
+    "states": {
+      "briefing": {
+        "description_ar": "الإحاطة",
+        "type": "atomic",
+        "on": {
+          "START": {
+            "target": "investigating"
+          }
+        }
+      },
+      "investigating": {
+        "description_ar": "التحقيق",
+        "type": "compound",
+        "initial": "gathering",
+        "states": {
+          "gathering": {
+            "type": "atomic",
+            "on": {
+              "OPEN_DEDUCTION": {
+                "target": "deducing"
+              }
+            }
+          },
+          "deducing": {
+            "type": "atomic",
+            "on": {
+              "BACK": {
+                "target": "gathering"
+              }
+            }
+          }
+        },
+        "on": {
+          "SUBMIT": {
+            "target": "review"
+          }
+        }
+      },
+      "review": {
+        "description_ar": "مراجعة",
+        "type": "atomic",
+        "on": {
+          "CLOSE": {
+            "target": "resolved"
+          }
+        }
+      },
+      "resolved": {
+        "description_ar": "إغلاق",
+        "type": "final"
+      }
+    }
+  },
+  "dialogue": {
+    "max_turns_per_interview": 10,
+    "llm_enabled": false,
+    "topics": [
+      {
+        "id": "t_office",
+        "label_ar": "من أعطاك الخطاب",
+        "example_questions_ar": [
+          "من أعطاك الخطاب؟",
+          "ماذا قيل لك عنه؟"
+        ],
+        "fact_ids": [
+          "f_wael_says_office"
+        ]
+      },
+      {
+        "id": "t_chat",
+        "label_ar": "الرسائل بينك وبين فراس",
+        "example_questions_ar": [
+          "هل عندك محادثة معه؟"
+        ],
+        "fact_ids": [
+          "f_chat_exists"
+        ]
+      },
+      {
+        "id": "t_file",
+        "label_ar": "الملف الإلكتروني",
+        "example_questions_ar": [
+          "هل عندك الملف كما وصلك؟"
+        ],
+        "fact_ids": [
+          "f_file_exists"
+        ]
+      },
+      {
+        "id": "t_denial",
+        "label_ar": "نفي الكتابة",
+        "example_questions_ar": [
+          "هل كتبت الخطاب؟"
+        ],
+        "fact_ids": [
+          "f_nabil_says"
+        ]
+      },
+      {
+        "id": "t_register",
+        "label_ar": "سجل الصادر",
+        "example_questions_ar": [
+          "كيف تقيّدون الكتب؟"
+        ],
+        "fact_ids": [
+          "f_register_exists"
+        ]
+      },
+      {
+        "id": "t_seal",
+        "label_ar": "الختم وسجله",
+        "example_questions_ar": [
+          "كيف يُستعمل الختم؟"
+        ],
+        "fact_ids": [
+          "f_seal_log_exists"
+        ]
+      },
+      {
+        "id": "t_keys",
+        "label_ar": "مفتاح الخزنة",
+        "example_questions_ar": [
+          "من يملك مفتاح الخزنة؟"
+        ],
+        "fact_ids": [
+          "f_safe_keys"
+        ]
+      },
+      {
+        "id": "t_source",
+        "label_ar": "من أين الخطاب",
+        "example_questions_ar": [
+          "من أين حصلت على الخطاب؟"
+        ],
+        "fact_ids": [],
+        "claim_ids": [
+          "cl_firas_office"
+        ]
+      },
+      {
+        "id": "t_made",
+        "label_ar": "ما فعلته بالخطاب",
+        "example_questions_ar": [
+          "هل كتبت الخطاب أو طبعته؟"
+        ],
+        "fact_ids": [
+          "f_firas_made"
+        ]
+      },
+      {
+        "id": "t_leave",
+        "label_ar": "غياب المديرة",
+        "example_questions_ar": [
+          "أين كنت في تلك الأيام؟"
+        ],
+        "fact_ids": [
+          "f_leave_notice_exists"
+        ]
+      },
+      {
+        "id": "t_samples",
+        "label_ar": "كتب المديرة السابقة",
+        "example_questions_ar": [
+          "هل عندكم نماذج من كتبك؟"
+        ],
+        "fact_ids": [
+          "f_samples_exist"
+        ]
+      },
+      {
+        "id": "t_tone",
+        "label_ar": "أسلوب الخطاب",
+        "example_questions_ar": [
+          "ما الذي لاحظتِه في الخطاب؟"
+        ],
+        "fact_ids": [
+          "f_letter_doubted"
+        ]
+      },
+      {
+        "id": "t_print",
+        "label_ar": "سجل الطباعة",
+        "example_questions_ar": [
+          "ماذا يسجّل نظام الطباعة؟"
+        ],
+        "fact_ids": [
+          "f_print_log_exists"
+        ]
+      },
+      {
+        "id": "t_club",
+        "label_ar": "باب غرفة النادي",
+        "example_questions_ar": [
+          "ماذا يسجّل قارئ الباب؟"
+        ],
+        "fact_ids": [
+          "f_club_log_exists"
+        ]
+      }
+    ]
+  },
+  "rubric": {
+    "reference_answer_ar": "الخطاب لا يثبت أنه صدر من الدار. رقم 41/2026 مقيّد لكتاب آخر بتاريخ آخر، ولا استعمال للختم في اليوم المكتوب، والمديرة كانت غائبة وتركت إشعاراً بعدم إصدار شيء باسمها، وأسلوبه وتخطيطه يخالفان ثلاثة كتب سابقة، وهذه الأخيرة قرينة ضعيفة تقوّيها الأولى. أما صانعه فملف يحمل اسم حساب فراس وطبع من حسابه بعد دقائق، وغرفة النادي لم تدخلها غير بطاقته قبل رسالته التي أرسلت الملف إلى وائل. حدود الاستنتاج: لا نعرف إن كان فراس وحده أم بمساعدة، ولا تنسب السجلات خطاً لأحد، ولا يغني اعترافه عن السجلات.",
+    "criteria": [
+      {
+        "id": "c_source",
+        "name_ar": "تصنيف المصادر",
+        "objective_ids": [
+          "lo_claim"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يصنّف"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "أخطأ في الأغلب"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "نصف صحيح"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمه صحيح"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كله صحيح"
+          }
+        ]
+      },
+      {
+        "id": "c_conflict",
+        "name_ar": "ترتيب الأحداث على الخط الزمني",
+        "objective_ids": [
+          "lo_timeline"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.2,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يرتّب شيئاً"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "رتّب قليلاً"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "رتّب نصفها"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمها"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كلها في موضعها"
+          }
+        ]
+      },
+      {
+        "id": "c_links",
+        "name_ar": "ربط الأدلة بالفرضيات",
+        "objective_ids": [
+          "lo_diag",
+          "lo_indep"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.2,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لا روابط"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "قليلة"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "نصفها صحيح"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمها"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كلها دقيقة"
+          }
+        ]
+      },
+      {
+        "id": "c_uncertainty",
+        "name_ar": "معايرة الثقة",
+        "objective_ids": [
+          "lo_calib"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "ثقة مفرطة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "حدود قليلة"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "جزئية"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معقولة"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "معايَرة كاملة"
+          }
+        ]
+      },
+      {
+        "id": "c_revision",
+        "name_ar": "مراجعة الرأي",
+        "objective_ids": [
+          "lo_revise"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "بقي على فرضية مرفوضة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "لم يعلن فرضية"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "ثبت على فرضية سليمة"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "غيّر بدليل"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "غيّر بدليل ووثّق"
+          }
+        ]
+      },
+      {
+        "id": "c_elimination",
+        "name_ar": "استبعاد الفرضيات الخاطئة",
+        "objective_ids": [
+          "lo_hyp"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يستبعد"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "استبعد خطأً"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "فرضية بدليل"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "فرضيتين"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كل الخاطئة"
+          }
+        ]
+      },
+      {
+        "id": "c_justification",
+        "name_ar": "جودة الحجة المكتوبة",
+        "objective_ids": [
+          "lo_main"
+        ],
+        "scored_by": "human",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لا حجة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "ادعاء بلا سند"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "أدلة دون ربط"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "ربط الأدلة بالاستنتاج"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "ربط مع الطرق البريئة والحدود"
+          }
+        ]
+      }
+    ]
+  },
+  "hint_ladder": [
+    {
+      "id": "hg1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "قبل أن تحكم على وثيقة بنبرتها، اسأل: أين قيدها عند من يُفترض أنه أصدرها؟",
+      "trigger": {
+        "always": true
+      },
+      "assessment_weight": 0.02
+    },
+    {
+      "id": "hg2",
+      "level": 2,
+      "kind": "focus_area",
+      "text_ar": "قارن الرقم والتاريخ المكتوبين بسجل الصادر وسجل الختم، لا بالمظهر.",
+      "trigger": {
+        "has_evidence": "ev_letter"
+      },
+      "assessment_weight": 0.04
+    },
+    {
+      "id": "hg3",
+      "level": 3,
+      "kind": "pointer",
+      "text_ar": "اسأل كاتب المكتب عن سجليه، واسأل من يملك السجلات الأخرى: الطباعة والباب.",
+      "trigger": {
+        "has_evidence": "ev_letter"
+      },
+      "assessment_weight": 0.08
+    },
+    {
+      "id": "hi1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "هل الاختلاف في الأسلوب كافٍ وحده أم يلزمه دليل ثانٍ من نوع آخر؟",
+      "trigger": {
+        "has_evidence": "ev_letter"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_issued_b"
+    },
+    {
+      "id": "hi2",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "ابحث عن ما يخص غياب المديرة في تلك الأيام وعن نماذج كتبها السابقة.",
+      "trigger": {
+        "has_evidence": "ev_letter"
+      },
+      "assessment_weight": 0.06,
+      "targets_inference_id": "i_issued_b"
+    },
+    {
+      "id": "hm1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "من أين خرج الملف قبل أن يصل إلى وائل؟",
+      "trigger": {
+        "has_evidence": "ev_letter"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_made_a"
+    },
+    {
+      "id": "hm2",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "اسأل مسؤولة الطباعة عن حساب الطابع، ثم قارنه ببيانات الملف.",
+      "trigger": {
+        "has_evidence": "ev_letter"
+      },
+      "assessment_weight": 0.06,
+      "targets_inference_id": "i_made_a"
+    }
+  ],
+  "fairness_test": {
+    "requirements": {
+      "min_disjoint_proof_paths": 2,
+      "max_inference_depth": 3,
+      "all_red_herrings_refutable": true,
+      "culprit_uniquely_entailed": true,
+      "no_hidden_fact_dependency": true,
+      "max_required_actions": 50
+    },
+    "runs": []
+  },
+  "ending_explanation": {
+    "steps": [
+      {
+        "order": 1,
+        "text_ar": "الخطاب بلا قيد: الرقم 41 محجوز لكتاب غيره، والختم لم يُستعمل في اليوم المكتوب؛ سجلان منفصلان يكفيان لنفي صدوره من الدار.",
+        "uses_evidence_ids": [
+          "ev_outgoing_register",
+          "ev_seal_log"
+        ],
+        "inference_id": "i_issued_a"
+      },
+      {
+        "order": 2,
+        "text_ar": "مسار ثانٍ: غياب المديرة وتعليمتها المكتوبة، ثم فروق الأسلوب والتخطيط عن ثلاثة نماذج؛ والفروق وحدها ضعيفة، وإشعار الغياب هو الذي يقوّيها.",
+        "uses_evidence_ids": [
+          "ev_leave_notice",
+          "ev_template_samples"
+        ],
+        "inference_id": "i_issued_b"
+      },
+      {
+        "order": 3,
+        "text_ar": "الصانع: ملف بحساب فراس وقالب ناديه طُبع من حسابه بعد دقائق.",
+        "uses_evidence_ids": [
+          "ev_print_log",
+          "ev_file_properties"
+        ],
+        "inference_id": "i_made_a"
+      },
+      {
+        "order": 4,
+        "text_ar": "مسار ثانٍ: رسالة إرسال الملف بعد خروجه من غرفة لم يدخلها غيره، ووائل لم يدخلها إلا بعدها بساعة.",
+        "uses_evidence_ids": [
+          "ev_chat_log",
+          "ev_club_room_log"
+        ],
+        "inference_id": "i_made_b"
+      },
+      {
+        "order": 5,
+        "text_ar": "بقية الأطراف: مفتاح الخزنة إمكان بلا فتح مسجّل، ومصلحة وائل ليست فعلاً؛ وإفادة فراس تؤيد سجلات سبقتها.",
+        "uses_evidence_ids": [
+          "ev_safe_keys",
+          "ev_firas_stmt"
+        ],
+        "inference_id": "i_rule_nabil"
+      }
+    ],
+    "alternative_paths_ar": [
+      "يمكن إثبات الحلقتين بالمسار الأول: سجل الصادر وسجل الختم لنفي الصدور، وسجل الطباعة وبيانات الملف لتحديد الصانع.",
+      "ويمكن إثباتهما بالمسار الثاني: إشعار الغياب مع مقارنة النماذج، ثم المراسلة مع سجل باب الغرفة؛ والأقوى أن يتفق المساران."
+    ],
+    "what_evidence_could_not_show_ar": [
+      "لا نعرف إن كان فراس وحده أو بمساعدة، ولا لماذا اختار هذه الصيغة الحارة.",
+      "سجل الطباعة وبيانات الملف يربطان الحساب لا الشخص؛ قوتهما في اتفاقهما مع المراسلة وسجل الباب.",
+      "لا تُنسب النتيجة إلى خط أحد؛ لا معدلات خطأ مقيسة هنا، وما استُعمل هو القيد والسجل لا شكل الحروف."
+    ],
+    "science_notes_ar": [
+      "الوثيقة تُحكم بمسارها: هل قيدها عند من يُفترض أنه أصدرها؟ وهل استُعمل ختمه؟ وهل كان موقّعها حاضراً؟ والمظهر الكامل لا يكفي، والمظهر المريب لا يكفي أيضاً.",
+      "فروق النبرة والتخطيط عن نماذج معروفة قرائن ضعيفة وحدها، وقد يكتب الشخص بغير عادته؛ تُعتمد حين يوافقها دليل مستقل كغياب القيد.",
+      "الشاهدان اللذان «يتذكران» الصيغة نفسها بعد تلقين صاحب المصلحة يشبهان كتاباً يقلّد كتاباً؛ ابحث عن سجل لا يعتمد على أي منهما.",
+      "لم يتعمد وائل شيئاً: صدّق صديقه. وفراس أراد المساعدة بطريق خاطئ. والإصلاح تعليمي ومؤسسي: يُسحب الخطاب، ويُتاح لوائل التقدم بالطريق الصحيح، ويتعلم فراس كلفة الاسم الذي ليس له.",
+      "بطاقة الأصل: القضية أصلية من ATHAR على بنية «الكتاب الذي بالغ في التوكيد» في مكتبة الحالات، وتعرض الكشف فقط لا الصنع."
+    ]
+  },
+  "expert_review": [
+    {
+      "role": "narrative_editor",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-28",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "scientific_reviewer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-28",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "learning_designer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-28",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "age_appropriateness",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-28",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "cultural_reviewer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-28",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "legal_rights",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-28",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "safety",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-28",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    }
+  ]
+}

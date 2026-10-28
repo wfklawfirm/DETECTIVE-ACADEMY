@@ -2,6 +2,7 @@ import type { CaseFile, PlayState, Submission } from "./types";
 import type { CaseUi, ScoringSpec } from "./ui-types";
 import { EngineError } from "./state";
 import { contentTokens } from "../lib/arabic";
+import { hintPenalty as hintPenaltyOf } from "./hints";
 
 export interface CriterionResult {
   id: string; name_ar: string; weight: number; fraction: number | null; level: number | null; status: "scored" | "pending_human";
@@ -47,7 +48,7 @@ export function assess(c: CaseFile, ui: CaseUi, sc: ScoringSpec, st: PlayState, 
   const crits: CriterionResult[] = [];
   const caps: string[] = [];
   const hintsUsed = st.hints.length;
-  const hintPenalty = Math.min(0.2, st.hints.reduce((s, h) => s + (c.hint_ladder.find((x) => x.id === h.hint_id)?.assessment_weight ?? 0), 0));
+  const hintPenalty = hintPenaltyOf(st.hints, c.hint_ladder);
 
   for (const crit of c.rubric.criteria) {
     const kind = sc.criteria_map[crit.id];

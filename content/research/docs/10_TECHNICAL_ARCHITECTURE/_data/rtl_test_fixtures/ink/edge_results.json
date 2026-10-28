@@ -1,0 +1,149 @@
+{
+ "fixed_conditional_choice": {
+  "errors": [],
+  "warnings": [],
+  "output": "تمت المواجهة.\n",
+  "codepoints_out": []
+ },
+ "condition_after_bracket_gotcha": {
+  "errors": [],
+  "warnings": [],
+  "output": "true تمت.\n",
+  "codepoints_out": []
+ },
+ "eastern_digit_in_identifier": {
+  "errors": [],
+  "warnings": [],
+  "output": "5\n",
+  "codepoints_out": []
+ },
+ "identifier_starting_with_eastern_digit": {
+  "errors": [],
+  "warnings": [],
+  "output": "5\n",
+  "codepoints_out": []
+ },
+ "diacritics_in_identifier": {
+  "errors": [],
+  "warnings": [],
+  "output": "7\n",
+  "codepoints_out": []
+ },
+ "diacritic_mismatch_lookup": {
+  "errors": [
+   "ERROR: line 2: Unresolved variable: الثقة"
+  ],
+  "warnings": [],
+  "exception": "Error: Compilation failed."
+ },
+ "tatweel_in_identifier": {
+  "errors": [],
+  "warnings": [],
+  "output": "3\n",
+  "codepoints_out": []
+ },
+ "persian_letters_pa_gaf": {
+  "errors": [],
+  "warnings": [],
+  "output": "2\n",
+  "codepoints_out": []
+ },
+ "arabic_supplement_U0750": {
+  "errors": [
+   "ERROR: line 1: Expected variable name but saw 'ݐب = 2'",
+   "ERROR: line 2: Expected some kind of logic, conditional or sequence within braces: { ... } but saw 'ݐب}'"
+  ],
+  "warnings": [],
+  "exception": "Error: Compilation failed."
+ },
+ "rlm_inside_identifier": {
+  "errors": [
+   "ERROR: line 1: Expected the '=' for an assignment of a value, e.g. '= 5' (initial values are mandatory) but saw '‏_الأدلة = 1'",
+   "ERROR: line 2: Expected some kind of logic, conditional or sequence within braces: { ... } but saw 'عدد‏_الأدلة}'"
+  ],
+  "warnings": [],
+  "exception": "Error: Compilation failed."
+ },
+ "rlm_after_identifier_in_divert": {
+  "errors": [
+   "ERROR: line 1: Expected end of line but saw '‏'"
+  ],
+  "warnings": [],
+  "exception": "Error: Compilation failed."
+ },
+ "zwnj_in_identifier": {
+  "errors": [
+   "ERROR: line 1: Expected the '=' for an assignment of a value, e.g. '= 5' (initial values are mandatory) but saw '‌الأدلة = 1'",
+   "ERROR: line 2: Expected some kind of logic, conditional or sequence within braces: { ... } but saw 'عدد‌الأدلة}'"
+  ],
+  "warnings": [],
+  "exception": "Error: Compilation failed."
+ },
+ "presentation_forms_identifier": {
+  "errors": [
+   "ERROR: line 1: Expected variable name but saw 'ﻣﻔﺘﺎﺣ = 1'",
+   "ERROR: line 2: Expected some kind of logic, conditional or sequence within braces: { ... } but saw 'ﻣﻔﺘﺎﺣ}'"
+  ],
+  "warnings": [],
+  "exception": "Error: Compilation failed."
+ },
+ "presentation_forms_in_text_only": {
+  "errors": [],
+  "warnings": [],
+  "output": "النص المنسوخ من PDF: ﻣﻔﺘﺎﺣ\n",
+  "codepoints_out": [
+   "U+FEE3",
+   "U+FED4",
+   "U+FE98",
+   "U+FE8E",
+   "U+FEA3"
+  ]
+ },
+ "arabic_string_compare": {
+  "errors": [],
+  "warnings": [],
+  "output": "صحيح\nلا-تطابق-مع-مسافة\n",
+  "codepoints_out": []
+ },
+ "arabic_comma_after_var_in_text": {
+  "errors": [],
+  "warnings": [],
+  "output": "قال سمير، ثم صمت؛ هل تصدقه؟\n",
+  "codepoints_out": []
+ },
+ "number_formatting": {
+  "errors": [],
+  "warnings": [],
+  "output": "ثقتك 40% ووزن الدليل 2.5.\n",
+  "codepoints_out": []
+ },
+ "sequence_shuffle_arabic": {
+  "errors": [],
+  "warnings": [],
+  "output": "صباح الخير يا محقق.\n",
+  "codepoints_out": []
+ },
+ "function_arabic": {
+  "errors": [
+   "ERROR: line 4: Functions may not contain diverts, but saw '-> END'"
+  ],
+  "warnings": [],
+  "exception": "Error: Compilation failed."
+ },
+ "error_message_arabic": {
+  "errors": [
+   "ERROR: line 2: Unresolved variable: غير_معرف"
+  ],
+  "warnings": [],
+  "exception": "Error: Compilation failed."
+ },
+ "bidi_marks_in_text": {
+  "errors": [],
+  "warnings": [],
+  "output": "⁧EV-014⁩ هو الدليل رقم 3.\n",
+  "codepoints_out": [
+   "U+2067",
+   "U+2069"
+  ]
+ }
+}

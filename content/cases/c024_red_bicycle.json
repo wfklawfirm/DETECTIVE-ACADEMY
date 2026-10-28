@@ -1,0 +1,2713 @@
+{
+  "schema_version": "0.1.0",
+  "case_id": "c024_red_bicycle",
+  "case_version": "0.1.0",
+  "meta": {
+    "title_ar": "الدراجة الحمراء والسؤال الذي غيّر الوصف",
+    "title_en": "The Red Bicycle and the Question That Changed the Description",
+    "age_band": "16-18",
+    "locale": "ar",
+    "dialogue_register": "msa",
+    "estimated_minutes": 30,
+    "difficulty": 3,
+    "content_flags": [
+      "theft",
+      "missing_person"
+    ],
+    "authors": [
+      "فريق أثر التحريري (مسودة بمساعدة الذكاء الاصطناعي، لم تُراجَع بشرياً بعد)"
+    ],
+    "knowledge_object_refs": [
+      "KO-RS-05-006",
+      "KO-RS-05-008",
+      "KO-RS-05-011",
+      "KO-RS-05-001",
+      "KO-RS-05-004",
+      "KO-RS-05-005",
+      "KO-RS-05-014",
+      "KO-RS-05-007",
+      "KO-RS-06-001",
+      "KO-RS-06-003",
+      "KO-RS-06-021",
+      "KO-RS-06-009",
+      "KO-RS-06-007",
+      "KO-RS-06-008",
+      "KO-FC-04-024",
+      "KO-CD-05-004"
+    ]
+  },
+  "premise": {
+    "hook_ar": "طفلة قالت لأمها «ولد بسترة خضراء». بعد سؤال واحد من الكبار صارت تقول «رجل طويل بلحية». أيهما كانت ذاكرتها، وأيهما صنعه السؤال؟",
+    "player_role_ar": "أنت وسيط مدرسي تراجع ملف دراجة اختفت ثم ظهرت، وطُلب منك رأي معلّل قبل أن يُنذر أحد العاملين.",
+    "setting_ar": "مدرسة القنطرة، يوم معرض مفتوح من الخميس 15:00 إلى صباح الجمعة. أوقات البوابة والمناوبة بساعة المدرسة.",
+    "public_fact_ids": [
+      "f_bike_missing",
+      "f_anwar_named",
+      "f_anwar_denies"
+    ],
+    "assumed_general_knowledge_ar": [
+      "الأسئلة الموحية تغيّر الإجابات",
+      "ثقة الشاهد ليست دقته",
+      "الأطفال يحتاجون إلى مقابلة هادئة بحضور ولي أمر"
+    ]
+  },
+  "entities": {
+    "characters": [
+      {
+        "id": "yara",
+        "name_ar": "يارا الخطيب",
+        "role": "witness",
+        "age_descriptor_ar": "طالبة في الصف الخامس، شاهدة صغيرة",
+        "persona_ar": "هادئة وخجولة، تجيب بجمل قصيرة وتنسى التفاصيل إذا طُلب منها تخمين. تحاول إرضاء الكبار وتقول «نعم» إذا شعرت أنهم يريدونها. تتحدث أفضل حين تروي بكلماتها.",
+        "motives_ar": [
+          "ألا تخطئ أمام الكبار",
+          "أن تفهم لماذا يسألونها"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "yr_greet",
+            "purpose": "greeting",
+            "text_ar": "أمي معي، وأنا أتكلم بهدوء."
+          },
+          {
+            "line_id": "yr_saw",
+            "purpose": "reveal",
+            "text_ar": "رأيت ولداً سترته خضراء يأخذ دراجة حمراء من عند البوابة الجانبية، وكان يضحك.",
+            "fact_ids": [
+              "f_yara_saw"
+            ]
+          },
+          {
+            "line_id": "yr_mom",
+            "purpose": "reveal",
+            "text_ar": "أخبرت أمي فوراً بما رأيت، وهي كتبت رسالة إلى مجموعة أولياء الأمور.",
+            "fact_ids": [
+              "f_told_mother"
+            ]
+          },
+          {
+            "line_id": "yr_beard",
+            "purpose": "reveal",
+            "text_ar": "بعد ذلك سألوني عن عمّ أنور، فقلت إنه ربما كان طويلاً وبلحية، لكنني لست متأكدة الآن.",
+            "claim_ids": [
+              "cl_yara_beard"
+            ]
+          },
+          {
+            "line_id": "yr_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أتذكر أكثر."
+          },
+          {
+            "line_id": "yr_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عمّا رأيته عند البوابة."
+          },
+          {
+            "line_id": "yr_bye",
+            "purpose": "farewell",
+            "text_ar": "هل أستطيع أن أذهب مع أمي؟"
+          }
+        ]
+      },
+      {
+        "id": "salma",
+        "name_ar": "سلمى الخطيب",
+        "role": "witness",
+        "age_descriptor_ar": "والدة يارا",
+        "persona_ar": "حنون وحريصة على ابنتها، تتذكر ما قيل بدقة لأنها كتبته على هاتفها، وتتألم من الضغط على طفلة. تقول ما سمعته ولا تحكم على أحد.",
+        "motives_ar": [
+          "حماية ابنتها",
+          "ألا يُظلم أحد بسبب كلمات طفلة"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "sa_greet",
+            "purpose": "greeting",
+            "text_ar": "ابنتي صادقة، لكنها صغيرة."
+          },
+          {
+            "line_id": "sa_says",
+            "purpose": "reveal",
+            "text_ar": "قالت لي يارا «ولد» ولم تقل «رجل»، وكتبت ذلك في رسالتي. وفي المقابلة سألها الأستاذ إن كان طويلاً وبلحية فقالت «ربما».",
+            "fact_ids": [
+              "f_mother_says"
+            ]
+          },
+          {
+            "line_id": "sa_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف أكثر."
+          },
+          {
+            "line_id": "sa_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسأل عن ابنتي وما قالته."
+          },
+          {
+            "line_id": "sa_bye",
+            "purpose": "farewell",
+            "text_ar": "أريدها أن تطمئن."
+          }
+        ]
+      },
+      {
+        "id": "fadi",
+        "name_ar": "فادي العلي",
+        "role": "authority",
+        "age_descriptor_ar": "وكيل المدرسة المسؤول عن الانضباط",
+        "persona_ar": "جاد وسريع القرار، يظن أن الشاهدة تقول الحقيقة إذا كانت واثقة. يقدّر أنه لم يقصد الإيحاء، ويراجع حين يرى النص الحرفي لأسئلته.",
+        "motives_ar": [
+          "حماية ممتلكات الطلاب",
+          "ألا يتهم أحداً ظلماً"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "fd_greet",
+            "purpose": "greeting",
+            "text_ar": "الشاهدة متأكدة تماماً، وهذا يكفيني."
+          },
+          {
+            "line_id": "fd_asked",
+            "purpose": "reveal",
+            "text_ar": "سألت يارا عن عمّ أنور لأنه المسؤول عن ترتيب الدراجات؛ لم أقصد الإيحاء.",
+            "fact_ids": [
+              "f_vp_asked"
+            ],
+            "claim_ids": [
+              "cl_vp_sure"
+            ]
+          },
+          {
+            "line_id": "fd_cam",
+            "purpose": "reveal",
+            "text_ar": "كاميرا البوابة الجانبية تلتقط صورة كل دقيقة، ويمكنني أن أخرج لك لقطات تلك الفترة.",
+            "fact_ids": [
+              "f_camera_stills"
+            ]
+          },
+          {
+            "line_id": "fd_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "هذا ليس عندي."
+          },
+          {
+            "line_id": "fd_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن المقابلة والكاميرا."
+          },
+          {
+            "line_id": "fd_bye",
+            "purpose": "farewell",
+            "text_ar": "أريد قراراً عادلاً."
+          }
+        ]
+      },
+      {
+        "id": "hind",
+        "name_ar": "هند الصباغ",
+        "role": "witness",
+        "age_descriptor_ar": "مرشدة نفسية في المدرسة، حضرت المقابلة",
+        "persona_ar": "هادئة ومنظمة، تدوّن حرفياً ما يُقال ولا تفسّره. تهتم براحة الطفلة قبل كل شيء.",
+        "motives_ar": [
+          "أن تكون المقابلة آمنة للطفلة",
+          "أن يبقى المحضر دقيقاً"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "hd_greet",
+            "purpose": "greeting",
+            "text_ar": "دوّنت المقابلة كما جرت."
+          },
+          {
+            "line_id": "hd_notes",
+            "purpose": "reveal",
+            "text_ar": "كتبت أسئلة الأستاذ فادي وأجوبة يارا بحروفها، ومعها ملاحظتي على كل جواب.",
+            "fact_ids": [
+              "f_transcript_exists"
+            ]
+          },
+          {
+            "line_id": "hd_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف غير ما دوّنته."
+          },
+          {
+            "line_id": "hd_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسأل عن المحضر."
+          },
+          {
+            "line_id": "hd_bye",
+            "purpose": "farewell",
+            "text_ar": "المحضر أمامكم."
+          }
+        ]
+      },
+      {
+        "id": "anwar",
+        "name_ar": "أنور الدهان",
+        "role": "suspect",
+        "age_descriptor_ar": "عامل في المدرسة منذ سنوات، طويل القامة وله لحية",
+        "persona_ar": "هادئ ومحرج من أن يُذكر اسمه، يجيب بإيجاز ويذكر ما يوقّعه. توتره ليس دليلاً على شيء.",
+        "motives_ar": [
+          "ألا يفقد عمله",
+          "أن يُنصَف"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "an_greet",
+            "purpose": "greeting",
+            "text_ar": "أنا لم آخذ شيئاً. اسألوني."
+          },
+          {
+            "line_id": "an_round",
+            "purpose": "reveal",
+            "text_ar": "كنت مناوباً عند باب القاعة الكبرى من الرابعة إلى الرابعة والنصف، ثم قمت بجولة الإغلاق نحو الخامسة والنصف وكتبتها في ورقتي.",
+            "fact_ids": [
+              "f_steward_duty",
+              "f_return_round"
+            ]
+          },
+          {
+            "line_id": "an_warn",
+            "purpose": "reveal",
+            "text_ar": "نعم، تلقيت تنبيهاً شفهياً عام 2022 لأنني نقلت دراجات دون إذن مكتوب أثناء حفل.",
+            "fact_ids": [
+              "f_old_warning"
+            ]
+          },
+          {
+            "line_id": "an_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف."
+          },
+          {
+            "line_id": "an_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن عملي في المعرض."
+          },
+          {
+            "line_id": "an_bye",
+            "purpose": "farewell",
+            "text_ar": "أرجو ألا يتضرر عملي."
+          }
+        ]
+      },
+      {
+        "id": "karim",
+        "name_ar": "كريم حداد",
+        "role": "suspect",
+        "age_descriptor_ar": "طالب في الصف الأخير، أخو آدم",
+        "persona_ar": "ودود ومتعجل، ينسى الاستئذان أحياناً ويعتذر بسهولة. يقول ما فعله بلا لف.",
+        "motives_ar": [
+          "ألا يتورط أحد بسببه",
+          "أن يصلح ما فعل"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "kr_greet",
+            "purpose": "greeting",
+            "text_ar": "أظن أنني السبب. دعني أشرح."
+          },
+          {
+            "line_id": "kr_says",
+            "purpose": "reveal",
+            "text_ar": "أخذت دراجة أخي بمفتاح الاحتياط لأوصل لوحة الفريق إلى المطبعة، وكتبت له، وأعدتها قبل الخامسة ونسيت أن أتأكد أنه قرأ.",
+            "fact_ids": [
+              "f_karim_says"
+            ]
+          },
+          {
+            "line_id": "kr_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف أكثر."
+          },
+          {
+            "line_id": "kr_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن الدراجة."
+          },
+          {
+            "line_id": "kr_bye",
+            "purpose": "farewell",
+            "text_ar": "سأعتذر لعمّ أنور."
+          }
+        ]
+      },
+      {
+        "id": "adam",
+        "name_ar": "آدم حداد",
+        "role": "victim",
+        "age_descriptor_ar": "طالب في الصف التاسع، صاحب الدراجة",
+        "persona_ar": "صريح وغاضب في البداية، ثم يهدأ حين يرى الأدلة. يغلق هاتفه أثناء المعرض.",
+        "motives_ar": [
+          "أن يعرف من أخذ دراجته",
+          "ألا يتهم أحداً بلا دليل"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "ad_greet",
+            "purpose": "greeting",
+            "text_ar": "دراجتي اختفت، ثم ظهرت. أريد أن أفهم."
+          },
+          {
+            "line_id": "ad_text",
+            "purpose": "reveal",
+            "text_ar": "فتحت هاتفي بعد المعرض فوجدت رسالة من أخي كريم عن دراجتي، وصلتني قبل أن أقرأها بساعة ونصف.",
+            "fact_ids": [
+              "f_adam_text"
+            ]
+          },
+          {
+            "line_id": "ad_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف أكثر."
+          },
+          {
+            "line_id": "ad_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن دراجتي."
+          },
+          {
+            "line_id": "ad_bye",
+            "purpose": "farewell",
+            "text_ar": "أريد أن ننتهي من هذا."
+          }
+        ]
+      }
+    ],
+    "locations": [
+      {
+        "id": "loc_gate",
+        "name_ar": "البوابة الجانبية وحامل الدراجات",
+        "description_ar": "بوابة فيها كاميرا تلتقط صورة كل دقيقة، وبجانبها حامل الدراجات."
+      },
+      {
+        "id": "loc_hall",
+        "name_ar": "باب القاعة الكبرى",
+        "description_ar": "موقع مناوبة مضيفي المعرض."
+      },
+      {
+        "id": "loc_office",
+        "name_ar": "مكتب وكيل المدرسة",
+        "description_ar": "حيث تُجرى المقابلات وتُحفظ الملفات."
+      }
+    ],
+    "objects": [
+      {
+        "id": "obj_bike",
+        "name_ar": "الدراجة الحمراء رقم 14",
+        "description_ar": "دراجة آدم، تُقفل بسلسلة ومفتاح."
+      }
+    ],
+    "organizations": [
+      {
+        "id": "org_school",
+        "name_ar": "مدرسة القنطرة",
+        "description_ar": "مدرسة خيالية تقيم معرضاً مفتوحاً."
+      }
+    ]
+  },
+  "truth": {
+    "solution": {
+      "culprit_ids": [
+        "karim"
+      ],
+      "summary_ar": "لم تُسرق الدراجة. استعارها كريم بمفتاح الاحتياط وأعادها، وكتب لأخيه رسالة لم تُقرأ في وقتها. ووصف يارا الأول لولد بسترة خضراء كان صحيحاً، وتبدّل إلى رجل بلحية بعد سؤال من الوكيل ذكر عمّ أنور، وقد زاد تأكدها دون أن تزيد دقتها.",
+      "key_fact_ids": [
+        "f_youth_took",
+        "f_account_contaminated"
+      ]
+    },
+    "facts": [
+      {
+        "id": "f_bike_missing",
+        "statement_ar": "اختفت دراجة آدم الحمراء من حامل البوابة الجانبية عصر الخميس ثم ظهرت في مكانها قبل الخامسة والنصف.",
+        "kind": "event",
+        "subject_ids": [
+          "obj_bike",
+          "adam"
+        ],
+        "spoiler_level": 0,
+        "time": {
+          "start_min": 68,
+          "precision": "exact"
+        },
+        "location_id": "loc_gate"
+      },
+      {
+        "id": "f_anwar_named",
+        "statement_ar": "نسب وكيل المدرسة أخذ الدراجة إلى العامل أنور بعد مقابلة شاهدة صغيرة.",
+        "kind": "attribute",
+        "subject_ids": [
+          "fadi",
+          "anwar"
+        ],
+        "spoiler_level": 0
+      },
+      {
+        "id": "f_anwar_denies",
+        "statement_ar": "ينفي أنور أنه أخذ الدراجة.",
+        "kind": "attribute",
+        "subject_ids": [
+          "anwar"
+        ],
+        "spoiler_level": 0
+      },
+      {
+        "id": "f_yara_saw",
+        "statement_ar": "قالت يارا إنها رأت ولداً بسترة خضراء يأخذ دراجة حمراء من البوابة الجانبية ويضحك.",
+        "kind": "attribute",
+        "subject_ids": [
+          "yara"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 68,
+          "precision": "exact"
+        },
+        "location_id": "loc_gate"
+      },
+      {
+        "id": "f_told_mother",
+        "statement_ar": "أخبرت يارا أمها بما رأت فوراً، فكتبت الأم رسالة إلى مجموعة أولياء الأمور 16:21.",
+        "kind": "event",
+        "subject_ids": [
+          "yara",
+          "salma"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 81,
+          "precision": "exact"
+        }
+      },
+      {
+        "id": "f_mother_says",
+        "statement_ar": "تقول الأم إن ابنتها قالت «ولد» ولم تقل «رجل»، وإنها أجابت «ربما» عن سؤال اللحية في المقابلة.",
+        "kind": "attribute",
+        "subject_ids": [
+          "salma",
+          "yara"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 160,
+          "precision": "exact"
+        },
+        "location_id": "loc_office"
+      },
+      {
+        "id": "f_vp_asked",
+        "statement_ar": "سأل الوكيل يارا في المقابلة هل كان الرجل طويلاً بلحية مثل أنور، ثم دوّن لاحقاً أنها متأكدة تماماً.",
+        "kind": "event",
+        "subject_ids": [
+          "fadi",
+          "yara"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 160,
+          "precision": "exact"
+        },
+        "location_id": "loc_office"
+      },
+      {
+        "id": "f_transcript_exists",
+        "statement_ar": "دوّنت المرشدة المقابلة حرفياً: أسئلة الوكيل وأجوبة يارا وملاحظة على كل جواب.",
+        "kind": "state",
+        "subject_ids": [
+          "hind"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 160,
+          "precision": "exact"
+        },
+        "location_id": "loc_office"
+      },
+      {
+        "id": "f_camera_stills",
+        "statement_ar": "تلتقط كاميرا البوابة الجانبية صورة كل دقيقة وتحتفظ بها.",
+        "kind": "state",
+        "subject_ids": [
+          "fadi"
+        ],
+        "spoiler_level": 1,
+        "location_id": "loc_gate"
+      },
+      {
+        "id": "f_return_round",
+        "statement_ar": "دوّن أنور في ورقة جولة الإغلاق حالة الدراجات على الحامل ومنها الدراجة الحمراء.",
+        "kind": "event",
+        "subject_ids": [
+          "anwar",
+          "obj_bike"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 125,
+          "precision": "exact"
+        },
+        "location_id": "loc_gate"
+      },
+      {
+        "id": "f_steward_duty",
+        "statement_ar": "ناوب أنور عند باب القاعة الكبرى وفق ورقة مناوبة وقّعتها منسقة المعرض.",
+        "kind": "state",
+        "subject_ids": [
+          "anwar"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 60,
+          "precision": "exact",
+          "end_min": 90
+        },
+        "location_id": "loc_hall"
+      },
+      {
+        "id": "f_old_warning",
+        "statement_ar": "تلقى أنور تنبيهاً شفهياً عام 2022 لنقله دراجات دون إذن مكتوب.",
+        "kind": "event",
+        "subject_ids": [
+          "anwar"
+        ],
+        "spoiler_level": 1
+      },
+      {
+        "id": "f_adam_text",
+        "statement_ar": "وجد آدم بعد المعرض رسالة من أخيه كريم عن دراجته وصلت قبل أن يقرأها بساعة ونصف.",
+        "kind": "event",
+        "subject_ids": [
+          "adam",
+          "karim"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 65,
+          "precision": "exact"
+        }
+      },
+      {
+        "id": "f_karim_says",
+        "statement_ar": "يقول كريم إنه أخذ الدراجة بمفتاح الاحتياط ليوصل لوحة إلى المطبعة وأعادها دون أن يتأكد أن أخاه قرأ رسالته.",
+        "kind": "attribute",
+        "subject_ids": [
+          "karim",
+          "obj_bike"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 68,
+          "precision": "exact"
+        },
+        "location_id": "loc_gate"
+      },
+      {
+        "id": "f_youth_took",
+        "statement_ar": "الذي أخذ الدراجة فتى بسترة خضراء من أسرة صاحبها، لا رجل بلحية ولا غريب، وقد أعادها إلى مكانها خلال ساعة تقريباً.",
+        "kind": "event",
+        "subject_ids": [
+          "obj_bike",
+          "karim"
+        ],
+        "spoiler_level": 3,
+        "time": {
+          "start_min": 68,
+          "precision": "exact",
+          "end_min": 125
+        },
+        "location_id": "loc_gate",
+        "science_ko_refs": [
+          "KO-RS-05-004",
+          "KO-RS-05-014"
+        ]
+      },
+      {
+        "id": "f_account_contaminated",
+        "statement_ar": "وصف يارا الأول كان «ولداً بسترة خضراء»، وتبدّل بعد سؤال موحٍ إلى «رجل بلحية»؛ فالتبدل صنعه السؤال، وارتفاع تأكدها لم يصاحبه ارتفاع في الدقة.",
+        "kind": "relation",
+        "subject_ids": [
+          "yara",
+          "fadi"
+        ],
+        "spoiler_level": 3,
+        "time": {
+          "start_min": 160,
+          "precision": "exact"
+        },
+        "location_id": "loc_office",
+        "science_ko_refs": [
+          "KO-RS-05-006",
+          "KO-RS-05-008"
+        ]
+      }
+    ],
+    "claims": [
+      {
+        "id": "cl_yara_beard",
+        "statement_ar": "كان الرجل الذي أخذ الدراجة طويلاً وله لحية.",
+        "kind": "honest_mistake",
+        "held_by": [
+          "yara"
+        ],
+        "true_fact_id": "f_account_contaminated",
+        "contradicted_by_evidence_ids": [
+          "ev_first_message",
+          "ev_interview_transcript"
+        ]
+      },
+      {
+        "id": "cl_vp_sure",
+        "statement_ar": "الشاهدة متأكدة تماماً أن الذي أخذ الدراجة هو أنور، وتأكدها دليل على صحة وصفها.",
+        "kind": "honest_mistake",
+        "held_by": [
+          "fadi"
+        ],
+        "true_fact_id": "f_account_contaminated",
+        "contradicted_by_evidence_ids": [
+          "ev_interview_transcript",
+          "ev_mother_statement"
+        ]
+      }
+    ]
+  },
+  "timeline": [
+    {
+      "id": "te_text",
+      "description_ar": "كريم يكتب لأخيه أنه أخذ الدراجة.",
+      "time": {
+        "start_min": 65,
+        "precision": "exact"
+      },
+      "actor_ids": [
+        "karim"
+      ],
+      "fact_ids": [
+        "f_adam_text"
+      ],
+      "motivated_by_ar": "أراد إخبار أخيه قبل أن يغادر"
+    },
+    {
+      "id": "te_steward",
+      "description_ar": "أنور مناوب عند باب القاعة الكبرى.",
+      "time": {
+        "start_min": 60,
+        "precision": "exact",
+        "end_min": 90
+      },
+      "location_id": "loc_hall",
+      "actor_ids": [
+        "anwar"
+      ],
+      "fact_ids": [
+        "f_steward_duty"
+      ],
+      "motivated_by_ar": "مناوبة المعرض المكتوبة"
+    },
+    {
+      "id": "te_take",
+      "description_ar": "فتى بسترة خضراء يخرج بالدراجة من البوابة الجانبية.",
+      "time": {
+        "start_min": 68,
+        "precision": "exact"
+      },
+      "location_id": "loc_gate",
+      "actor_ids": [
+        "karim",
+        "yara"
+      ],
+      "fact_ids": [
+        "f_yara_saw",
+        "f_youth_took"
+      ],
+      "motivated_by_ar": "كريم يوصل لوحة الفريق، ويارا تنتظر قرب الحامل"
+    },
+    {
+      "id": "te_message",
+      "description_ar": "سلمى ترسل رسالة إلى مجموعة أولياء الأمور بما قالته يارا.",
+      "time": {
+        "start_min": 81,
+        "precision": "exact"
+      },
+      "actor_ids": [
+        "salma"
+      ],
+      "fact_ids": [
+        "f_told_mother"
+      ],
+      "motivated_by_ar": "أرادت أن تساعد في العثور على صاحب الدراجة"
+    },
+    {
+      "id": "te_return",
+      "description_ar": "الدراجة تعود إلى الحامل وأنور يدوّنها في جولة الإغلاق.",
+      "time": {
+        "start_min": 125,
+        "precision": "exact"
+      },
+      "location_id": "loc_gate",
+      "actor_ids": [
+        "anwar",
+        "karim"
+      ],
+      "fact_ids": [
+        "f_return_round"
+      ],
+      "motivated_by_ar": "كريم أعاد الدراجة وأنور يدوّن جولته الروتينية"
+    },
+    {
+      "id": "te_interview",
+      "description_ar": "مقابلة يارا بحضور أمها والمرشدة.",
+      "time": {
+        "start_min": 160,
+        "precision": "exact"
+      },
+      "location_id": "loc_office",
+      "actor_ids": [
+        "fadi",
+        "yara",
+        "salma",
+        "hind"
+      ],
+      "fact_ids": [
+        "f_vp_asked",
+        "f_transcript_exists",
+        "f_mother_says"
+      ],
+      "motivated_by_ar": "أراد الوكيل معرفة ما رأته الشاهدة"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_bike_report",
+      "title_ar": "بلاغ آدم",
+      "kind": "documentary",
+      "content_ar": "مكتب وكيل المدرسة — بلاغ فقد — الخميس\n16:15 — آدم حداد: «دراجتي الحمراء رقم 14 كانت على حامل البوابة الجانبية 15:30 ولم أجدها عند 16:15.»\nإضافة 17:35: «وجدتها على الحامل 17:30. من أخذها؟»",
+      "acquired_by_action_ids": [
+        "a_bike_report"
+      ],
+      "supports_fact_ids": [
+        "f_bike_missing"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "بلاغ صاحب الدراجة بوقتين كتبهما بنفسه؛ لا يقول من أخذها ولا كيف.",
+      "location_id": "loc_office"
+    },
+    {
+      "id": "ev_vp_summary",
+      "title_ar": "ملخص الوكيل ليوم الجمعة",
+      "kind": "documentary",
+      "content_ar": "مكتب وكيل المدرسة — ملخص — الجمعة 09:00\nالشاهدة يارا (11 سنة) متأكدة تماماً: رجل طويل (نحو 1.85 م) بلحية، سترة خضراء، يشبه الأستاذ العامل أنور الذي يرتب الدراجات.\nالتوصية: إنذار مكتوب للعامل ومنعه من حامل الدراجات.",
+      "acquired_by_action_ids": [
+        "a_vp_summary"
+      ],
+      "supports_fact_ids": [
+        "f_anwar_named",
+        "f_anwar_denies"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "ملخص كتبه الوكيل بعد المقابلة بيوم؛ يعبّر عن تأكد الشاهدة ولا ينقل ألفاظها الأولى، ولم يقارَن برسالة أمها.",
+      "is_red_herring": true,
+      "location_id": "loc_office"
+    },
+    {
+      "id": "ev_first_message",
+      "title_ar": "رسالة الأم إلى مجموعة أولياء الأمور",
+      "kind": "digital",
+      "content_ar": "هاتف سلمى الخطيب — مجموعة أولياء الأمور — الخميس 16:21\n«يارا تقول إنها رأت ولداً بسترة خضراء يأخذ دراجة حمراء من عند البوابة الجانبية ويضحك. هل ضاعت دراجة لأحدكم؟»\nالرسالة أُرسلت قبل أي مقابلة وقبل أن يتحدث معها أحد من الإدارة.",
+      "acquired_by_action_ids": [
+        "a_first_message"
+      ],
+      "supports_fact_ids": [
+        "f_told_mother",
+        "f_yara_saw"
+      ],
+      "reliability": "strong",
+      "limits_ar": "تنقل الأم ما قالته الطفلة لها بكلمات الأم، وتسجل أول وصف مكتوب بتاريخه؛ ولا تضمن أن الطفلة رأت كل التفاصيل.",
+      "forensic_ko_ref": "KO-RS-05-008",
+      "location_id": "loc_office"
+    },
+    {
+      "id": "ev_interview_transcript",
+      "title_ar": "محضر مقابلة يارا",
+      "kind": "documentary",
+      "content_ar": "مكتب وكيل المدرسة — محضر المرشدة هند — الخميس 17:40 — حاضرون: يارا وأمها والوكيل والمرشدة\nس1 (الوكيل): «احكي لي بكلماتك ماذا رأيتِ؟» — ج1: «ولد بسترة خضراء أخذ دراجة حمراء وركب وكان يضحك.»\nس2: «ماذا فعل بعد ذلك؟» — ج2: «خرج من البوابة بهدوء.»\nس3: «هل كان رجلاً طويلاً بلحية، مثل عمّ أنور الذي يرتب الدراجات؟» — ج3: «ربما... لا أعرف.»\nس4: «هل أنتِ متأكدة أنه هو؟» — ج4: «نعم، أظن.»\nملاحظة المرشدة: لم تذكر يارا لحية ولا طولاً قبل س3.",
+      "acquired_by_action_ids": [
+        "a_interview_transcript"
+      ],
+      "supports_fact_ids": [
+        "f_vp_asked",
+        "f_transcript_exists"
+      ],
+      "reliability": "strong",
+      "limits_ar": "محضر كتبته مرشدة حاضرة بحروف الأسئلة والأجوبة؛ يبيّن ترتيب الكلام ولا يقيس ما كانت ترى الطفلة فعلاً.",
+      "forensic_ko_ref": "KO-RS-05-006",
+      "location_id": "loc_office"
+    },
+    {
+      "id": "ev_mother_statement",
+      "title_ar": "إفادة سلمى (ملخص)",
+      "kind": "testimonial",
+      "content_ar": "ملخص إفادة سلمى الخطيب:\n«ابنتي قالت لي «ولد» ولم تقل «رجل». حين سألها الأستاذ هل كان بلحية قالت «ربما». وفي الطريق إلى البيت سألتني: هل قلت شيئاً خطأ؟»",
+      "acquired_by_action_ids": [
+        "a_mother_statement"
+      ],
+      "supports_fact_ids": [
+        "f_mother_says"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "شهادة أم عن كلام ابنتها وعن المقابلة؛ تؤيدها رسالتها المكتوبة وتؤيدها المرشدة، ولا تغني عن المحضر.",
+      "location_id": "loc_office"
+    },
+    {
+      "id": "ev_vp_statement",
+      "title_ar": "إفادة الوكيل (ملخص)",
+      "kind": "testimonial",
+      "content_ar": "ملخص إفادة فادي العلي:\n«سألت يارا عن أنور لأنه المسؤول عن ترتيب الدراجات، ولم أقصد الإيحاء. كتبت في ملخصي أنها متأكدة تماماً. لم أقارن جوابها برسالة أمها قبل الكتابة.»",
+      "acquired_by_action_ids": [
+        "a_vp_statement"
+      ],
+      "supports_fact_ids": [
+        "f_vp_asked"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "اعتراف صاحب السؤال بما سأل، وهو يوافق المحضر المكتوب؛ ويقدّر نيته بنفسه ولا نملك ما يقيسها.",
+      "location_id": "loc_office"
+    },
+    {
+      "id": "ev_yara_statement",
+      "title_ar": "إفادة يارا (ملخص)",
+      "kind": "testimonial",
+      "content_ar": "ملخص إفادة يارا الخطيب (بحضور أمها):\n«رأيت ولداً يضحك ويأخذ الدراجة. سألوني عن عمّ أنور، وهو طيب معنا، ولا أعرف إن كانت له لحية في ذلك اليوم.»",
+      "acquired_by_action_ids": [
+        "a_yara_statement"
+      ],
+      "supports_fact_ids": [
+        "f_yara_saw"
+      ],
+      "reliability": "weak",
+      "limits_ar": "إفادة طفلة صادقة بعد يومين من الحدث؛ لا نقيس بها صدقها بل نقارنها بما قيل قبل الأسئلة.",
+      "location_id": "loc_office"
+    },
+    {
+      "id": "ev_gate_frame",
+      "title_ar": "لقطة كاميرا البوابة الجانبية 16:08",
+      "kind": "digital",
+      "content_ar": "البوابة الجانبية — كاميرا (لقطة كل دقيقة) — الخميس 16:08\nتظهر دراجة حمراء يقودها شخص يعبر البوابة، بسترة خضراء داكنة.\nعمود البوابة 2.0 م، وقمة رأس الشخص عند نحو 83% من ارتفاعه.\nالوجه غير واضح. لقطة 16:07: الدراجة على الحامل. لقطة 16:09: لا دراجة في الإطار.",
+      "acquired_by_action_ids": [
+        "a_gate_frame"
+      ],
+      "supports_fact_ids": [
+        "f_youth_took"
+      ],
+      "reliability": "strong",
+      "limits_ar": "لقطة كل دقيقة لا ترى الوجه ولا كل اللحظة؛ تقدّر القامة بمقياس من العمود ولا تحدد الهوية.",
+      "forensic_ko_ref": "KO-FC-04-024",
+      "location_id": "loc_gate"
+    },
+    {
+      "id": "ev_return_sheet",
+      "title_ar": "ورقة جولة الإغلاق",
+      "kind": "documentary",
+      "content_ar": "مدرسة القنطرة — ورقة جولة الإغلاق بخط العامل أنور — الخميس\n17:05: حامل البوابة الجانبية: الدراجة الحمراء رقم 14 في مكانها، سليمة، والسلسلة مفتوحة بمفتاح ولا كسر فيها.\nالتوقيع: أنور",
+      "acquired_by_action_ids": [
+        "a_return_sheet"
+      ],
+      "supports_fact_ids": [
+        "f_return_round",
+        "f_youth_took"
+      ],
+      "reliability": "strong",
+      "limits_ar": "ورقة كتبها العامل المتهم نفسه في حينها ضمن عمل روتيني؛ تثبت وقت العودة وحالة السلسلة، ولا تقول من أعادها.",
+      "location_id": "loc_gate"
+    },
+    {
+      "id": "ev_brother_text",
+      "title_ar": "رسالة كريم إلى آدم",
+      "kind": "digital",
+      "content_ar": "هاتف آدم حداد — رسالة من كريم — الخميس 16:05\n«أخذت دراجتك الحمراء بمفتاح الاحتياط لأوصل لوحة الفريق إلى المطبعة. سأعيدها قبل الخامسة. أنا لابس سترة الفريق الخضراء. آسف نسيت أن أستأذنك!»\nحالة الرسالة: وصلت 16:05 وقُرئت 17:30 (هاتف آدم مغلق أثناء المعرض).",
+      "acquired_by_action_ids": [
+        "a_brother_text"
+      ],
+      "supports_fact_ids": [
+        "f_adam_text",
+        "f_youth_took"
+      ],
+      "reliability": "strong",
+      "limits_ar": "رسالة بتاريخها على هاتف المستلم؛ تثبت ما كتبه كريم قبل الحادثة بثلاث دقائق، ولا تثبت وحدها أنه نفّذ ما كتب.",
+      "location_id": "loc_office"
+    },
+    {
+      "id": "ev_steward_sheet",
+      "title_ar": "ورقة مناوبة مضيفي المعرض",
+      "kind": "documentary",
+      "content_ar": "معرض مدرسة القنطرة — ورقة مناوبة باب القاعة الكبرى — الخميس\nأنور الدهان: حضور 16:00 — انصراف 16:30 (توقيع المنسقة ميساء السيد عند الحضور والانصراف)\nملاحظة المنسقة: «لم يغادر أحد المضيفين موقعه في هذه الفترة.»",
+      "acquired_by_action_ids": [
+        "a_steward_sheet"
+      ],
+      "supports_fact_ids": [
+        "f_steward_duty",
+        "f_youth_took"
+      ],
+      "reliability": "strong",
+      "limits_ar": "ورقة بتوقيع منسقة مستقلة عن الشاهدة والوكيل؛ تذكر موضع أنور المسجّل وقت الحادثة، ولا تثبت أن أحداً لم يعره بطاقته أو غاب لحظات.",
+      "location_id": "loc_hall"
+    },
+    {
+      "id": "ev_old_warning",
+      "title_ar": "ملاحظة إدارية عام 2022",
+      "kind": "documentary",
+      "content_ar": "ملف العاملين — ملاحظة إدارية — 2022\nتنبيه شفهي للعامل أنور لنقله دراجات من مدخل المدرسة دون إذن مكتوب أثناء حفل سابق، وتُرك الأمر بعد توضيحه.",
+      "acquired_by_action_ids": [
+        "a_old_warning"
+      ],
+      "supports_fact_ids": [
+        "f_old_warning"
+      ],
+      "reliability": "weak",
+      "limits_ar": "واقعة مختلفة قبل سنتين لا تربط الرجل بهذه الدراجة؛ وهي سبب مفهوم لظن الوكيل لا دليل على فعل.",
+      "is_red_herring": true,
+      "location_id": "loc_office"
+    },
+    {
+      "id": "ev_karim_statement",
+      "title_ar": "إفادة كريم (ملخص)",
+      "kind": "testimonial",
+      "content_ar": "ملخص إفادة كريم حداد:\n«أخذت دراجة أخي بمفتاح الاحتياط لأوصل لوحة الفريق إلى المطبعة، وكتبت له رسالة، وأعدتها قبل الخامسة. لم أتأكد أنه قرأها. أنا آسف.»",
+      "acquired_by_action_ids": [
+        "a_karim_statement"
+      ],
+      "supports_fact_ids": [
+        "f_karim_says"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "إفادة اعتراف بفعل بحسن نية؛ يؤيدها نص الرسالة وورقة جولة الإغلاق ولا يعتمد عليها الاستنتاج.",
+      "location_id": "loc_office"
+    }
+  ],
+  "evidence_graph": {
+    "inferences": [
+      {
+        "id": "i_a_youth",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_gate_frame"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_return_sheet"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_youth_took"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "اللقطة تُظهر شخصاً بسترة خضراء قامته نحو 1.65 م يخرج بالدراجة 16:08، وورقة العامل تثبت عودتها 17:05 والسلسلة مفتوحة بمفتاح؛ فالفاعل فتى لا رجل طويل، وقد أعادها.",
+        "skill_ko_refs": [
+          "KO-RS-05-004",
+          "KO-RS-06-003"
+        ]
+      },
+      {
+        "id": "i_b_youth",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_brother_text"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_steward_sheet"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_youth_took"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "رسالة كريم قبل الحادثة بثلاث دقائق تذكر السترة الخضراء ومفتاح الاحتياط والعودة قبل الخامسة، وورقة المناوبة تضع أنور عند باب القاعة بتوقيع طرف ثالث؛ وهما مصدران لا يشتركان في كاتب.",
+        "skill_ko_refs": [
+          "KO-RS-05-004",
+          "KO-RS-05-014"
+        ]
+      },
+      {
+        "id": "i_a_account",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_first_message"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_interview_transcript"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_account_contaminated"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "أول وصف مكتوب قبل أي سؤال هو «ولد بسترة خضراء»، وفي المحضر لم يظهر الطول ولا اللحية إلا بعد س3 الذي ذكر أنور والصفتين معاً؛ فالتبدل لاحق للسؤال، وجواب س4 يعبّر عن تأكد لا عن ذاكرة جديدة.",
+        "skill_ko_refs": [
+          "KO-RS-05-006",
+          "KO-RS-05-008"
+        ]
+      },
+      {
+        "id": "i_b_account",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_mother_statement"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_vp_statement"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_account_contaminated"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "الأم تذكر أن ابنتها قالت «ولد» وأجابت «ربما» عن اللحية، والوكيل يقرّ بأنه سألها عن أنور وبأنه كتب «متأكدة تماماً» دون مقارنة؛ مصدران من طرفين مختلفين يتفقان على ترتيب ما جرى.",
+        "skill_ko_refs": [
+          "KO-RS-05-008",
+          "KO-RS-05-011"
+        ]
+      },
+      {
+        "id": "i_support_borrow",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_youth_took"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_account_contaminated"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_borrow"
+        },
+        "relation": "supports",
+        "strength": "strong",
+        "rule_ar": "الاستعارة تفسّر الدراجة العائدة والسلسلة المفتوحة بمفتاح وتفسّر لماذا تبدل وصف الطفلة؛ وكل شيء بسيط ولا يحتاج إلى سارق.",
+        "skill_ko_refs": [
+          "KO-RS-06-007"
+        ]
+      },
+      {
+        "id": "i_rule_anwar",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_youth_took"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_account_contaminated"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_anwar"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "من أخذ الدراجة فتى بسترة خضراء، والوصف الذي يوافق أنور جاء من سؤال لا من الذاكرة؛ وتأكد الطفلة لا يزيد وصفها دقة.",
+        "skill_ko_refs": [
+          "KO-RS-06-008",
+          "KO-RS-05-008"
+        ]
+      },
+      {
+        "id": "i_rule_stranger",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_youth_took"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_account_contaminated"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_stranger"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "الذي أخذ الدراجة من أسرة صاحبها وبمفتاح الاحتياط وأعادها، فلا غريب هنا.",
+        "skill_ko_refs": [
+          "KO-RS-06-008"
+        ]
+      },
+      {
+        "id": "i_rule_lie",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_youth_took"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_account_contaminated"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_yara_lie"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "وصفها الأول «ولد بسترة خضراء» يطابق ما تثبته الكاميرا والرسالة، فهو لا يدل على اختلاق؛ والتبدل اللاحق نتيجة سؤال لا سوء نية.",
+        "skill_ko_refs": [
+          "KO-RS-05-014",
+          "KO-RS-05-008"
+        ]
+      },
+      {
+        "id": "i_cl_yara",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_account_contaminated"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_yara_beard"
+        },
+        "relation": "contradicts_claim",
+        "strength": "strong",
+        "rule_ar": "اللحية والطول لم يردا في أول وصف ولا في س1 وس2، وإنما بعد س3؛ فهما جزء من الاقتراح.",
+        "skill_ko_refs": [
+          "KO-RS-05-006"
+        ]
+      },
+      {
+        "id": "i_cl_vp",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_account_contaminated"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_vp_sure"
+        },
+        "relation": "contradicts_claim",
+        "strength": "strong",
+        "rule_ar": "ثقة الشاهد ليست مقياساً لدقته، خصوصاً بعد سؤال موحٍ؛ وقد ارتفعت ثقتها وانخفضت دقة وصفها.",
+        "skill_ko_refs": [
+          "KO-RS-05-008"
+        ]
+      }
+    ]
+  },
+  "character_knowledge": [
+    {
+      "character_id": "yara",
+      "knows": [
+        {
+          "fact_id": "f_yara_saw",
+          "access": "witnessed",
+          "certainty": "fairly_sure"
+        },
+        {
+          "fact_id": "f_told_mother",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": [
+        {
+          "claim_id": "cl_yara_beard",
+          "stance": "sincere"
+        }
+      ]
+    },
+    {
+      "character_id": "salma",
+      "knows": [
+        {
+          "fact_id": "f_mother_says",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    },
+    {
+      "character_id": "fadi",
+      "knows": [
+        {
+          "fact_id": "f_vp_asked",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_camera_stills",
+          "access": "professional",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": [
+        {
+          "claim_id": "cl_vp_sure",
+          "stance": "sincere"
+        }
+      ]
+    },
+    {
+      "character_id": "hind",
+      "knows": [
+        {
+          "fact_id": "f_transcript_exists",
+          "access": "professional",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    },
+    {
+      "character_id": "anwar",
+      "knows": [
+        {
+          "fact_id": "f_steward_duty",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_return_round",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_old_warning",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    },
+    {
+      "character_id": "karim",
+      "knows": [
+        {
+          "fact_id": "f_karim_says",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    },
+    {
+      "character_id": "adam",
+      "knows": [
+        {
+          "fact_id": "f_adam_text",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "h_anwar",
+      "statement_ar": "أخذ العامل أنور الدراجة، كما وصفته الشاهدة بعد سؤالها عنه.",
+      "is_true": false,
+      "plausibility_at_start": "high",
+      "suspect_id": "anwar"
+    },
+    {
+      "id": "h_stranger",
+      "statement_ar": "أخذ غريب الدراجة ثم أعادها بعد أن خاف.",
+      "is_true": false,
+      "plausibility_at_start": "medium"
+    },
+    {
+      "id": "h_borrow",
+      "statement_ar": "استعار كريم دراجة أخيه دون أن يستأذنه، ووصف يارا الأول صحيح، وقد تبدّل بعد سؤال موحٍ لا بسبب ذاكرة جديدة.",
+      "is_true": true,
+      "plausibility_at_start": "low",
+      "suspect_id": "karim"
+    },
+    {
+      "id": "h_yara_lie",
+      "statement_ar": "اختلقت يارا قصة الولد بسترة خضراء، ولا أحد أخذ الدراجة.",
+      "is_true": false,
+      "plausibility_at_start": "medium",
+      "suspect_id": "yara"
+    }
+  ],
+  "misdirection_plan": [
+    {
+      "id": "rh_sure",
+      "points_to_hypothesis_id": "h_anwar",
+      "planted_via_ar": "ملخص الوكيل يقول إن الشاهدة متأكدة تماماً من أنه أنور.",
+      "evidence_ids": [
+        "ev_vp_summary"
+      ],
+      "refuted_by_inference_ids": [
+        "i_cl_vp",
+        "i_a_account",
+        "i_rule_anwar"
+      ],
+      "fairness_note_ar": "المحضر الحرفي ورسالة الأم متاحان للاعب، وفيهما أن اللحية لم ترد قبل السؤال عنها."
+    },
+    {
+      "id": "rh_warning",
+      "points_to_hypothesis_id": "h_anwar",
+      "planted_via_ar": "تنبيه سابق لأنور بسبب نقل دراجات دون إذن.",
+      "evidence_ids": [
+        "ev_old_warning"
+      ],
+      "refuted_by_inference_ids": [
+        "i_b_youth",
+        "i_rule_anwar"
+      ],
+      "fairness_note_ar": "ورقة المناوبة توقعها منسقة مستقلة وتضع أنور عند باب القاعة، والواقعة القديمة ليست دليلاً على فعل جديد."
+    },
+    {
+      "id": "rh_camera",
+      "points_to_hypothesis_id": "h_stranger",
+      "planted_via_ar": "الكاميرا لا تُظهر الوجه، فقد يكون الفاعل أي شخص.",
+      "evidence_ids": [
+        "ev_gate_frame"
+      ],
+      "refuted_by_inference_ids": [
+        "i_b_youth",
+        "i_rule_stranger"
+      ],
+      "fairness_note_ar": "رسالة كريم وسلسلة العودة بمفتاح الاحتياط تحددان أسرة صاحب الدراجة قبل أي اعتماد على الوجه."
+    }
+  ],
+  "learning_objectives": [
+    {
+      "id": "lo_source",
+      "statement_ar": "يصنّف رسالة الأم والمحضر والسجلات مصادر أقرب إلى الحدث، والملخصات والإفادات أقوالاً لاحقة.",
+      "skill_ko_ref": "KO-RS-05-001",
+      "observable_behaviors_ar": [
+        "يصنّف الإفادات أقوالاً",
+        "يفرّق الأول عن اللاحق"
+      ],
+      "evidence_sources": [
+        "evidence_board"
+      ]
+    },
+    {
+      "id": "lo_conflict",
+      "statement_ar": "يرتّب الأحداث على خط زمني يضع الوصف الأول قبل السؤال الموحي والعودة قبل المقابلة.",
+      "skill_ko_ref": "KO-RS-05-005",
+      "observable_behaviors_ar": [
+        "يضع الأدلة في أزمنتها"
+      ],
+      "evidence_sources": [
+        "timeline_task",
+        "action_log"
+      ]
+    },
+    {
+      "id": "lo_links",
+      "statement_ar": "يفحص نص أسئلة المقابلة ويفرّق بين ثقة الشاهد ودقته، ويربط الدليل بالفرضية باتجاه صحيح.",
+      "skill_ko_ref": "KO-RS-05-008",
+      "observable_behaviors_ar": [
+        "يقرأ نص الأسئلة",
+        "يربط الدليل بالفرضية"
+      ],
+      "evidence_sources": [
+        "evidence_board",
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_calib",
+      "statement_ar": "يصوغ نسبة الترجيح بحدودها ويذكر ما لا يستطيع التسجيل إثباته عن ذاكرة الطفلة.",
+      "skill_ko_ref": "KO-RS-06-021",
+      "observable_behaviors_ar": [
+        "يختار ثقة معقولة",
+        "يذكر حدوداً"
+      ],
+      "evidence_sources": [
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_revise",
+      "statement_ar": "يراجع رأيه الأول حين يظهر الوصف الأول للشاهدة.",
+      "skill_ko_ref": "KO-RS-06-009",
+      "observable_behaviors_ar": [
+        "يغيّر فرضيته الرائدة بدليل"
+      ],
+      "evidence_sources": [
+        "hypothesis_ledger"
+      ]
+    },
+    {
+      "id": "lo_elim",
+      "statement_ar": "يبحث عن مسارين مستقلين ويستبعد ما تنقضه الأدلة.",
+      "skill_ko_ref": "KO-RS-05-004",
+      "observable_behaviors_ar": [
+        "يضيف فرضيات",
+        "يستبعد بدليل"
+      ],
+      "evidence_sources": [
+        "hypothesis_ledger"
+      ]
+    },
+    {
+      "id": "lo_just",
+      "statement_ar": "يكتب حجة تحافظ على كرامة الشاهدة وتذكر أن السؤال لا الطفلة هو سبب التبدل.",
+      "skill_ko_ref": "KO-RS-05-006",
+      "observable_behaviors_ar": [
+        "يكتب حجة معللة"
+      ],
+      "evidence_sources": [
+        "final_justification"
+      ]
+    }
+  ],
+  "mechanics": {
+    "time_budget_units": 50,
+    "actions": [
+      {
+        "id": "a_int_adam",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة آدم",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "adam",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "adam",
+        "telemetry_code": "INT_ADAM"
+      },
+      {
+        "id": "a_int_karim",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة كريم",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "karim",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "karim",
+        "telemetry_code": "INT_KARIM"
+      },
+      {
+        "id": "a_int_anwar",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة أنور",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "anwar",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "anwar",
+        "telemetry_code": "INT_ANWAR"
+      },
+      {
+        "id": "a_int_hind",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة هند",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "hind",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "hind",
+        "telemetry_code": "INT_HIND"
+      },
+      {
+        "id": "a_int_fadi",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة فادي",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "fadi",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "fadi",
+        "telemetry_code": "INT_FADI"
+      },
+      {
+        "id": "a_int_salma",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة سلمى",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "salma",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "salma",
+        "telemetry_code": "INT_SALMA"
+      },
+      {
+        "id": "a_int_yara",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة يارا",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "yara",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "yara",
+        "telemetry_code": "INT_YARA"
+      },
+      {
+        "id": "a_bike_report",
+        "type": "examine",
+        "label_ar": "اقرأ بلاغ آدم",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_bike_report"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_office",
+        "telemetry_code": "A_BIKE_REPORT"
+      },
+      {
+        "id": "a_vp_summary",
+        "type": "examine",
+        "label_ar": "اقرأ ملخص الوكيل ليوم الجمعة",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_vp_summary"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_office",
+        "telemetry_code": "A_VP_SUMMARY"
+      },
+      {
+        "id": "a_first_message",
+        "type": "examine",
+        "label_ar": "اطلب رسالة الأم إلى مجموعة أولياء الأمور",
+        "precondition": {
+          "fact_unlocked": "f_told_mother"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_first_message"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_office",
+        "telemetry_code": "A_FIRST_MESSAGE"
+      },
+      {
+        "id": "a_interview_transcript",
+        "type": "examine",
+        "label_ar": "اطلب محضر مقابلة يارا",
+        "precondition": {
+          "fact_unlocked": "f_transcript_exists"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_interview_transcript"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_office",
+        "telemetry_code": "A_INTERVIEW_TRANSCRIPT"
+      },
+      {
+        "id": "a_mother_statement",
+        "type": "examine",
+        "label_ar": "دوّن إفادة سلمى",
+        "precondition": {
+          "fact_unlocked": "f_mother_says"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_mother_statement"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_office",
+        "telemetry_code": "A_MOTHER_STATEMENT"
+      },
+      {
+        "id": "a_vp_statement",
+        "type": "examine",
+        "label_ar": "دوّن إفادة الوكيل",
+        "precondition": {
+          "fact_unlocked": "f_vp_asked"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_vp_statement"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_office",
+        "telemetry_code": "A_VP_STATEMENT"
+      },
+      {
+        "id": "a_yara_statement",
+        "type": "examine",
+        "label_ar": "دوّن إفادة يارا",
+        "precondition": {
+          "fact_unlocked": "f_yara_saw"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_yara_statement"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_office",
+        "telemetry_code": "A_YARA_STATEMENT"
+      },
+      {
+        "id": "a_gate_frame",
+        "type": "examine",
+        "label_ar": "اطلب لقطات كاميرا البوابة الجانبية",
+        "precondition": {
+          "fact_unlocked": "f_camera_stills"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_gate_frame"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_gate",
+        "telemetry_code": "A_GATE_FRAME"
+      },
+      {
+        "id": "a_return_sheet",
+        "type": "examine",
+        "label_ar": "اطلب ورقة جولة الإغلاق",
+        "precondition": {
+          "fact_unlocked": "f_return_round"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_return_sheet"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_gate",
+        "telemetry_code": "A_RETURN_SHEET"
+      },
+      {
+        "id": "a_brother_text",
+        "type": "examine",
+        "label_ar": "اطلب رسالة كريم من هاتف آدم",
+        "precondition": {
+          "fact_unlocked": "f_adam_text"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_brother_text"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_office",
+        "telemetry_code": "A_BROTHER_TEXT"
+      },
+      {
+        "id": "a_steward_sheet",
+        "type": "examine",
+        "label_ar": "اطلب ورقة مناوبة مضيفي المعرض",
+        "precondition": {
+          "fact_unlocked": "f_steward_duty"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_steward_sheet"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_hall",
+        "telemetry_code": "A_STEWARD_SHEET"
+      },
+      {
+        "id": "a_old_warning",
+        "type": "examine",
+        "label_ar": "اطلب ملاحظة عام 2022 من ملف العاملين",
+        "precondition": {
+          "fact_unlocked": "f_old_warning"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_old_warning"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_office",
+        "telemetry_code": "A_OLD_WARNING"
+      },
+      {
+        "id": "a_karim_statement",
+        "type": "examine",
+        "label_ar": "دوّن إفادة كريم",
+        "precondition": {
+          "fact_unlocked": "f_karim_says"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_karim_statement"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_office",
+        "telemetry_code": "A_KARIM_STATEMENT"
+      },
+      {
+        "id": "a_hint",
+        "type": "request_hint",
+        "label_ar": "اطلب تلميحاً",
+        "precondition": {
+          "always": true
+        },
+        "effects": [],
+        "time_cost_units": 0,
+        "telemetry_code": "REQUEST_HINT"
+      },
+      {
+        "id": "a_accuse",
+        "type": "final_accusation",
+        "label_ar": "قدّم الرأي المعلّل النهائي",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "SUBMIT"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "FINAL_ACCUSATION"
+      },
+      {
+        "id": "ask_yara_f_yara_saw",
+        "type": "interview",
+        "label_ar": "[نموذج] yara يذكر f_yara_saw",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_yara_saw"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "yara",
+        "telemetry_code": "ASK_YARA_F_YARA_SAW"
+      },
+      {
+        "id": "ask_yara_f_told_mother",
+        "type": "interview",
+        "label_ar": "[نموذج] yara يذكر f_told_mother",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_told_mother"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "yara",
+        "telemetry_code": "ASK_YARA_F_TOLD_MOTHER"
+      },
+      {
+        "id": "ask_salma_f_mother_says",
+        "type": "interview",
+        "label_ar": "[نموذج] salma يذكر f_mother_says",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_mother_says"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "salma",
+        "telemetry_code": "ASK_SALMA_F_MOTHER_SAYS"
+      },
+      {
+        "id": "ask_fadi_f_vp_asked",
+        "type": "interview",
+        "label_ar": "[نموذج] fadi يذكر f_vp_asked",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_vp_asked"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "fadi",
+        "telemetry_code": "ASK_FADI_F_VP_ASKED"
+      },
+      {
+        "id": "ask_fadi_f_camera_stills",
+        "type": "interview",
+        "label_ar": "[نموذج] fadi يذكر f_camera_stills",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_camera_stills"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "fadi",
+        "telemetry_code": "ASK_FADI_F_CAMERA_STILLS"
+      },
+      {
+        "id": "ask_hind_f_transcript_exists",
+        "type": "interview",
+        "label_ar": "[نموذج] hind يذكر f_transcript_exists",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_transcript_exists"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "hind",
+        "telemetry_code": "ASK_HIND_F_TRANSCRIPT_EXISTS"
+      },
+      {
+        "id": "ask_anwar_f_steward_duty",
+        "type": "interview",
+        "label_ar": "[نموذج] anwar يذكر f_steward_duty",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_steward_duty"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "anwar",
+        "telemetry_code": "ASK_ANWAR_F_STEWARD_DUTY"
+      },
+      {
+        "id": "ask_anwar_f_return_round",
+        "type": "interview",
+        "label_ar": "[نموذج] anwar يذكر f_return_round",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_return_round"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "anwar",
+        "telemetry_code": "ASK_ANWAR_F_RETURN_ROUND"
+      },
+      {
+        "id": "ask_anwar_f_old_warning",
+        "type": "interview",
+        "label_ar": "[نموذج] anwar يذكر f_old_warning",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_old_warning"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "anwar",
+        "telemetry_code": "ASK_ANWAR_F_OLD_WARNING"
+      },
+      {
+        "id": "ask_karim_f_karim_says",
+        "type": "interview",
+        "label_ar": "[نموذج] karim يذكر f_karim_says",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_karim_says"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "karim",
+        "telemetry_code": "ASK_KARIM_F_KARIM_SAYS"
+      },
+      {
+        "id": "ask_adam_f_adam_text",
+        "type": "interview",
+        "label_ar": "[نموذج] adam يذكر f_adam_text",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_adam_text"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "adam",
+        "telemetry_code": "ASK_ADAM_F_ADAM_TEXT"
+      }
+    ]
+  },
+  "state_machine": {
+    "id": "c024",
+    "initial": "briefing",
+    "type": "compound",
+    "states": {
+      "briefing": {
+        "description_ar": "الإحاطة",
+        "type": "atomic",
+        "on": {
+          "START": {
+            "target": "investigating"
+          }
+        }
+      },
+      "investigating": {
+        "description_ar": "التحقيق",
+        "type": "compound",
+        "initial": "gathering",
+        "states": {
+          "gathering": {
+            "type": "atomic",
+            "on": {
+              "OPEN_DEDUCTION": {
+                "target": "deducing"
+              }
+            }
+          },
+          "deducing": {
+            "type": "atomic",
+            "on": {
+              "BACK": {
+                "target": "gathering"
+              }
+            }
+          }
+        },
+        "on": {
+          "SUBMIT": {
+            "target": "review"
+          }
+        }
+      },
+      "review": {
+        "description_ar": "مراجعة",
+        "type": "atomic",
+        "on": {
+          "CLOSE": {
+            "target": "resolved"
+          }
+        }
+      },
+      "resolved": {
+        "description_ar": "إغلاق",
+        "type": "final"
+      }
+    }
+  },
+  "dialogue": {
+    "max_turns_per_interview": 10,
+    "llm_enabled": false,
+    "topics": [
+      {
+        "id": "t_saw",
+        "label_ar": "ما رأته يارا",
+        "example_questions_ar": [
+          "احكي لي بكلماتك ماذا رأيتِ؟",
+          "ماذا فعل الولد؟"
+        ],
+        "fact_ids": [
+          "f_yara_saw"
+        ],
+        "claim_ids": [
+          "cl_yara_beard"
+        ]
+      },
+      {
+        "id": "t_mom",
+        "label_ar": "ما قالته لأمها",
+        "example_questions_ar": [
+          "لمن حكيتِ أولاً؟"
+        ],
+        "fact_ids": [
+          "f_told_mother"
+        ]
+      },
+      {
+        "id": "t_mother_says",
+        "label_ar": "ما قالته الطفلة وما سُئلت",
+        "example_questions_ar": [
+          "ماذا قالت ابنتك لك أولاً؟",
+          "ماذا سُئلت في المقابلة؟"
+        ],
+        "fact_ids": [
+          "f_mother_says"
+        ]
+      },
+      {
+        "id": "t_questions",
+        "label_ar": "أسئلة المقابلة",
+        "example_questions_ar": [
+          "ماذا سألتَ الشاهدة؟",
+          "كيف عرفت أنها متأكدة؟"
+        ],
+        "fact_ids": [
+          "f_vp_asked"
+        ],
+        "claim_ids": [
+          "cl_vp_sure"
+        ]
+      },
+      {
+        "id": "t_camera",
+        "label_ar": "كاميرا البوابة",
+        "example_questions_ar": [
+          "هل في البوابة كاميرا؟"
+        ],
+        "fact_ids": [
+          "f_camera_stills"
+        ]
+      },
+      {
+        "id": "t_notes",
+        "label_ar": "محضر المقابلة",
+        "example_questions_ar": [
+          "هل دوّنتِ ما قيل؟"
+        ],
+        "fact_ids": [
+          "f_transcript_exists"
+        ]
+      },
+      {
+        "id": "t_round",
+        "label_ar": "مناوبتي وجولتي",
+        "example_questions_ar": [
+          "أين كنت عصر الخميس؟",
+          "ماذا دوّنت في جولة الإغلاق؟"
+        ],
+        "fact_ids": [
+          "f_steward_duty",
+          "f_return_round"
+        ]
+      },
+      {
+        "id": "t_warning",
+        "label_ar": "التنبيه السابق",
+        "example_questions_ar": [
+          "هل نُبّهت من قبل؟"
+        ],
+        "fact_ids": [
+          "f_old_warning"
+        ]
+      },
+      {
+        "id": "t_borrow",
+        "label_ar": "الدراجة والمفتاح",
+        "example_questions_ar": [
+          "هل أخذت الدراجة؟",
+          "كيف فتحت السلسلة؟"
+        ],
+        "fact_ids": [
+          "f_karim_says"
+        ]
+      },
+      {
+        "id": "t_message",
+        "label_ar": "الرسالة إلى آدم",
+        "example_questions_ar": [
+          "هل وصلتك رسالة من كريم؟"
+        ],
+        "fact_ids": [
+          "f_adam_text"
+        ]
+      }
+    ]
+  },
+  "rubric": {
+    "reference_answer_ar": "لا دليل على أن أنور أخذ الدراجة. أول وصف مكتوب للطفلة جاء في رسالة أمها قبل أي سؤال من المدرسة: ولد بسترة خضراء. أما الطول واللحية فظهرا بعد سؤال في المحضر ذكر أنور بنفسه، وارتفع تأكدها دون أن ترتفع دقتها. لقطة الكاميرا تُظهر سترة خضراء وقامة أقصر، وورقة الجولة تثبت عودة الدراجة والسلسلة مفتوحة بمفتاح، ورسالة كريم بتاريخها ترويها، وورقة المناوبة تضع أنور عند باب القاعة. حدود الاستنتاج: لا نعرف ما تذكره الطفلة اليوم، والكاميرا لا ترى الوجه، وورقة المناوبة لا تنفي غياباً قصيراً.",
+    "criteria": [
+      {
+        "id": "c_source",
+        "name_ar": "تصنيف المصادر",
+        "objective_ids": [
+          "lo_source"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يصنّف"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "أخطأ في الأغلب"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "نصف صحيح"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمه صحيح"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كله صحيح"
+          }
+        ]
+      },
+      {
+        "id": "c_conflict",
+        "name_ar": "ترتيب الأحداث على الخط الزمني",
+        "objective_ids": [
+          "lo_conflict"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.2,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يرتّب شيئاً"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "رتّب قليلاً"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "رتّب نصفها"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمها"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كلها في موضعها"
+          }
+        ]
+      },
+      {
+        "id": "c_links",
+        "name_ar": "ربط الأدلة بالفرضيات",
+        "objective_ids": [
+          "lo_links"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.2,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لا روابط"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "قليلة"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "نصفها صحيح"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمها"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كلها دقيقة"
+          }
+        ]
+      },
+      {
+        "id": "c_uncertainty",
+        "name_ar": "معايرة الثقة",
+        "objective_ids": [
+          "lo_calib"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "ثقة مفرطة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "حدود قليلة"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "جزئية"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معقولة"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "معايَرة كاملة"
+          }
+        ]
+      },
+      {
+        "id": "c_revision",
+        "name_ar": "مراجعة الرأي",
+        "objective_ids": [
+          "lo_revise"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "بقي على فرضية مرفوضة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "لم يعلن فرضية"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "ثبت على فرضية سليمة"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "غيّر بدليل"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "غيّر بدليل ووثّق"
+          }
+        ]
+      },
+      {
+        "id": "c_elimination",
+        "name_ar": "استبعاد الفرضيات الخاطئة",
+        "objective_ids": [
+          "lo_elim"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يستبعد"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "استبعد خطأً"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "فرضية بدليل"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "فرضيتين"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كل الخاطئة"
+          }
+        ]
+      },
+      {
+        "id": "c_justification",
+        "name_ar": "جودة الحجة المكتوبة",
+        "objective_ids": [
+          "lo_just"
+        ],
+        "scored_by": "human",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لا حجة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "ادعاء بلا سند"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "أدلة دون ربط"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "ربط الأدلة بالاستنتاج"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "ربط مع الحدود والبدائل"
+          }
+        ]
+      }
+    ]
+  },
+  "hint_ladder": [
+    {
+      "id": "hg1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "حين يتغيّر وصف الشاهد بين الرواية الأولى والثانية، اسأل: ما الذي حدث بينهما؟",
+      "trigger": {
+        "always": true
+      },
+      "assessment_weight": 0.02
+    },
+    {
+      "id": "hg2",
+      "level": 2,
+      "kind": "focus_area",
+      "text_ar": "قارن ما قيل قبل أول سؤال من المدرسة بما قيل بعده، وانظر في نص السؤال نفسه لا في جواب الطفلة وحده.",
+      "trigger": {
+        "has_evidence": "ev_vp_summary"
+      },
+      "assessment_weight": 0.04
+    },
+    {
+      "id": "hg3",
+      "level": 3,
+      "kind": "pointer",
+      "text_ar": "ابحث عن سجلات لا تكتبها الطفلة ولا الوكيل: كاميرا، وأوراق مناوبة، ورسائل بتواريخها.",
+      "trigger": {
+        "has_evidence": "ev_vp_summary"
+      },
+      "assessment_weight": 0.08
+    },
+    {
+      "id": "ha1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "هل يعني تأكد الشاهد أن وصفه أدق؟",
+      "trigger": {
+        "has_evidence": "ev_interview_transcript"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_a_account"
+    },
+    {
+      "id": "ha2",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "اقرأ س3 كلمة كلمة: ما الذي ذُكر فيه قبل أن تجيب الطفلة؟",
+      "trigger": {
+        "has_evidence": "ev_interview_transcript"
+      },
+      "assessment_weight": 0.06,
+      "targets_inference_id": "i_a_account"
+    },
+    {
+      "id": "hy1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "ما الدليل على هوية الفاعل الذي لا يتوقف على وجه ولا ذاكرة؟",
+      "trigger": {
+        "has_evidence": "ev_gate_frame"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_b_youth"
+    },
+    {
+      "id": "hy2",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "السلسلة فُتحت بمفتاح لا بكسر؛ من يملك مفتاحاً احتياطياً؟ وابحث عن رسالة بتاريخ قبل الحادثة.",
+      "trigger": {
+        "has_evidence": "ev_return_sheet"
+      },
+      "assessment_weight": 0.06,
+      "targets_inference_id": "i_b_youth"
+    }
+  ],
+  "fairness_test": {
+    "requirements": {
+      "min_disjoint_proof_paths": 2,
+      "max_inference_depth": 3,
+      "all_red_herrings_refutable": true,
+      "culprit_uniquely_entailed": true,
+      "no_hidden_fact_dependency": true,
+      "max_required_actions": 50
+    },
+    "runs": []
+  },
+  "ending_explanation": {
+    "steps": [
+      {
+        "order": 1,
+        "text_ar": "رتّب الكلام زمنياً: رسالة الأم 16:21 تسبق المقابلة 17:40، ووصف الطفلة فيها «ولد بسترة خضراء» بلا طول ولا لحية.",
+        "uses_evidence_ids": [
+          "ev_first_message",
+          "ev_interview_transcript"
+        ],
+        "inference_id": "i_a_account"
+      },
+      {
+        "order": 2,
+        "text_ar": "اقرأ الأسئلة حرفياً: الطول واللحية واسم العامل دخلت معاً في س3، ثم جاء «نعم، أظن» في س4؛ فارتفاع التأكد لا يبرهن على دقة الوصف.",
+        "uses_evidence_ids": [
+          "ev_interview_transcript"
+        ],
+        "inference_id": "i_cl_vp"
+      },
+      {
+        "order": 3,
+        "text_ar": "طريق ثانٍ لما جرى: الأم تروي ترتيب الكلام، والوكيل يقرّ بسؤاله وبأنه كتب «متأكدة» دون مقارنة؛ طرفان مختلفان يتفقان.",
+        "uses_evidence_ids": [
+          "ev_mother_statement",
+          "ev_vp_statement"
+        ],
+        "inference_id": "i_b_account"
+      },
+      {
+        "order": 4,
+        "text_ar": "من أخذ الدراجة؟ لقطة 16:08 تُظهر سترة خضراء وقامة أقصر من وصف الرجل، وورقة العامل تضع عودتها 17:05 والسلسلة مفتوحة بمفتاح.",
+        "uses_evidence_ids": [
+          "ev_gate_frame",
+          "ev_return_sheet"
+        ],
+        "inference_id": "i_a_youth"
+      },
+      {
+        "order": 5,
+        "text_ar": "الطريق المستقل لهوية الفاعل: رسالة بتاريخها قبل الحادثة تذكر المفتاح والسترة والعودة، وورقة مناوبة بتوقيع منسقة تضع أنور في مكان آخر.",
+        "uses_evidence_ids": [
+          "ev_brother_text",
+          "ev_steward_sheet"
+        ],
+        "inference_id": "i_b_youth"
+      },
+      {
+        "order": 6,
+        "text_ar": "فتسقط فكرة أن العامل هو الفاعل، وفكرة الغريب، وفكرة أن الطفلة اختلقت؛ ويبقى أن سؤالاً موحياً غيّر وصفاً كان صحيحاً.",
+        "uses_evidence_ids": [
+          "ev_gate_frame",
+          "ev_brother_text",
+          "ev_first_message"
+        ],
+        "inference_id": "i_rule_anwar"
+      }
+    ],
+    "alternative_paths_ar": [
+      "يكفي طريق الكاميرا والجولة لهوية الفاعل، وطريق الرسالة والمحضر لتبدّل الوصف، من غير إفادات الأطراف.",
+      "ويكفي طريق رسالة كريم وورقة المناوبة لهوية الفاعل، وإفادتا الأم والوكيل لتبدّل الوصف، من غير الكاميرا والمحضر؛ والأقوى أن يتفق الطريقان."
+    ],
+    "what_evidence_could_not_show_ar": [
+      "لا نستطيع أن نعرف ما تذكره يارا الآن؛ نعرف ما قالته قبل السؤال وما قالته بعده.",
+      "الكاميرا تلتقط صورة كل دقيقة، فلا ترى الوجه ولا كل اللحظة، وقامتها المقدّرة تقريبية.",
+      "ورقة المناوبة تضع أنور عند باب القاعة بتوقيع المنسقة، ولا تنفي من حيث المبدأ أن يكون قد غاب لحظات.",
+      "لا نعرف لماذا اختار الوكيل أنور من بين الناس إلا أنه المسؤول عن ترتيب الدراجات."
+    ],
+    "science_notes_ar": [
+      "السؤال الموحي يغيّر الذاكرة نفسها لا إجابة اللحظة فقط: ما تقوله الطفلة بعده قد يصبح ذكرى أوضح عندها من الأصل. لذلك تُحفظ الرواية الأولى قبل أي اقتراح، وتُطرح الأسئلة المفتوحة: «احكِ لي بكلماتك».",
+      "ثقة الشاهد ليست دقته: ارتفعت ثقة يارا من «ربما» إلى «نعم، أظن»، وانخفضت دقة وصفها. يعرف المحققون هذا النمط في إفادات الكبار والصغار.",
+      "الطفلة لم تكذب ولم تخطئ بسوء نية، والوكيل لم يقصد الإيحاء. وإصلاح الضرر ودّي: يُسحب الإنذار عن أنور، ويُعتذر له، وتُجرى مقابلات المدرسة بأسئلة مفتوحة وبحضور ولي الأمر.",
+      "كريم لم يسرق: أخذ ما ظنه مباحاً داخل الأسرة وأخبر أخاه برسالة لم تُقرأ. وهذا يعلّمنا أن الرسالة التي لم تُقرأ ليست رسالة وصلت.",
+      "لا يُعدّ ارتباك أنور ولا هدوؤه دليلاً؛ المعتمد هو السجلات.",
+      "بطاقة الأصل: القضية أصلية من ATHAR، وبنيتها من نمط «السؤال الذي زرع ذكرى» في مكتبة تصميم القضايا؛ لا مقابلات حقيقية فيها."
+    ]
+  },
+  "expert_review": [
+    {
+      "role": "narrative_editor",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-28",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "scientific_reviewer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-28",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "learning_designer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-28",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "age_appropriateness",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-28",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "cultural_reviewer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-28",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "legal_rights",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-28",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "safety",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-28",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    }
+  ]
+}

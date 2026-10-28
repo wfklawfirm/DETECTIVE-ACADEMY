@@ -1,0 +1,2407 @@
+{
+  "schema_version": "0.1.0",
+  "case_id": "c022_market_scale",
+  "case_version": "0.1.0",
+  "meta": {
+    "title_ar": "المحتسب الصغير: ميزان السوق",
+    "title_en": "The Little Inspector: The Market Scale",
+    "age_band": "13-15",
+    "locale": "ar",
+    "dialogue_register": "msa",
+    "estimated_minutes": 30,
+    "difficulty": 2,
+    "content_flags": [
+      "no_violence"
+    ],
+    "authors": [
+      "فريق أثر التحريري (مسودة بمساعدة الذكاء الاصطناعي، لم تُراجَع بشرياً بعد)"
+    ],
+    "knowledge_object_refs": [
+      "KO-RS-05-003",
+      "KO-RS-06-008",
+      "KO-RS-06-010",
+      "KO-RS-06-003",
+      "KO-RS-05-001",
+      "KO-RS-05-005",
+      "KO-RS-05-004",
+      "KO-RS-06-001",
+      "KO-RS-06-021",
+      "KO-RS-06-009",
+      "KO-RS-06-012",
+      "KO-RS-06-013",
+      "KO-FC-04-019",
+      "KO-CD-02H-004"
+    ]
+  },
+  "premise": {
+    "hook_ar": "ثلاثة زبائن يقولون إن عبواتهم ناقصة، وكل الأنظار على البائع الأحدث في السوق. لكنك محتسب صغير: تقيس أولاً ثم تحكم.",
+    "player_role_ar": "أنت محتسب صغير متدرب في مكتب سوق الأطلال، مهمتك حماية الزبائن بالقياس لا بالتخمين، وعندك ميزان مرجعي وصنجتان معياريتان.",
+    "setting_ar": "سوق الأطلال خلال أسبوع معرض القافلة، من السبت قبل الافتتاح إلى صباح الأربعاء. أوقات المكتب بساعة السوق.",
+    "public_fact_ids": [
+      "f_complaint",
+      "f_new_vendor",
+      "f_hamed_denies"
+    ],
+    "assumed_general_knowledge_ar": [
+      "القياس الواحد قد يخطئ فيُكرَّر",
+      "الميزان قد يقرأ زيادة ثابتة أو زيادة تكبر مع الوزن",
+      "كون البائع جديداً لا يدل على شيء"
+    ]
+  },
+  "entities": {
+    "characters": [
+      {
+        "id": "layla",
+        "name_ar": "ليلى الحداد",
+        "role": "victim",
+        "age_descriptor_ar": "زبونة من حي «الأطلال»، تشتري التمر للأسرة",
+        "persona_ar": "مهذبة وحازمة، تعدّ نفسها دقيقة في المطبخ، وتتألم من الشعور بأنها خُدعت. تتراجع عن الاتهام إذا رأت قياساً واضحاً.",
+        "motives_ar": [
+          "أن تأخذ حقها",
+          "ألا تظلم بائعاً بلا دليل"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "ly_greet",
+            "purpose": "greeting",
+            "text_ar": "اشتريت ثلاث عبوات، وكلها ناقصة. أريد أن أفهم السبب."
+          },
+          {
+            "line_id": "ly_bags",
+            "purpose": "reveal",
+            "text_ar": "ما زلت أحتفظ بالعبوات الثلاث مغلقة، وزبونان آخران حفظا عبواتهما أيضاً، وميزان مطبخي مستعد للفحص.",
+            "fact_ids": [
+              "f_bags_kept"
+            ]
+          },
+          {
+            "line_id": "ly_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف أكثر من هذا."
+          },
+          {
+            "line_id": "ly_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عمّا اشتريته وكيف وزنته."
+          },
+          {
+            "line_id": "ly_bye",
+            "purpose": "farewell",
+            "text_ar": "أريد عدلاً لا انتقاماً."
+          }
+        ]
+      },
+      {
+        "id": "hamed",
+        "name_ar": "حامد الرشيدي",
+        "role": "suspect",
+        "age_descriptor_ar": "بائع تمور، هذا أسبوعه الأول في السوق",
+        "persona_ar": "خجول ومرتبك قليلاً لأنه جديد، يجيب بإيجاز وبنبرة اعتذار. ارتباكه ليس دليلاً على شيء، وهو يقول ما يتذكره.",
+        "motives_ar": [
+          "أن يحافظ على سمعته الجديدة",
+          "أن يعرف ما الخطأ"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "hm_greet",
+            "purpose": "greeting",
+            "text_ar": "أنا لا أغشّ أحداً. اسأل عمّا شئت."
+          },
+          {
+            "line_id": "hm_pan",
+            "purpose": "reveal",
+            "text_ar": "تشققت كفة ميزاني صباح الاثنين، فاستعرت صينية من جارتي ووضعتها فوقها. الميزان نفسه سليم في ظني، ولم ألمس فيه غير ذلك.",
+            "fact_ids": [
+              "f_tray_swap"
+            ],
+            "claim_ids": [
+              "cl_hamed_fine"
+            ]
+          },
+          {
+            "line_id": "hm_stock",
+            "purpose": "reveal",
+            "text_ar": "أدوّن كل يوم في ورقة مخزني: كم كان عندي من التمر، وكم بعت من كل حجم، وكم بقي بعد العدّ.",
+            "fact_ids": [
+              "f_stock_sheet_exists"
+            ]
+          },
+          {
+            "line_id": "hm_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف."
+          },
+          {
+            "line_id": "hm_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن الميزان والتمر."
+          },
+          {
+            "line_id": "hm_bye",
+            "purpose": "farewell",
+            "text_ar": "افحصوا كل شيء، لا أخشى الفحص."
+          }
+        ]
+      },
+      {
+        "id": "umm_samir",
+        "name_ar": "أم سمير الخياط",
+        "role": "witness",
+        "age_descriptor_ar": "بائعة قديمة في السوق، جارة حامد",
+        "persona_ar": "ودودة وعملية، تحب أن تساعد الجدد وتدوّن كل ما تعيره. تقول ما رأته ولا تخمّن النيات.",
+        "motives_ar": [
+          "أن تساعد جارها",
+          "ألا تُنسب إليها مسؤولية لم تقصدها"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "us_greet",
+            "purpose": "greeting",
+            "text_ar": "جاري حامد شاب طيب. اسأل."
+          },
+          {
+            "line_id": "us_lent",
+            "purpose": "reveal",
+            "text_ar": "أعرت حامداً صينية فولاذية صباح الاثنين نحو العاشرة وعشرين دقيقة لأن كفته تشققت.",
+            "fact_ids": [
+              "f_tray_lent"
+            ]
+          },
+          {
+            "line_id": "us_book",
+            "purpose": "reveal",
+            "text_ar": "كل ما يُعار بين الأركان يُكتب في دفتر الإعارة عند مكتب السوق، وقد كتبت هذه الإعارة بيدي.",
+            "fact_ids": [
+              "f_loan_book_exists"
+            ]
+          },
+          {
+            "line_id": "us_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف غير ذلك."
+          },
+          {
+            "line_id": "us_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن الإعارة."
+          },
+          {
+            "line_id": "us_bye",
+            "purpose": "farewell",
+            "text_ar": "أرجو ألا يتضرر جاري."
+          }
+        ]
+      },
+      {
+        "id": "nabil",
+        "name_ar": "نبيل الصعيدي",
+        "role": "witness",
+        "age_descriptor_ar": "بائع قديم في السوق منذ سنوات",
+        "persona_ar": "واثق ومتكلم، يعمّم من خبرته ويبني حكمه على الانطباع. يتراجع إذا طُلب منه أن يفرّق بين ما رآه وما ظنه.",
+        "motives_ar": [
+          "ألا تتغير عادات السوق",
+          "أن يكون على صواب"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "nb_greet",
+            "purpose": "greeting",
+            "text_ar": "أعرف هذا السوق أكثر من مكتبه."
+          },
+          {
+            "line_id": "nb_new",
+            "purpose": "reveal",
+            "text_ar": "البائع الجديد يغشّ في أسبوعه الأول، هذا ما تعلمته. ورأيت حامداً صباح الاثنين يغيّر شيئاً في ميزانه.",
+            "fact_ids": [
+              "f_nabil_saw_change"
+            ],
+            "claim_ids": [
+              "cl_nabil_new"
+            ]
+          },
+          {
+            "line_id": "nb_open",
+            "purpose": "reveal",
+            "text_ar": "قبل الافتتاح يفحص المكتب موازين كل الأركان بصنجات مختومة، ويُدوَّن الفحص في جدول.",
+            "fact_ids": [
+              "f_opening_table_exists"
+            ]
+          },
+          {
+            "line_id": "nb_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أذكر."
+          },
+          {
+            "line_id": "nb_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن السوق."
+          },
+          {
+            "line_id": "nb_bye",
+            "purpose": "farewell",
+            "text_ar": "اسأل غيري أيضاً."
+          }
+        ]
+      },
+      {
+        "id": "abu_walid",
+        "name_ar": "أبو وليد المعايِر",
+        "role": "expert",
+        "age_descriptor_ar": "مختص معايرة في مكتب السوق",
+        "persona_ar": "هادئ ودقيق، يقيس أكثر مما يتكلم، ويقول إن القياس الواحد لا يكفي. لا يعرف نيات الباعة.",
+        "motives_ar": [
+          "أن تُقرأ القياسات بحدودها"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "aw_greet",
+            "purpose": "greeting",
+            "text_ar": "أقيس ولا أحكم على النيات."
+          },
+          {
+            "line_id": "aw_ref",
+            "purpose": "reveal",
+            "text_ar": "عندي صنجتان معياريتان مختومتان، خمسمئة غرام وألف غرام، وميزان مرجعي في المكتب. أستطيع فحص أي ميزان وأي غرض به.",
+            "fact_ids": [
+              "f_ref_weights"
+            ]
+          },
+          {
+            "line_id": "aw_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "هذا خارج ما أقيسه."
+          },
+          {
+            "line_id": "aw_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن القياس والصنجات."
+          },
+          {
+            "line_id": "aw_bye",
+            "purpose": "farewell",
+            "text_ar": "كرّر القياس قبل أن تحكم."
+          }
+        ]
+      }
+    ],
+    "locations": [
+      {
+        "id": "loc_stall",
+        "name_ar": "ركن حامد رقم 12",
+        "description_ar": "ركن لبيع التمور في سوق الأطلال، عليه ميزان ذو كفة."
+      },
+      {
+        "id": "loc_office",
+        "name_ar": "مكتب السوق",
+        "description_ar": "حيث تُسجَّل الشكاوى والإعارات وتُحفظ الصنجات المعيارية."
+      },
+      {
+        "id": "loc_market",
+        "name_ar": "سوق الأطلال",
+        "description_ar": "سوق قديم خيالي يستضيف أسبوع معرض القافلة."
+      }
+    ],
+    "objects": [
+      {
+        "id": "obj_scale",
+        "name_ar": "ميزان حامد",
+        "description_ar": "ميزان بكفة ونابض، مختوم من مكتب السوق."
+      },
+      {
+        "id": "obj_tray",
+        "name_ar": "الصينية الفولاذية المستعارة",
+        "description_ar": "صينية معدنية استعارها حامد من جارته."
+      }
+    ],
+    "organizations": [
+      {
+        "id": "org_market",
+        "name_ar": "إدارة سوق الأطلال",
+        "description_ar": "جهة تنظيم السوق وحماية المستهلك فيه."
+      }
+    ]
+  },
+  "truth": {
+    "solution": {
+      "culprit_ids": [
+        "hamed"
+      ],
+      "summary_ar": "لم يغشّ أحد. وضع حامد صينية مستعارة فوق كفته المتشققة ولم يعرف أن الصفر يحتاج إلى ضبط، فصار الميزان يقرأ ستين غراماً زائدة في كل وزنة وخرجت العبوات ناقصة بالمقدار نفسه.",
+      "key_fact_ids": [
+        "f_offset_constant",
+        "f_tray_cause"
+      ]
+    },
+    "facts": [
+      {
+        "id": "f_complaint",
+        "statement_ar": "اشترت ليلى ثلاث عبوات تمر من ركن حامد عصر الثلاثاء، وتقول إن كل عبوة تنقص نحو ستين غراماً عن المكتوب عليها.",
+        "kind": "event",
+        "subject_ids": [
+          "layla",
+          "hamed"
+        ],
+        "spoiler_level": 0
+      },
+      {
+        "id": "f_new_vendor",
+        "statement_ar": "حامد أحدث بائع في السوق، وهذا أسبوعه الأول.",
+        "kind": "attribute",
+        "subject_ids": [
+          "hamed"
+        ],
+        "spoiler_level": 0
+      },
+      {
+        "id": "f_hamed_denies",
+        "statement_ar": "ينفي حامد أنه غشّ أحداً.",
+        "kind": "attribute",
+        "subject_ids": [
+          "hamed"
+        ],
+        "spoiler_level": 0
+      },
+      {
+        "id": "f_bags_kept",
+        "statement_ar": "احتفظت ليلى بعبواتها مغلقة، ومعها زبونان آخران، وميزان مطبخها صالح للفحص في المكتب.",
+        "kind": "state",
+        "subject_ids": [
+          "layla"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 4380,
+          "precision": "exact"
+        },
+        "location_id": "loc_office"
+      },
+      {
+        "id": "f_tray_swap",
+        "statement_ar": "استبدل حامد صباح الاثنين كفة ميزانه المتشققة بصينية فولاذية استعارها من جارته، ووضعها فوق الكفة.",
+        "kind": "event",
+        "subject_ids": [
+          "hamed",
+          "obj_tray",
+          "obj_scale"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 1580,
+          "precision": "exact"
+        },
+        "location_id": "loc_stall"
+      },
+      {
+        "id": "f_tray_lent",
+        "statement_ar": "أعارت أم سمير حامداً الصينية الفولاذية الاثنين نحو الساعة 10:20.",
+        "kind": "event",
+        "subject_ids": [
+          "umm_samir",
+          "hamed",
+          "obj_tray"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 1580,
+          "precision": "exact"
+        },
+        "location_id": "loc_market"
+      },
+      {
+        "id": "f_stock_sheet_exists",
+        "statement_ar": "يدوّن حامد يومياً ورقة مخزن فيها الكمية والمبيع والمتبقي بعد العد.",
+        "kind": "state",
+        "subject_ids": [
+          "hamed"
+        ],
+        "spoiler_level": 1,
+        "location_id": "loc_stall"
+      },
+      {
+        "id": "f_loan_book_exists",
+        "statement_ar": "يحفظ مكتب السوق دفتر إعارة تُكتب فيه الأغراض المتبادلة بين الأركان.",
+        "kind": "state",
+        "subject_ids": [
+          "org_market"
+        ],
+        "spoiler_level": 1,
+        "location_id": "loc_office"
+      },
+      {
+        "id": "f_opening_table_exists",
+        "statement_ar": "يفحص مكتب السوق قبل الافتتاح كل الموازين بصنجات مختومة ويدوّن الانحراف ويختم الميزان.",
+        "kind": "state",
+        "subject_ids": [
+          "org_market"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": -900,
+          "precision": "exact"
+        },
+        "location_id": "loc_office"
+      },
+      {
+        "id": "f_ref_weights",
+        "statement_ar": "يملك المكتب صنجتين معياريتين مختومتين (500 غ و1000 غ) وميزاناً مرجعياً.",
+        "kind": "state",
+        "subject_ids": [
+          "abu_walid"
+        ],
+        "spoiler_level": 1,
+        "location_id": "loc_office"
+      },
+      {
+        "id": "f_nabil_saw_change",
+        "statement_ar": "رأى نبيل حامداً صباح الاثنين يغيّر شيئاً في ميزانه.",
+        "kind": "event",
+        "subject_ids": [
+          "nabil",
+          "hamed"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 1580,
+          "precision": "exact"
+        },
+        "location_id": "loc_stall"
+      },
+      {
+        "id": "f_offsets_common",
+        "statement_ar": "ظهر انحراف في خمسة موازين من أربعة عشر ميزاناً عند فحص الافتتاح، ثلاثة منها لبائعين قدامى.",
+        "kind": "state",
+        "subject_ids": [
+          "org_market"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": -900,
+          "precision": "exact"
+        },
+        "location_id": "loc_office"
+      },
+      {
+        "id": "f_offset_constant",
+        "statement_ar": "قراءة ميزان حامد تزيد زيادة ثابتة قدرها نحو ستين غراماً مهما كان الحمل، فهي إزاحة للصفر وليست نسبة من الوزن.",
+        "kind": "relation",
+        "subject_ids": [
+          "obj_scale"
+        ],
+        "spoiler_level": 3,
+        "time": {
+          "start_min": 4470,
+          "precision": "exact"
+        },
+        "location_id": "loc_stall",
+        "science_ko_refs": [
+          "KO-RS-06-003",
+          "KO-RS-05-003"
+        ]
+      },
+      {
+        "id": "f_tray_cause",
+        "statement_ar": "سبب الزيادة هو وزن الصينية المستعارة التي لم يُعدَّل الصفر بعد وضعها، لا عبث بآلية الميزان ولا قصد من أحد.",
+        "kind": "relation",
+        "subject_ids": [
+          "obj_tray",
+          "obj_scale",
+          "hamed"
+        ],
+        "spoiler_level": 3,
+        "time": {
+          "start_min": 1580,
+          "precision": "exact"
+        },
+        "location_id": "loc_stall",
+        "science_ko_refs": [
+          "KO-RS-05-003",
+          "KO-FC-04-019"
+        ]
+      }
+    ],
+    "claims": [
+      {
+        "id": "cl_hamed_fine",
+        "statement_ar": "ميزاني سليم ولم أغيّر فيه شيئاً سوى الكفة.",
+        "kind": "honest_mistake",
+        "held_by": [
+          "hamed"
+        ],
+        "true_fact_id": "f_tray_cause",
+        "contradicted_by_evidence_ids": [
+          "ev_tray_weight",
+          "ev_empty_test"
+        ]
+      },
+      {
+        "id": "cl_nabil_new",
+        "statement_ar": "كل بائع جديد يغشّ في أسبوعه الأول.",
+        "kind": "rumour",
+        "held_by": [
+          "nabil"
+        ],
+        "true_fact_id": "f_offsets_common",
+        "contradicted_by_evidence_ids": [
+          "ev_opening_table"
+        ]
+      }
+    ]
+  },
+  "timeline": [
+    {
+      "id": "te_opening",
+      "description_ar": "فحص الافتتاح لموازين الأركان وختمها.",
+      "time": {
+        "start_min": -900,
+        "precision": "exact"
+      },
+      "location_id": "loc_office",
+      "actor_ids": [
+        "abu_walid"
+      ],
+      "fact_ids": [
+        "f_opening_table_exists",
+        "f_offsets_common"
+      ],
+      "motivated_by_ar": "عمله إعداد السوق للأسبوع"
+    },
+    {
+      "id": "te_swap",
+      "description_ar": "حامد يضع الصينية المستعارة فوق كفته المتشققة.",
+      "time": {
+        "start_min": 1580,
+        "precision": "exact"
+      },
+      "location_id": "loc_stall",
+      "actor_ids": [
+        "hamed",
+        "umm_samir"
+      ],
+      "fact_ids": [
+        "f_tray_swap",
+        "f_tray_lent"
+      ],
+      "motivated_by_ar": "تشققت كفته ولا يريد أن يتوقف عن البيع"
+    },
+    {
+      "id": "te_purchase",
+      "description_ar": "ليلى تشتري ثلاث عبوات تمر.",
+      "time": {
+        "start_min": 3420,
+        "precision": "exact"
+      },
+      "location_id": "loc_stall",
+      "actor_ids": [
+        "layla"
+      ],
+      "fact_ids": [
+        "f_complaint"
+      ],
+      "motivated_by_ar": "تشتري تمراً لأسرتها"
+    },
+    {
+      "id": "te_complaint",
+      "description_ar": "ليلى تقدّم شكواها في مكتب السوق.",
+      "time": {
+        "start_min": 4380,
+        "precision": "exact"
+      },
+      "location_id": "loc_office",
+      "actor_ids": [
+        "layla"
+      ],
+      "fact_ids": [
+        "f_complaint",
+        "f_bags_kept"
+      ],
+      "motivated_by_ar": "تريد أن يتأكد أحد من وزن العبوات"
+    },
+    {
+      "id": "te_tests",
+      "description_ar": "أبو وليد يختبر ميزان حامد بالصنجات المعيارية.",
+      "time": {
+        "start_min": 4470,
+        "precision": "exact"
+      },
+      "location_id": "loc_stall",
+      "actor_ids": [
+        "abu_walid"
+      ],
+      "fact_ids": [
+        "f_offset_constant"
+      ],
+      "motivated_by_ar": "كلّفه المكتب بفحص الشكوى"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_complaint",
+      "title_ar": "نموذج شكوى ليلى",
+      "kind": "documentary",
+      "content_ar": "مكتب سوق الأطلال — نموذج شكوى — الأربعاء 09:00\nالمشتكية: ليلى الحداد\nالمشكو منه: ركن 12 (حامد الرشيدي)\nالواقعة: اشتريت عصر الثلاثاء عبوة 1000 غ وعبوتين 500 غ، ووزنتها في بيتي فكانت 940 غ و440 غ و440 غ. أظن أن البائع الجديد يغشّ.\nملاحظة الموظف: ثلاثة زبائن آخرين ذكروا نقصاً مماثلاً شفهياً.",
+      "acquired_by_action_ids": [
+        "a_complaint"
+      ],
+      "supports_fact_ids": [
+        "f_complaint",
+        "f_new_vendor",
+        "f_hamed_denies"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "ادعاء مقدَّم بعد وزن بميزان منزلي لم يُفحص وقتها؛ والجملة الأخيرة ظن من المشتكية لا قياس. اتفاق الزبائن على النقص يؤكد وجود النقص لا سببه.",
+      "is_red_herring": true,
+      "location_id": "loc_office"
+    },
+    {
+      "id": "ev_empty_test",
+      "title_ar": "اختبار الكفة الفارغة في ركن حامد",
+      "kind": "observation",
+      "content_ar": "مكتب السوق — محضر فحص — الأربعاء 10:30 — ركن 12 (الميزان كما وُجد، الصينية الفولاذية فوق الكفة، الختم رقم S-114 سليم)\nقراءة الميزان والكفة فارغة: 60 غ\nأعاد أبو وليد القراءة ثلاث مرات: 60 غ، 60 غ، 61 غ\nالطقس: ركن مظلل، طاولة مستوية.",
+      "acquired_by_action_ids": [
+        "a_empty_test"
+      ],
+      "supports_fact_ids": [
+        "f_offset_constant",
+        "f_tray_cause"
+      ],
+      "reliability": "strong",
+      "limits_ar": "قراءات متكررة لميزان واحد في ظرف واحد؛ تبيّن أن الميزان يقرأ شيئاً والكفة فارغة، ولا تبيّن سبب ذلك وحدها.",
+      "forensic_ko_ref": "KO-RS-06-003",
+      "location_id": "loc_stall"
+    },
+    {
+      "id": "ev_ref_test",
+      "title_ar": "اختبار الصنجتين المعياريتين",
+      "kind": "lab_result",
+      "content_ar": "مكتب السوق — فحص بصنجات مختومة — الأربعاء 10:40 — ركن 12 (الصينية في مكانها)\nالصنجة 500 غ: قراءة 560 غ (560 · 560 · 561)\nالصنجة 1000 غ: قراءة 1060 غ (1060 · 1059 · 1060)\nالحد المسموح في لائحة السوق: ±5 غ.",
+      "acquired_by_action_ids": [
+        "a_ref_test"
+      ],
+      "supports_fact_ids": [
+        "f_offset_constant"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يقيس الميزان عند حملين فقط؛ نتيجته تستبعد خطأً نسبياً لكنها لا تفسر مصدر الزيادة وحدها، وتعتمد على سلامة الصنجتين المختومتين.",
+      "forensic_ko_ref": "KO-FC-04-019",
+      "location_id": "loc_stall"
+    },
+    {
+      "id": "ev_tray_weight",
+      "title_ar": "وزن الصينية على الميزان المرجعي",
+      "kind": "observation",
+      "content_ar": "مكتب السوق — الميزان المرجعي — الأربعاء 11:05\nالصينية الفولاذية المستعارة وحدها: 60 غ (60 · 60 · 61)\nملاحظة: الميزان المرجعي مضبوط على الصفر بصنجة 1000 غ قبل الفحص.",
+      "acquired_by_action_ids": [
+        "a_tray_weight"
+      ],
+      "supports_fact_ids": [
+        "f_tray_cause"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يبيّن وزن الصينية لا أنها هي التي وُضعت على الكفة يوم الشراء؛ هذا يحتاج سجلاً مستقلاً بتاريخ الإعارة.",
+      "location_id": "loc_office"
+    },
+    {
+      "id": "ev_bag_reweigh",
+      "title_ar": "إعادة وزن اثنتي عشرة عبوة في المكتب",
+      "kind": "observation",
+      "content_ar": "مكتب السوق — الميزان المرجعي — الأربعاء 11:00 — عبوات مغلقة من ركن 12 اشتُريت الاثنين بعد العاشرة والنصف والثلاثاء\nعبوات مكتوب عليها 1000 غ (ست): 937 · 940 · 941 · 942 · 938 · 943\nعبوات مكتوب عليها 500 غ (ست): 437 · 440 · 441 · 442 · 438 · 443\nمنها عبوات ليلى الثلاث.",
+      "acquired_by_action_ids": [
+        "a_bag_reweigh"
+      ],
+      "supports_fact_ids": [
+        "f_offset_constant"
+      ],
+      "reliability": "strong",
+      "limits_ar": "عينة من اثنتي عشرة عبوة من زبائن وافقوا على إحضارها، لا كل ما بيع؛ وتقيس النقص لا سببه.",
+      "location_id": "loc_office"
+    },
+    {
+      "id": "ev_stock_sheet",
+      "title_ar": "ورقة مخزن حامد",
+      "kind": "documentary",
+      "content_ar": "ركن 12 — ورقة المخزن بخط حامد — من الاثنين 10:30 إلى الثلاثاء 19:00\nالمخزون عند 10:30 الاثنين: 100.0 كغ\nالمبيع المسجّل بالعلامات: 30 عبوة 1000 غ، و20 عبوة 500 غ\nالمتبقي بعد العدّ والوزن بميزان المكتب الثلاثاء 19:00: 63.0 كغ",
+      "acquired_by_action_ids": [
+        "a_stock_sheet"
+      ],
+      "supports_fact_ids": [
+        "f_offset_constant"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "ورقة بائع عن نفسه، لكنها كُتبت قبل الشكوى ويمكن مطابقتها بإعادة الوزن؛ تُظهر فائضاً في المتبقي دون تفسيره.",
+      "location_id": "loc_stall"
+    },
+    {
+      "id": "ev_loan_book",
+      "title_ar": "دفتر الإعارة في مكتب السوق",
+      "kind": "documentary",
+      "content_ar": "مكتب السوق — دفتر الإعارة — صفحة الاثنين\n10:20 — الغرض: صينية فولاذية — من: أم سمير (ركن 7) — إلى: حامد (ركن 12) — السبب: كفة الميزان تشققت — الإرجاع: نهاية الأسبوع\nالتوقيع: أم سمير · وتوقيع الموظف بالاستلام",
+      "acquired_by_action_ids": [
+        "a_loan_book"
+      ],
+      "supports_fact_ids": [
+        "f_tray_swap",
+        "f_tray_cause"
+      ],
+      "reliability": "strong",
+      "limits_ar": "سجل مكتوب لحظة الإعارة وتوقّع عليه جهة ثالثة؛ يثبت التاريخ والغرض ولا يثبت كيف وُضعت الصينية ولا أن الصفر لم يُعدَّل.",
+      "location_id": "loc_office"
+    },
+    {
+      "id": "ev_opening_table",
+      "title_ar": "جدول فحص الافتتاح لأربعة عشر ميزاناً",
+      "kind": "documentary",
+      "content_ar": "مكتب السوق — جدول فحص الافتتاح — السبت 17:00 (بصنجة 1000 غ)\nركن 12 (حامد، جديد): انحراف 0 غ — الختم S-114 وُضع\nركن 3 (نبيل، قديم): +40 · ركن 7 (أم سمير، قديمة): 0 · ركن 9 (قديم): +20 · ركن 5 (قديم): −30 · ركن 11 (جديد): +20 · ركن 13 (جديد): −10\nبقية الأركان (ثمانية): بين −5 و+5\nستة من الأركان الأربعة عشر لبائعين جدد هذا الأسبوع.",
+      "acquired_by_action_ids": [
+        "a_opening_table"
+      ],
+      "supports_fact_ids": [
+        "f_offsets_common"
+      ],
+      "reliability": "strong",
+      "limits_ar": "سجل أصلي لحظة الفحص؛ يصف السبت فقط ولا يقول شيئاً عمّا تغيّر بعده. وضعت الأركان فيه بعد الفحص أرقام أختام جديدة لمن ضُبط ميزانه.",
+      "contradicts_claim_ids": [
+        "cl_nabil_new"
+      ],
+      "location_id": "loc_office"
+    },
+    {
+      "id": "ev_home_check",
+      "title_ar": "فحص ميزان ليلى المنزلي",
+      "kind": "observation",
+      "content_ar": "مكتب السوق — الميزان المرجعي — الأربعاء 11:20\nميزان مطبخ ليلى: الصنجة 500 غ تقرأ 501 غ · الصنجة 1000 غ تقرأ 1000 غ\nالخلاصة المكتوبة: انحراف لا يتجاوز غراماً واحداً.",
+      "acquired_by_action_ids": [
+        "a_home_check"
+      ],
+      "supports_fact_ids": [
+        "f_bags_kept"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يبيّن أن ميزان البيت دقيق في حملين؛ لا يفسّر النقص ولا يكفي وحده لاتهام أو براءة أحد.",
+      "location_id": "loc_office"
+    },
+    {
+      "id": "ev_hamed_statement",
+      "title_ar": "إفادة حامد (ملخص)",
+      "kind": "testimonial",
+      "content_ar": "ملخص إفادة حامد الرشيدي:\n«تشققت الكفة صباح الاثنين فاستعرت صينية وضعتها فوقها حتى لا أتوقف عن البيع. لم أفتح الميزان ولم أكسر الختم، ولا أعرف شيئاً عن ضبط الصفر.»",
+      "acquired_by_action_ids": [
+        "a_hamed_statement"
+      ],
+      "supports_fact_ids": [
+        "f_tray_swap"
+      ],
+      "reliability": "weak",
+      "limits_ar": "إفادة صاحب الشأن عن نفسه؛ تُقاس بسجلات لا يكتبها هو، ولا يدل ارتباكه ولا هدوؤه على صدقه.",
+      "location_id": "loc_office"
+    },
+    {
+      "id": "ev_umm_statement",
+      "title_ar": "إفادة أم سمير (ملخص)",
+      "kind": "testimonial",
+      "content_ar": "ملخص إفادة أم سمير الخياط:\n«أعرت حامداً صينيتي الاثنين العاشرة وعشرين دقيقة وكتبت الإعارة في الدفتر. لم أقل له شيئاً عن الميزان لأنني لم أتخيل أن الصينية ستغيّر القراءة.»",
+      "acquired_by_action_ids": [
+        "a_umm_statement"
+      ],
+      "supports_fact_ids": [
+        "f_tray_lent"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "شهادة جارة عن فعلها هي؛ تؤيدها كتابة الدفتر ولا تغني عنه.",
+      "location_id": "loc_office"
+    },
+    {
+      "id": "ev_nabil_statement",
+      "title_ar": "إفادة نبيل (ملخص)",
+      "kind": "testimonial",
+      "content_ar": "ملخص إفادة نبيل الصعيدي:\n«البائع الجديد يغشّ في أسبوعه الأول، هذا ما رأيته مراراً. وصباح الاثنين شاهدت حامداً يغيّر شيئاً في ميزانه.»",
+      "acquired_by_action_ids": [
+        "a_nabil_statement"
+      ],
+      "supports_fact_ids": [
+        "f_nabil_saw_change"
+      ],
+      "reliability": "weak",
+      "limits_ar": "تعميم من تجربة شخصية وانطباع عن فعل لم يُحدَّد؛ لا يقول ما الذي تغيّر ولا يذكر قياساً.",
+      "is_red_herring": true,
+      "location_id": "loc_office"
+    }
+  ],
+  "evidence_graph": {
+    "inferences": [
+      {
+        "id": "i_a_const",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_empty_test"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_ref_test"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_offset_constant"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "القراءة تبلغ 60 والكفة فارغة، وتصير 560 عند 500 و1060 عند 1000؛ فالفرق ثابت عند الأحمال الثلاثة، أي إزاحة للصفر لا خطأ نسبي.",
+        "skill_ko_refs": [
+          "KO-RS-06-003",
+          "KO-RS-05-003"
+        ]
+      },
+      {
+        "id": "i_b_const",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_bag_reweigh"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_stock_sheet"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_offset_constant"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "النقص في العبوات 500 غ و1000 غ واحد تقريباً (نحو 60 غ)، والفائض في مخزن البائع 3.0 كغ يساوي 50 عبوة × 60 غ، ولو كان الخطأ نسبياً 6% لبلغ 2.4 كغ فقط.",
+        "skill_ko_refs": [
+          "KO-RS-06-003",
+          "KO-RS-06-012"
+        ]
+      },
+      {
+        "id": "i_a_tray",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_tray_weight"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_empty_test"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_tray_cause"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "وزن الصينية على الميزان المرجعي 60 غ، وهو عين ما يقرؤه ميزان حامد فارغاً؛ فالزيادة تفسّرها الصينية.",
+        "skill_ko_refs": [
+          "KO-RS-05-003",
+          "KO-FC-04-019"
+        ]
+      },
+      {
+        "id": "i_b_tray",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_offset_constant"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_loan_book"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_opening_table"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_tray_cause"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "الميزان كان مضبوطاً ومختوماً السبت، والدفتر يضع تغيير الكفة الاثنين العاشرة وعشرين دقيقة، والإزاحة الثابتة ظهرت بعده؛ فأول ما تغيّر هو الصينية لا الآلية.",
+        "skill_ko_refs": [
+          "KO-RS-05-005",
+          "KO-RS-05-004"
+        ]
+      },
+      {
+        "id": "i_support_tray",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_offset_constant"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_tray_cause"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_tray"
+        },
+        "relation": "supports",
+        "strength": "strong",
+        "rule_ar": "إزاحة ثابتة تساوي وزن الصينية الموضوعة بلا ضبط تفسّر النقص كله في العبوات دون افتراض قصد.",
+        "skill_ko_refs": [
+          "KO-RS-06-007"
+        ]
+      },
+      {
+        "id": "i_rule_cheat",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_offset_constant"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_tray_cause"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_cheat"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "الغشّ المتعمد لا يترك ختماً سليماً ولا إزاحة تطابق وزن غرض مستعار مسجّل في دفتر عام؛ وكون البائع الأحدث ليس دليلاً بذاته.",
+        "skill_ko_refs": [
+          "KO-RS-06-008",
+          "KO-RS-06-010"
+        ]
+      },
+      {
+        "id": "i_rule_home",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_offset_constant"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_tray_cause"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_home"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "الميزان المرجعي نفسه وجد الإزاحة في ميزان الركن وفي العبوات، فلا يتوقف الأمر على ميزان البيت.",
+        "skill_ko_refs": [
+          "KO-RS-06-008",
+          "KO-RS-06-003"
+        ]
+      },
+      {
+        "id": "i_rule_noise",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_offset_constant"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_tray_cause"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_noise"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "القراءات المتكررة تتفاوت بغرام واحد، أما الفرق فستون غراماً وثابت؛ وهو أكبر من الحد المسموح بكثير.",
+        "skill_ko_refs": [
+          "KO-RS-06-013",
+          "KO-RS-06-003"
+        ]
+      },
+      {
+        "id": "i_cl_hamed",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_tray_cause"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_hamed_fine"
+        },
+        "relation": "contradicts_claim",
+        "strength": "strong",
+        "rule_ar": "قوله إن الميزان سليم صادق في ظنه، لكن القياس يبيّن أن وضع الصينية غيّر القراءة.",
+        "skill_ko_refs": [
+          "KO-RS-05-014"
+        ]
+      },
+      {
+        "id": "i_cl_nabil",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_opening_table"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_nabil_new"
+        },
+        "relation": "contradicts_claim",
+        "strength": "strong",
+        "rule_ar": "ثلاثة من خمسة موازين منحرفة لبائعين قدامى، ومنها ميزان القائل نفسه، فالجِدّة لا تفسّر الانحراف.",
+        "skill_ko_refs": [
+          "KO-RS-06-010"
+        ]
+      }
+    ]
+  },
+  "character_knowledge": [
+    {
+      "character_id": "layla",
+      "knows": [
+        {
+          "fact_id": "f_bags_kept",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    },
+    {
+      "character_id": "hamed",
+      "knows": [
+        {
+          "fact_id": "f_tray_swap",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_stock_sheet_exists",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": [
+        {
+          "claim_id": "cl_hamed_fine",
+          "stance": "sincere"
+        }
+      ]
+    },
+    {
+      "character_id": "umm_samir",
+      "knows": [
+        {
+          "fact_id": "f_tray_lent",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_loan_book_exists",
+          "access": "professional",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    },
+    {
+      "character_id": "nabil",
+      "knows": [
+        {
+          "fact_id": "f_nabil_saw_change",
+          "access": "witnessed",
+          "certainty": "unsure"
+        },
+        {
+          "fact_id": "f_opening_table_exists",
+          "access": "common_knowledge",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": [
+        {
+          "claim_id": "cl_nabil_new",
+          "stance": "sincere"
+        }
+      ]
+    },
+    {
+      "character_id": "abu_walid",
+      "knows": [
+        {
+          "fact_id": "f_ref_weights",
+          "access": "professional",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "h_cheat",
+      "statement_ar": "تعمّد حامد التلاعب بميزانه ليبخس الزبائن، فهو الأحدث في السوق.",
+      "is_true": false,
+      "plausibility_at_start": "high",
+      "suspect_id": "hamed"
+    },
+    {
+      "id": "h_tray",
+      "statement_ar": "زاد ميزان حامد قراءته زيادة ثابتة لأن صينية مستعارة وُضعت على كفته دون ضبط الصفر، فنقصت العبوات دون قصد من أحد.",
+      "is_true": true,
+      "plausibility_at_start": "low",
+      "suspect_id": "hamed"
+    },
+    {
+      "id": "h_home",
+      "statement_ar": "ميزان ليلى المنزلي هو المخطئ، والعبوات سليمة.",
+      "is_true": false,
+      "plausibility_at_start": "medium",
+      "suspect_id": "layla"
+    },
+    {
+      "id": "h_noise",
+      "statement_ar": "النقص في حدود التفاوت العادي للقياس ولا يستحق شكوى.",
+      "is_true": false,
+      "plausibility_at_start": "medium"
+    }
+  ],
+  "misdirection_plan": [
+    {
+      "id": "rh_new",
+      "points_to_hypothesis_id": "h_cheat",
+      "planted_via_ar": "نبيل يقول إن الجدد يغشّون، وحامد أحدثهم؛ والشكوى نفسها تسمّيه.",
+      "evidence_ids": [
+        "ev_nabil_statement",
+        "ev_complaint"
+      ],
+      "refuted_by_inference_ids": [
+        "i_cl_nabil",
+        "i_rule_cheat"
+      ],
+      "fairness_note_ar": "جدول الافتتاح في متناول اللاعب ويُظهر انحرافاً في موازين قديمة وجديدة، والجِدّة وحدها ليست قياساً."
+    },
+    {
+      "id": "rh_change",
+      "points_to_hypothesis_id": "h_cheat",
+      "planted_via_ar": "نبيل رأى حامداً يغيّر شيئاً في ميزانه صباح الاثنين.",
+      "evidence_ids": [
+        "ev_nabil_statement"
+      ],
+      "refuted_by_inference_ids": [
+        "i_a_tray",
+        "i_b_tray",
+        "i_rule_cheat"
+      ],
+      "fairness_note_ar": "دفتر الإعارة ووزن الصينية يفسّران ما رآه نبيل بوضوح، وإفادته لا تحدد ما تغيّر."
+    },
+    {
+      "id": "rh_home",
+      "points_to_hypothesis_id": "h_home",
+      "planted_via_ar": "ليلى وزنت بميزان مطبخ لم يُفحص وقت الشكوى.",
+      "evidence_ids": [
+        "ev_complaint"
+      ],
+      "refuted_by_inference_ids": [
+        "i_rule_home",
+        "i_a_const"
+      ],
+      "fairness_note_ar": "فحص المكتب لميزان الركن وللعبوات يحدث بميزان مرجعي لا علاقة له بميزان البيت."
+    }
+  ],
+  "learning_objectives": [
+    {
+      "id": "lo_source",
+      "statement_ar": "يصنّف الشكوى والإفادات أقوالاً، ويميّز الفحوص المباشرة والسجلات من الأقوال.",
+      "skill_ko_ref": "KO-RS-05-001",
+      "observable_behaviors_ar": [
+        "يصنّف الشكوى والإفادات أقوالاً",
+        "يعدّ محاضر الفحص سجلات أصلية"
+      ],
+      "evidence_sources": [
+        "evidence_board"
+      ]
+    },
+    {
+      "id": "lo_conflict",
+      "statement_ar": "يرتّب الأحداث على خط زمني يضع تغيير الكفة بعد الفحص المختوم وقبل الشراء.",
+      "skill_ko_ref": "KO-RS-05-005",
+      "observable_behaviors_ar": [
+        "يضع الأدلة في أزمنتها"
+      ],
+      "evidence_sources": [
+        "timeline_task",
+        "action_log"
+      ]
+    },
+    {
+      "id": "lo_links",
+      "statement_ar": "يقدّر ما يثبته كل فحص وما لا يثبته ويربطه بالفرضية باتجاه صحيح.",
+      "skill_ko_ref": "KO-RS-06-001",
+      "observable_behaviors_ar": [
+        "يربط الدليل بالفرضية",
+        "يفرّق الإزاحة الثابتة عن الخطأ النسبي"
+      ],
+      "evidence_sources": [
+        "evidence_board",
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_calib",
+      "statement_ar": "يصوغ نسبة الترجيح بحدودها ويذكر ما قد يغيّر رأيه.",
+      "skill_ko_ref": "KO-RS-06-021",
+      "observable_behaviors_ar": [
+        "يختار ثقة معقولة",
+        "يذكر حدوداً"
+      ],
+      "evidence_sources": [
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_revise",
+      "statement_ar": "يراجع رأيه الأول حين يظهر ما يخالفه.",
+      "skill_ko_ref": "KO-RS-06-009",
+      "observable_behaviors_ar": [
+        "يغيّر فرضيته الرائدة بدليل"
+      ],
+      "evidence_sources": [
+        "hypothesis_ledger"
+      ]
+    },
+    {
+      "id": "lo_elim",
+      "statement_ar": "يختار الاختبار الذي يميّز بين التفسيرات ويستبعد ما تنقضه الأدلة.",
+      "skill_ko_ref": "KO-RS-05-003",
+      "observable_behaviors_ar": [
+        "يضيف فرضيات",
+        "يستبعد بدليل"
+      ],
+      "evidence_sources": [
+        "hypothesis_ledger"
+      ]
+    },
+    {
+      "id": "lo_just",
+      "statement_ar": "يكتب حجة تربط الأدلة بالاستنتاج وتذكر أن الفحص لا يقيس النية.",
+      "skill_ko_ref": "KO-RS-06-007",
+      "observable_behaviors_ar": [
+        "يكتب حجة معللة"
+      ],
+      "evidence_sources": [
+        "final_justification"
+      ]
+    }
+  ],
+  "mechanics": {
+    "time_budget_units": 50,
+    "actions": [
+      {
+        "id": "a_int_abu_walid",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة أبو",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "abu_walid",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "abu_walid",
+        "telemetry_code": "INT_ABU_WALID"
+      },
+      {
+        "id": "a_int_nabil",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة نبيل",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "nabil",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "nabil",
+        "telemetry_code": "INT_NABIL"
+      },
+      {
+        "id": "a_int_umm_samir",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة أم",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "umm_samir",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "umm_samir",
+        "telemetry_code": "INT_UMM_SAMIR"
+      },
+      {
+        "id": "a_int_hamed",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة حامد",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "hamed",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "hamed",
+        "telemetry_code": "INT_HAMED"
+      },
+      {
+        "id": "a_int_layla",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة ليلى",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "layla",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "layla",
+        "telemetry_code": "INT_LAYLA"
+      },
+      {
+        "id": "a_complaint",
+        "type": "examine",
+        "label_ar": "اقرأ نموذج شكوى ليلى",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_complaint"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_office",
+        "telemetry_code": "A_COMPLAINT"
+      },
+      {
+        "id": "a_empty_test",
+        "type": "examine",
+        "label_ar": "اطلب نتيجة اختبار الكفة الفارغة",
+        "precondition": {
+          "fact_unlocked": "f_ref_weights"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_empty_test"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_stall",
+        "telemetry_code": "A_EMPTY_TEST"
+      },
+      {
+        "id": "a_ref_test",
+        "type": "examine",
+        "label_ar": "اطلب نتيجة الصنجتين المعياريتين",
+        "precondition": {
+          "fact_unlocked": "f_ref_weights"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_ref_test"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_stall",
+        "telemetry_code": "A_REF_TEST"
+      },
+      {
+        "id": "a_tray_weight",
+        "type": "examine",
+        "label_ar": "اطلب وزن الصينية على الميزان المرجعي",
+        "precondition": {
+          "fact_unlocked": "f_ref_weights"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_tray_weight"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_office",
+        "telemetry_code": "A_TRAY_WEIGHT"
+      },
+      {
+        "id": "a_bag_reweigh",
+        "type": "examine",
+        "label_ar": "أعد وزن العبوات المحفوظة في المكتب",
+        "precondition": {
+          "fact_unlocked": "f_bags_kept"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_bag_reweigh"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_office",
+        "telemetry_code": "A_BAG_REWEIGH"
+      },
+      {
+        "id": "a_stock_sheet",
+        "type": "examine",
+        "label_ar": "اطلب ورقة مخزن حامد",
+        "precondition": {
+          "fact_unlocked": "f_stock_sheet_exists"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_stock_sheet"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_stall",
+        "telemetry_code": "A_STOCK_SHEET"
+      },
+      {
+        "id": "a_loan_book",
+        "type": "examine",
+        "label_ar": "اطلب دفتر الإعارة",
+        "precondition": {
+          "fact_unlocked": "f_loan_book_exists"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_loan_book"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_office",
+        "telemetry_code": "A_LOAN_BOOK"
+      },
+      {
+        "id": "a_opening_table",
+        "type": "examine",
+        "label_ar": "اطلب جدول فحص الافتتاح",
+        "precondition": {
+          "fact_unlocked": "f_opening_table_exists"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_opening_table"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_office",
+        "telemetry_code": "A_OPENING_TABLE"
+      },
+      {
+        "id": "a_home_check",
+        "type": "examine",
+        "label_ar": "افحص ميزان ليلى المنزلي",
+        "precondition": {
+          "fact_unlocked": "f_bags_kept"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_home_check"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_office",
+        "telemetry_code": "A_HOME_CHECK"
+      },
+      {
+        "id": "a_hamed_statement",
+        "type": "examine",
+        "label_ar": "دوّن إفادة حامد",
+        "precondition": {
+          "fact_unlocked": "f_tray_swap"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_hamed_statement"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_office",
+        "telemetry_code": "A_HAMED_STATEMENT"
+      },
+      {
+        "id": "a_umm_statement",
+        "type": "examine",
+        "label_ar": "دوّن إفادة أم سمير",
+        "precondition": {
+          "fact_unlocked": "f_tray_lent"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_umm_statement"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_office",
+        "telemetry_code": "A_UMM_STATEMENT"
+      },
+      {
+        "id": "a_nabil_statement",
+        "type": "examine",
+        "label_ar": "دوّن إفادة نبيل",
+        "precondition": {
+          "fact_unlocked": "f_nabil_saw_change"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_nabil_statement"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_office",
+        "telemetry_code": "A_NABIL_STATEMENT"
+      },
+      {
+        "id": "a_hint",
+        "type": "request_hint",
+        "label_ar": "اطلب تلميحاً",
+        "precondition": {
+          "always": true
+        },
+        "effects": [],
+        "time_cost_units": 0,
+        "telemetry_code": "REQUEST_HINT"
+      },
+      {
+        "id": "a_accuse",
+        "type": "final_accusation",
+        "label_ar": "قدّم الرأي المعلّل النهائي",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "SUBMIT"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "FINAL_ACCUSATION"
+      },
+      {
+        "id": "ask_layla_f_bags_kept",
+        "type": "interview",
+        "label_ar": "[نموذج] layla يذكر f_bags_kept",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_bags_kept"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "layla",
+        "telemetry_code": "ASK_LAYLA_F_BAGS_KEPT"
+      },
+      {
+        "id": "ask_hamed_f_tray_swap",
+        "type": "interview",
+        "label_ar": "[نموذج] hamed يذكر f_tray_swap",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_tray_swap"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "hamed",
+        "telemetry_code": "ASK_HAMED_F_TRAY_SWAP"
+      },
+      {
+        "id": "ask_hamed_f_stock_sheet_exists",
+        "type": "interview",
+        "label_ar": "[نموذج] hamed يذكر f_stock_sheet_exists",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_stock_sheet_exists"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "hamed",
+        "telemetry_code": "ASK_HAMED_F_STOCK_SHEET_EXISTS"
+      },
+      {
+        "id": "ask_umm_samir_f_tray_lent",
+        "type": "interview",
+        "label_ar": "[نموذج] umm_samir يذكر f_tray_lent",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_tray_lent"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "umm_samir",
+        "telemetry_code": "ASK_UMM_SAMIR_F_TRAY_LENT"
+      },
+      {
+        "id": "ask_umm_samir_f_loan_book_exists",
+        "type": "interview",
+        "label_ar": "[نموذج] umm_samir يذكر f_loan_book_exists",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_loan_book_exists"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "umm_samir",
+        "telemetry_code": "ASK_UMM_SAMIR_F_LOAN_BOOK_EXISTS"
+      },
+      {
+        "id": "ask_nabil_f_nabil_saw_change",
+        "type": "interview",
+        "label_ar": "[نموذج] nabil يذكر f_nabil_saw_change",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_nabil_saw_change"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "nabil",
+        "telemetry_code": "ASK_NABIL_F_NABIL_SAW_CHANGE"
+      },
+      {
+        "id": "ask_nabil_f_opening_table_exists",
+        "type": "interview",
+        "label_ar": "[نموذج] nabil يذكر f_opening_table_exists",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_opening_table_exists"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "nabil",
+        "telemetry_code": "ASK_NABIL_F_OPENING_TABLE_EXISTS"
+      },
+      {
+        "id": "ask_abu_walid_f_ref_weights",
+        "type": "interview",
+        "label_ar": "[نموذج] abu_walid يذكر f_ref_weights",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_ref_weights"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "abu_walid",
+        "telemetry_code": "ASK_ABU_WALID_F_REF_WEIGHTS"
+      }
+    ]
+  },
+  "state_machine": {
+    "id": "c022",
+    "initial": "briefing",
+    "type": "compound",
+    "states": {
+      "briefing": {
+        "description_ar": "الإحاطة",
+        "type": "atomic",
+        "on": {
+          "START": {
+            "target": "investigating"
+          }
+        }
+      },
+      "investigating": {
+        "description_ar": "التحقيق",
+        "type": "compound",
+        "initial": "gathering",
+        "states": {
+          "gathering": {
+            "type": "atomic",
+            "on": {
+              "OPEN_DEDUCTION": {
+                "target": "deducing"
+              }
+            }
+          },
+          "deducing": {
+            "type": "atomic",
+            "on": {
+              "BACK": {
+                "target": "gathering"
+              }
+            }
+          }
+        },
+        "on": {
+          "SUBMIT": {
+            "target": "review"
+          }
+        }
+      },
+      "review": {
+        "description_ar": "مراجعة",
+        "type": "atomic",
+        "on": {
+          "CLOSE": {
+            "target": "resolved"
+          }
+        }
+      },
+      "resolved": {
+        "description_ar": "إغلاق",
+        "type": "final"
+      }
+    }
+  },
+  "dialogue": {
+    "max_turns_per_interview": 10,
+    "llm_enabled": false,
+    "topics": [
+      {
+        "id": "t_bags",
+        "label_ar": "العبوات المحفوظة",
+        "example_questions_ar": [
+          "هل ما زالت عبواتك عندك؟",
+          "هل يمكن فحص ميزانك؟"
+        ],
+        "fact_ids": [
+          "f_bags_kept"
+        ]
+      },
+      {
+        "id": "t_pan",
+        "label_ar": "الكفة والصينية",
+        "example_questions_ar": [
+          "هل غيّرت شيئاً في ميزانك؟",
+          "ما الذي تشقق؟"
+        ],
+        "fact_ids": [
+          "f_tray_swap"
+        ],
+        "claim_ids": [
+          "cl_hamed_fine"
+        ]
+      },
+      {
+        "id": "t_stock",
+        "label_ar": "ورقة المخزن",
+        "example_questions_ar": [
+          "هل تدوّن مبيعاتك؟",
+          "كيف تعدّ المتبقي؟"
+        ],
+        "fact_ids": [
+          "f_stock_sheet_exists"
+        ]
+      },
+      {
+        "id": "t_lent",
+        "label_ar": "إعارة الصينية",
+        "example_questions_ar": [
+          "هل أعرتِ حامداً شيئاً؟",
+          "متى؟"
+        ],
+        "fact_ids": [
+          "f_tray_lent"
+        ]
+      },
+      {
+        "id": "t_book",
+        "label_ar": "دفتر الإعارة",
+        "example_questions_ar": [
+          "أين تُكتب الإعارات؟"
+        ],
+        "fact_ids": [
+          "f_loan_book_exists"
+        ]
+      },
+      {
+        "id": "t_newvendor",
+        "label_ar": "الباعة الجدد",
+        "example_questions_ar": [
+          "ماذا تقول عن البائع الجديد؟",
+          "ماذا رأيت صباح الاثنين؟"
+        ],
+        "fact_ids": [
+          "f_nabil_saw_change"
+        ],
+        "claim_ids": [
+          "cl_nabil_new"
+        ]
+      },
+      {
+        "id": "t_opening",
+        "label_ar": "فحص الافتتاح",
+        "example_questions_ar": [
+          "كيف تُفحص الموازين قبل الافتتاح؟"
+        ],
+        "fact_ids": [
+          "f_opening_table_exists"
+        ]
+      },
+      {
+        "id": "t_ref",
+        "label_ar": "الصنجات المعيارية",
+        "example_questions_ar": [
+          "ماذا يملك المكتب للقياس؟",
+          "ماذا يمكنك أن تفحص؟"
+        ],
+        "fact_ids": [
+          "f_ref_weights"
+        ]
+      }
+    ]
+  },
+  "rubric": {
+    "reference_answer_ar": "لا دليل على أن حامداً غشّ. ميزانه يقرأ زيادة ثابتة نحو 60 غ والكفة فارغة وعند 500 غ وعند 1000 غ، والعبوات الصغيرة والكبيرة تنقص بالمقدار نفسه، وهذا شأن إزاحة صفر لا خطأ نسبي. وزن الصينية المستعارة يطابق الزيادة، ودفتر الإعارة يضعها يوم الاثنين بعد فحص السبت المختوم. وجِدّة البائع ليست دليلاً، فبين الموازين المنحرفة موازين قديمة. حدود الاستنتاج: القياس لا يثبت النية، وعينة العبوات محدودة بمن أحضرها.",
+    "criteria": [
+      {
+        "id": "c_source",
+        "name_ar": "تصنيف المصادر",
+        "objective_ids": [
+          "lo_source"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يصنّف"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "أخطأ في الأغلب"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "نصف صحيح"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمه صحيح"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كله صحيح"
+          }
+        ]
+      },
+      {
+        "id": "c_conflict",
+        "name_ar": "ترتيب الأحداث على الخط الزمني",
+        "objective_ids": [
+          "lo_conflict"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.2,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يرتّب شيئاً"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "رتّب قليلاً"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "رتّب نصفها"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمها"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كلها في موضعها"
+          }
+        ]
+      },
+      {
+        "id": "c_links",
+        "name_ar": "ربط الأدلة بالفرضيات",
+        "objective_ids": [
+          "lo_links"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.2,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لا روابط"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "قليلة"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "نصفها صحيح"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمها"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كلها دقيقة"
+          }
+        ]
+      },
+      {
+        "id": "c_uncertainty",
+        "name_ar": "معايرة الثقة",
+        "objective_ids": [
+          "lo_calib"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "ثقة مفرطة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "حدود قليلة"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "جزئية"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معقولة"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "معايَرة كاملة"
+          }
+        ]
+      },
+      {
+        "id": "c_revision",
+        "name_ar": "مراجعة الرأي",
+        "objective_ids": [
+          "lo_revise"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "بقي على فرضية مرفوضة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "لم يعلن فرضية"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "ثبت على فرضية سليمة"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "غيّر بدليل"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "غيّر بدليل ووثّق"
+          }
+        ]
+      },
+      {
+        "id": "c_elimination",
+        "name_ar": "استبعاد الفرضيات الخاطئة",
+        "objective_ids": [
+          "lo_elim"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يستبعد"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "استبعد خطأً"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "فرضية بدليل"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "فرضيتين"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كل الخاطئة"
+          }
+        ]
+      },
+      {
+        "id": "c_justification",
+        "name_ar": "جودة الحجة المكتوبة",
+        "objective_ids": [
+          "lo_just"
+        ],
+        "scored_by": "human",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لا حجة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "ادعاء بلا سند"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "أدلة دون ربط"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "ربط الأدلة بالاستنتاج"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "ربط مع الحدود والبدائل"
+          }
+        ]
+      }
+    ]
+  },
+  "hint_ladder": [
+    {
+      "id": "hg1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "قبل أن تحكم على البائع الأحدث: ما التفسيرات الأخرى الممكنة للنقص نفسه؟",
+      "trigger": {
+        "always": true
+      },
+      "assessment_weight": 0.02
+    },
+    {
+      "id": "hg2",
+      "level": 2,
+      "kind": "focus_area",
+      "text_ar": "اختر اختباراً يعطي نتيجة مختلفة إذا كان التفسير هذا لا ذاك، لا اختباراً يوافق الجميع.",
+      "trigger": {
+        "has_evidence": "ev_complaint"
+      },
+      "assessment_weight": 0.04
+    },
+    {
+      "id": "hg3",
+      "level": 3,
+      "kind": "pointer",
+      "text_ar": "اسأل صاحب القياس عن أدواته، ثم قارن قراءة الكفة الفارغة بقراءتها عند حملين مختلفين.",
+      "trigger": {
+        "has_evidence": "ev_complaint"
+      },
+      "assessment_weight": 0.08
+    },
+    {
+      "id": "ht1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "هل الفرق يكبر مع الوزن أم يبقى كما هو؟ ماذا يعني كل منهما؟",
+      "trigger": {
+        "has_evidence": "ev_empty_test"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_a_tray"
+    },
+    {
+      "id": "ht2",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "قارن مقدار القراءة والكفة فارغة بوزن الصينية على الميزان المرجعي.",
+      "trigger": {
+        "has_evidence": "ev_empty_test"
+      },
+      "assessment_weight": 0.06,
+      "targets_inference_id": "i_a_tray"
+    },
+    {
+      "id": "ht3",
+      "level": 3,
+      "kind": "partial_reveal",
+      "text_ar": "الرقمان متساويان: 60 غ، فاسأل متى وُضع الغرض الذي وزنه ستون غراماً على الكفة.",
+      "trigger": {
+        "has_evidence": "ev_tray_weight"
+      },
+      "assessment_weight": 0.1,
+      "targets_inference_id": "i_a_tray"
+    },
+    {
+      "id": "hb1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "ما الذي تغيّر في هذا الركن بين فحص السبت ويوم الشراء؟",
+      "trigger": {
+        "has_evidence": "ev_opening_table"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_b_tray"
+    },
+    {
+      "id": "hb2",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "ابحث عن سجل يكتبه طرف ثالث لا علاقة له بحامد ولا بليلى.",
+      "trigger": {
+        "has_evidence": "ev_opening_table"
+      },
+      "assessment_weight": 0.06,
+      "targets_inference_id": "i_b_tray"
+    }
+  ],
+  "fairness_test": {
+    "requirements": {
+      "min_disjoint_proof_paths": 2,
+      "max_inference_depth": 3,
+      "all_red_herrings_refutable": true,
+      "culprit_uniquely_entailed": true,
+      "no_hidden_fact_dependency": true,
+      "max_required_actions": 50
+    },
+    "runs": []
+  },
+  "ending_explanation": {
+    "steps": [
+      {
+        "order": 1,
+        "text_ar": "ابدأ بنوع الخطأ لا بالمتهم: ميزان الركن يقرأ زيادة متساوية عند الصفر وعند الحملين المعياريين، فالإزاحة ثابتة.",
+        "uses_evidence_ids": [
+          "ev_empty_test",
+          "ev_ref_test"
+        ],
+        "inference_id": "i_a_const"
+      },
+      {
+        "order": 2,
+        "text_ar": "الطريق المستقل لنوع الخطأ: العبوات الصغيرة والكبيرة ينقصها المقدار نفسه تقريباً، وفائض مخزن البائع يطابق هذا المقدار مضروباً في عدد العبوات.",
+        "uses_evidence_ids": [
+          "ev_bag_reweigh",
+          "ev_stock_sheet"
+        ],
+        "inference_id": "i_b_const"
+      },
+      {
+        "order": 3,
+        "text_ar": "ما يعادل هذه الإزاحة موجود: صينية مستعارة وزنها يطابق القراءة الفارغة، وهذا يُبعد فكرة تلاعب بالنابض.",
+        "uses_evidence_ids": [
+          "ev_tray_weight",
+          "ev_empty_test"
+        ],
+        "inference_id": "i_a_tray"
+      },
+      {
+        "order": 4,
+        "text_ar": "السجلات الثلاثة المستقلة تضع التغيير في موضعه: ضبط وختم يوم السبت، ثم إعارة مكتوبة يوم الاثنين، ثم قراءة ثابتة الزيادة.",
+        "uses_evidence_ids": [
+          "ev_opening_table",
+          "ev_loan_book"
+        ],
+        "inference_id": "i_b_tray"
+      },
+      {
+        "order": 5,
+        "text_ar": "الجِدّة ليست قياساً: بين الموازين المنحرفة موازين لباعة قدامى، فالتعميم عن الجدد لا يفسّر ميزان حامد.",
+        "uses_evidence_ids": [
+          "ev_opening_table",
+          "ev_nabil_statement"
+        ],
+        "inference_id": "i_cl_nabil"
+      },
+      {
+        "order": 6,
+        "text_ar": "البدائل تسقط بالقياس نفسه: ميزان البيت دقيق ولا يقرّر النتيجة، والتفاوت العادي غرام واحد لا ستين.",
+        "uses_evidence_ids": [
+          "ev_home_check",
+          "ev_bag_reweigh",
+          "ev_ref_test"
+        ],
+        "inference_id": "i_rule_noise"
+      }
+    ],
+    "alternative_paths_ar": [
+      "يكفي طريق المكتب وحده: الكفة الفارغة والصنجتان ووزن الصينية، من غير إعادة وزن العبوات.",
+      "ويكفي طريق السجلات وحده: العبوات المحفوظة وورقة المخزن ودفتر الإعارة وجدول السبت، من غير قياسات المكتب في الركن؛ والأقوى أن يتفق الطريقان."
+    ],
+    "what_evidence_could_not_show_ar": [
+      "القياسات تثبت سبباً ميكانيكياً وتسلسلاً زمنياً، ولا تقيس نية أحد؛ نستنتج غياب القصد من اجتماع السبب البسيط مع الختم السليم.",
+      "فحصنا عبوات من زبائن وافقوا على إحضارها، لا كل ما بيع في الأسبوع.",
+      "لا نعرف كم زبوناً اشترى بعد الاثنين وتضرر، ولا نعرف إن كان يمكن تعويضهم كلهم."
+    ],
+    "science_notes_ar": [
+      "عند الشك في ميزان ابدأ بالكفة الفارغة ثم بوزنين معياريين: إزاحة ثابتة تعني خطأ صفر، وزيادة تكبر مع الوزن تعني خطأ نسبياً، وكل منهما سبب مختلف وعلاج مختلف.",
+      "الاختبار المميِّز مقدَّم على الاتهامي: اختبار يعطي النتيجة نفسها سواء غشّ البائع أو لم يغشّ لا يفيد.",
+      "التكرار يكشف التفاوت العادي: ثلاث قراءات تتفاوت بغرام، فلا يصح أن نسمّي فرق ستين غراماً تفاوتاً.",
+      "المحتسب في هذه القضية مفتش حماية مستهلك: يقيس ويُبلّغ ويصلح، ولا يتهم أحداً قبل الفحص.",
+      "الحل الودّي: تُضبط الكفة بعد وضع الصينية أو تُعاد الكفة المتشققة، ويُعوَّض الزبائن عن النقص، ويُسجَّل في دفتر الإعارة أن أي غرض يوضع على الكفة يستلزم إعادة الضبط.",
+      "بطاقة الأصل: القضية أصلية من ATHAR، وبنيتها مستلهمة من أخبار منسوبة في كتب الحسبة عن الموازين والصنج (نسبتها مختلف فيها)."
+    ]
+  },
+  "expert_review": [
+    {
+      "role": "narrative_editor",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-28",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "scientific_reviewer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-28",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "learning_designer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-28",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "age_appropriateness",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-28",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "cultural_reviewer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-28",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "legal_rights",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-28",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "safety",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-28",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    }
+  ]
+}

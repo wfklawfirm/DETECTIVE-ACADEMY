@@ -1,0 +1,113 @@
+{
+  "schema_version": "0.1.0",
+  "case_id": "c001_missing_trophy",
+  "case_version": "0.1.0",
+  "meta": {
+    "title_ar": "كأس المعرض المفقود",
+    "age_band": "13-15",
+    "locale": "ar",
+    "dialogue_register": "msa",
+    "estimated_minutes": 25,
+    "difficulty": 2,
+    "content_flags": ["no_violence", "theft"],
+    "authors": ["ATHAR draft"]
+  },
+  "premise": {
+    "hook_ar": "اختفى كأس معرض العلوم من خزانة المختبر قبل الحفل بساعة.",
+    "player_role_ar": "طالب في نادي التحقيق المدرسي",
+    "setting_ar": "مدرسة ثانوية، مساء يوم المعرض",
+    "public_fact_ids": ["f_trophy_missing"]
+  },
+  "entities": {
+    "characters": [
+      {"id": "ch_rami", "name_ar": "رامي", "role": "suspect", "persona_ar": "متوتر، يجيب باختصار", "motives_ar": ["يخشى أن يُتّهم لأنه خسر المسابقة"]},
+      {"id": "ch_lina", "name_ar": "لينا", "role": "witness", "persona_ar": "دقيقة وتحب التفاصيل", "motives_ar": ["تريد إنقاذ الحفل"]},
+      {"id": "ch_guard", "name_ar": "العم سمير", "role": "suspect", "persona_ar": "ودود ومنظم", "motives_ar": ["نقل الكأس لتلميعه ونسي إبلاغ أحد"]}
+    ],
+    "locations": [{"id": "loc_lab", "name_ar": "المختبر"}, {"id": "loc_storage", "name_ar": "غرفة الحارس"}],
+    "objects": [{"id": "obj_trophy", "name_ar": "الكأس", "aliases_ar": ["كأس المعرض"]}]
+  },
+  "truth": {
+    "solution": {"culprit_ids": ["ch_guard"], "summary_ar": "الحارس نقل الكأس لتلميعه ولم يُبلغ أحداً؛ لا توجد سرقة.", "key_fact_ids": ["f_guard_moved"]},
+    "facts": [
+      {"id": "f_trophy_missing", "statement_ar": "الكأس ليس في الخزانة عند الساعة 6 مساءً", "kind": "state", "subject_ids": ["obj_trophy"], "time": {"start_min": 0}, "spoiler_level": 0},
+      {"id": "f_guard_moved", "statement_ar": "العم سمير أخذ الكأس إلى غرفته الساعة 5:20", "kind": "event", "subject_ids": ["ch_guard", "obj_trophy"], "time": {"start_min": -40}, "location_id": "loc_lab", "spoiler_level": 3},
+      {"id": "f_rami_left", "statement_ar": "رامي غادر المختبر الساعة 5:10", "kind": "event", "subject_ids": ["ch_rami"], "time": {"start_min": -50}, "spoiler_level": 1},
+      {"id": "f_polish_smell", "statement_ar": "في الخزانة رائحة ملمّع معادن", "kind": "state", "subject_ids": ["loc_lab"], "spoiler_level": 1}
+    ],
+    "claims": [
+      {"id": "cl_guard_cover", "statement_ar": "لم أدخل المختبر بعد الخامسة", "kind": "half_truth", "held_by": ["ch_guard"], "true_fact_id": "f_guard_moved", "contradicted_by_evidence_ids": ["ev_logbook"]}
+    ]
+  },
+  "timeline": [
+    {"id": "t_rami_leaves", "description_ar": "رامي يغادر", "time": {"start_min": -50}, "actor_ids": ["ch_rami"], "witness_ids": ["ch_lina"], "fact_ids": ["f_rami_left"]},
+    {"id": "t_guard_takes", "description_ar": "الحارس يأخذ الكأس للتلميع", "time": {"start_min": -40}, "actor_ids": ["ch_guard"], "fact_ids": ["f_guard_moved"], "motivated_by_ar": "أراد أن يبدو الكأس لامعاً في الحفل"}
+  ],
+  "evidence": [
+    {"id": "ev_logbook", "title_ar": "سجل مفاتيح المختبر", "kind": "documentary", "content_ar": "توقيع باسم سمير عند 5:18", "acquired_by_action_ids": ["a_check_log"], "supports_fact_ids": ["f_guard_moved"], "contradicts_claim_ids": ["cl_guard_cover"], "reliability": "strong", "limits_ar": "التوقيع يثبت استلام المفتاح لا ما فعله داخل المختبر"},
+    {"id": "ev_smell", "title_ar": "رائحة ملمّع", "kind": "observation", "content_ar": "رائحة ملمّع معادن داخل الخزانة", "acquired_by_action_ids": ["a_examine_cabinet"], "supports_fact_ids": ["f_polish_smell"], "reliability": "moderate", "limits_ar": "لا تحدد من استخدم الملمّع"},
+    {"id": "ev_lina_testimony", "title_ar": "إفادة لينا", "kind": "testimonial", "content_ar": "رأت رامي يغادر 5:10 خالي اليدين", "acquired_by_action_ids": ["a_interview_lina"], "supports_fact_ids": ["f_rami_left"], "reliability": "moderate", "limits_ar": "شاهدة واحدة؛ قد تخطئ في التوقيت"}
+  ],
+  "evidence_graph": {
+    "inferences": [
+      {"id": "i_rami_out", "premises": [{"ref_type": "evidence", "ref_id": "ev_lina_testimony"}], "conclusion": {"ref_type": "hypothesis", "ref_id": "h_rami"}, "relation": "rules_out", "strength": "suggestive", "rule_ar": "غادر قبل الاختفاء خالي اليدين", "skill_ko_refs": []},
+      {"id": "i_guard_in", "premises": [{"ref_type": "evidence", "ref_id": "ev_logbook"}, {"ref_type": "evidence", "ref_id": "ev_smell"}], "conclusion": {"ref_type": "hypothesis", "ref_id": "h_guard"}, "relation": "supports", "strength": "strong", "rule_ar": "استلم المفتاح بعد مغادرة رامي، والرائحة تتسق مع التلميع", "skill_ko_refs": []}
+    ]
+  },
+  "character_knowledge": [
+    {"character_id": "ch_lina", "knows": [{"fact_id": "f_rami_left", "access": "witnessed"}], "hides": [], "believes": []},
+    {"character_id": "ch_guard", "knows": [], "hides": [{"fact_id": "f_guard_moved", "reveal_when": {"presented": {"evidence_id": "ev_logbook", "to_character": "ch_guard"}}, "cover_claim_id": "cl_guard_cover"}], "believes": [{"claim_id": "cl_guard_cover", "stance": "deliberate_lie"}]},
+    {"character_id": "ch_rami", "knows": [{"fact_id": "f_rami_left", "access": "witnessed"}], "hides": [], "believes": []}
+  ],
+  "hypotheses": [
+    {"id": "h_rami", "statement_ar": "رامي أخذ الكأس", "is_true": false, "plausibility_at_start": "high", "suspect_id": "ch_rami"},
+    {"id": "h_guard", "statement_ar": "الحارس نقل الكأس", "is_true": true, "plausibility_at_start": "low", "suspect_id": "ch_guard"}
+  ],
+  "misdirection_plan": [
+    {"id": "rh_rami_lost", "points_to_hypothesis_id": "h_rami", "planted_via_ar": "رامي خسر المسابقة ويبدو متوتراً", "refuted_by_inference_ids": ["i_rami_out"], "fairness_note_ar": "التوتر ليس دليلاً؛ الإفادة تنفي الفرصة"}
+  ],
+  "learning_objectives": [
+    {"id": "lo_motive_vs_evidence", "statement_ar": "التمييز بين الدافع المحتمل والدليل على الفعل", "skill_ko_ref": "KO-RS-05-001", "observable_behaviors_ar": ["يستبعد فرضية رامي مستنداً إلى دليل لا إلى انطباع"], "evidence_sources": ["hypothesis_ledger", "final_justification"]}
+  ],
+  "mechanics": {
+    "actions": [
+      {"id": "a_examine_cabinet", "type": "examine", "label_ar": "افحص الخزانة", "target_id": "loc_lab", "precondition": {"always": true}, "effects": [{"op": "grant_evidence", "ref_id": "ev_smell"}], "telemetry_code": "EXAMINE_CABINET"},
+      {"id": "a_check_log", "type": "examine", "label_ar": "راجع سجل المفاتيح", "precondition": {"always": true}, "effects": [{"op": "grant_evidence", "ref_id": "ev_logbook"}], "telemetry_code": "CHECK_LOG"},
+      {"id": "a_interview_lina", "type": "interview", "label_ar": "تحدث مع لينا", "target_id": "ch_lina", "precondition": {"always": true}, "effects": [{"op": "grant_evidence", "ref_id": "ev_lina_testimony"}], "telemetry_code": "INTERVIEW_LINA"},
+      {"id": "a_present_log_guard", "type": "present_evidence", "label_ar": "اعرض السجل على العم سمير", "target_id": "ch_guard", "precondition": {"has_evidence": "ev_logbook"}, "effects": [{"op": "unlock_fact", "ref_id": "f_guard_moved"}], "telemetry_code": "PRESENT_LOG_GUARD"},
+      {"id": "a_accuse", "type": "final_accusation", "label_ar": "قدّم استنتاجك", "precondition": {"always": true}, "effects": [{"op": "emit_event", "ref_id": "ACCUSE"}], "telemetry_code": "FINAL_ACCUSATION"}
+    ]
+  },
+  "state_machine": {
+    "id": "c001",
+    "initial": "investigating",
+    "states": {
+      "investigating": {"on": {"ACCUSE": {"target": "resolved"}}},
+      "resolved": {"type": "final"}
+    }
+  },
+  "rubric": {
+    "reference_answer_ar": "الحارس نقل الكأس؛ السجل والرائحة يدعمان ذلك، وإفادة لينا تستبعد رامي.",
+    "criteria": [
+      {"id": "r_conclusion", "name_ar": "صحة الاستنتاج", "objective_ids": ["lo_motive_vs_evidence"], "scored_by": "deterministic", "levels": [{"score": 0, "descriptor_ar": "استنتاج خاطئ"}, {"score": 2, "descriptor_ar": "استنتاج صحيح"}]},
+      {"id": "r_justification", "name_ar": "تعليل بالأدلة", "objective_ids": ["lo_motive_vs_evidence"], "scored_by": "llm_judge_with_human_moderation", "levels": [{"score": 0, "descriptor_ar": "لا يستند إلى دليل"}, {"score": 2, "descriptor_ar": "يذكر دليلاً واحداً صحيحاً"}, {"score": 4, "descriptor_ar": "يربط دليلين ويستبعد البديل"}]}
+    ]
+  },
+  "hint_ladder": [
+    {"id": "hn1", "level": 1, "kind": "metacognitive", "text_ar": "ما الذي يثبت وجود شخص في المختبر، لا مجرد رغبته؟", "trigger": {"always": true}},
+    {"id": "hn2", "level": 2, "kind": "pointer", "text_ar": "من يملك مفاتيح المختبر يترك أثراً مكتوباً.", "trigger": {"not": {"has_evidence": "ev_logbook"}}, "targets_inference_id": "i_guard_in", "assessment_weight": 0.3}
+  ],
+  "fairness_test": {
+    "requirements": {"min_disjoint_proof_paths": 1, "max_inference_depth": 2, "all_red_herrings_refutable": true, "culprit_uniquely_entailed": true, "no_hidden_fact_dependency": true},
+    "runs": []
+  },
+  "ending_explanation": {
+    "steps": [
+      {"order": 1, "text_ar": "إفادة لينا تضع رامي خارج المختبر قبل الاختفاء.", "uses_evidence_ids": ["ev_lina_testimony"], "inference_id": "i_rami_out"},
+      {"order": 2, "text_ar": "سجل المفاتيح ورائحة الملمّع يشيران إلى الحارس.", "uses_evidence_ids": ["ev_logbook", "ev_smell"], "inference_id": "i_guard_in"}
+    ],
+    "what_evidence_could_not_show_ar": ["الرائحة وحدها لا تحدد الفاعل"],
+    "science_notes_ar": ["الدليل الوثائقي يثبت الاستلام لا النية"]
+  },
+  "expert_review": []
+}

@@ -33,6 +33,7 @@ export default function Studio() {
   return (
     <>
       <PageHead title="استوديو المحتوى" lead="لا تُنشر قضية إلا بعد موافقة سبع بوابات على نسخة المحتوى الحالية (بصمتها مربوطة)، وموافقة المراجع لا تكون من كاتب النسخة نفسه." />
+      {role === "admin" && <div className="row"><LinkButton href="/studio/library">المكتبة البحثية (للمدير)</LinkButton></div>}
       {msg && <Callout tone="negative" role="alert">{msg}</Callout>}
       {!loaded && <LoadingRegion cards={2} />}
       <div className="grid-2">

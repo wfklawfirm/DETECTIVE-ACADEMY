@@ -1,0 +1,165 @@
+{
+  "accepted_conclusions": {
+    "h_dusting": {
+      "grade": 1,
+      "note_ar": "استنتاج متسق مع الأدلة ويتطلب ذكر حدوده."
+    },
+    "h_copykey": {
+      "grade": 0,
+      "note_ar": "يعالج خروجاً أثناء الاجتماع، والكأس كانت خارج الخزانة قبله؛ ونسخ مفتاح المخزن لا يمسّ الخزانة."
+    },
+    "h_panel": {
+      "grade": 0,
+      "note_ar": "سلامة الجدار لا تؤيد حلاً لواقعة لم تقع داخل القفل؛ ويحتاج افتراضات إضافية."
+    },
+    "h_staged": {
+      "grade": 0,
+      "note_ar": "ورقة المفتاح والإيصال تبعدان الرئيس؛ وإعلان التحدي ليس تدبيراً."
+    }
+  },
+  "confidence_band": {
+    "h_dusting": [
+      65,
+      90
+    ],
+    "h_copykey": [
+      0,
+      15
+    ],
+    "h_panel": [
+      0,
+      15
+    ],
+    "h_staged": [
+      0,
+      20
+    ]
+  },
+  "source_key": {
+    "ev_challenge": "claim",
+    "ev_compare_card": "template",
+    "ev_key_sheet": "primary_record",
+    "ev_dust_rota": "primary_record",
+    "ev_newsletter_photo": "primary_record",
+    "ev_store_slip": "primary_record",
+    "ev_store_door_log": "primary_record",
+    "ev_cabinet_inspect": "primary_record",
+    "ev_copy_receipt": "primary_record",
+    "ev_kinan_stmt": "claim",
+    "ev_basel_stmt": "claim",
+    "ev_yara_stmt": "claim"
+  },
+  "link_key": {
+    "h_dusting": {
+      "ev_key_sheet": "supports",
+      "ev_dust_rota": "supports",
+      "ev_newsletter_photo": "supports",
+      "ev_store_slip": "supports",
+      "ev_store_door_log": "supports",
+      "ev_yara_stmt": "supports",
+      "ev_cabinet_inspect": "neutral",
+      "ev_copy_receipt": "neutral",
+      "ev_compare_card": "neutral"
+    },
+    "h_copykey": {
+      "ev_copy_receipt": "supports",
+      "ev_basel_stmt": "neutral",
+      "ev_cabinet_inspect": "neutral",
+      "ev_newsletter_photo": "weakens",
+      "ev_store_slip": "weakens",
+      "ev_store_door_log": "weakens",
+      "ev_key_sheet": "weakens"
+    },
+    "h_panel": {
+      "ev_challenge": "supports",
+      "ev_cabinet_inspect": "weakens",
+      "ev_newsletter_photo": "weakens",
+      "ev_store_slip": "weakens",
+      "ev_store_door_log": "weakens"
+    },
+    "h_staged": {
+      "ev_kinan_stmt": "supports",
+      "ev_challenge": "supports",
+      "ev_key_sheet": "weakens",
+      "ev_store_slip": "weakens",
+      "ev_store_door_log": "weakens",
+      "ev_newsletter_photo": "weakens"
+    }
+  },
+  "required_limits": [
+    "l_why_not_told",
+    "l_card_not_person"
+  ],
+  "valid_mind_changers": [
+    "m_store_other",
+    "m_photo_later",
+    "m_key_other"
+  ],
+  "invalid_limits": [
+    "l_invalid_lock",
+    "l_invalid_skill",
+    "l_invalid_sure"
+  ],
+  "decisive_evidence": [
+    "ev_key_sheet",
+    "ev_dust_rota",
+    "ev_newsletter_photo",
+    "ev_store_slip",
+    "ev_store_door_log"
+  ],
+  "timeline_requirement": [
+    {
+      "evidence_id": "ev_key_sheet",
+      "utc_minute": 90,
+      "tol": 4
+    },
+    {
+      "evidence_id": "ev_store_slip",
+      "utc_minute": 100,
+      "tol": 4
+    },
+    {
+      "evidence_id": "ev_newsletter_photo",
+      "utc_minute": 110,
+      "tol": 3
+    },
+    {
+      "evidence_id": "ev_cabinet_inspect",
+      "utc_minute": 210,
+      "tol": 5
+    }
+  ],
+  "refuted_hypotheses": [
+    "h_copykey",
+    "h_panel",
+    "h_staged"
+  ],
+  "transfer_key": {
+    "valid": [
+      "o1",
+      "o2",
+      "o3",
+      "o4"
+    ],
+    "invalid": [
+      "o5",
+      "o6",
+      "o7"
+    ]
+  },
+  "case_id": "c027_cup_cabinet",
+  "lab_requirement": null,
+  "criteria_map": {
+    "c_source": "source_typing",
+    "c_conflict": "conflict_resolution",
+    "c_links": "hypothesis_links",
+    "c_uncertainty": "uncertainty",
+    "c_revision": "revision",
+    "c_elimination": "elimination",
+    "c_justification": "justification_human"
+  },
+  "caps": {
+    "no_citations_max": 45,
+    "no_conflict_resolution_max": 65
+  }
+}

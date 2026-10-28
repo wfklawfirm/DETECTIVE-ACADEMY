@@ -1,0 +1,2522 @@
+{
+  "schema_version": "0.1.0",
+  "case_id": "c023_quick_screen_pen",
+  "case_version": "0.1.0",
+  "meta": {
+    "title_ar": "القلم الذي أشار إلى رسالة قديمة",
+    "title_en": "The Pen That Flagged an Old Letter",
+    "age_band": "16-18",
+    "locale": "ar",
+    "dialogue_register": "msa",
+    "estimated_minutes": 30,
+    "difficulty": 3,
+    "content_flags": [
+      "fraud",
+      "science_lab"
+    ],
+    "authors": [
+      "فريق أثر التحريري (مسودة بمساعدة الذكاء الاصطناعي، لم تُراجَع بشرياً بعد)"
+    ],
+    "knowledge_object_refs": [
+      "KO-RS-06-010",
+      "KO-RS-06-008",
+      "KO-RS-06-001",
+      "KO-RS-06-003",
+      "KO-RS-06-021",
+      "KO-RS-06-009",
+      "KO-RS-05-001",
+      "KO-RS-05-004",
+      "KO-RS-05-005",
+      "KO-RS-06-007",
+      "KO-FC-04-009",
+      "KO-FC-04-010",
+      "KO-FC-04-011",
+      "KO-FC-04-019",
+      "KO-FC-04-024"
+    ]
+  },
+  "premise": {
+    "hook_ar": "جهاز فرز «دقيق بنسبة 95%» أشار إلى رسالة عمرها تسعون عاماً بأنها «حبر حديث». هل يعني هذا أنها مزورة بنسبة 95%؟",
+    "player_role_ar": "أنت مراجع مستقل في متحف الأثر، طُلب منك رأي معلّل في هبة موقوفة قبل أن يتخذ المتحف قراراً بحق الواهب.",
+    "setting_ar": "متحف الأثر في مدينة القنطرة، من الاثنين إلى الأربعاء. توقيت المتحف هو ساعة المختبر والمكتب.",
+    "public_fact_ids": [
+      "f_letter_flagged",
+      "f_spec_claimed",
+      "f_donor_denies"
+    ],
+    "assumed_general_knowledge_ar": [
+      "الاختبار السريع قد يعطي إشارات كاذبة",
+      "عدد الأمثلة المزورة بين كل الأمثلة يغيّر معنى الإشارة",
+      "ما يترتب عليه اتهام يحتاج إلى فحص أقوى من الفرز"
+    ]
+  },
+  "entities": {
+    "characters": [
+      {
+        "id": "dalia",
+        "name_ar": "داليا النجار",
+        "role": "authority",
+        "age_descriptor_ar": "أمينة المجموعات في متحف الأثر",
+        "persona_ar": "حازمة وسريعة الحكم تحت ضغط الوقت، تثق بالأرقام المكتوبة على الأجهزة وتحب القرارات الواضحة. تراجع رأيها إذا رأت جدولاً مقنعاً.",
+        "motives_ar": [
+          "حماية المجموعة من التزوير",
+          "ألا تظلم أحداً"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "dl_greet",
+            "purpose": "greeting",
+            "text_ar": "الجهاز دقيق بنسبة خمس وتسعين بالمئة، فلا داعي للتأخير."
+          },
+          {
+            "line_id": "dl_claim",
+            "purpose": "reveal",
+            "text_ar": "إذا كان الجهاز دقيقاً بنسبة 95% وأشار إلى الرسالة، فهي مزورة بنسبة 95% تقريباً.",
+            "claim_ids": [
+              "cl_pen_95"
+            ]
+          },
+          {
+            "line_id": "dl_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف أكثر من تقرير الفرز."
+          },
+          {
+            "line_id": "dl_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن قرار تعليق الهبة."
+          },
+          {
+            "line_id": "dl_bye",
+            "purpose": "farewell",
+            "text_ar": "أريد قراراً مبنياً على أرقام صحيحة."
+          }
+        ]
+      },
+      {
+        "id": "salem",
+        "name_ar": "سالم المنصوري",
+        "role": "suspect",
+        "age_descriptor_ar": "واهب الرسالة، تاجر متقاعد",
+        "persona_ar": "متأنٍّ ومعتز بإرث عائلته، يتألم من التلميح بأنه مزوّر، ويجيب بهدوء ويقدّم ما عنده من أوراق.",
+        "motives_ar": [
+          "أن تُحفظ الرسالة في المتحف",
+          "أن تبقى سمعة عائلته"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "sl_greet",
+            "purpose": "greeting",
+            "text_ar": "الرسالة كانت في صندوق جدي. لا أخفي شيئاً."
+          },
+          {
+            "line_id": "sl_origin",
+            "purpose": "reveal",
+            "text_ar": "ورثت الرسالة عن عائلتي، وسلّمتها للمتحف عام 2018 ولم أرمّمها أنا، وحفظ المتحف كل أوراقها.",
+            "fact_ids": [
+              "f_donor_says"
+            ]
+          },
+          {
+            "line_id": "sl_insure",
+            "purpose": "reveal",
+            "text_ar": "سألت المتحف الشهر الماضي عن قيمة الرسالة لأن شركة التأمين على بيتي طلبت قائمة بمقتنياتي.",
+            "fact_ids": [
+              "f_insurance_asked"
+            ]
+          },
+          {
+            "line_id": "sl_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف أكثر."
+          },
+          {
+            "line_id": "sl_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن الرسالة وعائلتها."
+          },
+          {
+            "line_id": "sl_bye",
+            "purpose": "farewell",
+            "text_ar": "أريد أن يُفحص الأمر فحصاً عادلاً."
+          }
+        ]
+      },
+      {
+        "id": "rana",
+        "name_ar": "رنا الحسيني",
+        "role": "suspect",
+        "age_descriptor_ar": "مرمّمة ورق في المتحف",
+        "persona_ar": "دقيقة ومتحفظة وتكتب كل شيء في سجلها. تتألم إذا ظُن أن عملها أضرّ بالقطعة، وتشرح بالتفصيل حين تُسأل عما فعلته.",
+        "motives_ar": [
+          "أن يُقرأ سجل الترميم",
+          "ألا يُنسب إليها ما لم تفعله"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "rn_greet",
+            "purpose": "greeting",
+            "text_ar": "كل ما فعلته بالرسالة مكتوب في سجلي."
+          },
+          {
+            "line_id": "rn_log",
+            "purpose": "reveal",
+            "text_ar": "رمّمت الرسالة عام 2019 ووضعت على صفحتها طبقة حماية شفافة رقيقة، ودوّنت ذلك في سجل الترميم.",
+            "fact_ids": [
+              "f_coating_applied",
+              "f_restoration_log_exists"
+            ]
+          },
+          {
+            "line_id": "rn_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "هذا ليس في سجلي."
+          },
+          {
+            "line_id": "rn_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن الترميم."
+          },
+          {
+            "line_id": "rn_bye",
+            "purpose": "farewell",
+            "text_ar": "السجل أمامكم فاقرؤوه."
+          }
+        ]
+      },
+      {
+        "id": "hala",
+        "name_ar": "هالة الشامي",
+        "role": "witness",
+        "age_descriptor_ar": "أمينة السجل في المتحف",
+        "persona_ar": "منظمة وهادئة، تقرأ من ملفاتها ولا تخمّن. تفرّق بين ما سُجّل وما افترضه الناس.",
+        "motives_ar": [
+          "أن تبقى الملفات سليمة"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "hl_greet",
+            "purpose": "greeting",
+            "text_ar": "الملفات أمامي، أقرأ منها."
+          },
+          {
+            "line_id": "hl_file",
+            "purpose": "reveal",
+            "text_ar": "ملف الهبة يضم جرداً عائلياً موثقاً عند كاتب عدل، وسجل التبرع عام 2018. وصُوِّرت الرسالة يومها لدليل المتحف.",
+            "fact_ids": [
+              "f_donation_file_exists",
+              "f_photo_2018_exists"
+            ]
+          },
+          {
+            "line_id": "hl_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "هذا ليس في ملفاتي."
+          },
+          {
+            "line_id": "hl_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسأل عن الملفات."
+          },
+          {
+            "line_id": "hl_bye",
+            "purpose": "farewell",
+            "text_ar": "الملف يبقى كما هو."
+          }
+        ]
+      },
+      {
+        "id": "tarek",
+        "name_ar": "طارق البيطار",
+        "role": "expert",
+        "age_descriptor_ar": "فني مختبر الفحص في المتحف",
+        "persona_ar": "عملي وصريح، يذكر حدود جهازه قبل نتائجه ويكرر الفحص ويقارن بعينات معلومة. لا يعرف نيات أحد.",
+        "motives_ar": [
+          "أن تُقرأ نتائج الأجهزة بحدودها"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "tk_greet",
+            "purpose": "greeting",
+            "text_ar": "قلم الفرز أداة فرز سريعة، ولا أحكم بها وحدها."
+          },
+          {
+            "line_id": "tk_methods",
+            "purpose": "reveal",
+            "text_ar": "عندنا فحص تأكيدي بالمجهر للحبر، ومصباح فوق بنفسجي لتصوير الصفحة كلها بدل الخطوط وحدها.",
+            "fact_ids": [
+              "f_confirm_available",
+              "f_uv_lamp_available"
+            ]
+          },
+          {
+            "line_id": "tk_pen",
+            "purpose": "reveal",
+            "text_ar": "للقلم دليل استعمال ينص على حساسيته ومحاذيره، وعندنا سجل لرسائل فرزناها العام الماضي ثم أكدناها بالفحص.",
+            "fact_ids": [
+              "f_pen_manual_exists",
+              "f_stats_exist"
+            ]
+          },
+          {
+            "line_id": "tk_controls",
+            "purpose": "reveal",
+            "text_ar": "أستطيع أن أجرّب القلم على أوراق قديمة معلومة الأصل، بعضها مطلي وبعضها غير مطلي، وأن أقارن.",
+            "fact_ids": [
+              "f_controls_possible"
+            ]
+          },
+          {
+            "line_id": "tk_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "هذا خارج ما أقيسه."
+          },
+          {
+            "line_id": "tk_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن القلم والفحوص."
+          },
+          {
+            "line_id": "tk_bye",
+            "purpose": "farewell",
+            "text_ar": "ابدأ بالعدّ قبل أن تثق بالنسبة."
+          }
+        ]
+      }
+    ],
+    "locations": [
+      {
+        "id": "loc_lab",
+        "name_ar": "مختبر الفحص",
+        "description_ar": "مختبر صغير في متحف الأثر فيه مجهر ومصباح فوق بنفسجي."
+      },
+      {
+        "id": "loc_registry",
+        "name_ar": "مكتب السجل",
+        "description_ar": "حيث تُحفظ ملفات الهبات وصور الفهرسة."
+      },
+      {
+        "id": "loc_conservation",
+        "name_ar": "ورشة الترميم",
+        "description_ar": "ورشة فيها سجل الترميم."
+      },
+      {
+        "id": "loc_office",
+        "name_ar": "مكتب الأمينة",
+        "description_ar": "حيث يُراجَع تقرير الفرز."
+      }
+    ],
+    "objects": [
+      {
+        "id": "obj_letter",
+        "name_ar": "الرسالة التجارية المؤرخة 1931",
+        "description_ar": "رسالة بخط اليد على ورق قديم، تبرع بها سالم عام 2018."
+      },
+      {
+        "id": "obj_pen",
+        "name_ar": "قلم الفرز فوق البنفسجي",
+        "description_ar": "جهاز فرز سريع يشير إلى «حبر حديث» أو لا."
+      }
+    ],
+    "organizations": [
+      {
+        "id": "org_museum",
+        "name_ar": "متحف الأثر",
+        "description_ar": "متحف خيالي في مدينة القنطرة."
+      }
+    ]
+  },
+  "truth": {
+    "solution": {
+      "culprit_ids": [
+        "rana"
+      ],
+      "summary_ar": "الرسالة أصلية وليست مزورة. أشار القلم إلى طبقة حماية وضعتها المرمّمة عام 2019 دون سوء قصد، والقلم يستجيب لهذه الطبقة، ودقته المعلنة لا تعني أن الرسالة المؤشَّر عليها مزورة بنسبة 95%.",
+      "key_fact_ids": [
+        "f_old_letter",
+        "f_coating_cause"
+      ]
+    },
+    "facts": [
+      {
+        "id": "f_letter_flagged",
+        "statement_ar": "أشار قلم الفرز الثلاثاء 10:15 إلى رسالة سالم بعبارة «حبر حديث».",
+        "kind": "event",
+        "subject_ids": [
+          "obj_letter",
+          "obj_pen"
+        ],
+        "spoiler_level": 0,
+        "time": {
+          "start_min": 1515,
+          "precision": "exact"
+        },
+        "location_id": "loc_lab"
+      },
+      {
+        "id": "f_spec_claimed",
+        "statement_ar": "يقول تقرير الأمينة إن القلم دقيق بنسبة 95%، وتعلّق المتحف قبول الهبة بانتظار القرار.",
+        "kind": "attribute",
+        "subject_ids": [
+          "dalia",
+          "obj_pen"
+        ],
+        "spoiler_level": 0
+      },
+      {
+        "id": "f_donor_denies",
+        "statement_ar": "ينكر سالم أنه زوّر الرسالة أو بدّلها.",
+        "kind": "attribute",
+        "subject_ids": [
+          "salem"
+        ],
+        "spoiler_level": 0
+      },
+      {
+        "id": "f_donor_says",
+        "statement_ar": "يقول سالم إن الرسالة إرث عائلي سلّمه للمتحف عام 2018 دون ترميم منه.",
+        "kind": "attribute",
+        "subject_ids": [
+          "salem",
+          "obj_letter"
+        ],
+        "spoiler_level": 1
+      },
+      {
+        "id": "f_insurance_asked",
+        "statement_ar": "سأل سالم المتحف الشهر الماضي عن قيمة الرسالة لقائمة مقتنيات تطلبها شركة تأمين بيته.",
+        "kind": "event",
+        "subject_ids": [
+          "salem"
+        ],
+        "spoiler_level": 1
+      },
+      {
+        "id": "f_coating_applied",
+        "statement_ar": "وضعت رنا عام 2019 طبقة حماية شفافة رقيقة على صفحة الرسالة كاملة.",
+        "kind": "event",
+        "subject_ids": [
+          "rana",
+          "obj_letter"
+        ],
+        "spoiler_level": 1,
+        "location_id": "loc_conservation"
+      },
+      {
+        "id": "f_restoration_log_exists",
+        "statement_ar": "تدوّن رنا كل عمل ترميم في سجل مكتوب بتاريخه ومادته.",
+        "kind": "state",
+        "subject_ids": [
+          "rana"
+        ],
+        "spoiler_level": 1,
+        "location_id": "loc_conservation"
+      },
+      {
+        "id": "f_donation_file_exists",
+        "statement_ar": "يضم ملف الهبة جرداً عائلياً موثقاً عند كاتب عدل وسجل التبرع عام 2018.",
+        "kind": "state",
+        "subject_ids": [
+          "obj_letter",
+          "org_museum"
+        ],
+        "spoiler_level": 1,
+        "location_id": "loc_registry"
+      },
+      {
+        "id": "f_photo_2018_exists",
+        "statement_ar": "صُوّرت الرسالة عام 2018 لدليل المتحف وحُفظت الصورة بتاريخها.",
+        "kind": "state",
+        "subject_ids": [
+          "obj_letter"
+        ],
+        "spoiler_level": 1,
+        "location_id": "loc_registry"
+      },
+      {
+        "id": "f_confirm_available",
+        "statement_ar": "يملك المختبر فحصاً تأكيدياً بالمجهر لحبر الرسائل.",
+        "kind": "state",
+        "subject_ids": [
+          "tarek"
+        ],
+        "spoiler_level": 1,
+        "location_id": "loc_lab"
+      },
+      {
+        "id": "f_uv_lamp_available",
+        "statement_ar": "يملك المختبر مصباحاً فوق بنفسجي لتصوير الصفحة كلها.",
+        "kind": "state",
+        "subject_ids": [
+          "tarek"
+        ],
+        "spoiler_level": 1,
+        "location_id": "loc_lab"
+      },
+      {
+        "id": "f_pen_manual_exists",
+        "statement_ar": "للقلم دليل استعمال يذكر حساسيته ومعدل الإشارات الكاذبة ومحاذير الاستعمال.",
+        "kind": "state",
+        "subject_ids": [
+          "obj_pen"
+        ],
+        "spoiler_level": 1,
+        "location_id": "loc_lab"
+      },
+      {
+        "id": "f_stats_exist",
+        "statement_ar": "يحتفظ المختبر بسجل رسائل فُرزت العام الماضي ثم أُكدت نتيجتها بالفحص التأكيدي.",
+        "kind": "state",
+        "subject_ids": [
+          "tarek"
+        ],
+        "spoiler_level": 1,
+        "location_id": "loc_lab"
+      },
+      {
+        "id": "f_controls_possible",
+        "statement_ar": "يستطيع الفني تجربة القلم على أوراق قديمة معلومة الأصل، مطلية وغير مطلية.",
+        "kind": "state",
+        "subject_ids": [
+          "tarek"
+        ],
+        "spoiler_level": 1,
+        "location_id": "loc_lab"
+      },
+      {
+        "id": "f_ppv",
+        "statement_ar": "نحو سبعين بالمئة من الرسائل التي يشير إليها القلم في هذا المتحف سليمة، وأقل من ثلثها مزور؛ فالإشارة وحدها ترفع الترجيح ولا تحسمه.",
+        "kind": "relation",
+        "subject_ids": [
+          "obj_pen"
+        ],
+        "spoiler_level": 2,
+        "time": {
+          "start_min": 1740,
+          "precision": "exact"
+        },
+        "location_id": "loc_office",
+        "science_ko_refs": [
+          "KO-RS-06-010",
+          "KO-FC-04-011",
+          "KO-FC-04-009"
+        ]
+      },
+      {
+        "id": "f_old_letter",
+        "statement_ar": "الرسالة قديمة الحبر والأصل، وسجلاتها الموثقة تسبق وجود القلم والشبهة بسنوات، فلا دليل على صنعها حديثاً.",
+        "kind": "relation",
+        "subject_ids": [
+          "obj_letter"
+        ],
+        "spoiler_level": 3,
+        "time": {
+          "start_min": 3000,
+          "precision": "exact"
+        },
+        "location_id": "loc_lab",
+        "science_ko_refs": [
+          "KO-FC-04-019",
+          "KO-RS-05-004"
+        ]
+      },
+      {
+        "id": "f_coating_cause",
+        "statement_ar": "سبب الإشارة هو طبقة الحماية التي وُضعت عند الترميم، فالقلم يتفاعل مع السطح كله لا مع حبر الخطوط.",
+        "kind": "relation",
+        "subject_ids": [
+          "obj_letter",
+          "obj_pen",
+          "rana"
+        ],
+        "spoiler_level": 3,
+        "time": {
+          "start_min": 3030,
+          "precision": "exact"
+        },
+        "location_id": "loc_lab",
+        "science_ko_refs": [
+          "KO-FC-04-019",
+          "KO-RS-06-008"
+        ]
+      }
+    ],
+    "claims": [
+      {
+        "id": "cl_pen_95",
+        "statement_ar": "القلم دقيق بنسبة 95%، فالرسالة التي أشار إليها مزورة بنسبة 95% تقريباً.",
+        "kind": "honest_mistake",
+        "held_by": [
+          "dalia"
+        ],
+        "true_fact_id": "f_ppv",
+        "contradicted_by_evidence_ids": [
+          "ev_screening_stats"
+        ]
+      }
+    ]
+  },
+  "timeline": [
+    {
+      "id": "te_flag",
+      "description_ar": "الفني يمرّر القلم على الرسالة فيشير إلى «حبر حديث».",
+      "time": {
+        "start_min": 1515,
+        "precision": "exact"
+      },
+      "location_id": "loc_lab",
+      "actor_ids": [
+        "tarek"
+      ],
+      "fact_ids": [
+        "f_letter_flagged"
+      ],
+      "motivated_by_ar": "فرز روتيني للهبات الجديدة قبل التسجيل"
+    },
+    {
+      "id": "te_report",
+      "description_ar": "الأمينة تكتب تقريرها وتعلّق قبول الهبة.",
+      "time": {
+        "start_min": 1740,
+        "precision": "exact"
+      },
+      "location_id": "loc_office",
+      "actor_ids": [
+        "dalia"
+      ],
+      "fact_ids": [
+        "f_spec_claimed"
+      ],
+      "motivated_by_ar": "تريد حماية المجموعة من التزوير"
+    },
+    {
+      "id": "te_confirm",
+      "description_ar": "الفني يجري الفحص التأكيدي بالمجهر.",
+      "time": {
+        "start_min": 3000,
+        "precision": "exact"
+      },
+      "location_id": "loc_lab",
+      "actor_ids": [
+        "tarek"
+      ],
+      "fact_ids": [
+        "f_old_letter"
+      ],
+      "motivated_by_ar": "طُلب منه تأكيد نتيجة الفرز قبل أي قرار"
+    },
+    {
+      "id": "te_uv",
+      "description_ar": "الفني يصوّر الصفحة كلها تحت المصباح فوق البنفسجي.",
+      "time": {
+        "start_min": 3030,
+        "precision": "exact"
+      },
+      "location_id": "loc_lab",
+      "actor_ids": [
+        "tarek"
+      ],
+      "fact_ids": [
+        "f_coating_cause"
+      ],
+      "motivated_by_ar": "يريد معرفة هل الإشارة على الخطوط أم على السطح كله"
+    },
+    {
+      "id": "te_controls",
+      "description_ar": "الفني يجرّب القلم على أوراق معلومة الأصل.",
+      "time": {
+        "start_min": 3180,
+        "precision": "exact"
+      },
+      "location_id": "loc_lab",
+      "actor_ids": [
+        "tarek"
+      ],
+      "fact_ids": [
+        "f_controls_possible"
+      ],
+      "motivated_by_ar": "يريد معايرة سلوك القلم على أوراق معروفة"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_curator_report",
+      "title_ar": "تقرير الأمينة",
+      "kind": "documentary",
+      "content_ar": "متحف الأثر — تقرير داخلي — الثلاثاء 14:00\nالموضوع: رسالة الواهب سالم المنصوري (مؤرخة 1931)\nالنتيجة: أشار قلم الفرز إلى «حبر حديث».\nالتقدير: دليل الجهاز ينص على دقة 95%، أي أن الرسالة مزورة بنسبة تقارب 95%. أوصي بتعليق قبول الهبة ومراجعة بقية ما قدّمه الواهب.",
+      "acquired_by_action_ids": [
+        "a_curator_report"
+      ],
+      "supports_fact_ids": [
+        "f_spec_claimed",
+        "f_donor_denies"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "تقدير كتبته الأمينة بعد قراءة رقم واحد من الدليل؛ لم تُجرَ فيه مقارنة بعدد الرسائل المزورة فعلاً، وتفسّر «الدقة» تفسيراً واحداً.",
+      "is_red_herring": true,
+      "location_id": "loc_office"
+    },
+    {
+      "id": "ev_pen_log",
+      "title_ar": "سجل قراءة قلم الفرز",
+      "kind": "digital",
+      "content_ar": "مختبر الفحص — سجل الجهاز — الثلاثاء 10:15\nالجهاز: قلم الفرز فوق البنفسجي\nالعينة: رسالة الواهب س. المنصوري (الصفحة الأولى)\nالنتيجة: إشارة «حبر حديث» (إيجابي)\nعدد القراءات: 1\nملاحظة الفني: لم يُجرَ فحص تأكيدي.",
+      "acquired_by_action_ids": [
+        "a_pen_log"
+      ],
+      "supports_fact_ids": [
+        "f_letter_flagged"
+      ],
+      "reliability": "strong",
+      "limits_ar": "قراءة واحدة بأداة فرز؛ تقول إن الجهاز أشار ولا تقول لماذا أشار.",
+      "location_id": "loc_lab"
+    },
+    {
+      "id": "ev_pen_manual",
+      "title_ar": "دليل استعمال القلم",
+      "kind": "documentary",
+      "content_ar": "دليل قلم الفرز فوق البنفسجي — فصل الأداء والمحاذير\nالحساسية: يشير إلى 95 من كل 100 رسالة كُتبت بحبر حديث.\nالإشارات الكاذبة: يشير إلى 5 من كل 100 رسالة سليمة.\nمحاذير: قد تُعطي الأسطح المغطاة بطبقات حماية بوليمرية إشارة كاذبة؛ تُفحص الصفحة كلها لا الخطوط وحدها؛ النتيجة الإيجابية تُؤكَّد بفحص آخر قبل أي حكم.",
+      "acquired_by_action_ids": [
+        "a_pen_manual"
+      ],
+      "supports_fact_ids": [
+        "f_pen_manual_exists",
+        "f_ppv"
+      ],
+      "reliability": "strong",
+      "limits_ar": "وثيقة صانع الجهاز عن أداء الجهاز في ظروف الاختبار؛ لا تذكر كم رسالة مزورة تمرّ في هذا المتحف.",
+      "location_id": "loc_lab"
+    },
+    {
+      "id": "ev_screening_stats",
+      "title_ar": "سجل الفرز والتأكيد للعام الماضي",
+      "kind": "documentary",
+      "content_ar": "مختبر الفحص — سجل سنوي — رسائل فُحصت بالقلم ثم بالفحص التأكيدي\nعدد الرسائل: 1000\nثبت بالتأكيد أنها مزورة: 20 رسالة (أشار القلم إلى 19 منها)\nثبت أنها سليمة: 980 رسالة (أشار القلم إلى 49 منها)",
+      "acquired_by_action_ids": [
+        "a_screening_stats"
+      ],
+      "supports_fact_ids": [
+        "f_stats_exist",
+        "f_ppv"
+      ],
+      "reliability": "strong",
+      "limits_ar": "سجل مختبر عن سنة واحدة وعن الرسائل التي مرت به؛ تتغير النسبة إذا تغيّر ما يصل إلى المتحف.",
+      "forensic_ko_ref": "KO-FC-04-011",
+      "location_id": "loc_lab"
+    },
+    {
+      "id": "ev_ink_confirm",
+      "title_ar": "نتيجة الفحص التأكيدي بالمجهر",
+      "kind": "lab_result",
+      "content_ar": "مختبر الفحص — فحص تأكيدي بالمجهر — الأربعاء 11:00 — رسالة الواهب سالم المنصوري\nحواف الخطوط: بنية اللون مع هالة باهتة حولها وتغلغل في ألياف الورق.\nالألياف حول الخطوط: متأكسدة بنمط يوافق حبراً عمره عقود.\nلا أثر لحبر صنعي حديث على أي سطر.",
+      "acquired_by_action_ids": [
+        "a_ink_confirm"
+      ],
+      "supports_fact_ids": [
+        "f_old_letter"
+      ],
+      "reliability": "strong",
+      "limits_ar": "فحص تأكيدي لثلاثة مواضع من الصفحة الأولى لا كل أسطرها؛ يقدّر العمر بمدى لا بسنة محددة، ويُقرأ مع باقي الأدلة.",
+      "forensic_ko_ref": "KO-FC-04-019",
+      "location_id": "loc_lab"
+    },
+    {
+      "id": "ev_pen_controls",
+      "title_ar": "اختبار القلم على أوراق معلومة الأصل",
+      "kind": "lab_result",
+      "content_ar": "مختبر الفحص — اختبار ضبط — الأربعاء 14:00 — أوراق تجارية معلومة الأصل من الثلاثينيات\nعشر أوراق غير مطلية: أشار القلم إلى ورقة واحدة\nعشر أوراق مطلية بطبقة الحماية نفسها التي يستعملها المتحف: أشار القلم إلى تسع منها\nجرى الاختبار مرتين بتبديل الفني، والنتيجة نفسها.",
+      "acquired_by_action_ids": [
+        "a_pen_controls"
+      ],
+      "supports_fact_ids": [
+        "f_coating_cause"
+      ],
+      "reliability": "strong",
+      "limits_ar": "عشرون ورقة فقط، وليست الرسالة نفسها؛ تبيّن سلوك القلم على الأوراق المطلية ولا تثبت أن رسالة سالم طُليت.",
+      "forensic_ko_ref": "KO-RS-06-008",
+      "location_id": "loc_lab"
+    },
+    {
+      "id": "ev_restoration_log",
+      "title_ar": "سجل الترميم للرسالة",
+      "kind": "documentary",
+      "content_ar": "متحف الأثر — سجل الترميم — شهر 5/2019\nالقطعة: رسالة تجارية مؤرخة 1931 (من مجموعة الهبات 2018)\nالعمل: تنظيف سطحي، ثم طبقة حماية شفافة رقيقة من بوليمر «ب-3» على الصفحة كاملة.\nالمرمّمة: رنا الحسيني",
+      "acquired_by_action_ids": [
+        "a_restoration_log"
+      ],
+      "supports_fact_ids": [
+        "f_coating_applied"
+      ],
+      "reliability": "strong",
+      "limits_ar": "سجل كتبته المرمّمة نفسها في حينه؛ يثبت ما أُضيف وتاريخه، ولا يثبت أن الطبقة هي سبب إشارة القلم.",
+      "location_id": "loc_conservation"
+    },
+    {
+      "id": "ev_uv_pattern",
+      "title_ar": "صورة الصفحة تحت المصباح فوق البنفسجي",
+      "kind": "observation",
+      "content_ar": "مختبر الفحص — تصوير الصفحة الأولى كاملة — الأربعاء 11:30\nيظهر توهج منتظم على الخطوط وعلى الهوامش البيضاء معاً، وتنتهي حدود التوهج عند أطراف الصفحة.\nقياس الشدة: الخطوط 82 والهوامش 80 (وحدات الجهاز)؛ ورقة غير مطلية للمقارنة: الخطوط 40 والهوامش 5.",
+      "acquired_by_action_ids": [
+        "a_uv_pattern"
+      ],
+      "supports_fact_ids": [
+        "f_coating_cause"
+      ],
+      "reliability": "strong",
+      "limits_ar": "صورة واحدة وفي ظرف إضاءة واحد؛ تبيّن أين يتوهج السطح لا ما المادة التي سبّبت التوهج.",
+      "location_id": "loc_lab"
+    },
+    {
+      "id": "ev_donation_file",
+      "title_ar": "ملف الهبة والجرد العائلي",
+      "kind": "documentary",
+      "content_ar": "متحف الأثر — ملف الهبة 2018/14\nجرد عائلي موثق عند كاتب عدل عام 1987: «رسالة تجارية مؤرخة 1931، أربعة عشر سطراً، بخط التاجر المنصوري الجد».\nسجل التبرع: سُلّمت الرسالة 12 آذار 2018، وفي الخانة: «حالة جيدة، بلا ترميم من الواهب».",
+      "acquired_by_action_ids": [
+        "a_donation_file"
+      ],
+      "supports_fact_ids": [
+        "f_donation_file_exists",
+        "f_old_letter"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يثبت أن رسالة بهذا الوصف سُجّلت قبل وجود القلم بسنوات؛ ولا يثبت وحده أن الرسالة التي بين أيدينا هي نفسها دون صورة تقابلها.",
+      "location_id": "loc_registry"
+    },
+    {
+      "id": "ev_catalogue_photo",
+      "title_ar": "صورة الفهرسة عام 2018",
+      "kind": "digital",
+      "content_ar": "متحف الأثر — فهرس الصور — الملف 2018/14 — التاريخ المسجّل 12/3/2018\nالصورة: الصفحة الأولى كاملة. يظهر تمزق في الزاوية العليا اليسرى، وبقعة حبر قرب السطر الرابع، وطيّتان أفقيتان.\nمقارنة الفني بالأصل اليوم: التمزق والبقعة والطيّتان في المواضع نفسها.",
+      "acquired_by_action_ids": [
+        "a_catalogue_photo"
+      ],
+      "supports_fact_ids": [
+        "f_photo_2018_exists",
+        "f_old_letter"
+      ],
+      "reliability": "strong",
+      "limits_ar": "صورة بتاريخ مسجّل في نظام المتحف؛ تثبت اتصال الرسالة الحالية بالسجل ولا تثبت عمر الحبر وحدها.",
+      "location_id": "loc_registry"
+    },
+    {
+      "id": "ev_insurance_inquiry",
+      "title_ar": "رسالة الواهب إلى مكتب الاستعلامات",
+      "kind": "documentary",
+      "content_ar": "بريد من س. المنصوري إلى المتحف — قبل شهر\n«أرجو إفادتي بالقيمة التقديرية لرسالة جدي المحفوظة عندكم، لأن شركة التأمين على بيتي طلبت قائمة بمقتنياتي وقيمتها.»\nرد المكتب: القيمة التقديرية غير معلنة؛ يمكن إصدار خطاب بإيداع الرسالة.",
+      "acquired_by_action_ids": [
+        "a_insurance_inquiry"
+      ],
+      "supports_fact_ids": [
+        "f_insurance_asked"
+      ],
+      "reliability": "weak",
+      "limits_ar": "سؤال عن قيمة لا يدل على نية؛ والتفسير المعلن مكتوب في البريد نفسه ويمكن التحقق منه، ولم يُطلب من الواهب بيع الرسالة.",
+      "is_red_herring": true,
+      "location_id": "loc_office"
+    },
+    {
+      "id": "ev_donor_statement",
+      "title_ar": "إفادة سالم (ملخص)",
+      "kind": "testimonial",
+      "content_ar": "ملخص إفادة سالم المنصوري:\n«الرسالة من صندوق جدي، سلّمتها للمتحف عام 2018 كما هي. لم أكتب فيها ولم أرمّمها، وسؤالي عن قيمتها كان لقائمة التأمين.»",
+      "acquired_by_action_ids": [
+        "a_donor_statement"
+      ],
+      "supports_fact_ids": [
+        "f_donor_says"
+      ],
+      "reliability": "weak",
+      "limits_ar": "إفادة صاحب الشأن عن نفسه؛ تُقاس بملفات المتحف لا بنبرة صاحبها.",
+      "location_id": "loc_office"
+    },
+    {
+      "id": "ev_conservator_statement",
+      "title_ar": "إفادة رنا (ملخص)",
+      "kind": "testimonial",
+      "content_ar": "ملخص إفادة رنا الحسيني:\n«رمّمت الرسالة عام 2019 وطليت صفحتها بطبقة حماية شفافة، ودوّنت ذلك. لم يطلب أحد مني أن أخبر مختبر الفرز، ولم أتوقع أن يتأثر القلم بها.»",
+      "acquired_by_action_ids": [
+        "a_conservator_statement"
+      ],
+      "supports_fact_ids": [
+        "f_coating_applied"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "شهادة عن عملها هي، تؤيدها سجلات الورشة؛ ولا تعني أن الطبقة سبب إشارة القلم.",
+      "location_id": "loc_office"
+    }
+  ],
+  "evidence_graph": {
+    "inferences": [
+      {
+        "id": "i_flag_base",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_screening_stats"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_pen_manual"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_ppv"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "في ألف رسالة 20 مزورة و980 سليمة: القلم يصيب 19 من العشرين ويخطئ في 49 من الباقي، فتكون الإشارات 68 إشارة لا يزيد المزور فيها على 19؛ أي أن نسبة الترجيح (95 إلى 5 = 19 مرة) ترفع الشك ولا تحسمه لأن المعدل الأساسي منخفض.",
+        "skill_ko_refs": [
+          "KO-RS-06-010",
+          "KO-FC-04-011",
+          "KO-FC-04-009"
+        ]
+      },
+      {
+        "id": "i_a_old",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_ink_confirm"
+          },
+          {
+            "ref_type": "general_knowledge",
+            "ref_id": "الفحص التأكيدي بالمجهر يتقدم على الفرز السريع عند التعارض"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_old_letter"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "الفحص التأكيدي هو الأقوى هنا، وقد وجد تغلغل الحبر وتأكسد الألياف على نمط عمره عقود ولم يجد حبراً صنعياً.",
+        "skill_ko_refs": [
+          "KO-FC-04-019"
+        ]
+      },
+      {
+        "id": "i_b_old",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_donation_file"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_catalogue_photo"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_old_letter"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "جرد موثق عام 1987 وصورة فهرسة عام 2018 بالتمزق والبقعة والطيّتين نفسها؛ مصدران من المتحف والعائلة سبقا القلم والشبهة بسنوات ولا يعتمد أحدهما على المجهر.",
+        "skill_ko_refs": [
+          "KO-RS-05-004",
+          "KO-FC-04-024"
+        ]
+      },
+      {
+        "id": "i_a_coat",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_pen_controls"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_restoration_log"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_coating_cause"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "القلم يشير إلى تسع من عشر أوراق مطلية وإلى واحدة من عشر غير مطلية، والسجل يقول إن الرسالة طُليت عام 2019؛ فإشارته عليها متوقعة دون حبر حديث.",
+        "skill_ko_refs": [
+          "KO-RS-06-008",
+          "KO-FC-04-019"
+        ]
+      },
+      {
+        "id": "i_b_coat",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_pen_manual"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_uv_pattern"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_coating_cause"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "الدليل يحذّر من الأسطح المغطاة ببوليمر، والتوهج متساوٍ على الخطوط والهوامش البيضاء ويقف عند حدود الصفحة، ولو كان حبراً حديثاً لتركز على الخطوط وحدها.",
+        "skill_ko_refs": [
+          "KO-RS-06-001",
+          "KO-RS-06-003"
+        ]
+      },
+      {
+        "id": "i_support_coating",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_old_letter"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_coating_cause"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_coating"
+        },
+        "relation": "supports",
+        "strength": "strong",
+        "rule_ar": "حبر قديم مؤكد، وسبب مادي للإشارة موثق عند الترميم؛ فالتفسير يجمع الأدلة كلها دون افتراض تزوير.",
+        "skill_ko_refs": [
+          "KO-RS-06-007"
+        ]
+      },
+      {
+        "id": "i_rule_forged",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_old_letter"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_coating_cause"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_forged"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "التزوير الحديث يتطلب حبراً حديثاً، وقد نفاه الفحص التأكيدي والسجلات القديمة، وللإشارة سبب بديل موثق.",
+        "skill_ko_refs": [
+          "KO-RS-06-008"
+        ]
+      },
+      {
+        "id": "i_rule_95",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_old_letter"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_coating_cause"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_95"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "إذا كانت الرسالة قديمة وللإشارة تفسير مادي، فالقول إنها مزورة بنسبة 95% باطل، وهذا ما يؤكده أيضاً جدول التكرارات.",
+        "skill_ko_refs": [
+          "KO-RS-06-010",
+          "KO-FC-04-010"
+        ]
+      },
+      {
+        "id": "i_rule_95_b",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_ppv"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_95"
+        },
+        "relation": "rules_out",
+        "strength": "suggestive",
+        "rule_ar": "حتى قبل أي فحص آخر، تظهر أرقام المختبر أن الإشارة الواحدة لا ترفع الاحتمال إلى 95%.",
+        "skill_ko_refs": [
+          "KO-RS-06-010"
+        ]
+      },
+      {
+        "id": "i_rule_pen",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_old_letter"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_coating_cause"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_pen"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "القلم أشار بسلوك متوقع على سطح مطلي، وأشار إلى سطح غير مطلي في واحدة من عشر فقط؛ فهو يعمل كما صُمّم وليس معطوباً.",
+        "skill_ko_refs": [
+          "KO-RS-06-003",
+          "KO-RS-06-008"
+        ]
+      },
+      {
+        "id": "i_cl_pen95",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_ppv"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_pen_95"
+        },
+        "relation": "contradicts_claim",
+        "strength": "strong",
+        "rule_ar": "دقة الجهاز ليست احتمال أن تكون الرسالة المؤشَّر عليها مزورة؛ فذلك يتوقف على نسبة المزور بين ما يصل إلى المتحف.",
+        "skill_ko_refs": [
+          "KO-FC-04-010",
+          "KO-RS-06-010"
+        ]
+      }
+    ]
+  },
+  "character_knowledge": [
+    {
+      "character_id": "dalia",
+      "knows": [],
+      "hides": [],
+      "believes": [
+        {
+          "claim_id": "cl_pen_95",
+          "stance": "sincere"
+        }
+      ]
+    },
+    {
+      "character_id": "salem",
+      "knows": [
+        {
+          "fact_id": "f_donor_says",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_insurance_asked",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    },
+    {
+      "character_id": "rana",
+      "knows": [
+        {
+          "fact_id": "f_coating_applied",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_restoration_log_exists",
+          "access": "professional",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    },
+    {
+      "character_id": "hala",
+      "knows": [
+        {
+          "fact_id": "f_donation_file_exists",
+          "access": "professional",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_photo_2018_exists",
+          "access": "professional",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    },
+    {
+      "character_id": "tarek",
+      "knows": [
+        {
+          "fact_id": "f_confirm_available",
+          "access": "professional",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_uv_lamp_available",
+          "access": "professional",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_pen_manual_exists",
+          "access": "professional",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_stats_exist",
+          "access": "professional",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_controls_possible",
+          "access": "professional",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "h_forged",
+      "statement_ar": "الرسالة مزورة حديثاً، ولذلك أشار القلم، والواهب هو المسؤول.",
+      "is_true": false,
+      "plausibility_at_start": "high",
+      "suspect_id": "salem"
+    },
+    {
+      "id": "h_95",
+      "statement_ar": "دقة القلم 95%، فالرسالة المؤشَّر عليها مزورة بنسبة 95% ويكفي هذا للحكم.",
+      "is_true": false,
+      "plausibility_at_start": "medium"
+    },
+    {
+      "id": "h_coating",
+      "statement_ar": "الرسالة أصلية قديمة، وإشارة القلم سببها طبقة حماية وُضعت عند ترميمها عام 2019 دون أن يقصد أحد التضليل.",
+      "is_true": true,
+      "plausibility_at_start": "low",
+      "suspect_id": "rana"
+    },
+    {
+      "id": "h_pen",
+      "statement_ar": "القلم معطوب ويشير إلى كل رسالة تقريباً، فلا قيمة لنتائجه.",
+      "is_true": false,
+      "plausibility_at_start": "medium"
+    }
+  ],
+  "misdirection_plan": [
+    {
+      "id": "rh_95",
+      "points_to_hypothesis_id": "h_forged",
+      "planted_via_ar": "تقرير الأمينة يحوّل دقة الجهاز 95% إلى احتمال تزوير 95%.",
+      "evidence_ids": [
+        "ev_curator_report",
+        "ev_pen_log"
+      ],
+      "refuted_by_inference_ids": [
+        "i_flag_base",
+        "i_cl_pen95",
+        "i_rule_forged"
+      ],
+      "fairness_note_ar": "الدليل نفسه يذكر معدل الإشارات الكاذبة، وسجل المختبر يتيح العدّ، والفحص التأكيدي متاح للاعب قبل الحكم."
+    },
+    {
+      "id": "rh_insurance",
+      "points_to_hypothesis_id": "h_forged",
+      "planted_via_ar": "الواهب سأل عن قيمة الرسالة قبل شهر من الإشارة، فيبدو أن له غرضاً مالياً.",
+      "evidence_ids": [
+        "ev_insurance_inquiry"
+      ],
+      "refuted_by_inference_ids": [
+        "i_rule_forged",
+        "i_a_old",
+        "i_b_old"
+      ],
+      "fairness_note_ar": "السبب مكتوب في البريد وفي إفادة الواهب، والسجلات القديمة تنفي صنع الرسالة حديثاً قبل أي سؤال عن القيمة."
+    },
+    {
+      "id": "rh_pen",
+      "points_to_hypothesis_id": "h_pen",
+      "planted_via_ar": "قلم يشير إلى رسالة قديمة فيبدو معطوباً.",
+      "evidence_ids": [
+        "ev_pen_log"
+      ],
+      "refuted_by_inference_ids": [
+        "i_rule_pen",
+        "i_a_coat",
+        "i_b_coat"
+      ],
+      "fairness_note_ar": "اختبار الضبط يُظهر أن القلم يعمل بسلوك متوقع، ودليله يحذّر من الأسطح المطلية."
+    }
+  ],
+  "learning_objectives": [
+    {
+      "id": "lo_source",
+      "statement_ar": "يصنّف التقرير والإفادات أقوالاً، والسجل وفحص المختبر سجلات أصلية، ودليل الصانع وثيقة منشورة.",
+      "skill_ko_ref": "KO-RS-05-001",
+      "observable_behaviors_ar": [
+        "يصنّف الأقوال",
+        "يميّز الوثيقة المنشورة"
+      ],
+      "evidence_sources": [
+        "evidence_board"
+      ]
+    },
+    {
+      "id": "lo_conflict",
+      "statement_ar": "يرتّب أحداث الفرز والتأكيد على الخط الزمني ويلاحظ أن التأكيد جاء بعد الفرز لا قبله.",
+      "skill_ko_ref": "KO-RS-05-005",
+      "observable_behaviors_ar": [
+        "يضع الأدلة في أزمنتها"
+      ],
+      "evidence_sources": [
+        "timeline_task",
+        "action_log"
+      ]
+    },
+    {
+      "id": "lo_links",
+      "statement_ar": "يميّز الاختبار التمهيدي من التأكيدي ويدمج المعدل الأساسي في تقدير ما تعنيه الإشارة.",
+      "skill_ko_ref": "KO-RS-06-010",
+      "observable_behaviors_ar": [
+        "يربط الدليل بالفرضية",
+        "يبني جدول التكرارات ذهنياً"
+      ],
+      "evidence_sources": [
+        "evidence_board",
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_calib",
+      "statement_ar": "يصوغ نسبة الترجيح بحدودها دون أن يخلط بين الدقة واحتمال الفرضية.",
+      "skill_ko_ref": "KO-FC-04-009",
+      "observable_behaviors_ar": [
+        "يختار ثقة معقولة",
+        "يذكر حدوداً"
+      ],
+      "evidence_sources": [
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_revise",
+      "statement_ar": "يراجع رأيه الأول حين تظهر نتيجة التأكيد.",
+      "skill_ko_ref": "KO-RS-06-009",
+      "observable_behaviors_ar": [
+        "يغيّر فرضيته الرائدة بدليل"
+      ],
+      "evidence_sources": [
+        "hypothesis_ledger"
+      ]
+    },
+    {
+      "id": "lo_elim",
+      "statement_ar": "يبحث عن الاختبار المكذِّب ويستبعد ما تنقضه الأدلة.",
+      "skill_ko_ref": "KO-RS-06-008",
+      "observable_behaviors_ar": [
+        "يضيف فرضيات",
+        "يستبعد بدليل"
+      ],
+      "evidence_sources": [
+        "hypothesis_ledger"
+      ]
+    },
+    {
+      "id": "lo_just",
+      "statement_ar": "يكتب حجة تربط الأدلة بالاستنتاج وتذكر حدود الفرز.",
+      "skill_ko_ref": "KO-RS-06-007",
+      "observable_behaviors_ar": [
+        "يكتب حجة معللة"
+      ],
+      "evidence_sources": [
+        "final_justification"
+      ]
+    }
+  ],
+  "mechanics": {
+    "time_budget_units": 50,
+    "actions": [
+      {
+        "id": "a_int_tarek",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة طارق",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "tarek",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "tarek",
+        "telemetry_code": "INT_TAREK"
+      },
+      {
+        "id": "a_int_hala",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة هالة",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "hala",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "hala",
+        "telemetry_code": "INT_HALA"
+      },
+      {
+        "id": "a_int_rana",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة رنا",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "rana",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "rana",
+        "telemetry_code": "INT_RANA"
+      },
+      {
+        "id": "a_int_salem",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة سالم",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "salem",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "salem",
+        "telemetry_code": "INT_SALEM"
+      },
+      {
+        "id": "a_int_dalia",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة داليا",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "dalia",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "dalia",
+        "telemetry_code": "INT_DALIA"
+      },
+      {
+        "id": "a_curator_report",
+        "type": "examine",
+        "label_ar": "اقرأ تقرير الأمينة",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_curator_report"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_office",
+        "telemetry_code": "A_CURATOR_REPORT"
+      },
+      {
+        "id": "a_pen_log",
+        "type": "examine",
+        "label_ar": "اقرأ سجل قراءة قلم الفرز",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_pen_log"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_lab",
+        "telemetry_code": "A_PEN_LOG"
+      },
+      {
+        "id": "a_pen_manual",
+        "type": "examine",
+        "label_ar": "اطلب دليل استعمال القلم",
+        "precondition": {
+          "fact_unlocked": "f_pen_manual_exists"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_pen_manual"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_lab",
+        "telemetry_code": "A_PEN_MANUAL"
+      },
+      {
+        "id": "a_screening_stats",
+        "type": "examine",
+        "label_ar": "اطلب سجل الفرز والتأكيد للعام الماضي",
+        "precondition": {
+          "fact_unlocked": "f_stats_exist"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_screening_stats"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_lab",
+        "telemetry_code": "A_SCREENING_STATS"
+      },
+      {
+        "id": "a_ink_confirm",
+        "type": "examine",
+        "label_ar": "اطلب نتيجة الفحص التأكيدي بالمجهر",
+        "precondition": {
+          "fact_unlocked": "f_confirm_available"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_ink_confirm"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_lab",
+        "telemetry_code": "A_INK_CONFIRM"
+      },
+      {
+        "id": "a_pen_controls",
+        "type": "examine",
+        "label_ar": "اطلب اختبار القلم على أوراق معلومة الأصل",
+        "precondition": {
+          "fact_unlocked": "f_controls_possible"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_pen_controls"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_lab",
+        "telemetry_code": "A_PEN_CONTROLS"
+      },
+      {
+        "id": "a_restoration_log",
+        "type": "examine",
+        "label_ar": "اطلب سجل الترميم",
+        "precondition": {
+          "fact_unlocked": "f_restoration_log_exists"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_restoration_log"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_conservation",
+        "telemetry_code": "A_RESTORATION_LOG"
+      },
+      {
+        "id": "a_uv_pattern",
+        "type": "examine",
+        "label_ar": "اطلب صورة الصفحة تحت المصباح فوق البنفسجي",
+        "precondition": {
+          "fact_unlocked": "f_uv_lamp_available"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_uv_pattern"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_lab",
+        "telemetry_code": "A_UV_PATTERN"
+      },
+      {
+        "id": "a_donation_file",
+        "type": "examine",
+        "label_ar": "اطلب ملف الهبة والجرد العائلي",
+        "precondition": {
+          "fact_unlocked": "f_donation_file_exists"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_donation_file"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_registry",
+        "telemetry_code": "A_DONATION_FILE"
+      },
+      {
+        "id": "a_catalogue_photo",
+        "type": "examine",
+        "label_ar": "اطلب صورة الفهرسة عام 2018",
+        "precondition": {
+          "fact_unlocked": "f_photo_2018_exists"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_catalogue_photo"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_registry",
+        "telemetry_code": "A_CATALOGUE_PHOTO"
+      },
+      {
+        "id": "a_insurance_inquiry",
+        "type": "examine",
+        "label_ar": "اطلب بريد الواهب عن قيمة الرسالة",
+        "precondition": {
+          "fact_unlocked": "f_insurance_asked"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_insurance_inquiry"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_office",
+        "telemetry_code": "A_INSURANCE_INQUIRY"
+      },
+      {
+        "id": "a_donor_statement",
+        "type": "examine",
+        "label_ar": "دوّن إفادة سالم",
+        "precondition": {
+          "fact_unlocked": "f_donor_says"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_donor_statement"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_office",
+        "telemetry_code": "A_DONOR_STATEMENT"
+      },
+      {
+        "id": "a_conservator_statement",
+        "type": "examine",
+        "label_ar": "دوّن إفادة رنا",
+        "precondition": {
+          "fact_unlocked": "f_coating_applied"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_conservator_statement"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_office",
+        "telemetry_code": "A_CONSERVATOR_STATEMENT"
+      },
+      {
+        "id": "a_hint",
+        "type": "request_hint",
+        "label_ar": "اطلب تلميحاً",
+        "precondition": {
+          "always": true
+        },
+        "effects": [],
+        "time_cost_units": 0,
+        "telemetry_code": "REQUEST_HINT"
+      },
+      {
+        "id": "a_accuse",
+        "type": "final_accusation",
+        "label_ar": "قدّم الرأي المعلّل النهائي",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "SUBMIT"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "FINAL_ACCUSATION"
+      },
+      {
+        "id": "ask_salem_f_donor_says",
+        "type": "interview",
+        "label_ar": "[نموذج] salem يذكر f_donor_says",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_donor_says"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "salem",
+        "telemetry_code": "ASK_SALEM_F_DONOR_SAYS"
+      },
+      {
+        "id": "ask_salem_f_insurance_asked",
+        "type": "interview",
+        "label_ar": "[نموذج] salem يذكر f_insurance_asked",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_insurance_asked"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "salem",
+        "telemetry_code": "ASK_SALEM_F_INSURANCE_ASKED"
+      },
+      {
+        "id": "ask_rana_f_coating_applied",
+        "type": "interview",
+        "label_ar": "[نموذج] rana يذكر f_coating_applied",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_coating_applied"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "rana",
+        "telemetry_code": "ASK_RANA_F_COATING_APPLIED"
+      },
+      {
+        "id": "ask_rana_f_restoration_log_exists",
+        "type": "interview",
+        "label_ar": "[نموذج] rana يذكر f_restoration_log_exists",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_restoration_log_exists"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "rana",
+        "telemetry_code": "ASK_RANA_F_RESTORATION_LOG_EXISTS"
+      },
+      {
+        "id": "ask_hala_f_donation_file_exists",
+        "type": "interview",
+        "label_ar": "[نموذج] hala يذكر f_donation_file_exists",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_donation_file_exists"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "hala",
+        "telemetry_code": "ASK_HALA_F_DONATION_FILE_EXISTS"
+      },
+      {
+        "id": "ask_hala_f_photo_2018_exists",
+        "type": "interview",
+        "label_ar": "[نموذج] hala يذكر f_photo_2018_exists",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_photo_2018_exists"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "hala",
+        "telemetry_code": "ASK_HALA_F_PHOTO_2018_EXISTS"
+      },
+      {
+        "id": "ask_tarek_f_confirm_available",
+        "type": "interview",
+        "label_ar": "[نموذج] tarek يذكر f_confirm_available",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_confirm_available"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "tarek",
+        "telemetry_code": "ASK_TAREK_F_CONFIRM_AVAILABLE"
+      },
+      {
+        "id": "ask_tarek_f_uv_lamp_available",
+        "type": "interview",
+        "label_ar": "[نموذج] tarek يذكر f_uv_lamp_available",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_uv_lamp_available"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "tarek",
+        "telemetry_code": "ASK_TAREK_F_UV_LAMP_AVAILABLE"
+      },
+      {
+        "id": "ask_tarek_f_pen_manual_exists",
+        "type": "interview",
+        "label_ar": "[نموذج] tarek يذكر f_pen_manual_exists",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_pen_manual_exists"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "tarek",
+        "telemetry_code": "ASK_TAREK_F_PEN_MANUAL_EXISTS"
+      },
+      {
+        "id": "ask_tarek_f_stats_exist",
+        "type": "interview",
+        "label_ar": "[نموذج] tarek يذكر f_stats_exist",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_stats_exist"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "tarek",
+        "telemetry_code": "ASK_TAREK_F_STATS_EXIST"
+      },
+      {
+        "id": "ask_tarek_f_controls_possible",
+        "type": "interview",
+        "label_ar": "[نموذج] tarek يذكر f_controls_possible",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_controls_possible"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "tarek",
+        "telemetry_code": "ASK_TAREK_F_CONTROLS_POSSIBLE"
+      }
+    ]
+  },
+  "state_machine": {
+    "id": "c023",
+    "initial": "briefing",
+    "type": "compound",
+    "states": {
+      "briefing": {
+        "description_ar": "الإحاطة",
+        "type": "atomic",
+        "on": {
+          "START": {
+            "target": "investigating"
+          }
+        }
+      },
+      "investigating": {
+        "description_ar": "التحقيق",
+        "type": "compound",
+        "initial": "gathering",
+        "states": {
+          "gathering": {
+            "type": "atomic",
+            "on": {
+              "OPEN_DEDUCTION": {
+                "target": "deducing"
+              }
+            }
+          },
+          "deducing": {
+            "type": "atomic",
+            "on": {
+              "BACK": {
+                "target": "gathering"
+              }
+            }
+          }
+        },
+        "on": {
+          "SUBMIT": {
+            "target": "review"
+          }
+        }
+      },
+      "review": {
+        "description_ar": "مراجعة",
+        "type": "atomic",
+        "on": {
+          "CLOSE": {
+            "target": "resolved"
+          }
+        }
+      },
+      "resolved": {
+        "description_ar": "إغلاق",
+        "type": "final"
+      }
+    }
+  },
+  "dialogue": {
+    "max_turns_per_interview": 10,
+    "llm_enabled": false,
+    "topics": [
+      {
+        "id": "t_claim95",
+        "label_ar": "دقة القلم والحكم",
+        "example_questions_ar": [
+          "ماذا تعني دقة 95% في رأيك؟",
+          "على ماذا بنيتِ تقريرك؟"
+        ],
+        "fact_ids": [],
+        "claim_ids": [
+          "cl_pen_95"
+        ]
+      },
+      {
+        "id": "t_origin",
+        "label_ar": "أصل الرسالة",
+        "example_questions_ar": [
+          "من أين جاءت الرسالة؟",
+          "هل رمّمتها؟"
+        ],
+        "fact_ids": [
+          "f_donor_says"
+        ]
+      },
+      {
+        "id": "t_value",
+        "label_ar": "سؤال القيمة",
+        "example_questions_ar": [
+          "لماذا سألت عن قيمتها؟"
+        ],
+        "fact_ids": [
+          "f_insurance_asked"
+        ]
+      },
+      {
+        "id": "t_restore",
+        "label_ar": "ترميم الرسالة",
+        "example_questions_ar": [
+          "ماذا فعلتِ بالرسالة؟",
+          "هل دوّنتِ عملك؟"
+        ],
+        "fact_ids": [
+          "f_coating_applied",
+          "f_restoration_log_exists"
+        ]
+      },
+      {
+        "id": "t_registry",
+        "label_ar": "ملفات الهبة",
+        "example_questions_ar": [
+          "ما الذي تحفظونه عن الرسالة؟",
+          "هل صُوّرت وقت التبرع؟"
+        ],
+        "fact_ids": [
+          "f_donation_file_exists",
+          "f_photo_2018_exists"
+        ]
+      },
+      {
+        "id": "t_methods",
+        "label_ar": "الفحوص المتاحة",
+        "example_questions_ar": [
+          "ما الفحوص عندكم غير القلم؟",
+          "هل يمكن تصوير الصفحة كلها؟"
+        ],
+        "fact_ids": [
+          "f_confirm_available",
+          "f_uv_lamp_available"
+        ]
+      },
+      {
+        "id": "t_pen",
+        "label_ar": "القلم وأرقامه",
+        "example_questions_ar": [
+          "ماذا يقول دليل القلم؟",
+          "هل عندكم أرقام من العام الماضي؟"
+        ],
+        "fact_ids": [
+          "f_pen_manual_exists",
+          "f_stats_exist"
+        ]
+      },
+      {
+        "id": "t_controls",
+        "label_ar": "اختبار الضبط",
+        "example_questions_ar": [
+          "هل تستطيع تجربة القلم على أوراق معلومة؟"
+        ],
+        "fact_ids": [
+          "f_controls_possible"
+        ]
+      }
+    ]
+  },
+  "rubric": {
+    "reference_answer_ar": "لا دليل على أن الرسالة مزورة. القلم أداة فرز تلتقط خمساً وتسعين بالمئة من المزور وتشير خطأً إلى خمس بالمئة من السليم، ولأن المزور نادر في هذا المتحف (نحو عشرين من ألف) تكثر الإشارات الكاذبة حتى تزيد على ضعف الصحيحة. الفحص التأكيدي وجد حبراً قديماً، والجرد الموثق وصورة الفهرسة تسبقان القلم بسنوات، واختبار الضبط وسجل الترميم ودليل الصانع وصورة المصباح تفسّر الإشارة بطبقة حماية وُضعت قبل خمس سنوات. حدود الاستنتاج: اختبار الضبط على أوراق أخرى، والمجهر على مواضع قليلة، ونسبة المزور من سنة واحدة.",
+    "criteria": [
+      {
+        "id": "c_source",
+        "name_ar": "تصنيف المصادر",
+        "objective_ids": [
+          "lo_source"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يصنّف"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "أخطأ في الأغلب"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "نصف صحيح"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمه صحيح"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كله صحيح"
+          }
+        ]
+      },
+      {
+        "id": "c_conflict",
+        "name_ar": "ترتيب الأحداث على الخط الزمني",
+        "objective_ids": [
+          "lo_conflict"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.2,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يرتّب شيئاً"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "رتّب قليلاً"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "رتّب نصفها"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمها"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كلها في موضعها"
+          }
+        ]
+      },
+      {
+        "id": "c_links",
+        "name_ar": "ربط الأدلة بالفرضيات",
+        "objective_ids": [
+          "lo_links"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.2,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لا روابط"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "قليلة"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "نصفها صحيح"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمها"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كلها دقيقة"
+          }
+        ]
+      },
+      {
+        "id": "c_uncertainty",
+        "name_ar": "معايرة الثقة",
+        "objective_ids": [
+          "lo_calib"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "ثقة مفرطة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "حدود قليلة"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "جزئية"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معقولة"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "معايَرة كاملة"
+          }
+        ]
+      },
+      {
+        "id": "c_revision",
+        "name_ar": "مراجعة الرأي",
+        "objective_ids": [
+          "lo_revise"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "بقي على فرضية مرفوضة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "لم يعلن فرضية"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "ثبت على فرضية سليمة"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "غيّر بدليل"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "غيّر بدليل ووثّق"
+          }
+        ]
+      },
+      {
+        "id": "c_elimination",
+        "name_ar": "استبعاد الفرضيات الخاطئة",
+        "objective_ids": [
+          "lo_elim"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يستبعد"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "استبعد خطأً"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "فرضية بدليل"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "فرضيتين"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كل الخاطئة"
+          }
+        ]
+      },
+      {
+        "id": "c_justification",
+        "name_ar": "جودة الحجة المكتوبة",
+        "objective_ids": [
+          "lo_just"
+        ],
+        "scored_by": "human",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لا حجة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "ادعاء بلا سند"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "أدلة دون ربط"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "ربط الأدلة بالاستنتاج"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "ربط مع الحدود والبدائل"
+          }
+        ]
+      }
+    ]
+  },
+  "hint_ladder": [
+    {
+      "id": "hg1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "حين تسمع «دقيق بنسبة 95%» اسأل: دقيق في أي شيء؟ وكم من الرسائل في هذا المتحف مزورة أصلاً؟",
+      "trigger": {
+        "always": true
+      },
+      "assessment_weight": 0.02
+    },
+    {
+      "id": "hg2",
+      "level": 2,
+      "kind": "focus_area",
+      "text_ar": "تخيّل ألف رسالة: كم منها مزور؟ وكم يُشير القلم إليه من المزور ومن السليم؟ ثم قارن الأعداد.",
+      "trigger": {
+        "has_evidence": "ev_pen_log"
+      },
+      "assessment_weight": 0.04
+    },
+    {
+      "id": "hg3",
+      "level": 3,
+      "kind": "pointer",
+      "text_ar": "الإشارة الأولى تستحق فحصاً ثانياً مختلف الأسلوب؛ اسأل فني المختبر ماذا يملك.",
+      "trigger": {
+        "has_evidence": "ev_pen_log"
+      },
+      "assessment_weight": 0.08
+    },
+    {
+      "id": "hc1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "هل توهّج الصفحة على الخطوط وحدها يشبه توهجها على الصفحة كلها؟ وماذا يعني الفرق؟",
+      "trigger": {
+        "has_evidence": "ev_pen_manual"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_b_coat"
+    },
+    {
+      "id": "hc2",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "اقرأ في دليل القلم فقرة المحاذير، ثم انظر أين يقف التوهج في صورة المصباح.",
+      "trigger": {
+        "has_evidence": "ev_pen_manual"
+      },
+      "assessment_weight": 0.06,
+      "targets_inference_id": "i_b_coat"
+    },
+    {
+      "id": "hc3",
+      "level": 3,
+      "kind": "partial_reveal",
+      "text_ar": "التوهج يشمل الهوامش البيضاء، وهذا يوافق مادة تغطي السطح كله لا حبراً على الخطوط.",
+      "trigger": {
+        "has_evidence": "ev_uv_pattern"
+      },
+      "assessment_weight": 0.1,
+      "targets_inference_id": "i_b_coat"
+    },
+    {
+      "id": "ho1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "ما الدليل الذي يسبق القلم بسنوات ولا يعتمد على أي جهاز فحص؟",
+      "trigger": {
+        "has_evidence": "ev_pen_log"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_b_old"
+    },
+    {
+      "id": "ho2",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "اسأل أمينة السجل ماذا حُفظ عن الرسالة يوم التبرع وقبله.",
+      "trigger": {
+        "has_evidence": "ev_pen_log"
+      },
+      "assessment_weight": 0.06,
+      "targets_inference_id": "i_b_old"
+    }
+  ],
+  "fairness_test": {
+    "requirements": {
+      "min_disjoint_proof_paths": 2,
+      "max_inference_depth": 3,
+      "all_red_herrings_refutable": true,
+      "culprit_uniquely_entailed": true,
+      "no_hidden_fact_dependency": true,
+      "max_required_actions": 50
+    },
+    "runs": []
+  },
+  "ending_explanation": {
+    "steps": [
+      {
+        "order": 1,
+        "text_ar": "ابدأ بالعدّ لا بالنسبة: في ألف رسالة قلّة قليلة مزورة، فتكثر الإشارات الكاذبة حتى تزيد على الصحيحة، وإشارة واحدة لا تكفي للحكم.",
+        "uses_evidence_ids": [
+          "ev_screening_stats",
+          "ev_pen_manual"
+        ],
+        "inference_id": "i_flag_base"
+      },
+      {
+        "order": 2,
+        "text_ar": "الفحص التأكيدي بالمجهر يبني عمر الحبر من أثره في الألياف، ويقدَّم على الفرز السريع عند التعارض.",
+        "uses_evidence_ids": [
+          "ev_ink_confirm"
+        ],
+        "inference_id": "i_a_old"
+      },
+      {
+        "order": 3,
+        "text_ar": "طريق مستقل لعمر الرسالة: جرد موثق يسبق الشبهة بعقود، وصورة فهرسة ما زال فيها التمزق والبقعة في موضعهما.",
+        "uses_evidence_ids": [
+          "ev_donation_file",
+          "ev_catalogue_photo"
+        ],
+        "inference_id": "i_b_old"
+      },
+      {
+        "order": 4,
+        "text_ar": "ثم يُفسَّر سبب الإشارة: القلم يستجيب لسطح مطلي بالبوليمر على أوراق مجرَّبة، والسجل يقول إن الصفحة طُليت قبل خمس سنوات.",
+        "uses_evidence_ids": [
+          "ev_pen_controls",
+          "ev_restoration_log"
+        ],
+        "inference_id": "i_a_coat"
+      },
+      {
+        "order": 5,
+        "text_ar": "الطريق المستقل لسبب الإشارة: تحذير الصانع من الأسطح المغطاة، وتوهج منتظم يشمل الهوامش البيضاء ويقف عند حدود الصفحة.",
+        "uses_evidence_ids": [
+          "ev_pen_manual",
+          "ev_uv_pattern"
+        ],
+        "inference_id": "i_b_coat"
+      },
+      {
+        "order": 6,
+        "text_ar": "فتسقط رواية التزوير، وتسقط معها فكرة أن القلم معطوب، ويبقى القلم أداة فرز تحتاج إلى متابعة.",
+        "uses_evidence_ids": [
+          "ev_pen_controls",
+          "ev_uv_pattern",
+          "ev_ink_confirm"
+        ],
+        "inference_id": "i_rule_pen"
+      }
+    ],
+    "alternative_paths_ar": [
+      "يكفي طريق المختبر: الفحص التأكيدي واختبار الضبط وسجل الترميم، من غير ملفات السجل ولا صورة المصباح.",
+      "ويكفي طريق الملفات: الجرد والصورة القديمة وتحذير الصانع وصورة المصباح، من غير مجهر الحبر؛ والأقوى أن يتفق الطريقان."
+    ],
+    "what_evidence_could_not_show_ar": [
+      "اختبار الضبط شمل عشرين ورقة، وليست الرسالة منها، فهو يبيّن سلوك القلم ولا يختبر الرسالة نفسها بشكل مباشر.",
+      "الفحص التأكيدي أخذ ثلاثة مواضع من الصفحة الأولى، ويقدّر العمر بمدى لا بسنة.",
+      "نسبة المزور بين الرسائل (2%) مأخوذة من سنة واحدة في هذا المختبر، وقد تتغير في سنة أخرى.",
+      "لا نعرف لماذا لم يُبلَّغ مختبر الفرز بأن الرسالة رُمّمت وطُليت؛ والحل ودّي: يُسجَّل الطلاء في ملف كل قطعة."
+    ],
+    "science_notes_ar": [
+      "الدقة ليست الاحتمال: قلم يلتقط 95 من كل 100 مزور ويخطئ في 5 من كل 100 سليم يعطي نسبة ترجيح مقدارها 19 (أي يضرب الأرجحية السابقة في 19). لكن إذا كان المزور رسالتين في كل ألف، فالأرجحية السابقة ضئيلة، ولذلك تبقى الإشارة المنفردة بعيدة عن الحسم.",
+      "نسبة الترجيح (likelihood ratio) مقياس لقوة الدليل، وهي غير مقياس الارتباط في الجداول المسمى odds ratio؛ فلا يُخلط المصطلحان.",
+      "الاختبار التمهيدي يُنتقي ليلتقط الجميع ويقبل إشارات كاذبة؛ والتأكيدي يُنتقى ليحسم. قرار يترتب عليه اتهام لا يُبنى على التمهيدي وحده.",
+      "حين تسمع «إيجابي» فاسأل عمّا يمكن أن يسبب إيجابية بريئة: طبقة، رطوبة، تلوث. وجدنا هنا الجواب في سجل ترميم مكتوب.",
+      "لا اتهام لأحد: المرمّمة عملت وفق أصول مهنتها، والواهب سلّم ما ورثه. وإصلاح الضرر أن تُرفع حالة التعليق وتُوثّق الطبقة في ملف الرسالة.",
+      "بطاقة الأصل: القضية أصلية من ATHAR، وبنيتها من نمط «الاختبار الدقيق بنسبة 95%» في مكتبة تصميم القضايا؛ لا قلم ولا جهاز حقيقيان فيها."
+    ]
+  },
+  "expert_review": [
+    {
+      "role": "narrative_editor",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-28",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "scientific_reviewer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-28",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "learning_designer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-28",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "age_appropriateness",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-28",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "cultural_reviewer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-28",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "legal_rights",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-28",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "safety",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-28",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+Title: Kashf al-zunun 'an asami al-kutub wa-l-funun
+Author: Hajji Khalifa (Katib Celebi)
+Digital source: Open Islamicate Texts Initiative (OpenITI), file 1067HajjiKhalifa.KashfZunun.JK000468-ara1
+URL: https://raw.githubusercontent.com/OpenITI/1075AH/master/data/1067HajjiKhalifa/1067HajjiKhalifa.KashfZunun/1067HajjiKhalifa.KashfZunun.JK000468-ara1
+Licence: CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/)
+Attribution text: "Text from the OpenITI corpus (Romanov, Savant, Seydi, Verkinderen, Nigst et al.), release on Zenodo doi:10.5281/zenodo.3082463, licensed CC BY-NC-SA 4.0."
+Use limits for ATHAR: internal research only (non-commercial). Do not ship this file or substantial extracts in a paid product; commercial ATHAR stories must be our own retellings. File unchanged (byte-identical to source).
+Notes: Holds classical definitions of 'ilm al-'iyafa and 'ilm al-qiyafa (vol.2 p.1180, p.1365).
+Stored by W2-HERITAGE on 2026-10-27.

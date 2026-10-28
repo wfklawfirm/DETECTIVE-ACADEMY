@@ -9,7 +9,10 @@ import { usePrefs, type ThemePref } from "./ui/prefs";
 
 const MORE = [
   { href: "/challenges", label: "تحدي اليوم", Icon: TargetIcon },
+  { href: "/season", label: "الموسم الأول", Icon: TargetIcon },
   { href: "/labs", label: "مختبرات آمنة", Icon: FlaskIcon },
+  { href: "/glossary", label: "المسرد الجنائي", Icon: FileIcon },
+  { href: "/heritage", label: "تراث الاستدلال", Icon: LinkIcon },
   { href: "/skills", label: "المهارات وأنماط الألغاز", Icon: SparkIcon },
   { href: "/sources", label: "المصادر والحقوق", Icon: LinkIcon },
   { href: "/gallery", label: "معرض المراجع", Icon: ImageIcon },

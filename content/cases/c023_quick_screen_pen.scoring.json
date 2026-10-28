@@ -1,0 +1,171 @@
+{
+  "case_id": "c023_quick_screen_pen",
+  "accepted_conclusions": {
+    "h_coating": {
+      "grade": 1,
+      "note_ar": "استنتاج متسق مع الفحص التأكيدي والسجلات ويتطلب ذكر حدوده."
+    },
+    "h_forged": {
+      "grade": 0,
+      "note_ar": "يبني الاتهام على إشارة فرز واحدة ويتجاهل المعدل الأساسي والفحص التأكيدي والسجلات القديمة."
+    },
+    "h_95": {
+      "grade": 0,
+      "note_ar": "يخلط بين دقة الجهاز واحتمال صحة الفرضية بعد الإشارة."
+    },
+    "h_pen": {
+      "grade": 0,
+      "note_ar": "القلم يعمل كما صُمّم وسلوكه على الأسطح المطلية متوقع."
+    }
+  },
+  "confidence_band": {
+    "h_coating": [
+      65,
+      90
+    ],
+    "h_forged": [
+      0,
+      15
+    ],
+    "h_95": [
+      0,
+      10
+    ],
+    "h_pen": [
+      0,
+      15
+    ]
+  },
+  "source_key": {
+    "ev_curator_report": "claim",
+    "ev_pen_log": "primary_record",
+    "ev_pen_manual": "public_document",
+    "ev_screening_stats": "primary_record",
+    "ev_ink_confirm": "primary_record",
+    "ev_pen_controls": "primary_record",
+    "ev_restoration_log": "primary_record",
+    "ev_uv_pattern": "primary_record",
+    "ev_donation_file": "primary_record",
+    "ev_catalogue_photo": "primary_record",
+    "ev_insurance_inquiry": "claim",
+    "ev_donor_statement": "claim",
+    "ev_conservator_statement": "claim"
+  },
+  "link_key": {
+    "h_coating": {
+      "ev_pen_manual": "supports",
+      "ev_ink_confirm": "supports",
+      "ev_pen_controls": "supports",
+      "ev_restoration_log": "supports",
+      "ev_uv_pattern": "supports",
+      "ev_donation_file": "supports",
+      "ev_catalogue_photo": "supports",
+      "ev_screening_stats": "supports",
+      "ev_conservator_statement": "supports"
+    },
+    "h_forged": {
+      "ev_curator_report": "supports",
+      "ev_pen_log": "supports",
+      "ev_insurance_inquiry": "supports",
+      "ev_ink_confirm": "weakens",
+      "ev_donation_file": "weakens",
+      "ev_catalogue_photo": "weakens",
+      "ev_uv_pattern": "weakens",
+      "ev_pen_controls": "weakens"
+    },
+    "h_95": {
+      "ev_curator_report": "supports",
+      "ev_screening_stats": "weakens",
+      "ev_ink_confirm": "weakens",
+      "ev_pen_controls": "weakens"
+    },
+    "h_pen": {
+      "ev_pen_log": "supports",
+      "ev_pen_controls": "weakens",
+      "ev_uv_pattern": "weakens",
+      "ev_pen_manual": "weakens"
+    }
+  },
+  "required_limits": [
+    "l_controls_small",
+    "l_screen_tool"
+  ],
+  "valid_mind_changers": [
+    "m_not_coated",
+    "m_ink_modern",
+    "m_stats_other"
+  ],
+  "invalid_limits": [
+    "l_invalid_95",
+    "l_invalid_insure",
+    "l_invalid_useless"
+  ],
+  "decisive_evidence": [
+    "ev_ink_confirm",
+    "ev_pen_controls",
+    "ev_restoration_log",
+    "ev_pen_manual",
+    "ev_uv_pattern",
+    "ev_donation_file",
+    "ev_catalogue_photo"
+  ],
+  "lab_requirement": null,
+  "timeline_requirement": [
+    {
+      "evidence_id": "ev_pen_log",
+      "utc_minute": 1515,
+      "tol": 20
+    },
+    {
+      "evidence_id": "ev_curator_report",
+      "utc_minute": 1740,
+      "tol": 20
+    },
+    {
+      "evidence_id": "ev_ink_confirm",
+      "utc_minute": 3000,
+      "tol": 20
+    },
+    {
+      "evidence_id": "ev_uv_pattern",
+      "utc_minute": 3030,
+      "tol": 20
+    },
+    {
+      "evidence_id": "ev_pen_controls",
+      "utc_minute": 3180,
+      "tol": 20
+    }
+  ],
+  "refuted_hypotheses": [
+    "h_forged",
+    "h_95",
+    "h_pen"
+  ],
+  "criteria_map": {
+    "c_source": "source_typing",
+    "c_conflict": "conflict_resolution",
+    "c_links": "hypothesis_links",
+    "c_uncertainty": "uncertainty",
+    "c_revision": "revision",
+    "c_elimination": "elimination",
+    "c_justification": "justification_human"
+  },
+  "transfer_key": {
+    "valid": [
+      "o1",
+      "o2",
+      "o3",
+      "o4"
+    ],
+    "invalid": [
+      "o5",
+      "o6",
+      "o7"
+    ]
+  },
+  "caps": {
+    "no_citations_max": 45,
+    "no_conflict_resolution_max": 65
+  }
+}

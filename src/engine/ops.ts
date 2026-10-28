@@ -130,12 +130,10 @@ export function runLab(c: CaseFile, labs: LabDef[], prev: PlayState, labId: stri
 
 // ---------- hints ----------
 import { evalGuard } from "./guard";
+import { pickHint } from "./hints";
 export function nextHint(c: CaseFile, prev: PlayState, now = new Date().toISOString()): { state: PlayState; hint: { id: string; level: number; kind: string; text_ar: string } | null } {
   const st = clone(prev);
-  const given = new Set(st.hints.map((h) => h.hint_id));
-  // choose the lowest-level not-yet-given hint whose trigger holds; prefer targeted hints for inferences the player has not yet mastered
-  const cand = c.hint_ladder.filter((h) => !given.has(h.id) && evalGuard(h.trigger, st)).sort((a, b) => a.level - b.level || (a.targets_inference_id ? 0 : 1) - (b.targets_inference_id ? 0 : 1));
-  const h = cand[0];
+  const h = pickHint(c.hint_ladder, st.hints, (x) => evalGuard(x.trigger, st));
   if (!h) return { state: st, hint: null };
   bump(st, now); st.hints.push({ seq: st.seq, hint_id: h.id, level: h.level }); st.log.push({ seq: st.seq, action: "hint", target: h.id });
   return { state: st, hint: { id: h.id, level: h.level, kind: h.kind, text_ar: h.text_ar } };

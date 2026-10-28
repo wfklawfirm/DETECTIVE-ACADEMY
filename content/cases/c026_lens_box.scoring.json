@@ -1,0 +1,175 @@
+{
+  "accepted_conclusions": {
+    "h_hadi": {
+      "grade": 1,
+      "note_ar": "استنتاج متسق مع الأدلة ويتطلب ذكر حدوده."
+    },
+    "h_sup": {
+      "grade": 0,
+      "note_ar": "يجعل مكان العثور دليلاً على من وضع، ويتجاهل السجلات المستقلة التي تبعد المشرف."
+    },
+    "h_mazen": {
+      "grade": 0,
+      "note_ar": "يبني على خلاف سابق وعلى كونه من وجد الصندوق، ولا قيد يقرّبه من المشغل."
+    },
+    "h_misfiled": {
+      "grade": 0,
+      "note_ar": "الصندوق غادر المشغل في حوزة شخص بعينه ولم يُنقل خطأً عند التنظيف."
+    }
+  },
+  "confidence_band": {
+    "h_hadi": [
+      65,
+      90
+    ],
+    "h_sup": [
+      0,
+      15
+    ],
+    "h_mazen": [
+      0,
+      20
+    ],
+    "h_misfiled": [
+      0,
+      20
+    ]
+  },
+  "source_key": {
+    "ev_found_report": "claim",
+    "ev_custody_form": "primary_record",
+    "ev_door_log": "primary_record",
+    "ev_exhibit_post": "primary_record",
+    "ev_patrol_log": "primary_record",
+    "ev_training_sheet": "primary_record",
+    "ev_gate_log": "primary_record",
+    "ev_office_lock_log": "primary_record",
+    "ev_found_photo": "redisplay",
+    "ev_sup_email": "primary_record",
+    "ev_mazen_stmt": "claim",
+    "ev_rashid_stmt": "claim",
+    "ev_hadi_stmt": "claim"
+  },
+  "link_key": {
+    "h_hadi": {
+      "ev_custody_form": "supports",
+      "ev_door_log": "supports",
+      "ev_exhibit_post": "supports",
+      "ev_patrol_log": "supports",
+      "ev_training_sheet": "supports",
+      "ev_gate_log": "supports",
+      "ev_office_lock_log": "supports",
+      "ev_found_photo": "neutral",
+      "ev_hadi_stmt": "supports",
+      "ev_sup_email": "neutral"
+    },
+    "h_sup": {
+      "ev_found_report": "supports",
+      "ev_sup_email": "supports",
+      "ev_training_sheet": "weakens",
+      "ev_gate_log": "weakens",
+      "ev_office_lock_log": "weakens",
+      "ev_found_photo": "weakens",
+      "ev_custody_form": "weakens",
+      "ev_door_log": "weakens"
+    },
+    "h_mazen": {
+      "ev_found_report": "supports",
+      "ev_mazen_stmt": "supports",
+      "ev_found_photo": "weakens",
+      "ev_door_log": "weakens",
+      "ev_custody_form": "weakens",
+      "ev_gate_log": "neutral"
+    },
+    "h_misfiled": {
+      "ev_door_log": "weakens",
+      "ev_custody_form": "weakens",
+      "ev_exhibit_post": "weakens",
+      "ev_patrol_log": "weakens"
+    }
+  },
+  "required_limits": [
+    "l_content_unknown",
+    "l_card_not_person"
+  ],
+  "valid_mind_changers": [
+    "m_sup_card",
+    "m_door_lent",
+    "m_photo_time"
+  ],
+  "invalid_limits": [
+    "l_invalid_place",
+    "l_invalid_feud",
+    "l_invalid_shy"
+  ],
+  "decisive_evidence": [
+    "ev_custody_form",
+    "ev_door_log",
+    "ev_exhibit_post",
+    "ev_patrol_log",
+    "ev_training_sheet",
+    "ev_gate_log",
+    "ev_office_lock_log",
+    "ev_found_photo"
+  ],
+  "timeline_requirement": [
+    {
+      "evidence_id": "ev_custody_form",
+      "utc_minute": 55,
+      "tol": 3
+    },
+    {
+      "evidence_id": "ev_door_log",
+      "utc_minute": 72,
+      "tol": 3
+    },
+    {
+      "evidence_id": "ev_exhibit_post",
+      "utc_minute": 400,
+      "tol": 5
+    },
+    {
+      "evidence_id": "ev_found_photo",
+      "utc_minute": 1066,
+      "tol": 3
+    },
+    {
+      "evidence_id": "ev_gate_log",
+      "utc_minute": 1072,
+      "tol": 4
+    }
+  ],
+  "refuted_hypotheses": [
+    "h_sup",
+    "h_mazen",
+    "h_misfiled"
+  ],
+  "transfer_key": {
+    "valid": [
+      "o1",
+      "o2",
+      "o3",
+      "o4"
+    ],
+    "invalid": [
+      "o5",
+      "o6",
+      "o7"
+    ]
+  },
+  "case_id": "c026_lens_box",
+  "lab_requirement": null,
+  "criteria_map": {
+    "c_source": "source_typing",
+    "c_conflict": "conflict_resolution",
+    "c_links": "hypothesis_links",
+    "c_uncertainty": "uncertainty",
+    "c_revision": "revision",
+    "c_elimination": "elimination",
+    "c_justification": "justification_human"
+  },
+  "caps": {
+    "no_citations_max": 45,
+    "no_conflict_resolution_max": 65
+  }
+}

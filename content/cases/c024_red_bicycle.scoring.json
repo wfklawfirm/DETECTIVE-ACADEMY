@@ -1,0 +1,175 @@
+{
+  "case_id": "c024_red_bicycle",
+  "accepted_conclusions": {
+    "h_borrow": {
+      "grade": 1,
+      "note_ar": "استنتاج متسق مع الأدلة ويتطلب ذكر حدوده."
+    },
+    "h_anwar": {
+      "grade": 0,
+      "note_ar": "يبني الاتهام على وصف تبدّل بعد سؤال موحٍ، ويتجاهل الرواية الأولى والكاميرا ورسالة كريم وورقة المناوبة."
+    },
+    "h_stranger": {
+      "grade": 0,
+      "note_ar": "الدراجة فُتحت بمفتاح الاحتياط وأعادها أخو صاحبها؛ لا غريب."
+    },
+    "h_yara_lie": {
+      "grade": 0,
+      "note_ar": "وصفها الأول يطابق الكاميرا والرسالة، والتبدل نتيجة سؤال لا اختلاق."
+    }
+  },
+  "confidence_band": {
+    "h_borrow": [
+      65,
+      90
+    ],
+    "h_anwar": [
+      0,
+      10
+    ],
+    "h_stranger": [
+      0,
+      15
+    ],
+    "h_yara_lie": [
+      0,
+      10
+    ]
+  },
+  "source_key": {
+    "ev_bike_report": "claim",
+    "ev_vp_summary": "claim",
+    "ev_first_message": "primary_record",
+    "ev_interview_transcript": "primary_record",
+    "ev_mother_statement": "claim",
+    "ev_vp_statement": "claim",
+    "ev_yara_statement": "claim",
+    "ev_gate_frame": "primary_record",
+    "ev_return_sheet": "primary_record",
+    "ev_brother_text": "primary_record",
+    "ev_steward_sheet": "primary_record",
+    "ev_old_warning": "primary_record",
+    "ev_karim_statement": "claim"
+  },
+  "link_key": {
+    "h_borrow": {
+      "ev_first_message": "supports",
+      "ev_interview_transcript": "supports",
+      "ev_gate_frame": "supports",
+      "ev_return_sheet": "supports",
+      "ev_brother_text": "supports",
+      "ev_steward_sheet": "supports",
+      "ev_mother_statement": "supports",
+      "ev_vp_statement": "supports",
+      "ev_karim_statement": "supports",
+      "ev_vp_summary": "weakens"
+    },
+    "h_anwar": {
+      "ev_vp_summary": "supports",
+      "ev_old_warning": "supports",
+      "ev_steward_sheet": "weakens",
+      "ev_gate_frame": "weakens",
+      "ev_brother_text": "weakens",
+      "ev_first_message": "weakens",
+      "ev_return_sheet": "neutral"
+    },
+    "h_stranger": {
+      "ev_gate_frame": "neutral",
+      "ev_brother_text": "weakens",
+      "ev_return_sheet": "weakens"
+    },
+    "h_yara_lie": {
+      "ev_first_message": "weakens",
+      "ev_gate_frame": "weakens",
+      "ev_bike_report": "neutral"
+    }
+  },
+  "required_limits": [
+    "l_memory_unknown",
+    "l_camera_limits"
+  ],
+  "valid_mind_changers": [
+    "m_text_late",
+    "m_frame_other",
+    "m_steward_left"
+  ],
+  "invalid_limits": [
+    "l_invalid_sure",
+    "l_invalid_child",
+    "l_invalid_warning"
+  ],
+  "decisive_evidence": [
+    "ev_first_message",
+    "ev_interview_transcript",
+    "ev_gate_frame",
+    "ev_return_sheet",
+    "ev_brother_text",
+    "ev_steward_sheet",
+    "ev_mother_statement",
+    "ev_vp_statement"
+  ],
+  "lab_requirement": null,
+  "timeline_requirement": [
+    {
+      "evidence_id": "ev_brother_text",
+      "utc_minute": 65,
+      "tol": 4
+    },
+    {
+      "evidence_id": "ev_gate_frame",
+      "utc_minute": 68,
+      "tol": 4
+    },
+    {
+      "evidence_id": "ev_first_message",
+      "utc_minute": 81,
+      "tol": 4
+    },
+    {
+      "evidence_id": "ev_return_sheet",
+      "utc_minute": 125,
+      "tol": 6
+    },
+    {
+      "evidence_id": "ev_interview_transcript",
+      "utc_minute": 160,
+      "tol": 6
+    },
+    {
+      "evidence_id": "ev_vp_summary",
+      "utc_minute": 1080,
+      "tol": 20
+    }
+  ],
+  "refuted_hypotheses": [
+    "h_anwar",
+    "h_stranger",
+    "h_yara_lie"
+  ],
+  "criteria_map": {
+    "c_source": "source_typing",
+    "c_conflict": "conflict_resolution",
+    "c_links": "hypothesis_links",
+    "c_uncertainty": "uncertainty",
+    "c_revision": "revision",
+    "c_elimination": "elimination",
+    "c_justification": "justification_human"
+  },
+  "transfer_key": {
+    "valid": [
+      "o1",
+      "o2",
+      "o3",
+      "o4"
+    ],
+    "invalid": [
+      "o5",
+      "o6",
+      "o7"
+    ]
+  },
+  "caps": {
+    "no_citations_max": 45,
+    "no_conflict_resolution_max": 65
+  }
+}

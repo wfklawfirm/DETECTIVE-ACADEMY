@@ -1,0 +1,238 @@
+section,scenario,parameter,value,unit,basis,tag
+input,all,SAR per USD (official peg),3.75,SAR/USD,ATH-SRC-2259,documented_fact
+input,all,Saudi VAT standard rate,0.15,share,ATH-SRC-2261,documented_fact
+input,all,App store commission (Apple SBP <$1M; Google subscriptions MENA),0.15,share,ATH-SRC-2226; ATH-SRC-2227,documented_fact
+input,B2C,Test price: family plan monthly (inside sourced SA band SAR 20.99-39.99 for Arabic edtech/reading),29.99,SAR incl. VAT,band from ATH-SRC-2200/2205/2206/2208/2210/2211; choice = assumption,assumption_for_sensitivity
+input,B2C,Test price: family plan annual (inside sourced SA band SAR 204.99-349.99),249.99,SAR incl. VAT,band from ATH-SRC-2206/2207/2210/2211; choice = assumption,assumption_for_sensitivity
+derived,B2C,Net proceeds per monthly payment,22.1665,SAR,price/(1+VAT)x(1-fee); ATH-SRC-2262,calculation_on_documented_inputs
+derived,B2C,Net proceeds per monthly payment,5.9111,USD,calc,calculation_on_documented_inputs
+derived,B2C,Net proceeds per annual payment,49.2734,USD,calc,calculation_on_documented_inputs
+input,B2C,"D35 download-to-paid, all apps median",0.02,share,ATH-SRC-2219,documented_fact
+input,B2C,"D35 download-to-paid, freemium median",0.021,share,ATH-SRC-2219,documented_fact
+input,B2C,"D35 download-to-paid, hard paywall median",0.107,share,ATH-SRC-2219,documented_fact
+input,B2C,"D35 download-to-paid, Gaming median",0.01,share,ATH-SRC-2219,documented_fact
+input,B2C,"D30 download-to-trial, Education median",0.065,share,ATH-SRC-2219,documented_fact
+input,B2C,"Trial-to-paid median, MEA users",0.195,share,ATH-SRC-2219,documented_fact
+derived,B2C,Education trial rate x MEA trial-to-paid (proxy D35 conversion),0.0127,share,calc on ATH-SRC-2219 (cross-segment product; not a published figure),calculation_on_documented_inputs
+input,B2C,"Monthly plan 1st renewal, range low end",0.53,share,ATH-SRC-2219 (53-75%),documented_fact
+input,B2C,"Monthly plans retained 6 months in, category medians (mid of 14-26%)",0.2,share,ATH-SRC-2219 (14-26%; midpoint = calc),calculation_on_documented_inputs
+input,B2C,"Year-1 retention, monthly plans (median)",0.08,share,ATH-SRC-2219,documented_fact
+input,B2C,"Year-1 retention, annual plans (median)",0.28,share,ATH-SRC-2219,documented_fact
+input,B2C,"Realized LTV per payer after year 1, Education median",22.82,USD,ATH-SRC-2219,documented_fact
+input,B2C,"Realized LTV per payer after year 1, Gaming median",11.22,USD,ATH-SRC-2219,documented_fact
+input,B2C,"Global gaming cost per install 2025 (floor reference, not ATHAR forecast)",0.56,USD,ATH-SRC-2223,documented_fact
+derived,B2C,Expected paid months in year 1 (monthly payer; interpolated retention curve),3.4535,months,calc on ATH-SRC-2219 anchors,calculation_on_documented_inputs
+derived,B2C,Year-1 net LTV per monthly payer (build-up),20.414,USD,calc,calculation_on_documented_inputs
+derived,B2C,Year-1 net LTV per annual payer (one annual payment; renewal falls in year 2),49.2734,USD,calc,calculation_on_documented_inputs
+derived,B2C,2-year net LTV per annual payer (incl. 28% renewal),63.07,USD,calc,calculation_on_documented_inputs
+input,B2C,MEA plan mix: share monthly (low end of 52-55%),0.52,share,ATH-SRC-2219,documented_fact
+derived,B2C,"Year-1 net LTV per payer, blended 52% monthly / 48% annual",34.2665,USD,calc (assumes non-monthly share = annual),calculation_on_documented_inputs
+input,all,"Hours, first case for a new team (range mid)",135.0,hours,CASE_PRODUCTION_PIPELINE.md §6 (105-165) [افتراض تصميمي],assumption_for_sensitivity
+input,all,Hours per case after 5 cases (range mid),82.5,hours,CASE_PRODUCTION_PIPELINE.md §6 (65-100) [افتراض تصميمي],assumption_for_sensitivity
+input,all,"Hours, season 1 (10 cases + labs + visuals), low",1130,hours,FIRST_SEASON_RECOMMENDATIONS.md §7.1 [افتراض تصميمي],assumption_for_sensitivity
+input,all,"Hours, season 1, high",2200,hours,FIRST_SEASON_RECOMMENDATIONS.md §7.1 [افتراض تصميمي],assumption_for_sensitivity
+input,all,"MVP engineering, low (14 person-weeks x 40 h)",560,hours,MVP_SCOPE.md §5.3 (14-24 person-weeks); 40 h/week = assumption,assumption_for_sensitivity
+input,all,"MVP engineering, high (24 person-weeks x 40 h)",960,hours,MVP_SCOPE.md §5.3,assumption_for_sensitivity
+input,all,"GASTAT average monthly wage, Saudi workers Q2 2025",11034,SAR/month,ATH-SRC-2263,documented_fact
+input,all,Working hours per month used for conversion,160,hours/month,assumption (40 h x 4 weeks),assumption_for_sensitivity
+derived,all,Hourly cost at GASTAT national average (floor; excludes on-costs and specialist premiums),18.39,USD/hour,calc,calculation_on_documented_inputs
+input,all,Hourly cost grid point 1x,18.39,USD/hour,1x calc on ATH-SRC-2263; 2x/3x assumption grid,calculation_on_documented_inputs
+input,all,Hourly cost grid point 2x,36.78,USD/hour,1x calc on ATH-SRC-2263; 2x/3x assumption grid,assumption_for_sensitivity
+input,all,Hourly cost grid point 3x,55.17,USD/hour,1x calc on ATH-SRC-2263; 2x/3x assumption grid,assumption_for_sensitivity
+derived,all,Fixed hours to reach a sellable season (season low + MVP eng low),1690,hours,calc,calculation_on_documented_inputs
+derived,all,Fixed hours (season high + MVP eng high),3160,hours,calc,calculation_on_documented_inputs
+input,hybrid,"Illustrative cost per 10-turn Arabic interrogation, small-model tier",0.0009,USD,10_TECHNICAL_ARCHITECTURE/ARABIC_TOKEN_COST_MEASUREMENT.md §3.3; ATH-SRC-1911/1913,documented_fact
+input,hybrid,"Illustrative cost per 10-turn Arabic interrogation, mid-model tier",0.018,USD,same,documented_fact
+input,hybrid,Interrogations per case,3,count,"assumption (4-6 characters per case, not all questioned)",assumption_for_sensitivity
+input,hybrid,Cases played per active subscriber per month,4,count,"assumption (weekly case cadence, MVP_SCOPE experiment 2)",assumption_for_sensitivity
+derived,hybrid,AI cost per subscriber-month (small tier),0.0108,USD,calc,calculation_on_documented_inputs
+derived,hybrid,AI cost as share of monthly net proceeds (small tier),0.0018,share,calc,calculation_on_documented_inputs
+derived,hybrid,AI cost per subscriber-month (mid tier),0.216,USD,calc,calculation_on_documented_inputs
+derived,hybrid,AI cost as share of monthly net proceeds (mid tier),0.0365,share,calc,calculation_on_documented_inputs
+sensitivity,A_B2C,Break-even CPI | conv=Gaming median 1.0% | LTV=blended build-up,0.3427,USD per install,conv x year-1 LTV (no overheads),calculation_on_documented_inputs
+sensitivity,A_B2C,Break-even CPI | conv=Gaming median 1.0% | LTV=RLTV Education,0.2282,USD per install,conv x year-1 LTV (no overheads),calculation_on_documented_inputs
+sensitivity,A_B2C,Break-even CPI | conv=Gaming median 1.0% | LTV=RLTV Gaming,0.1122,USD per install,conv x year-1 LTV (no overheads),calculation_on_documented_inputs
+sensitivity,A_B2C,Break-even CPI | conv=Edu trial x MEA t2p 1.27% | LTV=blended build-up,0.4352,USD per install,conv x year-1 LTV (no overheads),calculation_on_documented_inputs
+sensitivity,A_B2C,Break-even CPI | conv=Edu trial x MEA t2p 1.27% | LTV=RLTV Education,0.2898,USD per install,conv x year-1 LTV (no overheads),calculation_on_documented_inputs
+sensitivity,A_B2C,Break-even CPI | conv=Edu trial x MEA t2p 1.27% | LTV=RLTV Gaming,0.1425,USD per install,conv x year-1 LTV (no overheads),calculation_on_documented_inputs
+sensitivity,A_B2C,Break-even CPI | conv=All-apps median 2.0% | LTV=blended build-up,0.6853,USD per install,conv x year-1 LTV (no overheads),calculation_on_documented_inputs
+sensitivity,A_B2C,Break-even CPI | conv=All-apps median 2.0% | LTV=RLTV Education,0.4564,USD per install,conv x year-1 LTV (no overheads),calculation_on_documented_inputs
+sensitivity,A_B2C,Break-even CPI | conv=All-apps median 2.0% | LTV=RLTV Gaming,0.2244,USD per install,conv x year-1 LTV (no overheads),calculation_on_documented_inputs
+sensitivity,A_B2C,Break-even CPI | conv=Hard-paywall median 10.7% | LTV=blended build-up,3.6665,USD per install,conv x year-1 LTV (no overheads),calculation_on_documented_inputs
+sensitivity,A_B2C,Break-even CPI | conv=Hard-paywall median 10.7% | LTV=RLTV Education,2.4417,USD per install,conv x year-1 LTV (no overheads),calculation_on_documented_inputs
+sensitivity,A_B2C,Break-even CPI | conv=Hard-paywall median 10.7% | LTV=RLTV Gaming,1.2005,USD per install,conv x year-1 LTV (no overheads),calculation_on_documented_inputs
+sensitivity,A_B2C,Payers needed to recover year-1 fixed cost | LTV=RLTV Education (base) | rate 1x | hours low,1361.9238,payers,fixed $ / year-1 LTV,calculation_on_documented_inputs
+sensitivity,A_B2C,Installs needed at 2.0% D35 conversion | LTV=RLTV Education (base) | rate 1x | hours low,68096.1876,installs,calc,calculation_on_documented_inputs
+sensitivity,A_B2C,Payers needed to recover year-1 fixed cost | LTV=blended build-up (optimistic) | rate 1x | hours low,906.982,payers,fixed $ / year-1 LTV,calculation_on_documented_inputs
+sensitivity,A_B2C,Installs needed at 2.0% D35 conversion | LTV=blended build-up (optimistic) | rate 1x | hours low,45349.1019,installs,calc,calculation_on_documented_inputs
+sensitivity,A_B2C,Payers needed to recover year-1 fixed cost | LTV=RLTV Education (base) | rate 1x | hours high,2546.5557,payers,fixed $ / year-1 LTV,calculation_on_documented_inputs
+sensitivity,A_B2C,Installs needed at 2.0% D35 conversion | LTV=RLTV Education (base) | rate 1x | hours high,127327.7826,installs,calc,calculation_on_documented_inputs
+sensitivity,A_B2C,Payers needed to recover year-1 fixed cost | LTV=blended build-up (optimistic) | rate 1x | hours high,1695.8954,payers,fixed $ / year-1 LTV,calculation_on_documented_inputs
+sensitivity,A_B2C,Installs needed at 2.0% D35 conversion | LTV=blended build-up (optimistic) | rate 1x | hours high,84794.7704,installs,calc,calculation_on_documented_inputs
+sensitivity,A_B2C,Payers needed to recover year-1 fixed cost | LTV=RLTV Education (base) | rate 2x | hours low,2723.8475,payers,fixed $ / year-1 LTV,calculation_on_documented_inputs
+sensitivity,A_B2C,Installs needed at 2.0% D35 conversion | LTV=RLTV Education (base) | rate 2x | hours low,136192.3751,installs,calc,calculation_on_documented_inputs
+sensitivity,A_B2C,Payers needed to recover year-1 fixed cost | LTV=blended build-up (optimistic) | rate 2x | hours low,1813.9641,payers,fixed $ / year-1 LTV,calculation_on_documented_inputs
+sensitivity,A_B2C,Installs needed at 2.0% D35 conversion | LTV=blended build-up (optimistic) | rate 2x | hours low,90698.2038,installs,calc,calculation_on_documented_inputs
+sensitivity,A_B2C,Payers needed to recover year-1 fixed cost | LTV=RLTV Education (base) | rate 2x | hours high,5093.1113,payers,fixed $ / year-1 LTV,calculation_on_documented_inputs
+sensitivity,A_B2C,Installs needed at 2.0% D35 conversion | LTV=RLTV Education (base) | rate 2x | hours high,254655.5653,installs,calc,calculation_on_documented_inputs
+sensitivity,A_B2C,Payers needed to recover year-1 fixed cost | LTV=blended build-up (optimistic) | rate 2x | hours high,3391.7908,payers,fixed $ / year-1 LTV,calculation_on_documented_inputs
+sensitivity,A_B2C,Installs needed at 2.0% D35 conversion | LTV=blended build-up (optimistic) | rate 2x | hours high,169589.5408,installs,calc,calculation_on_documented_inputs
+sensitivity,A_B2C,Payers needed to recover year-1 fixed cost | LTV=RLTV Education (base) | rate 3x | hours low,4085.7713,payers,fixed $ / year-1 LTV,calculation_on_documented_inputs
+sensitivity,A_B2C,Installs needed at 2.0% D35 conversion | LTV=RLTV Education (base) | rate 3x | hours low,204288.5627,installs,calc,calculation_on_documented_inputs
+sensitivity,A_B2C,Payers needed to recover year-1 fixed cost | LTV=blended build-up (optimistic) | rate 3x | hours low,2720.9461,payers,fixed $ / year-1 LTV,calculation_on_documented_inputs
+sensitivity,A_B2C,Installs needed at 2.0% D35 conversion | LTV=blended build-up (optimistic) | rate 3x | hours low,136047.3057,installs,calc,calculation_on_documented_inputs
+sensitivity,A_B2C,Payers needed to recover year-1 fixed cost | LTV=RLTV Education (base) | rate 3x | hours high,7639.667,payers,fixed $ / year-1 LTV,calculation_on_documented_inputs
+sensitivity,A_B2C,Installs needed at 2.0% D35 conversion | LTV=RLTV Education (base) | rate 3x | hours high,381983.3479,installs,calc,calculation_on_documented_inputs
+sensitivity,A_B2C,Payers needed to recover year-1 fixed cost | LTV=blended build-up (optimistic) | rate 3x | hours high,5087.6862,payers,fixed $ / year-1 LTV,calculation_on_documented_inputs
+sensitivity,A_B2C,Installs needed at 2.0% D35 conversion | LTV=blended build-up (optimistic) | rate 3x | hours high,254384.3112,installs,calc,calculation_on_documented_inputs
+sensitivity,A_B2C,Break-even D35 conversion at global gaming CPI $0.56 | LTV=RLTV Education,0.0245,share of installs,CPI / year-1 LTV,calculation_on_documented_inputs
+sensitivity,A_B2C,Break-even D35 conversion at global gaming CPI $0.56 | LTV=blended build-up,0.0163,share of installs,CPI / year-1 LTV,calculation_on_documented_inputs
+sensitivity,A_B2C,Break-even D35 conversion at global gaming CPI $0.56 | LTV=RLTV Gaming,0.0499,share of installs,CPI / year-1 LTV,calculation_on_documented_inputs
+sensitivity,all,One-off fixed cost to sellable season (MVP eng + season 1 content) | rate 1x | hours low,31079.1,USD,"hours x hourly cost; excludes platform hosting, compliance/legal, sales, marketing, management",calculation_on_documented_inputs
+sensitivity,all,One-off fixed cost to sellable season (MVP eng + season 1 content) | rate 1x | hours high,58112.4,USD,"hours x hourly cost; excludes platform hosting, compliance/legal, sales, marketing, management",calculation_on_documented_inputs
+sensitivity,all,One-off fixed cost to sellable season (MVP eng + season 1 content) | rate 2x | hours low,62158.2,USD,"hours x hourly cost; excludes platform hosting, compliance/legal, sales, marketing, management",calculation_on_documented_inputs
+sensitivity,all,One-off fixed cost to sellable season (MVP eng + season 1 content) | rate 2x | hours high,116224.8,USD,"hours x hourly cost; excludes platform hosting, compliance/legal, sales, marketing, management",calculation_on_documented_inputs
+sensitivity,all,One-off fixed cost to sellable season (MVP eng + season 1 content) | rate 3x | hours low,93237.3,USD,"hours x hourly cost; excludes platform hosting, compliance/legal, sales, marketing, management",calculation_on_documented_inputs
+sensitivity,all,One-off fixed cost to sellable season (MVP eng + season 1 content) | rate 3x | hours high,174337.2,USD,"hours x hourly cost; excludes platform hosting, compliance/legal, sales, marketing, management",calculation_on_documented_inputs
+sensitivity,all,Steady-state annual content cost (one season/yr) | rate 1x | hours low,20780.7,USD/year,"season hours x hourly cost; excludes platform, compliance, sales, marketing",calculation_on_documented_inputs
+sensitivity,all,Steady-state annual content cost (one season/yr) | rate 1x | hours high,40458.0,USD/year,"season hours x hourly cost; excludes platform, compliance, sales, marketing",calculation_on_documented_inputs
+sensitivity,all,Steady-state annual content cost (one season/yr) | rate 2x | hours low,41561.4,USD/year,"season hours x hourly cost; excludes platform, compliance, sales, marketing",calculation_on_documented_inputs
+sensitivity,all,Steady-state annual content cost (one season/yr) | rate 2x | hours high,80916.0,USD/year,"season hours x hourly cost; excludes platform, compliance, sales, marketing",calculation_on_documented_inputs
+sensitivity,all,Steady-state annual content cost (one season/yr) | rate 3x | hours low,62342.1,USD/year,"season hours x hourly cost; excludes platform, compliance, sales, marketing",calculation_on_documented_inputs
+sensitivity,all,Steady-state annual content cost (one season/yr) | rate 3x | hours high,121374.0,USD/year,"season hours x hourly cost; excludes platform, compliance, sales, marketing",calculation_on_documented_inputs
+input,B_School,Saudi intermediate-stage students (MoE 2024),1571960,students,ATH-SRC-1556,documented_fact
+input,B_School,Saudi secondary-stage students (MoE 2024),1457650,students,ATH-SRC-1556,documented_fact
+input,B_School,"Private share of Saudi enrolment (industry statement, 2024)",0.165,share,ATH-SRC-2237,documented_fact
+derived,B_School,Saudi private intermediate students (assumes uniform private share across stages),259373.4,students,calc,calculation_on_documented_inputs
+input,B_School,Dubai private-school students 2026-27 (all grades),406563,students,ATH-SRC-2236,documented_fact
+input,B_School,"Price anchor: Breakout EDU school, starting",1499,USD/year,ATH-SRC-2214,documented_fact
+input,B_School,Price anchor: Mystery Science school,2199,USD/year,ATH-SRC-0828,documented_fact
+input,B_School,"Price anchor: Legends of Learning school (400-1,000 students)",4450,USD/year,ATH-SRC-2215,documented_fact
+input,B_School,Price anchor: Breakout EDU per classroom,99,USD/year,ATH-SRC-2214,documented_fact
+input,B_School,Price anchor: Legends Premium Classroom per teacher,790,USD/year,ATH-SRC-2215,documented_fact
+input,B_School,Distribution-partner take (grid 0/30/50%),0;0.3;0.5,share,assumption grid — no published rate (KO-PO-09A-007 notes pressure only),assumption_for_sensitivity
+sensitivity,B_School,"School licences/yr to recover fixed cost | price=Breakout EDU school, starting $1499 | partner take 0% | rate 1x | hours low",20.7332,schools,fixed $ / net licence,calculation_on_documented_inputs
+sensitivity,B_School,"School licences/yr to recover fixed cost | price=Breakout EDU school, starting $1499 | partner take 0% | rate 1x | hours high",38.7674,schools,fixed $ / net licence,calculation_on_documented_inputs
+sensitivity,B_School,"School licences/yr to recover fixed cost | price=Breakout EDU school, starting $1499 | partner take 0% | rate 2x | hours low",41.4664,schools,fixed $ / net licence,calculation_on_documented_inputs
+sensitivity,B_School,"School licences/yr to recover fixed cost | price=Breakout EDU school, starting $1499 | partner take 0% | rate 2x | hours high",77.5349,schools,fixed $ / net licence,calculation_on_documented_inputs
+sensitivity,B_School,"School licences/yr to recover fixed cost | price=Breakout EDU school, starting $1499 | partner take 0% | rate 3x | hours low",62.1997,schools,fixed $ / net licence,calculation_on_documented_inputs
+sensitivity,B_School,"School licences/yr to recover fixed cost | price=Breakout EDU school, starting $1499 | partner take 0% | rate 3x | hours high",116.3023,schools,fixed $ / net licence,calculation_on_documented_inputs
+sensitivity,B_School,"School licences/yr to recover fixed cost | price=Breakout EDU school, starting $1499 | partner take 30% | rate 1x | hours low",29.6189,schools,fixed $ / net licence,calculation_on_documented_inputs
+sensitivity,B_School,"School licences/yr to recover fixed cost | price=Breakout EDU school, starting $1499 | partner take 30% | rate 1x | hours high",55.3821,schools,fixed $ / net licence,calculation_on_documented_inputs
+sensitivity,B_School,"School licences/yr to recover fixed cost | price=Breakout EDU school, starting $1499 | partner take 30% | rate 2x | hours low",59.2378,schools,fixed $ / net licence,calculation_on_documented_inputs
+sensitivity,B_School,"School licences/yr to recover fixed cost | price=Breakout EDU school, starting $1499 | partner take 30% | rate 2x | hours high",110.7641,schools,fixed $ / net licence,calculation_on_documented_inputs
+sensitivity,B_School,"School licences/yr to recover fixed cost | price=Breakout EDU school, starting $1499 | partner take 30% | rate 3x | hours low",88.8567,schools,fixed $ / net licence,calculation_on_documented_inputs
+sensitivity,B_School,"School licences/yr to recover fixed cost | price=Breakout EDU school, starting $1499 | partner take 30% | rate 3x | hours high",166.1462,schools,fixed $ / net licence,calculation_on_documented_inputs
+sensitivity,B_School,"School licences/yr to recover fixed cost | price=Breakout EDU school, starting $1499 | partner take 50% | rate 1x | hours low",41.4664,schools,fixed $ / net licence,calculation_on_documented_inputs
+sensitivity,B_School,"School licences/yr to recover fixed cost | price=Breakout EDU school, starting $1499 | partner take 50% | rate 1x | hours high",77.5349,schools,fixed $ / net licence,calculation_on_documented_inputs
+sensitivity,B_School,"School licences/yr to recover fixed cost | price=Breakout EDU school, starting $1499 | partner take 50% | rate 2x | hours low",82.9329,schools,fixed $ / net licence,calculation_on_documented_inputs
+sensitivity,B_School,"School licences/yr to recover fixed cost | price=Breakout EDU school, starting $1499 | partner take 50% | rate 2x | hours high",155.0698,schools,fixed $ / net licence,calculation_on_documented_inputs
+sensitivity,B_School,"School licences/yr to recover fixed cost | price=Breakout EDU school, starting $1499 | partner take 50% | rate 3x | hours low",124.3993,schools,fixed $ / net licence,calculation_on_documented_inputs
+sensitivity,B_School,"School licences/yr to recover fixed cost | price=Breakout EDU school, starting $1499 | partner take 50% | rate 3x | hours high",232.6047,schools,fixed $ / net licence,calculation_on_documented_inputs
+sensitivity,B_School,School licences/yr to recover fixed cost | price=Mystery Science school $2199 | partner take 0% | rate 1x | hours low,14.1333,schools,fixed $ / net licence,calculation_on_documented_inputs
+sensitivity,B_School,School licences/yr to recover fixed cost | price=Mystery Science school $2199 | partner take 0% | rate 1x | hours high,26.4267,schools,fixed $ / net licence,calculation_on_documented_inputs
+sensitivity,B_School,School licences/yr to recover fixed cost | price=Mystery Science school $2199 | partner take 0% | rate 2x | hours low,28.2666,schools,fixed $ / net licence,calculation_on_documented_inputs
+sensitivity,B_School,School licences/yr to recover fixed cost | price=Mystery Science school $2199 | partner take 0% | rate 2x | hours high,52.8535,schools,fixed $ / net licence,calculation_on_documented_inputs
+sensitivity,B_School,School licences/yr to recover fixed cost | price=Mystery Science school $2199 | partner take 0% | rate 3x | hours low,42.3999,schools,fixed $ / net licence,calculation_on_documented_inputs
+sensitivity,B_School,School licences/yr to recover fixed cost | price=Mystery Science school $2199 | partner take 0% | rate 3x | hours high,79.2802,schools,fixed $ / net licence,calculation_on_documented_inputs
+sensitivity,B_School,School licences/yr to recover fixed cost | price=Mystery Science school $2199 | partner take 30% | rate 1x | hours low,20.1904,schools,fixed $ / net licence,calculation_on_documented_inputs
+sensitivity,B_School,School licences/yr to recover fixed cost | price=Mystery Science school $2199 | partner take 30% | rate 1x | hours high,37.7525,schools,fixed $ / net licence,calculation_on_documented_inputs
+sensitivity,B_School,School licences/yr to recover fixed cost | price=Mystery Science school $2199 | partner take 30% | rate 2x | hours low,40.3808,schools,fixed $ / net licence,calculation_on_documented_inputs
+sensitivity,B_School,School licences/yr to recover fixed cost | price=Mystery Science school $2199 | partner take 30% | rate 2x | hours high,75.505,schools,fixed $ / net licence,calculation_on_documented_inputs
+sensitivity,B_School,School licences/yr to recover fixed cost | price=Mystery Science school $2199 | partner take 30% | rate 3x | hours low,60.5712,schools,fixed $ / net licence,calculation_on_documented_inputs
+sensitivity,B_School,School licences/yr to recover fixed cost | price=Mystery Science school $2199 | partner take 30% | rate 3x | hours high,113.2575,schools,fixed $ / net licence,calculation_on_documented_inputs
+sensitivity,B_School,School licences/yr to recover fixed cost | price=Mystery Science school $2199 | partner take 50% | rate 1x | hours low,28.2666,schools,fixed $ / net licence,calculation_on_documented_inputs
+sensitivity,B_School,School licences/yr to recover fixed cost | price=Mystery Science school $2199 | partner take 50% | rate 1x | hours high,52.8535,schools,fixed $ / net licence,calculation_on_documented_inputs
+sensitivity,B_School,School licences/yr to recover fixed cost | price=Mystery Science school $2199 | partner take 50% | rate 2x | hours low,56.5332,schools,fixed $ / net licence,calculation_on_documented_inputs
+sensitivity,B_School,School licences/yr to recover fixed cost | price=Mystery Science school $2199 | partner take 50% | rate 2x | hours high,105.707,schools,fixed $ / net licence,calculation_on_documented_inputs
+sensitivity,B_School,School licences/yr to recover fixed cost | price=Mystery Science school $2199 | partner take 50% | rate 3x | hours low,84.7997,schools,fixed $ / net licence,calculation_on_documented_inputs
+sensitivity,B_School,School licences/yr to recover fixed cost | price=Mystery Science school $2199 | partner take 50% | rate 3x | hours high,158.5604,schools,fixed $ / net licence,calculation_on_documented_inputs
+sensitivity,B_School,"School licences/yr to recover fixed cost | price=Legends of Learning school (400-1,000 students) $4450 | partner take 0% | rate 1x | hours low",6.9841,schools,fixed $ / net licence,calculation_on_documented_inputs
+sensitivity,B_School,"School licences/yr to recover fixed cost | price=Legends of Learning school (400-1,000 students) $4450 | partner take 0% | rate 1x | hours high",13.059,schools,fixed $ / net licence,calculation_on_documented_inputs
+sensitivity,B_School,"School licences/yr to recover fixed cost | price=Legends of Learning school (400-1,000 students) $4450 | partner take 0% | rate 2x | hours low",13.9681,schools,fixed $ / net licence,calculation_on_documented_inputs
+sensitivity,B_School,"School licences/yr to recover fixed cost | price=Legends of Learning school (400-1,000 students) $4450 | partner take 0% | rate 2x | hours high",26.1179,schools,fixed $ / net licence,calculation_on_documented_inputs
+sensitivity,B_School,"School licences/yr to recover fixed cost | price=Legends of Learning school (400-1,000 students) $4450 | partner take 0% | rate 3x | hours low",20.9522,schools,fixed $ / net licence,calculation_on_documented_inputs
+sensitivity,B_School,"School licences/yr to recover fixed cost | price=Legends of Learning school (400-1,000 students) $4450 | partner take 0% | rate 3x | hours high",39.1769,schools,fixed $ / net licence,calculation_on_documented_inputs
+sensitivity,B_School,"School licences/yr to recover fixed cost | price=Legends of Learning school (400-1,000 students) $4450 | partner take 30% | rate 1x | hours low",9.9772,schools,fixed $ / net licence,calculation_on_documented_inputs
+sensitivity,B_School,"School licences/yr to recover fixed cost | price=Legends of Learning school (400-1,000 students) $4450 | partner take 30% | rate 1x | hours high",18.6557,schools,fixed $ / net licence,calculation_on_documented_inputs
+sensitivity,B_School,"School licences/yr to recover fixed cost | price=Legends of Learning school (400-1,000 students) $4450 | partner take 30% | rate 2x | hours low",19.9545,schools,fixed $ / net licence,calculation_on_documented_inputs
+sensitivity,B_School,"School licences/yr to recover fixed cost | price=Legends of Learning school (400-1,000 students) $4450 | partner take 30% | rate 2x | hours high",37.3113,schools,fixed $ / net licence,calculation_on_documented_inputs
+sensitivity,B_School,"School licences/yr to recover fixed cost | price=Legends of Learning school (400-1,000 students) $4450 | partner take 30% | rate 3x | hours low",29.9317,schools,fixed $ / net licence,calculation_on_documented_inputs
+sensitivity,B_School,"School licences/yr to recover fixed cost | price=Legends of Learning school (400-1,000 students) $4450 | partner take 30% | rate 3x | hours high",55.967,schools,fixed $ / net licence,calculation_on_documented_inputs
+sensitivity,B_School,"School licences/yr to recover fixed cost | price=Legends of Learning school (400-1,000 students) $4450 | partner take 50% | rate 1x | hours low",13.9681,schools,fixed $ / net licence,calculation_on_documented_inputs
+sensitivity,B_School,"School licences/yr to recover fixed cost | price=Legends of Learning school (400-1,000 students) $4450 | partner take 50% | rate 1x | hours high",26.1179,schools,fixed $ / net licence,calculation_on_documented_inputs
+sensitivity,B_School,"School licences/yr to recover fixed cost | price=Legends of Learning school (400-1,000 students) $4450 | partner take 50% | rate 2x | hours low",27.9363,schools,fixed $ / net licence,calculation_on_documented_inputs
+sensitivity,B_School,"School licences/yr to recover fixed cost | price=Legends of Learning school (400-1,000 students) $4450 | partner take 50% | rate 2x | hours high",52.2359,schools,fixed $ / net licence,calculation_on_documented_inputs
+sensitivity,B_School,"School licences/yr to recover fixed cost | price=Legends of Learning school (400-1,000 students) $4450 | partner take 50% | rate 3x | hours low",41.9044,schools,fixed $ / net licence,calculation_on_documented_inputs
+sensitivity,B_School,"School licences/yr to recover fixed cost | price=Legends of Learning school (400-1,000 students) $4450 | partner take 50% | rate 3x | hours high",78.3538,schools,fixed $ / net licence,calculation_on_documented_inputs
+sensitivity,B_School,Teacher/class licences/yr to recover fixed cost | Breakout EDU per classroom $99 | rate 1x | hours low,313.9303,teachers,calc,calculation_on_documented_inputs
+sensitivity,B_School,Teacher/class licences/yr to recover fixed cost | Breakout EDU per classroom $99 | rate 1x | hours high,586.9939,teachers,calc,calculation_on_documented_inputs
+sensitivity,B_School,Teacher/class licences/yr to recover fixed cost | Breakout EDU per classroom $99 | rate 2x | hours low,627.8606,teachers,calc,calculation_on_documented_inputs
+sensitivity,B_School,Teacher/class licences/yr to recover fixed cost | Breakout EDU per classroom $99 | rate 2x | hours high,1173.9879,teachers,calc,calculation_on_documented_inputs
+sensitivity,B_School,Teacher/class licences/yr to recover fixed cost | Breakout EDU per classroom $99 | rate 3x | hours low,941.7909,teachers,calc,calculation_on_documented_inputs
+sensitivity,B_School,Teacher/class licences/yr to recover fixed cost | Breakout EDU per classroom $99 | rate 3x | hours high,1760.9818,teachers,calc,calculation_on_documented_inputs
+sensitivity,B_School,Teacher/class licences/yr to recover fixed cost | Legends Premium Classroom per teacher $790 | rate 1x | hours low,39.3406,teachers,calc,calculation_on_documented_inputs
+sensitivity,B_School,Teacher/class licences/yr to recover fixed cost | Legends Premium Classroom per teacher $790 | rate 1x | hours high,73.56,teachers,calc,calculation_on_documented_inputs
+sensitivity,B_School,Teacher/class licences/yr to recover fixed cost | Legends Premium Classroom per teacher $790 | rate 2x | hours low,78.6813,teachers,calc,calculation_on_documented_inputs
+sensitivity,B_School,Teacher/class licences/yr to recover fixed cost | Legends Premium Classroom per teacher $790 | rate 2x | hours high,147.12,teachers,calc,calculation_on_documented_inputs
+sensitivity,B_School,Teacher/class licences/yr to recover fixed cost | Legends Premium Classroom per teacher $790 | rate 3x | hours low,118.0219,teachers,calc,calculation_on_documented_inputs
+sensitivity,B_School,Teacher/class licences/yr to recover fixed cost | Legends Premium Classroom per teacher $790 | rate 3x | hours high,220.68,teachers,calc,calculation_on_documented_inputs
+derived,B_School,Per-student equivalent of Legends school plan,4.45-11.12,USD/student/year,calc on ATH-SRC-2215,calculation_on_documented_inputs
+input,C_Hybrid,"School seat price grid for hybrid (USD/student/yr): 0 (free pilot), 2, 4.45 (Legends low-end equivalent)",0;2;4.45,USD/student/year,grid; 4.45 = calc on ATH-SRC-2215; 0 and 2 = assumption,assumption_for_sensitivity
+input,C_Hybrid,Students reached through school licences (grid point),10000,students,assumption grid; = 1.5-7.5% of (KSA private intermediate calc + Dubai private) pools,assumption_for_sensitivity
+sensitivity,C_Hybrid,Required family conversion of reached students | seat $0 | students 10000 | rate 1x | hours low,0.1362,share of reached students,(fixed - students x seat) / RLTV Education / students,calculation_on_documented_inputs
+sensitivity,C_Hybrid,Required family conversion of reached students | seat $0 | students 10000 | rate 1x | hours high,0.2547,share of reached students,(fixed - students x seat) / RLTV Education / students,calculation_on_documented_inputs
+sensitivity,C_Hybrid,Required family conversion of reached students | seat $0 | students 10000 | rate 2x | hours low,0.2724,share of reached students,(fixed - students x seat) / RLTV Education / students,calculation_on_documented_inputs
+sensitivity,C_Hybrid,Required family conversion of reached students | seat $0 | students 10000 | rate 2x | hours high,0.5093,share of reached students,(fixed - students x seat) / RLTV Education / students,calculation_on_documented_inputs
+sensitivity,C_Hybrid,Required family conversion of reached students | seat $0 | students 10000 | rate 3x | hours low,0.4086,share of reached students,(fixed - students x seat) / RLTV Education / students,calculation_on_documented_inputs
+sensitivity,C_Hybrid,Required family conversion of reached students | seat $0 | students 10000 | rate 3x | hours high,0.764,share of reached students,(fixed - students x seat) / RLTV Education / students,calculation_on_documented_inputs
+sensitivity,C_Hybrid,Required family conversion of reached students | seat $2 | students 10000 | rate 1x | hours low,0.0485,share of reached students,(fixed - students x seat) / RLTV Education / students,calculation_on_documented_inputs
+sensitivity,C_Hybrid,Required family conversion of reached students | seat $2 | students 10000 | rate 1x | hours high,0.167,share of reached students,(fixed - students x seat) / RLTV Education / students,calculation_on_documented_inputs
+sensitivity,C_Hybrid,Required family conversion of reached students | seat $2 | students 10000 | rate 2x | hours low,0.1847,share of reached students,(fixed - students x seat) / RLTV Education / students,calculation_on_documented_inputs
+sensitivity,C_Hybrid,Required family conversion of reached students | seat $2 | students 10000 | rate 2x | hours high,0.4217,share of reached students,(fixed - students x seat) / RLTV Education / students,calculation_on_documented_inputs
+sensitivity,C_Hybrid,Required family conversion of reached students | seat $2 | students 10000 | rate 3x | hours low,0.3209,share of reached students,(fixed - students x seat) / RLTV Education / students,calculation_on_documented_inputs
+sensitivity,C_Hybrid,Required family conversion of reached students | seat $2 | students 10000 | rate 3x | hours high,0.6763,share of reached students,(fixed - students x seat) / RLTV Education / students,calculation_on_documented_inputs
+sensitivity,C_Hybrid,Required family conversion of reached students | seat $4.45 | students 10000 | rate 1x | hours low,0.0,share of reached students,(fixed - students x seat) / RLTV Education / students,calculation_on_documented_inputs
+sensitivity,C_Hybrid,Required family conversion of reached students | seat $4.45 | students 10000 | rate 1x | hours high,0.0597,share of reached students,(fixed - students x seat) / RLTV Education / students,calculation_on_documented_inputs
+sensitivity,C_Hybrid,Required family conversion of reached students | seat $4.45 | students 10000 | rate 2x | hours low,0.0774,share of reached students,(fixed - students x seat) / RLTV Education / students,calculation_on_documented_inputs
+sensitivity,C_Hybrid,Required family conversion of reached students | seat $4.45 | students 10000 | rate 2x | hours high,0.3143,share of reached students,(fixed - students x seat) / RLTV Education / students,calculation_on_documented_inputs
+sensitivity,C_Hybrid,Required family conversion of reached students | seat $4.45 | students 10000 | rate 3x | hours low,0.2136,share of reached students,(fixed - students x seat) / RLTV Education / students,calculation_on_documented_inputs
+sensitivity,C_Hybrid,Required family conversion of reached students | seat $4.45 | students 10000 | rate 3x | hours high,0.569,share of reached students,(fixed - students x seat) / RLTV Education / students,calculation_on_documented_inputs
+input,C_Hybrid,Students reached through school licences (grid point),25000,students,assumption grid; = 1.5-7.5% of (KSA private intermediate calc + Dubai private) pools,assumption_for_sensitivity
+sensitivity,C_Hybrid,Required family conversion of reached students | seat $0 | students 25000 | rate 1x | hours low,0.0545,share of reached students,(fixed - students x seat) / RLTV Education / students,calculation_on_documented_inputs
+sensitivity,C_Hybrid,Required family conversion of reached students | seat $0 | students 25000 | rate 1x | hours high,0.1019,share of reached students,(fixed - students x seat) / RLTV Education / students,calculation_on_documented_inputs
+sensitivity,C_Hybrid,Required family conversion of reached students | seat $0 | students 25000 | rate 2x | hours low,0.109,share of reached students,(fixed - students x seat) / RLTV Education / students,calculation_on_documented_inputs
+sensitivity,C_Hybrid,Required family conversion of reached students | seat $0 | students 25000 | rate 2x | hours high,0.2037,share of reached students,(fixed - students x seat) / RLTV Education / students,calculation_on_documented_inputs
+sensitivity,C_Hybrid,Required family conversion of reached students | seat $0 | students 25000 | rate 3x | hours low,0.1634,share of reached students,(fixed - students x seat) / RLTV Education / students,calculation_on_documented_inputs
+sensitivity,C_Hybrid,Required family conversion of reached students | seat $0 | students 25000 | rate 3x | hours high,0.3056,share of reached students,(fixed - students x seat) / RLTV Education / students,calculation_on_documented_inputs
+sensitivity,C_Hybrid,Required family conversion of reached students | seat $2 | students 25000 | rate 1x | hours low,0.0,share of reached students,(fixed - students x seat) / RLTV Education / students,calculation_on_documented_inputs
+sensitivity,C_Hybrid,Required family conversion of reached students | seat $2 | students 25000 | rate 1x | hours high,0.0142,share of reached students,(fixed - students x seat) / RLTV Education / students,calculation_on_documented_inputs
+sensitivity,C_Hybrid,Required family conversion of reached students | seat $2 | students 25000 | rate 2x | hours low,0.0213,share of reached students,(fixed - students x seat) / RLTV Education / students,calculation_on_documented_inputs
+sensitivity,C_Hybrid,Required family conversion of reached students | seat $2 | students 25000 | rate 2x | hours high,0.1161,share of reached students,(fixed - students x seat) / RLTV Education / students,calculation_on_documented_inputs
+sensitivity,C_Hybrid,Required family conversion of reached students | seat $2 | students 25000 | rate 3x | hours low,0.0758,share of reached students,(fixed - students x seat) / RLTV Education / students,calculation_on_documented_inputs
+sensitivity,C_Hybrid,Required family conversion of reached students | seat $2 | students 25000 | rate 3x | hours high,0.2179,share of reached students,(fixed - students x seat) / RLTV Education / students,calculation_on_documented_inputs
+sensitivity,C_Hybrid,Required family conversion of reached students | seat $4.45 | students 25000 | rate 1x | hours low,0.0,share of reached students,(fixed - students x seat) / RLTV Education / students,calculation_on_documented_inputs
+sensitivity,C_Hybrid,Required family conversion of reached students | seat $4.45 | students 25000 | rate 1x | hours high,0.0,share of reached students,(fixed - students x seat) / RLTV Education / students,calculation_on_documented_inputs
+sensitivity,C_Hybrid,Required family conversion of reached students | seat $4.45 | students 25000 | rate 2x | hours low,0.0,share of reached students,(fixed - students x seat) / RLTV Education / students,calculation_on_documented_inputs
+sensitivity,C_Hybrid,Required family conversion of reached students | seat $4.45 | students 25000 | rate 2x | hours high,0.0087,share of reached students,(fixed - students x seat) / RLTV Education / students,calculation_on_documented_inputs
+sensitivity,C_Hybrid,Required family conversion of reached students | seat $4.45 | students 25000 | rate 3x | hours low,0.0,share of reached students,(fixed - students x seat) / RLTV Education / students,calculation_on_documented_inputs
+sensitivity,C_Hybrid,Required family conversion of reached students | seat $4.45 | students 25000 | rate 3x | hours high,0.1106,share of reached students,(fixed - students x seat) / RLTV Education / students,calculation_on_documented_inputs
+input,C_Hybrid,Students reached through school licences (grid point),50000,students,assumption grid; = 1.5-7.5% of (KSA private intermediate calc + Dubai private) pools,assumption_for_sensitivity
+sensitivity,C_Hybrid,Required family conversion of reached students | seat $0 | students 50000 | rate 1x | hours low,0.0272,share of reached students,(fixed - students x seat) / RLTV Education / students,calculation_on_documented_inputs
+sensitivity,C_Hybrid,Required family conversion of reached students | seat $0 | students 50000 | rate 1x | hours high,0.0509,share of reached students,(fixed - students x seat) / RLTV Education / students,calculation_on_documented_inputs
+sensitivity,C_Hybrid,Required family conversion of reached students | seat $0 | students 50000 | rate 2x | hours low,0.0545,share of reached students,(fixed - students x seat) / RLTV Education / students,calculation_on_documented_inputs
+sensitivity,C_Hybrid,Required family conversion of reached students | seat $0 | students 50000 | rate 2x | hours high,0.1019,share of reached students,(fixed - students x seat) / RLTV Education / students,calculation_on_documented_inputs
+sensitivity,C_Hybrid,Required family conversion of reached students | seat $0 | students 50000 | rate 3x | hours low,0.0817,share of reached students,(fixed - students x seat) / RLTV Education / students,calculation_on_documented_inputs
+sensitivity,C_Hybrid,Required family conversion of reached students | seat $0 | students 50000 | rate 3x | hours high,0.1528,share of reached students,(fixed - students x seat) / RLTV Education / students,calculation_on_documented_inputs
+sensitivity,C_Hybrid,Required family conversion of reached students | seat $2 | students 50000 | rate 1x | hours low,0.0,share of reached students,(fixed - students x seat) / RLTV Education / students,calculation_on_documented_inputs
+sensitivity,C_Hybrid,Required family conversion of reached students | seat $2 | students 50000 | rate 1x | hours high,0.0,share of reached students,(fixed - students x seat) / RLTV Education / students,calculation_on_documented_inputs
+sensitivity,C_Hybrid,Required family conversion of reached students | seat $2 | students 50000 | rate 2x | hours low,0.0,share of reached students,(fixed - students x seat) / RLTV Education / students,calculation_on_documented_inputs
+sensitivity,C_Hybrid,Required family conversion of reached students | seat $2 | students 50000 | rate 2x | hours high,0.0142,share of reached students,(fixed - students x seat) / RLTV Education / students,calculation_on_documented_inputs
+sensitivity,C_Hybrid,Required family conversion of reached students | seat $2 | students 50000 | rate 3x | hours low,0.0,share of reached students,(fixed - students x seat) / RLTV Education / students,calculation_on_documented_inputs
+sensitivity,C_Hybrid,Required family conversion of reached students | seat $2 | students 50000 | rate 3x | hours high,0.0652,share of reached students,(fixed - students x seat) / RLTV Education / students,calculation_on_documented_inputs
+sensitivity,C_Hybrid,Required family conversion of reached students | seat $4.45 | students 50000 | rate 1x | hours low,0.0,share of reached students,(fixed - students x seat) / RLTV Education / students,calculation_on_documented_inputs
+sensitivity,C_Hybrid,Required family conversion of reached students | seat $4.45 | students 50000 | rate 1x | hours high,0.0,share of reached students,(fixed - students x seat) / RLTV Education / students,calculation_on_documented_inputs
+sensitivity,C_Hybrid,Required family conversion of reached students | seat $4.45 | students 50000 | rate 2x | hours low,0.0,share of reached students,(fixed - students x seat) / RLTV Education / students,calculation_on_documented_inputs
+sensitivity,C_Hybrid,Required family conversion of reached students | seat $4.45 | students 50000 | rate 2x | hours high,0.0,share of reached students,(fixed - students x seat) / RLTV Education / students,calculation_on_documented_inputs
+sensitivity,C_Hybrid,Required family conversion of reached students | seat $4.45 | students 50000 | rate 3x | hours low,0.0,share of reached students,(fixed - students x seat) / RLTV Education / students,calculation_on_documented_inputs
+sensitivity,C_Hybrid,Required family conversion of reached students | seat $4.45 | students 50000 | rate 3x | hours high,0.0,share of reached students,(fixed - students x seat) / RLTV Education / students,calculation_on_documented_inputs

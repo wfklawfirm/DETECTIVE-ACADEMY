@@ -69,7 +69,7 @@ function Lab({ lab, busy, send, last }: { lab: View["labs"][number]; busy: boole
     <Card as="section" aria-labelledby={`lab-${lab.id}`}>
       <h3 id={`lab-${lab.id}`} className="card-title row" style={{ flexWrap: "nowrap" }}><FlaskIcon size={22} />{lab.title_ar}</h3>
       <p className="dim small">{lab.intro_ar}</p>
-      <div className="table-wrap"><table className="lab-table">
+      <div className="table-wrap" tabIndex={0} role="region" aria-label="جدول قابل للتمرير"><table className="lab-table">
         <thead><tr><th>الدليل</th><th>الوقت الظاهر</th><th>فرق التوقيت (ساعات)</th><th>انحراف الساعة (دقائق)</th></tr></thead>
         <tbody>{lab.items.map((it) => (
           <tr key={it.evidence_id}>

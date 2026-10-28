@@ -1,0 +1,2567 @@
+{
+  "schema_version": "0.1.0",
+  "case_id": "c027_cup_cabinet",
+  "case_version": "0.1.0",
+  "meta": {
+    "title_ar": "الكأس التي غادرت قبل القفل",
+    "title_en": "The Cup That Left Before the Lock",
+    "age_band": "16-18",
+    "estimated_minutes": 30,
+    "difficulty": 3,
+    "content_flags": [
+      "no_violence"
+    ],
+    "knowledge_object_refs": [
+      "KO-FC-04-009",
+      "KO-RS-06-008",
+      "KO-FC-04-026",
+      "KO-RS-05-004",
+      "KO-RS-05-001",
+      "KO-RS-05-014",
+      "KO-RS-06-001",
+      "KO-RS-06-021",
+      "KO-RS-06-009",
+      "KO-RS-05-002",
+      "KO-RS-05-005"
+    ],
+    "locale": "ar",
+    "dialogue_register": "msa",
+    "authors": [
+      "فريق أثر التحريري (مسودة بمساعدة الذكاء الاصطناعي، لم تُراجَع بشرياً بعد)"
+    ]
+  },
+  "premise": {
+    "hook_ar": "كأس اختفت من خزانة زجاجية مقفلة، ورئيس النادي يراهن أن أحداً لن يفسّر كيف. فما المعطى الذي لم يتحقق منه أحد؟",
+    "player_role_ar": "أنت عضو جديد في نادي الألغاز، وتحدّيت الرئيس أن تقدّم حلاً معلّلاً للغز الكأس، دون اتهام أحد قبل أن تثبت السجلات شيئاً.",
+    "setting_ar": "مدرسة الأطلال، بعد ظهر الخميس. الأوقات بساعة المدرسة.",
+    "public_fact_ids": [
+      "f_cup_vanished",
+      "f_challenge",
+      "f_rules"
+    ],
+    "assumed_general_knowledge_ar": [
+      "الحل الأفضل يفسّر كل القرائن ولا يناقض أيّاً منها",
+      "الحل الأقل افتراضات أرجح عند تساوي التغطية",
+      "ما يُعلن معطى قد لا يكون مثبتاً بسجل"
+    ]
+  },
+  "entities": {
+    "characters": [
+      {
+        "id": "kinan",
+        "name_ar": "كنان الصباغ",
+        "role": "witness",
+        "age_descriptor_ar": "رئيس نادي الألغاز في مدرسة الأطلال",
+        "persona_ar": "واثق ومرح، يحب التحدي ويصرّ على أن الأمر مستحيل، لكنه يقبل أن يُراجع كل ما قاله. يعرف أن المفتاح معه ولم يفتح الخزانة قبل الاجتماع.",
+        "motives_ar": [
+          "أن يبقى التحدي نزيهاً",
+          "أن يجد أحدهم الحل بالدليل"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "kn_greet",
+            "purpose": "greeting",
+            "text_ar": "أعلنت التحدي بنفسي: الخزانة مقفلة ومفتاحها معي والزجاج سليم."
+          },
+          {
+            "line_id": "kn_says",
+            "purpose": "reveal",
+            "text_ar": "أغلقت الخزانة ظهراً ولم أفتحها حتى بدأ الاجتماع، وحين فتحتها بعد الخامسة والنصف كانت فارغة والزجاج سليم.",
+            "fact_ids": [
+              "f_kinan_says"
+            ],
+            "claim_ids": [
+              "cl_locked_room"
+            ]
+          },
+          {
+            "line_id": "kn_inspect",
+            "purpose": "reveal",
+            "text_ar": "فحصنا الخزانة عند فتحها: الزجاج والقفل سليمان، والجدار الخلفي مثبّت بمسامير من الداخل ولم يمسّ، وسجلنا ذلك في ورقة.",
+            "fact_ids": [
+              "f_inspection_exists"
+            ]
+          },
+          {
+            "line_id": "kn_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف أكثر."
+          },
+          {
+            "line_id": "kn_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن التحدي."
+          },
+          {
+            "line_id": "kn_bye",
+            "purpose": "farewell",
+            "text_ar": "إن ظهر حل مقنع فسأعترف به."
+          }
+        ]
+      },
+      {
+        "id": "yara",
+        "name_ar": "يارا الحداد",
+        "role": "suspect",
+        "age_descriptor_ar": "أمينة مكتبة النادي",
+        "persona_ar": "منظمة وخجولة، تكره أن تُنسب إليها غلطة، فتؤجل الاعتراف حتى ترى أن السجلات قالتها. لا تقصد الإساءة لأحد.",
+        "motives_ar": [
+          "ألا تُحرج أمام النادي",
+          "أن تعود الكأس إلى مكانها"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "yr_greet",
+            "purpose": "greeting",
+            "text_ar": "أنا أرتب كتب النادي وأغبّرها. لا أعرف شيئاً عن الكأس."
+          },
+          {
+            "line_id": "yr_deny",
+            "purpose": "reveal",
+            "text_ar": "لم أفتح الخزانة يوم الخميس.",
+            "claim_ids": [
+              "cl_yara_never"
+            ]
+          },
+          {
+            "line_id": "yr_refuse",
+            "purpose": "refuse_secret",
+            "text_ar": "أفضّل ألا أتكلم الآن."
+          },
+          {
+            "line_id": "yr_moved",
+            "purpose": "reveal",
+            "text_ar": "فتحت الخزانة بالمفتاح الثاني قبل الاجتماع لأنني كلّفت بتغبير الكأس، فنقلتها إلى المخزن لأغسلها وأتركها تجف، وأقفلت الخزانة وأنا أظن أن الرئيس يعلم؛ ثم نسيت أن أخبره أو أن أعيدها، وخفت أن أبدو مهملة.",
+            "fact_ids": [
+              "f_yara_moved"
+            ]
+          },
+          {
+            "line_id": "yr_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أذكر."
+          },
+          {
+            "line_id": "yr_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن مكتبة النادي."
+          },
+          {
+            "line_id": "yr_bye",
+            "purpose": "farewell",
+            "text_ar": "كان عليّ أن أكتب ورقة على الخزانة."
+          }
+        ]
+      },
+      {
+        "id": "basel",
+        "name_ar": "باسل المنصور",
+        "role": "suspect",
+        "age_descriptor_ar": "عضو في النادي، هاوي أقفال",
+        "persona_ar": "متحمس بالأقفال ويحب الشرح، ويبدو مريباً لأنه يعرف كثيراً. يجيب بما فعله ويعطي الإيصالات.",
+        "motives_ar": [
+          "أن يُصدَّق",
+          "أن يُحل اللغز بحق"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "bs_greet",
+            "purpose": "greeting",
+            "text_ar": "أعرف الأقفال، وهذا لا يجعلني فاعلاً."
+          },
+          {
+            "line_id": "bs_copy",
+            "purpose": "reveal",
+            "text_ar": "قبل شهر نسخت مفتاح باب المخزن للنادي عند قفّال، وعندي الإيصال، ولم أنسخ مفتاح الخزانة.",
+            "fact_ids": [
+              "f_copy_made"
+            ]
+          },
+          {
+            "line_id": "bs_says",
+            "purpose": "reveal",
+            "text_ar": "كنت في الاجتماع من الرابعة إلى الخامسة والنصف ولم أقم من مكاني.",
+            "fact_ids": [
+              "f_basel_says"
+            ]
+          },
+          {
+            "line_id": "bs_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف."
+          },
+          {
+            "line_id": "bs_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن الأقفال."
+          },
+          {
+            "line_id": "bs_bye",
+            "purpose": "farewell",
+            "text_ar": "افحص الإيصال بنفسك."
+          }
+        ]
+      },
+      {
+        "id": "talla",
+        "name_ar": "تالا الخوري",
+        "role": "witness",
+        "age_descriptor_ar": "مصوّرة النشرة الشهرية للنادي",
+        "persona_ar": "دقيقة وتحتفظ بصورها بوقتها، وتقول إن ساعة هاتفها مضبوطة من الشبكة. لا تعرف شيئاً عن الكأس.",
+        "motives_ar": [
+          "أن تبقى صورها سليمة"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "tl_greet",
+            "purpose": "greeting",
+            "text_ar": "أصوّر للنشرة فقط."
+          },
+          {
+            "line_id": "tl_photo",
+            "purpose": "reveal",
+            "text_ar": "صوّرت الخزانة لنشرة الشهر قبل الاجتماع بدقائق، وفي الصورة ساعة الحائط.",
+            "fact_ids": [
+              "f_photo_exists"
+            ]
+          },
+          {
+            "line_id": "tl_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لم أنتبه."
+          },
+          {
+            "line_id": "tl_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن الصور."
+          },
+          {
+            "line_id": "tl_bye",
+            "purpose": "farewell",
+            "text_ar": "الصورة كما التُقطت."
+          }
+        ]
+      },
+      {
+        "id": "nadine",
+        "name_ar": "نادين العلمي",
+        "role": "witness",
+        "age_descriptor_ar": "أمينة سر النادي",
+        "persona_ar": "منظمة وتكتب كل شيء، وتقرأ من الأوراق ولا تفسر. لا تتهم أحداً.",
+        "motives_ar": [
+          "أن تبقى أوراق النادي صحيحة"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "nd_greet",
+            "purpose": "greeting",
+            "text_ar": "أحتفظ بأوراق النادي."
+          },
+          {
+            "line_id": "nd_sheet",
+            "purpose": "reveal",
+            "text_ar": "لخزانة الكؤوس مفتاحان: واحد مع الرئيس وآخر في صندوق النادي، وكل فتح للخزانة يُكتب في ورقة المفتاح باسم من فتحها.",
+            "fact_ids": [
+              "f_key_sheet_exists"
+            ]
+          },
+          {
+            "line_id": "nd_rota",
+            "purpose": "reveal",
+            "text_ar": "عندنا جدول مهام أسبوعي للتنظيف والتغبير، وفيه مهمة الخزانة والكأس يوم الخميس.",
+            "fact_ids": [
+              "f_rota_exists"
+            ]
+          },
+          {
+            "line_id": "nd_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "ليس عندي علم."
+          },
+          {
+            "line_id": "nd_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن الأوراق."
+          },
+          {
+            "line_id": "nd_bye",
+            "purpose": "farewell",
+            "text_ar": "الورقة موقّعة."
+          }
+        ]
+      },
+      {
+        "id": "dawood",
+        "name_ar": "داود العلمي",
+        "role": "witness",
+        "age_descriptor_ar": "أمين مخزن النادي",
+        "persona_ar": "كبير في السن ومنظم، يسجّل كل ما يدخل المخزن ويخرج، ويقرأ من إيصالاته.",
+        "motives_ar": [
+          "أن يبقى المخزن مضبوطاً"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "dw_greet",
+            "purpose": "greeting",
+            "text_ar": "أستلم الأغراض وأسجّلها."
+          },
+          {
+            "line_id": "dw_slip",
+            "purpose": "reveal",
+            "text_ar": "كل غرض يدخل المخزن أكتب له إيصال استلام بوقته واسم من سلّمه.",
+            "fact_ids": [
+              "f_slip_exists"
+            ]
+          },
+          {
+            "line_id": "dw_reader",
+            "purpose": "reveal",
+            "text_ar": "باب المخزن بقارئ بطاقات يسجّل كل دخول وخروج بوقته.",
+            "fact_ids": [
+              "f_store_reader_exists"
+            ]
+          },
+          {
+            "line_id": "dw_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف."
+          },
+          {
+            "line_id": "dw_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن المخزن."
+          },
+          {
+            "line_id": "dw_bye",
+            "purpose": "farewell",
+            "text_ar": "الإيصال لا يكذب."
+          }
+        ]
+      }
+    ],
+    "locations": [
+      {
+        "id": "loc_club",
+        "name_ar": "غرفة النادي",
+        "description_ar": "غرفة فيها خزانة زجاجية للكؤوس تقفل بمفتاحين."
+      },
+      {
+        "id": "loc_store",
+        "name_ar": "مخزن النادي",
+        "description_ar": "غرفة صغيرة بقارئ بطاقات على بابها."
+      }
+    ],
+    "objects": [
+      {
+        "id": "obj_cup",
+        "name_ar": "الكأس الخضراء",
+        "description_ar": "كأس بلاستيكية خضراء رمزية للنادي، لا قيمة مالية لها."
+      }
+    ],
+    "organizations": [
+      {
+        "id": "org_club",
+        "name_ar": "نادي الألغاز",
+        "description_ar": "نادٍ في مدرسة الأطلال الخيالية."
+      }
+    ]
+  },
+  "truth": {
+    "solution": {
+      "culprit_ids": [
+        "yara"
+      ],
+      "summary_ar": "لم تُسرق الكأس ولم تخرج من خزانة مقفلة. نقلتها يارا إلى المخزن للتنظيف قبل الاجتماع وأقفلت الخزانة دون إعلام الرئيس ثم نسيت إرجاعها، فكان المعطى الذي بُني عليه التحدي غير صحيح.",
+      "key_fact_ids": [
+        "f_empty_before",
+        "f_yara_moved"
+      ]
+    },
+    "facts": [
+      {
+        "id": "f_cup_vanished",
+        "statement_ar": "اختفت الكأس الخضراء من خزانة زجاجية مقفلة في غرفة النادي، واكتُشف ذلك عند فتح الخزانة بعد اجتماع الخميس.",
+        "kind": "event",
+        "subject_ids": [
+          "obj_cup"
+        ],
+        "spoiler_level": 0
+      },
+      {
+        "id": "f_challenge",
+        "statement_ar": "أعلن رئيس النادي أن الخزانة كانت مقفلة ومفتاحها معه وزجاجها سليم، وأن أحداً لن يفسّر ما جرى.",
+        "kind": "attribute",
+        "subject_ids": [
+          "kinan"
+        ],
+        "spoiler_level": 0
+      },
+      {
+        "id": "f_rules",
+        "statement_ar": "شروط التحدي المعلنة: يقدّم كل حل تفسيراً لكل القرائن، ولا يناقض أي قرينة، وبأقل الافتراضات.",
+        "kind": "state",
+        "subject_ids": [
+          "org_club"
+        ],
+        "spoiler_level": 0
+      },
+      {
+        "id": "f_kinan_says",
+        "statement_ar": "يقول الرئيس إنه أغلق الخزانة ظهراً ولم يفتحها حتى بدأ الاجتماع، وإنها كانت فارغة عند فتحها.",
+        "kind": "attribute",
+        "subject_ids": [
+          "kinan"
+        ],
+        "spoiler_level": 1
+      },
+      {
+        "id": "f_inspection_exists",
+        "statement_ar": "سجل النادي فحصاً عند فتح الخزانة: القفل والزجاج سليمان والجدار الخلفي لم يمسّ.",
+        "kind": "state",
+        "subject_ids": [
+          "loc_club"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 210,
+          "precision": "exact"
+        },
+        "location_id": "loc_club"
+      },
+      {
+        "id": "f_copy_made",
+        "statement_ar": "نسخ باسل قبل شهر مفتاح باب المخزن لدى قفّال ويملك إيصال النسخ.",
+        "kind": "event",
+        "subject_ids": [
+          "basel"
+        ],
+        "spoiler_level": 1
+      },
+      {
+        "id": "f_basel_says",
+        "statement_ar": "يقول باسل إنه كان في الاجتماع طوال الوقت ولم يقم من مكانه.",
+        "kind": "attribute",
+        "subject_ids": [
+          "basel"
+        ],
+        "spoiler_level": 1
+      },
+      {
+        "id": "f_photo_exists",
+        "statement_ar": "التقطت مصوّرة النشرة صورة للخزانة قبل الاجتماع تظهر فيها ساعة الحائط.",
+        "kind": "event",
+        "subject_ids": [
+          "talla"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 110,
+          "precision": "exact"
+        },
+        "location_id": "loc_club"
+      },
+      {
+        "id": "f_key_sheet_exists",
+        "statement_ar": "تُكتب كل مرة تفتح فيها خزانة الكؤوس في ورقة المفتاح باسم من فتحها.",
+        "kind": "state",
+        "subject_ids": [
+          "nadine"
+        ],
+        "spoiler_level": 1,
+        "location_id": "loc_club"
+      },
+      {
+        "id": "f_rota_exists",
+        "statement_ar": "للنادي جدول تنظيف أسبوعي فيه مهمة الخزانة والكأس يوم الخميس.",
+        "kind": "state",
+        "subject_ids": [
+          "nadine"
+        ],
+        "spoiler_level": 1
+      },
+      {
+        "id": "f_slip_exists",
+        "statement_ar": "يكتب أمين المخزن إيصال استلام لكل غرض يدخل المخزن بوقته واسم مسلّمه.",
+        "kind": "state",
+        "subject_ids": [
+          "dawood"
+        ],
+        "spoiler_level": 1,
+        "location_id": "loc_store"
+      },
+      {
+        "id": "f_store_reader_exists",
+        "statement_ar": "يسجّل قارئ باب المخزن كل دخول وخروج بالبطاقة.",
+        "kind": "state",
+        "subject_ids": [
+          "dawood"
+        ],
+        "spoiler_level": 1,
+        "location_id": "loc_store"
+      },
+      {
+        "id": "f_empty_before",
+        "statement_ar": "كانت الخزانة فارغة قبل بدء الاجتماع، فلم تغادرها الكأس أثناء قفلها ولا يلزم لتفسير الغياب مفتاح ثالث ولا جدار متحرك.",
+        "kind": "relation",
+        "subject_ids": [
+          "obj_cup",
+          "loc_club"
+        ],
+        "spoiler_level": 3,
+        "time": {
+          "start_min": 100,
+          "precision": "exact",
+          "end_min": 120
+        },
+        "location_id": "loc_club",
+        "science_ko_refs": [
+          "KO-RS-06-008",
+          "KO-RS-05-004"
+        ]
+      },
+      {
+        "id": "f_yara_moved",
+        "statement_ar": "نقلت يارا الكأس إلى المخزن قبل الاجتماع ضمن مهمة التنظيف وأقفلت الخزانة دون إعلام الرئيس.",
+        "kind": "event",
+        "subject_ids": [
+          "yara",
+          "obj_cup"
+        ],
+        "spoiler_level": 3,
+        "time": {
+          "start_min": 90,
+          "precision": "exact",
+          "end_min": 105
+        },
+        "location_id": "loc_store",
+        "science_ko_refs": [
+          "KO-RS-05-004",
+          "KO-FC-04-026"
+        ]
+      }
+    ],
+    "claims": [
+      {
+        "id": "cl_locked_room",
+        "statement_ar": "الكأس كانت في الخزانة المقفلة حتى بدأ الاجتماع، فاختفاؤها لغز.",
+        "kind": "honest_mistake",
+        "held_by": [
+          "kinan"
+        ],
+        "true_fact_id": "f_empty_before",
+        "contradicted_by_evidence_ids": [
+          "ev_newsletter_photo",
+          "ev_store_slip",
+          "ev_store_door_log"
+        ]
+      },
+      {
+        "id": "cl_yara_never",
+        "statement_ar": "لم أفتح الخزانة يوم الخميس.",
+        "kind": "lie",
+        "held_by": [
+          "yara"
+        ],
+        "true_fact_id": "f_yara_moved",
+        "contradicted_by_evidence_ids": [
+          "ev_key_sheet",
+          "ev_dust_rota",
+          "ev_store_slip"
+        ]
+      }
+    ]
+  },
+  "timeline": [
+    {
+      "id": "te_open",
+      "description_ar": "يارا تفتح الخزانة بالمفتاح الثاني.",
+      "time": {
+        "start_min": 90,
+        "precision": "exact"
+      },
+      "location_id": "loc_club",
+      "actor_ids": [
+        "yara"
+      ],
+      "fact_ids": [
+        "f_yara_moved"
+      ],
+      "motivated_by_ar": "مهمة التغبير في جدول النادي"
+    },
+    {
+      "id": "te_store_in",
+      "description_ar": "يارا في المخزن تسلّم الكأس لأمين المخزن.",
+      "time": {
+        "start_min": 95,
+        "precision": "exact",
+        "end_min": 102
+      },
+      "location_id": "loc_store",
+      "actor_ids": [
+        "yara",
+        "dawood"
+      ],
+      "fact_ids": [
+        "f_yara_moved"
+      ],
+      "motivated_by_ar": "غسل الكأس وتجفيفها"
+    },
+    {
+      "id": "te_lock",
+      "description_ar": "يارا تقفل الخزانة.",
+      "time": {
+        "start_min": 105,
+        "precision": "exact"
+      },
+      "location_id": "loc_club",
+      "actor_ids": [
+        "yara"
+      ],
+      "fact_ids": [
+        "f_empty_before"
+      ],
+      "motivated_by_ar": "إنهاء المهمة"
+    },
+    {
+      "id": "te_photo",
+      "description_ar": "تالا تصوّر الخزانة للنشرة.",
+      "time": {
+        "start_min": 110,
+        "precision": "exact"
+      },
+      "location_id": "loc_club",
+      "actor_ids": [
+        "talla"
+      ],
+      "fact_ids": [
+        "f_photo_exists"
+      ],
+      "motivated_by_ar": "نشرة الشهر"
+    },
+    {
+      "id": "te_meeting",
+      "description_ar": "يبدأ اجتماع النادي ويعلن الرئيس التحدي.",
+      "time": {
+        "start_min": 120,
+        "precision": "exact",
+        "end_min": 210
+      },
+      "location_id": "loc_club",
+      "actor_ids": [
+        "kinan",
+        "basel"
+      ],
+      "fact_ids": [
+        "f_challenge"
+      ],
+      "motivated_by_ar": "اجتماع النادي الأسبوعي"
+    },
+    {
+      "id": "te_inspect",
+      "description_ar": "فتح الخزانة وفحصها وتسجيل أنها فارغة.",
+      "time": {
+        "start_min": 210,
+        "precision": "exact"
+      },
+      "location_id": "loc_club",
+      "actor_ids": [],
+      "fact_ids": [
+        "f_inspection_exists"
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_challenge",
+      "title_ar": "ورقة التحدي",
+      "kind": "documentary",
+      "content_ar": "نادي الألغاز — ورقة التحدي (بخط الرئيس) — الخميس\nالمعطيات: الكأس الخضراء كانت في خزانة الزجاج. المفتاح الأول معي. الزجاج سليم. الخزانة فارغة عند فتحها 17:30.\nالشروط: أي حل يفسّر كل القرائن، ولا يناقض أيّاً منها، وبأقل الافتراضات.\nإعلان: لن يفسّر أحد كيف خرجت الكأس.",
+      "acquired_by_action_ids": [
+        "a_read_challenge"
+      ],
+      "supports_fact_ids": [
+        "f_cup_vanished",
+        "f_challenge",
+        "f_rules"
+      ],
+      "reliability": "weak",
+      "limits_ar": "ورقة تحدٍّ تعلن استحالة وتضع معطيات؛ وجود الكأس داخل الخزانة لحظة الإقفال معطى يحتاج إلى سجل يؤيده.",
+      "is_red_herring": true,
+      "location_id": "loc_club"
+    },
+    {
+      "id": "ev_compare_card",
+      "title_ar": "بطاقة مقارنة الحلول",
+      "kind": "documentary",
+      "content_ar": "بطاقة تدريب خيالية للمقارنة بين حلين متنافسين\nلكل قرينة اسأل: كم مرة أراها لو كان الحل (أ) صحيحاً؟ وكم مرة أراها لو كان الحل (ب) صحيحاً؟\nمثال بأرقام للتمرين: قرينة «إيصال استلام في المخزن» — تحت حل «نُقلت للتنظيف»: 9 من 10، وتحت حل «فُتحت بمفتاح مقلّد»: 1 من 20 → نسبة الترجيح نحو 18 لصالح الأول.\nقرينة «قفل سليم» — تحت الحلين نحو 9 من 10 → النسبة نحو 1، فلا تفرّق بين الحلين.\nتذكير: نسبة الترجيح تقارن تكرارين، وليست احتمال حل واحد.",
+      "acquired_by_action_ids": [
+        "a_read_card"
+      ],
+      "supports_fact_ids": [],
+      "reliability": "moderate",
+      "limits_ar": "نموذج تعليمي بأرقام للتدريب لا تخص هذه الغرفة؛ يُظهر طريقة المقارنة ولا يقيس القرائن الحقيقية.",
+      "location_id": "loc_club"
+    },
+    {
+      "id": "ev_key_sheet",
+      "title_ar": "ورقة مفتاح خزانة الكؤوس",
+      "kind": "documentary",
+      "content_ar": "نادي الألغاز — ورقة المفتاح (مفتاحان: الأول مع الرئيس، الثاني في صندوق النادي)\nالخميس 15:30 — فتح بالمفتاح الثاني — الاسم: ي. الحداد — السبب: مهمة الغبار\nالخميس 15:45 — قفل — ي. الحداد\nالخميس 16:00 — الرئيس يجرّب المقبض: مقفل (دون فتح)\nالخميس 17:30 — فتح بالمفتاح الأول — ك. الصباغ",
+      "acquired_by_action_ids": [
+        "a_get_key_sheet"
+      ],
+      "supports_fact_ids": [
+        "f_key_sheet_exists",
+        "f_yara_moved",
+        "f_empty_before"
+      ],
+      "reliability": "strong",
+      "limits_ar": "ورقة بخط أمينة السر وتوقيعات الفاتحين؛ تثبت فتحاً وقفلاً قبل الاجتماع، ولا تقول ماذا حُمل منها ولا إلى أين.",
+      "forensic_ko_ref": "KO-FC-04-026",
+      "location_id": "loc_club"
+    },
+    {
+      "id": "ev_dust_rota",
+      "title_ar": "جدول مهام التنظيف",
+      "kind": "documentary",
+      "content_ar": "نادي الألغاز — جدول التنظيف الأسبوعي (بخط أمينة السر)\nالخميس قبل الاجتماع: خزانة الكؤوس وغسل الكأس الخضراء وتجفيفها — المكلّفة: ي. الحداد\nالجمعة: ترتيب الكراسي — م. القاسم",
+      "acquired_by_action_ids": [
+        "a_get_dust_rota"
+      ],
+      "supports_fact_ids": [
+        "f_rota_exists",
+        "f_yara_moved"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "جدول مهام يبيّن من كُلّف لا ما فُعل؛ يقوى حين يوافقه سجل لا يعتمد عليه.",
+      "location_id": "loc_club"
+    },
+    {
+      "id": "ev_newsletter_photo",
+      "title_ar": "صورة الخزانة للنشرة",
+      "kind": "digital",
+      "content_ar": "هاتف مصوّرة النشرة — بيانات الصورة: الخميس 15:50 (وقت الشبكة)\nخزانة الكؤوس مقفلة، وعلى رفها العلوي أثر دائري باهت لقاعدة كأس ولا كأس فوقه؛ وفي الخلفية ساعة الحائط تشير إلى 15:50.",
+      "acquired_by_action_ids": [
+        "a_get_newsletter_photo"
+      ],
+      "supports_fact_ids": [
+        "f_photo_exists",
+        "f_empty_before"
+      ],
+      "reliability": "strong",
+      "limits_ar": "لقطة واحدة قبل الاجتماع؛ تبيّن خلو الرف ولا تبيّن إلى أين ذهبت الكأس ولا من نقلها.",
+      "location_id": "loc_club"
+    },
+    {
+      "id": "ev_store_slip",
+      "title_ar": "إيصال استلام المخزن",
+      "kind": "documentary",
+      "content_ar": "مخزن النادي — إيصال استلام — الخميس 15:40 (بخط أمين المخزن)\nالغرض: كأس خضراء للغسل والتجفيف\nالمسلِّم: ي. الحداد · المستلم: د. العلمي\nملاحظة: «ستعود قبل نهاية اليوم» — ولم يُسجَّل لها إرجاع.",
+      "acquired_by_action_ids": [
+        "a_get_store_slip"
+      ],
+      "supports_fact_ids": [
+        "f_slip_exists",
+        "f_yara_moved",
+        "f_empty_before"
+      ],
+      "reliability": "strong",
+      "limits_ar": "إيصال بخط أمين المخزن؛ يبيّن من سلّم الكأس ومتى، وعدم تسجيل الإرجاع لا يبيّن لماذا.",
+      "forensic_ko_ref": "KO-FC-04-026",
+      "location_id": "loc_store"
+    },
+    {
+      "id": "ev_store_door_log",
+      "title_ar": "سجل قارئ باب المخزن",
+      "kind": "digital",
+      "content_ar": "مخزن النادي — قارئ البطاقات — الخميس\n15:35 دخول: ي. الحداد\n15:42 خروج: ي. الحداد\nلا دخول ولا خروج لأي بطاقة بين 16:00 و17:45 حين دخل أمين المخزن.",
+      "acquired_by_action_ids": [
+        "a_get_store_door_log"
+      ],
+      "supports_fact_ids": [
+        "f_store_reader_exists",
+        "f_yara_moved",
+        "f_empty_before"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يسجّل مرور بطاقة لا شخصاً؛ قوته في اتفاقه مع الإيصال بخط أمين المخزن وهو نظام منفصل.",
+      "location_id": "loc_store"
+    },
+    {
+      "id": "ev_cabinet_inspect",
+      "title_ar": "ورقة فحص الخزانة عند فتحها",
+      "kind": "documentary",
+      "content_ar": "نادي الألغاز — فحص الخزانة — الخميس 17:30\nالزجاج سليم · القفل سليم · الجدار الخلفي مثبّت بأربعة مسامير من الداخل ولم يمسّ · الرف الأعلى فارغ",
+      "acquired_by_action_ids": [
+        "a_get_cabinet_inspect"
+      ],
+      "supports_fact_ids": [
+        "f_inspection_exists"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "يثبت سلامة القفل والزجاج والجدار بعد الاجتماع، ولا يبيّن متى غادرت الكأس الخزانة.",
+      "location_id": "loc_club"
+    },
+    {
+      "id": "ev_copy_receipt",
+      "title_ar": "إيصال القفّال",
+      "kind": "documentary",
+      "content_ar": "ورشة قفّال «الأطلال» — إيصال نسخ مفتاح\nمنذ شهر: نسخة واحدة لمفتاح باب المخزن — الطالب: باسل المنصور\nلا قيد بنسخ مفتاح آخر.",
+      "acquired_by_action_ids": [
+        "a_get_copy_receipt"
+      ],
+      "supports_fact_ids": [
+        "f_copy_made"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "يثبت نسخ مفتاح المخزن لا مفتاح الخزانة؛ والإمكان ليس فعلاً.",
+      "is_red_herring": true,
+      "location_id": "loc_club"
+    },
+    {
+      "id": "ev_kinan_stmt",
+      "title_ar": "إفادة الرئيس (ملخص)",
+      "kind": "testimonial",
+      "content_ar": "ملخص إفادة كنان الصباغ:\n«أغلقت الخزانة ظهراً وفتحتها 17:30 فكانت فارغة. أنا متأكد أنها كانت فيها حتى بدأ الاجتماع.»",
+      "acquired_by_action_ids": [
+        "a_note_kinan"
+      ],
+      "supports_fact_ids": [
+        "f_kinan_says"
+      ],
+      "reliability": "weak",
+      "limits_ar": "إفادة صاحب التحدي؛ ثقته لا تغني عن سجل، وقد يقصد بالإغلاق حركة سابقة لم يرها بنفسه.",
+      "location_id": "loc_club"
+    },
+    {
+      "id": "ev_basel_stmt",
+      "title_ar": "إفادة باسل (ملخص)",
+      "kind": "testimonial",
+      "content_ar": "ملخص إفادة باسل المنصور:\n«كنت في الاجتماع طوال الوقت ولم أقم. نسخت مفتاح المخزن لا الخزانة، وعندي الإيصال.»",
+      "acquired_by_action_ids": [
+        "a_note_basel"
+      ],
+      "supports_fact_ids": [
+        "f_basel_says"
+      ],
+      "reliability": "weak",
+      "limits_ar": "إفادة صاحب الشأن عن نفسه؛ تُقاس بالسجلات لا بمعرفته بالأقفال.",
+      "location_id": "loc_club"
+    },
+    {
+      "id": "ev_yara_stmt",
+      "title_ar": "إفادة يارا بعد المواجهة (ملخص)",
+      "kind": "testimonial",
+      "content_ar": "ملخص إفادة يارا الحداد:\n«فتحت الخزانة قبل الاجتماع لأغبّر الكأس، فنقلتها إلى المخزن لأغسلها، ونسيت أن أخبر الرئيس. لم أقصد أي أذى.»",
+      "acquired_by_action_ids": [
+        "a_note_yara"
+      ],
+      "supports_fact_ids": [
+        "f_yara_moved"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "اعتراف بعد عرض سجل عليها؛ يؤيد سجلات سبقته ولا يغني عنها.",
+      "location_id": "loc_club"
+    }
+  ],
+  "evidence_graph": {
+    "inferences": [
+      {
+        "id": "i_before_a",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_newsletter_photo"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_key_sheet"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_empty_before"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "الرف خالٍ في صورة بساعة ظاهرة قبل بدء الاجتماع، وورقة المفتاح تسجّل فتحاً وقفلاً في الفترة نفسها باسم غير الرئيس؛ فالاختفاء سابق للقفل الأخير.",
+        "skill_ko_refs": [
+          "KO-RS-06-008",
+          "KO-RS-05-004"
+        ]
+      },
+      {
+        "id": "i_before_b",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_store_slip"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_store_door_log"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_empty_before"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "إيصال المخزن وقارئ بابه، وهما نظامان لا علاقة لهما بالنادي ولا بالصورة، يضعان الكأس في المخزن قبل الاجتماع بنحو ثلث ساعة.",
+        "skill_ko_refs": [
+          "KO-RS-05-004",
+          "KO-FC-04-026"
+        ]
+      },
+      {
+        "id": "i_moved_a",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_key_sheet"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_dust_rota"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_yara_moved"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "من فتح الخزانة قبل الاجتماع هي المكلّفة في الجدول بالكأس والخزانة، فالفتح كان للمهمة وليس لإخراج الكأس خفية.",
+        "skill_ko_refs": [
+          "KO-RS-05-004",
+          "KO-FC-04-026"
+        ]
+      },
+      {
+        "id": "i_moved_b",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_store_slip"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_store_door_log"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_yara_moved"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "الإيصال باسم المسلِّمة وبطاقتها وحدها دخلت المخزن وخرجت في ذلك الوقت؛ فهي التي نقلت الكأس.",
+        "skill_ko_refs": [
+          "KO-RS-05-004",
+          "KO-FC-04-026"
+        ]
+      },
+      {
+        "id": "i_cl_kinan",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_empty_before"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_locked_room"
+        },
+        "relation": "contradicts_claim",
+        "strength": "strong",
+        "rule_ar": "الاعتقاد بأن الكأس كانت في الخزانة وقت الاجتماع لم يُفحص بسجل؛ والسجلات تضعها في مكان آخر قبله.",
+        "skill_ko_refs": [
+          "KO-RS-05-014"
+        ]
+      },
+      {
+        "id": "i_cl_yara",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_yara_moved"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_yara_never"
+        },
+        "relation": "contradicts_claim",
+        "strength": "strong",
+        "rule_ar": "اسمها في ورقة المفتاح وفي الإيصال وفي جدول المهام، فنفي فتح الخزانة لا يوافق السجلات.",
+        "skill_ko_refs": [
+          "KO-RS-05-014"
+        ]
+      },
+      {
+        "id": "i_support_dust",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_empty_before"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_yara_moved"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_dusting"
+        },
+        "relation": "supports",
+        "strength": "strong",
+        "rule_ar": "هذا الحل يفسّر كل القرائن: الرف الخالي والورقة والإيصال والجدول وسلامة القفل والجدار، بافتراض واحد هو أن النقل لم يُعلَن؛ وهي القرائن التي تزيد ترجيحه على كل حل منافس بنسبة كبيرة.",
+        "skill_ko_refs": [
+          "KO-FC-04-009",
+          "KO-RS-06-007"
+        ]
+      },
+      {
+        "id": "i_rule_copy",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_empty_before"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_yara_moved"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_copykey"
+        },
+        "relation": "rules_out",
+        "strength": "conclusive",
+        "rule_ar": "من احتاج مفتاحاً مقلّداً لفتح الخزانة أثناء الاجتماع حلّ مشكلة لم تقع، فالرف كان خالياً قبله؛ ونسخ مفتاح المخزن لا يمسّ الخزانة.",
+        "skill_ko_refs": [
+          "KO-RS-06-008",
+          "KO-FC-04-009"
+        ]
+      },
+      {
+        "id": "i_rule_panel",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_empty_before"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_yara_moved"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_panel"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "جدار متحرك يفسّر خروجاً أثناء القفل، والخروج حدث قبله؛ فالحل يضيف افتراضات ولا يضيف تفسيراً.",
+        "skill_ko_refs": [
+          "KO-RS-06-008",
+          "KO-FC-04-009"
+        ]
+      },
+      {
+        "id": "i_rule_staged",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_empty_before"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_yara_moved"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_staged"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "الكأس نُقلت إلى المخزن بيد غير يد الرئيس وبإيصال موقّع، فلا يلزم أن يكون التحدي مدبراً ولا أن يكون الرئيس هو الناقل.",
+        "skill_ko_refs": [
+          "KO-RS-06-008"
+        ]
+      }
+    ]
+  },
+  "character_knowledge": [
+    {
+      "character_id": "kinan",
+      "knows": [
+        {
+          "fact_id": "f_kinan_says",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_inspection_exists",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": [
+        {
+          "claim_id": "cl_locked_room",
+          "stance": "sincere"
+        }
+      ]
+    },
+    {
+      "character_id": "yara",
+      "knows": [],
+      "hides": [
+        {
+          "fact_id": "f_yara_moved",
+          "reveal_when": {
+            "presented": {
+              "evidence_id": "ev_store_slip",
+              "to_character": "yara"
+            }
+          },
+          "cover_claim_id": "cl_yara_never",
+          "reveal_line_id": "yr_moved"
+        }
+      ],
+      "believes": [
+        {
+          "claim_id": "cl_yara_never",
+          "stance": "deliberate_lie"
+        }
+      ]
+    },
+    {
+      "character_id": "basel",
+      "knows": [
+        {
+          "fact_id": "f_copy_made",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_basel_says",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    },
+    {
+      "character_id": "talla",
+      "knows": [
+        {
+          "fact_id": "f_photo_exists",
+          "access": "professional",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    },
+    {
+      "character_id": "nadine",
+      "knows": [
+        {
+          "fact_id": "f_key_sheet_exists",
+          "access": "professional",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_rota_exists",
+          "access": "professional",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    },
+    {
+      "character_id": "dawood",
+      "knows": [
+        {
+          "fact_id": "f_slip_exists",
+          "access": "professional",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_store_reader_exists",
+          "access": "professional",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "h_copykey",
+      "statement_ar": "فتح أحد الأعضاء الخزانة أثناء الاجتماع بمفتاح مقلّد وأخذ الكأس.",
+      "is_true": false,
+      "plausibility_at_start": "high",
+      "suspect_id": "basel"
+    },
+    {
+      "id": "h_panel",
+      "statement_ar": "خرجت الكأس أثناء القفل من جدار الخزانة الخلفي.",
+      "is_true": false,
+      "plausibility_at_start": "medium"
+    },
+    {
+      "id": "h_dusting",
+      "statement_ar": "نُقلت الكأس إلى المخزن قبل الاجتماع ضمن مهمة التنظيف ولم يعلم الرئيس.",
+      "is_true": true,
+      "plausibility_at_start": "low",
+      "suspect_id": "yara"
+    },
+    {
+      "id": "h_staged",
+      "statement_ar": "دبّر الرئيس الاختفاء ليربح التحدي.",
+      "is_true": false,
+      "plausibility_at_start": "medium",
+      "suspect_id": "kinan"
+    }
+  ],
+  "misdirection_plan": [
+    {
+      "id": "rh_copy",
+      "points_to_hypothesis_id": "h_copykey",
+      "planted_via_ar": "باسل هاوي أقفال ونسخ مفتاحاً قبل شهر.",
+      "evidence_ids": [
+        "ev_copy_receipt"
+      ],
+      "refuted_by_inference_ids": [
+        "i_rule_copy",
+        "i_before_a",
+        "i_before_b"
+      ],
+      "fairness_note_ar": "الإيصال نفسه يذكر مفتاح المخزن لا الخزانة، والسجلات تضع الكأس خارج الخزانة قبل الاجتماع؛ فالمفتاح المقلّد حل لمشكلة لم تقع."
+    },
+    {
+      "id": "rh_locked",
+      "points_to_hypothesis_id": "h_panel",
+      "planted_via_ar": "الخزانة بدت مقفلة وسليمة، فلا مفر من منفذ خفي.",
+      "evidence_ids": [
+        "ev_challenge",
+        "ev_cabinet_inspect"
+      ],
+      "refuted_by_inference_ids": [
+        "i_rule_panel",
+        "i_before_a"
+      ],
+      "fairness_note_ar": "المعطى بأن الكأس كانت في الخزانة لم يُسند بسجل، وقد وفّرت السجلات ما يبيّن عكسه؛ وجدار سليم لا يفسّر شيئاً حدث قبل القفل."
+    },
+    {
+      "id": "rh_staged",
+      "points_to_hypothesis_id": "h_staged",
+      "planted_via_ar": "الرئيس أعلن الاستحالة وهو من يملك المفتاح الأول.",
+      "evidence_ids": [
+        "ev_kinan_stmt",
+        "ev_challenge"
+      ],
+      "refuted_by_inference_ids": [
+        "i_rule_staged",
+        "i_moved_b"
+      ],
+      "fairness_note_ar": "ورقة المفتاح تبيّن أنه لم يفتح الخزانة قبل 17:30، والإيصال باسم غيره؛ وإعلان التحدي ليس دليلاً على تدبيره."
+    }
+  ],
+  "learning_objectives": [
+    {
+      "id": "lo_claim",
+      "statement_ar": "يصنّف الأدلة بحسب نوع مصدرها ويعامل الأقوال ادعاءات تحتاج تأييداً.",
+      "skill_ko_ref": "KO-RS-05-001",
+      "observable_behaviors_ar": [
+        "يصنّف الإفادات أقوالاً",
+        "يميز السجل الأصلي من النسخة"
+      ],
+      "evidence_sources": [
+        "evidence_board"
+      ]
+    },
+    {
+      "id": "lo_timeline",
+      "statement_ar": "يرتّب الأحداث على خط زمني واحد ليكشف ما يتعارض.",
+      "skill_ko_ref": "KO-RS-05-005",
+      "observable_behaviors_ar": [
+        "يضع الأدلة في أزمنتها"
+      ],
+      "evidence_sources": [
+        "timeline_task",
+        "action_log"
+      ]
+    },
+    {
+      "id": "lo_indep",
+      "statement_ar": "يتحقق من استقلال الأدلة ويقدّم مسارين لا يشتركان في مصدر.",
+      "skill_ko_ref": "KO-RS-05-004",
+      "observable_behaviors_ar": [
+        "يميز بين مصادر لا تشترك في أصل"
+      ],
+      "evidence_sources": [
+        "evidence_board",
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_main",
+      "statement_ar": "يختبر مقدمة «المستحيل» قبل البحث عن حل خفي، ويقارن الحلول المتنافسة بالتغطية والاتساق والاقتصاد، ويقدّر قوة كل قرينة بنسبة الترجيح: كم مرة تظهر لو صح حل ولو صح آخر.",
+      "skill_ko_ref": "KO-FC-04-009",
+      "observable_behaviors_ar": [
+        "يسأل هل كانت الكأس في الخزانة حقاً",
+        "يقارن حلين بنسبة بين تكرارين",
+        "يفضّل الحل الأقل افتراضاً"
+      ],
+      "evidence_sources": [
+        "evidence_board",
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_hyp",
+      "statement_ar": "يوازن بين فرضيتين على الأقل ويستبعد ما تنقضه الأدلة.",
+      "skill_ko_ref": "KO-RS-05-002",
+      "observable_behaviors_ar": [
+        "يضيف فرضيات",
+        "يستبعد بدليل"
+      ],
+      "evidence_sources": [
+        "hypothesis_ledger"
+      ]
+    },
+    {
+      "id": "lo_diag",
+      "statement_ar": "يقدّر ما يثبته كل دليل وما لا يثبته ويربطه بالفرضية باتجاه صحيح.",
+      "skill_ko_ref": "KO-RS-06-001",
+      "observable_behaviors_ar": [
+        "يربط الدليل بالفرضية"
+      ],
+      "evidence_sources": [
+        "evidence_board",
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_calib",
+      "statement_ar": "يصوغ نسبة الترجيح بين الحلول المتنافسة بحدودها.",
+      "skill_ko_ref": "KO-RS-06-021",
+      "observable_behaviors_ar": [
+        "يختار ثقة معقولة",
+        "يذكر حدوداً"
+      ],
+      "evidence_sources": [
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_revise",
+      "statement_ar": "يراجع رأيه الأول حين يظهر ما يخالفه.",
+      "skill_ko_ref": "KO-RS-06-009",
+      "observable_behaviors_ar": [
+        "يغيّر فرضيته الرائدة بدليل"
+      ],
+      "evidence_sources": [
+        "hypothesis_ledger"
+      ]
+    }
+  ],
+  "mechanics": {
+    "time_budget_units": 50,
+    "actions": [
+      {
+        "id": "a_read_challenge",
+        "type": "examine",
+        "label_ar": "اقرأ ورقة التحدي",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_challenge"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_club",
+        "telemetry_code": "READ_CHALLENGE"
+      },
+      {
+        "id": "a_read_card",
+        "type": "examine",
+        "label_ar": "اقرأ بطاقة مقارنة الحلول",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_compare_card"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_club",
+        "telemetry_code": "READ_CARD"
+      },
+      {
+        "id": "a_int_kinan",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة كنان",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "kinan",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "kinan",
+        "telemetry_code": "INT_KINAN"
+      },
+      {
+        "id": "a_int_yara",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة يارا",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "yara",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "yara",
+        "telemetry_code": "INT_YARA"
+      },
+      {
+        "id": "a_int_basel",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة باسل",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "basel",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "basel",
+        "telemetry_code": "INT_BASEL"
+      },
+      {
+        "id": "a_int_talla",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة تالا",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "talla",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "talla",
+        "telemetry_code": "INT_TALLA"
+      },
+      {
+        "id": "a_int_nadine",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة نادين",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "nadine",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "nadine",
+        "telemetry_code": "INT_NADINE"
+      },
+      {
+        "id": "a_int_dawood",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة داود",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "dawood",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "dawood",
+        "telemetry_code": "INT_DAWOOD"
+      },
+      {
+        "id": "a_get_key_sheet",
+        "type": "examine",
+        "label_ar": "اطلب ورقة مفتاح الخزانة",
+        "precondition": {
+          "fact_unlocked": "f_key_sheet_exists"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_key_sheet"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_club",
+        "telemetry_code": "GET_KEY_SHEET"
+      },
+      {
+        "id": "a_get_dust_rota",
+        "type": "examine",
+        "label_ar": "اطلب جدول مهام التنظيف",
+        "precondition": {
+          "fact_unlocked": "f_rota_exists"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_dust_rota"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_club",
+        "telemetry_code": "GET_DUST_ROTA"
+      },
+      {
+        "id": "a_get_newsletter_photo",
+        "type": "examine",
+        "label_ar": "اطلب صورة الخزانة للنشرة",
+        "precondition": {
+          "fact_unlocked": "f_photo_exists"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_newsletter_photo"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_club",
+        "telemetry_code": "GET_PHOTO"
+      },
+      {
+        "id": "a_get_store_slip",
+        "type": "examine",
+        "label_ar": "اطلب إيصال استلام المخزن",
+        "precondition": {
+          "fact_unlocked": "f_slip_exists"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_store_slip"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_store",
+        "telemetry_code": "GET_STORE_SLIP"
+      },
+      {
+        "id": "a_get_store_door_log",
+        "type": "examine",
+        "label_ar": "اطلب سجل قارئ باب المخزن",
+        "precondition": {
+          "fact_unlocked": "f_store_reader_exists"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_store_door_log"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_store",
+        "telemetry_code": "GET_STORE_LOG"
+      },
+      {
+        "id": "a_get_cabinet_inspect",
+        "type": "examine",
+        "label_ar": "اطلب ورقة فحص الخزانة",
+        "precondition": {
+          "fact_unlocked": "f_inspection_exists"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_cabinet_inspect"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_club",
+        "telemetry_code": "GET_INSPECT"
+      },
+      {
+        "id": "a_get_copy_receipt",
+        "type": "examine",
+        "label_ar": "اطلب إيصال القفّال",
+        "precondition": {
+          "fact_unlocked": "f_copy_made"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_copy_receipt"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_club",
+        "telemetry_code": "GET_RECEIPT"
+      },
+      {
+        "id": "a_note_kinan",
+        "type": "examine",
+        "label_ar": "دوّن إفادة الرئيس",
+        "precondition": {
+          "fact_unlocked": "f_kinan_says"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_kinan_stmt"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "kinan",
+        "telemetry_code": "NOTE_KINAN"
+      },
+      {
+        "id": "a_note_basel",
+        "type": "examine",
+        "label_ar": "دوّن إفادة باسل",
+        "precondition": {
+          "fact_unlocked": "f_basel_says"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_basel_stmt"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "basel",
+        "telemetry_code": "NOTE_BASEL"
+      },
+      {
+        "id": "a_note_yara",
+        "type": "examine",
+        "label_ar": "دوّن إفادة يارا",
+        "precondition": {
+          "fact_unlocked": "f_yara_moved"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_yara_stmt"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "yara",
+        "telemetry_code": "NOTE_YARA"
+      },
+      {
+        "id": "p_slip_yara",
+        "type": "present_evidence",
+        "label_ar": "اعرض إيصال المخزن على يارا",
+        "precondition": {
+          "presented": {
+            "evidence_id": "ev_store_slip",
+            "to_character": "yara"
+          }
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "PRESENTED_SLIP"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "yara",
+        "telemetry_code": "P_SLIP_YARA"
+      },
+      {
+        "id": "a_hint",
+        "type": "request_hint",
+        "label_ar": "اطلب تلميحاً",
+        "precondition": {
+          "always": true
+        },
+        "effects": [],
+        "time_cost_units": 0,
+        "telemetry_code": "REQUEST_HINT"
+      },
+      {
+        "id": "a_accuse",
+        "type": "final_accusation",
+        "label_ar": "قدّم الرأي المعلّل النهائي",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "SUBMIT"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "FINAL_ACCUSATION"
+      },
+      {
+        "id": "ask_kinan_f_kinan_says",
+        "type": "interview",
+        "label_ar": "[نموذج] kinan يذكر f_kinan_says",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_kinan_says"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "kinan",
+        "telemetry_code": "ASK_KINAN_F_KINAN_SAYS"
+      },
+      {
+        "id": "ask_kinan_f_inspection_exists",
+        "type": "interview",
+        "label_ar": "[نموذج] kinan يذكر f_inspection_exists",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_inspection_exists"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "kinan",
+        "telemetry_code": "ASK_KINAN_F_INSPECTION_EXISTS"
+      },
+      {
+        "id": "ask_yara_f_yara_moved",
+        "type": "interview",
+        "label_ar": "[نموذج] yara يكشف f_yara_moved",
+        "precondition": {
+          "all": [
+            {
+              "always": true
+            },
+            {
+              "presented": {
+                "evidence_id": "ev_store_slip",
+                "to_character": "yara"
+              }
+            }
+          ]
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_yara_moved"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "yara",
+        "telemetry_code": "ASK_YARA_F_YARA_MOVED"
+      },
+      {
+        "id": "ask_basel_f_copy_made",
+        "type": "interview",
+        "label_ar": "[نموذج] basel يذكر f_copy_made",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_copy_made"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "basel",
+        "telemetry_code": "ASK_BASEL_F_COPY_MADE"
+      },
+      {
+        "id": "ask_basel_f_basel_says",
+        "type": "interview",
+        "label_ar": "[نموذج] basel يذكر f_basel_says",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_basel_says"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "basel",
+        "telemetry_code": "ASK_BASEL_F_BASEL_SAYS"
+      },
+      {
+        "id": "ask_talla_f_photo_exists",
+        "type": "interview",
+        "label_ar": "[نموذج] talla يذكر f_photo_exists",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_photo_exists"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "talla",
+        "telemetry_code": "ASK_TALLA_F_PHOTO_EXISTS"
+      },
+      {
+        "id": "ask_nadine_f_key_sheet_exists",
+        "type": "interview",
+        "label_ar": "[نموذج] nadine يذكر f_key_sheet_exists",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_key_sheet_exists"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "nadine",
+        "telemetry_code": "ASK_NADINE_F_KEY_SHEET_EXISTS"
+      },
+      {
+        "id": "ask_nadine_f_rota_exists",
+        "type": "interview",
+        "label_ar": "[نموذج] nadine يذكر f_rota_exists",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_rota_exists"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "nadine",
+        "telemetry_code": "ASK_NADINE_F_ROTA_EXISTS"
+      },
+      {
+        "id": "ask_dawood_f_slip_exists",
+        "type": "interview",
+        "label_ar": "[نموذج] dawood يذكر f_slip_exists",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_slip_exists"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "dawood",
+        "telemetry_code": "ASK_DAWOOD_F_SLIP_EXISTS"
+      },
+      {
+        "id": "ask_dawood_f_store_reader_exists",
+        "type": "interview",
+        "label_ar": "[نموذج] dawood يذكر f_store_reader_exists",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_store_reader_exists"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "dawood",
+        "telemetry_code": "ASK_DAWOOD_F_STORE_READER_EXISTS"
+      }
+    ]
+  },
+  "state_machine": {
+    "id": "c027",
+    "initial": "briefing",
+    "type": "compound",
+    "states": {
+      "briefing": {
+        "description_ar": "الإحاطة",
+        "type": "atomic",
+        "on": {
+          "START": {
+            "target": "investigating"
+          }
+        }
+      },
+      "investigating": {
+        "description_ar": "التحقيق",
+        "type": "compound",
+        "initial": "gathering",
+        "states": {
+          "gathering": {
+            "type": "atomic",
+            "on": {
+              "OPEN_DEDUCTION": {
+                "target": "deducing"
+              }
+            }
+          },
+          "deducing": {
+            "type": "atomic",
+            "on": {
+              "BACK": {
+                "target": "gathering"
+              }
+            }
+          }
+        },
+        "on": {
+          "SUBMIT": {
+            "target": "review"
+          }
+        }
+      },
+      "review": {
+        "description_ar": "مراجعة",
+        "type": "atomic",
+        "on": {
+          "CLOSE": {
+            "target": "resolved"
+          }
+        }
+      },
+      "resolved": {
+        "description_ar": "إغلاق",
+        "type": "final"
+      }
+    }
+  },
+  "dialogue": {
+    "max_turns_per_interview": 10,
+    "llm_enabled": false,
+    "topics": [
+      {
+        "id": "t_kinan",
+        "label_ar": "متى أغلقت الخزانة",
+        "example_questions_ar": [
+          "متى أغلقت الخزانة؟",
+          "هل فتحتها قبل الاجتماع؟"
+        ],
+        "fact_ids": [
+          "f_kinan_says"
+        ],
+        "claim_ids": [
+          "cl_locked_room"
+        ]
+      },
+      {
+        "id": "t_inspect",
+        "label_ar": "فحص الخزانة",
+        "example_questions_ar": [
+          "ماذا وجدتم عند فتحها؟"
+        ],
+        "fact_ids": [
+          "f_inspection_exists"
+        ]
+      },
+      {
+        "id": "t_yara_open",
+        "label_ar": "فتح الخزانة يوم الخميس",
+        "example_questions_ar": [
+          "هل فتحتِ الخزانة؟"
+        ],
+        "fact_ids": [],
+        "claim_ids": [
+          "cl_yara_never"
+        ]
+      },
+      {
+        "id": "t_yara_moved",
+        "label_ar": "ما فعلتِه بالكأس",
+        "example_questions_ar": [
+          "ماذا فعلتِ بالكأس؟"
+        ],
+        "fact_ids": [
+          "f_yara_moved"
+        ]
+      },
+      {
+        "id": "t_copy",
+        "label_ar": "نسخ المفتاح",
+        "example_questions_ar": [
+          "هل نسخت مفتاحاً؟"
+        ],
+        "fact_ids": [
+          "f_copy_made"
+        ]
+      },
+      {
+        "id": "t_basel_where",
+        "label_ar": "أين كنت أثناء الاجتماع",
+        "example_questions_ar": [
+          "هل غادرت مكانك؟"
+        ],
+        "fact_ids": [
+          "f_basel_says"
+        ]
+      },
+      {
+        "id": "t_photo",
+        "label_ar": "صورة النشرة",
+        "example_questions_ar": [
+          "هل صوّرت الخزانة؟"
+        ],
+        "fact_ids": [
+          "f_photo_exists"
+        ]
+      },
+      {
+        "id": "t_sheet",
+        "label_ar": "ورقة المفتاح",
+        "example_questions_ar": [
+          "كيف تُسجَّل مفاتيح الخزانة؟"
+        ],
+        "fact_ids": [
+          "f_key_sheet_exists"
+        ]
+      },
+      {
+        "id": "t_rota",
+        "label_ar": "جدول المهام",
+        "example_questions_ar": [
+          "من كُلّف بتنظيف الكأس؟"
+        ],
+        "fact_ids": [
+          "f_rota_exists"
+        ]
+      },
+      {
+        "id": "t_slip",
+        "label_ar": "إيصالات المخزن",
+        "example_questions_ar": [
+          "كيف تسجّل ما يدخل المخزن؟"
+        ],
+        "fact_ids": [
+          "f_slip_exists"
+        ]
+      },
+      {
+        "id": "t_reader",
+        "label_ar": "قارئ باب المخزن",
+        "example_questions_ar": [
+          "ماذا يسجّل القارئ؟"
+        ],
+        "fact_ids": [
+          "f_store_reader_exists"
+        ]
+      }
+    ]
+  },
+  "rubric": {
+    "reference_answer_ar": "ليست الواقعة اختفاء من خزانة مقفلة، فالرف كان خالياً قبل الاجتماع. صورة بساعة ظاهرة تُظهر الرف بلا كأس وورقة المفتاح تسجّل فتحاً وقفلاً باسم يارا، وإيصال المخزن وقارئ بابه يضعان الكأس عندها هناك قبل الاجتماع بنحو ثلث ساعة، وجدول المهام يكلّفها بالتنظيف. المفتاح المقلّد والجدار الخلفي والتدبير المتعمّد حلول لا يلزمها شيء مما جرى، فتخسر أمام تفسير واحد بافتراض واحد هو أن النقل لم يُعلَن. حدود الاستنتاج: لا نعرف لماذا لم تُرجع الكأس ولا لماذا لم تخبر الرئيس، ولا تثبت السجلات ماذا قالت بالضبط، واعترافها لا يغني عنها.",
+    "criteria": [
+      {
+        "id": "c_source",
+        "name_ar": "تصنيف المصادر",
+        "objective_ids": [
+          "lo_claim"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يصنّف"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "أخطأ في الأغلب"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "نصف صحيح"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمه صحيح"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كله صحيح"
+          }
+        ]
+      },
+      {
+        "id": "c_conflict",
+        "name_ar": "ترتيب الأحداث على الخط الزمني",
+        "objective_ids": [
+          "lo_timeline"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.2,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يرتّب شيئاً"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "رتّب قليلاً"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "رتّب نصفها"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمها"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كلها في موضعها"
+          }
+        ]
+      },
+      {
+        "id": "c_links",
+        "name_ar": "ربط الأدلة بالفرضيات",
+        "objective_ids": [
+          "lo_diag",
+          "lo_indep"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.2,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لا روابط"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "قليلة"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "نصفها صحيح"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمها"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كلها دقيقة"
+          }
+        ]
+      },
+      {
+        "id": "c_uncertainty",
+        "name_ar": "معايرة الثقة",
+        "objective_ids": [
+          "lo_calib"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "ثقة مفرطة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "حدود قليلة"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "جزئية"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معقولة"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "معايَرة كاملة"
+          }
+        ]
+      },
+      {
+        "id": "c_revision",
+        "name_ar": "مراجعة الرأي",
+        "objective_ids": [
+          "lo_revise"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "بقي على فرضية مرفوضة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "لم يعلن فرضية"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "ثبت على فرضية سليمة"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "غيّر بدليل"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "غيّر بدليل ووثّق"
+          }
+        ]
+      },
+      {
+        "id": "c_elimination",
+        "name_ar": "استبعاد الفرضيات الخاطئة",
+        "objective_ids": [
+          "lo_hyp"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يستبعد"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "استبعد خطأً"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "فرضية بدليل"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "فرضيتين"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كل الخاطئة"
+          }
+        ]
+      },
+      {
+        "id": "c_justification",
+        "name_ar": "جودة الحجة المكتوبة",
+        "objective_ids": [
+          "lo_main"
+        ],
+        "scored_by": "human",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لا حجة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "ادعاء بلا سند"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "أدلة دون ربط"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "ربط الأدلة بالاستنتاج"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "ربط مع الطرق البريئة والحدود"
+          }
+        ]
+      }
+    ]
+  },
+  "hint_ladder": [
+    {
+      "id": "hg1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "حين يعلن لغز أنه مستحيل، اسأل أولاً: ما المعطى الذي لم يُثبَت بعد؟",
+      "trigger": {
+        "always": true
+      },
+      "assessment_weight": 0.02
+    },
+    {
+      "id": "hg2",
+      "level": 2,
+      "kind": "focus_area",
+      "text_ar": "اسأل: من فتح الخزانة قبل الاجتماع؟ وهل كانت الكأس فيها حقاً حين أُقفلت؟",
+      "trigger": {
+        "has_evidence": "ev_challenge"
+      },
+      "assessment_weight": 0.04
+    },
+    {
+      "id": "hg3",
+      "level": 3,
+      "kind": "pointer",
+      "text_ar": "ابحث عن أوراق لا يكتبها الرئيس: ورقة المفتاح، وصورة بساعة ظاهرة، وسجلات المخزن.",
+      "trigger": {
+        "has_evidence": "ev_challenge"
+      },
+      "assessment_weight": 0.08
+    },
+    {
+      "id": "hb1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "هل يمكن أن يكون ما جرى قد جرى قبل القفل لا بعده؟",
+      "trigger": {
+        "has_evidence": "ev_challenge"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_before_a"
+    },
+    {
+      "id": "hb2",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "اسأل أمينة السر عن ورقة المفتاح، ومصوّرة النشرة عن صورتها.",
+      "trigger": {
+        "has_evidence": "ev_challenge"
+      },
+      "assessment_weight": 0.06,
+      "targets_inference_id": "i_before_a"
+    },
+    {
+      "id": "hm1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "أي نظام آخر قد يكون سجّل مرور الكأس؟",
+      "trigger": {
+        "has_evidence": "ev_challenge"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_before_b"
+    },
+    {
+      "id": "hm2",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "اسأل أمين المخزن عن إيصالاته وقارئ بابه.",
+      "trigger": {
+        "has_evidence": "ev_challenge"
+      },
+      "assessment_weight": 0.06,
+      "targets_inference_id": "i_before_b"
+    }
+  ],
+  "fairness_test": {
+    "requirements": {
+      "min_disjoint_proof_paths": 2,
+      "max_inference_depth": 3,
+      "all_red_herrings_refutable": true,
+      "culprit_uniquely_entailed": true,
+      "no_hidden_fact_dependency": true,
+      "max_required_actions": 50
+    },
+    "runs": []
+  },
+  "ending_explanation": {
+    "steps": [
+      {
+        "order": 1,
+        "text_ar": "اختبر مقدمة اللغز: لا شيء في الورقة يثبت أن الكأس كانت في الخزانة وقت القفل الأخير؛ بل صورة بساعة ظاهرة تُظهر الرف خالياً قبل الاجتماع.",
+        "uses_evidence_ids": [
+          "ev_newsletter_photo",
+          "ev_key_sheet"
+        ],
+        "inference_id": "i_before_a"
+      },
+      {
+        "order": 2,
+        "text_ar": "ومسار مستقل: إيصال المخزن وقارئ بابه، نظامان لا علاقة لهما بالنادي، يضعان الكأس في المخزن قبل الاجتماع.",
+        "uses_evidence_ids": [
+          "ev_store_slip",
+          "ev_store_door_log"
+        ],
+        "inference_id": "i_before_b"
+      },
+      {
+        "order": 3,
+        "text_ar": "من نقلها: المكلّفة بالجدول وصاحبة الاسم في ورقة المفتاح، والإيصال وبطاقة الباب باسمها.",
+        "uses_evidence_ids": [
+          "ev_key_sheet",
+          "ev_dust_rota"
+        ],
+        "inference_id": "i_moved_a"
+      },
+      {
+        "order": 4,
+        "text_ar": "قارن الحلول المتنافسة: المفتاح المقلّد والجدار المتحرك والتدبير تعالج خروجاً أثناء القفل لم يقع، فتحتاج افتراضات أكثر وتُفسّر قرائن أقل.",
+        "uses_evidence_ids": [
+          "ev_copy_receipt",
+          "ev_cabinet_inspect"
+        ],
+        "inference_id": "i_rule_copy"
+      },
+      {
+        "order": 5,
+        "text_ar": "إفادة يارا تؤيد سجلات سبقتها، وسلامة القفل لا تفرّق بين الحلول لأن نسبة ظهورها واحدة تقريباً تحتها جميعاً.",
+        "uses_evidence_ids": [
+          "ev_yara_stmt",
+          "ev_compare_card"
+        ],
+        "inference_id": "i_rule_panel"
+      }
+    ],
+    "alternative_paths_ar": [
+      "يمكن إثبات الحلقتين بالمسار الأول: الصورة وورقة المفتاح وجدول المهام.",
+      "ويمكن إثباتهما بالمسار الثاني: إيصال المخزن وسجل قارئ بابه؛ والأقوى أن يتفق المساران."
+    ],
+    "what_evidence_could_not_show_ar": [
+      "لا نعرف لماذا لم تُرجع يارا الكأس ولا لماذا لم تخبر الرئيس، ولا نعرف ما قالته لأمين المخزن.",
+      "قارئ الباب يسجّل البطاقة لا حاملها؛ قوته في اتفاقه مع إيصال بخط أمين المخزن.",
+      "الحل الأقل افتراضاً ليس مضموناً صحيحاً؛ هو الأرجح بالسجلات الموجودة، ويتغير إذا ظهر سجل جديد."
+    ],
+    "science_notes_ar": [
+      "قبل أن تبحث عن حيلة، اختبر المقدمة: «الكأس كانت في الخزانة المقفلة». كثير من الألغاز المستحيلة تنحل حين يتبين أن المعطى لم يكن صحيحاً.",
+      "قارن الحلول المتنافسة بثلاثة أسئلة: هل يفسّر كل القرائن؟ وهل تناقضه قرينة؟ وكم افتراضاً يحتاج؟ والحل الأقل افتراضاً مع تغطية أكبر هو الأرجح.",
+      "نسبة الترجيح تقارن تكرارين: كم مرة تظهر القرينة لو صح حل، وكم مرة لو صح آخر. قرينة «القفل سليم» تظهر تحت الحلين فلا تفرّق بينهما، وقرينة «إيصال المخزن» تظهر تحت حل واحد غالباً فتفرّق كثيراً.",
+      "لا أحد هنا يريد إيذاء أحد: يارا أرادت إنجاز مهمتها ثم خافت من الاعتراف. والإصلاح بسيط: تُكتب ورقة على الخزانة كلما نُقل منها شيء.",
+      "بطاقة الأصل: القضية أصلية من ATHAR على بنية «تحدي القارئ» في مكتبة الحالات، وتستعير وعي القواعد المعلنة دون عنف."
+    ]
+  },
+  "expert_review": [
+    {
+      "role": "narrative_editor",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-28",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "scientific_reviewer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-28",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "learning_designer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-28",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "age_appropriateness",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-28",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "cultural_reviewer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-28",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "legal_rights",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-28",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "safety",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-28",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    }
+  ]
+}

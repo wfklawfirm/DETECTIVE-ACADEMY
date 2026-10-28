@@ -1,0 +1,45 @@
+competitor_id,name,region,category,free_investigation,linked_evidence_board,multi_hypothesis_testing,insufficient_evidence_verdict,ai_characters_knowledge_bounded,forensic_or_science_labs,reasoning_process_assessment,validated_assessment,graded_hint_ladder,original_arabic_content,arabic_ui_rtl,teen_safety_design,teacher_or_school_mode,learning_analytics,mobile_native,offline_or_low_bandwidth,similarity_to_athar,threat_level,source_ids
+COMP-A-035,"Homicide Desk (Shu'la Lab, Iraq)",arab,ai_detective_game_pc,yes,yes,unknown,no,yes,yes,partial,no,unknown,partial,yes,no,no,no,no,yes,5,medium,ATH-SRC-1153;ATH-SRC-1154;ATH-SRC-2070
+COMP-A-001,Circle of Suspicion (دائرة الشك),arab,arabic_detective_game_web_android,partial,partial,no,no,no,no,partial,no,partial,yes,yes,partial,no,no,yes,unknown,4,medium,ATH-SRC-1104;ATH-SRC-1105;ATH-SRC-2060
+COMP-A-036,invsroom (Investigation Room),arab,ai_interrogation_app,yes,yes,unknown,no,unknown,no,partial,no,unknown,yes,yes,no,no,no,yes,unknown,4,medium,ATH-SRC-1155;ATH-SRC-2059
+COMP-A-037,BUSTED: Interrogation,arab,ai_interrogation_app,yes,partial,no,no,unknown,no,partial,no,unknown,yes,yes,partial,no,no,yes,unknown,4,medium,ATH-SRC-1156;ATH-SRC-2059
+COMP-A-038,Al-Mufattish Fahlawy (المفتش فهلوي),arab,ai_interrogation_app_comic,partial,yes,unknown,no,unknown,partial,no,no,partial,yes,partial,partial,no,no,yes,unknown,3,medium,ATH-SRC-1157;ATH-SRC-2059
+COMP-A-003,Detective CrimeBot (المحقق - التحقيق الجنائي),arab,localized_generated_detective_app,partial,partial,no,no,no,no,no,no,unknown,no,yes,partial,no,no,yes,unknown,3,medium,ATH-SRC-1107;ATH-SRC-1108;ATH-SRC-2060
+COMP-A-002,Case File: Investigate 1000 Crimes (ملف القضية),arab,arabic_text_detective_app,no,partial,partial,no,no,no,no,no,unknown,yes,yes,partial,no,no,yes,unknown,3,low,ATH-SRC-1106
+COMP-A-039,Al-Qadiya 001 (القضية ٠٠١),arab,group_majlis_mystery_app,partial,partial,partial,no,no,no,no,no,unknown,yes,yes,partial,no,no,yes,unknown,3,low,ATH-SRC-1158;ATH-SRC-2059
+COMP-A-040,Tuhma (تهمة),arab,group_social_deduction_app,no,partial,partial,no,no,partial,no,no,unknown,yes,yes,partial,no,no,yes,unknown,2,low,ATH-SRC-1159;ATH-SRC-2059
+COMP-A-005,Mysterious Case File (ملف القضية الغامضة),arab,physical_case_file,partial,partial,unknown,unknown,no,no,no,no,partial,yes,yes,unknown,no,no,no,yes,3,low,ATH-SRC-1100
+COMP-A-023,PraxiLabs,arab,virtual_science_labs,no,no,no,no,no,yes,no,no,partial,no,partial,unknown,yes,yes,unknown,unknown,2,medium,ATH-SRC-1131;ATH-SRC-2073
+COMP-A-015,Alef Education,arab,ai_adaptive_k12_edtech,no,no,no,no,no,no,unknown,unknown,unknown,yes,yes,partial,yes,yes,unknown,unknown,2,medium,ATH-SRC-1121;ATH-SRC-1122
+COMP-A-046,Arabic LLM chat and open models (HUMAIN Chat/ALLaM; Jais 3; Fanar 2),arab,arabic_llm_infrastructure,no,no,no,no,no,no,no,no,no,no,yes,unknown,no,no,yes,partial,1,medium,ATH-SRC-1172;ATH-SRC-1173;ATH-SRC-1174;ATH-SRC-1175
+COMP-A-047,Detective Dana (المحققة دانة),arab,arabic_voiced_detective_pc,partial,partial,no,no,no,no,partial,no,unknown,yes,yes,unknown,no,no,no,unknown,4,low,ATH-SRC-2069
+COMP-A-048,Fax: Bakkas wa Jarimat Qatl (فاكس),arab,group_party_mystery_app,no,partial,partial,no,no,no,no,no,unknown,yes,yes,partial,no,no,yes,yes,3,low,ATH-SRC-2067
+GC-066,Case Mind: AI Murder Mystery (Android),global,ai_interrogation_mobile,yes,partial,unknown,unknown,yes,no,partial,no,partial,no,yes,no,no,no,yes,unknown,5,high,ATH-SRC-2061;ATH-SRC-2060
+GC-067,ColdTrace: Cold Case Mystery (iOS; Android 1M+),global,mobile_phone_evidence_mystery,partial,partial,unknown,unknown,no,no,no,no,unknown,no,yes,partial,no,no,yes,unknown,3,high,ATH-SRC-2065;ATH-SRC-2083
+GC-068,Inquest - Daily Detective Game,global,daily_logic_mystery,partial,partial,unknown,no,no,no,partial,no,unknown,no,yes,partial,no,no,yes,unknown,4,low,ATH-SRC-2066
+GC-072,Judge SIM 2: Precedent (and Judge SIM),global,courtroom_reasoning_pc,no,partial,unknown,unknown,no,no,partial,no,unknown,no,yes,unknown,no,no,no,unknown,3,low,ATH-SRC-2079
+GC-016,CSI: Web Adventures,global,forensic_edu_game,no,partial,no,no,no,yes,no,no,unknown,no,no,partial,partial,no,unknown,unknown,4,low,ATH-SRC-0808;ATH-SRC-0809
+GC-042,The Case of the Golden Idol (PC; iOS app; Netflix mobile),global,deduction_game,partial,partial,no,no,no,no,partial,no,partial,no,no,partial,no,no,yes,unknown,3,medium,ATH-SRC-0831;ATH-SRC-0201;ATH-SRC-0226;ATH-SRC-0894
+GC-043,Return of the Obra Dinn,global,deduction_game,yes,partial,partial,no,no,no,partial,no,no,no,yes,no,no,no,no,unknown,2,low,ATH-SRC-1114;ATH-SRC-0200;ATH-SRC-1114
+GC-046,Ace Attorney (Trilogy; Investigations),global,courtroom_deduction,no,partial,no,no,no,no,partial,no,no,no,no,partial,no,no,yes,unknown,3,low,ATH-SRC-0835;ATH-SRC-0836;ATH-SRC-0211
+GC-041,Shadows of Doubt,global,procedural_detective_sim,yes,partial,unknown,no,no,partial,partial,no,unknown,no,no,no,no,no,no,unknown,3,low,ATH-SRC-0830;ATH-SRC-0217
+GC-049,The Roottrees Are Dead,global,deduction_game,yes,yes,partial,no,no,no,partial,no,partial,no,no,unknown,no,no,no,unknown,3,low,ATH-SRC-0206;ATH-SRC-0872;ATH-SRC-0206
+GC-029,Nancy Drew games (HeR Interactive),global,mystery_adventure_edutainment,partial,partial,unknown,unknown,no,no,no,no,unknown,no,no,partial,partial,no,no,unknown,3,low,ATH-SRC-0841;ATH-SRC-0889
+GC-010,Breakout EDU,global,classroom_escape,no,partial,no,no,no,no,no,no,unknown,no,no,partial,yes,unknown,partial,partial,3,low,ATH-SRC-0806
+GC-031,Hidden Door,global,ai_storytelling_platform,yes,unknown,unknown,unknown,partial,no,no,no,unknown,no,no,partial,no,no,partial,unknown,3,low,ATH-SRC-0819;ATH-SRC-0820;ATH-SRC-2072
+GC-056,Uncover the Smoking Gun (ReLU Games / KRAFTON),global,ai_interrogation_game,yes,partial,unknown,unknown,unknown,no,no,no,unknown,no,no,unknown,no,no,no,no,3,medium,ATH-SRC-0869
+GC-035,Vaudeville,global,ai_interrogation_game,yes,partial,unknown,unknown,unknown,no,no,no,unknown,no,no,no,no,no,no,unknown,3,low,ATH-SRC-0823
+GC-039,Typhoon Detective Game (LLM lab demo),global,ai_interrogation_game,yes,unknown,unknown,unknown,unknown,no,no,no,unknown,no,no,unknown,no,no,unknown,unknown,3,medium,ATH-SRC-0826
+GC-051,Criminal Case,global,hidden_object_crime_mobile,no,partial,no,no,no,partial,no,no,unknown,no,no,no,no,no,yes,unknown,2,medium,ATH-SRC-0845;ATH-SRC-0846;ATH-SRC-0846
+GC-052,June's Journey,global,hidden_object_mystery_mobile,no,partial,no,no,no,no,no,no,unknown,no,yes,no,no,no,yes,unknown,1,medium,ATH-SRC-0847
+GC-064,An Elmwood Trail,global,mobile_phone_evidence_mystery,partial,partial,unknown,unknown,no,no,no,no,unknown,no,no,partial,no,no,yes,unknown,2,low,ATH-SRC-0890
+GC-014,Labster,global,virtual_lab,no,no,no,no,no,yes,no,no,unknown,no,no,unknown,yes,yes,unknown,unknown,2,low,ATH-SRC-0807;ATH-SRC-0876;ATH-SRC-0877;ATH-SRC-0878
+GC-028,Mystery Science,global,school_mystery_program,no,no,no,no,no,yes,no,no,unknown,no,no,partial,yes,partial,unknown,unknown,2,low,ATH-SRC-0827;ATH-SRC-0828;ATH-SRC-0829
+GC-017;GC-018;GC-019,Inoculation games (Bad News [Arabic edition since 2022]; Go Viral!; Harmony Square),global,misinformation_game,no,no,no,no,no,no,no,yes,no,no,partial,unknown,unknown,no,partial,unknown,2,low,ATH-SRC-0811;ATH-SRC-0812;ATH-SRC-0882;ATH-SRC-1136;ATH-SRC-2074
+GC-021,Civic Online Reasoning (Digital Inquiry Group),global,critical_thinking_curriculum,no,no,no,no,no,no,yes,yes,no,no,no,unknown,yes,no,unknown,partial,2,low,ATH-SRC-0813;ATH-SRC-0814;ATH-SRC-0526
+GC-024,Brilliant,global,interactive_reasoning_learning,no,no,no,no,no,no,no,no,partial,no,no,partial,yes,unknown,yes,unknown,2,medium,ATH-SRC-0816;ATH-SRC-0879
+GC-025,Khanmigo (Khan Academy),global,ai_tutor,no,no,no,no,no,no,unknown,unknown,partial,no,partial,yes,yes,unknown,partial,unknown,2,medium,ATH-SRC-0853;ATH-SRC-2071
+GC-033,Character.AI,global,ai_character_chat,no,no,no,no,no,no,no,no,no,no,no,partial,no,no,yes,no,1,low,ATH-SRC-0817;ATH-SRC-0818;ATH-SRC-0881
+count_yes,summary over 41 competitor rows (wave 2),all,summary,11,4,0,0,2,5,1,2,0,11,19,1,8,3,20,3,,,
+count_partial,summary over 41 competitor rows (wave 2),all,summary,11,25,6,0,1,4,13,0,9,1,4,21,2,1,4,3,,,
+share_yes_pct,summary over 41 competitor rows (yes / all rows x 100) (wave 2),all,summary,26.8,9.8,0.0,0.0,4.9,12.2,2.4,4.9,0.0,26.8,46.3,2.4,19.5,7.3,48.8,7.3,,,

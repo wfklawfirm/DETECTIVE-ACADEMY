@@ -1,6 +1,7 @@
 import { getActorFromCookies } from "@/server/auth";
 import { loadKnowledge, visibleKos } from "@/engine/knowledge";
 import { KnowledgeBrowser } from "@/components/KnowledgeBrowser";
+import { REFERENCE_PAGES } from "@/engine/reference-labels";
 import { PageHead, RowLink } from "@/components/ui/card";
 import { Callout } from "@/components/ui/feedback";
 import { FlaskIcon, ImageIcon, LinkIcon, SparkIcon } from "@/components/ui/icons";
@@ -20,6 +21,9 @@ export default async function Knowledge() {
         <li><RowLink href="/labs" icon={<FlaskIcon size={22} />} title="مختبرات آمنة" hint="تمارين قصيرة بسجلات خيالية" /></li>
         <li><RowLink href="/skills" icon={<SparkIcon size={22} />} title="المهارات وأنماط الألغاز" hint="الإطار الذي نبني عليه القضايا" /></li>
         <li><RowLink href="/sources" icon={<LinkIcon size={22} />} title="من أين جاءت هذه المعلومات؟" hint="سجل المصادر والحقوق" /></li>
+        {REFERENCE_PAGES.map((r) => <li key={r.href}><RowLink href={r.href} icon={<SparkIcon size={22} />} title={r.title} hint={r.hint} /></li>)}
+        <li><RowLink href="/books" icon={<FlaskIcon size={22} />} title="مفاهيم من كتب الطب الشرعي" hint="ملاحظات أصلية مع تدريبات قصيرة" /></li>
+        <li><RowLink href="/heritage" icon={<LinkIcon size={22} />} title="تراث الاستدلال" hint="نصوص من الملك العام ومراجع الأدب البوليسي" /></li>
         <li><RowLink href="/gallery" icon={<ImageIcon size={22} />} title="معرض المراجع" hint="صور مرجعية من مجموعات مفتوحة" /></li>
       </ul>
       <KnowledgeBrowser items={items} />

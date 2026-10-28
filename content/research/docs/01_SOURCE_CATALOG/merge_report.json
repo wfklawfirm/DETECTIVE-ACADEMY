@@ -1,0 +1,84 @@
+{
+ "raw_records": 1584,
+ "valid_records": 1584,
+ "unique_sources": 1550,
+ "duplicates_merged": 34,
+ "parse_errors": [],
+ "warnings": [],
+ "by_library": {
+  "09_COMPETITIVE_INTELLIGENCE": 254,
+  "02_DETECTIVE_LITERATURE": 229,
+  "07_LEARNING_SCIENCE": 186,
+  "11_RIGHTS_PRIVACY_AND_SAFETY": 154,
+  "08_ARAB_AUDIENCE_AND_CULTURE": 146,
+  "04_FORENSIC_SCIENCE": 128,
+  "15_STORY_MEDIA_AND_ASSETS": 115,
+  "10_TECHNICAL_ARCHITECTURE": 110,
+  "03_NARRATIVE_AND_GAME_DESIGN": 88,
+  "06_COGNITIVE_SCIENCE": 76,
+  "05_INVESTIGATIVE_REASONING": 64
+ },
+ "by_type": {
+  "journal_article": 323,
+  "website": 199,
+  "book": 189,
+  "news_article": 141,
+  "product": 117,
+  "legal_text": 99,
+  "conference_paper": 78,
+  "report": 64,
+  "documentation": 55,
+  "dataset": 54,
+  "guideline": 51,
+  "game": 42,
+  "software_tool": 30,
+  "standard": 26,
+  "video": 23,
+  "market_report": 21,
+  "book_chapter": 11,
+  "interview": 9,
+  "game_talk_or_postmortem": 8,
+  "thesis": 6,
+  "course": 4
+ },
+ "by_evidence_grade": {
+  "C": 586,
+  "B": 401,
+  "A": 374,
+  "D": 187,
+  "E": 2
+ },
+ "by_rights_status": {
+  "COPYRIGHTED_RESTRICTED": 1009,
+  "UNKNOWN": 216,
+  "OPEN_LICENSE": 176,
+  "PUBLIC_DOMAIN": 143,
+  "LICENSED": 6
+ },
+ "by_review_status": {
+  "verified": 1475,
+  "needs_expert_review": 75
+ },
+ "by_verification_method": {
+  "fetched_official_page": 994,
+  "doi_or_catalog_record": 337,
+  "wikipedia_bibliographic": 111,
+  "publisher_page": 94,
+  "search_result_confirmed": 14
+ },
+ "deep_cards": 179,
+ "knowledge_objects": 377,
+ "ko_by_type": {
+  "NP": 83,
+  "CD": 44,
+  "CM": 58,
+  "FC": 40,
+  "LA": 56,
+  "RS": 39,
+  "PO": 57
+ },
+ "ko_orphans": 0,
+ "rag_chunks": 2978,
+ "fts5": true,
+ "files_alias_rewritten": 0
+}

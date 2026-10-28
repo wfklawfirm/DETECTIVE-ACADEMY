@@ -1,0 +1,196 @@
+{
+  "case_id": "c025_club_envelope",
+  "accepted_conclusions": {
+    "h_insufficient": {
+      "grade": 1,
+      "note_ar": "استنتاج متسق مع الأدلة؛ ويتطلب ذكر ما ثبت وما الذي يحسم."
+    },
+    "h_sami": {
+      "grade": 0,
+      "note_ar": "يبني الاتهام على إشاعة بلا مصدر أول وعلى ما يصدق بالقدر نفسه على رامي."
+    },
+    "h_rami": {
+      "grade": 0,
+      "note_ar": "يبني الاتهام على ترتيب الدخول وحاجة المال، وكلاهما لا يفرّق بين الطالبين."
+    },
+    "h_outsider": {
+      "grade": 0,
+      "note_ar": "القفل سليم والسجلات الثلاثة لا تضم غريباً."
+    },
+    "h_never": {
+      "grade": 0,
+      "note_ar": "الظرف مجرود ومصوّر وغائب بعد ذلك."
+    }
+  },
+  "confidence_band": {
+    "h_insufficient": [
+      65,
+      90
+    ],
+    "h_sami": [
+      0,
+      15
+    ],
+    "h_rami": [
+      0,
+      15
+    ],
+    "h_outsider": [
+      0,
+      10
+    ],
+    "h_never": [
+      0,
+      10
+    ]
+  },
+  "source_key": {
+    "ev_count_sheet": "primary_record",
+    "ev_missing_report": "claim",
+    "ev_phone_photo": "primary_record",
+    "ev_cleaner_round": "primary_record",
+    "ev_key_log": "primary_record",
+    "ev_lock_check": "primary_record",
+    "ev_lab_register": "primary_record",
+    "ev_class_timetable": "primary_record",
+    "ev_partial_print": "primary_record",
+    "ev_camera_gap": "primary_record",
+    "ev_sami_statement": "claim",
+    "ev_rami_statement": "claim",
+    "ev_group_rumor": "claim",
+    "ev_trip_list": "primary_record"
+  },
+  "link_key": {
+    "h_insufficient": {
+      "ev_count_sheet": "supports",
+      "ev_phone_photo": "supports",
+      "ev_cleaner_round": "supports",
+      "ev_key_log": "supports",
+      "ev_lock_check": "supports",
+      "ev_lab_register": "supports",
+      "ev_class_timetable": "supports",
+      "ev_partial_print": "supports",
+      "ev_camera_gap": "supports",
+      "ev_sami_statement": "supports",
+      "ev_rami_statement": "supports",
+      "ev_group_rumor": "weakens"
+    },
+    "h_sami": {
+      "ev_group_rumor": "supports",
+      "ev_trip_list": "supports",
+      "ev_partial_print": "weakens",
+      "ev_camera_gap": "weakens",
+      "ev_sami_statement": "neutral"
+    },
+    "h_rami": {
+      "ev_trip_list": "supports",
+      "ev_key_log": "supports",
+      "ev_partial_print": "weakens",
+      "ev_camera_gap": "weakens",
+      "ev_rami_statement": "neutral"
+    },
+    "h_outsider": {
+      "ev_lock_check": "weakens",
+      "ev_lab_register": "weakens",
+      "ev_key_log": "weakens"
+    },
+    "h_never": {
+      "ev_count_sheet": "weakens",
+      "ev_phone_photo": "weakens",
+      "ev_cleaner_round": "weakens"
+    }
+  },
+  "required_limits": [
+    "l_no_discriminator",
+    "l_not_innocent"
+  ],
+  "valid_mind_changers": [
+    "m_camera_clip",
+    "m_cash_trail",
+    "m_full_print"
+  ],
+  "invalid_limits": [
+    "l_invalid_access",
+    "l_invalid_rumor",
+    "l_invalid_money"
+  ],
+  "decisive_evidence": [
+    "ev_count_sheet",
+    "ev_missing_report",
+    "ev_phone_photo",
+    "ev_cleaner_round",
+    "ev_key_log",
+    "ev_lock_check",
+    "ev_lab_register",
+    "ev_class_timetable",
+    "ev_partial_print",
+    "ev_camera_gap",
+    "ev_sami_statement",
+    "ev_rami_statement"
+  ],
+  "lab_requirement": null,
+  "timeline_requirement": [
+    {
+      "evidence_id": "ev_count_sheet",
+      "utc_minute": 40,
+      "tol": 4
+    },
+    {
+      "evidence_id": "ev_phone_photo",
+      "utc_minute": 42,
+      "tol": 4
+    },
+    {
+      "evidence_id": "ev_camera_gap",
+      "utc_minute": 55,
+      "tol": 4
+    },
+    {
+      "evidence_id": "ev_key_log",
+      "utc_minute": 65,
+      "tol": 6
+    },
+    {
+      "evidence_id": "ev_cleaner_round",
+      "utc_minute": 120,
+      "tol": 4
+    },
+    {
+      "evidence_id": "ev_missing_report",
+      "utc_minute": 130,
+      "tol": 4
+    }
+  ],
+  "refuted_hypotheses": [
+    "h_sami",
+    "h_rami",
+    "h_outsider",
+    "h_never"
+  ],
+  "criteria_map": {
+    "c_source": "source_typing",
+    "c_conflict": "conflict_resolution",
+    "c_links": "hypothesis_links",
+    "c_uncertainty": "uncertainty",
+    "c_revision": "revision",
+    "c_elimination": "elimination",
+    "c_justification": "justification_human"
+  },
+  "transfer_key": {
+    "valid": [
+      "o1",
+      "o2",
+      "o3",
+      "o4"
+    ],
+    "invalid": [
+      "o5",
+      "o6",
+      "o7"
+    ]
+  },
+  "caps": {
+    "no_citations_max": 45,
+    "no_conflict_resolution_max": 65
+  }
+}

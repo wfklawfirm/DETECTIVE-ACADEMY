@@ -27,10 +27,10 @@ describe("knowledge base", () => {
 });
 
 describe("safe labs", () => {
-  it("catalogue has 20 entries and every playable lab validates", () => {
+  it("catalogue has at least the original 20 entries and every playable lab validates", () => {
     const f = loadLabs();
-    expect(f.catalogue.length).toBe(20);
-    expect(f.playable.length).toBeGreaterThanOrEqual(6);
-    for (const l of f.playable) expect(new Set(l.items.map((i) => i.answer)).size, `${l.id} uses one category only`).toBeGreaterThan(1);
+    expect(f.catalogue.length).toBeGreaterThanOrEqual(20);
+    expect(f.playable.length).toBe(f.catalogue.length);
+    for (const l of f.playable) if (l.kind === "classify") expect(new Set(l.items.map((i) => i.answer)).size, `${l.id} uses one category only`).toBeGreaterThan(1);
   });
 });

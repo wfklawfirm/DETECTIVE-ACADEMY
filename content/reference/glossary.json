@@ -1,0 +1,5474 @@
+{
+ "version": "1.0.0",
+ "generated_from": "ATHAR_LIBRARY_v2_CORE/04_FORENSIC_SCIENCE/arabic_forensic_glossary.csv",
+ "hook_ar": "كلمة واحدة في تقرير قد تغيّر وزن الدليل كله. هل تعرف الفرق بين «تطابق» و«تشابه» و«تعذّر الاستبعاد»؟",
+ "categories": [
+  {
+   "id": "quality",
+   "label_ar": "الجودة والاعتماد",
+   "count": 34
+  },
+  {
+   "id": "statistics",
+   "label_ar": "الإحصاء والاحتمال",
+   "count": 22
+  },
+  {
+   "id": "dna",
+   "label_ar": "الحمض النووي",
+   "count": 18
+  },
+  {
+   "id": "fingerprints",
+   "label_ar": "البصمات",
+   "count": 18
+  },
+  {
+   "id": "legal_roles",
+   "label_ar": "الأدوار القانونية",
+   "count": 17
+  },
+  {
+   "id": "ethics",
+   "label_ar": "الأخلاقيات",
+   "count": 17
+  },
+  {
+   "id": "interpretation",
+   "label_ar": "تفسير الأدلة",
+   "count": 15
+  },
+  {
+   "id": "documents",
+   "label_ar": "فحص الوثائق",
+   "count": 14
+  },
+  {
+   "id": "general",
+   "label_ar": "عام",
+   "count": 13
+  },
+  {
+   "id": "medicine",
+   "label_ar": "الطب الشرعي",
+   "count": 11
+  },
+  {
+   "id": "bias",
+   "label_ar": "التحيز",
+   "count": 11
+  },
+  {
+   "id": "digital",
+   "label_ar": "الأدلة الرقمية",
+   "count": 10
+  },
+  {
+   "id": "trace",
+   "label_ar": "الآثار الدقيقة",
+   "count": 9
+  },
+  {
+   "id": "crime_scene",
+   "label_ar": "مسرح الجريمة",
+   "count": 7
+  },
+  {
+   "id": "chain_of_custody",
+   "label_ar": "سلسلة العهدة",
+   "count": 7
+  },
+  {
+   "id": "pattern",
+   "label_ar": "أدلة الأنماط",
+   "count": 6
+  },
+  {
+   "id": "imaging",
+   "label_ar": "التصوير الجنائي",
+   "count": 6
+  },
+  {
+   "id": "chemistry",
+   "label_ar": "الكيمياء الجنائية",
+   "count": 6
+  },
+  {
+   "id": "toxicology",
+   "label_ar": "علم السموم",
+   "count": 4
+  },
+  {
+   "id": "anthropology",
+   "label_ar": "الأنثروبولوجيا الشرعية",
+   "count": 3
+  }
+ ],
+ "items": [
+  {
+   "id": "GL-001",
+   "term_en": "forensic science",
+   "term_ar": "علم الأدلة الجنائية",
+   "alts_ar": [
+    "علوم الأدلة الجنائية",
+    "الاستدلال الجنائي العلمي",
+    "الأدلة الجرمية (الأردن)"
+   ],
+   "def_ar": "تطبيق مناهج العلوم الطبيعية والرقمية على أسئلة يطرحها القضاء، مع بيان حدود كل نتيجة.",
+   "cat": "general",
+   "level": "13-15",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "ع",
+   "src_ids": [
+    "ATH-SRC-1702",
+    "ATH-SRC-1703",
+    "ATH-SRC-1705",
+    "ATH-SRC-0300"
+   ],
+   "ko_ids": [
+    "KO-FC-04-001",
+    "KO-FC-04B-007"
+   ]
+  },
+  {
+   "id": "GL-002",
+   "term_en": "forensic evidence",
+   "term_ar": "الدليل الجنائي",
+   "alts_ar": [
+    "الأدلة الجنائية",
+    "الأدلة الجرمية",
+    "الدليل العلمي"
+   ],
+   "def_ar": "أثر أو معلومة تُجمع وتُفحص بطريقة موثقة لتساعد في الإجابة عن سؤال في قضية، ولا تحسم الإدانة وحدها.",
+   "cat": "general",
+   "level": "13-15",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "د",
+   "src_ids": [
+    "ATH-SRC-1703",
+    "ATH-SRC-1719",
+    "ATH-SRC-1726",
+    "ATH-SRC-0301"
+   ],
+   "ko_ids": [
+    "KO-FC-04-001",
+    "KO-FC-04-002",
+    "KO-FC-04-005",
+    "KO-FC-04-006"
+   ]
+  },
+  {
+   "id": "GL-003",
+   "term_en": "evidence",
+   "term_ar": "دليل",
+   "alts_ar": [
+    "بيّنة"
+   ],
+   "def_ar": "ما يُستند إليه لترجيح فرضية على أخرى؛ وقوته متفاوتة وتحتاج تقييماً.",
+   "cat": "general",
+   "level": "13-15",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "د",
+   "src_ids": [
+    "ATH-SRC-1701",
+    "ATH-SRC-1702",
+    "ATH-SRC-0317"
+   ],
+   "ko_ids": [
+    "KO-FC-04-008",
+    "KO-FC-04-009",
+    "KO-FC-04-010",
+    "KO-FC-04-018"
+   ]
+  },
+  {
+   "id": "GL-004",
+   "term_en": "physical evidence",
+   "term_ar": "الأدلة المادية",
+   "alts_ar": [
+    "الآثار المادية"
+   ],
+   "def_ar": "أشياء ملموسة كالبصمات والألياف والمستندات تُرفع من المكان وتُحفظ للفحص.",
+   "cat": "general",
+   "level": "13-15",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "ا",
+   "src_ids": [
+    "ATH-SRC-1702",
+    "ATH-SRC-1719",
+    "ATH-SRC-0348"
+   ],
+   "ko_ids": [
+    "KO-FC-04-026",
+    "KO-FC-04B-002"
+   ]
+  },
+  {
+   "id": "GL-005",
+   "term_en": "trace (n.)",
+   "term_ar": "أثر",
+   "alts_ar": [
+    "أثر مادي",
+    "أثر رقمي"
+   ],
+   "def_ar": "علامة أو بقايا صغيرة يتركها اتصال بين شخص أو شيء ومكان؛ قد توجد وقد لا توجد وقد لا تُكتشف.",
+   "cat": "general",
+   "level": "13-15",
+   "status": "sourced",
+   "tier": "tier3_institutional_usage",
+   "letter": "ا",
+   "src_ids": [
+    "ATH-SRC-1719",
+    "ATH-SRC-0356"
+   ],
+   "ko_ids": [
+    "KO-FC-04-011",
+    "KO-FC-04-018",
+    "KO-NP-02H-006"
+   ]
+  },
+  {
+   "id": "GL-006",
+   "term_en": "criminal proof",
+   "term_ar": "الإثبات الجنائي",
+   "alts_ar": [],
+   "def_ar": "الطريقة القانونية التي تُثبت بها وقائع الجريمة أمام القضاء، وفيها تُوزن الأدلة العلمية مع غيرها.",
+   "cat": "legal_roles",
+   "level": "16-18",
+   "status": "sourced",
+   "tier": "tier2_arab_academic",
+   "letter": "ا",
+   "src_ids": [
+    "ATH-SRC-1759"
+   ],
+   "ko_ids": []
+  },
+  {
+   "id": "GL-007",
+   "term_en": "forensic laboratory",
+   "term_ar": "المختبر الجنائي",
+   "alts_ar": [
+    "مختبر جنائي",
+    "معمل (مصر)",
+    "مختبر الأدلة الجنائية"
+   ],
+   "def_ar": "جهة تفحص الأدلة المادية أو الرقمية وتصدر تقارير للقضاء وفق نظام جودة موثق.",
+   "cat": "general",
+   "level": "13-15",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "م",
+   "src_ids": [
+    "ATH-SRC-1700",
+    "ATH-SRC-1702",
+    "ATH-SRC-1722",
+    "ATH-SRC-0313"
+   ],
+   "ko_ids": [
+    "KO-FC-04-030",
+    "KO-FC-04B-003"
+   ]
+  },
+  {
+   "id": "GL-008",
+   "term_en": "scientific police",
+   "term_ar": "الشرطة العلمية",
+   "alts_ar": [
+    "الشرطة العلمية والتقنية (المغرب)",
+    "المباحث العلمية"
+   ],
+   "def_ar": "تسمية شائعة في المغرب العربي وبعض الدول للأقسام الشرطية التي ترفع الأدلة وتفحصها.",
+   "cat": "legal_roles",
+   "level": "13-15",
+   "status": "sourced",
+   "tier": "tier3_institutional_usage",
+   "letter": "ش",
+   "src_ids": [
+    "ATH-SRC-1731"
+   ],
+   "ko_ids": [
+    "KO-FC-04B-003",
+    "KO-FC-04B-006"
+   ]
+  },
+  {
+   "id": "GL-009",
+   "term_en": "forensic expert",
+   "term_ar": "الخبير",
+   "alts_ar": [
+    "الخبير الفني",
+    "الخبير المحلَّف"
+   ],
+   "def_ar": "شخص مؤهل في تخصص محدد يقدم رأياً فنياً للقضاء ضمن حدود خبرته، ولا يحكم بالذنب.",
+   "cat": "legal_roles",
+   "level": "13-15",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "خ",
+   "src_ids": [
+    "ATH-SRC-1701",
+    "ATH-SRC-1729",
+    "ATH-SRC-0307"
+   ],
+   "ko_ids": [
+    "KO-FC-04-012",
+    "KO-FC-04-030",
+    "KO-FC-04-031",
+    "KO-FC-04B-005"
+   ]
+  },
+  {
+   "id": "GL-010",
+   "term_en": "expert witness",
+   "term_ar": "شاهد خبير",
+   "alts_ar": [],
+   "def_ar": "خبير تستدعيه المحكمة ليشرح النتائج الفنية وحدودها.",
+   "cat": "legal_roles",
+   "level": "16-18",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "ش",
+   "src_ids": [
+    "ATH-SRC-1700",
+    "ATH-SRC-1702"
+   ],
+   "ko_ids": [
+    "KO-FC-04B-002",
+    "KO-FC-04B-001"
+   ]
+  },
+  {
+   "id": "GL-011",
+   "term_en": "expert report",
+   "term_ar": "تقرير الخبير",
+   "alts_ar": [
+    "التقرير الفني"
+   ],
+   "def_ar": "وثيقة تعرض ما فُحص وكيف، والنتائج، ودرجة دعمها للفرضيات، وما لا تستطيع إثباته.",
+   "cat": "interpretation",
+   "level": "16-18",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "ت",
+   "src_ids": [
+    "ATH-SRC-1700",
+    "ATH-SRC-1702",
+    "ATH-SRC-0317",
+    "ATH-SRC-0336"
+   ],
+   "ko_ids": [
+    "KO-FC-04-008",
+    "KO-FC-04-009",
+    "KO-FC-04-010",
+    "KO-FC-04-018"
+   ]
+  },
+  {
+   "id": "GL-012",
+   "term_en": "expert testimony",
+   "term_ar": "شهادة الخبرة",
+   "alts_ar": [
+    "شهادة فنية"
+   ],
+   "def_ar": "أقوال الخبير أمام المحكمة؛ تُعد أخطاء الإبلاغ والشهادة من أكثر مصادر الخطأ في القضايا.",
+   "cat": "legal_roles",
+   "level": "16-18",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "ش",
+   "src_ids": [
+    "ATH-SRC-1702",
+    "ATH-SRC-0336"
+   ],
+   "ko_ids": [
+    "KO-FC-04-019",
+    "KO-FC-04-031"
+   ]
+  },
+  {
+   "id": "GL-013",
+   "term_en": "second opinion",
+   "term_ar": "رأي ثانٍ",
+   "alts_ar": [
+    "رأي آخر"
+   ],
+   "def_ar": "مراجعة مستقلة لنتيجة يجريها خبير آخر قبل اعتمادها.",
+   "cat": "quality",
+   "level": "13-15",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "ر",
+   "src_ids": [
+    "ATH-SRC-1701",
+    "ATH-SRC-0307"
+   ],
+   "ko_ids": [
+    "KO-FC-04-012",
+    "KO-FC-04-030",
+    "KO-FC-04-031",
+    "KO-FC-04B-005"
+   ]
+  },
+  {
+   "id": "GL-014",
+   "term_en": "criminal investigation",
+   "term_ar": "التحقيق الجنائي",
+   "alts_ar": [],
+   "def_ar": "مجموع الإجراءات القانونية لكشف وقائع جريمة ونسبتها، بإشراف النيابة أو قاضي التحقيق في الدول العربية المدروسة.",
+   "cat": "legal_roles",
+   "level": "13-15",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "ت",
+   "src_ids": [
+    "ATH-SRC-1707",
+    "ATH-SRC-1820"
+   ],
+   "ko_ids": [
+    "KO-FC-04B-006"
+   ]
+  },
+  {
+   "id": "GL-015",
+   "term_en": "crime scene",
+   "term_ar": "مسرح الجريمة",
+   "alts_ar": [
+    "مكان الجريمة"
+   ],
+   "def_ar": "المكان الذي يُعتقد أن أحداث القضية وقعت فيه، ويُعامل مصدراً للأدلة يجب حمايته وتوثيقه.",
+   "cat": "crime_scene",
+   "level": "13-15",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "م",
+   "src_ids": [
+    "ATH-SRC-1703",
+    "ATH-SRC-1705",
+    "ATH-SRC-1719",
+    "ATH-SRC-0348"
+   ],
+   "ko_ids": [
+    "KO-FC-04-026",
+    "KO-FC-04B-002"
+   ]
+  },
+  {
+   "id": "GL-016",
+   "term_en": "crime scene examiner",
+   "term_ar": "باحث مسرح الجريمة",
+   "alts_ar": [
+    "باحث في مسرح الجريمة",
+    "خبير مسرح الجريمة"
+   ],
+   "def_ar": "المختص الذي يوثق المكان ويرفع الأدلة وفق إجراءات مكتوبة.",
+   "cat": "crime_scene",
+   "level": "13-15",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "ب",
+   "src_ids": [
+    "ATH-SRC-1702",
+    "ATH-SRC-0348"
+   ],
+   "ko_ids": [
+    "KO-FC-04-026",
+    "KO-FC-04B-002"
+   ]
+  },
+  {
+   "id": "GL-017",
+   "term_en": "crime scene management",
+   "term_ar": "إدارة مسرح الجريمة",
+   "alts_ar": [],
+   "def_ar": "تنظيم الدخول والتوثيق والرفع والنقل في المكان بحيث تبقى الأدلة صالحة وموثقة.",
+   "cat": "crime_scene",
+   "level": "16-18",
+   "status": "sourced",
+   "tier": "tier3_institutional_usage",
+   "letter": "ا",
+   "src_ids": [
+    "ATH-SRC-1719",
+    "ATH-SRC-0315"
+   ],
+   "ko_ids": [
+    "KO-FC-04-026",
+    "KO-FC-04B-002"
+   ]
+  },
+  {
+   "id": "GL-018",
+   "term_en": "securing the scene",
+   "term_ar": "تأمين المكان",
+   "alts_ar": [
+    "حماية مسرح الجريمة"
+   ],
+   "def_ar": "منع الدخول غير الضروري إلى المكان للحد من التلوث وفقد الأدلة.",
+   "cat": "crime_scene",
+   "level": "13-15",
+   "status": "proposed",
+   "tier": "none",
+   "letter": "ت",
+   "src_ids": [
+    "ATH-SRC-0348"
+   ],
+   "ko_ids": [
+    "KO-FC-04-026",
+    "KO-FC-04B-002"
+   ]
+  },
+  {
+   "id": "GL-019",
+   "term_en": "documentation",
+   "term_ar": "التوثيق",
+   "alts_ar": [
+    "توثيق"
+   ],
+   "def_ar": "تسجيل الحالة كما وُجدت بالصور والملاحظات والرسوم والقياسات قبل لمس أي شيء.",
+   "cat": "crime_scene",
+   "level": "13-15",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "ت",
+   "src_ids": [
+    "ATH-SRC-1701",
+    "ATH-SRC-1737",
+    "ATH-SRC-0315",
+    "ATH-SRC-0348"
+   ],
+   "ko_ids": [
+    "KO-FC-04-026",
+    "KO-FC-04B-002"
+   ]
+  },
+  {
+   "id": "GL-020",
+   "term_en": "evidence recovery (lifting)",
+   "term_ar": "رفع الأثر",
+   "alts_ar": [
+    "رفع الآثار"
+   ],
+   "def_ar": "نقل الأثر من موضعه إلى حامل أو وعاء مناسب بطريقة تحفظه وتوثق مكانه.",
+   "cat": "crime_scene",
+   "level": "13-15",
+   "status": "sourced",
+   "tier": "tier3_institutional_usage",
+   "letter": "ر",
+   "src_ids": [
+    "ATH-SRC-1719",
+    "ATH-SRC-0315"
+   ],
+   "ko_ids": [
+    "KO-FC-04-026",
+    "KO-FC-04B-002"
+   ]
+  },
+  {
+   "id": "GL-021",
+   "term_en": "evidence package (exhibit)",
+   "term_ar": "الحِرز",
+   "alts_ar": [
+    "الأحراز",
+    "المضبوطات"
+   ],
+   "def_ar": "الوعاء المختوم الذي يُحفظ فيه الدليل ومعه بيانات القضية.",
+   "cat": "chain_of_custody",
+   "level": "13-15",
+   "status": "sourced",
+   "tier": "tier3_institutional_usage",
+   "letter": "ح",
+   "src_ids": [
+    "ATH-SRC-1719",
+    "ATH-SRC-0315"
+   ],
+   "ko_ids": [
+    "KO-FC-04-026",
+    "KO-FC-04B-002"
+   ]
+  },
+  {
+   "id": "GL-022",
+   "term_en": "seizure (legal)",
+   "term_ar": "الضبط",
+   "alts_ar": [
+    "الحجز"
+   ],
+   "def_ar": "استلام الجهة المختصة لشيء بإذن قانوني وتسجيله دليلاً في القضية.",
+   "cat": "legal_roles",
+   "level": "16-18",
+   "status": "variant",
+   "tier": "tier1_official",
+   "letter": "ض",
+   "src_ids": [
+    "ATH-SRC-1702"
+   ],
+   "ko_ids": [
+    "KO-FC-04B-001",
+    "KO-FC-04B-002"
+   ]
+  },
+  {
+   "id": "GL-023",
+   "term_en": "chain of custody",
+   "term_ar": "سلسلة العهدة",
+   "alts_ar": [
+    "سلسلة عهدة الدليل",
+    "تسلسل العهدة",
+    "سلسلة الحراسة / سلسلة الأدلة"
+   ],
+   "def_ar": "سجل متصل يبين من تسلّم الدليل ومتى ولماذا منذ رفعه حتى عرضه، ليمكن إثبات أنه لم يُبدَّل أو يُعبث به.",
+   "cat": "chain_of_custody",
+   "level": "13-15",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "س",
+   "src_ids": [
+    "ATH-SRC-1700",
+    "ATH-SRC-1702",
+    "ATH-SRC-1719",
+    "ATH-SRC-0315",
+    "ATH-SRC-0348"
+   ],
+   "ko_ids": [
+    "KO-FC-04-026",
+    "KO-FC-04B-002"
+   ]
+  },
+  {
+   "id": "GL-024",
+   "term_en": "chain-of-custody record",
+   "term_ar": "سجل تسلسل العهدة",
+   "alts_ar": [
+    "سجلات تسلسل العهدة"
+   ],
+   "def_ar": "النموذج الذي يوقّع عليه كل من يستلم الدليل أو يسلّمه، مع الوقت والسبب.",
+   "cat": "chain_of_custody",
+   "level": "13-15",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "س",
+   "src_ids": [
+    "ATH-SRC-1702",
+    "ATH-SRC-0315"
+   ],
+   "ko_ids": [
+    "KO-FC-04-026",
+    "KO-FC-04B-002"
+   ]
+  },
+  {
+   "id": "GL-025",
+   "term_en": "tamper-evident bag",
+   "term_ar": "كيس كاشف للعبث",
+   "alts_ar": [
+    "الأكياس المؤمنة ضد التلاعب"
+   ],
+   "def_ar": "كيس يُظهر أثراً واضحاً لأي محاولة فتح بعد إغلاقه، فيكشف انقطاع العهدة.",
+   "cat": "chain_of_custody",
+   "level": "13-15",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "ك",
+   "src_ids": [
+    "ATH-SRC-1702",
+    "ATH-SRC-0315"
+   ],
+   "ko_ids": [
+    "KO-FC-04-026",
+    "KO-FC-04B-002"
+   ]
+  },
+  {
+   "id": "GL-026",
+   "term_en": "sealing",
+   "term_ar": "إحكام الإغلاق",
+   "alts_ar": [
+    "الختم",
+    "التحريز"
+   ],
+   "def_ar": "إغلاق وعاء الدليل بطريقة لا تُفتح إلا بأثر ظاهر، مع توقيع من أغلقه.",
+   "cat": "chain_of_custody",
+   "level": "13-15",
+   "status": "variant",
+   "tier": "tier1_official",
+   "letter": "ا",
+   "src_ids": [
+    "ATH-SRC-1702",
+    "ATH-SRC-0315"
+   ],
+   "ko_ids": [
+    "KO-FC-04-026",
+    "KO-FC-04B-002"
+   ]
+  },
+  {
+   "id": "GL-027",
+   "term_en": "evidence integrity",
+   "term_ar": "سلامة الدليل",
+   "alts_ar": [
+    "سلامة العيّنة"
+   ],
+   "def_ar": "بقاء الدليل على حالته منذ رفعه دون تلوث أو تبديل أو تلف.",
+   "cat": "chain_of_custody",
+   "level": "13-15",
+   "status": "variant",
+   "tier": "tier1_official",
+   "letter": "س",
+   "src_ids": [
+    "ATH-SRC-1701",
+    "ATH-SRC-0315"
+   ],
+   "ko_ids": [
+    "KO-FC-04-026",
+    "KO-FC-04B-002"
+   ]
+  },
+  {
+   "id": "GL-028",
+   "term_en": "preservation of evidence",
+   "term_ar": "صون الأدلة",
+   "alts_ar": [
+    "الحفاظ على الأدلة"
+   ],
+   "def_ar": "حفظ الدليل بظروف تمنع تلفه أو تغيّره حتى يُفحص ويُعرض.",
+   "cat": "chain_of_custody",
+   "level": "13-15",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "ص",
+   "src_ids": [
+    "ATH-SRC-1702",
+    "ATH-SRC-0315"
+   ],
+   "ko_ids": [
+    "KO-FC-04-026",
+    "KO-FC-04B-002"
+   ]
+  },
+  {
+   "id": "GL-029",
+   "term_en": "contamination",
+   "term_ar": "التلوث",
+   "alts_ar": [
+    "تلوّث",
+    "تلويث"
+   ],
+   "def_ar": "دخول مادة أو أثر غريب إلى الدليل أو العينة بعد الحدث، فيغير نتيجة الفحص.",
+   "cat": "quality",
+   "level": "13-15",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "ت",
+   "src_ids": [
+    "ATH-SRC-1700",
+    "ATH-SRC-1701",
+    "ATH-SRC-1702",
+    "ATH-SRC-0304"
+   ],
+   "ko_ids": [
+    "KO-FC-04-005",
+    "KO-FC-04-006",
+    "KO-FC-04-007",
+    "KO-FC-04-009"
+   ]
+  },
+  {
+   "id": "GL-030",
+   "term_en": "first responder",
+   "term_ar": "المستجيب الأول",
+   "alts_ar": [
+    "مُسعِف",
+    "أحد أفراد النجدة"
+   ],
+   "def_ar": "أول من يصل إلى المكان؛ أولويته حماية الأشخاص ثم حماية المكان دون العبث بالأدلة.",
+   "cat": "crime_scene",
+   "level": "13-15",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "م",
+   "src_ids": [
+    "ATH-SRC-1702",
+    "ATH-SRC-1737",
+    "ATH-SRC-0348"
+   ],
+   "ko_ids": [
+    "KO-FC-04-026",
+    "KO-FC-04B-002"
+   ]
+  },
+  {
+   "id": "GL-031",
+   "term_en": "reference sample",
+   "term_ar": "عيّنة مرجعية",
+   "alts_ar": [
+    "عيّنة معروفة المصدر",
+    "عيّنة مقارنة"
+   ],
+   "def_ar": "عينة من مصدر معروف (شخص أو شيء) تُقارن بأثر مجهول المصدر.",
+   "cat": "general",
+   "level": "13-15",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "ع",
+   "src_ids": [
+    "ATH-SRC-1702",
+    "ATH-SRC-1758",
+    "ATH-SRC-0325"
+   ],
+   "ko_ids": [
+    "KO-FC-04-029",
+    "KO-FC-04B-007",
+    "KO-FC-04B-008"
+   ]
+  },
+  {
+   "id": "GL-032",
+   "term_en": "exemplar (known standard)",
+   "term_ar": "عيّنة نموذجية",
+   "alts_ar": [
+    "معيار معروف"
+   ],
+   "def_ar": "عينة من مصدر معروف جُمعت عمداً للمقارنة، كنماذج خط أو بصمات شخص.",
+   "cat": "general",
+   "level": "13-15",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "ع",
+   "src_ids": [
+    "ATH-SRC-1700"
+   ],
+   "ko_ids": [
+    "KO-FC-04B-002"
+   ]
+  },
+  {
+   "id": "GL-033",
+   "term_en": "questioned sample",
+   "term_ar": "العيّنة مجهولة المصدر",
+   "alts_ar": [
+    "الأثر المجهول"
+   ],
+   "def_ar": "الأثر المرفوع من المكان والمطلوب معرفة مصدره أو طريقة وصوله.",
+   "cat": "general",
+   "level": "13-15",
+   "status": "proposed",
+   "tier": "none",
+   "letter": "ع",
+   "src_ids": [
+    "ATH-SRC-0325"
+   ],
+   "ko_ids": [
+    "KO-FC-04-029",
+    "KO-FC-04B-007",
+    "KO-FC-04B-008"
+   ]
+  },
+  {
+   "id": "GL-034",
+   "term_en": "sample",
+   "term_ar": "عيّنة",
+   "alts_ar": [],
+   "def_ar": "جزء ممثل من مادة أكبر يؤخذ للفحص.",
+   "cat": "general",
+   "level": "13-15",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "ع",
+   "src_ids": [
+    "ATH-SRC-1700"
+   ],
+   "ko_ids": [
+    "KO-FC-04B-002"
+   ]
+  },
+  {
+   "id": "GL-035",
+   "term_en": "retention sample",
+   "term_ar": "عيّنة مستبقاة",
+   "alts_ar": [],
+   "def_ar": "جزء من العينة يُحفظ دون فحص لإتاحة إعادة الفحص أو فحص مستقل لاحقاً.",
+   "cat": "quality",
+   "level": "16-18",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "ع",
+   "src_ids": [
+    "ATH-SRC-1700"
+   ],
+   "ko_ids": [
+    "KO-FC-04B-002"
+   ]
+  },
+  {
+   "id": "GL-036",
+   "term_en": "sampling",
+   "term_ar": "أخذ العيّنات",
+   "alts_ar": [
+    "الاعتيان"
+   ],
+   "def_ar": "مجموعة الخطوات التي يُختار بها جزء من المادة أو المكان للفحص.",
+   "cat": "general",
+   "level": "13-15",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "ا",
+   "src_ids": [
+    "ATH-SRC-1700",
+    "ATH-SRC-1704"
+   ],
+   "ko_ids": [
+    "KO-FC-04B-002",
+    "KO-FC-04B-003",
+    "KO-FC-04B-007"
+   ]
+  },
+  {
+   "id": "GL-037",
+   "term_en": "control sample",
+   "term_ar": "عيّنة ضابطة",
+   "alts_ar": [
+    "عيّنات ضابطة"
+   ],
+   "def_ar": "عينة معروفة النتيجة تُفحص مع الأدلة للتأكد من أن الاختبار يعمل كما يجب.",
+   "cat": "quality",
+   "level": "13-15",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "ع",
+   "src_ids": [
+    "ATH-SRC-1700"
+   ],
+   "ko_ids": [
+    "KO-FC-04B-002"
+   ]
+  },
+  {
+   "id": "GL-038",
+   "term_en": "positive control",
+   "term_ar": "عيّنة ضابطة إيجابية",
+   "alts_ar": [],
+   "def_ar": "عينة يُعرف أنها تحتوي المادة، فيجب أن يعطي الاختبار معها نتيجة إيجابية.",
+   "cat": "quality",
+   "level": "16-18",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "ع",
+   "src_ids": [
+    "ATH-SRC-1700"
+   ],
+   "ko_ids": [
+    "KO-FC-04B-002"
+   ]
+  },
+  {
+   "id": "GL-039",
+   "term_en": "negative control",
+   "term_ar": "عيّنة ضابطة سلبية",
+   "alts_ar": [],
+   "def_ar": "عينة يُعرف أنها خالية من المادة، فيجب أن يعطي الاختبار معها نتيجة سلبية.",
+   "cat": "quality",
+   "level": "16-18",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "ع",
+   "src_ids": [
+    "ATH-SRC-1700"
+   ],
+   "ko_ids": [
+    "KO-FC-04B-002"
+   ]
+  },
+  {
+   "id": "GL-040",
+   "term_en": "trace evidence",
+   "term_ar": "الأدلة الأثرية الدقيقة",
+   "alts_ar": [
+    "الأدلة الزهيدة",
+    "الآثار الدقيقة"
+   ],
+   "def_ar": "مواد صغيرة جداً تنتقل بالتلامس، كالألياف والزجاج والتربة وحبوب اللقاح.",
+   "cat": "trace",
+   "level": "13-15",
+   "status": "variant",
+   "tier": "tier2_arab_academic",
+   "letter": "ا",
+   "src_ids": [
+    "ATH-SRC-1705",
+    "ATH-SRC-0356"
+   ],
+   "ko_ids": [
+    "KO-FC-04-011",
+    "KO-FC-04-018",
+    "KO-NP-02H-006"
+   ]
+  },
+  {
+   "id": "GL-041",
+   "term_en": "transfer",
+   "term_ar": "الانتقال",
+   "alts_ar": [
+    "انتقال",
+    "نقل"
+   ],
+   "def_ar": "مرور أثر من شخص أو شيء إلى آخر بالتلامس، مباشرة أو عبر وسيط.",
+   "cat": "trace",
+   "level": "13-15",
+   "status": "proposed",
+   "tier": "none",
+   "letter": "ا",
+   "src_ids": [
+    "ATH-SRC-0341",
+    "ATH-SRC-0356"
+   ],
+   "ko_ids": [
+    "KO-FC-04-007",
+    "KO-FC-04-011",
+    "KO-FC-04-018",
+    "KO-NP-02H-006"
+   ]
+  },
+  {
+   "id": "GL-042",
+   "term_en": "secondary (indirect) transfer",
+   "term_ar": "الانتقال غير المباشر",
+   "alts_ar": [
+    "الانتقال الثانوي"
+   ],
+   "def_ar": "وصول أثر إلى مكان عبر وسيط دون تلامس مباشر بين صاحبه والمكان.",
+   "cat": "dna",
+   "level": "16-18",
+   "status": "proposed",
+   "tier": "none",
+   "letter": "ا",
+   "src_ids": [
+    "ATH-SRC-0341"
+   ],
+   "ko_ids": [
+    "KO-FC-04-007"
+   ]
+  },
+  {
+   "id": "GL-043",
+   "term_en": "persistence",
+   "term_ar": "الثبات",
+   "alts_ar": [
+    "بقاء الأثر"
+   ],
+   "def_ar": "مدة بقاء الأثر في مكانه بعد انتقاله؛ تتغير بالوقت والنشاط والسطح.",
+   "cat": "trace",
+   "level": "16-18",
+   "status": "proposed",
+   "tier": "none",
+   "letter": "ث",
+   "src_ids": [
+    "ATH-SRC-0341"
+   ],
+   "ko_ids": [
+    "KO-FC-04-007"
+   ]
+  },
+  {
+   "id": "GL-044",
+   "term_en": "background (presence)",
+   "term_ar": "الخلفية",
+   "alts_ar": [
+    "الوجود الخلفي",
+    "مستوى الخلفية"
+   ],
+   "def_ar": "الآثار الموجودة أصلاً في مكان أو على شخص قبل الحدث، فلا يدل وجودها وحده على الحدث.",
+   "cat": "trace",
+   "level": "16-18",
+   "status": "variant",
+   "tier": "tier1_official",
+   "letter": "خ",
+   "src_ids": [
+    "ATH-SRC-1701",
+    "ATH-SRC-0356"
+   ],
+   "ko_ids": [
+    "KO-FC-04-011",
+    "KO-FC-04-018",
+    "KO-NP-02H-006"
+   ]
+  },
+  {
+   "id": "GL-045",
+   "term_en": "Locard's exchange principle",
+   "term_ar": "مبدأ لوكار للتبادل",
+   "alts_ar": [
+    "مبدأ التبادل"
+   ],
+   "def_ar": "فكرة أن كل تلامس قد يترك أثراً؛ وهي تبسيط، فالأثر قد لا يُكتشف أو يضيع أو يكون موجوداً أصلاً.",
+   "cat": "trace",
+   "level": "13-15",
+   "status": "proposed",
+   "tier": "none",
+   "letter": "م",
+   "src_ids": [
+    "ATH-SRC-0356"
+   ],
+   "ko_ids": [
+    "KO-FC-04-011",
+    "KO-FC-04-018",
+    "KO-NP-02H-006"
+   ]
+  },
+  {
+   "id": "GL-046",
+   "term_en": "fibre",
+   "term_ar": "ليفة",
+   "alts_ar": [
+    "ليف",
+    "ألياف"
+   ],
+   "def_ar": "خيط دقيق من نسيج؛ يُقارن عادة على مستوى الخصائص الفئوية لا التفريد.",
+   "cat": "trace",
+   "level": "13-15",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "ل",
+   "src_ids": [
+    "ATH-SRC-1701",
+    "ATH-SRC-0356"
+   ],
+   "ko_ids": [
+    "KO-FC-04-011",
+    "KO-FC-04-018",
+    "KO-NP-02H-006"
+   ]
+  },
+  {
+   "id": "GL-047",
+   "term_en": "pollen",
+   "term_ar": "حبوب اللقاح",
+   "alts_ar": [
+    "طلع",
+    "غبار الطلع"
+   ],
+   "def_ar": "حبيبات نباتية دقيقة قد تشير إلى بيئة أو منطقة، لا إلى شخص بعينه.",
+   "cat": "trace",
+   "level": "16-18",
+   "status": "variant",
+   "tier": "tier1_official",
+   "letter": "ح",
+   "src_ids": [
+    "ATH-SRC-1701",
+    "ATH-SRC-1702",
+    "ATH-SRC-0356"
+   ],
+   "ko_ids": [
+    "KO-FC-04-011",
+    "KO-FC-04-018",
+    "KO-NP-02H-006"
+   ]
+  },
+  {
+   "id": "GL-048",
+   "term_en": "soil fingerprint",
+   "term_ar": "بصمة التربة",
+   "alts_ar": [],
+   "def_ar": "مجموعة خصائص تربة مكان ما تُقارن بتربة على شيء؛ تفيد الاستبعاد أكثر من التحديد.",
+   "cat": "trace",
+   "level": "16-18",
+   "status": "variant",
+   "tier": "tier3_institutional_usage",
+   "letter": "ب",
+   "src_ids": [
+    "ATH-SRC-1719",
+    "ATH-SRC-0356"
+   ],
+   "ko_ids": [
+    "KO-FC-04-011",
+    "KO-FC-04-018",
+    "KO-NP-02H-006"
+   ]
+  },
+  {
+   "id": "GL-049",
+   "term_en": "glass fragment",
+   "term_ar": "شظية زجاج",
+   "alts_ar": [],
+   "def_ar": "قطعة زجاج صغيرة تُقارن خصائصها الفئوية بزجاج معروف.",
+   "cat": "trace",
+   "level": "13-15",
+   "status": "proposed",
+   "tier": "none",
+   "letter": "ش",
+   "src_ids": [
+    "ATH-SRC-0356"
+   ],
+   "ko_ids": [
+    "KO-FC-04-011",
+    "KO-FC-04-018",
+    "KO-NP-02H-006"
+   ]
+  },
+  {
+   "id": "GL-050",
+   "term_en": "class characteristics",
+   "term_ar": "الخصائص الفئوية",
+   "alts_ar": [
+    "سمات الصنف"
+   ],
+   "def_ar": "صفات يشترك فيها كثير من الأشياء من النوع نفسه (لون، نقش، مقاس)، فلا تحدد مصدراً واحداً.",
+   "cat": "pattern",
+   "level": "13-15",
+   "status": "proposed",
+   "tier": "none",
+   "letter": "خ",
+   "src_ids": [
+    "ATH-SRC-0301"
+   ],
+   "ko_ids": [
+    "KO-FC-04-001",
+    "KO-FC-04-002",
+    "KO-FC-04-005",
+    "KO-FC-04-006"
+   ]
+  },
+  {
+   "id": "GL-051",
+   "term_en": "individual (identifying) characteristics",
+   "term_ar": "الخصائص المميِّزة",
+   "alts_ar": [
+    "الخصائص الفردية",
+    "السمات العرضية"
+   ],
+   "def_ar": "تفاصيل عرضية كالخدوش والتآكل يُفترض أنها تميز شيئاً بعينه؛ قوتها تحتاج دراسات خطأ.",
+   "cat": "pattern",
+   "level": "13-15",
+   "status": "proposed",
+   "tier": "none",
+   "letter": "خ",
+   "src_ids": [
+    "ATH-SRC-0301",
+    "ATH-SRC-0302"
+   ],
+   "ko_ids": [
+    "KO-FC-04-002",
+    "KO-FC-04-013",
+    "KO-FC-04-014",
+    "KO-FC-04-015"
+   ]
+  },
+  {
+   "id": "GL-052",
+   "term_en": "individualization",
+   "term_ar": "التفريد",
+   "alts_ar": [],
+   "def_ar": "ادعاء أن أثراً جاء من مصدر واحد دون سواه في العالم؛ ادعاء لا تدعمه المعايير الحديثة بهذه الصيغة.",
+   "cat": "interpretation",
+   "level": "16-18",
+   "status": "proposed",
+   "tier": "none",
+   "letter": "ت",
+   "src_ids": [
+    "ATH-SRC-0301",
+    "ATH-SRC-0307"
+   ],
+   "ko_ids": [
+    "KO-FC-04-012",
+    "KO-FC-04B-005",
+    "KO-FC-04-001",
+    "KO-FC-04-002"
+   ]
+  },
+  {
+   "id": "GL-053",
+   "term_en": "uniqueness",
+   "term_ar": "التفرّد",
+   "alts_ar": [],
+   "def_ar": "افتراض أن كل بصمة أو نمط فريد؛ حتى لو صح لا يعني أن الفاحص يستطيع دائماً تمييزه بلا خطأ.",
+   "cat": "pattern",
+   "level": "16-18",
+   "status": "proposed",
+   "tier": "none",
+   "letter": "ت",
+   "src_ids": [
+    "ATH-SRC-0301"
+   ],
+   "ko_ids": [
+    "KO-FC-04-001",
+    "KO-FC-04-002",
+    "KO-FC-04-005",
+    "KO-FC-04-006"
+   ]
+  },
+  {
+   "id": "GL-054",
+   "term_en": "fingerprint",
+   "term_ar": "بصمة الإصبع",
+   "alts_ar": [
+    "بصمة",
+    "بصمات الأصابع"
+   ],
+   "def_ar": "الأثر الذي تتركه الخطوط الحلمية على سطح ما.",
+   "cat": "fingerprints",
+   "level": "13-15",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "ب",
+   "src_ids": [
+    "ATH-SRC-1701",
+    "ATH-SRC-1703",
+    "ATH-SRC-0331"
+   ],
+   "ko_ids": [
+    "KO-FC-04-003",
+    "KO-FC-04-004",
+    "KO-FC-04-012",
+    "KO-FC-04B-005"
+   ]
+  },
+  {
+   "id": "GL-055",
+   "term_en": "friction ridges (papillary ridges)",
+   "term_ar": "الخطوط الحلمية",
+   "alts_ar": [
+    "الأعراف الجلدية",
+    "الحروف الحلمية"
+   ],
+   "def_ar": "الخطوط البارزة في جلد باطن الأصابع والكفين التي تشكل البصمة.",
+   "cat": "fingerprints",
+   "level": "13-15",
+   "status": "variant",
+   "tier": "tier1_official",
+   "letter": "خ",
+   "src_ids": [
+    "ATH-SRC-1701"
+   ],
+   "ko_ids": [
+    "KO-FC-04B-001"
+   ]
+  },
+  {
+   "id": "GL-056",
+   "term_en": "dactyloscopy",
+   "term_ar": "فحص البصمات",
+   "alts_ar": [
+    "علم البصمات"
+   ],
+   "def_ar": "دراسة البصمات ومقارنتها لأغراض التعرف.",
+   "cat": "fingerprints",
+   "level": "13-15",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "ف",
+   "src_ids": [
+    "ATH-SRC-1701"
+   ],
+   "ko_ids": [
+    "KO-FC-04B-001"
+   ]
+  },
+  {
+   "id": "GL-057",
+   "term_en": "dermatoglyphics",
+   "term_ar": "دراسة الأنماط الجلدية",
+   "alts_ar": [
+    "دراسة تقاطيع النهايات"
+   ],
+   "def_ar": "دراسة الأنماط الجلدية في الأصابع والكفين والقدمين.",
+   "cat": "fingerprints",
+   "level": "16-18",
+   "status": "variant",
+   "tier": "tier1_official",
+   "letter": "د",
+   "src_ids": [
+    "ATH-SRC-1701"
+   ],
+   "ko_ids": [
+    "KO-FC-04B-001"
+   ]
+  },
+  {
+   "id": "GL-058",
+   "term_en": "latent fingerprint",
+   "term_ar": "البصمة الكامنة",
+   "alts_ar": [
+    "البصمة الخفية",
+    "كامن"
+   ],
+   "def_ar": "بصمة غير مرئية بالعين المجردة تحتاج إظهاراً قبل تصويرها ومقارنتها.",
+   "cat": "fingerprints",
+   "level": "13-15",
+   "status": "variant",
+   "tier": "tier1_official",
+   "letter": "ب",
+   "src_ids": [
+    "ATH-SRC-1701",
+    "ATH-SRC-0331"
+   ],
+   "ko_ids": [
+    "KO-FC-04-003",
+    "KO-FC-04-004",
+    "KO-FC-04-012",
+    "KO-FC-04B-005"
+   ]
+  },
+  {
+   "id": "GL-059",
+   "term_en": "fingerprint pattern",
+   "term_ar": "طراز البصمة",
+   "alts_ar": [
+    "نمط البصمة",
+    "أنماط بصمات الأصابع"
+   ],
+   "def_ar": "الشكل العام لتدفق الخطوط الحلمية؛ صفة فئوية لا تكفي للتعرف.",
+   "cat": "fingerprints",
+   "level": "13-15",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "ط",
+   "src_ids": [
+    "ATH-SRC-1701",
+    "ATH-SRC-0301"
+   ],
+   "ko_ids": [
+    "KO-FC-04-001",
+    "KO-FC-04-002",
+    "KO-FC-04-005",
+    "KO-FC-04-006"
+   ]
+  },
+  {
+   "id": "GL-060",
+   "term_en": "loop",
+   "term_ar": "العروة",
+   "alts_ar": [
+    "طراز العروة",
+    "نمط العروة",
+    "المنحدر (استعمال شائع، غير متحقق)"
+   ],
+   "def_ar": "نمط تدخل فيه الخطوط من جانب وتنعطف لتخرج من الجانب نفسه.",
+   "cat": "fingerprints",
+   "level": "13-15",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "ع",
+   "src_ids": [
+    "ATH-SRC-1701"
+   ],
+   "ko_ids": [
+    "KO-FC-04B-001"
+   ]
+  },
+  {
+   "id": "GL-061",
+   "term_en": "arch",
+   "term_ar": "القوس",
+   "alts_ar": [
+    "طراز القوس"
+   ],
+   "def_ar": "نمط تدخل فيه الخطوط من جانب وتخرج من الجانب الآخر مع ارتفاع في الوسط.",
+   "cat": "fingerprints",
+   "level": "13-15",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "ق",
+   "src_ids": [
+    "ATH-SRC-1701"
+   ],
+   "ko_ids": [
+    "KO-FC-04B-001"
+   ]
+  },
+  {
+   "id": "GL-062",
+   "term_en": "whorl",
+   "term_ar": "الدوّامة",
+   "alts_ar": [
+    "طراز الدوامة",
+    "المستدير (استعمال شائع، غير متحقق)"
+   ],
+   "def_ar": "نمط تدور فيه الخطوط حول مركز.",
+   "cat": "fingerprints",
+   "level": "13-15",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "د",
+   "src_ids": [
+    "ATH-SRC-1701"
+   ],
+   "ko_ids": [
+    "KO-FC-04B-001"
+   ]
+  },
+  {
+   "id": "GL-063",
+   "term_en": "delta",
+   "term_ar": "الدلتا",
+   "alts_ar": [
+    "المثلث"
+   ],
+   "def_ar": "نقطة تلتقي عندها ثلاثة اتجاهات للخطوط على شكل مثلث صغير.",
+   "cat": "fingerprints",
+   "level": "16-18",
+   "status": "proposed",
+   "tier": "none",
+   "letter": "د",
+   "src_ids": [],
+   "ko_ids": []
+  },
+  {
+   "id": "GL-064",
+   "term_en": "core",
+   "term_ar": "المركز",
+   "alts_ar": [
+    "اللب",
+    "النواة"
+   ],
+   "def_ar": "النقطة الوسطى تقريباً في نمط البصمة.",
+   "cat": "fingerprints",
+   "level": "16-18",
+   "status": "proposed",
+   "tier": "none",
+   "letter": "م",
+   "src_ids": [],
+   "ko_ids": []
+  },
+  {
+   "id": "GL-065",
+   "term_en": "minutiae",
+   "term_ar": "التفاصيل الدقيقة",
+   "alts_ar": [
+    "المميزات الدقيقة",
+    "النقاط المميزة"
+   ],
+   "def_ar": "نهايات الخطوط وتفرعاتها ومواضعها، وهي ما يقارنه الفاحص بعد الطراز العام.",
+   "cat": "fingerprints",
+   "level": "13-15",
+   "status": "variant",
+   "tier": "tier1_official",
+   "letter": "ت",
+   "src_ids": [
+    "ATH-SRC-1703",
+    "ATH-SRC-0331"
+   ],
+   "ko_ids": [
+    "KO-FC-04-003",
+    "KO-FC-04-004",
+    "KO-FC-04-012",
+    "KO-FC-04B-005"
+   ]
+  },
+  {
+   "id": "GL-066",
+   "term_en": "ridge ending",
+   "term_ar": "نهاية خط",
+   "alts_ar": [],
+   "def_ar": "موضع ينتهي فيه خط حلمي.",
+   "cat": "fingerprints",
+   "level": "16-18",
+   "status": "proposed",
+   "tier": "none",
+   "letter": "ن",
+   "src_ids": [],
+   "ko_ids": []
+  },
+  {
+   "id": "GL-067",
+   "term_en": "bifurcation",
+   "term_ar": "تفرّع",
+   "alts_ar": [
+    "انشطار الخط"
+   ],
+   "def_ar": "موضع ينقسم فيه خط حلمي إلى فرعين.",
+   "cat": "fingerprints",
+   "level": "16-18",
+   "status": "proposed",
+   "tier": "none",
+   "letter": "ت",
+   "src_ids": [],
+   "ko_ids": []
+  },
+  {
+   "id": "GL-068",
+   "term_en": "AFIS (automated fingerprint identification system)",
+   "term_ar": "نظام التعرف الآلي على بصمات الأصابع",
+   "alts_ar": [
+    "منظومة التبيّن الآلي لبصمات الأصابع"
+   ],
+   "def_ar": "حاسوب يقترح قائمة مرشحين مشابهين؛ القرار النهائي يبقى لفاحص بشري ويحتاج تحققاً.",
+   "cat": "fingerprints",
+   "level": "13-15",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "ن",
+   "src_ids": [
+    "ATH-SRC-1702",
+    "ATH-SRC-1703",
+    "ATH-SRC-0331"
+   ],
+   "ko_ids": [
+    "KO-FC-04-003",
+    "KO-FC-04-004",
+    "KO-FC-04-012",
+    "KO-FC-04B-005"
+   ]
+  },
+  {
+   "id": "GL-069",
+   "term_en": "candidate list",
+   "term_ar": "قائمة المرشحين",
+   "alts_ar": [
+    "الأشخاص المحتملون"
+   ],
+   "def_ar": "النتائج الأقرب التي يقترحها النظام الآلي؛ وجود اسم فيها ليس تطابقاً.",
+   "cat": "fingerprints",
+   "level": "16-18",
+   "status": "variant",
+   "tier": "tier1_official",
+   "letter": "ق",
+   "src_ids": [
+    "ATH-SRC-1703"
+   ],
+   "ko_ids": [
+    "KO-FC-04B-005"
+   ]
+  },
+  {
+   "id": "GL-070",
+   "term_en": "ACE-V",
+   "term_ar": "تحليل ثم مقارنة ثم تقييم ثم تحقق",
+   "alts_ar": [
+    "منهج ACE-V"
+   ],
+   "def_ar": "تسلسل عمل في مقارنة البصمات: تحليل الأثر، مقارنته، تقييم النتيجة، ثم تحقق فاحص آخر.",
+   "cat": "fingerprints",
+   "level": "16-18",
+   "status": "proposed",
+   "tier": "none",
+   "letter": "ت",
+   "src_ids": [
+    "ATH-SRC-0331",
+    "ATH-SRC-0358"
+   ],
+   "ko_ids": [
+    "KO-FC-04-003",
+    "KO-FC-04-004",
+    "KO-FC-04-012",
+    "KO-FC-04B-005"
+   ]
+  },
+  {
+   "id": "GL-071",
+   "term_en": "verification (by second examiner)",
+   "term_ar": "التحقق المستقل",
+   "alts_ar": [
+    "المراجعة من فاحص ثانٍ",
+    "التحقق"
+   ],
+   "def_ar": "إعادة فاحص آخر للمقارنة قبل اعتماد النتيجة؛ يكون أقوى حين لا يعرف رأي الأول.",
+   "cat": "quality",
+   "level": "13-15",
+   "status": "variant",
+   "tier": "tier1_official",
+   "letter": "ت",
+   "src_ids": [
+    "ATH-SRC-1700",
+    "ATH-SRC-1703",
+    "ATH-SRC-1704",
+    "ATH-SRC-0331"
+   ],
+   "ko_ids": [
+    "KO-FC-04-003",
+    "KO-FC-04-004",
+    "KO-FC-04-012",
+    "KO-FC-04B-005"
+   ]
+  },
+  {
+   "id": "GL-072",
+   "term_en": "suitability (for comparison)",
+   "term_ar": "الصلاحية للمقارنة",
+   "alts_ar": [],
+   "def_ar": "حكم أولي على ما إذا كان الأثر يحمل معلومات كافية ليُقارن أصلاً.",
+   "cat": "fingerprints",
+   "level": "16-18",
+   "status": "proposed",
+   "tier": "none",
+   "letter": "ص",
+   "src_ids": [
+    "ATH-SRC-0331"
+   ],
+   "ko_ids": [
+    "KO-FC-04-003",
+    "KO-FC-04-004",
+    "KO-FC-04-012",
+    "KO-FC-04B-005"
+   ]
+  },
+  {
+   "id": "GL-073",
+   "term_en": "footwear impression",
+   "term_ar": "أثر الحذاء",
+   "alts_ar": [
+    "بصمة القدم (لأثر القدم الحافية)"
+   ],
+   "def_ar": "الأثر الذي يتركه نعل الحذاء؛ يُقارن بنقش النعل ومقاسه وتآكله.",
+   "cat": "pattern",
+   "level": "13-15",
+   "status": "proposed",
+   "tier": "none",
+   "letter": "ا",
+   "src_ids": [
+    "ATH-SRC-0301",
+    "ATH-SRC-0302"
+   ],
+   "ko_ids": [
+    "KO-FC-04-002",
+    "KO-FC-04-013",
+    "KO-FC-04-014",
+    "KO-FC-04-015"
+   ]
+  },
+  {
+   "id": "GL-074",
+   "term_en": "toolmark",
+   "term_ar": "علامة الأداة",
+   "alts_ar": [],
+   "def_ar": "أثر تتركه أداة على سطح؛ موضع خلاف علمي في قوة ربطه بأداة بعينها.",
+   "cat": "pattern",
+   "level": "18+",
+   "status": "proposed",
+   "tier": "none",
+   "letter": "ع",
+   "src_ids": [
+    "ATH-SRC-0334"
+   ],
+   "ko_ids": [
+    "KO-FC-04-003",
+    "KO-FC-04-004",
+    "KO-FC-04-016"
+   ]
+  },
+  {
+   "id": "GL-075",
+   "term_en": "bite mark comparison",
+   "term_ar": "مقارنة علامات العض",
+   "alts_ar": [],
+   "def_ar": "طريقة قديمة لربط علامة بأسنان شخص؛ تبين أنها غير مدعومة علمياً.",
+   "cat": "pattern",
+   "level": "13-15",
+   "status": "proposed",
+   "tier": "none",
+   "letter": "م",
+   "src_ids": [
+    "ATH-SRC-0305"
+   ],
+   "ko_ids": [
+    "KO-FC-04-001",
+    "KO-FC-04-013"
+   ]
+  },
+  {
+   "id": "GL-076",
+   "term_en": "DNA",
+   "term_ar": "الحمض النووي",
+   "alts_ar": [
+    "الدنا",
+    "الحمض النووي الريبي منزوع الأكسجين"
+   ],
+   "def_ar": "جزيء في معظم خلايا الجسم يحمل المعلومات الوراثية؛ يُورث من الوالدين.",
+   "cat": "dna",
+   "level": "13-15",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "ح",
+   "src_ids": [
+    "ATH-SRC-1701",
+    "ATH-SRC-1703",
+    "ATH-SRC-1758",
+    "ATH-SRC-0301"
+   ],
+   "ko_ids": [
+    "KO-FC-04-001",
+    "KO-FC-04-002",
+    "KO-FC-04-005",
+    "KO-FC-04-006"
+   ]
+  },
+  {
+   "id": "GL-077",
+   "term_en": "DNA profile",
+   "term_ar": "ملف الحمض النووي",
+   "alts_ar": [
+    "البصمة الوراثية",
+    "سمات البصمة الوراثية",
+    "الصورة التحليلية للحمض النووي"
+   ],
+   "def_ar": "مجموعة نتائج من مواضع مختارة في الحمض النووي تُكتب أرقاماً وتُقارن بغيرها.",
+   "cat": "dna",
+   "level": "13-15",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "م",
+   "src_ids": [
+    "ATH-SRC-1702",
+    "ATH-SRC-1703",
+    "ATH-SRC-1758",
+    "ATH-SRC-0301"
+   ],
+   "ko_ids": [
+    "KO-FC-04-001",
+    "KO-FC-04-002",
+    "KO-FC-04-005",
+    "KO-FC-04-006"
+   ]
+  },
+  {
+   "id": "GL-078",
+   "term_en": "DNA profiling",
+   "term_ar": "تحليل الحمض النووي",
+   "alts_ar": [
+    "التنميط الجيني",
+    "تحديد البصمة الوراثية"
+   ],
+   "def_ar": "الإجراءات المخبرية التي تنتج ملف الحمض النووي من عينة.",
+   "cat": "dna",
+   "level": "13-15",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "ت",
+   "src_ids": [
+    "ATH-SRC-1702",
+    "ATH-SRC-1705",
+    "ATH-SRC-0301"
+   ],
+   "ko_ids": [
+    "KO-FC-04-001",
+    "KO-FC-04-002",
+    "KO-FC-04-005",
+    "KO-FC-04-006"
+   ]
+  },
+  {
+   "id": "GL-079",
+   "term_en": "locus (pl. loci)",
+   "term_ar": "موضع",
+   "alts_ar": [
+    "مواضع"
+   ],
+   "def_ar": "مكان محدد في الحمض النووي يُقرأ ويُقارن.",
+   "cat": "dna",
+   "level": "16-18",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "م",
+   "src_ids": [
+    "ATH-SRC-1701",
+    "ATH-SRC-1703"
+   ],
+   "ko_ids": [
+    "KO-FC-04B-001",
+    "KO-FC-04B-005"
+   ]
+  },
+  {
+   "id": "GL-080",
+   "term_en": "allele",
+   "term_ar": "أليل",
+   "alts_ar": [],
+   "def_ar": "أحد الأشكال الممكنة لموضع ما؛ يرث الإنسان أليلاً من كل والد.",
+   "cat": "dna",
+   "level": "16-18",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "ا",
+   "src_ids": [
+    "ATH-SRC-1701"
+   ],
+   "ko_ids": [
+    "KO-FC-04B-001"
+   ]
+  },
+  {
+   "id": "GL-081",
+   "term_en": "STR (short tandem repeat)",
+   "term_ar": "التكرارات الترادفية القصيرة",
+   "alts_ar": [
+    "STR"
+   ],
+   "def_ar": "مقاطع قصيرة متكررة يختلف عدد تكرارها بين الناس، وعليها تقوم ملفات الحمض النووي الجنائية.",
+   "cat": "dna",
+   "level": "18+",
+   "status": "proposed",
+   "tier": "none",
+   "letter": "ت",
+   "src_ids": [
+    "ATH-SRC-0301",
+    "ATH-SRC-0311"
+   ],
+   "ko_ids": [
+    "KO-FC-04-005",
+    "KO-FC-04-001",
+    "KO-FC-04-002",
+    "KO-FC-04-006"
+   ]
+  },
+  {
+   "id": "GL-082",
+   "term_en": "Y chromosome",
+   "term_ar": "الصبغي Y",
+   "alts_ar": [],
+   "def_ar": "صبغي يورث من الأب إلى الابن؛ يشترك فيه أقارب الأب الذكور، فلا يميز بينهم.",
+   "cat": "dna",
+   "level": "18+",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "ص",
+   "src_ids": [
+    "ATH-SRC-1701"
+   ],
+   "ko_ids": [
+    "KO-FC-04B-001"
+   ]
+  },
+  {
+   "id": "GL-083",
+   "term_en": "PCR (polymerase chain reaction)",
+   "term_ar": "التفاعل السلسلي للبوليميراز",
+   "alts_ar": [],
+   "def_ar": "تقنية مخبرية تنسخ مقاطع صغيرة من الحمض النووي ملايين المرات لتصبح قابلة للقراءة.",
+   "cat": "dna",
+   "level": "16-18",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "ت",
+   "src_ids": [
+    "ATH-SRC-1701"
+   ],
+   "ko_ids": [
+    "KO-FC-04B-001"
+   ]
+  },
+  {
+   "id": "GL-084",
+   "term_en": "DNA mixture",
+   "term_ar": "خليط الحمض النووي",
+   "alts_ar": [
+    "عيّنة مختلطة"
+   ],
+   "def_ar": "عينة فيها حمض نووي من أكثر من شخص؛ يزداد تفسيرها صعوبة مع زيادة المساهمين.",
+   "cat": "dna",
+   "level": "18+",
+   "status": "variant",
+   "tier": "tier1_official",
+   "letter": "خ",
+   "src_ids": [
+    "ATH-SRC-1701",
+    "ATH-SRC-0304",
+    "ATH-SRC-0328"
+   ],
+   "ko_ids": [
+    "KO-FC-04-006",
+    "KO-FC-04-005",
+    "KO-FC-04-007",
+    "KO-FC-04-009"
+   ]
+  },
+  {
+   "id": "GL-085",
+   "term_en": "contributor",
+   "term_ar": "مساهم",
+   "alts_ar": [],
+   "def_ar": "شخص يحتمل أن يكون جزء من الحمض النووي في الخليط منه.",
+   "cat": "dna",
+   "level": "18+",
+   "status": "proposed",
+   "tier": "none",
+   "letter": "م",
+   "src_ids": [
+    "ATH-SRC-0304"
+   ],
+   "ko_ids": [
+    "KO-FC-04-005",
+    "KO-FC-04-006",
+    "KO-FC-04-007",
+    "KO-FC-04-009"
+   ]
+  },
+  {
+   "id": "GL-086",
+   "term_en": "touch DNA",
+   "term_ar": "الحمض النووي اللمسي",
+   "alts_ar": [],
+   "def_ar": "كميات صغيرة من الحمض النووي قد تُترك بلمس الأشياء؛ يصعب معرفة كيف ومتى وصلت.",
+   "cat": "dna",
+   "level": "16-18",
+   "status": "proposed",
+   "tier": "none",
+   "letter": "ح",
+   "src_ids": [
+    "ATH-SRC-0341"
+   ],
+   "ko_ids": [
+    "KO-FC-04-007"
+   ]
+  },
+  {
+   "id": "GL-087",
+   "term_en": "saliva",
+   "term_ar": "اللعاب",
+   "alts_ar": [],
+   "def_ar": "سائل الفم؛ قد يحمل حمضاً نووياً.",
+   "cat": "dna",
+   "level": "13-15",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "ل",
+   "src_ids": [
+    "ATH-SRC-1701"
+   ],
+   "ko_ids": [
+    "KO-FC-04B-001"
+   ]
+  },
+  {
+   "id": "GL-088",
+   "term_en": "DNA database",
+   "term_ar": "قاعدة بيانات الحمض النووي",
+   "alts_ar": [
+    "قاعدة بيانات البصمة الوراثية"
+   ],
+   "def_ar": "سجل ملفات يُبحث فيه عن مطابقات؛ نتيجة البحث «مرشح» يحتاج تحققاً.",
+   "cat": "dna",
+   "level": "16-18",
+   "status": "variant",
+   "tier": "tier1_official",
+   "letter": "ق",
+   "src_ids": [
+    "ATH-SRC-1703"
+   ],
+   "ko_ids": [
+    "KO-FC-04B-005"
+   ]
+  },
+  {
+   "id": "GL-089",
+   "term_en": "DNA match",
+   "term_ar": "مطابقة الحمض النووي",
+   "alts_ar": [
+    "تطابق"
+   ],
+   "def_ar": "توافق ملفين في المواضع المفحوصة؛ قوته تُقدَّر إحصائياً ولا تعني «هو الفاعل».",
+   "cat": "dna",
+   "level": "13-15",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "م",
+   "src_ids": [
+    "ATH-SRC-1758",
+    "ATH-SRC-0301",
+    "ATH-SRC-0340"
+   ],
+   "ko_ids": [
+    "KO-FC-04-001",
+    "KO-FC-04-002",
+    "KO-FC-04-005",
+    "KO-FC-04-006"
+   ]
+  },
+  {
+   "id": "GL-090",
+   "term_en": "exclusion",
+   "term_ar": "الاستبعاد",
+   "alts_ar": [],
+   "def_ar": "نتيجة تُظهر أن الشخص لا يمكن أن يكون مصدر الأثر؛ غالباً أوضح من «التضمين».",
+   "cat": "dna",
+   "level": "13-15",
+   "status": "variant",
+   "tier": "tier1_official",
+   "letter": "ا",
+   "src_ids": [
+    "ATH-SRC-1703",
+    "ATH-SRC-0301"
+   ],
+   "ko_ids": [
+    "KO-FC-04-001",
+    "KO-FC-04-002",
+    "KO-FC-04-005",
+    "KO-FC-04-006"
+   ]
+  },
+  {
+   "id": "GL-091",
+   "term_en": "kinship analysis",
+   "term_ar": "تحليل القرابة",
+   "alts_ar": [
+    "معامل القرابة"
+   ],
+   "def_ar": "مقارنة ملفات أقارب لمعرفة ما إذا كانت العلاقة البيولوجية المفترضة مرجحة.",
+   "cat": "dna",
+   "level": "18+",
+   "status": "variant",
+   "tier": "tier1_official",
+   "letter": "ت",
+   "src_ids": [
+    "ATH-SRC-1701",
+    "ATH-SRC-1728"
+   ],
+   "ko_ids": [
+    "KO-FC-04B-001"
+   ]
+  },
+  {
+   "id": "GL-092",
+   "term_en": "monozygotic (identical) twins",
+   "term_ar": "التوأمان المتماثلان",
+   "alts_ar": [
+    "توأما البيضة الواحدة"
+   ],
+   "def_ar": "توأمان يتشاركان الحمض النووي نفسه تقريباً، فلا تفرق بينهما الملفات المعتادة.",
+   "cat": "dna",
+   "level": "13-15",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "ت",
+   "src_ids": [
+    "ATH-SRC-1701",
+    "ATH-SRC-1703",
+    "ATH-SRC-0333"
+   ],
+   "ko_ids": [
+    "KO-FC-04-003",
+    "KO-FC-04-017",
+    "KO-FC-04B-004"
+   ]
+  },
+  {
+   "id": "GL-093",
+   "term_en": "source-level question",
+   "term_ar": "سؤال المصدر",
+   "alts_ar": [],
+   "def_ar": "سؤال «ممن جاء هذا الأثر؟» دون الإجابة عن كيف أو متى.",
+   "cat": "interpretation",
+   "level": "16-18",
+   "status": "proposed",
+   "tier": "none",
+   "letter": "س",
+   "src_ids": [
+    "ATH-SRC-0339",
+    "ATH-SRC-0340"
+   ],
+   "ko_ids": [
+    "KO-FC-04-008",
+    "KO-FC-04-007",
+    "KO-FC-04-018"
+   ]
+  },
+  {
+   "id": "GL-094",
+   "term_en": "activity-level question",
+   "term_ar": "سؤال النشاط",
+   "alts_ar": [],
+   "def_ar": "سؤال «ما النشاط الذي أوصل الأثر؟» ويحتاج معرفة الانتقال والثبات والخلفية.",
+   "cat": "interpretation",
+   "level": "16-18",
+   "status": "proposed",
+   "tier": "none",
+   "letter": "س",
+   "src_ids": [
+    "ATH-SRC-0339",
+    "ATH-SRC-0340"
+   ],
+   "ko_ids": [
+    "KO-FC-04-008",
+    "KO-FC-04-007",
+    "KO-FC-04-018"
+   ]
+  },
+  {
+   "id": "GL-095",
+   "term_en": "offence-level question",
+   "term_ar": "سؤال الجرم",
+   "alts_ar": [],
+   "def_ar": "سؤال «هل وقعت الجريمة ومن ارتكبها؟» وهو للقاضي لا للخبير.",
+   "cat": "interpretation",
+   "level": "16-18",
+   "status": "proposed",
+   "tier": "none",
+   "letter": "س",
+   "src_ids": [
+    "ATH-SRC-0339"
+   ],
+   "ko_ids": [
+    "KO-FC-04-008",
+    "KO-FC-04-018"
+   ]
+  },
+  {
+   "id": "GL-096",
+   "term_en": "hierarchy of propositions",
+   "term_ar": "هرم الفرضيات",
+   "alts_ar": [],
+   "def_ar": "ترتيب الأسئلة من المصدر إلى النشاط إلى الجرم، وتحديد أيها يجيب عنه الدليل.",
+   "cat": "interpretation",
+   "level": "16-18",
+   "status": "proposed",
+   "tier": "none",
+   "letter": "ه",
+   "src_ids": [
+    "ATH-SRC-0317",
+    "ATH-SRC-0339",
+    "ATH-SRC-0340"
+   ],
+   "ko_ids": [
+    "KO-FC-04-008",
+    "KO-FC-04-018",
+    "KO-FC-04-007",
+    "KO-FC-04-009"
+   ]
+  },
+  {
+   "id": "GL-097",
+   "term_en": "questioned document examination",
+   "term_ar": "فحص المستندات",
+   "alts_ar": [
+    "فحص الوثائق",
+    "أبحاث التزييف والتزوير (مصر)",
+    "تدقيق وفحص الوثائق (المغرب)"
+   ],
+   "def_ar": "فحص الكتابة والتوقيعات والأحبار والورق والتعديلات لإبداء رأي متدرج.",
+   "cat": "documents",
+   "level": "13-15",
+   "status": "variant",
+   "tier": "tier2_arab_academic",
+   "letter": "ف",
+   "src_ids": [
+    "ATH-SRC-1705",
+    "ATH-SRC-1722",
+    "ATH-SRC-1731",
+    "ATH-SRC-0333"
+   ],
+   "ko_ids": [
+    "KO-FC-04-003",
+    "KO-FC-04-017",
+    "KO-FC-04B-004"
+   ]
+  },
+  {
+   "id": "GL-098",
+   "term_en": "questioned document",
+   "term_ar": "المستند محل الفحص",
+   "alts_ar": [
+    "المستند المشكوك فيه",
+    "الوثيقة المطعون فيها"
+   ],
+   "def_ar": "المستند الذي يُطلب رأي في صحته أو كاتبه.",
+   "cat": "documents",
+   "level": "13-15",
+   "status": "proposed",
+   "tier": "none",
+   "letter": "م",
+   "src_ids": [
+    "ATH-SRC-0333"
+   ],
+   "ko_ids": [
+    "KO-FC-04-003",
+    "KO-FC-04-017",
+    "KO-FC-04B-004"
+   ]
+  },
+  {
+   "id": "GL-099",
+   "term_en": "handwriting comparison",
+   "term_ar": "مقارنة الخط اليدوي",
+   "alts_ar": [
+    "التحليل الجنائي للكتابة اليدوية",
+    "المضاهاة"
+   ],
+   "def_ar": "مقارنة خط مجهول بنماذج خط معروفة وإبداء رأي متدرج، مع إمكان «غير حاسم».",
+   "cat": "documents",
+   "level": "13-15",
+   "status": "variant",
+   "tier": "tier2_arab_academic",
+   "letter": "م",
+   "src_ids": [
+    "ATH-SRC-1705",
+    "ATH-SRC-0333"
+   ],
+   "ko_ids": [
+    "KO-FC-04-003",
+    "KO-FC-04-017",
+    "KO-FC-04B-004"
+   ]
+  },
+  {
+   "id": "GL-100",
+   "term_en": "signature",
+   "term_ar": "التوقيع",
+   "alts_ar": [],
+   "def_ar": "علامة الشخص المكتوبة؛ تُقارن بنماذج توقيعه المعروفة.",
+   "cat": "documents",
+   "level": "13-15",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "ت",
+   "src_ids": [
+    "ATH-SRC-1701",
+    "ATH-SRC-1734"
+   ],
+   "ko_ids": [
+    "KO-FC-04B-004"
+   ]
+  },
+  {
+   "id": "GL-101",
+   "term_en": "simulated (traced/copied) signature",
+   "term_ar": "التوقيع المقلَّد",
+   "alts_ar": [
+    "المحاكاة"
+   ],
+   "def_ar": "توقيع كتبه شخص يحاول تقليد توقيع غيره.",
+   "cat": "documents",
+   "level": "13-15",
+   "status": "proposed",
+   "tier": "none",
+   "letter": "ت",
+   "src_ids": [
+    "ATH-SRC-1734",
+    "ATH-SRC-1735"
+   ],
+   "ko_ids": [
+    "KO-FC-04B-004"
+   ]
+  },
+  {
+   "id": "GL-102",
+   "term_en": "forgery",
+   "term_ar": "التزوير",
+   "alts_ar": [],
+   "def_ar": "صنع مستند أو توقيع غير صحيح أو تغيير مستند صحيح بقصد التضليل.",
+   "cat": "documents",
+   "level": "13-15",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "ت",
+   "src_ids": [
+    "ATH-SRC-1702"
+   ],
+   "ko_ids": [
+    "KO-FC-04B-001",
+    "KO-FC-04B-002"
+   ]
+  },
+  {
+   "id": "GL-103",
+   "term_en": "counterfeiting",
+   "term_ar": "التزييف",
+   "alts_ar": [],
+   "def_ar": "تقليد العملات أو الطوابع أو الأختام.",
+   "cat": "documents",
+   "level": "13-15",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "ت",
+   "src_ids": [
+    "ATH-SRC-1702",
+    "ATH-SRC-1722"
+   ],
+   "ko_ids": [
+    "KO-FC-04B-001",
+    "KO-FC-04B-002",
+    "KO-FC-04B-003",
+    "KO-FC-04B-005"
+   ]
+  },
+  {
+   "id": "GL-104",
+   "term_en": "alteration",
+   "term_ar": "التعديل",
+   "alts_ar": [
+    "التحوير",
+    "الكشط والإضافة"
+   ],
+   "def_ar": "تغيير لاحق في مستند (محو، إضافة، تغيير رقم).",
+   "cat": "documents",
+   "level": "13-15",
+   "status": "proposed",
+   "tier": "none",
+   "letter": "ت",
+   "src_ids": [],
+   "ko_ids": []
+  },
+  {
+   "id": "GL-105",
+   "term_en": "class characteristics of handwriting",
+   "term_ar": "الخصائص الفئوية للخط",
+   "alts_ar": [],
+   "def_ar": "أشكال حروف يشترك فيها كثيرون (بسبب المدرسة أو المنطقة)؛ لا تحدد كاتباً بعينه.",
+   "cat": "documents",
+   "level": "16-18",
+   "status": "proposed",
+   "tier": "none",
+   "letter": "خ",
+   "src_ids": [
+    "ATH-SRC-1736"
+   ],
+   "ko_ids": [
+    "KO-FC-04B-004"
+   ]
+  },
+  {
+   "id": "GL-106",
+   "term_en": "writer identification",
+   "term_ar": "نسبة الكتابة إلى كاتب",
+   "alts_ar": [
+    "تحديد الكاتب"
+   ],
+   "def_ar": "الرأي في أن كاتباً معيناً كتب المستند أو لم يكتبه، بدرجات متفاوتة.",
+   "cat": "documents",
+   "level": "16-18",
+   "status": "proposed",
+   "tier": "none",
+   "letter": "ن",
+   "src_ids": [
+    "ATH-SRC-0333"
+   ],
+   "ko_ids": [
+    "KO-FC-04-003",
+    "KO-FC-04-017",
+    "KO-FC-04B-004"
+   ]
+  },
+  {
+   "id": "GL-107",
+   "term_en": "opinion scale",
+   "term_ar": "مقياس الرأي",
+   "alts_ar": [
+    "سلم الرأي المتدرج"
+   ],
+   "def_ar": "عبارات متدرجة (من «كتبه» إلى «لم يكتبه» مروراً بـ«غير حاسم») بدل نعم/لا.",
+   "cat": "documents",
+   "level": "13-15",
+   "status": "proposed",
+   "tier": "none",
+   "letter": "م",
+   "src_ids": [
+    "ATH-SRC-0308",
+    "ATH-SRC-0333"
+   ],
+   "ko_ids": [
+    "KO-FC-04-017",
+    "KO-FC-04-003",
+    "KO-FC-04-029",
+    "KO-FC-04B-004"
+   ]
+  },
+  {
+   "id": "GL-108",
+   "term_en": "ink",
+   "term_ar": "الحبر",
+   "alts_ar": [],
+   "def_ar": "مادة الكتابة؛ تقدير عمر الحبر موضع خلاف علمي.",
+   "cat": "documents",
+   "level": "16-18",
+   "status": "proposed",
+   "tier": "none",
+   "letter": "ح",
+   "src_ids": [],
+   "ko_ids": []
+  },
+  {
+   "id": "GL-109",
+   "term_en": "line quality",
+   "term_ar": "جودة الخط (انسيابية الجرة)",
+   "alts_ar": [],
+   "def_ar": "سلاسة حركة القلم وضغطه؛ قد يظهر التردد في التوقيع المقلَّد.",
+   "cat": "documents",
+   "level": "16-18",
+   "status": "proposed",
+   "tier": "none",
+   "letter": "ج",
+   "src_ids": [
+    "ATH-SRC-1734"
+   ],
+   "ko_ids": [
+    "KO-FC-04B-004"
+   ]
+  },
+  {
+   "id": "GL-110",
+   "term_en": "slant",
+   "term_ar": "الميل",
+   "alts_ar": [],
+   "def_ar": "اتجاه ميلان الحروف؛ من العناصر التي قورنت في دراسة التوقيعات العربية.",
+   "cat": "documents",
+   "level": "16-18",
+   "status": "proposed",
+   "tier": "none",
+   "letter": "م",
+   "src_ids": [
+    "ATH-SRC-1734"
+   ],
+   "ko_ids": [
+    "KO-FC-04B-004"
+   ]
+  },
+  {
+   "id": "GL-111",
+   "term_en": "digital evidence",
+   "term_ar": "الدليل الرقمي",
+   "alts_ar": [
+    "الأدلة الرقمية",
+    "الدليل الإلكتروني"
+   ],
+   "def_ar": "بيانات مخزنة أو منقولة إلكترونياً يمكن أن تفيد في قضية.",
+   "cat": "digital",
+   "level": "13-15",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "د",
+   "src_ids": [
+    "ATH-SRC-1702",
+    "ATH-SRC-1715",
+    "ATH-SRC-0306"
+   ],
+   "ko_ids": [
+    "KO-FC-04-001",
+    "KO-FC-04-024"
+   ]
+  },
+  {
+   "id": "GL-112",
+   "term_en": "digital forensics",
+   "term_ar": "الاستدلال الجنائي الرقمي",
+   "alts_ar": [
+    "التحقيق الجنائي الرقمي",
+    "الحاسوب الجنائي",
+    "الأدلة الجنائية الرقمية"
+   ],
+   "def_ar": "تحديد البيانات الرقمية وحفظها واستخراجها وتحليلها بطرق موثقة.",
+   "cat": "digital",
+   "level": "13-15",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "ا",
+   "src_ids": [
+    "ATH-SRC-1702",
+    "ATH-SRC-1705",
+    "ATH-SRC-1714",
+    "ATH-SRC-0306"
+   ],
+   "ko_ids": [
+    "KO-FC-04-001",
+    "KO-FC-04-024"
+   ]
+  },
+  {
+   "id": "GL-113",
+   "term_en": "metadata",
+   "term_ar": "البيانات الوصفية",
+   "alts_ar": [
+    "الميتاداتا",
+    "بيانات فوقية"
+   ],
+   "def_ar": "بيانات عن الملف (وقت الإنشاء، الجهاز، الموقع) لا محتواه؛ قد تكون خاطئة أو معدلة.",
+   "cat": "digital",
+   "level": "13-15",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "ب",
+   "src_ids": [
+    "ATH-SRC-1702",
+    "ATH-SRC-1714",
+    "ATH-SRC-0306"
+   ],
+   "ko_ids": [
+    "KO-FC-04-001",
+    "KO-FC-04-024"
+   ]
+  },
+  {
+   "id": "GL-114",
+   "term_en": "timestamp",
+   "term_ar": "الطابع الزمني",
+   "alts_ar": [
+    "الختم الزمني"
+   ],
+   "def_ar": "تسجيل لوقت حدث رقمي؛ يتأثر بإعدادات الساعة والمنطقة الزمنية.",
+   "cat": "digital",
+   "level": "13-15",
+   "status": "proposed",
+   "tier": "none",
+   "letter": "ط",
+   "src_ids": [
+    "ATH-SRC-0306"
+   ],
+   "ko_ids": [
+    "KO-FC-04-001",
+    "KO-FC-04-024"
+   ]
+  },
+  {
+   "id": "GL-115",
+   "term_en": "digital timeline",
+   "term_ar": "الخط الزمني الرقمي",
+   "alts_ar": [
+    "التسلسل الزمني للأحداث الرقمية"
+   ],
+   "def_ar": "ترتيب الأحداث الرقمية زمنياً لاكتشاف التناقضات وما لا يمكن إثباته.",
+   "cat": "digital",
+   "level": "13-15",
+   "status": "proposed",
+   "tier": "none",
+   "letter": "خ",
+   "src_ids": [
+    "ATH-SRC-0306"
+   ],
+   "ko_ids": [
+    "KO-FC-04-001",
+    "KO-FC-04-024"
+   ]
+  },
+  {
+   "id": "GL-116",
+   "term_en": "hash value",
+   "term_ar": "القيمة التجزيئية",
+   "alts_ar": [
+    "البصمة الرقمية"
+   ],
+   "def_ar": "رقم يُحسب من محتوى الملف؛ يتغير إذا تغير أي جزء، فيُستعمل لإثبات أن النسخة لم تُعدّل.",
+   "cat": "digital",
+   "level": "16-18",
+   "status": "variant",
+   "tier": "tier1_official",
+   "letter": "ق",
+   "src_ids": [
+    "ATH-SRC-1702",
+    "ATH-SRC-0306"
+   ],
+   "ko_ids": [
+    "KO-FC-04-001",
+    "KO-FC-04-024"
+   ]
+  },
+  {
+   "id": "GL-117",
+   "term_en": "forensic copy (image)",
+   "term_ar": "النسخة الجنائية المطابقة",
+   "alts_ar": [
+    "نسخة طبق الأصل"
+   ],
+   "def_ar": "نسخة كاملة من وسيط تخزين يُعمل عليها بدل الأصل لحمايته.",
+   "cat": "digital",
+   "level": "16-18",
+   "status": "proposed",
+   "tier": "none",
+   "letter": "ن",
+   "src_ids": [
+    "ATH-SRC-0306"
+   ],
+   "ko_ids": [
+    "KO-FC-04-001",
+    "KO-FC-04-024"
+   ]
+  },
+  {
+   "id": "GL-118",
+   "term_en": "data recovery",
+   "term_ar": "استعادة البيانات",
+   "alts_ar": [],
+   "def_ar": "محاولة استرجاع بيانات محذوفة؛ قد تُستعاد جزئياً أو لا تُستعاد، وقد تحمل مواد دخيلة.",
+   "cat": "digital",
+   "level": "16-18",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "ا",
+   "src_ids": [
+    "ATH-SRC-1702",
+    "ATH-SRC-0306"
+   ],
+   "ko_ids": [
+    "KO-FC-04-001",
+    "KO-FC-04-024"
+   ]
+  },
+  {
+   "id": "GL-119",
+   "term_en": "authentication (of digital media)",
+   "term_ar": "التحقق من الأصالة",
+   "alts_ar": [
+    "توثيق",
+    "استيقان"
+   ],
+   "def_ar": "تقدير ما إذا كان الملف أو الصورة على حالته الأصلية أو عُدِّل.",
+   "cat": "digital",
+   "level": "13-15",
+   "status": "variant",
+   "tier": "tier1_official",
+   "letter": "ت",
+   "src_ids": [
+    "ATH-SRC-1702",
+    "ATH-SRC-0350"
+   ],
+   "ko_ids": [
+    "KO-FC-04-025"
+   ]
+  },
+  {
+   "id": "GL-120",
+   "term_en": "attribution (who used the device)",
+   "term_ar": "نسبة الفعل إلى مستخدم",
+   "alts_ar": [],
+   "def_ar": "السؤال عمّن استعمل الجهاز فعلاً؛ لا تجيب عنه البيانات الرقمية وحدها غالباً.",
+   "cat": "digital",
+   "level": "13-15",
+   "status": "proposed",
+   "tier": "none",
+   "letter": "ن",
+   "src_ids": [
+    "ATH-SRC-0306"
+   ],
+   "ko_ids": [
+    "KO-FC-04-001",
+    "KO-FC-04-024"
+   ]
+  },
+  {
+   "id": "GL-121",
+   "term_en": "supporting evidence",
+   "term_ar": "دليل مساند",
+   "alts_ar": [
+    "قرينة"
+   ],
+   "def_ar": "دليل يقوي دليلاً آخر ولا يكفي وحده.",
+   "cat": "interpretation",
+   "level": "13-15",
+   "status": "sourced",
+   "tier": "tier2_arab_academic",
+   "letter": "د",
+   "src_ids": [
+    "ATH-SRC-1714"
+   ],
+   "ko_ids": []
+  },
+  {
+   "id": "GL-122",
+   "term_en": "closed-circuit television (CCTV)",
+   "term_ar": "كاميرات المراقبة",
+   "alts_ar": [
+    "الدائرة التلفزيونية المغلقة"
+   ],
+   "def_ar": "تسجيلات مرئية قد تفيد التسلسل الزمني؛ دقتها ومنظورها يحدان مما يُستنتج منها.",
+   "cat": "imaging",
+   "level": "13-15",
+   "status": "variant",
+   "tier": "tier1_official",
+   "letter": "ك",
+   "src_ids": [
+    "ATH-SRC-1702",
+    "ATH-SRC-0321",
+    "ATH-SRC-0350"
+   ],
+   "ko_ids": [
+    "KO-FC-04-025"
+   ]
+  },
+  {
+   "id": "GL-123",
+   "term_en": "image enhancement",
+   "term_ar": "تحسين الصورة",
+   "alts_ar": [],
+   "def_ar": "معالجة توضح ما هو موجود في الصورة دون أن تخلق تفاصيل لم تُلتقط.",
+   "cat": "imaging",
+   "level": "13-15",
+   "status": "proposed",
+   "tier": "none",
+   "letter": "ت",
+   "src_ids": [
+    "ATH-SRC-0350"
+   ],
+   "ko_ids": [
+    "KO-FC-04-025"
+   ]
+  },
+  {
+   "id": "GL-124",
+   "term_en": "pixel",
+   "term_ar": "البكسل",
+   "alts_ar": [
+    "عنصر الصورة"
+   ],
+   "def_ar": "أصغر نقطة في الصورة الرقمية؛ عند التكبير لا تظهر تفاصيل جديدة بل تكبر النقاط.",
+   "cat": "imaging",
+   "level": "13-15",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "ب",
+   "src_ids": [
+    "ATH-SRC-1702",
+    "ATH-SRC-0350"
+   ],
+   "ko_ids": [
+    "KO-FC-04-025"
+   ]
+  },
+  {
+   "id": "GL-125",
+   "term_en": "image resolution",
+   "term_ar": "دقة الصورة",
+   "alts_ar": [],
+   "def_ar": "كمية التفاصيل التي تحملها الصورة؛ تحدد ما يمكن التعرف عليه منها.",
+   "cat": "imaging",
+   "level": "13-15",
+   "status": "proposed",
+   "tier": "none",
+   "letter": "د",
+   "src_ids": [
+    "ATH-SRC-0350"
+   ],
+   "ko_ids": [
+    "KO-FC-04-025"
+   ]
+  },
+  {
+   "id": "GL-126",
+   "term_en": "deepfake",
+   "term_ar": "التزييف العميق",
+   "alts_ar": [],
+   "def_ar": "صور أو مقاطع مولّدة أو معدلة بالذكاء الاصطناعي تبدو حقيقية.",
+   "cat": "imaging",
+   "level": "16-18",
+   "status": "proposed",
+   "tier": "none",
+   "letter": "ت",
+   "src_ids": [],
+   "ko_ids": []
+  },
+  {
+   "id": "GL-127",
+   "term_en": "facial recognition",
+   "term_ar": "التعرف على الوجه",
+   "alts_ar": [
+    "تحديد سمات الوجه"
+   ],
+   "def_ar": "مقارنة صور الوجوه آلياً لاقتراح مرشحين؛ تتأثر بالعمر والإضاءة والجودة.",
+   "cat": "imaging",
+   "level": "16-18",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "ت",
+   "src_ids": [
+    "ATH-SRC-1702",
+    "ATH-SRC-1703"
+   ],
+   "ko_ids": [
+    "KO-FC-04B-001",
+    "KO-FC-04B-002",
+    "KO-FC-04B-005"
+   ]
+  },
+  {
+   "id": "GL-128",
+   "term_en": "biometrics",
+   "term_ar": "القياسات الحيوية",
+   "alts_ar": [
+    "المحددات البيومترية"
+   ],
+   "def_ar": "استعمال خصائص جسدية كالبصمات والوجه للتعرف على الأشخاص.",
+   "cat": "general",
+   "level": "16-18",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "ق",
+   "src_ids": [
+    "ATH-SRC-1702",
+    "ATH-SRC-1703"
+   ],
+   "ko_ids": [
+    "KO-FC-04B-001",
+    "KO-FC-04B-002",
+    "KO-FC-04B-005"
+   ]
+  },
+  {
+   "id": "GL-129",
+   "term_en": "forensic chemistry",
+   "term_ar": "الكيمياء الجنائية",
+   "alts_ar": [
+    "الكيمياء الطبية الشرعية"
+   ],
+   "def_ar": "تحديد هوية المواد المجهولة بمخطط تحليلي متحقق منه.",
+   "cat": "chemistry",
+   "level": "13-15",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "ك",
+   "src_ids": [
+    "ATH-SRC-1701",
+    "ATH-SRC-1705",
+    "ATH-SRC-0349"
+   ],
+   "ko_ids": [
+    "KO-FC-04-019"
+   ]
+  },
+  {
+   "id": "GL-130",
+   "term_en": "forensic toxicology",
+   "term_ar": "علم السموم الجنائي",
+   "alts_ar": [
+    "علم السموم",
+    "السموميات"
+   ],
+   "def_ar": "كشف المواد في العينات الحيوية وقياسها ثم تفسير دلالتها؛ الكشف والتفسير مرحلتان.",
+   "cat": "toxicology",
+   "level": "16-18",
+   "status": "sourced",
+   "tier": "tier2_arab_academic",
+   "letter": "ع",
+   "src_ids": [
+    "ATH-SRC-1705",
+    "ATH-SRC-1707",
+    "ATH-SRC-1709",
+    "ATH-SRC-0353"
+   ],
+   "ko_ids": [
+    "KO-FC-04-020"
+   ]
+  },
+  {
+   "id": "GL-131",
+   "term_en": "screening (presumptive) test",
+   "term_ar": "الاختبار التمهيدي",
+   "alts_ar": [
+    "اختبار فرز / اختبار أولي / اختبار افتراضي",
+    "اختبار التحري",
+    "اختبار الفرز"
+   ],
+   "def_ar": "اختبار سريع يرجح وجود فئة مادة؛ قد يعطي نتيجة إيجابية كاذبة ولا يكفي لتحديد الهوية.",
+   "cat": "chemistry",
+   "level": "13-15",
+   "status": "variant",
+   "tier": "tier1_official",
+   "letter": "ا",
+   "src_ids": [
+    "ATH-SRC-1700",
+    "ATH-SRC-1701",
+    "ATH-SRC-1702",
+    "ATH-SRC-0336",
+    "ATH-SRC-0349"
+   ],
+   "ko_ids": [
+    "KO-FC-04-019",
+    "KO-FC-04-031"
+   ]
+  },
+  {
+   "id": "GL-132",
+   "term_en": "confirmatory test",
+   "term_ar": "الاختبار التأكيدي",
+   "alts_ar": [
+    "اختبار تأكيدي",
+    "الاختبار التوكيدي"
+   ],
+   "def_ar": "اختبار ثانٍ بطريقة مستقلة أكثر تمييزاً يؤكد هوية المادة.",
+   "cat": "chemistry",
+   "level": "13-15",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "ا",
+   "src_ids": [
+    "ATH-SRC-1700",
+    "ATH-SRC-1701",
+    "ATH-SRC-0349"
+   ],
+   "ko_ids": [
+    "KO-FC-04-019"
+   ]
+  },
+  {
+   "id": "GL-133",
+   "term_en": "limit of detection",
+   "term_ar": "حد الكشف",
+   "alts_ar": [],
+   "def_ar": "أقل كمية يمكن عندها استنتاج وجود المادة بثقة إحصائية معقولة؛ دونه قد تكون موجودة ولا تُرى.",
+   "cat": "toxicology",
+   "level": "16-18",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "ح",
+   "src_ids": [
+    "ATH-SRC-1700",
+    "ATH-SRC-0353"
+   ],
+   "ko_ids": [
+    "KO-FC-04-020"
+   ]
+  },
+  {
+   "id": "GL-134",
+   "term_en": "not detected",
+   "term_ar": "لم تُكشف",
+   "alts_ar": [
+    "لم يُكشف شيء"
+   ],
+   "def_ar": "النتيجة لم تظهر المادة ضمن نطاق الاختبار؛ لا تعني بالضرورة غيابها.",
+   "cat": "toxicology",
+   "level": "16-18",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "ل",
+   "src_ids": [
+    "ATH-SRC-1700",
+    "ATH-SRC-0353"
+   ],
+   "ko_ids": [
+    "KO-FC-04-020"
+   ]
+  },
+  {
+   "id": "GL-135",
+   "term_en": "cross-reactivity",
+   "term_ar": "التفاعل التبادلي",
+   "alts_ar": [],
+   "def_ar": "استجابة الاختبار لمادة أخرى غير المستهدفة، فيعطي نتيجة مضللة.",
+   "cat": "chemistry",
+   "level": "16-18",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "ت",
+   "src_ids": [
+    "ATH-SRC-1700"
+   ],
+   "ko_ids": [
+    "KO-FC-04B-002"
+   ]
+  },
+  {
+   "id": "GL-136",
+   "term_en": "chromatography",
+   "term_ar": "الاستشراب",
+   "alts_ar": [
+    "الكروماتوغرافيا"
+   ],
+   "def_ar": "فصل مكونات خليط بحسب سرعة حركتها خلال وسط ما.",
+   "cat": "chemistry",
+   "level": "16-18",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "ا",
+   "src_ids": [
+    "ATH-SRC-1700",
+    "ATH-SRC-1701"
+   ],
+   "ko_ids": [
+    "KO-FC-04B-001",
+    "KO-FC-04B-002"
+   ]
+  },
+  {
+   "id": "GL-137",
+   "term_en": "seized material",
+   "term_ar": "المواد المضبوطة",
+   "alts_ar": [
+    "المضبوطات"
+   ],
+   "def_ar": "مواد صادرتها الجهة المختصة وأرسلتها للفحص.",
+   "cat": "chemistry",
+   "level": "16-18",
+   "status": "variant",
+   "tier": "tier1_official",
+   "letter": "م",
+   "src_ids": [
+    "ATH-SRC-1700",
+    "ATH-SRC-1702",
+    "ATH-SRC-0349"
+   ],
+   "ko_ids": [
+    "KO-FC-04-019"
+   ]
+  },
+  {
+   "id": "GL-138",
+   "term_en": "detection is not causation",
+   "term_ar": "الكشف لا يعني السببية",
+   "alts_ar": [],
+   "def_ar": "وجود مادة في عينة لا يثبت أنها سببت ضعفاً أو وفاة؛ يلزم تفسير بسياق كامل.",
+   "cat": "toxicology",
+   "level": "16-18",
+   "status": "proposed",
+   "tier": "none",
+   "letter": "ك",
+   "src_ids": [
+    "ATH-SRC-0353"
+   ],
+   "ko_ids": [
+    "KO-FC-04-020"
+   ]
+  },
+  {
+   "id": "GL-139",
+   "term_en": "forensic medicine",
+   "term_ar": "الطب الشرعي",
+   "alts_ar": [],
+   "def_ar": "تطبيق المعرفة الطبية على أسئلة قانونية: فحص المصابين وتقدير الأعمار والتحقيق في الوفيات.",
+   "cat": "medicine",
+   "level": "13-15",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "ط",
+   "src_ids": [
+    "ATH-SRC-1701",
+    "ATH-SRC-1722",
+    "ATH-SRC-0354"
+   ],
+   "ko_ids": [
+    "KO-FC-04-021"
+   ]
+  },
+  {
+   "id": "GL-140",
+   "term_en": "forensic physician",
+   "term_ar": "الطبيب الشرعي",
+   "alts_ar": [],
+   "def_ar": "طبيب مختص يقدم رأياً طبياً للقضاء؛ في لبنان يُدرج ضمن خبراء وزارة العدل.",
+   "cat": "medicine",
+   "level": "13-15",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "ط",
+   "src_ids": [
+    "ATH-SRC-1701",
+    "ATH-SRC-1729"
+   ],
+   "ko_ids": [
+    "KO-FC-04B-001",
+    "KO-FC-04B-006"
+   ]
+  },
+  {
+   "id": "GL-141",
+   "term_en": "clinical forensic medicine",
+   "term_ar": "الطب الشرعي السريري",
+   "alts_ar": [
+    "فحص الأحياء"
+   ],
+   "def_ar": "فحص الأشخاص الأحياء وتوثيق إصاباتهم وتقدير أعمارهم لأغراض قانونية.",
+   "cat": "medicine",
+   "level": "16-18",
+   "status": "variant",
+   "tier": "tier3_institutional_usage",
+   "letter": "ط",
+   "src_ids": [
+    "ATH-SRC-1721",
+    "ATH-SRC-1723"
+   ],
+   "ko_ids": [
+    "KO-FC-04B-003",
+    "KO-FC-04B-006"
+   ]
+  },
+  {
+   "id": "GL-142",
+   "term_en": "autopsy",
+   "term_ar": "الصفة التشريحية",
+   "alts_ar": [
+    "تشريح الجثة",
+    "فتح الجثة"
+   ],
+   "def_ar": "فحص طبي لجثة لتحديد سبب الوفاة وتوثيق الإصابات.",
+   "cat": "medicine",
+   "level": "18+",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "ص",
+   "src_ids": [
+    "ATH-SRC-1701",
+    "ATH-SRC-1702"
+   ],
+   "ko_ids": [
+    "KO-FC-04B-001",
+    "KO-FC-04B-002"
+   ]
+  },
+  {
+   "id": "GL-143",
+   "term_en": "forensic pathology",
+   "term_ar": "الباثولوجيا الشرعية",
+   "alts_ar": [
+    "علم الأمراض الشرعي"
+   ],
+   "def_ar": "تخصص يدرس الوفيات للتمييز بين سببها وآليتها وطريقتها.",
+   "cat": "medicine",
+   "level": "18+",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "ب",
+   "src_ids": [
+    "ATH-SRC-1701",
+    "ATH-SRC-0329"
+   ],
+   "ko_ids": [
+    "KO-FC-04-022"
+   ]
+  },
+  {
+   "id": "GL-144",
+   "term_en": "cause of death",
+   "term_ar": "سبب الوفاة",
+   "alts_ar": [],
+   "def_ar": "المرض أو الإصابة التي أدت إلى الوفاة.",
+   "cat": "medicine",
+   "level": "18+",
+   "status": "proposed",
+   "tier": "none",
+   "letter": "س",
+   "src_ids": [
+    "ATH-SRC-0329"
+   ],
+   "ko_ids": [
+    "KO-FC-04-022"
+   ]
+  },
+  {
+   "id": "GL-145",
+   "term_en": "manner of death",
+   "term_ar": "طريقة الوفاة",
+   "alts_ar": [
+    "ظروف الوفاة"
+   ],
+   "def_ar": "تصنيف طبي-قانوني (طبيعية، حادث...) قد يبقى «غير محدد»، ويعتمد على معلومات التحقيق.",
+   "cat": "medicine",
+   "level": "18+",
+   "status": "variant",
+   "tier": "tier1_official",
+   "letter": "ط",
+   "src_ids": [
+    "ATH-SRC-1701",
+    "ATH-SRC-0329"
+   ],
+   "ko_ids": [
+    "KO-FC-04-022"
+   ]
+  },
+  {
+   "id": "GL-146",
+   "term_en": "post-mortem interval",
+   "term_ar": "الفاصل منذ الوفاة",
+   "alts_ar": [
+    "الفترة التالية للموت"
+   ],
+   "def_ar": "الزمن المنقضي منذ الوفاة؛ يُقدَّر دائماً نطاقاً يتسع مع المجاهيل.",
+   "cat": "medicine",
+   "level": "16-18",
+   "status": "variant",
+   "tier": "tier1_official",
+   "letter": "ف",
+   "src_ids": [
+    "ATH-SRC-1701",
+    "ATH-SRC-0354"
+   ],
+   "ko_ids": [
+    "KO-FC-04-021"
+   ]
+  },
+  {
+   "id": "GL-147",
+   "term_en": "forensic odontology",
+   "term_ar": "طب الأسنان الشرعي",
+   "alts_ar": [],
+   "def_ar": "استعمال سجلات الأسنان في التعرف على الهوية؛ مقارنة علامات العض خارجها علمياً.",
+   "cat": "medicine",
+   "level": "16-18",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "ط",
+   "src_ids": [
+    "ATH-SRC-1701",
+    "ATH-SRC-1707",
+    "ATH-SRC-0305"
+   ],
+   "ko_ids": [
+    "KO-FC-04-001",
+    "KO-FC-04-013"
+   ]
+  },
+  {
+   "id": "GL-148",
+   "term_en": "forensic anthropology",
+   "term_ar": "الأنثروبولوجيا الشرعية",
+   "alts_ar": [
+    "الأنثربولوجيا الطبية الشرعية"
+   ],
+   "def_ar": "دراسة البقايا الهيكلية لتقدير العمر والجنس والطول بنطاقات.",
+   "cat": "anthropology",
+   "level": "16-18",
+   "status": "variant",
+   "tier": "tier1_official",
+   "letter": "ا",
+   "src_ids": [
+    "ATH-SRC-1701",
+    "ATH-SRC-0355"
+   ],
+   "ko_ids": [
+    "KO-FC-04-023"
+   ]
+  },
+  {
+   "id": "GL-149",
+   "term_en": "skeletal age",
+   "term_ar": "العمر الهيكلي",
+   "alts_ar": [],
+   "def_ar": "تقدير العمر من نمو العظام وتغيرها؛ يُعطى نطاقاً لا رقماً.",
+   "cat": "anthropology",
+   "level": "16-18",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "ع",
+   "src_ids": [
+    "ATH-SRC-1701",
+    "ATH-SRC-0355"
+   ],
+   "ko_ids": [
+    "KO-FC-04-023"
+   ]
+  },
+  {
+   "id": "GL-150",
+   "term_en": "stature estimation",
+   "term_ar": "تقدير الطول",
+   "alts_ar": [
+    "القامة"
+   ],
+   "def_ar": "تقدير طول الشخص من قياسات عظام أو أطراف؛ يعتمد على مجتمع مرجعي.",
+   "cat": "anthropology",
+   "level": "16-18",
+   "status": "variant",
+   "tier": "tier1_official",
+   "letter": "ت",
+   "src_ids": [
+    "ATH-SRC-1701",
+    "ATH-SRC-0355"
+   ],
+   "ko_ids": [
+    "KO-FC-04-023"
+   ]
+  },
+  {
+   "id": "GL-151",
+   "term_en": "identification (of persons)",
+   "term_ar": "تحديد الهوية",
+   "alts_ar": [
+    "التعرف على الهوية",
+    "تحقيق الشخصية",
+    "استعراف"
+   ],
+   "def_ar": "إثبات هوية شخص أو رفات بمقارنة بيانات معروفة بأخرى مجهولة.",
+   "cat": "general",
+   "level": "13-15",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "ت",
+   "src_ids": [
+    "ATH-SRC-1702",
+    "ATH-SRC-1703",
+    "ATH-SRC-1705"
+   ],
+   "ko_ids": [
+    "KO-FC-04B-001",
+    "KO-FC-04B-002",
+    "KO-FC-04B-005"
+   ]
+  },
+  {
+   "id": "GL-152",
+   "term_en": "disaster victim identification (DVI)",
+   "term_ar": "تحديد هوية ضحايا الكوارث",
+   "alts_ar": [
+    "التعرف على ضحايا الكوارث"
+   ],
+   "def_ar": "منهج دولي للتعرف على ضحايا الحوادث الجماعية بالبصمات والأسنان والحمض النووي.",
+   "cat": "medicine",
+   "level": "18+",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "ت",
+   "src_ids": [
+    "ATH-SRC-1702",
+    "ATH-SRC-1703",
+    "ATH-SRC-1737"
+   ],
+   "ko_ids": [
+    "KO-FC-04B-001",
+    "KO-FC-04B-002",
+    "KO-FC-04B-005"
+   ]
+  },
+  {
+   "id": "GL-153",
+   "term_en": "forensic entomology",
+   "term_ar": "علم الحشرات الجنائي",
+   "alts_ar": [],
+   "def_ar": "استعمال الحشرات في تقدير حد أدنى للزمن ونحو ذلك.",
+   "cat": "medicine",
+   "level": "18+",
+   "status": "sourced",
+   "tier": "tier2_arab_academic",
+   "letter": "ع",
+   "src_ids": [
+    "ATH-SRC-1705",
+    "ATH-SRC-1710",
+    "ATH-SRC-1719"
+   ],
+   "ko_ids": [
+    "KO-FC-04B-002"
+   ]
+  },
+  {
+   "id": "GL-154",
+   "term_en": "evidence interpretation",
+   "term_ar": "تفسير الأدلة",
+   "alts_ar": [
+    "تفسير النتائج"
+   ],
+   "def_ar": "تقدير ما تعنيه النتائج في ضوء فرضيتين متنافستين على الأقل وما لا تعنيه.",
+   "cat": "interpretation",
+   "level": "16-18",
+   "status": "variant",
+   "tier": "tier1_official",
+   "letter": "ت",
+   "src_ids": [
+    "ATH-SRC-1700",
+    "ATH-SRC-0314",
+    "ATH-SRC-0317"
+   ],
+   "ko_ids": [
+    "KO-FC-04-009",
+    "KO-FC-04-008",
+    "KO-FC-04-010",
+    "KO-FC-04-018"
+   ]
+  },
+  {
+   "id": "GL-155",
+   "term_en": "evaluative reporting",
+   "term_ar": "التقرير التقييمي",
+   "alts_ar": [],
+   "def_ar": "تقرير يعبر عن قوة دعم النتائج لفرضية مقابل أخرى، لا عن احتمال الذنب.",
+   "cat": "interpretation",
+   "level": "18+",
+   "status": "proposed",
+   "tier": "none",
+   "letter": "ت",
+   "src_ids": [
+    "ATH-SRC-0317"
+   ],
+   "ko_ids": [
+    "KO-FC-04-008",
+    "KO-FC-04-009",
+    "KO-FC-04-010",
+    "KO-FC-04-018"
+   ]
+  },
+  {
+   "id": "GL-156",
+   "term_en": "proposition (hypothesis)",
+   "term_ar": "الفرضية",
+   "alts_ar": [
+    "فرضية",
+    "الطرح"
+   ],
+   "def_ar": "عبارة عن الواقعة يقيَّم الدليل في ضوئها، وتقابلها فرضية بديلة.",
+   "cat": "interpretation",
+   "level": "13-15",
+   "status": "variant",
+   "tier": "tier1_official",
+   "letter": "ف",
+   "src_ids": [
+    "ATH-SRC-1701",
+    "ATH-SRC-0317",
+    "ATH-SRC-0339"
+   ],
+   "ko_ids": [
+    "KO-FC-04-008",
+    "KO-FC-04-018",
+    "KO-FC-04-009",
+    "KO-FC-04-010"
+   ]
+  },
+  {
+   "id": "GL-157",
+   "term_en": "competing propositions",
+   "term_ar": "الفرضيتان المتنافستان",
+   "alts_ar": [
+    "الفرضية والفرضية البديلة"
+   ],
+   "def_ar": "روايتان مختلفتان للأحداث يُسأل عن احتمال النتائج تحت كل منهما.",
+   "cat": "interpretation",
+   "level": "13-15",
+   "status": "proposed",
+   "tier": "none",
+   "letter": "ف",
+   "src_ids": [
+    "ATH-SRC-0317"
+   ],
+   "ko_ids": [
+    "KO-FC-04-008",
+    "KO-FC-04-009",
+    "KO-FC-04-010",
+    "KO-FC-04-018"
+   ]
+  },
+  {
+   "id": "GL-158",
+   "term_en": "likelihood ratio (LR)",
+   "term_ar": "نسبة الترجيح",
+   "alts_ar": [],
+   "def_ar": "رقم يقارن احتمال النتائج إذا صحت الفرضية الأولى باحتمالها إذا صحت البديلة؛ لا يساوي احتمال الذنب.",
+   "cat": "statistics",
+   "level": "16-18",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "ن",
+   "src_ids": [
+    "ATH-SRC-1701",
+    "ATH-SRC-0304",
+    "ATH-SRC-0317"
+   ],
+   "ko_ids": [
+    "KO-FC-04-009",
+    "KO-FC-04-005",
+    "KO-FC-04-006",
+    "KO-FC-04-007"
+   ]
+  },
+  {
+   "id": "GL-159",
+   "term_en": "odds ratio",
+   "term_ar": "نسبة الأرجحية",
+   "alts_ar": [
+    "نسبة الاحتمال"
+   ],
+   "def_ar": "مقياس وبائي يقارن أرجحيتين؛ ليس مقياس قوة الدليل الجنائي.",
+   "cat": "statistics",
+   "level": "18+",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "ن",
+   "src_ids": [
+    "ATH-SRC-1701",
+    "ATH-SRC-1702"
+   ],
+   "ko_ids": [
+    "KO-FC-04B-001",
+    "KO-FC-04B-002"
+   ]
+  },
+  {
+   "id": "GL-160",
+   "term_en": "prior probability",
+   "term_ar": "الاحتمال المسبق",
+   "alts_ar": [],
+   "def_ar": "تقدير احتمال فرضية قبل النظر في الدليل الجديد.",
+   "cat": "statistics",
+   "level": "18+",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "ا",
+   "src_ids": [
+    "ATH-SRC-1701",
+    "ATH-SRC-0338"
+   ],
+   "ko_ids": [
+    "KO-FC-04-010",
+    "KO-FC-04-011",
+    "KO-FC-04B-001"
+   ]
+  },
+  {
+   "id": "GL-161",
+   "term_en": "posterior probability",
+   "term_ar": "الاحتمال اللاحق",
+   "alts_ar": [],
+   "def_ar": "احتمال الفرضية بعد النظر في الدليل؛ تقديره دور جهة الفصل لا الخبير.",
+   "cat": "statistics",
+   "level": "18+",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "ا",
+   "src_ids": [
+    "ATH-SRC-1701",
+    "ATH-SRC-0338"
+   ],
+   "ko_ids": [
+    "KO-FC-04-010",
+    "KO-FC-04-011",
+    "KO-FC-04B-001"
+   ]
+  },
+  {
+   "id": "GL-162",
+   "term_en": "Bayes' theorem",
+   "term_ar": "مبرهنة بايز",
+   "alts_ar": [
+    "قاعدة بايز"
+   ],
+   "def_ar": "قاعدة رياضية لتحديث الاحتمال المسبق بنسبة الترجيح للحصول على الاحتمال اللاحق.",
+   "cat": "statistics",
+   "level": "18+",
+   "status": "proposed",
+   "tier": "none",
+   "letter": "م",
+   "src_ids": [
+    "ATH-SRC-0338"
+   ],
+   "ko_ids": [
+    "KO-FC-04-010",
+    "KO-FC-04-011",
+    "KO-FC-04B-001"
+   ]
+  },
+  {
+   "id": "GL-163",
+   "term_en": "verbal scale",
+   "term_ar": "المقياس اللفظي",
+   "alts_ar": [
+    "سلم العبارات اللفظية"
+   ],
+   "def_ar": "عبارات متدرجة («دعم ضعيف»... «دعم قوي جداً») تقابل نطاقات نسبة الترجيح.",
+   "cat": "statistics",
+   "level": "16-18",
+   "status": "proposed",
+   "tier": "none",
+   "letter": "م",
+   "src_ids": [
+    "ATH-SRC-0317",
+    "ATH-SRC-0318"
+   ],
+   "ko_ids": [
+    "KO-FC-04-009",
+    "KO-FC-04-008",
+    "KO-FC-04-010",
+    "KO-FC-04-018"
+   ]
+  },
+  {
+   "id": "GL-164",
+   "term_en": "weak support",
+   "term_ar": "دعم ضعيف",
+   "alts_ar": [],
+   "def_ar": "النتائج أرجح قليلاً تحت فرضية منها تحت الأخرى.",
+   "cat": "statistics",
+   "level": "16-18",
+   "status": "proposed",
+   "tier": "none",
+   "letter": "د",
+   "src_ids": [
+    "ATH-SRC-0317"
+   ],
+   "ko_ids": [
+    "KO-FC-04-008",
+    "KO-FC-04-009",
+    "KO-FC-04-010",
+    "KO-FC-04-018"
+   ]
+  },
+  {
+   "id": "GL-165",
+   "term_en": "moderate support",
+   "term_ar": "دعم معتدل",
+   "alts_ar": [],
+   "def_ar": "النتائج أرجح بوضوح تحت فرضية، لكن ليس بقوة كبيرة.",
+   "cat": "statistics",
+   "level": "16-18",
+   "status": "proposed",
+   "tier": "none",
+   "letter": "د",
+   "src_ids": [
+    "ATH-SRC-0317"
+   ],
+   "ko_ids": [
+    "KO-FC-04-008",
+    "KO-FC-04-009",
+    "KO-FC-04-010",
+    "KO-FC-04-018"
+   ]
+  },
+  {
+   "id": "GL-166",
+   "term_en": "strong support",
+   "term_ar": "دعم قوي",
+   "alts_ar": [],
+   "def_ar": "النتائج أرجح كثيراً تحت فرضية؛ ولا يعني ذلك أن الفرضية صحيحة يقيناً.",
+   "cat": "statistics",
+   "level": "16-18",
+   "status": "proposed",
+   "tier": "none",
+   "letter": "د",
+   "src_ids": [
+    "ATH-SRC-0317",
+    "ATH-SRC-0318"
+   ],
+   "ko_ids": [
+    "KO-FC-04-009",
+    "KO-FC-04-008",
+    "KO-FC-04-010",
+    "KO-FC-04-018"
+   ]
+  },
+  {
+   "id": "GL-167",
+   "term_en": "probability",
+   "term_ar": "الاحتمال",
+   "alts_ar": [
+    "الاحتمالية"
+   ],
+   "def_ar": "قياس رقمي بين صفر وواحد لدرجة توقع حدوث شيء.",
+   "cat": "statistics",
+   "level": "13-15",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "ا",
+   "src_ids": [
+    "ATH-SRC-1701",
+    "ATH-SRC-1702"
+   ],
+   "ko_ids": [
+    "KO-FC-04B-001",
+    "KO-FC-04B-002"
+   ]
+  },
+  {
+   "id": "GL-168",
+   "term_en": "conditional probability",
+   "term_ar": "الاحتمال الشرطي",
+   "alts_ar": [],
+   "def_ar": "احتمال حدث بشرط حدوث آخر؛ قلب الشرط خطأ شائع.",
+   "cat": "statistics",
+   "level": "16-18",
+   "status": "proposed",
+   "tier": "none",
+   "letter": "ا",
+   "src_ids": [
+    "ATH-SRC-0338"
+   ],
+   "ko_ids": [
+    "KO-FC-04-010",
+    "KO-FC-04-011",
+    "KO-FC-04B-001"
+   ]
+  },
+  {
+   "id": "GL-169",
+   "term_en": "base rate",
+   "term_ar": "المعدل الأساسي",
+   "alts_ar": [
+    "معدل الانتشار",
+    "الانتشار"
+   ],
+   "def_ar": "مدى شيوع صفة أو حدث في المجموعة قبل أي فحص.",
+   "cat": "statistics",
+   "level": "13-15",
+   "status": "variant",
+   "tier": "tier1_official",
+   "letter": "م",
+   "src_ids": [
+    "ATH-SRC-1701",
+    "ATH-SRC-0338"
+   ],
+   "ko_ids": [
+    "KO-FC-04-010",
+    "KO-FC-04-011",
+    "KO-FC-04B-001"
+   ]
+  },
+  {
+   "id": "GL-170",
+   "term_en": "prevalence",
+   "term_ar": "الانتشار",
+   "alts_ar": [],
+   "def_ar": "نسبة من يحملون صفة ما في مجموعة محددة.",
+   "cat": "statistics",
+   "level": "16-18",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "ا",
+   "src_ids": [
+    "ATH-SRC-1701"
+   ],
+   "ko_ids": [
+    "KO-FC-04B-001"
+   ]
+  },
+  {
+   "id": "GL-171",
+   "term_en": "random match probability",
+   "term_ar": "احتمال التطابق العشوائي",
+   "alts_ar": [],
+   "def_ar": "احتمال أن يطابق شخص غير ذي صلة الملف بالمصادفة؛ ليس احتمال براءة المشتبه.",
+   "cat": "statistics",
+   "level": "16-18",
+   "status": "proposed",
+   "tier": "none",
+   "letter": "ا",
+   "src_ids": [
+    "ATH-SRC-0301",
+    "ATH-SRC-0338"
+   ],
+   "ko_ids": [
+    "KO-FC-04-001",
+    "KO-FC-04-002",
+    "KO-FC-04-005",
+    "KO-FC-04-006"
+   ]
+  },
+  {
+   "id": "GL-172",
+   "term_en": "prosecutor's fallacy",
+   "term_ar": "مغالطة المدعي",
+   "alts_ar": [
+    "مغالطة الادعاء"
+   ],
+   "def_ar": "الخلط بين «احتمال الدليل لو كان بريئاً» و«احتمال براءته بعد الدليل».",
+   "cat": "statistics",
+   "level": "16-18",
+   "status": "proposed",
+   "tier": "none",
+   "letter": "م",
+   "src_ids": [
+    "ATH-SRC-0338"
+   ],
+   "ko_ids": [
+    "KO-FC-04-010",
+    "KO-FC-04-011",
+    "KO-FC-04B-001"
+   ]
+  },
+  {
+   "id": "GL-173",
+   "term_en": "defence attorney's fallacy",
+   "term_ar": "مغالطة محامي الدفاع",
+   "alts_ar": [],
+   "def_ar": "إهمال الدليل لأن صفة يشترك فيها كثيرون، مع أنه يقلص عدد المحتملين.",
+   "cat": "statistics",
+   "level": "16-18",
+   "status": "proposed",
+   "tier": "none",
+   "letter": "م",
+   "src_ids": [
+    "ATH-SRC-0338"
+   ],
+   "ko_ids": [
+    "KO-FC-04-010",
+    "KO-FC-04-011",
+    "KO-FC-04B-001"
+   ]
+  },
+  {
+   "id": "GL-174",
+   "term_en": "false positive",
+   "term_ar": "إيجابي كاذب",
+   "alts_ar": [
+    "نتيجة إيجابية كاذبة",
+    "إيجابي زائف"
+   ],
+   "def_ar": "نتيجة تقول «نعم/تطابق» والحقيقة «لا».",
+   "cat": "statistics",
+   "level": "13-15",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "ا",
+   "src_ids": [
+    "ATH-SRC-1700",
+    "ATH-SRC-1701",
+    "ATH-SRC-1702",
+    "ATH-SRC-0331"
+   ],
+   "ko_ids": [
+    "KO-FC-04-003",
+    "KO-FC-04-004",
+    "KO-FC-04-012",
+    "KO-FC-04B-005"
+   ]
+  },
+  {
+   "id": "GL-175",
+   "term_en": "false negative",
+   "term_ar": "سلبي كاذب",
+   "alts_ar": [
+    "نتيجة سلبية كاذبة",
+    "سلبي زائف"
+   ],
+   "def_ar": "نتيجة تقول «لا» والحقيقة «نعم».",
+   "cat": "statistics",
+   "level": "13-15",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "س",
+   "src_ids": [
+    "ATH-SRC-1700",
+    "ATH-SRC-1701",
+    "ATH-SRC-1702",
+    "ATH-SRC-0331"
+   ],
+   "ko_ids": [
+    "KO-FC-04-003",
+    "KO-FC-04-004",
+    "KO-FC-04-012",
+    "KO-FC-04B-005"
+   ]
+  },
+  {
+   "id": "GL-176",
+   "term_en": "false positive rate",
+   "term_ar": "معدل الإيجابية الكاذبة",
+   "alts_ar": [
+    "معدل النتائج الإيجابية الزائفة"
+   ],
+   "def_ar": "نسبة الحالات السلبية حقاً التي أعطت نتيجة إيجابية خطأً.",
+   "cat": "statistics",
+   "level": "16-18",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "م",
+   "src_ids": [
+    "ATH-SRC-1700",
+    "ATH-SRC-1701",
+    "ATH-SRC-0331"
+   ],
+   "ko_ids": [
+    "KO-FC-04-003",
+    "KO-FC-04-004",
+    "KO-FC-04-012",
+    "KO-FC-04B-005"
+   ]
+  },
+  {
+   "id": "GL-177",
+   "term_en": "error rate",
+   "term_ar": "معدل الخطأ",
+   "alts_ar": [],
+   "def_ar": "نسبة القرارات الخاطئة في دراسة محددة؛ يتغير بحسب طريقة حساب «غير الحاسم».",
+   "cat": "statistics",
+   "level": "16-18",
+   "status": "proposed",
+   "tier": "none",
+   "letter": "م",
+   "src_ids": [
+    "ATH-SRC-0331",
+    "ATH-SRC-0335"
+   ],
+   "ko_ids": [
+    "KO-FC-04-004",
+    "KO-FC-04-003",
+    "KO-FC-04-012",
+    "KO-FC-04-016"
+   ]
+  },
+  {
+   "id": "GL-178",
+   "term_en": "positive predictive value",
+   "term_ar": "القيمة التنبؤية الإيجابية",
+   "alts_ar": [
+    "قيمة تنبؤية إيجابية"
+   ],
+   "def_ar": "نسبة النتائج الإيجابية الصحيحة من كل النتائج الإيجابية؛ تتأثر بالمعدل الأساسي.",
+   "cat": "statistics",
+   "level": "18+",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "ق",
+   "src_ids": [
+    "ATH-SRC-1700",
+    "ATH-SRC-1701"
+   ],
+   "ko_ids": [
+    "KO-FC-04B-001",
+    "KO-FC-04B-002"
+   ]
+  },
+  {
+   "id": "GL-179",
+   "term_en": "confidence interval",
+   "term_ar": "فاصلة الثقة",
+   "alts_ar": [
+    "مجال الثقة",
+    "فترة الثقة"
+   ],
+   "def_ar": "مدى من القيم يُرجح أن يحتوي القيمة الحقيقية بمستوى ثقة محدد.",
+   "cat": "statistics",
+   "level": "16-18",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "ف",
+   "src_ids": [
+    "ATH-SRC-1700",
+    "ATH-SRC-1701"
+   ],
+   "ko_ids": [
+    "KO-FC-04B-001",
+    "KO-FC-04B-002"
+   ]
+  },
+  {
+   "id": "GL-180",
+   "term_en": "uncertainty",
+   "term_ar": "عدم اليقين",
+   "alts_ar": [
+    "اللايقين (الريبة)",
+    "ارتياب",
+    "ارتياب القياس"
+   ],
+   "def_ar": "الشك المعقول المصاحب لأي نتيجة أو قياس؛ يجب أن يُعلن لا أن يُخفى.",
+   "cat": "quality",
+   "level": "13-15",
+   "status": "variant",
+   "tier": "tier1_official",
+   "letter": "ع",
+   "src_ids": [
+    "ATH-SRC-1700",
+    "ATH-SRC-1701",
+    "ATH-SRC-1704"
+   ],
+   "ko_ids": [
+    "KO-FC-04B-001",
+    "KO-FC-04B-002",
+    "KO-FC-04B-003",
+    "KO-FC-04B-007"
+   ]
+  },
+  {
+   "id": "GL-181",
+   "term_en": "inconclusive",
+   "term_ar": "غير حاسم",
+   "alts_ar": [
+    "نتيجة غير قاطعة",
+    "غير محدد"
+   ],
+   "def_ar": "نتيجة مشروعة تعني أن المعلومات لا تكفي لترجيح أي فرضية؛ ليست فشلاً.",
+   "cat": "interpretation",
+   "level": "13-15",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "غ",
+   "src_ids": [
+    "ATH-SRC-1701",
+    "ATH-SRC-1702",
+    "ATH-SRC-0331",
+    "ATH-SRC-0333",
+    "ATH-SRC-0335"
+   ],
+   "ko_ids": [
+    "KO-FC-04-003",
+    "KO-FC-04-004",
+    "KO-FC-04-012",
+    "KO-FC-04-016"
+   ]
+  },
+  {
+   "id": "GL-182",
+   "term_en": "identification (decision)",
+   "term_ar": "قرار التعرّف",
+   "alts_ar": [
+    "تطابق",
+    "مطابقة"
+   ],
+   "def_ar": "حكم الفاحص بأن الأثر والمرجع من المصدر نفسه؛ ينبغي أن يرافقه بيان لحدوده.",
+   "cat": "interpretation",
+   "level": "13-15",
+   "status": "proposed",
+   "tier": "none",
+   "letter": "ق",
+   "src_ids": [
+    "ATH-SRC-0331"
+   ],
+   "ko_ids": [
+    "KO-FC-04-003",
+    "KO-FC-04-004",
+    "KO-FC-04-012",
+    "KO-FC-04B-005"
+   ]
+  },
+  {
+   "id": "GL-183",
+   "term_en": "inference",
+   "term_ar": "الاستدلال",
+   "alts_ar": [
+    "استنتاج"
+   ],
+   "def_ar": "الانتقال من الملاحظات إلى نتيجة؛ قد يكون استنباطاً أو استقراءً أو ترجيحاً لأفضل تفسير.",
+   "cat": "interpretation",
+   "level": "13-15",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "ا",
+   "src_ids": [
+    "ATH-SRC-1701"
+   ],
+   "ko_ids": [
+    "KO-FC-04B-001"
+   ]
+  },
+  {
+   "id": "GL-184",
+   "term_en": "abductive reasoning",
+   "term_ar": "الاستدلال الترجيحي",
+   "alts_ar": [
+    "الاستدلال الافتراضي",
+    "الاستنتاج إلى أفضل تفسير"
+   ],
+   "def_ar": "اختيار التفسير الأفضل من بين تفسيرات ممكنة، مع بقائه قابلاً للمراجعة.",
+   "cat": "interpretation",
+   "level": "16-18",
+   "status": "proposed",
+   "tier": "none",
+   "letter": "ا",
+   "src_ids": [
+    "ATH-SRC-0400"
+   ],
+   "ko_ids": [
+    "KO-RS-05-002",
+    "KO-RS-05-003",
+    "KO-RS-05-012"
+   ]
+  },
+  {
+   "id": "GL-185",
+   "term_en": "quality assurance",
+   "term_ar": "ضمان الجودة",
+   "alts_ar": [
+    "ضمان النوعية"
+   ],
+   "def_ar": "منظومة أنشطة تهدف إلى أن تفي النتائج بمعايير جودة معلنة.",
+   "cat": "quality",
+   "level": "16-18",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "ض",
+   "src_ids": [
+    "ATH-SRC-1700",
+    "ATH-SRC-1701",
+    "ATH-SRC-1702",
+    "ATH-SRC-0313"
+   ],
+   "ko_ids": [
+    "KO-FC-04-030",
+    "KO-FC-04B-003"
+   ]
+  },
+  {
+   "id": "GL-186",
+   "term_en": "quality control",
+   "term_ar": "مراقبة الجودة",
+   "alts_ar": [
+    "ضبط الجودة",
+    "مراقبة النوعية"
+   ],
+   "def_ar": "فحوص تُجرى مع العمل اليومي للتأكد من أن الأدوات والطرق تعمل.",
+   "cat": "quality",
+   "level": "16-18",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "م",
+   "src_ids": [
+    "ATH-SRC-1700",
+    "ATH-SRC-1701",
+    "ATH-SRC-1702"
+   ],
+   "ko_ids": [
+    "KO-FC-04B-001",
+    "KO-FC-04B-002"
+   ]
+  },
+  {
+   "id": "GL-187",
+   "term_en": "accreditation",
+   "term_ar": "الاعتماد",
+   "alts_ar": [],
+   "def_ar": "اعتراف رسمي من هيئة اعتماد بأن المختبر كفء لأداء فحوص محددة.",
+   "cat": "quality",
+   "level": "16-18",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "ا",
+   "src_ids": [
+    "ATH-SRC-1700",
+    "ATH-SRC-1701",
+    "ATH-SRC-1702",
+    "ATH-SRC-0313"
+   ],
+   "ko_ids": [
+    "KO-FC-04-030",
+    "KO-FC-04B-003"
+   ]
+  },
+  {
+   "id": "GL-188",
+   "term_en": "accreditation body",
+   "term_ar": "هيئة الاعتماد",
+   "alts_ar": [],
+   "def_ar": "جهة مستقلة تقيّم المختبرات وتمنح الاعتماد (مثل EGAC، SAAC، EIAC).",
+   "cat": "quality",
+   "level": "16-18",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "ه",
+   "src_ids": [
+    "ATH-SRC-1700"
+   ],
+   "ko_ids": [
+    "KO-FC-04B-002"
+   ]
+  },
+  {
+   "id": "GL-189",
+   "term_en": "ISO/IEC 17025",
+   "term_ar": "المواصفة ISO/IEC 17025",
+   "alts_ar": [
+    "المتطلبات العامة لكفاءة مختبرات الفحص والمعايرة"
+   ],
+   "def_ar": "المعيار الدولي لكفاءة مختبرات الفحص والمعايرة.",
+   "cat": "quality",
+   "level": "16-18",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "م",
+   "src_ids": [
+    "ATH-SRC-1704",
+    "ATH-SRC-1720",
+    "ATH-SRC-1723",
+    "ATH-SRC-0313"
+   ],
+   "ko_ids": [
+    "KO-FC-04-030",
+    "KO-FC-04B-003"
+   ]
+  },
+  {
+   "id": "GL-190",
+   "term_en": "ISO/IEC 17020",
+   "term_ar": "المواصفة ISO/IEC 17020",
+   "alts_ar": [],
+   "def_ar": "المعيار الدولي لهيئات التفتيش؛ تعتمده بعض وحدات مسرح الجريمة والطب الشرعي.",
+   "cat": "quality",
+   "level": "18+",
+   "status": "sourced",
+   "tier": "tier3_institutional_usage",
+   "letter": "م",
+   "src_ids": [
+    "ATH-SRC-1719",
+    "ATH-SRC-1721"
+   ],
+   "ko_ids": [
+    "KO-FC-04B-002",
+    "KO-FC-04B-003"
+   ]
+  },
+  {
+   "id": "GL-191",
+   "term_en": "competence",
+   "term_ar": "الكفاءة",
+   "alts_ar": [],
+   "def_ar": "القدرة المثبتة على أداء مهمة بصورة صحيحة.",
+   "cat": "quality",
+   "level": "16-18",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "ك",
+   "src_ids": [
+    "ATH-SRC-1700",
+    "ATH-SRC-1704"
+   ],
+   "ko_ids": [
+    "KO-FC-04B-002",
+    "KO-FC-04B-003",
+    "KO-FC-04B-007"
+   ]
+  },
+  {
+   "id": "GL-192",
+   "term_en": "impartiality",
+   "term_ar": "الحيادية",
+   "alts_ar": [
+    "الحياد",
+    "عدم التحيز"
+   ],
+   "def_ar": "اتخاذ القرار الفني دون تأثير مصالح أو ضغوط.",
+   "cat": "quality",
+   "level": "13-15",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "ح",
+   "src_ids": [
+    "ATH-SRC-1702",
+    "ATH-SRC-1704"
+   ],
+   "ko_ids": [
+    "KO-FC-04B-001",
+    "KO-FC-04B-002",
+    "KO-FC-04B-003",
+    "KO-FC-04B-007"
+   ]
+  },
+  {
+   "id": "GL-193",
+   "term_en": "conflict of interest",
+   "term_ar": "تضارب المصالح",
+   "alts_ar": [
+    "تعارض المصالح"
+   ],
+   "def_ar": "حالة قد تؤثر فيها مصلحة على حياد الخبير.",
+   "cat": "quality",
+   "level": "16-18",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "ت",
+   "src_ids": [
+    "ATH-SRC-1702"
+   ],
+   "ko_ids": [
+    "KO-FC-04B-001",
+    "KO-FC-04B-002"
+   ]
+  },
+  {
+   "id": "GL-194",
+   "term_en": "validation (of a method)",
+   "term_ar": "التثبّت من صحة الطريقة",
+   "alts_ar": [
+    "التثبّت",
+    "التحقق من صلاحية الطرق التحليلية",
+    "المصادقة"
+   ],
+   "def_ar": "إثبات بالأدلة أن الطريقة تحقق الغرض المطلوب قبل استعمالها في القضايا.",
+   "cat": "quality",
+   "level": "16-18",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "ت",
+   "src_ids": [
+    "ATH-SRC-1700",
+    "ATH-SRC-1704",
+    "ATH-SRC-1709",
+    "ATH-SRC-0353"
+   ],
+   "ko_ids": [
+    "KO-FC-04-020"
+   ]
+  },
+  {
+   "id": "GL-195",
+   "term_en": "verification",
+   "term_ar": "التحقّق",
+   "alts_ar": [],
+   "def_ar": "التأكد بالفحص من استيفاء متطلبات محددة.",
+   "cat": "quality",
+   "level": "16-18",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "ت",
+   "src_ids": [
+    "ATH-SRC-1700",
+    "ATH-SRC-1704"
+   ],
+   "ko_ids": [
+    "KO-FC-04B-002",
+    "KO-FC-04B-003",
+    "KO-FC-04B-007"
+   ]
+  },
+  {
+   "id": "GL-196",
+   "term_en": "proficiency testing",
+   "term_ar": "اختبار الجدارة",
+   "alts_ar": [
+    "اختبار الكفاءة"
+   ],
+   "def_ar": "إرسال عينات معروفة الإجابة إلى المختبر لقياس دقة أدائه.",
+   "cat": "quality",
+   "level": "16-18",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "ا",
+   "src_ids": [
+    "ATH-SRC-1700",
+    "ATH-SRC-1702",
+    "ATH-SRC-1704",
+    "ATH-SRC-0307"
+   ],
+   "ko_ids": [
+    "KO-FC-04-012",
+    "KO-FC-04-030",
+    "KO-FC-04-031",
+    "KO-FC-04B-005"
+   ]
+  },
+  {
+   "id": "GL-197",
+   "term_en": "blind proficiency test",
+   "term_ar": "اختبار الجدارة الأعمى",
+   "alts_ar": [],
+   "def_ar": "اختبار يصل إلى الفاحص كأنه قضية عادية دون أن يعرف أنه اختبار.",
+   "cat": "quality",
+   "level": "16-18",
+   "status": "variant",
+   "tier": "tier1_official",
+   "letter": "ا",
+   "src_ids": [
+    "ATH-SRC-1700",
+    "ATH-SRC-0307"
+   ],
+   "ko_ids": [
+    "KO-FC-04-012",
+    "KO-FC-04-030",
+    "KO-FC-04-031",
+    "KO-FC-04B-005"
+   ]
+  },
+  {
+   "id": "GL-198",
+   "term_en": "blind sample",
+   "term_ar": "عيّنة محجوبة",
+   "alts_ar": [
+    "نموذج محجوب"
+   ],
+   "def_ar": "عينة لا يعرف المحلل أنها عينة اختبار وقت تحليلها.",
+   "cat": "quality",
+   "level": "16-18",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "ع",
+   "src_ids": [
+    "ATH-SRC-1700"
+   ],
+   "ko_ids": [
+    "KO-FC-04B-002"
+   ]
+  },
+  {
+   "id": "GL-199",
+   "term_en": "blinding",
+   "term_ar": "الحجب",
+   "alts_ar": [
+    "التعمية"
+   ],
+   "def_ar": "إخفاء معلومات قد تؤثر في الحكم عن الشخص الذي يصدره.",
+   "cat": "bias",
+   "level": "13-15",
+   "status": "variant",
+   "tier": "tier1_official",
+   "letter": "ح",
+   "src_ids": [
+    "ATH-SRC-1700",
+    "ATH-SRC-1701",
+    "ATH-SRC-0325"
+   ],
+   "ko_ids": [
+    "KO-FC-04-029",
+    "KO-FC-04B-007",
+    "KO-FC-04B-008"
+   ]
+  },
+  {
+   "id": "GL-200",
+   "term_en": "double blind",
+   "term_ar": "مزدوج التعمية",
+   "alts_ar": [
+    "أسلوب الحجب المزدوج"
+   ],
+   "def_ar": "تصميم لا يعرف فيه المشارك ولا المقيّم معلومات تؤثر في النتيجة.",
+   "cat": "bias",
+   "level": "16-18",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "م",
+   "src_ids": [
+    "ATH-SRC-1700",
+    "ATH-SRC-1701"
+   ],
+   "ko_ids": [
+    "KO-FC-04B-001",
+    "KO-FC-04B-002"
+   ]
+  },
+  {
+   "id": "GL-201",
+   "term_en": "peer review",
+   "term_ar": "استعراض الأقران",
+   "alts_ar": [
+    "مراجعة الأقران",
+    "استعراض النظراء"
+   ],
+   "def_ar": "مراجعة عمل مختص من قبل نظراء مستقلين للتأكد من سلامته.",
+   "cat": "quality",
+   "level": "13-15",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "ا",
+   "src_ids": [
+    "ATH-SRC-1700",
+    "ATH-SRC-1702"
+   ],
+   "ko_ids": [
+    "KO-FC-04B-002",
+    "KO-FC-04B-001"
+   ]
+  },
+  {
+   "id": "GL-202",
+   "term_en": "technical review",
+   "term_ar": "الاستعراض التقني",
+   "alts_ar": [
+    "المراجعة الفنية"
+   ],
+   "def_ar": "مراجعة الملاحظات والبيانات التي بُنيت عليها النتيجة.",
+   "cat": "quality",
+   "level": "16-18",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "ا",
+   "src_ids": [
+    "ATH-SRC-1700"
+   ],
+   "ko_ids": [
+    "KO-FC-04B-002"
+   ]
+  },
+  {
+   "id": "GL-203",
+   "term_en": "audit trail",
+   "term_ar": "سجل المراجعة التتبعية",
+   "alts_ar": [
+    "سجل متابعة"
+   ],
+   "def_ar": "سجلات تتيح لاحقاً إعادة بناء ما جرى خطوة خطوة.",
+   "cat": "quality",
+   "level": "16-18",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "س",
+   "src_ids": [
+    "ATH-SRC-1700",
+    "ATH-SRC-1702"
+   ],
+   "ko_ids": [
+    "KO-FC-04B-002",
+    "KO-FC-04B-001"
+   ]
+  },
+  {
+   "id": "GL-204",
+   "term_en": "traceability",
+   "term_ar": "التتبعية",
+   "alts_ar": [
+    "القابلية للتعقب",
+    "السلسلة المترولوجية"
+   ],
+   "def_ar": "إمكان تتبع تاريخ شيء أو نتيجة عبر معلومات مسجلة.",
+   "cat": "quality",
+   "level": "16-18",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "ت",
+   "src_ids": [
+    "ATH-SRC-1700",
+    "ATH-SRC-1704"
+   ],
+   "ko_ids": [
+    "KO-FC-04B-002",
+    "KO-FC-04B-003",
+    "KO-FC-04B-007"
+   ]
+  },
+  {
+   "id": "GL-205",
+   "term_en": "standard operating procedure (SOP)",
+   "term_ar": "إجراءات التشغيل القياسية",
+   "alts_ar": [
+    "إجراءات التشغيل المعيارية",
+    "الإجراءات التشغيلية الموحدة"
+   ],
+   "def_ar": "تعليمات مكتوبة توحد طريقة أداء عمل في المختبر.",
+   "cat": "quality",
+   "level": "16-18",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "ا",
+   "src_ids": [
+    "ATH-SRC-1700",
+    "ATH-SRC-1701",
+    "ATH-SRC-1702"
+   ],
+   "ko_ids": [
+    "KO-FC-04B-001",
+    "KO-FC-04B-002"
+   ]
+  },
+  {
+   "id": "GL-206",
+   "term_en": "corrective action",
+   "term_ar": "الإجراء التصحيحي",
+   "alts_ar": [
+    "تدابير تصحيحية"
+   ],
+   "def_ar": "خطوات لإزالة سبب خطأ ومنع تكراره.",
+   "cat": "quality",
+   "level": "16-18",
+   "status": "variant",
+   "tier": "tier1_official",
+   "letter": "ا",
+   "src_ids": [
+    "ATH-SRC-1700"
+   ],
+   "ko_ids": [
+    "KO-FC-04B-002"
+   ]
+  },
+  {
+   "id": "GL-207",
+   "term_en": "reliability",
+   "term_ar": "الموثوقية",
+   "alts_ar": [
+    "موثوقية (عَوَل)",
+    "معوَّلية"
+   ],
+   "def_ar": "درجة الاعتماد على طريقة أو نتيجة لأنها تعطي نتائج متسقة.",
+   "cat": "quality",
+   "level": "13-15",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "م",
+   "src_ids": [
+    "ATH-SRC-1700",
+    "ATH-SRC-1701",
+    "ATH-SRC-0301"
+   ],
+   "ko_ids": [
+    "KO-FC-04-001",
+    "KO-FC-04-002",
+    "KO-FC-04-005",
+    "KO-FC-04-006"
+   ]
+  },
+  {
+   "id": "GL-208",
+   "term_en": "validity",
+   "term_ar": "الصلاحية",
+   "alts_ar": [],
+   "def_ar": "مدى قياس الطريقة لما تدعي قياسه بدقة.",
+   "cat": "quality",
+   "level": "16-18",
+   "status": "proposed",
+   "tier": "none",
+   "letter": "ص",
+   "src_ids": [
+    "ATH-SRC-0301"
+   ],
+   "ko_ids": [
+    "KO-FC-04-001",
+    "KO-FC-04-002",
+    "KO-FC-04-005",
+    "KO-FC-04-006"
+   ]
+  },
+  {
+   "id": "GL-209",
+   "term_en": "foundational validity",
+   "term_ar": "الصلاحية التأسيسية",
+   "alts_ar": [],
+   "def_ar": "ثبوت دقة الطريقة تجريبياً بمعدلات خطأ مقيسة قبل تطبيقها على القضايا.",
+   "cat": "quality",
+   "level": "16-18",
+   "status": "proposed",
+   "tier": "none",
+   "letter": "ص",
+   "src_ids": [
+    "ATH-SRC-0301"
+   ],
+   "ko_ids": [
+    "KO-FC-04-001",
+    "KO-FC-04-002",
+    "KO-FC-04-005",
+    "KO-FC-04-006"
+   ]
+  },
+  {
+   "id": "GL-210",
+   "term_en": "accuracy",
+   "term_ar": "الدقة",
+   "alts_ar": [
+    "الصحة",
+    "مضبوطية"
+   ],
+   "def_ar": "قرب النتيجة من القيمة الحقيقية.",
+   "cat": "quality",
+   "level": "16-18",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "د",
+   "src_ids": [
+    "ATH-SRC-1700",
+    "ATH-SRC-1701"
+   ],
+   "ko_ids": [
+    "KO-FC-04B-001",
+    "KO-FC-04B-002"
+   ]
+  },
+  {
+   "id": "GL-211",
+   "term_en": "precision",
+   "term_ar": "الإحكام",
+   "alts_ar": [
+    "دقة"
+   ],
+   "def_ar": "تقارب النتائج المتكررة من بعضها، حتى لو كانت بعيدة عن الحقيقة.",
+   "cat": "quality",
+   "level": "18+",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "ا",
+   "src_ids": [
+    "ATH-SRC-1700",
+    "ATH-SRC-1701"
+   ],
+   "ko_ids": [
+    "KO-FC-04B-001",
+    "KO-FC-04B-002"
+   ]
+  },
+  {
+   "id": "GL-212",
+   "term_en": "bias (statistical)",
+   "term_ar": "الانحياز",
+   "alts_ar": [
+    "خطأ منهجي",
+    "تحيز"
+   ],
+   "def_ar": "فرق ثابت بين النتيجة المتوقعة والقيمة المرجعية.",
+   "cat": "quality",
+   "level": "18+",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "ا",
+   "src_ids": [
+    "ATH-SRC-1700",
+    "ATH-SRC-1701"
+   ],
+   "ko_ids": [
+    "KO-FC-04B-001",
+    "KO-FC-04B-002"
+   ]
+  },
+  {
+   "id": "GL-213",
+   "term_en": "cognitive bias",
+   "term_ar": "التحيز المعرفي",
+   "alts_ar": [],
+   "def_ar": "ميل منهجي في الحكم يتأثر بالتوقعات أو السياق، يصيب الخبراء وغيرهم.",
+   "cat": "bias",
+   "level": "13-15",
+   "status": "proposed",
+   "tier": "none",
+   "letter": "ت",
+   "src_ids": [
+    "ATH-SRC-0322",
+    "ATH-SRC-0324"
+   ],
+   "ko_ids": [
+    "KO-FC-04-027",
+    "KO-FC-04-028",
+    "KO-RS-05-004"
+   ]
+  },
+  {
+   "id": "GL-214",
+   "term_en": "confirmation bias",
+   "term_ar": "التحيز التأكيدي",
+   "alts_ar": [
+    "تحيز في التأكيد",
+    "تحيز تأكيدي"
+   ],
+   "def_ar": "الميل إلى البحث عما يؤكد فكرة مسبقة وإهمال ما ينقضها.",
+   "cat": "bias",
+   "level": "13-15",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "ت",
+   "src_ids": [
+    "ATH-SRC-1701",
+    "ATH-SRC-1702",
+    "ATH-SRC-0322"
+   ],
+   "ko_ids": [
+    "KO-FC-04-027",
+    "KO-RS-05-004"
+   ]
+  },
+  {
+   "id": "GL-215",
+   "term_en": "contextual bias",
+   "term_ar": "التحيز السياقي",
+   "alts_ar": [],
+   "def_ar": "تأثر الحكم على الدليل بمعلومات خارجة عنه، كاعتراف أو قصة المحقق.",
+   "cat": "bias",
+   "level": "13-15",
+   "status": "proposed",
+   "tier": "none",
+   "letter": "ت",
+   "src_ids": [
+    "ATH-SRC-0322",
+    "ATH-SRC-0323"
+   ],
+   "ko_ids": [
+    "KO-FC-04-027",
+    "KO-FC-04B-008",
+    "KO-RS-05-004"
+   ]
+  },
+  {
+   "id": "GL-216",
+   "term_en": "tunnel vision",
+   "term_ar": "الرؤية النفقية",
+   "alts_ar": [],
+   "def_ar": "التركيز على مشتبه واحد أو تفسير واحد مبكراً وتجاهل البدائل.",
+   "cat": "bias",
+   "level": "13-15",
+   "status": "proposed",
+   "tier": "none",
+   "letter": "ر",
+   "src_ids": [
+    "ATH-SRC-0425"
+   ],
+   "ko_ids": []
+  },
+  {
+   "id": "GL-217",
+   "term_en": "anchoring",
+   "term_ar": "الارتساء",
+   "alts_ar": [
+    "التثبيت على الانطباع الأول"
+   ],
+   "def_ar": "تأثر التقدير بأول رقم أو معلومة تُعرض.",
+   "cat": "bias",
+   "level": "13-15",
+   "status": "proposed",
+   "tier": "none",
+   "letter": "ا",
+   "src_ids": [
+    "ATH-SRC-0517"
+   ],
+   "ko_ids": [
+    "KO-RS-06-008",
+    "KO-RS-06-014"
+   ]
+  },
+  {
+   "id": "GL-218",
+   "term_en": "bias blind spot",
+   "term_ar": "النقطة العمياء للتحيز",
+   "alts_ar": [],
+   "def_ar": "الاعتقاد بأن الآخرين متحيزون أكثر منا.",
+   "cat": "bias",
+   "level": "13-15",
+   "status": "proposed",
+   "tier": "none",
+   "letter": "ن",
+   "src_ids": [
+    "ATH-SRC-0327"
+   ],
+   "ko_ids": [
+    "KO-FC-04-028"
+   ]
+  },
+  {
+   "id": "GL-219",
+   "term_en": "linear sequential unmasking (LSU)",
+   "term_ar": "الكشف المتسلسل الخطي",
+   "alts_ar": [],
+   "def_ar": "فحص الأثر وتوثيقه أولاً ثم كشف المرجع والسياق تدريجياً مع تسجيل كل خطوة.",
+   "cat": "bias",
+   "level": "13-15",
+   "status": "proposed",
+   "tier": "none",
+   "letter": "ك",
+   "src_ids": [
+    "ATH-SRC-0325",
+    "ATH-SRC-0326"
+   ],
+   "ko_ids": [
+    "KO-FC-04-029",
+    "KO-FC-04B-007",
+    "KO-FC-04B-008"
+   ]
+  },
+  {
+   "id": "GL-220",
+   "term_en": "task-irrelevant information",
+   "term_ar": "معلومات غير لازمة للمهمة",
+   "alts_ar": [],
+   "def_ar": "معلومات لا يحتاجها الفاحص لحكمه الفني وقد تحيّزه، كاعتراف المشتبه.",
+   "cat": "bias",
+   "level": "16-18",
+   "status": "proposed",
+   "tier": "none",
+   "letter": "م",
+   "src_ids": [
+    "ATH-SRC-0325"
+   ],
+   "ko_ids": [
+    "KO-FC-04-029",
+    "KO-FC-04B-007",
+    "KO-FC-04B-008"
+   ]
+  },
+  {
+   "id": "GL-221",
+   "term_en": "debiasing",
+   "term_ar": "الحد من التحيز",
+   "alts_ar": [
+    "إزالة التحيز"
+   ],
+   "def_ar": "تدخلات تقلل أثر التحيز، كالتدريب بالتغذية الراجعة وتعديل ترتيب المعلومات.",
+   "cat": "bias",
+   "level": "16-18",
+   "status": "proposed",
+   "tier": "none",
+   "letter": "ح",
+   "src_ids": [
+    "ATH-SRC-0517",
+    "ATH-SRC-0518"
+   ],
+   "ko_ids": [
+    "KO-RS-06-008",
+    "KO-RS-06-014"
+   ]
+  },
+  {
+   "id": "GL-222",
+   "term_en": "public prosecution",
+   "term_ar": "النيابة العامة",
+   "alts_ar": [],
+   "def_ar": "الجهة التي تقيم الدعوى العامة وتحقق في كثير من الدول العربية.",
+   "cat": "legal_roles",
+   "level": "13-15",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "ن",
+   "src_ids": [
+    "ATH-SRC-1822",
+    "ATH-SRC-1824"
+   ],
+   "ko_ids": [
+    "KO-FC-04B-006"
+   ]
+  },
+  {
+   "id": "GL-223",
+   "term_en": "public prosecutor (Jordan)",
+   "term_ar": "المدعي العام",
+   "alts_ar": [],
+   "def_ar": "في الأردن قاضٍ يحقق ويقيم دعوى الحق العام.",
+   "cat": "legal_roles",
+   "level": "13-15",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "م",
+   "src_ids": [
+    "ATH-SRC-1826"
+   ],
+   "ko_ids": []
+  },
+  {
+   "id": "GL-224",
+   "term_en": "investigating judge",
+   "term_ar": "قاضي التحقيق",
+   "alts_ar": [],
+   "def_ar": "قاضٍ يتولى التحقيق في القضية، كما في لبنان، ولا يحكم فيها بعد ذلك.",
+   "cat": "legal_roles",
+   "level": "13-15",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "ق",
+   "src_ids": [
+    "ATH-SRC-1820"
+   ],
+   "ko_ids": [
+    "KO-FC-04B-006"
+   ]
+  },
+  {
+   "id": "GL-225",
+   "term_en": "judicial police",
+   "term_ar": "الضابطة العدلية",
+   "alts_ar": [
+    "الضبط القضائي",
+    "الشرطة القضائية"
+   ],
+   "def_ar": "رجال الشرطة المكلفون بجمع الاستدلالات تحت إشراف النيابة أو القاضي.",
+   "cat": "legal_roles",
+   "level": "13-15",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "ض",
+   "src_ids": [
+    "ATH-SRC-1728",
+    "ATH-SRC-1820",
+    "ATH-SRC-1826"
+   ],
+   "ko_ids": [
+    "KO-FC-04B-006"
+   ]
+  },
+  {
+   "id": "GL-226",
+   "term_en": "presumption of innocence",
+   "term_ar": "قرينة البراءة",
+   "alts_ar": [
+    "افتراض البراءة"
+   ],
+   "def_ar": "مبدأ أن المتهم بريء حتى تثبت إدانته بحكم.",
+   "cat": "legal_roles",
+   "level": "13-15",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "ق",
+   "src_ids": [
+    "ATH-SRC-1702",
+    "ATH-SRC-1830"
+   ],
+   "ko_ids": [
+    "KO-FC-04B-001",
+    "KO-FC-04B-002"
+   ]
+  },
+  {
+   "id": "GL-227",
+   "term_en": "burden of proof",
+   "term_ar": "عبء الإثبات",
+   "alts_ar": [],
+   "def_ar": "الجهة التي يقع عليها إثبات الواقعة أمام القضاء.",
+   "cat": "legal_roles",
+   "level": "16-18",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "ع",
+   "src_ids": [
+    "ATH-SRC-1702"
+   ],
+   "ko_ids": [
+    "KO-FC-04B-001",
+    "KO-FC-04B-002"
+   ]
+  },
+  {
+   "id": "GL-228",
+   "term_en": "person of interest",
+   "term_ar": "شخص محل اهتمام",
+   "alts_ar": [],
+   "def_ar": "شخص يُنظر في صلته بالقضية دون اتهامه.",
+   "cat": "legal_roles",
+   "level": "13-15",
+   "status": "proposed",
+   "tier": "none",
+   "letter": "ش",
+   "src_ids": [],
+   "ko_ids": []
+  },
+  {
+   "id": "GL-229",
+   "term_en": "suspect",
+   "term_ar": "المشتبه به",
+   "alts_ar": [
+    "المشتبه فيه"
+   ],
+   "def_ar": "شخص تقوم شبهة على صلته بالجريمة؛ لا يعني الإدانة.",
+   "cat": "legal_roles",
+   "level": "13-15",
+   "status": "variant",
+   "tier": "tier1_official",
+   "letter": "م",
+   "src_ids": [
+    "ATH-SRC-1703"
+   ],
+   "ko_ids": [
+    "KO-FC-04B-005"
+   ]
+  },
+  {
+   "id": "GL-230",
+   "term_en": "juvenile",
+   "term_ar": "الحدث",
+   "alts_ar": [
+    "القاصر"
+   ],
+   "def_ar": "من لم يبلغ سن الرشد الجزائي؛ له إجراءات حماية خاصة.",
+   "cat": "legal_roles",
+   "level": "13-15",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "ح",
+   "src_ids": [
+    "ATH-SRC-1757",
+    "ATH-SRC-1821"
+   ],
+   "ko_ids": []
+  },
+  {
+   "id": "GL-231",
+   "term_en": "best interests of the child",
+   "term_ar": "مصالح الطفل الفضلى",
+   "alts_ar": [
+    "مصلحة الطفل الفضلى"
+   ],
+   "def_ar": "مبدأ يجعل مصلحة الطفل الاعتبار الأول في القرارات التي تخصه.",
+   "cat": "ethics",
+   "level": "13-15",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "م",
+   "src_ids": [
+    "ATH-SRC-1702"
+   ],
+   "ko_ids": [
+    "KO-FC-04B-001",
+    "KO-FC-04B-002"
+   ]
+  },
+  {
+   "id": "GL-232",
+   "term_en": "identity parade",
+   "term_ar": "عرض التعرف على الجاني",
+   "alts_ar": [
+    "طابور العرض"
+   ],
+   "def_ar": "إجراء يُطلب فيه من شاهد التعرف على شخص بين آخرين؛ عرضة للخطأ إن لم يُصمم جيداً.",
+   "cat": "legal_roles",
+   "level": "16-18",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "ع",
+   "src_ids": [
+    "ATH-SRC-1702",
+    "ATH-SRC-0409"
+   ],
+   "ko_ids": [
+    "KO-RS-05-008"
+   ]
+  },
+  {
+   "id": "GL-233",
+   "term_en": "informed consent",
+   "term_ar": "الموافقة المستنيرة",
+   "alts_ar": [
+    "الموافقة بعد التبصير",
+    "موافقة عن علم واطلاع"
+   ],
+   "def_ar": "موافقة حرة بلا إكراه بعد فهم الغرض والمخاطر والحقوق.",
+   "cat": "ethics",
+   "level": "13-15",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "م",
+   "src_ids": [
+    "ATH-SRC-1701",
+    "ATH-SRC-1702",
+    "ATH-SRC-1757",
+    "ATH-SRC-1738"
+   ],
+   "ko_ids": [
+    "KO-FC-04B-008"
+   ]
+  },
+  {
+   "id": "GL-234",
+   "term_en": "assent (of a minor)",
+   "term_ar": "موافقة القاصر",
+   "alts_ar": [
+    "القبول",
+    "رضا الطفل"
+   ],
+   "def_ar": "قبول الطفل أو المراهق نفسه المشاركة بلغة يفهمها، إضافة إلى إذن وليه؛ ورفضه مُلزم أخلاقياً.",
+   "cat": "ethics",
+   "level": "13-15",
+   "status": "proposed",
+   "tier": "none",
+   "letter": "م",
+   "src_ids": [
+    "ATH-SRC-1738",
+    "ATH-SRC-1739"
+   ],
+   "ko_ids": [
+    "KO-FC-04B-008"
+   ]
+  },
+  {
+   "id": "GL-235",
+   "term_en": "parental permission",
+   "term_ar": "إذن الولي",
+   "alts_ar": [
+    "موافقة ولي الأمر"
+   ],
+   "def_ar": "موافقة الشخص صاحب الولاية الشرعية على مشاركة القاصر.",
+   "cat": "ethics",
+   "level": "13-15",
+   "status": "variant",
+   "tier": "tier1_official",
+   "letter": "ا",
+   "src_ids": [
+    "ATH-SRC-1757",
+    "ATH-SRC-1739"
+   ],
+   "ko_ids": [
+    "KO-FC-04B-008"
+   ]
+  },
+  {
+   "id": "GL-236",
+   "term_en": "guardian",
+   "term_ar": "الولي",
+   "alts_ar": [
+    "ولي الأمر"
+   ],
+   "def_ar": "الشخص الذي يملك الولاية الشرعية على القاصر.",
+   "cat": "ethics",
+   "level": "13-15",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "و",
+   "src_ids": [
+    "ATH-SRC-1757"
+   ],
+   "ko_ids": []
+  },
+  {
+   "id": "GL-237",
+   "term_en": "minimal risk",
+   "term_ar": "الخطر الأدنى",
+   "alts_ar": [],
+   "def_ar": "ضرر يسير لا يتجاوز ما يُتوقع في الأنشطة اليومية العادية.",
+   "cat": "ethics",
+   "level": "16-18",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "خ",
+   "src_ids": [
+    "ATH-SRC-1757"
+   ],
+   "ko_ids": []
+  },
+  {
+   "id": "GL-238",
+   "term_en": "deception (research)",
+   "term_ar": "الخداع",
+   "alts_ar": [
+    "تضليل/خداع"
+   ],
+   "def_ar": "تقديم معلومة خاطئة أو مضللة أو حجب معلومة عمداً عن المشارك.",
+   "cat": "ethics",
+   "level": "16-18",
+   "status": "variant",
+   "tier": "tier1_official",
+   "letter": "خ",
+   "src_ids": [
+    "ATH-SRC-1702",
+    "ATH-SRC-1738",
+    "ATH-SRC-1739"
+   ],
+   "ko_ids": [
+    "KO-FC-04B-008"
+   ]
+  },
+  {
+   "id": "GL-239",
+   "term_en": "withholding information",
+   "term_ar": "حجب المعلومات",
+   "alts_ar": [
+    "الإخفاء المؤقت"
+   ],
+   "def_ar": "عدم إخبار المشارك ببعض تفاصيل الغرض دون تقديم معلومة كاذبة.",
+   "cat": "ethics",
+   "level": "16-18",
+   "status": "proposed",
+   "tier": "none",
+   "letter": "ح",
+   "src_ids": [
+    "ATH-SRC-1740"
+   ],
+   "ko_ids": [
+    "KO-FC-04B-008"
+   ]
+  },
+  {
+   "id": "GL-240",
+   "term_en": "authorized deception",
+   "term_ar": "الإخفاء المأذون به",
+   "alts_ar": [
+    "الخداع المأذون"
+   ],
+   "def_ar": "إخبار المشارك مسبقاً بأن بعض المعلومات قد تُحجب أو تتغير، مع وعد بالكشف لاحقاً.",
+   "cat": "ethics",
+   "level": "16-18",
+   "status": "proposed",
+   "tier": "none",
+   "letter": "ا",
+   "src_ids": [
+    "ATH-SRC-1742",
+    "ATH-SRC-1750"
+   ],
+   "ko_ids": [
+    "KO-FC-04B-008"
+   ]
+  },
+  {
+   "id": "GL-241",
+   "term_en": "debriefing",
+   "term_ar": "الإيضاح اللاحق",
+   "alts_ar": [
+    "استخلاص المعلومات (في سياق المهام)",
+    "جلسة الكشف"
+   ],
+   "def_ar": "شرح ما جرى وسببه بعد التجربة، وتصحيح المفاهيم الخاطئة، والتحقق من سلامة المشارك.",
+   "cat": "ethics",
+   "level": "13-15",
+   "status": "proposed",
+   "tier": "none",
+   "letter": "ا",
+   "src_ids": [
+    "ATH-SRC-1738",
+    "ATH-SRC-1745"
+   ],
+   "ko_ids": [
+    "KO-FC-04B-008"
+   ]
+  },
+  {
+   "id": "GL-242",
+   "term_en": "process debriefing",
+   "term_ar": "الإيضاح الإجرائي",
+   "alts_ar": [],
+   "def_ar": "إيضاح لا يكتفي بقول «كان خداعاً» بل يشرح كيف تبقى الانطباعات بعد كشفها ولماذا.",
+   "cat": "ethics",
+   "level": "16-18",
+   "status": "proposed",
+   "tier": "none",
+   "letter": "ا",
+   "src_ids": [
+    "ATH-SRC-1745"
+   ],
+   "ko_ids": [
+    "KO-FC-04B-008"
+   ]
+  },
+  {
+   "id": "GL-243",
+   "term_en": "prebriefing",
+   "term_ar": "التمهيد قبل المحاكاة",
+   "alts_ar": [
+    "الإحاطة المسبقة"
+   ],
+   "def_ar": "شرح القواعد والتوقعات قبل النشاط وبناء اتفاق على أنه تجربة تعلم آمنة.",
+   "cat": "ethics",
+   "level": "13-15",
+   "status": "proposed",
+   "tier": "none",
+   "letter": "ت",
+   "src_ids": [
+    "ATH-SRC-1752"
+   ],
+   "ko_ids": []
+  },
+  {
+   "id": "GL-244",
+   "term_en": "fiction contract",
+   "term_ar": "عقد الخيال",
+   "alts_ar": [],
+   "def_ar": "اتفاق صريح على أن المحاكاة خيالية وأن الأخطاء فيها للتعلم لا للحكم على الشخص.",
+   "cat": "ethics",
+   "level": "13-15",
+   "status": "proposed",
+   "tier": "none",
+   "letter": "ع",
+   "src_ids": [
+    "ATH-SRC-1752"
+   ],
+   "ko_ids": []
+  },
+  {
+   "id": "GL-245",
+   "term_en": "opt-out",
+   "term_ar": "الانسحاب",
+   "alts_ar": [
+    "حق الانسحاب"
+   ],
+   "def_ar": "حق المشارك في التوقف في أي وقت دون عقوبة، وسحب بياناته.",
+   "cat": "ethics",
+   "level": "13-15",
+   "status": "proposed",
+   "tier": "none",
+   "letter": "ا",
+   "src_ids": [
+    "ATH-SRC-1738",
+    "ATH-SRC-1739"
+   ],
+   "ko_ids": [
+    "KO-FC-04B-008"
+   ]
+  },
+  {
+   "id": "GL-246",
+   "term_en": "ethics committee",
+   "term_ar": "لجنة الأخلاقيات",
+   "alts_ar": [
+    "لجنة مراجعة الأخلاقيات"
+   ],
+   "def_ar": "لجنة مستقلة تراجع البحوث التي تشمل بشراً قبل بدئها.",
+   "cat": "ethics",
+   "level": "16-18",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "ل",
+   "src_ids": [
+    "ATH-SRC-1701",
+    "ATH-SRC-1757"
+   ],
+   "ko_ids": []
+  },
+  {
+   "id": "GL-247",
+   "term_en": "confidentiality",
+   "term_ar": "السرية",
+   "alts_ar": [
+    "الكتمان"
+   ],
+   "def_ar": "حماية معلومات المشارك من الاطلاع عليها دون إذن.",
+   "cat": "ethics",
+   "level": "13-15",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "س",
+   "src_ids": [
+    "ATH-SRC-1701",
+    "ATH-SRC-1739"
+   ],
+   "ko_ids": [
+    "KO-FC-04B-008"
+   ]
+  },
+  {
+   "id": "GL-248",
+   "term_en": "privacy",
+   "term_ar": "الخصوصية",
+   "alts_ar": [],
+   "def_ar": "حق الشخص في التحكم في معلوماته ومن يطّلع عليها.",
+   "cat": "ethics",
+   "level": "13-15",
+   "status": "sourced",
+   "tier": "tier1_official",
+   "letter": "خ",
+   "src_ids": [
+    "ATH-SRC-1701"
+   ],
+   "ko_ids": [
+    "KO-FC-04B-001"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,2856 @@
+{
+  "schema_version": "0.1.0",
+  "case_id": "c025_club_envelope",
+  "case_version": "0.1.0",
+  "meta": {
+    "title_ar": "ظرف النادي: لا يكفي بعد",
+    "title_en": "The Club Envelope: Not Enough Yet",
+    "age_band": "16-18",
+    "locale": "ar",
+    "dialogue_register": "msa",
+    "estimated_minutes": 30,
+    "difficulty": 3,
+    "content_flags": [
+      "theft"
+    ],
+    "authors": [
+      "فريق أثر التحريري (مسودة بمساعدة الذكاء الاصطناعي، لم تُراجَع بشرياً بعد)"
+    ],
+    "knowledge_object_refs": [
+      "KO-RS-06-021",
+      "KO-RS-05-010",
+      "KO-RS-05-013",
+      "KO-RS-05-004",
+      "KO-RS-05-005",
+      "KO-RS-05-001",
+      "KO-RS-05-009",
+      "KO-RS-06-001",
+      "KO-RS-06-008",
+      "KO-RS-06-009",
+      "KO-FC-04-012",
+      "KO-FC-04-010",
+      "KO-FC-04-024"
+    ]
+  },
+  "premise": {
+    "hook_ar": "ظرف مال اختفى من خزانة مغلقة، وشخصان فقط فتحاها في الفترة الممكنة، وإشاعة تسمّي أحدهما، وكاميرا كانت متوقفة. السؤال الأصعب: هل لديك ما يكفي لتحكم؟",
+    "player_role_ar": "أنت مراجع طلابي مستقل، طُلب منك رأي معلّل في فقد ظرف النادي قبل أن يقرر المشرف أي إجراء بحق أحد.",
+    "setting_ar": "مدرسة القنطرة، عصر الثلاثاء إلى صباح الأربعاء. أوقات الورقات والسجلات بساعة المدرسة.",
+    "public_fact_ids": [
+      "f_envelope_gone",
+      "f_rumor_names",
+      "f_both_deny"
+    ],
+    "assumed_general_knowledge_ar": [
+      "لا يكفي أن يكون المرء هو الأرجح ظاهرياً لنحكم عليه",
+      "الإشاعة المحوّلة بلا مصدر أول ليست دليلاً",
+      "النتيجة «غير حاسمة» مشروعة ولا تُقرأ كأنها حاسمة"
+    ]
+  },
+  "entities": {
+    "characters": [
+      {
+        "id": "nada",
+        "name_ar": "نداء السيد",
+        "role": "victim",
+        "age_descriptor_ar": "أمينة صندوق نادي الرصد المدرسي",
+        "persona_ar": "دقيقة وغاضبة قليلاً لأن المسؤولية عليها، وتتمسك بالأرقام والتوقيعات. تحاول ألا تتهم أحداً من أصدقائها بلا دليل.",
+        "motives_ar": [
+          "أن يعود المبلغ",
+          "ألا تضيع صداقة النادي"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "nd_greet",
+            "purpose": "greeting",
+            "text_ar": "كان كل شيء مسجلاً، ثم اختفى الظرف."
+          },
+          {
+            "line_id": "nd_count",
+            "purpose": "reveal",
+            "text_ar": "عددنا الظرف أنا والأستاذ زيد في الثالثة وأربعين دقيقة، وصوّرته على الرف الثاني بهاتفي ووقّعنا ورقة الجرد.",
+            "fact_ids": [
+              "f_count_done",
+              "f_photo_taken"
+            ]
+          },
+          {
+            "line_id": "nd_found",
+            "purpose": "reveal",
+            "text_ar": "اكتشفت غيابه في الخامسة وعشر دقائق حين فتحت الخزانة لأدفع ثمن أدوات القياس.",
+            "fact_ids": [
+              "f_discovered"
+            ]
+          },
+          {
+            "line_id": "nd_rumor",
+            "purpose": "reveal",
+            "text_ar": "وصلتني رسالة محوّلة في مجموعة النادي تقول إن سامي هو من أخذه، ولا أعرف من كتبها أول مرة.",
+            "fact_ids": [
+              "f_rumor_seen"
+            ]
+          },
+          {
+            "line_id": "nd_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف أكثر."
+          },
+          {
+            "line_id": "nd_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن الظرف والجرد."
+          },
+          {
+            "line_id": "nd_bye",
+            "purpose": "farewell",
+            "text_ar": "أريد حلاً عادلاً."
+          }
+        ]
+      },
+      {
+        "id": "zaid",
+        "name_ar": "زيد الحلبي",
+        "role": "authority",
+        "age_descriptor_ar": "معلم الفيزياء ومشرف النادي",
+        "persona_ar": "ودود ومنشغل، يوقّع بسرعة ويثق بطلابه. يحرص على ألا يُظلم طالب بلا دليل.",
+        "motives_ar": [
+          "حماية النادي",
+          "ألا يُتهم طالب ظلماً"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "zd_greet",
+            "purpose": "greeting",
+            "text_ar": "أتمنى أن تنتهي القضية بلا ظلم لأحد."
+          },
+          {
+            "line_id": "zd_class",
+            "purpose": "reveal",
+            "text_ar": "غادرت المختبر الخامسة إلا عشر دقائق لأدرّس حصة في المبنى الآخر حتى الخامسة، ووقّع طلابي ورقة الحضور.",
+            "fact_ids": [
+              "f_zaid_class"
+            ]
+          },
+          {
+            "line_id": "zd_trip",
+            "purpose": "reveal",
+            "text_ar": "رسوم رحلة النادي تُجمع هذا الأسبوع، ولم يدفعها بعد خمسة أعضاء.",
+            "fact_ids": [
+              "f_trip_fees"
+            ]
+          },
+          {
+            "line_id": "zd_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف أكثر."
+          },
+          {
+            "line_id": "zd_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن النادي."
+          },
+          {
+            "line_id": "zd_bye",
+            "purpose": "farewell",
+            "text_ar": "لنعاملهم كطلاب لا كمتهمين."
+          }
+        ]
+      },
+      {
+        "id": "sami",
+        "name_ar": "سامي القاسم",
+        "role": "suspect",
+        "age_descriptor_ar": "عضو في نادي الرصد، في الصف الحادي عشر",
+        "persona_ar": "متوتر وكثير الكلام حين يشعر بالاتهام، ويحاول أن يشرح كل شيء. توتره ليس دليلاً على شيء.",
+        "motives_ar": [
+          "ألا يُنسب إليه ما لم يفعله",
+          "أن يعرف من أخذ الظرف"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "sm_greet",
+            "purpose": "greeting",
+            "text_ar": "سمعت الإشاعة، وهي ليست صحيحة."
+          },
+          {
+            "line_id": "sm_says",
+            "purpose": "reveal",
+            "text_ar": "فتحت الخزانة بمفتاح الفني من الرابعة وخمس دقائق إلى الرابعة وعشرين لآخذ شريط القياس من الرف الأول، ولم أنظر إلى الرف الثاني.",
+            "fact_ids": [
+              "f_sami_says"
+            ]
+          },
+          {
+            "line_id": "sm_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف."
+          },
+          {
+            "line_id": "sm_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن شريط القياس."
+          },
+          {
+            "line_id": "sm_bye",
+            "purpose": "farewell",
+            "text_ar": "افحصوا كل شيء."
+          }
+        ]
+      },
+      {
+        "id": "rami",
+        "name_ar": "رامي الحايك",
+        "role": "suspect",
+        "age_descriptor_ar": "عضو في نادي الرصد، في الصف الحادي عشر",
+        "persona_ar": "هادئ ومتحفظ، يجيب بإيجاز وبنبرة ثابتة. هدوؤه ليس دليلاً على شيء.",
+        "motives_ar": [
+          "أن ينتهي الأمر بسرعة",
+          "ألا يُحرج أمام النادي"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "rm_greet",
+            "purpose": "greeting",
+            "text_ar": "أجيب بما فعلته."
+          },
+          {
+            "line_id": "rm_says",
+            "purpose": "reveal",
+            "text_ar": "فتحت الخزانة بمفتاح الفني من الرابعة والنصف إلى الخامسة إلا عشراً لآخذ الحامل الثلاثي من الرف الأول، ولم أنظر إلى الرف الثاني.",
+            "fact_ids": [
+              "f_rami_says"
+            ]
+          },
+          {
+            "line_id": "rm_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف."
+          },
+          {
+            "line_id": "rm_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن الحامل."
+          },
+          {
+            "line_id": "rm_bye",
+            "purpose": "farewell",
+            "text_ar": "كل شيء مكتوب."
+          }
+        ]
+      },
+      {
+        "id": "amer",
+        "name_ar": "عامر الحداد",
+        "role": "expert",
+        "age_descriptor_ar": "فني المختبر المدرسي",
+        "persona_ar": "عملي وصريح، يذكر ما سجّله وما لا يستطيع قوله، ويقول إن الأثر الجزئي لا يكفي وحده. لا يعرف نيات أحد.",
+        "motives_ar": [
+          "أن تُقرأ السجلات بحدودها"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "am_greet",
+            "purpose": "greeting",
+            "text_ar": "أحفظ المفاتيح وأفحص ما يُطلب مني."
+          },
+          {
+            "line_id": "am_keys",
+            "purpose": "reveal",
+            "text_ar": "مفتاح خزانة النادي يخرج من درجي بتوقيع في ورقة المفاتيح، وأستطيع فحص القفل بحثاً عن خدوش أو فتح بالقوة.",
+            "fact_ids": [
+              "f_key_sheet_exists",
+              "f_lock_inspected"
+            ]
+          },
+          {
+            "line_id": "am_print",
+            "purpose": "reveal",
+            "text_ar": "وجدت أثر بصمة جزئياً على حافة الرف الثاني وأرسلته للمقارنة، وكاميرا الممر كانت متوقفة للصيانة ذلك العصر.",
+            "fact_ids": [
+              "f_print_found",
+              "f_camera_maint"
+            ]
+          },
+          {
+            "line_id": "am_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "هذا خارج ما سجّلته."
+          },
+          {
+            "line_id": "am_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن المفاتيح والقفل."
+          },
+          {
+            "line_id": "am_bye",
+            "purpose": "farewell",
+            "text_ar": "اقرأ كل سجل بحدوده."
+          }
+        ]
+      },
+      {
+        "id": "ghassan",
+        "name_ar": "غسان المراكشي",
+        "role": "witness",
+        "age_descriptor_ar": "عامل تنظيف المختبرات",
+        "persona_ar": "منظم ومباشر، يقرأ من ورقته ولا يخمّن. يفرّق بين ما رآه وما افترضه.",
+        "motives_ar": [
+          "أن تبقى ورقته سليمة"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "gh_greet",
+            "purpose": "greeting",
+            "text_ar": "أقرأ من ورقة جولتي."
+          },
+          {
+            "line_id": "gh_round",
+            "purpose": "reveal",
+            "text_ar": "مررت على المختبر الساعة الخامسة، والخزانة كانت مغلقة، والرف الثاني من خلف الزجاج لم يكن فيه ظرف.",
+            "fact_ids": [
+              "f_cleaner_round"
+            ]
+          },
+          {
+            "line_id": "gh_register",
+            "purpose": "reveal",
+            "text_ar": "كل من يدخل المختبر يوقّع في سجل الباب، ولا يُدخَل المختبر دون توقيع.",
+            "fact_ids": [
+              "f_lab_register"
+            ]
+          },
+          {
+            "line_id": "gh_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف."
+          },
+          {
+            "line_id": "gh_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن جولتي."
+          },
+          {
+            "line_id": "gh_bye",
+            "purpose": "farewell",
+            "text_ar": "ورقتي أمامكم."
+          }
+        ]
+      }
+    ],
+    "locations": [
+      {
+        "id": "loc_lab",
+        "name_ar": "مختبر النادي",
+        "description_ar": "مختبر فيه خزانة للنادي ذات رفين وقفل بمفتاح."
+      },
+      {
+        "id": "loc_tech",
+        "name_ar": "غرفة الفني",
+        "description_ar": "فيها درج المفاتيح وورقة التوقيع."
+      },
+      {
+        "id": "loc_corridor",
+        "name_ar": "ممر المختبرات",
+        "description_ar": "ممر فيه كاميرا كانت متوقفة للصيانة."
+      }
+    ],
+    "objects": [
+      {
+        "id": "obj_envelope",
+        "name_ar": "ظرف تمويل النادي",
+        "description_ar": "ظرف أبيض بختم النادي فيه 200 وحدة نقدية لشراء أدوات قياس المطر."
+      },
+      {
+        "id": "obj_cabinet",
+        "name_ar": "خزانة النادي",
+        "description_ar": "خزانة ذات رفين وقفل بمفتاح واحد وآخر احتياطي مختوم."
+      }
+    ],
+    "organizations": [
+      {
+        "id": "org_club",
+        "name_ar": "نادي الرصد المدرسي",
+        "description_ar": "نادٍ علمي يقيس المطر والرياح على سطح المدرسة."
+      }
+    ]
+  },
+  "truth": {
+    "solution": {
+      "culprit_ids": [
+        "sami",
+        "rami"
+      ],
+      "summary_ar": "الذي يثبته الملف أن الظرف أُخذ من خزانة مقفلة في نافذة زمنية محددة على يد أحد طالبين لا ثالث لهما، وليس فيه ما يفرّق بينهما. فالجواب الصحيح أن الأدلة حددت الفترة وحصرت الدائرة ولم تحسم، وأن الدليل الحاسم غائب.",
+      "key_fact_ids": [
+        "f_window",
+        "f_two_access",
+        "f_no_discriminator"
+      ]
+    },
+    "facts": [
+      {
+        "id": "f_envelope_gone",
+        "statement_ar": "فُقد ظرف تمويل النادي (200 وحدة) من الرف الثاني في خزانة النادي عصر الثلاثاء.",
+        "kind": "event",
+        "subject_ids": [
+          "obj_envelope",
+          "nada"
+        ],
+        "spoiler_level": 0
+      },
+      {
+        "id": "f_rumor_names",
+        "statement_ar": "تداول أعضاء النادي رسالة تنسب أخذ الظرف إلى سامي، ولا يعرف أحد مصدرها الأول.",
+        "kind": "attribute",
+        "subject_ids": [
+          "sami"
+        ],
+        "spoiler_level": 0
+      },
+      {
+        "id": "f_both_deny",
+        "statement_ar": "ينكر سامي ورامي أنهما أخذا الظرف.",
+        "kind": "attribute",
+        "subject_ids": [
+          "sami",
+          "rami"
+        ],
+        "spoiler_level": 0
+      },
+      {
+        "id": "f_count_done",
+        "statement_ar": "عدّت نداء الظرف مع الأستاذ زيد الثلاثاء 15:40 ووقّعا ورقة جرد.",
+        "kind": "event",
+        "subject_ids": [
+          "nada",
+          "zaid"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 40,
+          "precision": "exact"
+        },
+        "location_id": "loc_lab"
+      },
+      {
+        "id": "f_photo_taken",
+        "statement_ar": "صوّرت نداء الظرف على الرف الثاني بهاتفها قرابة 15:42.",
+        "kind": "event",
+        "subject_ids": [
+          "nada",
+          "obj_envelope"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 42,
+          "precision": "exact"
+        },
+        "location_id": "loc_lab"
+      },
+      {
+        "id": "f_discovered",
+        "statement_ar": "اكتشفت نداء غياب الظرف نحو 17:10 بعد أن فتحت الخزانة.",
+        "kind": "event",
+        "subject_ids": [
+          "nada"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 130,
+          "precision": "exact"
+        },
+        "location_id": "loc_lab"
+      },
+      {
+        "id": "f_rumor_seen",
+        "statement_ar": "وصلت نداء رسالة محوّلة في مجموعة النادي تسمّي سامي، ولا تعرف كاتبها الأول.",
+        "kind": "event",
+        "subject_ids": [
+          "nada",
+          "sami"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 160,
+          "precision": "exact"
+        }
+      },
+      {
+        "id": "f_zaid_class",
+        "statement_ar": "غادر الأستاذ زيد المختبر 15:50 وأعطى مفتاحه للفني، ودرّس حصة في مبنى آخر حتى 17:00.",
+        "kind": "event",
+        "subject_ids": [
+          "zaid"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 50,
+          "precision": "exact",
+          "end_min": 120
+        }
+      },
+      {
+        "id": "f_trip_fees",
+        "statement_ar": "لم يدفع خمسة أعضاء رسوم رحلة النادي حتى هذا الأسبوع.",
+        "kind": "state",
+        "subject_ids": [
+          "org_club"
+        ],
+        "spoiler_level": 1
+      },
+      {
+        "id": "f_sami_says",
+        "statement_ar": "يقول سامي إنه فتح الخزانة من 16:05 إلى 16:20 لأخذ شريط القياس من الرف الأول ولم ينظر إلى الرف الثاني.",
+        "kind": "attribute",
+        "subject_ids": [
+          "sami"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 65,
+          "precision": "exact",
+          "end_min": 80
+        },
+        "location_id": "loc_lab"
+      },
+      {
+        "id": "f_rami_says",
+        "statement_ar": "يقول رامي إنه فتح الخزانة من 16:30 إلى 16:50 لأخذ الحامل الثلاثي من الرف الأول ولم ينظر إلى الرف الثاني.",
+        "kind": "attribute",
+        "subject_ids": [
+          "rami"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 90,
+          "precision": "exact",
+          "end_min": 110
+        },
+        "location_id": "loc_lab"
+      },
+      {
+        "id": "f_key_sheet_exists",
+        "statement_ar": "يدوّن الفني في ورقة المفاتيح من يستلم مفتاح الخزانة ومتى يعيده.",
+        "kind": "state",
+        "subject_ids": [
+          "amer"
+        ],
+        "spoiler_level": 1,
+        "location_id": "loc_tech"
+      },
+      {
+        "id": "f_lock_inspected",
+        "statement_ar": "يستطيع الفني فحص قفل الخزانة بحثاً عن آثار فتح بالقوة.",
+        "kind": "state",
+        "subject_ids": [
+          "amer",
+          "obj_cabinet"
+        ],
+        "spoiler_level": 1,
+        "location_id": "loc_tech"
+      },
+      {
+        "id": "f_print_found",
+        "statement_ar": "وجد الفني أثر بصمة جزئياً على حافة الرف الثاني وأرسله للمقارنة.",
+        "kind": "event",
+        "subject_ids": [
+          "amer",
+          "obj_cabinet"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 1140,
+          "precision": "exact"
+        },
+        "location_id": "loc_lab"
+      },
+      {
+        "id": "f_camera_maint",
+        "statement_ar": "كانت كاميرا الممر متوقفة للصيانة عصر الثلاثاء.",
+        "kind": "state",
+        "subject_ids": [
+          "loc_corridor"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 55,
+          "precision": "exact",
+          "end_min": 110
+        },
+        "location_id": "loc_corridor"
+      },
+      {
+        "id": "f_cleaner_round",
+        "statement_ar": "مرّ عامل التنظيف الساعة 17:00 فوجد الخزانة مغلقة والرف الثاني بلا ظرف.",
+        "kind": "event",
+        "subject_ids": [
+          "ghassan",
+          "obj_cabinet"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 120,
+          "precision": "exact"
+        },
+        "location_id": "loc_lab"
+      },
+      {
+        "id": "f_lab_register",
+        "statement_ar": "يوقّع كل داخل إلى المختبر في سجل الباب.",
+        "kind": "state",
+        "subject_ids": [
+          "loc_lab"
+        ],
+        "spoiler_level": 1,
+        "location_id": "loc_lab"
+      },
+      {
+        "id": "f_window",
+        "statement_ar": "كان الظرف في الخزانة عند 15:42 وغاب قبل 17:00، فاختفاؤه وقع داخل هذه الفترة والخزانة مغلقة بقفل سليم.",
+        "kind": "relation",
+        "subject_ids": [
+          "obj_envelope"
+        ],
+        "spoiler_level": 3,
+        "time": {
+          "start_min": 42,
+          "precision": "exact",
+          "end_min": 120
+        },
+        "location_id": "loc_lab",
+        "science_ko_refs": [
+          "KO-RS-05-005",
+          "KO-RS-05-004"
+        ]
+      },
+      {
+        "id": "f_two_access",
+        "statement_ar": "لم يفتح الخزانة بمفتاحها في تلك الفترة إلا سامي ورامي، فلا غريب ولا كسر، والدائرة تضيق إلى اثنين.",
+        "kind": "relation",
+        "subject_ids": [
+          "sami",
+          "rami",
+          "obj_cabinet"
+        ],
+        "spoiler_level": 3,
+        "time": {
+          "start_min": 65,
+          "precision": "exact",
+          "end_min": 110
+        },
+        "location_id": "loc_lab",
+        "science_ko_refs": [
+          "KO-RS-05-004",
+          "KO-RS-06-008"
+        ]
+      },
+      {
+        "id": "f_no_discriminator",
+        "statement_ar": "لا يوجد في ما بين أيدينا ما يفرّق بين سامي ورامي: لا تسجيل للممر، وبصمة جزئية غير حاسمة، ولا شاهد، وروايتاهما متماثلتان.",
+        "kind": "absence",
+        "subject_ids": [
+          "sami",
+          "rami"
+        ],
+        "spoiler_level": 3,
+        "time": {
+          "start_min": 1140,
+          "precision": "exact"
+        },
+        "location_id": "loc_lab",
+        "science_ko_refs": [
+          "KO-FC-04-012",
+          "KO-RS-05-013",
+          "KO-RS-05-010"
+        ]
+      }
+    ],
+    "claims": [
+      {
+        "id": "cl_rumor_sami",
+        "statement_ar": "سامي هو من أخذ الظرف، فالجميع يقول ذلك.",
+        "kind": "rumour",
+        "held_by": [
+          "nada"
+        ],
+        "true_fact_id": "f_no_discriminator",
+        "contradicted_by_evidence_ids": [],
+        "unresolved_by_design": true
+      }
+    ]
+  },
+  "timeline": [
+    {
+      "id": "te_count",
+      "description_ar": "نداء وزيد يعدّان الظرف ويوقّعان ورقة الجرد.",
+      "time": {
+        "start_min": 40,
+        "precision": "exact"
+      },
+      "location_id": "loc_lab",
+      "actor_ids": [
+        "nada",
+        "zaid"
+      ],
+      "fact_ids": [
+        "f_count_done"
+      ],
+      "motivated_by_ar": "جرد دوري لمال النادي"
+    },
+    {
+      "id": "te_photo",
+      "description_ar": "نداء تصوّر الظرف على الرف الثاني.",
+      "time": {
+        "start_min": 42,
+        "precision": "exact"
+      },
+      "location_id": "loc_lab",
+      "actor_ids": [
+        "nada"
+      ],
+      "fact_ids": [
+        "f_photo_taken"
+      ],
+      "motivated_by_ar": "أرادت توثيق المبلغ قبل المغادرة"
+    },
+    {
+      "id": "te_class",
+      "description_ar": "زيد يغادر ويدرّس حصة في المبنى الآخر.",
+      "time": {
+        "start_min": 50,
+        "precision": "exact",
+        "end_min": 120
+      },
+      "location_id": "loc_corridor",
+      "actor_ids": [
+        "zaid"
+      ],
+      "fact_ids": [
+        "f_zaid_class"
+      ],
+      "motivated_by_ar": "حصته المقررة"
+    },
+    {
+      "id": "te_camera",
+      "description_ar": "كاميرا الممر متوقفة للصيانة.",
+      "time": {
+        "start_min": 55,
+        "precision": "exact",
+        "end_min": 110
+      },
+      "location_id": "loc_corridor",
+      "actor_ids": [],
+      "fact_ids": [
+        "f_camera_maint"
+      ]
+    },
+    {
+      "id": "te_sami",
+      "description_ar": "سامي يفتح الخزانة بمفتاح الفني.",
+      "time": {
+        "start_min": 65,
+        "precision": "exact",
+        "end_min": 80
+      },
+      "location_id": "loc_lab",
+      "actor_ids": [
+        "sami"
+      ],
+      "fact_ids": [
+        "f_sami_says"
+      ],
+      "motivated_by_ar": "أراد شريط القياس لتجربة الغد"
+    },
+    {
+      "id": "te_rami",
+      "description_ar": "رامي يفتح الخزانة بمفتاح الفني.",
+      "time": {
+        "start_min": 90,
+        "precision": "exact",
+        "end_min": 110
+      },
+      "location_id": "loc_lab",
+      "actor_ids": [
+        "rami"
+      ],
+      "fact_ids": [
+        "f_rami_says"
+      ],
+      "motivated_by_ar": "أراد الحامل الثلاثي لتجربة الغد"
+    },
+    {
+      "id": "te_cleaner",
+      "description_ar": "غسان يمرّ على المختبر في جولته.",
+      "time": {
+        "start_min": 120,
+        "precision": "exact"
+      },
+      "location_id": "loc_lab",
+      "actor_ids": [
+        "ghassan"
+      ],
+      "fact_ids": [
+        "f_cleaner_round"
+      ],
+      "motivated_by_ar": "جولة التنظيف اليومية"
+    },
+    {
+      "id": "te_report",
+      "description_ar": "نداء تكتشف غياب الظرف وتبلّغ.",
+      "time": {
+        "start_min": 130,
+        "precision": "exact"
+      },
+      "location_id": "loc_lab",
+      "actor_ids": [
+        "nada"
+      ],
+      "fact_ids": [
+        "f_discovered"
+      ],
+      "motivated_by_ar": "أرادت دفع ثمن أدوات القياس"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_count_sheet",
+      "title_ar": "ورقة جرد ظرف النادي",
+      "kind": "documentary",
+      "content_ar": "نادي الرصد — ورقة جرد — الثلاثاء 15:40\nظرف التمويل: 200 وحدة (عشر أوراق من فئة 20)\nالعدّ: نداء السيد · التحقق: الأستاذ زيد الحلبي\nالتوقيعان بخطيهما. بعد الجرد أُقفلت الخزانة وسُلّم مفتاحها إلى الفني الساعة 15:50.",
+      "acquired_by_action_ids": [
+        "a_count_sheet"
+      ],
+      "supports_fact_ids": [
+        "f_count_done",
+        "f_window"
+      ],
+      "reliability": "strong",
+      "limits_ar": "ورقة موقّعة من شخصين وقت الجرد؛ تثبت وجود المبلغ ذلك الوقت ولا تثبت ما حدث بعده.",
+      "location_id": "loc_lab"
+    },
+    {
+      "id": "ev_missing_report",
+      "title_ar": "بلاغ نداء عن فقد الظرف",
+      "kind": "documentary",
+      "content_ar": "نادي الرصد — بلاغ — الثلاثاء 17:10\nنداء السيد: «أخذت المفتاح من الفني 17:05 وفتحت الخزانة فلم أجد الظرف على الرف الثاني. القفل سليم والخزانة كانت مغلقة.»",
+      "acquired_by_action_ids": [
+        "a_missing_report"
+      ],
+      "supports_fact_ids": [
+        "f_discovered",
+        "f_window",
+        "f_envelope_gone"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "بلاغ صاحبة الصندوق بوقت كتبته بنفسها؛ يحدد لحظة الاكتشاف لا لحظة الأخذ.",
+      "location_id": "loc_lab"
+    },
+    {
+      "id": "ev_phone_photo",
+      "title_ar": "صورة الظرف من هاتف نداء",
+      "kind": "digital",
+      "content_ar": "هاتف نداء السيد — بيانات صورة — الثلاثاء 15:42\nالرف الثاني من خزانة النادي: ظرف أبيض بختم النادي، وبجانبه علبة أقلام.\nساعة الهاتف مضبوطة تلقائياً على الشبكة.",
+      "acquired_by_action_ids": [
+        "a_phone_photo"
+      ],
+      "supports_fact_ids": [
+        "f_photo_taken",
+        "f_window"
+      ],
+      "reliability": "strong",
+      "limits_ar": "صورة بوقت جهاز مضبوط؛ تثبت وجود الظرف في موضعه وقتها، وقد يدّعي أحد أنها مأخوذة قبلها بدقائق.",
+      "forensic_ko_ref": "KO-FC-04-024",
+      "location_id": "loc_lab"
+    },
+    {
+      "id": "ev_cleaner_round",
+      "title_ar": "ورقة جولة التنظيف",
+      "kind": "documentary",
+      "content_ar": "مدرسة القنطرة — ورقة جولة التنظيف — مختبر النادي — الثلاثاء 17:00\nالخزانة مغلقة. من خلف الزجاج الجانبي: الرف الثاني فيه علبة أقلام فقط، ولا ظرف.\nالتوقيع: غسان",
+      "acquired_by_action_ids": [
+        "a_cleaner_round"
+      ],
+      "supports_fact_ids": [
+        "f_cleaner_round",
+        "f_window"
+      ],
+      "reliability": "strong",
+      "limits_ar": "ملاحظة عامل من خلف الزجاج لا فتح للخزانة؛ يثبت الغياب وقتها ولا يقول متى حدث.",
+      "location_id": "loc_lab"
+    },
+    {
+      "id": "ev_key_log",
+      "title_ar": "ورقة مفاتيح الفني",
+      "kind": "documentary",
+      "content_ar": "غرفة الفني — ورقة تسليم مفتاح خزانة النادي — الثلاثاء\n15:50 — الأستاذ زيد: إيداع المفتاح\n16:05 — سامي القاسم: استلام · 16:20 إعادة\n16:30 — رامي الحايك: استلام · 16:50 إعادة\n17:05 — نداء السيد: استلام\nلا توقيع آخر في هذه الفترة. المفتاح الاحتياطي الوحيد في ظرف مختوم عند الفني.",
+      "acquired_by_action_ids": [
+        "a_key_log"
+      ],
+      "supports_fact_ids": [
+        "f_key_sheet_exists",
+        "f_two_access"
+      ],
+      "reliability": "strong",
+      "limits_ar": "ورقة كتبها الفني بتوقيع المستلمين؛ تثبت من حمل المفتاح ولا تثبت ما فعله به أو من فتح بقصد الأخذ.",
+      "location_id": "loc_tech"
+    },
+    {
+      "id": "ev_lock_check",
+      "title_ar": "فحص قفل الخزانة",
+      "kind": "observation",
+      "content_ar": "غرفة الفني — محضر فحص — الأربعاء 08:00\nقفل خزانة النادي: لا خدوش، ولا أثر لأداة، ولا تلاعب. المفتاح الاحتياطي في ظرفه المختوم لم يُفتح.\nالخلاصة: فُتحت الخزانة بمفتاحها الأصلي فقط.",
+      "acquired_by_action_ids": [
+        "a_lock_check"
+      ],
+      "supports_fact_ids": [
+        "f_lock_inspected",
+        "f_two_access"
+      ],
+      "reliability": "strong",
+      "limits_ar": "فحص بصري لفني واحد؛ لا يستبعد نسخة مفتاح مصنوعة سراً، لكن لا دليل عليها.",
+      "location_id": "loc_tech"
+    },
+    {
+      "id": "ev_lab_register",
+      "title_ar": "سجل دخول المختبر",
+      "kind": "documentary",
+      "content_ar": "مختبر النادي — سجل الباب — الثلاثاء\n15:35 نداء · 15:35 زيد · 15:50 زيد (خروج)\n16:00 سامي (دخول) · 16:25 سامي (خروج)\n16:28 رامي (دخول) · 16:55 رامي (خروج)\n17:00 غسان · 17:03 نداء · 17:05 زيد (عودة)\nلا توقيع غير هذا.",
+      "acquired_by_action_ids": [
+        "a_lab_register"
+      ],
+      "supports_fact_ids": [
+        "f_lab_register",
+        "f_two_access"
+      ],
+      "reliability": "strong",
+      "limits_ar": "سجل توقيعات يدوي على الباب؛ يثبت من وقّع لا من دخل دون توقيع.",
+      "location_id": "loc_lab"
+    },
+    {
+      "id": "ev_class_timetable",
+      "title_ar": "ورقة حضور حصة الأستاذ زيد",
+      "kind": "documentary",
+      "content_ar": "مدرسة القنطرة — ورقة حضور حصة الكيمياء — المبنى الآخر — الثلاثاء 15:50–17:00\nالأستاذ زيد: توقيع حضور 16:00 بخطه، أربعة وعشرون طالباً.",
+      "acquired_by_action_ids": [
+        "a_class_timetable"
+      ],
+      "supports_fact_ids": [
+        "f_zaid_class",
+        "f_two_access"
+      ],
+      "reliability": "strong",
+      "limits_ar": "ورقة موقّعة من طرف مستقل عن النادي؛ تضع المشرف في مكان آخر وقتها ولا تتحدث عن غيره.",
+      "location_id": "loc_corridor"
+    },
+    {
+      "id": "ev_partial_print",
+      "title_ar": "تقرير مقارنة أثر البصمة",
+      "kind": "lab_result",
+      "content_ar": "مختبر المدرسة — مقارنة أثر كامن — الأربعاء 10:00\nالأثر: حافة الرف الثاني، ست نقاط تمييز فقط.\nالمقارنة: لا يُستبعد منه سامي ولا رامي ولا نداء. الأثر لا يكفي لتحديد صاحبه.\nالنتيجة: غير حاسمة.",
+      "acquired_by_action_ids": [
+        "a_partial_print"
+      ],
+      "supports_fact_ids": [
+        "f_print_found",
+        "f_no_discriminator"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "أثر جزئي وعدد قليل من النقاط؛ ونتيجته «غير حاسمة» مشروعة، وقد يعود إلى أي يد لمست الرف في أي يوم.",
+      "forensic_ko_ref": "KO-FC-04-012",
+      "location_id": "loc_lab"
+    },
+    {
+      "id": "ev_camera_gap",
+      "title_ar": "سجل صيانة كاميرا الممر",
+      "kind": "digital",
+      "content_ar": "ممر المختبرات — سجل الكاميرا — الثلاثاء\n15:55 — توقف التسجيل (تحديث مجدول)\n16:50 — استئناف التسجيل\nلا ملفات للفترة بين الوقتين.",
+      "acquired_by_action_ids": [
+        "a_camera_gap"
+      ],
+      "supports_fact_ids": [
+        "f_camera_maint",
+        "f_no_discriminator"
+      ],
+      "reliability": "strong",
+      "limits_ar": "سجل نظام لا يدلّ على من مرّ بالممر؛ غياب التسجيل ليس دليلاً على شيء بذاته.",
+      "forensic_ko_ref": "KO-RS-05-013",
+      "location_id": "loc_corridor"
+    },
+    {
+      "id": "ev_sami_statement",
+      "title_ar": "إفادة سامي (ملخص)",
+      "kind": "testimonial",
+      "content_ar": "ملخص إفادة سامي القاسم:\n«فتحت الخزانة من 16:05 إلى 16:20 لأخذ شريط القياس من الرف الأول، ولم أنظر إلى الرف الثاني. لم آخذ الظرف.»",
+      "acquired_by_action_ids": [
+        "a_sami_statement"
+      ],
+      "supports_fact_ids": [
+        "f_sami_says",
+        "f_no_discriminator"
+      ],
+      "reliability": "weak",
+      "limits_ar": "إفادة صاحب الشأن عن نفسه تتفق مع ورقة المفاتيح في الوقت، ولا يمكن التحقق من نظره إلى الرف.",
+      "location_id": "loc_lab"
+    },
+    {
+      "id": "ev_rami_statement",
+      "title_ar": "إفادة رامي (ملخص)",
+      "kind": "testimonial",
+      "content_ar": "ملخص إفادة رامي الحايك:\n«فتحت الخزانة من 16:30 إلى 16:50 لأخذ الحامل الثلاثي من الرف الأول، ولم أنظر إلى الرف الثاني. لم آخذ الظرف.»",
+      "acquired_by_action_ids": [
+        "a_rami_statement"
+      ],
+      "supports_fact_ids": [
+        "f_rami_says",
+        "f_no_discriminator"
+      ],
+      "reliability": "weak",
+      "limits_ar": "إفادة صاحب الشأن عن نفسه تتفق مع ورقة المفاتيح في الوقت، ولا يمكن التحقق من نظره إلى الرف.",
+      "location_id": "loc_lab"
+    },
+    {
+      "id": "ev_group_rumor",
+      "title_ar": "رسالة محوّلة في مجموعة النادي",
+      "kind": "digital",
+      "content_ar": "لقطة شاشة — مجموعة نادي الرصد — الثلاثاء 17:40\nرسالة محوّلة (أربع مرات): «سمعت أن سامي هو من أخذ الظرف».\nلا يظهر اسم كاتب الرسالة الأول.",
+      "acquired_by_action_ids": [
+        "a_group_rumor"
+      ],
+      "supports_fact_ids": [
+        "f_rumor_seen",
+        "f_rumor_names"
+      ],
+      "reliability": "weak",
+      "limits_ar": "رسالة بلا مصدر أول؛ تكرار تحويلها لا يزيد وزنها، ولا نعرف هل بُنيت على رؤية أو على ظن.",
+      "is_red_herring": true,
+      "location_id": "loc_lab"
+    },
+    {
+      "id": "ev_trip_list",
+      "title_ar": "قائمة رسوم رحلة النادي",
+      "kind": "documentary",
+      "content_ar": "نادي الرصد — قائمة الرسوم — هذا الأسبوع\nالمطلوب 30 وحدة من كل عضو قبل الخميس.\nلم يدفع: سامي القاسم · رامي الحايك · ثلاثة أعضاء آخرون.",
+      "acquired_by_action_ids": [
+        "a_trip_list"
+      ],
+      "supports_fact_ids": [
+        "f_trip_fees"
+      ],
+      "reliability": "weak",
+      "limits_ar": "حاجة خمسة أعضاء إلى المال لا تخص واحداً منهم؛ ولا تدل على فعل.",
+      "is_red_herring": true,
+      "location_id": "loc_lab"
+    }
+  ],
+  "evidence_graph": {
+    "inferences": [
+      {
+        "id": "i_a_window",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_count_sheet"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_missing_report"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_window"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "الجرد الموقّع 15:40 يثبت وجود المبلغ، وبلاغ نداء 17:10 يثبت غيابه والقفل سليم؛ فالاختفاء وقع بين الوقتين.",
+        "skill_ko_refs": [
+          "KO-RS-05-005"
+        ]
+      },
+      {
+        "id": "i_b_window",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_phone_photo"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_cleaner_round"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_window"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "صورة بوقت مضبوط تضع الظرف على الرف 15:42، وعامل التنظيف يراه غائباً 17:00 من خلف الزجاج؛ مصدران لا يشتركان في كاتب ولا جهاز.",
+        "skill_ko_refs": [
+          "KO-RS-05-004",
+          "KO-FC-04-024"
+        ]
+      },
+      {
+        "id": "i_a_access",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_key_log"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_lock_check"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_two_access"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "ورقة الفني تُظهر مفتاحاً واحداً لم يستلمه في الفترة سوى سامي ثم رامي، وفحص القفل ينفي الكسر والنسخة الاحتياطية المختومة.",
+        "skill_ko_refs": [
+          "KO-RS-05-004"
+        ]
+      },
+      {
+        "id": "i_b_access",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_lab_register"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_class_timetable"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_two_access"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "سجل الباب لا يضم في الفترة سوى سامي ورامي، وورقة الحصة تضع المشرف خارج المختبر؛ نظامان مستقلان عن ورقة المفاتيح.",
+        "skill_ko_refs": [
+          "KO-RS-05-004",
+          "KO-RS-05-005"
+        ]
+      },
+      {
+        "id": "i_a_nodisc",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_partial_print"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_camera_gap"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_no_discriminator"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "الأثر الجزئي لا يستبعد أحداً من الثلاثة، والكاميرا لم تسجّل أصلاً؛ فالغياب هنا غياب تسجيل لا غياب فعل.",
+        "skill_ko_refs": [
+          "KO-FC-04-012",
+          "KO-RS-05-013"
+        ]
+      },
+      {
+        "id": "i_b_nodisc",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_sami_statement"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_rami_statement"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_no_discriminator"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "روايتان متماثلتان في الشكل والمضمون، كلتاهما تتفق مع ورقة المفاتيح ولا تجد من يؤيدها أو ينقضها؛ فلا ترجيح بينهما.",
+        "skill_ko_refs": [
+          "KO-RS-05-009",
+          "KO-RS-05-010"
+        ]
+      },
+      {
+        "id": "i_support_insufficient",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_window"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_two_access"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_no_discriminator"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_insufficient"
+        },
+        "relation": "supports",
+        "strength": "strong",
+        "rule_ar": "الدليل حدّد الفترة وضيّق الدائرة إلى اثنين ولم يفرّق بينهما؛ فالحكم المسؤول هو أن الأدلة لا تكفي بعد، مع تسمية ما يحسم.",
+        "skill_ko_refs": [
+          "KO-RS-06-021",
+          "KO-RS-05-010"
+        ]
+      },
+      {
+        "id": "i_rule_sami",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_two_access"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_no_discriminator"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_sami"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "ما يشير إلى سامي يشير بالقدر نفسه إلى رامي، وما يميّز بينهما غير موجود؛ فلا تكفي الأدلة لتحميله وحده.",
+        "skill_ko_refs": [
+          "KO-FC-04-010",
+          "KO-RS-06-008"
+        ]
+      },
+      {
+        "id": "i_rule_rami",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_two_access"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_no_discriminator"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_rami"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "ترتيب دخوله الأخير في الفترة لا دليل فيه، وما يشير إليه يشير بالقدر نفسه إلى سامي؛ فلا تكفي الأدلة لتحميله وحده.",
+        "skill_ko_refs": [
+          "KO-FC-04-010",
+          "KO-RS-06-008"
+        ]
+      },
+      {
+        "id": "i_rule_outsider",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_window"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_two_access"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_outsider"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "قفل سليم وسجل باب وورقة مفاتيح لا تضم أحداً غير الاثنين؛ والغريب لا يترك أثراً في ثلاثة سجلات مستقلة.",
+        "skill_ko_refs": [
+          "KO-RS-06-008"
+        ]
+      },
+      {
+        "id": "i_rule_never",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_window"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_two_access"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_never"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "الظرف مجرود ومصوّر قبل الفترة وغائب بعدها، فلا يصح أن يقال إنه لم يكن موجوداً.",
+        "skill_ko_refs": [
+          "KO-RS-06-008"
+        ]
+      }
+    ]
+  },
+  "character_knowledge": [
+    {
+      "character_id": "nada",
+      "knows": [
+        {
+          "fact_id": "f_count_done",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_photo_taken",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_discovered",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_rumor_seen",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": [
+        {
+          "claim_id": "cl_rumor_sami",
+          "stance": "sincere"
+        }
+      ]
+    },
+    {
+      "character_id": "zaid",
+      "knows": [
+        {
+          "fact_id": "f_zaid_class",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_trip_fees",
+          "access": "common_knowledge",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    },
+    {
+      "character_id": "sami",
+      "knows": [
+        {
+          "fact_id": "f_sami_says",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    },
+    {
+      "character_id": "rami",
+      "knows": [
+        {
+          "fact_id": "f_rami_says",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    },
+    {
+      "character_id": "amer",
+      "knows": [
+        {
+          "fact_id": "f_key_sheet_exists",
+          "access": "professional",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_lock_inspected",
+          "access": "professional",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_print_found",
+          "access": "professional",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_camera_maint",
+          "access": "professional",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    },
+    {
+      "character_id": "ghassan",
+      "knows": [
+        {
+          "fact_id": "f_cleaner_round",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_lab_register",
+          "access": "professional",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "h_sami",
+      "statement_ar": "الأدلة التي بين أيدينا تكفي لتحميل سامي مسؤولية فقد الظرف.",
+      "is_true": false,
+      "plausibility_at_start": "high",
+      "suspect_id": "sami"
+    },
+    {
+      "id": "h_rami",
+      "statement_ar": "الأدلة التي بين أيدينا تكفي لتحميل رامي مسؤولية فقد الظرف.",
+      "is_true": false,
+      "plausibility_at_start": "medium",
+      "suspect_id": "rami"
+    },
+    {
+      "id": "h_outsider",
+      "statement_ar": "أخذ الظرف شخص من خارج من فتحوا الخزانة.",
+      "is_true": false,
+      "plausibility_at_start": "low"
+    },
+    {
+      "id": "h_never",
+      "statement_ar": "لم يكن في الخزانة ظرف أصلاً، وبلاغ نداء خطأ.",
+      "is_true": false,
+      "plausibility_at_start": "low"
+    },
+    {
+      "id": "h_insufficient",
+      "statement_ar": "الأدلة الحالية تحدّد الفترة والدائرة ولا تكفي للحكم على أحد؛ والدليل الذي يحسم ما زال غائباً.",
+      "is_true": true,
+      "plausibility_at_start": "low"
+    }
+  ],
+  "misdirection_plan": [
+    {
+      "id": "rh_rumor",
+      "points_to_hypothesis_id": "h_sami",
+      "planted_via_ar": "الجميع يقول إن سامي هو الفاعل، والرسالة حُوّلت أربع مرات.",
+      "evidence_ids": [
+        "ev_group_rumor"
+      ],
+      "refuted_by_inference_ids": [
+        "i_rule_sami",
+        "i_a_nodisc",
+        "i_b_nodisc"
+      ],
+      "fairness_note_ar": "الرسالة تظهر بلا مصدر أول ويقرأ اللاعب حدودها في بطاقة الدليل، وسجلات الملف لا تفرّق بين سامي ورامي."
+    },
+    {
+      "id": "rh_money",
+      "points_to_hypothesis_id": "h_rami",
+      "planted_via_ar": "رامي وسامي لم يدفعا رسوم الرحلة، فلهما حاجة إلى المال.",
+      "evidence_ids": [
+        "ev_trip_list"
+      ],
+      "refuted_by_inference_ids": [
+        "i_rule_rami",
+        "i_rule_sami"
+      ],
+      "fairness_note_ar": "القائمة تضم خمسة أعضاء لم يدفعوا، فالحاجة لا تخص أحداً بعينه."
+    },
+    {
+      "id": "rh_order",
+      "points_to_hypothesis_id": "h_rami",
+      "planted_via_ar": "رامي كان آخر من استلم المفتاح قبل الاكتشاف، فهو الأقرب زمنياً.",
+      "evidence_ids": [
+        "ev_key_log",
+        "ev_lab_register"
+      ],
+      "refuted_by_inference_ids": [
+        "i_rule_rami",
+        "i_a_nodisc"
+      ],
+      "fairness_note_ar": "الترتيب الزمني لا يقول متى غاب الظرف بين 15:42 و17:00، فقد يكون غاب في أي وقت داخل الفترة."
+    }
+  ],
+  "learning_objectives": [
+    {
+      "id": "lo_source",
+      "statement_ar": "يصنّف الإشاعة والإفادات أقوالاً، والسجلات والأوراق الموقعة سجلات أصلية.",
+      "skill_ko_ref": "KO-RS-05-001",
+      "observable_behaviors_ar": [
+        "يصنّف الإشاعة قولاً بلا مصدر أول",
+        "يعدّ الأوراق الموقعة سجلات"
+      ],
+      "evidence_sources": [
+        "evidence_board"
+      ]
+    },
+    {
+      "id": "lo_conflict",
+      "statement_ar": "يرتّب سجلات الجرد والمفاتيح والباب على خط زمني ويحدد الفترة الممكنة للاختفاء.",
+      "skill_ko_ref": "KO-RS-05-005",
+      "observable_behaviors_ar": [
+        "يضع الأدلة في أزمنتها"
+      ],
+      "evidence_sources": [
+        "timeline_task",
+        "action_log"
+      ]
+    },
+    {
+      "id": "lo_links",
+      "statement_ar": "يربط الدليل بالفرضية باتجاه صحيح ويدرك أن ما يشير إلى اثنين بالقدر نفسه لا يرجّح أحدهما.",
+      "skill_ko_ref": "KO-RS-06-001",
+      "observable_behaviors_ar": [
+        "يربط الدليل بالفرضية",
+        "يميز ما يفرّق مما لا يفرّق"
+      ],
+      "evidence_sources": [
+        "evidence_board",
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_calib",
+      "statement_ar": "يعبّر عن «غير كافٍ» بثقة معايَرة، ويسمّي الدليل الذي سيحسم.",
+      "skill_ko_ref": "KO-RS-05-010",
+      "observable_behaviors_ar": [
+        "يختار ثقة معقولة",
+        "يسمّي الدليل الناقص"
+      ],
+      "evidence_sources": [
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_revise",
+      "statement_ar": "يراجع ميله الأول إلى اتهام سامي حين تتساوى الدلائل.",
+      "skill_ko_ref": "KO-RS-06-009",
+      "observable_behaviors_ar": [
+        "يغيّر فرضيته الرائدة بدليل"
+      ],
+      "evidence_sources": [
+        "hypothesis_ledger"
+      ]
+    },
+    {
+      "id": "lo_elim",
+      "statement_ar": "يستبعد الغريب وانعدام الظرف بالسجلات، ويستبعد كفاية الأدلة لاتهام أي من الاثنين.",
+      "skill_ko_ref": "KO-RS-06-008",
+      "observable_behaviors_ar": [
+        "يضيف فرضيات",
+        "يستبعد بدليل"
+      ],
+      "evidence_sources": [
+        "hypothesis_ledger"
+      ]
+    },
+    {
+      "id": "lo_just",
+      "statement_ar": "يكتب حجة تقول ما أُثبت وما لم يُثبت وما الذي سيحسم، دون الخلط بين غير كافٍ وبريء.",
+      "skill_ko_ref": "KO-RS-06-021",
+      "observable_behaviors_ar": [
+        "يكتب حجة معللة"
+      ],
+      "evidence_sources": [
+        "final_justification"
+      ]
+    }
+  ],
+  "mechanics": {
+    "time_budget_units": 50,
+    "actions": [
+      {
+        "id": "a_int_ghassan",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة غسان",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "ghassan",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "ghassan",
+        "telemetry_code": "INT_GHASSAN"
+      },
+      {
+        "id": "a_int_amer",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة عامر",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "amer",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "amer",
+        "telemetry_code": "INT_AMER"
+      },
+      {
+        "id": "a_int_rami",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة رامي",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "rami",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "rami",
+        "telemetry_code": "INT_RAMI"
+      },
+      {
+        "id": "a_int_sami",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة سامي",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "sami",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "sami",
+        "telemetry_code": "INT_SAMI"
+      },
+      {
+        "id": "a_int_zaid",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة زيد",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "zaid",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "zaid",
+        "telemetry_code": "INT_ZAID"
+      },
+      {
+        "id": "a_int_nada",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة نداء",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "nada",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "nada",
+        "telemetry_code": "INT_NADA"
+      },
+      {
+        "id": "a_count_sheet",
+        "type": "examine",
+        "label_ar": "اطلب ورقة جرد ظرف النادي",
+        "precondition": {
+          "fact_unlocked": "f_count_done"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_count_sheet"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_lab",
+        "telemetry_code": "A_COUNT_SHEET"
+      },
+      {
+        "id": "a_missing_report",
+        "type": "examine",
+        "label_ar": "اطلب بلاغ نداء",
+        "precondition": {
+          "fact_unlocked": "f_discovered"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_missing_report"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_lab",
+        "telemetry_code": "A_MISSING_REPORT"
+      },
+      {
+        "id": "a_phone_photo",
+        "type": "examine",
+        "label_ar": "اطلب صورة الظرف من هاتف نداء",
+        "precondition": {
+          "fact_unlocked": "f_photo_taken"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_phone_photo"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_lab",
+        "telemetry_code": "A_PHONE_PHOTO"
+      },
+      {
+        "id": "a_cleaner_round",
+        "type": "examine",
+        "label_ar": "اطلب ورقة جولة التنظيف",
+        "precondition": {
+          "fact_unlocked": "f_cleaner_round"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_cleaner_round"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_lab",
+        "telemetry_code": "A_CLEANER_ROUND"
+      },
+      {
+        "id": "a_key_log",
+        "type": "examine",
+        "label_ar": "اطلب ورقة مفاتيح الفني",
+        "precondition": {
+          "fact_unlocked": "f_key_sheet_exists"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_key_log"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_tech",
+        "telemetry_code": "A_KEY_LOG"
+      },
+      {
+        "id": "a_lock_check",
+        "type": "examine",
+        "label_ar": "اطلب فحص قفل الخزانة",
+        "precondition": {
+          "fact_unlocked": "f_lock_inspected"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_lock_check"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_tech",
+        "telemetry_code": "A_LOCK_CHECK"
+      },
+      {
+        "id": "a_lab_register",
+        "type": "examine",
+        "label_ar": "اطلب سجل دخول المختبر",
+        "precondition": {
+          "fact_unlocked": "f_lab_register"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_lab_register"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_lab",
+        "telemetry_code": "A_LAB_REGISTER"
+      },
+      {
+        "id": "a_class_timetable",
+        "type": "examine",
+        "label_ar": "اطلب ورقة حضور حصة الأستاذ زيد",
+        "precondition": {
+          "fact_unlocked": "f_zaid_class"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_class_timetable"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_corridor",
+        "telemetry_code": "A_CLASS_TIMETABLE"
+      },
+      {
+        "id": "a_partial_print",
+        "type": "examine",
+        "label_ar": "اطلب تقرير مقارنة أثر البصمة",
+        "precondition": {
+          "fact_unlocked": "f_print_found"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_partial_print"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_lab",
+        "telemetry_code": "A_PARTIAL_PRINT"
+      },
+      {
+        "id": "a_camera_gap",
+        "type": "examine",
+        "label_ar": "اطلب سجل صيانة كاميرا الممر",
+        "precondition": {
+          "fact_unlocked": "f_camera_maint"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_camera_gap"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_corridor",
+        "telemetry_code": "A_CAMERA_GAP"
+      },
+      {
+        "id": "a_sami_statement",
+        "type": "examine",
+        "label_ar": "دوّن إفادة سامي",
+        "precondition": {
+          "fact_unlocked": "f_sami_says"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_sami_statement"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_lab",
+        "telemetry_code": "A_SAMI_STATEMENT"
+      },
+      {
+        "id": "a_rami_statement",
+        "type": "examine",
+        "label_ar": "دوّن إفادة رامي",
+        "precondition": {
+          "fact_unlocked": "f_rami_says"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_rami_statement"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_lab",
+        "telemetry_code": "A_RAMI_STATEMENT"
+      },
+      {
+        "id": "a_group_rumor",
+        "type": "examine",
+        "label_ar": "اطلب لقطة الرسالة المحوّلة",
+        "precondition": {
+          "fact_unlocked": "f_rumor_seen"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_group_rumor"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_lab",
+        "telemetry_code": "A_GROUP_RUMOR"
+      },
+      {
+        "id": "a_trip_list",
+        "type": "examine",
+        "label_ar": "اطلب قائمة رسوم رحلة النادي",
+        "precondition": {
+          "fact_unlocked": "f_trip_fees"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_trip_list"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_lab",
+        "telemetry_code": "A_TRIP_LIST"
+      },
+      {
+        "id": "a_hint",
+        "type": "request_hint",
+        "label_ar": "اطلب تلميحاً",
+        "precondition": {
+          "always": true
+        },
+        "effects": [],
+        "time_cost_units": 0,
+        "telemetry_code": "REQUEST_HINT"
+      },
+      {
+        "id": "a_accuse",
+        "type": "final_accusation",
+        "label_ar": "قدّم الرأي المعلّل النهائي",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "SUBMIT"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "FINAL_ACCUSATION"
+      },
+      {
+        "id": "ask_nada_f_count_done",
+        "type": "interview",
+        "label_ar": "[نموذج] nada يذكر f_count_done",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_count_done"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "nada",
+        "telemetry_code": "ASK_NADA_F_COUNT_DONE"
+      },
+      {
+        "id": "ask_nada_f_photo_taken",
+        "type": "interview",
+        "label_ar": "[نموذج] nada يذكر f_photo_taken",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_photo_taken"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "nada",
+        "telemetry_code": "ASK_NADA_F_PHOTO_TAKEN"
+      },
+      {
+        "id": "ask_nada_f_discovered",
+        "type": "interview",
+        "label_ar": "[نموذج] nada يذكر f_discovered",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_discovered"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "nada",
+        "telemetry_code": "ASK_NADA_F_DISCOVERED"
+      },
+      {
+        "id": "ask_nada_f_rumor_seen",
+        "type": "interview",
+        "label_ar": "[نموذج] nada يذكر f_rumor_seen",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_rumor_seen"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "nada",
+        "telemetry_code": "ASK_NADA_F_RUMOR_SEEN"
+      },
+      {
+        "id": "ask_zaid_f_zaid_class",
+        "type": "interview",
+        "label_ar": "[نموذج] zaid يذكر f_zaid_class",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_zaid_class"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "zaid",
+        "telemetry_code": "ASK_ZAID_F_ZAID_CLASS"
+      },
+      {
+        "id": "ask_zaid_f_trip_fees",
+        "type": "interview",
+        "label_ar": "[نموذج] zaid يذكر f_trip_fees",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_trip_fees"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "zaid",
+        "telemetry_code": "ASK_ZAID_F_TRIP_FEES"
+      },
+      {
+        "id": "ask_sami_f_sami_says",
+        "type": "interview",
+        "label_ar": "[نموذج] sami يذكر f_sami_says",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_sami_says"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "sami",
+        "telemetry_code": "ASK_SAMI_F_SAMI_SAYS"
+      },
+      {
+        "id": "ask_rami_f_rami_says",
+        "type": "interview",
+        "label_ar": "[نموذج] rami يذكر f_rami_says",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_rami_says"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "rami",
+        "telemetry_code": "ASK_RAMI_F_RAMI_SAYS"
+      },
+      {
+        "id": "ask_amer_f_key_sheet_exists",
+        "type": "interview",
+        "label_ar": "[نموذج] amer يذكر f_key_sheet_exists",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_key_sheet_exists"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "amer",
+        "telemetry_code": "ASK_AMER_F_KEY_SHEET_EXISTS"
+      },
+      {
+        "id": "ask_amer_f_lock_inspected",
+        "type": "interview",
+        "label_ar": "[نموذج] amer يذكر f_lock_inspected",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_lock_inspected"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "amer",
+        "telemetry_code": "ASK_AMER_F_LOCK_INSPECTED"
+      },
+      {
+        "id": "ask_amer_f_print_found",
+        "type": "interview",
+        "label_ar": "[نموذج] amer يذكر f_print_found",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_print_found"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "amer",
+        "telemetry_code": "ASK_AMER_F_PRINT_FOUND"
+      },
+      {
+        "id": "ask_amer_f_camera_maint",
+        "type": "interview",
+        "label_ar": "[نموذج] amer يذكر f_camera_maint",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_camera_maint"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "amer",
+        "telemetry_code": "ASK_AMER_F_CAMERA_MAINT"
+      },
+      {
+        "id": "ask_ghassan_f_cleaner_round",
+        "type": "interview",
+        "label_ar": "[نموذج] ghassan يذكر f_cleaner_round",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_cleaner_round"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "ghassan",
+        "telemetry_code": "ASK_GHASSAN_F_CLEANER_ROUND"
+      },
+      {
+        "id": "ask_ghassan_f_lab_register",
+        "type": "interview",
+        "label_ar": "[نموذج] ghassan يذكر f_lab_register",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_lab_register"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "ghassan",
+        "telemetry_code": "ASK_GHASSAN_F_LAB_REGISTER"
+      }
+    ]
+  },
+  "state_machine": {
+    "id": "c025",
+    "initial": "briefing",
+    "type": "compound",
+    "states": {
+      "briefing": {
+        "description_ar": "الإحاطة",
+        "type": "atomic",
+        "on": {
+          "START": {
+            "target": "investigating"
+          }
+        }
+      },
+      "investigating": {
+        "description_ar": "التحقيق",
+        "type": "compound",
+        "initial": "gathering",
+        "states": {
+          "gathering": {
+            "type": "atomic",
+            "on": {
+              "OPEN_DEDUCTION": {
+                "target": "deducing"
+              }
+            }
+          },
+          "deducing": {
+            "type": "atomic",
+            "on": {
+              "BACK": {
+                "target": "gathering"
+              }
+            }
+          }
+        },
+        "on": {
+          "SUBMIT": {
+            "target": "review"
+          }
+        }
+      },
+      "review": {
+        "description_ar": "مراجعة",
+        "type": "atomic",
+        "on": {
+          "CLOSE": {
+            "target": "resolved"
+          }
+        }
+      },
+      "resolved": {
+        "description_ar": "إغلاق",
+        "type": "final"
+      }
+    }
+  },
+  "dialogue": {
+    "max_turns_per_interview": 10,
+    "llm_enabled": false,
+    "topics": [
+      {
+        "id": "t_count",
+        "label_ar": "جرد الظرف وصورته",
+        "example_questions_ar": [
+          "متى جرد الظرف؟",
+          "هل صوّرتِه؟"
+        ],
+        "fact_ids": [
+          "f_count_done",
+          "f_photo_taken"
+        ]
+      },
+      {
+        "id": "t_found",
+        "label_ar": "اكتشاف الغياب",
+        "example_questions_ar": [
+          "متى اكتشفتِ أنه مفقود؟"
+        ],
+        "fact_ids": [
+          "f_discovered"
+        ]
+      },
+      {
+        "id": "t_rumor",
+        "label_ar": "الرسالة المحوّلة",
+        "example_questions_ar": [
+          "ما الرسالة التي وصلتك؟",
+          "ماذا يقول الناس؟"
+        ],
+        "fact_ids": [
+          "f_rumor_seen"
+        ],
+        "claim_ids": [
+          "cl_rumor_sami"
+        ]
+      },
+      {
+        "id": "t_class",
+        "label_ar": "حصتي وعودتي",
+        "example_questions_ar": [
+          "أين كنتَ عصر الثلاثاء؟"
+        ],
+        "fact_ids": [
+          "f_zaid_class"
+        ]
+      },
+      {
+        "id": "t_trip",
+        "label_ar": "رسوم الرحلة",
+        "example_questions_ar": [
+          "من لم يدفع رسوم الرحلة؟"
+        ],
+        "fact_ids": [
+          "f_trip_fees"
+        ]
+      },
+      {
+        "id": "t_sami",
+        "label_ar": "ما فعله سامي في المختبر",
+        "example_questions_ar": [
+          "لماذا فتحتَ الخزانة؟",
+          "ماذا أخذت؟"
+        ],
+        "fact_ids": [
+          "f_sami_says"
+        ]
+      },
+      {
+        "id": "t_rami",
+        "label_ar": "ما فعله رامي في المختبر",
+        "example_questions_ar": [
+          "لماذا فتحتَ الخزانة؟",
+          "ماذا أخذت؟"
+        ],
+        "fact_ids": [
+          "f_rami_says"
+        ]
+      },
+      {
+        "id": "t_keys",
+        "label_ar": "المفاتيح والقفل",
+        "example_questions_ar": [
+          "كيف يخرج المفتاح؟",
+          "هل يمكن فحص القفل؟"
+        ],
+        "fact_ids": [
+          "f_key_sheet_exists",
+          "f_lock_inspected"
+        ]
+      },
+      {
+        "id": "t_print",
+        "label_ar": "الأثر والكاميرا",
+        "example_questions_ar": [
+          "هل وجدتَ أثراً؟",
+          "ماذا عن كاميرا الممر؟"
+        ],
+        "fact_ids": [
+          "f_print_found",
+          "f_camera_maint"
+        ]
+      },
+      {
+        "id": "t_round",
+        "label_ar": "جولة التنظيف",
+        "example_questions_ar": [
+          "ماذا رأيتَ في المختبر؟"
+        ],
+        "fact_ids": [
+          "f_cleaner_round"
+        ]
+      },
+      {
+        "id": "t_register",
+        "label_ar": "سجل الباب",
+        "example_questions_ar": [
+          "هل يوقّع الداخلون؟"
+        ],
+        "fact_ids": [
+          "f_lab_register"
+        ]
+      }
+    ]
+  },
+  "rubric": {
+    "reference_answer_ar": "الأدلة لا تكفي بعد للحكم على أحد. ثبت أن الظرف كان في الخزانة بعد الجرد والتصوير وأنه غاب قبل جولة التنظيف، وأن القفل سليم، وأن الاثنين وحدهما حملا المفتاح ودخلا المختبر في تلك المدة. ولا شيء في الملف يفرّق بينهما: الكاميرا لم تسجّل، والأثر الجزئي غير حاسم، والروايتان متماثلتان، والإشاعة بلا مصدر أول، والحاجة إلى المال تشمل خمسة أعضاء. والدليل الذي قد يحسم: تسجيل للممر لو وُجد، أو أثر للمبلغ إنفاقاً أو إيداعاً، أو بصمة كاملة. حدود الاستنتاج: لا نعرف وقت الأخذ بدقة، ولا نستبعد نسخة مفتاح، و«غير كافٍ» لا تعني «بريء».",
+    "criteria": [
+      {
+        "id": "c_source",
+        "name_ar": "تصنيف المصادر",
+        "objective_ids": [
+          "lo_source"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يصنّف"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "أخطأ في الأغلب"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "نصف صحيح"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمه صحيح"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كله صحيح"
+          }
+        ]
+      },
+      {
+        "id": "c_conflict",
+        "name_ar": "ترتيب الأحداث على الخط الزمني",
+        "objective_ids": [
+          "lo_conflict"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.2,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يرتّب شيئاً"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "رتّب قليلاً"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "رتّب نصفها"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمها"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كلها في موضعها"
+          }
+        ]
+      },
+      {
+        "id": "c_links",
+        "name_ar": "ربط الأدلة بالفرضيات",
+        "objective_ids": [
+          "lo_links"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.2,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لا روابط"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "قليلة"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "نصفها صحيح"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمها"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كلها دقيقة"
+          }
+        ]
+      },
+      {
+        "id": "c_uncertainty",
+        "name_ar": "معايرة الثقة",
+        "objective_ids": [
+          "lo_calib"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "ثقة مفرطة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "حدود قليلة"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "جزئية"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معقولة"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "معايَرة كاملة"
+          }
+        ]
+      },
+      {
+        "id": "c_revision",
+        "name_ar": "مراجعة الرأي",
+        "objective_ids": [
+          "lo_revise"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "بقي على فرضية مرفوضة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "لم يعلن فرضية"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "ثبت على فرضية سليمة"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "غيّر بدليل"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "غيّر بدليل ووثّق"
+          }
+        ]
+      },
+      {
+        "id": "c_elimination",
+        "name_ar": "استبعاد الفرضيات الخاطئة",
+        "objective_ids": [
+          "lo_elim"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يستبعد"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "استبعد خطأً"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "فرضية بدليل"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "فرضيتين"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كل الخاطئة"
+          }
+        ]
+      },
+      {
+        "id": "c_justification",
+        "name_ar": "جودة الحجة المكتوبة",
+        "objective_ids": [
+          "lo_just"
+        ],
+        "scored_by": "human",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لا حجة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "ادعاء بلا سند"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "أدلة دون ربط"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "ربط الأدلة بالاستنتاج"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "ربط مع الحدود والبدائل"
+          }
+        ]
+      }
+    ]
+  },
+  "hint_ladder": [
+    {
+      "id": "hg1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "ما الذي تستطيع أن تثبته فعلاً، وما الذي تحتاج إليه لتثبت أكثر؟ هل يكفي أن تضيّق الدائرة؟",
+      "trigger": {
+        "always": true
+      },
+      "assessment_weight": 0.02
+    },
+    {
+      "id": "hg2",
+      "level": 2,
+      "kind": "focus_area",
+      "text_ar": "اسأل عن كل دليل: هل يشير إلى سامي دون رامي، أم إلى الاثنين بالقدر نفسه؟",
+      "trigger": {
+        "has_evidence": "ev_missing_report"
+      },
+      "assessment_weight": 0.04
+    },
+    {
+      "id": "hg3",
+      "level": 3,
+      "kind": "pointer",
+      "text_ar": "ابحث عن سجل يحدد الفترة، وسجل يحدد من وصل إلى الخزانة، ثم اسأل ما الذي سيفرّق بين من وصل.",
+      "trigger": {
+        "has_evidence": "ev_missing_report"
+      },
+      "assessment_weight": 0.08
+    },
+    {
+      "id": "hn1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "هل غياب التسجيل يعني غياب الفعل؟",
+      "trigger": {
+        "has_evidence": "ev_camera_gap"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_a_nodisc"
+    },
+    {
+      "id": "hn2",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "اقرأ حدود نتيجة البصمة: هل تستبعد أحداً؟",
+      "trigger": {
+        "has_evidence": "ev_partial_print"
+      },
+      "assessment_weight": 0.06,
+      "targets_inference_id": "i_a_nodisc"
+    },
+    {
+      "id": "hw1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "ما الدليل الذي يحدد بدء الفترة، وما الذي يحدد نهايتها؟",
+      "trigger": {
+        "has_evidence": "ev_count_sheet"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_a_window"
+    }
+  ],
+  "fairness_test": {
+    "requirements": {
+      "min_disjoint_proof_paths": 2,
+      "max_inference_depth": 3,
+      "all_red_herrings_refutable": true,
+      "culprit_uniquely_entailed": true,
+      "no_hidden_fact_dependency": true,
+      "max_required_actions": 50
+    },
+    "runs": []
+  },
+  "ending_explanation": {
+    "steps": [
+      {
+        "order": 1,
+        "text_ar": "حدّد النافذة: جرد موقّع ثم صورة بوقت مضبوط يضعان الظرف في موضعه قبل أن تتولى المفاتيح أيدي الطلاب، وبلاغ وورقة تنظيف تضعانه غائباً قبل الخامسة.",
+        "uses_evidence_ids": [
+          "ev_count_sheet",
+          "ev_missing_report",
+          "ev_phone_photo",
+          "ev_cleaner_round"
+        ],
+        "inference_id": "i_a_window"
+      },
+      {
+        "order": 2,
+        "text_ar": "ضيّق الدائرة بمصدرين مستقلين: ورقة المفاتيح مع فحص القفل، وسجل الباب مع ورقة حصة المشرف؛ كلها تقصر الوصول على طالبين.",
+        "uses_evidence_ids": [
+          "ev_key_log",
+          "ev_lock_check",
+          "ev_lab_register",
+          "ev_class_timetable"
+        ],
+        "inference_id": "i_a_access"
+      },
+      {
+        "order": 3,
+        "text_ar": "ثم اسأل عمّا يفرّق بينهما: أثر جزئي لا يستبعد أحداً، وكاميرا لم تسجّل، وروايتان متماثلتان؛ فلا شيء يفرّق.",
+        "uses_evidence_ids": [
+          "ev_partial_print",
+          "ev_camera_gap",
+          "ev_sami_statement",
+          "ev_rami_statement"
+        ],
+        "inference_id": "i_a_nodisc"
+      },
+      {
+        "order": 4,
+        "text_ar": "فلا يصح اتهام أحدهما: ما يُقال عن سامي يصدق على رامي، والإشاعة بلا مصدر، وحاجة المال تعمّ خمسة أعضاء.",
+        "uses_evidence_ids": [
+          "ev_group_rumor",
+          "ev_trip_list"
+        ],
+        "inference_id": "i_rule_sami"
+      },
+      {
+        "order": 5,
+        "text_ar": "الحكم المسؤول هو «غير كافٍ بعد»، مع تسمية ما يحسم: تسجيل الممر لو وُجد، أو أثر المبلغ نفسه إنفاقاً أو إيداعاً، أو بصمة كاملة.",
+        "uses_evidence_ids": [
+          "ev_key_log",
+          "ev_camera_gap",
+          "ev_partial_print"
+        ],
+        "inference_id": "i_support_insufficient"
+      }
+    ],
+    "alternative_paths_ar": [
+      "يكفي طريق الجرد والمفاتيح والأثر لتحديد الفترة والدائرة وعدم التفريق، من غير الصورة وسجل الباب والإفادات.",
+      "ويكفي طريق الصورة وجولة التنظيف وسجل الباب وحصة المشرف والإفادتين، من غير الجرد والمفاتيح والأثر؛ والأقوى أن يتفق الطريقان."
+    ],
+    "what_evidence_could_not_show_ar": [
+      "لا نعرف متى بين 15:42 و17:00 غاب الظرف على وجه التحديد.",
+      "لا نعرف أن أحداً لم يصنع نسخة من المفتاح؛ فحص القفل ينفي الكسر لا النسخ.",
+      "لا تعني عبارة «غير كافٍ» أن الاثنين بريئان؛ تعني أن ما بين أيدينا لا يسمح بحكم على أحد.",
+      "الدليل الذي قد يحسم غائب عن الملف اليوم: تسجيل كاميرا لو وُجد، أو أثر للمبلغ نفسه إنفاقاً أو إيداعاً، أو بصمة كاملة قابلة للمقارنة."
+    ],
+    "science_notes_ar": [
+      "«غير كافٍ» جواب علمي كامل حين تسنده بما أثبتّ: نافذة زمنية، ودائرة من اثنين، ولا دليل يفرّق بينهما. الجواب بلا هذه الثلاثة تهرّب لا معايرة.",
+      "ما يصدق بالقدر نفسه على شخصين لا يرجّح أحدهما: ورقة المفاتيح، وسجل الباب، والحاجة إلى المال، كلها تعمّ الاثنين، ولذلك لا نحمّل أحداً أكثر مما نثبت.",
+      "الإشاعة لا تكتسب وزناً بكثرة تحويلها؛ ابحث عن مصدرها الأول، فإن لم تجده فهي خبر بلا سند.",
+      "الأثر الجزئي نتيجته «غير حاسمة» مشروعة ولا تُعدّ فشلاً؛ والخطر أن نقرأها كأنها حاسمة.",
+      "حفاظاً على الإنصاف، يقدّم المشرف طلباً ودياً لمن أخذ الظرف أن يعيده دون مساءلة، ويُضاف إلى النادي سجل لحفظ المال بمفتاحين.",
+      "الملف لا يسمّي الفاعل لأنه لا يعرفه: أحد الطالبين أخذه على الأرجح، ولا ثالث؛ والعبرة أن «غير كافٍ» ليست «بريء»، وأن التخمين ولو أصاب لا يساوي الإثبات.",
+      "بطاقة الأصل: القضية أصلية من ATHAR، وبنيتها من نمط «لا يكفي بعد» في مكتبة تصميم القضايا؛ لا أحداث حقيقية فيها."
+    ]
+  },
+  "expert_review": [
+    {
+      "role": "narrative_editor",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-28",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "scientific_reviewer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-28",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "learning_designer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-28",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "age_appropriateness",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-28",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "cultural_reviewer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-28",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "legal_rights",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-28",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "safety",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-28",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    }
+  ]
+}

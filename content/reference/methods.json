@@ -1,0 +1,971 @@
+{
+ "version": "1.0.0",
+ "generated_from": "04_FORENSIC_SCIENCE/FORENSIC_METHOD_VALIDITY_MATRIX.csv",
+ "hook_ar": "ليست كل طرق فحص الأدلة سواء. أيها يصمد أمام الاختبار، وأيها بُني على ثقة أكثر مما يحتمله العلم؟",
+ "tiers": {
+  "strong": "أساس علمي راسخ نسبياً",
+  "conditional": "مقبول بشروط وحدود",
+  "open": "غير محسوم أو فجواته كبيرة",
+  "unsupported": "غير مدعوم علمياً لهذا الاستعمال",
+  "process": "إجراء أو ضمان جودة",
+  "analogue": "مثال تعليمي خيالي"
+ },
+ "items": [
+  {
+   "id": "M01",
+   "name_en": "Single-source DNA STR profiling",
+   "name_ar": "بصمة الحمض النووي (ملف STR) من مصدر واحد",
+   "hook_ar": "عُثر على عيّنة تطابق ملف شخص ما. هل يكفي التطابق لنعرف كيف وصلت العيّنة إلى هناك؟",
+   "discipline_en": "Forensic biology",
+   "discipline_ar": "علم الأحياء الجنائي",
+   "tier": "strong",
+   "min_band": "all",
+   "can_ar": [
+    "يربط عيّنة بشخص بعينه أو يستبعده بدقة عالية.",
+    "احتمال التطابق الصدفي يُقدَّر من قواعد بيانات السكان، وهو ضئيل جداً بحسب مراجعة PCAST عام 2016."
+   ],
+   "cannot_ar": [
+    "لا يبيّن كيف ولا متى وصل الحمض النووي إلى الأثر.",
+    "لا يفرّق بين لمس مباشر وانتقال غير مباشر من شيء آخر."
+   ],
+   "errors_ar": [
+    "التلوث وأخطاء المناولة، وهي الخطر العملي الأكبر.",
+    "الانتقال الثانوي للحمض النووي بين الأغراض والأشخاص."
+   ],
+   "suitability_en": "High (13+ for exclusion logic; 16+ for transfer)",
+   "in_mvp": "yes",
+   "confidence": "high",
+   "standards_en": "ANSI/ASB Standard 040 (2019, 1st ed.); ISO/IEC 17025:2017",
+   "original_en": {
+    "validity": "Foundationally valid (PCAST 2016); also simple two-person mixtures",
+    "error_rate": "PCAST: chance-match probabilities estimable from population databases and extremely low; no single lab error rate given; contamination/handling errors are the practical risk",
+    "concerns": "Source-level only: does not show how/when DNA was deposited; contamination; transfer"
+   },
+   "src_ids": [
+    "ATH-SRC-0301",
+    "ATH-SRC-0304",
+    "ATH-SRC-0311",
+    "ATH-SRC-0341"
+   ],
+   "ko_ids": [
+    "KO-FC-04-005",
+    "KO-FC-04-006",
+    "KO-FC-04-007"
+   ]
+  },
+  {
+   "id": "M02",
+   "name_en": "Complex DNA mixture interpretation (probabilistic genotyping)",
+   "name_ar": "تفسير خلائط الحمض النووي المعقدة (التنميط الاحتمالي)",
+   "hook_ar": "في العيّنة آثار من عدة أشخاص. كلما زاد عددهم قلّ ما يمكن قوله بثقة.",
+   "discipline_en": "Forensic biology / Forensic statistics",
+   "discipline_ar": "علم الأحياء الجنائي",
+   "tier": "open",
+   "min_band": "18+",
+   "can_ar": [
+    "برامج التنميط الاحتمالي تعطي نسبة ترجيح في نطاق محدود: نحو ثلاثة مساهمين على الأكثر، ومساهم ثانوي لا تقل حصته عن 20% بحسب PCAST 2016."
+   ],
+   "cannot_ar": [
+    "التفسير الذاتي للخلائط لم يُعدّ صالحاً بحسب PCAST 2016.",
+    "لا يحسم بثقة خلائط كثيرة المساهمين، وتقرير NIST لعام 2024 يرى أن الموثوقية مسألة درجات وأن البيانات العامة غير كافية."
+   ],
+   "errors_ar": [
+    "تختلف النتائج بين البرامج وبين المحللين في دراسات المختبرات.",
+    "نسبة الترجيح تُسنَد بنموذج ولا تُقاس مباشرة، والسياق قد يؤثر في الحكم.",
+    "الأسئلة عن «ماذا حدث؟» تبقى بلا جواب."
+   ],
+   "suitability_en": "Medium (18+ as concept: 'more contributors = more uncertainty')",
+   "in_mvp": "later",
+   "confidence": "high",
+   "standards_en": "ANSI/ASB Standard 040; ISFG 2018 propositions guidance; ISO 21043-4:2025",
+   "original_en": {
+    "validity": "PCAST 2016: subjective interpretation not valid; PG software valid only within limited range (3 contributors, minor >=20%). NIST IR 8351 (2024): reliability is a matter of degree; insufficient public data",
+    "error_rate": "Interlaboratory studies show wide variation; LRs differ by software/analyst; proficiency tests mostly simple samples",
+    "concerns": "Subjectivity and context (Dror & Hampikian 2011); LR assigned not measured; activity-level questions unaddressed"
+   },
+   "src_ids": [
+    "ATH-SRC-0301",
+    "ATH-SRC-0302",
+    "ATH-SRC-0304",
+    "ATH-SRC-0328",
+    "ATH-SRC-0340"
+   ],
+   "ko_ids": [
+    "KO-FC-04-006",
+    "KO-FC-04-002",
+    "KO-FC-04-005"
+   ]
+  },
+  {
+   "id": "M03",
+   "name_en": "DNA transfer and activity-level evaluation",
+   "name_ar": "انتقال الحمض النووي وتقييم «ماذا حدث؟»",
+   "hook_ar": "وُجد الحمض النووي لشخص على مقبض. هل لمسه فعلاً، أم انتقل إليه من يد أخرى؟",
+   "discipline_en": "Forensic biology / Evidence interpretation",
+   "discipline_ar": "علم الأحياء الجنائي",
+   "tier": "open",
+   "min_band": "all",
+   "can_ar": [
+    "يساعد على تقدير مدى توافق النتيجة مع روايتين مختلفتين لما جرى."
+   ],
+   "cannot_ar": [
+    "تطابق المصدر لا يثبت الفعل.",
+    "لا قاعدة عامة لمعدلات الانتقال؛ فهي تتغير كثيراً بتغير الظروف، ولا معدل خطأ عام لهذا النوع من التقييم."
+   ],
+   "errors_ar": [
+    "الانتقال الثانوي.",
+    "الحمض النووي الخلفي الموجود أصلاً في المكان.",
+    "قراءة تطابق المصدر على أنه إثبات للنشاط."
+   ],
+   "suitability_en": "High (16+; abstract token simulation)",
+   "in_mvp": "yes",
+   "confidence": "high",
+   "standards_en": "ISO 21043-4:2025; ENFSI 2015 guideline (activity-level propositions)",
+   "original_en": {
+    "validity": "No single validity verdict; NIST IR 8351 (2024) and ISFG (2018) stress significant knowledge gaps on transfer/persistence",
+    "error_rate": "Transfer rates vary widely by conditions (van Oorschot et al. 2019 review); no general error rate",
+    "concerns": "Secondary transfer; background DNA; over-reading of a source match as activity"
+   },
+   "src_ids": [
+    "ATH-SRC-0304",
+    "ATH-SRC-0317",
+    "ATH-SRC-0340",
+    "ATH-SRC-0341"
+   ],
+   "ko_ids": [
+    "KO-FC-04-007",
+    "KO-FC-04-008",
+    "KO-FC-04-009"
+   ]
+  },
+  {
+   "id": "M04",
+   "name_en": "Latent fingerprint comparison (ACE-V)",
+   "name_ar": "مقارنة البصمات الكامنة (طريقة ACE-V)",
+   "hook_ar": "البصمة تبدو واضحة للعين. فهل يمكن أن يقرأها خبيران قراءتين مختلفتين؟",
+   "discipline_en": "Pattern evidence / Trace",
+   "discipline_ar": "أدلة الأنماط",
+   "tier": "conditional",
+   "min_band": "all",
+   "can_ar": [
+    "طريقة صالحة من حيث الأساس لكنها ذاتية، وفيها نسبة إيجابيات كاذبة لا تُهمل بحسب PCAST 2016."
+   ],
+   "cannot_ar": [
+    "ليست «معصومة من الخطأ» كما تصوّر المسلسلات.",
+    "رأى تقرير الأكاديميات الأمريكية (NRC 2009) أن الطريقة غير محددة بما يكفي لتوصف بأنها مُتحقَّق منها."
+   ],
+   "errors_ar": [
+    "في دراسة Ulery 2011 على 169 فاحصاً: إيجابيات كاذبة 0.1% وسلبيات كاذبة 7.5%.",
+    "قدّر PCAST حدوداً عليا قد تصل إلى 1 من 306 (دراسة FBI) وإلى 1 من 18 (دراسة مختبر آخر).",
+    "تأثر الفاحص بالسياق (Dror 2006)، واختلاف الفاحصين، والمبالغة في الشهادة."
+   ],
+   "suitability_en": "High (13+ with synthetic prints)",
+   "in_mvp": "yes",
+   "confidence": "high",
+   "standards_en": "OSAC Friction Ridge standards on Registry (not individually verified); ISO/IEC 17025",
+   "original_en": {
+    "validity": "Foundationally valid subjective method with substantial false-positive rate (PCAST 2016); NRC 2009 said ACE-V not specific enough to be validated",
+    "error_rate": "Ulery et al. 2011: FP 0.1%, FN 7.5% (169 examiners); PCAST upper bounds up to 1 in 306 (FBI study) and 1 in 18 (other lab study)",
+    "concerns": "Contextual bias (Dror 2006); examiner disagreement on suitability; testimony overstatement"
+   },
+   "src_ids": [
+    "ATH-SRC-0301",
+    "ATH-SRC-0307",
+    "ATH-SRC-0323",
+    "ATH-SRC-0331",
+    "ATH-SRC-0332",
+    "ATH-SRC-0358"
+   ],
+   "ko_ids": [
+    "KO-FC-04-012",
+    "KO-FC-04B-005",
+    "KO-FC-04-001"
+   ]
+  },
+  {
+   "id": "M05",
+   "name_en": "Handwriting comparison",
+   "name_ar": "مقارنة الخط اليدوي",
+   "hook_ar": "كُتبت الرسالة بخط يشبه خط أحدهم. كم شخصاً يكتب بخط يشبهه؟",
+   "discipline_en": "Forensic document examination",
+   "discipline_ar": "فحص الوثائق",
+   "tier": "conditional",
+   "min_band": "all",
+   "can_ar": [
+    "تقيس دراسة صندوق أسود منشورة عام 2022 نسب الخطأ فعلياً، فالطريقة قابلة للدراسة والتحسين."
+   ],
+   "cannot_ar": [
+    "لا اتفاق على طريقة التعبير عن النتيجة باحتمال.",
+    "البيانات المتاحة من خط لاتيني فقط، فلا نعرف مدى انطباقها على الخط العربي."
+   ],
+   "errors_ar": [
+    "في دراسة Hicklin 2022: 3.1% قالوا خطأً «كتبه فلان» لخط كاتب آخر، و1.1% قالوا خطأً «لم يكتبه» لخط كاتبه الحقيقي.",
+    "ترتفع نسبة الخطأ إلى نحو 8.7% عند مقارنة خطّي توأمين.",
+    "يتأثر الأداء بمستوى تدريب الفاحص."
+   ],
+   "suitability_en": "High (13+ with fictional handwriting)",
+   "in_mvp": "yes",
+   "confidence": "high",
+   "standards_en": "ANSI/ASB Standard 011 (scope of expertise; edition not verified); NISTIR 8282r1",
+   "original_en": {
+    "validity": "Not assessed by PCAST; NIST human-factors report (2020/2021) recommends systemic safeguards; black-box study 2022",
+    "error_rate": "Hicklin et al. 2022: 3.1% erroneous 'written by' on non-mated, 1.1% erroneous 'not written by' on mated; twins 8.7%",
+    "concerns": "Twins/similar writers; training level; no consensus on probability expression; Latin-script data only"
+   },
+   "src_ids": [
+    "ATH-SRC-0308",
+    "ATH-SRC-0333",
+    "ATH-SRC-0359"
+   ],
+   "ko_ids": [
+    "KO-FC-04-017",
+    "KO-FC-04-003",
+    "KO-FC-04-020"
+   ]
+  },
+  {
+   "id": "M06",
+   "name_en": "Firearms / toolmark comparison",
+   "name_ar": "مقارنة آثار الأسلحة والأدوات (مفهوم المراجعة العلمية فقط)",
+   "hook_ar": "هل يستطيع أثر على المعدن أن يقول «هذه الأداة بعينها»؟ الدراسات تقول: أقل مما يُظن.",
+   "discipline_en": "Pattern evidence",
+   "discipline_ar": "أدلة الأنماط",
+   "tier": "open",
+   "min_band": "18+",
+   "can_ar": [
+    "بعض الدراسات تُظهر نسبة إيجابيات كاذبة صغيرة، لكنها ليست صفراً."
+   ],
+   "cannot_ar": [
+    "رأى PCAST عام 2016 أنها لم تبلغ الصلاحية الأساسية، وعارضت وزارة العدل الأمريكية ذلك عام 2021.",
+    "النتائج تتوقف كثيراً على طريقة معاملة الحالات «غير الحاسمة»."
+   ],
+   "errors_ar": [
+    "نحو 1 من 66 في دراسة Ames بحسب PCAST، ونحو 0.66% للرصاص و0.93% لأغلفة الطلقات في دراسة Monson 2023.",
+    "التصاميم المغلقة تُخفّض الخطأ الظاهر.",
+    "الأخطاء تتركز عند قلة من الفاحصين."
+   ],
+   "suitability_en": "Low for teens (weapon topic); toolmark-on-lock analogue acceptable 16+",
+   "in_mvp": "no",
+   "confidence": "medium",
+   "standards_en": "ASB Standard 096 (ammunition documentation; edition not verified); OSAC Firearms & Toolmarks subcommittee (14 Registry items)",
+   "original_en": {
+    "validity": "Fell short of foundational validity in 2016 (PCAST: one appropriate black-box study); contested by DOJ 2021",
+    "error_rate": "PCAST: FP ~1 in 66 (upper bound 1 in 46) in Ames study; Monson et al. 2023: FP ~0.66% bullets, ~0.93% cartridge cases; strongly dependent on handling of inconclusives (Dorfman & Valliant 2022)",
+    "concerns": "Inconclusive-rate debate; closed-set designs underestimate error; error concentrated in few examiners"
+   },
+   "src_ids": [
+    "ATH-SRC-0301",
+    "ATH-SRC-0302",
+    "ATH-SRC-0303",
+    "ATH-SRC-0334",
+    "ATH-SRC-0335"
+   ],
+   "ko_ids": [
+    "KO-FC-04-016",
+    "KO-FC-04-002",
+    "KO-FC-04-003"
+   ]
+  },
+  {
+   "id": "M07",
+   "name_en": "Toolmark analogue (fictional tool on fictional lock/wood)",
+   "name_ar": "محاكاة آثار الأدوات (أداة خيالية على قفل خيالي)",
+   "hook_ar": "قفل خيالي وأداة خيالية. كم أداة تترك الأثر نفسه؟",
+   "discipline_en": "Pattern evidence (educational analogue)",
+   "discipline_ar": "Pattern evidence (educational analogue)",
+   "tier": "analogue",
+   "min_band": "all",
+   "can_ar": [
+    "تدرّبك على الفرق بين الصفات العامة التي تشترك فيها أدوات كثيرة والصفات الفردية النادرة."
+   ],
+   "cannot_ar": [
+    "لا تقيس معدلات خطأ حقيقية؛ أرقام اللعبة خيالية ولا تُنسب إلى الواقع."
+   ],
+   "errors_ar": [
+    "الخلط بين الصفات العامة والفردية.",
+    "الانجراف نحو محتوى الأسلحة، وهذا ما تمنعه أثر عمداً."
+   ],
+   "suitability_en": "High (13+)",
+   "in_mvp": "later",
+   "confidence": "medium",
+   "standards_en": "None specific",
+   "original_en": {
+    "validity": "Educational analogue only; inherits firearms/toolmark uncertainty",
+    "error_rate": "Use fictional examiner-error data in game; do not cite real rates as if for this analogue",
+    "concerns": "Must not drift into weapon content; class vs individual characteristics"
+   },
+   "src_ids": [
+    "ATH-SRC-0301",
+    "ATH-SRC-0334"
+   ],
+   "ko_ids": [
+    "KO-FC-04-016",
+    "KO-FC-04-001",
+    "KO-FC-04-002"
+   ]
+  },
+  {
+   "id": "M08",
+   "name_en": "Bitemark comparison",
+   "name_ar": "مقارنة آثار العض",
+   "hook_ar": "قيل لسنوات إن الأسنان كالبصمة. فهل أثبت أحد ذلك؟ لم يثبت.",
+   "discipline_en": "Forensic odontology",
+   "discipline_ar": "طب الأسنان الشرعي",
+   "tier": "unsupported",
+   "min_band": "all",
+   "can_ar": [
+    "تُدرَّس هنا مثالاً على طريقة دخلت المحاكم ثم لم تصمد للفحص العلمي. نستعمل الطين أو الفاكهة مثالاً، لا دليلاً حقيقياً."
+   ],
+   "cannot_ar": [
+    "لا دعم علمياً لفرادة الأسنان ولا لإمكان قراءة أثرها على الجلد بدقة.",
+    "خلص تقرير NIST (2023) إلى أن أياً من الفرضيات الثلاث التي تقوم عليها الطريقة غير مدعومة."
+   ],
+   "errors_ar": [
+    "نسب الإيجابيات الكاذبة المرصودة تفوق عادة 10% بحسب PCAST.",
+    "تشوّه الجلد.",
+    "اختلاف الفاحصين حتى في كون الإصابة عضة أصلاً."
+   ],
+   "suitability_en": "High as a 'discredited method' case study using clay/fruit analogue (13+); never as valid evidence",
+   "in_mvp": "yes",
+   "confidence": "high",
+   "standards_en": "No OSAC-endorsed method for bitemark identification (status to confirm)",
+   "original_en": {
+    "validity": "Not supported: PCAST 2016 far from foundational validity; NIST IR 8352 (2023): none of three premises supported",
+    "error_rate": "PCAST: observed FP rates typically above 10%; NIST: in one study only 8% of cases reached 90% analyst agreement on key questions",
+    "concerns": "Skin distortion; uniqueness unproven; examiner disagreement on whether injury is a bite"
+   },
+   "src_ids": [
+    "ATH-SRC-0301",
+    "ATH-SRC-0302",
+    "ATH-SRC-0305"
+   ],
+   "ko_ids": [
+    "KO-FC-04-013",
+    "KO-FC-04-001",
+    "KO-FC-04-002"
+   ]
+  },
+  {
+   "id": "M09",
+   "name_en": "Microscopic hair comparison (for individualisation)",
+   "name_ar": "المقارنة المجهرية للشعر (لتحديد صاحبه)",
+   "hook_ar": "شعرتان تبدوان متطابقتين تحت المجهر. هل صاحبهما واحد؟ أحياناً لا.",
+   "discipline_en": "Trace evidence",
+   "discipline_ar": "الآثار الدقيقة",
+   "tier": "unsupported",
+   "min_band": "all",
+   "can_ar": [
+    "الاستعمال المقصود هنا هو تحديد صاحب الشعرة بعينه، وهو بالذات ما لم يثبت علمياً."
+   ],
+   "cannot_ar": [
+    "لم تثبت صلاحيته الأساسية لهذا الغرض بحسب PCAST 2016."
+   ],
+   "errors_ar": [
+    "في إعادة فحص FBI عام 2002 بالحمض النووي الميتوكوندري: 9 من 80 شعرة (11%) ظُنّت غير متمايزة مجهرياً لكنها تعود إلى أشخاص مختلفين.",
+    "بالغت الشهادات تاريخياً، وتُدرجه منظمة «مشروع البراءة» ضمن التخصصات الإشكالية."
+   ],
+   "suitability_en": "Medium (16+ as historical lesson)",
+   "in_mvp": "later",
+   "confidence": "high",
+   "standards_en": "OSAC Trace Materials standards exist for hair/fibre examination (not individually verified)",
+   "original_en": {
+    "validity": "Foundational validity not established (PCAST 2016 review of DOJ document)",
+    "error_rate": "FBI 2002 mtDNA re-examination: 9 of 80 (11%) microscopically indistinguishable hairs came from different people",
+    "concerns": "Overstated testimony historically; listed by Innocence Project among problem disciplines"
+   },
+   "src_ids": [
+    "ATH-SRC-0301",
+    "ATH-SRC-0302",
+    "ATH-SRC-0346"
+   ],
+   "ko_ids": [
+    "KO-FC-04-014",
+    "KO-FC-04-002",
+    "KO-FC-04-013"
+   ]
+  },
+  {
+   "id": "M10",
+   "name_en": "Footwear impression (identifying/randomly acquired characteristics)",
+   "name_ar": "آثار الأحذية (علامات التمييز والتآكل العشوائي)",
+   "hook_ar": "كم حذاءً في مدينتك له النقش نفسه؟",
+   "discipline_en": "Pattern evidence",
+   "discipline_ar": "أدلة الأنماط",
+   "tier": "open",
+   "min_band": "all",
+   "can_ar": [
+    "على مستوى الصفات العامة (النقش والمقاس) يمكن استبعاد حذاء، أو وضعه ضمن مجموعة من الأحذية المحتملة."
+   ],
+   "cannot_ar": [
+    "ربط أثر بحذاء بعينه عبر علامات التآكل العشوائي لم يثبت علمياً بحسب PCAST 2016.",
+    "لم توجد حتى 2016–2017 دراسات صندوق أسود مناسبة، ودراسات أحدث لم نتحقق منها."
+   ],
+   "errors_ar": [
+    "الخلط بين الصفات العامة والفردية.",
+    "عدم معرفة كم حذاءً من الطراز نفسه صُنع وبيع."
+   ],
+   "suitability_en": "High at class level (13+: 'how many shoes share this tread?')",
+   "in_mvp": "yes",
+   "confidence": "medium",
+   "standards_en": "OSAC Footwear & Tire subcommittee standards (not individually verified)",
+   "original_en": {
+    "validity": "Not scientifically valid for associating a print with a specific shoe via identifying marks (PCAST 2016); class characteristics not assessed",
+    "error_rate": "No appropriate black-box studies as of 2016-2017; later studies not verified in-session",
+    "concerns": "Class vs individual characteristics confusion; manufacturing volume unknown"
+   },
+   "src_ids": [
+    "ATH-SRC-0301",
+    "ATH-SRC-0302"
+   ],
+   "ko_ids": [
+    "KO-FC-04-002",
+    "KO-FC-04-013",
+    "KO-FC-04-014"
+   ]
+  },
+  {
+   "id": "M11",
+   "name_en": "Fibre / glass / paint / soil comparison (trace)",
+   "name_ar": "مقارنة الألياف والزجاج والطلاء والتربة",
+   "hook_ar": "ليفة صغيرة على سترة. هل تكفي لتقول من لمس من؟",
+   "discipline_en": "Trace evidence",
+   "discipline_ar": "الآثار الدقيقة",
+   "tier": "open",
+   "min_band": "all",
+   "can_ar": [
+    "ربط على مستوى الفئة: «من النوع نفسه»، ويزداد وزنه كلما توفرت بيانات عن مدى شيوع المادة في المنطقة."
+   ],
+   "cannot_ar": [
+    "لا معدل خطأ عام لها، وبيانات الشيوع تخص قضية ومنطقة بعينهما.",
+    "التشابه في الفئة لا يعني مصدراً واحداً."
+   ],
+   "errors_ar": [
+    "المبالغة في تفسير التشابه.",
+    "فقد الأثر أو بقاؤه بعد زمن.",
+    "المستويات الخلفية الموجودة أصلاً في المكان."
+   ],
+   "suitability_en": "High (13+ with fictional prevalence tables)",
+   "in_mvp": "yes",
+   "confidence": "medium",
+   "standards_en": "OSAC Trace Materials (34 Registry items at fetch; specific titles not verified); ENFSI evaluative guideline",
+   "original_en": {
+    "validity": "No PCAST verdict; class-level associations; value depends on population/background data (Roux et al. 2015)",
+    "error_rate": "No general error rate; frequency data case- and region-specific",
+    "concerns": "Over-interpretation of class similarity; persistence/loss; background levels"
+   },
+   "src_ids": [
+    "ATH-SRC-0309",
+    "ATH-SRC-0317",
+    "ATH-SRC-0339",
+    "ATH-SRC-0356"
+   ],
+   "ko_ids": [
+    "KO-FC-04-018",
+    "KO-FC-04-008",
+    "KO-FC-04-009"
+   ]
+  },
+  {
+   "id": "M12",
+   "name_en": "Seized-drug identification (analytical scheme)",
+   "name_ar": "تحديد المواد المضبوطة (مخطط تحليلي، مفهوم عام فقط)",
+   "hook_ar": "اختبار سريع غيّر لونه. هل يعني ذلك أن المختبر عرف المادة؟",
+   "discipline_en": "Forensic chemistry",
+   "discipline_ar": "الكيمياء الجنائية",
+   "tier": "strong",
+   "min_band": "all",
+   "can_ar": [
+    "التحديد بمخطط تحليلي يستوفي الحد الأدنى من معايير SWGDRUG (الإصدار 8.2، 2024) مقبول عموماً."
+   ],
+   "cannot_ar": [
+    "الاختبار اللوني التمهيدي قد يعطي إيجابيات كاذبة ولا يحدد هوية المادة وحده."
+   ],
+   "errors_ar": [
+    "الخلط بين الاختبار التمهيدي والتأكيدي.",
+    "وجدت دراسة Morgan 2023 أن الاعتماد على اختبار تمهيدي غير مؤكَّد كان من عوامل الإدانات الخاطئة.",
+    "في أثر نتدرب على «مادة س» خيالية فقط، دون أي مادة حقيقية."
+   ],
+   "suitability_en": "Medium (13+ only as abstract 'Substance X' logic)",
+   "in_mvp": "yes",
+   "confidence": "high",
+   "standards_en": "SWGDRUG Recommendations v8.2 (2024); ISO/IEC 17025",
+   "original_en": {
+    "validity": "Generally accepted analytical identification when SWGDRUG minimum standards met (v8.2, 2024)",
+    "error_rate": "Presumptive (colour) tests have false positives; Morgan 2023 found reliance on unconfirmed presumptive tests among wrongful-conviction factors",
+    "concerns": "Presumptive vs confirmatory confusion; safety: no drug-specific content for teens"
+   },
+   "src_ids": [
+    "ATH-SRC-0336",
+    "ATH-SRC-0349"
+   ],
+   "ko_ids": [
+    "KO-FC-04-019",
+    "KO-FC-04-031"
+   ]
+  },
+  {
+   "id": "M13",
+   "name_en": "Comparative bullet lead analysis (CBLA)",
+   "name_ar": "تحليل الرصاص المقارن بالتركيب (طريقة تاريخية)",
+   "hook_ar": "القياس كان دقيقاً، لكن الاستنتاج الذي بُني عليه كان أكبر من القياس.",
+   "discipline_en": "Forensic chemistry (historical)",
+   "discipline_ar": "Forensic chemistry (historical)",
+   "tier": "unsupported",
+   "min_band": "18+",
+   "can_ar": [
+    "تقنية قياس التركيب نفسها سليمة بحسب تقرير الأكاديميات الأمريكية (NRC 2004)."
+   ],
+   "cannot_ar": [
+    "الاستنتاجات منها مبالغ فيها: لا تفرّد المصدر، ولا تربط بعلبة بعينها، ولا تعطي احتمال المصدر."
+   ],
+   "errors_ar": [
+    "ادّعى FBI احتمال تطابق كاذب بنسبة 1 من 2500 بأسلوب غير موثق.",
+    "رأى NRC أن علبة واحدة قد تضم حتى 14 مجموعة تركيبية."
+   ],
+   "suitability_en": "Low (weapon-adjacent)",
+   "in_mvp": "no",
+   "confidence": "high",
+   "standards_en": "None (discontinued practice per secondary sources; not verified)",
+   "original_en": {
+    "validity": "NRC 2004 (Forensic Analysis: Weighing Bullet Lead Evidence): measurement technique sound but inferences overstated; not unique; cannot link to a box or give source probability; Innocence Project lists CBLA among flawed disciplines",
+    "error_rate": "FBI claimed 1 in 2,500 false-match probability via undocumented 2-SD overlap; NRC criticised the statistical grouping (chaining) and noted a box may contain up to 14 compositional groups",
+    "concerns": "Accurate measurement mistaken for valid source inference; missing distribution data; weapon-adjacent"
+   },
+   "src_ids": [
+    "ATH-SRC-0346",
+    "ATH-SRC-0361"
+   ],
+   "ko_ids": [
+    "KO-FC-04-014",
+    "KO-FC-04-031"
+   ]
+  },
+  {
+   "id": "M14",
+   "name_en": "Forensic toxicology (detection and interpretation)",
+   "name_ar": "علم السموم الجنائي: الكشف ثم التفسير (مبدأ عام فقط)",
+   "hook_ar": "وُجدت مادة في العيّنة. هل هي السبب؟ الكشف سؤال، والتفسير سؤال آخر.",
+   "discipline_en": "Forensic toxicology",
+   "discipline_ar": "علم السموم الجنائي",
+   "tier": "conditional",
+   "min_band": "all",
+   "can_ar": [
+    "لا تُستعمل في القضايا إلا طرق مُتحقَّق منها وفق معايير مثل SWGTOX 2013 ومعياري ASB رقم 098 و113."
+   ],
+   "cannot_ar": [
+    "«لم تُكشف» لا تعني «غير موجودة».",
+    "وجود مادة في عيّنة لا يثبت أنها سبب شيء."
+   ],
+   "errors_ar": [
+    "لا معدل خطأ عام موثق في مصادر المصفوفة.",
+    "التفسير بلا سياق كامل.",
+    "هذا موضوع حساس: نتناول مبدأ التفسير فقط، دون مواد أو جرعات."
+   ],
+   "suitability_en": "Low-medium (16+, interpretation principle only; no substances/doses)",
+   "in_mvp": "later",
+   "confidence": "medium",
+   "standards_en": "SWGTOX 2013 (possibly superseded by ANSI/ASB 036 - unverified); ANSI/ASB 098, 113",
+   "original_en": {
+    "validity": "Validated methods required before casework (SWGTOX 2013; ASB toxicology standards 098/113)",
+    "error_rate": "No general error rate in verified sources; method-specific validation parameters",
+    "concerns": "Detection is not causation; 'not detected' is not 'not present'; safety-critical topic"
+   },
+   "src_ids": [
+    "ATH-SRC-0353",
+    "ATH-SRC-0359"
+   ],
+   "ko_ids": [
+    "KO-FC-04-020"
+   ]
+  },
+  {
+   "id": "M15",
+   "name_en": "Time-since-death estimation (early period)",
+   "name_ar": "تقدير الزمن المنقضي منذ الوفاة (المرحلة المبكرة)",
+   "hook_ar": "هل يمكن أن نقول «حدث ذلك الساعة العاشرة تماماً»؟ الأصح أن نقول: بين ساعة وأخرى.",
+   "discipline_en": "Forensic medicine / pathology",
+   "discipline_ar": "الطب الشرعي",
+   "tier": "conditional",
+   "min_band": "all",
+   "can_ar": [
+    "تقدير فترة زمنية مع بيان عدم اليقين، وفق مراجعة Henssge وMadea (2004)."
+   ],
+   "cannot_ar": [
+    "لا يعطي لحظة محددة.",
+    "يتسع النطاق كلما مرّ الزمن وجُهلت الظروف."
+   ],
+   "errors_ar": [
+    "المتغيرات البيئية.",
+    "الاعتماد على طريقة واحدة بدقة زائفة."
+   ],
+   "suitability_en": "Medium (13+ via non-human cooling analogue; no body content)",
+   "in_mvp": "yes",
+   "confidence": "medium",
+   "standards_en": "None verified in-session",
+   "original_en": {
+    "validity": "Accepted as interval estimation with stated uncertainty (Henssge & Madea 2004 review)",
+    "error_rate": "Error expressed as confidence intervals that widen with time and unknown conditions",
+    "concerns": "Environmental variables; single-method over-precision"
+   },
+   "src_ids": [
+    "ATH-SRC-0354"
+   ],
+   "ko_ids": [
+    "KO-FC-04-021"
+   ]
+  },
+  {
+   "id": "M16",
+   "name_en": "Manner-of-death determination",
+   "name_ar": "تحديد طريقة الوفاة (للبالغين فقط)",
+   "hook_ar": "هذا حكم يجمع الطب والتحقيق معاً، وليس قياساً بجهاز.",
+   "discipline_en": "Forensic pathology",
+   "discipline_ar": "الباثولوجيا الشرعية",
+   "tier": "open",
+   "min_band": "18+",
+   "can_ar": [
+    "رأي خبير يدمج المعلومات الطبية والتحقيقية."
+   ],
+   "cannot_ar": [
+    "لا معدل خطأ عام موثق له."
+   ],
+   "errors_ar": [
+    "في دراسة محل خلاف (Dror وآخرون 2021) ظهر تباين بين الأطباء، والسياق مفيد لكنه قد يُحيّز الحكم.",
+    "موضوع حساس؛ تتولى مراجعته مصادر الخبراء البالغين."
+   ],
+   "suitability_en": "Low (18+ adult reviewers only)",
+   "in_mvp": "no",
+   "confidence": "low",
+   "standards_en": "None verified in-session",
+   "original_en": {
+    "validity": "Expert judgement integrating medical and investigative information; bias concern raised by Dror et al. 2021 (contested)",
+    "error_rate": "No general error rate; inter-pathologist variability documented in contested study",
+    "concerns": "Context needed but can bias; sensitive topics (child deaths, suicide)"
+   },
+   "src_ids": [
+    "ATH-SRC-0329"
+   ],
+   "ko_ids": [
+    "KO-FC-04-022"
+   ]
+  },
+  {
+   "id": "M17",
+   "name_en": "Biological profile from skeletal remains (age/sex/stature)",
+   "name_ar": "تقدير العمر والجنس والطول من الهيكل",
+   "hook_ar": "هل تقول العظام عمراً محدداً؟ إنها تقول نطاقاً.",
+   "discipline_en": "Forensic anthropology",
+   "discipline_ar": "الأنثروبولوجيا الشرعية",
+   "tier": "conditional",
+   "min_band": "all",
+   "can_ar": [
+    "مقبول عند استعمال طرق مُتحقَّق منها ومناسبة للمجتمع المرجعي (Christensen وCrowder 2009)."
+   ],
+   "cannot_ar": [
+    "لا يعطي رقماً واحداً، ولا ينطبق جيداً إذا اختلف المجتمع المرجعي عن صاحب الهيكل."
+   ],
+   "errors_ar": [
+    "عدم تطابق المجتمع المرجعي.",
+    "تأثر الخبير بالسياق (Nakhaeizadeh 2014).",
+    "حساسية ثقافية في التعامل مع البقايا. نكتفي في أثر برسوم مبسطة."
+   ],
+   "suitability_en": "Medium (16+, stylised diagrams only)",
+   "in_mvp": "later",
+   "confidence": "medium",
+   "standards_en": "OSAC Anthropology subcommittee (11 Registry items at fetch; titles not verified)",
+   "original_en": {
+    "validity": "Accepted with population-appropriate, validated methods (Christensen & Crowder 2009)",
+    "error_rate": "Method-specific; dental imaging age estimation reviewed systematically (Marroquin et al. 2017)",
+    "concerns": "Reference-population mismatch; contextual bias (Nakhaeizadeh et al. 2014); cultural sensitivity"
+   },
+   "src_ids": [
+    "ATH-SRC-0330",
+    "ATH-SRC-0355",
+    "ATH-SRC-0357"
+   ],
+   "ko_ids": [
+    "KO-FC-04-023",
+    "KO-FC-04-027"
+   ]
+  },
+  {
+   "id": "M18",
+   "name_en": "Digital forensic acquisition and artefact analysis",
+   "name_ar": "التحليل الجنائي الرقمي",
+   "hook_ar": "الهاتف يحتفظ بالكثير... لكن ليس بكل شيء، ولا يقول من كان يحمله.",
+   "discipline_en": "Digital evidence",
+   "discipline_ar": "الأدلة الرقمية",
+   "tier": "strong",
+   "min_band": "all",
+   "can_ar": [
+    "موثوق عند حسن التطبيق بحسب NIST (2022)، وتُختبر الأدوات ببرامج مثل CFTT وCFReDS."
+   ],
+   "cannot_ar": [
+    "لا يعثر على كل شيء.",
+    "لا ينسب الفعل تلقائياً إلى مستخدم بعينه."
+   ],
+   "errors_ar": [
+    "ضجيج استعادة الملفات المحذوفة.",
+    "يتغير معنى الأثر الرقمي بتغير إصدار البرنامج.",
+    "لا معدل خطأ واحد؛ فهو يختلف باختلاف الأداة."
+   ],
+   "suitability_en": "High (13+ with fictional device data)",
+   "in_mvp": "yes",
+   "confidence": "high",
+   "standards_en": "SWGDE documents (12 on OSAC Registry); ISO/IEC 27037 (referenced by ISO 21043-2; not verified)",
+   "original_en": {
+    "validity": "Reliable when appropriately applied (NIST IR 8354, 2022)",
+    "error_rate": "Tool-specific; NIST CFTT/CFReDS used to test tools; no single error rate",
+    "concerns": "Not all evidence found; deleted-file recovery noise; artefact meaning changes with software versions; user attribution"
+   },
+   "src_ids": [
+    "ATH-SRC-0306",
+    "ATH-SRC-0350",
+    "ATH-SRC-0351",
+    "ATH-SRC-0352"
+   ],
+   "ko_ids": [
+    "KO-FC-04-024",
+    "KO-FC-04-001",
+    "KO-FC-04-025"
+   ]
+  },
+  {
+   "id": "M19",
+   "name_en": "Image enhancement and authentication",
+   "name_ar": "تحسين الصور وإثبات أصالتها",
+   "hook_ar": "هل يستطيع «التحسين» أن يُظهر ما لم تلتقطه الكاميرا أصلاً؟ لا.",
+   "discipline_en": "Forensic imaging",
+   "discipline_ar": "التصوير الجنائي",
+   "tier": "open",
+   "min_band": "all",
+   "can_ar": [
+    "مبادئ العمل موثقة في وثائق إجماع الخبراء (SWGDE)."
+   ],
+   "cannot_ar": [
+    "التحسين لا يخلق تفاصيل غائبة.",
+    "التعرّف على شخص من صورة منخفضة الدقة محدود جداً."
+   ],
+   "errors_ar": [
+    "لا معدل خطأ عام موثقاً في مصادرنا، ولم نجد مراجعة أساسية من NIST.",
+    "صور الذكاء الاصطناعي التوليدية تعقّد مسألة الأصالة."
+   ],
+   "suitability_en": "High (13+)",
+   "in_mvp": "yes",
+   "confidence": "medium",
+   "standards_en": "SWGDE imaging/photography/video documents (titles not verified)",
+   "original_en": {
+    "validity": "Principles set in SWGDE consensus documents; no NIST foundation review verified",
+    "error_rate": "No general error rate verified",
+    "concerns": "Enhancement cannot create absent detail; low-resolution identification limits; generative-AI images"
+   },
+   "src_ids": [
+    "ATH-SRC-0321",
+    "ATH-SRC-0350"
+   ],
+   "ko_ids": [
+    "KO-FC-04-025"
+   ]
+  },
+  {
+   "id": "M20",
+   "name_en": "Forensic gait analysis from CCTV",
+   "name_ar": "تحليل المشية من كاميرات المراقبة",
+   "hook_ar": "هل مشيتك فريدة مثل بصمتك؟ لم يثبت ذلك.",
+   "discipline_en": "Forensic imaging",
+   "discipline_ar": "التصوير الجنائي",
+   "tier": "open",
+   "min_band": "all",
+   "can_ar": [
+    "يشرح كتيّب الجمعية الملكية البريطانية (2017) كيف يُستعمل أمام المحاكم وما حدوده."
+   ],
+   "cannot_ar": [
+    "موثوقيته لم تُقَس كمياً في مصادرنا المتحقَّق منها.",
+    "بيانات السكان المرجعية محدودة."
+   ],
+   "errors_ar": [
+    "رداءة جودة الصورة.",
+    "اختلاف مشية الشخص نفسه من وقت إلى آخر."
+   ],
+   "suitability_en": "Medium (16+, discussion)",
+   "in_mvp": "later",
+   "confidence": "medium",
+   "standards_en": "None verified",
+   "original_en": {
+    "validity": "Royal Society/RSE primer (2017) explains use and limitations for courts",
+    "error_rate": "Not quantified in verified sources",
+    "concerns": "Low image quality; within-person variability; limited population data"
+   },
+   "src_ids": [
+    "ATH-SRC-0321"
+   ],
+   "ko_ids": [
+    "KO-FC-04-025"
+   ]
+  },
+  {
+   "id": "M21",
+   "name_en": "Crime scene documentation and chain of custody",
+   "name_ar": "توثيق مسرح الجريمة وسلسلة العهدة",
+   "hook_ar": "من لمس الدليل ومتى؟ إن لم يكن مسجلاً فكأنه لم يُحفظ.",
+   "discipline_en": "Crime scene documentation",
+   "discipline_ar": "توثيق مسرح الجريمة",
+   "tier": "process",
+   "min_band": "all",
+   "can_ar": [
+    "تُثبت أن الدليل المعروض هو نفسه الذي رُفع من المكان ولم يُبدَّل (معيار ISO 21043-2:2018، ودليل NIJ لعام 2013)."
+   ],
+   "cannot_ar": [
+    "لا تثبت صحة نتيجة التحليل نفسه؛ فهي مسألة إجراء لا مسألة صلاحية علمية."
+   ],
+   "errors_ar": [
+    "أخطاء إجرائية: فقدان الدليل، تلوثه، نقص السجلات.",
+    "التوثيق الانتقائي.",
+    "الرؤية النفقية: توثيق ما يخدم فكرة واحدة فقط."
+   ],
+   "suitability_en": "High (13+, non-violent scenes)",
+   "in_mvp": "yes",
+   "confidence": "high",
+   "standards_en": "ISO 21043-2:2018 (stage 90.92 to be revised); NIJ guide NCJ 243598",
+   "original_en": {
+    "validity": "Process standard rather than validity question (ISO 21043-2:2018, under revision; NIJ 2013 guide)",
+    "error_rate": "Errors are procedural (loss, contamination, incomplete records)",
+    "concerns": "Selective documentation; tunnel vision; contamination"
+   },
+   "src_ids": [
+    "ATH-SRC-0315",
+    "ATH-SRC-0345",
+    "ATH-SRC-0348"
+   ],
+   "ko_ids": [
+    "KO-FC-04-026",
+    "KO-FC-04B-002"
+   ]
+  },
+  {
+   "id": "M22",
+   "name_en": "Evaluative reporting with likelihood ratios",
+   "name_ar": "التقرير التقييمي بنسبة الترجيح",
+   "hook_ar": "السؤال الصحيح ليس «هل هو مذنب؟» بل «كم يدعم هذا الدليل فرضية أكثر من أخرى؟»",
+   "discipline_en": "Evidence interpretation / Statistics",
+   "discipline_ar": "تفسير الأدلة",
+   "tier": "conditional",
+   "min_band": "all",
+   "can_ar": [
+    "إطار موصى به في أوروبا (ENFSI 2015) وفي المعيار ISO 21043-4:2025، يعبّر عن قوة دعم النتائج لفرضية مقابل فرضية بديلة."
+   ],
+   "cannot_ar": [
+    "لا يعطي احتمال الذنب.",
+    "ليس معتمداً في كل مكان؛ فالممارسة الأمريكية لا تلتزم به دائماً."
+   ],
+   "errors_ar": [
+    "نسبة الترجيح تُسنَد ولا تُقاس، وقد تختلف بين المحللين والبرامج (NIST IR 8351).",
+    "سوء فهم العبارات اللفظية.",
+    "مغالطة قلب الاحتمال الشرطي.",
+    "اختيار مستوى الفرضيتين المقارَنتين."
+   ],
+   "suitability_en": "Medium (16+; numberless version 13+)",
+   "in_mvp": "yes",
+   "confidence": "high",
+   "standards_en": "ENFSI Guideline v3.0 (2015); ISO 21043-4:2025; ISO 21043-5 (not verified)",
+   "original_en": {
+    "validity": "Recommended framework in Europe (ENFSI 2015) and in ISO 21043-4:2025; not universally adopted (US practice)",
+    "error_rate": "LRs are assigned and can vary between analysts/software (NIST IR 8351)",
+    "concerns": "Verbal scales misunderstood; transposed conditional; proposition level choice"
+   },
+   "src_ids": [
+    "ATH-SRC-0314",
+    "ATH-SRC-0316",
+    "ATH-SRC-0317",
+    "ATH-SRC-0318",
+    "ATH-SRC-0338"
+   ],
+   "ko_ids": [
+    "KO-FC-04-009",
+    "KO-FC-04-010",
+    "KO-FC-04B-001"
+   ]
+  },
+  {
+   "id": "M23",
+   "name_en": "Context management / Linear Sequential Unmasking (LSU, LSU-E)",
+   "name_ar": "إدارة السياق (الكشف المتسلسل الخطي LSU)",
+   "hook_ar": "ماذا لو لم يعرف الفاحص ما يتمنى المحقق أن يجده؟",
+   "discipline_en": "Cognitive bias / Quality assurance",
+   "discipline_ar": "التحيز المعرفي",
+   "tier": "process",
+   "min_band": "all",
+   "can_ar": [
+    "ضمانة إجرائية توصي بها تقارير NIST عن العوامل البشرية لتقليل أثر المعلومات الخارجية على الفاحص."
+   ],
+   "cannot_ar": [
+    "بيانات فعاليتها في القضايا الفعلية قليلة ولم تُقَس في مصادرنا المتحقَّق منها."
+   ],
+   "errors_ar": [
+    "صعوبة التطبيق؛ فخصائص الخط مثلاً لا يسهل تحديدها مسبقاً.",
+    "يتفاوت اعتماد هذه الإجراءات بين الجهات."
+   ],
+   "suitability_en": "High (13+ as game mechanic)",
+   "in_mvp": "yes",
+   "confidence": "high",
+   "standards_en": "NISTIR 7842; NISTIR 8282r1; FSR Code of Practice v2 (contents not read)",
+   "original_en": {
+    "validity": "Procedural safeguard recommended by NIST human-factors reports; limited empirical outcome data",
+    "error_rate": "Effectiveness in casework not quantified in verified sources",
+    "concerns": "Practicality (handwriting features not predefinable); adoption varies"
+   },
+   "src_ids": [
+    "ATH-SRC-0307",
+    "ATH-SRC-0308",
+    "ATH-SRC-0324",
+    "ATH-SRC-0325",
+    "ATH-SRC-0326"
+   ],
+   "ko_ids": [
+    "KO-FC-04-029",
+    "KO-FC-04-012",
+    "KO-FC-04-017"
+   ]
+  },
+  {
+   "id": "M24",
+   "name_en": "Laboratory accreditation and proficiency testing",
+   "name_ar": "اعتماد المختبرات واختبارات الكفاءة",
+   "hook_ar": "ختم «معتمد» على المختبر. هل يعني أن كل نتيجة صحيحة؟",
+   "discipline_en": "Quality assurance",
+   "discipline_ar": "ضمان الجودة",
+   "tier": "process",
+   "min_band": "all",
+   "can_ar": [
+    "المعيار ISO/IEC 17025:2017 (أُكّد عام 2023) هو أساس اعتماد المختبرات."
+   ],
+   "cannot_ar": [
+    "الاعتماد وحده لا يثبت صلاحية طريقة بعينها."
+   ],
+   "errors_ar": [
+    "اختبارات الكفاءة غالباً أسهل من القضايا الحقيقية (NIST IR 8351).",
+    "الخلط بين «المختبر معتمد» و«النتيجة صحيحة»."
+   ],
+   "suitability_en": "Medium (16+)",
+   "in_mvp": "later",
+   "confidence": "high",
+   "standards_en": "ISO/IEC 17025:2017; FSR Code of Practice v2 (2025, England & Wales); OSAC Registry",
+   "original_en": {
+    "validity": "ISO/IEC 17025:2017 (confirmed 2023) is the accreditation basis; does not by itself validate methods",
+    "error_rate": "Proficiency tests often easier than casework (NIST IR 8351)",
+    "concerns": "Accreditation mistaken for proof of correctness"
+   },
+   "src_ids": [
+    "ATH-SRC-0304",
+    "ATH-SRC-0309",
+    "ATH-SRC-0313",
+    "ATH-SRC-0319"
+   ],
+   "ko_ids": [
+    "KO-FC-04-030",
+    "KO-FC-04-005",
+    "KO-FC-04-006"
+   ]
+  }
+ ]
+}

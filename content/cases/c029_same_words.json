@@ -1,0 +1,2964 @@
+{
+  "schema_version": "0.1.0",
+  "case_id": "c029_same_words",
+  "case_version": "0.1.0",
+  "meta": {
+    "title_ar": "شهادتان بكلمات واحدة",
+    "title_en": "Two Statements in the Same Words",
+    "age_band": "13-15",
+    "estimated_minutes": 30,
+    "difficulty": 2,
+    "content_flags": [
+      "no_violence"
+    ],
+    "knowledge_object_refs": [
+      "KO-RS-05-004",
+      "KO-RS-05-009",
+      "KO-RS-05-014",
+      "KO-RS-06-017",
+      "KO-RS-06-020",
+      "KO-FC-04-024",
+      "KO-RS-05-001",
+      "KO-RS-06-001",
+      "KO-RS-06-008",
+      "KO-RS-06-021",
+      "KO-RS-06-009",
+      "KO-RS-05-002",
+      "KO-RS-05-005"
+    ],
+    "locale": "ar",
+    "dialogue_register": "msa",
+    "authors": [
+      "فريق أثر التحريري (مسودة بمساعدة الذكاء الاصطناعي، لم تُراجَع بشرياً بعد)"
+    ]
+  },
+  "premise": {
+    "hook_ar": "شاهدان يقولان الجملة نفسها بالحرف عن عمر. هل هذا يعني أنهما صادقان، أم أنهما سمعاها من مكان واحد؟",
+    "player_role_ar": "أنت عضو في لجنة الطعون بمجلس الطلاب في مدرسة القنطرة، وطُلب منك رأي معلّل في فقدان كشف الناخبين، دون اتهام أحد قبل أن تثبت السجلات شيئاً.",
+    "setting_ar": "مدرسة القنطرة، صباح الأربعاء يوم انتخاب مجلس الطلاب. الأوقات بساعة المدرسة.",
+    "public_fact_ids": [
+      "f_roll_missing",
+      "f_omar_accused"
+    ],
+    "assumed_general_knowledge_ar": [
+      "الشاهدان المستقلان لا يتفقان عادة في كل كلمة",
+      "الاختلاف البريء في التفاصيل لا يعني الكذب",
+      "ما نقرؤه بعد الحدث قد يختلط في الذاكرة بما رأيناه"
+    ]
+  },
+  "entities": {
+    "characters": [
+      {
+        "id": "omar",
+        "name_ar": "عمر الناصر",
+        "role": "suspect",
+        "age_descriptor_ar": "طالب في الصف العاشر، مرشح لمجلس الطلاب",
+        "persona_ar": "عصبي حين يُتهم بما لم يفعله ويتحدث بسرعة، لكنه يقدّم ما يملكه من أوراق ويقبل أن تُراجع. لا يخفي أنه اعترض على نشر الكشف.",
+        "motives_ar": [
+          "أن يبرّئ نفسه",
+          "أن يُجرى التصويت بنزاهة"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "om_greet",
+            "purpose": "greeting",
+            "text_ar": "لم آخذ شيئاً. اسألني ما تريد."
+          },
+          {
+            "line_id": "om_says",
+            "purpose": "reveal",
+            "text_ar": "كنت في مكتبة المدرسة أطبع ملصقات الحملة قرابة العاشرة، ثم عدت إلى القاعة بعد العاشرة والنصف ووقفت في الصف مع الناخبين.",
+            "fact_ids": [
+              "f_omar_says"
+            ]
+          },
+          {
+            "line_id": "om_objected",
+            "purpose": "reveal",
+            "text_ar": "نعم، اعترضت في الاجتماع السابق على تعليق الكشف علناً لأن فيه أسماء الطلاب، لكنني قبلت القرار.",
+            "fact_ids": [
+              "f_omar_objected"
+            ]
+          },
+          {
+            "line_id": "om_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف."
+          },
+          {
+            "line_id": "om_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن ذلك اليوم."
+          },
+          {
+            "line_id": "om_bye",
+            "purpose": "farewell",
+            "text_ar": "أريد الكشف أن يعود كما أريد أن يُفحص كلامي."
+          }
+        ]
+      },
+      {
+        "id": "reem",
+        "name_ar": "ريم الشامي",
+        "role": "suspect",
+        "age_descriptor_ar": "طالبة متطوعة في فريق التنظيم بسترة زرقاء",
+        "persona_ar": "نشيطة وسريعة، تعمل بما كُلّفت به وتثق بأن ما رمته كان مسودات. تتفاجأ إذا ظهر أن بين الأوراق ما هو مهم، وتتعاون.",
+        "motives_ar": [
+          "أن تؤدي مهمتها",
+          "ألا تُلام على سوء فهم"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "rm_greet",
+            "purpose": "greeting",
+            "text_ar": "كلفتني الأستاذة بترتيب الطاولة بعد التصويت."
+          },
+          {
+            "line_id": "rm_stack",
+            "purpose": "reveal",
+            "text_ar": "في الحادية عشرة جمعت الأوراق المتناثرة عن طاولة التسجيل ووضعتها في صندوق التدوير الأزرق، وقلت لنفسي إنها مسودات.",
+            "fact_ids": [
+              "f_reem_stacked"
+            ]
+          },
+          {
+            "line_id": "rm_belief",
+            "purpose": "reveal",
+            "text_ar": "أنا لا أرمي إلا المسودات، وتأكدت من ذلك.",
+            "claim_ids": [
+              "cl_reem_only_scrap"
+            ]
+          },
+          {
+            "line_id": "rm_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أذكر أكثر."
+          },
+          {
+            "line_id": "rm_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن الترتيب."
+          },
+          {
+            "line_id": "rm_bye",
+            "purpose": "farewell",
+            "text_ar": "سأفحص كل ورقة قبل أن أضعها في الصندوق بعد اليوم."
+          }
+        ]
+      },
+      {
+        "id": "karam",
+        "name_ar": "كرم الداود",
+        "role": "witness",
+        "age_descriptor_ar": "طالب في الصف العاشر",
+        "persona_ar": "اجتماعي ويثق بما يصله من زملائه، ويظن أنه يتذكر ما قرأه كأنه شاهده. يتراجع إذا طُلب منه أن يفرّق بين ما رآه وما قرأه.",
+        "motives_ar": [
+          "ألا يبدو كاذباً",
+          "أن يُنصَف زملاؤه"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "kr_greet",
+            "purpose": "greeting",
+            "text_ar": "أنا قلت ما رأيته."
+          },
+          {
+            "line_id": "kr_says",
+            "purpose": "reveal",
+            "text_ar": "قلت للأستاذة: رأيت عمر الناصر الساعة العاشرة والربع يلتقط كشف الناخبين عن الطاولة ويخرج به مسرعاً نحو السلم.",
+            "fact_ids": [
+              "f_karam_says"
+            ]
+          },
+          {
+            "line_id": "kr_msg",
+            "purpose": "reveal",
+            "text_ar": "قرأت رسالة في مجموعة الصف قبل أن أُستدعى للإفادة، ولا أذكر ما فيها بالضبط.",
+            "fact_ids": [
+              "f_group_msg_exists"
+            ]
+          },
+          {
+            "line_id": "kr_belief",
+            "purpose": "reveal",
+            "text_ar": "أنا متأكد أن عمر هو من أخذ الكشف.",
+            "claim_ids": [
+              "cl_omar_took"
+            ]
+          },
+          {
+            "line_id": "kr_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أذكر أكثر."
+          },
+          {
+            "line_id": "kr_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عمّا رأيته."
+          },
+          {
+            "line_id": "kr_bye",
+            "purpose": "farewell",
+            "text_ar": "ربما خلطت بين ما قرأته وما رأيته."
+          }
+        ]
+      },
+      {
+        "id": "dina",
+        "name_ar": "دينا العبدالله",
+        "role": "witness",
+        "age_descriptor_ar": "طالبة في الصف العاشر",
+        "persona_ar": "هادئة وتميل إلى موافقة صديقتها، وتفتح الرسائل فور وصولها. لا تقصد الإساءة لأحد.",
+        "motives_ar": [
+          "ألا تسبب مشكلة لأحد",
+          "أن تنتهي القضية"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "dn_greet",
+            "purpose": "greeting",
+            "text_ar": "أنا أجيب بما أذكر."
+          },
+          {
+            "line_id": "dn_says",
+            "purpose": "reveal",
+            "text_ar": "قلت للأستاذة: رأيت عمر الناصر الساعة العاشرة والربع يلتقط كشف الناخبين عن الطاولة ويخرج به مسرعاً نحو السلم.",
+            "fact_ids": [
+              "f_dina_says"
+            ]
+          },
+          {
+            "line_id": "dn_receipts",
+            "purpose": "reveal",
+            "text_ar": "المجموعة تُظهر لكل رسالة من فتحها ومتى، وقد فتحت أنا الرسالة صباح اليوم نفسه.",
+            "fact_ids": [
+              "f_read_receipts_exist"
+            ]
+          },
+          {
+            "line_id": "dn_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أذكر."
+          },
+          {
+            "line_id": "dn_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن إفادتي."
+          },
+          {
+            "line_id": "dn_bye",
+            "purpose": "farewell",
+            "text_ar": "لا أريد أن أظلم أحداً."
+          }
+        ]
+      },
+      {
+        "id": "lina",
+        "name_ar": "لينا الحايك",
+        "role": "witness",
+        "age_descriptor_ar": "طالبة في الصف الحادي عشر",
+        "persona_ar": "دقيقة الوصف وصريحة بحدود ما رأته، وتقول إن تذكرها غير كامل. لم تقرأ رسائل المجموعة ذلك الصباح.",
+        "motives_ar": [
+          "أن تقول ما رأته فقط"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "ln_greet",
+            "purpose": "greeting",
+            "text_ar": "سأقول ما رأيته وأوضح ما لم أره."
+          },
+          {
+            "line_id": "ln_says",
+            "purpose": "reveal",
+            "text_ar": "رأيت قرابة الحادية عشرة متطوعة بسترة زرقاء تجمع أوراقاً عن طاولة التسجيل، ولم أر وجهها ولا أعرف ماذا كانت تجمع.",
+            "fact_ids": [
+              "f_lina_says"
+            ]
+          },
+          {
+            "line_id": "ln_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لم أنتبه."
+          },
+          {
+            "line_id": "ln_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عمّا رأيته."
+          },
+          {
+            "line_id": "ln_bye",
+            "purpose": "farewell",
+            "text_ar": "ذاكرتي ناقصة وأقولها."
+          }
+        ]
+      },
+      {
+        "id": "nadim",
+        "name_ar": "نديم الخوري",
+        "role": "witness",
+        "age_descriptor_ar": "مصوّر نادي الإعلام",
+        "persona_ar": "منهجي، يحتفظ بصوره بوقتها ويصرّح بأن ساعة كاميرته مضبوطة صباح اليوم.",
+        "motives_ar": [
+          "أن تبقى صوره سليمة"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "nd_greet",
+            "purpose": "greeting",
+            "text_ar": "أصوّر للنادي وأحفظ كل شيء."
+          },
+          {
+            "line_id": "nd_photo",
+            "purpose": "reveal",
+            "text_ar": "التقطت صورة للقاعة نحو العاشرة وأربعين دقيقة وفي خلفيتها ساعة الحائط، وتظهر فيها طاولة التسجيل.",
+            "fact_ids": [
+              "f_photo_1040_exists"
+            ]
+          },
+          {
+            "line_id": "nd_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "ليس عندي."
+          },
+          {
+            "line_id": "nd_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن صوري."
+          },
+          {
+            "line_id": "nd_bye",
+            "purpose": "farewell",
+            "text_ar": "الصورة كما هي."
+          }
+        ]
+      },
+      {
+        "id": "rula",
+        "name_ar": "رولا الحلبي",
+        "role": "witness",
+        "age_descriptor_ar": "معلمة مشرفة على القاعة",
+        "persona_ar": "منظمة وتكتب كل ما تكلّف به، وتحتفظ بما استُرجع. لا تتهم أحداً قبل السجلات.",
+        "motives_ar": [
+          "أن يُستعاد الكشف",
+          "أن يُنصَف الجميع"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "rl_greet",
+            "purpose": "greeting",
+            "text_ar": "أشرفت على القاعة وأحتفظ بأوراقها."
+          },
+          {
+            "line_id": "rl_roll",
+            "purpose": "reveal",
+            "text_ar": "استُرجع الكشف ظهراً بتوقيعات الناخبين وأوقاتها، وهو عندي.",
+            "fact_ids": [
+              "f_roll_recovered"
+            ]
+          },
+          {
+            "line_id": "rl_roster",
+            "purpose": "reveal",
+            "text_ar": "وزّعت المتطوعين على مهام بورقة موقّعة، وكان على إحداهن ترتيب طاولة التسجيل بعد التصويت.",
+            "fact_ids": [
+              "f_tidy_roster_exists"
+            ]
+          },
+          {
+            "line_id": "rl_photo",
+            "purpose": "reveal",
+            "text_ar": "التقطت بهاتفي صورة للقاعة بعد الترتيب لأضيفها إلى تقرير الحدث.",
+            "fact_ids": [
+              "f_photo_1110_exists"
+            ]
+          },
+          {
+            "line_id": "rl_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف."
+          },
+          {
+            "line_id": "rl_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن القاعة."
+          },
+          {
+            "line_id": "rl_bye",
+            "purpose": "farewell",
+            "text_ar": "الأوراق عندي كما هي."
+          }
+        ]
+      },
+      {
+        "id": "hamza",
+        "name_ar": "حمزة النجار",
+        "role": "witness",
+        "age_descriptor_ar": "عامل النظافة المسؤول عن صناديق التدوير",
+        "persona_ar": "مباشر وصبور، يدوّن على بطاقة كل صندوق وقت جمعه وموضعه.",
+        "motives_ar": [
+          "أن تبقى بطاقاته صحيحة"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "hm_greet",
+            "purpose": "greeting",
+            "text_ar": "أجمع الصناديق وأكتب على بطاقاتها."
+          },
+          {
+            "line_id": "hm_crate",
+            "purpose": "reveal",
+            "text_ar": "على كل صندوق تدوير بطاقة بالموضع ووقت الجمع، وعند الفرز أدوّن ما وُجد فيه.",
+            "fact_ids": [
+              "f_crate_record_exists"
+            ]
+          },
+          {
+            "line_id": "hm_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف."
+          },
+          {
+            "line_id": "hm_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن الصناديق."
+          },
+          {
+            "line_id": "hm_bye",
+            "purpose": "farewell",
+            "text_ar": "البطاقة تتكلم."
+          }
+        ]
+      }
+    ],
+    "locations": [
+      {
+        "id": "loc_hall",
+        "name_ar": "قاعة التصويت ب",
+        "description_ar": "قاعة فيها طاولة التسجيل وكشف الناخبين."
+      },
+      {
+        "id": "loc_library",
+        "name_ar": "مكتبة المدرسة",
+        "description_ar": "مكتبة فيها طابعة."
+      },
+      {
+        "id": "loc_yard",
+        "name_ar": "فناء التدوير",
+        "description_ar": "مكان فرز صناديق التدوير."
+      }
+    ],
+    "objects": [
+      {
+        "id": "obj_roll",
+        "name_ar": "كشف الناخبين",
+        "description_ar": "ورقتان عليهما أسماء الناخبين وتوقيعاتهم وأوقات الاقتراع."
+      }
+    ],
+    "organizations": [
+      {
+        "id": "org_school",
+        "name_ar": "مدرسة القنطرة",
+        "description_ar": "مدرسة خيالية تُجري انتخابات مجلس الطلاب."
+      }
+    ]
+  },
+  "truth": {
+    "solution": {
+      "culprit_ids": [
+        "reem"
+      ],
+      "summary_ar": "لم يأخذ عمر الكشف. إفادتا كرم ودينا نسخة من رسالة واحدة سبقتهما، وبقي الكشف على الطاولة قيد الاستعمال بعد الوقت المنسوب إلى أخذه، ثم جمعته ريم مع أوراق الترتيب ووضعته في صندوق التدوير دون قصد.",
+      "key_fact_ids": [
+        "f_same_source",
+        "f_roll_swept"
+      ]
+    },
+    "facts": [
+      {
+        "id": "f_roll_missing",
+        "statement_ar": "فُقد كشف الناخبين من طاولة التسجيل في قاعة التصويت ب أثناء يوم الانتخاب.",
+        "kind": "event",
+        "subject_ids": [
+          "obj_roll"
+        ],
+        "spoiler_level": 0
+      },
+      {
+        "id": "f_omar_accused",
+        "statement_ar": "قال طالبان إنهما رأيا عمر يأخذ الكشف عن الطاولة قرابة العاشرة والربع.",
+        "kind": "attribute",
+        "subject_ids": [
+          "omar",
+          "karam",
+          "dina"
+        ],
+        "spoiler_level": 0
+      },
+      {
+        "id": "f_karam_says",
+        "statement_ar": "قال كرم للمعلمة إنه رأى عمر يلتقط الكشف ويخرج به مسرعاً نحو السلم قرابة العاشرة والربع.",
+        "kind": "attribute",
+        "subject_ids": [
+          "karam"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 165,
+          "precision": "exact"
+        }
+      },
+      {
+        "id": "f_dina_says",
+        "statement_ar": "قالت دينا للمعلمة بالصيغة نفسها إنها رأت عمر يلتقط الكشف ويخرج به مسرعاً نحو السلم قرابة العاشرة والربع.",
+        "kind": "attribute",
+        "subject_ids": [
+          "dina"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 160,
+          "precision": "exact"
+        }
+      },
+      {
+        "id": "f_group_msg_exists",
+        "statement_ar": "نُشرت في مجموعة الصف رسالة عن عمر والكشف قبل أن يُدلي الطالبان بإفادتيهما.",
+        "kind": "event",
+        "subject_ids": [
+          "karam",
+          "dina"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 118,
+          "precision": "exact"
+        }
+      },
+      {
+        "id": "f_read_receipts_exist",
+        "statement_ar": "تُظهر المجموعة لكل رسالة من فتحها ومتى.",
+        "kind": "state",
+        "subject_ids": [
+          "dina"
+        ],
+        "spoiler_level": 1
+      },
+      {
+        "id": "f_lina_says",
+        "statement_ar": "قالت لينا إنها رأت قرابة الحادية عشرة متطوعة بسترة زرقاء تجمع أوراقاً عن الطاولة دون أن تعرف ماذا كانت.",
+        "kind": "attribute",
+        "subject_ids": [
+          "lina"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 120,
+          "precision": "exact"
+        }
+      },
+      {
+        "id": "f_photo_1040_exists",
+        "statement_ar": "التقط مصوّر نادي الإعلام صورة للقاعة نحو 10:40 تظهر فيها طاولة التسجيل وساعة الحائط.",
+        "kind": "event",
+        "subject_ids": [
+          "nadim"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 100,
+          "precision": "exact"
+        },
+        "location_id": "loc_hall"
+      },
+      {
+        "id": "f_photo_1110_exists",
+        "statement_ar": "التقطت المعلمة صورة للقاعة بعد الترتيب لتقرير الحدث.",
+        "kind": "event",
+        "subject_ids": [
+          "rula"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 127,
+          "precision": "exact"
+        },
+        "location_id": "loc_hall"
+      },
+      {
+        "id": "f_roll_recovered",
+        "statement_ar": "استُرجع الكشف ظهراً وفيه توقيعات الناخبين وأوقاتها.",
+        "kind": "event",
+        "subject_ids": [
+          "rula",
+          "obj_roll"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 190,
+          "precision": "exact"
+        }
+      },
+      {
+        "id": "f_tidy_roster_exists",
+        "statement_ar": "وزّعت المعلمة المتطوعين على مهام بورقة موقّعة، ومنها ترتيب طاولة التسجيل.",
+        "kind": "state",
+        "subject_ids": [
+          "rula"
+        ],
+        "spoiler_level": 1
+      },
+      {
+        "id": "f_crate_record_exists",
+        "statement_ar": "تحمل صناديق التدوير بطاقات بموضع الجمع ووقته، ويدوّن عامل النظافة ما وُجد عند الفرز.",
+        "kind": "state",
+        "subject_ids": [
+          "hamza"
+        ],
+        "spoiler_level": 1,
+        "location_id": "loc_yard"
+      },
+      {
+        "id": "f_omar_says",
+        "statement_ar": "يقول عمر إنه كان في المكتبة يطبع ملصقات الحملة قرابة العاشرة وعاد إلى القاعة بعد العاشرة والنصف.",
+        "kind": "attribute",
+        "subject_ids": [
+          "omar"
+        ],
+        "spoiler_level": 1
+      },
+      {
+        "id": "f_omar_objected",
+        "statement_ar": "اعترض عمر في اجتماع سابق على تعليق الكشف علناً ثم قبل القرار.",
+        "kind": "event",
+        "subject_ids": [
+          "omar"
+        ],
+        "spoiler_level": 1
+      },
+      {
+        "id": "f_reem_stacked",
+        "statement_ar": "جمعت ريم الأوراق المتناثرة عن طاولة التسجيل قرابة 11:00 ووضعتها في صندوق التدوير الأزرق.",
+        "kind": "event",
+        "subject_ids": [
+          "reem"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 120,
+          "precision": "exact",
+          "end_min": 130
+        },
+        "location_id": "loc_hall"
+      },
+      {
+        "id": "f_same_source",
+        "statement_ar": "الإفادتان المتطابقتان نُقلتا عن رسالة واحدة سبقتهما، فهما رواية واحدة نُسخت لا مشاهدتان مستقلتان.",
+        "kind": "relation",
+        "subject_ids": [
+          "karam",
+          "dina"
+        ],
+        "spoiler_level": 3,
+        "time": {
+          "start_min": 118,
+          "precision": "exact",
+          "end_min": 165
+        },
+        "science_ko_refs": [
+          "KO-RS-05-004",
+          "KO-RS-05-009"
+        ]
+      },
+      {
+        "id": "f_roll_swept",
+        "statement_ar": "ظل الكشف على الطاولة قيد الاستعمال بعد الوقت المنسوب إلى أخذه، ثم انتقل مع أوراق الترتيب إلى صندوق التدوير دون قصد من أحد.",
+        "kind": "relation",
+        "subject_ids": [
+          "obj_roll",
+          "reem"
+        ],
+        "spoiler_level": 3,
+        "time": {
+          "start_min": 110,
+          "precision": "exact",
+          "end_min": 190
+        },
+        "location_id": "loc_hall",
+        "science_ko_refs": [
+          "KO-RS-05-014",
+          "KO-RS-06-017"
+        ]
+      }
+    ],
+    "claims": [
+      {
+        "id": "cl_omar_took",
+        "statement_ar": "رأيت عمر يأخذ الكشف عن الطاولة ويخرج به قرابة العاشرة والربع.",
+        "kind": "honest_mistake",
+        "held_by": [
+          "karam",
+          "dina"
+        ],
+        "true_fact_id": "f_roll_swept",
+        "contradicted_by_evidence_ids": [
+          "ev_roll_entries",
+          "ev_crate_tag",
+          "ev_photo_1040"
+        ]
+      },
+      {
+        "id": "cl_reem_only_scrap",
+        "statement_ar": "لم أضع في الصندوق إلا مسودات.",
+        "kind": "honest_mistake",
+        "held_by": [
+          "reem"
+        ],
+        "true_fact_id": "f_roll_swept",
+        "contradicted_by_evidence_ids": [
+          "ev_crate_tag",
+          "ev_photo_1110"
+        ]
+      }
+    ]
+  },
+  "timeline": [
+    {
+      "id": "te_vote",
+      "description_ar": "بدء اقتراع قاعة ب وتوقيع الناخبين على الكشف.",
+      "time": {
+        "start_min": 80,
+        "precision": "exact",
+        "end_min": 110
+      },
+      "location_id": "loc_hall",
+      "actor_ids": [],
+      "fact_ids": [
+        "f_roll_recovered"
+      ]
+    },
+    {
+      "id": "te_omar_lib",
+      "description_ar": "عمر في مكتبة المدرسة يطبع ملصقات حملته.",
+      "time": {
+        "start_min": 60,
+        "precision": "approx",
+        "end_min": 95
+      },
+      "location_id": "loc_library",
+      "actor_ids": [
+        "omar"
+      ],
+      "fact_ids": [
+        "f_omar_says"
+      ],
+      "motivated_by_ar": "تجهيز ملصقات الحملة"
+    },
+    {
+      "id": "te_photo1",
+      "description_ar": "نديم يصوّر القاعة.",
+      "time": {
+        "start_min": 100,
+        "precision": "exact"
+      },
+      "location_id": "loc_hall",
+      "actor_ids": [
+        "nadim"
+      ],
+      "fact_ids": [
+        "f_photo_1040_exists"
+      ],
+      "motivated_by_ar": "توثيق يوم الانتخاب لنادي الإعلام"
+    },
+    {
+      "id": "te_msg",
+      "description_ar": "رسالة في مجموعة الصف تذكر عمر والكشف.",
+      "time": {
+        "start_min": 118,
+        "precision": "exact"
+      },
+      "actor_ids": [],
+      "fact_ids": [
+        "f_group_msg_exists"
+      ]
+    },
+    {
+      "id": "te_tidy",
+      "description_ar": "ريم ترتّب طاولة التسجيل وتضع الأوراق في صندوق التدوير.",
+      "time": {
+        "start_min": 120,
+        "precision": "exact",
+        "end_min": 130
+      },
+      "location_id": "loc_hall",
+      "actor_ids": [
+        "reem"
+      ],
+      "fact_ids": [
+        "f_reem_stacked"
+      ],
+      "motivated_by_ar": "المهمة الموكلة إليها في ورقة المعلمة"
+    },
+    {
+      "id": "te_lina",
+      "description_ar": "لينا ترى المتطوعة تجمع أوراقاً.",
+      "time": {
+        "start_min": 121,
+        "precision": "exact"
+      },
+      "location_id": "loc_hall",
+      "actor_ids": [
+        "lina"
+      ],
+      "fact_ids": [
+        "f_lina_says"
+      ],
+      "motivated_by_ar": "كانت تنتظر دورها في القاعة"
+    },
+    {
+      "id": "te_photo2",
+      "description_ar": "رولا تصوّر القاعة بعد الترتيب.",
+      "time": {
+        "start_min": 127,
+        "precision": "exact"
+      },
+      "location_id": "loc_hall",
+      "actor_ids": [
+        "rula"
+      ],
+      "fact_ids": [
+        "f_photo_1110_exists"
+      ],
+      "motivated_by_ar": "توثيق الحدث للتقرير"
+    },
+    {
+      "id": "te_stmts",
+      "description_ar": "كرم ودينا يدليان بإفادتيهما.",
+      "time": {
+        "start_min": 160,
+        "precision": "exact",
+        "end_min": 165
+      },
+      "actor_ids": [
+        "karam",
+        "dina"
+      ],
+      "fact_ids": [
+        "f_karam_says",
+        "f_dina_says"
+      ],
+      "motivated_by_ar": "استدعتهما المعلمة بعد البلاغ"
+    },
+    {
+      "id": "te_found",
+      "description_ar": "عند فرز الصندوق يُسترجع الكشف.",
+      "time": {
+        "start_min": 190,
+        "precision": "exact"
+      },
+      "location_id": "loc_yard",
+      "actor_ids": [
+        "hamza"
+      ],
+      "fact_ids": [
+        "f_crate_record_exists"
+      ],
+      "motivated_by_ar": "فرز صناديق التدوير"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_incident_report",
+      "title_ar": "بلاغ فقدان كشف الناخبين",
+      "kind": "documentary",
+      "content_ar": "بلاغ مشرفة القاعة ب — الأربعاء 11:20\nفُقد كشف الناخبين (ورقتان) من طاولة التسجيل. أبلغ طالبان أنهما رأيا الطالب عمر الناصر يأخذه قرابة العاشرة والربع. أُوقف التسجيل مؤقتاً.",
+      "acquired_by_action_ids": [
+        "a_read_report"
+      ],
+      "supports_fact_ids": [
+        "f_roll_missing",
+        "f_omar_accused"
+      ],
+      "reliability": "weak",
+      "limits_ar": "بلاغ يسجّل ادعاءً لا واقعة؛ ولا يذكر كيف عُرف ما قاله الطالبان.",
+      "is_red_herring": true,
+      "location_id": "loc_hall"
+    },
+    {
+      "id": "ev_stmt_karam",
+      "title_ar": "إفادة كرم (نص كما دوّنته المعلمة)",
+      "kind": "testimonial",
+      "content_ar": "إفادة كرم الداود — الأربعاء 11:45\n«رأيت عمر الناصر الساعة العاشرة والربع يلتقط كشف الناخبين عن الطاولة ويخرج به مسرعاً نحو السلم.»",
+      "acquired_by_action_ids": [
+        "a_note_karam"
+      ],
+      "supports_fact_ids": [
+        "f_karam_says"
+      ],
+      "reliability": "weak",
+      "limits_ar": "إفادة شاهد؛ تُقرأ مع غيرها بحروفها، فالتطابق الحرفي بين روايتين يستدعي السؤال عن مصدر مشترك.",
+      "location_id": "loc_hall"
+    },
+    {
+      "id": "ev_stmt_dina",
+      "title_ar": "إفادة دينا (نص كما دوّنته المعلمة)",
+      "kind": "testimonial",
+      "content_ar": "إفادة دينا العبدالله — الأربعاء 11:40\n«رأيت عمر الناصر الساعة العاشرة والربع يلتقط كشف الناخبين عن الطاولة ويخرج به مسرعاً نحو السلم.»",
+      "acquired_by_action_ids": [
+        "a_note_dina"
+      ],
+      "supports_fact_ids": [
+        "f_dina_says"
+      ],
+      "reliability": "weak",
+      "limits_ar": "إفادة شاهدة؛ دُوّنت قبل إفادة كرم بخمس دقائق، وهي مطابقة لها حرفاً بحرف.",
+      "location_id": "loc_hall"
+    },
+    {
+      "id": "ev_stmt_lina",
+      "title_ar": "إفادة لينا (نص كما دوّنته المعلمة)",
+      "kind": "testimonial",
+      "content_ar": "إفادة لينا الحايك — الأربعاء 11:50\n«رأيت قرابة الحادية عشرة متطوعة بسترة زرقاء تجمع أوراقاً عن طاولة التسجيل. لم أر وجهها ولا أعرف ماذا كانت تجمع. لم أرَ عمر في تلك الدقائق.»",
+      "acquired_by_action_ids": [
+        "a_note_lina"
+      ],
+      "supports_fact_ids": [
+        "f_lina_says"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "إفادة بوصف محدود وبوقت مختلف عن الإفادتين الأخريين؛ الاختلاف بريء ولا يعني كذباً، وتقاس بسجلات لا تعتمد عليها.",
+      "location_id": "loc_hall"
+    },
+    {
+      "id": "ev_group_msg",
+      "title_ar": "رسالة مجموعة الصف",
+      "kind": "digital",
+      "content_ar": "مجموعة صف العاشر — رسالة س. القاسم — الأربعاء 10:58\n«سمعت من أحدهم أن عمر الناصر الساعة العاشرة والربع يلتقط كشف الناخبين عن الطاولة ويخرج به مسرعاً نحو السلم. انتبهوا له!»\nلم تكن س. القاسم في القاعة ب بحسب جدول الحصص.",
+      "acquired_by_action_ids": [
+        "a_get_group_msg"
+      ],
+      "supports_fact_ids": [
+        "f_group_msg_exists",
+        "f_same_source"
+      ],
+      "reliability": "strong",
+      "limits_ar": "تثبت وجود الصياغة قبل الإفادتين، ولا تثبت أن الطالبين قرآها؛ وهي بدورها نقل عن «أحدهم» لا مشاهدة.",
+      "location_id": "loc_hall"
+    },
+    {
+      "id": "ev_read_receipts",
+      "title_ar": "قائمة من فتح رسالة المجموعة",
+      "kind": "digital",
+      "content_ar": "مجموعة صف العاشر — معلومات الرسالة 10:58\nفُتحت من: ك. الداود 11:03 · د. العبدالله 11:06 · ل. الحايك: لم تُفتح\nاستُدعى كرم ودينا إلى الإفادة 11:35.",
+      "acquired_by_action_ids": [
+        "a_get_read_receipts"
+      ],
+      "supports_fact_ids": [
+        "f_read_receipts_exist",
+        "f_same_source"
+      ],
+      "reliability": "strong",
+      "limits_ar": "تبيّن من فتح الرسالة ومتى لا ما فهمه كل منهما، ولا تثبت وحدها النسخ؛ تقوى بالتطابق الحرفي مع الإفادتين.",
+      "location_id": "loc_hall"
+    },
+    {
+      "id": "ev_roll_entries",
+      "title_ar": "الكشف المسترجع: توقيعات الناخبين وأوقاتها",
+      "kind": "documentary",
+      "content_ar": "كشف الناخبين — ورقتان مسترجعتان ظهر الأربعاء\nتوقيعات الناخبين بأوقاتها بخط كاتبة التسجيل: 10:22 · 10:25 · 10:31 · 10:37 · 10:41 · 10:48\nلا توقيع بعد 10:48. على الهامش آثار ضغط كأن أوراقاً وُضعت فوقه.",
+      "acquired_by_action_ids": [
+        "a_get_roll_entries"
+      ],
+      "supports_fact_ids": [
+        "f_roll_recovered",
+        "f_roll_swept"
+      ],
+      "reliability": "strong",
+      "limits_ar": "ورقة أصلية بخط كاتبة التسجيل؛ تثبت أن الكشف كان بيد كاتبة التسجيل لحظة الأخذ المزعوم وبعده، ولا تقول بيد من وصل إلى الصندوق.",
+      "location_id": "loc_hall"
+    },
+    {
+      "id": "ev_crate_tag",
+      "title_ar": "بطاقة صندوق التدوير الأزرق رقم 3",
+      "kind": "documentary",
+      "content_ar": "بطاقة الصندوق — بخط ح. النجار\nالموضع: قاعة التصويت ب · وقت الجمع: 11:30\nعند الفرز 12:10: مسودات ملونة، وورقتان من كشف الناخبين بين أوراق ملصقة معاً\nنُقل الكشف إلى المشرفة.",
+      "acquired_by_action_ids": [
+        "a_get_crate_tag"
+      ],
+      "supports_fact_ids": [
+        "f_crate_record_exists",
+        "f_roll_swept"
+      ],
+      "reliability": "strong",
+      "limits_ar": "تبيّن أين وُجد الكشف ومتى جُمع الصندوق، ولا تبيّن من وضعه ولا لماذا.",
+      "location_id": "loc_yard"
+    },
+    {
+      "id": "ev_photo_1040",
+      "title_ar": "صورة القاعة نحو 10:40",
+      "kind": "digital",
+      "content_ar": "كاميرا نادي الإعلام — بيانات الصورة: الأربعاء 10:40 (ضُبطت الساعة صباحاً)\nقاعة التصويت ب: ساعة الحائط تشير إلى 10:40، وعلى طاولة التسجيل ورقتان وقلم وكاتبة التسجيل تسجّل توقيع ناخب.\nلا يظهر عمر الناصر في الصورة.",
+      "acquired_by_action_ids": [
+        "a_get_photo_1040"
+      ],
+      "supports_fact_ids": [
+        "f_photo_1040_exists",
+        "f_roll_swept"
+      ],
+      "reliability": "strong",
+      "limits_ar": "لقطة واحدة في لحظة واحدة؛ تثبت وجود ورقتين على الطاولة ولا تثبت أنهما الكشف نفسه إلا بمقارنتها بالتوقيعات.",
+      "location_id": "loc_hall"
+    },
+    {
+      "id": "ev_photo_1110",
+      "title_ar": "صورة المعلمة للقاعة بعد الترتيب",
+      "kind": "digital",
+      "content_ar": "هاتف المعلمة — بيانات الصورة: الأربعاء 11:07\nطاولة التسجيل فارغة إلا من قلم؛ وفي طرف الصورة متطوعة بسترة زرقاء تحمل صندوقاً أزرق نحو الباب.",
+      "acquired_by_action_ids": [
+        "a_get_photo_1110"
+      ],
+      "supports_fact_ids": [
+        "f_photo_1110_exists",
+        "f_roll_swept"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "لقطة بعد الواقعة؛ تبيّن خلو الطاولة وحمل صندوق ولا ترى محتواه.",
+      "location_id": "loc_hall"
+    },
+    {
+      "id": "ev_tidy_roster",
+      "title_ar": "ورقة توزيع المتطوعين",
+      "kind": "documentary",
+      "content_ar": "قاعة التصويت ب — مهام المتطوعين (بتوقيع ر. الحلبي)\n09:00–11:00 استقبال الناخبين\n11:00–11:10 ترتيب طاولة التسجيل وجمع الأوراق في صندوق التدوير: ريم الشامي\n11:10 إعادة ترتيب الكراسي",
+      "acquired_by_action_ids": [
+        "a_get_tidy_roster"
+      ],
+      "supports_fact_ids": [
+        "f_tidy_roster_exists",
+        "f_roll_swept"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "ورقة مهام لا تسجّل ما حدث فعلاً؛ تبيّن من كُلّف بالترتيب ووقته.",
+      "location_id": "loc_hall"
+    },
+    {
+      "id": "ev_motive_note",
+      "title_ar": "محضر الاجتماع السابق",
+      "kind": "documentary",
+      "content_ar": "محضر لجنة الانتخاب — الاثنين\nعمر الناصر: «أعترض على تعليق كشف الناخبين علناً لأن فيه أسماء الطلاب.»\nقرار اللجنة: يُعلَّق الكشف في القاعة فقط. عمر: «أقبل القرار.»",
+      "acquired_by_action_ids": [
+        "a_get_motive_note"
+      ],
+      "supports_fact_ids": [
+        "f_omar_objected"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "يبيّن اعتراضاً سابقاً وقبولاً للقرار؛ الاعتراض على سياسة ليس أخذاً لورقة.",
+      "is_red_herring": true,
+      "location_id": "loc_hall"
+    },
+    {
+      "id": "ev_omar_stmt",
+      "title_ar": "إفادة عمر (ملخص)",
+      "kind": "testimonial",
+      "content_ar": "ملخص إفادة عمر الناصر:\n«كنت في المكتبة أطبع ملصقاتي قرابة العاشرة، وعدت بعد العاشرة والنصف ووقفت في الصف. لم ألمس الكشف.»",
+      "acquired_by_action_ids": [
+        "a_note_omar"
+      ],
+      "supports_fact_ids": [
+        "f_omar_says"
+      ],
+      "reliability": "weak",
+      "limits_ar": "إفادة المتهم عن نفسه؛ لا يدل انفعاله ولا هدوؤه على شيء، وتُقاس بسجلات لا يكتبها.",
+      "location_id": "loc_hall"
+    },
+    {
+      "id": "ev_reem_stmt",
+      "title_ar": "إفادة ريم (ملخص)",
+      "kind": "testimonial",
+      "content_ar": "ملخص إفادة ريم الشامي:\n«في الحادية عشرة جمعت الأوراق المتناثرة عن الطاولة ووضعتها في الصندوق الأزرق. ظننتها مسودات ولم أفحصها.»",
+      "acquired_by_action_ids": [
+        "a_note_reem"
+      ],
+      "supports_fact_ids": [
+        "f_reem_stacked"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "إفادة صادقة بسوء تقدير؛ يؤيدها بطاقة الصندوق وصورة المعلمة ولا تغني عنهما.",
+      "location_id": "loc_hall"
+    }
+  ],
+  "evidence_graph": {
+    "inferences": [
+      {
+        "id": "i_source_a",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_stmt_karam"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_stmt_dina"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_same_source"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "روايتان من شاهدين منفصلين لا تتفقان عادة في كل كلمة، وهما هنا متطابقتان حرفاً بحرف بما فيهما وصف لا يتوقعه مشاهد (الاتجاه نحو السلم)؛ فهما نسخة واحدة لا شهادتان.",
+        "skill_ko_refs": [
+          "KO-RS-05-004",
+          "KO-RS-05-009"
+        ]
+      },
+      {
+        "id": "i_source_b",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_group_msg"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_read_receipts"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_same_source"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "الصياغة نفسها نُشرت 10:58 ونقلاً عن «أحدهم»، وفتحها كرم 11:03 ودينا 11:06، ثم استُدعيا 11:35؛ فسبقت الصياغة الإفادتين وبلغتهما.",
+        "skill_ko_refs": [
+          "KO-RS-05-004",
+          "KO-FC-04-024"
+        ]
+      },
+      {
+        "id": "i_swept_a",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_roll_entries"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_crate_tag"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_roll_swept"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "الكشف وُقّع عليه حتى 10:48، أي بعد الوقت المنسوب إلى أخذه، ثم وُجد في صندوق تدوير جُمع من القاعة 11:30 بين أوراق مسودات؛ فانتقل من الطاولة إلى الصندوق بين الوقتين.",
+        "skill_ko_refs": [
+          "KO-RS-05-014",
+          "KO-RS-06-017"
+        ]
+      },
+      {
+        "id": "i_swept_b",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_photo_1040"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_photo_1110"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_tidy_roster"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_roll_swept"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "ورقتان على الطاولة بعد منتصف الصباح، ثم طاولة فارغة ومتطوعة تحمل صندوقاً، وورقة المهام تكلف متطوعة بجمع الأوراق في الصندوق في تلك الدقائق؛ ثلاث وثائق مستقلة عن الشاهدين.",
+        "skill_ko_refs": [
+          "KO-RS-05-004",
+          "KO-RS-06-017"
+        ]
+      },
+      {
+        "id": "i_cl_omar",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_same_source"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_roll_swept"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_omar_took"
+        },
+        "relation": "contradicts_claim",
+        "strength": "strong",
+        "rule_ar": "ما نُقل عن رسالة واحدة لا يُحسب مشاهدة، والكشف كان على الطاولة قيد الاستعمال بعد الوقت المنسوب إلى أخذه.",
+        "skill_ko_refs": [
+          "KO-RS-05-014",
+          "KO-RS-06-020"
+        ]
+      },
+      {
+        "id": "i_cl_reem",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_roll_swept"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_reem_only_scrap"
+        },
+        "relation": "contradicts_claim",
+        "strength": "strong",
+        "rule_ar": "وُجد في الصندوق الذي وضعت فيه أوراقاً غير مسودات.",
+        "skill_ko_refs": [
+          "KO-RS-05-014"
+        ]
+      },
+      {
+        "id": "i_support_reem",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_roll_swept"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_same_source"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_reem"
+        },
+        "relation": "supports",
+        "strength": "strong",
+        "rule_ar": "الكشف ظل قيد الاستعمال ثم انتقل إلى الصندوق في تلك الدقائق، وقصة الأخذ المنسوبة إلى عمر نبعت من رواية واحدة منسوخة.",
+        "skill_ko_refs": [
+          "KO-RS-06-007"
+        ]
+      },
+      {
+        "id": "i_rule_omar",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_roll_swept"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_same_source"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_omar"
+        },
+        "relation": "rules_out",
+        "strength": "conclusive",
+        "rule_ar": "لا شاهد مستقل على أخذه، والكشف بقي على الطاولة بعد الوقت المنسوب إليه؛ والتحذير المنشور في المجموعة لا يثبت فعلاً.",
+        "skill_ko_refs": [
+          "KO-RS-06-008"
+        ]
+      },
+      {
+        "id": "i_rule_sabotage",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_roll_swept"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_same_source"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_sabotage"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "الكشف لم يخرج من القاعة بل وُجد بين أوراق التدوير بعد الترتيب، فلا أثر لأخذ مقصود لتعطيل التصويت.",
+        "skill_ko_refs": [
+          "KO-RS-06-008"
+        ]
+      },
+      {
+        "id": "i_rule_conspiracy",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_same_source"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_roll_swept"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_conspiracy"
+        },
+        "relation": "rules_out",
+        "strength": "suggestive",
+        "rule_ar": "تطابق إفادتين مع رسالة علنية يفسّره النسخ دون اتفاق مسبق، ولا قرينة على تواطؤ؛ والمهم أن الكشف لم يؤخذ أصلاً.",
+        "skill_ko_refs": [
+          "KO-RS-06-008"
+        ]
+      }
+    ]
+  },
+  "character_knowledge": [
+    {
+      "character_id": "omar",
+      "knows": [
+        {
+          "fact_id": "f_omar_says",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_omar_objected",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    },
+    {
+      "character_id": "reem",
+      "knows": [
+        {
+          "fact_id": "f_reem_stacked",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": [
+        {
+          "claim_id": "cl_reem_only_scrap",
+          "stance": "sincere"
+        }
+      ]
+    },
+    {
+      "character_id": "karam",
+      "knows": [
+        {
+          "fact_id": "f_karam_says",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_group_msg_exists",
+          "access": "witnessed",
+          "certainty": "unsure"
+        }
+      ],
+      "hides": [],
+      "believes": [
+        {
+          "claim_id": "cl_omar_took",
+          "stance": "sincere"
+        }
+      ]
+    },
+    {
+      "character_id": "dina",
+      "knows": [
+        {
+          "fact_id": "f_dina_says",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_read_receipts_exist",
+          "access": "professional",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": [
+        {
+          "claim_id": "cl_omar_took",
+          "stance": "sincere"
+        }
+      ]
+    },
+    {
+      "character_id": "lina",
+      "knows": [
+        {
+          "fact_id": "f_lina_says",
+          "access": "witnessed",
+          "certainty": "fairly_sure"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    },
+    {
+      "character_id": "nadim",
+      "knows": [
+        {
+          "fact_id": "f_photo_1040_exists",
+          "access": "professional",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    },
+    {
+      "character_id": "rula",
+      "knows": [
+        {
+          "fact_id": "f_roll_recovered",
+          "access": "professional",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_tidy_roster_exists",
+          "access": "professional",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_photo_1110_exists",
+          "access": "professional",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    },
+    {
+      "character_id": "hamza",
+      "knows": [
+        {
+          "fact_id": "f_crate_record_exists",
+          "access": "professional",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "h_omar",
+      "statement_ar": "أخذ عمر الكشف عن الطاولة وخرج به كما قال الشاهدان.",
+      "is_true": false,
+      "plausibility_at_start": "high",
+      "suspect_id": "omar"
+    },
+    {
+      "id": "h_conspiracy",
+      "statement_ar": "اتفق كرم ودينا عمداً على اتهام عمر بالكذب.",
+      "is_true": false,
+      "plausibility_at_start": "medium"
+    },
+    {
+      "id": "h_reem",
+      "statement_ar": "لم يأخذ أحد الكشف عمداً، بل جُمع مع أوراق الترتيب ووُضع في صندوق التدوير.",
+      "is_true": true,
+      "plausibility_at_start": "low",
+      "suspect_id": "reem"
+    },
+    {
+      "id": "h_sabotage",
+      "statement_ar": "أخذ شخص ما الكشف عمداً ليعطّل التصويت.",
+      "is_true": false,
+      "plausibility_at_start": "medium"
+    }
+  ],
+  "misdirection_plan": [
+    {
+      "id": "rh_two",
+      "points_to_hypothesis_id": "h_omar",
+      "planted_via_ar": "شاهدان يقولان الشيء نفسه عن عمر.",
+      "evidence_ids": [
+        "ev_stmt_karam",
+        "ev_stmt_dina",
+        "ev_incident_report"
+      ],
+      "refuted_by_inference_ids": [
+        "i_source_a",
+        "i_source_b",
+        "i_rule_omar"
+      ],
+      "fairness_note_ar": "نصّا الإفادتين متطابقان حرفاً، ورسالة المجموعة وقائمة الفتح بين يدي اللاعب؛ فهما مصدر واحد لا اثنان."
+    },
+    {
+      "id": "rh_objection",
+      "points_to_hypothesis_id": "h_omar",
+      "planted_via_ar": "عمر اعترض على تعليق الكشف علناً.",
+      "evidence_ids": [
+        "ev_motive_note"
+      ],
+      "refuted_by_inference_ids": [
+        "i_rule_omar",
+        "i_swept_a"
+      ],
+      "fairness_note_ar": "المحضر نفسه يذكر أنه قبل القرار؛ والاعتراض على سياسة لا يدل على أخذ ورقة."
+    },
+    {
+      "id": "rh_dispute",
+      "points_to_hypothesis_id": "h_conspiracy",
+      "planted_via_ar": "إفادة لينا تختلف عن إفادتي كرم ودينا في الوقت والمضمون.",
+      "evidence_ids": [
+        "ev_stmt_lina"
+      ],
+      "refuted_by_inference_ids": [
+        "i_rule_conspiracy",
+        "i_swept_b"
+      ],
+      "fairness_note_ar": "الاختلاف في الزاوية والوقت بين شاهدين مستقلين أمر عادي؛ إفادة لينا بريئة وتوافق ورقة المهام."
+    }
+  ],
+  "learning_objectives": [
+    {
+      "id": "lo_claim",
+      "statement_ar": "يصنّف الأدلة بحسب نوع مصدرها ويعامل الأقوال ادعاءات تحتاج تأييداً.",
+      "skill_ko_ref": "KO-RS-05-001",
+      "observable_behaviors_ar": [
+        "يصنّف الإفادات أقوالاً",
+        "يميز السجل الأصلي من النسخة"
+      ],
+      "evidence_sources": [
+        "evidence_board"
+      ]
+    },
+    {
+      "id": "lo_timeline",
+      "statement_ar": "يرتّب الأحداث على خط زمني واحد ليكشف ما يتعارض.",
+      "skill_ko_ref": "KO-RS-05-005",
+      "observable_behaviors_ar": [
+        "يضع الأدلة في أزمنتها"
+      ],
+      "evidence_sources": [
+        "timeline_task",
+        "action_log"
+      ]
+    },
+    {
+      "id": "lo_indep",
+      "statement_ar": "يتحقق من استقلال الأدلة ويقدّم مسارين لا يشتركان في مصدر.",
+      "skill_ko_ref": "KO-RS-05-004",
+      "observable_behaviors_ar": [
+        "يميز بين مصادر لا تشترك في أصل"
+      ],
+      "evidence_sources": [
+        "evidence_board",
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_main",
+      "statement_ar": "يفرّق بين شهادتين مستقلتين وروايتين متطابقتين حرفياً: التطابق الكامل في الألفاظ وفي تفصيل خاطئ يدل على مصدر مشترك، والاختلاف البريء في الزاوية والوقت علامة استقلال.",
+      "skill_ko_ref": "KO-RS-05-004",
+      "observable_behaviors_ar": [
+        "يقارن الإفادات كلمة بكلمة",
+        "يبحث عن مصدر سابق للصياغة",
+        "لا يعدّ كل اختلاف كذباً"
+      ],
+      "evidence_sources": [
+        "evidence_board",
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_hyp",
+      "statement_ar": "يوازن بين فرضيتين على الأقل ويستبعد ما تنقضه الأدلة.",
+      "skill_ko_ref": "KO-RS-05-002",
+      "observable_behaviors_ar": [
+        "يضيف فرضيات",
+        "يستبعد بدليل"
+      ],
+      "evidence_sources": [
+        "hypothesis_ledger"
+      ]
+    },
+    {
+      "id": "lo_diag",
+      "statement_ar": "يقدّر ما يثبته كل دليل وما لا يثبته ويربطه بالفرضية باتجاه صحيح.",
+      "skill_ko_ref": "KO-RS-06-001",
+      "observable_behaviors_ar": [
+        "يربط الدليل بالفرضية"
+      ],
+      "evidence_sources": [
+        "evidence_board",
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_calib",
+      "statement_ar": "يصوغ نسبة الترجيح بحدودها.",
+      "skill_ko_ref": "KO-RS-06-021",
+      "observable_behaviors_ar": [
+        "يختار ثقة معقولة",
+        "يذكر حدوداً"
+      ],
+      "evidence_sources": [
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_revise",
+      "statement_ar": "يراجع رأيه الأول حين يظهر ما يخالفه.",
+      "skill_ko_ref": "KO-RS-06-009",
+      "observable_behaviors_ar": [
+        "يغيّر فرضيته الرائدة بدليل"
+      ],
+      "evidence_sources": [
+        "hypothesis_ledger"
+      ]
+    }
+  ],
+  "mechanics": {
+    "time_budget_units": 50,
+    "actions": [
+      {
+        "id": "a_read_report",
+        "type": "examine",
+        "label_ar": "اقرأ بلاغ فقدان الكشف",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_incident_report"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_hall",
+        "telemetry_code": "READ_REPORT"
+      },
+      {
+        "id": "a_int_omar",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة عمر",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "omar",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "omar",
+        "telemetry_code": "INT_OMAR"
+      },
+      {
+        "id": "a_int_reem",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة ريم",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "reem",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "reem",
+        "telemetry_code": "INT_REEM"
+      },
+      {
+        "id": "a_int_karam",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة كرم",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "karam",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "karam",
+        "telemetry_code": "INT_KARAM"
+      },
+      {
+        "id": "a_int_dina",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة دينا",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "dina",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "dina",
+        "telemetry_code": "INT_DINA"
+      },
+      {
+        "id": "a_int_lina",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة لينا",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "lina",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "lina",
+        "telemetry_code": "INT_LINA"
+      },
+      {
+        "id": "a_int_nadim",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة نديم",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "nadim",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "nadim",
+        "telemetry_code": "INT_NADIM"
+      },
+      {
+        "id": "a_int_rula",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة رولا",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "rula",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "rula",
+        "telemetry_code": "INT_RULA"
+      },
+      {
+        "id": "a_int_hamza",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة حمزة",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "hamza",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "hamza",
+        "telemetry_code": "INT_HAMZA"
+      },
+      {
+        "id": "a_note_karam",
+        "type": "examine",
+        "label_ar": "دوّن إفادة كرم",
+        "precondition": {
+          "fact_unlocked": "f_karam_says"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_stmt_karam"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "karam",
+        "telemetry_code": "NOTE_KARAM"
+      },
+      {
+        "id": "a_note_dina",
+        "type": "examine",
+        "label_ar": "دوّن إفادة دينا",
+        "precondition": {
+          "fact_unlocked": "f_dina_says"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_stmt_dina"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "dina",
+        "telemetry_code": "NOTE_DINA"
+      },
+      {
+        "id": "a_note_lina",
+        "type": "examine",
+        "label_ar": "دوّن إفادة لينا",
+        "precondition": {
+          "fact_unlocked": "f_lina_says"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_stmt_lina"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "lina",
+        "telemetry_code": "NOTE_LINA"
+      },
+      {
+        "id": "a_note_omar",
+        "type": "examine",
+        "label_ar": "دوّن إفادة عمر",
+        "precondition": {
+          "fact_unlocked": "f_omar_says"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_omar_stmt"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "omar",
+        "telemetry_code": "NOTE_OMAR"
+      },
+      {
+        "id": "a_note_reem",
+        "type": "examine",
+        "label_ar": "دوّن إفادة ريم",
+        "precondition": {
+          "fact_unlocked": "f_reem_stacked"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_reem_stmt"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "reem",
+        "telemetry_code": "NOTE_REEM"
+      },
+      {
+        "id": "a_get_group_msg",
+        "type": "examine",
+        "label_ar": "اطلب رسالة مجموعة الصف",
+        "precondition": {
+          "fact_unlocked": "f_group_msg_exists"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_group_msg"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_hall",
+        "telemetry_code": "GET_GROUP_MSG"
+      },
+      {
+        "id": "a_get_read_receipts",
+        "type": "examine",
+        "label_ar": "اطلب قائمة من فتح الرسالة",
+        "precondition": {
+          "fact_unlocked": "f_read_receipts_exist"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_read_receipts"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_hall",
+        "telemetry_code": "GET_RECEIPTS"
+      },
+      {
+        "id": "a_get_roll_entries",
+        "type": "examine",
+        "label_ar": "اطلب الكشف المسترجع",
+        "precondition": {
+          "fact_unlocked": "f_roll_recovered"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_roll_entries"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_hall",
+        "telemetry_code": "GET_ROLL"
+      },
+      {
+        "id": "a_get_crate_tag",
+        "type": "examine",
+        "label_ar": "اطلب بطاقة صندوق التدوير",
+        "precondition": {
+          "fact_unlocked": "f_crate_record_exists"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_crate_tag"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_yard",
+        "telemetry_code": "GET_CRATE"
+      },
+      {
+        "id": "a_get_photo_1040",
+        "type": "examine",
+        "label_ar": "اطلب صورة القاعة نحو 10:40",
+        "precondition": {
+          "fact_unlocked": "f_photo_1040_exists"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_photo_1040"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_hall",
+        "telemetry_code": "GET_PHOTO1"
+      },
+      {
+        "id": "a_get_photo_1110",
+        "type": "examine",
+        "label_ar": "اطلب صورة المعلمة بعد الترتيب",
+        "precondition": {
+          "fact_unlocked": "f_photo_1110_exists"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_photo_1110"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_hall",
+        "telemetry_code": "GET_PHOTO2"
+      },
+      {
+        "id": "a_get_tidy_roster",
+        "type": "examine",
+        "label_ar": "اطلب ورقة توزيع المتطوعين",
+        "precondition": {
+          "fact_unlocked": "f_tidy_roster_exists"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_tidy_roster"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_hall",
+        "telemetry_code": "GET_ROSTER"
+      },
+      {
+        "id": "a_get_motive_note",
+        "type": "examine",
+        "label_ar": "اطلب محضر الاجتماع السابق",
+        "precondition": {
+          "fact_unlocked": "f_omar_objected"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_motive_note"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_hall",
+        "telemetry_code": "GET_MOTIVE"
+      },
+      {
+        "id": "a_hint",
+        "type": "request_hint",
+        "label_ar": "اطلب تلميحاً",
+        "precondition": {
+          "always": true
+        },
+        "effects": [],
+        "time_cost_units": 0,
+        "telemetry_code": "REQUEST_HINT"
+      },
+      {
+        "id": "a_accuse",
+        "type": "final_accusation",
+        "label_ar": "قدّم الرأي المعلّل النهائي",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "SUBMIT"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "FINAL_ACCUSATION"
+      },
+      {
+        "id": "ask_omar_f_omar_says",
+        "type": "interview",
+        "label_ar": "[نموذج] omar يذكر f_omar_says",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_omar_says"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "omar",
+        "telemetry_code": "ASK_OMAR_F_OMAR_SAYS"
+      },
+      {
+        "id": "ask_omar_f_omar_objected",
+        "type": "interview",
+        "label_ar": "[نموذج] omar يذكر f_omar_objected",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_omar_objected"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "omar",
+        "telemetry_code": "ASK_OMAR_F_OMAR_OBJECTED"
+      },
+      {
+        "id": "ask_reem_f_reem_stacked",
+        "type": "interview",
+        "label_ar": "[نموذج] reem يذكر f_reem_stacked",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_reem_stacked"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "reem",
+        "telemetry_code": "ASK_REEM_F_REEM_STACKED"
+      },
+      {
+        "id": "ask_karam_f_karam_says",
+        "type": "interview",
+        "label_ar": "[نموذج] karam يذكر f_karam_says",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_karam_says"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "karam",
+        "telemetry_code": "ASK_KARAM_F_KARAM_SAYS"
+      },
+      {
+        "id": "ask_karam_f_group_msg_exists",
+        "type": "interview",
+        "label_ar": "[نموذج] karam يذكر f_group_msg_exists",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_group_msg_exists"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "karam",
+        "telemetry_code": "ASK_KARAM_F_GROUP_MSG_EXISTS"
+      },
+      {
+        "id": "ask_dina_f_dina_says",
+        "type": "interview",
+        "label_ar": "[نموذج] dina يذكر f_dina_says",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_dina_says"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "dina",
+        "telemetry_code": "ASK_DINA_F_DINA_SAYS"
+      },
+      {
+        "id": "ask_dina_f_read_receipts_exist",
+        "type": "interview",
+        "label_ar": "[نموذج] dina يذكر f_read_receipts_exist",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_read_receipts_exist"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "dina",
+        "telemetry_code": "ASK_DINA_F_READ_RECEIPTS_EXIST"
+      },
+      {
+        "id": "ask_lina_f_lina_says",
+        "type": "interview",
+        "label_ar": "[نموذج] lina يذكر f_lina_says",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_lina_says"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "lina",
+        "telemetry_code": "ASK_LINA_F_LINA_SAYS"
+      },
+      {
+        "id": "ask_nadim_f_photo_1040_exists",
+        "type": "interview",
+        "label_ar": "[نموذج] nadim يذكر f_photo_1040_exists",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_photo_1040_exists"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "nadim",
+        "telemetry_code": "ASK_NADIM_F_PHOTO_1040_EXISTS"
+      },
+      {
+        "id": "ask_rula_f_roll_recovered",
+        "type": "interview",
+        "label_ar": "[نموذج] rula يذكر f_roll_recovered",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_roll_recovered"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "rula",
+        "telemetry_code": "ASK_RULA_F_ROLL_RECOVERED"
+      },
+      {
+        "id": "ask_rula_f_tidy_roster_exists",
+        "type": "interview",
+        "label_ar": "[نموذج] rula يذكر f_tidy_roster_exists",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_tidy_roster_exists"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "rula",
+        "telemetry_code": "ASK_RULA_F_TIDY_ROSTER_EXISTS"
+      },
+      {
+        "id": "ask_rula_f_photo_1110_exists",
+        "type": "interview",
+        "label_ar": "[نموذج] rula يذكر f_photo_1110_exists",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_photo_1110_exists"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "rula",
+        "telemetry_code": "ASK_RULA_F_PHOTO_1110_EXISTS"
+      },
+      {
+        "id": "ask_hamza_f_crate_record_exists",
+        "type": "interview",
+        "label_ar": "[نموذج] hamza يذكر f_crate_record_exists",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_crate_record_exists"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "hamza",
+        "telemetry_code": "ASK_HAMZA_F_CRATE_RECORD_EXISTS"
+      }
+    ]
+  },
+  "state_machine": {
+    "id": "c029",
+    "initial": "briefing",
+    "type": "compound",
+    "states": {
+      "briefing": {
+        "description_ar": "الإحاطة",
+        "type": "atomic",
+        "on": {
+          "START": {
+            "target": "investigating"
+          }
+        }
+      },
+      "investigating": {
+        "description_ar": "التحقيق",
+        "type": "compound",
+        "initial": "gathering",
+        "states": {
+          "gathering": {
+            "type": "atomic",
+            "on": {
+              "OPEN_DEDUCTION": {
+                "target": "deducing"
+              }
+            }
+          },
+          "deducing": {
+            "type": "atomic",
+            "on": {
+              "BACK": {
+                "target": "gathering"
+              }
+            }
+          }
+        },
+        "on": {
+          "SUBMIT": {
+            "target": "review"
+          }
+        }
+      },
+      "review": {
+        "description_ar": "مراجعة",
+        "type": "atomic",
+        "on": {
+          "CLOSE": {
+            "target": "resolved"
+          }
+        }
+      },
+      "resolved": {
+        "description_ar": "إغلاق",
+        "type": "final"
+      }
+    }
+  },
+  "dialogue": {
+    "max_turns_per_interview": 10,
+    "llm_enabled": false,
+    "topics": [
+      {
+        "id": "t_says_k",
+        "label_ar": "ما رأيته",
+        "example_questions_ar": [
+          "ماذا رأيت؟",
+          "ماذا قلت للمعلمة؟"
+        ],
+        "fact_ids": [
+          "f_karam_says"
+        ]
+      },
+      {
+        "id": "t_msg",
+        "label_ar": "رسالة في مجموعة الصف",
+        "example_questions_ar": [
+          "هل قرأت شيئاً قبل الإفادة؟"
+        ],
+        "fact_ids": [
+          "f_group_msg_exists"
+        ]
+      },
+      {
+        "id": "t_says_d",
+        "label_ar": "ما قلته للمعلمة",
+        "example_questions_ar": [
+          "ماذا قلتِ؟"
+        ],
+        "fact_ids": [
+          "f_dina_says"
+        ]
+      },
+      {
+        "id": "t_receipts",
+        "label_ar": "فتح الرسائل",
+        "example_questions_ar": [
+          "هل تُظهر المجموعة من فتح الرسالة؟"
+        ],
+        "fact_ids": [
+          "f_read_receipts_exist"
+        ]
+      },
+      {
+        "id": "t_lina",
+        "label_ar": "ما رأيته قرابة الحادية عشرة",
+        "example_questions_ar": [
+          "ماذا رأيتِ؟"
+        ],
+        "fact_ids": [
+          "f_lina_says"
+        ]
+      },
+      {
+        "id": "t_omar_where",
+        "label_ar": "أين كنت قرابة العاشرة",
+        "example_questions_ar": [
+          "أين كنت؟"
+        ],
+        "fact_ids": [
+          "f_omar_says"
+        ]
+      },
+      {
+        "id": "t_objection",
+        "label_ar": "اعتراضك السابق",
+        "example_questions_ar": [
+          "هل اعترضت على شيء؟"
+        ],
+        "fact_ids": [
+          "f_omar_objected"
+        ]
+      },
+      {
+        "id": "t_tidy",
+        "label_ar": "ترتيب الطاولة",
+        "example_questions_ar": [
+          "ماذا فعلتِ عند الترتيب؟"
+        ],
+        "fact_ids": [
+          "f_reem_stacked"
+        ]
+      },
+      {
+        "id": "t_scrap",
+        "label_ar": "ما رميتِه",
+        "example_questions_ar": [
+          "هل فحصتِ الأوراق؟"
+        ],
+        "fact_ids": [],
+        "claim_ids": [
+          "cl_reem_only_scrap"
+        ]
+      },
+      {
+        "id": "t_photo1",
+        "label_ar": "صورة نحو 10:40",
+        "example_questions_ar": [
+          "هل صوّرت القاعة؟"
+        ],
+        "fact_ids": [
+          "f_photo_1040_exists"
+        ]
+      },
+      {
+        "id": "t_roll",
+        "label_ar": "الكشف المسترجع",
+        "example_questions_ar": [
+          "أين الكشف الآن؟"
+        ],
+        "fact_ids": [
+          "f_roll_recovered"
+        ]
+      },
+      {
+        "id": "t_roster",
+        "label_ar": "ورقة المهام",
+        "example_questions_ar": [
+          "من كُلّف بالترتيب؟"
+        ],
+        "fact_ids": [
+          "f_tidy_roster_exists"
+        ]
+      },
+      {
+        "id": "t_photo2",
+        "label_ar": "صورة بعد الترتيب",
+        "example_questions_ar": [
+          "هل صوّرت القاعة بعد الترتيب؟"
+        ],
+        "fact_ids": [
+          "f_photo_1110_exists"
+        ]
+      },
+      {
+        "id": "t_crate",
+        "label_ar": "بطاقات الصناديق",
+        "example_questions_ar": [
+          "ماذا تدوّن على البطاقة؟"
+        ],
+        "fact_ids": [
+          "f_crate_record_exists"
+        ]
+      },
+      {
+        "id": "t_belief",
+        "label_ar": "ما رأيك في الاتهام",
+        "example_questions_ar": [
+          "هل أنت متأكد مما رأيت؟"
+        ],
+        "fact_ids": [],
+        "claim_ids": [
+          "cl_omar_took"
+        ]
+      }
+    ]
+  },
+  "rubric": {
+    "reference_answer_ar": "لا دليل مستقل على أن عمر أخذ الكشف. إفادتا كرم ودينا متطابقتان حرفاً بحرف، حتى في وصف الاتجاه نحو السلم، وهما تطابقان رسالة نُشرت قبلهما وفتحاها قبل الاستدعاء؛ فهما رواية واحدة نُسخت. والكشف المسترجع يحمل توقيعات ناخبين حتى 10:48، فكان على الطاولة بعد الوقت المنسوب إلى أخذه، وصورة 10:40 تؤيد ذلك، ثم جُمع مع أوراق الترتيب في صندوق تدوير وجد فيه بعد جمعه. ورقة المهام وصورة المعلمة وإفادة لينا تتفق على أن متطوعة رتبت الطاولة في ذلك الوقت. حدود الاستنتاج: لا نعرف بالضبط متى وضعته ريم، ولا نعرف من هو «أحدهم» في الرسالة، ولا يفيد الاعتراف عن شيء في غياب السجلات.",
+    "criteria": [
+      {
+        "id": "c_source",
+        "name_ar": "تصنيف المصادر",
+        "objective_ids": [
+          "lo_claim"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يصنّف"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "أخطأ في الأغلب"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "نصف صحيح"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمه صحيح"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كله صحيح"
+          }
+        ]
+      },
+      {
+        "id": "c_conflict",
+        "name_ar": "ترتيب الأحداث على الخط الزمني",
+        "objective_ids": [
+          "lo_timeline"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.2,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يرتّب شيئاً"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "رتّب قليلاً"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "رتّب نصفها"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمها"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كلها في موضعها"
+          }
+        ]
+      },
+      {
+        "id": "c_links",
+        "name_ar": "ربط الأدلة بالفرضيات",
+        "objective_ids": [
+          "lo_diag",
+          "lo_indep"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.2,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لا روابط"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "قليلة"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "نصفها صحيح"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمها"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كلها دقيقة"
+          }
+        ]
+      },
+      {
+        "id": "c_uncertainty",
+        "name_ar": "معايرة الثقة",
+        "objective_ids": [
+          "lo_calib"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "ثقة مفرطة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "حدود قليلة"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "جزئية"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معقولة"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "معايَرة كاملة"
+          }
+        ]
+      },
+      {
+        "id": "c_revision",
+        "name_ar": "مراجعة الرأي",
+        "objective_ids": [
+          "lo_revise"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "بقي على فرضية مرفوضة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "لم يعلن فرضية"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "ثبت على فرضية سليمة"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "غيّر بدليل"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "غيّر بدليل ووثّق"
+          }
+        ]
+      },
+      {
+        "id": "c_elimination",
+        "name_ar": "استبعاد الفرضيات الخاطئة",
+        "objective_ids": [
+          "lo_hyp"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يستبعد"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "استبعد خطأً"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "فرضية بدليل"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "فرضيتين"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كل الخاطئة"
+          }
+        ]
+      },
+      {
+        "id": "c_justification",
+        "name_ar": "جودة الحجة المكتوبة",
+        "objective_ids": [
+          "lo_main"
+        ],
+        "scored_by": "human",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لا حجة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "ادعاء بلا سند"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "أدلة دون ربط"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "ربط الأدلة بالاستنتاج"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "ربط مع الطرق البريئة والحدود"
+          }
+        ]
+      }
+    ]
+  },
+  "hint_ladder": [
+    {
+      "id": "hg1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "حين تتفق روايتان في كل كلمة، اسأل: هل رأى كل منهما الحدث وحده، أم قرأ كلاهما شيئاً واحداً؟",
+      "trigger": {
+        "always": true
+      },
+      "assessment_weight": 0.02
+    },
+    {
+      "id": "hg2",
+      "level": 2,
+      "kind": "focus_area",
+      "text_ar": "قارن إفادتي الشاهدين حرفاً بحرف، ثم قارن أوقات تدوينهما بأي رسالة سبقتهما.",
+      "trigger": {
+        "has_evidence": "ev_incident_report"
+      },
+      "assessment_weight": 0.04
+    },
+    {
+      "id": "hg3",
+      "level": 3,
+      "kind": "pointer",
+      "text_ar": "ابحث عن سجل لا يملكه الشاهدان: ورقة الكشف نفسها، وصورة بساعة ظاهرة، وبطاقة صندوق.",
+      "trigger": {
+        "has_evidence": "ev_incident_report"
+      },
+      "assessment_weight": 0.08
+    },
+    {
+      "id": "hs1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "هل أنهت الرسالة نصها قبل أن يُسأل الشاهدان؟",
+      "trigger": {
+        "has_evidence": "ev_stmt_karam"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_source_b"
+    },
+    {
+      "id": "hs2",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "اسأل عن رسالة في مجموعة الصف، ثم عمّن فتحها ومتى.",
+      "trigger": {
+        "has_evidence": "ev_stmt_karam"
+      },
+      "assessment_weight": 0.06,
+      "targets_inference_id": "i_source_b"
+    },
+    {
+      "id": "hw1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "لو أخذ عمر الكشف 10:15، فلماذا فيه توقيعات بعد ذلك؟",
+      "trigger": {
+        "has_evidence": "ev_incident_report"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_swept_a"
+    },
+    {
+      "id": "hw2",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "اطلب الكشف المسترجع من المعلمة وانظر إلى أوقات التوقيع الأخيرة.",
+      "trigger": {
+        "has_evidence": "ev_incident_report"
+      },
+      "assessment_weight": 0.06,
+      "targets_inference_id": "i_swept_a"
+    }
+  ],
+  "fairness_test": {
+    "requirements": {
+      "min_disjoint_proof_paths": 2,
+      "max_inference_depth": 3,
+      "all_red_herrings_refutable": true,
+      "culprit_uniquely_entailed": true,
+      "no_hidden_fact_dependency": true,
+      "max_required_actions": 50
+    },
+    "runs": []
+  },
+  "ending_explanation": {
+    "steps": [
+      {
+        "order": 1,
+        "text_ar": "قارن الإفادتين حرفاً بحرف: الجملة نفسها بالألفاظ نفسها، بما فيها وصف الاتجاه نحو السلم؛ شاهدان مستقلان لا يتفقان في كل كلمة.",
+        "uses_evidence_ids": [
+          "ev_stmt_karam",
+          "ev_stmt_dina"
+        ],
+        "inference_id": "i_source_a"
+      },
+      {
+        "order": 2,
+        "text_ar": "ثم ابحث عمّا سبقهما: رسالة المجموعة 10:58 نصّها هو نصّ الإفادتين، وقد فتحها كرم 11:03 ودينا 11:06 قبل أن يُستدعيا.",
+        "uses_evidence_ids": [
+          "ev_group_msg",
+          "ev_read_receipts"
+        ],
+        "inference_id": "i_source_b"
+      },
+      {
+        "order": 3,
+        "text_ar": "الكشف نفسه يروي: توقيعات الناخبين حتى 10:48 بعد الوقت المنسوب إلى أخذه، ثم وُجد في صندوق التدوير بين المسودات.",
+        "uses_evidence_ids": [
+          "ev_roll_entries",
+          "ev_crate_tag"
+        ],
+        "inference_id": "i_swept_a"
+      },
+      {
+        "order": 4,
+        "text_ar": "مسار ثانٍ: صورة 10:40 فيها ورقتان على الطاولة، وصورة 11:07 فيها طاولة فارغة ومتطوعة بصندوق، وورقة المهام تكلف ريم بجمع الأوراق.",
+        "uses_evidence_ids": [
+          "ev_photo_1040",
+          "ev_photo_1110",
+          "ev_tidy_roster"
+        ],
+        "inference_id": "i_swept_b"
+      },
+      {
+        "order": 5,
+        "text_ar": "إفادة لينا تختلف زمناً ومضموناً وهي بريئة؛ واعتراض عمر السابق على السياسة لا يعني أخذ الورقة.",
+        "uses_evidence_ids": [
+          "ev_stmt_lina",
+          "ev_motive_note"
+        ],
+        "inference_id": "i_rule_omar"
+      }
+    ],
+    "alternative_paths_ar": [
+      "يمكن إثبات حلقة المصدر المشترك بالإفادتين وحدهما بعد مقارنتهما، أو برسالة المجموعة وقائمة الفتح وحدهما؛ والأقوى أن يتفقا.",
+      "ويمكن إثبات بقاء الكشف على الطاولة ثم انتقاله بالكشف المسترجع وبطاقة الصندوق، أو بالصورتين وورقة المهام؛ والأقوى أن يتفق المساران."
+    ],
+    "what_evidence_could_not_show_ar": [
+      "لا نعرف بدقة متى وضعت ريم الكشف في الصندوق ولا هل رأته؛ تكفي إفادتها وبطاقة الصندوق والصورتان لترجيح أنه وُضع مع أوراق الترتيب.",
+      "لا نعرف من هو «أحدهم» الذي نقلت عنه الرسالة، ولا إن كان قصد الإساءة.",
+      "لا يثبت تطابق الإفادتين أن الطالبين كذبا؛ الأرجح أنهما صدّقا ما قرآه وظنّا أنهما شاهداه."
+    ],
+    "science_notes_ar": [
+      "إفادتان تتطابقان في كل كلمة، وفي تفصيل لا يتوقعه المشاهد، تدلان على مصدر واحد لا على مشاهدتين. المشاهدات المستقلة تختلف في الزاوية والوقت والألفاظ، وهذا الاختلاف علامة استقلال لا كذب.",
+      "الذاكرة تمتزج بما نقرؤه بعد الحدث: قد يتذكر الشخص جملة قرأها كأنه رآها، ولا يعني ذلك أنه يكذب؛ ولهذا نسأل أولاً: أي مصدر سبق هذه الصياغة؟",
+      "الحسم هنا بسجلات لا تعتمد على أي شاهد: ورقة الكشف بأوقات توقيعاتها، وصورتان بساعتين ظاهرتين، وبطاقة صندوق، وورقة مهام.",
+      "لا أحد يضغط على أحد في هذه القضية ولا يُنتزع اعتراف؛ تُقرأ الإفادات كل على حدة وبعد ذلك تُقارن، وهذه ممارسة حديثة سليمة.",
+      "لا أحد مذنب بقصد: ريم أخطأت التقدير، وكرم ودينا صدّقا رسالة، وعمر دفع ثمن شائعة. والإصلاح تعليمي: يُفحص ما يوضع في صناديق التدوير، وتُسأل المشاهدة قبل أن تُردد.",
+      "بطاقة الأصل: القضية أصلية من ATHAR على بنية «فرّق بين الشهود» في مكتبة الحالات، وتُستعار منها قراءة الإفادات المنفصلة فقط."
+    ]
+  },
+  "expert_review": [
+    {
+      "role": "narrative_editor",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-28",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "scientific_reviewer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-28",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "learning_designer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-28",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "age_appropriateness",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-28",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "cultural_reviewer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-28",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "legal_rights",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-28",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "safety",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-28",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    }
+  ]
+}

@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
-# Builds content/labs/labs.json: the 20-lab catalogue (from the content pack's safe_labs.jsonl) plus the playable labs authored here.
+# Builds content/labs/labs.json: the 20-lab catalogue (from the content pack's safe_labs.jsonl) + the new reconciled labs; every entry is playable.
+# Content lives in: this file (16 classify labs), labs_existing4.py (04/08/12/18), labs_new_*.py (SAFE_LABS-21..). Helpers: labs_dsl.py.
 # Usage: build_labs.py <safe_labs.jsonl> <OUT>
-import json, sys
+import json, sys, os
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 SRC, OUT = sys.argv[1], sys.argv[2]
 cat = [json.loads(l) for l in open(SRC, encoding="utf8") if l.strip()]
 def I(id, t, a, why): return {"id": id, "text_ar": t, "answer": a, "why_ar": why}
@@ -167,7 +169,47 @@ play = [
   ],
   "transfer_ar": "ما الخطوة الأولى التي تفعلها قبل مشاركة أي منشور يثير انفعالك؟", "boundary_ar": "المنشورات خيالية. المهارة موجهة لفحص المحتوى لا لاستهداف أشخاص أو جهات."},
 ]
-done = {p["id"] for p in play}
-json.dump({"version": "1.0.0", "catalogue": [{"id": c["id"], "title_ar": c["title"], "interaction_ar": c["interaction"], "skill_ar": c["skill"], "boundary_ar": c["boundary"], "playable": c["id"] in done} for c in cat], "playable": play},
+
+# metadata for the 16 original classify labs: (hook, difficulty, minutes, related KOs)
+META = {
+ "SAFE_LABS-01": ("ثلاث ساعات تروي لحظة واحدة بثلاث روايات. فأيّها تصدّق؟", 1, 4, ["KO-RS-05-005", "KO-CM-10-005", "KO-FC-04-024"]),
+ "SAFE_LABS-02": ("أي فرق بين النسختين يستحق أن توقف التحقيق عنده، وأيها مجرد مظهر؟", 1, 4, ["KO-RS-05-001", "KO-NP-08-003"]),
+ "SAFE_LABS-03": ("ماذا يوجد خارج الإطار الذي قُصّ؟", 1, 4, ["KO-NP-08-002", "KO-CM-15-001"]),
+ "SAFE_LABS-05": ("النص يقول «ثلاثة» وربما قال المتحدث «ثلاثين». من يحسم؟", 2, 4, ["KO-CM-03-019", "KO-RS-05-001"]),
+ "SAFE_LABS-06": ("قطعة صغيرة من نمط كبير: كم تستطيع أن تقول لنا؟", 2, 4, ["KO-FC-04-015", "KO-RS-06-012"]),
+ "SAFE_LABS-07": ("أربعة موازين تقرأ الغرفة نفسها بأرقام مختلفة. أيّها يكذب؟", 1, 4, ["KO-RS-06-003"]),
+ "SAFE_LABS-09": ("الرطوبة والطاقة ترتفعان معاً. هل تسبب إحداهما الأخرى؟", 2, 5, ["KO-RS-06-015"]),
+ "SAFE_LABS-10": ("الملف يقول إنه وُلد قبل الحادثة. من يشهد له؟", 2, 5, ["KO-FC-04-024", "KO-NP-08-003"]),
+ "SAFE_LABS-11": ("السجل صامت عند هذا البرج. هل يعني الصمت أن أحداً لم يمرّ؟", 2, 5, ["KO-RS-06-003", "KO-FC-04-024"]),
+ "SAFE_LABS-13": ("شاهدان يروون الرواية نفسها حرفاً بحرف. هل هذا يقوّيها؟", 2, 4, ["KO-RS-05-004", "KO-CD-05-002"]),
+ "SAFE_LABS-14": ("وثيقة انتقلت بين ثلاث أيدٍ. هل نعرف أين كانت يوم الثلاثاء؟", 2, 5, ["KO-FC-04-026", "KO-FC-04B-002"]),
+ "SAFE_LABS-15": ("اختبار إيجابي دقيقه ٩٠٪. هل يعني ذلك أن صاحبه مصاب بنسبة ٩٠٪؟", 3, 6, ["KO-RS-06-010", "KO-FC-04-011"]),
+ "SAFE_LABS-16": ("تقريران عن اجتماع واحد لا يتفقان. من منهما أخطأ؟ وربما لا أحد.", 2, 4, ["KO-RS-06-017", "KO-RS-05-005"]),
+ "SAFE_LABS-17": ("غيّرتَ ثلاثة أشياء معاً ونما النبات. ما السبب؟", 2, 5, ["KO-RS-06-015", "KO-LA-07-020"]),
+ "SAFE_LABS-19": ("الخبر صادم ومنتشر. ما أول ما تفحصه قبل أن تشاركه؟", 1, 4, ["KO-PO-08-004", "KO-RS-06-002"]),
+ "SAFE_LABS-20": ("معلومة جديدة وصلت للتو. هل ترجّح فرضيتك أم تضعفها؟", 3, 6, ["KO-RS-05-002", "KO-CM-10-006", "KO-FC-04-008"]),
+}
+for p in play:
+    hook, d, m, ko = META[p["id"]]
+    p.update({"kind": "classify", "hook_ar": hook, "difficulty": d, "minutes": m, "ko_ids": ko})
+    p["boundary_ar"] = p["boundary_ar"]
+
+import labs_existing4, labs_new_a, labs_new_b, labs_new_c
+catmap = {c["id"]: c for c in cat}
+new = labs_existing4.LABS + labs_new_a.LABS + labs_new_b.LABS + labs_new_c.LABS
+playable = play + [{k: v for k, v in n.items() if k != "_cat"} for n in new]
+playable.sort(key=lambda x: x["id"])
+extra = {n["id"]: n["_cat"] for n in new}
+catalogue = []
+for l in playable:
+    c = catmap.get(l["id"])
+    e = extra.get(l["id"], {})
+    catalogue.append({
+        "id": l["id"], "title_ar": l["title_ar"] if not c else c["title"], "interaction_ar": c["interaction"] if c else e["interaction_ar"], "skill_ar": c["skill"] if c else l["skill_ar"],
+        "boundary_ar": c["boundary"] if c else l["boundary_ar"], "playable": True, "kind": l["kind"], "difficulty": l["difficulty"], "minutes": l["minutes"], "ko_ids": l["ko_ids"],
+        "origin_ar": (c["origin"] if c else e["origin_ar"]) if (c or e.get("origin_ar")) else "",
+    })
+import labs_declined
+json.dump({"version": "2.0.0", "catalogue": catalogue, "playable": playable, "declined": labs_declined.DECLINED},
           open(OUT, "w", encoding="utf8"), ensure_ascii=False, indent=1)
-print(len(cat), len(play))
+print(len(catalogue), len(playable), len(labs_declined.DECLINED))

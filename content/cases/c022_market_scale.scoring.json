@@ -1,0 +1,170 @@
+{
+  "case_id": "c022_market_scale",
+  "accepted_conclusions": {
+    "h_tray": {
+      "grade": 1,
+      "note_ar": "استنتاج متسق مع القياسات والسجلات ويتطلب ذكر حدوده."
+    },
+    "h_cheat": {
+      "grade": 0,
+      "note_ar": "يبني الاتهام على جدّة البائع وانطباع جاره، ويتجاهل الختم السليم وتطابق الإزاحة مع وزن الصينية."
+    },
+    "h_home": {
+      "grade": 0,
+      "note_ar": "ميزان البيت دقيق، والميزان المرجعي وجد الإزاحة في ميزان الركن نفسه."
+    },
+    "h_noise": {
+      "grade": 0,
+      "note_ar": "التفاوت العادي غرام واحد، والفرق هنا ستون غراماً وثابت."
+    }
+  },
+  "confidence_band": {
+    "h_tray": [
+      65,
+      90
+    ],
+    "h_cheat": [
+      0,
+      15
+    ],
+    "h_home": [
+      0,
+      15
+    ],
+    "h_noise": [
+      0,
+      15
+    ]
+  },
+  "source_key": {
+    "ev_complaint": "claim",
+    "ev_empty_test": "primary_record",
+    "ev_ref_test": "primary_record",
+    "ev_tray_weight": "primary_record",
+    "ev_bag_reweigh": "primary_record",
+    "ev_stock_sheet": "primary_record",
+    "ev_loan_book": "primary_record",
+    "ev_opening_table": "primary_record",
+    "ev_home_check": "primary_record",
+    "ev_hamed_statement": "claim",
+    "ev_umm_statement": "claim",
+    "ev_nabil_statement": "claim"
+  },
+  "link_key": {
+    "h_tray": {
+      "ev_empty_test": "supports",
+      "ev_ref_test": "supports",
+      "ev_tray_weight": "supports",
+      "ev_bag_reweigh": "supports",
+      "ev_stock_sheet": "supports",
+      "ev_loan_book": "supports",
+      "ev_opening_table": "supports",
+      "ev_umm_statement": "supports",
+      "ev_hamed_statement": "supports",
+      "ev_nabil_statement": "neutral"
+    },
+    "h_cheat": {
+      "ev_complaint": "supports",
+      "ev_nabil_statement": "supports",
+      "ev_empty_test": "weakens",
+      "ev_tray_weight": "weakens",
+      "ev_loan_book": "weakens",
+      "ev_opening_table": "weakens",
+      "ev_stock_sheet": "neutral"
+    },
+    "h_home": {
+      "ev_complaint": "supports",
+      "ev_home_check": "weakens",
+      "ev_bag_reweigh": "weakens",
+      "ev_ref_test": "weakens"
+    },
+    "h_noise": {
+      "ev_empty_test": "weakens",
+      "ev_ref_test": "weakens",
+      "ev_bag_reweigh": "weakens",
+      "ev_stock_sheet": "weakens"
+    }
+  },
+  "required_limits": [
+    "l_intent",
+    "l_sample"
+  ],
+  "valid_mind_changers": [
+    "m_tray_light",
+    "m_seal_broken",
+    "m_loan_date"
+  ],
+  "invalid_limits": [
+    "l_invalid_new",
+    "l_invalid_three",
+    "l_invalid_nervous"
+  ],
+  "decisive_evidence": [
+    "ev_empty_test",
+    "ev_ref_test",
+    "ev_tray_weight",
+    "ev_bag_reweigh",
+    "ev_stock_sheet",
+    "ev_loan_book",
+    "ev_opening_table"
+  ],
+  "lab_requirement": null,
+  "timeline_requirement": [
+    {
+      "evidence_id": "ev_opening_table",
+      "utc_minute": -900,
+      "tol": 30
+    },
+    {
+      "evidence_id": "ev_loan_book",
+      "utc_minute": 1580,
+      "tol": 20
+    },
+    {
+      "evidence_id": "ev_complaint",
+      "utc_minute": 4380,
+      "tol": 20
+    },
+    {
+      "evidence_id": "ev_empty_test",
+      "utc_minute": 4470,
+      "tol": 20
+    },
+    {
+      "evidence_id": "ev_tray_weight",
+      "utc_minute": 4505,
+      "tol": 20
+    }
+  ],
+  "refuted_hypotheses": [
+    "h_cheat",
+    "h_home",
+    "h_noise"
+  ],
+  "criteria_map": {
+    "c_source": "source_typing",
+    "c_conflict": "conflict_resolution",
+    "c_links": "hypothesis_links",
+    "c_uncertainty": "uncertainty",
+    "c_revision": "revision",
+    "c_elimination": "elimination",
+    "c_justification": "justification_human"
+  },
+  "transfer_key": {
+    "valid": [
+      "o1",
+      "o2",
+      "o3",
+      "o4"
+    ],
+    "invalid": [
+      "o5",
+      "o6",
+      "o7"
+    ]
+  },
+  "caps": {
+    "no_citations_max": 45,
+    "no_conflict_resolution_max": 65
+  }
+}

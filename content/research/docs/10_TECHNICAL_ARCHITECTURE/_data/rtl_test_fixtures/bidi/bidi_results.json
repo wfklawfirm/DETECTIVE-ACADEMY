@@ -1,0 +1,414 @@
+[
+ {
+  "case": "C1_sentence_end_after_latin",
+  "mode": "ltr",
+  "dir": "ltr",
+  "reads_correctly_rtl": false,
+  "visual_rtl_order": [
+   2,
+   1,
+   0
+  ]
+ },
+ {
+  "case": "C1_sentence_end_after_latin",
+  "mode": "rtl",
+  "dir": "rtl",
+  "reads_correctly_rtl": true,
+  "visual_rtl_order": [
+   0,
+   1,
+   2
+  ]
+ },
+ {
+  "case": "C1_sentence_end_after_latin",
+  "mode": "auto",
+  "dir": "rtl",
+  "reads_correctly_rtl": true,
+  "visual_rtl_order": [
+   0,
+   1,
+   2
+  ]
+ },
+ {
+  "case": "C1_sentence_end_after_latin",
+  "mode": "rtl+bdi",
+  "dir": "rtl",
+  "reads_correctly_rtl": true,
+  "visual_rtl_order": [
+   0,
+   1,
+   2
+  ]
+ },
+ {
+  "case": "C2_choice_starting_with_latin",
+  "mode": "ltr",
+  "dir": "ltr",
+  "reads_correctly_rtl": false,
+  "visual_rtl_order": [
+   2,
+   1,
+   0
+  ]
+ },
+ {
+  "case": "C2_choice_starting_with_latin",
+  "mode": "rtl",
+  "dir": "rtl",
+  "reads_correctly_rtl": true,
+  "visual_rtl_order": [
+   0,
+   1,
+   2
+  ]
+ },
+ {
+  "case": "C2_choice_starting_with_latin",
+  "mode": "auto",
+  "dir": "ltr",
+  "reads_correctly_rtl": false,
+  "visual_rtl_order": [
+   2,
+   1,
+   0
+  ]
+ },
+ {
+  "case": "C2_choice_starting_with_latin",
+  "mode": "rtl+bdi",
+  "dir": "rtl",
+  "reads_correctly_rtl": true,
+  "visual_rtl_order": [
+   0,
+   1,
+   2
+  ]
+ },
+ {
+  "case": "C3_var_latin_name_then_number",
+  "mode": "ltr",
+  "dir": "ltr",
+  "reads_correctly_rtl": false,
+  "visual_rtl_order": [
+   4,
+   3,
+   2,
+   1,
+   0
+  ]
+ },
+ {
+  "case": "C3_var_latin_name_then_number",
+  "mode": "rtl",
+  "dir": "rtl",
+  "reads_correctly_rtl": false,
+  "visual_rtl_order": [
+   0,
+   3,
+   2,
+   1,
+   4
+  ]
+ },
+ {
+  "case": "C3_var_latin_name_then_number",
+  "mode": "auto",
+  "dir": "rtl",
+  "reads_correctly_rtl": false,
+  "visual_rtl_order": [
+   0,
+   3,
+   2,
+   1,
+   4
+  ]
+ },
+ {
+  "case": "C3_var_latin_name_then_number",
+  "mode": "rtl+bdi",
+  "dir": "rtl",
+  "reads_correctly_rtl": true,
+  "visual_rtl_order": [
+   0,
+   1,
+   2,
+   3,
+   4
+  ]
+ },
+ {
+  "case": "C4_var_latin_then_arabic_then_latin",
+  "mode": "ltr",
+  "dir": "ltr",
+  "reads_correctly_rtl": false,
+  "visual_rtl_order": [
+   4,
+   3,
+   2,
+   1,
+   0
+  ]
+ },
+ {
+  "case": "C4_var_latin_then_arabic_then_latin",
+  "mode": "rtl",
+  "dir": "rtl",
+  "reads_correctly_rtl": true,
+  "visual_rtl_order": [
+   0,
+   1,
+   2,
+   3,
+   4
+  ]
+ },
+ {
+  "case": "C4_var_latin_then_arabic_then_latin",
+  "mode": "auto",
+  "dir": "rtl",
+  "reads_correctly_rtl": true,
+  "visual_rtl_order": [
+   0,
+   1,
+   2,
+   3,
+   4
+  ]
+ },
+ {
+  "case": "C4_var_latin_then_arabic_then_latin",
+  "mode": "rtl+bdi",
+  "dir": "rtl",
+  "reads_correctly_rtl": true,
+  "visual_rtl_order": [
+   0,
+   1,
+   2,
+   3,
+   4
+  ]
+ },
+ {
+  "case": "C5_percent_and_minus",
+  "mode": "ltr",
+  "dir": "ltr",
+  "reads_correctly_rtl": true,
+  "visual_rtl_order": [
+   0,
+   1,
+   2
+  ]
+ },
+ {
+  "case": "C5_percent_and_minus",
+  "mode": "rtl",
+  "dir": "rtl",
+  "reads_correctly_rtl": true,
+  "visual_rtl_order": [
+   0,
+   1,
+   2
+  ]
+ },
+ {
+  "case": "C5_percent_and_minus",
+  "mode": "auto",
+  "dir": "rtl",
+  "reads_correctly_rtl": true,
+  "visual_rtl_order": [
+   0,
+   1,
+   2
+  ]
+ },
+ {
+  "case": "C5_percent_and_minus",
+  "mode": "rtl+bdi",
+  "dir": "rtl",
+  "reads_correctly_rtl": true,
+  "visual_rtl_order": [
+   0,
+   1,
+   2
+  ]
+ },
+ {
+  "case": "C6_time_range",
+  "mode": "ltr",
+  "dir": "ltr",
+  "reads_correctly_rtl": true,
+  "visual_rtl_order": [
+   0,
+   1,
+   2,
+   3
+  ]
+ },
+ {
+  "case": "C6_time_range",
+  "mode": "rtl",
+  "dir": "rtl",
+  "reads_correctly_rtl": true,
+  "visual_rtl_order": [
+   0,
+   1,
+   2,
+   3
+  ]
+ },
+ {
+  "case": "C6_time_range",
+  "mode": "auto",
+  "dir": "rtl",
+  "reads_correctly_rtl": true,
+  "visual_rtl_order": [
+   0,
+   1,
+   2,
+   3
+  ]
+ },
+ {
+  "case": "C6_time_range",
+  "mode": "rtl+bdi",
+  "dir": "rtl",
+  "reads_correctly_rtl": true,
+  "visual_rtl_order": [
+   0,
+   1,
+   2,
+   3
+  ]
+ },
+ {
+  "case": "C7_eastern_digits_time",
+  "mode": "ltr",
+  "dir": "ltr",
+  "reads_correctly_rtl": true,
+  "visual_rtl_order": [
+   0,
+   1,
+   2
+  ]
+ },
+ {
+  "case": "C7_eastern_digits_time",
+  "mode": "rtl",
+  "dir": "rtl",
+  "reads_correctly_rtl": true,
+  "visual_rtl_order": [
+   0,
+   1,
+   2
+  ]
+ },
+ {
+  "case": "C7_eastern_digits_time",
+  "mode": "auto",
+  "dir": "rtl",
+  "reads_correctly_rtl": true,
+  "visual_rtl_order": [
+   0,
+   1,
+   2
+  ]
+ },
+ {
+  "case": "C7_eastern_digits_time",
+  "mode": "rtl+bdi",
+  "dir": "rtl",
+  "reads_correctly_rtl": true,
+  "visual_rtl_order": [
+   0,
+   1,
+   2
+  ]
+ },
+ {
+  "case": "C8_latin_question_mark",
+  "mode": "ltr",
+  "dir": "ltr",
+  "reads_correctly_rtl": false,
+  "visual_rtl_order": [
+   1,
+   0
+  ]
+ },
+ {
+  "case": "C8_latin_question_mark",
+  "mode": "rtl",
+  "dir": "rtl",
+  "reads_correctly_rtl": true,
+  "visual_rtl_order": [
+   0,
+   1
+  ]
+ },
+ {
+  "case": "C8_latin_question_mark",
+  "mode": "auto",
+  "dir": "rtl",
+  "reads_correctly_rtl": true,
+  "visual_rtl_order": [
+   0,
+   1
+  ]
+ },
+ {
+  "case": "C8_latin_question_mark",
+  "mode": "rtl+bdi",
+  "dir": "rtl",
+  "reads_correctly_rtl": true,
+  "visual_rtl_order": [
+   0,
+   1
+  ]
+ },
+ {
+  "case": "C9_parenthesis_arabic",
+  "mode": "ltr",
+  "dir": "ltr",
+  "reads_correctly_rtl": true,
+  "visual_rtl_order": [
+   0,
+   1,
+   2
+  ]
+ },
+ {
+  "case": "C9_parenthesis_arabic",
+  "mode": "rtl",
+  "dir": "rtl",
+  "reads_correctly_rtl": true,
+  "visual_rtl_order": [
+   0,
+   1,
+   2
+  ]
+ },
+ {
+  "case": "C9_parenthesis_arabic",
+  "mode": "auto",
+  "dir": "rtl",
+  "reads_correctly_rtl": true,
+  "visual_rtl_order": [
+   0,
+   1,
+   2
+  ]
+ },
+ {
+  "case": "C9_parenthesis_arabic",
+  "mode": "rtl+bdi",
+  "dir": "rtl",
+  "reads_correctly_rtl": true,
+  "visual_rtl_order": [
+   0,
+   1,
+   2
+  ]
+ }
+]

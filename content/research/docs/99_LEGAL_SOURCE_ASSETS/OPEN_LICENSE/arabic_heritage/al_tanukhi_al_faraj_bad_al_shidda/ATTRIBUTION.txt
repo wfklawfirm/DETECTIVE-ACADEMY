@@ -1,0 +1,9 @@
+Title: al-Faraj ba'd al-shidda
+Author: al-Muhassin al-Tanukhi
+Digital source: Open Islamicate Texts Initiative (OpenITI), file 0384MuhassinTanukhi.FarajBacdaShidda.Shamela0012828-ara1.completed
+URL: https://raw.githubusercontent.com/OpenITI/0400AH/master/data/0384MuhassinTanukhi/0384MuhassinTanukhi.FarajBacdaShidda/0384MuhassinTanukhi.FarajBacdaShidda.Shamela0012828-ara1.completed
+Licence: CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/)
+Attribution text: "Text from the OpenITI corpus (Romanov, Savant, Seydi, Verkinderen, Nigst et al.), release on Zenodo doi:10.5281/zenodo.3082463, licensed CC BY-NC-SA 4.0."
+Use limits for ATHAR: internal research only (non-commercial). Do not ship this file or substantial extracts in a paid product; commercial ATHAR stories must be our own retellings. File unchanged (byte-identical to source).
+Notes: Base print is a modern edition; OpenITI tags NO_MAJOR_ISSUES; no footnote markers found.
+Stored by W2-HERITAGE on 2026-10-27.

@@ -1,0 +1,1209 @@
+{
+ "version": "1.0.0",
+ "sets": [
+  {
+   "key": "fluentui",
+   "name": "Fluent UI System Icons",
+   "license": "MIT",
+   "count": 48,
+   "license_file": "/assets/icons/fluentui/LICENSE.txt"
+  },
+  {
+   "key": "heroicons",
+   "name": "Heroicons (24 outline)",
+   "license": "MIT",
+   "count": 29,
+   "license_file": "/assets/icons/heroicons/LICENSE.txt"
+  },
+  {
+   "key": "lucide",
+   "name": "Lucide",
+   "license": "ISC",
+   "count": 37,
+   "license_file": "/assets/icons/lucide/LICENSE.txt"
+  },
+  {
+   "key": "material",
+   "name": "Material Symbols (Outlined)",
+   "license": "Apache-2.0",
+   "count": 41,
+   "license_file": "/assets/icons/material/LICENSE.txt"
+  },
+  {
+   "key": "phosphor",
+   "name": "Phosphor Icons",
+   "license": "MIT",
+   "count": 37,
+   "license_file": "/assets/icons/phosphor/LICENSE.txt"
+  },
+  {
+   "key": "tabler",
+   "name": "Tabler Icons (outline)",
+   "license": "MIT",
+   "count": 40,
+   "license_file": "/assets/icons/tabler/LICENSE.txt"
+  }
+ ],
+ "icons": [
+  {
+   "set": "fluentui",
+   "name": "archive_24_regular",
+   "file": "/assets/icons/fluentui/archive_24_regular.svg"
+  },
+  {
+   "set": "fluentui",
+   "name": "arrow_export_ltr_24_regular",
+   "file": "/assets/icons/fluentui/arrow_export_ltr_24_regular.svg"
+  },
+  {
+   "set": "fluentui",
+   "name": "arrow_export_rtl_24_regular",
+   "file": "/assets/icons/fluentui/arrow_export_rtl_24_regular.svg"
+  },
+  {
+   "set": "fluentui",
+   "name": "arrow_left_24_regular",
+   "file": "/assets/icons/fluentui/arrow_left_24_regular.svg"
+  },
+  {
+   "set": "fluentui",
+   "name": "arrow_right_24_regular",
+   "file": "/assets/icons/fluentui/arrow_right_24_regular.svg"
+  },
+  {
+   "set": "fluentui",
+   "name": "beaker_24_regular",
+   "file": "/assets/icons/fluentui/beaker_24_regular.svg"
+  },
+  {
+   "set": "fluentui",
+   "name": "book_open_24_regular",
+   "file": "/assets/icons/fluentui/book_open_24_regular.svg"
+  },
+  {
+   "set": "fluentui",
+   "name": "book_question_mark_rtl_24_regular",
+   "file": "/assets/icons/fluentui/book_question_mark_rtl_24_regular.svg"
+  },
+  {
+   "set": "fluentui",
+   "name": "calendar_24_regular",
+   "file": "/assets/icons/fluentui/calendar_24_regular.svg"
+  },
+  {
+   "set": "fluentui",
+   "name": "calendar_ltr_24_regular",
+   "file": "/assets/icons/fluentui/calendar_ltr_24_regular.svg"
+  },
+  {
+   "set": "fluentui",
+   "name": "calendar_rtl_24_regular",
+   "file": "/assets/icons/fluentui/calendar_rtl_24_regular.svg"
+  },
+  {
+   "set": "fluentui",
+   "name": "camera_24_regular",
+   "file": "/assets/icons/fluentui/camera_24_regular.svg"
+  },
+  {
+   "set": "fluentui",
+   "name": "clipboard_text_rtl_24_regular",
+   "file": "/assets/icons/fluentui/clipboard_text_rtl_24_regular.svg"
+  },
+  {
+   "set": "fluentui",
+   "name": "clock_24_regular",
+   "file": "/assets/icons/fluentui/clock_24_regular.svg"
+  },
+  {
+   "set": "fluentui",
+   "name": "closed_caption_24_regular",
+   "file": "/assets/icons/fluentui/closed_caption_24_regular.svg"
+  },
+  {
+   "set": "fluentui",
+   "name": "document_search_24_regular",
+   "file": "/assets/icons/fluentui/document_search_24_regular.svg"
+  },
+  {
+   "set": "fluentui",
+   "name": "document_text_24_regular",
+   "file": "/assets/icons/fluentui/document_text_24_regular.svg"
+  },
+  {
+   "set": "fluentui",
+   "name": "eye_24_regular",
+   "file": "/assets/icons/fluentui/eye_24_regular.svg"
+  },
+  {
+   "set": "fluentui",
+   "name": "fingerprint_24_regular",
+   "file": "/assets/icons/fluentui/fingerprint_24_regular.svg"
+  },
+  {
+   "set": "fluentui",
+   "name": "folder_24_regular",
+   "file": "/assets/icons/fluentui/folder_24_regular.svg"
+  },
+  {
+   "set": "fluentui",
+   "name": "folder_open_24_regular",
+   "file": "/assets/icons/fluentui/folder_open_24_regular.svg"
+  },
+  {
+   "set": "fluentui",
+   "name": "headphones_24_regular",
+   "file": "/assets/icons/fluentui/headphones_24_regular.svg"
+  },
+  {
+   "set": "fluentui",
+   "name": "hourglass_24_regular",
+   "file": "/assets/icons/fluentui/hourglass_24_regular.svg"
+  },
+  {
+   "set": "fluentui",
+   "name": "ios_arrow_rtl_24_regular",
+   "file": "/assets/icons/fluentui/ios_arrow_rtl_24_regular.svg"
+  },
+  {
+   "set": "fluentui",
+   "name": "key_24_regular",
+   "file": "/assets/icons/fluentui/key_24_regular.svg"
+  },
+  {
+   "set": "fluentui",
+   "name": "lightbulb_24_regular",
+   "file": "/assets/icons/fluentui/lightbulb_24_regular.svg"
+  },
+  {
+   "set": "fluentui",
+   "name": "link_24_regular",
+   "file": "/assets/icons/fluentui/link_24_regular.svg"
+  },
+  {
+   "set": "fluentui",
+   "name": "location_24_regular",
+   "file": "/assets/icons/fluentui/location_24_regular.svg"
+  },
+  {
+   "set": "fluentui",
+   "name": "lock_closed_24_regular",
+   "file": "/assets/icons/fluentui/lock_closed_24_regular.svg"
+  },
+  {
+   "set": "fluentui",
+   "name": "lock_open_24_regular",
+   "file": "/assets/icons/fluentui/lock_open_24_regular.svg"
+  },
+  {
+   "set": "fluentui",
+   "name": "map_24_regular",
+   "file": "/assets/icons/fluentui/map_24_regular.svg"
+  },
+  {
+   "set": "fluentui",
+   "name": "microscope_24_regular",
+   "file": "/assets/icons/fluentui/microscope_24_regular.svg"
+  },
+  {
+   "set": "fluentui",
+   "name": "music_note_2_24_regular",
+   "file": "/assets/icons/fluentui/music_note_2_24_regular.svg"
+  },
+  {
+   "set": "fluentui",
+   "name": "music_note_off_2_24_regular",
+   "file": "/assets/icons/fluentui/music_note_off_2_24_regular.svg"
+  },
+  {
+   "set": "fluentui",
+   "name": "news_24_regular",
+   "file": "/assets/icons/fluentui/news_24_regular.svg"
+  },
+  {
+   "set": "fluentui",
+   "name": "notebook_24_regular",
+   "file": "/assets/icons/fluentui/notebook_24_regular.svg"
+  },
+  {
+   "set": "fluentui",
+   "name": "person_search_24_regular",
+   "file": "/assets/icons/fluentui/person_search_24_regular.svg"
+  },
+  {
+   "set": "fluentui",
+   "name": "question_circle_24_regular",
+   "file": "/assets/icons/fluentui/question_circle_24_regular.svg"
+  },
+  {
+   "set": "fluentui",
+   "name": "scales_24_regular",
+   "file": "/assets/icons/fluentui/scales_24_regular.svg"
+  },
+  {
+   "set": "fluentui",
+   "name": "search_24_regular",
+   "file": "/assets/icons/fluentui/search_24_regular.svg"
+  },
+  {
+   "set": "fluentui",
+   "name": "speaker_2_24_regular",
+   "file": "/assets/icons/fluentui/speaker_2_24_regular.svg"
+  },
+  {
+   "set": "fluentui",
+   "name": "speaker_mute_24_regular",
+   "file": "/assets/icons/fluentui/speaker_mute_24_regular.svg"
+  },
+  {
+   "set": "fluentui",
+   "name": "task_list_rtl_24_regular",
+   "file": "/assets/icons/fluentui/task_list_rtl_24_regular.svg"
+  },
+  {
+   "set": "fluentui",
+   "name": "text_bullet_list_ltr_24_regular",
+   "file": "/assets/icons/fluentui/text_bullet_list_ltr_24_regular.svg"
+  },
+  {
+   "set": "fluentui",
+   "name": "text_bullet_list_rtl_24_regular",
+   "file": "/assets/icons/fluentui/text_bullet_list_rtl_24_regular.svg"
+  },
+  {
+   "set": "fluentui",
+   "name": "text_description_rtl_24_regular",
+   "file": "/assets/icons/fluentui/text_description_rtl_24_regular.svg"
+  },
+  {
+   "set": "fluentui",
+   "name": "text_direction_horizontal_rtl_24_regular",
+   "file": "/assets/icons/fluentui/text_direction_horizontal_rtl_24_regular.svg"
+  },
+  {
+   "set": "fluentui",
+   "name": "timeline_24_regular",
+   "file": "/assets/icons/fluentui/timeline_24_regular.svg"
+  },
+  {
+   "set": "heroicons",
+   "name": "archive-box",
+   "file": "/assets/icons/heroicons/archive-box.svg"
+  },
+  {
+   "set": "heroicons",
+   "name": "arrow-left",
+   "file": "/assets/icons/heroicons/arrow-left.svg"
+  },
+  {
+   "set": "heroicons",
+   "name": "arrow-right",
+   "file": "/assets/icons/heroicons/arrow-right.svg"
+  },
+  {
+   "set": "heroicons",
+   "name": "beaker",
+   "file": "/assets/icons/heroicons/beaker.svg"
+  },
+  {
+   "set": "heroicons",
+   "name": "book-open",
+   "file": "/assets/icons/heroicons/book-open.svg"
+  },
+  {
+   "set": "heroicons",
+   "name": "calendar",
+   "file": "/assets/icons/heroicons/calendar.svg"
+  },
+  {
+   "set": "heroicons",
+   "name": "camera",
+   "file": "/assets/icons/heroicons/camera.svg"
+  },
+  {
+   "set": "heroicons",
+   "name": "clock",
+   "file": "/assets/icons/heroicons/clock.svg"
+  },
+  {
+   "set": "heroicons",
+   "name": "document-magnifying-glass",
+   "file": "/assets/icons/heroicons/document-magnifying-glass.svg"
+  },
+  {
+   "set": "heroicons",
+   "name": "document-text",
+   "file": "/assets/icons/heroicons/document-text.svg"
+  },
+  {
+   "set": "heroicons",
+   "name": "eye",
+   "file": "/assets/icons/heroicons/eye.svg"
+  },
+  {
+   "set": "heroicons",
+   "name": "finger-print",
+   "file": "/assets/icons/heroicons/finger-print.svg"
+  },
+  {
+   "set": "heroicons",
+   "name": "folder-open",
+   "file": "/assets/icons/heroicons/folder-open.svg"
+  },
+  {
+   "set": "heroicons",
+   "name": "folder",
+   "file": "/assets/icons/heroicons/folder.svg"
+  },
+  {
+   "set": "heroicons",
+   "name": "key",
+   "file": "/assets/icons/heroicons/key.svg"
+  },
+  {
+   "set": "heroicons",
+   "name": "language",
+   "file": "/assets/icons/heroicons/language.svg"
+  },
+  {
+   "set": "heroicons",
+   "name": "light-bulb",
+   "file": "/assets/icons/heroicons/light-bulb.svg"
+  },
+  {
+   "set": "heroicons",
+   "name": "link",
+   "file": "/assets/icons/heroicons/link.svg"
+  },
+  {
+   "set": "heroicons",
+   "name": "lock-closed",
+   "file": "/assets/icons/heroicons/lock-closed.svg"
+  },
+  {
+   "set": "heroicons",
+   "name": "lock-open",
+   "file": "/assets/icons/heroicons/lock-open.svg"
+  },
+  {
+   "set": "heroicons",
+   "name": "magnifying-glass",
+   "file": "/assets/icons/heroicons/magnifying-glass.svg"
+  },
+  {
+   "set": "heroicons",
+   "name": "map-pin",
+   "file": "/assets/icons/heroicons/map-pin.svg"
+  },
+  {
+   "set": "heroicons",
+   "name": "map",
+   "file": "/assets/icons/heroicons/map.svg"
+  },
+  {
+   "set": "heroicons",
+   "name": "musical-note",
+   "file": "/assets/icons/heroicons/musical-note.svg"
+  },
+  {
+   "set": "heroicons",
+   "name": "newspaper",
+   "file": "/assets/icons/heroicons/newspaper.svg"
+  },
+  {
+   "set": "heroicons",
+   "name": "question-mark-circle",
+   "file": "/assets/icons/heroicons/question-mark-circle.svg"
+  },
+  {
+   "set": "heroicons",
+   "name": "scale",
+   "file": "/assets/icons/heroicons/scale.svg"
+  },
+  {
+   "set": "heroicons",
+   "name": "speaker-wave",
+   "file": "/assets/icons/heroicons/speaker-wave.svg"
+  },
+  {
+   "set": "heroicons",
+   "name": "speaker-x-mark",
+   "file": "/assets/icons/heroicons/speaker-x-mark.svg"
+  },
+  {
+   "set": "lucide",
+   "name": "archive",
+   "file": "/assets/icons/lucide/archive.svg"
+  },
+  {
+   "set": "lucide",
+   "name": "arrow-left",
+   "file": "/assets/icons/lucide/arrow-left.svg"
+  },
+  {
+   "set": "lucide",
+   "name": "arrow-right",
+   "file": "/assets/icons/lucide/arrow-right.svg"
+  },
+  {
+   "set": "lucide",
+   "name": "audio-waveform",
+   "file": "/assets/icons/lucide/audio-waveform.svg"
+  },
+  {
+   "set": "lucide",
+   "name": "book-open",
+   "file": "/assets/icons/lucide/book-open.svg"
+  },
+  {
+   "set": "lucide",
+   "name": "calendar",
+   "file": "/assets/icons/lucide/calendar.svg"
+  },
+  {
+   "set": "lucide",
+   "name": "camera",
+   "file": "/assets/icons/lucide/camera.svg"
+  },
+  {
+   "set": "lucide",
+   "name": "captions",
+   "file": "/assets/icons/lucide/captions.svg"
+  },
+  {
+   "set": "lucide",
+   "name": "circle-question-mark",
+   "file": "/assets/icons/lucide/circle-question-mark.svg"
+  },
+  {
+   "set": "lucide",
+   "name": "clock",
+   "file": "/assets/icons/lucide/clock.svg"
+  },
+  {
+   "set": "lucide",
+   "name": "eye",
+   "file": "/assets/icons/lucide/eye.svg"
+  },
+  {
+   "set": "lucide",
+   "name": "file-search",
+   "file": "/assets/icons/lucide/file-search.svg"
+  },
+  {
+   "set": "lucide",
+   "name": "file-text",
+   "file": "/assets/icons/lucide/file-text.svg"
+  },
+  {
+   "set": "lucide",
+   "name": "fingerprint-pattern",
+   "file": "/assets/icons/lucide/fingerprint-pattern.svg"
+  },
+  {
+   "set": "lucide",
+   "name": "flask-conical",
+   "file": "/assets/icons/lucide/flask-conical.svg"
+  },
+  {
+   "set": "lucide",
+   "name": "folder-open",
+   "file": "/assets/icons/lucide/folder-open.svg"
+  },
+  {
+   "set": "lucide",
+   "name": "folder",
+   "file": "/assets/icons/lucide/folder.svg"
+  },
+  {
+   "set": "lucide",
+   "name": "headphones",
+   "file": "/assets/icons/lucide/headphones.svg"
+  },
+  {
+   "set": "lucide",
+   "name": "hourglass",
+   "file": "/assets/icons/lucide/hourglass.svg"
+  },
+  {
+   "set": "lucide",
+   "name": "key-round",
+   "file": "/assets/icons/lucide/key-round.svg"
+  },
+  {
+   "set": "lucide",
+   "name": "lightbulb",
+   "file": "/assets/icons/lucide/lightbulb.svg"
+  },
+  {
+   "set": "lucide",
+   "name": "link",
+   "file": "/assets/icons/lucide/link.svg"
+  },
+  {
+   "set": "lucide",
+   "name": "lock-open",
+   "file": "/assets/icons/lucide/lock-open.svg"
+  },
+  {
+   "set": "lucide",
+   "name": "lock",
+   "file": "/assets/icons/lucide/lock.svg"
+  },
+  {
+   "set": "lucide",
+   "name": "map-pin",
+   "file": "/assets/icons/lucide/map-pin.svg"
+  },
+  {
+   "set": "lucide",
+   "name": "map",
+   "file": "/assets/icons/lucide/map.svg"
+  },
+  {
+   "set": "lucide",
+   "name": "microscope",
+   "file": "/assets/icons/lucide/microscope.svg"
+  },
+  {
+   "set": "lucide",
+   "name": "music",
+   "file": "/assets/icons/lucide/music.svg"
+  },
+  {
+   "set": "lucide",
+   "name": "newspaper",
+   "file": "/assets/icons/lucide/newspaper.svg"
+  },
+  {
+   "set": "lucide",
+   "name": "notebook-pen",
+   "file": "/assets/icons/lucide/notebook-pen.svg"
+  },
+  {
+   "set": "lucide",
+   "name": "scale",
+   "file": "/assets/icons/lucide/scale.svg"
+  },
+  {
+   "set": "lucide",
+   "name": "search",
+   "file": "/assets/icons/lucide/search.svg"
+  },
+  {
+   "set": "lucide",
+   "name": "stamp",
+   "file": "/assets/icons/lucide/stamp.svg"
+  },
+  {
+   "set": "lucide",
+   "name": "timeline",
+   "file": "/assets/icons/lucide/timeline.svg"
+  },
+  {
+   "set": "lucide",
+   "name": "user-search",
+   "file": "/assets/icons/lucide/user-search.svg"
+  },
+  {
+   "set": "lucide",
+   "name": "volume-2",
+   "file": "/assets/icons/lucide/volume-2.svg"
+  },
+  {
+   "set": "lucide",
+   "name": "volume-x",
+   "file": "/assets/icons/lucide/volume-x.svg"
+  },
+  {
+   "set": "material",
+   "name": "archive_24px",
+   "file": "/assets/icons/material/archive_24px.svg"
+  },
+  {
+   "set": "material",
+   "name": "arrow_back_24px",
+   "file": "/assets/icons/material/arrow_back_24px.svg"
+  },
+  {
+   "set": "material",
+   "name": "arrow_back_ios_new_24px",
+   "file": "/assets/icons/material/arrow_back_ios_new_24px.svg"
+  },
+  {
+   "set": "material",
+   "name": "arrow_forward_24px",
+   "file": "/assets/icons/material/arrow_forward_24px.svg"
+  },
+  {
+   "set": "material",
+   "name": "arrow_forward_ios_24px",
+   "file": "/assets/icons/material/arrow_forward_ios_24px.svg"
+  },
+  {
+   "set": "material",
+   "name": "balance_24px",
+   "file": "/assets/icons/material/balance_24px.svg"
+  },
+  {
+   "set": "material",
+   "name": "biotech_24px",
+   "file": "/assets/icons/material/biotech_24px.svg"
+  },
+  {
+   "set": "material",
+   "name": "book_2_24px",
+   "file": "/assets/icons/material/book_2_24px.svg"
+  },
+  {
+   "set": "material",
+   "name": "calendar_month_24px",
+   "file": "/assets/icons/material/calendar_month_24px.svg"
+  },
+  {
+   "set": "material",
+   "name": "closed_caption_24px",
+   "file": "/assets/icons/material/closed_caption_24px.svg"
+  },
+  {
+   "set": "material",
+   "name": "description_24px",
+   "file": "/assets/icons/material/description_24px.svg"
+  },
+  {
+   "set": "material",
+   "name": "find_in_page_24px",
+   "file": "/assets/icons/material/find_in_page_24px.svg"
+  },
+  {
+   "set": "material",
+   "name": "fingerprint_24px",
+   "file": "/assets/icons/material/fingerprint_24px.svg"
+  },
+  {
+   "set": "material",
+   "name": "folder_24px",
+   "file": "/assets/icons/material/folder_24px.svg"
+  },
+  {
+   "set": "material",
+   "name": "folder_open_24px",
+   "file": "/assets/icons/material/folder_open_24px.svg"
+  },
+  {
+   "set": "material",
+   "name": "format_textdirection_l_to_r_24px",
+   "file": "/assets/icons/material/format_textdirection_l_to_r_24px.svg"
+  },
+  {
+   "set": "material",
+   "name": "format_textdirection_r_to_l_24px",
+   "file": "/assets/icons/material/format_textdirection_r_to_l_24px.svg"
+  },
+  {
+   "set": "material",
+   "name": "graphic_eq_24px",
+   "file": "/assets/icons/material/graphic_eq_24px.svg"
+  },
+  {
+   "set": "material",
+   "name": "headphones_24px",
+   "file": "/assets/icons/material/headphones_24px.svg"
+  },
+  {
+   "set": "material",
+   "name": "help_24px",
+   "file": "/assets/icons/material/help_24px.svg"
+  },
+  {
+   "set": "material",
+   "name": "hourglass_24px",
+   "file": "/assets/icons/material/hourglass_24px.svg"
+  },
+  {
+   "set": "material",
+   "name": "key_24px",
+   "file": "/assets/icons/material/key_24px.svg"
+  },
+  {
+   "set": "material",
+   "name": "lightbulb_24px",
+   "file": "/assets/icons/material/lightbulb_24px.svg"
+  },
+  {
+   "set": "material",
+   "name": "link_24px",
+   "file": "/assets/icons/material/link_24px.svg"
+  },
+  {
+   "set": "material",
+   "name": "location_on_24px",
+   "file": "/assets/icons/material/location_on_24px.svg"
+  },
+  {
+   "set": "material",
+   "name": "lock_24px",
+   "file": "/assets/icons/material/lock_24px.svg"
+  },
+  {
+   "set": "material",
+   "name": "lock_open_24px",
+   "file": "/assets/icons/material/lock_open_24px.svg"
+  },
+  {
+   "set": "material",
+   "name": "map_24px",
+   "file": "/assets/icons/material/map_24px.svg"
+  },
+  {
+   "set": "material",
+   "name": "menu_book_24px",
+   "file": "/assets/icons/material/menu_book_24px.svg"
+  },
+  {
+   "set": "material",
+   "name": "music_note_24px",
+   "file": "/assets/icons/material/music_note_24px.svg"
+  },
+  {
+   "set": "material",
+   "name": "music_off_24px",
+   "file": "/assets/icons/material/music_off_24px.svg"
+  },
+  {
+   "set": "material",
+   "name": "newspaper_24px",
+   "file": "/assets/icons/material/newspaper_24px.svg"
+  },
+  {
+   "set": "material",
+   "name": "person_search_24px",
+   "file": "/assets/icons/material/person_search_24px.svg"
+  },
+  {
+   "set": "material",
+   "name": "photo_camera_24px",
+   "file": "/assets/icons/material/photo_camera_24px.svg"
+  },
+  {
+   "set": "material",
+   "name": "schedule_24px",
+   "file": "/assets/icons/material/schedule_24px.svg"
+  },
+  {
+   "set": "material",
+   "name": "science_24px",
+   "file": "/assets/icons/material/science_24px.svg"
+  },
+  {
+   "set": "material",
+   "name": "search_24px",
+   "file": "/assets/icons/material/search_24px.svg"
+  },
+  {
+   "set": "material",
+   "name": "timeline_24px",
+   "file": "/assets/icons/material/timeline_24px.svg"
+  },
+  {
+   "set": "material",
+   "name": "visibility_24px",
+   "file": "/assets/icons/material/visibility_24px.svg"
+  },
+  {
+   "set": "material",
+   "name": "volume_off_24px",
+   "file": "/assets/icons/material/volume_off_24px.svg"
+  },
+  {
+   "set": "material",
+   "name": "volume_up_24px",
+   "file": "/assets/icons/material/volume_up_24px.svg"
+  },
+  {
+   "set": "phosphor",
+   "name": "archive",
+   "file": "/assets/icons/phosphor/archive.svg"
+  },
+  {
+   "set": "phosphor",
+   "name": "arrow-left",
+   "file": "/assets/icons/phosphor/arrow-left.svg"
+  },
+  {
+   "set": "phosphor",
+   "name": "arrow-right",
+   "file": "/assets/icons/phosphor/arrow-right.svg"
+  },
+  {
+   "set": "phosphor",
+   "name": "book-open",
+   "file": "/assets/icons/phosphor/book-open.svg"
+  },
+  {
+   "set": "phosphor",
+   "name": "calendar",
+   "file": "/assets/icons/phosphor/calendar.svg"
+  },
+  {
+   "set": "phosphor",
+   "name": "camera",
+   "file": "/assets/icons/phosphor/camera.svg"
+  },
+  {
+   "set": "phosphor",
+   "name": "clock",
+   "file": "/assets/icons/phosphor/clock.svg"
+  },
+  {
+   "set": "phosphor",
+   "name": "closed-captioning",
+   "file": "/assets/icons/phosphor/closed-captioning.svg"
+  },
+  {
+   "set": "phosphor",
+   "name": "detective",
+   "file": "/assets/icons/phosphor/detective.svg"
+  },
+  {
+   "set": "phosphor",
+   "name": "eye",
+   "file": "/assets/icons/phosphor/eye.svg"
+  },
+  {
+   "set": "phosphor",
+   "name": "file-magnifying-glass",
+   "file": "/assets/icons/phosphor/file-magnifying-glass.svg"
+  },
+  {
+   "set": "phosphor",
+   "name": "file-text",
+   "file": "/assets/icons/phosphor/file-text.svg"
+  },
+  {
+   "set": "phosphor",
+   "name": "fingerprint",
+   "file": "/assets/icons/phosphor/fingerprint.svg"
+  },
+  {
+   "set": "phosphor",
+   "name": "flask",
+   "file": "/assets/icons/phosphor/flask.svg"
+  },
+  {
+   "set": "phosphor",
+   "name": "folder-open",
+   "file": "/assets/icons/phosphor/folder-open.svg"
+  },
+  {
+   "set": "phosphor",
+   "name": "folder",
+   "file": "/assets/icons/phosphor/folder.svg"
+  },
+  {
+   "set": "phosphor",
+   "name": "headphones",
+   "file": "/assets/icons/phosphor/headphones.svg"
+  },
+  {
+   "set": "phosphor",
+   "name": "hourglass",
+   "file": "/assets/icons/phosphor/hourglass.svg"
+  },
+  {
+   "set": "phosphor",
+   "name": "key",
+   "file": "/assets/icons/phosphor/key.svg"
+  },
+  {
+   "set": "phosphor",
+   "name": "lightbulb",
+   "file": "/assets/icons/phosphor/lightbulb.svg"
+  },
+  {
+   "set": "phosphor",
+   "name": "link",
+   "file": "/assets/icons/phosphor/link.svg"
+  },
+  {
+   "set": "phosphor",
+   "name": "lock-open",
+   "file": "/assets/icons/phosphor/lock-open.svg"
+  },
+  {
+   "set": "phosphor",
+   "name": "lock",
+   "file": "/assets/icons/phosphor/lock.svg"
+  },
+  {
+   "set": "phosphor",
+   "name": "magnifying-glass",
+   "file": "/assets/icons/phosphor/magnifying-glass.svg"
+  },
+  {
+   "set": "phosphor",
+   "name": "map-pin",
+   "file": "/assets/icons/phosphor/map-pin.svg"
+  },
+  {
+   "set": "phosphor",
+   "name": "map-trifold",
+   "file": "/assets/icons/phosphor/map-trifold.svg"
+  },
+  {
+   "set": "phosphor",
+   "name": "microscope",
+   "file": "/assets/icons/phosphor/microscope.svg"
+  },
+  {
+   "set": "phosphor",
+   "name": "music-notes",
+   "file": "/assets/icons/phosphor/music-notes.svg"
+  },
+  {
+   "set": "phosphor",
+   "name": "newspaper",
+   "file": "/assets/icons/phosphor/newspaper.svg"
+  },
+  {
+   "set": "phosphor",
+   "name": "notebook",
+   "file": "/assets/icons/phosphor/notebook.svg"
+  },
+  {
+   "set": "phosphor",
+   "name": "question",
+   "file": "/assets/icons/phosphor/question.svg"
+  },
+  {
+   "set": "phosphor",
+   "name": "scales",
+   "file": "/assets/icons/phosphor/scales.svg"
+  },
+  {
+   "set": "phosphor",
+   "name": "speaker-high",
+   "file": "/assets/icons/phosphor/speaker-high.svg"
+  },
+  {
+   "set": "phosphor",
+   "name": "speaker-slash",
+   "file": "/assets/icons/phosphor/speaker-slash.svg"
+  },
+  {
+   "set": "phosphor",
+   "name": "stamp",
+   "file": "/assets/icons/phosphor/stamp.svg"
+  },
+  {
+   "set": "phosphor",
+   "name": "text-align-right",
+   "file": "/assets/icons/phosphor/text-align-right.svg"
+  },
+  {
+   "set": "phosphor",
+   "name": "waveform",
+   "file": "/assets/icons/phosphor/waveform.svg"
+  },
+  {
+   "set": "tabler",
+   "name": "archive",
+   "file": "/assets/icons/tabler/archive.svg"
+  },
+  {
+   "set": "tabler",
+   "name": "arrow-left",
+   "file": "/assets/icons/tabler/arrow-left.svg"
+  },
+  {
+   "set": "tabler",
+   "name": "arrow-right",
+   "file": "/assets/icons/tabler/arrow-right.svg"
+  },
+  {
+   "set": "tabler",
+   "name": "book",
+   "file": "/assets/icons/tabler/book.svg"
+  },
+  {
+   "set": "tabler",
+   "name": "bulb",
+   "file": "/assets/icons/tabler/bulb.svg"
+  },
+  {
+   "set": "tabler",
+   "name": "calendar",
+   "file": "/assets/icons/tabler/calendar.svg"
+  },
+  {
+   "set": "tabler",
+   "name": "camera",
+   "file": "/assets/icons/tabler/camera.svg"
+  },
+  {
+   "set": "tabler",
+   "name": "clock",
+   "file": "/assets/icons/tabler/clock.svg"
+  },
+  {
+   "set": "tabler",
+   "name": "eye",
+   "file": "/assets/icons/tabler/eye.svg"
+  },
+  {
+   "set": "tabler",
+   "name": "file-search",
+   "file": "/assets/icons/tabler/file-search.svg"
+  },
+  {
+   "set": "tabler",
+   "name": "file-text",
+   "file": "/assets/icons/tabler/file-text.svg"
+  },
+  {
+   "set": "tabler",
+   "name": "fingerprint",
+   "file": "/assets/icons/tabler/fingerprint.svg"
+  },
+  {
+   "set": "tabler",
+   "name": "flask",
+   "file": "/assets/icons/tabler/flask.svg"
+  },
+  {
+   "set": "tabler",
+   "name": "folder-open",
+   "file": "/assets/icons/tabler/folder-open.svg"
+  },
+  {
+   "set": "tabler",
+   "name": "folder",
+   "file": "/assets/icons/tabler/folder.svg"
+  },
+  {
+   "set": "tabler",
+   "name": "headphones",
+   "file": "/assets/icons/tabler/headphones.svg"
+  },
+  {
+   "set": "tabler",
+   "name": "help",
+   "file": "/assets/icons/tabler/help.svg"
+  },
+  {
+   "set": "tabler",
+   "name": "hourglass",
+   "file": "/assets/icons/tabler/hourglass.svg"
+  },
+  {
+   "set": "tabler",
+   "name": "key",
+   "file": "/assets/icons/tabler/key.svg"
+  },
+  {
+   "set": "tabler",
+   "name": "link",
+   "file": "/assets/icons/tabler/link.svg"
+  },
+  {
+   "set": "tabler",
+   "name": "lock-open",
+   "file": "/assets/icons/tabler/lock-open.svg"
+  },
+  {
+   "set": "tabler",
+   "name": "lock",
+   "file": "/assets/icons/tabler/lock.svg"
+  },
+  {
+   "set": "tabler",
+   "name": "map-pin",
+   "file": "/assets/icons/tabler/map-pin.svg"
+  },
+  {
+   "set": "tabler",
+   "name": "map",
+   "file": "/assets/icons/tabler/map.svg"
+  },
+  {
+   "set": "tabler",
+   "name": "microscope",
+   "file": "/assets/icons/tabler/microscope.svg"
+  },
+  {
+   "set": "tabler",
+   "name": "music-off",
+   "file": "/assets/icons/tabler/music-off.svg"
+  },
+  {
+   "set": "tabler",
+   "name": "music",
+   "file": "/assets/icons/tabler/music.svg"
+  },
+  {
+   "set": "tabler",
+   "name": "news",
+   "file": "/assets/icons/tabler/news.svg"
+  },
+  {
+   "set": "tabler",
+   "name": "notebook",
+   "file": "/assets/icons/tabler/notebook.svg"
+  },
+  {
+   "set": "tabler",
+   "name": "rubber-stamp",
+   "file": "/assets/icons/tabler/rubber-stamp.svg"
+  },
+  {
+   "set": "tabler",
+   "name": "scale",
+   "file": "/assets/icons/tabler/scale.svg"
+  },
+  {
+   "set": "tabler",
+   "name": "search",
+   "file": "/assets/icons/tabler/search.svg"
+  },
+  {
+   "set": "tabler",
+   "name": "spy",
+   "file": "/assets/icons/tabler/spy.svg"
+  },
+  {
+   "set": "tabler",
+   "name": "subtitles",
+   "file": "/assets/icons/tabler/subtitles.svg"
+  },
+  {
+   "set": "tabler",
+   "name": "text-direction-rtl",
+   "file": "/assets/icons/tabler/text-direction-rtl.svg"
+  },
+  {
+   "set": "tabler",
+   "name": "timeline",
+   "file": "/assets/icons/tabler/timeline.svg"
+  },
+  {
+   "set": "tabler",
+   "name": "user-search",
+   "file": "/assets/icons/tabler/user-search.svg"
+  },
+  {
+   "set": "tabler",
+   "name": "volume-off",
+   "file": "/assets/icons/tabler/volume-off.svg"
+  },
+  {
+   "set": "tabler",
+   "name": "volume",
+   "file": "/assets/icons/tabler/volume.svg"
+  },
+  {
+   "set": "tabler",
+   "name": "wave-sine",
+   "file": "/assets/icons/tabler/wave-sine.svg"
+  }
+ ]
+}

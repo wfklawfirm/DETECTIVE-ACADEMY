@@ -78,6 +78,13 @@ export default function Home() {
             </UiCard>
           )}
 
+          <UiCard as="section" aria-labelledby="season-h">
+            <p className="text-label">موسم</p>
+            <h2 id="season-h" className="card-title">الموسم الأول: خيوط لا تتفق</h2>
+            <p className="small dim-2">ثماني حلقات بترتيب مقترح. كل حلقة تضيف عادة تفكير، وتنتهي بسؤال يفتح التي بعدها.</p>
+            <LinkButton variant="outline" size="sm" href="/season" style={{ alignSelf: "flex-start" }}>افتح الموسم</LinkButton>
+          </UiCard>
+
           {/* self-contained "today" card */}
           <UiCard as="section" aria-labelledby="today-h">
             <p className="text-label">اليوم</p>

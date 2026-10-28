@@ -61,7 +61,7 @@ test("onboarding → tutorial: first actions, interview, no hidden truth in netw
   expect(bodies.join("")).not.toContain("accepted_conclusions");
 });
 
-const PAGES = ["/", "/start", "/home", "/cases", "/case/c000_lost_notebook", "/academy", "/academy/A1", "/challenges", "/profile", "/account", "/privacy", "/report", "/review/ABC123", "/knowledge", "/knowledge/KO-RS-05-001", "/sources", "/labs", "/labs/SAFE_LABS-01", "/skills", "/gallery", "/credits", "/studio", "/no-such-page"];
+const PAGES = ["/", "/start", "/home", "/cases", "/case/c000_lost_notebook", "/academy", "/academy/A1", "/challenges", "/profile", "/account", "/privacy", "/report", "/review/ABC123", "/knowledge", "/knowledge/KO-RS-05-001", "/sources", "/labs", "/labs/SAFE_LABS-01", "/skills", "/gallery", "/credits", "/studio", "/sounds", "/icons", "/season", "/glossary", "/methods", "/biases", "/reasoning", "/rulebook", "/atlas", "/archetypes", "/heritage", "/heritage/poe-rue-morgue", "/books", "/books/BK-741", "/books/drills", "/labs/SAFE_LABS-30", "/academy/educators", "/no-such-page"];
 const setTheme = (page: Page, t: "dark" | "light") => page.addInitScript((v) => { try { localStorage.setItem("athar.theme", v); } catch { /* */ } }, t);
 const serious = (res: { violations: { id: string; impact?: string | null; nodes: unknown[] }[] }) => res.violations.filter((v) => ["serious", "critical"].includes(v.impact ?? ""));
 
