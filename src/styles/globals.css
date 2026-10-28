@@ -3738,3 +3738,54 @@ header.page-head,
     animation: sidebarIn 0.3s ease both;
   }
 }
+
+/* ═══════════════════════════════════════════════════════════════
+   CINEMATIC MENU SHEET
+   Amber-accented header, teal hover on links, deeper glass surface
+═══════════════════════════════════════════════════════════════ */
+
+/* Deeper surface for the slide-out sheet */
+.sheet {
+  background: color-mix(in srgb, var(--surface-2) 95%, var(--surface));
+  border-inline-start: 3px solid color-mix(in srgb, var(--accent-amber) 40%, var(--border));
+}
+
+/* Handle bar — amber tint */
+.sheet-handle-bar {
+  background: color-mix(in srgb, var(--accent-amber) 35%, var(--border));
+}
+
+/* Header: amber-tinted border + brand feel */
+.sheet-header {
+  border-block-end: 1px solid color-mix(in srgb, var(--accent-amber) 15%, var(--border));
+  background: color-mix(in srgb, var(--accent-amber) 4%, transparent);
+}
+.sheet-title {
+  color: var(--accent-amber);
+  letter-spacing: -0.01em;
+}
+
+/* Section kicker — teal */
+.sheet-section-title {
+  color: var(--accent-teal);
+  letter-spacing: 0.12em;
+}
+
+/* Sheet nav links — cinematic hover */
+.sheet-body a,
+.sheet-body button {
+  border-radius: var(--radius-control);
+  transition: background 0.15s ease, color 0.15s ease, padding-inline-start 0.15s ease;
+}
+.sheet-body a:hover,
+.sheet-body button:hover {
+  background: color-mix(in srgb, var(--accent-teal) 8%, transparent);
+  color: var(--accent-teal);
+  padding-inline-start: calc(0.75rem + 3px); /* subtle indent on hover */
+}
+/* Active link in sheet — amber */
+.sheet-body a[aria-current="page"] {
+  background: color-mix(in srgb, var(--accent-amber) 9%, transparent);
+  color: var(--accent-amber);
+  font-weight: 600;
+}
