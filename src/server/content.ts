@@ -62,7 +62,7 @@ export async function syncFileCases(dir = CASES_DIR): Promise<string[]> {
       await run("UPDATE case_versions SET core_json=?, ui_json=?, scoring_json=?, content_hash=?, qa_json=? WHERE case_id=? AND version=? AND status IN ('draft','in_review')",
         [JSON.stringify(core), JSON.stringify(t.ui), JSON.stringify(t.scoring), hash, JSON.stringify(qa), core.case_id, core.case_version]);
     } else {
-      await run("INSERT INTO case_versions(case_id, version, content_hash, status, core_json, ui_json, scoring_json, qa_json, created_by, created_at) VALUES (?,?,?,?,?,?,?,?,?,?)",
+      await run("INSERT OR IGNORE INTO case_versions(case_id, version, content_hash, status, core_json, ui_json, scoring_json, qa_json, created_by, created_at) VALUES (?,?,?,?,?,?,?,?,?,?)",
         [core.case_id, core.case_version, hash, "draft", JSON.stringify(core), JSON.stringify(t.ui), JSON.stringify(t.scoring), JSON.stringify(qa), "seed", new Date().toISOString()]);
       out.push(`${core.case_id}@${core.case_version}`);
     }
