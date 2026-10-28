@@ -12,7 +12,10 @@ export default function Review({ params }: { params: Promise<{ code: string }> }
   useEffect(() => { api<{ ticket: NonNullable<typeof t> }>(`/api/review/${code}`).then((r) => setT(r.ticket)).catch((e) => setErr(e instanceof ApiError ? e.message : "خطأ")); }, [code]);
   return (
     <>
-      <header className="page-head"><h1 className="text-page-title">طلب مراجعة <span className="mono">{code}</span></h1></header>
+      <div className="ref-hero">
+        <p className="ref-hero-kicker">نتيجة المراجعة</p>
+        <h1 className="ref-hero-title">طلب مراجعة <span className="mono">{code}</span></h1>
+      </div>
       {err ? <ErrorState title="تعذّر فتح الطلب" body={err} /> : !t ? <LoadingRegion cards={1} /> : t.status === "pending" ? <Callout tone="warning" title="قيد الانتظار">ما زال طلبك بانتظار مراجع بشري. ارجع لاحقاً بالرمز نفسه.</Callout> : (
         <Card><p>المستوى المقترح: <Badge tone="info">{t.level} من ٤</Badge></p><p>{t.feedback_ar}</p></Card>
       )}

@@ -3512,3 +3512,85 @@ pre code { background: none; border: none; padding: 0; font-size: 0.875rem; }
   margin-block-start: 2px;
   display: block;
 }
+
+/* ═══════════════════════════════════════════════════════════════
+   REF-HERO POLISH  — cinematic depth + mobile refinements
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Cinematic left-bar accent */
+.ref-hero {
+  border-inline-start: 3px solid var(--accent-amber);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle background gradient vignette */
+.ref-hero::before {
+  content: "";
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline-end: 0;
+  width: 45%;
+  height: 100%;
+  background: radial-gradient(ellipse at top right,
+    color-mix(in srgb, var(--accent-teal) 6%, transparent),
+    transparent 70%);
+  pointer-events: none;
+}
+
+/* Fade-in on mount */
+@keyframes heroIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0);   }
+}
+.ref-hero {
+  animation: heroIn 0.35s ease both;
+}
+
+/* Mobile: tighter padding */
+@media (max-width: 480px) {
+  .ref-hero {
+    padding: var(--sp-5) var(--sp-4);
+  }
+  .ref-hero-stats {
+    gap: var(--sp-4);
+    flex-wrap: wrap;
+  }
+  .ref-hero-stat-value {
+    font-size: 1.25rem;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   PAGE-HEAD  (.page-head / header.page-head) — cinematic upgrade
+   ═══════════════════════════════════════════════════════════════ */
+
+header.page-head,
+.page-head {
+  padding-block-end: var(--sp-4);
+  border-block-end: 1px solid var(--border);
+  margin-block-end: var(--sp-5);
+}
+
+/* Kicker inside page-head */
+.page-head .kicker {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent-amber);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   CASE-DETAIL-DISCLAIMER — reuse accent for ref-only note strips
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Teal variant for rights / legal notes */
+.case-detail-disclaimer--teal {
+  background: color-mix(in srgb, var(--accent-teal) 7%, transparent);
+  border-color: color-mix(in srgb, var(--accent-teal) 30%, transparent);
+}
+
+.case-detail-disclaimer--teal .case-detail-disclaimer-mark {
+  color: var(--accent-teal);
+}
