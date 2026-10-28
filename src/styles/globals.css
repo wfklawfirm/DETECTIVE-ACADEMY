@@ -3993,3 +3993,24 @@ header.page-head,
 /* info cards → surface-2 */
 .home-info-card { background: var(--surface-2); }
 
+
+/* ═══════════════════════════════════════════════════════════════
+   CINEMATIC PLAY TABS — upgrade active state to amber accent
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Active tab → amber glow */
+.play-tabs button[aria-selected="true"] {
+  color: var(--accent-amber);
+  font-weight: 700;
+}
+.play-tabs button[aria-selected="true"]::before {
+  background: var(--accent-amber);
+  box-shadow: 0 0 8px color-mix(in srgb, var(--accent-amber) 50%, transparent);
+}
+
+/* Hover → primary text */
+.play-tabs button:hover { color: var(--text-primary); }
+
+/* Badge count → amber */
+.play-tabs .count { background: var(--accent-amber); }
+
