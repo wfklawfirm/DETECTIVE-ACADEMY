@@ -4431,3 +4431,43 @@ header.page-head,
 
 /* row-link icon: teal (was legacy --accent which resolved differently) */
 .row-link .ico { color: var(--accent-teal); }
+
+
+/* ═══════════════════════════════════════════════════════════════
+   CINEMATIC KNOWLEDGE CARDS + MISC OVERRIDES
+   ═══════════════════════════════════════════════════════════════ */
+
+/* knowledge-link-card: amber icon on hover, teal accent */
+.knowledge-link-card:hover {
+  border-color: color-mix(in srgb, var(--accent-teal) 35%, var(--border));
+  background: var(--surface-2);
+}
+.knowledge-link-icon { color: var(--accent-teal); }
+.knowledge-link-title { color: var(--text-primary); }
+.knowledge-link-hint  { color: var(--text-muted); }
+
+/* profile-next-card and profile-question-card cinematic upgrade */
+.profile-next-card,
+.profile-question-card {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  transition: border-color 0.15s ease;
+}
+.profile-next-card:hover,
+.profile-question-card:hover {
+  border-color: color-mix(in srgb, var(--accent-amber) 30%, var(--border));
+}
+
+/* home-mastery-card cinematic */
+.home-mastery-card {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+}
+.home-mastery-card:hover {
+  border-color: color-mix(in srgb, var(--accent-teal) 30%, var(--border));
+}
+
+/* ico (icon inline helper) — ensure teal for all row icons */
+.row-link .ico,
+.ico { color: var(--accent-teal); }
