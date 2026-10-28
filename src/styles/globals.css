@@ -708,86 +708,10 @@ strong        { font-weight: 700; }
   font-weight: 600;
 }
 
-/* ───────── CASE HERO ───────── */
-.cases-hero {
-  background: linear-gradient(
-    160deg,
-    color-mix(in srgb, var(--accent) 8%, var(--surface-soft)) 0%,
-    var(--surface-soft) 40%,
-    color-mix(in srgb, var(--amber) 6%, var(--surface-soft)) 100%
-  );
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  padding: 2rem var(--gutter-lg);
-  position: relative;
-  overflow: hidden;
-}
+/* [old .cases-hero block removed — see cinematic version below] */
 
-.cases-hero::before {
-  content: "";
-  position: absolute;
-  inset-block-start: -2rem;
-  inset-inline-end: -2rem;
-  inline-size: 16rem;
-  block-size: 16rem;
-  background: radial-gradient(circle, var(--lantern) 0%, transparent 70%);
-  pointer-events: none;
-}
 
-.cases-hero-kicker {
-  font-family: var(--f-mono);
-  font-size: 0.625rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--accent);
-  font-weight: 600;
-  margin-block-end: 0.5rem;
-}
-
-.cases-hero h1 {
-  font-family: var(--f-display);
-  font-size: clamp(2rem, 5vw, 3rem);
-  font-weight: 700;
-  line-height: 1.15;
-  color: var(--foreground);
-  margin-block-end: 0.75rem;
-}
-
-.cases-hero-tagline {
-  font-size: 1rem;
-  color: var(--foreground-secondary);
-  line-height: 1.7;
-  max-inline-size: 36rem;
-  margin-block-end: 1.25rem;
-}
-
-.cases-hero-stats {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-  align-items: center;
-}
-
-.hero-stat {
-  display: flex;
-  flex-direction: column;
-  gap: 0.1rem;
-}
-
-.hero-stat-value {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--foreground);
-  font-family: var(--f-mono);
-  line-height: 1;
-}
-
-.hero-stat-label {
-  font-size: 0.6875rem;
-  color: var(--foreground-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-}
+/* [old hero-stat rules removed] */
 
 /* ───────── FEATURED CASE ───────── */
 .featured-case {
@@ -3868,4 +3792,111 @@ header.page-head,
 .academy-hero,
 .knowledge-hero {
   border-inline-start: 3px solid color-mix(in srgb, var(--accent-amber) 45%, var(--border));
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   CASES HERO FIXES
+   Fix stat layout on mobile, add amber left-border, remove
+   duplicate old definitions
+═══════════════════════════════════════════════════════════════ */
+
+/* Amber left-border on cases hero (mobile + desktop) */
+.cases-hero {
+  border-inline-start: 3px solid var(--accent-amber);
+  background: linear-gradient(
+    160deg,
+    color-mix(in srgb, var(--accent-amber) 5%, var(--surface-2)) 0%,
+    var(--surface-2) 60%,
+    color-mix(in srgb, var(--accent-teal) 4%, var(--surface-2)) 100%
+  );
+}
+
+/* Stats: fix the percentage value appearing on its own line */
+.cases-stat-value {
+  display: block;
+  font-variant-numeric: tabular-nums;
+}
+/* The "130" large number — make it amber-teal on the count */
+.cases-stat-value:not(.cases-stat-value--done):not(.cases-stat-value--open) {
+  color: var(--text-primary);
+}
+
+/* On very small screens, wrap stats vertically with less gap */
+@media (max-width: 420px) {
+  .cases-hero-stats {
+    gap: var(--sp-4);
+  }
+  .cases-stat-value {
+    font-size: 1.25rem;
+  }
+  /* Badge — hide on tiny screens to give text more space */
+  .cases-hero-badge {
+    display: none;
+  }
+  .cases-hero-inner {
+    align-items: flex-start;
+  }
+}
+
+/* Featured case card — make it more visible on mobile */
+.cases-featured {
+  border-inline-start: 3px solid color-mix(in srgb, var(--accent-teal) 50%, var(--border));
+}
+.cases-featured:hover,
+.cases-featured:focus-visible {
+  border-inline-start-color: var(--accent-teal);
+}
+
+/* Dossier cards — amber left-border on first card */
+.dossier-card:first-child {
+  border-inline-start: 3px solid color-mix(in srgb, var(--accent-amber) 40%, var(--border));
+}
+
+/* Filter bar active button — amber variant for "الكل" */
+.cases-filter-btn--active {
+  background: var(--accent-amber);
+  border-color: var(--accent-amber);
+  color: #000;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   CASES STATS MOBILE FIX
+   Progress bar stat takes full width on its own row
+═══════════════════════════════════════════════════════════════ */
+
+/* Stats strip — horizontal scroll on very small screens */
+.cases-hero-stats {
+  gap: var(--sp-4) var(--sp-5);
+}
+
+/* The bar stat goes to its own row on mobile */
+.cases-stat--bar {
+  flex-basis: 100%;
+  min-inline-size: 0;
+  max-inline-size: 28rem;
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+}
+/* Pct inline with the bar */
+.cases-stat--bar .cases-stat-pct {
+  font-size: .78rem;
+  font-weight: 700;
+  color: var(--accent-teal);
+  white-space: nowrap;
+  margin-block-start: 0;
+}
+
+/* Featured case card: darker surface + visible border on mobile dark mode */
+.cases-featured {
+  background: var(--surface-2);
+}
+@media (max-width: 640px) {
+  .cases-featured {
+    padding: var(--sp-4);
+  }
+  .cases-featured-visual {
+    inline-size: 4.5rem;
+    block-size: 4.5rem;
+  }
 }
