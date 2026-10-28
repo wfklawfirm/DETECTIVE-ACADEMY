@@ -2,7 +2,7 @@ import { loadRulebook } from "@/engine/reference";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardTitle } from "@/components/ui/card";
 import { Callout } from "@/components/ui/feedback";
-import { MoreReference, RefHead, RuleIcon, Section, SourcesBox } from "@/components/reference/parts";
+import { MoreReference, RuleIcon, Section, SourcesBox } from "@/components/reference/parts";
 
 export const metadata = { title: "دستور اللغز العادل" };
 export const dynamic = "force-dynamic";
@@ -12,7 +12,14 @@ export default function Rulebook() {
   const n = r.sections.reduce((s, x) => s + x.rules.length, 0);
   return (
     <>
-      <RefHead title="دستور اللغز العادل" hook={r.hook_ar} />
+            <div className="ref-hero">
+        <p className="ref-hero-kicker">مرجع المحقق</p>
+        <h1 className="ref-hero-title">دستور اللغز العادل</h1>
+        <p className="ref-hero-hook">{r.hook_ar}</p>
+        <div className="ref-hero-stats">
+          <div><span className="ref-hero-stat-value">{n}</span><span className="ref-hero-stat-label">قاعدة</span></div><div><span className="ref-hero-stat-value">{r.sections.length}</span><span className="ref-hero-stat-label">قسم</span></div>
+        </div>
+      </div>
       <p className="small dim-2">{n} قاعدة في {r.sections.length} أقسام. هي قواعد كتابة نلتزم بها نحن، وتعني لك أن ما تحتاجه للحل موجود أمامك، وأن أحداً لن يُتَّهم بسبب مظهره، وأن العلم يُعرض بحدوده.</p>
       <nav aria-label="أقسام الصفحة" className="row small">
         {r.sections.map((s) => <a key={s.id} className="badge badge-outline" href={`#${s.id}`}>{s.title_ar}</a>)}

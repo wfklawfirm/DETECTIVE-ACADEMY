@@ -1,8 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { Badge } from "@/components/ui/badge";
-import { Callout } from "@/components/ui/feedback";
-import { Card, PageHead } from "@/components/ui/card";
+import { Card } from "@/components/ui/card";
 import { LANG_NAME, LANG_ORDER, RIGHTS_LABEL, loadHeritage } from "@/engine/heritage";
 
 export const metadata: Metadata = { title: "مكتبة التراث", description: "فهرس لنصوص التحري والاستدلال في الملك العام، مع مقاطع قصيرة منسوبة لأصحابها." };
@@ -14,12 +13,25 @@ export default function Heritage() {
   const words = Math.round(excerpts.reduce((s, e) => s + e.words, 0));
   return (
     <div className="stack-lg">
-      <PageHead kicker="مكتبة التراث" title="قبل أن يكون هناك محققون في الشاشات" lead="هل سبق أحدٌ هولمز إلى فكرة «لا تثق بما ترى حتى تلاحظ»؟ اقرأ مقاطع قصيرة من نصوص قديمة، وانتبه إلى ما تلاحظه أنت." />
-      <Callout tone="info" title="كيف نتعامل مع الحقوق؟">
-        نقتبس مقاطع قصيرة (أقل من ١٢٠ كلمة) من نصوص ثبت أنها في الملك العام أو CC0، وننسبها لأصحابها ولمصدرها. أما النصوص ذات الترخيص غير التجاري (مثل مدونة OpenITI) فنذكر بياناتها فقط ولا نقتبس منها.
-        المقاطع بلغتها الأصلية مع شرح عربي قصير؛ والشرح العربي من إعدادنا ولم يراجعه مختص بعد.
-      </Callout>
-      <p className="small dim">{texts.length} نصاً في الفهرس · {withEx.length} منها بمقاطع ({excerpts.length} مقطعاً، نحو {words.toLocaleString("ar")} كلمة) · {refOnly.length} للمرجع فقط</p>
+      {/* ── Hero ─────────────────────────────────────────────── */}
+      <div className="ref-hero">
+        <p className="ref-hero-kicker">مكتبة التراث</p>
+        <h1 className="ref-hero-title">قبل أن يكون هناك محققون في الشاشات</h1>
+        <p className="ref-hero-hook">هل سبق أحدٌ هولمز إلى فكرة «لا تثق بما ترى حتى تلاحظ»؟ اقرأ مقاطع قصيرة من نصوص قديمة، وانتبه إلى ما تلاحظه أنت.</p>
+        <div className="ref-hero-stats">
+          <div><span className="ref-hero-stat-value">{texts.length}</span><span className="ref-hero-stat-label">نصاً في الفهرس</span></div>
+          <div><span className="ref-hero-stat-value">{withEx.length}</span><span className="ref-hero-stat-label">بمقاطع</span></div>
+          <div><span className="ref-hero-stat-value">{excerpts.length}</span><span className="ref-hero-stat-label">مقطع ({words.toLocaleString("ar")} كلمة)</span></div>
+        </div>
+      </div>
+
+      {/* Rights note */}
+      <div className="case-detail-disclaimer">
+        <span className="case-detail-disclaimer-mark" aria-hidden>⚖</span>
+        <p>نقتبس مقاطع قصيرة (أقل من ١٢٠ كلمة) من نصوص ثبت أنها في الملك العام أو CC0. أما النصوص ذات الترخيص غير التجاري (مثل مدونة OpenITI) فنذكر بياناتها فقط. الشرح العربي من إعدادنا ولم يراجعه مختص بعد.</p>
+      </div>
+
+      <p className="small dim">{texts.length} نصاً · {withEx.length} بمقاطع · {refOnly.length} للمرجع فقط</p>
       <nav aria-label="اللغات" className="row">
         {LANG_ORDER.filter((l) => withEx.some((t) => t.lang === l)).map((l) => <a key={l} className="badge badge-outline" href={`#lang-${l}`}>{LANG_NAME[l]} ({withEx.filter((t) => t.lang === l).length})</a>)}
         <a className="badge badge-outline" href="#ref-only">للمرجع فقط ({refOnly.length})</a>

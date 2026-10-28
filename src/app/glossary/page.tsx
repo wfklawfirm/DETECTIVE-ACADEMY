@@ -4,7 +4,7 @@ import { GLOSSARY_STATUS_LABEL, GLOSSARY_STATUS_TONE, LEVEL_LABEL, glossaryFor, 
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import { RefBrowser, type RefItem } from "@/components/reference/RefBrowser";
-import { KoLinkRow, MoreReference, RefHead, SourcesBox } from "@/components/reference/parts";
+import { KoLinkRow, MoreReference, SourcesBox } from "@/components/reference/parts";
 
 export const metadata = { title: "المسرد الجنائي" };
 export const dynamic = "force-dynamic";
@@ -49,7 +49,14 @@ export default async function Glossary() {
   }));
   return (
     <>
-      <RefHead title="المسرد الجنائي" hook={g.hook_ar} />
+            <div className="ref-hero">
+        <p className="ref-hero-kicker">مرجع المحقق</p>
+        <h1 className="ref-hero-title">المسرد الجنائي</h1>
+        <p className="ref-hero-hook">{g.hook_ar}</p>
+        <div className="ref-hero-stats">
+          <div><span className="ref-hero-stat-value">{items.length}</span><span className="ref-hero-stat-label">مصطلح</span></div>
+        </div>
+      </div>
       <p className="small dim-2">{items.length} مصطلحاً عربياً مع مقابلها الإنجليزي. «سلسلة العهدة» و«نسبة الترجيح» هما المصطلحان المعتمدان في واجهة Detective Academy.{hidden > 0 && ` أُخفي ${hidden} مصطلحاً مخصصاً للبالغين.`}</p>
       <RefBrowser items={refs} noun="مصطلح" searchLabel="ابحث في المسرد" placeholder="مثلاً: عهدة، بصمة، ترجيح، chain of custody"
         facets={[

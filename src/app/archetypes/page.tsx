@@ -4,7 +4,7 @@ import { AGE_BAND_LABEL, VIOLENCE_LABEL, archetypeCaseUse, gated, isAdult, loadA
 import { Badge } from "@/components/ui/badge";
 import { Card, CardTitle } from "@/components/ui/card";
 import { RefBrowser, type RefItem } from "@/components/reference/RefBrowser";
-import { MoreReference, RefHead } from "@/components/reference/parts";
+import { MoreReference } from "@/components/reference/parts";
 
 export const metadata = { title: "أنماط الألغاز" };
 export const dynamic = "force-dynamic";
@@ -60,7 +60,14 @@ export default async function Archetypes() {
   });
   return (
     <>
-      <RefHead title="أنماط الألغاز" hook={f.hook_ar} />
+            <div className="ref-hero">
+        <p className="ref-hero-kicker">مرجع المحقق</p>
+        <h1 className="ref-hero-title">أنماط الألغاز</h1>
+        <p className="ref-hero-hook">{f.hook_ar}</p>
+        <div className="ref-hero-stats">
+          <div><span className="ref-hero-stat-value">{items.length}</span><span className="ref-hero-stat-label">نمط</span></div><div><span className="ref-hero-stat-value">{nBuilt}</span><span className="ref-hero-stat-label">له قضايا</span></div>
+        </div>
+      </div>
       <p className="small dim-2">{items.length} نمطاً، منها {nBuilt} له قضية واحدة على الأقل. النمط قالب قابل للتكرار وليس قضية جاهزة. {hidden > 0 && `أُخفي ${hidden} نمط مؤجل للبالغين. `}ننسب القضية إلى النمط حين تشترك معه في وحدة نمط حبكة من الموسوعة، فهذا استدلال تقريبي قد يخطئ.</p>
       <RefBrowser items={refs} noun="نمطاً" searchLabel="ابحث في الأنماط" placeholder="مثلاً: شهود، ساعة، وثيقة، تراث"
         facets={[
