@@ -4014,3 +4014,96 @@ header.page-head,
 /* Badge count → amber */
 .play-tabs .count { background: var(--accent-amber); }
 
+
+/* ═══════════════════════════════════════════════════════════════
+   CINEMATIC PROFILE + CASE-DETAIL UPGRADE
+   Align legacy --foreground / --amber tokens with cinematic system
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ── Profile hero ─────────────────────────────────────────────── */
+.profile-hero {
+  background: color-mix(in srgb, var(--accent-amber) 4%, var(--surface-2));
+  border-color: color-mix(in srgb, var(--accent-amber) 14%, var(--border));
+}
+.profile-hero-kicker   { color: var(--accent-amber); }
+.profile-hero-name     { color: var(--text-primary); }
+.profile-rank-ar       { color: var(--accent-amber); text-shadow: 0 0 10px color-mix(in srgb, var(--accent-amber) 30%, transparent); }
+.profile-rank-en       { color: var(--text-secondary); }
+.profile-hero-avatar   { color: var(--text-secondary); border-color: color-mix(in srgb, var(--accent-amber) 20%, var(--border)); }
+
+/* Amber left-border accent on profile card */
+.profile-hero::before {
+  content: "";
+  position: absolute;
+  inset-block: 0;
+  inset-inline-start: 0;
+  inline-size: 3px;
+  border-radius: 0 2px 2px 0;
+  background: linear-gradient(to block-end, var(--accent-amber), var(--accent-teal));
+}
+
+/* ── Case-detail hero ─────────────────────────────────────────── */
+.case-detail-stamp {
+  color: var(--text-secondary);
+  border-color: var(--border);
+}
+.case-detail-hero::before {
+  background: radial-gradient(
+    ellipse 60% 40% at 50% 80%,
+    color-mix(in srgb, var(--accent-amber) 8%, transparent) 0%,
+    transparent 70%
+  );
+}
+
+/* Duplicate case-detail-hero override at line ~3031 — strengthen with amber */
+.case-detail-hero {
+  border-inline-start: 3px solid var(--accent-amber);
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   CINEMATIC LANDING PAGE
+   hero-title, hero-lead, stamp base + landing section polish
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Main hero title */
+.hero-title {
+  font-size: clamp(2rem, 6vw, 3.2rem);
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+  color: var(--text-primary);
+  margin-block: var(--sp-3) var(--sp-3);
+}
+.hero-title em {
+  font-style: normal;
+  color: var(--accent-amber);
+  text-shadow: 0 0 24px color-mix(in srgb, var(--accent-amber) 35%, transparent);
+}
+
+/* Hero sub-lead */
+.hero-lead {
+  font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+  color: var(--text-secondary);
+  line-height: 1.7;
+  max-inline-size: 54ch;
+  margin-block-end: var(--sp-5);
+}
+
+/* Stamp base — cinematic classification label */
+.stamp {
+  display: inline-block;
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent-amber);
+  border: 1px solid color-mix(in srgb, var(--accent-amber) 30%, transparent);
+  border-radius: var(--radius-pill);
+  padding: 0.2rem 0.65rem;
+  background: color-mix(in srgb, var(--accent-amber) 6%, transparent);
+}
+
+/* Global .kicker → amber (override legacy var(--accent)) */
+.kicker { color: var(--accent-amber); }
+
