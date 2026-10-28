@@ -3938,3 +3938,58 @@ header.page-head,
     transparent 55%
   );
 }
+
+/* ═══════════════════════════════════════════════════════════════
+   CINEMATIC HOME UPGRADE
+   Align home-hero + home content with the cinematic token system:
+   accent-amber → kickers / rank / values
+   text-primary / text-secondary → body copy
+   surface-2 / surface-3 → card backgrounds
+   amber left-bar on primary card hover
+   ═══════════════════════════════════════════════════════════════ */
+
+/* hero kicker → amber */
+.home-hero-kicker { color: var(--accent-amber); }
+
+/* hero title + stat values → primary text */
+.home-hero-title  { color: var(--text-primary); }
+.home-stat-value  { color: var(--text-primary); }
+
+/* hero sub + stat label → secondary text */
+.home-hero-sub        { color: var(--text-secondary); }
+.home-stat-label      { color: var(--text-secondary); }
+
+/* rank badge — amber glow */
+.rank-label { color: var(--text-secondary); }
+.rank-title { color: var(--accent-amber); text-shadow: 0 0 12px color-mix(in srgb, var(--accent-amber) 35%, transparent); }
+.rank-en    { color: var(--text-secondary); }
+
+/* section kickers → amber */
+.home-section-kicker { color: var(--accent-amber); }
+.home-primary-kicker { color: var(--accent-amber); }
+
+/* primary card → surface-2 + amber left-bar on hover */
+.home-primary-card {
+  background: var(--surface-2);
+  position: relative;
+  overflow: hidden;
+}
+.home-primary-card::before {
+  content: "";
+  position: absolute;
+  inset-inline-start: 0; inset-block: 0;
+  inline-size: 3px;
+  background: var(--accent-amber);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+.home-primary-card:hover::before { opacity: 1; }
+.home-primary-card:hover { border-color: color-mix(in srgb, var(--accent-amber) 25%, transparent); }
+
+/* primary title + meta → correct tokens */
+.home-primary-title { color: var(--text-primary); }
+.home-primary-meta  { color: var(--text-secondary); }
+
+/* info cards → surface-2 */
+.home-info-card { background: var(--surface-2); }
+
