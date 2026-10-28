@@ -3,7 +3,7 @@ import { TIER_LABEL, TIER_ORDER, TIER_TONE, gated, koLinks, loadMethods } from "
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import { RefBrowser, type RefItem } from "@/components/reference/RefBrowser";
-import { KoLinkRow, MoreReference, RefHead, SourcesBox } from "@/components/reference/parts";
+import { KoLinkRow, MoreReference, SourcesBox } from "@/components/reference/parts";
 
 export const metadata = { title: "طرق الفحص وحدودها" };
 export const dynamic = "force-dynamic";
@@ -49,12 +49,33 @@ export default async function Methods() {
   const discs = [...new Set(items.map((m) => m.discipline_ar))];
   return (
     <>
-      <RefHead title="طرق الفحص وحدودها" hook={f.hook_ar} />
-      <Card as="section" aria-label="مفتاح التصنيف">
-        <p className="small"><b>كيف نقرأ التصنيف؟</b> هو تبسيط تعليمي لما خلصت إليه مراجعات منشورة (مثل PCAST عام 2016 وتقارير NIST)، وليس حكماً نهائياً على الطريقة. الطريقة «الراسخة» تبقى قابلة للخطأ، و«غير المدعومة» قد تُستعمل في المحاكم أحياناً.</p>
-        <ul className="row" style={{ listStyle: "none", padding: 0, margin: 0 }}>{TIER_ORDER.map((t) => <li key={t}><Badge tone={TIER_TONE[t]}>{TIER_LABEL[t]}</Badge></li>)}</ul>
-      </Card>
-      <p className="small dim-2">{items.length} طريقة.{hidden > 0 && ` أُخفيت ${hidden} طرق مخصصة للبالغين لأنها تتصل بالأسلحة أو الوفاة أو الخلائط المعقدة.`} Detective Academy لا تعلّم تنفيذ أي إجراء؛ نتحدث عن المفهوم وحدوده فقط.</p>
+      {/* ── Hero ─────────────────────────────────────────────── */}
+      <div className="ref-hero">
+        <p className="ref-hero-kicker">مرجع المحقق</p>
+        <h1 className="ref-hero-title">طرق الفحص وحدودها</h1>
+        <p className="ref-hero-hook">{f.hook_ar}</p>
+        <div className="ref-hero-stats">
+          <div><span className="ref-hero-stat-value">{items.length}</span><span className="ref-hero-stat-label">طريقة</span></div>
+          {hidden > 0 && <div><span className="ref-hero-stat-value">{hidden}</span><span className="ref-hero-stat-label">مخصصة للبالغين</span></div>}
+        </div>
+      </div>
+
+      {/* Tier key */}
+      <div className="case-detail-disclaimer">
+        <span className="case-detail-disclaimer-mark" aria-hidden>🔬</span>
+        <div>
+          <p style={{ margin: "0 0 0.5rem" }}>
+            <b>كيف نقرأ التصنيف؟</b> هو تبسيط تعليمي لما خلصت إليه مراجعات منشورة (PCAST 2016 وتقارير NIST)، وليس حكماً نهائياً.
+          </p>
+          <ul className="row" style={{ listStyle: "none", padding: 0, margin: 0, flexWrap: "wrap", gap: "0.4rem" }}>
+            {TIER_ORDER.map((t) => <li key={t}><Badge tone={TIER_TONE[t]}>{TIER_LABEL[t]}</Badge></li>)}
+          </ul>
+        </div>
+      </div>
+
+      <p className="small dim-2">
+        {items.length} طريقة.{hidden > 0 && ` أُخفيت ${hidden} طرق مخصصة للبالغين.`} Detective Academy لا تعلّم تنفيذ أي إجراء؛ نتحدث عن المفهوم وحدوده فقط.
+      </p>
       <RefBrowser items={refs} noun="طريقة" searchLabel="ابحث في الطرق" placeholder="مثلاً: بصمة، شعر، رقمي، معدل الخطأ"
         facets={[
           { key: "tier", label: "درجة الدعم العلمي", display: "select", allLabel: "كل الدرجات", options: TIER_ORDER.filter((t) => items.some((m) => m.tier === t)).map((t) => ({ value: t, label: `${TIER_LABEL[t]} (${items.filter((m) => m.tier === t).length})` })) },

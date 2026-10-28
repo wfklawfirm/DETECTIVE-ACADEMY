@@ -1,9 +1,8 @@
 "use client";
 import { use, useEffect, useState } from "react";
 import { EntryHook } from "@/components/EntryHook";
-import { Badge } from "@/components/ui/badge";
 import { LinkButton } from "@/components/ui/button";
-import { Callout, EmptyState, LoadingRegion } from "@/components/ui/feedback";
+import { EmptyState, LoadingRegion } from "@/components/ui/feedback";
 import { FolderIcon } from "@/components/ui/icons";
 import { allTokens, api } from "@/lib/client";
 import type { Card, Prog } from "@/components/CaseCard";
@@ -39,7 +38,14 @@ export default function CaseIntro({ params }: { params: Promise<{ id: string }> 
   if (card === null) {
     return (
       <>
-        <h1 className="text-page-title">القضية غير متاحة</h1>
+        <div className="case-detail-hero case-detail-hero--empty">
+          <div className="case-detail-topbar">
+            <span className="case-id-label">ملف مجهول</span>
+            <span className="case-detail-stamp">سرّي</span>
+          </div>
+          <div className="case-detail-glyph" aria-hidden>🔒</div>
+          <h1 className="case-detail-title">القضية غير متاحة</h1>
+        </div>
         <EmptyState
           icon={<FolderIcon size={28} />}
           title="لم نجد هذه القضية"
@@ -54,6 +60,9 @@ export default function CaseIntro({ params }: { params: Promise<{ id: string }> 
   const isOpen = prog && !prog.done;
   const caseNum = card.case_id.replace(/[^0-9]/g, "").padStart(3, "0");
 
+  const stampLabel = isDone ? "مغلقة" : isOpen ? "قيد التحقيق" : "سرّي";
+  const stampMod   = isDone ? "stamp--closed" : isOpen ? "stamp--active" : "stamp--secret";
+
   return (
     <>
       <EntryHook surface={isOpen ? "case_return" : "case_open"} caseId={id} />
@@ -63,59 +72,63 @@ export default function CaseIntro({ params }: { params: Promise<{ id: string }> 
         {/* Top bar */}
         <div className="case-detail-topbar">
           <span className="case-id-label">#{caseNum}</span>
-          <span className="case-detail-stamp">
-            {isDone ? "مغلقة" : isOpen ? "قيد التحقيق" : "سرّي"}
-          </span>
+          <span className={`case-detail-stamp ${stampMod}`}>{stampLabel}</span>
         </div>
 
-        {/* Glyph + title */}
+        {/* Glyph */}
         <div className="case-detail-glyph" aria-hidden>{card.glyph ?? "📁"}</div>
+
+        {/* Kicker + title + tagline */}
         <p className="case-detail-kicker">{card.kicker_ar}</p>
         <h1 className="case-detail-title">{card.title_ar}</h1>
         <p className="case-detail-tagline">{card.tagline_ar}</p>
 
-        {/* Meta row */}
+        {/* Meta chips */}
         <div className="case-detail-meta">
-          <Badge>{card.minutes} دقيقة</Badge>
-          <Badge>الفئة: {card.age_band === "all" ? "الجميع" : card.age_band}</Badge>
-          {card.tutorial && <Badge tone="warning">نقطة البداية</Badge>}
-          {card.preview && <Badge tone="warning">نسخة تجريبية: لم تكتمل المراجعة الخبيرة</Badge>}
+          <span className="case-detail-chip">{card.minutes} دقيقة</span>
+          <span className="case-detail-chip">
+            {card.age_band === "all" ? "للجميع" : `الفئة: ${card.age_band}`}
+          </span>
+          {card.tutorial && <span className="case-detail-chip case-detail-chip--amber">نقطة البداية</span>}
+          {card.preview  && <span className="case-detail-chip case-detail-chip--red">تجريبية</span>}
         </div>
 
         {/* Difficulty */}
         {card.difficulty != null && (
           <div className="case-detail-difficulty">
-            <span className="case-detail-difficulty-label">مستوى الصعوبة</span>
+            <span className="case-detail-difficulty-label">الصعوبة</span>
             <DifficultyDots level={card.difficulty} />
           </div>
         )}
       </div>
 
-      {/* ── Progress panel (if open investigation) ─────────────── */}
+      {/* ── Progress panel (open investigation) ────────────────── */}
       {isOpen && (
-        <div className="case-detail-progress-panel">
+        <div className="case-detail-progress">
+          <p className="case-detail-progress-eyebrow">تقدّم التحقيق</p>
           <div className="case-detail-progress-row">
             <div className="case-detail-progress-stat">
               <span className="case-detail-progress-value">{prog.evidence_count}</span>
-              <span className="case-detail-progress-label">دليل محفوظ</span>
+              <span className="case-detail-progress-key">دليل محفوظ</span>
             </div>
             {prog.locked_count > 0 && (
               <div className="case-detail-progress-stat">
                 <span className="case-detail-progress-value">{prog.locked_count}</span>
-                <span className="case-detail-progress-label">لم يُكشف بعد</span>
+                <span className="case-detail-progress-key">لم يُكشف بعد</span>
               </div>
             )}
           </div>
-          <p className="small dim-2">تحقيقك مستمر — تابع من حيث توقفت.</p>
+          <p className="case-detail-progress-note">تحقيقك مستمر — تابع من حيث توقفت</p>
         </div>
       )}
 
-      {/* ── Disclaimer ────────────────────────────────────────── */}
-      <Callout tone="info">
-        القصة والأشخاص خياليون. الأدلة مصمَّمة لتدريب مهارات التحقق، وليست توثيقاً لوقائع حقيقية. ما تقرّره هنا لا يُقاس عليه في الواقع دون مختصين.
-      </Callout>
+      {/* ── Disclaimer strip ────────────────────────────────────── */}
+      <div className="case-detail-disclaimer">
+        <span className="case-detail-disclaimer-mark" aria-hidden>ℹ</span>
+        <p>القصة والأشخاص خياليون. الأدلة مصمَّمة لتدريب مهارات التحقق، وليست توثيقاً لوقائع حقيقية. ما تقرّره هنا لا يُقاس عليه في الواقع دون مختصين.</p>
+      </div>
 
-      {/* ── CTA ───────────────────────────────────────────────── */}
+      {/* ── CTA ─────────────────────────────────────────────────── */}
       <div className="case-detail-actions">
         <LinkButton variant="primary" size="lg" block href={`/play/${id}`}>
           {isDone ? "راجع الملخص" : isOpen ? "تابع التحقيق" : "افتح الملف"}

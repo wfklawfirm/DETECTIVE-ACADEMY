@@ -3,9 +3,8 @@ import { loadAtlas } from "@/engine/reference";
 import { PATTERN_AGE_TONE } from "@/engine/reference-labels";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardTitle } from "@/components/ui/card";
-import { Callout } from "@/components/ui/feedback";
 import { RefBrowser, type RefItem } from "@/components/reference/RefBrowser";
-import { MoreReference, RefHead, Section, SourcesBox } from "@/components/reference/parts";
+import { MoreReference, Section, SourcesBox } from "@/components/reference/parts";
 
 export const metadata = { title: "أطلس الأدب البوليسي" };
 export const dynamic = "force-dynamic";
@@ -79,8 +78,29 @@ export default async function Atlas() {
   ];
   return (
     <>
-      <RefHead title="أطلس الأدب البوليسي" hook={f.hook_ar} />
-      <Callout tone="info" title="كيف نتعامل مع الأعمال المحمية؟">{f.rights_note_ar}</Callout>
+      {/* ── Cinematic hero ──────────────────────────────────── */}
+      <div className="ref-hero">
+        <p className="ref-hero-kicker">مرجع المحقق</p>
+        <h1 className="ref-hero-title">أطلس الأدب البوليسي</h1>
+        <p className="ref-hero-hook">{f.hook_ar}</p>
+        <div className="ref-hero-stats">
+          <div>
+            <span className="ref-hero-stat-value">{f.corpus.length + f.heritage.length + f.principles.length + f.expansion.length + f.patterns.length}</span>
+            <span className="ref-hero-stat-label">بطاقة</span>
+          </div>
+          <div>
+            <span className="ref-hero-stat-value">{f.works.length}</span>
+            <span className="ref-hero-stat-label">عمل مرجعي</span>
+          </div>
+        </div>
+      </div>
+
+      {/* Rights note */}
+      <div className="case-detail-disclaimer">
+        <span className="case-detail-disclaimer-mark" aria-hidden>⚖</span>
+        <p>{f.rights_note_ar}</p>
+      </div>
+
       <nav aria-label="أقسام الصفحة" className="row small">
         <a className="badge badge-outline" href="#cards">البطاقات ({refs.length})</a>
         <a className="badge badge-outline" href="#limits">حدود التراث</a>

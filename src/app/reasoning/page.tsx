@@ -2,7 +2,7 @@ import { getActorFromCookies } from "@/server/auth";
 import { koLinks, loadReasoning } from "@/engine/reference";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardTitle } from "@/components/ui/card";
-import { KoLinkRow, MoreReference, Paras, RefHead, Section, SourcesBox } from "@/components/reference/parts";
+import { KoLinkRow, MoreReference, Paras, Section, SourcesBox } from "@/components/reference/parts";
 
 export const metadata = { title: "أخطاء الاستدلال وقواعد الدليل" };
 export const dynamic = "force-dynamic";
@@ -13,7 +13,16 @@ export default async function Reasoning() {
   const areas = [...new Set(r.skills.map((s) => s.area_ar))];
   return (
     <>
-      <RefHead title="أخطاء الاستدلال وقواعد الدليل" hook={r.hook_ar} />
+      <div className="ref-hero">
+        <p className="ref-hero-kicker">مرجع المحقق</p>
+        <h1 className="ref-hero-title">أخطاء الاستدلال وقواعد الدليل</h1>
+        <p className="ref-hero-hook">{r.hook_ar}</p>
+        <div className="ref-hero-stats">
+          <div><span className="ref-hero-stat-value">{r.errors.length}</span><span className="ref-hero-stat-label">خطأ شائع</span></div>
+          <div><span className="ref-hero-stat-value">{r.ethics.length}</span><span className="ref-hero-stat-label">مبدأ أخلاقي</span></div>
+          <div><span className="ref-hero-stat-value">{r.skills.length}</span><span className="ref-hero-stat-label">مهارة</span></div>
+        </div>
+      </div>
       <nav aria-label="أقسام الصفحة" className="row small">
         {[["errors", "أخطاء الاستدلال"], ["evidence", "تقييم الدليل"], ["uncertainty", "سلّم الاحتمال"], ["ethics", "التحقيق الأخلاقي"], ["skills", "مهارات الاستدلال"]].map(([id, l]) => <a key={id} className="badge badge-outline" href={`#${id}`}>{l}</a>)}
       </nav>
