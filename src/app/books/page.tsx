@@ -1,6 +1,5 @@
 import { getActorFromCookies } from "@/server/auth";
 import { loadBooks, visibleBooks, visibleConcepts } from "@/engine/books";
-import { BooksHead } from "@/components/books/parts";
 import { Badge } from "@/components/ui/badge";
 import { CardLink, RowLink } from "@/components/ui/card";
 import { SparkIcon } from "@/components/ui/icons";
@@ -15,7 +14,15 @@ export default async function Books() {
   const vc = visibleConcepts(concepts, books, a.ageBand);
   return (
     <>
-      <BooksHead title="مكتبة الكتب" hook="أربعة ملفات مغلقة على رف المحقق: نفتح منها الأفكار التي تنفع، ونترك الباقي مقفلاً لسبب مكتوب." />
+      <div className="ref-hero">
+        <p className="ref-hero-kicker">المكتبة البحثية</p>
+        <h1 className="ref-hero-title">مكتبة الكتب</h1>
+        <p className="ref-hero-hook">أربعة ملفات مغلقة على رف المحقق: نفتح منها الأفكار التي تنفع، ونترك الباقي مقفلاً لسبب مكتوب.</p>
+        <div className="ref-hero-stats">
+          <div><span className="ref-hero-stat-value">{vis.length}</span><span className="ref-hero-stat-label">كتاب</span></div>
+          <div><span className="ref-hero-stat-value">{drills.length}</span><span className="ref-hero-stat-label">تمريناً</span></div>
+        </div>
+      </div>
       <ul className="list" aria-label="روابط المكتبة">
         <li><RowLink href="/books/drills" icon={<SparkIcon size={22} />} title="تمارين استدلال المشهد" hint={`${drills.length} سؤالاً بتغذية راجعة فورية`} /></li>
       </ul>

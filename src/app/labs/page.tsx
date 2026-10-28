@@ -1,6 +1,6 @@
 import { KIND_LABEL, loadLabs, type LabKind } from "@/engine/labs";
 import { Badge } from "@/components/ui/badge";
-import { Card, CardLink, PageHead } from "@/components/ui/card";
+import { Card, CardLink } from "@/components/ui/card";
 import { ChevronIcon } from "@/components/ui/icons";
 import { DIFFICULTY_LABEL } from "./labels";
 
@@ -13,7 +13,15 @@ export default function Labs() {
   const kinds = Object.keys(KIND_LABEL) as LabKind[];
   return (
     <>
-      <PageHead title="مختبرات آمنة" kicker="تدريب بلا خطر" lead={`هل تستطيع أن تحكم على دليل دون أن تتجاوز ما يقوله؟ ${f.playable.length} تمريناً قصيراً بسجلات خيالية، كل واحد يدرّب مهارة واحدة. ليست إجراءات جنائية حقيقية ولا مختبرات طبية، وكلها تنتهي بسؤال: ماذا لا يثبته هذا الدليل؟ المتاح للعب الآن ${f.playable.length} من ${f.catalogue.length}.`} />
+      <div className="ref-hero">
+        <p className="ref-hero-kicker">تدريب بلا خطر</p>
+        <h1 className="ref-hero-title">مختبرات آمنة</h1>
+        <p className="ref-hero-hook">هل تستطيع أن تحكم على دليل دون أن تتجاوز ما يقوله؟ تمارين قصيرة بسجلات خيالية، كل واحد يدرّب مهارة واحدة.</p>
+        <div className="ref-hero-stats">
+          <div><span className="ref-hero-stat-value">{f.playable.length}</span><span className="ref-hero-stat-label">تمريناً متاحاً</span></div>
+          <div><span className="ref-hero-stat-value">{f.catalogue.length}</span><span className="ref-hero-stat-label">في الكتالوج</span></div>
+        </div>
+      </div>
       {kinds.map((k) => {
         const group = f.catalogue.filter((c) => playable.get(c.id)?.kind === k);
         if (!group.length) return null;

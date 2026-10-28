@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { loadAssets } from "@/engine/assets";
 import { LinkButton } from "@/components/ui/button";
-import { PageHead } from "@/components/ui/card";
 
 export const metadata = { title: "معرض المراجع" };
 export const dynamic = "force-dynamic";
@@ -21,7 +20,15 @@ export default async function Gallery({ searchParams }: { searchParams: Promise<
   const href = (p: number) => `/gallery?${new URLSearchParams({ ...(c ? { c } : {}), ...(q ? { q } : {}), page: String(p) })}`;
   return (
     <>
-      <PageHead title="معرض المراجع التاريخية" lead={`لقطات لمخطوطات وأدوات ووثائق وأماكن من مجموعات مفتوحة (${all.length} صورة)، نستلهم منها أجواء القضايا ومشاهدها. هي مراجع بصرية فقط؛ لا تظهر فيها شخصيات القصص ولا تُعدّ دليلاً في أي قضية. حقوق كل صورة مذكورة تحتها.`} />
+      <div className="ref-hero">
+        <p className="ref-hero-kicker">مراجع بصرية</p>
+        <h1 className="ref-hero-title">معرض المراجع التاريخية</h1>
+        <p className="ref-hero-hook">لقطات لمخطوطات وأدوات ووثائق وأماكن من مجموعات مفتوحة، نستلهم منها أجواء القضايا. هي مراجع بصرية فقط؛ حقوق كل صورة مذكورة تحتها.</p>
+        <div className="ref-hero-stats">
+          <div><span className="ref-hero-stat-value">{all.length}</span><span className="ref-hero-stat-label">صورة</span></div>
+          <div><span className="ref-hero-stat-value">{colls.length}</span><span className="ref-hero-stat-label">مجموعة</span></div>
+        </div>
+      </div>
       <form method="get" action="/gallery" className="row" role="search" aria-label="بحث في المعرض">
         <input className="input" type="search" name="q" defaultValue={sp.q ?? ""} placeholder="ابحث بالعنوان أو الوسم (بالإنجليزية غالباً)" aria-label="بحث" lang="en" dir="ltr" />
         <select className="input" name="c" defaultValue={c} aria-label="المجموعة">

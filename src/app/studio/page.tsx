@@ -3,7 +3,7 @@ import { useCallback, useEffect, useState } from "react";
 import { useMe } from "@/components/Shell";
 import { Badge } from "@/components/ui/badge";
 import { Button, LinkButton } from "@/components/ui/button";
-import { Card, PageHead } from "@/components/ui/card";
+import { Card } from "@/components/ui/card";
 import { Callout, EmptyState, LoadingRegion } from "@/components/ui/feedback";
 import { Field } from "@/components/ui/form";
 import { StudioIcon } from "@/components/ui/icons";
@@ -27,12 +27,16 @@ export default function Studio() {
   }, []);
   useEffect(() => { if (me?.user) void load(); }, [me, load]);
   const act = async (fn: () => Promise<unknown>) => { setMsg(null); try { await fn(); await load(); } catch (e) { setMsg(e instanceof ApiError ? e.message : "خطأ"); } };
-  if (!me?.user || !["editor", "reviewer", "admin"].includes(me.user.role)) return <><PageHead title="الاستوديو" /><EmptyState icon={<StudioIcon size={28} />} title="للمحررين والمراجعين فقط" action={<LinkButton variant="primary" href="/account?next=/studio">سجّل الدخول</LinkButton>} /></>;
+  if (!me?.user || !["editor", "reviewer", "admin"].includes(me.user.role)) return <><div className="ref-hero"><p className="ref-hero-kicker">استوديو</p><h1 className="ref-hero-title">الاستوديو</h1></div><EmptyState icon={<StudioIcon size={28} />} title="للمحررين والمراجعين فقط" action={<LinkButton variant="primary" href="/account?next=/studio">سجّل الدخول</LinkButton>} /></>;
   const role = me.user.role;
   const canReview = role === "reviewer" || role === "admin";
   return (
     <>
-      <PageHead title="استوديو المحتوى" lead="لا تُنشر قضية إلا بعد موافقة سبع بوابات على نسخة المحتوى الحالية (بصمتها مربوطة)، وموافقة المراجع لا تكون من كاتب النسخة نفسه." />
+      <div className="ref-hero">
+        <p className="ref-hero-kicker">استوديو المحتوى</p>
+        <h1 className="ref-hero-title">مراجعة القضايا</h1>
+        <p className="ref-hero-hook">لا تُنشر قضية إلا بعد موافقة سبع بوابات على نسخة المحتوى، وموافقة المراجع لا تكون من كاتب النسخة نفسه.</p>
+      </div>
       {role === "admin" && <div className="row"><LinkButton href="/studio/library">المكتبة البحثية (للمدير)</LinkButton></div>}
       {msg && <Callout tone="negative" role="alert">{msg}</Callout>}
       {!loaded && <LoadingRegion cards={2} />}

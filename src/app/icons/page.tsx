@@ -1,6 +1,6 @@
 import { loadIcons } from "@/engine/icons";
 import { Badge } from "@/components/ui/badge";
-import { Card, PageHead } from "@/components/ui/card";
+import { Card } from "@/components/ui/card";
 
 export const metadata = { title: "مكتبة الأيقونات" };
 export const dynamic = "force-dynamic";
@@ -9,7 +9,15 @@ export default function Icons() {
   const { sets, icons } = loadIcons();
   return (
     <>
-      <PageHead title="مكتبة الأيقونات" lead={`${icons.length} أيقونة خطية من ست مكتبات مفتوحة المصدر، محفوظة هنا مع نص ترخيص كل مكتبة. واجهة Detective Academy نفسها تستعمل عائلة أيقونات واحدة؛ هذه المكتبة مرجع لمن يصمّم قضايا وأدوات جديدة.`} />
+      <div className="ref-hero">
+        <p className="ref-hero-kicker">الأيقونات</p>
+        <h1 className="ref-hero-title">مكتبة الأيقونات</h1>
+        <p className="ref-hero-hook">مرجع لمن يصمّم قضايا وأدوات جديدة — مع نص ترخيص كل مكتبة.</p>
+        <div className="ref-hero-stats">
+          <div><span className="ref-hero-stat-value">{icons.length}</span><span className="ref-hero-stat-label">أيقونة</span></div>
+          <div><span className="ref-hero-stat-value">{sets.length}</span><span className="ref-hero-stat-label">مكتبة</span></div>
+        </div>
+      </div>
       {sets.map((s) => (
         <section key={s.key} className="stack" aria-label={s.name}>
           <h2 className="text-label section-title" lang="en" dir="ltr">{s.name} · <Badge latin>{s.license}</Badge> · {s.count} · <a href={s.license_file}>license</a></h2>
