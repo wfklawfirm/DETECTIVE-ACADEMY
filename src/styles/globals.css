@@ -4107,3 +4107,125 @@ header.page-head,
 /* Global .kicker → amber (override legacy var(--accent)) */
 .kicker { color: var(--accent-amber); }
 
+
+/* ═══════════════════════════════════════════════════════════════
+   CINEMATIC BUTTONS
+   Primary CTA → amber (matches detective amber theme)
+   Ghost → text-secondary / surface-2
+   ═══════════════════════════════════════════════════════════════ */
+
+.btn-primary {
+  background: var(--accent-amber);
+  color: #1a0f00;
+  border-color: var(--accent-amber);
+  font-weight: 700;
+}
+.btn-primary:hover {
+  background: color-mix(in srgb, var(--accent-amber) 88%, #fff);
+  border-color: color-mix(in srgb, var(--accent-amber) 88%, #fff);
+  color: #1a0f00;
+  box-shadow: 0 4px 20px color-mix(in srgb, var(--accent-amber) 40%, transparent);
+}
+
+.btn-ghost {
+  color: var(--text-secondary);
+  border-color: var(--border);
+}
+.btn-ghost:hover {
+  background: var(--surface-2);
+  color: var(--text-primary);
+  border-color: color-mix(in srgb, var(--accent-amber) 20%, var(--border));
+}
+
+/* Secondary variant (if used) → surface-2 + amber border on hover */
+.btn-secondary {
+  background: var(--surface-2);
+  color: var(--text-primary);
+  border-color: var(--border);
+}
+.btn-secondary:hover {
+  background: var(--surface-3);
+  border-color: color-mix(in srgb, var(--accent-amber) 25%, var(--border));
+  box-shadow: 0 2px 8px color-mix(in srgb, var(--accent-amber) 12%, transparent);
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   CINEMATIC PROGRESS COMPONENTS
+   ProgressBar (.progress) + ProgressRing (.ring / .arc / .track)
+   Amber fill = active progress; teal = info/positive tone
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ── ProgressBar ──────────────────────────────────────────────── */
+.progress {
+  block-size: 6px;
+  border-radius: var(--radius-pill);
+  background: color-mix(in srgb, var(--accent-amber) 12%, var(--surface-3));
+  overflow: hidden;
+  position: relative;
+}
+.progress i {
+  display: block;
+  block-size: 100%;
+  border-radius: inherit;
+  background: var(--accent-amber);
+  transition: inline-size 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.progress[data-tone="positive"] {
+  background: color-mix(in srgb, var(--accent-teal) 12%, var(--surface-3));
+}
+.progress[data-tone="positive"] i {
+  background: var(--accent-teal);
+}
+.progress[data-tone="info"] {
+  background: color-mix(in srgb, var(--accent-teal) 10%, var(--surface-3));
+}
+.progress[data-tone="info"] i {
+  background: var(--accent-teal);
+}
+
+/* ── ProgressRing ─────────────────────────────────────────────── */
+.ring {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  flex-shrink: 0;
+}
+.ring svg {
+  position: absolute;
+  inset: 0;
+  inline-size: 100%;
+  block-size: 100%;
+  transform: rotate(-90deg);
+}
+.ring .track {
+  stroke: color-mix(in srgb, var(--accent-amber) 15%, var(--surface-3));
+}
+.ring .arc {
+  stroke: var(--accent-amber);
+  stroke-linecap: round;
+  transition: stroke-dashoffset 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  filter: drop-shadow(0 0 4px color-mix(in srgb, var(--accent-amber) 50%, transparent));
+}
+.ring .val {
+  position: relative;
+  font-size: 0.65em;
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+/* StepDots */
+.dots i {
+  display: inline-block;
+  inline-size: 6px;
+  block-size: 6px;
+  border-radius: 50%;
+  background: var(--surface-3);
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+.dots i[data-state="done"]    { background: var(--accent-teal); }
+.dots i[data-state="current"] { background: var(--accent-amber); transform: scale(1.35); box-shadow: 0 0 6px color-mix(in srgb, var(--accent-amber) 50%, transparent); }
+
