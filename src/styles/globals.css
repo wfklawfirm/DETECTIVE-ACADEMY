@@ -4644,3 +4644,9 @@ header.page-head,
   color: var(--positive);
   padding: 0.25rem 0;
 }
+
+/* ── TRACK PROGRESS BAR ── */
+.track-progress-wrap { display: flex; align-items: center; gap: 0.5rem; margin-block: 0.5rem 0; }
+.track-progress-bar { flex: 1; height: 4px; background: color-mix(in srgb, var(--accent-amber) 18%, transparent); border-radius: 99px; overflow: hidden; }
+.track-progress-bar-fill { height: 100%; width: 0%; background: var(--accent-amber); border-radius: 99px; transition: width 0.4s ease; }
+.track-progress-count::before { content: var(--done, ""); font-size: 0.75rem; color: var(--text-muted); font-variant-numeric: tabular-nums; }

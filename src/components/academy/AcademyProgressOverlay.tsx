@@ -2,10 +2,18 @@
 import { useEffect, useState } from "react";
 
 /**
- * Client wrapper that marks completed lessons with a check indicator.
- * Fetches GET /api/academy/progress on mount (silently ignores errors / guests).
+ * Client wrapper that:
+ * 1. Marks completed lessons with a ✓ indicator (via injected CSS).
+ * 2. Shows per-track progress bars on the academy page.
  */
-export function AcademyProgressOverlay({ lessonIds }: { lessonIds: string[] }) {
+export function AcademyProgressOverlay({
+  lessonIds,
+  trackMap,
+}: {
+  lessonIds: string[];
+  /** Map from track id → list of lesson ids in that track */
+  trackMap?: Record<string, string[]>;
+}) {
   const [done, setDone] = useState<Set<string>>(new Set());
 
   useEffect(() => {
@@ -15,14 +23,33 @@ export function AcademyProgressOverlay({ lessonIds }: { lessonIds: string[] }) {
       .catch(() => {});
   }, []);
 
+  // Per-track progress injection: set CSS custom property --track-done / --track-total
+  const trackStyles = trackMap
+    ? Object.entries(trackMap)
+        .map(([trackId, ids]) => {
+          const n = ids.filter((id) => done.has(id)).length;
+          const pct = ids.length > 0 ? Math.round((n / ids.length) * 100) : 0;
+          return [
+            `[data-track-id="${trackId}"] .track-progress-bar-fill { width: ${pct}%; }`,
+            `[data-track-id="${trackId}"] .track-progress-count { --done: "${n}/${ids.length}"; }`,
+            n === ids.length && ids.length > 0
+              ? `[data-track-id="${trackId}"] .track-card-header::after { content: " ✓"; color: var(--accent-amber); font-weight: 700; margin-inline-start: 0.25rem; }`
+              : "",
+          ].filter(Boolean).join("\n");
+        })
+        .join("\n")
+    : "";
+
   if (done.size === 0) return null;
 
   return (
     <style>{
-      // Inject done-state styles for each completed lesson row
-      [...done].map((id) =>
-        `[data-lesson-id="${id}"] .row-link-title::after { content: " ✓"; color: var(--accent-amber); font-size: 0.85em; }`
-      ).join("\n")
+      [...done]
+        .map((id) =>
+          `[data-lesson-id="${id}"] .row-link-title::after { content: " ✓"; color: var(--accent-amber); font-size: 0.85em; }`
+        )
+        .join("\n") +
+      (trackStyles ? "\n" + trackStyles : "")
     }</style>
   );
 }

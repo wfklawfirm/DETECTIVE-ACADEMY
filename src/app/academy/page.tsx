@@ -15,7 +15,10 @@ export default function Academy() {
   return (
     <>
       {/* Progress overlay — marks completed lessons client-side */}
-      <AcademyProgressOverlay lessonIds={tracks.flatMap((t: Track) => t.lessons.map((l: Lesson) => l.id))} />
+      <AcademyProgressOverlay
+        lessonIds={tracks.flatMap((t: Track) => t.lessons.map((l: Lesson) => l.id))}
+        trackMap={Object.fromEntries(tracks.map((t: Track) => [t.id, t.lessons.map((l: Lesson) => l.id)]))}
+      />
 
       {/* ── Cinematic hero ──────────────────────────────────────── */}
       <header className="academy-hero">
@@ -48,7 +51,7 @@ export default function Academy() {
       {/* ── Tracks ─────────────────────────────────────────────── */}
       <div className="academy-tracks">
         {tracks.map((t: Track) => (
-          <section key={t.id} className="track-card" aria-labelledby={`t-${t.id}`}>
+          <section key={t.id} data-track-id={t.id} className="track-card" aria-labelledby={`t-${t.id}`}>
             {/* Track header */}
             <div className="track-card-header">
               <div className="track-card-glyph" aria-hidden>{t.glyph}</div>
@@ -60,6 +63,12 @@ export default function Academy() {
             </div>
 
             <p className="track-card-summary">{t.summary_ar}</p>
+            <div className="track-progress-wrap" aria-hidden>
+              <div className="track-progress-bar">
+                <div className="track-progress-bar-fill" />
+              </div>
+              <span className="track-progress-count" />
+            </div>
 
             {/* Lessons */}
             <ul className="list track-lessons">
