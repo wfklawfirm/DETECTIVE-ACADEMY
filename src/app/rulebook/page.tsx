@@ -4,7 +4,14 @@ import { Card, CardTitle } from "@/components/ui/card";
 import { Callout } from "@/components/ui/feedback";
 import { MoreReference, RuleIcon, Section, SourcesBox } from "@/components/reference/parts";
 
-export const metadata = { title: "دستور اللغز العادل" };
+import type { Metadata } from "next";
+export const metadata: Metadata = {
+  title: "دستور اللغز العادل",
+  description: "مبادئ اللعب النظيف في الألغاز التحقيقية — ما الذي يجعل اللغز عادلاً وما الذي يجعله مضللاً.",
+  openGraph: { title: "دستور اللغز العادل · Detective Academy", description: "مبادئ اللعب النظيف في الألغاز التحقيقية.", type: "website", siteName: "Detective Academy" },
+  twitter: { card: "summary", title: "دستور اللغز العادل · Detective Academy" },
+  alternates: { canonical: "/rulebook" },
+};
 export const dynamic = "force-dynamic";
 
 export default function Rulebook() {

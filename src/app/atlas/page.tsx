@@ -6,7 +6,14 @@ import { Card, CardTitle } from "@/components/ui/card";
 import { RefBrowser, type RefItem } from "@/components/reference/RefBrowser";
 import { MoreReference, Section, SourcesBox } from "@/components/reference/parts";
 
-export const metadata = { title: "أطلس الأدب البوليسي" };
+import type { Metadata } from "next";
+export const metadata: Metadata = {
+  title: "أطلس الأدب البوليسي",
+  description: "خريطة الأعمال الكلاسيكية في الأدب البوليسي — مؤلفون وأعمال وأنماط سردية تشكّل الخيال التحقيقي.",
+  openGraph: { title: "أطلس الأدب البوليسي · Detective Academy", description: "خريطة الأعمال الكلاسيكية في الأدب البوليسي.", type: "website", siteName: "Detective Academy" },
+  twitter: { card: "summary", title: "أطلس الأدب البوليسي · Detective Academy" },
+  alternates: { canonical: "/atlas" },
+};
 export const dynamic = "force-dynamic";
 
 const KIND = { principle: "مبدأ من الأدب", expansion: "مبدأ من تقاليد العالم", corpus: "عمل من التراث العربي", heritage: "درس من التراث", pattern: "نمط حبكة" } as const;

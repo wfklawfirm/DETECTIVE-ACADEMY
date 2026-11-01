@@ -4,7 +4,14 @@ import { Badge } from "@/components/ui/badge";
 import { CardLink, RowLink } from "@/components/ui/card";
 import { SparkIcon } from "@/components/ui/icons";
 
-export const metadata = { title: "مكتبة الكتب" };
+import type { Metadata } from "next";
+export const metadata: Metadata = {
+  title: "مكتبة الكتب",
+  description: "قائمة الكتب التي تستند إليها Detective Academy في بناء محتواها التعليمي — مع إشارات واضحة لحدود الاستخدام.",
+  openGraph: { title: "مكتبة الكتب · Detective Academy", description: "قائمة الكتب المصدرية لمحتوى Detective Academy.", type: "website", siteName: "Detective Academy" },
+  twitter: { card: "summary", title: "مكتبة الكتب · Detective Academy" },
+  alternates: { canonical: "/books" },
+};
 export const dynamic = "force-dynamic";
 
 export default async function Books() {

@@ -6,7 +6,14 @@ import { Card } from "@/components/ui/card";
 import { RefBrowser, type RefItem } from "@/components/reference/RefBrowser";
 import { KoLinkRow, LabLinkRow, MoreReference, SourcesBox } from "@/components/reference/parts";
 
-export const metadata = { title: "طرق الفحص وحدودها" };
+import type { Metadata } from "next";
+export const metadata: Metadata = {
+  title: "طرق الفحص وحدودها",
+  description: "دليل طرق الفحص الجنائية وحدودها العلمية — ما تثبته كل طريقة وما لا تستطيع إثباته.",
+  openGraph: { title: "طرق الفحص وحدودها · Detective Academy", description: "دليل طرق الفحص الجنائية وحدودها العلمية.", type: "website", siteName: "Detective Academy" },
+  twitter: { card: "summary", title: "طرق الفحص وحدودها · Detective Academy" },
+  alternates: { canonical: "/methods" },
+};
 export const dynamic = "force-dynamic";
 
 export default async function Methods() {

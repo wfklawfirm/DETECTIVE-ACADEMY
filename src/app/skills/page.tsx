@@ -1,7 +1,14 @@
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 
-export const metadata = { title: "المهارات وأنماط الألغاز" };
+import type { Metadata } from "next";
+export const metadata: Metadata = {
+  title: "المهارات وأنماط الألغاز",
+  description: "فهرس المهارات التحقيقية وأنماط الألغاز المُقيَّسة في Detective Academy — مع مؤشرات الإتقان والأدلة.",
+  openGraph: { title: "المهارات وأنماط الألغاز · Detective Academy", description: "فهرس المهارات التحقيقية وأنماط الألغاز.", type: "website", siteName: "Detective Academy" },
+  twitter: { card: "summary", title: "المهارات وأنماط الألغاز · Detective Academy" },
+  alternates: { canonical: "/skills" },
+};
 export const dynamic = "force-dynamic";
 
 interface Skill    { id: string; title_ar: string; definition_ar: string; scenario_ar: string; achievement_ar: string; common_error_ar: string }

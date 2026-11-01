@@ -6,7 +6,14 @@ import { Card } from "@/components/ui/card";
 import { RefBrowser, type RefItem } from "@/components/reference/RefBrowser";
 import { KoLinkRow, LabLinkRow, MoreReference, Paras, Section, SourcesBox } from "@/components/reference/parts";
 
-export const metadata = { title: "فخاخ العقل" };
+import type { Metadata } from "next";
+export const metadata: Metadata = {
+  title: "فخاخ العقل",
+  description: "مغالطات وتحيزات معرفية تؤثر على حكم المحقق — كيف تقع في الفخ وكيف تتجنبه.",
+  openGraph: { title: "فخاخ العقل · Detective Academy", description: "مغالطات وتحيزات معرفية تؤثر على حكم المحقق.", type: "website", siteName: "Detective Academy" },
+  twitter: { card: "summary", title: "فخاخ العقل · Detective Academy" },
+  alternates: { canonical: "/biases" },
+};
 export const dynamic = "force-dynamic";
 
 export default async function Biases() {

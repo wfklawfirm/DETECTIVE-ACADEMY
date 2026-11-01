@@ -7,7 +7,14 @@ import { Card } from "@/components/ui/card";
 import { RefBrowser, type RefItem } from "@/components/reference/RefBrowser";
 import { KoLinkRow, LabLinkRow, MoreReference, SourcesBox } from "@/components/reference/parts";
 
-export const metadata = { title: "المسرد الجنائي" };
+import type { Metadata } from "next";
+export const metadata: Metadata = {
+  title: "المسرد الجنائي",
+  description: "مصطلحات فنية من علم الأدلة الجنائية والتحقيق الجنائي — معرّفة وموضّحة بأمثلة من قضايا Detective Academy.",
+  openGraph: { title: "المسرد الجنائي · Detective Academy", description: "مصطلحات فنية من علم الأدلة الجنائية.", type: "website", siteName: "Detective Academy" },
+  twitter: { card: "summary", title: "المسرد الجنائي · Detective Academy" },
+  alternates: { canonical: "/glossary" },
+};
 export const dynamic = "force-dynamic";
 
 export default async function Glossary() {

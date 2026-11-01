@@ -5,7 +5,14 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardTitle } from "@/components/ui/card";
 import { KoLinkRow, LabLinkRow, MoreReference, Paras, Section, SourcesBox } from "@/components/reference/parts";
 
-export const metadata = { title: "أخطاء الاستدلال وقواعد الدليل" };
+import type { Metadata } from "next";
+export const metadata: Metadata = {
+  title: "أخطاء الاستدلال وقواعد الدليل",
+  description: "قواعد الاستدلال الصحيح وأشيع أخطاء التحقيق — مرجع سريع للمحقق الذي يريد أن يفكر بوضوح أكثر.",
+  openGraph: { title: "أخطاء الاستدلال · Detective Academy", description: "قواعد الاستدلال الصحيح وأشيع أخطاء التحقيق.", type: "website", siteName: "Detective Academy" },
+  twitter: { card: "summary", title: "أخطاء الاستدلال · Detective Academy" },
+  alternates: { canonical: "/reasoning" },
+};
 export const dynamic = "force-dynamic";
 
 export default async function Reasoning() {

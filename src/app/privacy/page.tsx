@@ -2,7 +2,14 @@ import { Callout } from "@/components/ui/feedback";
 import { LinkButton } from "@/components/ui/button";
 
 
-export const metadata = { title: "الخصوصية والسلامة" };
+import type { Metadata } from "next";
+export const metadata: Metadata = {
+  title: "الخصوصية والسلامة",
+  description: "سياسة الخصوصية وضمانات السلامة في Detective Academy — بيانات المستخدمين، وضمانات المحتوى، وتدابير حماية المراهقين.",
+  openGraph: { title: "الخصوصية والسلامة · Detective Academy", description: "سياسة الخصوصية وضمانات السلامة.", type: "website", siteName: "Detective Academy" },
+  twitter: { card: "summary", title: "الخصوصية والسلامة · Detective Academy" },
+  alternates: { canonical: "/privacy" },
+};
 export default function Privacy() {
   return (
     <>

@@ -6,7 +6,14 @@ import { Card, CardTitle } from "@/components/ui/card";
 import { RefBrowser, type RefItem } from "@/components/reference/RefBrowser";
 import { MoreReference } from "@/components/reference/parts";
 
-export const metadata = { title: "أنماط الألغاز" };
+import type { Metadata } from "next";
+export const metadata: Metadata = {
+  title: "أنماط الألغاز",
+  description: "تصنيف أنماط الألغاز التحقيقية الشائعة — كيف تعرف النمط، وكيف تتعامل معه بدون أن تقع في فخه.",
+  openGraph: { title: "أنماط الألغاز · Detective Academy", description: "تصنيف أنماط الألغاز التحقيقية الشائعة.", type: "website", siteName: "Detective Academy" },
+  twitter: { card: "summary", title: "أنماط الألغاز · Detective Academy" },
+  alternates: { canonical: "/archetypes" },
+};
 export const dynamic = "force-dynamic";
 
 export default async function Archetypes() {
