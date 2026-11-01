@@ -6,10 +6,11 @@ import { Button } from "../ui/button";
 import { Card } from "../ui/card";
 
 interface FirstLesson { id: string; title_ar: string }
+interface NextLab { id: string; title_ar: string; skill_ar: string }
 
 /** Closing card shared by every lab kind: the score line, the transfer question, the explicit limit ("what this cannot prove") and a retry.
  *  Also saves lab completion to the server once per session. */
-export function LabEnd({ lab, summary, onRetry, firstLesson }: { lab: Lab; summary: ReactNode; onRetry: () => void; firstLesson?: FirstLesson | null }) {
+export function LabEnd({ lab, summary, onRetry, firstLesson, nextLab }: { lab: Lab; summary: ReactNode; onRetry: () => void; firstLesson?: FirstLesson | null; nextLab?: NextLab | null }) {
   const saved = useRef(false);
   useEffect(() => {
     if (saved.current) return;
@@ -31,6 +32,13 @@ export function LabEnd({ lab, summary, onRetry, firstLesson }: { lab: Lab; summa
       {firstLesson && (
         <Link href={`/academy/${firstLesson.id}`} className="lab-end-lesson-link">
           تعمّق في الدرس المرتبط: {firstLesson.title_ar} ←
+        </Link>
+      )}
+      {nextLab && (
+        <Link href={`/labs/${nextLab.id}`} className="lab-end-next-link">
+          <span className="lab-end-next-label">المختبر التالي</span>
+          <span className="lab-end-next-title">{nextLab.title_ar}</span>
+          <span className="small dim">{nextLab.skill_ar}</span>
         </Link>
       )}
     </Card>

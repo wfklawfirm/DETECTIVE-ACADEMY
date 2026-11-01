@@ -5,7 +5,8 @@ import { Button } from "../ui/button";
 import { LabEnd } from "./common";
 
 interface FirstLesson { id: string; title_ar: string }
-export function Match({ lab, firstLesson }: { lab: LabOf<"match">; firstLesson?: FirstLesson | null }) {
+interface NextLab { id: string; title_ar: string; skill_ar: string }
+export function Match({ lab, firstLesson, nextLab }: { lab: LabOf<"match">; firstLesson?: FirstLesson | null; nextLab?: NextLab | null }) {
   const uid = useId();
   const [pick, setPick] = useState<Record<string, string>>({});
   const [done, setDone] = useState(false);
@@ -28,7 +29,7 @@ export function Match({ lab, firstLesson }: { lab: LabOf<"match">; firstLesson?:
         );
       })}
       {!done ? <Button variant="primary" size="lg" block disabled={!all} onClick={() => setDone(true)}>اكشف التعليق</Button>
-        : <LabEnd lab={lab} onRetry={() => { setPick({}); setDone(false); }} summary={<><b>{right} من {lab.pairs.length}</b> أزواج صحيحة.</>} firstLesson={firstLesson} />}
+        : <LabEnd lab={lab} onRetry={() => { setPick({}); setDone(false); }} summary={<><b>{right} من {lab.pairs.length}</b> أزواج صحيحة.</>} firstLesson={firstLesson} nextLab={nextLab} />}
     </div>
   );
 }

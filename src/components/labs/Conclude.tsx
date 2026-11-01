@@ -8,7 +8,8 @@ import { LabEnd } from "./common";
 const VERDICT: Record<string, string> = { best: "استنتاج مسوَّغ", overreach: "مبالغة: يتجاوز ما تدعمه المعطيات", too_weak: "تحفّظ زائد: يهمل ما تدعمه المعطيات", off_topic: "لا يجيب عن السؤال المطروح" };
 
 interface FirstLesson { id: string; title_ar: string }
-export function Conclude({ lab, firstLesson }: { lab: LabOf<"conclude">; firstLesson?: FirstLesson | null }) {
+interface NextLab { id: string; title_ar: string; skill_ar: string }
+export function Conclude({ lab, firstLesson, nextLab }: { lab: LabOf<"conclude">; firstLesson?: FirstLesson | null; nextLab?: NextLab | null }) {
   const [pick, setPick] = useState<Record<string, string>>({});
   const [done, setDone] = useState(false);
   const all = lab.scenarios.every((s) => pick[s.id]);
@@ -35,7 +36,7 @@ export function Conclude({ lab, firstLesson }: { lab: LabOf<"conclude">; firstLe
         );
       })}
       {!done ? <Button variant="primary" size="lg" block disabled={!all} onClick={() => setDone(true)}>اكشف التعليق</Button>
-        : <LabEnd lab={lab} onRetry={() => { setPick({}); setDone(false); }} summary={<><b>{right} من {lab.scenarios.length}</b> اخترتَ فيها الاستنتاج المسوَّغ.</>} firstLesson={firstLesson} />}
+        : <LabEnd lab={lab} onRetry={() => { setPick({}); setDone(false); }} summary={<><b>{right} من {lab.scenarios.length}</b> اخترتَ فيها الاستنتاج المسوَّغ.</>} firstLesson={firstLesson} nextLab={nextLab} />}
     </div>
   );
 }

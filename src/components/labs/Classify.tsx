@@ -6,7 +6,8 @@ import { ChoiceGroup } from "../ui/form";
 import { LabEnd } from "./common";
 
 interface FirstLesson { id: string; title_ar: string }
-export function Classify({ lab, firstLesson }: { lab: LabOf<"classify">; firstLesson?: FirstLesson | null }) {
+interface NextLab { id: string; title_ar: string; skill_ar: string }
+export function Classify({ lab, firstLesson, nextLab }: { lab: LabOf<"classify">; firstLesson?: FirstLesson | null; nextLab?: NextLab | null }) {
   const [pick, setPick] = useState<Record<string, string>>({});
   const [done, setDone] = useState(false);
   const all = lab.items.every((i) => pick[i.id]);
@@ -26,7 +27,7 @@ export function Classify({ lab, firstLesson }: { lab: LabOf<"classify">; firstLe
         );
       })}
       {!done ? <Button variant="primary" size="lg" block disabled={!all} onClick={() => setDone(true)}>اكشف التعليق</Button>
-        : <LabEnd lab={lab} onRetry={() => { setPick({}); setDone(false); }} summary={<><b>{right} من {lab.items.length}</b> وافقت تصنيف المختبر.</>} firstLesson={firstLesson} />}
+        : <LabEnd lab={lab} onRetry={() => { setPick({}); setDone(false); }} summary={<><b>{right} من {lab.items.length}</b> وافقت تصنيف المختبر.</>} firstLesson={firstLesson} nextLab={nextLab} />}
     </div>
   );
 }
