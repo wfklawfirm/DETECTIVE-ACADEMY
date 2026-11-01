@@ -5,11 +5,13 @@ import { useEffect, useState } from "react";
  * Client wrapper that:
  * 1. Marks completed lessons with a ✓ indicator (via injected CSS).
  * 2. Shows per-track progress bars on the academy page.
+ * 3. Highlights the next undone lesson with a "التالي" chip.
  */
 export function AcademyProgressOverlay({
   lessonIds,
   trackMap,
 }: {
+  /** All lesson ids in display order (used to find the first undone) */
   lessonIds: string[];
   /** Map from track id → list of lesson ids in that track */
   trackMap?: Record<string, string[]>;
@@ -23,7 +25,7 @@ export function AcademyProgressOverlay({
       .catch(() => {});
   }, []);
 
-  // Per-track progress injection: set CSS custom property --track-done / --track-total
+  // Per-track progress injection
   const trackStyles = trackMap
     ? Object.entries(trackMap)
         .map(([trackId, ids]) => {
@@ -40,7 +42,20 @@ export function AcademyProgressOverlay({
         .join("\n")
     : "";
 
-  if (done.size === 0) return null;
+  // Find the first undone lesson (in lessonIds order)
+  const nextId = lessonIds.find((id) => !done.has(id));
+
+  // Next-lesson highlight styles
+  const nextStyle = nextId
+    ? `[data-lesson-id="${nextId}"] .row-link-title::before { content: "▶ "; color: var(--accent-amber); font-size: 0.8em; }\n` +
+      `[data-lesson-id="${nextId}"] { position: relative; }\n` +
+      `[data-lesson-id="${nextId}"]::after { content: "التالي"; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.04em; ` +
+      `color: var(--bg-base); background: var(--accent-amber); padding: 0.1rem 0.45rem; border-radius: 99px; ` +
+      `margin-inline-start: 0.5rem; vertical-align: middle; display: inline-block; }\n`
+    : "";
+
+  // Nothing to show if no progress and no next lesson to highlight
+  if (done.size === 0 && !nextId) return null;
 
   return (
     <style>{
@@ -49,7 +64,8 @@ export function AcademyProgressOverlay({
           `[data-lesson-id="${id}"] .row-link-title::after { content: " ✓"; color: var(--accent-amber); font-size: 0.85em; }`
         )
         .join("\n") +
-      (trackStyles ? "\n" + trackStyles : "")
+      (trackStyles ? "\n" + trackStyles : "") +
+      (nextStyle ? "\n" + nextStyle : "")
     }</style>
   );
 }
