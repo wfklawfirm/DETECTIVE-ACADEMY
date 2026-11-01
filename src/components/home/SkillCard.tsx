@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import { CERTAINTY_AR, STATUS_AR, type MasteryStatus } from "@/engine/mastery";
@@ -17,6 +18,11 @@ export function SkillCard({ s }: { s: SkillItem }) {
       </span>
       <p className="small dim" aria-hidden>{CERTAINTY_AR[s.certainty]}</p>
       <p className="small dim">من: {s.cases.join("، ")}</p>
+      {s.lesson_id && (
+        <Link href={`/academy/${s.lesson_id}`} className="skill-card-lesson-link small">
+          درس مرتبط ←
+        </Link>
+      )}
     </Card>
   );
 }

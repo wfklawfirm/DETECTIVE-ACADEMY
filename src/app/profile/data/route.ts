@@ -2,6 +2,7 @@ import { z } from "zod";
 import { assess } from "@/engine/assess";
 import { estimateAll, nextStep, type Observation } from "@/engine/mastery";
 import { loadTracks } from "@/engine/tracks";
+import { loadLabs } from "@/engine/labs";
 import type { PlayState } from "@/engine/types";
 import { route } from "@/server/api";
 import { getActor } from "@/server/auth";
@@ -12,6 +13,21 @@ import { json, readJson } from "@/server/http";
 import koNames from "../../../../content/knowledge/ko_names.json";
 
 const Body = z.object({ tokens: z.record(z.string().max(64), z.string().max(180_000)).optional() });
+
+/** Build a Map<ko_id, labId[]> from labs ko_ids */
+let _labsByKo: Map<string, string[]> | null = null;
+function labsByKo(): Map<string, string[]> {
+  if (_labsByKo) return _labsByKo;
+  const map = new Map<string, string[]>();
+  for (const lab of loadLabs().playable) {
+    for (const ko of lab.ko_ids) {
+      if (!map.has(ko)) map.set(ko, []);
+      map.get(ko)!.push(lab.id);
+    }
+  }
+  _labsByKo = map;
+  return map;
+}
 
 /** Mastery is derived on every request from the player's own submitted cases. Nothing is stored and nothing is fabricated. */
 export const POST = route(async (req) => {
@@ -57,9 +73,24 @@ export const POST = route(async (req) => {
   const est = estimateAll(obs);
   const next = nextStep(est, lessonOf);
   const lessonTitle = next?.lesson_id ? tracks.flatMap((t) => t.lessons).find((l) => l.id === next.lesson_id)?.title_ar : undefined;
+
+  // Find a related lab for the next KO (first match)
+  let nextLab: { id: string; title_ar: string; skill_ar: string; minutes: number; kind: string } | null = null;
+  if (next?.ko_id) {
+    const koMap = labsByKo();
+    const labId = koMap.get(next.ko_id)?.[0];
+    if (labId) {
+      const lab = loadLabs().playable.find((l) => l.id === labId);
+      if (lab) {
+        nextLab = { id: lab.id, title_ar: lab.title_ar, skill_ar: lab.skill_ar, minutes: lab.minutes, kind: lab.kind };
+      }
+    }
+  }
+
   return json({
     submitted_cases: submitted,
     skills: est.map((e) => ({ ko_id: e.ko_id, name_ar: names[e.ko_id] ?? e.ko_id, status: e.status, certainty: e.certainty, cases: [...(meta.get(e.ko_id)?.titles ?? [])], track: meta.get(e.ko_id)?.track ?? null, lesson_id: lessonOf(e.ko_id) ?? null })),
     next: next ? { ...next, name_ar: names[next.ko_id] ?? next.ko_id, lesson_title_ar: lessonTitle ?? null } : null,
+    next_lab: nextLab,
   });
 });

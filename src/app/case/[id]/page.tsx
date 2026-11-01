@@ -10,6 +10,7 @@ import { allTokens, api } from "@/lib/client";
 import type { Card, Prog } from "@/components/CaseCard";
 
 interface LinkedLesson { id: string; title_ar: string; track_id: string; track_title_ar: string; minutes: number }
+interface LinkedLab { id: string; title_ar: string; skill_ar: string; minutes: number; kind: string }
 
 /* ── Difficulty dots ─────────────────────────────────────────── */
 function DifficultyDots({ level, max = 5 }: { level: number; max?: number }) {
@@ -28,6 +29,7 @@ export default function CaseIntro({ params }: { params: Promise<{ id: string }> 
   const [card, setCard] = useState<Card | null | undefined>(undefined);
   const [prog, setProg] = useState<Prog | undefined>();
   const [linkedLessons, setLinkedLessons] = useState<LinkedLesson[]>([]);
+  const [linkedLabs, setLinkedLabs] = useState<LinkedLab[]>([]);
   const [doneLessons, setDoneLessons] = useState<Set<string>>(new Set());
 
   useEffect(() => {
@@ -39,7 +41,10 @@ export default function CaseIntro({ params }: { params: Promise<{ id: string }> 
       .catch(() => setCard(null));
     fetch(`/api/cases/${id}/lessons`)
       .then((r) => r.ok ? r.json() : null)
-      .then((d) => { if (d?.lessons) setLinkedLessons(d.lessons as LinkedLesson[]); })
+      .then((d) => {
+        if (d?.lessons) setLinkedLessons(d.lessons as LinkedLesson[]);
+        if (d?.labs) setLinkedLabs(d.labs as LinkedLab[]);
+      })
       .catch(() => {});
     fetch("/api/academy/progress")
       .then((r) => r.ok ? r.json() : null)
@@ -162,6 +167,26 @@ export default function CaseIntro({ params }: { params: Promise<{ id: string }> 
                 </li>
               );
             })}
+          </ul>
+        </section>
+      )}
+
+      {/* ── Linked labs ─────────────────────────────────────────── */}
+      {linkedLabs.length > 0 && (
+        <section className="case-linked-lessons" aria-labelledby="case-labs-h">
+          <h2 id="case-labs-h" className="case-linked-lessons-title">تدرّب قبل التحقيق</h2>
+          <p className="small dim-2">مختبرات قصيرة تدرّب المهارات الأساسية لهذه القضية:</p>
+          <ul className="case-linked-lessons-list">
+            {linkedLabs.map((l) => (
+              <li key={l.id}>
+                <Link href={`/labs/${l.id}`} className="case-linked-lesson-row">
+                  <Badge className="case-linked-lesson-id">{l.kind}</Badge>
+                  <span className="case-linked-lesson-title">{l.title_ar}</span>
+                  <span className="case-linked-lesson-meta small dim">{l.skill_ar} · {l.minutes} د</span>
+                  <span className="case-linked-lesson-chev" aria-hidden>←</span>
+                </Link>
+              </li>
+            ))}
           </ul>
         </section>
       )}

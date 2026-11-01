@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import { getActorFromCookies } from "@/server/auth";
 import { CONF_LABEL, RIGHTS_LABEL, STATUS_LABEL, TYPE_LABEL, loadKnowledge, visibleKos } from "@/engine/knowledge";
 import { loadTracks } from "@/engine/tracks";
+import { loadLabs } from "@/engine/labs";
 import { forensicCardFor, loadForensicCards } from "@/engine/forensic-cards";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardTitle, RowLink } from "@/components/ui/card";
@@ -23,6 +24,7 @@ export default async function Ko({ params }: { params: Promise<{ id: string }> }
   if (!k) notFound();
   const srcs = k.source_ids.map((s) => src.find((x) => x.id === s)).filter((x): x is NonNullable<typeof x> => !!x);
   const lessons = loadTracks().tracks.flatMap((t) => t.lessons.filter((l) => l.ko_refs.includes(k.ko_id)).map((l) => ({ id: l.id, title: l.title_ar })));
+  const labs = loadLabs().playable.filter((l) => l.ko_ids.includes(k.ko_id)).slice(0, 4).map((l) => ({ id: l.id, title: l.title_ar, skill: l.skill_ar, minutes: l.minutes, kind: l.kind }));
   const fc = forensicCardFor(loadForensicCards(), k.ko_id);
   const extras = EN_KEYS.filter((key) => k.extra[key] !== undefined);
   return (
@@ -46,6 +48,22 @@ export default async function Ko({ params }: { params: Promise<{ id: string }> }
         </Card>
       )}
       {lessons.length > 0 && <section className="stack"><h2 className="text-label section-title">دروس مرتبطة</h2><ul className="list">{lessons.map((l) => <li key={l.id}><RowLink href={`/academy/${l.id}`} title={l.title} /></li>)}</ul></section>}
+      {labs.length > 0 && (
+        <section className="stack">
+          <h2 className="text-label section-title">مختبرات تدريبية مرتبطة</h2>
+          <ul className="list">
+            {labs.map((l) => (
+              <li key={l.id}>
+                <RowLink
+                  href={`/labs/${l.id}`}
+                  title={l.title}
+                  trailing={<span className="small dim">{l.skill} · {l.minutes} د</span>}
+                />
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
       {extras.length > 0 && (
         <details className="card"><summary>تفاصيل من المكتبة البحثية (بالإنجليزية)</summary>
           <dl className="stack" lang="en" dir="ltr">

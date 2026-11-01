@@ -3,10 +3,13 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useMe } from "@/components/Shell";
 import { SkillCard, type SkillItem } from "@/components/home/SkillCard";
+import { Badge } from "@/components/ui/badge";
 import { LinkButton } from "@/components/ui/button";
 import { EmptyState, ErrorState, LoadingRegion } from "@/components/ui/feedback";
 import { ProfileIcon, SearchIcon, TargetIcon } from "@/components/ui/icons";
 import { allTokens, api } from "@/lib/client";
+
+interface LabRef { id: string; title_ar: string; skill_ar: string; minutes: number; kind: string }
 
 interface Data {
   submitted_cases: number;
@@ -18,6 +21,7 @@ interface Data {
     lesson_id?: string;
     lesson_title_ar: string | null;
   } | null;
+  next_lab: LabRef | null;
 }
 
 const DISCLAIMER =
@@ -186,17 +190,27 @@ export default function Profile() {
                   : "جرّب قضية أخرى تستخدم هذه العادة."}
                 {" "}هذا اقتراح فقط ولا يقفل شيئاً.
               </p>
-              <LinkButton
-                variant="primary"
-                size="sm"
-                href={
-                  d.next.kind === "lesson" && d.next.lesson_id
-                    ? `/academy/${d.next.lesson_id}`
-                    : "/cases"
-                }
-              >
-                {d.next.kind === "lesson" ? "افتح الدرس ←" : "اختر قضية ←"}
-              </LinkButton>
+              <div className="profile-next-actions">
+                <LinkButton
+                  variant="primary"
+                  size="sm"
+                  href={
+                    d.next.kind === "lesson" && d.next.lesson_id
+                      ? `/academy/${d.next.lesson_id}`
+                      : "/cases"
+                  }
+                >
+                  {d.next.kind === "lesson" ? "افتح الدرس ←" : "اختر قضية ←"}
+                </LinkButton>
+                {d.next_lab && (
+                  <Link href={`/labs/${d.next_lab.id}`} className="profile-next-lab-link">
+                    <Badge className="profile-next-lab-badge">{d.next_lab.kind}</Badge>
+                    <span className="profile-next-lab-title">{d.next_lab.title_ar}</span>
+                    <span className="profile-next-lab-meta small dim">{d.next_lab.minutes} د</span>
+                    <span aria-hidden>←</span>
+                  </Link>
+                )}
+              </div>
             </div>
           )}
 

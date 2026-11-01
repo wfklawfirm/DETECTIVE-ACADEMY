@@ -1,8 +1,10 @@
 import { route } from "@/server/api";
 import { json } from "@/server/http";
 import { loadTracks } from "@/engine/tracks";
+import { loadLabs } from "@/engine/labs";
+import { getPlayable } from "@/server/content";
 
-/** GET /api/cases/[id]/lessons — academy lessons linked to this case. */
+/** GET /api/cases/[id]/lessons — academy lessons and labs linked to this case. */
 export const GET = route(async (_req, ctx) => {
   const { id: caseId } = await (ctx as { params: Promise<{ id: string }> }).params;
   const file = loadTracks();
@@ -20,5 +22,23 @@ export const GET = route(async (_req, ctx) => {
       }
     }
   }
-  return json({ lessons: linked });
+
+  // Also find labs via learning objective KO refs from the case itself
+  let labs: { id: string; title_ar: string; skill_ar: string; minutes: number; kind: string }[] = [];
+  try {
+    const lc = await getPlayable(caseId);
+    if (lc) {
+      const caseKos = new Set(lc.core.learning_objectives.map((o) => o.skill_ko_ref).filter(Boolean));
+      if (caseKos.size > 0) {
+        labs = loadLabs().playable
+          .filter((lab) => lab.ko_ids.some((ko) => caseKos.has(ko)))
+          .slice(0, 4)
+          .map((lab) => ({ id: lab.id, title_ar: lab.title_ar, skill_ar: lab.skill_ar, minutes: lab.minutes, kind: lab.kind }));
+      }
+    }
+  } catch {
+    // getPlayable failure is non-fatal
+  }
+
+  return json({ lessons: linked, labs });
 }, { limit: 60, key: "case-lessons" });
