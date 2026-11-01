@@ -17,7 +17,11 @@ export function LessonProgressTracker({ lessonId }: Props) {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ lesson_id: lessonId }),
     })
-      .then((r) => { if (r.ok && !cancelled) setTimeout(() => { if (!cancelled) setSaved(true); }, 1000); })
+      .then(async (r) => {
+        // Always drain the body so the request completes (an unread 401 body keeps it "in flight").
+        await r.text().catch(() => "");
+        if (r.ok && !cancelled) setTimeout(() => { if (!cancelled) setSaved(true); }, 1000);
+      })
       .catch(() => { /* silent — guests or network errors */ });
     return () => { cancelled = true; };
   }, [lessonId]);
