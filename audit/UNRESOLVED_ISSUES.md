@@ -16,3 +16,6 @@
 - The P1 structural recommendations in `DETAILED_AUDIT_AR.md` (simplified navigation, lesson player, separating "ready to play" archetypes, moving authoring notes out of the index) were not started. They are design changes that should follow a visual review, not be guessed from measurements.
 - Cold start is 3.1-4.3 s, not instant. Remaining cost is the draft comparison query plus function start; a stored content hash column would remove the comparison.
 - Raw screenshots (about 160 MB) are not committed; only measurements, the index, findings and a few comparison images are.
+
+## E2E failures present before this work (see QA_REPORT.md)
+- Axe violations on some pages (dark and light), 320px networkidle timeout, theme-toggle radio overlay, light-theme contrast on the play "الملف" tab (mobile), stale studio heading test, desktop menu-sheet test assumption.
