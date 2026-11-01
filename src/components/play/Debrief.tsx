@@ -111,7 +111,7 @@ export function Debrief({ r, busy, send }: { r: Resp; busy: boolean; send: (x: R
                     <span className="case-linked-lesson-id">{l.id}</span>
                     <span className="case-linked-lesson-title">{l.title_ar}</span>
                     <span className="case-linked-lesson-meta small dim">{l.track_title_ar} · {l.minutes} د</span>
-                    {done && <Badge tone="success" className="case-linked-lesson-done">✓</Badge>}
+                    {done && <Badge tone="positive" className="case-linked-lesson-done">✓</Badge>}
                     <span className="case-linked-lesson-chev" aria-hidden>←</span>
                   </Link>
                 </li>

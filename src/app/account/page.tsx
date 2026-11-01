@@ -43,6 +43,7 @@ export default function Account() {
 
   /* ── Logged-in view ─────────────────────────────────────────── */
   if (me?.user) {
+    const user = me.user;
     return (
       <>
         {/* Hero */}
@@ -50,8 +51,8 @@ export default function Account() {
           <div className="account-hero-inner">
             <div className="account-hero-text">
               <p className="account-hero-kicker">إعدادات الحساب</p>
-              <h1 className="account-hero-name">{me.user.display_name ?? "محقق"}</h1>
-              <p className="account-hero-email">{me.user.email ?? ""}</p>
+              <h1 className="account-hero-name">{user.display_name ?? "محقق"}</h1>
+              <p className="account-hero-email">{user.email ?? ""}</p>
             </div>
             <span className="account-hero-avatar" aria-hidden>🪪</span>
           </div>
@@ -63,7 +64,7 @@ export default function Account() {
           <Field label="الاسم الظاهر">
             {(p) => (
               <input
-                {...p} className="input" maxLength={40} placeholder={me.user.display_name ?? "محقق"}
+                {...p} className="input" maxLength={40} placeholder={user.display_name ?? "محقق"}
                 value={editName} onChange={(e) => setEditName(e.target.value)}
               />
             )}
@@ -116,7 +117,7 @@ export default function Account() {
           <Toggle
             label="وضع هادئ"
             hint="تلميحات الدخول أقصر وأقل تشويقاً."
-            checked={me.user.gentle_hooks}
+            checked={user.gentle_hooks}
             onChange={async (v) => {
               await api("/api/auth/settings", { gentle_hooks: v });
               setGentle(v);

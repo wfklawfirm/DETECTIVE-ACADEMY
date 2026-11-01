@@ -46,4 +46,4 @@ export function allTokens(): Record<string, string> {
   return out;
 }
 
-export interface Me { kind: "account" | "device"; age_band: "13-15" | "16-17" | "18+" | null; preview_mode: boolean; user: { id: string; display_name: string | null; role: string; gentle_hooks: boolean } | null }
+export interface Me { kind: "account" | "device"; age_band: "13-15" | "16-17" | "18+" | null; preview_mode: boolean; user: { id: string; email?: string; display_name: string | null; role: string; gentle_hooks: boolean } | null }

@@ -91,11 +91,9 @@ export const ConcludeLab = Base.extend({
 
 export const LabSchema = z.discriminatedUnion("kind", [ClassifyLab, OrderLab, MatchLab, SliderLab, SpotLab, MeasureLab, ConcludeLab]);
 export type Lab = z.infer<typeof LabSchema>;
-export type LabKind = Lab["kind"];
 export type LabOf<K extends LabKind> = Extract<Lab, { kind: K }>;
-export const KIND_LABEL: Record<LabKind, string> = {
-  classify: "صنّف في خانات", order: "رتّب الخطوات", match: "طابق الأزواج", slider: "نموذج بمنزلقات", spot: "اكتشف الخلل في وثيقة", measure: "قِس واحسب", conclude: "اختر الاستنتاج المسوَّغ",
-};
+export { KIND_LABEL, type LabKind } from "./lab-labels";
+import type { LabKind } from "./lab-labels";
 
 export const LabsFileSchema = z.object({
   version: z.string(),

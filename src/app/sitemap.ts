@@ -76,14 +76,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // Dynamic: books and concepts (visible to all age bands)
   const { books, concepts } = loadBooks();
-  const visBooks = visibleBooks(books, "all");
+  const visBooks = visibleBooks(books, null);
   const bookUrls: MetadataRoute.Sitemap = visBooks.map((b) => ({
     url: `${BASE}/books/${b.id}`,
     lastModified: now,
     changeFrequency: "monthly" as const,
     priority: 0.4,
   }));
-  const visConcepts = visibleConcepts(concepts, books, "all");
+  const visConcepts = visibleConcepts(concepts, books, null);
   const conceptUrls: MetadataRoute.Sitemap = visConcepts.map((c) => ({
     url: `${BASE}/books/concept/${c.id}`,
     lastModified: now,

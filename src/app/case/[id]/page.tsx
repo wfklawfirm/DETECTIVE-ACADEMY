@@ -161,7 +161,7 @@ export default function CaseIntro({ params }: { params: Promise<{ id: string }> 
                     <span className="case-linked-lesson-id">{l.id}</span>
                     <span className="case-linked-lesson-title">{l.title_ar}</span>
                     <span className="case-linked-lesson-meta small dim">{l.track_title_ar} · {l.minutes} د</span>
-                    {done && <Badge tone="success" className="case-linked-lesson-done">✓</Badge>}
+                    {done && <Badge tone="positive" className="case-linked-lesson-done">✓</Badge>}
                     <span className="case-linked-lesson-chev" aria-hidden>←</span>
                   </Link>
                 </li>

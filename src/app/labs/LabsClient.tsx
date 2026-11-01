@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import type { LabKind } from "@/engine/labs";
-import { KIND_LABEL } from "@/engine/labs";
+import { KIND_LABEL } from "@/engine/lab-labels";
 import { Badge } from "@/components/ui/badge";
 import { CardLink } from "@/components/ui/card";
 import { ChevronIcon } from "@/components/ui/icons";
@@ -122,7 +122,7 @@ export function LabsClient({
                     <div className="row" style={{ flexWrap: "nowrap" }}>
                       <b className="grow">{item.title_ar}</b>
                       <span className="lab-done-chip" style={{ display: "none" }}>
-                        <Badge tone="success">✓ مكتمل</Badge>
+                        <Badge tone="positive">✓ مكتمل</Badge>
                       </span>
                       <ChevronIcon className="chev" size={20} />
                     </div>
