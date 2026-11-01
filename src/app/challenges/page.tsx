@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { Badge } from "@/components/ui/badge";
 import { LinkButton } from "@/components/ui/button";
 import { ErrorState, LoadingRegion } from "@/components/ui/feedback";
 import { ChoiceGroup } from "@/components/ui/form";
@@ -13,11 +14,19 @@ interface Riddle {
   options: { id: string; text_ar: string }[];
 }
 
+interface LabRef { id: string; title_ar: string; skill_ar: string; minutes: number; kind: string }
+
 export default function Challenges() {
-  const [r, setR]         = useState<Riddle | null>(null);
+  const [r, setR]           = useState<Riddle | null>(null);
   const [failed, setFailed] = useState(false);
-  const [res, setRes]     = useState<{ correct: boolean; answer_id: string; explanation_ar: string; lesson: { id: string; title_ar: string; track_id: string; track_title_ar: string } | null } | null>(null);
-  const [sel, setSel]     = useState<string | null>(null);
+  const [res, setRes] = useState<{
+    correct: boolean;
+    answer_id: string;
+    explanation_ar: string;
+    lesson: { id: string; title_ar: string; track_id: string; track_title_ar: string } | null;
+    labs: LabRef[];
+  } | null>(null);
+  const [sel, setSel] = useState<string | null>(null);
 
   useEffect(() => {
     api<{ riddle: Riddle }>(`/api/riddle?seed=${encodeURIComponent(deviceSeed())}`)
@@ -87,7 +96,7 @@ export default function Challenges() {
         </section>
       )}
 
-      {/* ── Academy link — smart when answered ───────────────────── */}
+      {/* ── Academy lesson link — smart when answered ───────────── */}
       <div className="challenges-footer">
         {res?.lesson ? (
           <>
@@ -100,6 +109,27 @@ export default function Challenges() {
               <span className="challenges-lesson-meta">{res.lesson.track_title_ar}</span>
               <span className="challenges-lesson-chev" aria-hidden>←</span>
             </Link>
+
+            {/* Related labs for this riddle's skill */}
+            {res.labs && res.labs.length > 0 && (
+              <div className="challenges-labs-section">
+                <p className="challenges-footer-text challenges-labs-label">
+                  تدرّب عليها في مختبر آمن:
+                </p>
+                <ul className="case-linked-lessons-list challenges-labs-list">
+                  {res.labs.map((lab) => (
+                    <li key={lab.id}>
+                      <Link href={`/labs/${lab.id}`} className="case-linked-lesson-row">
+                        <Badge className="case-linked-lesson-id">{lab.kind}</Badge>
+                        <span className="case-linked-lesson-title">{lab.title_ar}</span>
+                        <span className="case-linked-lesson-meta small dim">{lab.skill_ar} · {lab.minutes} د</span>
+                        <span className="case-linked-lesson-chev" aria-hidden>←</span>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
           </>
         ) : (
           <>

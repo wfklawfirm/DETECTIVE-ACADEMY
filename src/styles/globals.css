@@ -4861,3 +4861,17 @@ mark.search-hl {
   margin-inline-start: auto;
   flex-shrink: 0;
 }
+
+/* ── CHALLENGES LABS SECTION ── */
+.challenges-labs-section {
+  margin-block-start: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.challenges-labs-label {
+  margin-block-start: 0 !important;
+}
+.challenges-labs-list {
+  margin-block-start: 0 !important;
+}
