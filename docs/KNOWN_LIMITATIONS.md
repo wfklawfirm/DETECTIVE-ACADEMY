@@ -30,3 +30,9 @@
 
 ## النشر (GitHub / Vercel)
 لم يُنشر المشروع: رفض نظام الأذونات إنشاء مستودع `wfklawfirm/athar` من الجلسة، ولم يُلتفّ على الرفض. الخطوات الجاهزة: إنشاء مستودع خاص، دفع الفرع main، ربطه بـ Vercel، وضبط المتغيرات (`ATHAR_SECRET`, `ATHAR_ADMIN_EMAIL`, `ATHAR_ADMIN_PASSWORD`, `ATHAR_ALLOW_PREVIEW=1`، ويُفضَّل Turso لـ `ATHAR_DB_URL` لأن قاعدة /tmp على Vercel مؤقتة). التفاصيل في docs/DEPLOYMENT.md.
+
+## تحديثات جلسة 2026-11-01
+- ✅ شريط تقدم لكل مسار أكاديمي (x/y دروس بخط عنبري)
+- ✅ عداد "درس ✓" في الصفحة الرئيسية
+- ✅ زر "أرسل للمراجعة" في الاستوديو (draft → in_review)
+- ✅ `POST /api/studio/submit` — نقطة نهاية جديدة مراجَعة وموثّقة
