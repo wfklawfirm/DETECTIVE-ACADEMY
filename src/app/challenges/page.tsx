@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import { LinkButton } from "@/components/ui/button";
 import { ErrorState, LoadingRegion } from "@/components/ui/feedback";
 import { ChoiceGroup } from "@/components/ui/form";
@@ -15,7 +16,7 @@ interface Riddle {
 export default function Challenges() {
   const [r, setR]         = useState<Riddle | null>(null);
   const [failed, setFailed] = useState(false);
-  const [res, setRes]     = useState<{ correct: boolean; answer_id: string; explanation_ar: string } | null>(null);
+  const [res, setRes]     = useState<{ correct: boolean; answer_id: string; explanation_ar: string; lesson: { id: string; title_ar: string; track_id: string; track_title_ar: string } | null } | null>(null);
   const [sel, setSel]     = useState<string | null>(null);
 
   useEffect(() => {
@@ -86,12 +87,28 @@ export default function Challenges() {
         </section>
       )}
 
-      {/* ── Academy link ────────────────────────────────────────── */}
+      {/* ── Academy link — smart when answered ───────────────────── */}
       <div className="challenges-footer">
-        <p className="challenges-footer-text">هل أثار اللغز فضولك؟</p>
-        <LinkButton variant="outline" href="/academy">
-          تعلّم المهارة خلف اللغز في الأكاديمية ←
-        </LinkButton>
+        {res?.lesson ? (
+          <>
+            <p className="challenges-footer-text">
+              المهارة وراء هذا اللغز هي درس في الأكاديمية:
+            </p>
+            <Link href={`/academy/${res.lesson.id}`} className="challenges-lesson-link">
+              <span className="challenges-lesson-id">{res.lesson.id}</span>
+              <span className="challenges-lesson-title">{res.lesson.title_ar}</span>
+              <span className="challenges-lesson-meta">{res.lesson.track_title_ar}</span>
+              <span className="challenges-lesson-chev" aria-hidden>←</span>
+            </Link>
+          </>
+        ) : (
+          <>
+            <p className="challenges-footer-text">هل أثار اللغز فضولك؟</p>
+            <LinkButton variant="outline" href="/academy">
+              تعلّم المهارة خلف اللغز في الأكاديمية ←
+            </LinkButton>
+          </>
+        )}
       </div>
     </>
   );

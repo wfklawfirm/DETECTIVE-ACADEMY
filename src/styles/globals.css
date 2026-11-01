@@ -4819,3 +4819,45 @@ mark.search-hl {
   flex-shrink: 0;
   transform: scaleX(-1);
 }
+
+/* ── CHALLENGES LESSON LINK ── */
+.challenges-lesson-link {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  padding: .75rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: .75rem;
+  background: var(--surface-raised);
+  text-decoration: none;
+  color: inherit;
+  transition: background .15s, border-color .15s;
+  flex-wrap: wrap;
+}
+.challenges-lesson-link:hover { background: var(--surface-hover); border-color: var(--accent); }
+.challenges-lesson-id {
+  font-size: .75rem;
+  font-weight: 700;
+  padding: .15rem .45rem;
+  border-radius: .35rem;
+  background: var(--accent-tint);
+  color: var(--accent);
+  font-family: var(--font-mono, monospace);
+  flex-shrink: 0;
+}
+.challenges-lesson-title {
+  font-weight: 600;
+  font-size: .9rem;
+  flex: 1;
+  min-width: 0;
+}
+.challenges-lesson-meta {
+  font-size: .75rem;
+  color: var(--text-secondary);
+  flex-shrink: 0;
+}
+.challenges-lesson-chev {
+  color: var(--accent);
+  margin-inline-start: auto;
+  flex-shrink: 0;
+}
