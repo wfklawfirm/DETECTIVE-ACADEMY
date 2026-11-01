@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   twitter: { card: "summary", title: "مختبرات آمنة · Detective Academy" },
   alternates: { canonical: "/labs" },
 };
-export const dynamic = "force-dynamic";
+export const revalidate = 86400;
 
 export default function Labs() {
   const f = loadLabs();

@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   twitter: { card: "summary", title: "دستور اللغز العادل · Detective Academy" },
   alternates: { canonical: "/rulebook" },
 };
-export const dynamic = "force-dynamic";
+export const revalidate = 86400;
 
 export default function Rulebook() {
   const r = loadRulebook();

@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   twitter: { card: "summary", title: "مكتبة الأصوات · Detective Academy" },
   alternates: { canonical: "/sounds" },
 };
-export const dynamic = "force-dynamic";
+export const revalidate = 86400;
 
 export default function Sounds() {
   const snd = loadAssets().filter((a) => a.kind === "audio");

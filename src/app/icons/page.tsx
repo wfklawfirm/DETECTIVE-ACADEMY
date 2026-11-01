@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   twitter: { card: "summary", title: "مكتبة الأيقونات · Detective Academy" },
   alternates: { canonical: "/icons" },
 };
-export const dynamic = "force-dynamic";
+export const revalidate = 86400;
 
 export default function Icons() {
   const { sets, icons } = loadIcons();

@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   twitter: { card: "summary", title: "الاعتمادات · Detective Academy" },
   alternates: { canonical: "/credits" },
 };
-export const dynamic = "force-dynamic";
+export const revalidate = 86400;
 
 export default function Credits() {
   const all = loadAssets();

@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   twitter: { card: "summary", title: "دليل المعلّم · Detective Academy" },
   alternates: { canonical: "/academy/educators" },
 };
-export const dynamic = "force-dynamic";
+export const revalidate = 86400;
 
 interface Meta { title: string; minutes: number; band: string; skills: string[] }
 function meta(id: string): Meta | null {

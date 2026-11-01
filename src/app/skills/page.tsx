@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   twitter: { card: "summary", title: "المهارات وأنماط الألغاز · Detective Academy" },
   alternates: { canonical: "/skills" },
 };
-export const dynamic = "force-dynamic";
+export const revalidate = 86400;
 
 interface Skill    { id: string; title_ar: string; definition_ar: string; scenario_ar: string; achievement_ar: string; common_error_ar: string }
 interface Pattern  { id: string; title_ar: string; hook_ar: string; fair_play_ar: string; constraint_ar: string }

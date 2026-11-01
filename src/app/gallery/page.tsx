@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   twitter: { card: "summary", title: "معرض المراجع · Detective Academy" },
   alternates: { canonical: "/gallery" },
 };
-export const dynamic = "force-dynamic";
+export const revalidate = 86400;
 const PER = 48;
 const COLL_AR: Record<string, string> = {};
 

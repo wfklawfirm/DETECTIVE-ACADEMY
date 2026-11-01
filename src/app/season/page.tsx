@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   twitter: { card: "summary", title: "الموسم الأول · Detective Academy" },
   alternates: { canonical: "/season" },
 };
-export const dynamic = "force-dynamic";
+export const revalidate = 86400;
 
 export default function SeasonPage() {
   const { season, episodes } = loadResolvedSeason();
