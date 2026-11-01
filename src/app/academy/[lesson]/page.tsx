@@ -16,7 +16,6 @@ export async function generateMetadata({ params }: { params: Promise<{ lesson: s
   const file = loadTracks();
   const l = lessonById(file, lesson);
   if (!l) return {};
-  const track = file.tracks.find((t) => t.lessons.some((x) => x.id === l.id));
   return {
     title: l.title_ar,
     description: l.intro_ar?.slice(0, 160) ?? undefined,
