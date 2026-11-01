@@ -1,18 +1,38 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import Link from "next/link";
 import { useMe } from "../Shell";
 import { Button, LinkButton } from "../ui/button";
+import { Badge } from "../ui/badge";
 import { Card, CardTitle } from "../ui/card";
 import { Callout, LoadingRegion } from "../ui/feedback";
 import { ChoiceGroup, Field } from "../ui/form";
 import { ProgressBar, ProgressRing } from "../ui/progress";
 import type { Resp } from "./usePlay";
 
+interface LinkedLesson { id: string; title_ar: string; track_id: string; track_title_ar: string; minutes: number }
+
 export function Debrief({ r, busy, send }: { r: Resp; busy: boolean; send: (x: Record<string, unknown>) => Promise<unknown> }) {
   const v = r.view; const a = r.assessment; const d = v.debrief;
   const { me } = useMe();
   const [picked, setPicked] = useState<string[]>([]);
   const [ft, setFt] = useState("");
+  const [linkedLessons, setLinkedLessons] = useState<LinkedLesson[]>([]);
+  const [doneLessons, setDoneLessons] = useState<Set<string>>(new Set());
+
+  useEffect(() => {
+    const caseId = v.case_id ?? "";
+    if (!caseId) return;
+    fetch(`/api/cases/${caseId}/lessons`)
+      .then((r) => r.ok ? r.json() : null)
+      .then((d) => { if (d?.lessons) setLinkedLessons(d.lessons as LinkedLesson[]); })
+      .catch(() => {});
+    fetch("/api/academy/progress")
+      .then((r) => r.ok ? r.json() : null)
+      .then((d) => { if (d?.done) setDoneLessons(new Set<string>(d.done as string[])); })
+      .catch(() => {});
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   const concl = v.hypotheses.find((h) => h.id === v.submission?.conclusion_hypothesis_id);
   if (!a || !d) return <LoadingRegion label="جارٍ تحميل الملخص" cards={2} />;
   const evT = (id: string) => v.evidence.find((e) => e.id === id)?.title_ar ?? id;
@@ -71,6 +91,28 @@ export function Debrief({ r, busy, send }: { r: Resp; busy: boolean; send: (x: R
               <Button type="submit" variant="secondary" disabled={busy || picked.length === 0}>أرسل</Button>
             </form>
           )}
+        </Card>
+      )}
+      {linkedLessons.length > 0 && (
+        <Card as="section" aria-labelledby="debrief-lessons-h">
+          <h2 id="debrief-lessons-h" className="text-section-title">عمّق هذه المهارة في الأكاديمية</h2>
+          <p className="small dim-2">دروس قصيرة مرتبطة بمهارات هذه القضية.</p>
+          <ul className="case-linked-lessons-list" style={{ marginBlockStart: "0.6rem" }}>
+            {linkedLessons.map((l) => {
+              const done = doneLessons.has(l.id);
+              return (
+                <li key={l.id}>
+                  <Link href={`/academy/${l.id}`} className="case-linked-lesson-row">
+                    <span className="case-linked-lesson-id">{l.id}</span>
+                    <span className="case-linked-lesson-title">{l.title_ar}</span>
+                    <span className="case-linked-lesson-meta small dim">{l.track_title_ar} · {l.minutes} د</span>
+                    {done && <Badge tone="success" className="case-linked-lesson-done">✓</Badge>}
+                    <span className="case-linked-lesson-chev" aria-hidden>←</span>
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
         </Card>
       )}
       <div className="stack-sm">
