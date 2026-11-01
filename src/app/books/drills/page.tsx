@@ -3,7 +3,14 @@ import { drillsFor, loadBooks } from "@/engine/books";
 
 import { DrillRunner } from "@/components/books/DrillRunner";
 
-export const metadata = { title: "تمارين استدلال المشهد" };
+import type { Metadata } from "next";
+export const metadata: Metadata = {
+  title: "تمارين استدلال المشهد",
+  description: "تمارين قصيرة على استدلال المشهد — مشاهد خيالية بجواب واحد دقيق تتمرّن فيه على قراءة الأدلة قبل الحكم.",
+  robots: { index: false, follow: false },
+  openGraph: { title: "تمارين استدلال المشهد · Detective Academy", description: "مشاهد خيالية قصيرة لتمرين الاستدلال.", type: "website", siteName: "Detective Academy" },
+  twitter: { card: "summary", title: "تمارين استدلال المشهد · Detective Academy" },
+};
 export const dynamic = "force-dynamic";
 
 export default async function Drills() {

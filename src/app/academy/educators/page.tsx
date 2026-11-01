@@ -7,7 +7,14 @@ import { Callout } from "@/components/ui/feedback";
 import { Card } from "@/components/ui/card";
 import { SearchIcon } from "@/components/ui/icons";
 
-export const metadata = { title: "دليل المعلّم" };
+import type { Metadata } from "next";
+export const metadata: Metadata = {
+  title: "دليل المعلّم",
+  description: "دليل استخدام Detective Academy في الفصول الدراسية — منهج مقترح للحلقات والقضايا مع ملاحظات تربوية للمعلّمين والمشرفين.",
+  openGraph: { title: "دليل المعلّم · Detective Academy", description: "دليل للمعلّمين والمشرفين — منهج مقترح دون بيانات الطلاب.", type: "website", siteName: "Detective Academy" },
+  twitter: { card: "summary", title: "دليل المعلّم · Detective Academy" },
+  alternates: { canonical: "/academy/educators" },
+};
 export const dynamic = "force-dynamic";
 
 interface Meta { title: string; minutes: number; band: string; skills: string[] }

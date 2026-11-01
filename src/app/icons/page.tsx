@@ -1,8 +1,15 @@
+import type { Metadata } from "next";
 import { loadIcons } from "@/engine/icons";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 
-export const metadata = { title: "مكتبة الأيقونات" };
+export const metadata: Metadata = {
+  title: "مكتبة الأيقونات",
+  description: "مكتبة الأيقونات المفتوحة المستخدمة في Detective Academy — بتراخيص MIT وISC وApache مع نص كل ترخيص.",
+  openGraph: { title: "مكتبة الأيقونات · Detective Academy", description: "أيقونات مفتوحة المصدر بتراخيص MIT وISC وApache.", type: "website", siteName: "Detective Academy" },
+  twitter: { card: "summary", title: "مكتبة الأيقونات · Detective Academy" },
+  alternates: { canonical: "/icons" },
+};
 export const dynamic = "force-dynamic";
 
 export default function Icons() {

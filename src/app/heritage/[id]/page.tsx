@@ -9,8 +9,17 @@ import { RIGHTS_LABEL, dirFor, excerptsFor, loadHeritage, safeUrl, showable } fr
 export const dynamicParams = false;
 export function generateStaticParams() { return loadHeritage().texts.map((t) => ({ id: t.id })); }
 export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
-  const { id } = await params; const t = loadHeritage().texts.find((x) => x.id === id);
-  return { title: t ? `${t.title_ar} · مكتبة التراث` : "مكتبة التراث" };
+  const { id } = await params;
+  const t = loadHeritage().texts.find((x) => x.id === id);
+  if (!t) return { title: "مكتبة التراث" };
+  const desc = `نص تراثي من «${t.title_ar}» (${t.author_ar}) — ${t.era_ar}. مرجع بصري ومقاطع موجّهة في مكتبة التراث الاستقصائي.`;
+  return {
+    title: t.title_ar,
+    description: desc,
+    openGraph: { title: `${t.title_ar} · مكتبة التراث`, description: desc, type: "article", siteName: "Detective Academy" },
+    twitter: { card: "summary", title: `${t.title_ar} · مكتبة التراث` },
+    alternates: { canonical: `/heritage/${t.id}` },
+  };
 }
 
 export default async function HeritageText({ params }: { params: Promise<{ id: string }> }) {
