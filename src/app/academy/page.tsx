@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { AcademyProgressOverlay } from "@/components/academy/AcademyProgressOverlay";
+import { AcademyProgressStrip } from "@/components/academy/AcademyProgressStrip";
 import { loadTracks } from "@/engine/tracks";
 import type { Track, Lesson } from "@/engine/tracks";
 import { Badge } from "@/components/ui/badge";
@@ -35,6 +36,9 @@ export default function Academy() {
           </div>
         </div>
       </header>
+
+      {/* ── Overall progress strip ────────────────────────────── */}
+      <AcademyProgressStrip total={totalLessons} />
 
       {/* ── Educators note ─────────────────────────────────────── */}
       <div className="academy-educators-note">

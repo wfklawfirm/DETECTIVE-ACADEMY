@@ -10,19 +10,29 @@ import { useEffect, useState } from "react";
 export function AcademyProgressOverlay({
   lessonIds,
   trackMap,
+  onStats,
 }: {
   /** All lesson ids in display order (used to find the first undone) */
   lessonIds: string[];
   /** Map from track id → list of lesson ids in that track */
   trackMap?: Record<string, string[]>;
+  /** Called once we know how many lessons are done */
+  onStats?: (done: number, total: number) => void;
 }) {
   const [done, setDone] = useState<Set<string>>(new Set());
 
   useEffect(() => {
     fetch("/api/academy/progress")
       .then((r) => r.ok ? r.json() : null)
-      .then((d) => { if (d?.done) setDone(new Set<string>(d.done)); })
+      .then((d) => {
+        if (d?.done) {
+          const s = new Set<string>(d.done);
+          setDone(s);
+          onStats?.(s.size, lessonIds.length);
+        }
+      })
       .catch(() => {});
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // Per-track progress injection
