@@ -928,6 +928,11 @@ strong        { font-weight: 700; }
   background: var(--surface-muted);
   color: var(--foreground-secondary);
   border: 1px solid var(--border);
+  max-inline-size: 100%;
+}
+/* Long badge text (e.g. evidence-strength notes) must wrap on narrow screens instead of forcing horizontal scroll. */
+@media (max-width: 520px) {
+  .badge { white-space: normal; text-align: start; line-height: 1.35; }
 }
 
 .badge-brand  { background: var(--accent-tint);    color: var(--accent);    border-color: rgba(85, 198, 212, 0.3); }

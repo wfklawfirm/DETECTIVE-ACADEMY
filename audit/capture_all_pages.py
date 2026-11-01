@@ -136,6 +136,7 @@ def main():
     ap.add_argument("--viewports", default="desktop,mobile", help="comma-separated: desktop,tablet,mobile,small-mobile")
     ap.add_argument("--full-height-limit", type=int, default=16000)
     ap.add_argument("--page-timeout", type=int, default=25000)
+    ap.add_argument("--age", default="", help="pre-set the athar_age cookie (16-17 or 18+) to skip the age gate")
     ap.add_argument("--no-follow", action="store_true", help="do not enqueue links discovered on pages")
     ap.add_argument("--no-seeds", action="store_true", help="use only --routes-file")
     args = ap.parse_args()
@@ -168,6 +169,8 @@ def main():
             print(f"[{idx + 1}/{args.max_pages}] {url}", flush=True)
             for vp in widths:
                 context = browser.new_context(viewport=VIEWPORTS[vp], device_scale_factor=1, locale="ar-LB", color_scheme="light")
+                if args.age:
+                    context.add_cookies([{"name": "athar_age", "value": args.age, "url": base}])
                 page = context.new_page()
                 page.on("pageerror", lambda error, r=row: r["console_errors"].append(str(error)[:300]))
                 try:
