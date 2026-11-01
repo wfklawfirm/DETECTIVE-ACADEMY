@@ -122,6 +122,7 @@ test("theme: toggle in the menu sheet switches data-theme and persists across re
 
 test("menu: large text and reduce-motion toggles set root attributes", async ({ page }) => {
   await page.goto("/"); await passGate(page);
+  test.skip(!(await page.getByRole("button", { name: "القائمة" }).isVisible()), "desktop layout has no menu button (sidebar instead)");
   await page.getByRole("button", { name: "القائمة" }).click();
   await page.getByRole("switch", { name: "نص أكبر" }).click();
   await page.getByRole("switch", { name: "تقليل الحركة" }).click();
@@ -135,6 +136,7 @@ test("menu: large text and reduce-motion toggles set root attributes", async ({ 
 
 test("menu sheet: opens, traps focus, closes on Escape and restores focus; holds nav, footer links and sound toggle", async ({ page }) => {
   await page.goto("/home"); await passGate(page);
+  test.skip(!(await page.getByRole("button", { name: "القائمة" }).isVisible()), "desktop layout has no menu button (sidebar instead)");
   const opener = page.getByRole("button", { name: "القائمة" });
   await opener.click();
   const dlg = page.getByRole("dialog", { name: "القائمة" });
@@ -149,6 +151,7 @@ test("menu sheet: opens, traps focus, closes on Escape and restores focus; holds
 });
 
 test("bottom nav: five destinations on top-level screens, navigates, hidden on landing, /start and /play", async ({ page }) => {
+  test.skip(test.info().project.name === "desktop", "bottom nav is the mobile layout; desktop uses the sidebar");
   await page.goto("/"); await passGate(page);
   await expect(page.getByRole("navigation", { name: "التنقل الرئيسي" })).toBeHidden();
   await page.goto("/home");

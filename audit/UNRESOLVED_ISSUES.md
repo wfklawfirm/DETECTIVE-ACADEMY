@@ -17,5 +17,5 @@
 - Cold start is 3.1-4.3 s, not instant. Remaining cost is the draft comparison query plus function start; a stored content hash column would remove the comparison.
 - Raw screenshots (about 160 MB) are not committed; only measurements, the index, findings and a few comparison images are.
 
-## E2E failures present before this work (see QA_REPORT.md)
-- Axe violations on some pages (dark and light), 320px networkidle timeout, theme-toggle radio overlay, light-theme contrast on the play "الملف" tab (mobile), stale studio heading test, desktop menu-sheet test assumption.
+## Status of earlier E2E failures
+Resolved in code or tests; see QA_REPORT.md. Remaining gap: no desktop E2E for sidebar navigation.
