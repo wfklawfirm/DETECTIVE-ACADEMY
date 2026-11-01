@@ -1,11 +1,23 @@
 "use client";
-import type { ReactNode } from "react";
+import { useEffect, useRef, type ReactNode } from "react";
 import type { Lab } from "@/engine/labs";
 import { Button } from "../ui/button";
 import { Card } from "../ui/card";
 
-/** Closing card shared by every lab kind: the score line, the transfer question, the explicit limit ("what this cannot prove") and a retry. */
+/** Closing card shared by every lab kind: the score line, the transfer question, the explicit limit ("what this cannot prove") and a retry.
+ *  Also saves lab completion to the server once per session. */
 export function LabEnd({ lab, summary, onRetry }: { lab: Lab; summary: ReactNode; onRetry: () => void }) {
+  const saved = useRef(false);
+  useEffect(() => {
+    if (saved.current) return;
+    saved.current = true;
+    fetch("/api/labs/progress", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ lab_id: lab.id }),
+    }).catch(() => {/* best-effort; no UI feedback needed */});
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   return (
     <Card as="section" aria-live="polite" aria-label="خلاصة المختبر">
       <p>{summary} الغرض هنا فهم الفكرة، والنتيجة لا تُحفظ ولا تدخل في ملفك.</p>

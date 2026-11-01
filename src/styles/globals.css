@@ -4731,3 +4731,44 @@ mark.search-hl {
   border-radius: 2px;
   padding: 0 1px;
 }
+
+/* ── LABS FILTER CONTROLS ── */
+.labs-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-block-end: 1.25rem;
+}
+.labs-filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+}
+.labs-filter-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  min-width: 3.5rem;
+}
+.filter-btn {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: 0.4rem;
+  color: var(--text-secondary);
+  font-size: 0.78rem;
+  padding: 0.25rem 0.6rem;
+  cursor: pointer;
+  font-family: inherit;
+  transition: border-color 0.15s, color 0.15s, background 0.15s;
+}
+.filter-btn:hover { border-color: var(--accent-amber); color: var(--text-primary); }
+.filter-btn--active {
+  background: color-mix(in srgb, var(--accent-amber) 18%, transparent);
+  border-color: var(--accent-amber);
+  color: var(--text-primary);
+  font-weight: 600;
+}
+.labs-result-count { margin-block-start: 0.25rem; }
+/* ── LAB DONE CHIP — hidden by default, shown via CSS injection from LabProgressOverlay ── */
+.lab-done-chip { display: none; }

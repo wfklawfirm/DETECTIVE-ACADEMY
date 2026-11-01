@@ -108,12 +108,15 @@ export default function Home() {
   const [riddle, setRiddle] = useState<Riddle | null | undefined>(undefined);
   const [lessonsDone, setLessonsDone] = useState(0);
   const [nextLesson, setNextLesson] = useState<{ id: string; title_ar: string; track_id: string; track_title_ar: string } | null | undefined>(undefined);
+  const [labsDone, setLabsDone] = useState(0);
 
   useEffect(() => {
     fetch("/api/academy/progress").then((r) => r.ok ? r.json() : null)
       .then((p) => { if (p?.done) setLessonsDone((p.done as string[]).length); }).catch(() => {});
     fetch("/api/academy/next").then((r) => r.ok ? r.json() : null)
       .then((p) => setNextLesson(p?.lesson ?? null)).catch(() => setNextLesson(null));
+    fetch("/api/labs/progress").then((r) => r.ok ? r.json() : null)
+      .then((p) => { if (p?.done) setLabsDone((p.done as string[]).length); }).catch(() => {});
   }, []);
 
   useEffect(() => {
@@ -192,6 +195,15 @@ export default function Home() {
                   <div className="home-hero-stat">
                     <span className="home-stat-value">{lessonsDone}</span>
                     <span className="home-stat-label">درس ✓</span>
+                  </div>
+                </>
+              )}
+              {labsDone > 0 && (
+                <>
+                  <div className="home-hero-stat-sep" />
+                  <div className="home-hero-stat">
+                    <span className="home-stat-value">{labsDone}</span>
+                    <span className="home-stat-label">مختبر ✓</span>
                   </div>
                 </>
               )}
