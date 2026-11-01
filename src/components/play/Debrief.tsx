@@ -11,6 +11,7 @@ import { ProgressBar, ProgressRing } from "../ui/progress";
 import type { Resp } from "./usePlay";
 
 interface LinkedLesson { id: string; title_ar: string; track_id: string; track_title_ar: string; minutes: number }
+interface LinkedLab { id: string; title_ar: string; skill_ar: string; minutes: number; kind: string }
 
 export function Debrief({ r, busy, send }: { r: Resp; busy: boolean; send: (x: Record<string, unknown>) => Promise<unknown> }) {
   const v = r.view; const a = r.assessment; const d = v.debrief;
@@ -18,6 +19,7 @@ export function Debrief({ r, busy, send }: { r: Resp; busy: boolean; send: (x: R
   const [picked, setPicked] = useState<string[]>([]);
   const [ft, setFt] = useState("");
   const [linkedLessons, setLinkedLessons] = useState<LinkedLesson[]>([]);
+  const [linkedLabs, setLinkedLabs] = useState<LinkedLab[]>([]);
   const [doneLessons, setDoneLessons] = useState<Set<string>>(new Set());
 
   useEffect(() => {
@@ -25,7 +27,10 @@ export function Debrief({ r, busy, send }: { r: Resp; busy: boolean; send: (x: R
     if (!caseId) return;
     fetch(`/api/cases/${caseId}/lessons`)
       .then((r) => r.ok ? r.json() : null)
-      .then((d) => { if (d?.lessons) setLinkedLessons(d.lessons as LinkedLesson[]); })
+      .then((d) => {
+        if (d?.lessons) setLinkedLessons(d.lessons as LinkedLesson[]);
+        if (d?.labs) setLinkedLabs(d.labs as LinkedLab[]);
+      })
       .catch(() => {});
     fetch("/api/academy/progress")
       .then((r) => r.ok ? r.json() : null)
@@ -112,6 +117,24 @@ export function Debrief({ r, busy, send }: { r: Resp; busy: boolean; send: (x: R
                 </li>
               );
             })}
+          </ul>
+        </Card>
+      )}
+      {linkedLabs.length > 0 && (
+        <Card as="section" aria-labelledby="debrief-labs-h">
+          <h2 id="debrief-labs-h" className="text-section-title">تدرّب في مختبر</h2>
+          <p className="small dim-2">مختبرات قصيرة تعزّز مهارات هذه القضية.</p>
+          <ul className="case-linked-lessons-list" style={{ marginBlockStart: "0.6rem" }}>
+            {linkedLabs.map((l) => (
+              <li key={l.id}>
+                <Link href={`/labs/${l.id}`} className="case-linked-lesson-row">
+                  <Badge className="case-linked-lesson-id">{l.kind}</Badge>
+                  <span className="case-linked-lesson-title">{l.title_ar}</span>
+                  <span className="case-linked-lesson-meta small dim">{l.skill_ar} · {l.minutes} د</span>
+                  <span className="case-linked-lesson-chev" aria-hidden>←</span>
+                </Link>
+              </li>
+            ))}
           </ul>
         </Card>
       )}
