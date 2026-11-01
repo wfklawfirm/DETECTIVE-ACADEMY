@@ -101,12 +101,48 @@ export async function getPlayable(caseId: string): Promise<LoadedCase | null> {
   return any ? parseRow(any, true) : null;
 }
 
+interface VersionMeta { case_id: string; version: string; content_hash: string; status: string }
+type VersionRow = VersionMeta & { core_json: string; ui_json: string; scoring_json: string };
+
+/**
+ * Batch version of getPlayable: resolves many cases in TWO round trips instead of one per case.
+ * (1) a tiny metadata query picks the version per case using the same rules as getPlayable
+ *     (latest published wins; otherwise latest non-retired, only when preview is enabled);
+ * (2) JSON blobs are fetched, in one query, only for versions not already in the process cache.
+ * A warm worker therefore needs a single light query. Pass no ids to resolve every case.
+ */
+export async function getPlayableMany(caseIds?: string[]): Promise<Map<string, LoadedCase>> {
+  const out = new Map<string, LoadedCase>();
+  if (caseIds && caseIds.length === 0) return out;
+  const where = caseIds ? ` AND case_id IN (${caseIds.map(() => "?").join(",")})` : "";
+  const metas = await q<VersionMeta>(
+    `SELECT case_id, version, content_hash, status FROM case_versions WHERE status != 'retired'${where} ORDER BY created_at DESC`, caseIds ?? []);
+  const chosen = new Map<string, VersionMeta & { preview: boolean }>();
+  for (const m of metas) if (m.status === "published" && !chosen.has(m.case_id)) chosen.set(m.case_id, { ...m, preview: false });
+  if (env.allowPreview) for (const m of metas) if (!chosen.has(m.case_id)) chosen.set(m.case_id, { ...m, preview: true });
+
+  const keyOf = (m: VersionMeta & { preview: boolean }) => `${m.content_hash}:${m.status}:${m.preview}`;
+  const missing = [...chosen.values()].filter((m) => !cache().has(keyOf(m)));
+  const fetched = new Map<string, VersionRow>();
+  if (missing.length) {
+    const rows = await q<VersionRow>(
+      `SELECT case_id, version, content_hash, status, core_json, ui_json, scoring_json FROM case_versions WHERE (case_id || '@' || version) IN (${missing.map(() => "?").join(",")})`,
+      missing.map((m) => `${m.case_id}@${m.version}`));
+    for (const r of rows) fetched.set(`${r.case_id}@${r.version}`, r);
+  }
+  for (const m of chosen.values()) {
+    const hit = cache().get(keyOf(m));
+    if (hit) { out.set(m.case_id, hit); continue; }
+    const row = fetched.get(`${m.case_id}@${m.version}`);
+    if (row) out.set(m.case_id, parseRow(row, m.preview));
+  }
+  return out;
+}
+
 export async function listPlayable(ageBand: "13-15" | "16-17" | "18+"): Promise<CaseCard[]> {
-  const ids = (await q<{ case_id: string }>("SELECT DISTINCT case_id FROM case_versions WHERE status != 'retired'")).map((r) => r.case_id);
+  const all = await getPlayableMany();
   const cards: CaseCard[] = [];
-  for (const id of ids) {
-    const c = await getPlayable(id);
-    if (!c) continue;
+  for (const c of all.values()) {
     if (!ageAllows(c.core.meta.age_band, ageBand)) continue;
     cards.push(card(c));
   }

@@ -1,7 +1,7 @@
 import { assess } from "../engine/assess";
 import type { PlayState } from "../engine/types";
 import type { Actor } from "./auth";
-import { listPlayable, getPlayable, ageAllows, type CaseCard } from "./content";
+import { listPlayable, getPlayableMany, ageAllows, type CaseCard } from "./content";
 import { q } from "./db";
 import { verifyToken } from "./crypto";
 import koNames from "../../content/knowledge/ko_names.json";
@@ -31,8 +31,9 @@ export async function progressFor(actor: Actor, tokens: Record<string, string> |
   const cards = await listPlayable(band);
   const states = await statesFor(actor, tokens);
   const cases: CaseProgress[] = [];
+  const loaded = await getPlayableMany([...states.keys()]);
   for (const [caseId, st] of states) {
-    const lc = await getPlayable(caseId);
+    const lc = loaded.get(caseId);
     if (!lc || !ageAllows(lc.core.meta.age_band, band)) continue;
     cases.push({
       case_id: caseId, title_ar: lc.ui.cover.title_ar, machine: st.machine,
@@ -51,9 +52,10 @@ export async function skillProfile(actor: Actor, tokens: Record<string, string> 
   const states = await statesFor(actor, tokens);
   const acc = new Map<string, { sum: number; n: number; cases: Set<string>; track: string | null }>();
   let submitted = 0;
+  const loaded = await getPlayableMany([...states].filter(([, st]) => st.submission).map(([id]) => id));
   for (const [caseId, st] of states) {
     if (!st.submission) continue;
-    const lc = await getPlayable(caseId);
+    const lc = loaded.get(caseId);
     if (!lc) continue;
     submitted++;
     const res = assess(lc.core, lc.ui, lc.scoring, st, st.submission);
