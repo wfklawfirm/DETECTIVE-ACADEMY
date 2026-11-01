@@ -109,6 +109,7 @@ export default function Home() {
   const [lessonsDone, setLessonsDone] = useState(0);
   const [nextLesson, setNextLesson] = useState<{ id: string; title_ar: string; track_id: string; track_title_ar: string } | null | undefined>(undefined);
   const [labsDone, setLabsDone] = useState(0);
+  const [nextLab, setNextLab] = useState<{ id: string; title_ar: string; skill_ar: string; minutes: number; kind: string } | null | undefined>(undefined);
 
   useEffect(() => {
     fetch("/api/academy/progress").then((r) => r.ok ? r.json() : null)
@@ -117,6 +118,8 @@ export default function Home() {
       .then((p) => setNextLesson(p?.lesson ?? null)).catch(() => setNextLesson(null));
     fetch("/api/labs/progress").then((r) => r.ok ? r.json() : null)
       .then((p) => { if (p?.done) setLabsDone((p.done as string[]).length); }).catch(() => {});
+    fetch("/api/labs/next").then((r) => r.ok ? r.json() : null)
+      .then((p) => setNextLab(p?.lab ?? null)).catch(() => setNextLab(null));
   }, []);
 
   useEffect(() => {
@@ -274,6 +277,29 @@ export default function Home() {
                     <h3 className="home-info-title">الأكاديمية</h3>
                     <p className="home-info-body small dim-2">٣٦ درساً في ٦ مسارات تحقيقية.</p>
                     <Link href="/academy" className="home-info-link">استكشف المسارات ←</Link>
+                  </>
+                )}
+              </div>
+            </div>
+
+            {/* Labs next card */}
+            <div className="home-info-card">
+              <span className="home-info-icon" aria-hidden>🔬</span>
+              <div>
+                <p className="home-info-label">مختبر</p>
+                {nextLab === undefined ? (
+                  <span className="skeleton skel-line" aria-hidden />
+                ) : nextLab ? (
+                  <>
+                    <h3 className="home-info-title">{nextLab.title_ar}</h3>
+                    <p className="home-info-body small dim-2">{nextLab.skill_ar} · {nextLab.minutes} د</p>
+                    <Link href={`/labs/${nextLab.id}`} className="home-info-link">ابدأ المختبر ←</Link>
+                  </>
+                ) : (
+                  <>
+                    <h3 className="home-info-title">المختبرات</h3>
+                    <p className="home-info-body small dim-2">٥٠ مختبراً تدريبياً قصيراً.</p>
+                    <Link href="/labs" className="home-info-link">استكشف المختبرات ←</Link>
                   </>
                 )}
               </div>
