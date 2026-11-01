@@ -7,6 +7,13 @@ const contentGlobs = readdirSync("./content")
   .filter((n) => n !== "research")
   .map((n) => (statSync(`./content/${n}`).isDirectory() ? `./content/${n}/**/*` : `./content/${n}`));
 
+// In development Next.js needs 'unsafe-eval' for HMR/fast-refresh.
+// In production it is not needed and is removed to tighten the CSP.
+const isDev = process.env.NODE_ENV !== "production";
+const scriptSrc = isDev
+  ? "'self' 'unsafe-inline' 'unsafe-eval'"
+  : "'self' 'unsafe-inline'";
+
 const securityHeaders = [
   { key: "X-Content-Type-Options", value: "nosniff" },
   { key: "X-Frame-Options", value: "DENY" },
@@ -14,8 +21,7 @@ const securityHeaders = [
   { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=()" },
   {
     key: "Content-Security-Policy",
-    value:
-      "default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; font-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'",
+    value: `default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src ${scriptSrc}; font-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'`,
   },
 ];
 
