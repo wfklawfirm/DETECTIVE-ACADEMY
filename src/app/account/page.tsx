@@ -7,6 +7,7 @@ import { ErrorState } from "@/components/ui/feedback";
 import { ChoiceGroup, Field, Toggle } from "@/components/ui/form";
 import { useToast } from "@/components/ui/toast";
 import { api, ApiError, setGentle } from "@/lib/client";
+import Link from "next/link";
 
 export default function Account() {
   const { me, refresh } = useMe();
@@ -194,6 +195,11 @@ export default function Account() {
           >
             {mode === "login" ? "ليس لدي حساب — أنشئ حساباً" : "لدي حساب — سجّل الدخول"}
           </Button>
+          {mode === "login" && (
+            <Link href="/forgot" className="link dim-2 text-center" style={{ fontSize: "0.85rem" }}>
+              نسيت كلمة المرور؟
+            </Link>
+          )}
         </div>
       </form>
     </>

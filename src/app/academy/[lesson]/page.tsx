@@ -3,6 +3,7 @@ import { loadTracks, lessonById } from "@/engine/tracks";
 import { Practice } from "@/components/Practice";
 import { LinkButton } from "@/components/ui/button";
 import { Card, CardTitle } from "@/components/ui/card";
+import { LessonProgressTracker } from "@/components/academy/LessonProgressTracker";
 
 export const dynamic = "force-dynamic";
 
@@ -16,6 +17,9 @@ export default async function Lesson({ params }: { params: Promise<{ lesson: str
   const next = track.lessons[idx + 1];
   return (
     <article className="stack-lg">
+      {/* Auto-mark lesson done for logged-in users */}
+      <LessonProgressTracker lessonId={l.id} />
+
       <header className="ref-hero academy-hero">
         <p className="kicker">المسار {track.id} · {track.title_ar} · {l.minutes} دقائق</p>
         <h1 className="text-page-title">{l.title_ar}</h1>

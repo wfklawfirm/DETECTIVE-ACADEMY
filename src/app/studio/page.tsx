@@ -43,7 +43,7 @@ export default function Studio() {
       <div className="grid-2">
       {vers.map((v) => (
         <Card as="section" key={v.case_id + v.version}>
-          <div className="row row-between"><h2 className="card-title mono">{v.case_id}@{v.version}</h2><Badge tone={v.status === "published" ? "positive" : "warning"}>{v.status}</Badge></div>
+          <div className="row row-between"><h2 className="card-title mono">{v.case_id}@{v.version}</h2><div className="row"><Badge tone={v.status === "published" ? "positive" : "warning"}>{v.status}</Badge>{role === "admin" && <a href={`/studio/editor/${v.case_id}`} className="btn btn-ghost btn-sm" style={{fontSize:"0.8rem"}}>✏️ تعديل</a>}</div></div>
           <p className="small">فحص الجودة الآلي: {v.qa_ok === null ? "—" : v.qa_ok ? <span className="ok">ناجح</span> : <span className="err">فاشل</span>}</p>
           <ul className="list list-flush">{Object.entries(v.gates).map(([r, st]) => (
             <li key={r} className="board-row">
