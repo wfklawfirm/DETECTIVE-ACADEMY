@@ -1,9 +1,10 @@
 import { getActorFromCookies } from "@/server/auth";
 import { TIER_LABEL, TIER_ORDER, TIER_TONE, gated, koLinks, loadMethods } from "@/engine/reference";
+import { labsByKo, loadLabs } from "@/engine/labs";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import { RefBrowser, type RefItem } from "@/components/reference/RefBrowser";
-import { KoLinkRow, MoreReference, SourcesBox } from "@/components/reference/parts";
+import { KoLinkRow, LabLinkRow, MoreReference, SourcesBox } from "@/components/reference/parts";
 
 export const metadata = { title: "طرق الفحص وحدودها" };
 export const dynamic = "force-dynamic";
@@ -13,6 +14,8 @@ export default async function Methods() {
   const f = loadMethods();
   const items = gated(f.items, a.ageBand);
   const hidden = f.items.length - items.length;
+  const koToLabs = labsByKo();
+  const labTitles = new Map(loadLabs().playable.map((l) => [l.id, l.title_ar]));
   const refs: RefItem[] = items.map((m) => ({
     id: m.id,
     text: [m.name_ar, m.name_en, m.hook_ar, m.discipline_ar, ...m.can_ar, ...m.cannot_ar, ...m.errors_ar].join(" "),
@@ -41,6 +44,7 @@ export default async function Methods() {
             <div><dt className="small dim">Teen suitability (library note)</dt><dd style={{ margin: 0 }}>{m.suitability_en}</dd></div>
           </dl>
           <KoLinkRow links={koLinks(m.ko_ids, a.ageBand)} />
+          <LabLinkRow labIds={m.ko_ids.flatMap((k) => koToLabs.get(k) ?? [])} labTitles={labTitles} />
           <SourcesBox ids={m.src_ids} />
         </details>
       </Card>

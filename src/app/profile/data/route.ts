@@ -2,7 +2,7 @@ import { z } from "zod";
 import { assess } from "@/engine/assess";
 import { estimateAll, nextStep, type Observation } from "@/engine/mastery";
 import { loadTracks } from "@/engine/tracks";
-import { loadLabs } from "@/engine/labs";
+import { labsByKo, loadLabs } from "@/engine/labs";
 import type { PlayState } from "@/engine/types";
 import { route } from "@/server/api";
 import { getActor } from "@/server/auth";
@@ -13,21 +13,6 @@ import { json, readJson } from "@/server/http";
 import koNames from "../../../../content/knowledge/ko_names.json";
 
 const Body = z.object({ tokens: z.record(z.string().max(64), z.string().max(180_000)).optional() });
-
-/** Build a Map<ko_id, labId[]> from labs ko_ids */
-let _labsByKo: Map<string, string[]> | null = null;
-function labsByKo(): Map<string, string[]> {
-  if (_labsByKo) return _labsByKo;
-  const map = new Map<string, string[]>();
-  for (const lab of loadLabs().playable) {
-    for (const ko of lab.ko_ids) {
-      if (!map.has(ko)) map.set(ko, []);
-      map.get(ko)!.push(lab.id);
-    }
-  }
-  _labsByKo = map;
-  return map;
-}
 
 /** Mastery is derived on every request from the player's own submitted cases. Nothing is stored and nothing is fabricated. */
 export const POST = route(async (req) => {

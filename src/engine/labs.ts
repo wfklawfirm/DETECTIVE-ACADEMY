@@ -119,3 +119,19 @@ export function loadLabs(root = process.cwd()) {
   for (const l of f.playable) if (!ids.has(l.id)) throw new Error(`playable lab ${l.id} missing from catalogue`);
   return f;
 }
+
+/** Singleton: Map<ko_id, labId[]> built once from loadLabs().playable. */
+let _labsByKo: Map<string, string[]> | null = null;
+export function labsByKo(): Map<string, string[]> {
+  if (_labsByKo) return _labsByKo;
+  const map = new Map<string, string[]>();
+  for (const lab of loadLabs().playable) {
+    for (const ko of lab.ko_ids) {
+      const arr = map.get(ko) ?? [];
+      arr.push(lab.id);
+      map.set(ko, arr);
+    }
+  }
+  _labsByKo = map;
+  return map;
+}

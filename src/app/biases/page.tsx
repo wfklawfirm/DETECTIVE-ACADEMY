@@ -1,9 +1,10 @@
 import { getActorFromCookies } from "@/server/auth";
 import { koLinks, loadBiases } from "@/engine/reference";
+import { labsByKo, loadLabs } from "@/engine/labs";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import { RefBrowser, type RefItem } from "@/components/reference/RefBrowser";
-import { KoLinkRow, MoreReference, Paras, Section, SourcesBox } from "@/components/reference/parts";
+import { KoLinkRow, LabLinkRow, MoreReference, Paras, Section, SourcesBox } from "@/components/reference/parts";
 
 export const metadata = { title: "فخاخ العقل" };
 export const dynamic = "force-dynamic";
@@ -11,6 +12,8 @@ export const dynamic = "force-dynamic";
 export default async function Biases() {
   const a = await getActorFromCookies();
   const f = loadBiases();
+  const koToLabs = labsByKo();
+  const labTitles = new Map(loadLabs().playable.map((l) => [l.id, l.title_ar]));
   const refs: RefItem[] = f.items.map((b) => ({
     id: b.id,
     text: [b.name_ar, b.name_en, b.example_ar, b.research_ar].join(" "),
@@ -31,6 +34,7 @@ export default async function Biases() {
             {b.research_ar && <><p className="text-label">ما يقوله البحث</p><Paras text={b.research_ar} className="small" /></>}
             {b.debrief_ar && <><p className="text-label">كيف نتدرّب عليه</p><Paras text={b.debrief_ar} className="small" /></>}
             <KoLinkRow links={koLinks(b.ko_ids, a.ageBand)} />
+            <LabLinkRow labIds={b.ko_ids.flatMap((k) => koToLabs.get(k) ?? [])} labTitles={labTitles} />
             <SourcesBox ids={b.src_ids} />
           </div>
         </details>

@@ -58,6 +58,20 @@ export function SourcesBox({ ids, compact }: { ids: string[]; compact?: boolean 
   );
 }
 
+/** Linked labs pill row — mirrors KoLinkRow but links to labs. */
+export function LabLinkRow({ labIds, labTitles }: { labIds: string[]; labTitles: Map<string, string> }) {
+  const visible = labIds.filter((id) => labTitles.has(id));
+  if (!visible.length) return null;
+  return (
+    <div className="stack-sm">
+      <span className="text-label dim">🔬 تدرّب في مختبر</span>
+      <ul className="row" style={{ listStyle: "none", padding: 0, margin: 0, gap: "0.4rem" }}>
+        {visible.map((id) => <li key={id}><Link className="badge badge-outline" href={`/labs/${id}`}>{labTitles.get(id)}</Link></li>)}
+      </ul>
+    </div>
+  );
+}
+
 export function KoLinkRow({ links }: { links: { id: string; name: string }[] }) {
   if (!links.length) return null;
   return (

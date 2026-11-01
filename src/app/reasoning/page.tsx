@@ -1,8 +1,9 @@
 import { getActorFromCookies } from "@/server/auth";
 import { koLinks, loadReasoning } from "@/engine/reference";
+import { labsByKo, loadLabs } from "@/engine/labs";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardTitle } from "@/components/ui/card";
-import { KoLinkRow, MoreReference, Paras, Section, SourcesBox } from "@/components/reference/parts";
+import { KoLinkRow, LabLinkRow, MoreReference, Paras, Section, SourcesBox } from "@/components/reference/parts";
 
 export const metadata = { title: "أخطاء الاستدلال وقواعد الدليل" };
 export const dynamic = "force-dynamic";
@@ -11,6 +12,8 @@ export default async function Reasoning() {
   const a = await getActorFromCookies();
   const r = loadReasoning();
   const areas = [...new Set(r.skills.map((s) => s.area_ar))];
+  const koToLabs = labsByKo();
+  const labTitles = new Map(loadLabs().playable.map((l) => [l.id, l.title_ar]));
   return (
     <>
       <div className="ref-hero">
@@ -39,6 +42,7 @@ export default async function Reasoning() {
                 {e.limits_ar && <p className="small dim-2"><b>حدود الدليل: </b>{e.limits_ar}</p>}
                 <p className="paper" style={{ padding: "0.6rem 0.9rem" }}><b>جرّب: </b>{e.practice_ar}</p>
                 <KoLinkRow links={koLinks(e.ko_ids, a.ageBand)} />
+                <LabLinkRow labIds={e.ko_ids.flatMap((k) => koToLabs.get(k) ?? [])} labTitles={labTitles} />
                 <SourcesBox ids={e.src_ids} />
               </Card>
             </li>
