@@ -4,3 +4,4 @@ before_age_s*/
 after_*/
 *.log
 before_all.json
+!after_extra/
