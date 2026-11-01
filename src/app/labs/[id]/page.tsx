@@ -10,6 +10,22 @@ import { Card, CardTitle, RowLink } from "@/components/ui/card";
 import { LinkButton } from "@/components/ui/button";
 import { DIFFICULTY_LABEL } from "../labels";
 
+
+import type { Metadata } from "next";
+
+export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
+  const { id } = await params;
+  const lab = loadLabs().playable.find((l) => l.id === id);
+  if (!lab) return {};
+  return {
+    title: lab.title_ar,
+    description: lab.hook_ar?.slice(0, 160) ?? lab.intro_ar?.slice(0, 160) ?? undefined,
+    openGraph: { title: lab.title_ar, description: lab.hook_ar?.slice(0, 160) ?? undefined, type: "website", siteName: "Detective Academy" },
+    twitter: { card: "summary", title: lab.title_ar },
+    alternates: { canonical: `/labs/${lab.id}` },
+  };
+}
+
 export const dynamic = "force-dynamic";
 
 export default async function LabPage({ params }: { params: Promise<{ id: string }> }) {

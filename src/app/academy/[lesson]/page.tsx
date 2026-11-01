@@ -8,6 +8,24 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardTitle } from "@/components/ui/card";
 import { LessonProgressTracker } from "@/components/academy/LessonProgressTracker";
 
+
+import type { Metadata } from "next";
+
+export async function generateMetadata({ params }: { params: Promise<{ lesson: string }> }): Promise<Metadata> {
+  const { lesson } = await params;
+  const file = loadTracks();
+  const l = lessonById(file, lesson);
+  if (!l) return {};
+  const track = file.tracks.find((t) => t.lessons.some((x) => x.id === l.id));
+  return {
+    title: l.title_ar,
+    description: l.intro_ar?.slice(0, 160) ?? undefined,
+    openGraph: { title: l.title_ar, description: l.intro_ar?.slice(0, 160) ?? undefined, type: "article", siteName: "Detective Academy" },
+    twitter: { card: "summary", title: l.title_ar },
+    alternates: { canonical: `/academy/${l.id}` },
+  };
+}
+
 export const dynamic = "force-dynamic";
 
 export default async function Lesson({ params }: { params: Promise<{ lesson: string }> }) {

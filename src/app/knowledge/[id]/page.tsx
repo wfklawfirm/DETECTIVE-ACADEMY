@@ -7,6 +7,24 @@ import { forensicCardFor, loadForensicCards } from "@/engine/forensic-cards";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardTitle, RowLink } from "@/components/ui/card";
 
+
+import type { Metadata } from "next";
+
+export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
+  const { id } = await params;
+  const { kos } = loadKnowledge();
+  const k = kos.find((x) => x.ko_id === id);
+  if (!k) return {};
+  const desc = k.summary_ar?.slice(0, 160) ?? undefined;
+  return {
+    title: k.name_ar,
+    description: desc,
+    openGraph: { title: k.name_ar, description: desc, type: "article", siteName: "Detective Academy" },
+    twitter: { card: "summary", title: k.name_ar },
+    alternates: { canonical: `/knowledge/${k.ko_id}` },
+  };
+}
+
 export const dynamic = "force-dynamic";
 const EN_KEYS = ["what_it_can_show", "what_it_cannot_show", "error_sources", "tv_myth", "safe_simulation", "reliability_note", "discipline", "operational_definition", "common_errors", "evidence_strength", "transfer_notes", "plot_type", "mystery_principle", "fairness_criterion", "athar_use", "strengths", "weaknesses"];
 const EN_LABEL: Record<string, string> = {
