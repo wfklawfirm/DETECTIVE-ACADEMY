@@ -142,6 +142,30 @@ export default function CaseIntro({ params }: { params: Promise<{ id: string }> 
         <p>القصة والأشخاص خياليون. الأدلة مصمَّمة لتدريب مهارات التحقق، وليست توثيقاً لوقائع حقيقية. ما تقرّره هنا لا يُقاس عليه في الواقع دون مختصين.</p>
       </div>
 
+      {/* ── Linked academy lessons ──────────────────────────────── */}
+      {linkedLessons.length > 0 && (
+        <section className="case-linked-lessons" aria-labelledby="case-linked-h">
+          <h2 id="case-linked-h" className="case-linked-lessons-title">دروس الأكاديمية المرتبطة</h2>
+          <p className="small dim-2">قضية هذا الملف تدرّب مهاراتٍ يشرحها الدرس التالي:</p>
+          <ul className="case-linked-lessons-list">
+            {linkedLessons.map((l) => {
+              const done = doneLessons.has(l.id);
+              return (
+                <li key={l.id}>
+                  <Link href={`/academy/${l.id}`} className="case-linked-lesson-row">
+                    <span className="case-linked-lesson-id">{l.id}</span>
+                    <span className="case-linked-lesson-title">{l.title_ar}</span>
+                    <span className="case-linked-lesson-meta small dim">{l.track_title_ar} · {l.minutes} د</span>
+                    {done && <Badge tone="success" className="case-linked-lesson-done">✓</Badge>}
+                    <span className="case-linked-lesson-chev" aria-hidden>←</span>
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        </section>
+      )}
+
       {/* ── CTA ─────────────────────────────────────────────────── */}
       <div className="case-detail-actions">
         <LinkButton variant="primary" size="lg" block href={`/play/${id}`}>
