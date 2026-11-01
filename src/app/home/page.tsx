@@ -106,6 +106,12 @@ export default function Home() {
   const [d, setD] = useState<{ cards: Card[]; cases: Prog[] } | null>(null);
   const [failed, setFailed] = useState(false);
   const [riddle, setRiddle] = useState<Riddle | null | undefined>(undefined);
+  const [lessonsDone, setLessonsDone] = useState(0);
+
+  useEffect(() => {
+    fetch("/api/academy/progress").then((r) => r.ok ? r.json() : null)
+      .then((p) => { if (p?.done) setLessonsDone((p.done as string[]).length); }).catch(() => {});
+  }, []);
 
   useEffect(() => {
     api<{ cards: Card[]; cases: Prog[] }>("/api/progress", { tokens: allTokens() })
@@ -177,6 +183,15 @@ export default function Home() {
                 <span className="home-stat-value">{next.length}</span>
                 <span className="home-stat-label">جديدة</span>
               </div>
+              {lessonsDone > 0 && (
+                <>
+                  <div className="home-hero-stat-sep" />
+                  <div className="home-hero-stat">
+                    <span className="home-stat-value">{lessonsDone}</span>
+                    <span className="home-stat-label">درس ✓</span>
+                  </div>
+                </>
+              )}
             </div>
             <ProgressBar value={done} max={total} label="نسبة القضايا المنجزة" />
           </div>
