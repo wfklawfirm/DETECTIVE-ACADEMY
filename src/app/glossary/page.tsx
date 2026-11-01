@@ -1,10 +1,11 @@
 import Link from "next/link";
 import { getActorFromCookies } from "@/server/auth";
 import { GLOSSARY_STATUS_LABEL, GLOSSARY_STATUS_TONE, LEVEL_LABEL, glossaryFor, koLinks, loadGlossary, sortLetters } from "@/engine/reference";
+import { labsByKo, loadLabs } from "@/engine/labs";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import { RefBrowser, type RefItem } from "@/components/reference/RefBrowser";
-import { KoLinkRow, MoreReference, SourcesBox } from "@/components/reference/parts";
+import { KoLinkRow, LabLinkRow, MoreReference, SourcesBox } from "@/components/reference/parts";
 
 export const metadata = { title: "المسرد الجنائي" };
 export const dynamic = "force-dynamic";
@@ -16,6 +17,8 @@ export default async function Glossary() {
   const items = glossaryFor(all, a.ageBand);
   const hidden = all.length - items.length;
   const catLabel = new Map(g.categories.map((c) => [c.id, c.label_ar]));
+  const koToLabs = labsByKo();
+  const labTitles = new Map(loadLabs().playable.map((l) => [l.id, l.title_ar]));
   const letters = sortLetters(items.map((i) => i.letter));
   const refs: RefItem[] = items.map((t) => ({
     id: t.id,
@@ -40,6 +43,7 @@ export default async function Glossary() {
             <div className="stack-sm">
               {t.alts_ar.length > 0 && <p className="small"><b>صيغ أخرى مستعملة: </b>{t.alts_ar.join("، ")}</p>}
               <KoLinkRow links={koLinks(t.ko_ids, a.ageBand)} />
+              <LabLinkRow labIds={t.ko_ids.flatMap((k) => koToLabs.get(k) ?? [])} labTitles={labTitles} />
               <SourcesBox ids={t.src_ids} compact />
             </div>
           </details>
