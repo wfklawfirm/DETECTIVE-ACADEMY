@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getActorFromCookies } from "@/server/auth";
 import { loadBooks, visibleBooks, visibleConcepts, INCLUSION_LABEL, REASON_LABEL } from "@/engine/books";
@@ -7,6 +8,22 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardTitle } from "@/components/ui/card";
 
 export const dynamic = "force-dynamic";
+
+export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
+  const { id } = await params;
+  const a = await getActorFromCookies();
+  const { books } = loadBooks();
+  const b = visibleBooks(books, a.ageBand).find((x) => x.id === id);
+  if (!b) return {};
+  const authors = b.authors_ar.join("، ");
+  return {
+    title: b.title_ar,
+    description: `${b.hook_ar} — مفاهيم تحقيقية مستخلصة من كتاب «${b.title_ar}» (${authors}).`,
+    openGraph: { title: `${b.title_ar} · Detective Academy`, description: b.hook_ar, type: "article", siteName: "Detective Academy" },
+    twitter: { card: "summary", title: `${b.title_ar} · Detective Academy` },
+    alternates: { canonical: `/books/${id}` },
+  };
+}
 
 export default async function BookPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;

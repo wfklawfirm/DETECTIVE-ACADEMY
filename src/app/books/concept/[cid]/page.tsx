@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getActorFromCookies } from "@/server/auth";
@@ -10,6 +11,22 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardTitle, RowLink } from "@/components/ui/card";
 
 export const dynamic = "force-dynamic";
+
+export async function generateMetadata({ params }: { params: Promise<{ cid: string }> }): Promise<Metadata> {
+  const { cid } = await params;
+  const a = await getActorFromCookies();
+  const { books, concepts } = loadBooks();
+  const c = visibleConcepts(concepts, books, a.ageBand).find((x) => x.id === cid);
+  if (!c) return {};
+  const book = books.find((b) => b.id === c.book_id)!;
+  return {
+    title: c.title_ar,
+    description: `${c.summary_ar.slice(0, 140)} — مفهوم تحقيقي مستخلص من «${book.title_ar}».`,
+    openGraph: { title: `${c.title_ar} · Detective Academy`, description: c.summary_ar.slice(0, 200), type: "article", siteName: "Detective Academy" },
+    twitter: { card: "summary", title: `${c.title_ar} · Detective Academy` },
+    alternates: { canonical: `/books/concept/${cid}` },
+  };
+}
 
 export default async function ConceptPage({ params }: { params: Promise<{ cid: string }> }) {
   const { cid } = await params;
