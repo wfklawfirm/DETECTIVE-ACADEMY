@@ -86,7 +86,7 @@ export const CountsFile = z.object({ version: str, counts: z.record(z.string(), 
 const g = globalThis as typeof globalThis & { __atharRef?: Map<string, unknown> };
 function load<T>(file: string, schema: z.ZodType<T>, root = process.cwd()): T {
   const cache = (g.__atharRef ??= new Map());
-  const key = join(root, file);
+  const key = `${root}::${file}`; // plain string: join(root, file) made the bundler trace the whole project
   if (cache.has(key)) return cache.get(key) as T;
   const v = schema.parse(JSON.parse(readFileSync(join(root, "content/reference", file), "utf8")));
   cache.set(key, v);
@@ -133,11 +133,11 @@ export interface CaseUse { case_id: string; title_ar: string; age_band: string }
  */
 export function archetypeCaseUse(arcs: ArchetypeEntry[], dir = join(process.cwd(), "content/cases")): Map<string, CaseUse[]> {
   const out = new Map<string, CaseUse[]>(arcs.map((a) => [a.id, []]));
-  if (!existsSync(dir)) return out;
-  for (const f of readdirSync(dir).sort()) {
+  if (!existsSync(/*turbopackIgnore: true*/ dir)) return out;
+  for (const f of readdirSync(/*turbopackIgnore: true*/ dir).sort()) {
     if (!f.endsWith(".json") || f.endsWith(".ui.json") || f.endsWith(".scoring.json")) continue;
     let meta: Record<string, unknown> | undefined, case_id = f.replace(/\.json$/, "");
-    try { const d = JSON.parse(readFileSync(join(dir, f), "utf8")) as { case_id?: string; meta?: Record<string, unknown> }; meta = d.meta; case_id = d.case_id ?? case_id; } catch { continue; }
+    try { const d = JSON.parse(readFileSync(join(/*turbopackIgnore: true*/ dir, f), "utf8")) as { case_id?: string; meta?: Record<string, unknown> }; meta = d.meta; case_id = d.case_id ?? case_id; } catch { continue; }
     if (!meta) continue;
     const refs = new Set(Array.isArray(meta.knowledge_object_refs) ? (meta.knowledge_object_refs as string[]) : []);
     const declared = new Set<string>([...(Array.isArray(meta.tags) ? (meta.tags as string[]) : []), ...(Array.isArray(meta.archetype_ids) ? (meta.archetype_ids as string[]) : [])]);

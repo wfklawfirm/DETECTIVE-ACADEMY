@@ -46,7 +46,7 @@ export function readFileTriplet(dir: string, id: string): { core: unknown; ui: u
 }
 
 export function listFileCaseIds(dir = CASES_DIR): string[] {
-  return readdirSync(dir).filter((f) => f.endsWith(".json") && !f.endsWith(".ui.json") && !f.endsWith(".scoring.json")).map((f) => f.replace(/\.json$/, "")).sort();
+  return readdirSync(/*turbopackIgnore: true*/ dir).filter((f) => f.endsWith(".json") && !f.endsWith(".ui.json") && !f.endsWith(".scoring.json")).map((f) => f.replace(/\.json$/, "")).sort();
 }
 
 /** Import every file case into case_versions (idempotent). New versions arrive as drafts; nothing is auto-approved. */

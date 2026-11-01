@@ -38,10 +38,10 @@ export async function migrate(dir = "migrations"): Promise<string[]> {
   await c.execute("CREATE TABLE IF NOT EXISTS schema_migrations (version TEXT PRIMARY KEY, applied_at TEXT NOT NULL)");
   const done = new Set((await c.execute("SELECT version FROM schema_migrations")).rows.map((r) => String(r.version)));
   const applied: string[] = [];
-  for (const f of readdirSync(dir).filter((x) => x.endsWith(".sql")).sort()) {
+  for (const f of readdirSync(/*turbopackIgnore: true*/ dir).filter((x) => x.endsWith(".sql")).sort()) {
     const v = f.replace(/\.sql$/, "");
     if (done.has(v)) continue;
-    const sql = readFileSync(join(dir, f), "utf8");
+    const sql = readFileSync(join(/*turbopackIgnore: true*/ dir, f), "utf8");
     await c.executeMultiple(sql);
     await c.execute({ sql: "INSERT INTO schema_migrations(version, applied_at) VALUES (?, ?)", args: [v, new Date().toISOString()] });
     applied.push(v);
