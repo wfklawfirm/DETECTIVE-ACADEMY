@@ -28,6 +28,7 @@ const securityHeaders = [
 const nextConfig: NextConfig = {
   poweredByHeader: false,
   reactStrictMode: true,
+  compress: true,
   serverExternalPackages: ["@libsql/client"],
   // runtime reads of content and migrations must be bundled into the serverless output
   outputFileTracingIncludes: {
@@ -36,7 +37,14 @@ const nextConfig: NextConfig = {
     "/studio/library/[...path]": ["./content/research/**/*"],
   },
   async headers() {
-    return [{ source: "/:path*", headers: securityHeaders }];
+    return [
+      { source: "/:path*", headers: securityHeaders },
+      // Public content pages: CDN edge cache 60s, stale-while-revalidate 5m
+      {
+        source: "/(cases|labs|academy|knowledge|season|glossary|biases|methods|reasoning|rulebook|archetypes|atlas|skills|books|heritage|gallery|sounds|sources|credits|privacy|start|challenges)(.*)",
+        headers: [{ key: "Cache-Control", value: "public, s-maxage=60, stale-while-revalidate=300" }],
+      },
+    ];
   },
 };
 export default nextConfig;

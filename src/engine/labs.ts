@@ -113,11 +113,17 @@ export type LabsFile = z.infer<typeof LabsFileSchema>;
 export function loadKoNames(root = process.cwd()): Record<string, string> {
   return JSON.parse(readFileSync(join(root, "content/knowledge/ko_names.json"), "utf8")) as Record<string, string>;
 }
-export function loadLabs(root = process.cwd()) {
+const _g = globalThis as typeof globalThis & { __atharLabs?: ReturnType<typeof _loadLabs> };
+function _loadLabs(root = process.cwd()) {
   const f = LabsFileSchema.parse(JSON.parse(readFileSync(join(root, "content/labs/labs.json"), "utf8")));
   const ids = new Set(f.catalogue.map((c) => c.id));
   for (const l of f.playable) if (!ids.has(l.id)) throw new Error(`playable lab ${l.id} missing from catalogue`);
   return f;
+}
+export function loadLabs(root = process.cwd()) {
+  if (_g.__atharLabs) return _g.__atharLabs;
+  _g.__atharLabs = _loadLabs(root);
+  return _g.__atharLabs;
 }
 
 /** Singleton: Map<ko_id, labId[]> built once from loadLabs().playable. */

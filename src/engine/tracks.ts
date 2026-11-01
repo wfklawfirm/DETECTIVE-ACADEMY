@@ -51,9 +51,12 @@ export type TracksFile = z.infer<typeof TracksSchema>;
 export type Track = z.infer<typeof TrackSchema>;
 export type Lesson = z.infer<typeof LessonSchema>;
 
+const _gt = globalThis as typeof globalThis & { __atharTracks?: TracksFile };
 export function loadTracks(): TracksFile {
+  if (_gt.__atharTracks) return _gt.__atharTracks;
   const p = join(process.cwd(), "content", "tracks", "tracks.json");
-  return TracksSchema.parse(JSON.parse(readFileSync(p, "utf8")));
+  _gt.__atharTracks = TracksSchema.parse(JSON.parse(readFileSync(p, "utf8")));
+  return _gt.__atharTracks;
 }
 
 export function lessonById(file: TracksFile, id: string): Lesson | undefined {
