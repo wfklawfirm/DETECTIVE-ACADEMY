@@ -107,10 +107,13 @@ export default function Home() {
   const [failed, setFailed] = useState(false);
   const [riddle, setRiddle] = useState<Riddle | null | undefined>(undefined);
   const [lessonsDone, setLessonsDone] = useState(0);
+  const [nextLesson, setNextLesson] = useState<{ id: string; title_ar: string; track_id: string; track_title_ar: string } | null | undefined>(undefined);
 
   useEffect(() => {
     fetch("/api/academy/progress").then((r) => r.ok ? r.json() : null)
       .then((p) => { if (p?.done) setLessonsDone((p.done as string[]).length); }).catch(() => {});
+    fetch("/api/academy/next").then((r) => r.ok ? r.json() : null)
+      .then((p) => setNextLesson(p?.lesson ?? null)).catch(() => setNextLesson(null));
   }, []);
 
   useEffect(() => {
@@ -238,6 +241,29 @@ export default function Home() {
                   <p className="home-info-body small dim-2">لغز قصير من تأليفنا، جديد كل يوم.</p>
                 )}
                 <Link href="/challenges" className="home-info-link">جرّب اللغز ←</Link>
+              </div>
+            </div>
+
+            {/* Academy next-lesson card */}
+            <div className="home-info-card">
+              <span className="home-info-icon" aria-hidden>🎓</span>
+              <div>
+                <p className="home-info-label">أكاديمية</p>
+                {nextLesson === undefined ? (
+                  <span className="skeleton skel-line" aria-hidden />
+                ) : nextLesson ? (
+                  <>
+                    <h3 className="home-info-title">{nextLesson.title_ar}</h3>
+                    <p className="home-info-body small dim-2">المسار {nextLesson.track_id} · {nextLesson.track_title_ar}</p>
+                    <Link href={`/academy/${nextLesson.id}`} className="home-info-link">ابدأ الدرس ←</Link>
+                  </>
+                ) : (
+                  <>
+                    <h3 className="home-info-title">الأكاديمية</h3>
+                    <p className="home-info-body small dim-2">٣٦ درساً في ٦ مسارات تحقيقية.</p>
+                    <Link href="/academy" className="home-info-link">استكشف المسارات ←</Link>
+                  </>
+                )}
               </div>
             </div>
           </section>
