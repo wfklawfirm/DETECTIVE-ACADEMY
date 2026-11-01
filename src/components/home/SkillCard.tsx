@@ -3,7 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import { CERTAINTY_AR, STATUS_AR, type MasteryStatus } from "@/engine/mastery";
 
-export interface SkillItem { ko_id: string; name_ar: string; status: MasteryStatus; certainty: 0 | 1 | 2; cases: string[]; track: string | null; lesson_id: string | null }
+export interface SkillItem { ko_id: string; name_ar: string; status: MasteryStatus; certainty: 0 | 1 | 2; cases: string[]; track: string | null; lesson_id: string | null; lab_id?: string | null }
 const STEP: Record<MasteryStatus, number> = { insufficient_evidence: 0, emerging: 1, developing: 2, secure: 3 };
 
 /** Verbal status + 3 segments + certainty dots. No percentages, no ranking, no comparison with other people. */
@@ -21,6 +21,11 @@ export function SkillCard({ s }: { s: SkillItem }) {
       {s.lesson_id && (
         <Link href={`/academy/${s.lesson_id}`} className="skill-card-lesson-link small">
           درس مرتبط ←
+        </Link>
+      )}
+      {s.lab_id && (
+        <Link href={`/labs/${s.lab_id}`} className="skill-card-lesson-link small">
+          تدرّب في مختبر ←
         </Link>
       )}
     </Card>

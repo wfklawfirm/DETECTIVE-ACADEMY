@@ -89,7 +89,11 @@ export const POST = route(async (req) => {
 
   return json({
     submitted_cases: submitted,
-    skills: est.map((e) => ({ ko_id: e.ko_id, name_ar: names[e.ko_id] ?? e.ko_id, status: e.status, certainty: e.certainty, cases: [...(meta.get(e.ko_id)?.titles ?? [])], track: meta.get(e.ko_id)?.track ?? null, lesson_id: lessonOf(e.ko_id) ?? null })),
+    skills: est.map((e) => {
+      const koMap = labsByKo();
+      const labId = koMap.get(e.ko_id)?.[0] ?? null;
+      return { ko_id: e.ko_id, name_ar: names[e.ko_id] ?? e.ko_id, status: e.status, certainty: e.certainty, cases: [...(meta.get(e.ko_id)?.titles ?? [])], track: meta.get(e.ko_id)?.track ?? null, lesson_id: lessonOf(e.ko_id) ?? null, lab_id: labId };
+    }),
     next: next ? { ...next, name_ar: names[next.ko_id] ?? next.ko_id, lesson_title_ar: lessonTitle ?? null } : null,
     next_lab: nextLab,
   });
