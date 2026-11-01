@@ -4958,3 +4958,33 @@ mark.search-hl {
   transition: width 0.4s ease;
 }
 .labs-progress-pct { min-width: 2.5rem; text-align: end; }
+
+/* ── LAB END NEXT LAB LINK ── */
+.lab-end-next-link {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  margin-block-start: 0.75rem;
+  padding: 0.75rem 1rem;
+  background: var(--surface-raised, rgba(107,159,255,0.06));
+  border: 1px solid var(--border-subtle, rgba(107,159,255,0.15));
+  border-radius: 0.5rem;
+  color: inherit;
+  text-decoration: none;
+  transition: background 0.15s, border-color 0.15s;
+}
+.lab-end-next-link:hover {
+  background: var(--accent-subtle, rgba(107,159,255,0.12));
+  border-color: var(--accent, #6b9fff);
+}
+.lab-end-next-label {
+  font-size: 0.75rem;
+  color: var(--accent, #6b9fff);
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+.lab-end-next-title {
+  font-size: 1rem;
+  font-weight: 600;
+}

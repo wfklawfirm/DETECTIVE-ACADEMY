@@ -17,6 +17,18 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
   applicationName: "Detective Academy",
   appleWebApp: { capable: true, title: "Detective Academy", statusBarStyle: "black-translucent" },
+  openGraph: {
+    type: "website",
+    siteName: "Detective Academy",
+    title: "Detective Academy — تحقيقات تتعلّم منها",
+    description: "منصة عربية للألغاز التحقيقية القائمة على الأدلة: تقرأ الملفات، تستجوب الشهود، وتتعلّم كيف تعرف ما الذي تثبته الأدلة فعلاً.",
+    locale: "ar_SA",
+  },
+  twitter: {
+    card: "summary",
+    title: "Detective Academy — تحقيقات تتعلّم منها",
+    description: "منصة عربية للألغاز التحقيقية القائمة على الأدلة: تقرأ الملفات، تستجوب الشهود، وتتعلّم كيف تعرف ما الذي تثبته الأدلة فعلاً.",
+  },
 };
 export const viewport: Viewport = { width: "device-width", initialScale: 1, themeColor: "#0b1115", colorScheme: "dark light" };
 

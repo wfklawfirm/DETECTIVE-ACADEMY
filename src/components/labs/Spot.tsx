@@ -6,7 +6,8 @@ import { CardTitle } from "../ui/card";
 import { LabEnd } from "./common";
 
 interface FirstLesson { id: string; title_ar: string }
-export function Spot({ lab, firstLesson }: { lab: LabOf<"spot">; firstLesson?: FirstLesson | null }) {
+interface NextLab { id: string; title_ar: string; skill_ar: string }
+export function Spot({ lab, firstLesson, nextLab }: { lab: LabOf<"spot">; firstLesson?: FirstLesson | null; nextLab?: NextLab | null }) {
   const [marked, setMarked] = useState<Set<string>>(new Set());
   const [done, setDone] = useState(false);
   const flaws = lab.lines.filter((l) => l.flaw);
@@ -38,7 +39,7 @@ export function Spot({ lab, firstLesson }: { lab: LabOf<"spot">; firstLesson?: F
       </section>
       <p className="small" aria-live="polite">علّمتَ {marked.size} سطراً.</p>
       {!done ? <Button variant="primary" size="lg" block onClick={() => setDone(true)}>اكشف الأخطاء</Button>
-        : <LabEnd lab={lab} onRetry={() => { setMarked(new Set()); setDone(false); }} summary={<>رصدتَ <b>{found} من {flaws.length}</b> {flaws.length === 1 ? "خللاً" : "أخلال"}، وعلّمتَ {false_} {false_ === 1 ? "سطراً سليماً" : "أسطر سليمة"} بالخطأ.</>} firstLesson={firstLesson} />}
+        : <LabEnd lab={lab} onRetry={() => { setMarked(new Set()); setDone(false); }} summary={<>رصدتَ <b>{found} من {flaws.length}</b> {flaws.length === 1 ? "خللاً" : "أخلال"}، وعلّمتَ {false_} {false_ === 1 ? "سطراً سليماً" : "أسطر سليمة"} بالخطأ.</>} firstLesson={firstLesson} nextLab={nextLab} />}
     </div>
   );
 }

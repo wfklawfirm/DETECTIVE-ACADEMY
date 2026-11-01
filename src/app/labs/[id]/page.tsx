@@ -15,8 +15,11 @@ export const dynamic = "force-dynamic";
 export default async function LabPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
   const f = loadLabs();
-  const lab = f.playable.find((l) => l.id === id);
+  const labIndex = f.playable.findIndex((l) => l.id === id);
+  const lab = f.playable[labIndex];
   if (!lab) notFound();
+  const nextLabRaw = f.playable[labIndex + 1] ?? null;
+  const nextLab = nextLabRaw ? { id: nextLabRaw.id, title_ar: nextLabRaw.title_ar, skill_ar: nextLabRaw.skill_ar } : null;
   const a = await getActorFromCookies();
   const shown = new Set(visibleKos(loadKnowledge().kos, a.ageBand).map((k) => k.ko_id));
   const names = loadKoNames();
@@ -44,7 +47,7 @@ export default async function LabPage({ params }: { params: Promise<{ id: string
       <div className="lab-meta"><Badge>{KIND_LABEL[lab.kind]}</Badge><Badge outline>{DIFFICULTY_LABEL[lab.difficulty]}</Badge><Badge outline>نحو {lab.minutes} د</Badge><Badge tone="warning">محاكاة خيالية · تتطلب مراجعة خبراء</Badge></div>
       <aside className="lead-card" aria-label="سؤال الدخول"><p>{lab.hook_ar}</p></aside>
       <p className="dim-2">{lab.intro_ar}</p>
-      <LabRunner key={lab.id} lab={lab} firstLesson={linkedLessons[0] ?? null} />
+      <LabRunner key={lab.id} lab={lab} firstLesson={linkedLessons[0] ?? null} nextLab={nextLab} />
       {linkedLessons.length > 0 && (
         <Card as="section" aria-labelledby="lab-lessons-h">
           <h2 id="lab-lessons-h" className="text-section-title">دروس الأكاديمية المرتبطة</h2>
