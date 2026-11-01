@@ -1,8 +1,15 @@
+import type { Metadata } from "next";
 import { RIGHTS_LABEL, loadKnowledge } from "@/engine/knowledge";
 import { SourceList } from "@/components/SourceList";
 import { Card, CardTitle } from "@/components/ui/card";
 
-export const metadata = { title: "المصادر والحقوق" };
+export const metadata: Metadata = {
+  title: "المصادر والحقوق",
+  description: "قائمة المصادر العلمية والمراجع التي بنينا عليها مفاهيم Detectve Academy — مع وضع حقوق كل مرجع وقيود استخدامه.",
+  openGraph: { title: "المصادر والحقوق · Detective Academy", description: "المراجع العلمية وحقوق المحتوى التي تستند إليها المنصة.", type: "website", siteName: "Detective Academy" },
+  twitter: { card: "summary", title: "المصادر والحقوق · Detective Academy" },
+  alternates: { canonical: "/sources" },
+};
 export const dynamic = "force-dynamic";
 
 export default function Sources() {

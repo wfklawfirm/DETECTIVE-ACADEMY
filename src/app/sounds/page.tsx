@@ -1,8 +1,15 @@
+import type { Metadata } from "next";
 import { loadAssets } from "@/engine/assets";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 
-export const metadata = { title: "مكتبة الأصوات" };
+export const metadata: Metadata = {
+  title: "مكتبة الأصوات",
+  description: "مقاطع صوتية بترخيص مفتوح أو ملكية عامة — مؤثرات تُستخدم في قضايا وتجارب Detective Academy.",
+  openGraph: { title: "مكتبة الأصوات · Detective Academy", description: "مؤثرات صوتية مفتوحة المصدر لقضايا Detective Academy.", type: "website", siteName: "Detective Academy" },
+  twitter: { card: "summary", title: "مكتبة الأصوات · Detective Academy" },
+  alternates: { canonical: "/sounds" },
+};
 export const dynamic = "force-dynamic";
 
 export default function Sounds() {

@@ -1,8 +1,15 @@
+import type { Metadata } from "next";
 import { loadAssets } from "@/engine/assets";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 
-export const metadata = { title: "الاعتمادات" };
+export const metadata: Metadata = {
+  title: "الاعتمادات",
+  description: "اعتمادات المحتوى المرئي والصوتي المستخدم في Detective Academy — حقوق كل أصل وترخيصه ومصدره.",
+  openGraph: { title: "الاعتمادات · Detective Academy", description: "حقوق المحتوى المرئي والصوتي وتراخيص الأصول.", type: "website", siteName: "Detective Academy" },
+  twitter: { card: "summary", title: "الاعتمادات · Detective Academy" },
+  alternates: { canonical: "/credits" },
+};
 export const dynamic = "force-dynamic";
 
 export default function Credits() {

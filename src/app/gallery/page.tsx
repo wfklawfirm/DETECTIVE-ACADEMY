@@ -1,8 +1,15 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { loadAssets } from "@/engine/assets";
 import { LinkButton } from "@/components/ui/button";
 
-export const metadata = { title: "معرض المراجع" };
+export const metadata: Metadata = {
+  title: "معرض المراجع",
+  description: "صور مرجعية تاريخية مفتوحة المصدر — مخطوطات وأدوات ووثائق وأماكن نستلهم منها أجواء قضايا Detective Academy.",
+  openGraph: { title: "معرض المراجع · Detective Academy", description: "صور مرجعية تاريخية — مجموعات مفتوحة نستلهم منها قضايانا.", type: "website", siteName: "Detective Academy" },
+  twitter: { card: "summary", title: "معرض المراجع · Detective Academy" },
+  alternates: { canonical: "/gallery" },
+};
 export const dynamic = "force-dynamic";
 const PER = 48;
 const COLL_AR: Record<string, string> = {};
