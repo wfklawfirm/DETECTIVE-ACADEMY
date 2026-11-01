@@ -1,4 +1,19 @@
+import type { Metadata } from "next";
 import { EntryHook } from "@/components/EntryHook";
+
+export const metadata: Metadata = {
+  title: { absolute: "Detective Academy — تحقيقات تتعلّم منها" },
+  description: "منصة عربية للألغاز التحقيقية القائمة على الأدلة: تقرأ الملفات، تستجوب الشهود، وتتعلّم كيف تفرّق بين ما تثبته الأدلة وما يبدو مقنعاً فقط.",
+  robots: { index: true, follow: true },
+  openGraph: {
+    title: "Detective Academy — الحقيقة لا تُخمَّن. تُثبَت.",
+    description: "منصة عربية للألغاز التحقيقية القائمة على الأدلة: تقرأ الملفات، تستجوب الشهود، وتتعلّم كيف تعرف ما الذي تثبته الأدلة فعلاً.",
+    type: "website",
+    siteName: "Detective Academy",
+  },
+  twitter: { card: "summary_large_image", title: "Detective Academy — الحقيقة لا تُخمَّن. تُثبَت." },
+  alternates: { canonical: "/" },
+};
 import { AtharMark } from "@/components/ui/brand";
 import { LinkButton } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
