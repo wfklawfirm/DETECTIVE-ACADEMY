@@ -5,7 +5,7 @@ export class ApiError extends Error {
   constructor(public status: number, public code: string, message: string) { super(message); }
 }
 
-export async function api<T = unknown>(path: string, body?: unknown, method?: "GET" | "POST" | "PUT"): Promise<T> {
+export async function api<T = unknown>(path: string, body?: unknown, method?: "GET" | "POST" | "PUT" | "PATCH" | "DELETE"): Promise<T> {
   const m = method ?? (body === undefined ? "GET" : "POST");
   const res = await fetch(path, { method: m, headers: body === undefined ? undefined : { "content-type": "application/json" }, body: body === undefined ? undefined : JSON.stringify(body), credentials: "same-origin", cache: "no-store" });
   let j: unknown = null;

@@ -18,6 +18,10 @@ export default function Account() {
   const [err, setErr]   = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
   const [delPass, setDelPass] = useState("");
+  const [editName, setEditName] = useState("");
+  const [editPass, setEditPass] = useState({ current: "", next: "" });
+  const [editBusy, setEditBusy] = useState(false);
+  const [editMsg, setEditMsg] = useState<string | null>(null);
 
   const next     = typeof window !== "undefined" ? new URLSearchParams(location.search).get("next") : null;
   const safeNext = next && next.startsWith("/") && !next.startsWith("//") ? next : "/home";
@@ -52,6 +56,59 @@ export default function Account() {
             <span className="account-hero-avatar" aria-hidden>🪪</span>
           </div>
         </header>
+
+        {/* Edit profile */}
+        <div className="account-card">
+          <p className="account-card-kicker">تعديل الحساب</p>
+          <Field label="الاسم الظاهر">
+            {(p) => (
+              <input
+                {...p} className="input" maxLength={40} placeholder={me.user.display_name ?? "محقق"}
+                value={editName} onChange={(e) => setEditName(e.target.value)}
+              />
+            )}
+          </Field>
+          <Field label="كلمة المرور الحالية">
+            {(p) => (
+              <input {...p} className="input" type="password" autoComplete="current-password"
+                value={editPass.current} onChange={(e) => setEditPass({ ...editPass, current: e.target.value })} />
+            )}
+          </Field>
+          <Field label="كلمة المرور الجديدة (١٠+ أحرف)">
+            {(p) => (
+              <input {...p} className="input" type="password" autoComplete="new-password" minLength={10}
+                value={editPass.next} onChange={(e) => setEditPass({ ...editPass, next: e.target.value })} />
+            )}
+          </Field>
+          {editMsg && <p className="account-edit-msg">{editMsg}</p>}
+          <Button
+            variant="secondary"
+            loading={editBusy}
+            disabled={!editName.trim() && !(editPass.current && editPass.next.length >= 10)}
+            onClick={async () => {
+              setEditBusy(true); setEditMsg(null);
+              try {
+                const body: Record<string, string> = {};
+                if (editName.trim()) body.display_name = editName.trim();
+                if (editPass.current && editPass.next) {
+                  body.current_password = editPass.current;
+                  body.new_password = editPass.next;
+                }
+                await api("/api/auth/update", body, "PATCH");
+                await refresh();
+                setEditName(""); setEditPass({ current: "", next: "" });
+                setEditMsg("✓ تم الحفظ");
+                toast("تم تحديث الحساب");
+              } catch (x) {
+                setEditMsg(x instanceof ApiError ? x.message : "تعذّر الحفظ");
+              } finally {
+                setEditBusy(false);
+              }
+            }}
+          >
+            حفظ التغييرات
+          </Button>
+        </div>
 
         {/* Settings card */}
         <div className="account-card">

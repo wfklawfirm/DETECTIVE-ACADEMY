@@ -4637,3 +4637,10 @@ header.page-head,
   align-items: center;
   gap: 0.5rem;
 }
+
+/* ── ACCOUNT EDIT ─────────────────────────────────────────────────────── */
+.account-edit-msg {
+  font-size: 0.85rem;
+  color: var(--positive);
+  padding: 0.25rem 0;
+}

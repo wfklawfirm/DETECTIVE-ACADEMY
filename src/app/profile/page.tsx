@@ -58,11 +58,19 @@ export default function Profile() {
   const { me } = useMe();
   const [d, setD] = useState<Data | null>(null);
   const [failed, setFailed] = useState(false);
+  const [lessonsCount, setLessonsCount] = useState<number>(0);
 
   useEffect(() => {
     api<Data>("/profile/data", { tokens: allTokens() })
       .then(setD)
       .catch(() => setFailed(true));
+  }, []);
+
+  useEffect(() => {
+    fetch("/api/academy/progress")
+      .then((r) => r.ok ? r.json() : null)
+      .then((d) => { if (d?.done) setLessonsCount((d.done as string[]).length); })
+      .catch(() => {});
   }, []);
 
   const rank = d ? rankFor(d.submitted_cases) : null;
@@ -100,6 +108,11 @@ export default function Profile() {
             <div className="profile-stat">
               <span className="profile-stat-value">{d.submitted_cases}</span>
               <span className="profile-stat-label">قضية منجزة</span>
+            </div>
+            <div className="profile-stat-sep" />
+            <div className="profile-stat">
+              <span className="profile-stat-value">{lessonsCount}</span>
+              <span className="profile-stat-label">درس مكتمل</span>
             </div>
             <div className="profile-stat-sep" />
             <div className="profile-stat">
