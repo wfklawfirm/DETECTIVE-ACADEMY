@@ -1,7 +1,8 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Button, LinkButton } from "@/components/ui/button";
 import { StepDots } from "@/components/ui/progress";
+import { allTokens, api } from "@/lib/client";
 
 const LINES = [
   "وصلتك رسالة بلا اسم مرسل:",
@@ -11,7 +12,45 @@ const LINES = [
 
 export default function Start() {
   const [n, setN] = useState(1);
+  const [returning, setReturning] = useState<boolean | null>(null);
 
+  // Detect whether user already has progress
+  useEffect(() => {
+    api<{ cards: unknown[]; cases: { case_id: string; done: boolean }[] }>("/api/progress", { tokens: allTokens() })
+      .then((d) => {
+        const hasProgress = d.cases.length > 0;
+        setReturning(hasProgress);
+      })
+      .catch(() => setReturning(false));
+  }, []);
+
+  // While checking — show nothing yet (avoids flash)
+  if (returning === null) return null;
+
+  // Returning user — skip the cold open and send to home
+  if (returning) {
+    return (
+      <section className="start-screen" aria-label="مرحباً بعودتك">
+        <div className="start-topbar">
+          <span className="start-stamp">أكاديمية المحقق · مركز العمليات</span>
+        </div>
+        <div className="start-cold-open">
+          <p className="start-line start-line--new">مرحباً بعودتك.</p>
+          <p className="start-line">تحقيقاتك في انتظارك.</p>
+        </div>
+        <div className="start-cta">
+          <LinkButton variant="primary" size="lg" block href="/home">
+            إلى مركز العمليات ←
+          </LinkButton>
+          <LinkButton variant="secondary" size="lg" block href="/cases">
+            كل القضايا
+          </LinkButton>
+        </div>
+      </section>
+    );
+  }
+
+  // New user — show cold-open sequence
   return (
     <section className="start-screen" aria-label="مشهد الافتتاح">
       {/* Top bar */}
