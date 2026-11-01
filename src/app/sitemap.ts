@@ -2,6 +2,8 @@ import type { MetadataRoute } from "next";
 import { loadLabs } from "@/engine/labs";
 import { loadTracks } from "@/engine/tracks";
 import { loadKnowledge } from "@/engine/knowledge";
+import { loadHeritage } from "@/engine/heritage";
+import { loadBooks, visibleBooks, visibleConcepts } from "@/engine/books";
 
 const BASE = "https://detectiveacademy.app";
 
@@ -26,6 +28,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/atlas`, lastModified: now, changeFrequency: "monthly", priority: 0.5 },
     { url: `${BASE}/skills`, lastModified: now, changeFrequency: "monthly", priority: 0.5 },
     { url: `${BASE}/books`, lastModified: now, changeFrequency: "monthly", priority: 0.4 },
+    { url: `${BASE}/heritage`, lastModified: now, changeFrequency: "monthly", priority: 0.4 },
+    { url: `${BASE}/gallery`, lastModified: now, changeFrequency: "monthly", priority: 0.3 },
+    { url: `${BASE}/sounds`, lastModified: now, changeFrequency: "monthly", priority: 0.2 },
     { url: `${BASE}/privacy`, lastModified: now, changeFrequency: "yearly", priority: 0.3 },
     { url: `${BASE}/credits`, lastModified: now, changeFrequency: "yearly", priority: 0.2 },
     { url: `${BASE}/sources`, lastModified: now, changeFrequency: "yearly", priority: 0.2 },
@@ -60,5 +65,31 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.5,
   }));
 
-  return [...statics, ...labUrls, ...lessonUrls, ...koUrls];
+  // Dynamic: heritage texts (public domain / cc ref only)
+  const { texts } = loadHeritage();
+  const heritageUrls: MetadataRoute.Sitemap = texts.map((t) => ({
+    url: `${BASE}/heritage/${t.id}`,
+    lastModified: now,
+    changeFrequency: "yearly" as const,
+    priority: 0.4,
+  }));
+
+  // Dynamic: books and concepts (visible to all age bands)
+  const { books, concepts } = loadBooks();
+  const visBooks = visibleBooks(books, "all");
+  const bookUrls: MetadataRoute.Sitemap = visBooks.map((b) => ({
+    url: `${BASE}/books/${b.id}`,
+    lastModified: now,
+    changeFrequency: "monthly" as const,
+    priority: 0.4,
+  }));
+  const visConcepts = visibleConcepts(concepts, books, "all");
+  const conceptUrls: MetadataRoute.Sitemap = visConcepts.map((c) => ({
+    url: `${BASE}/books/concept/${c.id}`,
+    lastModified: now,
+    changeFrequency: "monthly" as const,
+    priority: 0.3,
+  }));
+
+  return [...statics, ...labUrls, ...lessonUrls, ...koUrls, ...heritageUrls, ...bookUrls, ...conceptUrls];
 }
