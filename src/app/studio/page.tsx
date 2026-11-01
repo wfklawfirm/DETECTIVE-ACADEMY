@@ -19,7 +19,8 @@ export default function Studio() {
   const [tix, setTix] = useState<Ticket[]>([]);
   const [msg, setMsg] = useState<string | null>(null);
   const [loaded, setLoaded] = useState(false);
-  const [fb, setFb] = useState<Record<string, { level: string; text: string }>>({});
+  const [fb, setFb] = useState<Record<string, { level: string; text: string }>>({}); 
+  const [statusFilter, setStatusFilter] = useState<string>("all");;
   const load = useCallback(async () => {
     try { setVers((await api<{ versions: Ver[] }>("/api/studio/versions")).versions); } catch (e) { setMsg(e instanceof ApiError ? e.message : "خطأ"); }
     try { setTix((await api<{ tickets: Ticket[] }>("/api/studio/tickets")).tickets); } catch { /* editors cannot read tickets */ }
@@ -40,8 +41,17 @@ export default function Studio() {
       {role === "admin" && <div className="row"><LinkButton href="/studio/library">المكتبة البحثية</LinkButton><LinkButton href="/studio/stats">إحصاءات المنصة</LinkButton></div>}
       {msg && <Callout tone="negative" role="alert">{msg}</Callout>}
       {!loaded && <LoadingRegion cards={2} />}
+      {loaded && vers.length > 0 && (
+        <div className="row" style={{ gap: "0.5rem", flexWrap: "wrap" }}>
+          {(["all", "draft", "in_review", "published"] as const).map((s) => {
+            const count = s === "all" ? vers.length : vers.filter((v) => v.status === s).length;
+            const labels: Record<string, string> = { all: "الكل", draft: "مسودة", in_review: "قيد المراجعة", published: "منشورة" };
+            return <button key={s} onClick={() => setStatusFilter(s)} className={`btn btn-sm ${statusFilter === s ? "btn-primary" : "btn-ghost"}`}>{labels[s]} ({count})</button>;
+          })}
+        </div>
+      )}
       <div className="grid-2">
-      {vers.map((v) => (
+      {vers.filter((v) => statusFilter === "all" || v.status === statusFilter).map((v) => (
         <Card as="section" key={v.case_id + v.version}>
           <div className="row row-between"><h2 className="card-title mono">{v.case_id}@{v.version}</h2><div className="row"><Badge tone={v.status === "published" ? "positive" : "warning"}>{v.status}</Badge>{role === "admin" && <a href={`/studio/editor/${v.case_id}`} className="btn btn-ghost btn-sm" style={{fontSize:"0.8rem"}}>✏️ تعديل</a>}</div></div>
           <p className="small">فحص الجودة الآلي: {v.qa_ok === null ? "—" : v.qa_ok ? <span className="ok">ناجح</span> : <span className="err">فاشل</span>}</p>
