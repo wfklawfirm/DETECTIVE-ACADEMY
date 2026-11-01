@@ -48,11 +48,11 @@ export function Sheet({ open, onClose, title, closeLabel = "إغلاق", childre
   if (!open || !node) return null;
   return createPortal(
     <div className="sheet-root">
-      <div className="sheet-scrim" onClick={dismissible ? onClose : undefined} aria-hidden />
+      <div className="sheet-backdrop" onClick={dismissible ? onClose : undefined} aria-hidden />
       <div ref={panel} role="dialog" aria-modal="true" aria-labelledby={titleId} tabIndex={-1} className="sheet animate-rise">
-        <span className="sheet-grip" aria-hidden />
-        <div className="sheet-head">
-          <h2 id={titleId} className="text-section-title">{title}</h2>
+        <div className="sheet-handle" aria-hidden><span className="sheet-handle-bar" /></div>
+        <div className="sheet-header">
+          <h2 id={titleId} className="sheet-title">{title}</h2>
           {dismissible && <IconButton label={closeLabel} onClick={onClose}><XIcon /></IconButton>}
         </div>
         <div className="sheet-body">{children}</div>

@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import { Button, LinkButton } from "@/components/ui/button";
 import { StepDots } from "@/components/ui/progress";
+import { LoadingRegion } from "@/components/ui/feedback";
 import { allTokens, api } from "@/lib/client";
 
 const LINES = [
@@ -24,8 +25,8 @@ export default function Start() {
       .catch(() => setReturning(false));
   }, []);
 
-  // While checking — show nothing yet (avoids flash)
-  if (returning === null) return null;
+  // While checking: a neutral placeholder instead of an empty screen (the check can take a moment on a cold server)
+  if (returning === null) return <LoadingRegion cards={1} />;
 
   // Returning user — skip the cold open and send to home
   if (returning) {

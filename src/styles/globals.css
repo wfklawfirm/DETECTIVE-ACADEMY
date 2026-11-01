@@ -4993,3 +4993,10 @@ mark.search-hl {
   font-size: 1rem;
   font-weight: 600;
 }
+
+/* Sheet: bottom sheet on phones, centred dialog from 640px (as documented in components/ui/sheet.tsx). */
+@media (min-width: 640px) {
+  .sheet-root { align-items: center; }
+  .sheet { border-radius: var(--radius-lg); border-block-end: 1px solid var(--border); max-block-size: min(88dvh, 40rem); }
+  .sheet-handle { display: none; }
+}
