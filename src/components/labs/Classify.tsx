@@ -5,7 +5,8 @@ import { Button } from "../ui/button";
 import { ChoiceGroup } from "../ui/form";
 import { LabEnd } from "./common";
 
-export function Classify({ lab }: { lab: LabOf<"classify"> }) {
+interface FirstLesson { id: string; title_ar: string }
+export function Classify({ lab, firstLesson }: { lab: LabOf<"classify">; firstLesson?: FirstLesson | null }) {
   const [pick, setPick] = useState<Record<string, string>>({});
   const [done, setDone] = useState(false);
   const all = lab.items.every((i) => pick[i.id]);
@@ -25,7 +26,7 @@ export function Classify({ lab }: { lab: LabOf<"classify"> }) {
         );
       })}
       {!done ? <Button variant="primary" size="lg" block disabled={!all} onClick={() => setDone(true)}>اكشف التعليق</Button>
-        : <LabEnd lab={lab} onRetry={() => { setPick({}); setDone(false); }} summary={<><b>{right} من {lab.items.length}</b> وافقت تصنيف المختبر.</>} />}
+        : <LabEnd lab={lab} onRetry={() => { setPick({}); setDone(false); }} summary={<><b>{right} من {lab.items.length}</b> وافقت تصنيف المختبر.</>} firstLesson={firstLesson} />}
     </div>
   );
 }

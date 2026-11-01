@@ -1,12 +1,15 @@
 "use client";
 import { useEffect, useRef, type ReactNode } from "react";
+import Link from "next/link";
 import type { Lab } from "@/engine/labs";
 import { Button } from "../ui/button";
 import { Card } from "../ui/card";
 
+interface FirstLesson { id: string; title_ar: string }
+
 /** Closing card shared by every lab kind: the score line, the transfer question, the explicit limit ("what this cannot prove") and a retry.
  *  Also saves lab completion to the server once per session. */
-export function LabEnd({ lab, summary, onRetry }: { lab: Lab; summary: ReactNode; onRetry: () => void }) {
+export function LabEnd({ lab, summary, onRetry, firstLesson }: { lab: Lab; summary: ReactNode; onRetry: () => void; firstLesson?: FirstLesson | null }) {
   const saved = useRef(false);
   useEffect(() => {
     if (saved.current) return;
@@ -25,6 +28,11 @@ export function LabEnd({ lab, summary, onRetry }: { lab: Lab; summary: ReactNode
       <div className="lab-limit"><b>ما لا يثبته هذا المختبر: </b>{lab.boundary_ar}</div>
       {lab.illustrative_ar && <p className="small dim">{lab.illustrative_ar}</p>}
       <Button variant="secondary" onClick={onRetry}>أعد المحاولة</Button>
+      {firstLesson && (
+        <Link href={`/academy/${firstLesson.id}`} className="lab-end-lesson-link">
+          تعمّق في الدرس المرتبط: {firstLesson.title_ar} ←
+        </Link>
+      )}
     </Card>
   );
 }

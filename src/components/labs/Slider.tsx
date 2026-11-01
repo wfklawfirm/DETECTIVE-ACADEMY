@@ -9,7 +9,8 @@ import { evalExpr } from "./expr";
 
 const fmt = (n: number, d: number) => n.toLocaleString("ar-EG", { minimumFractionDigits: d, maximumFractionDigits: d });
 
-export function Slider({ lab }: { lab: LabOf<"slider"> }) {
+interface FirstLesson { id: string; title_ar: string }
+export function Slider({ lab, firstLesson }: { lab: LabOf<"slider">; firstLesson?: FirstLesson | null }) {
   const uid = useId();
   const start = () => Object.fromEntries(lab.controls.map((c) => [c.id, c.value]));
   const [guess, setGuess] = useState<string | null>(null);
@@ -63,7 +64,7 @@ export function Slider({ lab }: { lab: LabOf<"slider"> }) {
           <ul className="stack-sm">{lab.reveal.points_ar.map((p) => <li key={p}>{p}</li>)}</ul>
         </section>
       )}
-      {done && <LabEnd lab={lab} onRetry={() => { setGuess(null); setLocked(false); setVals(start()); setDone(false); }} summary={<>{guessOk ? "توقعك أصاب" : "توقعك لم يصب"}، و{met ? "بلغتَ هدف التحدي" : "لم تبلغ هدف التحدي"}.</>} />}
+      {done && <LabEnd lab={lab} onRetry={() => { setGuess(null); setLocked(false); setVals(start()); setDone(false); }} summary={<>{guessOk ? "توقعك أصاب" : "توقعك لم يصب"}، و{met ? "بلغتَ هدف التحدي" : "لم تبلغ هدف التحدي"}.</>} firstLesson={firstLesson} />}
     </div>
   );
 }

@@ -4,7 +4,8 @@ import type { LabOf } from "@/engine/labs";
 import { Button } from "../ui/button";
 import { LabEnd } from "./common";
 
-export function Match({ lab }: { lab: LabOf<"match"> }) {
+interface FirstLesson { id: string; title_ar: string }
+export function Match({ lab, firstLesson }: { lab: LabOf<"match">; firstLesson?: FirstLesson | null }) {
   const uid = useId();
   const [pick, setPick] = useState<Record<string, string>>({});
   const [done, setDone] = useState(false);
@@ -27,7 +28,7 @@ export function Match({ lab }: { lab: LabOf<"match"> }) {
         );
       })}
       {!done ? <Button variant="primary" size="lg" block disabled={!all} onClick={() => setDone(true)}>اكشف التعليق</Button>
-        : <LabEnd lab={lab} onRetry={() => { setPick({}); setDone(false); }} summary={<><b>{right} من {lab.pairs.length}</b> أزواج صحيحة.</>} />}
+        : <LabEnd lab={lab} onRetry={() => { setPick({}); setDone(false); }} summary={<><b>{right} من {lab.pairs.length}</b> أزواج صحيحة.</>} firstLesson={firstLesson} />}
     </div>
   );
 }

@@ -4,7 +4,8 @@ import type { LabOf } from "@/engine/labs";
 import { Button } from "../ui/button";
 import { LabEnd, shuffled } from "./common";
 
-export function Order({ lab }: { lab: LabOf<"order"> }) {
+interface FirstLesson { id: string; title_ar: string }
+export function Order({ lab, firstLesson }: { lab: LabOf<"order">; firstLesson?: FirstLesson | null }) {
   const init = () => shuffled(lab.steps.map((s) => s.id), lab.id).map((x) => x);
   const [seq, setSeq] = useState<string[]>(init);
   const [done, setDone] = useState(false);
@@ -40,7 +41,7 @@ export function Order({ lab }: { lab: LabOf<"order"> }) {
       </ol>
       <p className="sr-only" role="status">{note}</p>
       {!done ? <Button variant="primary" size="lg" block onClick={() => setDone(true)}>تحقق من الترتيب</Button>
-        : <LabEnd lab={lab} onRetry={() => { setSeq(init()); setDone(false); setNote(""); }} summary={<><b>{right} من {seq.length}</b> في موضعها الصحيح.</>} />}
+        : <LabEnd lab={lab} onRetry={() => { setSeq(init()); setDone(false); setNote(""); }} summary={<><b>{right} من {seq.length}</b> في موضعها الصحيح.</>} firstLesson={firstLesson} />}
     </div>
   );
 }

@@ -5,7 +5,8 @@ import { Button } from "../ui/button";
 import { Field } from "../ui/form";
 import { LabEnd, parseNum } from "./common";
 
-export function Measure({ lab }: { lab: LabOf<"measure"> }) {
+interface FirstLesson { id: string; title_ar: string }
+export function Measure({ lab, firstLesson }: { lab: LabOf<"measure">; firstLesson?: FirstLesson | null }) {
   const [val, setVal] = useState<Record<string, string>>({});
   const [done, setDone] = useState(false);
   const parsed = (id: string) => parseNum(val[id] ?? "");
@@ -33,7 +34,7 @@ export function Measure({ lab }: { lab: LabOf<"measure"> }) {
         );
       })}
       {!done ? <Button variant="primary" size="lg" block disabled={!all} onClick={() => setDone(true)}>تحقق من إجاباتي</Button>
-        : <LabEnd lab={lab} onRetry={() => { setVal({}); setDone(false); }} summary={<><b>{right} من {lab.tasks.length}</b> ضمن الهامش المقبول.</>} />}
+        : <LabEnd lab={lab} onRetry={() => { setVal({}); setDone(false); }} summary={<><b>{right} من {lab.tasks.length}</b> ضمن الهامش المقبول.</>} firstLesson={firstLesson} />}
     </div>
   );
 }

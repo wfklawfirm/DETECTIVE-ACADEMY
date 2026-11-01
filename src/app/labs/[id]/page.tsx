@@ -44,7 +44,7 @@ export default async function LabPage({ params }: { params: Promise<{ id: string
       <div className="lab-meta"><Badge>{KIND_LABEL[lab.kind]}</Badge><Badge outline>{DIFFICULTY_LABEL[lab.difficulty]}</Badge><Badge outline>نحو {lab.minutes} د</Badge><Badge tone="warning">محاكاة خيالية · تتطلب مراجعة خبراء</Badge></div>
       <aside className="lead-card" aria-label="سؤال الدخول"><p>{lab.hook_ar}</p></aside>
       <p className="dim-2">{lab.intro_ar}</p>
-      <LabRunner key={lab.id} lab={lab} />
+      <LabRunner key={lab.id} lab={lab} firstLesson={linkedLessons[0] ?? null} />
       {linkedLessons.length > 0 && (
         <Card as="section" aria-labelledby="lab-lessons-h">
           <h2 id="lab-lessons-h" className="text-section-title">دروس الأكاديمية المرتبطة</h2>

@@ -4913,3 +4913,21 @@ mark.search-hl {
   font-weight: 500;
 }
 .skill-card-lesson-link:hover { text-decoration: underline; }
+
+/* ── LAB END LESSON LINK ── */
+.lab-end-lesson-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin-block-start: 0.75rem;
+  padding: 0.5rem 0.875rem;
+  background: var(--accent-subtle, rgba(107,159,255,0.08));
+  border: 1px solid var(--accent, #6b9fff);
+  border-radius: 0.5rem;
+  color: var(--accent, #6b9fff);
+  font-weight: 600;
+  font-size: 0.875rem;
+  text-decoration: none;
+  transition: background 0.15s;
+}
+.lab-end-lesson-link:hover { background: var(--accent-subtle-hover, rgba(107,159,255,0.15)); }
