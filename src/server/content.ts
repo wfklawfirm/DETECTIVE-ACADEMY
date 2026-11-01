@@ -56,21 +56,27 @@ export function listFileCaseIds(dir = CASES_DIR): string[] {
  */
 export async function syncFileCases(dir = CASES_DIR): Promise<string[]> {
   const out: string[] = [];
-  const existing = new Map((await q<{ case_id: string; version: string; status: string }>("SELECT case_id, version, status FROM case_versions"))
-    .map((r) => [`${r.case_id}@${r.version}`, r.status]));
+  // Text columns are returned only for draft/in_review rows (the only ones that can be refreshed), so published rows cost nothing.
+  type Existing = { case_id: string; version: string; status: string; content_hash: string; core_json: string | null; ui_json: string | null; scoring_json: string | null; qa_json: string | null };
+  const open = (c: string) => `CASE WHEN status IN ('draft','in_review') THEN ${c} END AS ${c}`;
+  const existing = new Map((await q<Existing>(`SELECT case_id, version, status, content_hash, ${open("core_json")}, ${open("ui_json")}, ${open("scoring_json")}, ${open("qa_json")} FROM case_versions`))
+    .map((r) => [`${r.case_id}@${r.version}`, r]));
   for (const id of listFileCaseIds(dir)) {
     const t = readFileTriplet(dir, id)!;
     const core = t.core as CaseFile;
-    const status = existing.get(`${core.case_id}@${core.case_version}`);
-    if (status !== undefined && status !== "draft" && status !== "in_review") continue;
+    const row = existing.get(`${core.case_id}@${core.case_version}`);
+    if (row && row.status !== "draft" && row.status !== "in_review") continue;
     const hash = await contentHash(core);
     const qa = qaCase(core);
-    if (status !== undefined) {
+    const next = { core: JSON.stringify(core), ui: JSON.stringify(t.ui), scoring: JSON.stringify(t.scoring), qa: JSON.stringify(qa) };
+    if (row) {
+      // unchanged draft: no write (this ran as ~30 sequential UPDATEs on every cold start)
+      if (row.content_hash === hash && row.core_json === next.core && row.ui_json === next.ui && row.scoring_json === next.scoring && row.qa_json === next.qa) continue;
       await run("UPDATE case_versions SET core_json=?, ui_json=?, scoring_json=?, content_hash=?, qa_json=? WHERE case_id=? AND version=? AND status IN ('draft','in_review')",
-        [JSON.stringify(core), JSON.stringify(t.ui), JSON.stringify(t.scoring), hash, JSON.stringify(qa), core.case_id, core.case_version]);
+        [next.core, next.ui, next.scoring, hash, next.qa, core.case_id, core.case_version]);
     } else {
       await run("INSERT OR IGNORE INTO case_versions(case_id, version, content_hash, status, core_json, ui_json, scoring_json, qa_json, created_by, created_at) VALUES (?,?,?,?,?,?,?,?,?,?)",
-        [core.case_id, core.case_version, hash, "draft", JSON.stringify(core), JSON.stringify(t.ui), JSON.stringify(t.scoring), JSON.stringify(qa), "seed", new Date().toISOString()]);
+        [core.case_id, core.case_version, hash, "draft", next.core, next.ui, next.scoring, next.qa, "seed", new Date().toISOString()]);
       out.push(`${core.case_id}@${core.case_version}`);
     }
   }

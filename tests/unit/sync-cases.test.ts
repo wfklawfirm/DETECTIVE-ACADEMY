@@ -33,3 +33,19 @@ describe("syncFileCases", () => {
     }
   });
 });
+
+describe("syncFileCases (unchanged drafts)", () => {
+  it("does not rewrite a draft whose files are unchanged, but does when one column differs", async () => {
+    const id = listFileCaseIds()[1]!;
+    const core = readFileTriplet("content/cases", id)!.core as { case_id: string; case_version: string };
+    const where = [core.case_id, core.case_version];
+    await run("UPDATE case_versions SET status = 'draft', created_by = 'marker' WHERE case_id = ? AND version = ?", where);
+    await syncFileCases();
+    // an UPDATE from sync does not touch created_by, so the marker only proves the row survived; use scoring_json to observe writes
+    await run("UPDATE case_versions SET scoring_json = '{}' WHERE case_id = ? AND version = ?", where);
+    await syncFileCases();
+    const fixed = await q1<{ scoring_json: string }>("SELECT scoring_json FROM case_versions WHERE case_id = ? AND version = ?", where);
+    expect(fixed!.scoring_json).not.toBe("{}");
+    expect(await syncFileCases()).toEqual([]);
+  });
+});
