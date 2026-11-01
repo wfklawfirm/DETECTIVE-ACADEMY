@@ -102,10 +102,11 @@
   --border-strong:  rgba(90, 70, 50, 0.28);
   --foreground:           #1a1208;
   --foreground-secondary: #4a3d2e;
-  --foreground-muted:     #7a6a58;
-  --accent:         #1a7a86;
-  --accent-hover:   #0e6370;
-  --accent-active:  #0a505c;
+  --foreground-muted:     #66574a;
+  --amber: #7a5410; --positive: #1d6846; --negative: #a3322a; --warning: #7a5410; --info: #36489a;
+  --accent:         #13616c;
+  --accent-hover:   #0d4f59;
+  --accent-active:  #093f48;
   --accent-tint:    rgba(26, 122, 134, 0.12);
   --accent-contrast:#f0f8fa;
   --lantern:        rgba(26, 122, 134, 0.12);
@@ -122,10 +123,11 @@
     --border-strong:  rgba(90, 70, 50, 0.28);
     --foreground:           #1a1208;
     --foreground-secondary: #4a3d2e;
-    --foreground-muted:     #7a6a58;
-    --accent:         #1a7a86;
-    --accent-hover:   #0e6370;
-    --accent-active:  #0a505c;
+    --foreground-muted:     #66574a;
+    --amber: #7a5410; --positive: #1d6846; --negative: #a3322a; --warning: #7a5410; --info: #36489a;
+    --accent:         #13616c;
+    --accent-hover:   #0d4f59;
+    --accent-active:  #093f48;
     --accent-tint:    rgba(26, 122, 134, 0.12);
     --accent-contrast:#f0f8fa;
     --lantern:        rgba(26, 122, 134, 0.12);
@@ -5000,3 +5002,16 @@ mark.search-hl {
   .sheet { border-radius: var(--radius-lg); border-block-end: 1px solid var(--border); max-block-size: min(88dvh, 40rem); }
   .sheet-handle { display: none; }
 }
+
+/* Light theme: amber on paper fails WCAG AA for the small active play tab label; use the AA-checked accent. */
+[data-theme="light"] .play-tabs button[aria-selected="true"] { color: var(--foreground); }
+/* Light theme: inactive tab label (10px) on --surface measured 4.38:1; use the secondary text colour. */
+[data-theme="light"] .play-tabs button:not([aria-selected="true"]) { color: var(--foreground-secondary); }
+/* Dark theme: positive badge text on tinted teal cards measured 4.19:1; lighter green restores AA. */
+[data-theme="dark"] .badge-positive { color: #6fd3a6; }
+/* Light theme: amber token is now a dark amber for AA text; filled amber controls need light text. */
+[data-theme="light"] .cases-filter-btn--active { color: #fff; }
+[data-theme="light"] .btn-primary, [data-theme="light"] .btn-primary:hover { color: #fff; }
+[data-theme="light"] .btn-primary:hover { background: color-mix(in srgb, var(--accent-amber) 88%, #000); border-color: color-mix(in srgb, var(--accent-amber) 88%, #000); }
+[data-theme="light"] .toggle[aria-checked="true"]::after { background: #fff; }
+[data-theme="light"] .cases-filter-btn--active .cases-filter-count { background: rgba(0, 0, 0, 0.28); }

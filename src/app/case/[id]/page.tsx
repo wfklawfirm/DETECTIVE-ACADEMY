@@ -15,7 +15,7 @@ interface LinkedLab { id: string; title_ar: string; skill_ar: string; minutes: n
 /* ── Difficulty dots ─────────────────────────────────────────── */
 function DifficultyDots({ level, max = 5 }: { level: number; max?: number }) {
   return (
-    <div className="difficulty-bar" aria-label={`مستوى الصعوبة: ${level} من ${max}`}>
+    <div className="difficulty-bar" role="img" aria-label={`مستوى الصعوبة: ${level} من ${max}`}>
       {Array.from({ length: max }, (_, i) => (
         <span key={i} className={`difficulty-segment${i < level ? " difficulty-segment--active" : ""}`} />
       ))}

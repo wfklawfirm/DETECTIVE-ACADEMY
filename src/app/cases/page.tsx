@@ -15,7 +15,7 @@ type Sort   = "default" | "easy" | "hard" | "short";
 /* ── Difficulty dots ─────────────────────────────────────────── */
 function DifficultyDots({ level, max = 5 }: { level: number; max?: number }) {
   return (
-    <div className="difficulty-bar" aria-label={`مستوى الصعوبة: ${level} من ${max}`}>
+    <div className="difficulty-bar" role="img" aria-label={`مستوى الصعوبة: ${level} من ${max}`}>
       {Array.from({ length: max }, (_, i) => (
         <span
           key={i}
