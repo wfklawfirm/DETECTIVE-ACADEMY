@@ -5,7 +5,14 @@ import { REFERENCE_PAGES } from "@/engine/reference-labels";
 import { RowLink } from "@/components/ui/card";
 import { FlaskIcon, ImageIcon, LinkIcon, SparkIcon } from "@/components/ui/icons";
 
-export const metadata = { title: "موسوعة المحقق" };
+import type { Metadata } from "next";
+export const metadata: Metadata = {
+  title: "موسوعة المحقق",
+  description: "مكتبة مفاهيم علم الأدلة ومهارات الاستدلال وأنماط الألغاز — مرجع مفتوح مرتبط بقضايا وأكاديمية Detective Academy.",
+  openGraph: { title: "موسوعة المحقق · Detective Academy", description: "مكتبة مفاهيم علم الأدلة ومهارات الاستدلال.", type: "website", siteName: "Detective Academy" },
+  twitter: { card: "summary", title: "موسوعة المحقق · Detective Academy" },
+  alternates: { canonical: "/knowledge" },
+};
 export const dynamic = "force-dynamic";
 
 export default async function Knowledge() {

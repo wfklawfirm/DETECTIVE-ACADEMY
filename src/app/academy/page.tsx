@@ -6,7 +6,14 @@ import type { Track, Lesson } from "@/engine/tracks";
 import { Badge } from "@/components/ui/badge";
 import { RowLink } from "@/components/ui/card";
 
-export const metadata = { title: "الأكاديمية" };
+import type { Metadata } from "next";
+export const metadata: Metadata = {
+  title: "الأكاديمية",
+  description: "٣٦ درساً قصيراً في ٦ مسارات تحقيقية — تعلّم كيف تقرأ الأدلة، وتستجوب الشهود، وتبني استنتاجات تستحق الثقة.",
+  openGraph: { title: "الأكاديمية · Detective Academy", description: "٣٦ درساً قصيراً في ٦ مسارات تحقيقية.", type: "website", siteName: "Detective Academy" },
+  twitter: { card: "summary", title: "الأكاديمية · Detective Academy" },
+  alternates: { canonical: "/academy" },
+};
 export const dynamic = "force-dynamic";
 
 export default function Academy() {

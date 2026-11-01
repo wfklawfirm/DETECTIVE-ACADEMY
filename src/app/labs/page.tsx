@@ -3,7 +3,14 @@ import { Card } from "@/components/ui/card";
 import { DIFFICULTY_LABEL } from "./labels";
 import { LabsClient } from "./LabsClient";
 
-export const metadata = { title: "مختبرات آمنة" };
+import type { Metadata } from "next";
+export const metadata: Metadata = {
+  title: "مختبرات آمنة",
+  description: "تمارين تفاعلية قصيرة في علم الأدلة والاستدلال — صُمّمت لتبني مهارات تحقيقية حقيقية بسياقات خيالية آمنة.",
+  openGraph: { title: "مختبرات آمنة · Detective Academy", description: "تمارين تفاعلية قصيرة في علم الأدلة والاستدلال.", type: "website", siteName: "Detective Academy" },
+  twitter: { card: "summary", title: "مختبرات آمنة · Detective Academy" },
+  alternates: { canonical: "/labs" },
+};
 export const dynamic = "force-dynamic";
 
 export default function Labs() {
