@@ -7,8 +7,8 @@ import { AgeGate } from "./AgeGate";
 import { MenuSheet } from "./MenuSheet";
 import { BrandWordmark } from "./ui/brand";
 import { IconButton, IconLink } from "./ui/button";
-import { BackIcon, BookIcon, FolderIcon, HomeIcon, LibraryIcon, MenuIcon, ProfileIcon } from "./ui/icons";
-import { PrefsProvider } from "./ui/prefs";
+import { BackIcon, BookIcon, FolderIcon, HomeIcon, LibraryIcon, MenuIcon, MoonIcon, ProfileIcon, SunIcon } from "./ui/icons";
+import { PrefsProvider, usePrefs, type ThemePref, resolveTheme } from "./ui/prefs";
 import { ToastProvider } from "./ui/toast";
 
 interface Ctx { me: Me | null; refresh: () => Promise<void> }
@@ -49,6 +49,25 @@ const BACK: [prefix: string, href: string, label: string][] = [
 ];
 
 const WIDE = ["/studio", "/gallery", "/credits", "/sources", "/skills"];
+
+
+/** Cycles dark → light → system. Shows sun/moon icon reflecting resolved theme. */
+function ThemeToggle({ compact = false }: { compact?: boolean }) {
+  const { theme, setTheme } = usePrefs();
+  const resolved = resolveTheme(theme);
+  const next: Record<ThemePref, ThemePref> = { dark: "light", light: "system", system: "dark" };
+  const label = theme === "system" ? "وضع تلقائي (نظام)" : theme === "light" ? "الوضع الفاتح" : "الوضع الداكن";
+  return (
+    <IconButton
+      label={`تبديل السمة — ${label}`}
+      onClick={() => setTheme(next[theme])}
+      aria-pressed={theme !== "system"}
+      className={compact ? "theme-toggle-compact" : "theme-toggle"}
+    >
+      {resolved === "light" ? <SunIcon size={18} /> : <MoonIcon size={18} />}
+    </IconButton>
+  );
+}
 
 export function Shell({ children }: { children: ReactNode }) {
   return <PrefsProvider><ToastProvider><Inner>{children}</Inner></ToastProvider></PrefsProvider>;
@@ -100,7 +119,8 @@ function Inner({ children }: { children: ReactNode }) {
             })}
           </div>
           <div className="sidebar-footer">
-            Detective Academy · نموذج تجريبي
+            <ThemeToggle />
+            <span className="small dim-2">نموذج تجريبي</span>
           </div>
         </nav>
       )}
@@ -125,6 +145,7 @@ function Inner({ children }: { children: ReactNode }) {
                 <span className="app-header-spacer" />
               </>
             )}
+            <ThemeToggle compact />
             <IconButton
               label="القائمة"
               aria-haspopup="dialog"

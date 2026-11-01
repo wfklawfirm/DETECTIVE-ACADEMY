@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { AcademyProgressOverlay } from "@/components/academy/AcademyProgressOverlay";
 import { loadTracks } from "@/engine/tracks";
 import type { Track, Lesson } from "@/engine/tracks";
 import { Badge } from "@/components/ui/badge";
@@ -13,6 +14,9 @@ export default function Academy() {
 
   return (
     <>
+      {/* Progress overlay — marks completed lessons client-side */}
+      <AcademyProgressOverlay lessonIds={tracks.flatMap((t: Track) => t.lessons.map((l: Lesson) => l.id))} />
+
       {/* ── Cinematic hero ──────────────────────────────────────── */}
       <header className="academy-hero">
         <div className="academy-hero-inner">
@@ -60,7 +64,7 @@ export default function Academy() {
             {/* Lessons */}
             <ul className="list track-lessons">
               {t.lessons.map((l: Lesson) => (
-                <li key={l.id}>
+                <li key={l.id} data-lesson-id={l.id}>
                   <RowLink
                     href={`/academy/${l.id}`}
                     title={l.title_ar}

@@ -47,3 +47,4 @@ export const StudioIcon = (p: P) => <Svg {...p}><path d="M4 20h4L19 9a2.8 2.8 0 
 export const SunIcon = (p: P) => <Svg {...p}><circle cx="12" cy="12" r="4" /><path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6L7 7M17 17l1.4 1.4M5.6 18.4L7 17M17 7l1.4-1.4" /></Svg>;
 export const RefreshIcon = (p: P) => <Svg {...p}><path d="M20 11a8 8 0 00-14-4.5L4 9" /><path d="M4 4v5h5" /><path d="M4 13a8 8 0 0014 4.5L20 15" /><path d="M20 20v-5h-5" /></Svg>;
 export const TargetIcon = (p: P) => <Svg {...p}><circle cx="12" cy="12" r="8.5" /><circle cx="12" cy="12" r="4.5" /><circle cx="12" cy="12" r="0.8" /></Svg>;
+export const MoonIcon = (p: P) => <Svg {...p}><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" /></Svg>;
