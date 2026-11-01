@@ -4657,3 +4657,74 @@ header.page-head,
 .studio-stat-value { font-size: 1.75rem; font-weight: 700; line-height: 1; color: var(--accent-amber); font-variant-numeric: tabular-nums; }
 .studio-stat-label { font-size: 0.8rem; color: var(--text-muted); }
 .studio-stat-sub { font-size: 0.75rem; color: var(--positive); }
+
+/* ── CASES SEARCH + SORT ── */
+.cases-search-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-block-end: 0.75rem;
+}
+.cases-search-icon {
+  position: absolute;
+  inset-inline-start: 0.75rem;
+  color: var(--text-muted);
+  pointer-events: none;
+  display: flex;
+}
+.cases-search-input {
+  width: 100%;
+  padding-block: 0.55rem;
+  padding-inline: 2.25rem 2rem;
+  background: color-mix(in srgb, var(--bg-surface) 90%, var(--accent-amber) 10%);
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  font-family: inherit;
+  direction: rtl;
+  transition: border-color 0.15s;
+}
+.cases-search-input::placeholder { color: var(--text-muted); }
+.cases-search-input:focus { outline: none; border-color: var(--accent-amber); }
+.cases-search-clear {
+  position: absolute;
+  inset-inline-end: 0.5rem;
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-size: 1.1rem;
+  line-height: 1;
+  padding: 0.2rem 0.4rem;
+}
+.cases-search-clear:hover { color: var(--text-primary); }
+.cases-controls-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 1rem;
+  margin-block-end: 0.75rem;
+}
+.cases-sort-select {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: 0.4rem;
+  color: var(--text-primary);
+  font-size: 0.82rem;
+  padding: 0.3rem 0.6rem;
+  cursor: pointer;
+  font-family: inherit;
+}
+.cases-sort-select:focus { outline: none; border-color: var(--accent-amber); }
+.cases-search-result-count {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin-block-end: 0.5rem;
+}
+mark.search-hl {
+  background: color-mix(in srgb, var(--accent-amber) 35%, transparent);
+  color: inherit;
+  border-radius: 2px;
+  padding: 0 1px;
+}

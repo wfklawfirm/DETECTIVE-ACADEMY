@@ -4,12 +4,13 @@ import { useEffect, useMemo, useState } from "react";
 import { type Card, type Prog } from "@/components/CaseCard";
 import { LinkButton } from "@/components/ui/button";
 import { ErrorState, LoadingRegion } from "@/components/ui/feedback";
-import { FolderIcon } from "@/components/ui/icons";
+import { FolderIcon, SearchIcon } from "@/components/ui/icons";
 import { ProgressBar } from "@/components/ui/progress";
 import { allTokens, api } from "@/lib/client";
 
 /* ── types ──────────────────────────────────────────────────── */
 type Filter = "all" | "new" | "inprogress" | "done";
+type Sort   = "default" | "easy" | "hard" | "short";
 
 /* ── Difficulty dots ─────────────────────────────────────────── */
 function DifficultyDots({ level, max = 5 }: { level: number; max?: number }) {
@@ -70,10 +71,18 @@ function FeaturedCase({ c, prog }: { c: Card; prog?: Prog }) {
 }
 
 /* ── Dossier card ────────────────────────────────────────────── */
-function DossierCard({ c, prog }: { c: Card; prog?: Prog }) {
+function DossierCard({ c, prog, query }: { c: Card; prog?: Prog; query: string }) {
   const href = prog && !prog.done ? `/play/${c.case_id}` : `/case/${c.case_id}`;
   const cta = prog?.done ? "مراجعة" : prog ? "تابع" : c.tutorial ? "ابدأ" : "افتح الملف";
   const idNum = c.case_id.replace(/\D/g, "").padStart(3, "0");
+
+  /* Highlight matched query in title */
+  const hl = (text: string) => {
+    if (!query) return text;
+    const idx = text.toLowerCase().indexOf(query.toLowerCase());
+    if (idx < 0) return text;
+    return <>{text.slice(0, idx)}<mark className="search-hl">{text.slice(idx, idx + query.length)}</mark>{text.slice(idx + query.length)}</>;
+  };
 
   return (
     <Link href={href} className="dossier-card" aria-label={c.title_ar}>
@@ -81,8 +90,8 @@ function DossierCard({ c, prog }: { c: Card; prog?: Prog }) {
         <span className="dossier-card-id">#{idNum}</span>
         <span className="dossier-card-glyph" aria-hidden>{c.glyph ?? "📁"}</span>
       </div>
-      <p className="dossier-card-kicker">{c.kicker_ar}</p>
-      <h3 className="dossier-card-title">{c.title_ar}</h3>
+      <p className="dossier-card-kicker">{hl(c.kicker_ar)}</p>
+      <h3 className="dossier-card-title">{hl(c.title_ar)}</h3>
       <p className="dossier-card-tagline">{c.tagline_ar}</p>
       <div className="dossier-card-meta">
         <span className="cases-tag">{c.minutes} د</span>
@@ -106,12 +115,21 @@ const FILTERS: { id: Filter; label: string }[] = [
   { id: "done",       label: "مكتملة" },
 ];
 
+const SORTS: { id: Sort; label: string }[] = [
+  { id: "default", label: "الترتيب الافتراضي" },
+  { id: "easy",    label: "الأسهل أولاً" },
+  { id: "hard",    label: "الأصعب أولاً" },
+  { id: "short",   label: "الأقصر أولاً" },
+];
+
 /* ── Main page ───────────────────────────────────────────────── */
 export default function Cases() {
   const [cards,  setCards]  = useState<Card[] | null>(null);
   const [prog,   setProg]   = useState<Prog[]>([]);
   const [failed, setFailed] = useState(false);
   const [filter, setFilter] = useState<Filter>("all");
+  const [query,  setQuery]  = useState("");
+  const [sort,   setSort]   = useState<Sort>("default");
 
   useEffect(() => {
     api<{ cards: Card[]; cases: Prog[] }>("/api/progress", { tokens: allTokens() })
@@ -129,15 +147,26 @@ export default function Cases() {
 
   const progOf = (id: string) => prog.find((p: Prog) => p.case_id === id);
 
-  /* Grid (exclude featured) */
+  /* Grid (exclude featured, apply filter + search + sort) */
   const gridCards = useMemo<Card[]>(() => {
     if (!cards) return [];
     let list = cards.filter((c: Card) => c.case_id !== featured?.case_id);
     if (filter === "new")        list = list.filter((c: Card) => !progOf(c.case_id));
     if (filter === "inprogress") list = list.filter((c: Card) => { const p = progOf(c.case_id); return p && !p.done; });
     if (filter === "done")       list = list.filter((c: Card) => progOf(c.case_id)?.done);
+    if (query.trim()) {
+      const q = query.trim().toLowerCase();
+      list = list.filter((c: Card) =>
+        c.title_ar.toLowerCase().includes(q) ||
+        c.kicker_ar.toLowerCase().includes(q) ||
+        (c.tagline_ar ?? "").toLowerCase().includes(q)
+      );
+    }
+    if (sort === "easy") list = [...list].sort((a, b) => a.difficulty - b.difficulty);
+    if (sort === "hard") list = [...list].sort((a, b) => b.difficulty - a.difficulty);
+    if (sort === "short") list = [...list].sort((a, b) => a.minutes - b.minutes);
     return list;
-  }, [cards, prog, filter, featured]);
+  }, [cards, prog, filter, query, sort, featured]);
 
   const counts = useMemo(() => {
     const rest = (cards ?? []).filter((c: Card) => c.case_id !== featured?.case_id);
@@ -242,32 +271,75 @@ export default function Cases() {
             <section aria-labelledby="archive-h">
               <p className="cases-section-kicker" id="archive-h">أرشيف القضايا</p>
 
-              {/* Filter bar */}
-              <div className="cases-filter-bar" role="group" aria-label="تصفية القضايا">
-                {FILTERS.map(({ id, label }) => (
+              {/* Search bar */}
+              <div className="cases-search-wrap" role="search" aria-label="بحث في القضايا">
+                <span className="cases-search-icon" aria-hidden><SearchIcon size={16} /></span>
+                <input
+                  className="cases-search-input"
+                  type="search"
+                  value={query}
+                  onChange={(e) => setQuery(e.target.value)}
+                  placeholder="ابحث باسم القضية أو الموضوع…"
+                  aria-label="بحث في القضايا"
+                />
+                {query && (
                   <button
-                    key={id}
-                    className={`cases-filter-btn${filter === id ? " cases-filter-btn--active" : ""}`}
-                    aria-pressed={filter === id}
-                    onClick={() => setFilter(id)}
+                    className="cases-search-clear"
+                    onClick={() => setQuery("")}
+                    aria-label="امسح البحث"
                   >
-                    {label}
-                    {counts[id] > 0 && (
-                      <span className="cases-filter-count">{counts[id]}</span>
-                    )}
+                    ×
                   </button>
-                ))}
+                )}
               </div>
+
+              {/* Filter + sort row */}
+              <div className="cases-controls-row">
+                <div className="cases-filter-bar" role="group" aria-label="تصفية القضايا">
+                  {FILTERS.map(({ id, label }) => (
+                    <button
+                      key={id}
+                      className={`cases-filter-btn${filter === id ? " cases-filter-btn--active" : ""}`}
+                      aria-pressed={filter === id}
+                      onClick={() => setFilter(id)}
+                    >
+                      {label}
+                      {counts[id] > 0 && (
+                        <span className="cases-filter-count">{counts[id]}</span>
+                      )}
+                    </button>
+                  ))}
+                </div>
+                <select
+                  className="cases-sort-select"
+                  value={sort}
+                  onChange={(e) => setSort(e.target.value as Sort)}
+                  aria-label="ترتيب القضايا"
+                >
+                  {SORTS.map(({ id, label }) => (
+                    <option key={id} value={id}>{label}</option>
+                  ))}
+                </select>
+              </div>
+
+              {/* Result count when searching */}
+              {query.trim() && (
+                <p className="cases-search-result-count" role="status" aria-live="polite">
+                  {gridCards.length === 0
+                    ? "لا نتائج لهذا البحث."
+                    : `${gridCards.length} قضية تطابق «${query.trim()}»`}
+                </p>
+              )}
 
               {/* Grid */}
               {gridCards.length === 0 ? (
                 <div className="empty-state" style={{ minBlockSize: "8rem" }}>
-                  <p>لا قضايا في هذه الفئة.</p>
+                  <p>{query.trim() ? "لا نتائج لهذا البحث. جرّب كلمة أخرى." : "لا قضايا في هذه الفئة."}</p>
                 </div>
               ) : (
                 <div className="cases-grid">
                   {gridCards.map((c: Card) => (
-                    <DossierCard key={c.case_id} c={c} prog={progOf(c.case_id)} />
+                    <DossierCard key={c.case_id} c={c} prog={progOf(c.case_id)} query={query} />
                   ))}
                 </div>
               )}
