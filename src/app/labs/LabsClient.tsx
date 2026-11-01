@@ -35,7 +35,7 @@ export function LabsClient({
 }) {
   const [kindFilter, setKindFilter] = useState<"all" | LabKind>("all");
   const [diffFilter, setDiffFilter] = useState<DiffFilter>("all");
-  const [doneIds, setDoneIds] = useState<Set<string>>(new Set());
+  const [doneCount, setDoneCount] = useState<number>(0);
 
   const kinds = Object.keys(KIND_LABEL) as LabKind[];
 
@@ -54,11 +54,26 @@ export function LabsClient({
       {/* Progress overlay — injects CSS for done chips */}
       <LabProgressOverlay
         labIds={allIds}
-        onStats={(done) => {
-          // We don't need the count here; track via doneIds
-          void done;
-        }}
+        onStats={(done) => setDoneCount(done)}
       />
+
+      {/* Progress summary strip — visible once progress is known */}
+      {doneCount > 0 && (
+        <div className="labs-progress-strip" role="status" aria-label={`أكملت ${doneCount} من ${allIds.length} تمريناً`}>
+          <span className="labs-progress-text">
+            أكملت <b>{doneCount}</b> من <b>{allIds.length}</b> تمريناً
+          </span>
+          <div className="labs-progress-bar-wrap" aria-hidden>
+            <div
+              className="labs-progress-bar-fill"
+              style={{ width: `${Math.round((doneCount / allIds.length) * 100)}%` }}
+            />
+          </div>
+          <span className="labs-progress-pct small dim" aria-hidden>
+            {Math.round((doneCount / allIds.length) * 100)}٪
+          </span>
+        </div>
+      )}
 
       {/* Filter controls */}
       <div className="labs-controls" role="toolbar" aria-label="فلاتر المختبرات">
