@@ -7,6 +7,6 @@ export async function register(): Promise<void> {
   const { syncFileCases } = await import("./server/content");
   const { ensureAdmin } = await import("./server/auth");
   await migrate();
-  await syncFileCases();
-  await ensureAdmin();
+  // independent of each other, and each costs remote round trips: run together to keep cold starts short
+  await Promise.all([syncFileCases(), ensureAdmin()]);
 }

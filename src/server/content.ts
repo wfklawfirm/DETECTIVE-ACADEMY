@@ -49,16 +49,23 @@ export function listFileCaseIds(dir = CASES_DIR): string[] {
   return readdirSync(/*turbopackIgnore: true*/ dir).filter((f) => f.endsWith(".json") && !f.endsWith(".ui.json") && !f.endsWith(".scoring.json")).map((f) => f.replace(/\.json$/, "")).sort();
 }
 
-/** Import every file case into case_versions (idempotent). New versions arrive as drafts; nothing is auto-approved. */
+/**
+ * Import every file case into case_versions (idempotent). New versions arrive as drafts; nothing is auto-approved.
+ * Runs at every cold start on serverless hosts, so it must be cheap: one query lists existing versions, and versions that are
+ * already published/retired are skipped (the refresh below only ever touched draft/in_review rows, so skipping changes nothing).
+ */
 export async function syncFileCases(dir = CASES_DIR): Promise<string[]> {
   const out: string[] = [];
+  const existing = new Map((await q<{ case_id: string; version: string; status: string }>("SELECT case_id, version, status FROM case_versions"))
+    .map((r) => [`${r.case_id}@${r.version}`, r.status]));
   for (const id of listFileCaseIds(dir)) {
     const t = readFileTriplet(dir, id)!;
     const core = t.core as CaseFile;
-    const exists = await q1("SELECT 1 AS x FROM case_versions WHERE case_id = ? AND version = ?", [core.case_id, core.case_version]);
+    const status = existing.get(`${core.case_id}@${core.case_version}`);
+    if (status !== undefined && status !== "draft" && status !== "in_review") continue;
     const hash = await contentHash(core);
     const qa = qaCase(core);
-    if (exists) {
+    if (status !== undefined) {
       await run("UPDATE case_versions SET core_json=?, ui_json=?, scoring_json=?, content_hash=?, qa_json=? WHERE case_id=? AND version=? AND status IN ('draft','in_review')",
         [JSON.stringify(core), JSON.stringify(t.ui), JSON.stringify(t.scoring), hash, JSON.stringify(qa), core.case_id, core.case_version]);
     } else {
