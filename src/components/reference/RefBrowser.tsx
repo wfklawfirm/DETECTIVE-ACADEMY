@@ -15,12 +15,14 @@ export function foldText(s: string): string {
   return s.replace(AR_MARKS, "").replace(/[أإآٱ]/g, "ا").replace(/ى/g, "ي").replace(/ة/g, "ه").toLowerCase();
 }
 
-export function RefBrowser({ items, facets = [], searchLabel, placeholder, noun, limit = 400 }: {
-  items: RefItem[]; facets?: FacetDef[]; searchLabel: string; placeholder?: string; noun: string; limit?: number;
+export function RefBrowser({ items, facets = [], searchLabel, placeholder, noun, limit = 400, pageSize = 24 }: {
+  items: RefItem[]; facets?: FacetDef[]; searchLabel: string; placeholder?: string; noun: string; limit?: number; pageSize?: number;
 }) {
   const [q, setQ] = useState("");
   const [sel, setSel] = useState<Record<string, string>>({});
   const [target, setTarget] = useState<string | null>(null);
+  /** Progressive disclosure: long reference lists mount pageSize items first (hundreds of full cards made /glossary ~62k px tall). */
+  const [visible, setVisible] = useState(pageSize);
   const uid = useId();
   const refs = useRef<Map<string, HTMLLIElement>>(new Map());
   const folded = useMemo(() => items.map((i) => foldText(i.text)), [items]);
@@ -31,6 +33,7 @@ export function RefBrowser({ items, facets = [], searchLabel, placeholder, noun,
   }, [items, folded, q, sel, facets]);
 
   // Deep links (/glossary#GL-023): clear any filter that would hide the item, then scroll to it and mark it.
+  useEffect(() => { setVisible(pageSize); }, [q, sel, pageSize]);
   const goTo = useCallback(() => {
     const id = decodeURIComponent(window.location.hash.replace(/^#/, ""));
     if (!id || !items.some((i) => i.id === id)) return;
@@ -43,11 +46,15 @@ export function RefBrowser({ items, facets = [], searchLabel, placeholder, noun,
   }, [goTo]);
   useEffect(() => {
     if (!target) return;
+    const idx = list.findIndex((i) => i.id === target);
+    if (idx >= visible) { setVisible(idx + 1); return; } // reveal a deep-linked item before scrolling to it
     const t = window.setTimeout(() => { refs.current.get(target)?.scrollIntoView({ block: "start", behavior: "auto" }); }, 30);
     return () => window.clearTimeout(t);
-  }, [target, list]);
+  }, [target, list, visible]);
 
-  const shown = list.slice(0, limit);
+  const cap = Math.min(list.length, limit);
+  const shown = list.slice(0, Math.min(visible, cap));
+  const remaining = cap - shown.length;
   return (
     <div className="stack">
       <Field label={searchLabel}>{(p) => <input {...p} className="input" type="search" value={q} onChange={(e) => setQ(e.target.value)} placeholder={placeholder} autoComplete="off" />}</Field>
@@ -80,6 +87,12 @@ export function RefBrowser({ items, facets = [], searchLabel, placeholder, noun,
           </li>
         ))}
       </ul>
+      {remaining > 0 && (
+        <div className="row" style={{ justifyContent: "center" }}>
+          <Button variant="secondary" onClick={() => setVisible((v) => v + pageSize)}>عرض المزيد ({remaining} متبقٍ)</Button>
+          <Button variant="outline" onClick={() => setVisible(cap)}>عرض الكل</Button>
+        </div>
+      )}
       {list.length > limit && <p className="small dim">يُعرض أول {limit} نتيجة؛ ضيّق البحث لرؤية الباقي.</p>}
     </div>
   );

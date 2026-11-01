@@ -1,7 +1,7 @@
 import { assess } from "../engine/assess";
 import type { PlayState } from "../engine/types";
 import type { Actor } from "./auth";
-import { listPlayable, getPlayableMany, ageAllows, type CaseCard } from "./content";
+import { listPlayable, getCardsLight, getPlayableMany, ageAllows, type CaseCard } from "./content";
 import { q } from "./db";
 import { verifyToken } from "./crypto";
 import koNames from "../../content/knowledge/ko_names.json";
@@ -31,15 +31,15 @@ export async function progressFor(actor: Actor, tokens: Record<string, string> |
   const cards = await listPlayable(band);
   const states = await statesFor(actor, tokens);
   const cases: CaseProgress[] = [];
-  const loaded = await getPlayableMany([...states.keys()]);
+  const loaded = await getCardsLight([...states.keys()]);
   for (const [caseId, st] of states) {
     const lc = loaded.get(caseId);
-    if (!lc || !ageAllows(lc.core.meta.age_band, band)) continue;
+    if (!lc || !ageAllows(lc.age_band, band)) continue;
     cases.push({
-      case_id: caseId, title_ar: lc.ui.cover.title_ar, machine: st.machine,
+      case_id: caseId, title_ar: lc.card.title_ar, machine: st.machine,
       done: st.machine === "resolved" || st.machine === "review",
       submitted: !!st.submission,
-      evidence_count: st.evidence.length, locked_count: Math.max(0, lc.core.evidence.length - st.evidence.length), updated_at: st.updated_at,
+      evidence_count: st.evidence.length, locked_count: Math.max(0, lc.evidence_total - st.evidence.length), updated_at: st.updated_at,
     });
   }
   return { cases, cards };

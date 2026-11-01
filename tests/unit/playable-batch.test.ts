@@ -1,6 +1,6 @@
 import { beforeAll, describe, expect, it } from "vitest";
 import { migrate } from "@/server/db";
-import { getPlayable, getPlayableMany, listFileCaseIds, listPlayable, syncFileCases } from "@/server/content";
+import { card, getCardsLight, getPlayable, getPlayableMany, listFileCaseIds, listPlayable, syncFileCases } from "@/server/content";
 
 beforeAll(async () => { await migrate(); await syncFileCases(); });
 
@@ -29,5 +29,22 @@ describe("getPlayableMany", () => {
     const cards = await listPlayable("16-17");
     const sorted = [...cards].sort((a, b) => Number(b.tutorial) - Number(a.tutorial) || a.difficulty - b.difficulty || a.case_id.localeCompare(b.case_id));
     expect(cards.map((c) => c.case_id)).toEqual(sorted.map((c) => c.case_id));
+  });
+});
+
+/** The cold-start fast path builds cards from json_extract fields; it must be indistinguishable from the full-JSON card. */
+describe("getCardsLight", () => {
+  it("returns, for every case, exactly the card/age band/evidence count the full case gives", async () => {
+    const light = await getCardsLight();
+    expect(light.size).toBeGreaterThan(0);
+    for (const id of listFileCaseIds()) {
+      const full = await getPlayable(id);
+      const l = light.get(id);
+      expect(l === undefined).toBe(full === null);
+      if (!full || !l) continue;
+      expect(l.card).toEqual(JSON.parse(JSON.stringify(card(full))));
+      expect(l.age_band).toBe(full.core.meta.age_band);
+      expect(l.evidence_total).toBe(full.core.evidence.length);
+    }
   });
 });

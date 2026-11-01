@@ -114,15 +114,9 @@ type VersionRow = VersionMeta & { core_json: string; ui_json: string; scoring_js
 export async function getPlayableMany(caseIds?: string[]): Promise<Map<string, LoadedCase>> {
   const out = new Map<string, LoadedCase>();
   if (caseIds && caseIds.length === 0) return out;
-  const where = caseIds ? ` AND case_id IN (${caseIds.map(() => "?").join(",")})` : "";
-  const metas = await q<VersionMeta>(
-    `SELECT case_id, version, content_hash, status FROM case_versions WHERE status != 'retired'${where} ORDER BY created_at DESC`, caseIds ?? []);
-  const chosen = new Map<string, VersionMeta & { preview: boolean }>();
-  for (const m of metas) if (m.status === "published" && !chosen.has(m.case_id)) chosen.set(m.case_id, { ...m, preview: false });
-  if (env.allowPreview) for (const m of metas) if (!chosen.has(m.case_id)) chosen.set(m.case_id, { ...m, preview: true });
-
+  const chosen = await chooseVersions(caseIds);
   const keyOf = (m: VersionMeta & { preview: boolean }) => `${m.content_hash}:${m.status}:${m.preview}`;
-  const missing = [...chosen.values()].filter((m) => !cache().has(keyOf(m)));
+  const missing = chosen.filter((m) => !cache().has(keyOf(m)));
   const fetched = new Map<string, VersionRow>();
   if (missing.length) {
     const rows = await q<VersionRow>(
@@ -130,7 +124,7 @@ export async function getPlayableMany(caseIds?: string[]): Promise<Map<string, L
       missing.map((m) => `${m.case_id}@${m.version}`));
     for (const r of rows) fetched.set(`${r.case_id}@${r.version}`, r);
   }
-  for (const m of chosen.values()) {
+  for (const m of chosen) {
     const hit = cache().get(keyOf(m));
     if (hit) { out.set(m.case_id, hit); continue; }
     const row = fetched.get(`${m.case_id}@${m.version}`);
@@ -139,12 +133,69 @@ export async function getPlayableMany(caseIds?: string[]): Promise<Map<string, L
   return out;
 }
 
+/** Which version of each case is playable: same rules as getPlayable, for many cases in one light query. */
+async function chooseVersions(caseIds?: string[]): Promise<(VersionMeta & { preview: boolean })[]> {
+  const where = caseIds ? ` AND case_id IN (${caseIds.map(() => "?").join(",")})` : "";
+  const metas = await q<VersionMeta>(
+    `SELECT case_id, version, content_hash, status FROM case_versions WHERE status != 'retired'${where} ORDER BY created_at DESC`, caseIds ?? []);
+  const chosen = new Map<string, VersionMeta & { preview: boolean }>();
+  for (const m of metas) if (m.status === "published" && !chosen.has(m.case_id)) chosen.set(m.case_id, { ...m, preview: false });
+  if (env.allowPreview) for (const m of metas) if (!chosen.has(m.case_id)) chosen.set(m.case_id, { ...m, preview: true });
+  return [...chosen.values()];
+}
+
+/** What list screens need from a case: its card plus age band and evidence count. */
+export interface LightCase { card: CaseCard; age_band: string; evidence_total: number }
+const gl = globalThis as typeof globalThis & { __atharLight?: Map<string, LightCase> };
+const lightCache = (): Map<string, LightCase> => (gl.__atharLight ??= new Map());
+type LightRow = VersionMeta & { mins: number; diff: number; ab: string; cover: string; tut: unknown; skills: string | null; ev_n: number };
+
+/**
+ * Card-level data for many cases without downloading their full JSON (core + ui + scoring can be megabytes in total).
+ * The database extracts only the few fields a card needs, and results are cached per version hash, so a cold worker pays
+ * one small query instead of fetching every case in full.
+ */
+export async function getCardsLight(caseIds?: string[]): Promise<Map<string, LightCase>> {
+  const out = new Map<string, LightCase>();
+  if (caseIds && caseIds.length === 0) return out;
+  const chosen = await chooseVersions(caseIds);
+  const keyOf = (m: VersionMeta & { preview: boolean }) => `${m.content_hash}:${m.status}:${m.preview}`;
+  const missing = chosen.filter((m) => !lightCache().has(keyOf(m)));
+  if (missing.length) {
+    const rows = await q<LightRow>(
+      `SELECT case_id, version, content_hash, status,
+         json_extract(core_json, '$.meta.estimated_minutes') AS mins, json_extract(core_json, '$.meta.difficulty') AS diff,
+         json_extract(core_json, '$.meta.age_band') AS ab, json_extract(ui_json, '$.cover') AS cover,
+         json_extract(ui_json, '$.tutorial') AS tut, json_extract(ui_json, '$.skills') AS skills,
+         json_array_length(core_json, '$.evidence') AS ev_n
+       FROM case_versions WHERE (case_id || '@' || version) IN (${missing.map(() => "?").join(",")})`,
+      missing.map((m) => `${m.case_id}@${m.version}`));
+    const byId = new Map(rows.map((r) => [`${r.case_id}@${r.version}`, r]));
+    if (lightCache().size > 256) lightCache().clear();
+    for (const m of missing) {
+      const r = byId.get(`${m.case_id}@${m.version}`);
+      if (!r) continue;
+      const cover = JSON.parse(r.cover) as CaseUi["cover"];
+      lightCache().set(keyOf(m), {
+        age_band: r.ab, evidence_total: Number(r.ev_n),
+        card: {
+          case_id: m.case_id, title_ar: cover.title_ar, kicker_ar: cover.kicker_ar, tagline_ar: cover.tagline_ar, glyph: cover.glyph, accent: cover.accent,
+          minutes: Number(r.mins), difficulty: Number(r.diff), age_band: r.ab, tutorial: !!r.tut, preview: m.preview,
+          skills: r.skills ? (JSON.parse(r.skills) as CaseCard["skills"]) : [],
+        },
+      });
+    }
+  }
+  for (const m of chosen) { const hit = lightCache().get(keyOf(m)); if (hit) out.set(m.case_id, hit); }
+  return out;
+}
+
 export async function listPlayable(ageBand: "13-15" | "16-17" | "18+"): Promise<CaseCard[]> {
-  const all = await getPlayableMany();
+  const all = await getCardsLight();
   const cards: CaseCard[] = [];
   for (const c of all.values()) {
-    if (!ageAllows(c.core.meta.age_band, ageBand)) continue;
-    cards.push(card(c));
+    if (!ageAllows(c.age_band, ageBand)) continue;
+    cards.push(c.card);
   }
   return cards.sort((a, b) => Number(b.tutorial) - Number(a.tutorial) || a.difficulty - b.difficulty || a.case_id.localeCompare(b.case_id));
 }
