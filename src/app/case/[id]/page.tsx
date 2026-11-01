@@ -1,11 +1,15 @@
 "use client";
 import { use, useEffect, useState } from "react";
+import Link from "next/link";
 import { EntryHook } from "@/components/EntryHook";
 import { LinkButton } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 import { EmptyState, LoadingRegion } from "@/components/ui/feedback";
 import { FolderIcon } from "@/components/ui/icons";
 import { allTokens, api } from "@/lib/client";
 import type { Card, Prog } from "@/components/CaseCard";
+
+interface LinkedLesson { id: string; title_ar: string; track_id: string; track_title_ar: string; minutes: number }
 
 /* ── Difficulty dots ─────────────────────────────────────────── */
 function DifficultyDots({ level, max = 5 }: { level: number; max?: number }) {
@@ -23,6 +27,8 @@ export default function CaseIntro({ params }: { params: Promise<{ id: string }> 
   const { id } = use(params);
   const [card, setCard] = useState<Card | null | undefined>(undefined);
   const [prog, setProg] = useState<Prog | undefined>();
+  const [linkedLessons, setLinkedLessons] = useState<LinkedLesson[]>([]);
+  const [doneLessons, setDoneLessons] = useState<Set<string>>(new Set());
 
   useEffect(() => {
     api<{ cards: Card[]; cases: Prog[] }>("/api/progress", { tokens: allTokens() })
@@ -31,6 +37,14 @@ export default function CaseIntro({ params }: { params: Promise<{ id: string }> 
         setProg(r.cases.find((c: Prog) => c.case_id === id));
       })
       .catch(() => setCard(null));
+    fetch(`/api/cases/${id}/lessons`)
+      .then((r) => r.ok ? r.json() : null)
+      .then((d) => { if (d?.lessons) setLinkedLessons(d.lessons as LinkedLesson[]); })
+      .catch(() => {});
+    fetch("/api/academy/progress")
+      .then((r) => r.ok ? r.json() : null)
+      .then((d) => { if (d?.done) setDoneLessons(new Set<string>(d.done as string[])); })
+      .catch(() => {});
   }, [id]);
 
   if (card === undefined) return <LoadingRegion cards={2} />;

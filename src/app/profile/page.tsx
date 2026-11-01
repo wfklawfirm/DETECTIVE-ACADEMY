@@ -59,6 +59,7 @@ export default function Profile() {
   const [d, setD] = useState<Data | null>(null);
   const [failed, setFailed] = useState(false);
   const [lessonsCount, setLessonsCount] = useState<number>(0);
+  const [labsCount, setLabsCount] = useState<number>(0);
 
   useEffect(() => {
     api<Data>("/profile/data", { tokens: allTokens() })
@@ -70,6 +71,10 @@ export default function Profile() {
     fetch("/api/academy/progress")
       .then((r) => r.ok ? r.json() : null)
       .then((d) => { if (d?.done) setLessonsCount((d.done as string[]).length); })
+      .catch(() => {});
+    fetch("/api/labs/progress")
+      .then((r) => r.ok ? r.json() : null)
+      .then((d) => { if (d?.done) setLabsCount((d.done as string[]).length); })
       .catch(() => {});
   }, []);
 
@@ -114,6 +119,15 @@ export default function Profile() {
               <span className="profile-stat-value">{lessonsCount}</span>
               <span className="profile-stat-label">درس مكتمل</span>
             </div>
+            {labsCount > 0 && (
+              <>
+                <div className="profile-stat-sep" />
+                <div className="profile-stat">
+                  <span className="profile-stat-value">{labsCount}</span>
+                  <span className="profile-stat-label">مختبر مكتمل</span>
+                </div>
+              </>
+            )}
             <div className="profile-stat-sep" />
             <div className="profile-stat">
               <span className="profile-stat-value">{d.skills.length}</span>

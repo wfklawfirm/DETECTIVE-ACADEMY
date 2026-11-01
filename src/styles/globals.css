@@ -4772,3 +4772,50 @@ mark.search-hl {
 .labs-result-count { margin-block-start: 0.25rem; }
 /* ── LAB DONE CHIP — hidden by default, shown via CSS injection from LabProgressOverlay ── */
 .lab-done-chip { display: none; }
+
+/* ── CASE LINKED LESSONS ── */
+.case-linked-lessons {
+  margin-block: 1.5rem 0.5rem;
+}
+.case-linked-lessons-title {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-block-end: 0.25rem;
+}
+.case-linked-lessons-list {
+  list-style: none;
+  padding: 0;
+  margin: 0.75rem 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+.case-linked-lesson-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 0.75rem;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  text-decoration: none;
+  color: var(--text-primary);
+  transition: border-color 0.15s;
+}
+.case-linked-lesson-row:hover { border-color: var(--accent-amber); }
+.case-linked-lesson-id {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--accent-amber);
+  min-width: 1.6rem;
+}
+.case-linked-lesson-title { flex: 1; font-size: 0.88rem; }
+.case-linked-lesson-meta { font-size: 0.72rem; }
+.case-linked-lesson-done { flex-shrink: 0; }
+.case-linked-lesson-chev {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  flex-shrink: 0;
+  transform: scaleX(-1);
+}
