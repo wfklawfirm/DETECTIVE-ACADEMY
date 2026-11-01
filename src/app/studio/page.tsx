@@ -37,7 +37,7 @@ export default function Studio() {
         <h1 className="ref-hero-title">مراجعة القضايا</h1>
         <p className="ref-hero-hook">لا تُنشر قضية إلا بعد موافقة سبع بوابات على نسخة المحتوى، وموافقة المراجع لا تكون من كاتب النسخة نفسه.</p>
       </div>
-      {role === "admin" && <div className="row"><LinkButton href="/studio/library">المكتبة البحثية (للمدير)</LinkButton></div>}
+      {role === "admin" && <div className="row"><LinkButton href="/studio/library">المكتبة البحثية</LinkButton><LinkButton href="/studio/stats">إحصاءات المنصة</LinkButton></div>}
       {msg && <Callout tone="negative" role="alert">{msg}</Callout>}
       {!loaded && <LoadingRegion cards={2} />}
       <div className="grid-2">
@@ -50,7 +50,8 @@ export default function Studio() {
               <div className="row row-between"><span>{ROLE_AR[r] ?? r}</span><Badge tone={st === "approved" ? "positive" : st === "changes_requested" ? "warning" : "neutral"}>{st === "approved" ? "معتمد" : st === "changes_requested" ? "تعديلات مطلوبة" : "قيد الانتظار"}</Badge></div>
               {canReview && ["draft", "in_review", "approved"].includes(v.status) && <div className="row"><Button size="sm" variant="secondary" onClick={() => act(() => api("/api/studio/review", { case_id: v.case_id, version: v.version, role: r, status: "approved" }))}>اعتمد</Button><Button size="sm" variant="ghost" onClick={() => act(() => api("/api/studio/review", { case_id: v.case_id, version: v.version, role: r, status: "changes_requested", notes: "يحتاج تعديلاً" }))}>تعديلات</Button></div>}
             </li>))}</ul>
-          {v.status === "draft" {role === "admin" && v.all_approved && v.status !== "published" && <Button variant="primary" onClick={() => act(() => api("/api/studio/publish", { case_id: v.case_id, version: v.version }))}>انشر</Button>}{role === "admin" && v.all_approved && v.status !== "published" && <Button variant="primary" onClick={() => act(() => api("/api/studio/publish", { case_id: v.case_id, version: v.version }))}>انشر</Button>} (role === "editor" || role === "admin") {role === "admin" && v.all_approved && v.status !== "published" && <Button variant="primary" onClick={() => act(() => api("/api/studio/publish", { case_id: v.case_id, version: v.version }))}>انشر</Button>}{role === "admin" && v.all_approved && v.status !== "published" && <Button variant="primary" onClick={() => act(() => api("/api/studio/publish", { case_id: v.case_id, version: v.version }))}>انشر</Button>} <Button variant="secondary" onClick={() => act(() => api("/api/studio/submit", { case_id: v.case_id, version: v.version }))}>أرسل للمراجعة</Button>}{role === "admin" && v.all_approved && v.status !== "published" && <Button variant="primary" onClick={() => act(() => api("/api/studio/publish", { case_id: v.case_id, version: v.version }))}>انشر</Button>}
+          {v.status === "draft" && (role === "editor" || role === "admin") && <Button variant="secondary" onClick={() => act(() => api("/api/studio/submit", { case_id: v.case_id, version: v.version }))}>أرسل للمراجعة</Button>}
+          {role === "admin" && v.all_approved && v.status !== "published" && <Button variant="primary" onClick={() => act(() => api("/api/studio/publish", { case_id: v.case_id, version: v.version }))}>انشر</Button>}
         </Card>
       ))}
       </div>

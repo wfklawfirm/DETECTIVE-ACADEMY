@@ -4650,3 +4650,10 @@ header.page-head,
 .track-progress-bar { flex: 1; height: 4px; background: color-mix(in srgb, var(--accent-amber) 18%, transparent); border-radius: 99px; overflow: hidden; }
 .track-progress-bar-fill { height: 100%; width: 0%; background: var(--accent-amber); border-radius: 99px; transition: width 0.4s ease; }
 .track-progress-count::before { content: var(--done, ""); font-size: 0.75rem; color: var(--text-muted); font-variant-numeric: tabular-nums; }
+
+/* ── STUDIO STATS ── */
+.studio-stats-strip { display: flex; flex-wrap: wrap; gap: 1rem 2rem; margin-block-start: 0.75rem; }
+.studio-stat { display: flex; flex-direction: column; gap: 0.1rem; }
+.studio-stat-value { font-size: 1.75rem; font-weight: 700; line-height: 1; color: var(--accent-amber); font-variant-numeric: tabular-nums; }
+.studio-stat-label { font-size: 0.8rem; color: var(--text-muted); }
+.studio-stat-sub { font-size: 0.75rem; color: var(--positive); }
