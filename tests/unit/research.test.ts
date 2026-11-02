@@ -79,7 +79,10 @@ describe("research manifest integrity", () => {
       expect(existsSync(p), f.path).toBe(true);
       const buf = readFileSync(p);
       const raw = f.stored_as!.endsWith(".gz") ? gunzipSync(buf) : buf;
-      expect(createHash("sha256").update(raw).digest("hex"), f.path).toBe(f.sha256);
+      const sha = (b: Buffer) => createHash("sha256").update(b).digest("hex");
+      // A Windows checkout with core.autocrlf turns LF into CRLF; the recorded hash is of the LF original.
+      const lf = Buffer.from(raw.toString("latin1").replace(/\r\n/g, "\n"), "latin1");
+      expect([sha(raw), sha(lf)], f.path).toContain(f.sha256);
       if (f.type === "md") expect(f.desc, f.path).toBeTruthy();
     }
   });

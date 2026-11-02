@@ -1,0 +1,8 @@
+# Keep line endings identical on every machine: content hashes (case files, research manifest) depend on exact bytes.
+* text=auto eol=lf
+*.gz binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+*.woff2 binary
