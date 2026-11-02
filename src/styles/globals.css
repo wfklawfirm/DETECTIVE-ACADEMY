@@ -4417,6 +4417,16 @@ header.page-head,
   --sp-4: 1rem;
   --sp-5: 1.25rem;
   --sp-6: 1.5rem;
+  /* Tokens that were referenced in the CSS but never defined (the declarations using them were silently dropped:
+     reference heroes had zero padding and square corners on desktop). */
+  --sp-7: 2rem;
+  --sp-8: 3rem;
+  --radius-md: 10px;
+  --radius-xl: 20px;
+  --bg-surface: var(--surface);
+  --surface-hover: var(--surface-soft);
+  --surface-raised: var(--surface-soft);
+  --font-mono: var(--f-mono);
 }
 
 /* lead-card: investigation clue aside */
