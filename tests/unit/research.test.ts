@@ -80,9 +80,12 @@ describe("research manifest integrity", () => {
       const buf = readFileSync(p);
       const raw = f.stored_as!.endsWith(".gz") ? gunzipSync(buf) : buf;
       const sha = (b: Buffer) => createHash("sha256").update(b).digest("hex");
-      // A Windows checkout with core.autocrlf turns LF into CRLF; the recorded hash is of the LF original.
-      const lf = Buffer.from(raw.toString("latin1").replace(/\r\n/g, "\n"), "latin1");
-      expect([sha(raw), sha(lf)], f.path).toContain(f.sha256);
+      // Line endings depend on the checkout (Windows autocrlf, or files stored with CRLF): accept the exact bytes,
+      // the LF form, or the CRLF form. A real content change still fails all three.
+      const text = raw.toString("latin1");
+      const lf = Buffer.from(text.replace(/\r\n/g, "\n"), "latin1");
+      const crlf = Buffer.from(text.replace(/\r\n/g, "\n").replace(/\n/g, "\r\n"), "latin1");
+      expect([sha(raw), sha(lf), sha(crlf)], f.path).toContain(f.sha256);
       if (f.type === "md") expect(f.desc, f.path).toBeTruthy();
     }
   });
