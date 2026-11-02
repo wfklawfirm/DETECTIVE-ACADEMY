@@ -60,6 +60,8 @@ function h32(s: string): number {
 function eligible(h: HookDef, ctx: HookContext): boolean {
   if (!h.surfaces.includes(ctx.surface)) return false;
   if (ctx.gentle && h.kind !== "skill" && h.kind !== "welcome_back") return false;
+  // "Welcome back" only makes sense for someone who has actually started a case.
+  if (h.kind === "welcome_back" && ctx.cases.length === 0) return false;
   const w = h.when;
   if (!w) return true;
   const done = ctx.cases.filter((c) => c.done);

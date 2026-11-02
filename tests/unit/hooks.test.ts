@@ -61,3 +61,17 @@ describe("daily riddle", () => {
     expect(slots.size).toBeGreaterThanOrEqual(3);
   });
 });
+
+describe("welcome-back hooks", () => {
+  it("are never shown to someone with no started case, but are still available after progress", () => {
+    for (const gentle of [false, true])
+      for (const surface of ["landing", "home"] as const)
+        for (let n = 0; n < 80; n++) {
+          const h = selectHook(hooks, { ...base, surface, gentle, cases: [], entry_counter: n, seed: `w${n}` });
+          expect(h.kind, `${surface}/${gentle}/${n}`).not.toBe("welcome_back");
+        }
+    const seen = new Set<string>();
+    for (let n = 0; n < 200; n++) seen.add(selectHook(hooks, { ...base, surface: "home", gentle: true, cases: [open], entry_counter: n, seed: `p${n}` }).kind);
+    expect(seen.has("welcome_back")).toBe(true);
+  });
+});
