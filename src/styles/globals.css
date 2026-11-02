@@ -5040,3 +5040,14 @@ mark.search-hl {
 .profile-stat-label { white-space: normal; text-wrap: balance; }
 .profile-stat-sep:last-child { display: none; }
 @media (max-width: 520px) { .profile-stat-sep { display: none; } }
+
+/* Hero vignette: the old gradient sat in a 45%-wide box and its brightest point touched the box edge, which drew a hard
+   vertical line across every reference hero in RTL. Let the glow fade out inside a full-width box instead. */
+.ref-hero::before, .labs-hero::before, .academy-hero::before, .knowledge-hero::before {
+  inset: 0;
+  inline-size: auto;
+  block-size: auto;
+  width: auto;
+  height: auto;
+  background: radial-gradient(ellipse 65% 90% at 0% 0%, color-mix(in srgb, var(--accent-teal) 8%, transparent), transparent 70%);
+}
