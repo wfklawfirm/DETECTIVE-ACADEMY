@@ -219,7 +219,7 @@ export default function Cases() {
                 <span className="cases-stat-label">مفتوحة</span>
               </div>
             )}
-            {total > 0 && (
+            {total > 0 && doneCount > 0 && (
               <div className="cases-stat cases-stat--bar">
                 <ProgressBar value={doneCount} max={total} label="نسبة القضايا المكتملة" />
                 <p className="cases-stat-pct">{Math.round((doneCount / total) * 100)}٪</p>
@@ -269,7 +269,7 @@ export default function Cases() {
           {/* Archive grid */}
           {total > 1 && (
             <section aria-labelledby="archive-h">
-              <p className="cases-section-kicker" id="archive-h">أرشيف القضايا</p>
+              <p className="cases-section-kicker" id="archive-h">{featured ? "بقية القضايا" : "أرشيف القضايا"}</p>
 
               {/* Search bar */}
               <div className="cases-search-wrap" role="search" aria-label="بحث في القضايا">
