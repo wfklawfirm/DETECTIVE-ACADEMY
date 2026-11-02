@@ -19,3 +19,8 @@
 
 ## Status of earlier E2E failures
 Resolved in code or tests; see QA_REPORT.md. Remaining gap: no desktop E2E for sidebar navigation.
+
+## Added after screenshot review (design polish, not fixed)
+- `/cases` hero: floating folder icon, isolated "0%", large empty areas; featured card very wide on desktop; counter 30 vs filter 29 (the tutorial case is probably counted in one and not the other).
+- Real screen-reader testing has not been done.
+- Production database is reported persistent by `/api/health`; backup policy is unknown.

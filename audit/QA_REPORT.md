@@ -2,11 +2,10 @@
 
 Honest status. Nothing here claims expert review, user testing, or full visual sign-off.
 
-## Automated results (final run on this code)
-- Unit tests: 340 pass. `tsc --noEmit` clean. `next build` passes.
-- Full Playwright E2E suite (mobile + desktop projects): 35 passed, 3 failed, 2 skipped in the full run.
-  - The 3 failures were desktop-only tests that assume mobile UI (menu button, bottom nav). After the full run these tests were changed to skip on desktop, and the 3 re-ran as skipped. **The full suite was not re-run end to end after that change.**
-  - The whole-site axe test (all 40 routes, dark and light, both viewports), the 320px no-overflow test, the theme toggle, the play-tab a11y tests and the studio test all passed in the last runs.
+## Automated results (final run, commit 4ead221)
+- Unit tests: 344 (340 + 4 storage-class tests). `tsc --noEmit` clean. `next build` passes.
+- Full Playwright E2E suite (mobile + desktop): **39 passed, 0 failed, 7 skipped** (skips are layout-specific: mobile-only tests skip on desktop and the reverse).
+- New tests: desktop sidebar navigation, `/api/health` shape (no config leak), and a document-structure check on every page (lang/dir, one `main`, one `h1`, no skipped heading levels, images have `alt`).
 
 ## What was found and fixed (root causes)
 | Problem | Root cause | Fix |
@@ -22,8 +21,14 @@ Honest status. Nothing here claims expert review, user testing, or full visual s
 ## Stale tests updated (not site bugs)
 Studio heading (now "مراجعة القضايا"), light background value (`rgb(245, 240, 232)`), theme radio click, and desktop-layout assumptions (no menu button / bottom nav on desktop).
 
+## Verified in production
+- `/api/health` reports `storage: "persistent"`, so `ATHAR_DB_URL` is not a per-instance local file. It reports only the storage class; I did not read the actual URL or any environment value. Whether that remote database is backed up is not verified.
+
+## Found by looking at real screenshots (new in this round)
+- Profile hero on phones broke text letter by letter (an old duplicate CSS rule made the hero a flex row). Fixed.
+- `.sr-only` was used in markup but never defined, so "hidden" headings and labels were visible. Defined it.
+- Pages missing an `h1` (`/start`) or skipping heading levels (lessons, season). Fixed.
+
 ## Not covered
-- Menu sheet and bottom nav behaviour is tested on mobile only; desktop sidebar navigation has no equivalent E2E test.
-- Automated axe cannot catch every issue (focus order, meaning of content, real screen-reader behaviour). No manual assistive-technology test was done.
-- Visual review covers part of the scope only. See `UNRESOLVED_ISSUES.md`.
-- Production still needs `ATHAR_DB_URL` confirmed as persistent storage; this was not verified.
+- No manual test with a real screen reader (NVDA/VoiceOver/TalkBack). Automated axe and structure checks cannot prove real assistive-technology behaviour.
+- Visual review: I looked at screenshots of `/cases`, `/academy`, `/season`, `/profile` (mobile and, for some, desktop). Observations not fixed: the `/cases` hero has a floating folder icon, an isolated "0%" and wide empty areas; the featured case card is very wide on desktop; the counter says 30 while the filter says 29. Most other page types were not visually reviewed. See `UNRESOLVED_ISSUES.md`.
