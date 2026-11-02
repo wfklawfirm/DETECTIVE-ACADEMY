@@ -13,6 +13,8 @@ function need(name: string, min = 1): string {
 export const env = {
   get secret() { return need("ATHAR_SECRET", 32); },
   get dbUrl() { return process.env.ATHAR_DB_URL || (process.env.VERCEL ? "file:/tmp/athar.db" : "file:./data/athar.db"); },
+  /** True when accounts/progress would be lost: a local file DB on a serverless host (per-instance, wiped on restart). */
+  get dbEphemeral() { return !!process.env.VERCEL && this.dbUrl.startsWith("file:"); },
   /** Serverless hosts start with an empty disk: create the schema, import the file cases and ensure the admin at boot. */
   get autoBootstrap() { return process.env.ATHAR_AUTO_BOOTSTRAP === "1" || !!process.env.VERCEL; },
   get dbToken() { return process.env.ATHAR_DB_AUTH_TOKEN || undefined; },

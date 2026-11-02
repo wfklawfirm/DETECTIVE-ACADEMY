@@ -52,8 +52,8 @@ export default async function Lesson({ params }: { params: Promise<{ lesson: str
       </header>
       <p className="narrative dim-2">{l.intro_ar}</p>
       <div className="stack">{l.body_ar.map((p, i) => <p key={i}>{p}</p>)}</div>
-      <section className="paper" aria-label="مثال محلول"><h3>مثال محلول</h3>{l.worked_example_ar}</section>
-      <Card as="section"><CardTitle level={3}>خطأ شائع</CardTitle><p>{l.common_mistake_ar}</p></Card>
+      <section className="paper" aria-label="مثال محلول"><h2>مثال محلول</h2>{l.worked_example_ar}</section>
+      <Card as="section"><CardTitle level={2}>خطأ شائع</CardTitle><p>{l.common_mistake_ar}</p></Card>
       <Practice practice={l.practice} />
 
       {/* ── Related labs ─────────────────────────────────────── */}

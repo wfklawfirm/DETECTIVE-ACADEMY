@@ -203,6 +203,8 @@ export function SeasonView({
       ) : !view ? (
         <LoadingRegion cards={4} />
       ) : (
+        <>
+        <h2 className="sr-only">حلقات الموسم</h2>
         <ol className="season-ep-list list" style={{ listStyle: "none", padding: 0 }}>
           {view.rows.map(({ e, s }) => {
             const state: EpState = e.id === view.rec ? "recommended" : s.state;
@@ -218,6 +220,7 @@ export function SeasonView({
             );
           })}
         </ol>
+        </>
       )}
     </>
   );

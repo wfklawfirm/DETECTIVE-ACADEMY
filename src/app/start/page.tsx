@@ -32,6 +32,7 @@ export default function Start() {
   if (returning) {
     return (
       <section className="start-screen" aria-label="مرحباً بعودتك">
+        <h1 className="sr-only">مرحباً بعودتك إلى أكاديمية المحقق</h1>
         <div className="start-topbar">
           <span className="start-stamp">أكاديمية المحقق · مركز العمليات</span>
         </div>
@@ -54,6 +55,7 @@ export default function Start() {
   // New user — show cold-open sequence
   return (
     <section className="start-screen" aria-label="مشهد الافتتاح">
+      <h1 className="sr-only">مشهد الافتتاح: رسالة مجهولة</h1>
       {/* Top bar */}
       <div className="start-topbar">
         <span className="start-stamp">رسالة مجهولة · ٠٣:١٢</span>

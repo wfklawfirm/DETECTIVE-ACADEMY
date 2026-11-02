@@ -5018,3 +5018,25 @@ mark.search-hl {
 /* Light theme: season chips used hardcoded colours (info 1.83:1); use the AA-checked semantic tokens. */
 [data-theme="light"] .season-ep-chip--info { background: var(--info-tint); color: var(--info); }
 [data-theme="light"] .season-ep-chip--warning { background: var(--negative-tint); color: var(--negative); }
+
+/* Screen-reader-only text. The class was used in markup (headings, labels) but never defined, so it rendered visibly. */
+.sr-only {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Profile hero: an early duplicate rule made the hero a flex row, squeezing the name and stats into narrow columns
+   on phones (text wrapped letter by letter). The hero is a block; its inner row and stats strip stack. */
+.profile-hero { display: block; }
+.profile-stats-strip { margin-block-end: 0; padding: var(--sp-3) var(--sp-4); }
+.profile-stat { flex: 1 1 4.5rem; align-items: center; text-align: center; }
+.profile-stat-label { white-space: normal; text-wrap: balance; }
+.profile-stat-sep:last-child { display: none; }
+@media (max-width: 520px) { .profile-stat-sep { display: none; } }

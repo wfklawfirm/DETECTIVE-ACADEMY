@@ -150,6 +150,48 @@ test("menu sheet: opens, traps focus, closes on Escape and restores focus; holds
   await expect(opener).toBeFocused();
 });
 
+test("desktop sidebar: five destinations, current page marked, navigates, hidden on landing, /start and /play", async ({ page }) => {
+  test.skip(test.info().project.name !== "desktop", "sidebar is the desktop layout; mobile uses the bottom nav");
+  await page.goto("/"); await passGate(page);
+  await expect(page.getByRole("navigation", { name: "التنقل الرئيسي" })).toBeHidden();
+  await page.goto("/home");
+  const nav = page.getByRole("navigation", { name: "التنقل الرئيسي" });
+  await expect(nav).toBeVisible();
+  const items = nav.locator(".sidebar-nav");
+  await expect(items.getByRole("link")).toHaveCount(5);
+  await expect(items.getByRole("link", { name: "الرئيسية" })).toHaveAttribute("aria-current", "page");
+  for (const [name, url] of [["القضايا", /\/cases$/], ["الأكاديمية", /\/academy$/], ["الموسوعة", /\/knowledge$/], ["مهاراتي", /\/profile$/]] as const) {
+    await items.getByRole("link", { name, exact: true }).click();
+    await expect(page).toHaveURL(url);
+    await expect(items.getByRole("link", { name, exact: true })).toHaveAttribute("aria-current", "page");
+  }
+  await page.goto("/start");
+  await expect(page.getByRole("navigation", { name: "التنقل الرئيسي" })).toBeHidden();
+});
+
+test("document structure: lang/dir, one main, one h1, no skipped heading levels, images have alt (every page)", async ({ page }) => {
+  test.skip(test.info().project.name !== "mobile", "structure does not depend on viewport; checked once");
+  test.setTimeout(300_000);
+  await page.goto("/"); await passGate(page);
+  for (const path of PAGES.filter((p) => p !== "/no-such-page")) {
+    await page.goto(path); await page.waitForLoadState("networkidle"); await page.waitForTimeout(250);
+    const r = await page.evaluate(() => {
+      const hs = [...document.querySelectorAll("h1,h2,h3,h4")].filter((h) => (h as HTMLElement).offsetParent !== null || getComputedStyle(h).position === "fixed").map((h) => Number(h.tagName[1]));
+      let skipped = 0; for (let i = 1; i < hs.length; i++) if (hs[i] - hs[i - 1] > 1) skipped++;
+      return { h1: document.querySelectorAll("h1").length, skipped, main: document.querySelectorAll("main,[role=main]").length, lang: document.documentElement.lang, dir: document.documentElement.dir, noAlt: [...document.images].filter((i) => !i.hasAttribute("alt")).length };
+    });
+    expect(r, path).toEqual({ h1: 1, skipped: 0, main: 1, lang: "ar", dir: "rtl", noAlt: 0 });
+  }
+});
+
+test("health: reports storage class without leaking configuration", async ({ request }) => {
+  const r = await request.get("/api/health");
+  expect(r.status()).toBe(200);
+  const body = await r.json();
+  expect(Object.keys(body).sort()).toEqual(["ok", "storage"]);
+  expect(["persistent", "ephemeral"]).toContain(body.storage);
+});
+
 test("bottom nav: five destinations on top-level screens, navigates, hidden on landing, /start and /play", async ({ page }) => {
   test.skip(test.info().project.name === "desktop", "bottom nav is the mobile layout; desktop uses the sidebar");
   await page.goto("/"); await passGate(page);
