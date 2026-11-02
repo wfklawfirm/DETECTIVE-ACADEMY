@@ -8,6 +8,7 @@ import "@fontsource/ibm-plex-sans-arabic/latin-400.css";
 import "@fontsource/ibm-plex-mono/latin-400.css";
 import "@fontsource/reem-kufi/arabic-400.css";
 import "../styles/globals.css";
+import "../styles/redesign.css";
 import { Shell } from "@/components/Shell";
 import { NO_FLASH_SCRIPT } from "@/components/ui/prefs";
 
@@ -30,7 +31,7 @@ export const metadata: Metadata = {
     description: "منصة عربية للألغاز التحقيقية القائمة على الأدلة: تقرأ الملفات، تستجوب الشهود، وتتعلّم كيف تعرف ما الذي تثبته الأدلة فعلاً.",
   },
 };
-export const viewport: Viewport = { width: "device-width", initialScale: 1, themeColor: "#0b1115", colorScheme: "dark light" };
+export const viewport: Viewport = { width: "device-width", initialScale: 1, themeColor: "#111619", colorScheme: "dark light" };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
