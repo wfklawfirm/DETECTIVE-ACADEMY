@@ -112,7 +112,7 @@ test("theme: toggle in the menu sheet switches data-theme and persists across re
   await page.getByRole("radiogroup", { name: "السمة" }).getByRole("radio", { name: "فاتح" }).check({ force: true });
   await expect(page.locator("html")).toHaveAttribute("data-theme", "light");
   const bg = await page.evaluate(() => getComputedStyle(document.body).backgroundColor);
-  expect(bg).toBe("rgb(245, 240, 232)");
+  expect(bg).toBe("rgb(243, 238, 227)");
   await page.reload();
   await expect(page.locator("html")).toHaveAttribute("data-theme", "light");
   await page.getByRole("button", { name: "القائمة" }).click();

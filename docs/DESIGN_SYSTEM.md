@@ -13,14 +13,14 @@ Implemented as one override layer: `src/styles/redesign.css` (loaded after `glob
 | foreground | #F3F0E9 | #2A2620 |
 | secondary | #B6B9B8 | #4A443A |
 | muted | #9AA2A3 | #645C4F |
-| accent (copper) | #C9A16B | #7A5521 |
+| accent (copper) | #C9A16B | #6B4A1C |
 | accent-contrast | #111619 | #FBF7EE |
 
 Status colours (positive/negative/warning/info) unchanged from the previous AA-checked set.
 
 ## Contrast (computed, WCAG 2.x)
 Dark: text/bg 16.0, text/surface 13.7, secondary/surface 7.9, muted/elevated 5.2, copper/bg 7.6, copper/elevated 5.6, dark-on-copper 7.6.
-Light: text/bg 13.0, secondary/soft 7.0, muted/soft 4.8, copper/bg 5.8, copper/soft 4.8, light-on-copper 6.2.
+Light: text/bg 13.0, secondary/soft 7.0, muted/soft 4.8, copper(#6B4A1C)/bg ~7, copper/muted-surface >=4.5, light-on-copper >=7. (Copper darkened from #7A5521 and info lightened to #8FABF7 after axe flagged 4.34 and 4.48 on tinted badges.)
 All ≥ 4.5:1. (Computed from hex pairs only — not a substitute for an axe run on every page.)
 
 ## Typography
