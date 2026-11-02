@@ -126,3 +126,7 @@ body { font-size: 1rem; line-height: 1.75; }
 
 /* opaque bottom nav: nothing may read through it */
 .bottom-nav { background: var(--surface); backdrop-filter: none; -webkit-backdrop-filter: none; }
+
+/* season chips used hard-coded colours that fell below AA on the new surfaces */
+.season-ep-chip--info    { background: var(--info-tint);     color: var(--info); }
+.season-ep-chip--warning { background: var(--negative-tint); color: var(--negative); }
