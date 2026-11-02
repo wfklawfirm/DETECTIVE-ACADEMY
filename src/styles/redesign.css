@@ -17,7 +17,7 @@
 
   --foreground:           #F3F0E9;
   --foreground-secondary: #B6B9B8;
-  --foreground-muted:     #9AA2A3;
+  --foreground-muted:     #A4ABAC;
 
   --accent:          #C9A16B;   /* copper — the single accent */
   --accent-hover:    #DAB784;
@@ -48,7 +48,7 @@
   --border-strong:  rgba(52, 48, 42, 0.30);
   --foreground:           #2A2620;
   --foreground-secondary: #4A443A;
-  --foreground-muted:     #645C4F;
+  --foreground-muted:     #5A5246;
   --accent:         #6B4A1C;
   --accent-hover:   #5A3E17;
   --accent-active:  #4A3312;
@@ -68,7 +68,7 @@
     --border-strong:  rgba(52, 48, 42, 0.30);
     --foreground:           #2A2620;
     --foreground-secondary: #4A443A;
-    --foreground-muted:     #645C4F;
+    --foreground-muted:     #5A5246;
     --accent:         #6B4A1C;
     --accent-hover:   #5A3E17;
     --accent-active:  #4A3312;

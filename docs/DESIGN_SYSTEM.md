@@ -12,7 +12,7 @@ Implemented as one override layer: `src/styles/redesign.css` (loaded after `glob
 | surface-soft (elevated) | #273034 | #E2DBCB |
 | foreground | #F3F0E9 | #2A2620 |
 | secondary | #B6B9B8 | #4A443A |
-| muted | #9AA2A3 | #645C4F |
+| muted | #A4ABAC | #5A5246 |
 | accent (copper) | #C9A16B | #6B4A1C |
 | accent-contrast | #111619 | #FBF7EE |
 
