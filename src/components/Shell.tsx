@@ -126,7 +126,7 @@ function Inner({ children }: { children: ReactNode }) {
       )}
 
       <div
-        className={`frame${showNav ? " has-bottom-nav" : ""}`}
+        className={`frame${showNav ? " has-bottom-nav" : ""}${playing ? " frame--playing" : ""}`}
         data-wide={wide || undefined}
       >
         <a className="skip" href="#main">تجاوز إلى المحتوى</a>
@@ -137,6 +137,7 @@ function Inner({ children }: { children: ReactNode }) {
             {back ? (
               <>
                 <IconLink href={back[1]} label={`رجوع إلى ${back[2]}`}><BackIcon /></IconLink>
+                {playing && <IconLink href="/home" label="الرئيسية"><HomeIcon /></IconLink>}
                 <span className="app-header-title" aria-hidden>{back[2]}</span>
               </>
             ) : (

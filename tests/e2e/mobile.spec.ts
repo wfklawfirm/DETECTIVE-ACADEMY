@@ -95,3 +95,11 @@ test("academy: first path open, other paths folded; lesson list is a real disclo
   await d.nth(1).locator("summary").click();
   await expect(d.nth(1)).toHaveAttribute("open", "");
 });
+
+test("workspace: there is always a visible way back to Home (desktop has no sidebar in /play)", async ({ page }) => {
+  await page.goto("/play/c000_lost_notebook"); await page.waitForLoadState("networkidle");
+  const home = page.getByRole("link", { name: "الرئيسية" }).first();
+  await expect(home).toBeVisible();
+  await home.click();
+  await expect(page).toHaveURL(/\/home$/);
+});

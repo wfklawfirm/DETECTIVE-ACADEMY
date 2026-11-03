@@ -7,9 +7,13 @@ import { SearchIcon } from "./ui/icons";
 interface Resolved { id: string; kind: string; text_ar: string; cta_ar?: string; cta_href?: string }
 const MARK: Record<string, string> = { teaser: "خيط جديد", welcome_back: "عودة", cliffhanger: "لم ينتهِ بعد", skill: "مهارة اليوم", challenge: "تحدٍّ" };
 
+const SSR_HOOK: Resolved = { id: "ssr", kind: "teaser", text_ar: "في ملف ما تفصيلة صغيرة تنتظر من يلاحظها." };
+
 /** One spoiler-safe "new lead" at EVERY entry (a fresh visit to landing/home, opening a case, returning to a case). */
 export function EntryHook({ surface, caseId }: { surface: "landing" | "home" | "case_open" | "case_return"; caseId?: string }) {
-  const [hook, setHook] = useState<Resolved | null>(null);
+  /* Server HTML carries a neutral, spoiler-safe line so first paint does not wait for hydration + API;
+     the personalised hook replaces it when /api/hook answers. */
+  const [hook, setHook] = useState<Resolved | null>(SSR_HOOK);
   const fired = useRef(false);
   useEffect(() => {
     if (fired.current) return; // StrictMode double-invoke guard

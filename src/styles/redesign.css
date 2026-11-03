@@ -173,3 +173,10 @@ main#main { min-block-size: calc(100dvh - var(--header-height)); }
   .home-hero-sub { font-size: 0.95rem; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
   .home-hero-inner > :last-child:not(.home-hero-text) { transform: scale(0.8); transform-origin: center; margin: -0.5rem; }
 }
+
+/* Investigation workspace on desktop: no sidebar there, so keep the header (back + home + menu)
+   visible — otherwise there was no way out of /play on wide screens. */
+@media (min-width: 1280px) {
+  .frame.frame--playing > .app-header { display: block; }
+  .frame.frame--playing > main#main { margin-inline-start: 0; }
+}
