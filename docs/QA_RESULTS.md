@@ -4,7 +4,7 @@
 |---|---|
 | Unit tests (vitest) | 345 / 345 pass |
 | `tsc --noEmit`, `next build` | clean |
-| Playwright E2E, full suite (mobile Pixel 7 + desktop 1366) | last full run: 56 passed, 7 failed, 7 skipped. The 7 failures were my new touch-target tests wrongly running on the mouse-driven desktop project; they are now skipped there (`isMobile` guard) and pass on the mobile project. After that edit only `mobile.spec.ts` on desktop was re-run (5 passed, 7 skipped); a final full run was not repeated. |
+| Playwright E2E, full suite (mobile Pixel 7 + desktop 1366) | final full run on the last commit: **58 passed, 0 failed, 14 skipped** (skips are layout-specific: mobile-only tests on desktop and vice versa) |
 | axe serious/critical, 40 routes × dark/light | 0 violations (full run before the last UI changes; re-covered by the full run above) |
 | Horizontal overflow, 8 routes × 8 widths (320…1440) | 0 overflowing (`audit/screenshots/after/overflow.tsv`) |
 | Tap-target scan (12 routes × 320×640, 390×844, 844×390) | 0 targets < 44px after fixes (was 3–15 per page) |
@@ -16,7 +16,7 @@ Final figures after font preload / reserved-space fixes:
 
 | Route | Perf | LCP | CLS | TBT |
 |---|---|---|---|---|
-| /home | 74–83 | 3.8–4.0 s | 0 | 290–540 ms |
+| /home | 85–90 | 2.9–3.3 s | 0 | 260–340 ms |  (after server-rendering cards + a neutral hook line; was 4.0 s)
 | /cases | 95 | 2.4 s | 0 | 210 ms |
 | /academy | 91 | 2.9 s | ~0 | 210 ms |
 | /labs | 90 | 3.1 s | 0 | 220 ms |
@@ -37,11 +37,12 @@ numbers on one machine, not field data. Runner: `tools/perf-lighthouse.mjs`.
   /knowledge) and repeat visitors lose the cached stylesheet. No reliable gain → reverted.
 - Deduplicating `globals.css` (≈5,000 lines, many repeated rule layers): gzipped CSS is only ≈16 KB, so the
   expected LCP gain is small versus regression risk → not attempted.
-- Server-rendering a neutral entry-hook line on /home (replaced after the API answers): LCP unchanged
-  (4.0–4.3 s over 3 runs) → reverted. The LCP element on /home is actually the primary case card
-  (`.home-primary-glyph`), which only appears after the client fetches the home data (render delay ≈1.4 s).
-  Real fix = render the home shell/case cards on the server and apply progress client-side (as the Academy
-  page already does). That is a larger refactor of `/home` and was not attempted.
+- /home, hook line alone: no change (the case card was then the LCP element). Case cards alone: no change
+  (the hook text became the LCP element). **Both together shipped**: `/home` is now a server component that
+  renders `cards` + server-side progress, and the entry hook renders a neutral spoiler-safe line in the HTML
+  that is replaced by the personalised hook when `/api/hook` answers. LCP 4.0 → 2.9–3.3 s (3 runs). Trade-off:
+  a returning anonymous visitor whose progress lives in localStorage may briefly see "ملف جديد" before the
+  card switches to "تابع التحقيق"; the neutral hook line also changes once.
 
 ## Regressions found and fixed in this effort
 First post-palette E2E run: 5 failures (contrast on tinted badges 4.29–4.48:1, season chips with
