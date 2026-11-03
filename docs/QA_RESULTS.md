@@ -31,6 +31,14 @@ other pages are held back by ~100 KB render-blocking CSS + hydration under CPU/n
 throttling. INP was **not** measured (Lighthouse lab runs do not report it). These are lab
 numbers on one machine, not field data. Runner: `tools/perf-lighthouse.mjs`.
 
+## LCP experiments (recorded, not shipped)
+- `experimental.inlineCss: true` (CSS inlined in HTML): mixed single-run results — /knowledge 3.4→2.0 s,
+  /academy 2.9→2.5 s, but /books 2.3→3.4 s and /glossary 3.5→3.9 s; HTML grows (≈104 KB gzipped on
+  /knowledge) and repeat visitors lose the cached stylesheet. No reliable gain → reverted.
+- Deduplicating `globals.css` (≈5,000 lines, many repeated rule layers): gzipped CSS is only ≈16 KB, so the
+  expected LCP gain is small versus regression risk → not attempted.
+- Remaining lever with real potential: server-render the home entry hook instead of fetching it after hydration.
+
 ## Regressions found and fixed in this effort
 First post-palette E2E run: 5 failures (contrast on tinted badges 4.29–4.48:1, season chips with
 hard-coded colours, a theme test pinned to the old paper colour) — all fixed. CLS 0.116–0.158 on
