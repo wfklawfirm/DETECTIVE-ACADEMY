@@ -178,5 +178,10 @@ main#main { min-block-size: calc(100dvh - var(--header-height)); }
    visible — otherwise there was no way out of /play on wide screens. */
 @media (min-width: 1280px) {
   .frame.frame--playing > .app-header { display: block; }
-  .frame.frame--playing > main#main { margin-inline-start: 0; }
+  .frame.frame--playing { flex-direction: column; }
+  .frame.frame--playing > .app-header { inline-size: 100%; }
+  .frame.frame--playing > main#main { margin-inline: auto; min-block-size: calc(100dvh - var(--header-height)); }
 }
+
+/* workspace tab bar: opaque, nothing may read through it */
+.play-tabs { background: var(--surface); backdrop-filter: none; -webkit-backdrop-filter: none; }

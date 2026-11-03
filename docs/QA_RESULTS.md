@@ -51,5 +51,5 @@ home/labs/case traced to font swap, footer position and hook-card height — fix
 ## NOT tested / not claimed
 - Real devices, real screen readers (VoiceOver/TalkBack/NVDA): not possible here.
 - Visual-regression diffing in CI: not added; review was manual.
-- Offline test only covers an already-loaded page (no service worker/PWA caching exists).
+- Offline: there is NO offline support (no service worker). The test only checks that an already-open page stays rendered; navigating while offline shows the browser's own error page.
 - INP; field (real-user) performance.
