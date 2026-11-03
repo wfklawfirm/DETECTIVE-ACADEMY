@@ -53,7 +53,7 @@ home/labs/case traced to font swap, footer position and hook-card height — fix
 - Real devices, real screen readers (VoiceOver/TalkBack/NVDA): not possible here.
 - Visual-regression diffing in CI: not added; review was manual.
 - Offline: there is NO offline support (no service worker). The test only checks that an already-open page stays rendered; navigating while offline shows the browser's own error page.
-- INP; field (real-user) performance.
+- Field (real-user) performance; INP is only a lab proxy (see above).
 
 ## Lighthouse on the live production deployment (after merge, 2026-11-03, mobile profile, 1 run each)
 | Route | Perf | A11y | LCP | CLS | TBT |
@@ -69,3 +69,21 @@ LCP budget (≤ 2.5 s) is met on /home only; the others are 0.1–0.5 s over. CL
 Single runs on a simulated slow-4G/4× CPU profile — indicative, not field data. INP still unmeasured.
 Tried and rejected: preloading only the 400 font face (next/font would create two families and
 synthesise bold) — not shipped.
+
+## Interaction latency (INP proxy) — measured on production, touch emulation, CPU throttled 4×
+Worst event duration per interaction (PerformanceObserver `event`, single run, cold first use):
+
+| Interaction | ms |
+|---|---|
+| open menu sheet | 272 |
+| open cases filter sheet | 248 |
+| lab: check answer | 184 |
+| bottom nav → home | 128 |
+| academy: expand path | 120 |
+| pick filter chip | 120 |
+| close sheet | 88 |
+| lab: move step | 72 |
+
+Budget INP ≤ 200 ms: met for 6 of 8 interactions; the two **sheet-opening** interactions exceed it
+under 4× throttle (≈ a low-end phone). Likely cost: the sheet marks every other body child `inert` and
+moves focus synchronously on open; not yet profiled or optimised. This is a lab proxy, not field INP.
