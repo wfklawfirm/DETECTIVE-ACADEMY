@@ -37,7 +37,11 @@ numbers on one machine, not field data. Runner: `tools/perf-lighthouse.mjs`.
   /knowledge) and repeat visitors lose the cached stylesheet. No reliable gain → reverted.
 - Deduplicating `globals.css` (≈5,000 lines, many repeated rule layers): gzipped CSS is only ≈16 KB, so the
   expected LCP gain is small versus regression risk → not attempted.
-- Remaining lever with real potential: server-render the home entry hook instead of fetching it after hydration.
+- Server-rendering a neutral entry-hook line on /home (replaced after the API answers): LCP unchanged
+  (4.0–4.3 s over 3 runs) → reverted. The LCP element on /home is actually the primary case card
+  (`.home-primary-glyph`), which only appears after the client fetches the home data (render delay ≈1.4 s).
+  Real fix = render the home shell/case cards on the server and apply progress client-side (as the Academy
+  page already does). That is a larger refactor of `/home` and was not attempted.
 
 ## Regressions found and fixed in this effort
 First post-palette E2E run: 5 failures (contrast on tinted badges 4.29–4.48:1, season chips with
