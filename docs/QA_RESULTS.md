@@ -54,3 +54,18 @@ home/labs/case traced to font swap, footer position and hook-card height — fix
 - Visual-regression diffing in CI: not added; review was manual.
 - Offline: there is NO offline support (no service worker). The test only checks that an already-open page stays rendered; navigating while offline shows the browser's own error page.
 - INP; field (real-user) performance.
+
+## Lighthouse on the live production deployment (after merge, 2026-11-03, mobile profile, 1 run each)
+| Route | Perf | A11y | LCP | CLS | TBT |
+|---|---|---|---|---|---|
+| /home | 87 | 100 | **2.0 s** | 0.01 | 460 ms |
+| /cases | 88 | 100 | 2.9 s | 0 | 320 ms |
+| /academy | 83 | 100 | 3.0 s | 0 | 430 ms |
+| /labs | 94 | 100 | 2.6 s | 0 | 160 ms |
+| /knowledge | 85 | 100 | 3.0 s | 0 | 370 ms |
+| /play/c000_lost_notebook | 89 | 100 | 2.7 s | 0 | 260 ms |
+
+LCP budget (≤ 2.5 s) is met on /home only; the others are 0.1–0.5 s over. CLS budget met everywhere.
+Single runs on a simulated slow-4G/4× CPU profile — indicative, not field data. INP still unmeasured.
+Tried and rejected: preloading only the 400 font face (next/font would create two families and
+synthesise bold) — not shipped.
