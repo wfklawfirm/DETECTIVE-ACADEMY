@@ -148,3 +148,28 @@ main#main { min-block-size: calc(100dvh - var(--header-height)); }
 }
 .cases-search-input, .cases-sort-select, select, input[type="search"], input[type="text"] { min-block-size: var(--tap); }
 .filter-btn { min-inline-size: var(--tap); }
+
+/* Cases: filters live in a bottom sheet on phones, inline from 768px */
+.cases-filter-open { inline-size: 100%; justify-content: center; margin-block-end: var(--sp-3); gap: var(--sp-2); }
+.cases-controls-row--inline { display: none; }
+@media (min-width: 768px) {
+  .cases-filter-open { display: none; }
+  .cases-controls-row--inline { display: flex; }
+}
+
+/* Academy: paths first; lesson lists fold away */
+.track-lessons-details { margin-block-start: var(--sp-3); }
+.track-lessons-summary {
+  cursor: pointer; display: flex; align-items: center; min-block-size: var(--tap);
+  font-weight: 600; color: var(--accent); list-style-position: inside;
+}
+.track-lessons-details[open] > .track-lessons-summary { margin-block-end: var(--sp-2); }
+
+/* Home on phones: the next action must be reachable without scrolling past a poster */
+@media (max-width: 767.98px) {
+  .home-hero { padding: var(--sp-4); }
+  .home-hero-inner { gap: var(--sp-3); margin-block-end: var(--sp-3); }
+  .home-hero-title { font-size: 1.75rem; }
+  .home-hero-sub { font-size: 0.95rem; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+  .home-hero-inner > :last-child:not(.home-hero-text) { transform: scale(0.8); transform-origin: center; margin: -0.5rem; }
+}

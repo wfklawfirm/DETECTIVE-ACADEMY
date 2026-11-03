@@ -65,3 +65,32 @@ test("offline: an already-open page stays usable and a new navigation fails grac
   await expect(page.locator("body")).not.toBeEmpty();
   await context.setOffline(false);
 });
+
+test("cases: phone shows one filter button that opens a bottom sheet; inline filters appear from 768px", async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto("/cases"); await page.waitForLoadState("networkidle");
+  const open = page.getByRole("button", { name: /تصفية وترتيب/ });
+  await expect(open).toBeVisible();
+  await expect(page.getByRole("group", { name: "تصفية القضايا" })).toBeHidden();
+  await open.click();
+  const dlg = page.getByRole("dialog", { name: "تصفية وترتيب القضايا" });
+  await expect(dlg).toBeVisible();
+  await dlg.getByRole("button", { name: /مفتوحة/ }).click();
+  await dlg.getByRole("button", { name: /عرض/ }).click();
+  await expect(dlg).toBeHidden();
+  await expect(open).toContainText("1"); // active-filter badge
+  await page.setViewportSize({ width: 1024, height: 800 });
+  await expect(open).toBeHidden();
+  await expect(page.getByRole("group", { name: "تصفية القضايا" })).toBeVisible();
+});
+
+test("academy: first path open, other paths folded; lesson list is a real disclosure", async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto("/academy"); await page.waitForLoadState("networkidle");
+  const d = page.locator("details.track-lessons-details");
+  expect(await d.count()).toBeGreaterThan(1);
+  await expect(d.first()).toHaveAttribute("open", "");
+  await expect(d.nth(1)).not.toHaveAttribute("open", "");
+  await d.nth(1).locator("summary").click();
+  await expect(d.nth(1)).toHaveAttribute("open", "");
+});
