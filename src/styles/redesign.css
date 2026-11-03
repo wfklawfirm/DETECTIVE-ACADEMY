@@ -32,7 +32,7 @@
 
   --paper: #F3EEE3; --paper-ink: #34302A; --paper-dim: #5A5348; --paper-line: #B9AE97;
 
-  --f-ui: "IBM Plex Sans Arabic", "Tajawal", system-ui, sans-serif;
+  --f-ui: var(--font-plex-ar), "IBM Plex Sans Arabic", system-ui, sans-serif;
   --tap: 2.75rem;               /* 44px minimum touch target */
   --safe-bottom: env(safe-area-inset-bottom, 0px);
   --safe-top: env(safe-area-inset-top, 0px);
@@ -130,3 +130,21 @@ body { font-size: 1rem; line-height: 1.75; }
 /* season chips used hard-coded colours that fell below AA on the new surfaces */
 .season-ep-chip--info    { background: var(--info-tint);     color: var(--info); }
 .season-ep-chip--warning { background: var(--negative-tint); color: var(--negative); }
+
+/* LCP/CLS: the entry-hook card is the LCP element on /home. Reserve its height
+   (skeleton → content swap no longer shifts layout) and do not fade it in. */
+.lead-card { min-block-size: 9rem; }
+.lead-card.animate-rise { animation: none; }
+
+/* CLS: on short/loading pages the footer sat inside the viewport and was shoved
+   out when content arrived. Keep it below the fold from the first paint. */
+main#main { min-block-size: calc(100dvh - var(--header-height)); }
+
+/* ───────── measured touch-target fixes (≥ 44×44 CSS px) ─────────
+   Found by the tap-target scan on 320/390/844 viewports. */
+.icon-btn { min-inline-size: var(--tap); min-block-size: var(--tap); }
+.home-info-link, .academy-educators-link {
+  display: inline-flex; align-items: center; min-block-size: var(--tap);
+}
+.cases-search-input, .cases-sort-select, select, input[type="search"], input[type="text"] { min-block-size: var(--tap); }
+.filter-btn { min-inline-size: var(--tap); }
