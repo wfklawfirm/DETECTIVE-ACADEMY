@@ -4,20 +4,40 @@
 |---|---|
 | Unit tests (vitest) | 345 / 345 pass |
 | `tsc --noEmit`, `next build` | clean |
-| Playwright E2E (mobile Pixel 7 + desktop 1366) | 39 passed, 0 failed, 7 skipped (layout-specific skips) |
-| axe serious/critical, every page, dark + light | 0 violations (40 routes) |
+| Playwright E2E, full suite (mobile Pixel 7 + desktop 1366) | last full run: 56 passed, 7 failed, 7 skipped. The 7 failures were my new touch-target tests wrongly running on the mouse-driven desktop project; they are now skipped there (`isMobile` guard) and pass on the mobile project. After that edit only `mobile.spec.ts` on desktop was re-run (5 passed, 7 skipped); a final full run was not repeated. |
+| axe serious/critical, 40 routes × dark/light | 0 violations (full run before the last UI changes; re-covered by the full run above) |
 | Horizontal overflow, 8 routes × 8 widths (320…1440) | 0 overflowing (`audit/screenshots/after/overflow.tsv`) |
+| Tap-target scan (12 routes × 320×640, 390×844, 844×390) | 0 targets < 44px after fixes (was 3–15 per page) |
+| Mobile E2E (`tests/e2e/mobile.spec.ts`) | all 7 lab kinds at 320/390/landscape, rotation, reload, offline (open page stays usable, no blank screen), cases filter sheet, academy folding |
+| Visual review | 24 extra routes × 2 themes at 390px reviewed by eye (contact sheets); no layout breakage or illegible text seen |
 
-## Regressions found and fixed during this pass
-The first full run after the palette change had 5 failures (honest record):
-copper-on-tinted badges 4.34:1 (light), info badge 4.48:1 (dark), muted text on
-dark-tinted surface 4.29:1 (light), positive badge 4.33:1 (light), hard-coded season chip
-colour (dark), and a theme test hard-coding the old paper colour. All fixed (tokens in
-`redesign.css`; test updated and now reports the offending node).
+## Lighthouse (mobile profile, local production build, simulated throttling) — measured
+Final figures after font preload / reserved-space fixes:
+
+| Route | Perf | LCP | CLS | TBT |
+|---|---|---|---|---|
+| /home | 74–83 | 3.8–4.0 s | 0 | 290–540 ms |
+| /cases | 95 | 2.4 s | 0 | 210 ms |
+| /academy | 91 | 2.9 s | ~0 | 210 ms |
+| /labs | 90 | 3.1 s | 0 | 220 ms |
+| /knowledge | 87 | 3.4 s | 0 | 230 ms |
+| /glossary | 83 | 3.5 s | 0 | 300 ms |
+| /books, /profile | 95–97 | 2.3 s | ≤ 0.065 → 0.035 | 70–140 ms |
+Accessibility score: 100 on all 12 measured routes.
+
+**Budget status:** CLS ≤ 0.1 met on every measured route. LCP ≤ 2.5 s is **not met** on most routes
+(2.3–4.0 s). Home's LCP element is the per-visit entry hook fetched after hydration (by design);
+other pages are held back by ~100 KB render-blocking CSS + hydration under CPU/network
+throttling. INP was **not** measured (Lighthouse lab runs do not report it). These are lab
+numbers on one machine, not field data. Runner: `tools/perf-lighthouse.mjs`.
+
+## Regressions found and fixed in this effort
+First post-palette E2E run: 5 failures (contrast on tinted badges 4.29–4.48:1, season chips with
+hard-coded colours, a theme test pinned to the old paper colour) — all fixed. CLS 0.116–0.158 on
+home/labs/case traced to font swap, footer position and hook-card height — fixed.
 
 ## NOT tested / not claimed
-- Lighthouse / LCP / CLS / INP: **not measured**; no performance claim is made.
-- Visual regression diffing: only manual review of before/after PNGs for 8 routes.
-- Rotation, offline, reload-resume, all-lab-types mobile tests: not added in this pass.
-- Real devices, real screen readers: not tested.
-- Workspace/lab/lesson pages: pass axe and E2E but were not visually re-reviewed under the new palette beyond a light-theme check of the case page.
+- Real devices, real screen readers (VoiceOver/TalkBack/NVDA): not possible here.
+- Visual-regression diffing in CI: not added; review was manual.
+- Offline test only covers an already-loaded page (no service worker/PWA caching exists).
+- INP; field (real-user) performance.

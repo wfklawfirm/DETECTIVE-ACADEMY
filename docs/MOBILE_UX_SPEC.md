@@ -6,6 +6,9 @@
 - Targets ≥ 44px for coarse pointers; no hover-only interactions were added.
 - Bottom sheets (`ui/sheet.tsx`, filter/menu) already exist and were not modified.
 
-## Not redesigned in this pass
+## Changed later in this branch
+Cases filters → bottom sheet on phones; Academy paths folded; Home hero compacted. See REDESIGN_AUDIT.md.
+
+## Not restructured
 Investigation workspace layout, lab tap-alternatives, academy path-first restructure, case
 filter bottom sheet changes, home information architecture. See IMPLEMENTATION_REPORT.md.

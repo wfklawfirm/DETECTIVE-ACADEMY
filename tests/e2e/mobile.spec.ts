@@ -24,7 +24,8 @@ const tooSmall = (page: Page) => page.evaluate(() =>
     .map((e) => `${e.tagName}.${String(e.className).split(" ")[0]} ${Math.round(e.getBoundingClientRect().width)}x${Math.round(e.getBoundingClientRect().height)}`));
 
 for (const [kind, id] of Object.entries(LABS)) {
-  test(`lab kind "${kind}": renders, no horizontal scroll, touch targets ≥44px at 320/390/landscape`, async ({ page }) => {
+  test(`lab kind "${kind}": renders, no horizontal scroll, touch targets ≥44px at 320/390/landscape`, async ({ page, isMobile }) => {
+    test.skip(!isMobile, "touch-target sizing applies to coarse pointers (mobile project) only");
     for (const v of VIEWPORTS) {
       await page.setViewportSize({ width: v.w, height: v.h });
       await page.goto(`/labs/${id}`);
