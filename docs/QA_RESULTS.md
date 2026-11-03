@@ -85,5 +85,11 @@ Worst event duration per interaction (PerformanceObserver `event`, single run, c
 | lab: move step | 72 |
 
 Budget INP ≤ 200 ms: met for 6 of 8 interactions; the two **sheet-opening** interactions exceed it
-under 4× throttle (≈ a low-end phone). Likely cost: the sheet marks every other body child `inert` and
-moves focus synchronously on open; not yet profiled or optimised. This is a lab proxy, not field INP.
+under 4× throttle (≈ a low-end phone). This is a lab proxy, not field INP.
+
+**Profiled (local build, same throttle, 5 repeats of "open filter sheet"):** first open 248–280 ms, subsequent
+opens 104–168 ms (median ≈140). Event Timing split of the first open: ≈100 ms *input delay* (main thread still busy
+right after hydration) + ≈70 ms handler + ≈90 ms presentation; warm opens ≈30 + 50 + 65 ms. Removing the full-screen
+`backdrop-filter` made no measurable difference (reverted, not shipped). Conclusion: the slow figure is a
+first-interaction/hydration effect, not the sheet component; warm interactions are within the 200 ms budget.
+Reducing it would mean cutting hydration/JS work after load, which was not attempted.
