@@ -6,6 +6,7 @@ import { LinkButton } from "@/components/ui/button";
 import { ErrorState, LoadingRegion } from "@/components/ui/feedback";
 import { FolderIcon, SearchIcon } from "@/components/ui/icons";
 import { ProgressBar } from "@/components/ui/progress";
+import { Sheet } from "@/components/ui/sheet";
 import { allTokens, api } from "@/lib/client";
 
 /* ── types ──────────────────────────────────────────────────── */
@@ -130,6 +131,7 @@ export default function Cases() {
   const [filter, setFilter] = useState<Filter>("all");
   const [query,  setQuery]  = useState("");
   const [sort,   setSort]   = useState<Sort>("default");
+  const [sheet,  setSheet]  = useState(false);
 
   useEffect(() => {
     api<{ cards: Card[]; cases: Prog[] }>("/api/progress", { tokens: allTokens() })
@@ -293,8 +295,57 @@ export default function Cases() {
                 )}
               </div>
 
-              {/* Filter + sort row */}
-              <div className="cases-controls-row">
+              {/* Phone: one button → bottom sheet. Tablet/desktop: inline controls. */}
+              <button
+                type="button"
+                className="btn btn-outline cases-filter-open"
+                aria-haspopup="dialog"
+                onClick={() => setSheet(true)}
+              >
+                تصفية وترتيب
+                {(filter !== "all" || sort !== "default") && (
+                  <span className="cases-filter-count" aria-label="فلاتر مفعّلة">
+                    {(filter !== "all" ? 1 : 0) + (sort !== "default" ? 1 : 0)}
+                  </span>
+                )}
+              </button>
+              <Sheet
+                open={sheet}
+                onClose={() => setSheet(false)}
+                title="تصفية وترتيب القضايا"
+                footer={<button type="button" className="btn btn-primary" onClick={() => setSheet(false)}>عرض {gridCards.length} قضية</button>}
+              >
+                <div className="stack">
+                  <p className="cases-section-kicker">الحالة</p>
+                <div className="cases-filter-bar" role="group" aria-label="تصفية القضايا">
+                  {FILTERS.map(({ id, label }) => (
+                    <button
+                      key={id}
+                      className={`cases-filter-btn${filter === id ? " cases-filter-btn--active" : ""}`}
+                      aria-pressed={filter === id}
+                      onClick={() => setFilter(id)}
+                    >
+                      {label}
+                      {counts[id] > 0 && (
+                        <span className="cases-filter-count">{counts[id]}</span>
+                      )}
+                    </button>
+                  ))}
+                </div>
+                  <p className="cases-section-kicker">الترتيب</p>
+                <select
+                  className="cases-sort-select"
+                  value={sort}
+                  onChange={(e) => setSort(e.target.value as Sort)}
+                  aria-label="ترتيب القضايا"
+                >
+                  {SORTS.map(({ id, label }) => (
+                    <option key={id} value={id}>{label}</option>
+                  ))}
+                </select>
+                </div>
+              </Sheet>
+              <div className="cases-controls-row cases-controls-row--inline">
                 <div className="cases-filter-bar" role="group" aria-label="تصفية القضايا">
                   {FILTERS.map(({ id, label }) => (
                     <button

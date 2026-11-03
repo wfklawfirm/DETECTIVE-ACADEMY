@@ -1,0 +1,187 @@
+/*
+ * Redesign layer — "Cinematic Detective Academy" (mobile-first)
+ * Loaded AFTER globals.css. Sole job: one coherent palette (charcoal + copper,
+ * paper in light mode), compact phone layouts, safe areas, touch targets.
+ * No component markup changes live here; contrast of every pair was checked
+ * (see docs/DESIGN_SYSTEM.md).
+ */
+
+/* ───────── dark: Modern Noir × Cold Case Archive ───────── */
+:root {
+  --background:     #111619;
+  --surface:        #1D2528;
+  --surface-soft:   #273034;
+  --surface-muted:  #222B2F;
+  --border:         rgba(243, 240, 233, 0.12);
+  --border-strong:  rgba(243, 240, 233, 0.24);
+
+  --foreground:           #F3F0E9;
+  --foreground-secondary: #B6B9B8;
+  --foreground-muted:     #A4ABAC;
+
+  --accent:          #C9A16B;   /* copper — the single accent */
+  --accent-hover:    #DAB784;
+  --accent-active:   #B38A54;
+  --accent-tint:     rgba(201, 161, 107, 0.14);
+  --accent-contrast: #111619;
+  --amber:           #E3BE82;
+  --amber-tint:      rgba(227, 190, 130, 0.14);
+  --lantern:         rgba(201, 161, 107, 0.14);
+  --info: #8FABF7;
+  --shadow-glow: 0 0 0 1px rgba(201,161,107,.28), 0 4px 20px rgba(201,161,107,.10);
+
+  --paper: #F3EEE3; --paper-ink: #34302A; --paper-dim: #5A5348; --paper-line: #B9AE97;
+
+  --f-ui: var(--font-plex-ar), "IBM Plex Sans Arabic", system-ui, sans-serif;
+  --tap: 2.75rem;               /* 44px minimum touch target */
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-top: env(safe-area-inset-top, 0px);
+}
+
+/* ───────── light: Vintage Paper ───────── */
+[data-theme="light"] {
+  --background:     #F3EEE3;
+  --surface:        #EBE5D8;
+  --surface-soft:   #E2DBCB;
+  --surface-muted:  #D8D0BE;
+  --border:         rgba(52, 48, 42, 0.16);
+  --border-strong:  rgba(52, 48, 42, 0.30);
+  --foreground:           #2A2620;
+  --foreground-secondary: #4A443A;
+  --foreground-muted:     #5A5246;
+  --accent:         #6B4A1C;
+  --accent-hover:   #5A3E17;
+  --accent-active:  #4A3312;
+  --accent-tint:    rgba(122, 85, 33, 0.12);
+  --accent-contrast:#FBF7EE;
+  --amber:          #6B4A1C;
+  --info:           #36489a;
+  --positive:       #185A3B;
+  --lantern:        rgba(122, 85, 33, 0.10);
+}
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    --background:     #F3EEE3;
+    --surface:        #EBE5D8;
+    --surface-soft:   #E2DBCB;
+    --surface-muted:  #D8D0BE;
+    --border:         rgba(52, 48, 42, 0.16);
+    --border-strong:  rgba(52, 48, 42, 0.30);
+    --foreground:           #2A2620;
+    --foreground-secondary: #4A443A;
+    --foreground-muted:     #5A5246;
+    --accent:         #6B4A1C;
+    --accent-hover:   #5A3E17;
+    --accent-active:  #4A3312;
+    --accent-tint:    rgba(122, 85, 33, 0.12);
+    --accent-contrast:#FBF7EE;
+    --amber:          #6B4A1C;
+    --info:           #36489a;
+    --positive:       #185A3B;
+    --lantern:        rgba(122, 85, 33, 0.10);
+  }
+}
+/* light mode: primary button text stays on the dark-copper fill */
+[data-theme="light"] .btn-primary { color: var(--accent-contrast); }
+
+/* ───────── typography: phone body ≥ 16px ───────── */
+body { font-size: 1rem; line-height: 1.75; }
+
+/* ───────── mobile (<768px) ───────── */
+@media (max-width: 767.98px) {
+  /* hero blocks were poster-sized on a phone: make them a compact page header */
+  .cases-hero { padding-block: var(--sp-4) var(--sp-3); margin-block-end: var(--sp-4); }
+  .cases-hero-inner { margin-block-end: var(--sp-3); gap: var(--sp-3); }
+  .cases-hero-badge { display: none; }
+  .cases-hero-title { font-size: 1.75rem; }
+  .cases-hero-sub { font-size: 0.95rem; }
+  .ref-hero { padding: var(--sp-5) var(--sp-4); border-radius: var(--radius-lg); }
+  .ref-hero-hook { font-size: 1rem; }
+
+  /* room for bottom nav + home indicator so no CTA hides beneath it */
+  main { padding-block-end: calc(var(--bottom-nav-height) + var(--safe-bottom) + 1rem); }
+  .bottom-nav { padding-block-end: var(--safe-bottom); }
+}
+
+/* ───────── touch targets (coarse pointers) ───────── */
+@media (pointer: coarse) {
+  .btn, button, [role="button"], .bottom-nav a, .chip, .tab, summary {
+    min-block-size: var(--tap);
+  }
+  .bottom-nav a { min-inline-size: var(--tap); }
+}
+
+/* ───────── focus ring always visible, no hover-only affordances ───────── */
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* ───────── motion ───────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* opaque bottom nav: nothing may read through it */
+.bottom-nav { background: var(--surface); backdrop-filter: none; -webkit-backdrop-filter: none; }
+
+/* season chips used hard-coded colours that fell below AA on the new surfaces */
+.season-ep-chip--info    { background: var(--info-tint);     color: var(--info); }
+.season-ep-chip--warning { background: var(--negative-tint); color: var(--negative); }
+
+/* LCP/CLS: the entry-hook card is the LCP element on /home. Reserve its height
+   (skeleton → content swap no longer shifts layout) and do not fade it in. */
+.lead-card { min-block-size: 9rem; }
+.lead-card.animate-rise { animation: none; }
+
+/* CLS: on short/loading pages the footer sat inside the viewport and was shoved
+   out when content arrived. Keep it below the fold from the first paint. */
+main#main { min-block-size: calc(100dvh - var(--header-height)); }
+
+/* ───────── measured touch-target fixes (≥ 44×44 CSS px) ─────────
+   Found by the tap-target scan on 320/390/844 viewports. */
+.icon-btn { min-inline-size: var(--tap); min-block-size: var(--tap); }
+.home-info-link, .academy-educators-link {
+  display: inline-flex; align-items: center; min-block-size: var(--tap);
+}
+.cases-search-input, .cases-sort-select, select, input[type="search"], input[type="text"] { min-block-size: var(--tap); }
+.filter-btn { min-inline-size: var(--tap); }
+
+/* Cases: filters live in a bottom sheet on phones, inline from 768px */
+.cases-filter-open { inline-size: 100%; justify-content: center; margin-block-end: var(--sp-3); gap: var(--sp-2); }
+.cases-controls-row--inline { display: none; }
+@media (min-width: 768px) {
+  .cases-filter-open { display: none; }
+  .cases-controls-row--inline { display: flex; }
+}
+
+/* Academy: paths first; lesson lists fold away */
+.track-lessons-details { margin-block-start: var(--sp-3); }
+.track-lessons-summary {
+  cursor: pointer; display: flex; align-items: center; min-block-size: var(--tap);
+  font-weight: 600; color: var(--accent); list-style-position: inside;
+}
+.track-lessons-details[open] > .track-lessons-summary { margin-block-end: var(--sp-2); }
+
+/* Home on phones: the next action must be reachable without scrolling past a poster */
+@media (max-width: 767.98px) {
+  .home-hero { padding: var(--sp-4); }
+  .home-hero-inner { gap: var(--sp-3); margin-block-end: var(--sp-3); }
+  .home-hero-title { font-size: 1.75rem; }
+  .home-hero-sub { font-size: 0.95rem; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+  .home-hero-inner > :last-child:not(.home-hero-text) { transform: scale(0.8); transform-origin: center; margin: -0.5rem; }
+}
+
+/* Investigation workspace on desktop: no sidebar there, so keep the header (back + home + menu)
+   visible — otherwise there was no way out of /play on wide screens. */
+@media (min-width: 1280px) {
+  .frame.frame--playing > .app-header { display: block; }
+  .frame.frame--playing { flex-direction: column; }
+  .frame.frame--playing > .app-header { inline-size: 100%; }
+  .frame.frame--playing > main#main { margin-inline: auto; min-block-size: calc(100dvh - var(--header-height)); }
+}
+
+/* workspace tab bar: opaque, nothing may read through it */
+.play-tabs { background: var(--surface); backdrop-filter: none; -webkit-backdrop-filter: none; }

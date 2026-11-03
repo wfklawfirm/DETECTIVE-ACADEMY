@@ -81,7 +81,9 @@ export default function Academy() {
               <span className="track-progress-count" />
             </div>
 
-            {/* Lessons */}
+            {/* Lessons: paths first — only the first path opens by default */}
+            <details className="track-lessons-details" open={t.id === tracks[0]?.id}>
+            <summary className="track-lessons-summary">دروس المسار ({t.lessons.length})</summary>
             <ul className="list track-lessons">
               {t.lessons.map((l: Lesson) => (
                 <li key={l.id} data-lesson-id={l.id}>
@@ -98,6 +100,7 @@ export default function Academy() {
                 </li>
               ))}
             </ul>
+            </details>
           </section>
         ))}
       </div>

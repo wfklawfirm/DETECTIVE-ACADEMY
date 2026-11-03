@@ -63,7 +63,7 @@ test("onboarding → tutorial: first actions, interview, no hidden truth in netw
 
 const PAGES = ["/", "/start", "/home", "/cases", "/case/c000_lost_notebook", "/academy", "/academy/A1", "/challenges", "/profile", "/account", "/privacy", "/report", "/review/ABC123", "/knowledge", "/knowledge/KO-RS-05-001", "/sources", "/labs", "/labs/SAFE_LABS-01", "/skills", "/gallery", "/credits", "/studio", "/sounds", "/icons", "/season", "/glossary", "/methods", "/biases", "/reasoning", "/rulebook", "/atlas", "/archetypes", "/heritage", "/heritage/poe-rue-morgue", "/books", "/books/BK-741", "/books/drills", "/labs/SAFE_LABS-30", "/academy/educators", "/no-such-page"];
 const setTheme = (page: Page, t: "dark" | "light") => page.addInitScript((v) => { try { localStorage.setItem("athar.theme", v); } catch { /* */ } }, t);
-const serious = (res: { violations: { id: string; impact?: string | null; nodes: unknown[] }[] }) => res.violations.filter((v) => ["serious", "critical"].includes(v.impact ?? ""));
+const serious = (res: { violations: { id: string; impact?: string | null; nodes: { target?: unknown }[] }[] }) => res.violations.filter((v) => ["serious", "critical"].includes(v.impact ?? ""));
 
 for (const theme of ["dark", "light"] as const) {
   test(`a11y (${theme}): every page has no serious/critical axe violations and no horizontal scroll`, async ({ page }) => {
@@ -75,7 +75,7 @@ for (const theme of ["dark", "light"] as const) {
       await page.waitForLoadState("networkidle");
       await page.waitForTimeout(250);
       const res = await new AxeBuilder({ page }).withTags(["wcag2a", "wcag2aa"]).analyze();
-      expect(serious(res).map((v) => `${path}: ${v.id} (${v.nodes.length})`), `${theme} ${path}`).toEqual([]);
+      expect(serious(res).map((v) => `${path}: ${v.id} (${v.nodes.length}) ${JSON.stringify(v.nodes[0]?.target ?? "")}`), `${theme} ${path}`).toEqual([]);
       await noHScroll(page);
     }
   });
@@ -112,7 +112,7 @@ test("theme: toggle in the menu sheet switches data-theme and persists across re
   await page.getByRole("radiogroup", { name: "السمة" }).getByRole("radio", { name: "فاتح" }).check({ force: true });
   await expect(page.locator("html")).toHaveAttribute("data-theme", "light");
   const bg = await page.evaluate(() => getComputedStyle(document.body).backgroundColor);
-  expect(bg).toBe("rgb(245, 240, 232)");
+  expect(bg).toBe("rgb(243, 238, 227)");
   await page.reload();
   await expect(page.locator("html")).toHaveAttribute("data-theme", "light");
   await page.getByRole("button", { name: "القائمة" }).click();
