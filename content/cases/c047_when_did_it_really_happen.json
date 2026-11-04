@@ -1,0 +1,2882 @@
+{
+  "schema_version": "0.1.0",
+  "case_id": "c047_when_did_it_really_happen",
+  "case_version": "0.1.0",
+  "meta": {
+    "title_ar": "ثلاث ساعات لفتحٍ واحد",
+    "title_en": "Three Clocks, One Opening",
+    "age_band": "16-18",
+    "locale": "ar",
+    "dialogue_register": "msa",
+    "estimated_minutes": 30,
+    "difficulty": 3,
+    "content_flags": [
+      "no_violence",
+      "theft",
+      "science_lab"
+    ],
+    "authors": [
+      "فريق أثر التحريري (مسودة بمساعدة الذكاء الاصطناعي، لم تُراجَع بشرياً بعد)"
+    ],
+    "knowledge_object_refs": [
+      "KO-RS-05-001",
+      "KO-RS-05-005",
+      "KO-RS-05-002",
+      "KO-RS-06-001",
+      "KO-RS-06-009",
+      "KO-RS-06-021",
+      "KO-FC-04-024"
+    ]
+  },
+  "premise": {
+    "hook_ar": "اختفت وحدة من خزانة مقفلة بعد فتح واحد مسجّل، وحجة غياب أحد الطلاب تعتمد على رقم واحد في سجل القفل.",
+    "player_role_ar": "أنت محقق متدرب كلّفته إدارة الثانوية بأن يحدد متى فُتحت الخزانة فعلاً وماذا تدل عليه الأدلة.",
+    "setting_ar": "ثانوية الواحة، ظهر يوم الخميس. لكل جهاز ساعته ومرجعه الزمني: قفل الخزانة وهاتف المشرفة وحاضنة الشحن وتقرير لقاء الفيديو.",
+    "public_fact_ids": [
+      "f_module_missing",
+      "f_karim_alibi_claim",
+      "f_adam_suspected"
+    ],
+    "assumed_general_knowledge_ar": [
+      "التوقيت المحلي = UTC + الإزاحة، وقد تكون الإزاحة سالبة",
+      "الساعة المتقدمة تعرض وقتاً أكبر من الحقيقي، فيُطرح مقدار تقدمها",
+      "لا يُقارن سجلان قبل أن يُعرف المرجع الزمني لكل منهما"
+    ]
+  },
+  "entities": {
+    "characters": [
+      {
+        "id": "karim",
+        "name_ar": "كريم الشامي",
+        "role": "suspect",
+        "age_descriptor_ar": "طالب في الصف الثاني عشر، عضو في نادي الروبوت",
+        "persona_ar": "واثق ومنظم، يروي ما فعله بأرقام دقيقة ويستشهد بالسجلات حين تخدم روايته.",
+        "motives_ar": [
+          "أن يجرّب الوحدة بنفسه قبل عرض الغد",
+          "ألا يُحاسَب على خطوة قام بها دون إذن"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "ky_greet",
+            "purpose": "greeting",
+            "text_ar": "تفضّل. أستطيع أن أخبرك أين كنت وماذا فعلت بالدقيقة."
+          },
+          {
+            "line_id": "ky_sheet",
+            "purpose": "reveal",
+            "text_ar": "أوقّع في ورقة الاستلام بقاعة النادي كلما أخذت البطاقة.",
+            "fact_ids": [
+              "f_badge_sheet_exists"
+            ]
+          },
+          {
+            "line_id": "ky_badge",
+            "purpose": "reveal",
+            "text_ar": "استلمت بطاقة النادي رقم 2 الساعة 12:50 وسلّمتها الساعة 13:08 لأحضّر لوحة الشرح.",
+            "fact_ids": [
+              "f_badge_karim"
+            ]
+          },
+          {
+            "line_id": "ky_alibi",
+            "purpose": "lie",
+            "text_ar": "سجل القفل يقول إن الخزانة فُتحت 13:15، وكنت وقتها أمام شاشة اللقاء، فلا علاقة لي بها.",
+            "claim_ids": [
+              "cl_karim_alibi"
+            ]
+          },
+          {
+            "line_id": "ky_admit",
+            "purpose": "break_down",
+            "text_ar": "لا أستطيع الإنكار بعد أن رأيت الأرقام موحّدة. أخذت الوحدة عند الواحدة ودقيقة لأجرّبها في البيت، ولم أطلب إذناً، وكنت أنوي إعادتها صباحاً.",
+            "fact_ids": [
+              "f_karim_took"
+            ]
+          },
+          {
+            "line_id": "ky_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف أكثر مما قلته لك."
+          },
+          {
+            "line_id": "ky_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عمّا فعلته أثناء الظهيرة."
+          },
+          {
+            "line_id": "ky_bye",
+            "purpose": "farewell",
+            "text_ar": "أرجو أن يُحسم الأمر بالأدلة."
+          }
+        ]
+      },
+      {
+        "id": "adam",
+        "name_ar": "آدم الحجّار",
+        "role": "suspect",
+        "age_descriptor_ar": "طالب في الصف الحادي عشر، أمين صندوق النادي",
+        "persona_ar": "متوتر لأن اسمه ذُكر، صريح، يجيب عمّا فعله ولا يضيف تخميناً.",
+        "motives_ar": [
+          "أن يُبرَّأ اسمه",
+          "ألا يتعطل عرض النادي"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "ad_greet",
+            "purpose": "greeting",
+            "text_ar": "أنا لم أفتح الخزانة، وأريد أن يتبيّن ذلك بالأدلة."
+          },
+          {
+            "line_id": "ad_sheet",
+            "purpose": "reveal",
+            "text_ar": "من يأخذ بطاقة النادي يوقّع في ورقة الاستلام الموجودة بالقاعة.",
+            "fact_ids": [
+              "f_badge_sheet_exists"
+            ]
+          },
+          {
+            "line_id": "ad_badge",
+            "purpose": "reveal",
+            "text_ar": "استلمت البطاقة بعد الظهر لأجهّز لوحات العرض، ووقّعت الاستلام 13:10 والتسليم 13:26.",
+            "fact_ids": [
+              "f_badge_adam"
+            ]
+          },
+          {
+            "line_id": "ad_library",
+            "purpose": "reveal",
+            "text_ar": "قبل ذلك كنت في المكتبة أعيد كتابين، ولبوابة المكتبة سجل دخول وخروج.",
+            "fact_ids": [
+              "f_adam_library"
+            ]
+          },
+          {
+            "line_id": "ad_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف، لم أكن هناك."
+          },
+          {
+            "line_id": "ad_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن البطاقة وعن المكتبة."
+          },
+          {
+            "line_id": "ad_bye",
+            "purpose": "farewell",
+            "text_ar": "شكراً لأنك لم تحكم على الرقم وحده."
+          }
+        ]
+      },
+      {
+        "id": "dana",
+        "name_ar": "دانة العلي",
+        "role": "witness",
+        "age_descriptor_ar": "طالبة في الصف الحادي عشر، شاركت في لقاء الفيديو",
+        "persona_ar": "وفيّة لزملائها وتميل إلى تأكيد ما يريحهم، وتتراجع حين تُواجَه بسجل مكتوب.",
+        "motives_ar": [
+          "أن تحمي زميلها من الشك",
+          "ألا تُتَّهم بالكذب"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "dn_greet",
+            "purpose": "greeting",
+            "text_ar": "أهلاً. شاركت في لقاء الفيديو مع نادي الأفق."
+          },
+          {
+            "line_id": "dn_report",
+            "purpose": "reveal",
+            "text_ar": "المضيفة تصدّر بعد كل لقاء تقرير حضور ونص المحادثة بتوقيتها هي.",
+            "fact_ids": [
+              "f_call_report_exists"
+            ]
+          },
+          {
+            "line_id": "dn_claim",
+            "purpose": "lie",
+            "text_ar": "كريم كان معنا منذ بداية اللقاء ولم يتأخر لحظة.",
+            "claim_ids": [
+              "cl_dana_start"
+            ]
+          },
+          {
+            "line_id": "dn_belief",
+            "purpose": "reveal",
+            "text_ar": "السجل يقول 13:15، وفي هذا الوقت كان آدم يحمل البطاقة، فأظنه هو.",
+            "claim_ids": [
+              "cl_open_1315"
+            ]
+          },
+          {
+            "line_id": "dn_admit",
+            "purpose": "break_down",
+            "text_ar": "طلب مني كريم أن أقول إنه حضر من البداية تحسباً لأي سؤال عن الأوقات، ولم يكن ذلك صحيحاً. أنا آسفة.",
+            "fact_ids": [
+              "f_dana_asked"
+            ]
+          },
+          {
+            "line_id": "dn_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف أكثر من ذلك."
+          },
+          {
+            "line_id": "dn_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن اللقاء فقط."
+          },
+          {
+            "line_id": "dn_bye",
+            "purpose": "farewell",
+            "text_ar": "كان عليّ أن أقرأ التقرير قبل أن أتكلم."
+          }
+        ]
+      },
+      {
+        "id": "fadi",
+        "name_ar": "فادي العمّار",
+        "role": "expert",
+        "age_descriptor_ar": "فني المختبرات والصيانة في الثانوية",
+        "persona_ar": "هادئ ودقيق، يتحدث عن الأجهزة وإعداداتها ولا يخمّن في الأشخاص.",
+        "motives_ar": [
+          "أن تُفهم إعدادات الأجهزة فهماً صحيحاً"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "fd_greet",
+            "purpose": "greeting",
+            "text_ar": "تفضّل. أعرف الأجهزة وإعداداتها، ولا أعرف من أخذ الوحدة."
+          },
+          {
+            "line_id": "fd_inv",
+            "purpose": "reveal",
+            "text_ar": "أجريت جرد الظهيرة الساعة 12:30 ووجدت الوحدة في حاضنتها.",
+            "fact_ids": [
+              "f_present_1230"
+            ]
+          },
+          {
+            "line_id": "fd_miss",
+            "purpose": "reveal",
+            "text_ar": "اكتشفنا غيابها الساعة 14:20 عند تحضير العرض.",
+            "fact_ids": [
+              "f_missing_1420"
+            ]
+          },
+          {
+            "line_id": "fd_lock",
+            "purpose": "reveal",
+            "text_ar": "لمتحكم القفل ورقة صيانة فيها قياس لدقة ساعته.",
+            "fact_ids": [
+              "f_lock_fast"
+            ]
+          },
+          {
+            "line_id": "fd_dock",
+            "purpose": "reveal",
+            "text_ar": "حاضنة الشحن تسجل لحظة رفع الوحدة عنها، وقد جاءت ضمن عدّة من نادٍ شريك.",
+            "fact_ids": [
+              "f_dock_log"
+            ]
+          },
+          {
+            "line_id": "fd_belief",
+            "purpose": "reveal",
+            "text_ar": "ما يعرضه سجل القفل هو ما قرأته الساعة على الشاشة، ولا أعرف غير ذلك.",
+            "claim_ids": [
+              "cl_open_1315"
+            ]
+          },
+          {
+            "line_id": "fd_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "هذا خارج ما أعرفه عن الأجهزة."
+          },
+          {
+            "line_id": "fd_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن القفل والحاضنة فقط."
+          },
+          {
+            "line_id": "fd_bye",
+            "purpose": "farewell",
+            "text_ar": "اقرأ إعداد الجهاز قبل أن تقرأ رقمه."
+          }
+        ]
+      },
+      {
+        "id": "mona",
+        "name_ar": "منى الخطيب",
+        "role": "authority",
+        "age_descriptor_ar": "مشرفة نادي الروبوت، تحضر ورشة تدريب خارج المدينة",
+        "persona_ar": "حريصة على التحقق قبل اللوم، وتتابع النادي من هاتفها.",
+        "motives_ar": [
+          "أن يُعرف مصير الوحدة قبل العرض",
+          "ألا يُظلم طالب بسبب رقم"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "mo_greet",
+            "purpose": "greeting",
+            "text_ar": "أتابع من الورشة. اسألني عمّا وصلني على هاتفي."
+          },
+          {
+            "line_id": "mo_alert",
+            "purpose": "reveal",
+            "text_ar": "وصلني على هاتفي تنبيه من تطبيق القفل بأن الخزانة فُتحت، ولدي لقطة له.",
+            "fact_ids": [
+              "f_phone_alert"
+            ]
+          },
+          {
+            "line_id": "mo_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف، فأنا بعيدة عن المدرسة."
+          },
+          {
+            "line_id": "mo_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن التنبيه الذي وصلني."
+          },
+          {
+            "line_id": "mo_bye",
+            "purpose": "farewell",
+            "text_ar": "أخبرني بما تتبيّنه حين تنتهي."
+          }
+        ]
+      }
+    ],
+    "locations": [
+      {
+        "id": "loc_club",
+        "name_ar": "قاعة نادي الروبوت",
+        "description_ar": "فيها خزانة المعدات وحاضنة الشحن وورقة استلام البطاقة."
+      },
+      {
+        "id": "loc_library",
+        "name_ar": "مكتبة الثانوية",
+        "description_ar": "لها بوابة تسجل الدخول والخروج."
+      },
+      {
+        "id": "loc_lab",
+        "name_ar": "مختبر الحاسوب",
+        "description_ar": "حيث انضم الطلاب إلى لقاء الفيديو."
+      },
+      {
+        "id": "loc_workshop",
+        "name_ar": "ورشة تدريب المشرفة",
+        "description_ar": "مكان تحضره المشرفة خارج المدينة، وتعمل هواتف الحاضرين فيه بتوقيت مختلف."
+      },
+      {
+        "id": "loc_remote",
+        "name_ar": "لقاء الفيديو مع نادي الأفق",
+        "description_ar": "لقاء عن بعد يصدّر مضيفه تقارير بتوقيته."
+      }
+    ],
+    "objects": [
+      {
+        "id": "obj_module",
+        "name_ar": "وحدة الاستشعار الشمسية «شمسية-2»",
+        "description_ar": "نموذج أولي صغير يعدّه النادي لعرض الغد."
+      },
+      {
+        "id": "obj_cabinet",
+        "name_ar": "خزانة المعدات",
+        "description_ar": "خزانة بقفل إلكتروني يسجل أحداث الفتح والإغلاق."
+      },
+      {
+        "id": "obj_badge",
+        "name_ar": "بطاقة النادي رقم 2",
+        "description_ar": "البطاقة التي تفتح الخزانة، ويوقّع من يستلمها في ورقة."
+      }
+    ],
+    "organizations": [
+      {
+        "id": "org_school",
+        "name_ar": "ثانوية الواحة",
+        "description_ar": "مدرسة خيالية فيها نادي الروبوت."
+      },
+      {
+        "id": "org_partner",
+        "name_ar": "نادي الأفق للروبوتات",
+        "description_ar": "نادٍ شريك بعيد خيالي، يستضيف لقاءات الفيديو بتوقيته."
+      }
+    ]
+  },
+  "truth": {
+    "solution": {
+      "culprit_ids": [
+        "karim"
+      ],
+      "summary_ar": "الفتح الفعلي وقع عند 13:01 بتوقيت المدرسة (10:01 UTC) لا عند الرقم الذي عرضته ساعة المتحكم المتقدمة، وتؤيده ساعتا الهاتف والحاضنة بعد توحيد مرجعيهما. في تلك اللحظة كانت البطاقة بيد كريم وكان خارج لقاء الفيديو، أما آدم فكان في المكتبة. فحجة كريم قامت على رقم لم يُصحَّح، وأخذ كريم الوحدة دون إذن.",
+      "key_fact_ids": [
+        "f_open_true",
+        "f_karim_no_alibi"
+      ]
+    },
+    "facts": [
+      {
+        "id": "f_module_missing",
+        "statement_ar": "اختفت وحدة الاستشعار الشمسية «شمسية-2» من خزانة معدات نادي الروبوت بعد جرد الظهيرة.",
+        "kind": "event",
+        "subject_ids": [
+          "obj_module"
+        ],
+        "spoiler_level": 0,
+        "location_id": "loc_club"
+      },
+      {
+        "id": "f_karim_alibi_claim",
+        "statement_ar": "يقول كريم إنه كان في لقاء فيديو مع نادٍ شريك حين فُتحت الخزانة.",
+        "kind": "attribute",
+        "subject_ids": [
+          "karim"
+        ],
+        "spoiler_level": 0
+      },
+      {
+        "id": "f_adam_suspected",
+        "statement_ar": "يشير زملاء النادي إلى آدم لأنه كان يحمل البطاقة عند الوقت الذي يعرضه سجل القفل.",
+        "kind": "attribute",
+        "subject_ids": [
+          "adam"
+        ],
+        "spoiler_level": 0
+      },
+      {
+        "id": "f_present_1230",
+        "statement_ar": "وُجدت الوحدة في حاضنتها داخل الخزانة عند جرد الساعة 12:30 بتوقيت المدرسة.",
+        "kind": "event",
+        "subject_ids": [
+          "obj_module",
+          "fadi"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 30,
+          "precision": "exact"
+        },
+        "location_id": "loc_club"
+      },
+      {
+        "id": "f_missing_1420",
+        "statement_ar": "اكتُشف غياب الوحدة الساعة 14:20 بتوقيت المدرسة.",
+        "kind": "event",
+        "subject_ids": [
+          "obj_module",
+          "fadi"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 140,
+          "precision": "exact"
+        },
+        "location_id": "loc_club"
+      },
+      {
+        "id": "f_lock_fast",
+        "statement_ar": "ساعة متحكم القفل متقدمة 14 دقيقة عن ساعة المدرسة الرسمية حسب فحص الصيانة الأخير.",
+        "kind": "state",
+        "subject_ids": [
+          "obj_cabinet"
+        ],
+        "spoiler_level": 2,
+        "location_id": "loc_club",
+        "science_ko_refs": [
+          "KO-FC-04-024"
+        ]
+      },
+      {
+        "id": "f_dock_log",
+        "statement_ar": "سجّلت حاضنة الشحن انفصال الوحدة الساعة 06:02 بالتوقيت الذي ضُبطت عليه (UTC−4).",
+        "kind": "event",
+        "subject_ids": [
+          "obj_module",
+          "obj_cabinet"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 62,
+          "precision": "approx"
+        },
+        "location_id": "loc_club",
+        "science_ko_refs": [
+          "KO-FC-04-024"
+        ]
+      },
+      {
+        "id": "f_phone_alert",
+        "statement_ar": "وصل إلى هاتف المشرفة تنبيه فتح الخزانة الساعة 11:01 بتوقيت هاتفها (UTC+1).",
+        "kind": "event",
+        "subject_ids": [
+          "mona",
+          "obj_cabinet"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 61,
+          "precision": "approx"
+        },
+        "location_id": "loc_workshop",
+        "science_ko_refs": [
+          "KO-FC-04-024"
+        ]
+      },
+      {
+        "id": "f_badge_sheet_exists",
+        "statement_ar": "ورقة استلام بطاقة النادي في القاعة تسجل من استلمها ومتى سلّمها.",
+        "kind": "state",
+        "subject_ids": [
+          "obj_badge"
+        ],
+        "spoiler_level": 1,
+        "location_id": "loc_club"
+      },
+      {
+        "id": "f_badge_karim",
+        "statement_ar": "استلم كريم بطاقة النادي رقم 2 الساعة 12:50 وسلّمها الساعة 13:08 بتوقيت المدرسة.",
+        "kind": "event",
+        "subject_ids": [
+          "karim",
+          "obj_badge"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 50,
+          "precision": "exact",
+          "end_min": 68
+        },
+        "location_id": "loc_club"
+      },
+      {
+        "id": "f_badge_adam",
+        "statement_ar": "استلم آدم بطاقة النادي رقم 2 الساعة 13:10 وسلّمها الساعة 13:26 بتوقيت المدرسة.",
+        "kind": "event",
+        "subject_ids": [
+          "adam",
+          "obj_badge"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 70,
+          "precision": "exact",
+          "end_min": 86
+        },
+        "location_id": "loc_club"
+      },
+      {
+        "id": "f_adam_library",
+        "statement_ar": "دخل آدم مكتبة الثانوية الساعة 12:52 وخرج منها الساعة 13:09 بتوقيت المدرسة.",
+        "kind": "event",
+        "subject_ids": [
+          "adam"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 52,
+          "precision": "exact",
+          "end_min": 69
+        },
+        "location_id": "loc_library"
+      },
+      {
+        "id": "f_call_report_exists",
+        "statement_ar": "يصدّر مضيف لقاء الفيديو تقرير حضور ونص محادثة بتوقيت المضيف.",
+        "kind": "state",
+        "subject_ids": [
+          "org_partner"
+        ],
+        "spoiler_level": 1,
+        "location_id": "loc_remote"
+      },
+      {
+        "id": "f_karim_join",
+        "statement_ar": "انضم حساب كريم إلى لقاء الفيديو الساعة 06:12 وغادره الساعة 06:58 بتوقيت المضيف (UTC−4)، وكان اللقاء قد بدأ الساعة 06:00.",
+        "kind": "event",
+        "subject_ids": [
+          "karim",
+          "org_partner"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 72,
+          "precision": "exact",
+          "end_min": 118
+        },
+        "location_id": "loc_remote"
+      },
+      {
+        "id": "f_same_instant",
+        "statement_ar": "سجلات الهاتف والحاضنة والمتحكم، بعد توحيد مراجعها، تصف لحظة واحدة تقريباً (10:01 و10:01 و10:02 UTC).",
+        "kind": "relation",
+        "subject_ids": [
+          "obj_cabinet",
+          "mona"
+        ],
+        "spoiler_level": 2,
+        "time": {
+          "start_min": 61,
+          "precision": "approx",
+          "end_min": 62
+        },
+        "science_ko_refs": [
+          "KO-FC-04-024",
+          "KO-RS-05-005"
+        ]
+      },
+      {
+        "id": "f_karim_took",
+        "statement_ar": "أخذ كريم الوحدة من الخزانة قبل انضمامه إلى اللقاء ليجرّبها دون إذن.",
+        "kind": "event",
+        "subject_ids": [
+          "karim",
+          "obj_module"
+        ],
+        "spoiler_level": 2,
+        "time": {
+          "start_min": 61,
+          "precision": "exact"
+        },
+        "location_id": "loc_club"
+      },
+      {
+        "id": "f_dana_asked",
+        "statement_ar": "طلب كريم من دانة أن تؤكد أنه حضر لقاء الفيديو منذ بدايته.",
+        "kind": "event",
+        "subject_ids": [
+          "karim",
+          "dana"
+        ],
+        "spoiler_level": 2
+      },
+      {
+        "id": "f_open_true",
+        "statement_ar": "وقع فتح الخزانة الفعلي عند 13:01 بتوقيت المدرسة، أي 10:01 UTC، وليس عند الوقت الذي تعرضه ساعة المتحكم.",
+        "kind": "event",
+        "subject_ids": [
+          "obj_cabinet"
+        ],
+        "spoiler_level": 3,
+        "time": {
+          "start_min": 61,
+          "precision": "exact"
+        },
+        "location_id": "loc_club",
+        "science_ko_refs": [
+          "KO-FC-04-024",
+          "KO-RS-05-005"
+        ]
+      },
+      {
+        "id": "f_karim_no_alibi",
+        "statement_ar": "كان كريم خارج لقاء الفيديو لحظة الفتح الفعلي، إذ سبق انضمامُه الفتحَ بنحو إحدى عشرة دقيقة.",
+        "kind": "relation",
+        "subject_ids": [
+          "karim"
+        ],
+        "spoiler_level": 3,
+        "time": {
+          "start_min": 61,
+          "precision": "exact",
+          "end_min": 72
+        },
+        "science_ko_refs": [
+          "KO-RS-05-005",
+          "KO-RS-06-001"
+        ]
+      },
+      {
+        "id": "f_adam_cleared",
+        "statement_ar": "كان آدم داخل المكتبة لحظة الفتح الفعلي، فلا يصح أن يكون هو من فتح الخزانة.",
+        "kind": "relation",
+        "subject_ids": [
+          "adam"
+        ],
+        "spoiler_level": 3,
+        "time": {
+          "start_min": 61,
+          "precision": "exact"
+        },
+        "location_id": "loc_library",
+        "science_ko_refs": [
+          "KO-RS-05-005"
+        ]
+      },
+      {
+        "id": "f_karim_held_badge",
+        "statement_ar": "كانت بطاقة النادي بيد كريم وحده لحظة الفتح الفعلي، وتسلّمها آدم بعد ذلك.",
+        "kind": "relation",
+        "subject_ids": [
+          "karim",
+          "adam",
+          "obj_badge"
+        ],
+        "spoiler_level": 3,
+        "time": {
+          "start_min": 61,
+          "precision": "exact"
+        },
+        "location_id": "loc_club",
+        "science_ko_refs": [
+          "KO-RS-05-005"
+        ]
+      }
+    ],
+    "claims": [
+      {
+        "id": "cl_karim_alibi",
+        "statement_ar": "فُتحت الخزانة عند الوقت الظاهر في سجل القفل، وكنت وقتها في لقاء الفيديو، فلا علاقة لي بها.",
+        "kind": "lie",
+        "held_by": [
+          "karim"
+        ],
+        "true_fact_id": "f_open_true",
+        "contradicted_by_evidence_ids": [
+          "ev_lab_norm",
+          "ev_maint_sheet"
+        ]
+      },
+      {
+        "id": "cl_dana_start",
+        "statement_ar": "كريم حضر لقاء الفيديو منذ بدايته ولم يتأخر.",
+        "kind": "lie",
+        "held_by": [
+          "dana"
+        ],
+        "true_fact_id": "f_karim_join",
+        "contradicted_by_evidence_ids": [
+          "ev_call_log",
+          "ev_call_chat"
+        ]
+      },
+      {
+        "id": "cl_open_1315",
+        "statement_ar": "فُتحت الخزانة عند الساعة 13:15 كما يعرض سجل القفل.",
+        "kind": "honest_mistake",
+        "held_by": [
+          "dana",
+          "fadi"
+        ],
+        "true_fact_id": "f_open_true",
+        "contradicted_by_evidence_ids": [
+          "ev_lab_norm",
+          "ev_maint_sheet",
+          "ev_dock_log"
+        ]
+      }
+    ]
+  },
+  "timeline": [
+    {
+      "id": "te_check",
+      "description_ar": "فادي يجري جرد الظهيرة ويجد الوحدة في حاضنتها.",
+      "time": {
+        "start_min": 30,
+        "precision": "exact"
+      },
+      "location_id": "loc_club",
+      "actor_ids": [
+        "fadi"
+      ],
+      "fact_ids": [
+        "f_present_1230"
+      ],
+      "motivated_by_ar": "الجرد الدوري قبل عرض الغد"
+    },
+    {
+      "id": "te_badge_karim",
+      "description_ar": "كريم يستلم بطاقة النادي ويسلّمها.",
+      "time": {
+        "start_min": 50,
+        "precision": "exact",
+        "end_min": 68
+      },
+      "location_id": "loc_club",
+      "actor_ids": [
+        "karim"
+      ],
+      "fact_ids": [
+        "f_badge_karim"
+      ],
+      "motivated_by_ar": "قال إنه يحضّر لوحة الشرح"
+    },
+    {
+      "id": "te_library",
+      "description_ar": "آدم داخل مكتبة الثانوية.",
+      "time": {
+        "start_min": 52,
+        "precision": "exact",
+        "end_min": 69
+      },
+      "location_id": "loc_library",
+      "actor_ids": [
+        "adam"
+      ],
+      "fact_ids": [
+        "f_adam_library"
+      ],
+      "motivated_by_ar": "إعادة كتابين مستعارين"
+    },
+    {
+      "id": "te_call_start",
+      "description_ar": "يبدأ لقاء الفيديو بتوقيت المضيف.",
+      "time": {
+        "start_min": 60,
+        "precision": "exact"
+      },
+      "location_id": "loc_remote",
+      "actor_ids": [],
+      "fact_ids": [
+        "f_call_report_exists"
+      ]
+    },
+    {
+      "id": "te_open",
+      "description_ar": "فتح الخزانة ورفع الوحدة من حاضنتها.",
+      "time": {
+        "start_min": 61,
+        "precision": "exact"
+      },
+      "location_id": "loc_club",
+      "actor_ids": [
+        "karim"
+      ],
+      "fact_ids": [
+        "f_open_true",
+        "f_karim_took",
+        "f_karim_held_badge"
+      ],
+      "motivated_by_ar": "أراد أن يجرّب الوحدة بنفسه قبل العرض"
+    },
+    {
+      "id": "te_phone",
+      "description_ar": "يصل تنبيه الفتح إلى هاتف المشرفة.",
+      "time": {
+        "start_min": 61,
+        "precision": "approx"
+      },
+      "location_id": "loc_workshop",
+      "actor_ids": [
+        "mona"
+      ],
+      "fact_ids": [
+        "f_phone_alert"
+      ],
+      "motivated_by_ar": "تلقّت تنبيهاً آلياً من التطبيق",
+      "caused_by_event_ids": [
+        "te_open"
+      ]
+    },
+    {
+      "id": "te_dock",
+      "description_ar": "الحاضنة تسجل انفصال الوحدة.",
+      "time": {
+        "start_min": 62,
+        "precision": "approx"
+      },
+      "location_id": "loc_club",
+      "actor_ids": [],
+      "fact_ids": [
+        "f_dock_log"
+      ],
+      "caused_by_event_ids": [
+        "te_open"
+      ]
+    },
+    {
+      "id": "te_badge_adam",
+      "description_ar": "آدم يستلم البطاقة ويسلّمها.",
+      "time": {
+        "start_min": 70,
+        "precision": "exact",
+        "end_min": 86
+      },
+      "location_id": "loc_club",
+      "actor_ids": [
+        "adam"
+      ],
+      "fact_ids": [
+        "f_badge_adam"
+      ],
+      "motivated_by_ar": "أراد تجهيز لوحات العرض"
+    },
+    {
+      "id": "te_join",
+      "description_ar": "كريم ينضم إلى لقاء الفيديو من مختبر الحاسوب.",
+      "time": {
+        "start_min": 72,
+        "precision": "exact",
+        "end_min": 118
+      },
+      "location_id": "loc_lab",
+      "actor_ids": [
+        "karim"
+      ],
+      "fact_ids": [
+        "f_karim_join"
+      ],
+      "motivated_by_ar": "أراد حضور اللقاء بعد تسليم البطاقة"
+    },
+    {
+      "id": "te_missing",
+      "description_ar": "يُكتشف غياب الوحدة عند تحضير العرض.",
+      "time": {
+        "start_min": 140,
+        "precision": "exact"
+      },
+      "location_id": "loc_club",
+      "actor_ids": [
+        "fadi"
+      ],
+      "fact_ids": [
+        "f_missing_1420"
+      ],
+      "motivated_by_ar": "تحضير عرض الغد"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_lock_log",
+      "title_ar": "سجل متحكم قفل الخزانة",
+      "kind": "digital",
+      "content_ar": "سجل متحكم قفل خزانة المعدات\nإعداد الساعة: توقيت المدرسة (UTC+3)\nالحدث: فتح الخزانة ببطاقة النادي رقم 2\nوقت الحدث على ساعة المتحكم: 13:15\nالحدث التالي: إغلاق الخزانة 13:16\nعدد مرات الفتح بين 12:00 و15:00: مرة واحدة",
+      "acquired_by_action_ids": [
+        "a_read_lock"
+      ],
+      "supports_fact_ids": [
+        "f_module_missing"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "يعرض ما قرأته ساعة المتحكم نفسها؛ لا يبيّن مقدار دقة هذه الساعة ولا من حمل البطاقة.",
+      "location_id": "loc_club",
+      "is_red_herring": true
+    },
+    {
+      "id": "ev_checklist",
+      "title_ar": "ورقة جرد خزانة المعدات",
+      "kind": "documentary",
+      "content_ar": "جرد خزانة المعدات — فادي العمّار (بساعة المدرسة الرسمية)\n12:30 — الوحدة «شمسية-2» موجودة في حاضنة الشحن.\n14:20 — الوحدة غير موجودة؛ اكتُشف ذلك عند تحضير عرض الغد.",
+      "acquired_by_action_ids": [
+        "a_read_checklist"
+      ],
+      "supports_fact_ids": [
+        "f_present_1230",
+        "f_missing_1420"
+      ],
+      "reliability": "strong",
+      "limits_ar": "تحدد نافذة الغياب بين الجردين فقط؛ لا تحدد اللحظة التي أُخذت فيها الوحدة داخل النافذة.",
+      "location_id": "loc_club"
+    },
+    {
+      "id": "ev_maint_sheet",
+      "title_ar": "ورقة صيانة متحكم القفل",
+      "kind": "documentary",
+      "content_ar": "ورقة صيانة متحكم القفل — فحص يوم الأحد\nقيس الفرق بين ساعة المتحكم وساعة المدرسة الرسمية: المتحكم متقدّم 14 دقيقة.\nالإجراء: لم تُصحَّح الساعة بعد، ويُعاد الفحص الأحد القادم.",
+      "acquired_by_action_ids": [
+        "a_get_maint"
+      ],
+      "supports_fact_ids": [
+        "f_lock_fast"
+      ],
+      "reliability": "strong",
+      "limits_ar": "قياس مضى عليه أربعة أيام؛ لا يضمن وحده أن الفرق بقي ثابتاً حتى الخميس.",
+      "location_id": "loc_club",
+      "contradicts_claim_ids": [
+        "cl_open_1315",
+        "cl_karim_alibi"
+      ]
+    },
+    {
+      "id": "ev_phone_alert",
+      "title_ar": "لقطة تنبيه هاتف المشرفة منى",
+      "kind": "digital",
+      "content_ar": "لقطة شاشة هاتف المشرفة منى الخطيب\nتطبيق قفل الخزانة: «فُتحت خزانة المعدات»\nوقت وصول التنبيه: 11:01\nإعدادات الهاتف: المنطقة الزمنية UTC+1 (ضبط تلقائي في مكان الورشة)",
+      "acquired_by_action_ids": [
+        "a_get_phone"
+      ],
+      "supports_fact_ids": [
+        "f_phone_alert"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "تصف وصول تنبيه إلى هاتف واحد بتوقيت ذلك الهاتف؛ قد يتأخر التنبيه ثوانيَ عن الفتح ولا يبيّن من فتح الخزانة.",
+      "location_id": "loc_workshop"
+    },
+    {
+      "id": "ev_dock_log",
+      "title_ar": "سجل حاضنة شحن الوحدة",
+      "kind": "digital",
+      "content_ar": "سجل حاضنة شحن الوحدة (داخل الخزانة)\nضُبطت الحاضنة عند تركيبها على توقيت نادي الأفق: UTC−4\nالحدث: انفصال الوحدة «شمسية-2» عن الحاضنة\nالوقت: 06:02\nالحالة بعد الحدث: لا اتصال",
+      "acquired_by_action_ids": [
+        "a_get_dock"
+      ],
+      "supports_fact_ids": [
+        "f_dock_log"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يبيّن لحظة رفع الوحدة عن الحاضنة بتوقيت الحاضنة؛ لا يبيّن من رفعها ولا إلى أين ذهبت.",
+      "location_id": "loc_club",
+      "contradicts_claim_ids": [
+        "cl_open_1315"
+      ]
+    },
+    {
+      "id": "ev_lab_norm",
+      "title_ar": "تقرير توحيد الأزمنة",
+      "kind": "lab_result",
+      "content_ar": "تقرير مختبر الأزمنة: بعد تحويل 13:15 (UTC+3) مع تصحيح تقدّم ساعة المتحكم 14 دقيقة، و11:01 (UTC+1)، و06:02 (UTC−4) إلى التوقيت العالمي تقع الثلاثة عند 10:01 و10:01 و10:02 UTC بفارق دقيقة واحدة. أي أن السجلات الثلاثة تصف لحظة واحدة، وأن اللحظة الفعلية تسبق الرقم 13:15 بتوقيت المدرسة بأربع عشرة دقيقة.",
+      "acquired_by_action_ids": [
+        "a_compare_times"
+      ],
+      "supports_fact_ids": [
+        "f_same_instant"
+      ],
+      "reliability": "strong",
+      "limits_ar": "نتيجة حسابية تعتمد على صحة الإزاحات والانحراف المدخلين؛ توحّد الأزمنة ولا تقول من فتح الخزانة.",
+      "location_id": "loc_club",
+      "contradicts_claim_ids": [
+        "cl_open_1315",
+        "cl_karim_alibi"
+      ],
+      "forensic_ko_ref": "KO-FC-04-024"
+    },
+    {
+      "id": "ev_badge_sheet",
+      "title_ar": "ورقة استلام بطاقة النادي",
+      "kind": "documentary",
+      "content_ar": "ورقة استلام بطاقة النادي (خط اليد، من ساعة جدار القاعة المضبوطة صباحاً على ساعة المدرسة)\nالبطاقة رقم 2:\nكريم الشامي — استلام 12:50 — تسليم 13:08\nآدم الحجّار — استلام 13:10 — تسليم 13:26",
+      "acquired_by_action_ids": [
+        "a_get_badge"
+      ],
+      "supports_fact_ids": [
+        "f_badge_sheet_exists",
+        "f_badge_karim",
+        "f_badge_adam"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "أوقات بخط اليد قد تخطئ بدقيقة أو دقيقتين؛ تبيّن من تسلّم البطاقة ولا تثبت من استعملها فعلاً في الخزانة.",
+      "location_id": "loc_club"
+    },
+    {
+      "id": "ev_library_log",
+      "title_ar": "سجل بوابة مكتبة الثانوية",
+      "kind": "digital",
+      "content_ar": "سجل بوابة مكتبة الثانوية (متزامن مع ساعة المدرسة الرسمية)\nآدم الحجّار: دخول 12:52 — خروج 13:09\nالإعارة: إرجاع كتابين",
+      "acquired_by_action_ids": [
+        "a_get_library"
+      ],
+      "supports_fact_ids": [
+        "f_adam_library"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يبيّن دخول المكتبة وخروجها فقط؛ لا يبيّن ما فعله آدم قبل الدخول أو بعد الخروج.",
+      "location_id": "loc_library"
+    },
+    {
+      "id": "ev_call_log",
+      "title_ar": "تقرير حضور لقاء الفيديو",
+      "kind": "digital",
+      "content_ar": "تقرير حضور لقاء النوادي بالفيديو — نادي الأفق\nالمنطقة الزمنية للتقرير: UTC−4 (توقيت المضيف)\nبدء اللقاء: 06:00\nدانة العلي: انضمام 06:01 — مغادرة 06:56\nكريم الشامي: انضمام 06:12 — مغادرة 06:58",
+      "acquired_by_action_ids": [
+        "a_get_call_log"
+      ],
+      "supports_fact_ids": [
+        "f_call_report_exists",
+        "f_karim_join"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يبيّن انضمام الحسابات ومغادرتها؛ لا يبيّن من كان جالساً أمام كل حاسوب.",
+      "location_id": "loc_remote",
+      "contradicts_claim_ids": [
+        "cl_dana_start"
+      ]
+    },
+    {
+      "id": "ev_call_chat",
+      "title_ar": "نص محادثة لقاء الفيديو",
+      "kind": "digital",
+      "content_ar": "نص محادثة اللقاء (مصدَّر بتوقيت المضيف UTC−4)\n06:00 المضيفة: بدأنا اللقاء، أهلاً بالجميع.\n06:03 دانة: وصلتُ والصوت واضح.\n06:12 المضيفة: أهلاً كريم، انضممتَ بعد البدء.\n06:13 كريم: عذراً على التأخر.",
+      "acquired_by_action_ids": [
+        "a_get_call_chat"
+      ],
+      "supports_fact_ids": [
+        "f_call_report_exists",
+        "f_karim_join"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "تبيّن توقيت الرسائل لا موقع كاتبيها؛ وهي نص كتبه أصحابه.",
+      "location_id": "loc_remote",
+      "contradicts_claim_ids": [
+        "cl_dana_start"
+      ]
+    },
+    {
+      "id": "ev_karim_statement",
+      "title_ar": "إفادة كريم الشامي (ملخص)",
+      "kind": "testimonial",
+      "content_ar": "ملخص إفادة كريم الشامي:\n«سلّمت البطاقة 13:08 وانضممت إلى اللقاء فوراً. السجل يقول إن الخزانة فُتحت 13:15، وكنت أمام الشاشة.»",
+      "acquired_by_action_ids": [
+        "a_note_karim"
+      ],
+      "supports_fact_ids": [
+        "f_badge_karim"
+      ],
+      "reliability": "weak",
+      "limits_ar": "إفادة صاحبها؛ تُقاس بالسجلات المستقلة لا بثقة قائلها.",
+      "location_id": "loc_lab"
+    },
+    {
+      "id": "ev_adam_statement",
+      "title_ar": "إفادة آدم الحجّار (ملخص)",
+      "kind": "testimonial",
+      "content_ar": "ملخص إفادة آدم الحجّار:\n«كنت في المكتبة ثم أخذت البطاقة 13:10. لم أفتح الخزانة.»",
+      "acquired_by_action_ids": [
+        "a_note_adam"
+      ],
+      "supports_fact_ids": [
+        "f_badge_adam",
+        "f_adam_library"
+      ],
+      "reliability": "weak",
+      "limits_ar": "إفادة صاحبها؛ يؤيدها سجل المكتبة وورقة الاستلام ولا تغني عنهما.",
+      "location_id": "loc_club"
+    },
+    {
+      "id": "ev_dana_statement",
+      "title_ar": "إفادة دانة العلي (ملخص)",
+      "kind": "testimonial",
+      "content_ar": "ملخص إفادة دانة العلي:\n«كريم كان معنا منذ بداية اللقاء. وسجل القفل يقول 13:15 وآدم كان يحمل البطاقة.»",
+      "acquired_by_action_ids": [
+        "a_note_dana"
+      ],
+      "supports_fact_ids": [
+        "f_call_report_exists"
+      ],
+      "reliability": "weak",
+      "limits_ar": "إفادة زميلة؛ تُقاس بتقرير الحضور وبنص المحادثة.",
+      "location_id": "loc_remote"
+    },
+    {
+      "id": "ev_fadi_statement",
+      "title_ar": "إفادة فادي العمّار (ملخص)",
+      "kind": "testimonial",
+      "content_ar": "ملخص إفادة فادي العمّار:\n«لورقة الصيانة قياس لدقة ساعة المتحكم، والحاضنة تسجل بتوقيت غير توقيت المدرسة. لا أعرف من فتح الخزانة.»",
+      "acquired_by_action_ids": [
+        "a_note_fadi"
+      ],
+      "supports_fact_ids": [
+        "f_lock_fast",
+        "f_dock_log"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "إفادة فني عن إعدادات الأجهزة؛ تُقاس بالأوراق والسجلات، ولا تخبر بما حدث في لحظة بعينها.",
+      "location_id": "loc_club"
+    }
+  ],
+  "evidence_graph": {
+    "inferences": [
+      {
+        "id": "i_open_a",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_lock_log"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_maint_sheet"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_open_true"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "السجل يعرض 13:15 على ساعة مضبوطة على UTC+3، وورقة الصيانة تقول إنها متقدمة 14 دقيقة؛ فالوقت الفعلي 13:01 بتوقيت المدرسة أي 10:01 UTC.",
+        "skill_ko_refs": [
+          "KO-RS-05-005",
+          "KO-FC-04-024"
+        ]
+      },
+      {
+        "id": "i_open_b",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_phone_alert"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_dock_log"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_open_true"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "الهاتف 11:01 بتوقيت UTC+1 يساوي 10:01 UTC، والحاضنة 06:02 بتوقيت UTC−4 تساوي 10:02 UTC؛ سجلان مستقلان يلتقيان عند اللحظة نفسها دون حاجة إلى ساعة المتحكم.",
+        "skill_ko_refs": [
+          "KO-RS-05-005",
+          "KO-FC-04-024"
+        ]
+      },
+      {
+        "id": "i_same",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_lab_norm"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_same_instant"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "ثلاثة أجهزة بمراجع مختلفة تتقارب بعد التوحيد عند دقيقة واحدة؛ فالفروق الظاهرة بينها من اختلاف المرجع والانحراف لا من اختلاف اللحظة.",
+        "skill_ko_refs": [
+          "KO-FC-04-024"
+        ]
+      },
+      {
+        "id": "i_open_c",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_same_instant"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_checklist"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_open_true"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "اللحظة المشتركة 10:01–10:02 UTC تقع داخل نافذة الغياب بين جرد 12:30 واكتشاف الغياب 14:20 بتوقيت المدرسة؛ فهي لحظة الأخذ الوحيدة المسجلة.",
+        "skill_ko_refs": [
+          "KO-RS-05-005"
+        ]
+      },
+      {
+        "id": "i_nocall_a",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_open_true"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_call_log"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_karim_no_alibi"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "انضمام كريم 06:12 بتوقيت UTC−4 هو 10:12 UTC، والفتح الفعلي 10:01 UTC؛ فقد سبق الفتحُ انضمامَه بإحدى عشرة دقيقة.",
+        "skill_ko_refs": [
+          "KO-RS-05-005"
+        ]
+      },
+      {
+        "id": "i_nocall_b",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_open_true"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_call_chat"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_karim_no_alibi"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "المضيفة رحّبت بكريم 06:12 بتوقيتها وقالت إنه انضم بعد البدء؛ وهذا الوقت يوافق 10:12 UTC، بعد الفتح الفعلي بإحدى عشرة دقيقة.",
+        "skill_ko_refs": [
+          "KO-RS-05-005"
+        ]
+      },
+      {
+        "id": "i_adam_clear",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_open_true"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_library_log"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_adam_cleared"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "سجل المكتبة يضع آدم داخلها من 12:52 إلى 13:09 بتوقيت المدرسة، والفتح الفعلي 13:01؛ فلم يكن قرب الخزانة.",
+        "skill_ko_refs": [
+          "KO-RS-05-005",
+          "KO-RS-05-002"
+        ]
+      },
+      {
+        "id": "i_karim_held",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_open_true"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_badge_sheet"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_karim_held_badge"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "ورقة الاستلام تضع البطاقة بيد كريم من 12:50 إلى 13:08، والفتح الفعلي 13:01 داخل هذه الفترة، أما آدم فاستلمها 13:10.",
+        "skill_ko_refs": [
+          "KO-RS-05-005"
+        ]
+      },
+      {
+        "id": "i_claim_karim",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_open_true"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_karim_no_alibi"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_karim_alibi"
+        },
+        "relation": "contradicts_claim",
+        "strength": "strong",
+        "rule_ar": "حجة كريم بُنيت على الرقم 13:15 غير المصحَّح؛ والفتح الفعلي أبكر منه وسبق انضمامه إلى اللقاء، فلا تنفعه الحجة.",
+        "skill_ko_refs": [
+          "KO-RS-05-001",
+          "KO-RS-05-007"
+        ]
+      },
+      {
+        "id": "i_claim_dana",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_call_log"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_call_chat"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_dana_start"
+        },
+        "relation": "contradicts_claim",
+        "strength": "strong",
+        "rule_ar": "التقرير يضع بدء اللقاء 06:00 وانضمام كريم 06:12، ونص المحادثة فيه ترحيب بوصوله المتأخر؛ فقول دانة إنه حضر من البداية يخالف سجلين.",
+        "skill_ko_refs": [
+          "KO-RS-05-001",
+          "KO-RS-05-007"
+        ]
+      },
+      {
+        "id": "i_claim_1315",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_lab_norm"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_maint_sheet"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_open_1315"
+        },
+        "relation": "contradicts_claim",
+        "strength": "strong",
+        "rule_ar": "الرقم 13:15 قراءة ساعة متقدمة؛ وبعد التصحيح والتوحيد يصير الفتح 13:01 بتوقيت المدرسة. فمن قرأ الرقم كما هو أخطأ دون قصد.",
+        "skill_ko_refs": [
+          "KO-FC-04-024",
+          "KO-RS-05-007"
+        ]
+      },
+      {
+        "id": "i_support_karim",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_karim_no_alibi"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_karim_held_badge"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_adam_cleared"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_karim"
+        },
+        "relation": "supports",
+        "strength": "strong",
+        "rule_ar": "في لحظة الفتح الفعلي كانت البطاقة بيد كريم وكان خارج اللقاء، وكان آدم في المكتبة؛ فتتسق الأدلة كلها مع فرضية كريم دون غيرها.",
+        "skill_ko_refs": [
+          "KO-RS-05-002"
+        ]
+      },
+      {
+        "id": "i_rule_adam",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_adam_cleared"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_open_true"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_adam"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "آدم كان في المكتبة وقت الفتح الفعلي، وبطاقته جاءت بعده؛ أما الرقم 13:15 الذي قارب وقت استلامه فكان قراءة ساعة متقدمة.",
+        "skill_ko_refs": [
+          "KO-RS-06-008"
+        ]
+      },
+      {
+        "id": "i_rule_fault",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_dock_log"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_phone_alert"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_fault"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "جهازان مستقلان سجلا الفتح، والحاضنة سجلت انفصال الوحدة نفسها في اللحظة ذاتها؛ فالفتح حدث فعلاً ولم يكن خللاً في المتحكم.",
+        "skill_ko_refs": [
+          "KO-RS-06-008"
+        ]
+      },
+      {
+        "id": "i_rule_fault_lab",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_same_instant"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_fault"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "اختلاف الأرقام زال حين وُحّدت المراجع وصُحّح الانحراف؛ فلا يصح القول إن السجلات متضاربة أو إن الفتح لم يقع.",
+        "skill_ko_refs": [
+          "KO-RS-06-008"
+        ]
+      }
+    ]
+  },
+  "character_knowledge": [
+    {
+      "character_id": "karim",
+      "knows": [
+        {
+          "fact_id": "f_badge_sheet_exists",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_badge_karim",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_karim_took",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [
+        {
+          "fact_id": "f_karim_took",
+          "reveal_when": {
+            "all": [
+              {
+                "presented": {
+                  "evidence_id": "ev_lab_norm",
+                  "to_character": "karim"
+                }
+              },
+              {
+                "presented": {
+                  "evidence_id": "ev_badge_sheet",
+                  "to_character": "karim"
+                }
+              }
+            ]
+          },
+          "cover_claim_id": "cl_karim_alibi",
+          "reveal_line_id": "ky_admit"
+        }
+      ],
+      "believes": [
+        {
+          "claim_id": "cl_karim_alibi",
+          "stance": "deliberate_lie"
+        }
+      ]
+    },
+    {
+      "character_id": "adam",
+      "knows": [
+        {
+          "fact_id": "f_badge_sheet_exists",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_badge_adam",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_adam_library",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    },
+    {
+      "character_id": "dana",
+      "knows": [
+        {
+          "fact_id": "f_call_report_exists",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_dana_asked",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [
+        {
+          "fact_id": "f_dana_asked",
+          "reveal_when": {
+            "presented": {
+              "evidence_id": "ev_call_log",
+              "to_character": "dana"
+            }
+          },
+          "cover_claim_id": "cl_dana_start",
+          "reveal_line_id": "dn_admit"
+        }
+      ],
+      "believes": [
+        {
+          "claim_id": "cl_dana_start",
+          "stance": "deliberate_lie"
+        },
+        {
+          "claim_id": "cl_open_1315",
+          "stance": "sincere"
+        }
+      ]
+    },
+    {
+      "character_id": "fadi",
+      "knows": [
+        {
+          "fact_id": "f_present_1230",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_missing_1420",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_lock_fast",
+          "access": "professional",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_dock_log",
+          "access": "professional",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": [
+        {
+          "claim_id": "cl_open_1315",
+          "stance": "sincere"
+        }
+      ]
+    },
+    {
+      "character_id": "mona",
+      "knows": [
+        {
+          "fact_id": "f_phone_alert",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "h_adam",
+      "statement_ar": "آدم فتح الخزانة وأخذ الوحدة، فالفتح مسجل عند 13:15 وكان يحمل البطاقة في ذلك الوقت.",
+      "is_true": false,
+      "plausibility_at_start": "high",
+      "suspect_id": "adam"
+    },
+    {
+      "id": "h_karim",
+      "statement_ar": "كريم فتح الخزانة قبل أن ينضم إلى لقاء الفيديو، وحجته مبنية على وقت غير صحيح.",
+      "is_true": true,
+      "plausibility_at_start": "low",
+      "suspect_id": "karim"
+    },
+    {
+      "id": "h_fault",
+      "statement_ar": "لم يفتح أحد الخزانة في ذلك الوقت؛ السجلات متضاربة بسبب خلل في المتحكم، والوحدة غابت بطريقة أخرى.",
+      "is_true": false,
+      "plausibility_at_start": "medium"
+    }
+  ],
+  "misdirection_plan": [
+    {
+      "id": "rh_lock_face",
+      "points_to_hypothesis_id": "h_adam",
+      "planted_via_ar": "سجل القفل يعرض 13:15 وهو يقع داخل فترة استلام آدم للبطاقة (13:10 إلى 13:26).",
+      "evidence_ids": [
+        "ev_lock_log"
+      ],
+      "refuted_by_inference_ids": [
+        "i_rule_adam",
+        "i_open_a",
+        "i_claim_1315"
+      ],
+      "fairness_note_ar": "ورقة الصيانة تذكر تقدم ساعة المتحكم، وسجلا الهاتف والحاضنة يعطيان الوقت الفعلي دون ساعة المتحكم؛ وكل ما يلزم للتصحيح متاح للاعب."
+    },
+    {
+      "id": "rh_badge_adam",
+      "points_to_hypothesis_id": "h_adam",
+      "planted_via_ar": "ورقة الاستلام تضع اسم آدم بعد الفتح الظاهر مباشرة.",
+      "evidence_ids": [
+        "ev_badge_sheet"
+      ],
+      "refuted_by_inference_ids": [
+        "i_rule_adam",
+        "i_adam_clear"
+      ],
+      "fairness_note_ar": "الورقة نفسها تضع البطاقة بيد كريم من 12:50 إلى 13:08، وسجل المكتبة يضع آدم داخلها حتى 13:09."
+    },
+    {
+      "id": "rh_clock_gap",
+      "points_to_hypothesis_id": "h_fault",
+      "planted_via_ar": "أرقام المتحكم والهاتف والحاضنة تبدو متباعدة بساعات (13:15 و11:01 و06:02).",
+      "evidence_ids": [
+        "ev_phone_alert",
+        "ev_dock_log"
+      ],
+      "refuted_by_inference_ids": [
+        "i_rule_fault",
+        "i_rule_fault_lab",
+        "i_same"
+      ],
+      "fairness_note_ar": "كل سجل يذكر مرجعه الزمني، وورقة الصيانة تذكر الانحراف؛ فالتباعد الظاهر قابل للتفسير بالمعلومات المتاحة."
+    }
+  ],
+  "learning_objectives": [
+    {
+      "id": "lo_claim",
+      "statement_ar": "يفرّق بين قول بُني على قراءة خاطئة وقول يُراد به التضليل، ويقيس كل قول بسجل مستقل.",
+      "skill_ko_ref": "KO-RS-05-001",
+      "observable_behaviors_ar": [
+        "يصنّف الإفادات أقوالاً",
+        "لا يعدّ الاتفاق مع رقم السجل دليلاً بذاته"
+      ],
+      "evidence_sources": [
+        "evidence_board"
+      ]
+    },
+    {
+      "id": "lo_timeline",
+      "statement_ar": "يوحّد الأزمنة بإزاحة المنطقة وتصحيح انحراف الساعة، ويرتّب الأحداث على خط واحد.",
+      "skill_ko_ref": "KO-RS-05-005",
+      "observable_behaviors_ar": [
+        "يشغّل مختبر الأزمنة بإزاحات صحيحة",
+        "يصحّح انحراف ساعة جهاز معروف",
+        "يضع الأدلة في أزمنتها بالتوقيت العالمي"
+      ],
+      "evidence_sources": [
+        "timeline_task",
+        "action_log"
+      ]
+    },
+    {
+      "id": "lo_hyp",
+      "statement_ar": "يوازن بين فرضيات متنافسة ويستبعد ما تنقضه الأدلة.",
+      "skill_ko_ref": "KO-RS-05-002",
+      "observable_behaviors_ar": [
+        "يضيف فرضيات",
+        "يستبعد بدليل"
+      ],
+      "evidence_sources": [
+        "hypothesis_ledger"
+      ]
+    },
+    {
+      "id": "lo_diag",
+      "statement_ar": "يقدّر ما يثبته كل سجل زمني وما لا يثبته، ويربط الدليل بالفرضية باتجاه صحيح.",
+      "skill_ko_ref": "KO-RS-06-001",
+      "observable_behaviors_ar": [
+        "يميز وقت الجهاز من وقت الحدث",
+        "يربط الدليل بالفرضية"
+      ],
+      "evidence_sources": [
+        "evidence_board",
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_calib",
+      "statement_ar": "يصوغ نسبة الترجيح بحدودها، ويذكر ما لم تثبته الأدلة.",
+      "skill_ko_ref": "KO-RS-06-021",
+      "observable_behaviors_ar": [
+        "يختار ثقة معقولة",
+        "يذكر حدوداً"
+      ],
+      "evidence_sources": [
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_revise",
+      "statement_ar": "يراجع رأيه الأول حين يظهر ما يخالفه.",
+      "skill_ko_ref": "KO-RS-06-009",
+      "observable_behaviors_ar": [
+        "يغيّر فرضيته الرائدة بدليل"
+      ],
+      "evidence_sources": [
+        "hypothesis_ledger"
+      ]
+    }
+  ],
+  "mechanics": {
+    "time_budget_units": 40,
+    "actions": [
+      {
+        "id": "a_read_lock",
+        "type": "examine",
+        "label_ar": "اطلب سجل متحكم قفل الخزانة",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_lock_log"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_club",
+        "telemetry_code": "READ_LOCK"
+      },
+      {
+        "id": "a_read_checklist",
+        "type": "examine",
+        "label_ar": "اقرأ ورقة جرد الخزانة",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_checklist"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_club",
+        "telemetry_code": "READ_CHECKLIST"
+      },
+      {
+        "id": "a_int_karim",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة كريم",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "karim",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "karim",
+        "telemetry_code": "INT_KARIM"
+      },
+      {
+        "id": "a_int_adam",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة آدم",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "adam",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "adam",
+        "telemetry_code": "INT_ADAM"
+      },
+      {
+        "id": "a_int_dana",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة دانة",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "dana",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "dana",
+        "telemetry_code": "INT_DANA"
+      },
+      {
+        "id": "a_int_fadi",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة فادي",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "fadi",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "fadi",
+        "telemetry_code": "INT_FADI"
+      },
+      {
+        "id": "a_int_mona",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة منى",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "mona",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "mona",
+        "telemetry_code": "INT_MONA"
+      },
+      {
+        "id": "a_get_maint",
+        "type": "examine",
+        "label_ar": "اطلب ورقة صيانة المتحكم",
+        "precondition": {
+          "fact_unlocked": "f_lock_fast"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_maint_sheet"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_club",
+        "telemetry_code": "GET_MAINT"
+      },
+      {
+        "id": "a_get_dock",
+        "type": "examine",
+        "label_ar": "اطلب سجل حاضنة الشحن",
+        "precondition": {
+          "fact_unlocked": "f_dock_log"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_dock_log"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_club",
+        "telemetry_code": "GET_DOCK"
+      },
+      {
+        "id": "a_get_phone",
+        "type": "examine",
+        "label_ar": "اطلب لقطة تنبيه هاتف المشرفة",
+        "precondition": {
+          "fact_unlocked": "f_phone_alert"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_phone_alert"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_workshop",
+        "telemetry_code": "GET_PHONE"
+      },
+      {
+        "id": "a_get_badge",
+        "type": "examine",
+        "label_ar": "اطلب ورقة استلام البطاقة",
+        "precondition": {
+          "any": [
+            {
+              "fact_unlocked": "f_badge_karim"
+            },
+            {
+              "fact_unlocked": "f_badge_adam"
+            },
+            {
+              "fact_unlocked": "f_badge_sheet_exists"
+            }
+          ]
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_badge_sheet"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_club",
+        "telemetry_code": "GET_BADGE"
+      },
+      {
+        "id": "a_get_library",
+        "type": "examine",
+        "label_ar": "اطلب سجل بوابة المكتبة",
+        "precondition": {
+          "fact_unlocked": "f_adam_library"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_library_log"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_library",
+        "telemetry_code": "GET_LIBRARY"
+      },
+      {
+        "id": "a_get_call_log",
+        "type": "examine",
+        "label_ar": "اطلب تقرير حضور لقاء الفيديو",
+        "precondition": {
+          "fact_unlocked": "f_call_report_exists"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_call_log"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_remote",
+        "telemetry_code": "GET_CALL_LOG"
+      },
+      {
+        "id": "a_get_call_chat",
+        "type": "examine",
+        "label_ar": "اطلب نص محادثة لقاء الفيديو",
+        "precondition": {
+          "fact_unlocked": "f_call_report_exists"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_call_chat"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_remote",
+        "telemetry_code": "GET_CALL_CHAT"
+      },
+      {
+        "id": "a_note_karim",
+        "type": "examine",
+        "label_ar": "دوّن إفادة كريم",
+        "precondition": {
+          "fact_unlocked": "f_badge_karim"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_karim_statement"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "karim",
+        "telemetry_code": "NOTE_KARIM"
+      },
+      {
+        "id": "a_note_adam",
+        "type": "examine",
+        "label_ar": "دوّن إفادة آدم",
+        "precondition": {
+          "fact_unlocked": "f_badge_adam"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_adam_statement"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "adam",
+        "telemetry_code": "NOTE_ADAM"
+      },
+      {
+        "id": "a_note_dana",
+        "type": "examine",
+        "label_ar": "دوّن إفادة دانة",
+        "precondition": {
+          "fact_unlocked": "f_call_report_exists"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_dana_statement"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "dana",
+        "telemetry_code": "NOTE_DANA"
+      },
+      {
+        "id": "a_note_fadi",
+        "type": "examine",
+        "label_ar": "دوّن إفادة فادي",
+        "precondition": {
+          "fact_unlocked": "f_lock_fast"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_fadi_statement"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "fadi",
+        "telemetry_code": "NOTE_FADI"
+      },
+      {
+        "id": "a_compare_times",
+        "type": "compare_evidence",
+        "label_ar": "وحِّد الأزمنة (يُمنح عبر المختبر عند نجاحه)",
+        "precondition": {
+          "all": [
+            {
+              "has_evidence": "ev_lock_log"
+            },
+            {
+              "has_evidence": "ev_phone_alert"
+            },
+            {
+              "has_evidence": "ev_dock_log"
+            }
+          ]
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_lab_norm"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "COMPARE_TIMES"
+      },
+      {
+        "id": "p_lab_karim",
+        "type": "present_evidence",
+        "label_ar": "اعرض تقرير توحيد الأزمنة على كريم",
+        "precondition": {
+          "presented": {
+            "evidence_id": "ev_lab_norm",
+            "to_character": "karim"
+          }
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "PRESENTED_LAB"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "karim",
+        "telemetry_code": "P_LAB_KARIM"
+      },
+      {
+        "id": "p_badge_karim",
+        "type": "present_evidence",
+        "label_ar": "اعرض ورقة استلام البطاقة على كريم",
+        "precondition": {
+          "presented": {
+            "evidence_id": "ev_badge_sheet",
+            "to_character": "karim"
+          }
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "PRESENTED_BADGE"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "karim",
+        "telemetry_code": "P_BADGE_KARIM"
+      },
+      {
+        "id": "p_call_dana",
+        "type": "present_evidence",
+        "label_ar": "اعرض تقرير حضور اللقاء على دانة",
+        "precondition": {
+          "presented": {
+            "evidence_id": "ev_call_log",
+            "to_character": "dana"
+          }
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "PRESENTED_CALL"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "dana",
+        "telemetry_code": "P_CALL_DANA"
+      },
+      {
+        "id": "a_hint",
+        "type": "request_hint",
+        "label_ar": "اطلب تلميحاً",
+        "precondition": {
+          "always": true
+        },
+        "effects": [],
+        "time_cost_units": 0,
+        "telemetry_code": "REQUEST_HINT"
+      },
+      {
+        "id": "a_accuse",
+        "type": "final_accusation",
+        "label_ar": "قدّم الاستنتاج النهائي",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "SUBMIT"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "FINAL_ACCUSATION"
+      }
+    ]
+  },
+  "state_machine": {
+    "id": "c047",
+    "initial": "briefing",
+    "type": "compound",
+    "states": {
+      "briefing": {
+        "description_ar": "الإحاطة",
+        "type": "atomic",
+        "on": {
+          "START": {
+            "target": "investigating"
+          }
+        }
+      },
+      "investigating": {
+        "description_ar": "التحقيق",
+        "type": "compound",
+        "initial": "gathering",
+        "states": {
+          "gathering": {
+            "type": "atomic",
+            "on": {
+              "OPEN_DEDUCTION": {
+                "target": "deducing"
+              }
+            }
+          },
+          "deducing": {
+            "type": "atomic",
+            "on": {
+              "BACK": {
+                "target": "gathering"
+              }
+            }
+          }
+        },
+        "on": {
+          "SUBMIT": {
+            "target": "review"
+          }
+        }
+      },
+      "review": {
+        "description_ar": "مراجعة",
+        "type": "atomic",
+        "on": {
+          "CLOSE": {
+            "target": "resolved"
+          }
+        }
+      },
+      "resolved": {
+        "description_ar": "إغلاق",
+        "type": "final"
+      }
+    }
+  },
+  "dialogue": {
+    "max_turns_per_interview": 10,
+    "llm_enabled": false,
+    "topics": [
+      {
+        "id": "t_lock",
+        "label_ar": "قفل الخزانة وساعته",
+        "example_questions_ar": [
+          "ماذا يسجل متحكم القفل؟",
+          "هل ساعة المتحكم دقيقة؟",
+          "متى فُتحت الخزانة؟"
+        ],
+        "fact_ids": [
+          "f_lock_fast",
+          "f_dock_log"
+        ],
+        "claim_ids": [
+          "cl_open_1315"
+        ]
+      },
+      {
+        "id": "t_inventory",
+        "label_ar": "جرد الخزانة",
+        "example_questions_ar": [
+          "متى رأيت الوحدة آخر مرة؟",
+          "متى اكتشفتم غيابها؟"
+        ],
+        "fact_ids": [
+          "f_present_1230",
+          "f_missing_1420"
+        ]
+      },
+      {
+        "id": "t_alert",
+        "label_ar": "تنبيه الفتح على الهاتف",
+        "example_questions_ar": [
+          "ماذا وصلك على هاتفك؟",
+          "هل بقي أثر للتنبيه؟"
+        ],
+        "fact_ids": [
+          "f_phone_alert"
+        ]
+      },
+      {
+        "id": "t_badge",
+        "label_ar": "بطاقة النادي وورقة الاستلام",
+        "example_questions_ar": [
+          "من استلم البطاقة ومتى؟",
+          "هل توجد ورقة تسجل الاستلام؟"
+        ],
+        "fact_ids": [
+          "f_badge_sheet_exists",
+          "f_badge_karim",
+          "f_badge_adam"
+        ]
+      },
+      {
+        "id": "t_whereabouts",
+        "label_ar": "أين كنت وقت الفتح؟",
+        "example_questions_ar": [
+          "أين كنت قبل الواحدة والنصف؟",
+          "هل كنت في المكتبة؟",
+          "هل أخذت الوحدة؟"
+        ],
+        "fact_ids": [
+          "f_adam_library",
+          "f_karim_took"
+        ],
+        "claim_ids": [
+          "cl_karim_alibi"
+        ]
+      },
+      {
+        "id": "t_call",
+        "label_ar": "لقاء الفيديو مع نادي الأفق",
+        "example_questions_ar": [
+          "متى انضم كريم إلى اللقاء؟",
+          "هل يوجد تقرير للحضور؟"
+        ],
+        "fact_ids": [
+          "f_call_report_exists",
+          "f_dana_asked"
+        ],
+        "claim_ids": [
+          "cl_dana_start"
+        ]
+      }
+    ]
+  },
+  "rubric": {
+    "reference_answer_ar": "لم تُفتح الخزانة عند الرقم 13:15 الذي عرضه سجل القفل، فساعة المتحكم متقدمة 14 دقيقة. بعد التصحيح وتوحيد الأزمنة يقع الفتح عند 13:01 بتوقيت المدرسة (10:01 UTC)، وتؤيد ذلك ساعة هاتف المشرفة (11:01 بتوقيت UTC+1) وساعة الحاضنة (06:02 بتوقيت UTC−4). في هذه اللحظة كانت بطاقة النادي بيد كريم، وهو لم ينضم إلى اللقاء إلا عند 13:12، أما آدم فكان في المكتبة حتى 13:09. فحجة كريم سقطت وفرضية آدم سقطت. حدود الاستنتاج: قياس انحراف المتحكم عمره أربعة أيام ويدعمه اتفاق الساعتين الأخريين، وأوقات ورقة البطاقة بخط اليد، ولا تبيّن الأدلة أين الوحدة الآن ولا ماذا ينوي كريم.",
+    "criteria": [
+      {
+        "id": "c_source",
+        "name_ar": "تصنيف المصادر",
+        "objective_ids": [
+          "lo_claim"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يصنّف"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "أخطأ في الأغلب"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "نصف صحيح"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمه صحيح"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كله صحيح"
+          }
+        ]
+      },
+      {
+        "id": "c_conflict",
+        "name_ar": "توحيد الأزمنة وترتيبها",
+        "objective_ids": [
+          "lo_timeline"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.25,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يوحّد شيئاً"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "وحّد قليلاً"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "وحّد نصفها"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمها"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كلها في موضعها"
+          }
+        ]
+      },
+      {
+        "id": "c_links",
+        "name_ar": "ربط الأدلة بالفرضيات",
+        "objective_ids": [
+          "lo_diag"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لا روابط"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "قليلة"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "نصفها صحيح"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمها"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كلها دقيقة"
+          }
+        ]
+      },
+      {
+        "id": "c_uncertainty",
+        "name_ar": "معايرة الثقة",
+        "objective_ids": [
+          "lo_calib"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "ثقة مفرطة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "حدود قليلة"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "جزئية"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معقولة"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "معايَرة كاملة"
+          }
+        ]
+      },
+      {
+        "id": "c_revision",
+        "name_ar": "مراجعة الرأي",
+        "objective_ids": [
+          "lo_revise"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "بقي على فرضية مرفوضة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "لم يعلن فرضية"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "ثبت على فرضية سليمة"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "غيّر بدليل"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "غيّر بدليل ووثّق"
+          }
+        ]
+      },
+      {
+        "id": "c_elimination",
+        "name_ar": "استبعاد الفرضيات الخاطئة",
+        "objective_ids": [
+          "lo_hyp"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يستبعد"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "استبعد خطأً"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "فرضية بدليل"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "فرضيتين"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كل الخاطئة"
+          }
+        ]
+      },
+      {
+        "id": "c_justification",
+        "name_ar": "جودة الحجة المكتوبة",
+        "objective_ids": [
+          "lo_diag",
+          "lo_hyp"
+        ],
+        "scored_by": "human",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لا حجة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "ادعاء بلا سند"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "أدلة دون ربط"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "ربط الأدلة بالاستنتاج"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "ربط مع البدائل والحدود"
+          }
+        ]
+      }
+    ]
+  },
+  "hint_ladder": [
+    {
+      "id": "hg1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "هل تعرف لكل رقم أمامك: أي ساعة قاسته، وبأي مرجع؟",
+      "trigger": {
+        "always": true
+      },
+      "assessment_weight": 0.02
+    },
+    {
+      "id": "hg2",
+      "level": 2,
+      "kind": "focus_area",
+      "text_ar": "اكتب بجانب كل سجل: ما نوعه، وما منطقته الزمنية، وهل لجهازه انحراف معروف؟",
+      "trigger": {
+        "has_evidence": "ev_phone_alert"
+      },
+      "assessment_weight": 0.04
+    },
+    {
+      "id": "hg3",
+      "level": 3,
+      "kind": "pointer",
+      "text_ar": "راجع الوثيقة التي تقيس دقة ساعة متحكم القفل قبل أن تعتمد رقمه في مقارنة أي حجة.",
+      "trigger": {
+        "has_evidence": "ev_phone_alert"
+      },
+      "assessment_weight": 0.08
+    },
+    {
+      "id": "ht1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "إذا اتفقت ساعتان مستقلتان وخالفتهما ثالثة، فأيّها تحتاج إلى فحص إعداد جهازها؟",
+      "trigger": {
+        "has_evidence": "ev_dock_log"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_open_b"
+    },
+    {
+      "id": "ht2",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "حوّل وقت الهاتف ووقت الحاضنة إلى UTC بطرح الإزاحة المكتوبة في كل سجل، ثم قارنهما بوقت لقاء الفيديو بعد تحويله.",
+      "trigger": {
+        "has_evidence": "ev_dock_log"
+      },
+      "assessment_weight": 0.06,
+      "targets_inference_id": "i_open_b"
+    },
+    {
+      "id": "ht3",
+      "level": 3,
+      "kind": "partial_reveal",
+      "text_ar": "في مختبر الأزمنة أدخل للهاتف +1 وللحاضنة −4 وللمتحكم +3، ثم أدخل لساعة المتحكم الانحراف الذي تجده في ورقة الصيانة، وانتبه إلى إشارته.",
+      "trigger": {
+        "has_evidence": "ev_dock_log"
+      },
+      "assessment_weight": 0.1,
+      "targets_inference_id": "i_open_b"
+    }
+  ],
+  "fairness_test": {
+    "requirements": {
+      "min_disjoint_proof_paths": 2,
+      "max_inference_depth": 4,
+      "all_red_herrings_refutable": true,
+      "culprit_uniquely_entailed": true,
+      "no_hidden_fact_dependency": true,
+      "max_required_actions": 40
+    },
+    "runs": []
+  },
+  "ending_explanation": {
+    "steps": [
+      {
+        "order": 1,
+        "text_ar": "سجلا الهاتف والحاضنة لا يحتاجان إلى ساعة المتحكم: 11:01 بتوقيت UTC+1 و06:02 بتوقيت UTC−4 يصيران 10:01 و10:02 UTC.",
+        "uses_evidence_ids": [
+          "ev_phone_alert",
+          "ev_dock_log"
+        ],
+        "inference_id": "i_open_b"
+      },
+      {
+        "order": 2,
+        "text_ar": "سجل المتحكم يعرض 13:15 على ساعة متقدمة 14 دقيقة حسب ورقة الصيانة؛ فيصير 13:01 بتوقيت المدرسة، أي 10:01 UTC، فيتفق مع المسار الأول.",
+        "uses_evidence_ids": [
+          "ev_lock_log",
+          "ev_maint_sheet",
+          "ev_lab_norm"
+        ],
+        "inference_id": "i_open_a"
+      },
+      {
+        "order": 3,
+        "text_ar": "سجل المكتبة يضع آدم داخلها حتى 13:09، فلم يكن قرب الخزانة لحظة الفتح، أما استلامه البطاقة فجاء بعده.",
+        "uses_evidence_ids": [
+          "ev_library_log",
+          "ev_badge_sheet"
+        ],
+        "inference_id": "i_adam_clear"
+      },
+      {
+        "order": 4,
+        "text_ar": "البطاقة كانت بيد كريم من 12:50 إلى 13:08، وانضمامه إلى اللقاء 06:12 بتوقيت UTC−4 يساوي 13:12 بتوقيت المدرسة؛ فالفتح سبق انضمامه بنحو إحدى عشرة دقيقة.",
+        "uses_evidence_ids": [
+          "ev_badge_sheet",
+          "ev_call_log"
+        ],
+        "inference_id": "i_nocall_a"
+      },
+      {
+        "order": 5,
+        "text_ar": "نص المحادثة مصدر ثانٍ مستقل: ترحيب المضيفة بكريم عند 06:12 وقولها إنه انضم بعد البدء.",
+        "uses_evidence_ids": [
+          "ev_call_chat",
+          "ev_lab_norm"
+        ],
+        "inference_id": "i_nocall_b"
+      },
+      {
+        "order": 6,
+        "text_ar": "حجة كريم قامت على الرقم 13:15 غير المصحَّح، وقول دانة إنه حضر من البداية يخالفه تقرير الحضور ونص المحادثة.",
+        "uses_evidence_ids": [
+          "ev_call_log",
+          "ev_call_chat"
+        ],
+        "inference_id": "i_claim_dana"
+      },
+      {
+        "order": 7,
+        "text_ar": "فرضية الخلل سقطت: جهازان مستقلان سجلا الفتح، وانفصلت الوحدة عن حاضنتها في اللحظة نفسها.",
+        "uses_evidence_ids": [
+          "ev_dock_log",
+          "ev_phone_alert"
+        ],
+        "inference_id": "i_rule_fault"
+      },
+      {
+        "order": 8,
+        "text_ar": "النتيجة: الأدلة تتسق مع فرضية كريم وتنقض فرضية آدم.",
+        "uses_evidence_ids": [
+          "ev_badge_sheet",
+          "ev_library_log",
+          "ev_call_log"
+        ],
+        "inference_id": "i_support_karim"
+      }
+    ],
+    "alternative_paths_ar": [
+      "يمكن بلوغ الوقت الفعلي من الهاتف والحاضنة دون ساعة المتحكم، أو من ساعة المتحكم مع ورقة الصيانة دون الهاتف؛ والأقوى أن يتفق المساران.",
+      "ويمكن إثبات أن كريم خارج اللقاء من تقرير الحضور أو من نص المحادثة، وكل منهما يكفي وحده."
+    ],
+    "what_evidence_could_not_show_ar": [
+      "لا تبيّن الأدلة أين الوحدة الآن ولا لماذا أُخذت أو هل ستُعاد.",
+      "قياس انحراف المتحكم عمره أربعة أيام، ويدعمه اتفاق الساعتين الأخريين دون أن يكون يقيناً.",
+      "أوقات ورقة البطاقة بخط اليد تقريبية، ولا تثبت من استعمل البطاقة فعلاً."
+    ],
+    "science_notes_ar": [
+      "لا يُقارن سجلان قبل معرفة مرجع كل منهما: ساعة محلية أم UTC، وهل لجهازه انحراف.",
+      "الساعة المتقدمة تُصحَّح بطرح مقدار تقدمها، والمتأخرة بإضافته.",
+      "اتفاق ساعات مستقلة بعد التوحيد أقوى من ثقة رقم واحد مكتوب."
+    ]
+  },
+  "expert_review": [
+    {
+      "role": "narrative_editor",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "scientific_reviewer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "learning_designer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "age_appropriateness",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "cultural_reviewer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "legal_rights",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "safety",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    }
+  ]
+}

@@ -1,0 +1,1627 @@
+{
+  "schema_version": "0.1.0",
+  "case_id": "c045_riddle_will",
+  "case_version": "0.1.0",
+  "meta": {
+    "title_ar": "الوصية ذات الوجهين",
+    "title_en": "The Two-Faced Bequest",
+    "age_band": "16-18",
+    "estimated_minutes": 35,
+    "difficulty": 3,
+    "content_flags": [
+      "no_violence"
+    ],
+    "knowledge_object_refs": [
+      "KO-RS-05-001",
+      "KO-RS-05-005",
+      "KO-RS-05-002",
+      "KO-RS-05-004",
+      "KO-RS-06-001",
+      "KO-RS-06-021",
+      "KO-RS-06-009"
+    ],
+    "locale": "ar",
+    "dialogue_register": "msa",
+    "authors": [
+      "فريق أثر التحريري (مسودة بمساعدة الذكاء الاصطناعي، لم تُراجَع بشرياً بعد)"
+    ]
+  },
+  "premise": {
+    "hook_ar": "وجد أمين نادي الحديقة ورقة وصية ملصقة داخل غطاء علبة بذور قديمة، وفيها عبارة واحدة تحتمل معنيين. وقبل أن تجتمع اللجنة، يطالب بها ثلاثة أعضاء كل واحد بقراءته. فأي القراءات تسندها الأوراق؟",
+    "player_role_ar": "أنت عضو في لجنة الشباب بنادي الحديقة المشتركة، وطلب منك الأستاذ جلال رأياً معلّلاً قبل اجتماع اللجنة، دون أن تنحاز لأحد أو تتهم أحداً.",
+    "setting_ar": "نادي الحديقة المشتركة في حيّ التلّ الأخضر بمدينة مرفأ الصنوبر المتخيَّلة، يوم السبت. الأسماء والتواريخ متخيَّلة، والوصية غير مالية: عهدة دفاتر ومفتاح بيت زجاجي لزراعة الشتلات. الأوقات بساعة النادي.",
+    "public_fact_ids": [
+      "f_will_found",
+      "f_claim_made",
+      "f_candidates"
+    ],
+    "assumed_general_knowledge_ar": [
+      "اللفظ الواحد قد يحمل معنيين، والنص وحده لا يحسم أيهما أراد كاتبه",
+      "المصطلح في وثائق جهةٍ ما يُفهم بتعريف تلك الجهة له، ما لم يظهر ما يدل على غير ذلك",
+      "الكاتب يستعمل ألفاظه عادة بالمعنى الذي استعملها به في كتاباته الأخرى",
+      "لقب المجاملة في حفل لا يُعدّ تعريفاً رسمياً لكلمة في وثيقة"
+    ]
+  },
+  "entities": {
+    "characters": [
+      {
+        "id": "jalal",
+        "name_ar": "الأستاذ جلال الريّس",
+        "role": "authority",
+        "age_descriptor_ar": "أمين سرّ النادي منذ ثلاث عشرة سنة",
+        "persona_ar": "هادئ ومنظّم، يحفظ الأوراق ويدوّن ما يجده ولا يحكم قبل أن يقرأ.",
+        "motives_ar": [
+          "أن تُحسم المسألة بالأوراق",
+          "ألا يخسر النادي أحداً من أعضائه"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        }
+      },
+      {
+        "id": "hisham",
+        "name_ar": "هشام الزعيم",
+        "role": "suspect",
+        "age_descriptor_ar": "عضو منذ سنتين، في الثامنة والستين من عمره",
+        "persona_ar": "ودود وواثق، يحب النادي ويتولى الري الصباحي، ويصدّق ما سمعه من الأستاذة سلوى كما فهمه.",
+        "motives_ar": [
+          "أن يحفظ دفاتر النادي ومفتاحه",
+          "أن يُحترم كِبَر سنّه وتقديره"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        }
+      },
+      {
+        "id": "nadia",
+        "name_ar": "نادية القاسمي",
+        "role": "witness",
+        "age_descriptor_ar": "عضوة حاضرة منذ إحدى عشرة سنة، في الرابعة والثلاثين",
+        "persona_ar": "مجتهدة ومواظبة، تغار على الحديقة وتدافع عن رأيها بحرارة دون أن تسيء لأحد.",
+        "motives_ar": [
+          "أن يُقدَّر حضورها المستمر",
+          "أن تُرعى الحديقة بيد عارفة"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        }
+      },
+      {
+        "id": "tariq",
+        "name_ar": "طارق المنصور",
+        "role": "witness",
+        "age_descriptor_ar": "عضو من أيام التأسيس، في الأربعين من عمره",
+        "persona_ar": "قليل الكلام، سافر للعمل سنوات ثم عاد، ولا يطالب بشيء قبل أن تقرر اللجنة.",
+        "motives_ar": [
+          "أن يعود النادي إلى هدوئه",
+          "أن تُحترم الوصية كما أرادتها صاحبتها"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        }
+      },
+      {
+        "id": "salwa",
+        "name_ar": "الأستاذة سلوى الدالاتي",
+        "role": "expert",
+        "age_descriptor_ar": "مؤسسة النادي ومعلمة علوم متقاعدة، رحلت العام الماضي بهدوء",
+        "persona_ar": "كانت دقيقة في كتابتها، تفرّق بين الألفاظ وتحب التنكيت اللطيف؛ لا تظهر في القضية إلا بأوراقها.",
+        "motives_ar": [
+          "أن تبقى الحديقة بين أيدٍ تحبها",
+          "أن يتعلّم الأحدث من الأقدم"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        }
+      }
+    ],
+    "locations": [
+      {
+        "id": "loc_clubroom",
+        "name_ar": "غرفة النادي",
+        "description_ar": "غرفة صغيرة فيها خزانة الأوراق وسجل العضوية وعلبة البذور الصفراء."
+      },
+      {
+        "id": "loc_glasshouse",
+        "name_ar": "البيت الزجاجي",
+        "description_ar": "بيت زجاجي صغير تُرعى فيه الشتلات، ومفتاحه ودفاتر البذور من أثمن ما في النادي."
+      }
+    ],
+    "objects": [
+      {
+        "id": "obj_will",
+        "name_ar": "ورقة الوصية",
+        "description_ar": "ورقة بخط الأستاذة سلوى ملصقة بشريط داخل غطاء علبة البذور."
+      },
+      {
+        "id": "obj_register",
+        "name_ar": "سجل العضوية",
+        "description_ar": "دفتر مرقّم تُسجَّل فيه بطاقات الأعضاء بحسب ترتيب انضمامهم."
+      },
+      {
+        "id": "obj_notebooks",
+        "name_ar": "دفاتر البذور ومفتاح البيت الزجاجي",
+        "description_ar": "دفاتر دوّنت فيها الأستاذة ملاحظات سنين، ومفتاح البيت الزجاجي."
+      }
+    ],
+    "organizations": [
+      {
+        "id": "org_club",
+        "name_ar": "نادي الحديقة المشتركة",
+        "description_ar": "نادٍ حيّ يرعى حديقة مشتركة وبيتاً زجاجياً للشتلات، تأسس سنة 2008."
+      }
+    ]
+  },
+  "truth": {
+    "solution": {
+      "culprit_ids": [
+        "hisham"
+      ],
+      "summary_ar": "لا نزاع على مال ولا اتهام لأحد. الوصية تقول «لأقدم أعضاء النادي»، وهشام قرأها «لأكبرنا سناً» بحسن نية. أما أوراق النادي وكتابات الأستاذة سلوى نفسها فتستعمل «الأقدم» لمن انضم أولاً وبقي رقم بطاقته له، وتستعمل «الأكبر سناً» لمن كبر عمره. فالقراءة التي تسندها الأدلة هي أن العهدة لطارق صاحب البطاقة الثالثة.",
+      "key_fact_ids": [
+        "f_true_reading"
+      ]
+    },
+    "facts": [
+      {
+        "id": "f_will_found",
+        "statement_ar": "وجد الأستاذ جلال ورقة الوصية ملصقة داخل غطاء علبة البذور الصفراء، وفيها أن دفاتر البذور ومفتاح البيت الزجاجي «لأقدم أعضاء النادي».",
+        "kind": "event",
+        "subject_ids": [
+          "jalal",
+          "obj_will",
+          "obj_notebooks"
+        ],
+        "spoiler_level": 0,
+        "location_id": "loc_clubroom"
+      },
+      {
+        "id": "f_claim_made",
+        "statement_ar": "طلب هشام الدفاتر والمفتاح محتجاً بأنه أكبر الأعضاء سناً، وتقرر أن تنظر اللجنة في الأمر بعد الظهر.",
+        "kind": "event",
+        "subject_ids": [
+          "hisham",
+          "jalal"
+        ],
+        "spoiler_level": 0,
+        "location_id": "loc_clubroom"
+      },
+      {
+        "id": "f_candidates",
+        "statement_ar": "المرشحون الظاهرون ثلاثة: هشام الزعيم ونادية القاسمي وطارق المنصور، ولكل منهم تفسيره لكلمة «أقدم».",
+        "kind": "relation",
+        "subject_ids": [
+          "hisham",
+          "nadia",
+          "tariq"
+        ],
+        "spoiler_level": 0
+      },
+      {
+        "id": "f_ages",
+        "statement_ar": "عمر هشام ثمانٍ وستون سنة، وعمر طارق أربعون، وعمر نادية أربع وثلاثون.",
+        "kind": "attribute",
+        "subject_ids": [
+          "hisham",
+          "tariq",
+          "nadia",
+          "obj_register"
+        ],
+        "spoiler_level": 1
+      },
+      {
+        "id": "f_cards",
+        "statement_ar": "رقم بطاقة طارق 3 (2008)، ورقم نادية 11 (2015)، ورقم هشام 47 (2024). وطارق غاب ست سنوات ثم جدّد بطاقته بالرقم نفسه.",
+        "kind": "attribute",
+        "subject_ids": [
+          "tariq",
+          "nadia",
+          "hisham",
+          "obj_register"
+        ],
+        "spoiler_level": 1
+      },
+      {
+        "id": "f_hisham_basis",
+        "statement_ar": "يستند هشام إلى أن الأستاذة سلوى ناولته مازحة لقب «كبيرنا» في حفل الربيع الماضي، فظن أنها قصدته.",
+        "kind": "event",
+        "subject_ids": [
+          "hisham",
+          "salwa"
+        ],
+        "spoiler_level": 1
+      },
+      {
+        "id": "f_nadia_basis",
+        "statement_ar": "تستند نادية إلى أنها أطولهم حضوراً دون انقطاع، وترى أن «الأقدم» من استمر في الخدمة.",
+        "kind": "attribute",
+        "subject_ids": [
+          "nadia"
+        ],
+        "spoiler_level": 1
+      },
+      {
+        "id": "f_bylaw_rule",
+        "statement_ar": "النظام الداخلي للنادي يرتّب الأقدمية برقم البطاقة، فيتقدّم الأصغر رقماً، ولا يسقط الرقم بغياب صاحبه ويعود إليه إذا جدّد بطاقته؛ ونصّه موضوع لترتيب الكلام والتصويت في الجمعية.",
+        "kind": "attribute",
+        "subject_ids": [
+          "org_club"
+        ],
+        "spoiler_level": 2
+      },
+      {
+        "id": "f_usage_join",
+        "statement_ar": "الأستاذة سلوى في كتاباتها تسمّي «الأقدم» من انضم أولاً (وتسمّي طارق بذلك وهو غائب ثم وهو حاضر)، وتسمّي «أكبر الأعضاء سناً» من كبر عمره؛ وهي تفرّق بين اللفظين في الورقة نفسها.",
+        "kind": "attribute",
+        "subject_ids": [
+          "salwa",
+          "tariq"
+        ],
+        "spoiler_level": 2
+      },
+      {
+        "id": "f_true_reading",
+        "statement_ar": "المقصود في الوصية بـ«أقدم أعضاء النادي» هو من انضم أولاً وهو صاحب أصغر رقم بطاقة، أي طارق المنصور، لا أكبرهم سناً ولا أطولهم حضوراً.",
+        "kind": "state",
+        "subject_ids": [
+          "salwa",
+          "tariq",
+          "obj_will"
+        ],
+        "spoiler_level": 3
+      },
+      {
+        "id": "f_honest_rivals",
+        "statement_ar": "هشام ونادية صادقان في ما قالاه، ولم يخفِ أحد ورقة؛ والخلاف خلاف قراءة لا خلاف على وقائع.",
+        "kind": "state",
+        "subject_ids": [
+          "hisham",
+          "nadia"
+        ],
+        "spoiler_level": 3
+      }
+    ],
+    "claims": [
+      {
+        "id": "cl_age_reading",
+        "statement_ar": "قصدت الأستاذة بالأقدم أكبر الأعضاء سناً.",
+        "kind": "honest_mistake",
+        "held_by": [
+          "hisham"
+        ],
+        "true_fact_id": "f_true_reading",
+        "contradicted_by_evidence_ids": [
+          "ev_newsletter",
+          "ev_memo"
+        ]
+      },
+      {
+        "id": "cl_service_reading",
+        "statement_ar": "الأقدم هو من خدم النادي بلا انقطاع.",
+        "kind": "half_truth",
+        "held_by": [
+          "nadia"
+        ],
+        "true_fact_id": "f_true_reading",
+        "contradicted_by_evidence_ids": [
+          "ev_bylaws",
+          "ev_memo"
+        ]
+      }
+    ]
+  },
+  "timeline": [
+    {
+      "id": "te_newsletter",
+      "description_ar": "سنة 2018: كتبت الأستاذة سلوى نشرة العيد العاشر وفرّقت فيها بين الأقدم والأكبر سناً.",
+      "time": {
+        "start_min": -4200000,
+        "precision": "unknown"
+      },
+      "location_id": "loc_clubroom",
+      "actor_ids": [
+        "salwa"
+      ],
+      "fact_ids": [
+        "f_usage_join"
+      ],
+      "motivated_by_ar": "الاحتفاء بأعضاء النادي في عيده العاشر"
+    },
+    {
+      "id": "te_memo",
+      "description_ar": "ربيع 2025: تركت الأستاذة سلوى ورقة قبل سفرها القصير تحدد فيها حامل مفتاح البيت الزجاجي.",
+      "time": {
+        "start_min": -700000,
+        "precision": "unknown"
+      },
+      "location_id": "loc_glasshouse",
+      "actor_ids": [
+        "salwa"
+      ],
+      "fact_ids": [
+        "f_usage_join"
+      ],
+      "motivated_by_ar": "ألا يبقى المفتاح بلا حامل أثناء غيابها"
+    },
+    {
+      "id": "te_found",
+      "description_ar": "التاسعة صباحاً: وجد الأستاذ جلال ورقة الوصية داخل غطاء علبة البذور.",
+      "time": {
+        "start_min": 60,
+        "precision": "approx"
+      },
+      "location_id": "loc_clubroom",
+      "actor_ids": [
+        "jalal"
+      ],
+      "fact_ids": [
+        "f_will_found"
+      ],
+      "motivated_by_ar": "البحث عن بذور لموسم الغرس"
+    },
+    {
+      "id": "te_claim",
+      "description_ar": "العاشرة: جاء هشام وطلب الدفاتر والمفتاح محتجاً بسنّه، وقرر الأستاذ جلال إحالة الأمر إلى اللجنة.",
+      "time": {
+        "start_min": 120,
+        "precision": "approx"
+      },
+      "location_id": "loc_clubroom",
+      "actor_ids": [
+        "hisham",
+        "jalal"
+      ],
+      "fact_ids": [
+        "f_claim_made",
+        "f_hisham_basis"
+      ],
+      "motivated_by_ar": "الحرص على دفاتر النادي ومفتاحه",
+      "witness_ids": [
+        "nadia"
+      ],
+      "caused_by_event_ids": [
+        "te_found"
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_will",
+      "title_ar": "ورقة الوصية في غطاء علبة البذور",
+      "kind": "documentary",
+      "content_ar": "علبة البذور الصفراء عليها ملصق بخط الأستاذة سلوى: «بذور الشتاء، خريف 2025». وداخل الغطاء ورقة ملصقة بشريط، بخط اليد نفسه:\n\n«إلى أصدقاء حديقتنا،\nلا أملك مالاً أتركه، وأملك شيئين أحبهما: دفاتر البذور التي دوّنتها سنين، ومفتاح البيت الزجاجي.\nأوصي بهما لأقدم أعضاء النادي، يحفظهما ويعلّم بهما من جاء بعده.\nوللكلمة وجهان، فمن أراد عدلاً فليعد إلى أوراق النادي وليترك ظنّ المجالس.\nسلوى»",
+      "acquired_by_action_ids": [
+        "a_read_will"
+      ],
+      "supports_fact_ids": [
+        "f_will_found"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "تثبت لفظ الوصية فحسب، ولا تعرّف «الأقدم»؛ وتفتح الباب لأكثر من قراءة ولا تحسم بينها.",
+      "location_id": "loc_clubroom"
+    },
+    {
+      "id": "ev_register",
+      "title_ar": "مقتطف من سجل العضوية",
+      "kind": "documentary",
+      "content_ar": "سجل عضوية نادي الحديقة المشتركة (مقتطف للأسماء الثلاثة، بخط الأستاذ جلال)\nالقاعدة المطبوعة في رأس الصفحة: يأخذ كل عضو عند انضمامه بطاقة برقم متسلسل، ويبقى الرقم لصاحبه.\n\nرقم 3 — طارق المنصور — انضم 2008 — العمر الآن 40 — ملاحظة: سافر للعمل سنة 2014، وعاد وجدّد بطاقته سنة 2020 بالرقم نفسه.\nرقم 11 — نادية القاسمي — انضمت 2015 — العمر الآن 34 — ملاحظة: حضور مستمر دون انقطاع.\nرقم 47 — هشام الزعيم — انضم 2024 — العمر الآن 68 — ملاحظة: يتولى الري الصباحي.",
+      "acquired_by_action_ids": [
+        "a_read_register"
+      ],
+      "supports_fact_ids": [
+        "f_ages",
+        "f_cards",
+        "f_nadia_basis"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يبيّن أرقام البطاقات وتواريخ الانضمام والأعمار؛ لا يقول شيئاً عن معنى كلمة «أقدم» في الوصية.",
+      "location_id": "loc_clubroom"
+    },
+    {
+      "id": "ev_bylaws",
+      "title_ar": "النظام الداخلي للنادي (2008)",
+      "kind": "documentary",
+      "content_ar": "النظام الداخلي لنادي الحديقة المشتركة، نسخة 2008\nالمادة 7: لترتيب الكلام والتصويت في الجمعية العمومية تُعتمد الأقدمية برقم البطاقة، فيتقدّم صاحب الرقم الأصغر.\nالمادة 8: لا يسقط رقم البطاقة بغياب صاحبه، ويعود إليه كاملاً إذا جدّد بطاقته.",
+      "acquired_by_action_ids": [
+        "a_read_bylaws"
+      ],
+      "supports_fact_ids": [
+        "f_bylaw_rule"
+      ],
+      "reliability": "strong",
+      "limits_ar": "وُضع لترتيب الكلام والتصويت في الجمعية، ولا يتحدث عن الوصايا؛ فهو يرجّح القراءة ولا يحسمها وحده.",
+      "location_id": "loc_clubroom",
+      "contradicts_claim_ids": [
+        "cl_service_reading"
+      ]
+    },
+    {
+      "id": "ev_newsletter",
+      "title_ar": "نشرة النادي في عيده العاشر (2018)",
+      "kind": "documentary",
+      "content_ar": "نشرة نادي الحديقة المشتركة، عدد العيد العاشر، 2018، بقلم سلوى الدالاتي (مقتطف):\n«يسعدنا في هذا الحفل أن نرحّب بعمّنا يوسف الجبلي، أكبر أعضائنا سناً، وقد جاوز الثمانين وما زال يعدّ لنا الشتلات. ونحيّي من بعيد طارق المنصور، أقدم أعضاء النادي، أول من جاء إلى حديقتنا وما زال اسمه على بطاقتنا الثالثة، ونرجو أن تعيده الأيام قريباً.»",
+      "acquired_by_action_ids": [
+        "a_read_newsletter"
+      ],
+      "supports_fact_ids": [
+        "f_usage_join"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "تبيّن استعمال الأستاذة للفظين سنة 2018؛ لا تقول إن الوصية كُتبت بالمعنى نفسه بعد سبع سنوات.",
+      "location_id": "loc_clubroom",
+      "contradicts_claim_ids": [
+        "cl_age_reading"
+      ]
+    },
+    {
+      "id": "ev_memo",
+      "title_ar": "ورقة المفتاح قبل سفر الأستاذة (2025)",
+      "kind": "documentary",
+      "content_ar": "ورقة بخط الأستاذة سلوى إلى الأستاذ جلال، ربيع 2025:\n«سأغيب أسبوعاً في معرض الأزهار. يبقى مفتاح البيت الزجاجي عند أقدمنا، وهو طارق، فإن غاب فعند نادية. أما الري الصباحي فكلّموا هشاماً، فهو أدقّكم في المواعيد.»",
+      "acquired_by_action_ids": [
+        "a_read_memo"
+      ],
+      "supports_fact_ids": [
+        "f_usage_join"
+      ],
+      "reliability": "strong",
+      "limits_ar": "تبيّن من اختارت للمفتاح في أسبوع واحد وبأي لفظ وصفته؛ وليست وصية، ولا تقول شيئاً عن الدفاتر.",
+      "location_id": "loc_glasshouse",
+      "contradicts_claim_ids": [
+        "cl_age_reading",
+        "cl_service_reading"
+      ]
+    },
+    {
+      "id": "ev_hisham",
+      "title_ar": "إفادة هشام الزعيم",
+      "kind": "testimonial",
+      "content_ar": "إفادة هشام الزعيم، كما دوّنها الأستاذ جلال:\n«أنا أكبر الأعضاء سناً بفارق كبير. وفي حفل الربيع الماضي كانت الأستاذة سلوى تناديني ’كبيرنا‘ وهي تضحك. أفهم من ذلك أنها قصدتني بالوصية، ولم أسمع أحداً يعترض.»",
+      "acquired_by_action_ids": [
+        "a_read_hisham"
+      ],
+      "supports_fact_ids": [
+        "f_hisham_basis",
+        "f_claim_made"
+      ],
+      "reliability": "weak",
+      "limits_ar": "يصف ما سمعه وما فهمه؛ ومناداة المجاملة في حفل لا تعرّف كلمة مكتوبة في وصية.",
+      "location_id": "loc_clubroom",
+      "is_red_herring": true
+    },
+    {
+      "id": "ev_nadia",
+      "title_ar": "إفادة نادية القاسمي",
+      "kind": "testimonial",
+      "content_ar": "إفادة نادية القاسمي، كما دوّنها الأستاذ جلال:\n«أنا أطول الأعضاء خدمة بلا انقطاع. طارق غاب ست سنين، ولا يسمّى قديماً من غاب. هذا معنى الأقدم عندي، وأظن أنه معناه عند الأستاذة.»",
+      "acquired_by_action_ids": [
+        "a_read_nadia"
+      ],
+      "supports_fact_ids": [
+        "f_nadia_basis"
+      ],
+      "reliability": "weak",
+      "limits_ar": "ما تقوله عن خدمتها صحيح في السجل، لكن معنى الكلمة عندها لا يثبت معناها عند كاتبة الوصية.",
+      "location_id": "loc_clubroom",
+      "is_red_herring": true
+    }
+  ],
+  "evidence_graph": {
+    "inferences": [
+      {
+        "id": "i_cards",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_register"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_cards"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "اقرأ أرقام البطاقات في السجل: أصغرها 3 لطارق، ثم 11 لنادية، ثم 47 لهشام، وطارق جدّد بطاقته بالرقم نفسه.",
+        "skill_ko_refs": [
+          "KO-RS-05-001"
+        ]
+      },
+      {
+        "id": "i_bylaw",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_bylaws"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_bylaw_rule"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "المادتان 7 و8 تجعلان الأقدمية برقم البطاقة ولا تسقط بالغياب.",
+        "skill_ko_refs": [
+          "KO-RS-05-001"
+        ]
+      },
+      {
+        "id": "i_formal",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_cards"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_bylaw_rule"
+          },
+          {
+            "ref_type": "general_knowledge",
+            "ref_id": "gk_term_in_rules"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_true_reading"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "إذا كان معنى «الأقدمية» في وثائق النادي هو رقم البطاقة، وكان صاحب الرقم 3 هو طارق، فالقراءة الأقرب للفظ في وصية تخص النادي أن «الأقدم» هو طارق. وتبقى الحجة موضوعة أصلاً لترتيب الكلام والتصويت.",
+        "skill_ko_refs": [
+          "KO-RS-05-002",
+          "KO-RS-05-004"
+        ]
+      },
+      {
+        "id": "i_usage",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_newsletter"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_memo"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_usage_join"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "في نشرة 2018 وفي ورقة 2025 تسمّي الكاتبة طارق «أقدم» وتسمّي يوسف «أكبر سناً»؛ فهي تفرّق بين اللفظين ولا تستعمل «الأقدم» للأكبر عمراً.",
+        "skill_ko_refs": [
+          "KO-RS-05-004",
+          "KO-RS-06-001"
+        ]
+      },
+      {
+        "id": "i_author",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_usage_join"
+          },
+          {
+            "ref_type": "general_knowledge",
+            "ref_id": "gk_author_usage"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_true_reading"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "الكاتب يستعمل ألفاظه بمعناها المعتاد عنده؛ وكتابات الأستاذة سلوى تجعل «الأقدم» لمن انضم أولاً، وهو طارق، فتُقرأ الوصية بالمعنى نفسه.",
+        "skill_ko_refs": [
+          "KO-RS-05-004",
+          "KO-RS-06-001"
+        ]
+      },
+      {
+        "id": "i_ages",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_register"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_ages"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "أعمار الأعضاء في السجل: هشام الأكبر سناً بلا شك، وهذا أمر مختلف عن أقدميته في النادي.",
+        "skill_ko_refs": [
+          "KO-RS-05-001"
+        ]
+      },
+      {
+        "id": "i_rule_age",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_ages"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_usage_join"
+          },
+          {
+            "ref_type": "general_knowledge",
+            "ref_id": "gk_nickname_not_term"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_age"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "الكاتبة نفسها تفرّق بين «الأقدم» و«الأكبر سناً»، وتركت مفتاح بيتها عند طارق لا عند الأكبر عمراً؛ أما لقب المجاملة في حفل فلا يغيّر معنى كلمة كتبتها.",
+        "skill_ko_refs": [
+          "KO-RS-05-002",
+          "KO-RS-06-001"
+        ]
+      },
+      {
+        "id": "i_rule_cont",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_bylaw_rule"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_usage_join"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_cont"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "نظام النادي لا يُسقط الأقدمية بالغياب، والكاتبة سمّت طارق «أقدم» وهو غائب ثم حاضر؛ فمعنى الاستمرار في الخدمة لا يسنده ما كتبته.",
+        "skill_ko_refs": [
+          "KO-RS-05-002",
+          "KO-RS-06-009"
+        ]
+      },
+      {
+        "id": "i_rule_open",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_true_reading"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_will"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_open"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "احتمال أكثر من معنى في الجملة لا يعني استحالة الترجيح؛ فالأوراق التي أحالت إليها الوصية نفسها ترجّح معنى واحداً بقرائن مستقلة.",
+        "skill_ko_refs": [
+          "KO-RS-06-009"
+        ]
+      },
+      {
+        "id": "i_est_card",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_true_reading"
+          },
+          {
+            "ref_type": "general_knowledge",
+            "ref_id": "gk_term_in_rules"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_card"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "قراءة «الأقدم» بمعنى الأسبق انضماماً وأصغر الأرقام تفسّر الوصية وتتفق مع نظام النادي ومع كتابات الأستاذة، وهي أبسط القراءات التي لا تتناقض مع ورقة.",
+        "skill_ko_refs": [
+          "KO-RS-05-002",
+          "KO-RS-06-021"
+        ]
+      }
+    ]
+  },
+  "character_knowledge": [
+    {
+      "character_id": "jalal",
+      "knows": [
+        {
+          "fact_id": "f_will_found",
+          "access": "witnessed"
+        },
+        {
+          "fact_id": "f_claim_made",
+          "access": "witnessed"
+        },
+        {
+          "fact_id": "f_cards",
+          "access": "professional"
+        },
+        {
+          "fact_id": "f_candidates",
+          "access": "common_knowledge"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    },
+    {
+      "character_id": "hisham",
+      "knows": [
+        {
+          "fact_id": "f_claim_made",
+          "access": "witnessed"
+        },
+        {
+          "fact_id": "f_ages",
+          "access": "common_knowledge"
+        },
+        {
+          "fact_id": "f_hisham_basis",
+          "access": "witnessed"
+        },
+        {
+          "fact_id": "f_candidates",
+          "access": "common_knowledge"
+        }
+      ],
+      "hides": [],
+      "believes": [
+        {
+          "claim_id": "cl_age_reading",
+          "stance": "sincere"
+        }
+      ]
+    },
+    {
+      "character_id": "nadia",
+      "knows": [
+        {
+          "fact_id": "f_nadia_basis",
+          "access": "witnessed"
+        },
+        {
+          "fact_id": "f_ages",
+          "access": "common_knowledge"
+        },
+        {
+          "fact_id": "f_candidates",
+          "access": "common_knowledge"
+        }
+      ],
+      "hides": [],
+      "believes": [
+        {
+          "claim_id": "cl_service_reading",
+          "stance": "sincere"
+        }
+      ]
+    },
+    {
+      "character_id": "tariq",
+      "knows": [
+        {
+          "fact_id": "f_cards",
+          "access": "witnessed"
+        },
+        {
+          "fact_id": "f_candidates",
+          "access": "common_knowledge"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "h_age",
+      "statement_ar": "«الأقدم» في الوصية تعني الأكبر سناً، فالعهدة لهشام.",
+      "is_true": false,
+      "plausibility_at_start": "high",
+      "suspect_id": "hisham"
+    },
+    {
+      "id": "h_cont",
+      "statement_ar": "«الأقدم» تعني من خدم النادي بلا انقطاع، فالعهدة لنادية.",
+      "is_true": false,
+      "plausibility_at_start": "medium"
+    },
+    {
+      "id": "h_card",
+      "statement_ar": "«الأقدم» تعني الأسبق انضماماً وصاحب أصغر رقم بطاقة، فالعهدة لطارق.",
+      "is_true": true,
+      "plausibility_at_start": "medium"
+    },
+    {
+      "id": "h_open",
+      "statement_ar": "العبارة غامضة غموضاً لا يمكن معه الترجيح بين القراءات بأي دليل.",
+      "is_true": false,
+      "plausibility_at_start": "medium"
+    }
+  ],
+  "misdirection_plan": [
+    {
+      "id": "rh_age",
+      "points_to_hypothesis_id": "h_age",
+      "planted_via_ar": "أن هشاماً أكبر الأعضاء سناً، وإفادته عن لقب «كبيرنا» في الحفل.",
+      "evidence_ids": [
+        "ev_hisham",
+        "ev_register"
+      ],
+      "refuted_by_inference_ids": [
+        "i_rule_age"
+      ],
+      "fairness_note_ar": "النشرة وورقة المفتاح بين يدي اللاعب من البداية، وفيهما تفريق صريح بين «الأقدم» و«الأكبر سناً»."
+    },
+    {
+      "id": "rh_service",
+      "points_to_hypothesis_id": "h_cont",
+      "planted_via_ar": "أن نادية حاضرة بلا انقطاع منذ إحدى عشرة سنة، وأن طارق غاب ست سنوات.",
+      "evidence_ids": [
+        "ev_nadia",
+        "ev_register"
+      ],
+      "refuted_by_inference_ids": [
+        "i_rule_cont"
+      ],
+      "fairness_note_ar": "المادة الثامنة من النظام وملاحظة السجل تصرّحان بأن غياب طارق لم يُسقط رقمه."
+    }
+  ],
+  "learning_objectives": [
+    {
+      "id": "lo_main",
+      "statement_ar": "يولّد القراءات الممكنة للعبارة الغامضة قبل أن يختار واحدة، ويسمّي ما يسند كل قراءة.",
+      "skill_ko_ref": "KO-RS-05-002",
+      "observable_behaviors_ar": [
+        "يعدّ القراءات الثلاث",
+        "يربط كل قراءة بدليل"
+      ],
+      "evidence_sources": [
+        "hypothesis_ledger",
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_source",
+      "statement_ar": "يصنّف الإفادتين أقوالاً، ويصنّف السجل والنظام والنشرة والورقة وثائق.",
+      "skill_ko_ref": "KO-RS-05-001",
+      "observable_behaviors_ar": [
+        "يميز القول من الوثيقة"
+      ],
+      "evidence_sources": [
+        "evidence_board"
+      ]
+    },
+    {
+      "id": "lo_indep",
+      "statement_ar": "يجد مسارين مستقلين: تعريف النادي لللفظ، واستعمال الكاتبة له في أوراقها.",
+      "skill_ko_ref": "KO-RS-05-004",
+      "observable_behaviors_ar": [
+        "يفصل مسار النظام والسجل عن مسار النشرة والورقة"
+      ],
+      "evidence_sources": [
+        "evidence_board",
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_diag",
+      "statement_ar": "يقدّر ما يثبته كل دليل ويربطه بالقراءة باتجاه صحيح.",
+      "skill_ko_ref": "KO-RS-06-001",
+      "observable_behaviors_ar": [
+        "يربط الدليل بالفرضية"
+      ],
+      "evidence_sources": [
+        "evidence_board"
+      ]
+    },
+    {
+      "id": "lo_calib",
+      "statement_ar": "يصوغ نسبة ترجيح بحدودها، ويذكر ما لا يثبته الدليل عن مراد الكاتبة.",
+      "skill_ko_ref": "KO-RS-06-021",
+      "observable_behaviors_ar": [
+        "يختار ثقة معقولة",
+        "يذكر حدوداً"
+      ],
+      "evidence_sources": [
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_revise",
+      "statement_ar": "يراجع قراءته الأولى حين تظهر وثيقة تخالفها، ويتحلى بالمرونة بين المعاني.",
+      "skill_ko_ref": "KO-RS-06-009",
+      "observable_behaviors_ar": [
+        "يغيّر قراءته الرائدة بدليل"
+      ],
+      "evidence_sources": [
+        "hypothesis_ledger"
+      ]
+    }
+  ],
+  "mechanics": {
+    "time_budget_units": 24,
+    "actions": [
+      {
+        "id": "a_read_will",
+        "type": "examine",
+        "label_ar": "اقرأ ورقة الوصية في غطاء العلبة",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_will"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "READ_WILL",
+        "target_id": "loc_clubroom"
+      },
+      {
+        "id": "a_read_register",
+        "type": "examine",
+        "label_ar": "اطلع على مقتطف سجل العضوية",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_register"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "READ_REGISTER",
+        "target_id": "loc_clubroom"
+      },
+      {
+        "id": "a_read_bylaws",
+        "type": "search_location",
+        "label_ar": "ابحث عن النظام الداخلي في خزانة الأوراق",
+        "precondition": {
+          "has_evidence": "ev_will"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_bylaws"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "READ_BYLAWS",
+        "target_id": "loc_clubroom"
+      },
+      {
+        "id": "a_read_newsletter",
+        "type": "search_location",
+        "label_ar": "ابحث عن النشرات القديمة للنادي",
+        "precondition": {
+          "has_evidence": "ev_will"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_newsletter"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "READ_NEWSLETTER",
+        "target_id": "loc_clubroom"
+      },
+      {
+        "id": "a_read_memo",
+        "type": "search_location",
+        "label_ar": "ابحث عن أوراق الأستاذة سلوى في البيت الزجاجي",
+        "precondition": {
+          "has_evidence": "ev_will"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_memo"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "READ_MEMO",
+        "target_id": "loc_glasshouse"
+      },
+      {
+        "id": "a_read_hisham",
+        "type": "examine",
+        "label_ar": "اقرأ إفادة هشام",
+        "precondition": {
+          "has_evidence": "ev_will"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_hisham"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "READ_HISHAM",
+        "target_id": "loc_clubroom"
+      },
+      {
+        "id": "a_read_nadia",
+        "type": "examine",
+        "label_ar": "اقرأ إفادة نادية",
+        "precondition": {
+          "has_evidence": "ev_will"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_nadia"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "READ_NADIA",
+        "target_id": "loc_clubroom"
+      },
+      {
+        "id": "a_hint",
+        "type": "request_hint",
+        "label_ar": "اطلب تلميحاً",
+        "precondition": {
+          "always": true
+        },
+        "effects": [],
+        "time_cost_units": 0,
+        "telemetry_code": "REQUEST_HINT"
+      },
+      {
+        "id": "a_accuse",
+        "type": "final_accusation",
+        "label_ar": "قدّم قراءتك المرجّحة وجملة «كيف عرفت؟»",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "SUBMIT"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "FINAL_ACCUSATION"
+      }
+    ]
+  },
+  "state_machine": {
+    "id": "c045",
+    "initial": "briefing",
+    "type": "compound",
+    "states": {
+      "briefing": {
+        "description_ar": "الإحاطة",
+        "type": "atomic",
+        "on": {
+          "START": {
+            "target": "investigating"
+          }
+        }
+      },
+      "investigating": {
+        "description_ar": "التحقيق",
+        "type": "compound",
+        "initial": "gathering",
+        "states": {
+          "gathering": {
+            "type": "atomic",
+            "on": {
+              "OPEN_DEDUCTION": {
+                "target": "deducing"
+              }
+            }
+          },
+          "deducing": {
+            "type": "atomic",
+            "on": {
+              "BACK": {
+                "target": "gathering"
+              }
+            }
+          }
+        },
+        "on": {
+          "SUBMIT": {
+            "target": "review"
+          }
+        }
+      },
+      "review": {
+        "description_ar": "مراجعة",
+        "type": "atomic",
+        "on": {
+          "CLOSE": {
+            "target": "resolved"
+          }
+        }
+      },
+      "resolved": {
+        "description_ar": "إغلاق",
+        "type": "final"
+      }
+    }
+  },
+  "rubric": {
+    "reference_answer_ar": "القراءة الأرجح أن «أقدم أعضاء النادي» تعني الأسبق انضماماً وصاحب أصغر رقم بطاقة، أي طارق. مساران مستقلان يسندان ذلك: نظام النادي وسجله (الأقدمية برقم البطاقة ولا تسقط بالغياب، ورقم طارق 3)، وكتابات الأستاذة سلوى نفسها (نشرة 2018 وورقة 2025) التي تسمّي طارق «أقدم» وتسمّي غيره «أكبر سناً». قراءة هشام تخلط الأقدمية بالعمر، وقراءة نادية تخلطها بالاستمرار، وكلتاهما بحسن نية. حدود الاستنتاج: لا نعرف مراد الكاتبة بيقين، والمادة السابعة من النظام وُضعت للتصويت لا للوصايا، وقد توجد أوراق أخرى لم تصل إلينا.",
+    "criteria": [
+      {
+        "id": "c_source",
+        "name_ar": "تصنيف المصادر",
+        "objective_ids": [
+          "lo_source"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يصنّف"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "أخطأ في الأغلب"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "نصف صحيح"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمه صحيح"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كله صحيح"
+          }
+        ]
+      },
+      {
+        "id": "c_links",
+        "name_ar": "ربط الأدلة بالفرضيات",
+        "objective_ids": [
+          "lo_diag",
+          "lo_indep"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.25,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لا روابط"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "قليلة"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "نصفها صحيح"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمها"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كلها دقيقة"
+          }
+        ]
+      },
+      {
+        "id": "c_uncertainty",
+        "name_ar": "معايرة الثقة",
+        "objective_ids": [
+          "lo_calib"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.2,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "ثقة مفرطة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "حدود قليلة"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "جزئية"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معقولة"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "معايَرة كاملة"
+          }
+        ]
+      },
+      {
+        "id": "c_revision",
+        "name_ar": "مراجعة الرأي",
+        "objective_ids": [
+          "lo_revise"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "بقي على فرضية مرفوضة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "لم يعلن فرضية"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "ثبت على فرضية سليمة"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "غيّر بدليل"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "غيّر بدليل ووثّق"
+          }
+        ]
+      },
+      {
+        "id": "c_elimination",
+        "name_ar": "استبعاد الفرضيات الخاطئة",
+        "objective_ids": [
+          "lo_main"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يستبعد"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "استبعد خطأً"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "فرضية بدليل"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "فرضيتين"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كل الخاطئة"
+          }
+        ]
+      },
+      {
+        "id": "c_justification",
+        "name_ar": "جملة «كيف عرفت؟» وجودة الحجة",
+        "objective_ids": [
+          "lo_main",
+          "lo_indep"
+        ],
+        "scored_by": "human",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لا حجة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "ادعاء بلا سند"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "دليل دون ربط"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "ربط مسار واحد بالقراءة"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "مساران مع البدائل والحدود"
+          }
+        ]
+      }
+    ]
+  },
+  "hint_ladder": [
+    {
+      "id": "hg1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "قبل أن تنحاز لأحد: ما المعاني الممكنة لكلمة «أقدم» في هذه الجملة؟ اكتبها كلها.",
+      "trigger": {
+        "always": true
+      },
+      "assessment_weight": 0.02
+    },
+    {
+      "id": "hg2",
+      "level": 2,
+      "kind": "focus_area",
+      "text_ar": "الوصية نفسها تحيل إلى أوراق النادي. ابحث عن أوراق تستعمل اللفظ، لا عن آراء من يطالبون.",
+      "trigger": {
+        "has_evidence": "ev_will"
+      },
+      "assessment_weight": 0.04
+    },
+    {
+      "id": "hg3",
+      "level": 3,
+      "kind": "pointer",
+      "text_ar": "ابحث عن وثيقتين تعرّفان اللفظ من جهتين مختلفتين: جهة النادي، وجهة كاتبة الوصية.",
+      "trigger": {
+        "has_evidence": "ev_will"
+      },
+      "assessment_weight": 0.08
+    },
+    {
+      "id": "hf1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "ماذا يعني «الأقدم» في نظام النادي وسجله؟ ومن يحمل أصغر رقم؟",
+      "trigger": {
+        "has_evidence": "ev_will"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_formal"
+    },
+    {
+      "id": "hf2",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "اقرأ المادتين السابعة والثامنة، ثم قارن أرقام البطاقات في السجل. وانتبه: لمن وُضع هذا النص أصلاً؟",
+      "trigger": {
+        "has_evidence": "ev_bylaws"
+      },
+      "assessment_weight": 0.06,
+      "targets_inference_id": "i_formal"
+    },
+    {
+      "id": "ha1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "كيف استعملت الأستاذة سلوى الكلمة نفسها في أوراقها الأخرى؟",
+      "trigger": {
+        "has_evidence": "ev_will"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_author"
+    },
+    {
+      "id": "ha2",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "قارن بين ما كتبته عن يوسف الجبلي وما كتبته عن طارق في نشرة 2018، ثم انظر من اختارت لحمل المفتاح سنة 2025.",
+      "trigger": {
+        "has_evidence": "ev_newsletter"
+      },
+      "assessment_weight": 0.06,
+      "targets_inference_id": "i_author"
+    },
+    {
+      "id": "hr1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "هل يعني أن هشاماً الأكبر سناً أنه الأقدم في النادي؟ وماذا تقول الكاتبة نفسها؟",
+      "trigger": {
+        "has_evidence": "ev_hisham"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_rule_age"
+    },
+    {
+      "id": "hc1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "إذا غاب عضو ست سنين ثم جدّد بطاقته، فماذا يحدث لرقمه في نظام النادي؟",
+      "trigger": {
+        "has_evidence": "ev_nadia"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_rule_cont"
+    },
+    {
+      "id": "hc2",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "هل غياب طارق ست سنين أسقط رقمه؟ ارجع إلى المادة الثامنة وإلى لفظ الأستاذة وهو غائب.",
+      "trigger": {
+        "has_evidence": "ev_nadia"
+      },
+      "assessment_weight": 0.06,
+      "targets_inference_id": "i_rule_cont"
+    }
+  ],
+  "fairness_test": {
+    "requirements": {
+      "min_disjoint_proof_paths": 2,
+      "max_inference_depth": 3,
+      "all_red_herrings_refutable": true,
+      "culprit_uniquely_entailed": true,
+      "no_hidden_fact_dependency": true,
+      "max_required_actions": 8
+    },
+    "runs": []
+  },
+  "ending_explanation": {
+    "steps": [
+      {
+        "order": 1,
+        "text_ar": "قبل الحكم عدّد القراءات: «الأقدم» قد تعني الأكبر سناً (هشام)، أو الأطول خدمة بلا انقطاع (نادية)، أو الأسبق انضماماً (طارق). الوصية نفسها تقول إن للكلمة وجهين وتحيل إلى أوراق النادي.",
+        "uses_evidence_ids": [
+          "ev_will"
+        ],
+        "inference_id": "i_est_card"
+      },
+      {
+        "order": 2,
+        "text_ar": "المسار الأول، من جهة النادي: الأقدمية في نظامه برقم البطاقة، ولا يسقط الرقم بالغياب، وأصغر الأرقام 3 لطارق.",
+        "uses_evidence_ids": [
+          "ev_bylaws",
+          "ev_register"
+        ],
+        "inference_id": "i_formal"
+      },
+      {
+        "order": 3,
+        "text_ar": "المسار الثاني، من جهة الكاتبة ولا يمر بالنظام ولا بالسجل: في نشرة 2018 سمّت طارق «أقدم» وسمّت يوسف «أكبر سناً»، وفي ورقة 2025 تركت المفتاح عند «أقدمنا طارق».",
+        "uses_evidence_ids": [
+          "ev_newsletter",
+          "ev_memo"
+        ],
+        "inference_id": "i_author"
+      },
+      {
+        "order": 4,
+        "text_ar": "قراءة هشام تخلط الأقدمية بالعمر؛ والكاتبة تفرّق بينهما، ولقب «كبيرنا» مزاح في حفل لا يعرّف كلمة مكتوبة.",
+        "uses_evidence_ids": [
+          "ev_hisham",
+          "ev_register",
+          "ev_newsletter"
+        ],
+        "inference_id": "i_rule_age"
+      },
+      {
+        "order": 5,
+        "text_ar": "قراءة نادية تخلط الأقدمية بالاستمرار؛ والمادة الثامنة لا تُسقط الرقم بالغياب، والكاتبة سمّت طارق «أقدم» وهو غائب.",
+        "uses_evidence_ids": [
+          "ev_nadia",
+          "ev_bylaws",
+          "ev_memo"
+        ],
+        "inference_id": "i_rule_cont"
+      },
+      {
+        "order": 6,
+        "text_ar": "الخلاصة: الغموض لم يمنع الترجيح. القراءة الأقرب إلى النظام وإلى لفظ الكاتبة هي طارق، والمطالبان الآخران صادقان في قراءتيهما لكن الأوراق لا تسندهما.",
+        "uses_evidence_ids": [
+          "ev_bylaws",
+          "ev_memo"
+        ],
+        "inference_id": "i_rule_open"
+      }
+    ],
+    "alternative_paths_ar": [
+      "يكفي مسار النظام والسجل وحده لترجيح طارق، ويكفي مسار نشرة 2018 وورقة 2025 وحده؛ والأقوى أن يتفقا لأن كلاً منهما لا يعتمد على الآخر."
+    ],
+    "what_evidence_could_not_show_ar": [
+      "لا نعرف مراد الأستاذة سلوى بيقين، فنحن نرجّح أقرب القراءات إلى استعمالها.",
+      "المادة السابعة وُضعت لترتيب الكلام والتصويت، لا للوصايا.",
+      "قد توجد أوراق أخرى لم تصل إلينا، ولو ظهرت ورقة لاحقة بخط الأستاذة تسمّي غير طارق لوجب أن نراجع الاستنتاج.",
+      "لا نعرف لماذا أخفت الأستاذة الوصية في علبة البذور، ولا حاجة لذلك في الحل."
+    ],
+    "science_notes_ar": [
+      "الكلمة التي تحتمل معنيين لا تُحسم بالأقرب إلى الحرف ولا بالأعلى صوتاً؛ تُحسم بمعناها عند كاتبها وفي وثائق الجهة التي كُتبت لها.",
+      "حين نعرض القراءات الممكنة كلها قبل الاختيار، نتجنب أن نتمسك بأول معنى خطر ببالنا.",
+      "مسار الإثبات الأقوى هو الذي يعتمد على وثائق مستقلة تتفق، لا على وثيقة واحدة نكررها.",
+      "صدق صاحب القراءة لا يجعل قراءته صحيحة، وكذلك حرارة دفاعه عنها."
+    ]
+  },
+  "expert_review": [
+    {
+      "role": "narrative_editor",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-11-05",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "scientific_reviewer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-11-05",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "learning_designer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-11-05",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "age_appropriateness",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-11-05",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "cultural_reviewer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-11-05",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "legal_rights",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-11-05",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "safety",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-11-05",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    }
+  ]
+}

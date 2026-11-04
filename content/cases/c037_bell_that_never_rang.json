@@ -1,0 +1,3026 @@
+{
+  "schema_version": "0.1.0",
+  "case_id": "c037_bell_that_never_rang",
+  "case_version": "0.1.0",
+  "meta": {
+    "title_ar": "الجرس الذي لم يرن",
+    "title_en": "The Bell That Never Rang",
+    "age_band": "16-18",
+    "locale": "ar",
+    "dialogue_register": "msa",
+    "estimated_minutes": 40,
+    "difficulty": 3,
+    "content_flags": [
+      "no_violence",
+      "theft"
+    ],
+    "authors": [
+      "فريق أثر التحريري (مسودة بمساعدة الذكاء الاصطناعي، لم تُراجَع بشرياً بعد)"
+    ],
+    "knowledge_object_refs": [
+      "KO-RS-05-001",
+      "KO-RS-05-005",
+      "KO-RS-05-002",
+      "KO-RS-05-004",
+      "KO-RS-06-001",
+      "KO-RS-06-008",
+      "KO-RS-06-009",
+      "KO-RS-06-021",
+      "KO-NP-02-010"
+    ]
+  },
+  "premise": {
+    "hook_ar": "اختفت ساعة جيب أودعها زبون للإصلاح من خزنة دكان في الليل، ولم يُكسر قفل. يرجّح صاحب الدكان أن لصاً دخل من بابه الأمامي. فماذا كان يجب أن يحدث لو صح ذلك؟",
+    "player_role_ar": "أنت محقق متدرب لدى لجنة جمعية مجمّع الحِرَف، وطُلب منك أن تراجع السجلات قبل أن تقرر اللجنة كيف تُحال الواقعة إلى الجهة المختصة.",
+    "setting_ar": "دكان للساعات في مجمّع حِرَف صغير بمدينة بيادر المتخيَّلة، من مساء الثلاثاء إلى صباح الأربعاء. للجنة إذن بالاطلاع على أوراق الجمعية والحارس وصاحب الدكان والجيران، ولا تفتح غيرها. الأسماء والأحداث كلها متخيَّلة، وتوقيت المجمّع هو توقيت كل السجلات.",
+    "public_fact_ids": [
+      "f_theft_reported",
+      "f_no_break"
+    ],
+    "assumed_general_knowledge_ar": [
+      "الجرس المعلّق على نابض بباب يرن حين تتحرك الضلفة",
+      "شريط ورقي لاصق على فاصل باب ينقطع أو ينفصل إذا فُتح الباب",
+      "المصباح ذو الحسّاس يضيء عند حركة أمامه"
+    ]
+  },
+  "entities": {
+    "characters": [
+      {
+        "id": "mansour",
+        "name_ar": "الحاج منصور الدباغ",
+        "role": "victim",
+        "age_descriptor_ar": "صاحب دكان الساعات",
+        "persona_ar": "رجل في الستين يعتزّ بصنعته، حزين لضياع أمانة زبون، ويميل إلى تفسير سريع يبعد الشبهة عمّن يعرفهم.",
+        "motives_ar": [
+          "أن تعود الأمانة إلى صاحبها",
+          "ألا يتهم أحداً من أهله بلا يقين"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "mn_greet",
+            "purpose": "greeting",
+            "text_ar": "تفضّل. الساعة أمانة عندي، ولن أرتاح حتى تعود."
+          },
+          {
+            "line_id": "mn_watch",
+            "purpose": "reveal",
+            "text_ar": "راجعت الصينية في الثامنة والربع ووجدت الساعة فيها. ثم أقفلت وخرجت من الباب الأمامي بعد خمس دقائق.",
+            "fact_ids": [
+              "f_watch_present",
+              "f_owner_left"
+            ]
+          },
+          {
+            "line_id": "mn_front",
+            "purpose": "lie",
+            "text_ar": "لا أرى إلا أن لصاً غريباً دخل من الباب الأمامي. ولم يكسر شيئاً، فلا بد أنه محترف.",
+            "claim_ids": [
+              "cl_owner_front"
+            ]
+          },
+          {
+            "line_id": "mn_bell",
+            "purpose": "lie",
+            "text_ar": "الجرس قديم، وأظنه لا يرن إذا فُتح الباب بحذر.",
+            "claim_ids": [
+              "cl_bell_old"
+            ]
+          },
+          {
+            "line_id": "mn_key",
+            "purpose": "reveal",
+            "text_ar": "صحيح، أعرت ابن أخي وليداً المفتاح الاحتياطي في أول الشهر، ونسيت أنني لم أستردّه.",
+            "fact_ids": [
+              "f_key_lent"
+            ]
+          },
+          {
+            "line_id": "mn_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "هذا لا أعرفه، ولا أحب أن أخمّن."
+          },
+          {
+            "line_id": "mn_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "دعنا نبقَ عند الساعة وما جرى لها."
+          },
+          {
+            "line_id": "mn_bye",
+            "purpose": "farewell",
+            "text_ar": "أرجو أن تعرف الحقيقة، ولو كانت ثقيلة."
+          }
+        ]
+      },
+      {
+        "id": "yasin",
+        "name_ar": "ياسين الحلبي",
+        "role": "suspect",
+        "age_descriptor_ar": "متدرب في دكان الساعات",
+        "persona_ar": "شاب في العشرين، دقيق في مواعيده، يخشى أن يُظنّ به السوء لأنه آخر من غادر عند الإقفال.",
+        "motives_ar": [
+          "ألا يُنسب إليه ما لم يفعله",
+          "أن يُثبت أنه أدّى عمله كما طُلب منه"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "ys_greet",
+            "purpose": "greeting",
+            "text_ar": "أهلاً. أنا آخر من خرج من الدكان، وأعرف أن هذا يلفت النظر."
+          },
+          {
+            "line_id": "ys_left",
+            "purpose": "reveal",
+            "text_ar": "خرجت في الثامنة وخمس دقائق مساءً، وكانت الساعة في الصينية. وسمعت الجرس يرن خلفي كعادته.",
+            "fact_ids": [
+              "f_apprentice_left",
+              "f_watch_present"
+            ]
+          },
+          {
+            "line_id": "ys_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف شيئاً بعد خروجي."
+          },
+          {
+            "line_id": "ys_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "أفضّل أن أتكلم عن عملي في الدكان فقط."
+          },
+          {
+            "line_id": "ys_bye",
+            "purpose": "farewell",
+            "text_ar": "أنا مستعد لأي سؤال آخر."
+          }
+        ]
+      },
+      {
+        "id": "walid",
+        "name_ar": "وليد الدباغ",
+        "role": "suspect",
+        "age_descriptor_ar": "ابن أخ صاحب الدكان",
+        "persona_ar": "شاب في الرابعة والعشرين، عمله متقطع في التوصيل، سريع الكلام ويحب أن يبدو واثقاً.",
+        "motives_ar": [
+          "أن يسدّ ديناً لتاجر قماش قبل نهاية الأسبوع",
+          "ألا يعرف عمّه أنه ما زال يحتفظ بالمفتاح"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "wl_greet",
+            "purpose": "greeting",
+            "text_ar": "أهلاً. سمعت بما حدث وأنا آسف لعمّي."
+          },
+          {
+            "line_id": "wl_nokey",
+            "purpose": "lie",
+            "text_ar": "لم أدخل الدكان منذ أسبوعين، وليس معي مفتاح. وليلة الثلاثاء نمت في البيت.",
+            "claim_ids": [
+              "cl_walid_nokey"
+            ]
+          },
+          {
+            "line_id": "wl_key",
+            "purpose": "reveal",
+            "text_ar": "نعم، أخذت المفتاح الاحتياطي لتسليم بضاعة، ونسيت أن أعيده. لكن هذا لا يعني أنني دخلت.",
+            "fact_ids": [
+              "f_key_lent"
+            ]
+          },
+          {
+            "line_id": "wl_confess",
+            "purpose": "break_down",
+            "text_ar": "كان عليّ دين يضغط عليّ. دخلت من الباب الخلفي وأخذت الساعة وبعتها، وكنت أنوي أن أعوّض عمّي.",
+            "fact_ids": [
+              "f_walid_took"
+            ]
+          },
+          {
+            "line_id": "wl_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف عن هذا شيئاً."
+          },
+          {
+            "line_id": "wl_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "ما علاقة هذا بالموضوع؟"
+          },
+          {
+            "line_id": "wl_bye",
+            "purpose": "farewell",
+            "text_ar": "أرجو أن ينتهي هذا سريعاً."
+          }
+        ]
+      },
+      {
+        "id": "najla",
+        "name_ar": "نجلاء الشيخ",
+        "role": "witness",
+        "age_descriptor_ar": "جارة تسكن الطابق الأول فوق الدكان",
+        "persona_ar": "امرأة في الخمسين، حادة السمع، قليلة الصبر على الضجيج، وتدوّن ما يزعجها.",
+        "motives_ar": [
+          "أن تُسمع شكواها القديمة",
+          "أن تُدوَّن شهادتها كما كتبتها"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "nj_greet",
+            "purpose": "greeting",
+            "text_ar": "أهلاً. دوّنت تلك الليلة كلها لأن ألم الضرس لم يتركني أنام."
+          },
+          {
+            "line_id": "nj_rings",
+            "purpose": "reveal",
+            "text_ar": "سمعت الجرس ثلاث مرات فقط: في 20:05 ثم 20:20 ثم 07:55. وهو يوقظني متى فُتح الباب.",
+            "fact_ids": [
+              "f_diary_rings"
+            ]
+          },
+          {
+            "line_id": "nj_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لم أسمع غير ذلك، ولا أحب أن أضيف ما لم أسمعه."
+          },
+          {
+            "line_id": "nj_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسأل عن الجرس والليلة فقط، فهذا ما أعرفه."
+          },
+          {
+            "line_id": "nj_bye",
+            "purpose": "farewell",
+            "text_ar": "سجلاتي عندك، فاقرأها كما كُتبت."
+          }
+        ]
+      },
+      {
+        "id": "saeed",
+        "name_ar": "سعيد الجبوري",
+        "role": "witness",
+        "age_descriptor_ar": "حارس المجمّع",
+        "persona_ar": "رجل منتظم في جولاته، يلتزم بما في ورقته ولا يحب الاجتهاد خارجها.",
+        "motives_ar": [
+          "أن تُقبل ورقة جولاته كما هي",
+          "ألا يُحمَّل ما لا يحرسه"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "sd_greet",
+            "purpose": "greeting",
+            "text_ar": "أهلاً. أدوّن كل جولة في ورقتها."
+          },
+          {
+            "line_id": "sd_seal",
+            "purpose": "reveal",
+            "text_ar": "ختمت الأبواب الأمامية في 20:30، وفي جولتي 01:40 و05:50 وجدت الأختام سليمة. أما الفناء الخلفي فلا أحرس أبوابه.",
+            "fact_ids": [
+              "f_seals_intact"
+            ]
+          },
+          {
+            "line_id": "sd_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "هذا ليس من جولتي."
+          },
+          {
+            "line_id": "sd_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "سل عن الأبواب والأختام، فهذا عملي."
+          },
+          {
+            "line_id": "sd_bye",
+            "purpose": "farewell",
+            "text_ar": "الورقة عندك، وفيها كل ما رأيت."
+          }
+        ]
+      },
+      {
+        "id": "hassan",
+        "name_ar": "حسّان العمر",
+        "role": "witness",
+        "age_descriptor_ar": "خبّاز المخبز المقابل عبر الفناء",
+        "persona_ar": "خبّاز يبدأ عمله قبل الفجر، يعرف أصوات الفناء كلها، ويتحفظ في تقدير الأوقات.",
+        "motives_ar": [
+          "أن يبقى بعيداً عن الاتهام",
+          "أن يقول ما سمعه دون زيادة"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "hs_greet",
+            "purpose": "greeting",
+            "text_ar": "أهلاً. أبدأ العجين قبل الفجر، والفناء يسمعني وأسمعه."
+          },
+          {
+            "line_id": "hs_hinge",
+            "purpose": "reveal",
+            "text_ar": "وأنا أعجن سمعت صرير الباب الخلفي لدكان الساعات مرتين، قرابة الثانية وعشر دقائق ثم الثانية والنصف. لم أخرج لأرى.",
+            "fact_ids": [
+              "f_hinge_heard"
+            ]
+          },
+          {
+            "line_id": "hs_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لم أرَ أحداً، ولا أحب أن أخمّن من كان."
+          },
+          {
+            "line_id": "hs_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "حدّثني عن الفناء وأصواته فقط."
+          },
+          {
+            "line_id": "hs_bye",
+            "purpose": "farewell",
+            "text_ar": "إن احتجت أن أعيد ما سمعته فأنا هنا."
+          }
+        ]
+      }
+    ],
+    "locations": [
+      {
+        "id": "loc_shop",
+        "name_ar": "دكان الدباغ للساعات",
+        "description_ar": "دكان صغير بباب أمامي عليه جرس نحاسي، وباب خلفي يفتح على الفناء."
+      },
+      {
+        "id": "loc_yard",
+        "name_ar": "الفناء الخلفي المشترك",
+        "description_ar": "فناء بين دكان الساعات والمخبز، له بوابة مشتركة مفتوحة ليلاً، ومصباح فوق عتبة الباب الخلفي."
+      },
+      {
+        "id": "loc_flat",
+        "name_ar": "شقة نجلاء الشيخ",
+        "description_ar": "شقة في الطابق الأول فوق الدكان، نافذتها على الشارع قرب الباب الأمامي."
+      },
+      {
+        "id": "loc_hut",
+        "name_ar": "غرفة الحارس",
+        "description_ar": "غرفة عند مدخل المجمّع تحفظ أوراق جولات الحارس."
+      },
+      {
+        "id": "loc_bakery",
+        "name_ar": "المخبز المقابل",
+        "description_ar": "مخبز بابه الخلفي على الفناء."
+      },
+      {
+        "id": "loc_dealer",
+        "name_ar": "محل زمن الأمس للساعات القديمة",
+        "description_ar": "محل في حي آخر يشتري الساعات المستعملة ويسجّل مشترياته."
+      },
+      {
+        "id": "loc_assoc",
+        "name_ar": "مكتب جمعية المجمّع",
+        "description_ar": "مكتب يحفظ التقارير والرسائل الواردة من أصحاب الدكاكين والسكان."
+      }
+    ],
+    "objects": [
+      {
+        "id": "obj_watch",
+        "name_ar": "ساعة الجيب الفضية",
+        "description_ar": "ساعة أودعها زبون للإصلاح، رقم حركتها 4471."
+      },
+      {
+        "id": "obj_bell",
+        "name_ar": "جرس الباب الأمامي",
+        "description_ar": "جرس نحاسي على نابض أعلى ضلفة الباب."
+      },
+      {
+        "id": "obj_seal",
+        "name_ar": "شريط الختم الورقي",
+        "description_ar": "شريط مؤرَّخ يلصقه الحارس على فاصل كل باب أمامي بعد الإقفال."
+      },
+      {
+        "id": "obj_lamp",
+        "name_ar": "مصباح الفناء",
+        "description_ar": "مصباح فوق عتبة الباب الخلفي يضيء بالحركة ويحفظ سجلاً."
+      }
+    ],
+    "organizations": [
+      {
+        "id": "org_assoc",
+        "name_ar": "جمعية مجمّع الحِرَف",
+        "description_ar": "جمعية أصحاب الدكاكين في المجمّع."
+      },
+      {
+        "id": "org_dealer",
+        "name_ar": "محل زمن الأمس",
+        "description_ar": "محل لبيع الساعات القديمة وشرائها."
+      }
+    ]
+  },
+  "truth": {
+    "solution": {
+      "culprit_ids": [
+        "walid"
+      ],
+      "summary_ar": "لم يدخل لصّ غريب من الواجهة. لو فُتح الباب الأمامي ليلاً لرنّ الجرس، ولسمعته جارة مستيقظة وسجّلته، ولتمزّق شريط الختم؛ ولم يحدث شيء من ذلك. دخل وليد من الفناء بمفتاح الباب الخلفي الذي لم يُرجعه، ثم باع الساعة صباحاً لمحل ساعات قديمة.",
+      "key_fact_ids": [
+        "f_front_shut",
+        "f_yard_entry",
+        "f_walid_took"
+      ]
+    },
+    "facts": [
+      {
+        "id": "f_theft_reported",
+        "statement_ar": "أُبلغ صباح الأربعاء عن غياب ساعة جيب فضية مودَعة للإصلاح من صينية الخزنة في دكان الدباغ للساعات.",
+        "kind": "event",
+        "subject_ids": [
+          "obj_watch",
+          "mansour"
+        ],
+        "spoiler_level": 0,
+        "time": {
+          "start_min": 835,
+          "precision": "approx"
+        },
+        "location_id": "loc_shop"
+      },
+      {
+        "id": "f_no_break",
+        "statement_ar": "لم يظهر كسر في أي من بابَي الدكان، ولم يُفقد غير الساعة.",
+        "kind": "state",
+        "subject_ids": [
+          "loc_shop"
+        ],
+        "spoiler_level": 0
+      },
+      {
+        "id": "f_apprentice_left",
+        "statement_ar": "غادر المتدرب ياسين الدكان من الباب الأمامي في الثامنة وخمس دقائق مساءً.",
+        "kind": "event",
+        "subject_ids": [
+          "yasin"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 125,
+          "precision": "exact"
+        },
+        "location_id": "loc_shop"
+      },
+      {
+        "id": "f_watch_present",
+        "statement_ar": "كانت الساعة في صينية الخزنة في الثامنة والربع مساءً، بعد مغادرة المتدرب.",
+        "kind": "state",
+        "subject_ids": [
+          "obj_watch",
+          "mansour"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 135,
+          "precision": "exact"
+        },
+        "location_id": "loc_shop"
+      },
+      {
+        "id": "f_owner_left",
+        "statement_ar": "غادر الحاج منصور من الباب الأمامي في الثامنة وعشرين دقيقة بعد أن أقفل البابين.",
+        "kind": "event",
+        "subject_ids": [
+          "mansour"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 140,
+          "precision": "exact"
+        },
+        "location_id": "loc_shop"
+      },
+      {
+        "id": "f_seals_intact",
+        "statement_ar": "ختم الحارس الأبواب الأمامية في 20:30 ووجدها سليمة في جولتي 01:40 و05:50.",
+        "kind": "event",
+        "subject_ids": [
+          "saeed",
+          "obj_seal"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 150,
+          "precision": "exact"
+        },
+        "location_id": "loc_hut"
+      },
+      {
+        "id": "f_diary_rings",
+        "statement_ar": "سمعت الجارة جرس الدكان ثلاث مرات فقط في الليلة: 20:05 و20:20 و07:55.",
+        "kind": "event",
+        "subject_ids": [
+          "najla",
+          "obj_bell"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 125,
+          "precision": "exact"
+        },
+        "location_id": "loc_flat"
+      },
+      {
+        "id": "f_hinge_heard",
+        "statement_ar": "سمع الخبّاز صرير الباب الخلفي للدكان مرتين، قرابة 02:10 وقرابة 02:30.",
+        "kind": "event",
+        "subject_ids": [
+          "hassan"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 490,
+          "precision": "approx",
+          "end_min": 510
+        },
+        "location_id": "loc_yard"
+      },
+      {
+        "id": "f_key_lent",
+        "statement_ar": "أعار الحاج منصور وليداً مفتاح الباب الخلفي الاحتياطي في الثالث من الشهر ولم يُسترد.",
+        "kind": "relation",
+        "subject_ids": [
+          "mansour",
+          "walid"
+        ],
+        "spoiler_level": 2
+      },
+      {
+        "id": "f_bell_works",
+        "statement_ar": "الجرس يرن عند أي فتح للباب الأمامي، بطيئاً كان أو سريعاً، ويبلغ صوته شقة الجارة.",
+        "kind": "attribute",
+        "subject_ids": [
+          "obj_bell"
+        ],
+        "spoiler_level": 1
+      },
+      {
+        "id": "f_front_shut",
+        "statement_ar": "لم يُفتح الباب الأمامي للدكان بين 20:30 مساءً و07:50 صباحاً.",
+        "kind": "absence",
+        "subject_ids": [
+          "loc_shop",
+          "obj_bell"
+        ],
+        "spoiler_level": 2,
+        "time": {
+          "start_min": 150,
+          "precision": "approx",
+          "end_min": 830
+        },
+        "location_id": "loc_shop"
+      },
+      {
+        "id": "f_yard_entry",
+        "statement_ar": "دخل شخص إلى الدكان من بابه الخلفي بين 02:10 و02:30 فجراً.",
+        "kind": "event",
+        "subject_ids": [
+          "loc_shop",
+          "loc_yard"
+        ],
+        "spoiler_level": 2,
+        "time": {
+          "start_min": 490,
+          "precision": "approx",
+          "end_min": 510
+        },
+        "location_id": "loc_yard"
+      },
+      {
+        "id": "f_walid_took",
+        "statement_ar": "خرجت الساعة من الدكان عبر الباب الخلفي في تلك الليلة، وكانت بيد وليد الدباغ صباحاً فباعها لمحل ساعات قديمة.",
+        "kind": "event",
+        "subject_ids": [
+          "walid",
+          "obj_watch"
+        ],
+        "spoiler_level": 3,
+        "time": {
+          "start_min": 490,
+          "precision": "approx",
+          "end_min": 510
+        },
+        "location_id": "loc_shop"
+      }
+    ],
+    "claims": [
+      {
+        "id": "cl_owner_front",
+        "statement_ar": "دخل لص غريب من الباب الأمامي ليلاً.",
+        "kind": "honest_mistake",
+        "held_by": [
+          "mansour"
+        ],
+        "true_fact_id": "f_front_shut",
+        "contradicted_by_evidence_ids": [
+          "ev_neighbor_diary",
+          "ev_guard_round",
+          "ev_seal_photo"
+        ]
+      },
+      {
+        "id": "cl_bell_old",
+        "statement_ar": "الجرس قديم وقد لا يرن إذا فُتح الباب بحذر.",
+        "kind": "honest_mistake",
+        "held_by": [
+          "mansour"
+        ],
+        "true_fact_id": "f_bell_works",
+        "contradicted_by_evidence_ids": [
+          "ev_bell_card",
+          "ev_bell_check"
+        ]
+      },
+      {
+        "id": "cl_walid_nokey",
+        "statement_ar": "لم أدخل الدكان منذ أسبوعين وليس معي مفتاح.",
+        "kind": "lie",
+        "held_by": [
+          "walid"
+        ],
+        "true_fact_id": "f_key_lent",
+        "contradicted_by_evidence_ids": [
+          "ev_key_board",
+          "ev_dealer_slip"
+        ]
+      }
+    ]
+  },
+  "timeline": [
+    {
+      "id": "te_apprentice",
+      "description_ar": "المتدرب ينهي دوامه ويخرج من الباب الأمامي.",
+      "time": {
+        "start_min": 125,
+        "precision": "exact"
+      },
+      "location_id": "loc_shop",
+      "actor_ids": [
+        "yasin"
+      ],
+      "witness_ids": [
+        "najla"
+      ],
+      "fact_ids": [
+        "f_apprentice_left",
+        "f_diary_rings"
+      ],
+      "motivated_by_ar": "نهاية دوامه المعتاد"
+    },
+    {
+      "id": "te_check",
+      "description_ar": "صاحب الدكان يراجع الصينية ويدوّن قائمة الإقفال.",
+      "time": {
+        "start_min": 135,
+        "precision": "exact"
+      },
+      "location_id": "loc_shop",
+      "actor_ids": [
+        "mansour"
+      ],
+      "fact_ids": [
+        "f_watch_present"
+      ],
+      "motivated_by_ar": "جرد الإقفال المعتاد قبل المغادرة",
+      "caused_by_event_ids": [
+        "te_apprentice"
+      ]
+    },
+    {
+      "id": "te_owner_leave",
+      "description_ar": "صاحب الدكان يقفل البابين ويخرج من الأمامي.",
+      "time": {
+        "start_min": 140,
+        "precision": "exact"
+      },
+      "location_id": "loc_shop",
+      "actor_ids": [
+        "mansour"
+      ],
+      "witness_ids": [
+        "najla"
+      ],
+      "fact_ids": [
+        "f_owner_left"
+      ],
+      "motivated_by_ar": "انتهاء يوم العمل",
+      "caused_by_event_ids": [
+        "te_check"
+      ]
+    },
+    {
+      "id": "te_seal",
+      "description_ar": "الحارس يلصق أختام الأبواب الأمامية ويفحصها في جولتين لاحقتين.",
+      "time": {
+        "start_min": 150,
+        "precision": "exact",
+        "end_min": 710
+      },
+      "location_id": "loc_hut",
+      "actor_ids": [
+        "saeed"
+      ],
+      "fact_ids": [
+        "f_seals_intact"
+      ],
+      "motivated_by_ar": "قاعدة الجمعية في حراسة الأبواب الأمامية"
+    },
+    {
+      "id": "te_entry",
+      "description_ar": "وليد يدخل من الباب الخلفي بالمفتاح الاحتياطي ويأخذ الساعة ثم يخرج.",
+      "time": {
+        "start_min": 490,
+        "precision": "approx",
+        "end_min": 510
+      },
+      "location_id": "loc_yard",
+      "actor_ids": [
+        "walid"
+      ],
+      "witness_ids": [
+        "hassan"
+      ],
+      "fact_ids": [
+        "f_yard_entry",
+        "f_hinge_heard",
+        "f_walid_took",
+        "f_key_lent"
+      ],
+      "motivated_by_ar": "حاجته إلى مال سريع لسداد دين"
+    },
+    {
+      "id": "te_open",
+      "description_ar": "صاحب الدكان يصوّر شريط الختم ثم يفتح الباب ويكتشف غياب الساعة.",
+      "time": {
+        "start_min": 835,
+        "precision": "approx"
+      },
+      "location_id": "loc_shop",
+      "actor_ids": [
+        "mansour"
+      ],
+      "witness_ids": [
+        "najla"
+      ],
+      "fact_ids": [
+        "f_theft_reported"
+      ],
+      "motivated_by_ar": "فتح الدكان في موعده المعتاد"
+    },
+    {
+      "id": "te_sale",
+      "description_ar": "وليد يبيع الساعة في محل ساعات قديمة ببطاقة هويته.",
+      "time": {
+        "start_min": 940,
+        "precision": "approx"
+      },
+      "location_id": "loc_dealer",
+      "actor_ids": [
+        "walid"
+      ],
+      "fact_ids": [
+        "f_walid_took"
+      ],
+      "motivated_by_ar": "حاجته إلى المال قبل نهاية الأسبوع",
+      "caused_by_event_ids": [
+        "te_entry"
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_incident_report",
+      "title_ar": "تقرير الجمعية عن الواقعة",
+      "kind": "documentary",
+      "content_ar": "تقرير جمعية مجمّع الحِرَف — الأربعاء 08:30\nالمبلِّغ: الحاج منصور الدباغ، صاحب دكان الدباغ للساعات.\nالمفقود: ساعة جيب فضية رقم حركتها 4471، أودعها زبون للإصلاح يوم الخميس الماضي.\nالواقعة: وجد صاحب الدكان صينية الخزنة فارغة عند الفتح الساعة 07:55.\nالأقفال: القفلان الأمامي والخلفي سليمان بلا كسر، ولم يُفقد غير الساعة.\nترجيح المبلِّغ: دخل لص غريب من الباب الأمامي ليلاً.\nالمرتبطون بالدكان والمكان: ياسين الحلبي (متدرب)، ووليد الدباغ (ابن أخ المبلِّغ)، ونجلاء الشيخ (جارة الطابق الأول)، وسعيد الجبوري (حارس المجمّع)، وحسّان العمر (خبّاز المخبز المقابل).",
+      "acquired_by_action_ids": [
+        "a_get_report"
+      ],
+      "supports_fact_ids": [
+        "f_theft_reported",
+        "f_no_break"
+      ],
+      "reliability": "strong",
+      "limits_ar": "تلخّص ما قاله المبلِّغ وحالة الأقفال؛ ولا تثبت ما جرى في الليل.",
+      "location_id": "loc_assoc"
+    },
+    {
+      "id": "ev_owner_statement",
+      "title_ar": "إفادة صاحب الدكان",
+      "kind": "testimonial",
+      "content_ar": "إفادة الحاج منصور الدباغ (مدوّنة):\nوضعت الساعة في صينية الخزنة بنفسي وراجعتها عند الإقفال، ثم خرجت من الباب الأمامي بعد الثامنة والخامسة عشرة بقليل. صباحاً وجدت الصينية فارغة ولم أجد كسراً. أرى أن لصاً غريباً دخل من الباب الأمامي. والجرس قديم، وأظنه لا يرن إذا فُتح الباب بحذر.",
+      "acquired_by_action_ids": [
+        "a_get_owner_stmt"
+      ],
+      "supports_fact_ids": [
+        "f_watch_present"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "إفادة شخص يروي ما فعله ويضيف ظنّه؛ والظن فيها لا يُحسب واقعة.",
+      "location_id": "loc_shop"
+    },
+    {
+      "id": "ev_closing_list",
+      "title_ar": "قائمة الإقفال المكتوبة",
+      "kind": "documentary",
+      "content_ar": "قائمة إقفال دكان الدباغ للساعات — الثلاثاء\n20:15 مراجعة الصينية: ساعة الجيب الفضية (حركة 4471) موجودة — توقيع م. الدباغ\n20:15 الباب الخلفي: مقفل بالمفتاح — توقيع م. الدباغ\n20:20 الباب الأمامي: مقفل — توقيع م. الدباغ\nملاحظة بخط صاحب الدكان: غادر المتدرب 20:05.",
+      "acquired_by_action_ids": [
+        "a_get_closing"
+      ],
+      "supports_fact_ids": [
+        "f_watch_present",
+        "f_owner_left"
+      ],
+      "reliability": "strong",
+      "limits_ar": "ورقة بخط صاحب الدكان تثبت ما دوّنه؛ ولا تغني عن سجل مستقل عنه.",
+      "location_id": "loc_shop"
+    },
+    {
+      "id": "ev_yasin_statement",
+      "title_ar": "إفادة المتدرب",
+      "kind": "testimonial",
+      "content_ar": "إفادة ياسين الحلبي (مدوّنة):\nانتهى دوامي في الثامنة وخمس دقائق مساءً، فخرجت من الباب الأمامي وسمعت الجرس يرن خلفي. معي مفتاح الباب الأمامي فقط، ولم أحمل مفتاح الباب الخلفي في حياتي. تركت الساعة في الصينية وصاحب الدكان ما زال في الداخل.",
+      "acquired_by_action_ids": [
+        "a_get_yasin_stmt"
+      ],
+      "supports_fact_ids": [
+        "f_apprentice_left",
+        "f_watch_present"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "قول متدرب يمكن مقابلته بالسجلات؛ ولا يثبت وحده ما جرى بعد خروجه.",
+      "location_id": "loc_shop"
+    },
+    {
+      "id": "ev_walid_statement",
+      "title_ar": "إفادة ابن الأخ",
+      "kind": "testimonial",
+      "content_ar": "إفادة وليد الدباغ (مدوّنة):\nلم أدخل دكان عمّي منذ أسبوعين، وليس معي أي مفتاح له. ليلة الثلاثاء كنت في البيت وحدي أنام.",
+      "acquired_by_action_ids": [
+        "a_get_walid_stmt"
+      ],
+      "supports_fact_ids": [],
+      "reliability": "weak",
+      "limits_ar": "إنكار شخص مرتبط بالدكان؛ يُقاس بالسجلات لا بنبرة صاحبه.",
+      "location_id": "loc_assoc"
+    },
+    {
+      "id": "ev_bell_card",
+      "title_ar": "بطاقة صيانة الجرس",
+      "kind": "documentary",
+      "content_ar": "بطاقة صيانة — جرس باب دكان الدباغ للساعات\nالتاريخ: قبل أسبوعين.\nالنوع: جرس نحاسي على نابض، مثبّت أعلى ضلفة الباب الأمامي.\nما أُجري: تشحيم النابض وفحص اللسان.\nملاحظة الفنّي: يرن عند أدنى تحريك للضلفة، ولا يوجد مخمِّد عليه، ويبلغ صوته الطابق الأول.",
+      "acquired_by_action_ids": [
+        "a_get_bell_card"
+      ],
+      "supports_fact_ids": [
+        "f_bell_works"
+      ],
+      "reliability": "strong",
+      "limits_ar": "تصف حال الجرس يوم الصيانة قبل أسبوعين؛ ولا تصف حاله ليلة الثلاثاء.",
+      "contradicts_claim_ids": [
+        "cl_bell_old"
+      ],
+      "location_id": "loc_shop"
+    },
+    {
+      "id": "ev_bell_check",
+      "title_ar": "تجربة الجرس صباح الأربعاء",
+      "kind": "observation",
+      "content_ar": "تجربتك على الباب الأمامي صباح الأربعاء:\nفتحت الضلفة ببطء شديد بقدر شبر واحد: رنّ الجرس.\nفتحتها بسرعة: رنّ الجرس بصوت أعلى.\nاللسان حرّ، ولا قماش ولا خيط ولا شريط لاصق على الجرس أو على النابض.\nالغبار على الإطار العلوي مستوٍ ولم يُمسّ.",
+      "acquired_by_action_ids": [
+        "a_test_bell"
+      ],
+      "supports_fact_ids": [
+        "f_bell_works"
+      ],
+      "reliability": "strong",
+      "limits_ar": "تخص حال الجرس صباح الأربعاء؛ ولا تستبعد وحدها أن شيئاً غطّاه ليلاً ثم أُزيل.",
+      "contradicts_claim_ids": [
+        "cl_bell_old"
+      ],
+      "forensic_ko_ref": "KO-RS-06-008",
+      "location_id": "loc_shop"
+    },
+    {
+      "id": "ev_neighbor_complaint",
+      "title_ar": "رسالة شكوى الجارة",
+      "kind": "documentary",
+      "content_ar": "رسالة من نجلاء الشيخ إلى جمعية المجمّع — قبل ثلاثة أسابيع\nأسكن فوق دكان الساعات. جرس بابه يوقظني كلما فُتح الباب فجراً لتسليم البضاعة، حتى والنافذة مغلقة. أرجو تخفيف صوته.\nملاحظة الجمعية: لم يُتخذ إجراء، وبقي الجرس كما هو.",
+      "acquired_by_action_ids": [
+        "a_get_complaint"
+      ],
+      "supports_fact_ids": [
+        "f_bell_works"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "تثبت أن الجارة تسمع الجرس من شقتها؛ ولا تثبت أنها كانت مستيقظة ليلة الثلاثاء.",
+      "location_id": "loc_assoc"
+    },
+    {
+      "id": "ev_neighbor_diary",
+      "title_ar": "دفتر الجارة لليلة الحادثة",
+      "kind": "documentary",
+      "content_ar": "دفتر نجلاء الشيخ — ليلة الثلاثاء إلى الأربعاء (بخطها)\nأبقاني ألم ضرس مستيقظة حتى السادسة صباحاً، فدوّنت ما سمعت لأحكيه للطبيب.\n20:05 رنّ الجرس مرة واحدة.\n20:20 رنّ الجرس مرة واحدة.\nجلست بعدها قرب نافذتي أنتظر الفجر.\nبعد السادسة غفوت قليلاً.\n07:55 أيقظني الجرس: رنّ مرة واحدة.",
+      "acquired_by_action_ids": [
+        "a_get_diary"
+      ],
+      "supports_fact_ids": [
+        "f_diary_rings"
+      ],
+      "reliability": "strong",
+      "limits_ar": "تدوين شخص واحد من شقته؛ ولا يغطي ما لا يُسمع من شقته كالفناء الخلفي.",
+      "forensic_ko_ref": "KO-RS-05-005",
+      "location_id": "loc_flat"
+    },
+    {
+      "id": "ev_guard_round",
+      "title_ar": "ورقة جولات الحارس",
+      "kind": "documentary",
+      "content_ar": "ورقة جولات حارس المجمّع — الثلاثاء إلى الأربعاء\n20:30 ختم الأبواب الأمامية: شريط ورقي مؤرَّخ ومُوقَّع على فاصل كل باب. دكان الساعات: ختمت.\n01:40 جولة: الأبواب الأمامية كلها بأختامها سليمة.\n05:50 جولة: الأبواب الأمامية كلها بأختامها سليمة.\nبوابة الفناء الخلفي: مفتوحة ليلاً لأنها مشتركة مع المخبز، ولا يشملها الحرس.",
+      "acquired_by_action_ids": [
+        "a_get_guard_round"
+      ],
+      "supports_fact_ids": [
+        "f_seals_intact"
+      ],
+      "reliability": "strong",
+      "limits_ar": "تخص الأبواب الأمامية؛ ولا تخص الباب الخلفي ولا الفناء ولا ما يجري داخل الدكان.",
+      "contradicts_claim_ids": [
+        "cl_owner_front"
+      ],
+      "location_id": "loc_hut"
+    },
+    {
+      "id": "ev_seal_photo",
+      "title_ar": "صورة الشريط على الباب",
+      "kind": "digital",
+      "content_ar": "صورة من هاتف صاحب الدكان — الأربعاء 07:50 (وقت الصورة مسجّل)\nالشريط الورقي على فاصل الباب الأمامي ملتصق من الجهتين بلا قطع ولا طيّ. التاريخ المطبوع: الثلاثاء. توقيع الحارس واضح.",
+      "acquired_by_action_ids": [
+        "a_get_seal_photo"
+      ],
+      "supports_fact_ids": [
+        "f_seals_intact"
+      ],
+      "reliability": "strong",
+      "limits_ar": "صورة لحال الشريط لحظة التصوير؛ ولا تقول شيئاً عن الباب الخلفي.",
+      "contradicts_claim_ids": [
+        "cl_owner_front"
+      ],
+      "location_id": "loc_shop"
+    },
+    {
+      "id": "ev_yard_lamp",
+      "title_ar": "سجل مصباح الفناء",
+      "kind": "digital",
+      "content_ar": "سجل مصباح الفناء — يملكه مؤجّر المجمّع\nالمصباح فوق عتبة الباب الخلفي لدكان الساعات، وحسّاسه موجَّه إلى العتبة وحدها.\nليلة الثلاثاء: أضاء الساعة 02:12 دقيقة واحدة، وأضاء الساعة 02:31 دقيقة واحدة.\nالليالي الست السابقة: لا إضاءة بين 01:00 و05:00.",
+      "acquired_by_action_ids": [
+        "a_get_lamp"
+      ],
+      "supports_fact_ids": [
+        "f_yard_entry"
+      ],
+      "reliability": "strong",
+      "limits_ar": "الحسّاس يلتقط حركة عند العتبة؛ ولا يعرف من تحرك ولا ماذا فعل.",
+      "forensic_ko_ref": "KO-RS-06-001",
+      "location_id": "loc_yard"
+    },
+    {
+      "id": "ev_baker_statement",
+      "title_ar": "إفادة الخبّاز",
+      "kind": "testimonial",
+      "content_ar": "إفادة حسّان العمر، خبّاز المخبز المقابل (مدوّنة):\nأبدأ العجين في الثانية فجراً وبابي مفتوح على الفناء. سمعت صرير الباب الخلفي لدكان الساعات، وأعرفه جيداً، مرتين: قرابة 02:10، ثم قرابة 02:30. لم أخرج ولم أرَ أحداً.",
+      "acquired_by_action_ids": [
+        "a_get_baker"
+      ],
+      "supports_fact_ids": [
+        "f_hinge_heard"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "سمع صوتاً ولم يرَ أحداً، ويقدّر الوقت بالتقريب.",
+      "location_id": "loc_bakery"
+    },
+    {
+      "id": "ev_key_board",
+      "title_ar": "لوحة المفاتيح ودفتر التسليم",
+      "kind": "documentary",
+      "content_ar": "لوحة مفاتيح دكان الدباغ للساعات ودفتر تسليمها\nالباب الأمامي: مفتاحان — مع الحاج منصور ومع ياسين الحلبي.\nالباب الخلفي: مفتاحان — مع الحاج منصور، والاحتياطي على الخطاف 3.\nالخطاف 3 صباح الأربعاء: فارغ.\nدفتر التسليم: الثالث من الشهر — مفتاح الخطاف 3 إلى وليد الدباغ لتسليم بضاعة، يُعاد نهاية الأسبوع. لا توقيع استرداد.",
+      "acquired_by_action_ids": [
+        "a_get_keyboard"
+      ],
+      "supports_fact_ids": [
+        "f_key_lent"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يدوّن من استلم مفتاحاً لا من استعمله؛ ولا يمنع أن توجد نسخة غير مدوّنة.",
+      "contradicts_claim_ids": [
+        "cl_walid_nokey"
+      ],
+      "location_id": "loc_shop"
+    },
+    {
+      "id": "ev_repair_ticket",
+      "title_ar": "إيصال إيداع الساعة",
+      "kind": "documentary",
+      "content_ar": "إيصال إيداع رقم 218 — دكان الدباغ للساعات\nساعة جيب فضية، علبتها منقوشة بورقة نبات، ورقم الحركة 4471 محفور على اللوح الداخلي.\nتاريخ الإيداع: الخميس الماضي. العطل: توقف النابض الرئيس.",
+      "acquired_by_action_ids": [
+        "a_get_ticket"
+      ],
+      "supports_fact_ids": [
+        "f_walid_took"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يعرّف الساعة برقم حركتها؛ ولا يقول أين صارت.",
+      "location_id": "loc_shop"
+    },
+    {
+      "id": "ev_dealer_slip",
+      "title_ar": "سجل مشتريات محل الساعات القديمة",
+      "kind": "documentary",
+      "content_ar": "سجل مشتريات محل «زمن الأمس» للساعات القديمة — الأربعاء 09:40\nاشترى المحل ساعة جيب فضية، علبتها منقوشة بورقة نبات، رقم الحركة 4471.\nالبائع: وليد عبد الكريم الدباغ — اطُّلع على بطاقة هويته.\nالمبلغ المدفوع: 300 ديناراً.",
+      "acquired_by_action_ids": [
+        "a_get_dealer"
+      ],
+      "supports_fact_ids": [
+        "f_walid_took"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يثبت أن بائعاً بهذا الاسم باع ساعة بهذا الرقم؛ ولا يقول كيف وصلت إلى يده.",
+      "contradicts_claim_ids": [
+        "cl_walid_nokey"
+      ],
+      "location_id": "loc_dealer"
+    }
+  ],
+  "evidence_graph": {
+    "inferences": [
+      {
+        "id": "i_bell_works",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_bell_card"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_bell_check"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_bell_works"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "بطاقة الصيانة تصف جرساً بلا مخمِّد يرن عند أدنى تحريك، وتجربتك تؤكد رنينه في الفتح البطيء والسريع دون أي غطاء على لسانه.",
+        "skill_ko_refs": [
+          "KO-RS-06-001"
+        ]
+      },
+      {
+        "id": "i_front_a",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_bell_works"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_neighbor_complaint"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_neighbor_diary"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_front_shut"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "الجارة تسمع الجرس من شقتها وهو يوقظها كلما فُتح الباب، وكانت مستيقظة تدوّن، فلم يرن إلا عند خروج المتدرب وصاحب الدكان وعند الفتح صباحاً؛ وما كان سيرن لو فُتح الباب لا يمكن أن يغيب. فالباب لم يُفتح بينهما.",
+        "skill_ko_refs": [
+          "KO-RS-06-008",
+          "KO-RS-05-005"
+        ]
+      },
+      {
+        "id": "i_front_b",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_guard_round"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_seal_photo"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_front_shut"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "شريط الختم الذي أُلصق بعد الإقفال وجده الحارس سليماً مرتين في الليل، وصوّره صاحب الدكان سليماً قبل الفتح؛ ولو فُتحت الضلفة لانقطع الشريط. وهذا طريق مستقل عن الجرس وعن الجارة.",
+        "skill_ko_refs": [
+          "KO-RS-06-008",
+          "KO-RS-05-004"
+        ]
+      },
+      {
+        "id": "i_yard_a",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_yard_lamp"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_front_shut"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_yard_entry"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "الباب الأمامي لم يُفتح، والمصباح الموجَّه إلى عتبة الباب الخلفي أضاء مرتين في الساعة التي غابت فيها الإضاءة ست ليالٍ، فجاء الدخول من الخلف.",
+        "skill_ko_refs": [
+          "KO-RS-05-005"
+        ]
+      },
+      {
+        "id": "i_yard_b",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_baker_statement"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_front_shut"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_yard_entry"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "الباب الأمامي لم يُفتح، وسمع الخبّاز صرير الباب الخلفي المعروف عنده مرتين في الساعة نفسها تقريباً، فجاء الدخول من الخلف.",
+        "skill_ko_refs": [
+          "KO-RS-05-005"
+        ]
+      },
+      {
+        "id": "i_walid_a",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_key_board"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_yard_entry"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_walid_took"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "الدخول جاء من الباب الخلفي، ومفتاحاه معروفان: مفتاح صاحب الدكان ومفتاح احتياطي خرج إلى وليد ولم يعد؛ والمتدرب لا يحمل إلا مفتاح الواجهة.",
+        "skill_ko_refs": [
+          "KO-RS-05-004",
+          "KO-RS-06-001"
+        ]
+      },
+      {
+        "id": "i_walid_b",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_dealer_slip"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_repair_ticket"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_yard_entry"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_walid_took"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "رقم الحركة في سجل المحل هو رقمها في إيصال الإيداع، والبائع وليد باعها صباحاً بعد ساعات من دخول شخص من الباب الخلفي؛ فالأقرب أنها خرجت إليه من ذلك الدخول.",
+        "skill_ko_refs": [
+          "KO-RS-05-004",
+          "KO-RS-05-014"
+        ]
+      },
+      {
+        "id": "i_rule_front",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_front_shut"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_stranger"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "لص غريب من الواجهة كان سيفتح الضلفة فيرن الجرس وينقطع الشريط؛ ولم يحدث هذا ولا ذاك.",
+        "skill_ko_refs": [
+          "KO-RS-06-009"
+        ]
+      },
+      {
+        "id": "i_rule_apprentice",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_closing_list"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_yasin_statement"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_key_board"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_front_shut"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_apprentice"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "كانت الساعة في صينية الخزنة بعد خروجه بعشر دقائق، ولا يملك مفتاح الباب الخلفي، والواجهة لم تُفتح بعد ذلك؛ فلا طريق له إلى الدكان ليلاً.",
+        "skill_ko_refs": [
+          "KO-RS-05-002"
+        ]
+      },
+      {
+        "id": "i_rule_misplaced",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_dealer_slip"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_repair_ticket"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_misplaced"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "الساعة بذاتها، برقم حركتها، صارت في محل ساعات قديمة؛ فلم تُنسَ داخل الدكان.",
+        "skill_ko_refs": [
+          "KO-RS-05-002"
+        ]
+      },
+      {
+        "id": "i_supports_walid",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_walid_took"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_yard_entry"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_walid"
+        },
+        "relation": "supports",
+        "strength": "strong",
+        "rule_ar": "دخول من الخلف، ومفتاح خلفي لم يعد، وساعة بيعت باسمه؛ ثلاثة خيوط تتلاقى على فرضية واحدة.",
+        "skill_ko_refs": [
+          "KO-RS-05-002"
+        ]
+      },
+      {
+        "id": "i_claim_front",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_front_shut"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_owner_front"
+        },
+        "relation": "contradicts_claim",
+        "strength": "strong",
+        "rule_ar": "الواجهة لم تُفتح، فالقول بدخول لص منها لا يصح.",
+        "skill_ko_refs": [
+          "KO-RS-05-014"
+        ]
+      },
+      {
+        "id": "i_claim_bell",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_bell_works"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_bell_old"
+        },
+        "relation": "contradicts_claim",
+        "strength": "strong",
+        "rule_ar": "الجرس يرن في الفتح البطيء كما يرن في السريع، فقول صاحب الدكان لا يصح.",
+        "skill_ko_refs": [
+          "KO-RS-05-014"
+        ]
+      },
+      {
+        "id": "i_claim_walid",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_key_board"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_walid_nokey"
+        },
+        "relation": "contradicts_claim",
+        "strength": "strong",
+        "rule_ar": "دفتر التسليم يسجل خروج المفتاح الاحتياطي إليه بلا استرداد.",
+        "skill_ko_refs": [
+          "KO-RS-05-014"
+        ]
+      }
+    ]
+  },
+  "character_knowledge": [
+    {
+      "character_id": "mansour",
+      "knows": [
+        {
+          "fact_id": "f_watch_present",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_owner_left",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [
+        {
+          "fact_id": "f_key_lent",
+          "reveal_when": {
+            "presented": {
+              "evidence_id": "ev_key_board",
+              "to_character": "mansour"
+            }
+          },
+          "cover_claim_id": null,
+          "reveal_line_id": "mn_key"
+        }
+      ],
+      "believes": [
+        {
+          "claim_id": "cl_owner_front",
+          "stance": "sincere"
+        },
+        {
+          "claim_id": "cl_bell_old",
+          "stance": "sincere"
+        }
+      ]
+    },
+    {
+      "character_id": "yasin",
+      "knows": [
+        {
+          "fact_id": "f_apprentice_left",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_watch_present",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    },
+    {
+      "character_id": "walid",
+      "knows": [],
+      "hides": [
+        {
+          "fact_id": "f_key_lent",
+          "reveal_when": {
+            "presented": {
+              "evidence_id": "ev_key_board",
+              "to_character": "walid"
+            }
+          },
+          "cover_claim_id": "cl_walid_nokey",
+          "reveal_line_id": "wl_key"
+        },
+        {
+          "fact_id": "f_walid_took",
+          "reveal_when": {
+            "presented": {
+              "evidence_id": "ev_dealer_slip",
+              "to_character": "walid"
+            }
+          },
+          "cover_claim_id": "cl_walid_nokey",
+          "reveal_line_id": "wl_confess"
+        }
+      ],
+      "believes": [
+        {
+          "claim_id": "cl_walid_nokey",
+          "stance": "deliberate_lie"
+        }
+      ]
+    },
+    {
+      "character_id": "najla",
+      "knows": [
+        {
+          "fact_id": "f_diary_rings",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    },
+    {
+      "character_id": "saeed",
+      "knows": [
+        {
+          "fact_id": "f_seals_intact",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    },
+    {
+      "character_id": "hassan",
+      "knows": [
+        {
+          "fact_id": "f_hinge_heard",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "h_stranger",
+      "statement_ar": "دخل لص غريب من الباب الأمامي ليلاً وأخذ الساعة.",
+      "is_true": false,
+      "plausibility_at_start": "high"
+    },
+    {
+      "id": "h_apprentice",
+      "statement_ar": "أخذ المتدرب ياسين الحلبي الساعة، إما عند انصرافه وإما بعودته ليلاً بمفتاحه.",
+      "is_true": false,
+      "plausibility_at_start": "medium",
+      "suspect_id": "yasin"
+    },
+    {
+      "id": "h_misplaced",
+      "statement_ar": "لم تُسرق الساعة؛ وُضعت في غير موضعها ولم يعد صاحب الدكان يتذكر أين.",
+      "is_true": false,
+      "plausibility_at_start": "low"
+    },
+    {
+      "id": "h_walid",
+      "statement_ar": "دخل وليد الدباغ من الباب الخلفي بالمفتاح الاحتياطي الذي لم يُعده، وأخذ الساعة وباعها.",
+      "is_true": true,
+      "plausibility_at_start": "low",
+      "suspect_id": "walid"
+    }
+  ],
+  "misdirection_plan": [
+    {
+      "id": "rh_old_bell",
+      "points_to_hypothesis_id": "h_stranger",
+      "planted_via_ar": "صاحب الدكان يقول إن الجرس قديم وقد لا يرن، وإن الأقفال سليمة؛ فيبدو أن الصمت لا معنى له وأن اللص محترف.",
+      "evidence_ids": [
+        "ev_owner_statement",
+        "ev_incident_report"
+      ],
+      "refuted_by_inference_ids": [
+        "i_rule_front",
+        "i_claim_bell"
+      ],
+      "fairness_note_ar": "بطاقة الصيانة وتجربة الجرس وشكوى الجارة ودفترها وورقة الحارس وصورة الشريط كلها متاحة بالإجراءات العادية، ولا يحتاج الحل إلى علم خفي."
+    },
+    {
+      "id": "rh_last_out",
+      "points_to_hypothesis_id": "h_apprentice",
+      "planted_via_ar": "المتدرب آخر من غادر قبل الجرد، ومعه مفتاح الواجهة، وهو من يتعامل مع الصينية يومياً.",
+      "evidence_ids": [
+        "ev_yasin_statement",
+        "ev_closing_list",
+        "ev_key_board"
+      ],
+      "refuted_by_inference_ids": [
+        "i_rule_apprentice"
+      ],
+      "fairness_note_ar": "قائمة الإقفال ولوحة المفاتيح وسجلات الواجهة متاحة، وكلها تبيّن أن الساعة بقيت بعد خروجه وأنه لا يملك مفتاح الخلف."
+    },
+    {
+      "id": "rh_no_trace",
+      "points_to_hypothesis_id": "h_misplaced",
+      "planted_via_ar": "لا كسر ولا فقد غير الساعة، فقد يكون الأمر سهواً من صاحب الدكان.",
+      "evidence_ids": [
+        "ev_incident_report"
+      ],
+      "refuted_by_inference_ids": [
+        "i_rule_misplaced"
+      ],
+      "fairness_note_ar": "إيصال الإيداع وسجل المحل متاحان بعد سؤال عن رقم الحركة، وفيهما ما يبيّن أين صارت الساعة."
+    }
+  ],
+  "learning_objectives": [
+    {
+      "id": "lo_claim",
+      "statement_ar": "يصنّف الإفادات والسجلات ويسأل من أنتج كل منها ومتى.",
+      "skill_ko_ref": "KO-RS-05-001",
+      "observable_behaviors_ar": [
+        "يصنّف الأوراق أقوالاً أو سجلات",
+        "يقابل القول بالسجل"
+      ],
+      "evidence_sources": [
+        "evidence_board"
+      ]
+    },
+    {
+      "id": "lo_timeline",
+      "statement_ar": "يرتّب الرنين والأختام والإضاءة على خط زمني واحد.",
+      "skill_ko_ref": "KO-RS-05-005",
+      "observable_behaviors_ar": [
+        "يضع الإقفال والأختام وإضاءة المصباح والبيع في أزمنتها"
+      ],
+      "evidence_sources": [
+        "timeline_task",
+        "action_log"
+      ]
+    },
+    {
+      "id": "lo_hyp",
+      "statement_ar": "يوازن عدة فرضيات ويستبعد ما تنقضه الأدلة.",
+      "skill_ko_ref": "KO-RS-05-002",
+      "observable_behaviors_ar": [
+        "يضيف فرضيات",
+        "يستبعد بدليل"
+      ],
+      "evidence_sources": [
+        "hypothesis_ledger"
+      ]
+    },
+    {
+      "id": "lo_diag",
+      "statement_ar": "يقدّر ما يثبته غياب الحدث وما لا يثبته، ويربط الدليل بالفرضية باتجاه صحيح.",
+      "skill_ko_ref": "KO-RS-06-001",
+      "observable_behaviors_ar": [
+        "يعرف أن الصمت لا يدل إلا مع توقع مثبت",
+        "يربط الدليل بالفرضية"
+      ],
+      "evidence_sources": [
+        "evidence_board",
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_expect",
+      "statement_ar": "يكتب التوقع الذي يجعل الغياب ذا معنى ثم يبحث عما قد يكذّبه.",
+      "skill_ko_ref": "KO-RS-06-008",
+      "observable_behaviors_ar": [
+        "يصرّح بما كان يجب أن يحدث",
+        "يطلب سجلات تختبر توقعه"
+      ],
+      "evidence_sources": [
+        "action_log",
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_indep",
+      "statement_ar": "يفرّق بين أدلة مستقلة وأدلة تعود إلى مصدر واحد.",
+      "skill_ko_ref": "KO-RS-05-004",
+      "observable_behaviors_ar": [
+        "يذكر طريقين منفصلين لإثبات أن الواجهة لم تُفتح"
+      ],
+      "evidence_sources": [
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_calib",
+      "statement_ar": "يصوغ نسبة الترجيح بحدودها.",
+      "skill_ko_ref": "KO-RS-06-021",
+      "observable_behaviors_ar": [
+        "يختار ثقة معقولة",
+        "يذكر حدوداً"
+      ],
+      "evidence_sources": [
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_revise",
+      "statement_ar": "يراجع رأيه الأول حين يظهر ما يخالفه.",
+      "skill_ko_ref": "KO-RS-06-009",
+      "observable_behaviors_ar": [
+        "يغيّر فرضيته الرائدة بدليل"
+      ],
+      "evidence_sources": [
+        "hypothesis_ledger"
+      ]
+    }
+  ],
+  "mechanics": {
+    "time_budget_units": 40,
+    "actions": [
+      {
+        "id": "a_get_report",
+        "type": "examine",
+        "label_ar": "اقرأ تقرير الجمعية عن الواقعة",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_incident_report"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "GET_REPORT",
+        "target_id": "loc_assoc"
+      },
+      {
+        "id": "a_get_owner_stmt",
+        "type": "examine",
+        "label_ar": "اطلب إفادة صاحب الدكان المدوّنة",
+        "precondition": {
+          "has_evidence": "ev_incident_report"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_owner_statement"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "GET_OWNER_STMT",
+        "target_id": "loc_shop"
+      },
+      {
+        "id": "a_get_closing",
+        "type": "examine",
+        "label_ar": "اطلب قائمة الإقفال المكتوبة",
+        "precondition": {
+          "has_evidence": "ev_incident_report"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_closing_list"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "GET_CLOSING",
+        "target_id": "loc_shop"
+      },
+      {
+        "id": "a_get_yasin_stmt",
+        "type": "examine",
+        "label_ar": "اطلب إفادة المتدرب المدوّنة",
+        "precondition": {
+          "has_evidence": "ev_incident_report"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_yasin_statement"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "GET_YASIN_STMT",
+        "target_id": "loc_shop"
+      },
+      {
+        "id": "a_get_walid_stmt",
+        "type": "examine",
+        "label_ar": "اطلب إفادة ابن الأخ المدوّنة",
+        "precondition": {
+          "has_evidence": "ev_incident_report"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_walid_statement"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "GET_WALID_STMT",
+        "target_id": "loc_assoc"
+      },
+      {
+        "id": "a_get_bell_card",
+        "type": "examine",
+        "label_ar": "اقرأ بطاقة صيانة الجرس",
+        "precondition": {
+          "has_evidence": "ev_incident_report"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_bell_card"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "GET_BELL_CARD",
+        "target_id": "loc_shop"
+      },
+      {
+        "id": "a_test_bell",
+        "type": "examine",
+        "label_ar": "جرّب الجرس بفتح الباب الأمامي بطيئاً ثم سريعاً",
+        "precondition": {
+          "has_evidence": "ev_incident_report"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_bell_check"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "TEST_BELL",
+        "target_id": "loc_shop"
+      },
+      {
+        "id": "a_get_complaint",
+        "type": "examine",
+        "label_ar": "اطلب رسالة شكوى الجارة من ملف الجمعية",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_neighbor_complaint"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "GET_COMPLAINT",
+        "target_id": "loc_assoc"
+      },
+      {
+        "id": "a_get_diary",
+        "type": "examine",
+        "label_ar": "اطلب دفتر الجارة لتلك الليلة",
+        "precondition": {
+          "has_evidence": "ev_incident_report"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_neighbor_diary"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "GET_DIARY",
+        "target_id": "loc_flat"
+      },
+      {
+        "id": "a_get_guard_round",
+        "type": "search_location",
+        "label_ar": "اطلب ورقة جولات الحارس",
+        "precondition": {
+          "has_evidence": "ev_incident_report"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_guard_round"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "GET_GUARD_ROUND",
+        "target_id": "loc_hut"
+      },
+      {
+        "id": "a_get_seal_photo",
+        "type": "examine",
+        "label_ar": "اطلب صورة الشريط الورقي من هاتف صاحب الدكان",
+        "precondition": {
+          "has_evidence": "ev_incident_report"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_seal_photo"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "GET_SEAL_PHOTO",
+        "target_id": "loc_shop"
+      },
+      {
+        "id": "a_get_lamp",
+        "type": "search_location",
+        "label_ar": "اطلب سجل مصباح الفناء من المؤجّر",
+        "precondition": {
+          "has_evidence": "ev_incident_report"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_yard_lamp"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "GET_LAMP",
+        "target_id": "loc_yard"
+      },
+      {
+        "id": "a_get_baker",
+        "type": "interview",
+        "label_ar": "اطلب إفادة الخبّاز المدوّنة",
+        "precondition": {
+          "has_evidence": "ev_yard_lamp"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_baker_statement"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "GET_BAKER",
+        "target_id": "loc_bakery"
+      },
+      {
+        "id": "a_get_keyboard",
+        "type": "examine",
+        "label_ar": "اطلب لوحة المفاتيح ودفتر التسليم",
+        "precondition": {
+          "has_evidence": "ev_incident_report"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_key_board"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "GET_KEYBOARD",
+        "target_id": "loc_shop"
+      },
+      {
+        "id": "a_get_ticket",
+        "type": "examine",
+        "label_ar": "اطلب إيصال إيداع الساعة",
+        "precondition": {
+          "has_evidence": "ev_incident_report"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_repair_ticket"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "GET_TICKET",
+        "target_id": "loc_shop"
+      },
+      {
+        "id": "a_get_dealer",
+        "type": "search_location",
+        "label_ar": "اطلب سجل مشتريات محل الساعات القديمة برقم الحركة",
+        "precondition": {
+          "has_evidence": "ev_repair_ticket"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_dealer_slip"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "GET_DEALER",
+        "target_id": "loc_dealer"
+      },
+      {
+        "id": "a_int_mansour",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة صاحب الدكان",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "mansour",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "INT_MANSOUR",
+        "target_id": "mansour"
+      },
+      {
+        "id": "a_int_yasin",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة المتدرب",
+        "precondition": {
+          "has_evidence": "ev_incident_report"
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "yasin",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "INT_YASIN",
+        "target_id": "yasin"
+      },
+      {
+        "id": "a_int_walid",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة ابن الأخ",
+        "precondition": {
+          "has_evidence": "ev_incident_report"
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "walid",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "INT_WALID",
+        "target_id": "walid"
+      },
+      {
+        "id": "a_int_najla",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة الجارة",
+        "precondition": {
+          "has_evidence": "ev_incident_report"
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "najla",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "INT_NAJLA",
+        "target_id": "najla"
+      },
+      {
+        "id": "a_int_saeed",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة الحارس",
+        "precondition": {
+          "has_evidence": "ev_incident_report"
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "saeed",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "INT_SAEED",
+        "target_id": "saeed"
+      },
+      {
+        "id": "a_int_hassan",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة الخبّاز",
+        "precondition": {
+          "has_evidence": "ev_yard_lamp"
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "hassan",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "INT_HASSAN",
+        "target_id": "hassan"
+      },
+      {
+        "id": "p_keyboard_walid",
+        "type": "present_evidence",
+        "label_ar": "اعرض لوحة المفاتيح على ابن الأخ",
+        "precondition": {
+          "presented": {
+            "evidence_id": "ev_key_board",
+            "to_character": "walid"
+          }
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "PRESENTED_KEYBOARD_WALID"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "P_KEYBOARD_WALID",
+        "target_id": "walid"
+      },
+      {
+        "id": "p_dealer_walid",
+        "type": "present_evidence",
+        "label_ar": "اعرض سجل محل الساعات على ابن الأخ",
+        "precondition": {
+          "presented": {
+            "evidence_id": "ev_dealer_slip",
+            "to_character": "walid"
+          }
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "PRESENTED_DEALER_WALID"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "P_DEALER_WALID",
+        "target_id": "walid"
+      },
+      {
+        "id": "p_keyboard_mansour",
+        "type": "present_evidence",
+        "label_ar": "اعرض لوحة المفاتيح على صاحب الدكان",
+        "precondition": {
+          "presented": {
+            "evidence_id": "ev_key_board",
+            "to_character": "mansour"
+          }
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "PRESENTED_KEYBOARD_MANSOUR"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "P_KEYBOARD_MANSOUR",
+        "target_id": "mansour"
+      },
+      {
+        "id": "a_hint",
+        "type": "request_hint",
+        "label_ar": "اطلب تلميحاً",
+        "precondition": {
+          "always": true
+        },
+        "effects": [],
+        "time_cost_units": 0,
+        "telemetry_code": "REQUEST_HINT"
+      },
+      {
+        "id": "a_accuse",
+        "type": "final_accusation",
+        "label_ar": "قدّم الاستنتاج النهائي",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "SUBMIT"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "FINAL_ACCUSATION"
+      },
+      {
+        "id": "ask_mansour_f_watch_present",
+        "type": "interview",
+        "label_ar": "[نموذج] mansour يذكر f_watch_present",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_watch_present"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "ASK_MANSOUR_F_WATCH_PRESENT",
+        "target_id": "mansour"
+      },
+      {
+        "id": "ask_mansour_f_owner_left",
+        "type": "interview",
+        "label_ar": "[نموذج] mansour يذكر f_owner_left",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_owner_left"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "ASK_MANSOUR_F_OWNER_LEFT",
+        "target_id": "mansour"
+      },
+      {
+        "id": "ask_mansour_f_key_lent",
+        "type": "interview",
+        "label_ar": "[نموذج] mansour يذكر f_key_lent",
+        "precondition": {
+          "presented": {
+            "evidence_id": "ev_key_board",
+            "to_character": "mansour"
+          }
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_key_lent"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "ASK_MANSOUR_F_KEY_LENT",
+        "target_id": "mansour"
+      },
+      {
+        "id": "ask_yasin_f_apprentice_left",
+        "type": "interview",
+        "label_ar": "[نموذج] yasin يذكر f_apprentice_left",
+        "precondition": {
+          "has_evidence": "ev_incident_report"
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_apprentice_left"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "ASK_YASIN_F_APPRENTICE_LEFT",
+        "target_id": "yasin"
+      },
+      {
+        "id": "ask_yasin_f_watch_present",
+        "type": "interview",
+        "label_ar": "[نموذج] yasin يذكر f_watch_present",
+        "precondition": {
+          "has_evidence": "ev_incident_report"
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_watch_present"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "ASK_YASIN_F_WATCH_PRESENT",
+        "target_id": "yasin"
+      },
+      {
+        "id": "ask_walid_f_key_lent",
+        "type": "interview",
+        "label_ar": "[نموذج] walid يذكر f_key_lent",
+        "precondition": {
+          "all": [
+            {
+              "has_evidence": "ev_incident_report"
+            },
+            {
+              "presented": {
+                "evidence_id": "ev_key_board",
+                "to_character": "walid"
+              }
+            }
+          ]
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_key_lent"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "ASK_WALID_F_KEY_LENT",
+        "target_id": "walid"
+      },
+      {
+        "id": "ask_walid_f_walid_took",
+        "type": "interview",
+        "label_ar": "[نموذج] walid يذكر f_walid_took",
+        "precondition": {
+          "all": [
+            {
+              "has_evidence": "ev_incident_report"
+            },
+            {
+              "presented": {
+                "evidence_id": "ev_dealer_slip",
+                "to_character": "walid"
+              }
+            }
+          ]
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_walid_took"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "ASK_WALID_F_WALID_TOOK",
+        "target_id": "walid"
+      },
+      {
+        "id": "ask_najla_f_diary_rings",
+        "type": "interview",
+        "label_ar": "[نموذج] najla يذكر f_diary_rings",
+        "precondition": {
+          "has_evidence": "ev_incident_report"
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_diary_rings"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "ASK_NAJLA_F_DIARY_RINGS",
+        "target_id": "najla"
+      },
+      {
+        "id": "ask_saeed_f_seals_intact",
+        "type": "interview",
+        "label_ar": "[نموذج] saeed يذكر f_seals_intact",
+        "precondition": {
+          "has_evidence": "ev_incident_report"
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_seals_intact"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "ASK_SAEED_F_SEALS_INTACT",
+        "target_id": "saeed"
+      },
+      {
+        "id": "ask_hassan_f_hinge_heard",
+        "type": "interview",
+        "label_ar": "[نموذج] hassan يذكر f_hinge_heard",
+        "precondition": {
+          "has_evidence": "ev_yard_lamp"
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_hinge_heard"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "ASK_HASSAN_F_HINGE_HEARD",
+        "target_id": "hassan"
+      }
+    ]
+  },
+  "state_machine": {
+    "id": "c037",
+    "initial": "briefing",
+    "type": "compound",
+    "states": {
+      "briefing": {
+        "description_ar": "الإحاطة",
+        "type": "atomic",
+        "on": {
+          "START": {
+            "target": "investigating"
+          }
+        }
+      },
+      "investigating": {
+        "description_ar": "التحقيق",
+        "type": "compound",
+        "initial": "gathering",
+        "states": {
+          "gathering": {
+            "type": "atomic",
+            "on": {
+              "OPEN_DEDUCTION": {
+                "target": "deducing"
+              }
+            }
+          },
+          "deducing": {
+            "type": "atomic",
+            "on": {
+              "BACK": {
+                "target": "gathering"
+              }
+            }
+          }
+        },
+        "on": {
+          "SUBMIT": {
+            "target": "review"
+          }
+        }
+      },
+      "review": {
+        "description_ar": "مراجعة",
+        "type": "atomic",
+        "on": {
+          "CLOSE": {
+            "target": "resolved"
+          }
+        }
+      },
+      "resolved": {
+        "description_ar": "إغلاق",
+        "type": "final"
+      }
+    }
+  },
+  "dialogue": {
+    "max_turns_per_interview": 10,
+    "llm_enabled": false,
+    "topics": [
+      {
+        "id": "t_closing",
+        "label_ar": "الإقفال والصينية",
+        "example_questions_ar": [
+          "متى وضعت الساعة في الصينية؟",
+          "متى غادرتم الدكان؟"
+        ],
+        "fact_ids": [
+          "f_watch_present",
+          "f_owner_left",
+          "f_apprentice_left"
+        ],
+        "claim_ids": [
+          "cl_owner_front"
+        ]
+      },
+      {
+        "id": "t_bell",
+        "label_ar": "الجرس وما سُمع منه",
+        "example_questions_ar": [
+          "هل يرن الجرس دائماً؟",
+          "كم مرة سمعته تلك الليلة؟"
+        ],
+        "fact_ids": [
+          "f_diary_rings"
+        ],
+        "claim_ids": [
+          "cl_bell_old"
+        ]
+      },
+      {
+        "id": "t_night",
+        "label_ar": "جولات الليل والفناء",
+        "example_questions_ar": [
+          "ماذا رأيت في جولتك؟",
+          "ماذا سمعت في الفناء؟"
+        ],
+        "fact_ids": [
+          "f_seals_intact",
+          "f_hinge_heard"
+        ]
+      },
+      {
+        "id": "t_key",
+        "label_ar": "المفتاح الاحتياطي والبيع",
+        "example_questions_ar": [
+          "من يحمل مفتاح الباب الخلفي؟",
+          "من باع الساعة؟"
+        ],
+        "fact_ids": [
+          "f_key_lent",
+          "f_walid_took"
+        ],
+        "claim_ids": [
+          "cl_walid_nokey"
+        ]
+      }
+    ]
+  },
+  "rubric": {
+    "reference_answer_ar": "لم يدخل لصّ غريب من الواجهة، والفاعل الأرجح وليد الدباغ. الصمت دليل هنا لأن الجرس يرن عند أي فتح، وقد ثبت ذلك ببطاقة الصيانة وتجربته، وجارة مستيقظة قرب نافذتها دوّنت ثلاث رنات لا غير، وشريط الختم بقي سليماً عند الحارس وفي صورة الصباح. فتح شخص الباب الخلفي في الثانية فجراً، كما يدل مصباح العتبة وصرير سمعه الخبّاز، ومفتاحه الاحتياطي عند وليد بلا استرداد، وساعة بالرقم نفسه بيعت باسمه صباحاً. حدود الاستنتاج: لوحة المفاتيح تبيّن من استلم لا من استعمل، والمصباح لا يعرف صاحب الحركة، وتوقيت الصرير تقريبي، ولا تثبت السجلات سبب حاجته إلى المال. وهذا تحليل للتدريب، والفصل في المسؤولية للجهة المختصة لا للمحقق المتدرب.",
+    "criteria": [
+      {
+        "id": "c_source",
+        "name_ar": "تصنيف المصادر واستقلالها",
+        "objective_ids": [
+          "lo_claim",
+          "lo_indep"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يصنّف"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "أخطأ في الأغلب"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "نصف صحيح"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمه صحيح"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كله صحيح"
+          }
+        ]
+      },
+      {
+        "id": "c_conflict",
+        "name_ar": "ربط السجلات بأزمنتها",
+        "objective_ids": [
+          "lo_timeline"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يضع شيئاً"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "وضع قليلاً"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "وضع نصفها صحيحاً"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمها"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كلها في موضعها"
+          }
+        ]
+      },
+      {
+        "id": "c_links",
+        "name_ar": "ربط الأدلة بالفرضيات",
+        "objective_ids": [
+          "lo_diag"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.2,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لا روابط"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "قليلة"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "نصفها صحيح"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمها"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كلها دقيقة"
+          }
+        ]
+      },
+      {
+        "id": "c_uncertainty",
+        "name_ar": "معايرة الثقة",
+        "objective_ids": [
+          "lo_calib"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "ثقة مفرطة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "حدود قليلة"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "جزئية"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معقولة"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "معايَرة كاملة"
+          }
+        ]
+      },
+      {
+        "id": "c_revision",
+        "name_ar": "مراجعة الرأي",
+        "objective_ids": [
+          "lo_revise"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "بقي على فرضية مرفوضة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "لم يعلن فرضية"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "ثبت على فرضية سليمة"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "غيّر بدليل"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "غيّر بدليل ووثّق"
+          }
+        ]
+      },
+      {
+        "id": "c_elimination",
+        "name_ar": "استبعاد الفرضيات الخاطئة",
+        "objective_ids": [
+          "lo_hyp",
+          "lo_expect"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يستبعد"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "استبعد خطأً"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "فرضية بدليل"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "فرضيتين"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كل الخاطئة"
+          }
+        ]
+      },
+      {
+        "id": "c_justification",
+        "name_ar": "جودة الحجة المكتوبة",
+        "objective_ids": [
+          "lo_diag",
+          "lo_expect"
+        ],
+        "scored_by": "human",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لا حجة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "ادعاء بلا سند"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "أدلة دون ربط"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "ربط الأدلة بالاستنتاج"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "ربط مع البدائل والحدود"
+          }
+        ]
+      }
+    ]
+  },
+  "hint_ladder": [
+    {
+      "id": "hg1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "قبل أن تعدّ الصمت دليلاً، اكتب: ما الذي كان سيقع لو جاء أحد من هذا الطريق؟",
+      "trigger": {
+        "always": true
+      },
+      "assessment_weight": 0.02
+    },
+    {
+      "id": "hg2",
+      "level": 2,
+      "kind": "focus_area",
+      "text_ar": "لكل توقع تكتبه اسأل: على أي سجل يقوم؟ وهل هو مستقل عن الصمت نفسه؟",
+      "trigger": {
+        "has_evidence": "ev_incident_report"
+      },
+      "assessment_weight": 0.04
+    },
+    {
+      "id": "hg3",
+      "level": 3,
+      "kind": "pointer",
+      "text_ar": "افصل بين ما يثبت أن الأداة تعمل وما يسجل أنها لم تعمل في الليلة المعنية.",
+      "trigger": {
+        "has_evidence": "ev_incident_report"
+      },
+      "assessment_weight": 0.08
+    },
+    {
+      "id": "hb1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "لو فُتحت الواجهة ليلاً بلا إذن، فماذا كان يجب أن يُسمع؟ وهل تعرف ما يجعل ذلك مؤكداً؟",
+      "trigger": {
+        "has_evidence": "ev_incident_report"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_front_a"
+    },
+    {
+      "id": "hb2",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "ابحث عن ما يبيّن حال الجرس وقوة صوته، ثم عمّن كان قادراً على سماعه طوال الليل.",
+      "trigger": {
+        "has_evidence": "ev_bell_card"
+      },
+      "assessment_weight": 0.06,
+      "targets_inference_id": "i_front_a"
+    },
+    {
+      "id": "hb3",
+      "level": 3,
+      "kind": "partial_reveal",
+      "text_ar": "قابل بطاقة الصيانة وتجربتك للجرس مع شكوى الجارة ودفتر ليلتها، ثم اسأل: كم رنة بين الإقفال والفتح؟",
+      "trigger": {
+        "has_evidence": "ev_neighbor_complaint"
+      },
+      "assessment_weight": 0.1,
+      "targets_inference_id": "i_front_a"
+    },
+    {
+      "id": "hs1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "هل يوجد سجل آخر عن الواجهة لا يعتمد على الجرس ولا على الجارة؟",
+      "trigger": {
+        "has_evidence": "ev_incident_report"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_front_b"
+    },
+    {
+      "id": "hs2",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "اسأل عن عادات الحراسة في المجمّع: ماذا يوضع على الأبواب بعد الإقفال؟ ومن يفحصه؟",
+      "trigger": {
+        "has_evidence": "ev_incident_report"
+      },
+      "assessment_weight": 0.06,
+      "targets_inference_id": "i_front_b"
+    },
+    {
+      "id": "hs3",
+      "level": 3,
+      "kind": "partial_reveal",
+      "text_ar": "ضع على خط واحد وقت لصق الشريط وجولتي الحارس وصورة الصباح، ثم انظر ما حال الشريط في كل مرة.",
+      "trigger": {
+        "has_evidence": "ev_guard_round"
+      },
+      "assessment_weight": 0.1,
+      "targets_inference_id": "i_front_b"
+    },
+    {
+      "id": "hy1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "إذا لم يدخل أحد من الواجهة، فمن أي مكان آخر كان يمكن الدخول؟",
+      "trigger": {
+        "has_evidence": "ev_incident_report"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_yard_a"
+    },
+    {
+      "id": "hy2",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "اسأل عن أي جهاز أو شاهد قرب الباب الذي لا يحرسه أحد.",
+      "trigger": {
+        "has_evidence": "ev_yard_lamp"
+      },
+      "assessment_weight": 0.06,
+      "targets_inference_id": "i_yard_a"
+    },
+    {
+      "id": "hy3",
+      "level": 3,
+      "kind": "partial_reveal",
+      "text_ar": "قابل أوقات إضاءة مصباح العتبة بما سمعه الخبّاز، وانظر ما حال المصباح في الليالي السابقة.",
+      "trigger": {
+        "has_evidence": "ev_baker_statement"
+      },
+      "assessment_weight": 0.1,
+      "targets_inference_id": "i_yard_a"
+    },
+    {
+      "id": "hw1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "من كان يملك طريقاً مشروعاً إلى الباب الخلفي؟ وهل يكفي أن يملكه ليكون الفاعل؟",
+      "trigger": {
+        "has_evidence": "ev_incident_report"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_walid_b"
+    },
+    {
+      "id": "hw2",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "اسأل عن الساعة نفسها: بأي رقم تُعرف؟ وأين يمكن أن يظهر هذا الرقم بعد الحادثة؟",
+      "trigger": {
+        "has_evidence": "ev_repair_ticket"
+      },
+      "assessment_weight": 0.06,
+      "targets_inference_id": "i_walid_b"
+    },
+    {
+      "id": "hw3",
+      "level": 3,
+      "kind": "partial_reveal",
+      "text_ar": "قابل رقم الحركة في الإيصال برقمها في سجل المحل، ثم انظر من باع ومتى بالنسبة إلى صرير الباب الخلفي.",
+      "trigger": {
+        "has_evidence": "ev_dealer_slip"
+      },
+      "assessment_weight": 0.1,
+      "targets_inference_id": "i_walid_b"
+    }
+  ],
+  "fairness_test": {
+    "requirements": {
+      "min_disjoint_proof_paths": 2,
+      "max_inference_depth": 3,
+      "all_red_herrings_refutable": true,
+      "culprit_uniquely_entailed": true,
+      "no_hidden_fact_dependency": true,
+      "max_required_actions": 30
+    },
+    "runs": []
+  },
+  "ending_explanation": {
+    "steps": [
+      {
+        "order": 1,
+        "text_ar": "ابدأ بالتوقع: جرس على الباب بلا مخمِّد يصدح عند أي فتح. بطاقة الصيانة وتجربتك له تثبتان أنه يعمل بالبطء والسرعة، فلا يصح قول صاحب الدكان إنه قد يصمت.",
+        "uses_evidence_ids": [
+          "ev_bell_card",
+          "ev_bell_check"
+        ],
+        "inference_id": "i_bell_works"
+      },
+      {
+        "order": 2,
+        "text_ar": "جارة تُوقظها الرنة وتجلس تدوّن لم تسمع إلا ثلاث رنات: خروج المتدرب، وخروج صاحب الدكان، وفتح الصباح. فصمتُ ما بينها له معنى لأن توقع الرنين كان مؤكداً.",
+        "uses_evidence_ids": [
+          "ev_neighbor_complaint",
+          "ev_neighbor_diary"
+        ],
+        "inference_id": "i_front_a"
+      },
+      {
+        "order": 3,
+        "text_ar": "في طريق مستقل لا يشارك الأول بدليل: بقي شريط الحارس سليماً في جولتيه ثم في صورة الصباح، فلم تُفتح الواجهة.",
+        "uses_evidence_ids": [
+          "ev_guard_round",
+          "ev_seal_photo"
+        ],
+        "inference_id": "i_front_b"
+      },
+      {
+        "order": 4,
+        "text_ar": "وإذا سقطت الواجهة، فالدخول جاء من الخلف: المصباح فوق العتبة أضاء مرتين في ساعة خلت منها الليالي الست الماضية.",
+        "uses_evidence_ids": [
+          "ev_yard_lamp"
+        ],
+        "inference_id": "i_yard_a"
+      },
+      {
+        "order": 5,
+        "text_ar": "ثم دلّ المفتاح الاحتياطي الذي خرج إلى وليد بلا استرداد على من كان يستطيع الدخول.",
+        "uses_evidence_ids": [
+          "ev_key_board"
+        ],
+        "inference_id": "i_walid_a"
+      },
+      {
+        "order": 6,
+        "text_ar": "ويؤيده مسار آخر: رقم الحركة في الإيصال هو رقم الساعة التي بيعت صباحاً باسم وليد في محل الساعات القديمة.",
+        "uses_evidence_ids": [
+          "ev_dealer_slip",
+          "ev_repair_ticket"
+        ],
+        "inference_id": "i_walid_b"
+      },
+      {
+        "order": 7,
+        "text_ar": "فتسقط فرضية اللص الغريب، وتسقط فرضية المتدرب، وتسقط فرضية السهو؛ وتبقى فرضية وليد بحدودها.",
+        "uses_evidence_ids": [
+          "ev_closing_list",
+          "ev_yasin_statement",
+          "ev_key_board"
+        ],
+        "inference_id": "i_rule_apprentice"
+      }
+    ],
+    "alternative_paths_ar": [
+      "مسار مستقل: شريط الحارس وصورة الصباح يغنيان عن الجرس والجارة في نفي الواجهة، وسمع الخبّاز للصرير يغني عن المصباح في إثبات دخول الخلف، وسجل محل الساعات مع الإيصال يغنيان عن دفتر المفاتيح في الوصول إلى وليد."
+    ],
+    "what_evidence_could_not_show_ar": [
+      "لوحة المفاتيح تبيّن من استلم مفتاحاً لا من استعمله، والمصباح يلتقط حركة لا هوية صاحبها، وتوقيت الصرير تقريبي.",
+      "لا تبيّن السجلات سبب حاجة وليد إلى المال ولا هل كان ينوي الإعادة، وقوله هو لا يُحسب مقدمة إثبات.",
+      "الحكم على المسؤولية شأن الجهة المختصة لا شأن المحقق المتدرب."
+    ],
+    "science_notes_ar": [
+      "غياب الحدث لا يدل على شيء إلا إذا كان وقوعه متوقعاً بقوة، وكان هذا التوقع مثبتاً بسجلات لا تعتمد على الغياب نفسه.",
+      "حين يشير غياب واحد إلى نتيجة، يُطلب له دليل مستقل ثانٍ، كالشريط الورقي هنا، حتى لا يقوم الاستنتاج على أداة واحدة."
+    ]
+  },
+  "expert_review": [
+    {
+      "role": "narrative_editor",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "scientific_reviewer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "learning_designer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "age_appropriateness",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "cultural_reviewer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "legal_rights",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "safety",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    }
+  ]
+}

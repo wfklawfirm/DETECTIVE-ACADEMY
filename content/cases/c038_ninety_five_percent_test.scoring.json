@@ -1,0 +1,152 @@
+{
+  "case_id": "c038_ninety_five_percent_test",
+  "accepted_conclusions": {
+    "h_95": {
+      "grade": 0,
+      "note_ar": "يخلط بين دقة الجهاز واحتمال صحة الإشارة، ويتجاهل ندرة المتصدع وفحصي التأكيد."
+    },
+    "h_supplier": {
+      "grade": 0,
+      "note_ar": "يقرأ 61 مقابل 57 زيادة، وهي قريبة من النصف لكل دفعة، والجرد يظهر تصدعات متقاربة."
+    },
+    "h_sound": {
+      "grade": 1,
+      "note_ar": "استنتاج متسق مع الأدلة ويتطلب ذكر حدوده: الفحصان يخصان ب-17 وحده، وللكشف حدود."
+    },
+    "h_sensor": {
+      "grade": 0,
+      "note_ar": "يبالغ: الجهاز التقط معظم المتصدعات، وكثرة الإشارات السليمة متوقعة لندرة المتصدع."
+    }
+  },
+  "confidence_band": {
+    "h_95": [
+      0,
+      10
+    ],
+    "h_supplier": [
+      0,
+      10
+    ],
+    "h_sound": [
+      60,
+      88
+    ],
+    "h_sensor": [
+      0,
+      10
+    ]
+  },
+  "source_key": {
+    "ev_kamal_report": "claim",
+    "ev_scan_log": "primary_record",
+    "ev_sensor_sheet": "public_document",
+    "ev_history": "primary_record",
+    "ev_last_season": "primary_record",
+    "ev_batch_split": "redisplay",
+    "ev_jamil_statement": "claim",
+    "ev_care_log": "primary_record",
+    "ev_nader_statement": "claim",
+    "ev_rescan_clean": "primary_record",
+    "ev_control_bolts": "primary_record",
+    "ev_confirm_dye": "primary_record",
+    "ev_confirm_ultra": "primary_record"
+  },
+  "link_key": {
+    "h_95": {
+      "ev_kamal_report": "supports",
+      "ev_scan_log": "supports",
+      "ev_sensor_sheet": "weakens",
+      "ev_history": "weakens",
+      "ev_last_season": "weakens",
+      "ev_confirm_dye": "weakens",
+      "ev_confirm_ultra": "weakens",
+      "ev_rescan_clean": "weakens"
+    },
+    "h_supplier": {
+      "ev_batch_split": "supports",
+      "ev_jamil_statement": "neutral",
+      "ev_history": "weakens",
+      "ev_scan_log": "neutral"
+    },
+    "h_sound": {
+      "ev_confirm_ultra": "supports",
+      "ev_confirm_dye": "supports",
+      "ev_rescan_clean": "supports",
+      "ev_control_bolts": "supports",
+      "ev_care_log": "supports",
+      "ev_nader_statement": "supports",
+      "ev_history": "supports",
+      "ev_last_season": "supports",
+      "ev_kamal_report": "weakens"
+    },
+    "h_sensor": {
+      "ev_jamil_statement": "supports",
+      "ev_last_season": "weakens",
+      "ev_sensor_sheet": "neutral",
+      "ev_batch_split": "neutral"
+    }
+  },
+  "required_limits": [
+    "l_only_b17",
+    "l_rate_seasons"
+  ],
+  "valid_mind_changers": [
+    "m_rate_higher",
+    "m_crack_found",
+    "m_batch_cracks"
+  ],
+  "invalid_limits": [
+    "l_invalid_95",
+    "l_invalid_broken"
+  ],
+  "decisive_evidence": [
+    "ev_sensor_sheet",
+    "ev_history",
+    "ev_last_season",
+    "ev_confirm_ultra",
+    "ev_confirm_dye",
+    "ev_rescan_clean",
+    "ev_control_bolts"
+  ],
+  "lab_requirement": null,
+  "timeline_requirement": [
+    {
+      "evidence_id": "ev_care_log",
+      "utc_minute": 30,
+      "tol": 10
+    },
+    {
+      "evidence_id": "ev_scan_log",
+      "utc_minute": 150,
+      "tol": 10
+    },
+    {
+      "evidence_id": "ev_kamal_report",
+      "utc_minute": 300,
+      "tol": 10
+    },
+    {
+      "evidence_id": "ev_rescan_clean",
+      "utc_minute": 450,
+      "tol": 10
+    }
+  ],
+  "refuted_hypotheses": [
+    "h_95",
+    "h_supplier",
+    "h_sensor"
+  ],
+  "criteria_map": {
+    "c_source": "source_typing",
+    "c_conflict": "conflict_resolution",
+    "c_links": "hypothesis_links",
+    "c_uncertainty": "uncertainty",
+    "c_revision": "revision",
+    "c_elimination": "elimination",
+    "c_justification": "justification_human"
+  },
+  "caps": {
+    "no_citations_max": 45,
+    "no_conflict_resolution_max": 70
+  }
+}

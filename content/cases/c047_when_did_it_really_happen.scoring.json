@@ -1,0 +1,166 @@
+{
+  "case_id": "c047_when_did_it_really_happen",
+  "accepted_conclusions": {
+    "h_karim": {
+      "grade": 1,
+      "note_ar": "استنتاج متسق مع الأدلة ويتطلب ذكر حدوده."
+    },
+    "h_adam": {
+      "grade": 0,
+      "note_ar": "يقرأ الرقم 13:15 كما هو، ويتجاهل انحراف ساعة المتحكم وسجل المكتبة."
+    },
+    "h_fault": {
+      "grade": 0,
+      "note_ar": "الاختلاف ظاهري ويزول بتوحيد المراجع وتصحيح الانحراف؛ لا يعني خلل المتحكم."
+    }
+  },
+  "confidence_band": {
+    "h_karim": [
+      65,
+      92
+    ],
+    "h_adam": [
+      0,
+      15
+    ],
+    "h_fault": [
+      0,
+      15
+    ]
+  },
+  "source_key": {
+    "ev_lock_log": "primary_record",
+    "ev_checklist": "primary_record",
+    "ev_maint_sheet": "primary_record",
+    "ev_phone_alert": "redisplay",
+    "ev_dock_log": "primary_record",
+    "ev_badge_sheet": "primary_record",
+    "ev_library_log": "primary_record",
+    "ev_call_log": "primary_record",
+    "ev_call_chat": "primary_record",
+    "ev_karim_statement": "claim",
+    "ev_adam_statement": "claim",
+    "ev_dana_statement": "claim",
+    "ev_fadi_statement": "claim"
+  },
+  "link_key": {
+    "h_karim": {
+      "ev_lab_norm": "supports",
+      "ev_maint_sheet": "supports",
+      "ev_phone_alert": "supports",
+      "ev_dock_log": "supports",
+      "ev_call_log": "supports",
+      "ev_call_chat": "supports",
+      "ev_badge_sheet": "supports",
+      "ev_library_log": "supports",
+      "ev_lock_log": "neutral",
+      "ev_checklist": "neutral",
+      "ev_karim_statement": "neutral"
+    },
+    "h_adam": {
+      "ev_lock_log": "supports",
+      "ev_lab_norm": "weakens",
+      "ev_maint_sheet": "weakens",
+      "ev_phone_alert": "weakens",
+      "ev_dock_log": "weakens",
+      "ev_library_log": "weakens",
+      "ev_badge_sheet": "weakens",
+      "ev_adam_statement": "neutral"
+    },
+    "h_fault": {
+      "ev_phone_alert": "supports",
+      "ev_lab_norm": "weakens",
+      "ev_dock_log": "weakens",
+      "ev_maint_sheet": "weakens",
+      "ev_checklist": "weakens"
+    }
+  },
+  "required_limits": [
+    "l_drift_age",
+    "l_where_module"
+  ],
+  "valid_mind_changers": [
+    "m_clock_changed",
+    "m_second_open",
+    "m_badge_copy"
+  ],
+  "invalid_limits": [
+    "l_invalid_diff",
+    "l_invalid_insist"
+  ],
+  "decisive_evidence": [
+    "ev_lock_log",
+    "ev_maint_sheet",
+    "ev_phone_alert",
+    "ev_dock_log",
+    "ev_lab_norm",
+    "ev_call_log",
+    "ev_library_log"
+  ],
+  "lab_requirement": {
+    "lab_id": "lab_zone",
+    "must_converge": true
+  },
+  "timeline_requirement": [
+    {
+      "evidence_id": "ev_checklist",
+      "utc_minute": 30,
+      "tol": 3
+    },
+    {
+      "evidence_id": "ev_library_log",
+      "utc_minute": 52,
+      "tol": 3
+    },
+    {
+      "evidence_id": "ev_lock_log",
+      "utc_minute": 61,
+      "tol": 3
+    },
+    {
+      "evidence_id": "ev_phone_alert",
+      "utc_minute": 61,
+      "tol": 3
+    },
+    {
+      "evidence_id": "ev_dock_log",
+      "utc_minute": 62,
+      "tol": 3
+    },
+    {
+      "evidence_id": "ev_call_log",
+      "utc_minute": 72,
+      "tol": 3
+    }
+  ],
+  "refuted_hypotheses": [
+    "h_adam",
+    "h_fault"
+  ],
+  "criteria_map": {
+    "c_source": "source_typing",
+    "c_conflict": "conflict_resolution",
+    "c_links": "hypothesis_links",
+    "c_uncertainty": "uncertainty",
+    "c_revision": "revision",
+    "c_elimination": "elimination",
+    "c_justification": "justification_human"
+  },
+  "transfer_key": {
+    "valid": [
+      "o1",
+      "o2",
+      "o3",
+      "o4"
+    ],
+    "invalid": [
+      "o5",
+      "o6",
+      "o7"
+    ]
+  },
+  "caps": {
+    "no_citations_max": 45,
+    "no_conflict_resolution_max": 65
+  }
+}

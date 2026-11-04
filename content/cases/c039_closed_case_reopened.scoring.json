@@ -1,0 +1,148 @@
+{
+  "case_id": "c039_closed_case_reopened",
+  "accepted_conclusions": {
+    "h_ayham": {
+      "grade": 0,
+      "note_ar": "يعامل الاعتراف المكتوب دليلاً كافياً، وتنقضه سجلات الإنذار والصور والبوابة."
+    },
+    "h_outsider": {
+      "grade": 0,
+      "note_ar": "يعتمد على الباب غير المقفل، والإنذار لم يسجل أي فتح بعد 20:05."
+    },
+    "h_azmi": {
+      "grade": 0,
+      "note_ar": "يعتمد على مذكرة قديمة، وجدول المناوبات وسجل البوابة يضعانه خارج المدرسة حتى 19:55."
+    },
+    "h_jana": {
+      "grade": 1,
+      "note_ar": "استنتاج متسق مع الأدلة ويتطلب ذكر حدوده."
+    }
+  },
+  "confidence_band": {
+    "h_ayham": [
+      0,
+      10
+    ],
+    "h_outsider": [
+      0,
+      10
+    ],
+    "h_azmi": [
+      0,
+      15
+    ],
+    "h_jana": [
+      60,
+      88
+    ]
+  },
+  "source_key": {
+    "ev_bulletin": "public_document",
+    "ev_confession": "claim",
+    "ev_closure_memo": "public_document",
+    "ev_morning_sheet": "primary_record",
+    "ev_alarm_log": "primary_record",
+    "ev_azmi_memo": "public_document",
+    "ev_guard_log": "primary_record",
+    "ev_roster": "primary_record",
+    "ev_contact_sheet": "primary_record",
+    "ev_key_sheet": "primary_record",
+    "ev_loan_request": "primary_record",
+    "ev_ayham_stmt": "claim",
+    "ev_jana_stmt": "claim"
+  },
+  "link_key": {
+    "h_ayham": {
+      "ev_confession": "supports",
+      "ev_closure_memo": "supports",
+      "ev_bulletin": "neutral",
+      "ev_alarm_log": "weakens",
+      "ev_contact_sheet": "weakens",
+      "ev_guard_log": "weakens"
+    },
+    "h_outsider": {
+      "ev_morning_sheet": "supports",
+      "ev_bulletin": "supports",
+      "ev_alarm_log": "weakens",
+      "ev_contact_sheet": "weakens"
+    },
+    "h_azmi": {
+      "ev_azmi_memo": "supports",
+      "ev_morning_sheet": "supports",
+      "ev_roster": "weakens",
+      "ev_guard_log": "weakens",
+      "ev_contact_sheet": "weakens"
+    },
+    "h_jana": {
+      "ev_key_sheet": "supports",
+      "ev_contact_sheet": "supports",
+      "ev_guard_log": "supports",
+      "ev_alarm_log": "supports",
+      "ev_loan_request": "supports",
+      "ev_ayham_stmt": "supports",
+      "ev_jana_stmt": "supports",
+      "ev_roster": "neutral"
+    }
+  },
+  "required_limits": [
+    "l_key_signer",
+    "l_no_whereabouts"
+  ],
+  "valid_mind_changers": [
+    "m_earlier_key",
+    "m_alarm_fault",
+    "m_clock_off"
+  ],
+  "invalid_limits": [
+    "l_invalid_signed",
+    "l_invalid_old"
+  ],
+  "decisive_evidence": [
+    "ev_alarm_log",
+    "ev_contact_sheet",
+    "ev_key_sheet",
+    "ev_guard_log",
+    "ev_bulletin"
+  ],
+  "lab_requirement": null,
+  "timeline_requirement": [
+    {
+      "evidence_id": "ev_contact_sheet",
+      "utc_minute": 315,
+      "tol": 10
+    },
+    {
+      "evidence_id": "ev_key_sheet",
+      "utc_minute": 200,
+      "tol": 10
+    },
+    {
+      "evidence_id": "ev_guard_log",
+      "utc_minute": 342,
+      "tol": 10
+    },
+    {
+      "evidence_id": "ev_alarm_log",
+      "utc_minute": 365,
+      "tol": 10
+    }
+  ],
+  "refuted_hypotheses": [
+    "h_ayham",
+    "h_outsider",
+    "h_azmi"
+  ],
+  "criteria_map": {
+    "c_source": "source_typing",
+    "c_conflict": "conflict_resolution",
+    "c_links": "hypothesis_links",
+    "c_uncertainty": "uncertainty",
+    "c_revision": "revision",
+    "c_elimination": "elimination",
+    "c_justification": "justification_human"
+  },
+  "caps": {
+    "no_citations_max": 45,
+    "no_conflict_resolution_max": 70
+  }
+}

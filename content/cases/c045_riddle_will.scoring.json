@@ -1,0 +1,130 @@
+{
+  "case_id": "c045_riddle_will",
+  "accepted_conclusions": {
+    "h_card": {
+      "grade": 1,
+      "note_ar": "قراءة متسقة مع نظام النادي وكتابات الأستاذة، وتتطلب ذكر حدودها."
+    },
+    "h_age": {
+      "grade": 0,
+      "note_ar": "تخلط الأقدمية بالعمر؛ والكاتبة نفسها تفرّق بين «الأقدم» و«الأكبر سناً»."
+    },
+    "h_cont": {
+      "grade": 0,
+      "note_ar": "تخلط الأقدمية بالاستمرار؛ والنظام لا يُسقط الرقم بالغياب، والكاتبة سمّت طارق أقدم وهو غائب."
+    },
+    "h_open": {
+      "grade": 0,
+      "note_ar": "الغموض في اللفظ لا يعني استحالة الترجيح؛ فالأوراق تسند قراءة واحدة بمسارين مستقلين."
+    }
+  },
+  "confidence_band": {
+    "h_card": [
+      70,
+      92
+    ],
+    "h_age": [
+      0,
+      10
+    ],
+    "h_cont": [
+      0,
+      15
+    ],
+    "h_open": [
+      0,
+      20
+    ]
+  },
+  "source_key": {
+    "ev_will": "claim",
+    "ev_register": "primary_record",
+    "ev_bylaws": "public_document",
+    "ev_newsletter": "public_document",
+    "ev_memo": "primary_record",
+    "ev_hisham": "claim",
+    "ev_nadia": "claim"
+  },
+  "link_key": {
+    "h_card": {
+      "ev_will": "neutral",
+      "ev_register": "supports",
+      "ev_bylaws": "supports",
+      "ev_newsletter": "supports",
+      "ev_memo": "supports",
+      "ev_hisham": "neutral",
+      "ev_nadia": "neutral"
+    },
+    "h_age": {
+      "ev_hisham": "supports",
+      "ev_register": "neutral",
+      "ev_newsletter": "weakens",
+      "ev_memo": "weakens",
+      "ev_bylaws": "neutral"
+    },
+    "h_cont": {
+      "ev_nadia": "supports",
+      "ev_register": "neutral",
+      "ev_bylaws": "weakens",
+      "ev_memo": "weakens",
+      "ev_newsletter": "weakens"
+    },
+    "h_open": {
+      "ev_will": "neutral",
+      "ev_bylaws": "weakens",
+      "ev_newsletter": "weakens",
+      "ev_memo": "weakens"
+    }
+  },
+  "required_limits": [
+    "l_intent",
+    "l_scope"
+  ],
+  "valid_mind_changers": [
+    "m_later_paper",
+    "m_bylaw_amended",
+    "m_not_hers"
+  ],
+  "invalid_limits": [
+    "l_invalid_age",
+    "l_invalid_loud",
+    "l_invalid_first"
+  ],
+  "decisive_evidence": [
+    "ev_bylaws",
+    "ev_register",
+    "ev_newsletter",
+    "ev_memo"
+  ],
+  "lab_requirement": null,
+  "refuted_hypotheses": [
+    "h_age",
+    "h_cont",
+    "h_open"
+  ],
+  "transfer_key": {
+    "valid": [
+      "o1",
+      "o2",
+      "o3",
+      "o4"
+    ],
+    "invalid": [
+      "o5",
+      "o6",
+      "o7"
+    ]
+  },
+  "criteria_map": {
+    "c_source": "source_typing",
+    "c_links": "hypothesis_links",
+    "c_uncertainty": "uncertainty",
+    "c_revision": "revision",
+    "c_elimination": "elimination",
+    "c_justification": "justification_human"
+  },
+  "caps": {
+    "no_citations_max": 45,
+    "no_conflict_resolution_max": 65
+  }
+}

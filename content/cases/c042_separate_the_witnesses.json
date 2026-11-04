@@ -1,0 +1,2858 @@
+{
+  "schema_version": "0.1.0",
+  "case_id": "c042_separate_the_witnesses",
+  "case_version": "0.1.0",
+  "meta": {
+    "title_ar": "بلاطات الأمواج",
+    "title_en": "The Wave Tiles",
+    "age_band": "16-18",
+    "locale": "ar",
+    "dialogue_register": "msa",
+    "estimated_minutes": 40,
+    "difficulty": 3,
+    "content_flags": [
+      "no_violence",
+      "theft"
+    ],
+    "authors": [
+      "فريق أثر التحريري (مسودة بمساعدة الذكاء الاصطناعي، لم تُراجَع بشرياً بعد)"
+    ],
+    "knowledge_object_refs": [
+      "KO-NP-08-001",
+      "KO-NP-02H-004",
+      "KO-RS-05-001",
+      "KO-RS-05-005",
+      "KO-RS-05-002",
+      "KO-RS-06-002",
+      "KO-RS-06-021",
+      "KO-RS-06-009"
+    ]
+  },
+  "premise": {
+    "hook_ar": "وصل صندوق بلاطات خزفية إلى قاعة المعرض وفيه أربع بلاطات أقل من القائمة. أخذت اللجنة إفادات الشهود كلاً على حدة، فاختلفوا في الدقائق وفي لون الحزام. فمتى فُتح الصندوق، ومن أين جاء كل تفصيل؟",
+    "player_role_ar": "أنت محقق متدرب لدى لجنة المعرض، وطُلب منك أن تقارن إفادات أُخذت من الشهود واحداً واحداً قبل أن تقرر اللجنة أين فُقدت البلاطات.",
+    "setting_ar": "قاعة الينابيع ومشغل وادي الصفصاف في مدينة السنديان المتخيَّلة، صباح الخميس. بإذن مكتوب من اللجنة تطّلع على سجلات الرصيف والشاحنة والمخزن والهاتف والإفادات، ولا تفتح غيرها. الأسماء والأحداث كلها متخيَّلة، وتوقيت المعرض هو توقيت كل السجلات.",
+    "public_fact_ids": [
+      "f_missing",
+      "f_statements_differ"
+    ],
+    "assumed_general_knowledge_ar": [
+      "تقدير الشهود للوقت بالدقائق يختلف طبيعياً ولا يعني الكذب",
+      "من يسمع وصفاً قبل أن يُسأل قد يرويه كأنه رآه",
+      "قارئ البطاقات يسجل البطاقة لا حاملها",
+      "نقصان محتوى الصندوق ينقص وزنه"
+    ]
+  },
+  "entities": {
+    "characters": [
+      {
+        "id": "hatem",
+        "name_ar": "حاتم الصايغ",
+        "role": "witness",
+        "age_descriptor_ar": "سائق شاحنة نقل لمشغل الفخار منذ ست سنوات",
+        "persona_ar": "مباشر وقليل الكلام، يقدّر الوقت من عادته لا من الساعة، ويحب أن يُقال ما رآه بالضبط.",
+        "motives_ar": [
+          "أن يُعرف أن حمولته وصلت كما خرجت",
+          "أن يعود إلى عمله دون تأخير"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "ht_greet",
+            "purpose": "greeting",
+            "text_ar": "تفضّل. أقول ما رأيته وأقول متى لست متأكداً."
+          },
+          {
+            "line_id": "ht_seal",
+            "purpose": "reveal",
+            "text_ar": "عند التحميل رأيت الحزام أزرق وعليه ختم بلاستيكي رقمه ينتهي بـ71.",
+            "fact_ids": [
+              "f_blue_sealed"
+            ]
+          },
+          {
+            "line_id": "ht_road",
+            "purpose": "reveal",
+            "text_ar": "لم أفتح باب الحمولة بين الرصيف والقاعة، ولم أتوقف في الطريق.",
+            "fact_ids": [
+              "f_no_open_transit"
+            ]
+          },
+          {
+            "line_id": "ht_store",
+            "purpose": "reveal",
+            "text_ar": "حملنا الصندوق أنا والآنسة داليا على عربة إلى المخزن، وكان الختم سليماً حين أغلقت الباب.",
+            "fact_ids": [
+              "f_intact_in_store"
+            ]
+          },
+          {
+            "line_id": "ht_time",
+            "purpose": "lie",
+            "text_ar": "أظن أنني وصلت القاعة قرابة التاسعة والنصف.",
+            "claim_ids": [
+              "cl_hatem_time"
+            ]
+          },
+          {
+            "line_id": "ht_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف ما جرى في القاعة بعد أن غادرتها."
+          },
+          {
+            "line_id": "ht_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن الشحنة والطريق."
+          },
+          {
+            "line_id": "ht_bye",
+            "purpose": "farewell",
+            "text_ar": "أتمنى أن تُحسم المسألة بالسجلات."
+          }
+        ]
+      },
+      {
+        "id": "lubna",
+        "name_ar": "لبنى الدرويش",
+        "role": "witness",
+        "age_descriptor_ar": "موظفة رصيف التحميل في مشغل وادي الصفصاف",
+        "persona_ar": "نشيطة ودقيقة في الأوراق، تتذكر الأرقام أكثر من التفاصيل الصغيرة، وتتحدث بثقة.",
+        "motives_ar": [
+          "أن يبقى سجل الرصيف نظيفاً",
+          "أن تفيد التحقيق بما تذكره"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "lb_greet",
+            "purpose": "greeting",
+            "text_ar": "مرحباً. سأقول ما أذكره عن ذلك الصباح."
+          },
+          {
+            "line_id": "lb_weigh",
+            "purpose": "reveal",
+            "text_ar": "وزنت الصندوق على ميزان الرصيف وصوّرته وكتبت تذكرة الوزن.",
+            "fact_ids": [
+              "f_packed_full"
+            ]
+          },
+          {
+            "line_id": "lb_green",
+            "purpose": "lie",
+            "text_ar": "الذي أذكره أن الحزام كان أخضر ومقصوصاً من الزاوية.",
+            "claim_ids": [
+              "cl_green_cut"
+            ]
+          },
+          {
+            "line_id": "lb_call",
+            "purpose": "reveal",
+            "text_ar": "بعد العاشرة والنصف اتصلت منسقة القاعة بمكتب الرصيف بمكبّر الصوت، وكنت أنا ومجد عند الجهاز.",
+            "fact_ids": [
+              "f_call_described"
+            ]
+          },
+          {
+            "line_id": "lb_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف أكثر من ذلك."
+          },
+          {
+            "line_id": "lb_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "لنعد إلى ما جرى على الرصيف."
+          },
+          {
+            "line_id": "lb_bye",
+            "purpose": "farewell",
+            "text_ar": "آمل أن يكون في ما قلته فائدة."
+          }
+        ]
+      },
+      {
+        "id": "majd",
+        "name_ar": "مجد العيسى",
+        "role": "witness",
+        "age_descriptor_ar": "متطوع جامعي يساعد في التحميل على الرصيف",
+        "persona_ar": "متحمس ومجتهد، يحب أن يبدو متعاوناً، وتختلط عليه التفاصيل حين تتشابه الصناديق.",
+        "motives_ar": [
+          "أن يساعد اللجنة",
+          "ألا يُلام على خطأ لم يرتكبه"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "mj_greet",
+            "purpose": "greeting",
+            "text_ar": "أهلاً. حملت صناديق كثيرة ذلك الصباح، لكنني سأحاول."
+          },
+          {
+            "line_id": "mj_pack",
+            "purpose": "reveal",
+            "text_ar": "ساعدت في ربط الصندوق ورفعه إلى الشاحنة، وكان ثقيلاً.",
+            "fact_ids": [
+              "f_packed_full"
+            ]
+          },
+          {
+            "line_id": "mj_green",
+            "purpose": "lie",
+            "text_ar": "أذكر أن الحزام كان أخضر ومقصوصاً من الزاوية.",
+            "claim_ids": [
+              "cl_green_cut"
+            ]
+          },
+          {
+            "line_id": "mj_call",
+            "purpose": "reveal",
+            "text_ar": "نعم، سمعنا صوت المنسقة من المكبّر قبل أن أُسأل بنصف ساعة تقريباً.",
+            "fact_ids": [
+              "f_call_described"
+            ]
+          },
+          {
+            "line_id": "mj_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف."
+          },
+          {
+            "line_id": "mj_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عما حملته على الرصيف."
+          },
+          {
+            "line_id": "mj_bye",
+            "purpose": "farewell",
+            "text_ar": "شكراً لسماعي."
+          }
+        ]
+      },
+      {
+        "id": "dalia",
+        "name_ar": "داليا الخطيب",
+        "role": "witness",
+        "age_descriptor_ar": "موظفة استقبال قاعة الينابيع",
+        "persona_ar": "هادئة ومنظمة، تكتب كل شيء في الاستمارة لحظة حدوثه، وتتحرى الدقة في الوقت.",
+        "motives_ar": [
+          "أن يُحفظ سجل الاستقبال كما كُتب",
+          "أن تنتهي المسألة دون ظلم أحد"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "dl_greet",
+            "purpose": "greeting",
+            "text_ar": "تفضّل. أجيب عمّا كتبته وعمّا رأيته."
+          },
+          {
+            "line_id": "dl_seal",
+            "purpose": "reveal",
+            "text_ar": "قرأت رقم الختم عند الاستلام فكان 4471، والحزام أزرق، وسجلتهما في الاستمارة.",
+            "fact_ids": [
+              "f_blue_sealed"
+            ]
+          },
+          {
+            "line_id": "dl_store",
+            "purpose": "reveal",
+            "text_ar": "ساعدني السائق في نقل الصندوق إلى المخزن، وأغلقت الباب ببطاقتي والختم سليم.",
+            "fact_ids": [
+              "f_intact_in_store"
+            ]
+          },
+          {
+            "line_id": "dl_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لم أدخل المخزن بعد ذلك الصباح، فلا أعرف."
+          },
+          {
+            "line_id": "dl_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن الاستلام والاستمارة."
+          },
+          {
+            "line_id": "dl_bye",
+            "purpose": "farewell",
+            "text_ar": "السجلات تقول أكثر مما أقول."
+          }
+        ]
+      },
+      {
+        "id": "salma",
+        "name_ar": "سلمى الرفاعي",
+        "role": "witness",
+        "age_descriptor_ar": "منسقة قاعة الينابيع في المعرض",
+        "persona_ar": "عملية وسريعة القرار، تكتب ملاحظاتها بسرعة، وتعترف بما ظنّته حين يُسأل عنه.",
+        "motives_ar": [
+          "أن يفتتح المعرض في موعده",
+          "أن تعرف أين فُقدت البلاطات"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "sl_greet",
+            "purpose": "greeting",
+            "text_ar": "أهلاً بك. المعرض يفتتح قريباً وأريد جواباً واضحاً."
+          },
+          {
+            "line_id": "sl_missing",
+            "purpose": "reveal",
+            "text_ar": "فحصت الصندوق في المخزن الساعة العاشرة وثمانياً وعشرين دقيقة، وعددنا فكانت أربع بلاطات ناقصة.",
+            "fact_ids": [
+              "f_missing"
+            ]
+          },
+          {
+            "line_id": "sl_note",
+            "purpose": "reveal",
+            "text_ar": "كتبت في ملاحظتي ما رأيته ثم أضفت تقديري أن الصندوق خرج مفتوحاً من الرصيف، وهذا تقدير لا مشاهدة.",
+            "fact_ids": [
+              "f_salma_assumed"
+            ]
+          },
+          {
+            "line_id": "sl_call",
+            "purpose": "reveal",
+            "text_ar": "اتصلت بمكتب الرصيف ووصفت لهم الحزام كما رأيته في المخزن وسألتهم إن كان كذلك عند الخروج.",
+            "fact_ids": [
+              "f_call_described"
+            ]
+          },
+          {
+            "line_id": "sl_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف أكثر مما كتبت."
+          },
+          {
+            "line_id": "sl_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "لنبقَ عند الصندوق."
+          },
+          {
+            "line_id": "sl_bye",
+            "purpose": "farewell",
+            "text_ar": "أرجو أن تقارن الإفادات بالسجلات قبل أي قرار."
+          }
+        ]
+      },
+      {
+        "id": "tariq",
+        "name_ar": "طارق منصور",
+        "role": "suspect",
+        "age_descriptor_ar": "أمين مخزن قاعة الينابيع وعارض في ركن الحرفيين المحليين",
+        "persona_ar": "ودود في الظاهر ويميل إلى الاختصار، ويحب أن يُظهر أنه مشغول بعمله.",
+        "motives_ar": [
+          "أن يكتمل ركنه قبل الافتتاح",
+          "ألا يُنسب إليه خطأ"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "tq_greet",
+            "purpose": "greeting",
+            "text_ar": "أهلاً. عندي ركني وأعمال كثيرة قبل الافتتاح."
+          },
+          {
+            "line_id": "tq_lie",
+            "purpose": "lie",
+            "text_ar": "لم أدخل المخزن صباح اليوم أبداً، وكنت في ركني أرتب معروضاتي.",
+            "claim_ids": [
+              "cl_tariq_corner"
+            ]
+          },
+          {
+            "line_id": "tq_break",
+            "purpose": "break_down",
+            "text_ar": "دخلت المخزن، وفتحت الصندوق وأخذت أربع بلاطات لأكمل ركني، وشددته بحزام من لفافة القاعة، وكنت أنوي إعادتها بعد الافتتاح.",
+            "fact_ids": [
+              "f_tariq_took",
+              "f_tariq_alone",
+              "f_tariq_motive"
+            ]
+          },
+          {
+            "line_id": "tq_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف عن ذلك شيئاً."
+          },
+          {
+            "line_id": "tq_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "أنا مشغول بركني."
+          },
+          {
+            "line_id": "tq_bye",
+            "purpose": "farewell",
+            "text_ar": "أرجو أن ننتهي سريعاً."
+          }
+        ]
+      }
+    ],
+    "locations": [
+      {
+        "id": "loc_dock",
+        "name_ar": "رصيف مشغل وادي الصفصاف",
+        "description_ar": "رصيف تحميل فيه ميزان ومكتب صغير وهاتف بمكبّر صوت."
+      },
+      {
+        "id": "loc_road",
+        "name_ar": "طريق الشاحنة",
+        "description_ar": "طريق بين المشغل وقاعة المعرض."
+      },
+      {
+        "id": "loc_hall_desk",
+        "name_ar": "استقبال قاعة الينابيع",
+        "description_ar": "مكتب استلام الشحنات وفيه ميزان القاعة."
+      },
+      {
+        "id": "loc_store",
+        "name_ar": "مخزن القاعة",
+        "description_ar": "غرفة تُفتح ببطاقة وتُسجَّل فيها الدخلات والخرجات."
+      },
+      {
+        "id": "loc_corner",
+        "name_ar": "ركن الحرفيين المحليين",
+        "description_ar": "ركن عرض صغير داخل القاعة له قائمة معروضات."
+      },
+      {
+        "id": "loc_office",
+        "name_ar": "مكتب التنسيق",
+        "description_ar": "مكتب منسقة القاعة وفيه هاتف بمكبّر صوت وسجل مكالمات."
+      }
+    ],
+    "objects": [
+      {
+        "id": "obj_crate",
+        "name_ar": "صندوق البلاطات رقم 17",
+        "description_ar": "صندوق خشبي فيه أربعون بلاطة خزفية زرقاء مموجة من الدفعة 17-م."
+      },
+      {
+        "id": "obj_strap",
+        "name_ar": "حزام الصندوق وختمه",
+        "description_ar": "حزام عريض يلفّ الصندوق ويُثبَّت بختم بلاستيكي مرقّم."
+      }
+    ],
+    "organizations": [
+      {
+        "id": "org_exhibition",
+        "name_ar": "معرض الحرف في قاعة الينابيع",
+        "description_ar": "معرض متخيَّل في مدينة السنديان."
+      }
+    ]
+  },
+  "truth": {
+    "solution": {
+      "culprit_ids": [
+        "tariq"
+      ],
+      "summary_ar": "لم يُفتح الصندوق على الرصيف ولا في الطريق. وصل سليماً وكاملاً وبقي ختمه قائماً حتى وُضع في المخزن، ثم دخل طارق منصور المخزن وحده، فقطع الحزام وأخذ أربع بلاطات ليكمل بها ركنه، وأعاد شد الصندوق بحزام آخر. أما رواية لبنى ومجد عن لون الحزام فصدى لوصف المنسقة المسموع عبر المكبّر قبل أخذ إفادتيهما، فليست مشاهدة مستقلة.",
+      "key_fact_ids": [
+        "f_intact_in_store",
+        "f_shared_source",
+        "f_tariq_took"
+      ]
+    },
+    "facts": [
+      {
+        "id": "f_missing",
+        "statement_ar": "عند الفحص في مخزن القاعة ظهر أن في صندوق البلاطات رقم 17 أربع بلاطات أقل من قائمة التعبئة.",
+        "kind": "event",
+        "subject_ids": [
+          "obj_crate",
+          "org_exhibition"
+        ],
+        "spoiler_level": 0,
+        "time": {
+          "start_min": 148,
+          "precision": "exact"
+        },
+        "location_id": "loc_store"
+      },
+      {
+        "id": "f_statements_differ",
+        "statement_ar": "اختلفت إفادات الشهود في أوقات التحميل والاستلام وفي لون الحزام وحالته، وأُخذت كل إفادة على حدة.",
+        "kind": "event",
+        "subject_ids": [
+          "hatem",
+          "lubna",
+          "majd",
+          "dalia"
+        ],
+        "spoiler_level": 0,
+        "time": {
+          "start_min": 205,
+          "precision": "approx"
+        }
+      },
+      {
+        "id": "f_packed_full",
+        "statement_ar": "حُزم الصندوق على الرصيف بأربعين بلاطة ووزنه الكلي 41.6 كغ.",
+        "kind": "state",
+        "subject_ids": [
+          "obj_crate",
+          "lubna"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 31,
+          "precision": "exact"
+        },
+        "location_id": "loc_dock"
+      },
+      {
+        "id": "f_blue_sealed",
+        "statement_ar": "خرج الصندوق من الرصيف بحزام أزرق وختم رقمه 4471 غير مقطوع.",
+        "kind": "state",
+        "subject_ids": [
+          "obj_crate",
+          "obj_strap"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 32,
+          "precision": "exact"
+        },
+        "location_id": "loc_dock"
+      },
+      {
+        "id": "f_no_open_transit",
+        "statement_ar": "لم يُفتح باب الحمولة بين الرصيف والقاعة ولم تتوقف الشاحنة.",
+        "kind": "absence",
+        "subject_ids": [
+          "hatem",
+          "obj_crate"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 40,
+          "precision": "exact",
+          "end_min": 95
+        },
+        "location_id": "loc_road"
+      },
+      {
+        "id": "f_intact_in_store",
+        "statement_ar": "وُضع الصندوق في المخزن الساعة 09:46 وختمه الأزرق سليم ووزنه 41.6 كغ.",
+        "kind": "state",
+        "subject_ids": [
+          "obj_crate",
+          "dalia",
+          "hatem"
+        ],
+        "spoiler_level": 2,
+        "time": {
+          "start_min": 106,
+          "precision": "exact"
+        },
+        "location_id": "loc_store"
+      },
+      {
+        "id": "f_salma_assumed",
+        "statement_ar": "أضافت سلمى إلى ملاحظتها تقديراً بأن الصندوق خرج مفتوحاً من الرصيف، ولم تكن قد شاهدته هناك.",
+        "kind": "event",
+        "subject_ids": [
+          "salma"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 166,
+          "precision": "exact"
+        },
+        "location_id": "loc_office"
+      },
+      {
+        "id": "f_call_described",
+        "statement_ar": "وصفت سلمى الحزام لمن في مكتب الرصيف عبر المكبّر في مكالمة استمرت ست دقائق.",
+        "kind": "event",
+        "subject_ids": [
+          "salma",
+          "lubna",
+          "majd"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 158,
+          "precision": "exact",
+          "end_min": 164
+        },
+        "location_id": "loc_office"
+      },
+      {
+        "id": "f_shared_source",
+        "statement_ar": "روايتا لبنى ومجد عن لون الحزام وحالته مأخوذتان من وصف سلمى الذي سمعتاه، لا من مشاهدة مستقلة.",
+        "kind": "relation",
+        "subject_ids": [
+          "lubna",
+          "majd",
+          "salma"
+        ],
+        "spoiler_level": 2,
+        "time": {
+          "start_min": 195,
+          "precision": "approx"
+        }
+      },
+      {
+        "id": "f_tariq_alone",
+        "statement_ar": "دخل طارق المخزن وحده من 10:02 إلى 10:14.",
+        "kind": "event",
+        "subject_ids": [
+          "tariq"
+        ],
+        "spoiler_level": 2,
+        "time": {
+          "start_min": 122,
+          "precision": "exact",
+          "end_min": 134
+        },
+        "location_id": "loc_store"
+      },
+      {
+        "id": "f_weight_drop",
+        "statement_ar": "وزن الصندوق 38.4 كغ على ميزان القاعة الساعة 10:33، أي أقل من الوزن الكامل بـ3.2 كغ.",
+        "kind": "state",
+        "subject_ids": [
+          "obj_crate"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 153,
+          "precision": "exact"
+        },
+        "location_id": "loc_store"
+      },
+      {
+        "id": "f_corner_tiles",
+        "statement_ar": "أضاف طارق إلى قائمة ركنه الساعة 10:20 أربع بلاطات زرقاء مموجة من الدفعة 17-م.",
+        "kind": "event",
+        "subject_ids": [
+          "tariq"
+        ],
+        "spoiler_level": 2,
+        "time": {
+          "start_min": 140,
+          "precision": "exact"
+        },
+        "location_id": "loc_corner"
+      },
+      {
+        "id": "f_tariq_motive",
+        "statement_ar": "ركن طارق كان ناقصاً عن الحد المطلوب لافتتاحه وهو يريد إكماله.",
+        "kind": "attribute",
+        "subject_ids": [
+          "tariq"
+        ],
+        "spoiler_level": 2
+      },
+      {
+        "id": "f_tariq_took",
+        "statement_ar": "قطع طارق حزام الصندوق في المخزن وأخذ أربع بلاطات ثم شدّ الصندوق من جديد بحزام أخضر من مواد القاعة.",
+        "kind": "event",
+        "subject_ids": [
+          "tariq",
+          "obj_crate"
+        ],
+        "spoiler_level": 3,
+        "time": {
+          "start_min": 122,
+          "precision": "exact",
+          "end_min": 134
+        },
+        "location_id": "loc_store"
+      }
+    ],
+    "claims": [
+      {
+        "id": "cl_green_cut",
+        "statement_ar": "الحزام كان أخضر ومقصوصاً من الزاوية حين خرج الصندوق من الرصيف.",
+        "kind": "honest_mistake",
+        "held_by": [
+          "lubna",
+          "majd"
+        ],
+        "true_fact_id": "f_blue_sealed",
+        "contradicted_by_evidence_ids": [
+          "ev_dock_photo",
+          "ev_hall_receipt"
+        ]
+      },
+      {
+        "id": "cl_hatem_time",
+        "statement_ar": "وصلت الشاحنة إلى القاعة قرابة التاسعة والنصف.",
+        "kind": "honest_mistake",
+        "held_by": [
+          "hatem"
+        ],
+        "contradicted_by_evidence_ids": [
+          "ev_trip_log"
+        ]
+      },
+      {
+        "id": "cl_tariq_corner",
+        "statement_ar": "طارق لم يدخل المخزن صباح الخميس وبقي في ركنه.",
+        "kind": "lie",
+        "held_by": [
+          "tariq"
+        ],
+        "true_fact_id": "f_tariq_alone",
+        "contradicted_by_evidence_ids": [
+          "ev_store_door"
+        ]
+      }
+    ]
+  },
+  "timeline": [
+    {
+      "id": "te_pack",
+      "description_ar": "لبنى توزن الصندوق وتصوّره وتسجل الختم، ومجد يربطه.",
+      "time": {
+        "start_min": 31,
+        "precision": "exact",
+        "end_min": 33
+      },
+      "location_id": "loc_dock",
+      "actor_ids": [
+        "lubna",
+        "majd"
+      ],
+      "fact_ids": [
+        "f_packed_full",
+        "f_blue_sealed"
+      ],
+      "motivated_by_ar": "إتمام إجراءات الشحن قبل انطلاق الشاحنة"
+    },
+    {
+      "id": "te_depart",
+      "description_ar": "حاتم ينطلق بالشاحنة وباب الحمولة مغلق.",
+      "time": {
+        "start_min": 40,
+        "precision": "exact"
+      },
+      "location_id": "loc_dock",
+      "actor_ids": [
+        "hatem"
+      ],
+      "fact_ids": [
+        "f_no_open_transit"
+      ],
+      "motivated_by_ar": "موعد التسليم في القاعة"
+    },
+    {
+      "id": "te_drive",
+      "description_ar": "الشاحنة تسير دون توقف.",
+      "time": {
+        "start_min": 41,
+        "precision": "exact",
+        "end_min": 94
+      },
+      "location_id": "loc_road",
+      "actor_ids": [
+        "hatem"
+      ],
+      "fact_ids": [
+        "f_no_open_transit"
+      ],
+      "motivated_by_ar": "الوصول في الموعد"
+    },
+    {
+      "id": "te_receive",
+      "description_ar": "داليا تستلم الصندوق وتقرأ الختم وتزنه.",
+      "time": {
+        "start_min": 95,
+        "precision": "exact",
+        "end_min": 100
+      },
+      "location_id": "loc_hall_desk",
+      "actor_ids": [
+        "dalia",
+        "hatem"
+      ],
+      "fact_ids": [
+        "f_intact_in_store"
+      ],
+      "motivated_by_ar": "تسجيل الاستلام في الاستمارة"
+    },
+    {
+      "id": "te_store",
+      "description_ar": "داليا وحاتم يضعان الصندوق في المخزن وداليا تغلق الباب.",
+      "time": {
+        "start_min": 101,
+        "precision": "exact",
+        "end_min": 106
+      },
+      "location_id": "loc_store",
+      "actor_ids": [
+        "dalia",
+        "hatem"
+      ],
+      "fact_ids": [
+        "f_intact_in_store"
+      ],
+      "motivated_by_ar": "حفظ الصندوق حتى فحصه"
+    },
+    {
+      "id": "te_hatem_leave",
+      "description_ar": "حاتم يغادر القاعة بالشاحنة.",
+      "time": {
+        "start_min": 112,
+        "precision": "exact"
+      },
+      "location_id": "loc_hall_desk",
+      "actor_ids": [
+        "hatem"
+      ],
+      "fact_ids": [],
+      "motivated_by_ar": "العودة إلى المشغل"
+    },
+    {
+      "id": "te_tariq_store",
+      "description_ar": "طارق يدخل المخزن وحده فيقطع الحزام ويأخذ أربع بلاطات ويشد الصندوق بحزام آخر.",
+      "time": {
+        "start_min": 122,
+        "precision": "exact",
+        "end_min": 134
+      },
+      "location_id": "loc_store",
+      "actor_ids": [
+        "tariq"
+      ],
+      "fact_ids": [
+        "f_tariq_alone",
+        "f_tariq_took"
+      ],
+      "motivated_by_ar": "إكمال معروضات ركنه قبل الافتتاح"
+    },
+    {
+      "id": "te_tariq_corner",
+      "description_ar": "طارق يعود إلى ركنه ويضيف البلاطات إلى قائمة المعروضات.",
+      "time": {
+        "start_min": 136,
+        "precision": "exact",
+        "end_min": 141
+      },
+      "location_id": "loc_corner",
+      "actor_ids": [
+        "tariq"
+      ],
+      "fact_ids": [
+        "f_corner_tiles",
+        "f_tariq_motive"
+      ],
+      "motivated_by_ar": "استيفاء الحد المطلوب لافتتاح الركن"
+    },
+    {
+      "id": "te_inspect",
+      "description_ar": "سلمى تفتح المخزن وتفحص الصندوق وتعدّ البلاطات.",
+      "time": {
+        "start_min": 148,
+        "precision": "exact",
+        "end_min": 153
+      },
+      "location_id": "loc_store",
+      "actor_ids": [
+        "salma"
+      ],
+      "fact_ids": [
+        "f_missing",
+        "f_weight_drop"
+      ],
+      "motivated_by_ar": "التأكد من الشحنة قبل الافتتاح"
+    },
+    {
+      "id": "te_call",
+      "description_ar": "سلمى تتصل بمكتب الرصيف بالمكبّر وتصف الحزام.",
+      "time": {
+        "start_min": 158,
+        "precision": "exact",
+        "end_min": 164
+      },
+      "location_id": "loc_office",
+      "actor_ids": [
+        "salma"
+      ],
+      "fact_ids": [
+        "f_call_described"
+      ],
+      "motivated_by_ar": "التحقق من حالة الصندوق عند خروجه"
+    },
+    {
+      "id": "te_dock_listen",
+      "description_ar": "لبنى ومجد يسمعان الوصف عبر المكبّر في مكتب الرصيف.",
+      "time": {
+        "start_min": 158,
+        "precision": "exact",
+        "end_min": 164
+      },
+      "location_id": "loc_dock",
+      "actor_ids": [
+        "lubna",
+        "majd"
+      ],
+      "fact_ids": [
+        "f_call_described"
+      ],
+      "motivated_by_ar": "الرد على اتصال المنسقة"
+    },
+    {
+      "id": "te_note",
+      "description_ar": "سلمى تكتب ملاحظتها وتضيف تقديرها.",
+      "time": {
+        "start_min": 166,
+        "precision": "exact"
+      },
+      "location_id": "loc_office",
+      "actor_ids": [
+        "salma"
+      ],
+      "fact_ids": [
+        "f_salma_assumed"
+      ],
+      "motivated_by_ar": "توثيق ما حدث للجنة"
+    },
+    {
+      "id": "te_stmts",
+      "description_ar": "سجل اللجنة يأخذ الإفادات الخمس هاتفياً، واحدة بعد الأخرى وكل شاهد وحده.",
+      "time": {
+        "start_min": 170,
+        "end_min": 215,
+        "precision": "approx"
+      },
+      "actor_ids": [],
+      "fact_ids": [
+        "f_statements_differ",
+        "f_shared_source"
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_incident_note",
+      "title_ar": "ملاحظة منسقة القاعة",
+      "kind": "documentary",
+      "content_ar": "ملاحظة سلمى الرفاعي، منسقة القاعة (كُتبت 10:46):\nعند الفحص 10:28 وجدت غطاء الصندوق مفكوكاً، والحزام الأخضر مقصوصاً من الزاوية وكأنه فُتح قبل خروجه من الرصيف. الناقص أربع بلاطات حسب القائمة.\nفي 10:38 اتصلت بمكتب الرصيف بمكبّر الصوت، وكانت على الخط لبنى الدرويش ومجد العيسى، فوصفت لهما الحزام كما رأيته وسألتهما إن كان كذلك عند الخروج.",
+      "acquired_by_action_ids": [
+        "a_get_note"
+      ],
+      "supports_fact_ids": [
+        "f_missing",
+        "f_salma_assumed",
+        "f_call_described"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "نص كتبته صاحبته بعد الحدث؛ تخلط فيه ما رأته في المخزن بما ظنّته عن الرصيف، ولا تثبت منه حال الصندوق عند خروجه.",
+      "location_id": "loc_office"
+    },
+    {
+      "id": "ev_register",
+      "title_ar": "سجل أخذ الإفادات",
+      "kind": "documentary",
+      "content_ar": "سجل لجنة المعرض (أخذته المسجّلة هند السعدي، هاتفياً، وكل شاهد وحده):\n10:50 حاتم الصايغ، من الشاحنة.\n11:05 داليا الخطيب، من مكتب الاستقبال.\n11:15 لبنى الدرويش، من مكتب الرصيف.\n11:25 مجد العيسى، من مكتب الرصيف.\n11:35 طارق منصور، من ركن الحرفيين.\nلم يُقرأ على أي شاهد ما قاله غيره.",
+      "acquired_by_action_ids": [
+        "a_get_register"
+      ],
+      "supports_fact_ids": [
+        "f_statements_differ"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "يبين متى وأين أُخذت كل إفادة، ولا يبين ما سمعه الشاهد قبل أن يُسأل.",
+      "location_id": "loc_office"
+    },
+    {
+      "id": "ev_packing_list",
+      "title_ar": "قائمة التعبئة",
+      "kind": "documentary",
+      "content_ar": "قائمة تعبئة مشغل وادي الصفصاف: صندوق واحد رقم 17، أربعون بلاطة زرقاء مموجة من الدفعة 17-م، وزن البلاطة 0.8 كغ، وزن الخشب والتغليف 9.6 كغ، الوزن الكلي 41.6 كغ، ختم المرسل 4471.",
+      "acquired_by_action_ids": [
+        "a_get_packing"
+      ],
+      "supports_fact_ids": [
+        "f_packed_full"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "وثيقة المرسل عما أُعدّ للشحن؛ لا تثبت وحدها ما وصل إلى القاعة.",
+      "location_id": "loc_dock"
+    },
+    {
+      "id": "ev_dock_photo",
+      "title_ar": "صورة سجل الرصيف",
+      "kind": "digital",
+      "content_ar": "صورة من سجل الرصيف وقتها 08:32: صندوق خشبي يلفّه حزام أزرق عريض مرتين، وعليه ختم بلاستيكي رقمه 4471 قائم. وإلى جانبه تذكرة ميزان الرصيف: 41.6 كغ، 08:31.",
+      "acquired_by_action_ids": [
+        "a_get_photo"
+      ],
+      "supports_fact_ids": [
+        "f_packed_full",
+        "f_blue_sealed"
+      ],
+      "reliability": "strong",
+      "limits_ar": "تصف الصندوق عند التقاط الصورة فقط، وليس ما حدث له بعد ذلك.",
+      "location_id": "loc_dock",
+      "contradicts_claim_ids": [
+        "cl_green_cut"
+      ]
+    },
+    {
+      "id": "ev_stmt_hatem",
+      "title_ar": "إفادة حاتم الصايغ",
+      "kind": "testimonial",
+      "content_ar": "إفادة حاتم الصايغ (10:50، من الشاحنة):\n«حملنا الصندوق على الرصيف قرابة الثامنة والنصف، وانطلقت بعده بقليل. كان الحزام أزرق وعليه ختم بلاستيكي رقمه ينتهي بـ71. لم أفتح باب الحمولة ولم أتوقف. وصلت قرابة التاسعة والنصف، وحملت الصندوق مع الآنسة داليا على عربة إلى المخزن، وكان الختم سليماً. رأيت لبنى تكتب التذكرة، ومجد يشد الحزام.»",
+      "acquired_by_action_ids": [
+        "a_get_stmt_hatem"
+      ],
+      "supports_fact_ids": [
+        "f_blue_sealed",
+        "f_no_open_transit",
+        "f_intact_in_store"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "قول شخص عن ذاكرته؛ يقرّب الأوقات بالدقائق ولا يحفظ رقم الختم كاملاً.",
+      "location_id": "loc_road"
+    },
+    {
+      "id": "ev_stmt_dalia",
+      "title_ar": "إفادة داليا الخطيب",
+      "kind": "testimonial",
+      "content_ar": "إفادة داليا الخطيب (11:05، من مكتب الاستقبال):\n«استلمت الصندوق قرابة التاسعة وأربعين دقيقة. الحزام أزرق وعليه ختم لم أفتحه، قرأت رقمه 4471 وسجلته في الاستمارة. ساعدني السائق في نقله إلى المخزن على عربة، ثم أغلقت الباب ببطاقتي. لم أدخل المخزن بعد ذلك.»",
+      "acquired_by_action_ids": [
+        "a_get_stmt_dalia"
+      ],
+      "supports_fact_ids": [
+        "f_blue_sealed",
+        "f_intact_in_store"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "قول شخص عن ذاكرته؛ يخص الاستقبال والمخزن حتى لحظة إغلاق الباب فقط.",
+      "location_id": "loc_hall_desk"
+    },
+    {
+      "id": "ev_stmt_lubna",
+      "title_ar": "إفادة لبنى الدرويش",
+      "kind": "testimonial",
+      "content_ar": "إفادة لبنى الدرويش (11:15، من مكتب الرصيف):\n«وزنت الصندوق على ميزان الرصيف وصوّرته وكتبت التذكرة قرابة الثامنة وعشرين دقيقة. الحزام كان أخضر ومقصوصاً من الزاوية وكأنه فُتح قبل خروجه من الرصيف، ولم ينتبه أحد. حمله مجد وحاتم إلى الشاحنة.»",
+      "acquired_by_action_ids": [
+        "a_get_stmt_lubna"
+      ],
+      "supports_fact_ids": [
+        "f_packed_full",
+        "f_shared_source"
+      ],
+      "reliability": "weak",
+      "limits_ar": "قول شخص عن ذاكرته، وفيه عبارة وصفية لا يمكن أن يكون صاحبها قد حفظها من الصورة والسجل.",
+      "location_id": "loc_dock"
+    },
+    {
+      "id": "ev_stmt_majd",
+      "title_ar": "إفادة مجد العيسى",
+      "kind": "testimonial",
+      "content_ar": "إفادة مجد العيسى (11:25، من مكتب الرصيف):\n«ربطت الصندوق وساعدت في رفعه إلى الشاحنة قرابة الثامنة والنصف، ومعي لبنى. الحزام كان أخضر ومقصوصاً من الزاوية وكأنه فُتح قبل خروجه من الرصيف، ولم ينتبه أحد. كان الصندوق ثقيلاً.»",
+      "acquired_by_action_ids": [
+        "a_get_stmt_majd"
+      ],
+      "supports_fact_ids": [
+        "f_packed_full",
+        "f_shared_source"
+      ],
+      "reliability": "weak",
+      "limits_ar": "قول شخص عن ذاكرته؛ يتفق مع إفادة أخرى في عبارة كاملة.",
+      "location_id": "loc_dock"
+    },
+    {
+      "id": "ev_stmt_tariq",
+      "title_ar": "إفادة طارق منصور",
+      "kind": "testimonial",
+      "content_ar": "إفادة طارق منصور (11:35، من ركن الحرفيين):\n«بقيت في ركني منذ التاسعة والنصف أركّب المعروضات. لم أدخل المخزن صباح اليوم، ولا أعرف شيئاً عن الصندوق.»",
+      "acquired_by_action_ids": [
+        "a_get_stmt_tariq"
+      ],
+      "supports_fact_ids": [],
+      "reliability": "weak",
+      "limits_ar": "قول صاحب علاقة بالمخزن؛ ينفي ولا يقدّم سجلاً.",
+      "location_id": "loc_corner"
+    },
+    {
+      "id": "ev_hall_receipt",
+      "title_ar": "استمارة استلام القاعة",
+      "kind": "documentary",
+      "content_ar": "استمارة استلام قاعة الينابيع:\n09:40 استلام صندوق رقم 17. ختم 4471 قائم غير مقطوع. الوزن على ميزان القاعة 41.6 كغ.\n09:46 وُضع الصندوق في المخزن بحضور السائق، والحزام أزرق، والختم قائم.\nالتوقيع: داليا الخطيب، حاتم الصايغ.",
+      "acquired_by_action_ids": [
+        "a_get_receipt"
+      ],
+      "supports_fact_ids": [
+        "f_intact_in_store",
+        "f_blue_sealed"
+      ],
+      "reliability": "strong",
+      "limits_ar": "تسجل حال الصندوق حتى 09:46 فقط، ولا تغطي ما بعد إغلاق باب المخزن.",
+      "location_id": "loc_hall_desk",
+      "contradicts_claim_ids": [
+        "cl_green_cut"
+      ]
+    },
+    {
+      "id": "ev_trip_log",
+      "title_ar": "سجل الشاحنة",
+      "kind": "digital",
+      "content_ar": "سجل جهاز الشاحنة (حساس الباب وتحديد المكان):\n08:38 إغلاق باب الحمولة.\n08:40 انطلاق من الرصيف.\nلا توقف حتى 09:35 عند باب القاعة.\n09:36 فتح باب الحمولة للتفريغ.\n09:48 إغلاق الباب.",
+      "acquired_by_action_ids": [
+        "a_get_trip"
+      ],
+      "supports_fact_ids": [
+        "f_no_open_transit"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يسجل فتح الباب وحركة الشاحنة، ولا يرى الصندوق ولا حزامه.",
+      "location_id": "loc_road",
+      "contradicts_claim_ids": [
+        "cl_hatem_time"
+      ]
+    },
+    {
+      "id": "ev_call_log",
+      "title_ar": "سجل هاتف مكتب التنسيق",
+      "kind": "digital",
+      "content_ar": "سجل هاتف مكتب التنسيق (جهاز المكالمات):\n10:38 مكالمة صادرة إلى مكتب الرصيف، المدة 6 دقائق و12 ثانية، وضع مكبّر الصوت مفعّل في الجهتين.",
+      "acquired_by_action_ids": [
+        "a_get_call"
+      ],
+      "supports_fact_ids": [
+        "f_call_described"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يسجل الوقت والمدة ووضع المكبّر، ولا يسجل ما قيل ولا من كان في الغرفة.",
+      "location_id": "loc_office"
+    },
+    {
+      "id": "ev_store_door",
+      "title_ar": "سجل بطاقات المخزن",
+      "kind": "digital",
+      "content_ar": "سجل قارئ بطاقات مخزن القاعة (يوم الخميس):\n09:41 دخول بطاقة داليا الخطيب.\n09:46 خروج بطاقة داليا الخطيب.\n10:02 دخول بطاقة طارق منصور.\n10:14 خروج بطاقة طارق منصور.\n10:28 دخول بطاقة سلمى الرفاعي.\nلا بطاقة أخرى.",
+      "acquired_by_action_ids": [
+        "a_get_door"
+      ],
+      "supports_fact_ids": [
+        "f_tariq_alone"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يسجل البطاقة لا حاملها، ولا يسجل من يدخل مع حامل البطاقة ولا ما فعله داخل المخزن.",
+      "location_id": "loc_store",
+      "contradicts_claim_ids": [
+        "cl_tariq_corner"
+      ]
+    },
+    {
+      "id": "ev_reweigh",
+      "title_ar": "سجل ميزان القاعة",
+      "kind": "digital",
+      "content_ar": "سجل ميزان قاعة الينابيع:\n09:40 صندوق رقم 17: 41.6 كغ.\n10:33 صندوق رقم 17: 38.4 كغ.",
+      "acquired_by_action_ids": [
+        "a_get_reweigh"
+      ],
+      "supports_fact_ids": [
+        "f_weight_drop"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يقيس الكتلة فقط؛ لا يبين متى نقصت ولا من نقلها.",
+      "location_id": "loc_hall_desk"
+    },
+    {
+      "id": "ev_store_bin",
+      "title_ar": "محضر تفتيش المخزن",
+      "kind": "observation",
+      "content_ar": "محضر تفتيش مخزن القاعة (قام به مساعد اللجنة 10:55):\nفي سلة المهملات داخل المخزن قطعة من حزام أزرق مقصوص عليها ختم بلاستيكي رقمه 4471.\nعلى رف المواد لفافة حزام أخضر تخص القاعة، وقد قُطع منها طول جديد.",
+      "acquired_by_action_ids": [
+        "a_search_store"
+      ],
+      "supports_fact_ids": [
+        "f_tariq_took"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يبين أن الصندوق قُطع وأُعيد شدّه داخل المخزن، ولا يبين من فعل ذلك.",
+      "location_id": "loc_store"
+    },
+    {
+      "id": "ev_corner_list",
+      "title_ar": "قائمة معروضات ركن الحرفيين",
+      "kind": "documentary",
+      "content_ar": "قائمة معروضات ركن الحرفيين المحليين (يحدّثها صاحب الركن طارق منصور):\nنسخة 09:00: ستة معروضات.\nنسخة 10:20: عشرة معروضات، أُضيفت أربع بلاطات خزفية زرقاء مموجة من الدفعة 17-م.\nملاحظة اللجنة: لا يُفتح الركن للجمهور قبل بلوغ عشرة معروضات.",
+      "acquired_by_action_ids": [
+        "a_get_corner"
+      ],
+      "supports_fact_ids": [
+        "f_corner_tiles",
+        "f_tariq_motive"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "وثيقة يكتبها صاحب الركن؛ تبين ما أُضيف إلى ركنه، ولا تبين كيف وصلت البلاطات إليه.",
+      "location_id": "loc_corner"
+    }
+  ],
+  "evidence_graph": {
+    "inferences": [
+      {
+        "id": "i_intact_a",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_hall_receipt"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_packing_list"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_intact_in_store"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "استمارة القاعة تسجل الختم 4471 قائماً والوزن 41.6 كغ، وقائمة التعبئة تجعل 41.6 كغ هو الوزن الكامل؛ فالصندوق كان سليماً وكاملاً حين وُضع في المخزن.",
+        "skill_ko_refs": [
+          "KO-RS-05-001"
+        ]
+      },
+      {
+        "id": "i_intact_b",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_stmt_hatem"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_stmt_dalia"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_intact_in_store"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "حاتم وداليا أُخذت إفادتاهما كل على حدة ولم يسمع أحدهما الآخر، وتتفقان على الحزام الأزرق والختم السليم عند النقل إلى المخزن؛ فاتفاق مستقل يقوّي النتيجة.",
+        "skill_ko_refs": [
+          "KO-RS-05-002"
+        ]
+      },
+      {
+        "id": "i_nodrop",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_dock_photo"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_trip_log"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_no_open_transit"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "الصورة تظهر الصندوق مختوماً قبل الانطلاق، وسجل الشاحنة يظهر الباب مغلقاً بلا توقف حتى باب القاعة؛ فلا فرصة لفتحه في الطريق.",
+        "skill_ko_refs": [
+          "KO-RS-05-005"
+        ]
+      },
+      {
+        "id": "i_shared_a",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_stmt_lubna"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_stmt_majd"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_shared_source"
+        },
+        "relation": "supports",
+        "strength": "suggestive",
+        "rule_ar": "إفادتان أُخذتا على حدة تتفقان في عبارة كاملة وفي تفصيل لا يذكره غيرهما؛ التطابق في الحرف بين ذاكرتين يرجّح مصدراً مشتركاً، لكنه يحتاج إلى سجل يثبت التواصل.",
+        "skill_ko_refs": [
+          "KO-RS-05-002"
+        ]
+      },
+      {
+        "id": "i_shared_b",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_call_log"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_incident_note"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_shared_source"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "ملاحظة المنسقة تنقل العبارة نفسها وتذكر أنها وصفتها للبنى ومجد، وسجل الهاتف يؤكد مكالمة بالمكبّر قبل الإفادتين؛ فالمصدر المشترك ثابت بسجل.",
+        "skill_ko_refs": [
+          "KO-RS-05-001"
+        ]
+      },
+      {
+        "id": "i_green_false",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_dock_photo"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_hall_receipt"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_green_cut"
+        },
+        "relation": "contradicts_claim",
+        "strength": "strong",
+        "rule_ar": "الصورة عند الرصيف والاستمارة عند القاعة تسجلان الحزام أزرق وختماً سليماً؛ فرواية الحزام الأخضر المقصوص لا يسندها سجل.",
+        "skill_ko_refs": [
+          "KO-RS-06-002"
+        ]
+      },
+      {
+        "id": "i_took_a",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_intact_in_store"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_store_door"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_reweigh"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_tariq_took"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "الصندوق سليم وكامل 09:46، وبطاقة واحدة فقط دخلت المخزن بين ذلك الوقت والفحص ومكثت 12 دقيقة، ثم قيس النقص 3.2 كغ؛ فالفتح والأخذ حدثا في تلك الفترة.",
+        "skill_ko_refs": [
+          "KO-RS-05-005"
+        ]
+      },
+      {
+        "id": "i_took_b",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_intact_in_store"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_store_bin"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_corner_list"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_tariq_took"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "الحزام الأزرق المقطوع بختمه وحزام جديد من لفافة القاعة يبينان أن الفتح تم داخل المخزن، وقائمة الركن تضيف بلاطات من الدفعة نفسها بعد قليل؛ فصاحب الركن هو من أخذها.",
+        "skill_ko_refs": [
+          "KO-RS-06-002"
+        ]
+      },
+      {
+        "id": "i_h_store",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_tariq_took"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_store"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "ما ثبت عن المخزن وصاحب الركن يجعل فرضية الفتح داخل المخزن هي المسندة.",
+        "skill_ko_refs": [
+          "KO-RS-05-002"
+        ]
+      },
+      {
+        "id": "i_h_dock_out",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_intact_in_store"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_dock"
+        },
+        "relation": "refutes",
+        "strength": "strong",
+        "rule_ar": "ما دام الصندوق سليماً وكاملاً بعد وصوله، فلم يُفتح على الرصيف.",
+        "skill_ko_refs": [
+          "KO-RS-05-002"
+        ]
+      },
+      {
+        "id": "i_h_transit_out",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_no_open_transit"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_transit"
+        },
+        "relation": "refutes",
+        "strength": "strong",
+        "rule_ar": "الباب مغلق والشاحنة بلا توقف، فلا فرصة لأخذ شيء في الطريق.",
+        "skill_ko_refs": [
+          "KO-RS-05-002"
+        ]
+      },
+      {
+        "id": "i_h_short_out",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_packing_list"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_hall_receipt"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_short"
+        },
+        "relation": "refutes",
+        "strength": "strong",
+        "rule_ar": "القائمة تجعل 41.6 كغ هو الوزن الكامل، وميزان القاعة قرأ 41.6 كغ عند الاستلام؛ فلم يُشحن الصندوق ناقصاً.",
+        "skill_ko_refs": [
+          "KO-RS-05-002"
+        ]
+      }
+    ]
+  },
+  "character_knowledge": [
+    {
+      "character_id": "hatem",
+      "knows": [
+        {
+          "fact_id": "f_blue_sealed",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_no_open_transit",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_intact_in_store",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": [
+        {
+          "claim_id": "cl_hatem_time",
+          "stance": "sincere"
+        }
+      ]
+    },
+    {
+      "character_id": "lubna",
+      "knows": [
+        {
+          "fact_id": "f_packed_full",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_call_described",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": [
+        {
+          "claim_id": "cl_green_cut",
+          "stance": "sincere"
+        }
+      ]
+    },
+    {
+      "character_id": "majd",
+      "knows": [
+        {
+          "fact_id": "f_packed_full",
+          "access": "witnessed",
+          "certainty": "fairly_sure"
+        },
+        {
+          "fact_id": "f_call_described",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": [
+        {
+          "claim_id": "cl_green_cut",
+          "stance": "sincere"
+        }
+      ]
+    },
+    {
+      "character_id": "dalia",
+      "knows": [
+        {
+          "fact_id": "f_blue_sealed",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_intact_in_store",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    },
+    {
+      "character_id": "salma",
+      "knows": [
+        {
+          "fact_id": "f_missing",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_salma_assumed",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_call_described",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    },
+    {
+      "character_id": "tariq",
+      "knows": [],
+      "hides": [
+        {
+          "fact_id": "f_tariq_took",
+          "reveal_when": {
+            "presented": {
+              "evidence_id": "ev_store_door",
+              "to_character": "tariq"
+            }
+          },
+          "cover_claim_id": "cl_tariq_corner",
+          "reveal_line_id": "tq_break"
+        },
+        {
+          "fact_id": "f_tariq_alone",
+          "reveal_when": {
+            "presented": {
+              "evidence_id": "ev_store_door",
+              "to_character": "tariq"
+            }
+          },
+          "cover_claim_id": "cl_tariq_corner",
+          "reveal_line_id": "tq_break"
+        },
+        {
+          "fact_id": "f_tariq_motive",
+          "reveal_when": {
+            "presented": {
+              "evidence_id": "ev_store_door",
+              "to_character": "tariq"
+            }
+          },
+          "cover_claim_id": "cl_tariq_corner",
+          "reveal_line_id": "tq_break"
+        }
+      ],
+      "believes": [
+        {
+          "claim_id": "cl_tariq_corner",
+          "stance": "deliberate_lie"
+        }
+      ]
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "h_dock",
+      "statement_ar": "فُتح الصندوق عند خروجه من رصيف التحميل، قبل أن يصل إلى القاعة.",
+      "is_true": false,
+      "plausibility_at_start": "high"
+    },
+    {
+      "id": "h_transit",
+      "statement_ar": "أخذ السائق حاتم الصايغ البلاطات في الطريق.",
+      "is_true": false,
+      "plausibility_at_start": "medium",
+      "suspect_id": "hatem"
+    },
+    {
+      "id": "h_store",
+      "statement_ar": "فُتح الصندوق في مخزن القاعة بعد استلامه، وأخذ طارق منصور البلاطات الأربع.",
+      "is_true": true,
+      "plausibility_at_start": "low",
+      "suspect_id": "tariq"
+    },
+    {
+      "id": "h_short",
+      "statement_ar": "شُحن الصندوق ناقصاً منذ البداية ولم يُفتح بعد ذلك.",
+      "is_true": false,
+      "plausibility_at_start": "low"
+    }
+  ],
+  "misdirection_plan": [
+    {
+      "id": "rh_green",
+      "points_to_hypothesis_id": "h_dock",
+      "planted_via_ar": "إفادتان متفقتان في عبارة واحدة عن حزام أخضر مقصوص، وملاحظة المنسقة تقول الشيء نفسه.",
+      "evidence_ids": [
+        "ev_stmt_lubna",
+        "ev_stmt_majd",
+        "ev_incident_note"
+      ],
+      "refuted_by_inference_ids": [
+        "i_shared_b",
+        "i_green_false",
+        "i_h_dock_out"
+      ],
+      "fairness_note_ar": "كل خيط هنا سجل ظاهر: سجل الهاتف وصورة الرصيف واستمارة القاعة متاحة بالإجراء العادي، والتفسير البريء أن الشاهدين تأثرا بوصف سمعاه."
+    },
+    {
+      "id": "rh_driver",
+      "points_to_hypothesis_id": "h_transit",
+      "planted_via_ar": "إفادة السائق تخالف الآخرين في وقت الوصول والانطلاق، وهو من حمل الصندوق في الطريق.",
+      "evidence_ids": [
+        "ev_stmt_hatem",
+        "ev_trip_log"
+      ],
+      "refuted_by_inference_ids": [
+        "i_nodrop",
+        "i_h_transit_out"
+      ],
+      "fairness_note_ar": "فرق الدقائق في التقدير عادي، وسجل الشاحنة يوضح الوقت الفعلي ويبين أن الباب لم يُفتح قبل القاعة."
+    }
+  ],
+  "learning_objectives": [
+    {
+      "id": "lo_compare",
+      "statement_ar": "يبني جدول مقارنة للتفاصيل ويفرّق بين الاختلاف البريء في التقدير والتطابق الحرفي المريب.",
+      "skill_ko_ref": "KO-RS-05-001",
+      "observable_behaviors_ar": [
+        "يضع التفاصيل المتفق عليها والمختلف عليها في جدول",
+        "لا يعدّ كل اختلاف كذباً"
+      ],
+      "evidence_sources": [
+        "evidence_board"
+      ]
+    },
+    {
+      "id": "lo_timeline",
+      "statement_ar": "يرتّب السجلات والإفادات على خط زمني ليعرف ما سبق ما، وما سمعه الشاهد قبل أن يُسأل.",
+      "skill_ko_ref": "KO-RS-05-005",
+      "observable_behaviors_ar": [
+        "يضع المكالمة قبل الإفادات",
+        "يضع آخر دليل على السلامة قبل أول دليل على النقص"
+      ],
+      "evidence_sources": [
+        "timeline_task",
+        "action_log"
+      ]
+    },
+    {
+      "id": "lo_hyp",
+      "statement_ar": "يوازن بين عدة فرضيات ويستبعد ما تنقضه الأدلة المستقلة.",
+      "skill_ko_ref": "KO-RS-05-002",
+      "observable_behaviors_ar": [
+        "يضيف الفرضيات",
+        "يستبعد الرصيف والطريق والشحن الناقص بدليل"
+      ],
+      "evidence_sources": [
+        "hypothesis_ledger"
+      ]
+    },
+    {
+      "id": "lo_diag",
+      "statement_ar": "يقدّر ما يثبته كل سجل وما لا يثبته، ويربط الدليل بالفرضية باتجاه صحيح.",
+      "skill_ko_ref": "KO-RS-06-002",
+      "observable_behaviors_ar": [
+        "يعرف أن قارئ البطاقات يسجل البطاقة لا حاملها",
+        "يعرف أن اتفاق الشاهدين لا يكفي إذا اشتركا في مصدر"
+      ],
+      "evidence_sources": [
+        "evidence_board",
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_calib",
+      "statement_ar": "يصوغ نسبة الترجيح بحدودها.",
+      "skill_ko_ref": "KO-RS-06-021",
+      "observable_behaviors_ar": [
+        "يختار ثقة معقولة",
+        "يذكر حدوداً"
+      ],
+      "evidence_sources": [
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_revise",
+      "statement_ar": "يراجع رأيه الأول حين يظهر ما يخالفه.",
+      "skill_ko_ref": "KO-RS-06-009",
+      "observable_behaviors_ar": [
+        "يترك فرضية الرصيف حين يظهر سجل الهاتف"
+      ],
+      "evidence_sources": [
+        "hypothesis_ledger"
+      ]
+    }
+  ],
+  "mechanics": {
+    "time_budget_units": 40,
+    "actions": [
+      {
+        "id": "a_get_note",
+        "type": "examine",
+        "label_ar": "اقرأ ملاحظة منسقة القاعة",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_incident_note"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "GET_NOTE",
+        "target_id": "loc_office"
+      },
+      {
+        "id": "a_get_register",
+        "type": "examine",
+        "label_ar": "اطلب سجل أخذ الإفادات",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_register"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "GET_REGISTER",
+        "target_id": "loc_office"
+      },
+      {
+        "id": "a_get_packing",
+        "type": "examine",
+        "label_ar": "اطلب قائمة التعبئة",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_packing_list"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "GET_PACKING",
+        "target_id": "loc_dock"
+      },
+      {
+        "id": "a_get_photo",
+        "type": "examine",
+        "label_ar": "اطلب صورة سجل الرصيف",
+        "precondition": {
+          "has_evidence": "ev_register"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_dock_photo"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "GET_PHOTO",
+        "target_id": "loc_dock"
+      },
+      {
+        "id": "a_get_stmt_hatem",
+        "type": "examine",
+        "label_ar": "اقرأ إفادة حاتم",
+        "precondition": {
+          "has_evidence": "ev_register"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_stmt_hatem"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "GET_STMT_HATEM",
+        "target_id": "hatem"
+      },
+      {
+        "id": "a_get_stmt_dalia",
+        "type": "examine",
+        "label_ar": "اقرأ إفادة داليا",
+        "precondition": {
+          "has_evidence": "ev_register"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_stmt_dalia"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "GET_STMT_DALIA",
+        "target_id": "dalia"
+      },
+      {
+        "id": "a_get_stmt_lubna",
+        "type": "examine",
+        "label_ar": "اقرأ إفادة لبنى",
+        "precondition": {
+          "has_evidence": "ev_register"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_stmt_lubna"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "GET_STMT_LUBNA",
+        "target_id": "lubna"
+      },
+      {
+        "id": "a_get_stmt_majd",
+        "type": "examine",
+        "label_ar": "اقرأ إفادة مجد",
+        "precondition": {
+          "has_evidence": "ev_register"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_stmt_majd"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "GET_STMT_MAJD",
+        "target_id": "majd"
+      },
+      {
+        "id": "a_get_stmt_tariq",
+        "type": "examine",
+        "label_ar": "اقرأ إفادة طارق",
+        "precondition": {
+          "has_evidence": "ev_register"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_stmt_tariq"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "GET_STMT_TARIQ",
+        "target_id": "tariq"
+      },
+      {
+        "id": "a_get_receipt",
+        "type": "examine",
+        "label_ar": "اطلب استمارة استلام القاعة",
+        "precondition": {
+          "has_evidence": "ev_packing_list"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_hall_receipt"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "GET_RECEIPT",
+        "target_id": "loc_hall_desk"
+      },
+      {
+        "id": "a_get_trip",
+        "type": "search_location",
+        "label_ar": "اطلب سجل الشاحنة",
+        "precondition": {
+          "has_evidence": "ev_register"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_trip_log"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "GET_TRIP",
+        "target_id": "loc_road"
+      },
+      {
+        "id": "a_get_call",
+        "type": "search_location",
+        "label_ar": "اطلب سجل هاتف مكتب التنسيق",
+        "precondition": {
+          "has_evidence": "ev_incident_note"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_call_log"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "GET_CALL",
+        "target_id": "loc_office"
+      },
+      {
+        "id": "a_get_door",
+        "type": "search_location",
+        "label_ar": "اطلب سجل بطاقات المخزن",
+        "precondition": {
+          "has_evidence": "ev_incident_note"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_store_door"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "GET_DOOR",
+        "target_id": "loc_store"
+      },
+      {
+        "id": "a_get_reweigh",
+        "type": "search_location",
+        "label_ar": "اطلب سجل ميزان القاعة",
+        "precondition": {
+          "has_evidence": "ev_hall_receipt"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_reweigh"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "GET_REWEIGH",
+        "target_id": "loc_hall_desk"
+      },
+      {
+        "id": "a_search_store",
+        "type": "search_location",
+        "label_ar": "اطلب محضر تفتيش المخزن",
+        "precondition": {
+          "has_evidence": "ev_store_door"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_store_bin"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "SEARCH_STORE",
+        "target_id": "loc_store"
+      },
+      {
+        "id": "a_get_corner",
+        "type": "examine",
+        "label_ar": "اطلب قائمة معروضات الركن",
+        "precondition": {
+          "has_evidence": "ev_store_door"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_corner_list"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "GET_CORNER",
+        "target_id": "loc_corner"
+      },
+      {
+        "id": "a_int_hatem",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة حاتم",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "hatem",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "INT_HATEM",
+        "target_id": "hatem"
+      },
+      {
+        "id": "a_int_lubna",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة لبنى",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "lubna",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "INT_LUBNA",
+        "target_id": "lubna"
+      },
+      {
+        "id": "a_int_majd",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة مجد",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "majd",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "INT_MAJD",
+        "target_id": "majd"
+      },
+      {
+        "id": "a_int_dalia",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة داليا",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "dalia",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "INT_DALIA",
+        "target_id": "dalia"
+      },
+      {
+        "id": "a_int_salma",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة سلمى",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "salma",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "INT_SALMA",
+        "target_id": "salma"
+      },
+      {
+        "id": "a_int_tariq",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة طارق",
+        "precondition": {
+          "has_evidence": "ev_register"
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "tariq",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "INT_TARIQ",
+        "target_id": "tariq"
+      },
+      {
+        "id": "p_door_tariq",
+        "type": "present_evidence",
+        "label_ar": "اعرض سجل بطاقات المخزن على طارق",
+        "precondition": {
+          "presented": {
+            "evidence_id": "ev_store_door",
+            "to_character": "tariq"
+          }
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "PRESENTED_DOOR"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "P_DOOR_TARIQ",
+        "target_id": "tariq"
+      },
+      {
+        "id": "p_photo_lubna",
+        "type": "present_evidence",
+        "label_ar": "اعرض صورة الرصيف على لبنى",
+        "precondition": {
+          "presented": {
+            "evidence_id": "ev_dock_photo",
+            "to_character": "lubna"
+          }
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "PRESENTED_PHOTO_LUBNA"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "P_PHOTO_LUBNA",
+        "target_id": "lubna"
+      },
+      {
+        "id": "p_call_majd",
+        "type": "present_evidence",
+        "label_ar": "اعرض سجل الهاتف على مجد",
+        "precondition": {
+          "presented": {
+            "evidence_id": "ev_call_log",
+            "to_character": "majd"
+          }
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "PRESENTED_CALL_MAJD"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "P_CALL_MAJD",
+        "target_id": "majd"
+      },
+      {
+        "id": "a_hint",
+        "type": "request_hint",
+        "label_ar": "اطلب تلميحاً",
+        "precondition": {
+          "always": true
+        },
+        "effects": [],
+        "time_cost_units": 0,
+        "telemetry_code": "REQUEST_HINT"
+      },
+      {
+        "id": "a_accuse",
+        "type": "final_accusation",
+        "label_ar": "قدّم الاستنتاج النهائي",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "SUBMIT"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "FINAL_ACCUSATION"
+      }
+    ]
+  },
+  "state_machine": {
+    "id": "c042",
+    "initial": "briefing",
+    "type": "compound",
+    "states": {
+      "briefing": {
+        "description_ar": "الإحاطة",
+        "type": "atomic",
+        "on": {
+          "START": {
+            "target": "investigating"
+          }
+        }
+      },
+      "investigating": {
+        "description_ar": "التحقيق",
+        "type": "compound",
+        "initial": "gathering",
+        "states": {
+          "gathering": {
+            "type": "atomic",
+            "on": {
+              "OPEN_DEDUCTION": {
+                "target": "deducing"
+              }
+            }
+          },
+          "deducing": {
+            "type": "atomic",
+            "on": {
+              "BACK": {
+                "target": "gathering"
+              }
+            }
+          }
+        },
+        "on": {
+          "SUBMIT": {
+            "target": "review"
+          }
+        }
+      },
+      "review": {
+        "description_ar": "مراجعة",
+        "type": "atomic",
+        "on": {
+          "CLOSE": {
+            "target": "resolved"
+          }
+        }
+      },
+      "resolved": {
+        "description_ar": "إغلاق",
+        "type": "final"
+      }
+    }
+  },
+  "dialogue": {
+    "max_turns_per_interview": 10,
+    "llm_enabled": false,
+    "topics": [
+      {
+        "id": "t_loading",
+        "label_ar": "التحميل والتعبئة",
+        "example_questions_ar": [
+          "ماذا فعلت على الرصيف؟",
+          "كيف كان الحزام والختم؟"
+        ],
+        "fact_ids": [
+          "f_packed_full",
+          "f_blue_sealed"
+        ],
+        "claim_ids": [
+          "cl_green_cut"
+        ]
+      },
+      {
+        "id": "t_road",
+        "label_ar": "الطريق والتسليم",
+        "example_questions_ar": [
+          "هل توقفت في الطريق؟",
+          "متى وصلت إلى القاعة؟"
+        ],
+        "fact_ids": [
+          "f_no_open_transit",
+          "f_intact_in_store"
+        ],
+        "claim_ids": [
+          "cl_hatem_time"
+        ]
+      },
+      {
+        "id": "t_call",
+        "label_ar": "المكالمة وما سمعه الشهود",
+        "example_questions_ar": [
+          "هل كلّمك أحد قبل إفادتك؟",
+          "ماذا سمعت عبر المكبّر؟"
+        ],
+        "fact_ids": [
+          "f_call_described",
+          "f_salma_assumed"
+        ]
+      },
+      {
+        "id": "t_inspect",
+        "label_ar": "الفحص وعدّ البلاطات",
+        "example_questions_ar": [
+          "متى فحصت الصندوق؟",
+          "كم بلاطة ناقصة؟"
+        ],
+        "fact_ids": [
+          "f_missing"
+        ]
+      },
+      {
+        "id": "t_store",
+        "label_ar": "المخزن وبطاقات الدخول",
+        "example_questions_ar": [
+          "هل دخلت المخزن؟",
+          "ماذا فعلت في ركنك؟"
+        ],
+        "fact_ids": [
+          "f_tariq_took",
+          "f_tariq_alone",
+          "f_tariq_motive"
+        ],
+        "claim_ids": [
+          "cl_tariq_corner"
+        ]
+      }
+    ]
+  },
+  "rubric": {
+    "reference_answer_ar": "وقع النقص داخل مخزن القاعة، لا على الرصيف ولا في الطريق. لخّص جدول المقارنة ما اتفق عليه الشهود وما اختلفوا فيه: اختلاف الدقائق عند السائق ومستلمة الصندوق تقدير عادي، أما اتفاق لبنى ومجد في عبارة كاملة عن لون الحزام فمصدره وصف المنسقة المسموع عبر المكبّر قبل أخذ إفادتيهما، فلا يُعدّ شهادتين مستقلتين. وتحسم المسألة سجلات لا يؤثر فيها سماع أحد: صورة الرصيف والاستمارة والقائمة تثبت الصندوق سليماً وكاملاً عند الوضع في المخزن، وسجل بطاقات المخزن يبين دخول بطاقة طارق وحدها اثنتي عشرة دقيقة، ثم قيس نقص 3.2 كغ، ووُجد الحزام الأصلي مقطوعاً في سلة المخزن، وأُضيفت إلى ركن طارق بلاطات من الدفعة نفسها. حدود الاستنتاج: قارئ الدخول يرصد البطاقة وليس الشخص، والميزان يقيس الكتلة لا الفاعل، ومصدر الشاهدين المشترك لا يعني أنهما كذبا، ولا يغني اعتراف أحد عن هذه السجلات.",
+    "criteria": [
+      {
+        "id": "c_source",
+        "name_ar": "تصنيف المصادر",
+        "objective_ids": [
+          "lo_compare"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يصنّف"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "أخطأ في الأغلب"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "نصف صحيح"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمه صحيح"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كله صحيح"
+          }
+        ]
+      },
+      {
+        "id": "c_conflict",
+        "name_ar": "ربط السجلات بأزمنتها",
+        "objective_ids": [
+          "lo_timeline"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يضع شيئاً"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "وضع قليلاً"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "وضع نصفها صحيحاً"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمها"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كلها في موضعها"
+          }
+        ]
+      },
+      {
+        "id": "c_links",
+        "name_ar": "ربط الأدلة بالفرضيات",
+        "objective_ids": [
+          "lo_diag"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.2,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لا روابط"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "قليلة"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "نصفها صحيح"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمها"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كلها دقيقة"
+          }
+        ]
+      },
+      {
+        "id": "c_uncertainty",
+        "name_ar": "معايرة الثقة",
+        "objective_ids": [
+          "lo_calib"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.2,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "ثقة مفرطة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "حدود قليلة"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "جزئية"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معقولة"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "معايَرة كاملة"
+          }
+        ]
+      },
+      {
+        "id": "c_revision",
+        "name_ar": "مراجعة الرأي",
+        "objective_ids": [
+          "lo_revise"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "بقي على فرضية مرفوضة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "لم يعلن فرضية"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "ثبت على فرضية سليمة"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "غيّر بدليل"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "غيّر بدليل ووثّق"
+          }
+        ]
+      },
+      {
+        "id": "c_elimination",
+        "name_ar": "استبعاد الفرضيات الخاطئة",
+        "objective_ids": [
+          "lo_hyp"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يستبعد"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "استبعد خطأً"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "فرضية بدليل"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "فرضيتين"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كل الخاطئة"
+          }
+        ]
+      },
+      {
+        "id": "c_justification",
+        "name_ar": "جودة الحجة المكتوبة",
+        "objective_ids": [
+          "lo_diag",
+          "lo_hyp"
+        ],
+        "scored_by": "human",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لا حجة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "ادعاء بلا سند"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "أدلة دون ربط"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "ربط الأدلة بالاستنتاج"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "ربط مع البدائل والحدود"
+          }
+        ]
+      }
+    ]
+  },
+  "hint_ladder": [
+    {
+      "id": "hg1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "قبل أن تسأل أي إفادة أصح، اسأل عن كل تفصيل: هل رآه الشاهد بنفسه أم سمعه من غيره؟",
+      "trigger": {
+        "always": true
+      },
+      "assessment_weight": 0.02
+    },
+    {
+      "id": "hg2",
+      "level": 2,
+      "kind": "focus_area",
+      "text_ar": "ضع الإفادات الخمس في جدول، صف لكل تفصيل: وقت التحميل، ولون الحزام، ومن حمل الصندوق، ووقت الاستلام. أي اختلاف بريء وأي تطابق غريب؟",
+      "trigger": {
+        "has_evidence": "ev_register"
+      },
+      "assessment_weight": 0.04
+    },
+    {
+      "id": "hg3",
+      "level": 3,
+      "kind": "pointer",
+      "text_ar": "اختلاف الدقائق في التقدير شيء عادي. أما العبارة التي تتكرر حرفاً بحرف عند شاهدين فتستحق السؤال: من قالها قبلهما؟",
+      "trigger": {
+        "has_evidence": "ev_stmt_majd"
+      },
+      "assessment_weight": 0.08
+    },
+    {
+      "id": "hs1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "هل كان لدى الشاهدين مصدر مشترك قبل أن يُسألا؟ ابحث عن سجل يبين من كلّم من.",
+      "trigger": {
+        "has_evidence": "ev_register"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_shared_b"
+    },
+    {
+      "id": "hs2",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "ابدأ بملاحظة المنسقة ثم اطلب ما يؤكد ما فيها من سجلات الاتصال.",
+      "trigger": {
+        "has_evidence": "ev_incident_note"
+      },
+      "assessment_weight": 0.05,
+      "targets_inference_id": "i_shared_b"
+    },
+    {
+      "id": "hs3",
+      "level": 3,
+      "kind": "partial_reveal",
+      "text_ar": "قابل وقت المكالمة وطول مدتها بوقت أخذ الإفادتين، وانظر أين كان كل من لبنى ومجد عند أخذها.",
+      "trigger": {
+        "has_evidence": "ev_call_log"
+      },
+      "assessment_weight": 0.08,
+      "targets_inference_id": "i_shared_b"
+    },
+    {
+      "id": "ht1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "إن لم يثبت الفتح عند التحميل أو أثناء السير، فمتى كانت آخر مرة رُصدت فيها سلامة الصندوق، ومتى رُصد نقصه أول مرة؟",
+      "trigger": {
+        "has_evidence": "ev_incident_note"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_took_a"
+    },
+    {
+      "id": "ht2",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "اطلب سجلات المخزن وقارن كل دخول فيها بآخر وقت للسلامة وبأول وقت للنقص.",
+      "trigger": {
+        "has_evidence": "ev_hall_receipt"
+      },
+      "assessment_weight": 0.06,
+      "targets_inference_id": "i_took_a"
+    },
+    {
+      "id": "ht3",
+      "level": 3,
+      "kind": "partial_reveal",
+      "text_ar": "ضع على خط واحد: الختم السليم 09:46، ثم الدخلات المسجلة، ثم الوزن الناقص 10:33، وانظر من بقي وحده في المخزن بين الأولى والأخيرة.",
+      "trigger": {
+        "has_evidence": "ev_store_door"
+      },
+      "assessment_weight": 0.1,
+      "targets_inference_id": "i_took_a"
+    }
+  ],
+  "fairness_test": {
+    "requirements": {
+      "min_disjoint_proof_paths": 2,
+      "max_inference_depth": 3,
+      "all_red_herrings_refutable": true,
+      "culprit_uniquely_entailed": true,
+      "no_hidden_fact_dependency": true,
+      "max_required_actions": 40
+    },
+    "runs": []
+  },
+  "ending_explanation": {
+    "steps": [
+      {
+        "order": 1,
+        "text_ar": "ابدأ بجدول المقارنة. الأوقات تختلف بدقائق قليلة عند كل شاهد، وهذا تقدير عادي. أما لبنى ومجد فتتفقان في عبارة كاملة لا يذكرها حاتم ولا داليا.",
+        "uses_evidence_ids": [
+          "ev_stmt_lubna",
+          "ev_stmt_majd",
+          "ev_stmt_hatem",
+          "ev_stmt_dalia"
+        ],
+        "inference_id": "i_shared_a"
+      },
+      {
+        "order": 2,
+        "text_ar": "ثم اطلب السجل الذي يفسر التطابق: ملاحظة المنسقة تنقل العبارة نفسها وتذكر أنها قالتها للبنى ومجد، وسجل الهاتف يثبت مكالمة بمكبّر الصوت قبل أخذ الإفادتين.",
+        "uses_evidence_ids": [
+          "ev_call_log",
+          "ev_incident_note"
+        ],
+        "inference_id": "i_shared_b"
+      },
+      {
+        "order": 3,
+        "text_ar": "بعد ذلك قارن الرواية المسموعة بسجل أُنتج وقت الحدث: الحزام أزرق وختمه قائم في صورة الرصيف وفي استمارة القاعة، فلا سند لرواية اللون الآخر.",
+        "uses_evidence_ids": [
+          "ev_dock_photo",
+          "ev_hall_receipt"
+        ],
+        "inference_id": "i_green_false"
+      },
+      {
+        "order": 4,
+        "text_ar": "آخر رصد للسلامة هو وضعه في المخزن الساعة 09:46: الاستمارة والقائمة تتفقان على الوزن الكامل، وشاهدان لم يسمع أحدهما الآخر يتفقان على الحزام والختم.",
+        "uses_evidence_ids": [
+          "ev_hall_receipt",
+          "ev_packing_list"
+        ],
+        "inference_id": "i_intact_a"
+      },
+      {
+        "order": 5,
+        "text_ar": "وأول رصد للنقص هو الوزن 38.4 كغ الساعة 10:33. وبين الوقتين لم تدخل المخزن إلا بطاقة طارق، ومكثت اثنتي عشرة دقيقة.",
+        "uses_evidence_ids": [
+          "ev_store_door",
+          "ev_reweigh"
+        ],
+        "inference_id": "i_took_a"
+      },
+      {
+        "order": 6,
+        "text_ar": "ويؤيده مسار مستقل عن الوزن وعن بطاقات الدخول: قطعة الحزام الأزرق المختومة في سلة المخزن، والحزام الجديد المقطوع من لفافة القاعة، وقائمة الركن التي زادت أربع بلاطات من الدفعة نفسها.",
+        "uses_evidence_ids": [
+          "ev_store_bin",
+          "ev_corner_list"
+        ],
+        "inference_id": "i_took_b"
+      },
+      {
+        "order": 7,
+        "text_ar": "النتيجة أن الفتح تم في المخزن، فيسقط الرصيف والطريق والشحن الناقص.",
+        "uses_evidence_ids": [
+          "ev_packing_list",
+          "ev_hall_receipt",
+          "ev_trip_log"
+        ],
+        "inference_id": "i_h_short_out"
+      }
+    ],
+    "alternative_paths_ar": [
+      "مسار مستقل: إفادتا حاتم وداليا المأخوذتان على حدة تتفقان مع صورة الرصيف وسجل الشاحنة على سلامة الصندوق، وسجل الحزام المقطوع وقائمة الركن يثبتان الفتح داخل المخزن دون الحاجة إلى سجل البطاقات."
+    ],
+    "what_evidence_could_not_show_ar": [
+      "سجل البطاقات يسجل البطاقة لا حاملها، ولا يبين ما فعله صاحبها داخل المخزن.",
+      "لا نعرف هل أراد طارق إعادة البلاطات أم لا، ولا يثبت سجل أي نيته.",
+      "تأثر لبنى ومجد بالوصف المسموع لا يعني أنهما كذبتا؛ فقد تكون كلتاهما صادقة فيما ظنّتا أنهما تذكرانه."
+    ],
+    "science_notes_ar": [
+      "الشاهد الذي يسمع وصفاً قبل أن يُسأل قد يدمجه في ذاكرته ويرويه كأنه رآه.",
+      "الاختلاف في تقدير الدقائق بين الشهود لا يدل على الكذب، أما التطابق الحرفي في عبارة غير مألوفة فيدل على مصدر مشترك.",
+      "شاهدان يرويان الشيء نفسه عن مصدر واحد لا يساويان شاهدين مستقلين."
+    ]
+  },
+  "expert_review": [
+    {
+      "role": "narrative_editor",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "scientific_reviewer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "learning_designer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "age_appropriateness",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "cultural_reviewer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "legal_rights",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "safety",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    }
+  ]
+}

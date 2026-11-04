@@ -1,0 +1,168 @@
+{
+  "accepted_conclusions": {
+    "h_farewell": {
+      "grade": 1,
+      "note_ar": "استنتاج متسق مع الأدلة ويتطلب ذكر حدوده."
+    },
+    "h_leak": {
+      "grade": 0,
+      "note_ar": "يبني على تشابه لون الورق، ويتجاهل أن ظرف الأسئلة بقي مختوماً وأن للأوراق الزرقاء تفسيراً موثقاً."
+    },
+    "h_cheat": {
+      "grade": 0,
+      "note_ar": "يعدّ كتمان الأمر عن المعلم دليلاً على الغش، وللكتمان سبب موثق بريء."
+    },
+    "h_joke": {
+      "grade": 0,
+      "note_ar": "يتجاهل المشتريات الفعلية وحجز المكان والكراسة التي تدل على ترتيب حقيقي."
+    }
+  },
+  "confidence_band": {
+    "h_farewell": [
+      65,
+      90
+    ],
+    "h_leak": [
+      0,
+      15
+    ],
+    "h_cheat": [
+      0,
+      20
+    ],
+    "h_joke": [
+      0,
+      15
+    ]
+  },
+  "source_key": {
+    "ev_note": "claim",
+    "ev_memo": "claim",
+    "ev_exam_notice": "public_document",
+    "ev_seal_check": "primary_record",
+    "ev_key_log": "primary_record",
+    "ev_receipt": "primary_record",
+    "ev_booking": "primary_record",
+    "ev_retire_notice": "public_document",
+    "ev_card_book": "primary_record",
+    "ev_tamer_stmt": "claim"
+  },
+  "link_key": {
+    "h_farewell": {
+      "ev_receipt": "supports",
+      "ev_card_book": "supports",
+      "ev_booking": "supports",
+      "ev_retire_notice": "supports",
+      "ev_seal_check": "supports",
+      "ev_key_log": "supports",
+      "ev_tamer_stmt": "supports",
+      "ev_note": "neutral",
+      "ev_memo": "neutral",
+      "ev_exam_notice": "neutral"
+    },
+    "h_leak": {
+      "ev_memo": "supports",
+      "ev_exam_notice": "supports",
+      "ev_note": "supports",
+      "ev_seal_check": "weakens",
+      "ev_key_log": "weakens",
+      "ev_receipt": "weakens",
+      "ev_card_book": "weakens",
+      "ev_booking": "weakens"
+    },
+    "h_cheat": {
+      "ev_note": "supports",
+      "ev_memo": "supports",
+      "ev_exam_notice": "neutral",
+      "ev_card_book": "weakens",
+      "ev_receipt": "weakens",
+      "ev_retire_notice": "weakens",
+      "ev_booking": "weakens"
+    },
+    "h_joke": {
+      "ev_receipt": "weakens",
+      "ev_booking": "weakens",
+      "ev_card_book": "weakens",
+      "ev_note": "neutral"
+    }
+  },
+  "required_limits": [
+    "l_author",
+    "l_thursday"
+  ],
+  "valid_mind_changers": [
+    "m_seal_broken",
+    "m_book_math",
+    "m_booking_other"
+  ],
+  "invalid_limits": [
+    "l_invalid_color",
+    "l_invalid_secret",
+    "l_invalid_nerves"
+  ],
+  "decisive_evidence": [
+    "ev_note",
+    "ev_memo",
+    "ev_receipt",
+    "ev_card_book",
+    "ev_booking",
+    "ev_retire_notice",
+    "ev_seal_check",
+    "ev_key_log"
+  ],
+  "timeline_requirement": [
+    {
+      "evidence_id": "ev_note",
+      "utc_minute": 100,
+      "tol": 4
+    },
+    {
+      "evidence_id": "ev_memo",
+      "utc_minute": 195,
+      "tol": 6
+    },
+    {
+      "evidence_id": "ev_retire_notice",
+      "utc_minute": 290,
+      "tol": 8
+    },
+    {
+      "evidence_id": "ev_seal_check",
+      "utc_minute": 330,
+      "tol": 6
+    }
+  ],
+  "refuted_hypotheses": [
+    "h_leak",
+    "h_cheat",
+    "h_joke"
+  ],
+  "transfer_key": {
+    "valid": [
+      "o1",
+      "o2",
+      "o3",
+      "o4"
+    ],
+    "invalid": [
+      "o5",
+      "o6",
+      "o7"
+    ]
+  },
+  "case_id": "c044_implied_message",
+  "lab_requirement": null,
+  "criteria_map": {
+    "c_source": "source_typing",
+    "c_conflict": "conflict_resolution",
+    "c_links": "hypothesis_links",
+    "c_uncertainty": "uncertainty",
+    "c_revision": "revision",
+    "c_elimination": "elimination",
+    "c_justification": "justification_human"
+  },
+  "caps": {
+    "no_citations_max": 45,
+    "no_conflict_resolution_max": 65
+  }
+}

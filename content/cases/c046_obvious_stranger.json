@@ -1,0 +1,2559 @@
+{
+  "schema_version": "0.1.0",
+  "case_id": "c046_obvious_stranger",
+  "case_version": "0.1.0",
+  "meta": {
+    "title_ar": "الطالب الجديد عند الطاولة",
+    "title_en": "The New Student at the Table",
+    "age_band": "13-15",
+    "estimated_minutes": 30,
+    "difficulty": 2,
+    "content_flags": [
+      "no_violence"
+    ],
+    "knowledge_object_refs": [
+      "KO-RS-05-007",
+      "KO-RS-06-001",
+      "KO-RS-06-010",
+      "KO-RS-05-001",
+      "KO-RS-05-005",
+      "KO-RS-06-017",
+      "KO-RS-06-008",
+      "KO-RS-05-002",
+      "KO-RS-06-009",
+      "KO-RS-06-021",
+      "KO-RS-05-004",
+      "KO-RS-06-002"
+    ],
+    "locale": "ar",
+    "dialogue_register": "msa",
+    "authors": [
+      "فريق أثر التحريري (مسودة بمساعدة الذكاء الاصطناعي، لم تُراجَع بشرياً بعد)"
+    ]
+  },
+  "premise": {
+    "hook_ar": "اختفت لوحة من مجسم قبل التحكيم، وطالب جديد وقف قربه. هل يكفي أنه لا يعرفه أحد؟",
+    "player_role_ar": "أنت عضو في لجنة التظلمات بنادي الابتكار في مدرسة الواحة، وطُلب منك رأي معلّل في فقدان اللوحة، دون اتهام أحد قبل أن تثبت السجلات شيئاً.",
+    "setting_ar": "مدرسة الواحة، صباح الخميس في معرض الابتكار بالقاعة الكبرى. الأوقات بساعة المدرسة.",
+    "public_fact_ids": [
+      "f_board_missing",
+      "f_salem_accused"
+    ],
+    "assumed_general_knowledge_ar": [
+      "في أي تجمع كبير يوجد كثيرون لا نعرفهم",
+      "كون الشخص جديداً لا يدل على أنه فعل شيئاً",
+      "من يغادر مكانه يترك أثراً في سجلات المكان الذي ذهب إليه"
+    ]
+  },
+  "entities": {
+    "characters": [
+      {
+        "id": "salem",
+        "name_ar": "سالم الراشد",
+        "role": "suspect",
+        "age_descriptor_ar": "طالب جديد في الصف التاسع، التحق بالمدرسة قبل أسبوعين",
+        "persona_ar": "خجول ومهذب، يسأل كثيراً لأنه يحب التقنية. يتوتر حين يُنظر إليه كأنه غريب، لكنه يجيب بوضوح ويقبل أن تُراجع أقواله.",
+        "motives_ar": [
+          "أن يتأقلم مع المدرسة",
+          "أن يُنصَف"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "sl_greet",
+            "purpose": "greeting",
+            "text_ar": "مرحباً. أنا جديد هنا، اسألني عما تريد."
+          },
+          {
+            "line_id": "sl_says",
+            "purpose": "reveal",
+            "text_ar": "كنت في المكتبة أسجّل بطاقتي حتى العاشرة والربع، ثم جئت إلى القاعة وسألت منى عن الحساسات. والشيء الأخضر الذي رأته جنى هو علبة أقلامي.",
+            "fact_ids": [
+              "f_salem_says"
+            ]
+          },
+          {
+            "line_id": "sl_new",
+            "purpose": "reveal",
+            "text_ar": "أنا في المدرسة منذ أسبوعين فقط، ولهذا لا يعرفني الفريق."
+          },
+          {
+            "line_id": "sl_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف."
+          },
+          {
+            "line_id": "sl_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن ذلك الصباح."
+          },
+          {
+            "line_id": "sl_bye",
+            "purpose": "farewell",
+            "text_ar": "أريد أن أعرف أين اللوحة، فقد أعجبني المجسم."
+          }
+        ]
+      },
+      {
+        "id": "hadi",
+        "name_ar": "هادي المنصور",
+        "role": "suspect",
+        "age_descriptor_ar": "طالب في الصف التاسع، قائد الفريق الرابع",
+        "persona_ar": "واثق ومحبوب بين زملائه، سريع الكلام. يخاف من أن يُلام على خطأ أمام الأستاذ والحكّام.",
+        "motives_ar": [
+          "أن يحافظ على سمعة الفريق",
+          "ألا يُلام على خطأ"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "hd_greet",
+            "purpose": "greeting",
+            "text_ar": "أنا قائد الفريق الرابع. اسأل ما تريد."
+          },
+          {
+            "line_id": "hd_says",
+            "purpose": "reveal",
+            "text_ar": "قلت للأستاذ فارس إنني لم أغادر طاولة الفريق منذ افتتاح المعرض، وإنني لا أعرف ما حدث للوحة.",
+            "fact_ids": [
+              "f_hadi_says"
+            ]
+          },
+          {
+            "line_id": "hd_lie",
+            "purpose": "lie",
+            "text_ar": "أنا قائد الفريق ولم أترك الطاولة لحظة.",
+            "claim_ids": [
+              "cl_hadi_stayed"
+            ]
+          },
+          {
+            "line_id": "hd_refuse",
+            "purpose": "refuse_secret",
+            "text_ar": "لا شيء آخر عندي."
+          },
+          {
+            "line_id": "hd_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف."
+          },
+          {
+            "line_id": "hd_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن المجسم."
+          },
+          {
+            "line_id": "hd_bye",
+            "purpose": "farewell",
+            "text_ar": "أريد أن تُعاد اللوحة قبل التحكيم."
+          }
+        ]
+      },
+      {
+        "id": "mona",
+        "name_ar": "منى الصباغ",
+        "role": "witness",
+        "age_descriptor_ar": "طالبة في الصف التاسع، عضو الفريق الرابع",
+        "persona_ar": "منظمة وتدوّن كل ما يجري في اختبارات الفريق، وتشرح للزوار بحماس. لا تنظر إلى ما لا يخصها حين تنشغل.",
+        "motives_ar": [
+          "أن ينجح فريقها",
+          "أن تقول ما رأته"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "mn_greet",
+            "purpose": "greeting",
+            "text_ar": "أنا من الفريق الرابع. أجيب بما رأيته."
+          },
+          {
+            "line_id": "mn_says",
+            "purpose": "reveal",
+            "text_ar": "قال هادي قرابة العاشرة إنه ذاهب ليجلب شاحناً، وعاد قرابة العاشرة وخمس وأربعين دقيقة دون شاحن. بقيت أشرح للزوار ولم أنظر داخل القاعدة، وجاء سالم نحو العاشرة وخمس وعشرين فسألني عن الحساسات فشرحت له.",
+            "fact_ids": [
+              "f_mona_says"
+            ]
+          },
+          {
+            "line_id": "mn_sheet",
+            "purpose": "reveal",
+            "text_ar": "أدوّن في ورقة الفريق كل اختبار وأوقاته، وقد دوّنت اختبارات الصباح فيها.",
+            "fact_ids": [
+              "f_test_sheet_exists"
+            ]
+          },
+          {
+            "line_id": "mn_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أذكر أكثر."
+          },
+          {
+            "line_id": "mn_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن الفريق."
+          },
+          {
+            "line_id": "mn_bye",
+            "purpose": "farewell",
+            "text_ar": "كنت منشغلة بالزوار، وهذا ما أقوله."
+          }
+        ]
+      },
+      {
+        "id": "jana",
+        "name_ar": "جنى الخطيب",
+        "role": "witness",
+        "age_descriptor_ar": "طالبة في الصف العاشر، زائرة للمعرض",
+        "persona_ar": "اجتماعية وتعرف أكثر الطلاب في المدرسة، فتنتبه لكل وجه لا تعرفه. تتحدث بسرعة وتظن أن الغريب عن الجماعة هو الأولى بالسؤال.",
+        "motives_ar": [
+          "أن يُعاد ما فُقد",
+          "أن تبدو منتبهة"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "jn_greet",
+            "purpose": "greeting",
+            "text_ar": "أعرف أغلب من في المدرسة."
+          },
+          {
+            "line_id": "jn_says",
+            "purpose": "reveal",
+            "text_ar": "وقف نحو العاشرة وخمس وعشرين دقيقة طالب جديد لا أعرفه عند طاولة الفريق، ونظر إلى قاعدة المجسم، ثم وضع شيئاً أخضر في حقيبته.",
+            "fact_ids": [
+              "f_jana_says"
+            ]
+          },
+          {
+            "line_id": "jn_belief",
+            "purpose": "reveal",
+            "text_ar": "لا أعرفه ولم أره من قبل، فأظنه هو من أخذ اللوحة.",
+            "claim_ids": [
+              "cl_stranger_took"
+            ]
+          },
+          {
+            "line_id": "jn_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لم أنتبه."
+          },
+          {
+            "line_id": "jn_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عمّا رأيته."
+          },
+          {
+            "line_id": "jn_bye",
+            "purpose": "farewell",
+            "text_ar": "ربما أخطأت الظن، فأنا لا أعرف كل أحد."
+          }
+        ]
+      },
+      {
+        "id": "layan",
+        "name_ar": "لجين السقا",
+        "role": "witness",
+        "age_descriptor_ar": "طالبة في نادي الإعلام، مصوّرة المعرض",
+        "persona_ar": "دقيقة تحتفظ بصورها بأوقاتها، وتتأكد من ضبط ساعة كاميرتها كل صباح.",
+        "motives_ar": [
+          "أن تبقى صورها سليمة"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "ly_greet",
+            "purpose": "greeting",
+            "text_ar": "أصوّر المعرض للنادي."
+          },
+          {
+            "line_id": "ly_photo",
+            "purpose": "reveal",
+            "text_ar": "التقطت صورة لأروقة القاعة نحو العاشرة وعشر دقائق، وتظهر فيها ساعة الحائط وطاولة الفريق الرابع.",
+            "fact_ids": [
+              "f_photo_exists"
+            ]
+          },
+          {
+            "line_id": "ly_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "ليس عندي."
+          },
+          {
+            "line_id": "ly_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن صوري."
+          },
+          {
+            "line_id": "ly_bye",
+            "purpose": "farewell",
+            "text_ar": "الصورة كما التقطتها."
+          }
+        ]
+      },
+      {
+        "id": "rashid",
+        "name_ar": "رشيد الجمال",
+        "role": "witness",
+        "age_descriptor_ar": "أمين ورشة التقنية",
+        "persona_ar": "هادئ ومنظم، يسجّل في دفتره كل من يدخل الورشة ويخرج منها، ويقفل الأدراج بمفتاحه.",
+        "motives_ar": [
+          "أن يبقى سجل الورشة صحيحاً"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "rs_greet",
+            "purpose": "greeting",
+            "text_ar": "أسجّل كل من يدخل الورشة."
+          },
+          {
+            "line_id": "rs_log",
+            "purpose": "reveal",
+            "text_ar": "في دفتر الورشة اسم من دخل ووقته وما عمل وما تركه، وأكتبه بيدي.",
+            "fact_ids": [
+              "f_workshop_log_exists"
+            ]
+          },
+          {
+            "line_id": "rs_found",
+            "purpose": "reveal",
+            "text_ar": "عند جرد الأدراج بعد الحادية عشرة وجدت في أحدها لوحة خضراء عليها بطاقة الفريق الرابع.",
+            "fact_ids": [
+              "f_board_found"
+            ]
+          },
+          {
+            "line_id": "rs_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف."
+          },
+          {
+            "line_id": "rs_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن الورشة."
+          },
+          {
+            "line_id": "rs_bye",
+            "purpose": "farewell",
+            "text_ar": "الدفتر يتكلم."
+          }
+        ]
+      },
+      {
+        "id": "fares",
+        "name_ar": "فارس الحداد",
+        "role": "authority",
+        "age_descriptor_ar": "معلم العلوم، المشرف على المعرض",
+        "persona_ar": "عادل ويحب النظام، كتب البلاغ بسرعة حين انتبه إلى غياب اللوحة. يعترف بأن البلاغ يسجّل ما قيل لا ما ثبت.",
+        "motives_ar": [
+          "أن يسير التحكيم بعدل",
+          "ألا يُظلم أحد"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "fr_greet",
+            "purpose": "greeting",
+            "text_ar": "أشرفت على المعرض وكتبت البلاغ."
+          },
+          {
+            "line_id": "fr_entry",
+            "purpose": "reveal",
+            "text_ar": "عند باب القاعة ورقة دخول يوقّع عليها كل زائر باسمه ووقته، وهي عندي.",
+            "fact_ids": [
+              "f_entry_sheet_exists"
+            ]
+          },
+          {
+            "line_id": "fr_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف."
+          },
+          {
+            "line_id": "fr_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن المعرض."
+          },
+          {
+            "line_id": "fr_bye",
+            "purpose": "farewell",
+            "text_ar": "لا أريد أن أتهم أحداً قبل أن تثبت الأوراق شيئاً."
+          }
+        ]
+      }
+    ],
+    "locations": [
+      {
+        "id": "loc_hall",
+        "name_ar": "القاعة الكبرى",
+        "description_ar": "قاعة معرض الابتكار وفيها طاولات الفرق وورقة الدخول."
+      },
+      {
+        "id": "loc_library",
+        "name_ar": "مكتبة المدرسة",
+        "description_ar": "مكتبة يسجَّل فيها الطلاب الجدد بطاقاتهم."
+      },
+      {
+        "id": "loc_workshop",
+        "name_ar": "ورشة التقنية",
+        "description_ar": "ورشة فيها محطات لحام وأدراج مقفلة للفرق."
+      }
+    ],
+    "objects": [
+      {
+        "id": "obj_board",
+        "name_ar": "لوحة التحكم الخضراء",
+        "description_ar": "لوحة إلكترونية صغيرة تتحكم بحساسات مجسم الجسر الذكي وعليها بطاقة الفريق."
+      }
+    ],
+    "organizations": [
+      {
+        "id": "org_school",
+        "name_ar": "مدرسة الواحة",
+        "description_ar": "مدرسة خيالية تقيم معرض ابتكار سنوياً."
+      }
+    ]
+  },
+  "truth": {
+    "solution": {
+      "culprit_ids": [
+        "hadi"
+      ],
+      "summary_ar": "لم يأخذ سالم اللوحة. كانت خارج القاعدة قبل أن يدخل القاعة؛ فقد أحرقت بطارية جديدة قطعة فيها، فأخرجها هادي وحملها إلى الورشة ليصلحها دون علم أحد وتركها في الدرج 4، ثم عاد وقال إنه لم يغادر الطاولة.",
+      "key_fact_ids": [
+        "f_gone_before_salem",
+        "f_hadi_took"
+      ]
+    },
+    "facts": [
+      {
+        "id": "f_board_missing",
+        "statement_ar": "فُقدت لوحة التحكم الخضراء من قاعدة مجسم الجسر الذكي الخاص بالفريق الرابع قبل التحكيم.",
+        "kind": "event",
+        "subject_ids": [
+          "obj_board"
+        ],
+        "spoiler_level": 0
+      },
+      {
+        "id": "f_salem_accused",
+        "statement_ar": "ذُكر في البلاغ أن طالباً جديداً لم يعرفه أحد وقف عند طاولة الفريق قبل الفقدان بنحو نصف ساعة.",
+        "kind": "attribute",
+        "subject_ids": [
+          "salem"
+        ],
+        "spoiler_level": 0
+      },
+      {
+        "id": "f_salem_says",
+        "statement_ar": "يقول سالم إنه كان في المكتبة حتى 10:15 ثم جاء إلى القاعة وسأل منى عن الحساسات، وإن الشيء الأخضر علبة أقلامه.",
+        "kind": "attribute",
+        "subject_ids": [
+          "salem"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 75,
+          "precision": "approx",
+          "end_min": 90
+        }
+      },
+      {
+        "id": "f_jana_says",
+        "statement_ar": "قالت جنى إنها رأت طالباً جديداً عند الطاولة نحو 10:25 ينظر إلى القاعدة ثم يضع شيئاً أخضر في حقيبته.",
+        "kind": "attribute",
+        "subject_ids": [
+          "jana",
+          "salem"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 85,
+          "precision": "exact"
+        }
+      },
+      {
+        "id": "f_mona_says",
+        "statement_ar": "قالت منى إن هادي غادر الطاولة قرابة العاشرة ليجلب شاحناً وعاد قرابة 10:45، وإنها لم تنظر داخل القاعدة.",
+        "kind": "attribute",
+        "subject_ids": [
+          "mona",
+          "hadi"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 60,
+          "precision": "approx",
+          "end_min": 105
+        }
+      },
+      {
+        "id": "f_hadi_says",
+        "statement_ar": "يقول هادي إنه لم يغادر طاولة الفريق منذ افتتاح المعرض.",
+        "kind": "attribute",
+        "subject_ids": [
+          "hadi"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 115,
+          "precision": "exact"
+        }
+      },
+      {
+        "id": "f_entry_sheet_exists",
+        "statement_ar": "عند باب القاعة ورقة دخول بأسماء الزوار وأوقات توقيعهم.",
+        "kind": "state",
+        "subject_ids": [
+          "fares"
+        ],
+        "spoiler_level": 1,
+        "location_id": "loc_hall"
+      },
+      {
+        "id": "f_photo_exists",
+        "statement_ar": "التقطت مصوّرة نادي الإعلام نحو 10:10 صورة لطاولة الفريق الرابع تظهر فيها ساعة الحائط.",
+        "kind": "event",
+        "subject_ids": [
+          "layan"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 70,
+          "precision": "exact"
+        },
+        "location_id": "loc_hall"
+      },
+      {
+        "id": "f_workshop_log_exists",
+        "statement_ar": "يدوّن أمين الورشة في دفتر كل من يدخل الورشة ويخرج منها ووقته وما عمل.",
+        "kind": "state",
+        "subject_ids": [
+          "rashid"
+        ],
+        "spoiler_level": 1,
+        "location_id": "loc_workshop"
+      },
+      {
+        "id": "f_test_sheet_exists",
+        "statement_ar": "دوّنت منى في ورقة الفريق اختبارات الصباح وأوقاتها.",
+        "kind": "state",
+        "subject_ids": [
+          "mona"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 55,
+          "precision": "exact"
+        }
+      },
+      {
+        "id": "f_board_found",
+        "statement_ar": "وُجدت اللوحة في الدرج رقم 4 في الورشة عند الجرد نحو 11:20.",
+        "kind": "event",
+        "subject_ids": [
+          "rashid",
+          "obj_board"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 140,
+          "precision": "exact"
+        },
+        "location_id": "loc_workshop"
+      },
+      {
+        "id": "f_gone_before_salem",
+        "statement_ar": "كانت اللوحة خارج قاعدة المجسم قبل أن يدخل سالم القاعة، فلا يمكن أن يكون أخذها منها.",
+        "kind": "relation",
+        "subject_ids": [
+          "obj_board",
+          "salem"
+        ],
+        "spoiler_level": 3,
+        "time": {
+          "start_min": 60,
+          "precision": "exact",
+          "end_min": 80
+        },
+        "location_id": "loc_hall"
+      },
+      {
+        "id": "f_hadi_took",
+        "statement_ar": "أخرج هادي اللوحة بعد أن أحرقت بطارية جديدة مقاوماً فيها، وحملها إلى الورشة لإصلاحها وتركها في الدرج 4، ثم عاد إلى القاعة وقال إنه لم يغادر الطاولة.",
+        "kind": "relation",
+        "subject_ids": [
+          "hadi",
+          "obj_board"
+        ],
+        "spoiler_level": 3,
+        "time": {
+          "start_min": 58,
+          "precision": "exact",
+          "end_min": 100
+        },
+        "location_id": "loc_workshop"
+      }
+    ],
+    "claims": [
+      {
+        "id": "cl_stranger_took",
+        "statement_ar": "الطالب الجديد الذي لا أعرفه هو من أخذ اللوحة.",
+        "kind": "honest_mistake",
+        "held_by": [
+          "jana"
+        ],
+        "true_fact_id": "f_gone_before_salem",
+        "contradicted_by_evidence_ids": [
+          "ev_entry_sheet",
+          "ev_photo_1010",
+          "ev_workshop_log"
+        ]
+      },
+      {
+        "id": "cl_hadi_stayed",
+        "statement_ar": "لم أغادر طاولة الفريق منذ افتتاح المعرض.",
+        "kind": "lie",
+        "held_by": [
+          "hadi"
+        ],
+        "true_fact_id": "f_hadi_took",
+        "contradicted_by_evidence_ids": [
+          "ev_workshop_log",
+          "ev_photo_1010",
+          "ev_mona_stmt"
+        ]
+      }
+    ]
+  },
+  "timeline": [
+    {
+      "id": "te_open",
+      "description_ar": "افتتاح المعرض وتوقيع الفرق دخولها.",
+      "time": {
+        "start_min": 20,
+        "precision": "exact",
+        "end_min": 30
+      },
+      "location_id": "loc_hall",
+      "actor_ids": [],
+      "fact_ids": [
+        "f_entry_sheet_exists"
+      ]
+    },
+    {
+      "id": "te_test",
+      "description_ar": "هادي يجرّب بطارية جديدة في القاعدة، فتحترق قطعة صغيرة في اللوحة.",
+      "time": {
+        "start_min": 55,
+        "precision": "exact"
+      },
+      "location_id": "loc_hall",
+      "actor_ids": [
+        "hadi",
+        "mona"
+      ],
+      "fact_ids": [
+        "f_test_sheet_exists"
+      ],
+      "motivated_by_ar": "اختبار المجسم قبل التحكيم"
+    },
+    {
+      "id": "te_leave",
+      "description_ar": "هادي يخرج اللوحة ويغادر القاعة قائلاً إنه سيجلب شاحناً.",
+      "time": {
+        "start_min": 58,
+        "precision": "exact",
+        "end_min": 62
+      },
+      "location_id": "loc_hall",
+      "actor_ids": [
+        "hadi"
+      ],
+      "fact_ids": [
+        "f_mona_says"
+      ],
+      "motivated_by_ar": "يخشى أن يُلام أمام الأستاذ والحكّام فيريد إصلاحها سراً"
+    },
+    {
+      "id": "te_workshop",
+      "description_ar": "هادي في ورشة التقنية يحاول لحام اللوحة ثم يتركها في الدرج 4.",
+      "time": {
+        "start_min": 63,
+        "precision": "exact",
+        "end_min": 98
+      },
+      "location_id": "loc_workshop",
+      "actor_ids": [
+        "hadi",
+        "rashid"
+      ],
+      "fact_ids": [
+        "f_workshop_log_exists",
+        "f_hadi_took"
+      ],
+      "motivated_by_ar": "إصلاح اللوحة قبل أن يلحظ أحد"
+    },
+    {
+      "id": "te_library",
+      "description_ar": "سالم في المكتبة يسجّل بطاقته.",
+      "time": {
+        "start_min": 50,
+        "precision": "approx",
+        "end_min": 75
+      },
+      "location_id": "loc_library",
+      "actor_ids": [
+        "salem"
+      ],
+      "fact_ids": [
+        "f_salem_says"
+      ],
+      "motivated_by_ar": "تسجيل بطاقة المكتبة بعد التحاقه بالمدرسة"
+    },
+    {
+      "id": "te_photo",
+      "description_ar": "لجين تصوّر طاولة الفريق الرابع.",
+      "time": {
+        "start_min": 70,
+        "precision": "exact"
+      },
+      "location_id": "loc_hall",
+      "actor_ids": [
+        "layan",
+        "mona"
+      ],
+      "fact_ids": [
+        "f_photo_exists"
+      ],
+      "motivated_by_ar": "توثيق المعرض لنادي الإعلام"
+    },
+    {
+      "id": "te_salem_hall",
+      "description_ar": "سالم يدخل القاعة ويسأل منى عن الحساسات.",
+      "time": {
+        "start_min": 80,
+        "precision": "approx",
+        "end_min": 90
+      },
+      "location_id": "loc_hall",
+      "actor_ids": [
+        "salem",
+        "mona"
+      ],
+      "fact_ids": [
+        "f_salem_says",
+        "f_mona_says"
+      ],
+      "motivated_by_ar": "فضوله في التقنية"
+    },
+    {
+      "id": "te_jana",
+      "description_ar": "جنى ترى طالباً لا تعرفه عند الطاولة.",
+      "time": {
+        "start_min": 85,
+        "precision": "exact"
+      },
+      "location_id": "loc_hall",
+      "actor_ids": [
+        "jana"
+      ],
+      "fact_ids": [
+        "f_jana_says"
+      ],
+      "motivated_by_ar": "زيارة المعرض"
+    },
+    {
+      "id": "te_return",
+      "description_ar": "هادي يعود إلى القاعة دون شاحن.",
+      "time": {
+        "start_min": 105,
+        "precision": "exact"
+      },
+      "location_id": "loc_hall",
+      "actor_ids": [
+        "hadi"
+      ],
+      "fact_ids": [
+        "f_mona_says"
+      ],
+      "motivated_by_ar": "يريد أن يبدو كأنه لم يغب"
+    },
+    {
+      "id": "te_report",
+      "description_ar": "المشرف يلحظ غياب اللوحة ويكتب البلاغ، وهادي يقول إنه لم يغادر الطاولة.",
+      "time": {
+        "start_min": 110,
+        "precision": "exact",
+        "end_min": 115
+      },
+      "location_id": "loc_hall",
+      "actor_ids": [
+        "fares",
+        "hadi"
+      ],
+      "fact_ids": [
+        "f_hadi_says",
+        "f_board_missing"
+      ],
+      "motivated_by_ar": "إدارة المعرض وتسجيل ما قيل"
+    },
+    {
+      "id": "te_found",
+      "description_ar": "أمين الورشة يجد اللوحة في الدرج 4 عند الجرد.",
+      "time": {
+        "start_min": 140,
+        "precision": "exact"
+      },
+      "location_id": "loc_workshop",
+      "actor_ids": [
+        "rashid"
+      ],
+      "fact_ids": [
+        "f_board_found"
+      ],
+      "motivated_by_ar": "جرد الأدراج بعد الظهر"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_report",
+      "title_ar": "بلاغ فقدان لوحة التحكم",
+      "kind": "documentary",
+      "content_ar": "بلاغ مشرف المعرض — الخميس 10:55\nفُقدت لوحة التحكم الخضراء من قاعدة مجسم «الجسر الذكي» (الفريق الرابع). ذكرت إحدى الطالبات أن طالباً جديداً لم يعرفه أحد وقف عند الطاولة قبل ذلك بنحو نصف ساعة. أُجّل تحكيم الفريق إلى ما بعد الظهر.",
+      "acquired_by_action_ids": [
+        "a_read_report"
+      ],
+      "supports_fact_ids": [
+        "f_board_missing",
+        "f_salem_accused"
+      ],
+      "reliability": "weak",
+      "limits_ar": "بلاغ يسجّل ما قيل لا ما ثبت؛ وكون الطالب جديداً لا يخبر عمّا فعله.",
+      "is_red_herring": true,
+      "location_id": "loc_hall"
+    },
+    {
+      "id": "ev_jana_stmt",
+      "title_ar": "إفادة جنى (كما دوّنها المشرف)",
+      "kind": "testimonial",
+      "content_ar": "إفادة جنى الخطيب — الخميس 11:00\n«وقف طالب جديد لا أعرفه عند طاولة الفريق نحو 10:25، ونظر إلى قاعدة المجسم، ثم وضع شيئاً أخضر في حقيبته.»",
+      "acquired_by_action_ids": [
+        "a_note_jana"
+      ],
+      "supports_fact_ids": [
+        "f_jana_says"
+      ],
+      "reliability": "weak",
+      "limits_ar": "إفادة صادقة بحدود ما رأت؛ لا تذكر ما كان الشيء الأخضر، ولا تقول إن اللوحة كانت في القاعدة وقتها.",
+      "is_red_herring": true,
+      "location_id": "loc_hall"
+    },
+    {
+      "id": "ev_salem_stmt",
+      "title_ar": "إفادة سالم (ملخص)",
+      "kind": "testimonial",
+      "content_ar": "ملخص إفادة سالم الراشد — الخميس 11:05\n«كنت في المكتبة أسجّل بطاقتي حتى 10:15 ثم جئت إلى القاعة. سألت منى عن الحساسات. الشيء الأخضر علبة أقلامي.»",
+      "acquired_by_action_ids": [
+        "a_note_salem"
+      ],
+      "supports_fact_ids": [
+        "f_salem_says"
+      ],
+      "reliability": "weak",
+      "limits_ar": "إفادة المتهم عن نفسه؛ لا يدل خجله ولا توتره على شيء، وتُقاس بسجلات لا يكتبها.",
+      "location_id": "loc_hall"
+    },
+    {
+      "id": "ev_mona_stmt",
+      "title_ar": "إفادة منى (ملخص)",
+      "kind": "testimonial",
+      "content_ar": "ملخص إفادة منى الصباغ — الخميس 11:10\n«قال هادي قرابة العاشرة إنه ذاهب ليجلب شاحناً، وعاد قرابة 10:45 دون شاحن. بقيت أشرح للزوار ولم أنظر داخل القاعدة. جاء سالم نحو 10:25 وسألني عن الحساسات.»",
+      "acquired_by_action_ids": [
+        "a_note_mona"
+      ],
+      "supports_fact_ids": [
+        "f_mona_says"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "شاهدة صادقة لكنها لم تنظر داخل القاعدة؛ تقديرها للأوقات تقريبي وتُقاس بسجلات مكتوبة.",
+      "location_id": "loc_hall"
+    },
+    {
+      "id": "ev_hadi_stmt",
+      "title_ar": "إفادة هادي (ملخص)",
+      "kind": "testimonial",
+      "content_ar": "ملخص إفادة هادي المنصور — الخميس 10:55\n«لم أغادر طاولة الفريق منذ افتتاح المعرض. لا أعرف ما حدث للوحة.»",
+      "acquired_by_action_ids": [
+        "a_note_hadi"
+      ],
+      "supports_fact_ids": [
+        "f_hadi_says"
+      ],
+      "reliability": "weak",
+      "limits_ar": "إفادة صاحبها عن نفسه؛ وثقة قائد الفريق وسمعته الحسنة ليستا دليلاً، وتُقاس بسجلات لا يكتبها.",
+      "location_id": "loc_hall"
+    },
+    {
+      "id": "ev_entry_sheet",
+      "title_ar": "ورقة دخول القاعة الكبرى",
+      "kind": "documentary",
+      "content_ar": "ورقة دخول القاعة الكبرى — الخميس (بخط المشرف)\nوقّع 58 زائراً بين 9:30 و10:50، منهم 31 من خارج المدرسة (أولياء وضيوف) لم يعرف الفريق الرابع منهم أحداً تقريباً.\nسالم الراشد: أول توقيع له 10:20.\nالفرق المشاركة وقّعت دخولها جماعياً 9:20.",
+      "acquired_by_action_ids": [
+        "a_get_entry_sheet"
+      ],
+      "supports_fact_ids": [
+        "f_entry_sheet_exists",
+        "f_gone_before_salem"
+      ],
+      "reliability": "strong",
+      "limits_ar": "تبيّن من دخل ومتى لا ما فعله بعد دخوله؛ وتبيّن أن الوجوه غير المألوفة في القاعة كثيرة.",
+      "location_id": "loc_hall"
+    },
+    {
+      "id": "ev_photo_1010",
+      "title_ar": "صورة طاولة الفريق نحو 10:10",
+      "kind": "digital",
+      "content_ar": "كاميرا نادي الإعلام — بيانات الصورة: الخميس 10:10 (ضُبطت الساعة صباحاً، وساعة الحائط ظاهرة خلف الطاولة)\nطاولة الفريق الرابع: غطاء قاعدة المجسم مرفوع قليلاً، والحيّز الذي توضع فيه اللوحة فارغ وسلك مدلّى. تقف منى عند الطاولة مع زائرين. لا يظهر هادي ولا سالم في الصورة.",
+      "acquired_by_action_ids": [
+        "a_get_photo_1010"
+      ],
+      "supports_fact_ids": [
+        "f_photo_exists",
+        "f_gone_before_salem",
+        "f_hadi_took"
+      ],
+      "reliability": "strong",
+      "limits_ar": "لقطة واحدة في لحظة واحدة؛ تبيّن أن الحيّز فارغ وأن هادي غائب عن الطاولة، ولا تبيّن من أخرج اللوحة ولا إلى أين ذهبت.",
+      "location_id": "loc_hall"
+    },
+    {
+      "id": "ev_workshop_log",
+      "title_ar": "دفتر ورشة التقنية",
+      "kind": "documentary",
+      "content_ar": "دفتر ورشة التقنية — بخط أمين الورشة ر. الجمال (الخميس)\n10:03 دخول: هادي المنصور (الفريق الرابع) — لحام مقاوم في لوحة مجسم الجسر — المحطة 2\n10:38 خروج: هادي المنصور — اللوحة في الدرج 4 بانتظار قطعة.",
+      "acquired_by_action_ids": [
+        "a_get_workshop_log"
+      ],
+      "supports_fact_ids": [
+        "f_workshop_log_exists",
+        "f_hadi_took",
+        "f_gone_before_salem"
+      ],
+      "reliability": "strong",
+      "limits_ar": "سجل مكتوب لحظة الدخول والخروج؛ يبيّن أن اللوحة كانت في الورشة بيد هادي، ولا يبيّن لماذا احترقت ولا هل نوى إعادتها.",
+      "location_id": "loc_workshop"
+    },
+    {
+      "id": "ev_test_sheet",
+      "title_ar": "ورقة اختبارات الفريق الرابع",
+      "kind": "documentary",
+      "content_ar": "ورقة اختبارات الفريق الرابع — بخط منى\n9:55 هادي جرّب بطارية جديدة في القاعدة؛ انطفأ ضوء الحساس وفاحت رائحة ساخنة.\n10:00 هادي قال إنه سيجلب شاحناً.",
+      "acquired_by_action_ids": [
+        "a_get_test_sheet"
+      ],
+      "supports_fact_ids": [
+        "f_test_sheet_exists",
+        "f_hadi_took"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "ورقة مدوّنة في حينها بخط منى؛ تبيّن ما جرى للقاعدة وأن هادي غادر، ولا تبيّن إلى أين ذهب.",
+      "location_id": "loc_hall"
+    },
+    {
+      "id": "ev_board_found",
+      "title_ar": "اللوحة في الدرج رقم 4",
+      "kind": "physical",
+      "content_ar": "جرد الأدراج — الخميس 11:20 (أمين الورشة)\nلوحة تحكم خضراء عليها بطاقة «فريق 4»، وُجدت في الدرج 4 الذي يقفله أمين الورشة. عليها مقاوم محروق وأثر لحام جديد لم يكتمل. أُبلغ المشرف.",
+      "acquired_by_action_ids": [
+        "a_get_board_found"
+      ],
+      "supports_fact_ids": [
+        "f_board_found",
+        "f_hadi_took"
+      ],
+      "reliability": "strong",
+      "limits_ar": "تبيّن أين وُجدت اللوحة وحالتها، ولا تبيّن من وضعها فيه إلا بمقارنتها بدفتر الورشة.",
+      "location_id": "loc_workshop"
+    }
+  ],
+  "evidence_graph": {
+    "inferences": [
+      {
+        "id": "i_gone_a",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_entry_sheet"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_photo_1010"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_gone_before_salem"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "أول توقيع لسالم في ورقة الدخول 10:20، وصورة 10:10 بساعة ظاهرة تُري الحيّز فارغاً؛ فخرجت اللوحة قبل أن يدخل القاعة.",
+        "skill_ko_refs": [
+          "KO-RS-06-017",
+          "KO-RS-06-001"
+        ]
+      },
+      {
+        "id": "i_gone_b",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_workshop_log"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_board_found"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_gone_before_salem"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "دفتر الورشة يسجّل اللوحة عند هادي في الورشة 10:03، ثم وُجدت في الدرج 4؛ أي أنها خرجت من القاعة قبل مجيء سالم بسبع عشرة دقيقة.",
+        "skill_ko_refs": [
+          "KO-RS-06-017",
+          "KO-RS-05-005"
+        ]
+      },
+      {
+        "id": "i_took_a",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_workshop_log"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_board_found"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_hadi_took"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "دفتر الورشة يسجّل هادي بلوحة المجسم 10:03 ويضعها في الدرج 4 عند خروجه، ثم وُجدت فيه لوحة الفريق الرابع بإصلاح لم يكتمل.",
+        "skill_ko_refs": [
+          "KO-RS-05-001",
+          "KO-RS-06-002"
+        ]
+      },
+      {
+        "id": "i_took_b",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_photo_1010"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_mona_stmt"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_test_sheet"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_hadi_took"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "ورقة الاختبارات تذكر احتراقاً في القاعدة 9:55 ثم مغادرة هادي، وصورة 10:10 تُري الحيّز فارغاً وهادي غائباً، وتؤكد منى غيابه حتى نحو 10:45؛ ثلاثة مصادر لا تعتمد على دفتر الورشة.",
+        "skill_ko_refs": [
+          "KO-RS-05-004",
+          "KO-RS-06-017"
+        ]
+      },
+      {
+        "id": "i_cl_jana",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_gone_before_salem"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_stranger_took"
+        },
+        "relation": "contradicts_claim",
+        "strength": "strong",
+        "rule_ar": "ما رأته جنى حدث بعد خروج اللوحة من القاعدة، فلا يكون الشيء الأخضر اللوحة؛ وعدم معرفتها بسالم يخبر عن معرفتها هي لا عن فعله.",
+        "skill_ko_refs": [
+          "KO-RS-05-007",
+          "KO-RS-06-001"
+        ]
+      },
+      {
+        "id": "i_cl_hadi",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_hadi_took"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_hadi_stayed"
+        },
+        "relation": "contradicts_claim",
+        "strength": "strong",
+        "rule_ar": "دفتر الورشة وصورة 10:10 وإفادة منى تضع هادي خارج الطاولة، فقوله إنه لم يغادرها غير صحيح.",
+        "skill_ko_refs": [
+          "KO-RS-05-001"
+        ]
+      },
+      {
+        "id": "i_support_hadi",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_hadi_took"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_gone_before_salem"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_hadi"
+        },
+        "relation": "supports",
+        "strength": "strong",
+        "rule_ar": "اللوحة خرجت من القاعة بيد هادي قبل أن يدخل سالم، ووُجدت في درج الورشة الذي سجّل فيه تركها.",
+        "skill_ko_refs": [
+          "KO-RS-06-008"
+        ]
+      },
+      {
+        "id": "i_rule_salem",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_gone_before_salem"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_hadi_took"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_salem"
+        },
+        "relation": "rules_out",
+        "strength": "conclusive",
+        "rule_ar": "كانت اللوحة خارج القاعدة قبل دخوله وبيد غيره، فلا يمكن أن يكون أخذها؛ وكونه جديداً أو مجهولاً للفريق لا يرجّح الفعل.",
+        "skill_ko_refs": [
+          "KO-RS-06-008",
+          "KO-RS-05-007"
+        ]
+      },
+      {
+        "id": "i_rule_visitor",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_hadi_took"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_gone_before_salem"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_visitor"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "اللوحة لم تُسرق من القاعة بل نُقلت إلى الورشة ووُجدت فيها؛ وكثرة الوجوه غير المألوفة في القاعة لا تدل على فاعل منهم.",
+        "skill_ko_refs": [
+          "KO-RS-06-008",
+          "KO-RS-06-010"
+        ]
+      }
+    ]
+  },
+  "character_knowledge": [
+    {
+      "character_id": "salem",
+      "knows": [
+        {
+          "fact_id": "f_salem_says",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    },
+    {
+      "character_id": "hadi",
+      "knows": [
+        {
+          "fact_id": "f_hadi_says",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": [
+        {
+          "claim_id": "cl_hadi_stayed",
+          "stance": "deliberate_lie"
+        }
+      ]
+    },
+    {
+      "character_id": "mona",
+      "knows": [
+        {
+          "fact_id": "f_mona_says",
+          "access": "witnessed",
+          "certainty": "fairly_sure"
+        },
+        {
+          "fact_id": "f_test_sheet_exists",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    },
+    {
+      "character_id": "jana",
+      "knows": [
+        {
+          "fact_id": "f_jana_says",
+          "access": "witnessed",
+          "certainty": "fairly_sure"
+        }
+      ],
+      "hides": [],
+      "believes": [
+        {
+          "claim_id": "cl_stranger_took",
+          "stance": "sincere"
+        }
+      ]
+    },
+    {
+      "character_id": "layan",
+      "knows": [
+        {
+          "fact_id": "f_photo_exists",
+          "access": "professional",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    },
+    {
+      "character_id": "rashid",
+      "knows": [
+        {
+          "fact_id": "f_workshop_log_exists",
+          "access": "professional",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_board_found",
+          "access": "professional",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    },
+    {
+      "character_id": "fares",
+      "knows": [
+        {
+          "fact_id": "f_entry_sheet_exists",
+          "access": "professional",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "h_salem",
+      "statement_ar": "أخذ سالم، الطالب الجديد، اللوحة من القاعدة قرابة 10:25.",
+      "is_true": false,
+      "plausibility_at_start": "high",
+      "suspect_id": "salem"
+    },
+    {
+      "id": "h_visitor",
+      "statement_ar": "أخذ اللوحة أحد زوار المعرض من خارج الفريق.",
+      "is_true": false,
+      "plausibility_at_start": "medium"
+    },
+    {
+      "id": "h_hadi",
+      "statement_ar": "أخرج هادي اللوحة بعد احتراق قطعة فيها وحملها إلى الورشة، ولم يخبر أحداً.",
+      "is_true": true,
+      "plausibility_at_start": "low",
+      "suspect_id": "hadi"
+    }
+  ],
+  "misdirection_plan": [
+    {
+      "id": "rh_new",
+      "points_to_hypothesis_id": "h_salem",
+      "planted_via_ar": "طالب جديد لا يعرفه أحد وقف عند الطاولة.",
+      "evidence_ids": [
+        "ev_report"
+      ],
+      "refuted_by_inference_ids": [
+        "i_gone_a",
+        "i_gone_b",
+        "i_rule_salem"
+      ],
+      "fairness_note_ar": "البلاغ نفسه يذكر الجدّة وحدها؛ وورقة الدخول تبيّن أن أكثر من نصف الزوار غرباء عن الفريق، فالوجه غير المألوف لا يميّز أحداً."
+    },
+    {
+      "id": "rh_green",
+      "points_to_hypothesis_id": "h_salem",
+      "planted_via_ar": "شيء أخضر وُضع في حقيبة الطالب الجديد.",
+      "evidence_ids": [
+        "ev_jana_stmt"
+      ],
+      "refuted_by_inference_ids": [
+        "i_cl_jana",
+        "i_gone_a"
+      ],
+      "fairness_note_ar": "صورة 10:10 ودفتر الورشة 10:03 يثبتان أن اللوحة كانت خارج القاعدة قبل 10:25، فالأخضر الذي رأته جنى لا يمكن أن يكون اللوحة."
+    }
+  ],
+  "learning_objectives": [
+    {
+      "id": "lo_claim",
+      "statement_ar": "يصنّف الأدلة بحسب نوع مصدرها ويعامل الأقوال ادعاءات تحتاج تأييداً.",
+      "skill_ko_ref": "KO-RS-05-001",
+      "observable_behaviors_ar": [
+        "يصنّف الإفادات أقوالاً",
+        "يميز السجل الأصلي من الإفادة"
+      ],
+      "evidence_sources": [
+        "evidence_board"
+      ]
+    },
+    {
+      "id": "lo_timeline",
+      "statement_ar": "يرتّب الأحداث على خط زمني واحد ليعرف ما سبق وما لحق.",
+      "skill_ko_ref": "KO-RS-05-005",
+      "observable_behaviors_ar": [
+        "يضع الأدلة في أزمنتها",
+        "يقارن وقت خروج اللوحة بوقت دخول سالم"
+      ],
+      "evidence_sources": [
+        "timeline_task",
+        "action_log"
+      ]
+    },
+    {
+      "id": "lo_main",
+      "statement_ar": "لا يعدّ الجدّة أو الخجل أو الانفعال دليلاً: الصفة الاجتماعية والانطباع لا يميّزان الفاعل، والسجلات الزمنية هي التي تحسم.",
+      "skill_ko_ref": "KO-RS-05-007",
+      "observable_behaviors_ar": [
+        "يرفض الانطباع دليلاً",
+        "يطلب سجلاً لا يعتمد على الشهود"
+      ],
+      "evidence_sources": [
+        "evidence_board",
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_diag",
+      "statement_ar": "يقدّر ما يثبته كل دليل وما لا يثبته ويربطه بالفرضية باتجاه صحيح.",
+      "skill_ko_ref": "KO-RS-06-001",
+      "observable_behaviors_ar": [
+        "يربط الدليل بالفرضية",
+        "يعرف أن دليلاً يتسق مع البريء والمذنب لا يرجّح شيئاً"
+      ],
+      "evidence_sources": [
+        "evidence_board",
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_base",
+      "statement_ar": "يدمج المعدل الأساسي: كثرة غير المألوفين في الحشد تعني أن عدم الألفة ليست علامة على فاعل.",
+      "skill_ko_ref": "KO-RS-06-010",
+      "observable_behaviors_ar": [
+        "يستعمل عدد الزوار الغرباء في التقدير"
+      ],
+      "evidence_sources": [
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_hyp",
+      "statement_ar": "يوازن بين فرضيتين على الأقل ويستبعد ما تنقضه الأدلة.",
+      "skill_ko_ref": "KO-RS-05-002",
+      "observable_behaviors_ar": [
+        "يضيف فرضيات",
+        "يستبعد بدليل"
+      ],
+      "evidence_sources": [
+        "hypothesis_ledger"
+      ]
+    },
+    {
+      "id": "lo_calib",
+      "statement_ar": "يصوغ نسبة الترجيح بحدودها.",
+      "skill_ko_ref": "KO-RS-06-021",
+      "observable_behaviors_ar": [
+        "يختار ثقة معقولة",
+        "يذكر حدوداً"
+      ],
+      "evidence_sources": [
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_revise",
+      "statement_ar": "يراجع رأيه الأول حين يظهر ما يخالفه.",
+      "skill_ko_ref": "KO-RS-06-009",
+      "observable_behaviors_ar": [
+        "يغيّر فرضيته الرائدة بدليل"
+      ],
+      "evidence_sources": [
+        "hypothesis_ledger"
+      ]
+    }
+  ],
+  "mechanics": {
+    "time_budget_units": 50,
+    "actions": [
+      {
+        "id": "a_read_report",
+        "type": "examine",
+        "label_ar": "اقرأ بلاغ فقدان اللوحة",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_report"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_hall",
+        "telemetry_code": "READ_REPORT"
+      },
+      {
+        "id": "a_int_salem",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة سالم",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "salem",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "salem",
+        "telemetry_code": "INT_SALEM"
+      },
+      {
+        "id": "a_int_hadi",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة هادي",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "hadi",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "hadi",
+        "telemetry_code": "INT_HADI"
+      },
+      {
+        "id": "a_int_mona",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة منى",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "mona",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "mona",
+        "telemetry_code": "INT_MONA"
+      },
+      {
+        "id": "a_int_jana",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة جنى",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "jana",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "jana",
+        "telemetry_code": "INT_JANA"
+      },
+      {
+        "id": "a_int_layan",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة لجين",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "layan",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "layan",
+        "telemetry_code": "INT_LAYAN"
+      },
+      {
+        "id": "a_int_rashid",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة رشيد",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "rashid",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "rashid",
+        "telemetry_code": "INT_RASHID"
+      },
+      {
+        "id": "a_int_fares",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة الأستاذ فارس",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "fares",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "fares",
+        "telemetry_code": "INT_FARES"
+      },
+      {
+        "id": "a_note_jana",
+        "type": "examine",
+        "label_ar": "دوّن إفادة جنى",
+        "precondition": {
+          "fact_unlocked": "f_jana_says"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_jana_stmt"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "jana",
+        "telemetry_code": "NOTE_JANA"
+      },
+      {
+        "id": "a_note_salem",
+        "type": "examine",
+        "label_ar": "دوّن إفادة سالم",
+        "precondition": {
+          "fact_unlocked": "f_salem_says"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_salem_stmt"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "salem",
+        "telemetry_code": "NOTE_SALEM"
+      },
+      {
+        "id": "a_note_mona",
+        "type": "examine",
+        "label_ar": "دوّن إفادة منى",
+        "precondition": {
+          "fact_unlocked": "f_mona_says"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_mona_stmt"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "mona",
+        "telemetry_code": "NOTE_MONA"
+      },
+      {
+        "id": "a_note_hadi",
+        "type": "examine",
+        "label_ar": "دوّن إفادة هادي",
+        "precondition": {
+          "fact_unlocked": "f_hadi_says"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_hadi_stmt"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "hadi",
+        "telemetry_code": "NOTE_HADI"
+      },
+      {
+        "id": "a_get_entry_sheet",
+        "type": "examine",
+        "label_ar": "اطلب ورقة دخول القاعة",
+        "precondition": {
+          "fact_unlocked": "f_entry_sheet_exists"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_entry_sheet"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_hall",
+        "telemetry_code": "GET_ENTRY"
+      },
+      {
+        "id": "a_get_photo_1010",
+        "type": "examine",
+        "label_ar": "اطلب صورة طاولة الفريق نحو 10:10",
+        "precondition": {
+          "fact_unlocked": "f_photo_exists"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_photo_1010"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_hall",
+        "telemetry_code": "GET_PHOTO"
+      },
+      {
+        "id": "a_get_workshop_log",
+        "type": "examine",
+        "label_ar": "اطلب دفتر ورشة التقنية",
+        "precondition": {
+          "fact_unlocked": "f_workshop_log_exists"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_workshop_log"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_workshop",
+        "telemetry_code": "GET_WORKSHOP"
+      },
+      {
+        "id": "a_get_test_sheet",
+        "type": "examine",
+        "label_ar": "اطلب ورقة اختبارات الفريق",
+        "precondition": {
+          "fact_unlocked": "f_test_sheet_exists"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_test_sheet"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_hall",
+        "telemetry_code": "GET_TESTS"
+      },
+      {
+        "id": "a_get_board_found",
+        "type": "examine",
+        "label_ar": "اطلب سجل جرد الدرج رقم 4",
+        "precondition": {
+          "fact_unlocked": "f_board_found"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_board_found"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_workshop",
+        "telemetry_code": "GET_BOARD"
+      },
+      {
+        "id": "a_hint",
+        "type": "request_hint",
+        "label_ar": "اطلب تلميحاً",
+        "precondition": {
+          "always": true
+        },
+        "effects": [],
+        "time_cost_units": 0,
+        "telemetry_code": "REQUEST_HINT"
+      },
+      {
+        "id": "a_accuse",
+        "type": "final_accusation",
+        "label_ar": "قدّم الرأي المعلّل النهائي",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "SUBMIT"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "FINAL_ACCUSATION"
+      },
+      {
+        "id": "ask_salem_f_salem_says",
+        "type": "interview",
+        "label_ar": "[نموذج] salem يذكر f_salem_says",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_salem_says"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "salem",
+        "telemetry_code": "ASK_SALEM_F_SALEM_SAYS"
+      },
+      {
+        "id": "ask_hadi_f_hadi_says",
+        "type": "interview",
+        "label_ar": "[نموذج] hadi يذكر f_hadi_says",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_hadi_says"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "hadi",
+        "telemetry_code": "ASK_HADI_F_HADI_SAYS"
+      },
+      {
+        "id": "ask_mona_f_mona_says",
+        "type": "interview",
+        "label_ar": "[نموذج] mona يذكر f_mona_says",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_mona_says"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "mona",
+        "telemetry_code": "ASK_MONA_F_MONA_SAYS"
+      },
+      {
+        "id": "ask_mona_f_test_sheet_exists",
+        "type": "interview",
+        "label_ar": "[نموذج] mona يذكر f_test_sheet_exists",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_test_sheet_exists"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "mona",
+        "telemetry_code": "ASK_MONA_F_TEST_SHEET_EXISTS"
+      },
+      {
+        "id": "ask_jana_f_jana_says",
+        "type": "interview",
+        "label_ar": "[نموذج] jana يذكر f_jana_says",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_jana_says"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "jana",
+        "telemetry_code": "ASK_JANA_F_JANA_SAYS"
+      },
+      {
+        "id": "ask_layan_f_photo_exists",
+        "type": "interview",
+        "label_ar": "[نموذج] layan يذكر f_photo_exists",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_photo_exists"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "layan",
+        "telemetry_code": "ASK_LAYAN_F_PHOTO_EXISTS"
+      },
+      {
+        "id": "ask_rashid_f_workshop_log_exists",
+        "type": "interview",
+        "label_ar": "[نموذج] rashid يذكر f_workshop_log_exists",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_workshop_log_exists"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "rashid",
+        "telemetry_code": "ASK_RASHID_F_WORKSHOP_LOG_EXISTS"
+      },
+      {
+        "id": "ask_rashid_f_board_found",
+        "type": "interview",
+        "label_ar": "[نموذج] rashid يذكر f_board_found",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_board_found"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "rashid",
+        "telemetry_code": "ASK_RASHID_F_BOARD_FOUND"
+      },
+      {
+        "id": "ask_fares_f_entry_sheet_exists",
+        "type": "interview",
+        "label_ar": "[نموذج] fares يذكر f_entry_sheet_exists",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_entry_sheet_exists"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "fares",
+        "telemetry_code": "ASK_FARES_F_ENTRY_SHEET_EXISTS"
+      }
+    ]
+  },
+  "state_machine": {
+    "id": "c046",
+    "initial": "briefing",
+    "type": "compound",
+    "states": {
+      "briefing": {
+        "description_ar": "الإحاطة",
+        "type": "atomic",
+        "on": {
+          "START": {
+            "target": "investigating"
+          }
+        }
+      },
+      "investigating": {
+        "description_ar": "التحقيق",
+        "type": "compound",
+        "initial": "gathering",
+        "states": {
+          "gathering": {
+            "type": "atomic",
+            "on": {
+              "OPEN_DEDUCTION": {
+                "target": "deducing"
+              }
+            }
+          },
+          "deducing": {
+            "type": "atomic",
+            "on": {
+              "BACK": {
+                "target": "gathering"
+              }
+            }
+          }
+        },
+        "on": {
+          "SUBMIT": {
+            "target": "review"
+          }
+        }
+      },
+      "review": {
+        "description_ar": "مراجعة",
+        "type": "atomic",
+        "on": {
+          "CLOSE": {
+            "target": "resolved"
+          }
+        }
+      },
+      "resolved": {
+        "description_ar": "إغلاق",
+        "type": "final"
+      }
+    }
+  },
+  "dialogue": {
+    "max_turns_per_interview": 10,
+    "llm_enabled": false,
+    "topics": [
+      {
+        "id": "t_salem_where",
+        "label_ar": "أين كنت قبل العاشرة والنصف",
+        "example_questions_ar": [
+          "أين كنت؟",
+          "ماذا فعلت في القاعة؟"
+        ],
+        "fact_ids": [
+          "f_salem_says"
+        ]
+      },
+      {
+        "id": "t_hadi_stay",
+        "label_ar": "أين كنت صباحاً",
+        "example_questions_ar": [
+          "هل غادرت الطاولة؟",
+          "أين كنت؟"
+        ],
+        "fact_ids": [
+          "f_hadi_says"
+        ],
+        "claim_ids": [
+          "cl_hadi_stayed"
+        ]
+      },
+      {
+        "id": "t_mona_hadi",
+        "label_ar": "ما رأيته عند الطاولة",
+        "example_questions_ar": [
+          "من غادر الطاولة؟",
+          "من جاء إليكم؟"
+        ],
+        "fact_ids": [
+          "f_mona_says"
+        ]
+      },
+      {
+        "id": "t_sheet",
+        "label_ar": "ورقة اختبارات الفريق",
+        "example_questions_ar": [
+          "هل دوّنتم الاختبارات؟"
+        ],
+        "fact_ids": [
+          "f_test_sheet_exists"
+        ]
+      },
+      {
+        "id": "t_jana",
+        "label_ar": "ما رأيته نحو 10:25",
+        "example_questions_ar": [
+          "ماذا رأيتِ؟"
+        ],
+        "fact_ids": [
+          "f_jana_says"
+        ],
+        "claim_ids": [
+          "cl_stranger_took"
+        ]
+      },
+      {
+        "id": "t_photo",
+        "label_ar": "صورة نحو 10:10",
+        "example_questions_ar": [
+          "هل صوّرتِ الطاولة؟"
+        ],
+        "fact_ids": [
+          "f_photo_exists"
+        ]
+      },
+      {
+        "id": "t_log",
+        "label_ar": "دفتر الورشة",
+        "example_questions_ar": [
+          "من دخل الورشة؟",
+          "ماذا يُسجَّل في الدفتر؟"
+        ],
+        "fact_ids": [
+          "f_workshop_log_exists"
+        ]
+      },
+      {
+        "id": "t_found",
+        "label_ar": "جرد الأدراج",
+        "example_questions_ar": [
+          "ماذا وجدت في الجرد؟"
+        ],
+        "fact_ids": [
+          "f_board_found"
+        ]
+      },
+      {
+        "id": "t_entry",
+        "label_ar": "ورقة الدخول",
+        "example_questions_ar": [
+          "هل من سجل لدخول القاعة؟"
+        ],
+        "fact_ids": [
+          "f_entry_sheet_exists"
+        ]
+      }
+    ]
+  },
+  "rubric": {
+    "reference_answer_ar": "لا دليل على أن سالم أخذ اللوحة؛ كونه جديداً لا يميّزه، فأكثر من نصف زوار القاعة (31 من 58) غرباء عن المدرسة ولا يعرفهم الفريق. كانت اللوحة خارج القاعدة في صورة 10:10 ذات الساعة الظاهرة قبل أن يوقّع سالم دخوله 10:20، ودفتر الورشة يسجّل هادي بلوحة المجسم 10:03، ثم وُجدت لوحة الفريق في الدرج 4. وتؤيد ذلك ورقة الاختبارات وإفادة منى بأن هادي غادر الطاولة، وهي تنقض قوله إنه لم يغادرها. حدود الاستنتاج: لا نعرف هل نوى هادي إعادة اللوحة قبل التحكيم، ولا لماذا أنكر مغادرته، ولا نعرف ما الشيء الأخضر الذي رأته جنى، لكنه لا يغيّر التوقيت، وجنى لم تكذب بل ظنّت ظناً.",
+    "criteria": [
+      {
+        "id": "c_source",
+        "name_ar": "تصنيف المصادر",
+        "objective_ids": [
+          "lo_claim"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يصنّف"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "أخطأ في الأغلب"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "نصف صحيح"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمه صحيح"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كله صحيح"
+          }
+        ]
+      },
+      {
+        "id": "c_conflict",
+        "name_ar": "ترتيب الأحداث على الخط الزمني",
+        "objective_ids": [
+          "lo_timeline"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.2,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يرتّب شيئاً"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "رتّب قليلاً"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "رتّب نصفها"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمها"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كلها في موضعها"
+          }
+        ]
+      },
+      {
+        "id": "c_links",
+        "name_ar": "ربط الأدلة بالفرضيات",
+        "objective_ids": [
+          "lo_diag",
+          "lo_main"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.2,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لا روابط"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "قليلة"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "نصفها صحيح"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمها"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كلها دقيقة"
+          }
+        ]
+      },
+      {
+        "id": "c_uncertainty",
+        "name_ar": "معايرة الثقة",
+        "objective_ids": [
+          "lo_calib"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "ثقة مفرطة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "حدود قليلة"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "جزئية"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معقولة"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "معايَرة كاملة"
+          }
+        ]
+      },
+      {
+        "id": "c_revision",
+        "name_ar": "مراجعة الرأي",
+        "objective_ids": [
+          "lo_revise"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "بقي على فرضية مرفوضة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "لم يعلن فرضية"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "ثبت على فرضية سليمة"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "غيّر بدليل"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "غيّر بدليل ووثّق"
+          }
+        ]
+      },
+      {
+        "id": "c_elimination",
+        "name_ar": "استبعاد الفرضيات الخاطئة",
+        "objective_ids": [
+          "lo_hyp"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يستبعد"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "استبعد خطأً"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "فرضية بدليل"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "فرضيتين"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كل الخاطئة"
+          }
+        ]
+      },
+      {
+        "id": "c_justification",
+        "name_ar": "جودة الحجة المكتوبة",
+        "objective_ids": [
+          "lo_main",
+          "lo_base"
+        ],
+        "scored_by": "human",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لا حجة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "ادعاء بلا سند"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "أدلة دون ربط"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "ربط الأدلة بالاستنتاج"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "ربط مع المعدل الأساسي والحدود"
+          }
+        ]
+      }
+    ]
+  },
+  "hint_ladder": [
+    {
+      "id": "hg1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "ما الذي يميّز سالم عن غيره سوى أنه جديد؟ وهل كانت اللوحة في مكانها حين وصل؟",
+      "trigger": {
+        "always": true
+      },
+      "assessment_weight": 0.02
+    },
+    {
+      "id": "hg2",
+      "level": 2,
+      "kind": "focus_area",
+      "text_ar": "ضع على خط واحد: وقت غياب اللوحة عن مكانها، ووقت توقيع سالم دخوله.",
+      "trigger": {
+        "has_evidence": "ev_report"
+      },
+      "assessment_weight": 0.04
+    },
+    {
+      "id": "hg3",
+      "level": 3,
+      "kind": "pointer",
+      "text_ar": "اطلب سجلاً لا يملكه الشهود: ورقة الدخول، وصورة بساعة ظاهرة، ودفتر الورشة.",
+      "trigger": {
+        "has_evidence": "ev_report"
+      },
+      "assessment_weight": 0.08
+    },
+    {
+      "id": "hs1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "كم من الزوار في القاعة لا يعرفهم الفريق؟ وهل يدل ذلك على فاعل؟",
+      "trigger": {
+        "has_evidence": "ev_jana_stmt"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_gone_a"
+    },
+    {
+      "id": "hs2",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "انظر في الصورة: من يقف عند الطاولة ومن يغيب عنها، وما حال الحيّز.",
+      "trigger": {
+        "has_evidence": "ev_jana_stmt"
+      },
+      "assessment_weight": 0.06,
+      "targets_inference_id": "i_gone_a"
+    },
+    {
+      "id": "hw1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "منى قالت إن شخصاً غادر الطاولة؛ فأين يذهب من يريد لحاماً؟",
+      "trigger": {
+        "has_evidence": "ev_mona_stmt"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_took_a"
+    },
+    {
+      "id": "hw2",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "اسأل أمين الورشة عن دفتره، ثم عن الأدراج.",
+      "trigger": {
+        "has_evidence": "ev_mona_stmt"
+      },
+      "assessment_weight": 0.06,
+      "targets_inference_id": "i_took_a"
+    }
+  ],
+  "fairness_test": {
+    "requirements": {
+      "min_disjoint_proof_paths": 2,
+      "max_inference_depth": 3,
+      "all_red_herrings_refutable": true,
+      "culprit_uniquely_entailed": true,
+      "no_hidden_fact_dependency": true,
+      "max_required_actions": 50
+    },
+    "runs": []
+  },
+  "ending_explanation": {
+    "steps": [
+      {
+        "order": 1,
+        "text_ar": "ابدأ بالزمن: صورة 10:10 تُري الحيّز فارغاً، وورقة الدخول تجعل أول توقيع لسالم 10:20؛ فخرجت اللوحة قبل دخوله القاعة.",
+        "uses_evidence_ids": [
+          "ev_photo_1010",
+          "ev_entry_sheet"
+        ],
+        "inference_id": "i_gone_a"
+      },
+      {
+        "order": 2,
+        "text_ar": "ثم اسأل أين ذهبت: دفتر الورشة يسجّل هادي بلوحة المجسم 10:03، ثم وُجدت لوحة الفريق الرابع في الدرج 4 بإصلاح لم يكتمل.",
+        "uses_evidence_ids": [
+          "ev_workshop_log",
+          "ev_board_found"
+        ],
+        "inference_id": "i_took_a"
+      },
+      {
+        "order": 3,
+        "text_ar": "مسار ثانٍ لا يمر بالورشة: ورقة الاختبارات تذكر احتراقاً 9:55 ثم مغادرة هادي، وصورة 10:10 تُري غيابه، وتؤكد منى أنه عاد قرابة 10:45.",
+        "uses_evidence_ids": [
+          "ev_test_sheet",
+          "ev_photo_1010",
+          "ev_mona_stmt"
+        ],
+        "inference_id": "i_took_b"
+      },
+      {
+        "order": 4,
+        "text_ar": "لذلك لا يصح قول هادي إنه لم يغادر الطاولة، وتسقط روايتا «الغريب» و«أحد الزوار».",
+        "uses_evidence_ids": [
+          "ev_hadi_stmt",
+          "ev_workshop_log"
+        ],
+        "inference_id": "i_cl_hadi"
+      },
+      {
+        "order": 5,
+        "text_ar": "أما رواية جنى فلم تكن كذباً: رأت شخصاً لا تعرفه فظنّت، لكن الجدّة لا تميّز فاعلاً؛ فأكثر من نصف زوار القاعة غرباء عن المدرسة، وما رأته جرى بعد خروج اللوحة.",
+        "uses_evidence_ids": [
+          "ev_jana_stmt",
+          "ev_entry_sheet",
+          "ev_report"
+        ],
+        "inference_id": "i_rule_salem"
+      }
+    ],
+    "alternative_paths_ar": [
+      "يمكن إثبات أن اللوحة خرجت قبل سالم بورقة الدخول وصورة 10:10، أو بدفتر الورشة ووجود اللوحة في الدرج؛ والأقوى أن يتفق المساران.",
+      "ويمكن إثبات أن هادي هو من حملها بدفتر الورشة مع جرد الدرج، أو بورقة الاختبارات وصورة القاعة وإفادة منى؛ والأقوى أن يتفقا."
+    ],
+    "what_evidence_could_not_show_ar": [
+      "لا نعرف هل نوى هادي إعادة اللوحة قبل التحكيم، ولا لماذا أنكر مغادرته؛ الأرجح أنه خاف من اللوم، لكن لا سجل يثبت ذلك.",
+      "لا نعرف ما الشيء الأخضر الذي رأته جنى؛ إفادة سالم عنه غير موثقة، لكنه لا يغيّر شيئاً لأن اللوحة كانت قد خرجت.",
+      "لا يثبت خطأ جنى أنها كاذبة؛ الأرجح أنها ظنّت أن من لا تعرفه هو الأولى بالشك."
+    ],
+    "science_notes_ar": [
+      "الجدّة في الجماعة ليست دليلاً على فعل: في أي تجمع يوجد كثيرون لا نعرفهم، وأكثر من نصف زوار القاعة غرباء عن المدرسة؛ فصفة «لا نعرفه» لا تميّز من فعل ممن لم يفعل.",
+      "الخجل والتوتر وكثرة الأسئلة انطباعات لا تفرّق بين البريء والمذنب؛ فقد يتوتر البريء حين يشعر أنه محل نظر، ويهدأ من يخشى اللوم.",
+      "الدليل المميِّز هنا هو الزمن: ما يتفق مع براءة سالم ومع إدانته معاً لا يرجّح شيئاً، أما أن اللوحة خارج القاعدة قبل دخوله فلا يتفق إلا مع براءته.",
+      "الحسم بسجلات لا تعتمد على أي شاهد: ورقة دخول بأوقات، وصورة بساعة ظاهرة، ودفتر ورشة، وجرد درج.",
+      "لا أحد يُنتزع منه اعتراف في هذه القضية؛ هادي أخطأ حين أنكر، وجنى أخطأت حين ظنّت، وسالم دفع ثمن أنه جديد. والدرس: نسمّي الشبهة الظالمة باسمها، ونسأل عن السجل قبل أن نسأل عن الوجه.",
+      "بطاقة الأصل: القضية أصلية من ATHAR على نمط «الغريب الواضح»، ولا تستعير نصاً ولا حبكة من عمل منشور."
+    ]
+  },
+  "expert_review": [
+    {
+      "role": "narrative_editor",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-11-05",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "scientific_reviewer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-11-05",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "learning_designer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-11-05",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "age_appropriateness",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-11-05",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "cultural_reviewer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-11-05",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "legal_rights",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-11-05",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "safety",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-11-05",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    }
+  ]
+}

@@ -1,0 +1,187 @@
+{
+  "case_id": "c040_four_keys",
+  "accepted_conclusions": {
+    "h_hala": {
+      "grade": 0,
+      "note_ar": "يعدّ اسم البطاقة في السجل دليلاً على حاملها، وتنقضه وثيقة الحفل ودفتر الاستقبال."
+    },
+    "h_rana": {
+      "grade": 0,
+      "note_ar": "يبني على مذكرة قديمة ورأي، ويتجاهل أن المزلاج بقي مغلقاً والحرارة ثابتة بعد خروجها."
+    },
+    "h_shadi": {
+      "grade": 0,
+      "note_ar": "يقرأ دخوله المتأخر دون مقارنته بوقت التنبيه الذي سبقه."
+    },
+    "h_majed": {
+      "grade": 1,
+      "note_ar": "استنتاج متسق مع الأدلة ويتطلب ذكر حدوده، فالسجلات لا تثبت النية ولا طريقة أخذ البطاقة."
+    },
+    "h_karim": {
+      "grade": 0,
+      "note_ar": "لا يحسب زمن المشي بين الحاجز والغرفة مقابل توقيعي الإيصال."
+    },
+    "h_glitch": {
+      "grade": 0,
+      "note_ar": "يفترض عطلاً دون أن يلاحظ اتفاق ثلاثة أجهزة سليمة."
+    }
+  },
+  "confidence_band": {
+    "h_hala": [
+      0,
+      12
+    ],
+    "h_rana": [
+      0,
+      12
+    ],
+    "h_shadi": [
+      0,
+      10
+    ],
+    "h_majed": [
+      62,
+      88
+    ],
+    "h_karim": [
+      0,
+      10
+    ],
+    "h_glitch": [
+      0,
+      10
+    ]
+  },
+  "source_key": {
+    "ev_incident_note": "redisplay",
+    "ev_card_register": "public_document",
+    "ev_door_log": "primary_record",
+    "ev_latch_log": "primary_record",
+    "ev_temp_graph": "primary_record",
+    "ev_gate_book": "primary_record",
+    "ev_event_roster": "public_document",
+    "ev_sample_sheet": "primary_record",
+    "ev_night_headcount": "primary_record",
+    "ev_delivery_receipt": "primary_record",
+    "ev_site_plan": "public_document",
+    "ev_maint_check": "primary_record",
+    "ev_alarm_sheet": "primary_record",
+    "ev_hala_statement": "claim",
+    "ev_majed_statement": "claim",
+    "ev_rana_statement": "claim",
+    "ev_march_memo": "public_document"
+  },
+  "link_key": {
+    "h_hala": {
+      "ev_door_log": "supports",
+      "ev_hala_statement": "neutral",
+      "ev_gate_book": "weakens",
+      "ev_event_roster": "weakens",
+      "ev_card_register": "neutral"
+    },
+    "h_rana": {
+      "ev_march_memo": "supports",
+      "ev_hala_statement": "supports",
+      "ev_door_log": "neutral",
+      "ev_latch_log": "weakens",
+      "ev_temp_graph": "weakens",
+      "ev_rana_statement": "weakens"
+    },
+    "h_shadi": {
+      "ev_door_log": "supports",
+      "ev_gate_book": "weakens",
+      "ev_alarm_sheet": "weakens",
+      "ev_temp_graph": "weakens"
+    },
+    "h_majed": {
+      "ev_door_log": "supports",
+      "ev_card_register": "supports",
+      "ev_sample_sheet": "supports",
+      "ev_event_roster": "supports",
+      "ev_gate_book": "supports",
+      "ev_night_headcount": "supports",
+      "ev_delivery_receipt": "supports",
+      "ev_site_plan": "supports",
+      "ev_majed_statement": "weakens",
+      "ev_latch_log": "supports",
+      "ev_temp_graph": "supports",
+      "ev_incident_note": "supports"
+    },
+    "h_karim": {
+      "ev_incident_note": "supports",
+      "ev_night_headcount": "neutral",
+      "ev_delivery_receipt": "weakens",
+      "ev_site_plan": "weakens"
+    },
+    "h_glitch": {
+      "ev_door_log": "neutral",
+      "ev_maint_check": "weakens",
+      "ev_latch_log": "weakens",
+      "ev_temp_graph": "weakens"
+    }
+  },
+  "required_limits": [
+    "l_card_not_person",
+    "l_self_written"
+  ],
+  "valid_mind_changers": [
+    "m_second_entrance",
+    "m_clock_offset",
+    "m_roster_forged"
+  ],
+  "invalid_limits": [
+    "l_invalid_expired",
+    "l_invalid_habit"
+  ],
+  "decisive_evidence": [
+    "ev_door_log",
+    "ev_latch_log",
+    "ev_gate_book",
+    "ev_event_roster",
+    "ev_sample_sheet",
+    "ev_night_headcount"
+  ],
+  "lab_requirement": null,
+  "timeline_requirement": [
+    {
+      "evidence_id": "ev_door_log",
+      "utc_minute": 771,
+      "tol": 10
+    },
+    {
+      "evidence_id": "ev_sample_sheet",
+      "utc_minute": 775,
+      "tol": 10
+    },
+    {
+      "evidence_id": "ev_delivery_receipt",
+      "utc_minute": 778,
+      "tol": 10
+    },
+    {
+      "evidence_id": "ev_latch_log",
+      "utc_minute": 784,
+      "tol": 10
+    }
+  ],
+  "refuted_hypotheses": [
+    "h_hala",
+    "h_rana",
+    "h_shadi",
+    "h_karim",
+    "h_glitch"
+  ],
+  "criteria_map": {
+    "c_source": "source_typing",
+    "c_conflict": "conflict_resolution",
+    "c_links": "hypothesis_links",
+    "c_uncertainty": "uncertainty",
+    "c_revision": "revision",
+    "c_elimination": "elimination",
+    "c_justification": "justification_human"
+  },
+  "caps": {
+    "no_citations_max": 45,
+    "no_conflict_resolution_max": 70
+  }
+}

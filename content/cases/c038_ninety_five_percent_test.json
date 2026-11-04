@@ -1,0 +1,2600 @@
+{
+  "schema_version": "0.1.0",
+  "case_id": "c038_ninety_five_percent_test",
+  "case_version": "0.1.0",
+  "meta": {
+    "title_ar": "البرغي الذي أشار إليه الجهاز",
+    "title_en": "The Bolt the Tester Flagged",
+    "age_band": "16-18",
+    "locale": "ar",
+    "dialogue_register": "msa",
+    "estimated_minutes": 35,
+    "difficulty": 3,
+    "content_flags": [
+      "no_violence",
+      "science_lab"
+    ],
+    "authors": [
+      "فريق أثر التحريري (مسودة بمساعدة الذكاء الاصطناعي، لم تُراجَع بشرياً بعد)"
+    ],
+    "knowledge_object_refs": [
+      "KO-RS-06-010",
+      "KO-RS-06-008",
+      "KO-RS-06-001",
+      "KO-RS-06-021",
+      "KO-RS-06-009",
+      "KO-RS-05-001",
+      "KO-RS-05-004",
+      "KO-RS-05-005"
+    ]
+  },
+  "premise": {
+    "hook_ar": "جهاز نقر سريع «دقيق بنسبة 95%» أشار إلى برغي في قاعدة ذراع رافعة، والمشرف يطلب إيقاف الرافعة وإعادة دفعة كاملة إلى المورّد. فهل الإشارة تعني أن البرغي متصدع بنسبة 95%؟",
+    "player_role_ar": "أنت مراجع متدرب في لجنة السلامة بمرفأ المدينة، وطُلب منك رأي معلّل قبل أن تقرر اللجنة شيئاً بشأن الرافعة 3 والدفعة «ز».",
+    "setting_ar": "رصيف الرافعات في مرفأ «الشراع الفضي» بمدينة متخيَّلة، يوم الاثنين من الصباح إلى ما بعد الظهر. توقيت المرفأ هو ساعة الورشة والسجلات. الأرقام تمثيلية لأغراض التعلم.",
+    "public_fact_ids": [
+      "f_flag_b17",
+      "f_flagged_total",
+      "f_claim_95"
+    ],
+    "assumed_general_knowledge_ar": [
+      "الفحص السريع قد يعطي إشارات كاذبة، والفحص التأكيدي أدق ويُقدَّم عليه عند التعارض",
+      "طبقة سميكة على سطح معدني قد تغيّر ما يلتقطه جهاز يعتمد على الصدى",
+      "عدد الحالات الحقيقية النادرة بين كل البراغي يغيّر معنى الإشارة الواحدة"
+    ]
+  },
+  "entities": {
+    "characters": [
+      {
+        "id": "kamal",
+        "name_ar": "كمال المنصوري",
+        "role": "authority",
+        "age_descriptor_ar": "مشرف صيانة الرافعات",
+        "persona_ar": "حازم وسريع القرار، يهمه ألا يقع حادث في عهده، ويثق بالأرقام المكتوبة على الأجهزة. يراجع رأيه إذا رأى جدول عدّ واضحاً.",
+        "motives_ar": [
+          "ألا يقع حادث في الرافعات",
+          "أن يظهر قراره حاسماً أمام الإدارة"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "km_greet",
+            "purpose": "greeting",
+            "text_ar": "الجهاز دقيق بنسبة خمس وتسعين بالمئة، فلا وقت للتأخير."
+          },
+          {
+            "line_id": "km_claim",
+            "purpose": "reveal",
+            "text_ar": "إذا كان الجهاز دقيقاً بنسبة 95% وأشار إلى البرغي، فاحتمال تصدعه نحو 95%. هذا ما كتبته في التقرير.",
+            "fact_ids": [
+              "f_claim_95"
+            ],
+            "claim_ids": [
+              "cl_95"
+            ]
+          },
+          {
+            "line_id": "km_batch",
+            "purpose": "reveal",
+            "text_ar": "أكثر الإشارات جاءت من الدفعة «ز»: إحدى وستون إشارة. وهذا يدل عندي على عيب في الدفعة.",
+            "fact_ids": [
+              "f_batch_split"
+            ],
+            "claim_ids": [
+              "cl_batch"
+            ]
+          },
+          {
+            "line_id": "km_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف تفاصيل أكثر من ذلك، فاسأل أصحاب الاختصاص."
+          },
+          {
+            "line_id": "km_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "لنبقَ في أمر الرافعة 3."
+          },
+          {
+            "line_id": "km_bye",
+            "purpose": "farewell",
+            "text_ar": "أريد رأياً واضحاً قبل نهاية الدوام."
+          }
+        ]
+      },
+      {
+        "id": "maher",
+        "name_ar": "ماهر الدباغ",
+        "role": "expert",
+        "age_descriptor_ar": "فني فحص في ورشة المرفأ",
+        "persona_ar": "هادئ ودقيق، يشرح عمل الأجهزة بكلمات بسيطة، ولا يحب أن يُقال عن جهازه أكثر مما يقول دليله.",
+        "motives_ar": [
+          "أن يُفهم الجهاز على حقيقته",
+          "ألا يُحمَّل الجهاز ما لم يدّعه"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "mh_greet",
+            "purpose": "greeting",
+            "text_ar": "أهلاً بك. الجهاز أداة فرز سريعة، وله أدلة استعمال."
+          },
+          {
+            "line_id": "mh_flag",
+            "purpose": "reveal",
+            "text_ar": "مررت الجهاز على البراغي صباح الاثنين، فأشار إلى ثمانية عشر بعد المئة برغياً، منها ب-17.",
+            "fact_ids": [
+              "f_flag_b17",
+              "f_flagged_total"
+            ]
+          },
+          {
+            "line_id": "mh_clean",
+            "purpose": "reveal",
+            "text_ar": "أستطيع تنظيف البرغي بالمذيب وإعادة المسح، وأقيس معه برغيين آخرين للمقارنة.",
+            "fact_ids": [
+              "f_clean_possible"
+            ]
+          },
+          {
+            "line_id": "mh_confirm",
+            "purpose": "reveal",
+            "text_ar": "عندي جهازان تأكيديان: فحص الصبغة للسطح، وفحص الموجات فوق الصوتية للداخل.",
+            "fact_ids": [
+              "f_confirm_available"
+            ]
+          },
+          {
+            "line_id": "mh_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "هذا خارج ما قست أو سجلت."
+          },
+          {
+            "line_id": "mh_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن الفحص وحده."
+          },
+          {
+            "line_id": "mh_bye",
+            "purpose": "farewell",
+            "text_ar": "اطلب الفحص التأكيدي قبل أي قرار."
+          }
+        ]
+      },
+      {
+        "id": "salwa",
+        "name_ar": "سلوى الحكيم",
+        "role": "witness",
+        "age_descriptor_ar": "أمينة سجلات الصيانة",
+        "persona_ar": "منظمة وصبورة، تحفظ مواضع الأوراق، وتجيب عما يُطلب منها بالضبط.",
+        "motives_ar": [
+          "أن تبقى السجلات كاملة ومفهومة",
+          "أن تساعد اللجنة دون أن تقرر مكانها"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "sw_greet",
+            "purpose": "greeting",
+            "text_ar": "أهلاً بك. كل ما في الخزانة مؤرَّخ ومرقَّم."
+          },
+          {
+            "line_id": "sw_hist",
+            "purpose": "reveal",
+            "text_ar": "عندي جرد نهاية المواسم الثلاثة الأخيرة، تُفكَّك فيه البراغي كلها وتُفحص.",
+            "fact_ids": [
+              "f_history_exists"
+            ]
+          },
+          {
+            "line_id": "sw_last",
+            "purpose": "reveal",
+            "text_ar": "وعندي ملف المتابعة للموسم الماضي: فُحصت فيه كل البراغي المُشار إليها فحصاً تأكيدياً.",
+            "fact_ids": [
+              "f_lastseason_exists"
+            ]
+          },
+          {
+            "line_id": "sw_care",
+            "purpose": "reveal",
+            "text_ar": "وسجل العناية بالرصيف لهذا الأسبوع عندي أيضاً.",
+            "fact_ids": [
+              "f_care_exists"
+            ]
+          },
+          {
+            "line_id": "sw_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "ليس عندي سجل بذلك."
+          },
+          {
+            "line_id": "sw_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "أنا أحفظ الأوراق فقط."
+          },
+          {
+            "line_id": "sw_bye",
+            "purpose": "farewell",
+            "text_ar": "أعيدي الأوراق إلى مكانها حين تنتهين."
+          }
+        ]
+      },
+      {
+        "id": "nader",
+        "name_ar": "نادر الشامي",
+        "role": "suspect",
+        "age_descriptor_ar": "عامل رصيف",
+        "persona_ar": "مجتهد وخجول، يخشى أن يُلام على عمل أدّاه كما طُلب منه.",
+        "motives_ar": [
+          "ألا يُنسب إليه خطأ",
+          "أن يثبت أنه اتبع ورقة العناية"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "nd_greet",
+            "purpose": "greeting",
+            "text_ar": "أهلاً. عملي هو العناية بالرصيف فقط."
+          },
+          {
+            "line_id": "nd_light",
+            "purpose": "lie",
+            "text_ar": "دهنت براغي الرافعة 3 دهناً خفيفاً لا يؤثر في شيء.",
+            "claim_ids": [
+              "cl_nader_light"
+            ]
+          },
+          {
+            "line_id": "nd_greased",
+            "purpose": "reveal",
+            "text_ar": "نعم، دهنت براغي الرافعة 3 كلها بالشحم صباح الاثنين، وتركت الطبقة سميكة كما في ورقة العناية.",
+            "fact_ids": [
+              "f_nader_greased"
+            ]
+          },
+          {
+            "line_id": "nd_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف أكثر من ذلك."
+          },
+          {
+            "line_id": "nd_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "أفضل أن أبقى عند عملي."
+          },
+          {
+            "line_id": "nd_bye",
+            "purpose": "farewell",
+            "text_ar": "أرجو ألا يكون في الأمر خطأ مني."
+          }
+        ]
+      },
+      {
+        "id": "jamil",
+        "name_ar": "جميل الراسخ",
+        "role": "suspect",
+        "age_descriptor_ar": "ممثل مورّد البراغي",
+        "persona_ar": "لبق ومتحمس لسمعة مصنعه، يميل إلى التقليل من شأن كل ما يُنسب إلى منتجه.",
+        "motives_ar": [
+          "حماية سمعة الدفعة «ز»",
+          "ألا يُعاد مخزونه كله"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "jm_greet",
+            "purpose": "greeting",
+            "text_ar": "أهلاً بك. براغينا تخرج من المصنع بعد فحص طويل."
+          },
+          {
+            "line_id": "jm_says",
+            "purpose": "reveal",
+            "text_ar": "هذا الجهاز يشير إلى براغ سليمة كل موسم، فلا قيمة لإشاراته. وقد كتبت إفادتي بذلك.",
+            "fact_ids": [
+              "f_jamil_says"
+            ],
+            "claim_ids": [
+              "cl_jamil_sensor"
+            ]
+          },
+          {
+            "line_id": "jm_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا علم لي بسجلات المرفأ."
+          },
+          {
+            "line_id": "jm_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "دعنا نتكلم عن البراغي."
+          },
+          {
+            "line_id": "jm_bye",
+            "purpose": "farewell",
+            "text_ar": "أرجو أن تُنصف اللجنة دفعتنا."
+          }
+        ]
+      }
+    ],
+    "locations": [
+      {
+        "id": "loc_yard",
+        "name_ar": "رصيف الرافعات",
+        "description_ar": "رصيف مكشوف فيه الرافعات 1 إلى 8 وبراغي قواعد أذرعها."
+      },
+      {
+        "id": "loc_workshop",
+        "name_ar": "ورشة الفحص",
+        "description_ar": "ورشة فيها أجهزة الفحص وأوراق بيانات الصانع."
+      },
+      {
+        "id": "loc_records",
+        "name_ar": "غرفة السجلات",
+        "description_ar": "خزانة سجلات الصيانة والجرد السنوي."
+      },
+      {
+        "id": "loc_office",
+        "name_ar": "مكتب المشرف",
+        "description_ar": "مكتب فيه تقارير الإدارة وإفادات الأطراف."
+      }
+    ],
+    "objects": [
+      {
+        "id": "obj_bolt",
+        "name_ar": "البرغي ب-17",
+        "description_ar": "برغي تثبيت في قاعدة ذراع الرافعة 3، من الدفعة «ز»."
+      },
+      {
+        "id": "obj_tester",
+        "name_ar": "جهاز النقر الرنّان",
+        "description_ar": "جهاز فرز سريع يطرق البرغي ويقيس رنينه ويعطي مؤشر رنين."
+      },
+      {
+        "id": "obj_crane3",
+        "name_ar": "الرافعة 3",
+        "description_ar": "رافعة رصيف تعمل في تحميل الحاويات."
+      }
+    ],
+    "organizations": [
+      {
+        "id": "org_port",
+        "name_ar": "شركة أرصفة الشراع الفضي"
+      },
+      {
+        "id": "org_committee",
+        "name_ar": "لجنة السلامة في المرفأ"
+      },
+      {
+        "id": "org_supplier",
+        "name_ar": "مصنع الصفا للمسامير"
+      }
+    ]
+  },
+  "truth": {
+    "solution": {
+      "culprit_ids": [
+        "nader"
+      ],
+      "summary_ar": "لا يوجد متهم بمعنى الذنب. إشارة الجهاز على البرغي ب-17 إنذار كاذب سببه طبقة الشحم السميكة التي وُضعت قبل المسح بساعتين، والبرغي سليم بحسب الفحصين التأكيديين. ودقة الجهاز 95% تعني أنه يلتقط 95 من كل 100 متصدع، لا أن الإشارة صحيحة بنسبة 95%؛ فمع نحو 20 متصدعاً بين 2000 برغي تكون الإشارة وحدها صحيحة في نحو واحدة من كل ست. وكل إشارة تحتاج فحصاً تأكيدياً قبل القرار. ونادر هنا سبب غير مقصود لا مذنب.",
+      "key_fact_ids": [
+        "f_ppv_low",
+        "f_b17_sound",
+        "f_crust_cause"
+      ]
+    },
+    "facts": [
+      {
+        "id": "f_flag_b17",
+        "statement_ar": "أشار جهاز النقر صباح الاثنين إلى البرغي ب-17 في الرافعة 3 بمؤشر رنين 0.82، وحد الإشارة 0.60.",
+        "kind": "event",
+        "subject_ids": [
+          "obj_bolt",
+          "obj_tester",
+          "maher"
+        ],
+        "spoiler_level": 0,
+        "time": {
+          "start_min": 150,
+          "precision": "exact"
+        },
+        "location_id": "loc_yard"
+      },
+      {
+        "id": "f_flagged_total",
+        "statement_ar": "أشار الجهاز في جلسة الصباح إلى 118 برغياً من 2000 ممسوحة.",
+        "kind": "attribute",
+        "subject_ids": [
+          "obj_tester",
+          "maher"
+        ],
+        "spoiler_level": 0,
+        "time": {
+          "start_min": 150,
+          "precision": "exact"
+        },
+        "location_id": "loc_yard"
+      },
+      {
+        "id": "f_claim_95",
+        "statement_ar": "كتب المشرف كمال أن الجهاز دقيق بنسبة 95% فاحتمال تصدع البرغي نحو 95%، وطلب إيقاف الرافعة 3 وإعادة الدفعة «ز».",
+        "kind": "attribute",
+        "subject_ids": [
+          "kamal",
+          "obj_crane3"
+        ],
+        "spoiler_level": 0,
+        "time": {
+          "start_min": 300,
+          "precision": "exact"
+        },
+        "location_id": "loc_office"
+      },
+      {
+        "id": "f_batch_split",
+        "statement_ar": "من الإشارات الـ118 جاءت 61 من الدفعة «ز» و57 من الدفعة «ن»، وكل دفعة ألف برغي.",
+        "kind": "attribute",
+        "subject_ids": [
+          "kamal",
+          "obj_tester"
+        ],
+        "spoiler_level": 1
+      },
+      {
+        "id": "f_history_exists",
+        "statement_ar": "يوجد جرد سنوي يفكك الألفي برغي كلها ويفحصها، ومدوَّن لثلاثة مواسم.",
+        "kind": "state",
+        "subject_ids": [
+          "salwa",
+          "loc_records"
+        ],
+        "spoiler_level": 1
+      },
+      {
+        "id": "f_lastseason_exists",
+        "statement_ar": "يوجد ملف متابعة للموسم الماضي فُحصت فيه كل البراغي المُشار إليها فحصاً تأكيدياً.",
+        "kind": "state",
+        "subject_ids": [
+          "salwa",
+          "loc_records"
+        ],
+        "spoiler_level": 1
+      },
+      {
+        "id": "f_care_exists",
+        "statement_ar": "يوجد سجل عناية بالرصيف يبيّن ما دُهن هذا الأسبوع.",
+        "kind": "state",
+        "subject_ids": [
+          "salwa",
+          "loc_records"
+        ],
+        "spoiler_level": 1
+      },
+      {
+        "id": "f_nader_greased",
+        "statement_ar": "دهن نادر براغي الرافعة 3 كلها بثلاث طبقات من الشحم الواقي بين 07:30 و08:00، أي قبل المسح بساعتين.",
+        "kind": "event",
+        "subject_ids": [
+          "nader",
+          "obj_crane3"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 30,
+          "end_min": 60,
+          "precision": "exact"
+        },
+        "location_id": "loc_yard"
+      },
+      {
+        "id": "f_jamil_says",
+        "statement_ar": "يقول جميل إن الجهاز يشير إلى براغ سليمة كل موسم ولا قيمة لإشاراته.",
+        "kind": "attribute",
+        "subject_ids": [
+          "jamil",
+          "org_supplier"
+        ],
+        "spoiler_level": 1
+      },
+      {
+        "id": "f_clean_possible",
+        "statement_ar": "يمكن تنظيف البرغي بالمذيب وإعادة مسحه مع برغيين للمقارنة.",
+        "kind": "state",
+        "subject_ids": [
+          "maher",
+          "obj_tester"
+        ],
+        "spoiler_level": 1
+      },
+      {
+        "id": "f_confirm_available",
+        "statement_ar": "يتوفر فحصان تأكيديان: الصبغة النافذة للسطح، والموجات فوق الصوتية للداخل.",
+        "kind": "state",
+        "subject_ids": [
+          "maher",
+          "loc_workshop"
+        ],
+        "spoiler_level": 1
+      },
+      {
+        "id": "f_no_batch_excess",
+        "statement_ar": "لا زيادة تدل على عيب في الدفعة «ز»: عدد التصدعات في الجرد متقارب بين الدفعتين، وتوزيع الإشارات (61 و57) قريب من النصف لكل دفعة.",
+        "kind": "relation",
+        "subject_ids": [
+          "org_supplier",
+          "obj_tester"
+        ],
+        "spoiler_level": 2
+      },
+      {
+        "id": "f_sensor_works",
+        "statement_ar": "الجهاز يعمل كما تقول ورقته: التقط 20 من 21 برغياً متصدعاً في الموسم الماضي، وأشار إلى 101 من 1979 سليماً.",
+        "kind": "relation",
+        "subject_ids": [
+          "obj_tester"
+        ],
+        "spoiler_level": 2
+      },
+      {
+        "id": "f_ppv_low",
+        "statement_ar": "الإشارة وحدها لا تعني 95%: بين 118 إشارة نتوقع نحو 19 متصدعاً فقط، أي نحو 16% أو واحد من كل ستة تقريباً.",
+        "kind": "relation",
+        "subject_ids": [
+          "obj_tester",
+          "obj_bolt"
+        ],
+        "spoiler_level": 2
+      },
+      {
+        "id": "f_b17_sound",
+        "statement_ar": "الفحصان التأكيديان للبرغي ب-17 لا يريان شقاً فوق حدود الكشف، فهو سليم ضمن هذه الحدود.",
+        "kind": "state",
+        "subject_ids": [
+          "obj_bolt"
+        ],
+        "spoiler_level": 3,
+        "time": {
+          "start_min": 480,
+          "end_min": 530,
+          "precision": "exact"
+        },
+        "location_id": "loc_workshop"
+      },
+      {
+        "id": "f_crust_cause",
+        "statement_ar": "سبب إشارة ب-17 طبقة الشحم السميكة: ارتفع المؤشر معها وانخفض بعد التنظيف، وتكرر الأثر في برغي مدهون آخر ولم يظهر في برغي غير مدهون.",
+        "kind": "relation",
+        "subject_ids": [
+          "obj_bolt",
+          "nader",
+          "obj_tester"
+        ],
+        "spoiler_level": 3,
+        "time": {
+          "start_min": 450,
+          "precision": "exact"
+        },
+        "location_id": "loc_yard"
+      }
+    ],
+    "claims": [
+      {
+        "id": "cl_95",
+        "statement_ar": "الجهاز دقيق بنسبة 95%، فالبرغي المُشار إليه متصدع باحتمال نحو 95%.",
+        "kind": "honest_mistake",
+        "held_by": [
+          "kamal"
+        ],
+        "true_fact_id": "f_ppv_low",
+        "contradicted_by_evidence_ids": [
+          "ev_sensor_sheet",
+          "ev_last_season"
+        ]
+      },
+      {
+        "id": "cl_batch",
+        "statement_ar": "الدفعة «ز» أكثر إشارات من «ن»، فهي معيبة.",
+        "kind": "honest_mistake",
+        "held_by": [
+          "kamal"
+        ],
+        "true_fact_id": "f_no_batch_excess",
+        "contradicted_by_evidence_ids": [
+          "ev_history"
+        ]
+      },
+      {
+        "id": "cl_jamil_sensor",
+        "statement_ar": "الجهاز يشير إلى براغ سليمة كل موسم، فلا قيمة لإشاراته.",
+        "kind": "half_truth",
+        "held_by": [
+          "jamil"
+        ],
+        "true_fact_id": "f_sensor_works",
+        "contradicted_by_evidence_ids": [
+          "ev_last_season"
+        ]
+      },
+      {
+        "id": "cl_nader_light",
+        "statement_ar": "دهنت براغي الرافعة 3 دهناً خفيفاً لا يؤثر في شيء.",
+        "kind": "honest_mistake",
+        "held_by": [
+          "nader"
+        ],
+        "true_fact_id": "f_nader_greased",
+        "contradicted_by_evidence_ids": [
+          "ev_care_log",
+          "ev_control_bolts"
+        ]
+      }
+    ]
+  },
+  "timeline": [
+    {
+      "id": "te_grease",
+      "description_ar": "نادر يدهن براغي الرافعة 3 بثلاث طبقات من الشحم الواقي.",
+      "time": {
+        "start_min": 30,
+        "end_min": 60,
+        "precision": "exact"
+      },
+      "location_id": "loc_yard",
+      "actor_ids": [
+        "nader"
+      ],
+      "fact_ids": [
+        "f_nader_greased"
+      ],
+      "motivated_by_ar": "تنفيذ ورقة العناية الأسبوعية بالرصيف"
+    },
+    {
+      "id": "te_scan",
+      "description_ar": "ماهر يمرّر جهاز النقر على براغي الرافعات 1 إلى 8 فيشير إلى 118 برغياً منها ب-17.",
+      "time": {
+        "start_min": 150,
+        "precision": "exact"
+      },
+      "location_id": "loc_yard",
+      "actor_ids": [
+        "maher"
+      ],
+      "fact_ids": [
+        "f_flag_b17",
+        "f_flagged_total"
+      ],
+      "motivated_by_ar": "الفرز الروتيني لبداية الموسم"
+    },
+    {
+      "id": "te_report",
+      "description_ar": "كمال يكتب تقريره ويطلب إيقاف الرافعة 3 وإعادة الدفعة «ز».",
+      "time": {
+        "start_min": 300,
+        "precision": "exact"
+      },
+      "location_id": "loc_office",
+      "actor_ids": [
+        "kamal"
+      ],
+      "fact_ids": [
+        "f_claim_95"
+      ],
+      "motivated_by_ar": "يريد منع أي حادث في الرافعات"
+    },
+    {
+      "id": "te_clean",
+      "description_ar": "ماهر ينظف ب-17 وب-18 وب-41 بالمذيب، ويقرأ البرغيين الآخرين قبل التنظيف وبعده.",
+      "time": {
+        "start_min": 420,
+        "end_min": 440,
+        "precision": "exact"
+      },
+      "location_id": "loc_yard",
+      "actor_ids": [
+        "maher"
+      ],
+      "fact_ids": [
+        "f_clean_possible"
+      ],
+      "motivated_by_ar": "يريد التحقق من أثر سطح البرغي في قراءة الجهاز"
+    },
+    {
+      "id": "te_rescan",
+      "description_ar": "ماهر يعيد مسح ب-17 بعد التنظيف.",
+      "time": {
+        "start_min": 450,
+        "precision": "exact"
+      },
+      "location_id": "loc_yard",
+      "actor_ids": [
+        "maher"
+      ],
+      "fact_ids": [
+        "f_crust_cause"
+      ],
+      "motivated_by_ar": "يريد معرفة هل تبقى الإشارة بعد إزالة الطبقة"
+    },
+    {
+      "id": "te_dye",
+      "description_ar": "ماهر يجري فحص الصبغة النافذة على سطح ب-17.",
+      "time": {
+        "start_min": 480,
+        "end_min": 500,
+        "precision": "exact"
+      },
+      "location_id": "loc_yard",
+      "actor_ids": [
+        "maher"
+      ],
+      "fact_ids": [
+        "f_confirm_available"
+      ],
+      "motivated_by_ar": "فحص تأكيدي للسطح قبل القرار"
+    },
+    {
+      "id": "te_ultra",
+      "description_ar": "ماهر يجري الفحص فوق الصوتي على ب-17 في الورشة.",
+      "time": {
+        "start_min": 510,
+        "end_min": 530,
+        "precision": "exact"
+      },
+      "location_id": "loc_workshop",
+      "actor_ids": [
+        "maher"
+      ],
+      "fact_ids": [
+        "f_b17_sound"
+      ],
+      "motivated_by_ar": "فحص تأكيدي للداخل قبل القرار"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_kamal_report",
+      "title_ar": "تقرير المشرف كمال",
+      "kind": "documentary",
+      "content_ar": "تقرير الحادث المحتمل — الاثنين 12:00\nالموضوع: البرغي ب-17، قاعدة الذراع، الرافعة 3 (دفعة «ز»).\nنتيجة جهاز النقر هذا الصباح: إشارة «تصدع محتمل».\nالجهاز دقيق بنسبة 95%، وأقدّر لذلك أن احتمال تصدع البرغي نحو 95%.\nالمطلوب: إيقاف الرافعة 3 فوراً، وإعادة دفعة البراغي «ز» كلها إلى المورّد.",
+      "acquired_by_action_ids": [
+        "a_report"
+      ],
+      "supports_fact_ids": [
+        "f_claim_95"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "تقدير كاتبه. لا يعرض أي عدّ ولا فحصاً ثانياً، ولا يوضح ماذا تعني كلمة «دقيق» في ورقة الجهاز.",
+      "location_id": "loc_office",
+      "is_red_herring": true
+    },
+    {
+      "id": "ev_scan_log",
+      "title_ar": "سجل جلسة المسح",
+      "kind": "digital",
+      "content_ar": "سجل جهاز النقر — جلسة الاثنين 09:30، الرافعات 1 إلى 8\nعدد البراغي الممسوحة: 2000\nحد الإشارة: مؤشر الرنين 0.60\nالبرغي ب-17 (الرافعة 3، دفعة «ز»): مؤشر الرنين 0.82 — إشارة\nمجموع الإشارات في الجلسة: 118",
+      "acquired_by_action_ids": [
+        "a_scan_log"
+      ],
+      "supports_fact_ids": [
+        "f_flag_b17",
+        "f_flagged_total"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يسجل قراءة الجهاز لكل برغي لحظة المسح، ولا يقول لماذا ارتفع المؤشر ولا إن كان في البرغي شق.",
+      "location_id": "loc_yard"
+    },
+    {
+      "id": "ev_sensor_sheet",
+      "title_ar": "ورقة بيانات الجهاز",
+      "kind": "documentary",
+      "content_ar": "ورقة بيانات جهاز النقر الرنّان (من الصانع)\nالحساسية: من كل مئة برغي متصدع يشير الجهاز إلى 95 منها.\nالإشارة الكاذبة: من كل مئة برغي سليم يشير الجهاز إلى 5 منها.\nتنبيه: قد يتأثر المؤشر بما يغطي سطح البرغي من شحم أو ملح بحري، فتُنظَّف الأسطح قبل المسح.\nتنبيه: الإشارة نتيجة فرز تمهيدية، وتُؤكَّد بفحص ثانٍ قبل أي قرار على الرافعة.",
+      "acquired_by_action_ids": [
+        "a_sheet"
+      ],
+      "supports_fact_ids": [
+        "f_ppv_low",
+        "f_sensor_works"
+      ],
+      "reliability": "strong",
+      "limits_ar": "أرقام اختبارات الصانع. لا تقول كم برغياً متصدعاً بين براغي هذا المرفأ.",
+      "location_id": "loc_workshop",
+      "contradicts_claim_ids": [
+        "cl_95"
+      ]
+    },
+    {
+      "id": "ev_history",
+      "title_ar": "سجل الجرد السنوي",
+      "kind": "documentary",
+      "content_ar": "سجل الجرد السنوي لبراغي الرافعات (2000 برغي: الدفعة «ز» ألف، والدفعة «ن» ألف). تُفكَّك البراغي كلها وتُفحص في نهاية كل موسم، وتُستبدل المتصدعة.\nقبل ثلاثة مواسم: 19 متصدعاً («ز» 9، «ن» 10)\nقبل موسمين: 20 متصدعاً («ز» 10، «ن» 10)\nالموسم الماضي: 21 متصدعاً («ز» 11، «ن» 10)",
+      "acquired_by_action_ids": [
+        "a_history"
+      ],
+      "supports_fact_ids": [
+        "f_ppv_low",
+        "f_no_batch_excess"
+      ],
+      "reliability": "strong",
+      "limits_ar": "ثلاثة مواسم فقط؛ والعدد قد يختلف هذا الموسم. وهو جرد نهاية المواسم السابقة لا هذا الموسم.",
+      "location_id": "loc_records",
+      "contradicts_claim_ids": [
+        "cl_batch"
+      ]
+    },
+    {
+      "id": "ev_last_season",
+      "title_ar": "ملف متابعة الموسم الماضي",
+      "kind": "documentary",
+      "content_ar": "ملف المتابعة — الموسم الماضي\nمسح جهاز النقر البراغي الألفين: 121 إشارة.\nفُحصت الإشارات الـ121 كلها بالفحص التأكيدي: 20 متصدعاً و101 سليماً.\nجرد التفكيك في نهاية الموسم: 21 متصدعاً في المجموع، منها 20 كانت بين المُشار إليها وواحد لم يُشَر إليه.",
+      "acquired_by_action_ids": [
+        "a_last_season"
+      ],
+      "supports_fact_ids": [
+        "f_ppv_low",
+        "f_sensor_works"
+      ],
+      "reliability": "strong",
+      "limits_ar": "موسم واحد، ولا يخص البرغي ب-17 بعينه، والعدد يتغير من موسم لآخر.",
+      "location_id": "loc_records",
+      "contradicts_claim_ids": [
+        "cl_95",
+        "cl_jamil_sensor"
+      ]
+    },
+    {
+      "id": "ev_batch_split",
+      "title_ar": "توزيع الإشارات حسب الدفعة",
+      "kind": "documentary",
+      "content_ar": "توزيع إشارات جلسة الاثنين حسب الدفعة\nالدفعة «ز» (1000 برغي): 61 إشارة\nالدفعة «ن» (1000 برغي): 57 إشارة\nالمجموع: 118 إشارة",
+      "acquired_by_action_ids": [
+        "a_batch_split"
+      ],
+      "supports_fact_ids": [
+        "f_batch_split"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "يعدّ الإشارات لا التصدعات، ولا يبيّن كم منها صحيح.",
+      "location_id": "loc_workshop",
+      "is_red_herring": true
+    },
+    {
+      "id": "ev_jamil_statement",
+      "title_ar": "إفادة جميل الراسخ",
+      "kind": "testimonial",
+      "content_ar": "إفادة جميل الراسخ، ممثل المورّد:\n«براغي الدفعة «ز» اجتازت اختبارات المصنع كلها. وهذا الجهاز يشير إلى براغ سليمة كل موسم، فلا قيمة لإشاراته.»",
+      "acquired_by_action_ids": [
+        "a_jamil_stmt"
+      ],
+      "supports_fact_ids": [
+        "f_jamil_says"
+      ],
+      "reliability": "weak",
+      "limits_ar": "قول طرف له مصلحة تجارية. لا يقدّم عدّاً ولا فحصاً.",
+      "location_id": "loc_office",
+      "is_red_herring": true
+    },
+    {
+      "id": "ev_care_log",
+      "title_ar": "سجل العناية بالرصيف",
+      "kind": "documentary",
+      "content_ar": "سجل العناية بالرصيف — الاثنين\n07:30 إلى 08:00: دهن براغي الرافعة 3 بالشحم الواقي، ثلاث طبقات (نادر الشامي).\nلم تُدهن براغي الرافعة 4 هذا الأسبوع.\nجدول المسح المعلق في الورشة: الجلسة 09:30.",
+      "acquired_by_action_ids": [
+        "a_care_log"
+      ],
+      "supports_fact_ids": [
+        "f_care_exists",
+        "f_nader_greased"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يسجل أن الدهن تم وكميته، ولا يقيس أثره في الجهاز.",
+      "location_id": "loc_records",
+      "contradicts_claim_ids": [
+        "cl_nader_light"
+      ]
+    },
+    {
+      "id": "ev_nader_statement",
+      "title_ar": "إفادة نادر الشامي",
+      "kind": "testimonial",
+      "content_ar": "إفادة نادر الشامي، عامل الرصيف:\n«اتبعت ورقة العناية: دهنت براغي الرافعة 3 كلها صباح الاثنين وتركت الطبقة سميكة لتحميها من الملح. لم يقل لي أحد إن المسح سيجري بعد ساعتين.»",
+      "acquired_by_action_ids": [
+        "a_nader_stmt"
+      ],
+      "supports_fact_ids": [
+        "f_nader_greased"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "يصف ما فعله هو. لا يعرف أثر الطبقة في الجهاز، ولا يثبت وحده سبب الإشارة.",
+      "location_id": "loc_yard"
+    },
+    {
+      "id": "ev_rescan_clean",
+      "title_ar": "إعادة المسح بعد التنظيف",
+      "kind": "observation",
+      "content_ar": "إعادة مسح البرغي ب-17 بعد تنظيفه بالمذيب (14:30)\nمؤشر الرنين: 0.31 (حد الإشارة 0.60) — لا إشارة.",
+      "acquired_by_action_ids": [
+        "a_rescan"
+      ],
+      "supports_fact_ids": [
+        "f_crust_cause"
+      ],
+      "reliability": "strong",
+      "limits_ar": "قراءة جهاز فرز واحدة؛ والجهاز قد يفوته بعض المتصدعات، فلا تكفي هذه القراءة وحدها لنفي التصدع.",
+      "location_id": "loc_yard"
+    },
+    {
+      "id": "ev_control_bolts",
+      "title_ar": "قراءات المقارنة",
+      "kind": "observation",
+      "content_ar": "قراءات مؤشر الرنين قبل التنظيف وبعده (14:00 إلى 14:35)\nب-18 (الرافعة 3، دُهن صباحاً، لم يُشَر إليه): قبل 0.58، بعد 0.29\nب-41 (الرافعة 4، لم يُدهن، لم يُشَر إليه): قبل 0.30، بعد 0.30",
+      "acquired_by_action_ids": [
+        "a_controls"
+      ],
+      "supports_fact_ids": [
+        "f_crust_cause"
+      ],
+      "reliability": "strong",
+      "limits_ar": "برغيان فقط؛ ولا تبيّن القراءات ما في داخل أي برغي.",
+      "location_id": "loc_yard",
+      "contradicts_claim_ids": [
+        "cl_nader_light"
+      ]
+    },
+    {
+      "id": "ev_confirm_dye",
+      "title_ar": "فحص الصبغة النافذة",
+      "kind": "observation",
+      "content_ar": "فحص الصبغة النافذة لسطح ب-17 بعد التنظيف (15:00)\nالنتيجة: لا خطوط صبغة ولا تجمعات على السطح ولا عند جذور السنون.\nحد الكشف: شقوق سطحية بطول نحو 1 ملم فأكثر.",
+      "acquired_by_action_ids": [
+        "a_dye"
+      ],
+      "supports_fact_ids": [
+        "f_b17_sound"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يكشف الشقوق السطحية فقط، ولا يرى داخل البرغي. ويخص ب-17 وحده.",
+      "location_id": "loc_yard"
+    },
+    {
+      "id": "ev_confirm_ultra",
+      "title_ar": "الفحص فوق الصوتي",
+      "kind": "observation",
+      "content_ar": "الفحص التأكيدي بالموجات فوق الصوتية للبرغي ب-17 (15:30)\nالنتيجة: لا انعكاس يدل على شق داخلي على طول البرغي.\nحد الكشف: شقوق بعمق نحو 1.5 ملم فأكثر.",
+      "acquired_by_action_ids": [
+        "a_ultra"
+      ],
+      "supports_fact_ids": [
+        "f_b17_sound"
+      ],
+      "reliability": "strong",
+      "limits_ar": "لا يكشف شقاً أصغر من حد الكشف. ويخص ب-17 وحده، أما بقية الإشارات (117) فلم تُفحص بعد.",
+      "location_id": "loc_workshop"
+    }
+  ],
+  "evidence_graph": {
+    "inferences": [
+      {
+        "id": "i_table",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_history"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_sensor_sheet"
+          },
+          {
+            "ref_type": "general_knowledge",
+            "ref_id": "نبني جدولاً بالتكرارات الطبيعية: العدد الكلي، ثم المتصدع، ثم من يُشار إليه من كل فئة"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_ppv_low"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "نبني جدول الألفين. المتوسط 20 متصدعاً: (19 + 20 + 21) ÷ 3 = 20، والسليم 1980. الجهاز يشير إلى 95 من كل 100 متصدع: 19 من 20. ويشير إلى 5 من كل 100 سليم: 99 من 1980. فالمُشار إليه 19 + 99 = 118، والمتصدع بينه 19: نحو 16%، أي واحد من كل ستة تقريباً.",
+        "skill_ko_refs": [
+          "KO-RS-06-010",
+          "KO-RS-06-021"
+        ]
+      },
+      {
+        "id": "i_followup",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_last_season"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_ppv_low"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "في الموسم الماضي فُحصت كل الإشارات الـ121 تأكيدياً فوُجد 20 متصدعاً: 20 ÷ 121 نحو 16.5%، أي نحو واحد من كل ستة. وهذا العدّ الفعلي مستقل عن الحساب الافتراضي.",
+        "skill_ko_refs": [
+          "KO-RS-06-010",
+          "KO-RS-05-004"
+        ]
+      },
+      {
+        "id": "i_sound_a",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_confirm_ultra"
+          },
+          {
+            "ref_type": "general_knowledge",
+            "ref_id": "الفحص التأكيدي الأدق يتقدم على الفرز التمهيدي عند التعارض"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_b17_sound"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "الفحص فوق الصوتي يفحص داخل البرغي ولم يجد انعكاساً لشق فوق حد الكشف. والفحص التأكيدي يتقدم على الفرز عند التعارض.",
+        "skill_ko_refs": [
+          "KO-RS-06-008",
+          "KO-RS-06-001"
+        ]
+      },
+      {
+        "id": "i_sound_b",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_confirm_dye"
+          },
+          {
+            "ref_type": "general_knowledge",
+            "ref_id": "الفحص التأكيدي الأدق يتقدم على الفرز التمهيدي عند التعارض"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_b17_sound"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "فحص الصبغة طريقة مختلفة تفحص السطح وجذور السنون حيث تبدأ الشقوق عادة، ولم يجد خطاً. فالفحصان المختلفان يتفقان، ولكل منهما حدّ كشف.",
+        "skill_ko_refs": [
+          "KO-RS-06-008",
+          "KO-RS-05-004"
+        ]
+      },
+      {
+        "id": "i_crust_a",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_control_bolts"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_rescan_clean"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_crust_cause"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "ب-17 نزل من 0.82 إلى 0.31 بعد التنظيف. وب-18 المدهون نزل من 0.58 إلى 0.29، أما ب-41 غير المدهون فبقي 0.30. فالتغير يتبع الطبقة لا البرغي نفسه.",
+        "skill_ko_refs": [
+          "KO-RS-06-008",
+          "KO-RS-06-001"
+        ]
+      },
+      {
+        "id": "i_crust_b",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_care_log"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_nader_statement"
+          },
+          {
+            "ref_type": "general_knowledge",
+            "ref_id": "طبقة سميكة على السطح قد تغيّر ما يلتقطه جهاز يعتمد على الرنين"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_crust_cause"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "السجل والإفادة يتفقان على أن براغي الرافعة 3 دُهنت بثلاث طبقات قبل المسح بساعتين، ولم تُدهن براغي الرافعة 4. والطبقة السميكة قد تغيّر الرنين، فهذا سبب معقول للإشارة.",
+        "skill_ko_refs": [
+          "KO-RS-05-004",
+          "KO-RS-05-005"
+        ]
+      },
+      {
+        "id": "i_no_excess",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_history"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_batch_split"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_no_batch_excess"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "كل دفعة ألف برغي. والجرد يعدّ تصدعات الدفعتين متقاربة في المواسم الثلاثة (30 لكل منهما). والإشارات 61 و57: قريبة من نصف الـ118 (59). فلا زيادة تدل على عيب في دفعة.",
+        "skill_ko_refs": [
+          "KO-RS-06-010",
+          "KO-RS-06-001"
+        ]
+      },
+      {
+        "id": "i_sensor_works",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_last_season"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_sensor_works"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "الجهاز التقط 20 من 21 متصدعاً في الموسم الماضي (نحو 95%)، وأشار إلى 101 من 1979 سليماً (نحو 5%)، أي كما تقول ورقته. فهو يعمل لكنه تمهيدي.",
+        "skill_ko_refs": [
+          "KO-RS-06-001",
+          "KO-RS-06-021"
+        ]
+      },
+      {
+        "id": "i_support_sound",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_b17_sound"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_crust_cause"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_ppv_low"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_sound"
+        },
+        "relation": "supports",
+        "strength": "strong",
+        "rule_ar": "البرغي سليم بفحصين مختلفين، وسبب الإشارة طبقة الشحم، والإشارة وحدها لا تعني أكثر من نحو واحد من ست. فهذه الفرضية تفسر كل الأدلة.",
+        "skill_ko_refs": [
+          "KO-RS-06-009"
+        ]
+      },
+      {
+        "id": "i_rule_95",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_ppv_low"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_b17_sound"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_95"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "الإشارة الواحدة تعني نحو 16% لا 95%، وفحصا ب-17 التأكيديان لا يريان شقاً. فلا يبقى مبرر لقول إن البرغي متصدع باحتمال 95%.",
+        "skill_ko_refs": [
+          "KO-RS-06-010",
+          "KO-RS-06-008"
+        ]
+      },
+      {
+        "id": "i_rule_supplier",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_no_batch_excess"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_supplier"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "تصدعات الدفعتين متقاربة في الجرد، والإشارات موزعة قرابة النصف. فلا دليل على عيب خاص بالدفعة «ز».",
+        "skill_ko_refs": [
+          "KO-RS-06-001"
+        ]
+      },
+      {
+        "id": "i_rule_sensor",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_sensor_works"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_ppv_low"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_sensor"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "الجهاز التقط معظم المتصدعات في الموسم الماضي، وكثرة الإشارات السليمة متوقعة لأن المتصدع نادر. فلا يصح القول إنه بلا قيمة؛ بل هو أداة فرز تحتاج متابعة.",
+        "skill_ko_refs": [
+          "KO-RS-06-001",
+          "KO-RS-06-010"
+        ]
+      },
+      {
+        "id": "i_cl_95",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_ppv_low"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_95"
+        },
+        "relation": "contradicts_claim",
+        "strength": "strong",
+        "rule_ar": "«دقة 95%» تصف التقاط 95 من كل 100 متصدع، لا احتمال أن تكون الإشارة صحيحة. فالعدّ يعطي نحو 16%.",
+        "skill_ko_refs": [
+          "KO-RS-06-010"
+        ]
+      },
+      {
+        "id": "i_cl_jamil",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_sensor_works"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_jamil_sensor"
+        },
+        "relation": "contradicts_claim",
+        "strength": "strong",
+        "rule_ar": "نصف الحقيقة: الجهاز يشير فعلاً إلى براغ سليمة كثيرة، لكنه التقط معظم المتصدعات، فلا يُهمل.",
+        "skill_ko_refs": [
+          "KO-RS-06-001"
+        ]
+      }
+    ]
+  },
+  "character_knowledge": [
+    {
+      "character_id": "kamal",
+      "knows": [
+        {
+          "fact_id": "f_claim_95",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_batch_split",
+          "access": "professional",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_flagged_total",
+          "access": "professional",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": [
+        {
+          "claim_id": "cl_95",
+          "stance": "sincere"
+        },
+        {
+          "claim_id": "cl_batch",
+          "stance": "sincere"
+        }
+      ]
+    },
+    {
+      "character_id": "maher",
+      "knows": [
+        {
+          "fact_id": "f_flag_b17",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_flagged_total",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_clean_possible",
+          "access": "professional",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_confirm_available",
+          "access": "professional",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    },
+    {
+      "character_id": "salwa",
+      "knows": [
+        {
+          "fact_id": "f_history_exists",
+          "access": "professional",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_lastseason_exists",
+          "access": "professional",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_care_exists",
+          "access": "professional",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    },
+    {
+      "character_id": "nader",
+      "knows": [],
+      "hides": [
+        {
+          "fact_id": "f_nader_greased",
+          "reveal_when": {
+            "presented": {
+              "evidence_id": "ev_care_log",
+              "to_character": "nader"
+            }
+          },
+          "cover_claim_id": "cl_nader_light",
+          "reveal_line_id": "nd_greased"
+        }
+      ],
+      "believes": [
+        {
+          "claim_id": "cl_nader_light",
+          "stance": "sincere"
+        }
+      ]
+    },
+    {
+      "character_id": "jamil",
+      "knows": [
+        {
+          "fact_id": "f_jamil_says",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": [
+        {
+          "claim_id": "cl_jamil_sensor",
+          "stance": "sincere"
+        }
+      ]
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "h_95",
+      "statement_ar": "الجهاز دقيق بنسبة 95%، فالبرغي ب-17 متصدع باحتمال نحو 95%، ويجب إيقاف الرافعة 3 وإعادة الدفعة «ز» كلها.",
+      "is_true": false,
+      "plausibility_at_start": "high"
+    },
+    {
+      "id": "h_supplier",
+      "statement_ar": "عيب في الدفعة «ز» هو سبب كثرة الإشارات، والمورّد مسؤول عن ذلك.",
+      "is_true": false,
+      "plausibility_at_start": "medium",
+      "suspect_id": "jamil"
+    },
+    {
+      "id": "h_sound",
+      "statement_ar": "إشارة ب-17 إنذار كاذب سببه طبقة الشحم السميكة، والبرغي سليم؛ والإشارة وحدها لا تعني أكثر من نحو واحد من ست.",
+      "is_true": true,
+      "plausibility_at_start": "low",
+      "suspect_id": "nader"
+    },
+    {
+      "id": "h_sensor",
+      "statement_ar": "الجهاز معطوب ويشير إلى براغ سليمة، فلا قيمة لإشاراته كلها.",
+      "is_true": false,
+      "plausibility_at_start": "low"
+    }
+  ],
+  "misdirection_plan": [
+    {
+      "id": "rh_95",
+      "points_to_hypothesis_id": "h_95",
+      "planted_via_ar": "تقرير المشرف يحوّل «دقة 95%» إلى احتمال تصدع 95%.",
+      "evidence_ids": [
+        "ev_kamal_report"
+      ],
+      "refuted_by_inference_ids": [
+        "i_cl_95",
+        "i_rule_95"
+      ],
+      "fairness_note_ar": "ورقة الجهاز تذكر معدل الإشارات الكاذبة، وسجل الجرد يتيح العدّ، والفحصان التأكيديان متاحان للاعب قبل الحكم."
+    },
+    {
+      "id": "rh_batch",
+      "points_to_hypothesis_id": "h_supplier",
+      "planted_via_ar": "61 إشارة من الدفعة «ز» مقابل 57 من «ن» تبدو زيادة.",
+      "evidence_ids": [
+        "ev_batch_split"
+      ],
+      "refuted_by_inference_ids": [
+        "i_rule_supplier"
+      ],
+      "fairness_note_ar": "كل دفعة ألف برغي، فالمتوقع نحو 59 لكل منهما، والجرد يُظهر تصدعات متقاربة بين الدفعتين."
+    },
+    {
+      "id": "rh_sensor",
+      "points_to_hypothesis_id": "h_sensor",
+      "planted_via_ar": "المورّد يقول إن الجهاز يشير إلى براغ سليمة كل موسم.",
+      "evidence_ids": [
+        "ev_jamil_statement"
+      ],
+      "refuted_by_inference_ids": [
+        "i_rule_sensor",
+        "i_cl_jamil"
+      ],
+      "fairness_note_ar": "كثرة الإشارات السليمة صحيحة جزئياً (101 من 121 الموسم الماضي)، لكن ملف المتابعة يبيّن أن الجهاز التقط 20 من 21 متصدعاً."
+    }
+  ],
+  "learning_objectives": [
+    {
+      "id": "lo_claim",
+      "statement_ar": "يسأل عن كل رقم: ماذا يعدّ بالضبط؟ ومن أين جاء؟ ومن كتبه؟",
+      "skill_ko_ref": "KO-RS-05-001",
+      "observable_behaviors_ar": [
+        "يصنّف التقرير والإفادات أقوالاً",
+        "يميّز سجل الجهاز عن تفسير المشرف"
+      ],
+      "evidence_sources": [
+        "evidence_board"
+      ]
+    },
+    {
+      "id": "lo_timeline",
+      "statement_ar": "يرتّب الدهن والمسح والتقرير والتنظيف والفحصين على خط زمني ليعرف ما سبق ما.",
+      "skill_ko_ref": "KO-RS-05-005",
+      "observable_behaviors_ar": [
+        "يضع الدهن قبل المسح بساعتين",
+        "يضع الفحوص التأكيدية بعد التقرير"
+      ],
+      "evidence_sources": [
+        "timeline_task",
+        "action_log"
+      ]
+    },
+    {
+      "id": "lo_hyp",
+      "statement_ar": "يوازن بين عدة فرضيات ويستبعد ما تنقضه الأدلة، ويطلب الفحص الذي يفرّق بينها.",
+      "skill_ko_ref": "KO-RS-06-008",
+      "observable_behaviors_ar": [
+        "يطلب الفحص التأكيدي",
+        "يستبعد الدفعة المعيبة والجهاز المعطوب بدليل"
+      ],
+      "evidence_sources": [
+        "hypothesis_ledger",
+        "action_log"
+      ]
+    },
+    {
+      "id": "lo_diag",
+      "statement_ar": "يبني جدولاً بالتكرارات الطبيعية (متصدع/سليم، مُشار/غير مُشار) ويقرأ منه ما تعنيه الإشارة.",
+      "skill_ko_ref": "KO-RS-06-010",
+      "observable_behaviors_ar": [
+        "يعدّ كم متصدعاً بين الألفين",
+        "يقدّر كم من الـ118 متصدع فعلاً"
+      ],
+      "evidence_sources": [
+        "evidence_board",
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_calib",
+      "statement_ar": "يصوغ ثقته بنسبة معقولة ويذكر حدودها، ويفرّق بين الدقة واحتمال صحة الإشارة.",
+      "skill_ko_ref": "KO-RS-06-021",
+      "observable_behaviors_ar": [
+        "يختار ثقة معقولة",
+        "يذكر أن الإشارات الـ117 الباقية لم تُفحص"
+      ],
+      "evidence_sources": [
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_revise",
+      "statement_ar": "يراجع رأيه الأول حين يظهر ما يخالفه.",
+      "skill_ko_ref": "KO-RS-06-009",
+      "observable_behaviors_ar": [
+        "يغيّر فرضيته الرائدة بعد الفحصين"
+      ],
+      "evidence_sources": [
+        "hypothesis_ledger"
+      ]
+    }
+  ],
+  "mechanics": {
+    "time_budget_units": 40,
+    "actions": [
+      {
+        "id": "a_report",
+        "type": "examine",
+        "label_ar": "اقرأ تقرير المشرف",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_kamal_report"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_office",
+        "telemetry_code": "GET_REPORT"
+      },
+      {
+        "id": "a_scan_log",
+        "type": "examine",
+        "label_ar": "افتح سجل جلسة المسح",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_scan_log"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_yard",
+        "telemetry_code": "GET_SCAN_LOG"
+      },
+      {
+        "id": "a_sheet",
+        "type": "examine",
+        "label_ar": "اقرأ ورقة بيانات الجهاز",
+        "precondition": {
+          "has_evidence": "ev_scan_log"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_sensor_sheet"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_workshop",
+        "telemetry_code": "GET_SHEET"
+      },
+      {
+        "id": "a_batch_split",
+        "type": "examine",
+        "label_ar": "اطلب توزيع الإشارات حسب الدفعة",
+        "precondition": {
+          "fact_unlocked": "f_batch_split"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_batch_split"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_workshop",
+        "telemetry_code": "GET_BATCH"
+      },
+      {
+        "id": "a_history",
+        "type": "examine",
+        "label_ar": "افتح سجل الجرد السنوي",
+        "precondition": {
+          "fact_unlocked": "f_history_exists"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_history"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_records",
+        "telemetry_code": "GET_HISTORY"
+      },
+      {
+        "id": "a_last_season",
+        "type": "examine",
+        "label_ar": "افتح ملف متابعة الموسم الماضي",
+        "precondition": {
+          "fact_unlocked": "f_lastseason_exists"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_last_season"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_records",
+        "telemetry_code": "GET_LAST_SEASON"
+      },
+      {
+        "id": "a_care_log",
+        "type": "examine",
+        "label_ar": "افتح سجل العناية بالرصيف",
+        "precondition": {
+          "fact_unlocked": "f_care_exists"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_care_log"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_records",
+        "telemetry_code": "GET_CARE_LOG"
+      },
+      {
+        "id": "a_jamil_stmt",
+        "type": "examine",
+        "label_ar": "اطلب إفادة جميل المكتوبة",
+        "precondition": {
+          "fact_unlocked": "f_jamil_says"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_jamil_statement"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_office",
+        "telemetry_code": "GET_JAMIL_STMT"
+      },
+      {
+        "id": "a_nader_stmt",
+        "type": "examine",
+        "label_ar": "اطلب إفادة نادر المكتوبة",
+        "precondition": {
+          "fact_unlocked": "f_nader_greased"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_nader_statement"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_yard",
+        "telemetry_code": "GET_NADER_STMT"
+      },
+      {
+        "id": "a_controls",
+        "type": "request_lab_test",
+        "label_ar": "اطلب قراءات المقارنة قبل التنظيف وبعده",
+        "precondition": {
+          "fact_unlocked": "f_clean_possible"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_control_bolts"
+          }
+        ],
+        "time_cost_units": 2,
+        "target_id": "loc_yard",
+        "telemetry_code": "GET_CONTROLS"
+      },
+      {
+        "id": "a_rescan",
+        "type": "request_lab_test",
+        "label_ar": "اطلب إعادة مسح ب-17 بعد التنظيف",
+        "precondition": {
+          "fact_unlocked": "f_clean_possible"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_rescan_clean"
+          }
+        ],
+        "time_cost_units": 2,
+        "target_id": "loc_yard",
+        "telemetry_code": "GET_RESCAN"
+      },
+      {
+        "id": "a_dye",
+        "type": "request_lab_test",
+        "label_ar": "اطلب فحص الصبغة النافذة لـ ب-17",
+        "precondition": {
+          "all": [
+            {
+              "fact_unlocked": "f_confirm_available"
+            },
+            {
+              "has_evidence": "ev_rescan_clean"
+            }
+          ]
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_confirm_dye"
+          }
+        ],
+        "time_cost_units": 2,
+        "target_id": "loc_yard",
+        "telemetry_code": "GET_DYE"
+      },
+      {
+        "id": "a_ultra",
+        "type": "request_lab_test",
+        "label_ar": "اطلب الفحص فوق الصوتي لـ ب-17",
+        "precondition": {
+          "fact_unlocked": "f_confirm_available"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_confirm_ultra"
+          }
+        ],
+        "time_cost_units": 2,
+        "target_id": "loc_workshop",
+        "telemetry_code": "GET_ULTRA"
+      },
+      {
+        "id": "a_int_kamal",
+        "type": "interview",
+        "label_ar": "اسأل كمال عن أساس تقريره",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_batch_split"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "kamal",
+        "telemetry_code": "INT_KAMAL"
+      },
+      {
+        "id": "a_int_maher",
+        "type": "interview",
+        "label_ar": "اسأل ماهر عن الجهاز وما يستطيعه",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_clean_possible"
+          },
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_confirm_available"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "maher",
+        "telemetry_code": "INT_MAHER"
+      },
+      {
+        "id": "a_int_salwa",
+        "type": "interview",
+        "label_ar": "اسأل سلوى عن السجلات",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_history_exists"
+          },
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_lastseason_exists"
+          },
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_care_exists"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "salwa",
+        "telemetry_code": "INT_SALWA"
+      },
+      {
+        "id": "a_int_jamil",
+        "type": "interview",
+        "label_ar": "اسأل جميلاً عن رأيه في الجهاز",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_jamil_says"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "jamil",
+        "telemetry_code": "INT_JAMIL"
+      },
+      {
+        "id": "a_int_nader",
+        "type": "interview",
+        "label_ar": "اسأل نادراً عن عمله صباح الاثنين",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "nader",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "nader",
+        "telemetry_code": "INT_NADER"
+      },
+      {
+        "id": "a_confront_nader",
+        "type": "present_evidence",
+        "label_ar": "اعرض سجل العناية على نادر",
+        "precondition": {
+          "all": [
+            {
+              "has_evidence": "ev_care_log"
+            },
+            {
+              "presented": {
+                "evidence_id": "ev_care_log",
+                "to_character": "nader"
+              }
+            }
+          ]
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_nader_greased"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "nader",
+        "telemetry_code": "CONFRONT_NADER"
+      },
+      {
+        "id": "a_hint",
+        "type": "request_hint",
+        "label_ar": "اطلب تلميحاً",
+        "precondition": {
+          "always": true
+        },
+        "effects": [],
+        "time_cost_units": 0,
+        "telemetry_code": "HINT"
+      },
+      {
+        "id": "a_accuse",
+        "type": "final_accusation",
+        "label_ar": "قدّم رأيك المعلل للجنة",
+        "precondition": {
+          "always": true
+        },
+        "effects": [],
+        "time_cost_units": 0,
+        "telemetry_code": "ACCUSE"
+      }
+    ]
+  },
+  "state_machine": {
+    "id": "c038",
+    "initial": "briefing",
+    "type": "compound",
+    "states": {
+      "briefing": {
+        "description_ar": "الإحاطة",
+        "type": "atomic",
+        "on": {
+          "START": {
+            "target": "investigating"
+          }
+        }
+      },
+      "investigating": {
+        "description_ar": "التحقيق",
+        "type": "compound",
+        "initial": "gathering",
+        "states": {
+          "gathering": {
+            "type": "atomic",
+            "on": {
+              "OPEN_DEDUCTION": {
+                "target": "deducing"
+              }
+            }
+          },
+          "deducing": {
+            "type": "atomic",
+            "on": {
+              "BACK": {
+                "target": "gathering"
+              }
+            }
+          }
+        },
+        "on": {
+          "SUBMIT": {
+            "target": "review"
+          }
+        }
+      },
+      "review": {
+        "description_ar": "مراجعة",
+        "type": "atomic",
+        "on": {
+          "CLOSE": {
+            "target": "resolved"
+          }
+        }
+      },
+      "resolved": {
+        "description_ar": "إغلاق",
+        "type": "final"
+      }
+    }
+  },
+  "dialogue": {
+    "max_turns_per_interview": 10,
+    "llm_enabled": false,
+    "topics": [
+      {
+        "id": "t_claim",
+        "label_ar": "التقرير ودقة الجهاز",
+        "example_questions_ar": [
+          "ماذا تعني دقة 95% في رأيك؟",
+          "على ماذا بنيت تقريرك؟"
+        ],
+        "fact_ids": [
+          "f_claim_95",
+          "f_batch_split"
+        ],
+        "claim_ids": [
+          "cl_95",
+          "cl_batch"
+        ]
+      },
+      {
+        "id": "t_scan",
+        "label_ar": "المسح والفحص",
+        "example_questions_ar": [
+          "كم برغياً مسحت؟",
+          "هل يمكن إعادة المسح؟"
+        ],
+        "fact_ids": [
+          "f_flag_b17",
+          "f_flagged_total",
+          "f_clean_possible",
+          "f_confirm_available"
+        ]
+      },
+      {
+        "id": "t_records",
+        "label_ar": "السجلات",
+        "example_questions_ar": [
+          "ما السجلات التي تحتفظين بها؟"
+        ],
+        "fact_ids": [
+          "f_history_exists",
+          "f_lastseason_exists",
+          "f_care_exists"
+        ]
+      },
+      {
+        "id": "t_care",
+        "label_ar": "العناية بالرصيف",
+        "example_questions_ar": [
+          "ماذا فعلت صباح الاثنين؟",
+          "هل دهنت البراغي؟"
+        ],
+        "fact_ids": [
+          "f_nader_greased"
+        ],
+        "claim_ids": [
+          "cl_nader_light"
+        ]
+      },
+      {
+        "id": "t_supplier",
+        "label_ar": "رأي المورّد",
+        "example_questions_ar": [
+          "لماذا تقول إن الجهاز لا قيمة له؟"
+        ],
+        "fact_ids": [
+          "f_jamil_says"
+        ],
+        "claim_ids": [
+          "cl_jamil_sensor"
+        ]
+      }
+    ]
+  },
+  "rubric": {
+    "reference_answer_ar": "البرغي ب-17 سليم في الأرجح، وليس متصدعاً باحتمال 95%. دقة الجهاز تعني أنه يلتقط 95 من كل 100 متصدع ويشير خطأ إلى 5 من كل 100 سليم. وبين ألفي برغي فيها نحو 20 متصدعاً نتوقع 19 إشارة صحيحة و99 كاذبة، فبين 118 إشارة نحو 19 صحيحة: نحو 16%. والموسم الماضي أعطى عدّاً قريباً: 20 من 121. وب-17 سُجل له مؤشر 0.82 بعد ثلاث طبقات شحم قبل المسح بساعتين؛ وبعد التنظيف نزل إلى 0.31، والفحصان التأكيديان لم يجدا شقاً. ولا دليل على عيب في الدفعة «ز»، ولا على أن الجهاز معطوب. حدود الاستنتاج: الفحصان يخصان ب-17 وحده، والإشارات الـ117 الباقية يجب أن تُفحص تأكيدياً، ومعدل التصدع مأخوذ من ثلاثة مواسم قد تختلف.",
+    "criteria": [
+      {
+        "id": "c_source",
+        "name_ar": "تصنيف المصادر",
+        "objective_ids": [
+          "lo_claim"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يصنّف"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "أخطأ في الأغلب"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "نصف صحيح"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمه صحيح"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كله صحيح"
+          }
+        ]
+      },
+      {
+        "id": "c_conflict",
+        "name_ar": "ترتيب الأحداث الزمني",
+        "objective_ids": [
+          "lo_timeline"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يضع شيئاً"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "وضع قليلاً"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "نصف صحيح"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمه صحيح"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كله صحيح"
+          }
+        ]
+      },
+      {
+        "id": "c_links",
+        "name_ar": "ربط الأدلة بالفرضيات",
+        "objective_ids": [
+          "lo_diag"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.2,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يربط"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "أخطأ في الأغلب"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "نصف صحيح"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمه صحيح"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كله صحيح"
+          }
+        ]
+      },
+      {
+        "id": "c_uncertainty",
+        "name_ar": "معايرة الثقة",
+        "objective_ids": [
+          "lo_calib"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.2,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "خارج النطاق كثيراً"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "بعيد عن النطاق"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "قريب من النطاق"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "داخل النطاق مع حدود ناقصة"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "داخل النطاق مع حدود كاملة"
+          }
+        ]
+      },
+      {
+        "id": "c_revision",
+        "name_ar": "مراجعة الرأي",
+        "objective_ids": [
+          "lo_revise"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "تمسك بالرأي الأول"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "غيّر دون سبب"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "غيّر بسبب جزئي"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "غيّر بدليل"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "غيّر بدليل وذكر ما غيّره"
+          }
+        ]
+      },
+      {
+        "id": "c_elimination",
+        "name_ar": "استبعاد الفرضيات الخاطئة",
+        "objective_ids": [
+          "lo_hyp"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يستبعد"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "استبعد خطأً"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "استبعد واحدة"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "استبعد معظمها بدليل"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "استبعدها كلها بدليل"
+          }
+        ]
+      },
+      {
+        "id": "c_justification",
+        "name_ar": "جودة الحجة المكتوبة",
+        "objective_ids": [
+          "lo_diag",
+          "lo_hyp"
+        ],
+        "scored_by": "human",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لا حجة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "ادعاء بلا سند"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "أدلة دون ربط"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "ربط الأدلة بالاستنتاج"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "ربط مع البدائل والحدود"
+          }
+        ]
+      }
+    ]
+  },
+  "hint_ladder": [
+    {
+      "id": "hg1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "قبل أن تسأل هل البرغي متصدع، اسأل: ماذا تعني «الدقة 95%» بالضبط؟ وكم برغياً بين الألفين متصدع أصلاً؟",
+      "trigger": {
+        "always": true
+      },
+      "assessment_weight": 0.02
+    },
+    {
+      "id": "hg2",
+      "level": 2,
+      "kind": "focus_area",
+      "text_ar": "ارسم جدولاً بأربع خلايا: متصدع أو سليم، ومُشار إليه أو غير مُشار إليه. ما الذي تحتاجه من أعداد؟",
+      "trigger": {
+        "has_evidence": "ev_scan_log"
+      },
+      "assessment_weight": 0.04
+    },
+    {
+      "id": "hg3",
+      "level": 3,
+      "kind": "pointer",
+      "text_ar": "ابحث عن سجلات تعدّ المتصدعات في المواسم السابقة، وعن ورقة الجهاز.",
+      "trigger": {
+        "has_evidence": "ev_scan_log"
+      },
+      "assessment_weight": 0.08
+    },
+    {
+      "id": "ht1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "لو كان المتصدع واحداً في المئة تقريباً، فكم إشارة كاذبة تتوقع من كل ألفي برغي سليم؟",
+      "trigger": {
+        "has_evidence": "ev_sensor_sheet"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_table"
+    },
+    {
+      "id": "ht2",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "اجمع المتصدعات الثلاث الأخيرة واقسمها على 3، ثم طبّق نسب الورقة: 95 من 100 و5 من 100.",
+      "trigger": {
+        "has_evidence": "ev_history"
+      },
+      "assessment_weight": 0.06,
+      "targets_inference_id": "i_table"
+    },
+    {
+      "id": "ht3",
+      "level": 3,
+      "kind": "partial_reveal",
+      "text_ar": "نحو 20 متصدعاً: 19 منها تُشار. و1980 سليماً: 99 منها تُشار. فكم متصدعاً بين الـ118؟",
+      "trigger": {
+        "has_evidence": "ev_history"
+      },
+      "assessment_weight": 0.1,
+      "targets_inference_id": "i_table"
+    },
+    {
+      "id": "hc1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "ما الفحص الرخيص الذي كان سيُسقط الفرضية المغرية لو أُجري قبل القرار؟",
+      "trigger": {
+        "has_evidence": "ev_kamal_report"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_sound_a"
+    },
+    {
+      "id": "hc2",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "اسأل الفني عمّا يمكنه فعله بعد الإشارة، وراجع تنبيهات ورقة الجهاز.",
+      "trigger": {
+        "has_evidence": "ev_sensor_sheet"
+      },
+      "assessment_weight": 0.06,
+      "targets_inference_id": "i_sound_a"
+    },
+    {
+      "id": "hc3",
+      "level": 3,
+      "kind": "partial_reveal",
+      "text_ar": "اطلب الفحصين التأكيديين للبرغي ب-17، ولاحظ الحد الأدنى للشق الذي يكشفه كل منهما.",
+      "trigger": {
+        "has_evidence": "ev_sensor_sheet"
+      },
+      "assessment_weight": 0.1,
+      "targets_inference_id": "i_sound_a"
+    },
+    {
+      "id": "hx1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "ما الذي تغيّر على سطح الرافعة 3 قبل المسح ولم يتغير على غيرها؟",
+      "trigger": {
+        "has_evidence": "ev_scan_log"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_crust_a"
+    },
+    {
+      "id": "hx2",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "اطلب سجل العناية بالرصيف، وقارن الرافعة 3 بالرافعة 4.",
+      "trigger": {
+        "has_evidence": "ev_scan_log"
+      },
+      "assessment_weight": 0.06,
+      "targets_inference_id": "i_crust_a"
+    },
+    {
+      "id": "hx3",
+      "level": 3,
+      "kind": "partial_reveal",
+      "text_ar": "قارن قراءة برغي مدهون وآخر غير مدهون قبل التنظيف وبعده، ثم قارن ب-17 بهما.",
+      "trigger": {
+        "has_evidence": "ev_care_log"
+      },
+      "assessment_weight": 0.1,
+      "targets_inference_id": "i_crust_a"
+    }
+  ],
+  "fairness_test": {
+    "requirements": {
+      "min_disjoint_proof_paths": 2,
+      "max_inference_depth": 3,
+      "all_red_herrings_refutable": true,
+      "culprit_uniquely_entailed": true,
+      "no_hidden_fact_dependency": true,
+      "max_required_actions": 40
+    },
+    "runs": []
+  },
+  "ending_explanation": {
+    "steps": [
+      {
+        "order": 1,
+        "text_ar": "ابدأ بالعدّ لا بالنسبة: بين ألفي برغي نحو 20 متصدعاً. الجهاز يلتقط 19 منها، ويشير خطأ إلى 99 من الـ1980 السليمة. فبين 118 إشارة نحو 19 صحيحة فقط: نحو 16%، لا 95%.",
+        "uses_evidence_ids": [
+          "ev_history",
+          "ev_sensor_sheet"
+        ],
+        "inference_id": "i_table"
+      },
+      {
+        "order": 2,
+        "text_ar": "طريق مستقل بالعدّ الفعلي: في الموسم الماضي فُحصت 121 إشارة تأكيدياً فكان 20 متصدعاً فقط، أي نحو واحدة من كل ست.",
+        "uses_evidence_ids": [
+          "ev_last_season"
+        ],
+        "inference_id": "i_followup"
+      },
+      {
+        "order": 3,
+        "text_ar": "الفحص فوق الصوتي يفحص داخل ب-17 ولم يجد شقاً فوق حد الكشف، والفحص التأكيدي يتقدم على الفرز.",
+        "uses_evidence_ids": [
+          "ev_confirm_ultra"
+        ],
+        "inference_id": "i_sound_a"
+      },
+      {
+        "order": 4,
+        "text_ar": "فحص الصبغة طريق مختلف يفحص السطح، واتفق مع الأول.",
+        "uses_evidence_ids": [
+          "ev_confirm_dye"
+        ],
+        "inference_id": "i_sound_b"
+      },
+      {
+        "order": 5,
+        "text_ar": "سبب الإشارة: نزل مؤشر ب-17 من 0.82 إلى 0.31 بعد التنظيف، وتبعه ب-18 المدهون (0.58 إلى 0.29) ولم يتغير ب-41 غير المدهون.",
+        "uses_evidence_ids": [
+          "ev_rescan_clean",
+          "ev_control_bolts"
+        ],
+        "inference_id": "i_crust_a"
+      },
+      {
+        "order": 6,
+        "text_ar": "الطريق المستقل للسبب: سجل العناية وإفادة نادر يثبتان ثلاث طبقات شحم قبل المسح بساعتين.",
+        "uses_evidence_ids": [
+          "ev_care_log",
+          "ev_nader_statement"
+        ],
+        "inference_id": "i_crust_b"
+      },
+      {
+        "order": 7,
+        "text_ar": "فتسقط فكرة 95%، وتسقط فكرة عيب الدفعة «ز» لأن الإشارات موزعة قرابة النصف والتصدعات متقاربة، وتسقط فكرة أن الجهاز معطوب لأنه التقط معظم المتصدعات.",
+        "uses_evidence_ids": [
+          "ev_history",
+          "ev_batch_split",
+          "ev_last_season"
+        ],
+        "inference_id": "i_rule_95"
+      }
+    ],
+    "alternative_paths_ar": [
+      "يكفي طريق العدّ مع الفحص فوق الصوتي وإعادة المسح بعد التنظيف: ورقة الجهاز وسجل الجرد، ثم الفحص التأكيدي، ثم قراءات المقارنة.",
+      "ويكفي طريق الملفات والفحص الثاني: ملف الموسم الماضي، وفحص الصبغة، وسجل العناية مع إفادة نادر؛ والأقوى أن يتفق الطريقان."
+    ],
+    "what_evidence_could_not_show_ar": [
+      "الفحصان التأكيديان يخصان ب-17 وحده؛ فالإشارات الـ117 الباقية يجب أن تُفحص قبل أي قرار على بقية الرافعات.",
+      "لكل فحص حد كشف: 1 ملم للصبغة، و1.5 ملم للموجات فوق الصوتية، فقد يوجد شق أصغر لا يُرى.",
+      "معدل نحو 20 متصدعاً في الألفين مأخوذ من ثلاثة مواسم سابقة وقد يتغير هذا الموسم.",
+      "لا نعرف هل أثرت الطبقة في براغي أخرى مدهونة في الرافعة 3 أخفت إشارات صحيحة؛ وهذا يستحق إعادة المسح بعد التنظيف."
+    ],
+    "science_notes_ar": [
+      "الدقة ليست احتمال صحة الإشارة. جهاز يلتقط 95 من كل 100 متصدع ويخطئ في 5 من كل 100 سليم يعطي نسبة ترجيح 19 (0.95 ÷ 0.05). لكن إذا كان المتصدع واحداً في المئة، فالأرجحية السابقة ضئيلة، وتبقى الإشارة المنفردة بعيدة عن الحسم: 19 من 118.",
+      "جدول التكرارات الطبيعية يجعل الحساب عدّاً بسيطاً: 2000 برغي، 20 متصدعاً، 19 منها تُشار، و1980 سليماً، 99 منها تُشار؛ المجموع 118.",
+      "الاختبار التمهيدي يُصمَّم ليلتقط أكثر المتصدعات ويقبل إشارات كاذبة، والتأكيدي يأتي بعده؛ ولا يُحكم على الرافعة بإشارة واحدة.",
+      "طبقات الشحم أو الملح قد تغيّر قراءة أجهزة تعتمد على الصدى، ولهذا يصف الصانع تنظيف السطح قبل المسح."
+    ]
+  },
+  "expert_review": [
+    {
+      "role": "narrative_editor",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-11-05",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "scientific_reviewer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-11-05",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "learning_designer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-11-05",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "age_appropriateness",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-11-05",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "cultural_reviewer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-11-05",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "legal_rights",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-11-05",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "safety",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-11-05",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    }
+  ]
+}

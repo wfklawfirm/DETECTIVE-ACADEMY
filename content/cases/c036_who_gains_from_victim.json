@@ -1,0 +1,3893 @@
+{
+  "schema_version": "0.1.0",
+  "case_id": "c036_who_gains_from_victim",
+  "case_version": "0.1.0",
+  "meta": {
+    "title_ar": "ثلاث مرات في أسبوع",
+    "title_en": "Three Times in One Week",
+    "age_band": "16-18",
+    "locale": "ar",
+    "dialogue_register": "msa",
+    "estimated_minutes": 40,
+    "difficulty": 3,
+    "content_flags": [
+      "no_violence",
+      "fraud"
+    ],
+    "authors": [
+      "فريق أثر التحريري (مسودة بمساعدة الذكاء الاصطناعي، لم تُراجَع بشرياً بعد)"
+    ],
+    "knowledge_object_refs": [
+      "KO-RS-05-001",
+      "KO-RS-05-005",
+      "KO-RS-05-002",
+      "KO-RS-06-002",
+      "KO-RS-06-021",
+      "KO-RS-06-009",
+      "KO-NP-02-013"
+    ]
+  },
+  "premise": {
+    "hook_ar": "صاحب دكان قرطاسية يقول إن دكانه تعرض لثلاثة اعتداءات في أسبوع، ويطلب تعويضاً قبل معاينة اللجنة. فمن يُصدَّق، وبأي سجل؟",
+    "player_role_ar": "أنت مراجع مطالبات متدرب في جمعية تجار سوق الأقواس، وعليك أن تحدد ما تثبته السجلات قبل أن تقرر اللجنة.",
+    "setting_ar": "سوق الأقواس في مدينة الريحان المتخيَّلة، من الجمعة إلى الإثنين. الأسماء والمبالغ متخيَّلة لأغراض التعلم، وتوقيت السوق هو توقيت كل السجلات.",
+    "public_fact_ids": [
+      "f_i1_report",
+      "f_i2_report",
+      "f_i3_report",
+      "f_claim_filed",
+      "f_hisham_record"
+    ],
+    "assumed_general_knowledge_ar": [
+      "الإنذار المسلّح يسجل ما تلتقطه حساساته، ولا يسجل ما يحدث بعد إيقافه",
+      "قفل البطاقة يسجل البطاقة لا حاملها",
+      "اتفاق الأقوال المنقولة عن مصدر واحد ليس تأييداً مستقلاً",
+      "التحقق من البلاغ لا يعني اتهام صاحبه"
+    ]
+  },
+  "entities": {
+    "characters": [
+      {
+        "id": "hisham",
+        "name_ar": "هشام العريان",
+        "role": "suspect",
+        "age_descriptor_ar": "صاحب دكان ورقيات الأقواس منذ إحدى عشرة سنة",
+        "persona_ar": "لبق وحزين النبرة، يكثر من ذكر ما أصابه ويحب أن يُعامَل معاملة المتضرر الذي لا يُسأل.",
+        "motives_ar": [
+          "أن يُصرف له تعويض الصندوق",
+          "أن يبقى اسمه بين التجار نظيفاً"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "hs_greet",
+            "purpose": "greeting",
+            "text_ar": "شكراً لأنك جئت. أتمنى أن تنتهي هذه المحنة سريعاً."
+          },
+          {
+            "line_id": "hs_window",
+            "purpose": "lie",
+            "text_ar": "الواجهة كُسرت في الليل وأنا نائم في بيتي، ووجدتها محطمة حين وصلت صباحاً.",
+            "claim_ids": [
+              "cl_window_night"
+            ]
+          },
+          {
+            "line_id": "hs_close",
+            "purpose": "lie",
+            "text_ar": "أغلقت الدكان في التاسعة مساء كعادتي، وكانت الستارة نظيفة، وجاء من دهنها بعد العاشرة.",
+            "claim_ids": [
+              "cl_closing_21"
+            ]
+          },
+          {
+            "line_id": "hs_tap",
+            "purpose": "lie",
+            "text_ar": "حين خرجت كان المخزن سليماً والصنبور مغلقاً، ودخل أحدهم بعد خروجي وفتحه.",
+            "claim_ids": [
+              "cl_tap_later"
+            ]
+          },
+          {
+            "line_id": "hs_pressure",
+            "purpose": "lie",
+            "text_ar": "لا ضغط مالي عليّ، وأموري مع المورّدين منتظمة.",
+            "claim_ids": [
+              "cl_no_pressure"
+            ]
+          },
+          {
+            "line_id": "hs_threat",
+            "purpose": "lie",
+            "text_ar": "ماجد الفارس هددني قبل أسابيع وقال لي: ستندم.",
+            "claim_ids": [
+              "cl_majed_threat"
+            ]
+          },
+          {
+            "line_id": "hs_neighbours",
+            "purpose": "lie",
+            "text_ar": "تسعة من التجار شاهدوا ما جرى ويؤيدونني.",
+            "claim_ids": [
+              "cl_neighbours"
+            ]
+          },
+          {
+            "line_id": "hs_paint",
+            "purpose": "reveal",
+            "text_ar": "اشتريت علبة طلاء يوم الجمعة لأجدد رفوف الدكان، فأنا أفعل ذلك كل سنة.",
+            "fact_ids": [
+              "f_paint_bought"
+            ]
+          },
+          {
+            "line_id": "hs_early",
+            "purpose": "reveal",
+            "text_ar": "نعم، أغلقت يوم السبت مبكراً قرابة السابعة والربع.",
+            "fact_ids": [
+              "f_early_close"
+            ]
+          },
+          {
+            "line_id": "hs_debt",
+            "purpose": "reveal",
+            "text_ar": "نعم، علي رصيد متأخر للمورّد، لكنه لا علاقة له بما أصابني.",
+            "fact_ids": [
+              "f_supplier_overdue"
+            ]
+          },
+          {
+            "line_id": "hs_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "هذا كل ما أعرفه."
+          },
+          {
+            "line_id": "hs_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "أرجو أن نبقى عند ما أصاب دكاني."
+          },
+          {
+            "line_id": "hs_bye",
+            "purpose": "farewell",
+            "text_ar": "أرجو ألا يطول النظر في طلبي."
+          }
+        ]
+      },
+      {
+        "id": "majed",
+        "name_ar": "ماجد الفارس",
+        "role": "suspect",
+        "age_descriptor_ar": "صاحب دكان أدوات منزلية مجاور",
+        "persona_ar": "مستعجل وجاف في كلامه، ويغضب حين يشعر أنه متهم، لكنه يجيب بما يعرفه.",
+        "motives_ar": [
+          "أن يُرفع عنه الشك",
+          "أن يعود الهدوء إلى الصف"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "mj_greet",
+            "purpose": "greeting",
+            "text_ar": "اسأل ما تشاء، فليس عندي ما أخفيه."
+          },
+          {
+            "line_id": "mj_dispute",
+            "purpose": "reveal",
+            "text_ar": "اختلفت مع هشام على لافتة مشتركة، ثم وقّعنا محضر تسوية في الجمعية وانتهى الأمر.",
+            "fact_ids": [
+              "f_dispute"
+            ]
+          },
+          {
+            "line_id": "mj_where",
+            "purpose": "reveal",
+            "text_ar": "كنت ليلة الجمعة وليلة الأحد عند أختي في الضاحية، وغادرت السوق السبت قبل العصر لزيارة والدي.",
+            "fact_ids": [
+              "f_majed_gate"
+            ]
+          },
+          {
+            "line_id": "mj_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف أكثر من ذلك."
+          },
+          {
+            "line_id": "mj_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن ليالي الوقائع فقط."
+          },
+          {
+            "line_id": "mj_bye",
+            "purpose": "farewell",
+            "text_ar": "أرجو أن يُكتب في ملفك أنني أجبت كل سؤال."
+          }
+        ]
+      },
+      {
+        "id": "salim",
+        "name_ar": "سالم البدري",
+        "role": "witness",
+        "age_descriptor_ar": "حارس ليلي في سوق الأقواس",
+        "persona_ar": "هادئ ومنظم، يقرأ من دفتره ولا يزيد على ما دوّنه.",
+        "motives_ar": [
+          "أن يُقرأ دفتره كما كُتب"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "sl_greet",
+            "purpose": "greeting",
+            "text_ar": "دفتر الجولات معي، اسأل عما فيه."
+          },
+          {
+            "line_id": "sl_rounds",
+            "purpose": "reveal",
+            "text_ar": "جولاتي ليلة الجمعة وليلة الأحد دوّنتها كلها: كل الواجهات سليمة حتى السادسة صباحاً، ولم يزرني ولا زار السوق أحد بعد الغلق.",
+            "fact_ids": [
+              "f_guard_rounds"
+            ]
+          },
+          {
+            "line_id": "sl_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لم أدوّن غير ما رأيته."
+          },
+          {
+            "line_id": "sl_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن جولاتي."
+          },
+          {
+            "line_id": "sl_bye",
+            "purpose": "farewell",
+            "text_ar": "الدفتر أمامكم متى شئتم."
+          }
+        ]
+      },
+      {
+        "id": "huda",
+        "name_ar": "هدى النجار",
+        "role": "witness",
+        "age_descriptor_ar": "صاحبة المقهى المقابل لدكان ورقيات الأقواس",
+        "persona_ar": "ودودة وعملية، ومرّت هي نفسها بتجربة بلاغ حقيقي وتعرف كيف يُتحقق منه.",
+        "motives_ar": [
+          "أن يُنصف المتضرر الحقيقي",
+          "ألا يضيع وقت الصندوق في ما لا يؤيده سجل"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "hd_greet",
+            "purpose": "greeting",
+            "text_ar": "أهلاً بك. أفتح المقهى باكراً فأرى الصف قبل غيري."
+          },
+          {
+            "line_id": "hd_saw",
+            "purpose": "reveal",
+            "text_ar": "مررت بالدكان قبل فتح المقهى نحو السادسة والنصف إلا عشر دقائق ورأيت الواجهة سليمة.",
+            "fact_ids": [
+              "f_huda_saw_intact"
+            ]
+          },
+          {
+            "line_id": "hd_case",
+            "purpose": "reveal",
+            "text_ar": "انكسرت لافتة مقهاي قبل شهرين، وتحققت اللجنة من بلاغي بتسجيل كاميرا جارٍ مستقل وبدفتر الحارس، ثم صُرف التعويض.",
+            "fact_ids": [
+              "f_huda_verified"
+            ]
+          },
+          {
+            "line_id": "hd_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لم أرَ أكثر من ذلك."
+          },
+          {
+            "line_id": "hd_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عمّا رأيته في الصف."
+          },
+          {
+            "line_id": "hd_bye",
+            "purpose": "farewell",
+            "text_ar": "من حق المتضرر أن يُصدَّق وأن يُتحقق من بلاغه معاً."
+          }
+        ]
+      },
+      {
+        "id": "nada",
+        "name_ar": "ندى الصباغ",
+        "role": "authority",
+        "age_descriptor_ar": "موظفة لجنة المطالبات في جمعية التجار",
+        "persona_ar": "مهنية ومتأنية، تفصل بين ما يقوله الملف وما تثبته السجلات.",
+        "motives_ar": [
+          "أن تُصرف الأموال لمستحقيها",
+          "أن يُحفظ حق من يتضرر فعلاً"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "nd_greet",
+            "purpose": "greeting",
+            "text_ar": "مرحباً. الملف أمامك، وما تحتاجه من سجلات اطلبه بإجراءاته."
+          },
+          {
+            "line_id": "nd_rule",
+            "purpose": "reveal",
+            "text_ar": "الصندوق يدفع حتى ثمانين في المئة من الخسارة الموثقة، ويقدَّم الطلب قبل المعاينة، وتتقدم الطلبات التي تتكرر وقائعها خلال أسبوع.",
+            "fact_ids": [
+              "f_fund_rule"
+            ]
+          },
+          {
+            "line_id": "nd_total",
+            "purpose": "reveal",
+            "text_ar": "قدّر هشام خسارته بستة آلاف وثلاثمئة دينار، منها خمسة آلاف عن ورق المخزن.",
+            "fact_ids": [
+              "f_claim_total"
+            ]
+          },
+          {
+            "line_id": "nd_stock",
+            "purpose": "reveal",
+            "text_ar": "جرد الجمعية قبل شهرين سجّل ورق المخزن نفسه بطيء الحركة وقدّر قيمة تصفيته بألف ومئتي دينار.",
+            "fact_ids": [
+              "f_stock_slow"
+            ]
+          },
+          {
+            "line_id": "nd_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "هذا خارج ما أعرفه."
+          },
+          {
+            "line_id": "nd_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "لنبقَ في ملف المطالبة."
+          },
+          {
+            "line_id": "nd_bye",
+            "purpose": "farewell",
+            "text_ar": "تحقق قبل أن تقرر، وأنصف من يثبت بلاغه."
+          }
+        ]
+      }
+    ],
+    "locations": [
+      {
+        "id": "loc_shop",
+        "name_ar": "دكان ورقيات الأقواس",
+        "description_ar": "دكان قرطاسية في الصف الشرقي، له واجهة زجاجية وستارة معدنية وباب خلفي إلى مخزن الورق."
+      },
+      {
+        "id": "loc_stockroom",
+        "name_ar": "مخزن الورق",
+        "description_ar": "غرفة خلف الدكان فيها صنبور وعدّاد مياه خاص بها."
+      },
+      {
+        "id": "loc_row",
+        "name_ar": "ممر الدكاكين",
+        "description_ar": "الممر الذي يمر به الحارس في جولاته."
+      },
+      {
+        "id": "loc_gate",
+        "name_ar": "بوابة السوق",
+        "description_ar": "بوابة تُفتح ببطاقات التجار، وعندها دفتر الحارس للزوار."
+      },
+      {
+        "id": "loc_cafe",
+        "name_ar": "مقهى النجار",
+        "description_ar": "مقهى مقابل للدكان وفيه كاميرا تلتقط الحركة عند الصف."
+      },
+      {
+        "id": "loc_paint_shop",
+        "name_ar": "محل الدهانات",
+        "description_ar": "محل في حي مجاور يبيع الطلاء وأدواته."
+      },
+      {
+        "id": "loc_committee",
+        "name_ar": "مكتب لجنة المطالبات",
+        "description_ar": "مكتب الجمعية حيث تُحفظ ملفات المطالبات والمحاضر."
+      }
+    ],
+    "objects": [
+      {
+        "id": "obj_window",
+        "name_ar": "واجهة الدكان الزجاجية",
+        "description_ar": "واجهة عليها حساس كسر زجاج متصل بلوحة الإنذار."
+      },
+      {
+        "id": "obj_shutter",
+        "name_ar": "ستارة الدكان",
+        "description_ar": "ستارة معدنية تُسدل عند الإغلاق."
+      },
+      {
+        "id": "obj_stock",
+        "name_ar": "ورق المخزن",
+        "description_ar": "أربعمئة رزمة ورق ملوّن في المخزن."
+      },
+      {
+        "id": "obj_alarm",
+        "name_ar": "لوحة الإنذار",
+        "description_ar": "لوحة تسجل التسليح والإيقاف برمز المستخدم وأحداث الحساسات."
+      }
+    ],
+    "organizations": [
+      {
+        "id": "org_coop",
+        "name_ar": "جمعية تجار سوق الأقواس",
+        "description_ar": "جمعية تجار في مدينة الريحان المتخيَّلة."
+      },
+      {
+        "id": "org_fund",
+        "name_ar": "صندوق ضمان التجار",
+        "description_ar": "صندوق تابع للجمعية يعوّض بعض خسائر الاعتداء."
+      }
+    ]
+  },
+  "truth": {
+    "solution": {
+      "culprit_ids": [
+        "hisham"
+      ],
+      "summary_ar": "لم يتعرض هشام العريان لاعتداء من أحد. الزجاج كان سليماً حتى الصباح ولم يسجل الإنذار حدثاً قبل أن يوقفه برمزه، والماء كان يجري في المخزن قبل مغادرته ولم يدخل بعده أحد. وضاق به أجل دين المورّد فجمع ثلاث وقائع في أيام قليلة ليطلب تعويضاً يفوق قيمة الورق بكثير، وجاء تأييد التجار منقولاً عن روايته هو. أما ماجد فبطاقته خارج السوق، والتمديدات سليمة.",
+      "key_fact_ids": [
+        "f_i1_not_overnight",
+        "f_i3_no_entry_after",
+        "f_motive",
+        "f_staged_by_owner"
+      ]
+    },
+    "facts": [
+      {
+        "id": "f_i1_report",
+        "statement_ar": "أبلغ هشام العريان صباح السبت عن كسر واجهة دكانه، وقال إن الكسر وقع في الليل.",
+        "kind": "event",
+        "subject_ids": [
+          "hisham",
+          "obj_window"
+        ],
+        "spoiler_level": 0,
+        "time": {
+          "start_min": 1372,
+          "precision": "exact"
+        },
+        "location_id": "loc_shop"
+      },
+      {
+        "id": "f_i2_report",
+        "statement_ar": "أبلغ هشام صباح الأحد عن دهان على ستارة دكانه، وقال إنه وقع بعد العاشرة من مساء السبت.",
+        "kind": "event",
+        "subject_ids": [
+          "hisham",
+          "obj_shutter"
+        ],
+        "spoiler_level": 0,
+        "time": {
+          "start_min": 2805,
+          "precision": "exact"
+        },
+        "location_id": "loc_shop"
+      },
+      {
+        "id": "f_i3_report",
+        "statement_ar": "أبلغ هشام صباح الإثنين عن غمر مخزن الورق بالماء، وقال إن أحداً دخل بعد خروجه وفتح الصنبور.",
+        "kind": "event",
+        "subject_ids": [
+          "hisham",
+          "obj_stock"
+        ],
+        "spoiler_level": 0,
+        "time": {
+          "start_min": 4258,
+          "precision": "exact"
+        },
+        "location_id": "loc_stockroom"
+      },
+      {
+        "id": "f_claim_filed",
+        "statement_ar": "قدّم هشام طلب تعويض عن الوقائع الثلاث إلى صندوق ضمان التجار، ومعاينة اللجنة بعد ثلاثة أيام.",
+        "kind": "event",
+        "subject_ids": [
+          "hisham",
+          "org_fund"
+        ],
+        "spoiler_level": 0,
+        "time": {
+          "start_min": 4290,
+          "precision": "exact"
+        },
+        "location_id": "loc_committee"
+      },
+      {
+        "id": "f_hisham_record",
+        "statement_ar": "يملك هشام دكان ورقيات الأقواس منذ إحدى عشرة سنة، وليس في سجله لدى الجمعية شكوى ولا إنذار.",
+        "kind": "attribute",
+        "subject_ids": [
+          "hisham"
+        ],
+        "spoiler_level": 0
+      },
+      {
+        "id": "f_alarm_nights",
+        "statement_ar": "سجل الإنذار: سُلّح برمز هشام الجمعة 21:05 وأُوقف برمزه السبت 06:31، ولم يسجل حساس الزجاج أي حدث بين الوقتين.",
+        "kind": "event",
+        "subject_ids": [
+          "hisham",
+          "obj_alarm"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 1351,
+          "precision": "exact"
+        },
+        "location_id": "loc_shop"
+      },
+      {
+        "id": "f_sensor_ok",
+        "statement_ar": "اختُبر حساس الزجاج قبل الواقعة الأولى بخمسة أيام فنجح، واختُبر بعد البلاغ بيومين فنجح.",
+        "kind": "state",
+        "subject_ids": [
+          "obj_window",
+          "obj_alarm"
+        ],
+        "spoiler_level": 1
+      },
+      {
+        "id": "f_guard_rounds",
+        "statement_ar": "دوّن الحارس سالم البدري أن الواجهات سليمة في جولتي 04:10 و06:00 من صباح السبت، وأن الباب الخلفي مغلق ولا زوار في ليلة الأحد.",
+        "kind": "event",
+        "subject_ids": [
+          "salim"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 1320,
+          "precision": "exact"
+        },
+        "location_id": "loc_row"
+      },
+      {
+        "id": "f_huda_saw_intact",
+        "statement_ar": "مرّت هدى النجار بالدكان نحو 06:20 صباح السبت ورأت الواجهة سليمة.",
+        "kind": "event",
+        "subject_ids": [
+          "huda",
+          "obj_window"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 1340,
+          "precision": "exact"
+        },
+        "location_id": "loc_row"
+      },
+      {
+        "id": "f_wash_clean",
+        "statement_ar": "انتهى عامل النظافة من غسل ستائر الصف عصر السبت 16:10 وسجل أن ستارة الدكان نظيفة.",
+        "kind": "event",
+        "subject_ids": [
+          "obj_shutter"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 1930,
+          "precision": "exact"
+        },
+        "location_id": "loc_row"
+      },
+      {
+        "id": "f_courier_photo",
+        "statement_ar": "صورة مندوب التوصيل 19:40 مساء السبت تُظهر ستارة الدكان مسدلة وعليها دهان داكن.",
+        "kind": "event",
+        "subject_ids": [
+          "obj_shutter"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 2140,
+          "precision": "exact"
+        },
+        "location_id": "loc_shop"
+      },
+      {
+        "id": "f_early_close",
+        "statement_ar": "سُلّح إنذار الدكان 19:16 مساء السبت برمز هشام، وخرجت بطاقته من البوابة 19:31.",
+        "kind": "event",
+        "subject_ids": [
+          "hisham",
+          "obj_alarm"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 2116,
+          "precision": "exact"
+        },
+        "location_id": "loc_shop"
+      },
+      {
+        "id": "f_cafe_person",
+        "statement_ar": "التقطت كاميرا المقهى شخصاً واحداً عند ستارة الدكان بين 19:18 و19:27، ولا أحد عندها بعد ذلك حتى 19:40.",
+        "kind": "event",
+        "subject_ids": [
+          "obj_shutter"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 2118,
+          "end_min": 2127,
+          "precision": "exact"
+        },
+        "location_id": "loc_cafe"
+      },
+      {
+        "id": "f_paint_bought",
+        "statement_ar": "اشترى هشام الجمعة 17:20 علبة طلاء داكن لتر واحد.",
+        "kind": "event",
+        "subject_ids": [
+          "hisham"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 560,
+          "precision": "exact"
+        },
+        "location_id": "loc_paint_shop"
+      },
+      {
+        "id": "f_rear_log",
+        "statement_ar": "سجل الباب الخلفي: دخول ببطاقة هشام الأحد 08:12، وخروج ببطاقته 20:52، ثم لا حدث حتى دخوله ببطاقته الإثنين 06:41.",
+        "kind": "event",
+        "subject_ids": [
+          "hisham",
+          "loc_stockroom"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 3652,
+          "precision": "exact"
+        },
+        "location_id": "loc_stockroom"
+      },
+      {
+        "id": "f_flow",
+        "statement_ar": "بدأ جريان الماء في عدّاد المخزن الأحد 20:41 بمعدل ثابت قدره ستة لترات في الدقيقة، وانقطع الإثنين 06:48 بعد إغلاق المحبس.",
+        "kind": "event",
+        "subject_ids": [
+          "obj_stock"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 3641,
+          "precision": "exact"
+        },
+        "location_id": "loc_stockroom"
+      },
+      {
+        "id": "f_plumber_ok",
+        "statement_ar": "شهادة سباك قبل ثلاثة أسابيع: صنبور المخزن وصمامه جديدان واختُبرا ساعة كاملة بلا تسرب.",
+        "kind": "state",
+        "subject_ids": [
+          "loc_stockroom"
+        ],
+        "spoiler_level": 1
+      },
+      {
+        "id": "f_gate_nights",
+        "statement_ar": "سجل البوابة: خروج هشام الأحد 20:55 ثم لا دخول لأي بطاقة حتى دخوله الإثنين 06:38، ودفتر الزوار عند الحارس خالٍ.",
+        "kind": "event",
+        "subject_ids": [
+          "hisham"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 3655,
+          "precision": "exact"
+        },
+        "location_id": "loc_gate"
+      },
+      {
+        "id": "f_majed_gate",
+        "statement_ar": "بطاقة ماجد خارج السوق: من الجمعة 20:30 إلى السبت 07:10، ومن السبت 15:30 إلى الأحد 07:10، ومن الأحد 21:10 إلى الإثنين 07:20.",
+        "kind": "state",
+        "subject_ids": [
+          "majed"
+        ],
+        "spoiler_level": 1,
+        "location_id": "loc_gate"
+      },
+      {
+        "id": "f_dispute",
+        "statement_ar": "سجلت لجنة الجمعية قبل ثلاثة أسابيع خلافاً بين هشام وماجد على لافتة مشتركة، وانتهى بمحضر تسوية وقّعه الطرفان.",
+        "kind": "event",
+        "subject_ids": [
+          "hisham",
+          "majed"
+        ],
+        "spoiler_level": 1,
+        "location_id": "loc_committee"
+      },
+      {
+        "id": "f_supplier_overdue",
+        "statement_ar": "طلب مورّد الورق من هشام سداد رصيد متأخر قدره 5000 دينار قبل أربعاء الأسبوع نفسه، وإلا أوقف التوريد.",
+        "kind": "event",
+        "subject_ids": [
+          "hisham"
+        ],
+        "spoiler_level": 1
+      },
+      {
+        "id": "f_fund_rule",
+        "statement_ar": "يدفع الصندوق حتى 80% من الخسارة الموثقة بعد المعاينة، ويجب التقديم قبلها، وتتقدم الطلبات التي تتكرر وقائعها خلال أسبوع.",
+        "kind": "attribute",
+        "subject_ids": [
+          "org_fund"
+        ],
+        "spoiler_level": 1
+      },
+      {
+        "id": "f_claim_total",
+        "statement_ar": "قدّر هشام خسارته بـ6300 دينار: 900 للواجهة، و400 للستارة، و5000 لأربعمئة رزمة ورق في المخزن.",
+        "kind": "attribute",
+        "subject_ids": [
+          "hisham",
+          "obj_stock"
+        ],
+        "spoiler_level": 1
+      },
+      {
+        "id": "f_stock_slow",
+        "statement_ar": "جرد الجمعية قبل شهرين سجل الرزم الأربعمئة بطيئة الحركة جداً، وقدّر قيمة تصفيتها بـ1200 دينار.",
+        "kind": "attribute",
+        "subject_ids": [
+          "obj_stock"
+        ],
+        "spoiler_level": 1
+      },
+      {
+        "id": "f_petition",
+        "statement_ar": "عريضة تسعة تجار تنص على أنهم يعلمون بالاعتداءات «من هشام العريان»، ولا يذكر أحدهم أنه رأى شيئاً بنفسه.",
+        "kind": "attribute",
+        "subject_ids": [
+          "org_coop"
+        ],
+        "spoiler_level": 1
+      },
+      {
+        "id": "f_huda_verified",
+        "statement_ar": "تحققت اللجنة من بلاغ هدى قبل شهرين بتسجيل كاميرا مستقل ودفتر الحارس، فصُرف تعويضها.",
+        "kind": "event",
+        "subject_ids": [
+          "huda",
+          "org_fund"
+        ],
+        "spoiler_level": 1,
+        "location_id": "loc_committee"
+      },
+      {
+        "id": "f_i1_not_overnight",
+        "statement_ar": "لم تُكسر الواجهة في الليل: بقيت سليمة حتى الصباح، وكُسرت بعد وصول هشام.",
+        "kind": "event",
+        "subject_ids": [
+          "obj_window",
+          "hisham"
+        ],
+        "spoiler_level": 2,
+        "time": {
+          "start_min": 1358,
+          "precision": "exact"
+        },
+        "location_id": "loc_shop"
+      },
+      {
+        "id": "f_i2_time_false",
+        "statement_ar": "وُجد الدهان على الستارة قبل 19:40 مساء السبت، لا بعد العاشرة ليلاً كما ورد في البلاغ.",
+        "kind": "event",
+        "subject_ids": [
+          "obj_shutter"
+        ],
+        "spoiler_level": 2,
+        "time": {
+          "start_min": 2127,
+          "precision": "exact"
+        },
+        "location_id": "loc_shop"
+      },
+      {
+        "id": "f_i2_owner_near",
+        "statement_ar": "كان هشام آخر من أغلق الدكان وخرج، والشخص الوحيد الذي رُئي عند الستارة قبل الدهان قيد الصورة.",
+        "kind": "event",
+        "subject_ids": [
+          "hisham",
+          "obj_shutter"
+        ],
+        "spoiler_level": 2,
+        "time": {
+          "start_min": 2118,
+          "precision": "exact"
+        },
+        "location_id": "loc_shop"
+      },
+      {
+        "id": "f_i3_flow_before_exit",
+        "statement_ar": "كان الماء يجري في المخزن قبل أن يغادر هشام الباب الخلفي مساء الأحد.",
+        "kind": "event",
+        "subject_ids": [
+          "hisham",
+          "obj_stock"
+        ],
+        "spoiler_level": 2,
+        "time": {
+          "start_min": 3641,
+          "precision": "exact"
+        },
+        "location_id": "loc_stockroom"
+      },
+      {
+        "id": "f_i3_no_entry_after",
+        "statement_ar": "لم يدخل أحد الدكان بعد خروج هشام مساء الأحد حتى عودته صباح الإثنين.",
+        "kind": "absence",
+        "subject_ids": [
+          "loc_stockroom"
+        ],
+        "spoiler_level": 2,
+        "time": {
+          "start_min": 3652,
+          "end_min": 4241,
+          "precision": "exact"
+        },
+        "location_id": "loc_stockroom"
+      },
+      {
+        "id": "f_i3_not_pipe",
+        "statement_ar": "جرى الماء بمعدل ثابت منذ لحظة البدء، وأنابيب المخزن وصنبوره سليمة، فلا تسرب عرضياً.",
+        "kind": "state",
+        "subject_ids": [
+          "loc_stockroom"
+        ],
+        "spoiler_level": 2
+      },
+      {
+        "id": "f_majed_away_all",
+        "statement_ar": "كانت بطاقة ماجد خارج السوق في كل فترة وقعت فيها إحدى الوقائع الثلاث.",
+        "kind": "state",
+        "subject_ids": [
+          "majed"
+        ],
+        "spoiler_level": 2
+      },
+      {
+        "id": "f_motive",
+        "statement_ar": "على هشام دفعة متأخرة للمورّد بقدر المبلغ الذي طلبه، والصندوق يعوّض الخسارة الموثقة، وقيمة الورق الحقيقية أقل بكثير مما أعلن.",
+        "kind": "state",
+        "subject_ids": [
+          "hisham",
+          "org_fund"
+        ],
+        "spoiler_level": 2
+      },
+      {
+        "id": "f_echo",
+        "statement_ar": "تأييد التجار لروايته منقول عن روايته نفسها، فليس شهادة مستقلة.",
+        "kind": "relation",
+        "subject_ids": [
+          "org_coop",
+          "hisham"
+        ],
+        "spoiler_level": 2
+      },
+      {
+        "id": "f_real_verified",
+        "statement_ar": "البلاغ الحقيقي يتأيد بسجلات مستقلة عن صاحبه، كما حدث مع بلاغ هدى.",
+        "kind": "relation",
+        "subject_ids": [
+          "huda"
+        ],
+        "spoiler_level": 2
+      },
+      {
+        "id": "f_staged_by_owner",
+        "statement_ar": "وقائع الواجهة والستارة والمخزن دبّرها هشام بنفسه ليحصل على تعويض يغطي ما عليه من دين.",
+        "kind": "event",
+        "subject_ids": [
+          "hisham"
+        ],
+        "spoiler_level": 3
+      }
+    ],
+    "claims": [
+      {
+        "id": "cl_window_night",
+        "statement_ar": "الواجهة كُسرت في الليل ووجدها هشام محطمة حين وصل.",
+        "kind": "lie",
+        "held_by": [
+          "hisham"
+        ],
+        "true_fact_id": "f_i1_not_overnight",
+        "contradicted_by_evidence_ids": [
+          "ev_alarm_log",
+          "ev_guard_sheet",
+          "ev_sensor_test"
+        ]
+      },
+      {
+        "id": "cl_closing_21",
+        "statement_ar": "أغلق هشام الدكان التاسعة مساء السبت وكانت الستارة نظيفة، والدهان جاء بعد العاشرة.",
+        "kind": "lie",
+        "held_by": [
+          "hisham"
+        ],
+        "true_fact_id": "f_i2_time_false",
+        "contradicted_by_evidence_ids": [
+          "ev_courier_photo",
+          "ev_alarm_log",
+          "ev_gate_log"
+        ]
+      },
+      {
+        "id": "cl_tap_later",
+        "statement_ar": "المخزن كان سليماً حين خرج هشام، ودخل أحدهم بعده وفتح الصنبور.",
+        "kind": "lie",
+        "held_by": [
+          "hisham"
+        ],
+        "true_fact_id": "f_i3_no_entry_after",
+        "contradicted_by_evidence_ids": [
+          "ev_rear_door_log",
+          "ev_water_meter",
+          "ev_gate_log"
+        ]
+      },
+      {
+        "id": "cl_no_pressure",
+        "statement_ar": "لا ضغط مالي على هشام ولا دين متأخر عليه.",
+        "kind": "lie",
+        "held_by": [
+          "hisham"
+        ],
+        "true_fact_id": "f_supplier_overdue",
+        "contradicted_by_evidence_ids": [
+          "ev_supplier_letter"
+        ]
+      },
+      {
+        "id": "cl_majed_threat",
+        "statement_ar": "ماجد هدد هشاماً وقال له إنه سيندم.",
+        "kind": "half_truth",
+        "held_by": [
+          "hisham"
+        ],
+        "true_fact_id": "f_dispute",
+        "contradicted_by_evidence_ids": [
+          "ev_dispute_minutes"
+        ]
+      },
+      {
+        "id": "cl_neighbours",
+        "statement_ar": "تسعة تجار شاهدوا الوقائع ويؤيدون هشاماً.",
+        "kind": "half_truth",
+        "held_by": [
+          "hisham"
+        ],
+        "true_fact_id": "f_echo",
+        "contradicted_by_evidence_ids": [
+          "ev_petition"
+        ]
+      }
+    ]
+  },
+  "timeline": [
+    {
+      "id": "te_paint_buy",
+      "description_ar": "هشام يشتري علبة طلاء من محل الدهانات.",
+      "time": {
+        "start_min": 560,
+        "precision": "exact"
+      },
+      "actor_ids": [
+        "hisham"
+      ],
+      "fact_ids": [
+        "f_paint_bought"
+      ],
+      "location_id": "loc_paint_shop",
+      "motivated_by_ar": "تجهيز ما سيدّعي أنه اعتداء"
+    },
+    {
+      "id": "te_arm_fri",
+      "description_ar": "هشام يسلّح الإنذار ويغلق الدكان ليلة الجمعة.",
+      "time": {
+        "start_min": 785,
+        "precision": "exact"
+      },
+      "actor_ids": [
+        "hisham"
+      ],
+      "fact_ids": [
+        "f_alarm_nights"
+      ],
+      "location_id": "loc_shop",
+      "motivated_by_ar": "إغلاق الدكان قبل بلاغ الصباح"
+    },
+    {
+      "id": "te_majed_out_fri",
+      "description_ar": "بطاقة ماجد تخرج من البوابة ليلة الجمعة.",
+      "time": {
+        "start_min": 750,
+        "precision": "exact"
+      },
+      "actor_ids": [
+        "majed"
+      ],
+      "fact_ids": [
+        "f_majed_gate"
+      ],
+      "location_id": "loc_gate",
+      "motivated_by_ar": "المبيت عند أخته"
+    },
+    {
+      "id": "te_guard_0410",
+      "description_ar": "الحارس يسجل الواجهات سليمة في جولة 04:10.",
+      "time": {
+        "start_min": 1210,
+        "precision": "exact"
+      },
+      "actor_ids": [
+        "salim"
+      ],
+      "fact_ids": [
+        "f_guard_rounds"
+      ],
+      "location_id": "loc_row",
+      "motivated_by_ar": "جولة حراسة دورية"
+    },
+    {
+      "id": "te_guard_0600",
+      "description_ar": "الحارس يسجل الواجهات سليمة في جولة 06:00.",
+      "time": {
+        "start_min": 1320,
+        "precision": "exact"
+      },
+      "actor_ids": [
+        "salim"
+      ],
+      "fact_ids": [
+        "f_guard_rounds"
+      ],
+      "location_id": "loc_row",
+      "motivated_by_ar": "جولة حراسة دورية"
+    },
+    {
+      "id": "te_huda_pass",
+      "description_ar": "هدى تمر بالدكان وترى الواجهة سليمة.",
+      "time": {
+        "start_min": 1340,
+        "precision": "exact"
+      },
+      "actor_ids": [
+        "huda"
+      ],
+      "fact_ids": [
+        "f_huda_saw_intact"
+      ],
+      "location_id": "loc_row",
+      "motivated_by_ar": "التوجه إلى مقهاها لفتحه"
+    },
+    {
+      "id": "te_disarm_sat",
+      "description_ar": "هشام يوقف الإنذار صباح السبت.",
+      "time": {
+        "start_min": 1351,
+        "precision": "exact"
+      },
+      "actor_ids": [
+        "hisham"
+      ],
+      "fact_ids": [
+        "f_alarm_nights"
+      ],
+      "location_id": "loc_shop",
+      "motivated_by_ar": "الدخول إلى الدكان"
+    },
+    {
+      "id": "te_window_broken",
+      "description_ar": "كسر الواجهة بعد إيقاف الإنذار.",
+      "time": {
+        "start_min": 1358,
+        "precision": "exact"
+      },
+      "actor_ids": [
+        "hisham"
+      ],
+      "fact_ids": [
+        "f_i1_not_overnight"
+      ],
+      "location_id": "loc_shop",
+      "motivated_by_ar": "تجهيز اعتداء مزعوم يسبق المعاينة"
+    },
+    {
+      "id": "te_report1",
+      "description_ar": "هشام يبلغ عن كسر الواجهة.",
+      "time": {
+        "start_min": 1372,
+        "precision": "exact"
+      },
+      "actor_ids": [
+        "hisham"
+      ],
+      "fact_ids": [
+        "f_i1_report"
+      ],
+      "location_id": "loc_committee",
+      "motivated_by_ar": "طلب التعويض"
+    },
+    {
+      "id": "te_wash",
+      "description_ar": "عامل النظافة ينهي غسل الستائر ويسجل ستارة الدكان نظيفة.",
+      "time": {
+        "start_min": 1930,
+        "precision": "exact"
+      },
+      "actor_ids": [],
+      "fact_ids": [
+        "f_wash_clean"
+      ],
+      "location_id": "loc_row"
+    },
+    {
+      "id": "te_arm_sat",
+      "description_ar": "هشام يسلّح الإنذار ويغلق الدكان مساء السبت.",
+      "time": {
+        "start_min": 2116,
+        "precision": "exact"
+      },
+      "actor_ids": [
+        "hisham"
+      ],
+      "fact_ids": [
+        "f_early_close"
+      ],
+      "location_id": "loc_shop",
+      "motivated_by_ar": "الإعداد لواقعة الستارة"
+    },
+    {
+      "id": "te_paint",
+      "description_ar": "شخص واحد عند الستارة ثم يظهر الدهان عليها.",
+      "time": {
+        "start_min": 2118,
+        "precision": "exact",
+        "end_min": 2127
+      },
+      "actor_ids": [
+        "hisham"
+      ],
+      "fact_ids": [
+        "f_cafe_person",
+        "f_i2_time_false",
+        "f_i2_owner_near"
+      ],
+      "location_id": "loc_shop",
+      "motivated_by_ar": "تجهيز اعتداء مزعوم ثان"
+    },
+    {
+      "id": "te_gate_sat",
+      "description_ar": "بطاقة هشام تخرج من البوابة.",
+      "time": {
+        "start_min": 2131,
+        "precision": "exact"
+      },
+      "actor_ids": [
+        "hisham"
+      ],
+      "fact_ids": [
+        "f_early_close"
+      ],
+      "location_id": "loc_gate",
+      "motivated_by_ar": "مغادرة السوق"
+    },
+    {
+      "id": "te_courier",
+      "description_ar": "مندوب التوصيل يصور الستارة المدهونة.",
+      "time": {
+        "start_min": 2140,
+        "precision": "exact"
+      },
+      "actor_ids": [],
+      "fact_ids": [
+        "f_courier_photo"
+      ],
+      "location_id": "loc_shop"
+    },
+    {
+      "id": "te_report2",
+      "description_ar": "هشام يبلغ عن دهان الستارة.",
+      "time": {
+        "start_min": 2805,
+        "precision": "exact"
+      },
+      "actor_ids": [
+        "hisham"
+      ],
+      "fact_ids": [
+        "f_i2_report"
+      ],
+      "location_id": "loc_committee",
+      "motivated_by_ar": "استكمال ملف التعويض"
+    },
+    {
+      "id": "te_tap_open",
+      "description_ar": "هشام يفتح صنبور المخزن ويترك الماء يجري.",
+      "time": {
+        "start_min": 3641,
+        "precision": "exact"
+      },
+      "actor_ids": [
+        "hisham"
+      ],
+      "fact_ids": [
+        "f_flow",
+        "f_i3_flow_before_exit"
+      ],
+      "location_id": "loc_stockroom",
+      "motivated_by_ar": "تجهيز الواقعة الثالثة قبل الغياب"
+    },
+    {
+      "id": "te_rear_exit",
+      "description_ar": "هشام يخرج من الباب الخلفي ببطاقته.",
+      "time": {
+        "start_min": 3652,
+        "precision": "exact"
+      },
+      "actor_ids": [
+        "hisham"
+      ],
+      "fact_ids": [
+        "f_rear_log"
+      ],
+      "location_id": "loc_stockroom",
+      "motivated_by_ar": "مغادرة الدكان"
+    },
+    {
+      "id": "te_gate_sun",
+      "description_ar": "بطاقة هشام تخرج من البوابة.",
+      "time": {
+        "start_min": 3655,
+        "precision": "exact"
+      },
+      "actor_ids": [
+        "hisham"
+      ],
+      "fact_ids": [
+        "f_gate_nights"
+      ],
+      "location_id": "loc_gate",
+      "motivated_by_ar": "مغادرة السوق"
+    },
+    {
+      "id": "te_majed_out_sun",
+      "description_ar": "بطاقة ماجد تخرج من السوق ليلة الأحد ولا تعود قبل الصباح.",
+      "time": {
+        "start_min": 3670,
+        "precision": "exact",
+        "end_min": 4280
+      },
+      "actor_ids": [
+        "majed"
+      ],
+      "fact_ids": [
+        "f_majed_gate",
+        "f_majed_away_all"
+      ],
+      "location_id": "loc_gate",
+      "motivated_by_ar": "المبيت عند أخته"
+    },
+    {
+      "id": "te_rear_enter",
+      "description_ar": "هشام يدخل من الباب الخلفي ببطاقته صباح الإثنين.",
+      "time": {
+        "start_min": 4241,
+        "precision": "exact"
+      },
+      "actor_ids": [
+        "hisham"
+      ],
+      "fact_ids": [
+        "f_rear_log",
+        "f_i3_no_entry_after"
+      ],
+      "location_id": "loc_stockroom",
+      "motivated_by_ar": "العودة إلى الدكان"
+    },
+    {
+      "id": "te_flow_stop",
+      "description_ar": "الماء ينقطع بعد إغلاق المحبس.",
+      "time": {
+        "start_min": 4248,
+        "precision": "exact"
+      },
+      "actor_ids": [
+        "hisham"
+      ],
+      "fact_ids": [
+        "f_flow"
+      ],
+      "location_id": "loc_stockroom",
+      "motivated_by_ar": "إنهاء جريان الماء قبل البلاغ"
+    },
+    {
+      "id": "te_report3",
+      "description_ar": "هشام يبلغ عن غمر المخزن.",
+      "time": {
+        "start_min": 4258,
+        "precision": "exact"
+      },
+      "actor_ids": [
+        "hisham"
+      ],
+      "fact_ids": [
+        "f_i3_report"
+      ],
+      "location_id": "loc_committee",
+      "motivated_by_ar": "استكمال ملف التعويض"
+    },
+    {
+      "id": "te_filed",
+      "description_ar": "هشام يقدّم طلب التعويض عن الوقائع الثلاث.",
+      "time": {
+        "start_min": 4290,
+        "precision": "exact"
+      },
+      "actor_ids": [
+        "hisham"
+      ],
+      "fact_ids": [
+        "f_claim_filed",
+        "f_claim_total"
+      ],
+      "location_id": "loc_committee",
+      "motivated_by_ar": "الحصول على التعويض"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_claim_file",
+      "title_ar": "ملف المطالبة (نسخة اللجنة)",
+      "kind": "documentary",
+      "content_ar": "ملف مطالبة مقدم من هشام العريان إلى صندوق ضمان التجار (الإثنين 07:30)\nالواقعة الأولى: كسر واجهة الدكان — بلاغ السبت 06:52 — الخسارة المعلنة 900 دينار.\nالواقعة الثانية: دهان على ستارة الدكان — بلاغ الأحد 06:45 — الخسارة المعلنة 400 دينار.\nالواقعة الثالثة: غمر مخزن الورق بالماء — بلاغ الإثنين 06:58 — الخسارة المعلنة 5000 دينار عن أربعمئة رزمة ورق ملوّن.\nالمجموع المعلن: 6300 دينار. موعد معاينة اللجنة: الخميس.",
+      "acquired_by_action_ids": [
+        "a_get_claim_file"
+      ],
+      "supports_fact_ids": [
+        "f_i1_report",
+        "f_i2_report",
+        "f_i3_report",
+        "f_claim_filed",
+        "f_claim_total"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "ملخص إداري يسجل ما قاله مقدم الطلب وما قدّره من خسائر، ولا يتحقق من وقوع الوقائع ولا من قيمة الأشياء.",
+      "location_id": "loc_committee"
+    },
+    {
+      "id": "ev_hisham_statement",
+      "title_ar": "إفادة هشام العريان المكتوبة",
+      "kind": "testimonial",
+      "content_ar": "إفادة هشام العريان (مكتوبة للجنة):\n«أغلقت الدكان الجمعة قرابة التاسعة وعدت السبت 06:30 فوجدت الواجهة محطمة، وقد كُسرت في الليل. وأغلقت السبت في التاسعة والستارة نظيفة، وجاء من دهنها بعد العاشرة. وغادرت الأحد قبل التاسعة والمخزن سليم والصنبور مغلق، ودخل أحدهم بعدي وفتحه. أظن أن ماجد الفارس هو الفاعل فقد هددني وقال لي: ستندم. ولا ضغط مالي علي، وتسعة من التجار يؤيدونني.»",
+      "acquired_by_action_ids": [
+        "a_get_hisham_stmt"
+      ],
+      "supports_fact_ids": [
+        "f_i1_report",
+        "f_i2_report",
+        "f_i3_report"
+      ],
+      "reliability": "weak",
+      "limits_ar": "قول صاحب المصلحة في الواقعة؛ يصف ما يقول إنه حدث ولا يثبته، وقد يخلط الصحيح بغيره.",
+      "location_id": "loc_committee"
+    },
+    {
+      "id": "ev_petition",
+      "title_ar": "عريضة تضامن التجار",
+      "kind": "documentary",
+      "content_ar": "عريضة موقعة من تسعة تجار في سوق الأقواس:\n«نحن الموقعين أدناه نعلم من الأستاذ هشام العريان أن دكانه تعرض لثلاثة اعتداءات متتالية، ونرجو من الصندوق الإسراع في تعويضه.»\nتسعة تواقيع. لا يذكر أي من الموقعين أنه رأى الوقائع أو سمع بها من غير هشام.",
+      "acquired_by_action_ids": [
+        "a_get_petition"
+      ],
+      "supports_fact_ids": [
+        "f_petition"
+      ],
+      "reliability": "weak",
+      "limits_ar": "تعبر عن تعاطف الجيران ولا تحمل معلومة مستقلة عن رواية صاحب الدكان؛ ولا يصح أن يقوم عدد التواقيع مقام السجلات.",
+      "location_id": "loc_committee",
+      "contradicts_claim_ids": [
+        "cl_neighbours"
+      ]
+    },
+    {
+      "id": "ev_majed_statement",
+      "title_ar": "إفادة ماجد الفارس",
+      "kind": "testimonial",
+      "content_ar": "إفادة ماجد الفارس: «لا علاقة لي بما جرى. كنت ليلة الجمعة وليلة الأحد عند أختي في الضاحية، وغادرت السوق السبت قبل العصر لزيارة والدي. خلافي مع هشام انتهى بمحضر في الجمعية.»",
+      "acquired_by_action_ids": [
+        "a_get_majed_stmt"
+      ],
+      "supports_fact_ids": [
+        "f_majed_gate",
+        "f_dispute"
+      ],
+      "reliability": "weak",
+      "limits_ar": "قول شخص ذكره المبلِّغ؛ يحتاج إلى سجل مستقل يؤيده أو ينفيه.",
+      "location_id": "loc_committee"
+    },
+    {
+      "id": "ev_dispute_minutes",
+      "title_ar": "محضر لجنة الجمعية في خلاف اللافتة",
+      "kind": "documentary",
+      "content_ar": "محضر لجنة الجمعية (قبل ثلاثة أسابيع): خلاف بين هشام العريان وماجد الفارس على حدود لافتة مشتركة بين الدكانين. جرى النقاش بهدوء، واتفق الطرفان على تحريك لافتة ماجد ثلاثين سنتيمتراً، ووقّعا محضر التسوية. لم يُسجَّل في المحضر أي تهديد أو إساءة.",
+      "acquired_by_action_ids": [
+        "a_get_dispute"
+      ],
+      "supports_fact_ids": [
+        "f_dispute"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "يبين أن الخلاف سُوّي رسمياً ولا يسجل ما قيل خارج الجلسة؛ ولا يثبت وحده براءة ماجد.",
+      "location_id": "loc_committee",
+      "contradicts_claim_ids": [
+        "cl_majed_threat"
+      ]
+    },
+    {
+      "id": "ev_fund_notice",
+      "title_ar": "إعلان قواعد صندوق ضمان التجار",
+      "kind": "documentary",
+      "content_ar": "إعلان الصندوق: يدفع الصندوق حتى 80% من الخسارة الموثقة الناتجة عن اعتداء من الغير، بعد معاينة اللجنة. تقدَّم المطالبة قبل موعد المعاينة. تُعطى الأولوية للمطالبات التي تتكرر وقائعها خلال أسبوع واحد.",
+      "acquired_by_action_ids": [
+        "a_get_fund_notice"
+      ],
+      "supports_fact_ids": [
+        "f_fund_rule"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "يعرض قواعد عامة تنطبق على كل التجار، ولا يدل بذاته على أن مطالبة بعينها غير صحيحة.",
+      "location_id": "loc_committee"
+    },
+    {
+      "id": "ev_supplier_letter",
+      "title_ar": "رسالة مورّد الورق إلى هشام",
+      "kind": "documentary",
+      "content_ar": "رسالة مستودع الورق الشمالي إلى هشام العريان (قبل اثني عشر يوماً):\n«رصيدكم المتأخر 5000 دينار. ينتهي أجل السداد يوم الأربعاء القادم، وبعده يتوقف التوريد ويُحال الرصيد إلى التحصيل.»",
+      "acquired_by_action_ids": [
+        "a_get_supplier"
+      ],
+      "supports_fact_ids": [
+        "f_supplier_overdue"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "تثبت وجود دين وموعداً للسداد، ولا تثبت أن صاحب الدين لجأ إلى الاحتيال؛ فكثيرون يقعون في ضيق مالي دون أن يخالفوا.",
+      "location_id": "loc_committee",
+      "contradicts_claim_ids": [
+        "cl_no_pressure"
+      ]
+    },
+    {
+      "id": "ev_stock_sheet",
+      "title_ar": "جرد الجمعية لدكان ورقيات الأقواس",
+      "kind": "documentary",
+      "content_ar": "جرد دوري للجمعية (قبل شهرين): دكان ورقيات الأقواس — ورق ملوّن: 400 رزمة. الحركة: بطيئة جداً (بيعت 20 رزمة في اثني عشر شهراً). قيمة التصفية المقدّرة: 1200 دينار.",
+      "acquired_by_action_ids": [
+        "a_get_stock"
+      ],
+      "supports_fact_ids": [
+        "f_stock_slow"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "تقدير تقريبي لقيمة التصفية في تاريخ سابق؛ ولا يقول شيئاً عن ما جرى للورق لاحقاً.",
+      "location_id": "loc_committee"
+    },
+    {
+      "id": "ev_alarm_log",
+      "title_ar": "سجل لوحة الإنذار (شركة صيانة أنظمة السوق)",
+      "kind": "digital",
+      "content_ar": "سجل لوحة إنذار دكان ورقيات الأقواس:\nالجمعة 21:05 — تسليح (رمز المستخدم: هشام)\nالسبت 06:31 — إيقاف (رمز المستخدم: هشام)\nالسبت 19:16 — تسليح (رمز المستخدم: هشام)\nالأحد 06:40 — إيقاف (رمز المستخدم: هشام)\nالأحد 20:50 — تسليح (رمز المستخدم: هشام)\nالإثنين 06:42 — إيقاف (رمز المستخدم: هشام)\nأحداث الحساسات: لا حدث لحساس الزجاج بين تسليح الجمعة 21:05 وإيقاف السبت 06:31. حساس الزجاج يعمل في كل فترات التسليح.",
+      "acquired_by_action_ids": [
+        "a_get_alarm"
+      ],
+      "supports_fact_ids": [
+        "f_alarm_nights",
+        "f_early_close"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يسجل رمز المستخدم لا من أدخله فعلاً، ولا يرى ما يجري بعد الإيقاف، ولا يشمل الأحداث خارج الواجهة.",
+      "location_id": "loc_shop",
+      "contradicts_claim_ids": [
+        "cl_window_night",
+        "cl_closing_21"
+      ]
+    },
+    {
+      "id": "ev_sensor_test",
+      "title_ar": "سجل صيانة حساس الزجاج",
+      "kind": "digital",
+      "content_ar": "سجل صيانة الإنذار — دكان ورقيات الأقواس:\nاختبار شهري لحساس الزجاج قبل خمسة أيام من ليلة الجمعة: ناجح.\nاختبار بعد البلاغ بيومين: ناجح.",
+      "acquired_by_action_ids": [
+        "a_get_sensor"
+      ],
+      "supports_fact_ids": [
+        "f_sensor_ok"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يثبت سلامة الحساس في تاريخي الاختبار، ولا يثبت حالته في اللحظة نفسها إلا بالاستدلال.",
+      "location_id": "loc_shop",
+      "contradicts_claim_ids": [
+        "cl_window_night"
+      ]
+    },
+    {
+      "id": "ev_guard_sheet",
+      "title_ar": "دفتر جولات الحارس سالم البدري",
+      "kind": "documentary",
+      "content_ar": "دفتر الحارس — ممر الدكاكين:\nليلة الجمعة والسبت: 22:10، 00:10، 02:10، 04:10، 06:00 — «الواجهات سليمة».\nليلة الأحد والإثنين: 22:10، 00:10، 02:10، 04:10، 06:00 — «الواجهات سليمة، الباب الخلفي مغلق، لا زوار بعد الغلق».",
+      "acquired_by_action_ids": [
+        "a_get_guard"
+      ],
+      "supports_fact_ids": [
+        "f_guard_rounds"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "دفتر مكتوب بيد الحارس عند الجولات فقط؛ لا يغطي الفترات بين جولتين ولا ما وراء الواجهة.",
+      "location_id": "loc_row",
+      "contradicts_claim_ids": [
+        "cl_window_night"
+      ]
+    },
+    {
+      "id": "ev_wash_sheet",
+      "title_ar": "ورقة عمل شركة النظافة",
+      "kind": "documentary",
+      "content_ar": "ورقة عمل غسل ستائر الصف الشرقي — السبت: انتهى الغسل 16:10. ستارة ورقيات الأقواس: نظيفة. توقيع العامل.",
+      "acquired_by_action_ids": [
+        "a_get_wash"
+      ],
+      "supports_fact_ids": [
+        "f_wash_clean"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "تسجل حالة الستارة لحظة انتهاء العامل، ولا تقول ما جرى بعد ذلك.",
+      "location_id": "loc_row"
+    },
+    {
+      "id": "ev_courier_photo",
+      "title_ar": "سجل ماسح مندوب التوصيل وصورته",
+      "kind": "digital",
+      "content_ar": "سجل ماسح مندوب التوصيل — محاولة تسليم رقم 8841 — السبت 19:40 — الحالة: «الدكان مغلق».\nوصف الصورة المرفقة: ستارة الدكان مسدلة، وعليها خطوط دهان داكنة عريضة.",
+      "acquired_by_action_ids": [
+        "a_get_courier"
+      ],
+      "supports_fact_ids": [
+        "f_courier_photo"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يثبت حالة الستارة في اللحظة المسجلة، ولا يقول من دهنها ولا متى بالضبط قبل ذلك.",
+      "location_id": "loc_shop",
+      "contradicts_claim_ids": [
+        "cl_closing_21"
+      ]
+    },
+    {
+      "id": "ev_cafe_cam",
+      "title_ar": "قائمة مقاطع كاميرا مقهى النجار",
+      "kind": "digital",
+      "content_ar": "قائمة مقاطع الحركة — كاميرا مقهى النجار (ساعتها مضبوطة على ساعة الجمعة):\nالسبت 19:18–19:27 — شخص واحد عند ستارة ورقيات الأقواس، معطف داكن، الوجه غير واضح.\nالسبت 19:27–19:40 — لا أحد عند الستارة.",
+      "acquired_by_action_ids": [
+        "a_get_cafe"
+      ],
+      "supports_fact_ids": [
+        "f_cafe_person"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "لا يحدد هوية الشخص ولا يُرى منه ما فعله بيديه.",
+      "location_id": "loc_cafe"
+    },
+    {
+      "id": "ev_paint_receipt",
+      "title_ar": "فاتورة محل الدهانات",
+      "kind": "documentary",
+      "content_ar": "فاتورة محل الدهانات — الجمعة 17:20: علبة طلاء داكن لتر واحد. اسم المشتري المدوّن: هشام العريان.",
+      "acquired_by_action_ids": [
+        "a_get_receipt"
+      ],
+      "supports_fact_ids": [
+        "f_paint_bought"
+      ],
+      "reliability": "weak",
+      "limits_ar": "شراء الطلاء عمل عادي لصاحب دكان، ولا يثبت أنه استُعمل في الدهان.",
+      "location_id": "loc_paint_shop"
+    },
+    {
+      "id": "ev_rear_door_log",
+      "title_ar": "سجل قفل الباب الخلفي",
+      "kind": "digital",
+      "content_ar": "سجل قفل الباب الخلفي لدكان ورقيات الأقواس (بطاقات):\nالأحد 08:12 — دخول — بطاقة هشام\nالأحد 20:52 — خروج — بطاقة هشام\nالإثنين 06:41 — دخول — بطاقة هشام\nلا أحداث أخرى. للدكان بطاقة واحدة مسجلة.",
+      "acquired_by_action_ids": [
+        "a_get_reardoor"
+      ],
+      "supports_fact_ids": [
+        "f_rear_log"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يسجل البطاقة المقروءة لا من يحملها، ولا يمنع احتمال نسخ البطاقة.",
+      "location_id": "loc_stockroom",
+      "contradicts_claim_ids": [
+        "cl_tap_later"
+      ]
+    },
+    {
+      "id": "ev_water_meter",
+      "title_ar": "قراءات عدّاد مياه المخزن",
+      "kind": "digital",
+      "content_ar": "عدّاد مياه مخزن ورقيات الأقواس (مرتبط بمركز مياه السوق):\nالأحد 20:40 — 0 لتر/دقيقة\nالأحد 20:41 — بدء جريان بمعدل 6 لترات/دقيقة ثابت\nمن 20:41 حتى الإثنين 06:48 — المعدل لا يتغير\nالإثنين 06:48 — 0 لتر/دقيقة (إغلاق المحبس)",
+      "acquired_by_action_ids": [
+        "a_get_meter"
+      ],
+      "supports_fact_ids": [
+        "f_flow"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يسجل كمية الماء وتوقيتها، ولا يقول من فتح الصنبور.",
+      "location_id": "loc_stockroom",
+      "contradicts_claim_ids": [
+        "cl_tap_later"
+      ]
+    },
+    {
+      "id": "ev_plumber_cert",
+      "title_ar": "شهادة سباك الجمعية",
+      "kind": "documentary",
+      "content_ar": "شهادة سباك معتمد من الجمعية (قبل ثلاثة أسابيع): مخزن ورقيات الأقواس — استُبدل الصنبور وصمامه، واختُبر الضغط ساعة كاملة بلا تسرب، والأنابيب سليمة.",
+      "acquired_by_action_ids": [
+        "a_get_plumber"
+      ],
+      "supports_fact_ids": [
+        "f_plumber_ok"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "تصف حال التمديدات قبل ثلاثة أسابيع، ولا ترى ليلة الأحد.",
+      "location_id": "loc_stockroom"
+    },
+    {
+      "id": "ev_gate_log",
+      "title_ar": "سجل بوابة سوق الأقواس ودفتر زوارها",
+      "kind": "digital",
+      "content_ar": "سجل بطاقات البوابة (تُغلق للدخول بغير بطاقة بعد الساعة 21:00؛ ويسجل الحارس الزوار في دفتره):\nالجمعة 20:30 — خروج — ماجد الفارس\nالجمعة 21:12 — خروج — هشام العريان\nالسبت 06:28 — دخول — هشام العريان\nالسبت 07:10 — دخول — ماجد الفارس\nالسبت 15:30 — خروج — ماجد الفارس\nالسبت 19:31 — خروج — هشام العريان\nالأحد 06:36 — دخول — هشام العريان\nالأحد 07:10 — دخول — ماجد الفارس\nالأحد 20:55 — خروج — هشام العريان\nالأحد 21:10 — خروج — ماجد الفارس\nالإثنين 06:38 — دخول — هشام العريان\nالإثنين 07:20 — دخول — ماجد الفارس\nدفتر الزوار ليلة الأحد: لا أسماء.",
+      "acquired_by_action_ids": [
+        "a_get_gate"
+      ],
+      "supports_fact_ids": [
+        "f_gate_nights",
+        "f_majed_gate",
+        "f_early_close"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يسجل البطاقة لا حاملها، ولا يشمل من يدخل من غير البوابة المسجلة.",
+      "location_id": "loc_gate",
+      "contradicts_claim_ids": [
+        "cl_closing_21",
+        "cl_tap_later"
+      ]
+    },
+    {
+      "id": "ev_huda_case",
+      "title_ar": "ملف مطالبة هدى النجار السابقة",
+      "kind": "documentary",
+      "content_ar": "ملف مطالبة سابقة (قبل شهرين): مقهى النجار — كسر لافتة المقهى ليلاً.\nالتحقق: تسجيل كاميرا دكان جار لا صلة له بالمطالِبة يظهر شخصين يحطمان اللافتة 01:12؛ ودفتر الحارس يسجل البلاغ في جولة 01:40؛ وأُنجز الفحص في يومين.\nالقرار: صُرف التعويض.",
+      "acquired_by_action_ids": [
+        "a_get_huda_case"
+      ],
+      "supports_fact_ids": [
+        "f_huda_verified"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "يبين كيف يُتحقق من بلاغ حقيقي بسجلات مستقلة، ولا يقول شيئاً عن بلاغ هشام.",
+      "location_id": "loc_committee"
+    }
+  ],
+  "evidence_graph": {
+    "inferences": [
+      {
+        "id": "i_i1_a",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_alarm_log"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_sensor_test"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_i1_not_overnight"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "الإنذار كان مسلّحاً من الجمعية 21:05 حتى 06:31 وحساس الزجاج سليم في الاختبارين ولم يسجل أي حدث؛ فلو انكسر الزجاج في الليل لسُجّل. إذن لم يحدث الكسر إلا بعد إيقاف الإنذار.",
+        "skill_ko_refs": [
+          "KO-RS-05-005"
+        ]
+      },
+      {
+        "id": "i_i1_b",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_guard_sheet"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_i1_not_overnight"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "دفتر الحارس، وهو مصدر مستقل عن الإنذار وعن صاحب الدكان، يسجل الواجهات سليمة حتى 06:00 صباح السبت؛ فالكسر وقع بعد ذلك لا في الليل.",
+        "skill_ko_refs": [
+          "KO-RS-05-001"
+        ]
+      },
+      {
+        "id": "i_i3_a",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_rear_door_log"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_i3_no_entry_after"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "قفل الباب الخلفي لا يسجل بعد خروج بطاقة هشام 20:52 أي دخول حتى عودته 06:41، فلم يدخل أحد ببطاقة الدكان في تلك الفترة.",
+        "skill_ko_refs": [
+          "KO-RS-06-002"
+        ]
+      },
+      {
+        "id": "i_i3_b",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_gate_log"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_guard_sheet"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_i3_no_entry_after"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "سجل البوابة لا يسجل دخول أي بطاقة بين خروج هشام وعودته، ودفتر الزوار خالٍ، والحارس دوّن الباب الخلفي مغلقاً في كل جولاته؛ فلا طريق لأحد إلى الدكان في تلك الليلة.",
+        "skill_ko_refs": [
+          "KO-RS-05-001"
+        ]
+      },
+      {
+        "id": "i_flow_before",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_water_meter"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_i3_flow_before_exit"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "العدّاد يبدأ التسجيل 20:41، والباب الخلفي يسجل خروج هشام 20:52؛ فالماء كان يجري قبل مغادرته بإحدى عشرة دقيقة.",
+        "skill_ko_refs": [
+          "KO-RS-05-005"
+        ]
+      },
+      {
+        "id": "i_not_pipe",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_plumber_cert"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_water_meter"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_i3_not_pipe"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "الأنابيب والصنبور اختُبرت سليمة قبل ثلاثة أسابيع، والعدّاد يبين بدءاً مفاجئاً بمعدل ثابت لا بتدفق يتزايد تدريجياً كما في التسرب؛ فالماء لم يجرِ من عطل.",
+        "skill_ko_refs": [
+          "KO-RS-05-002"
+        ]
+      },
+      {
+        "id": "i_motive_a",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_supplier_letter"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_fund_notice"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_motive"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "دين المورّد 5000 ينتهي أجله قبل المعاينة، والصندوق يدفع حتى 80% من الخسارة الموثقة ويقدّم المطالبات المتكررة؛ فهناك ما يدفع إلى طلب التعويض، وهذا دافع لا دليل على الفعل وحده.",
+        "skill_ko_refs": [
+          "KO-RS-06-002"
+        ]
+      },
+      {
+        "id": "i_motive_b",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_claim_file"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_stock_sheet"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_motive"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "المطالبة تقدّر أربعمئة رزمة بـ5000، والجرد نفسه قبل شهرين قدّر الرزم الأربعمئة بـ1200 فقط وبطيئة الحركة؛ فالخسارة المعلنة تفوق قيمة الورق بكثير.",
+        "skill_ko_refs": [
+          "KO-RS-05-001"
+        ]
+      },
+      {
+        "id": "i_staged",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_i1_not_overnight"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_i3_no_entry_after"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_motive"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_staged_by_owner"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "واقعتان من الثلاث ثبت أن روايتهما غير ممكنة: واحدة لم تقع في الليل بل بعد وصوله وإيقافه الإنذار، والأخرى لم يدخلها أحد غيره والماء جارٍ قبل خروجه. ومع الحافز المالي يصير الأرجح أن صاحب الدكان هو من دبّر الوقائع.",
+        "skill_ko_refs": [
+          "KO-RS-05-002"
+        ]
+      },
+      {
+        "id": "i_i2_time",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_wash_sheet"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_courier_photo"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_i2_time_false"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "الستارة نظيفة 16:10 وعليها الدهان 19:40؛ فالدهان وقع بين الوقتين لا بعد العاشرة ليلاً.",
+        "skill_ko_refs": [
+          "KO-RS-05-005"
+        ]
+      },
+      {
+        "id": "i_i2_who",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_i2_time_false"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_cafe_cam"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_alarm_log"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_gate_log"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_paint_receipt"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_i2_owner_near"
+        },
+        "relation": "supports",
+        "strength": "suggestive",
+        "rule_ar": "الإنذار سُلّح 19:16 والبوابة سجلت خروج بطاقة هشام 19:31، والكاميرا ترى شخصاً واحداً عند الستارة بين 19:18 و19:27 ثم لا أحد، وفاتورة الطلاء باسمه؛ والاستنتاج هنا ظرفي لأن الوجه غير مرئي.",
+        "skill_ko_refs": [
+          "KO-RS-05-002"
+        ]
+      },
+      {
+        "id": "i_majed_out",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_gate_log"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_wash_sheet"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_majed_away_all"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "بطاقة ماجد خارج السوق في الليلتين وتخرج السبت 15:30 قبل انتهاء الغسل 16:10، فلم يكن في السوق في أي من الفترات الثلاث (والسجل يخص البطاقة لا حاملها).",
+        "skill_ko_refs": [
+          "KO-RS-06-002"
+        ]
+      },
+      {
+        "id": "i_echo",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_petition"
+          },
+          {
+            "ref_type": "general_knowledge",
+            "ref_id": "اتفاق الأقوال المنقولة عن مصدر واحد ليس تأييداً مستقلاً"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_echo"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "العريضة تنص على أن الموقعين يعلمون من هشام نفسه ولا يذكر أحد أنه رأى شيئاً؛ فتسعة تواقيع تعود إلى مصدر واحد.",
+        "skill_ko_refs": [
+          "KO-RS-05-001"
+        ]
+      },
+      {
+        "id": "i_real",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_huda_case"
+          },
+          {
+            "ref_type": "general_knowledge",
+            "ref_id": "التحقق بسجلات مستقلة يصلح للبلاغ الحقيقي كما يصلح لغيره"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_real_verified"
+        },
+        "relation": "supports",
+        "strength": "strong",
+        "rule_ar": "بلاغ هدى تأيد بكاميرا جار مستقل ودفتر الحارس خلال يومين؛ فمعيار التحقق نفسه يحفظ حق المتضرر الحقيقي.",
+        "skill_ko_refs": [
+          "KO-RS-06-009"
+        ]
+      },
+      {
+        "id": "i_claim_window",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_alarm_log"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_guard_sheet"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_window_night"
+        },
+        "relation": "contradicts_claim",
+        "strength": "strong",
+        "rule_ar": "الإنذار المسلّح بلا أي حدث، ودفتر الحارس الذي يسجل الواجهات سليمة حتى 06:00، يناقضان القول بأن الكسر وقع ليلاً.",
+        "skill_ko_refs": [
+          "KO-RS-05-001"
+        ]
+      },
+      {
+        "id": "i_claim_close",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_courier_photo"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_alarm_log"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_closing_21"
+        },
+        "relation": "contradicts_claim",
+        "strength": "strong",
+        "rule_ar": "الإنذار سُلّح 19:16 لا 21:00، والستارة مدهونة 19:40 قبل الساعة التي ذكرها.",
+        "skill_ko_refs": [
+          "KO-RS-05-001"
+        ]
+      },
+      {
+        "id": "i_claim_tap",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_rear_door_log"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_water_meter"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_tap_later"
+        },
+        "relation": "contradicts_claim",
+        "strength": "strong",
+        "rule_ar": "الماء بدأ يجري قبل خروجه ولم يدخل أحد بعده؛ فلا يصح القول إن المخزن كان سليماً حين خرج وإن غيره فتح الصنبور.",
+        "skill_ko_refs": [
+          "KO-RS-05-001"
+        ]
+      },
+      {
+        "id": "i_claim_pressure",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_supplier_letter"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_no_pressure"
+        },
+        "relation": "contradicts_claim",
+        "strength": "strong",
+        "rule_ar": "رسالة المورّد تذكر رصيداً متأخراً وموعداً لوقف التوريد، فلا يصح القول بأنه لا دين عليه.",
+        "skill_ko_refs": [
+          "KO-RS-05-001"
+        ]
+      },
+      {
+        "id": "i_claim_threat",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_dispute_minutes"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_majed_threat"
+        },
+        "relation": "contradicts_claim",
+        "strength": "suggestive",
+        "rule_ar": "المحضر الرسمي يصف جلسة هادئة وتسوية موقعة ولا يسجل أي تهديد؛ وهو لا يمنع أن يكون قيل كلام خارج الجلسة.",
+        "skill_ko_refs": [
+          "KO-RS-05-001"
+        ]
+      },
+      {
+        "id": "i_claim_neighbours",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_petition"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_neighbours"
+        },
+        "relation": "contradicts_claim",
+        "strength": "strong",
+        "rule_ar": "نص العريضة يبين أن المؤيدين لم يشاهدوا شيئاً بل نقلوا عن هشام.",
+        "skill_ko_refs": [
+          "KO-RS-05-001"
+        ]
+      },
+      {
+        "id": "i_h_owner",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_staged_by_owner"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_i2_time_false"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_i3_flow_before_exit"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_hisham"
+        },
+        "relation": "supports",
+        "strength": "strong",
+        "rule_ar": "ثبوت استحالة روايتين، والدهان قبل الوقت المعلن، والماء الجاري قبل خروجه، مع الحافز المالي، تجعل أن صاحب الدكان دبّر الوقائع هو التفسير الذي تتسق معه كل السجلات.",
+        "skill_ko_refs": [
+          "KO-RS-05-002"
+        ]
+      },
+      {
+        "id": "i_rule_stranger",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_i1_not_overnight"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_i3_no_entry_after"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_stranger"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "لو كان غريب قد حطم الواجهة ليلاً وأغرق المخزن لسجلتهما الحساسات والأقفال والحارس؛ والسجلات تقول إن الكسر بعد الصباح وإن المخزن لم يدخله أحد.",
+        "skill_ko_refs": [
+          "KO-RS-06-009"
+        ]
+      },
+      {
+        "id": "i_rule_majed",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_majed_away_all"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_staged_by_owner"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_majed"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "بطاقة ماجد خارج السوق في الفترات الثلاث، والسجلات المستقلة تحمّل الوقائع لمن كان قريباً منها؛ ولا يكفي خلاف قديم سُوّي بمحضر.",
+        "skill_ko_refs": [
+          "KO-RS-06-009"
+        ]
+      },
+      {
+        "id": "i_rule_pipe",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_i3_not_pipe"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_pipe"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "التمديدات سليمة والجريان بدأ بمعدل ثابت من لحظة واحدة، فلا يصح أن يكون الغمر من عطل أنبوب.",
+        "skill_ko_refs": [
+          "KO-RS-05-002"
+        ]
+      }
+    ]
+  },
+  "character_knowledge": [
+    {
+      "character_id": "hisham",
+      "knows": [
+        {
+          "fact_id": "f_paint_bought",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [
+        {
+          "fact_id": "f_early_close",
+          "reveal_when": {
+            "presented": {
+              "evidence_id": "ev_courier_photo",
+              "to_character": "hisham"
+            }
+          },
+          "cover_claim_id": "cl_closing_21",
+          "reveal_line_id": "hs_early"
+        },
+        {
+          "fact_id": "f_supplier_overdue",
+          "reveal_when": {
+            "presented": {
+              "evidence_id": "ev_supplier_letter",
+              "to_character": "hisham"
+            }
+          },
+          "cover_claim_id": "cl_no_pressure",
+          "reveal_line_id": "hs_debt"
+        }
+      ],
+      "believes": [
+        {
+          "claim_id": "cl_window_night",
+          "stance": "deliberate_lie"
+        },
+        {
+          "claim_id": "cl_closing_21",
+          "stance": "deliberate_lie"
+        },
+        {
+          "claim_id": "cl_tap_later",
+          "stance": "deliberate_lie"
+        },
+        {
+          "claim_id": "cl_no_pressure",
+          "stance": "deliberate_lie"
+        },
+        {
+          "claim_id": "cl_majed_threat",
+          "stance": "deliberate_lie"
+        },
+        {
+          "claim_id": "cl_neighbours",
+          "stance": "deliberate_lie"
+        }
+      ]
+    },
+    {
+      "character_id": "majed",
+      "knows": [
+        {
+          "fact_id": "f_dispute",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_majed_gate",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    },
+    {
+      "character_id": "salim",
+      "knows": [
+        {
+          "fact_id": "f_guard_rounds",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    },
+    {
+      "character_id": "huda",
+      "knows": [
+        {
+          "fact_id": "f_huda_saw_intact",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_huda_verified",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    },
+    {
+      "character_id": "nada",
+      "knows": [
+        {
+          "fact_id": "f_fund_rule",
+          "access": "professional",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_claim_total",
+          "access": "professional",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_stock_slow",
+          "access": "professional",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "h_hisham",
+      "statement_ar": "دبّر هشام العريان بنفسه الوقائع الثلاث ليحصل على تعويض الصندوق.",
+      "is_true": true,
+      "plausibility_at_start": "low",
+      "suspect_id": "hisham"
+    },
+    {
+      "id": "h_majed",
+      "statement_ar": "ماجد الفارس هو من كسر الواجهة ودهن الستارة وأغرق المخزن بسبب خلافهما القديم.",
+      "is_true": false,
+      "plausibility_at_start": "medium",
+      "suspect_id": "majed"
+    },
+    {
+      "id": "h_stranger",
+      "statement_ar": "تعرض الدكان لثلاثة اعتداءات من مجهولين في الليل كما روى صاحبه.",
+      "is_true": false,
+      "plausibility_at_start": "high"
+    },
+    {
+      "id": "h_pipe",
+      "statement_ar": "غمر المخزن سببه عطل في الصنبور أو الأنابيب وليس فعل أحد.",
+      "is_true": false,
+      "plausibility_at_start": "low"
+    }
+  ],
+  "misdirection_plan": [
+    {
+      "id": "rh_petition",
+      "points_to_hypothesis_id": "h_stranger",
+      "planted_via_ar": "ثلاثة بلاغات متتالية وعريضة من تسعة تجار وإفادة مؤثرة، وكلها تبدو كأنها تؤيد وقوع اعتداءات من الغير.",
+      "evidence_ids": [
+        "ev_claim_file",
+        "ev_hisham_statement",
+        "ev_petition"
+      ],
+      "refuted_by_inference_ids": [
+        "i_rule_stranger",
+        "i_echo"
+      ],
+      "fairness_note_ar": "سجلات الإنذار والحارس والباب والبوابة متاحة بالإجراءات العادية، والعريضة تنص بنفسها على أن التجار نقلوا عن صاحب الدكان."
+    },
+    {
+      "id": "rh_majed",
+      "points_to_hypothesis_id": "h_majed",
+      "planted_via_ar": "خلاف سابق موثق بين الجارين، وصاحب الدكان يذكر تهديداً.",
+      "evidence_ids": [
+        "ev_dispute_minutes",
+        "ev_hisham_statement"
+      ],
+      "refuted_by_inference_ids": [
+        "i_rule_majed",
+        "i_claim_threat"
+      ],
+      "fairness_note_ar": "المحضر نفسه ينص على تسوية هادئة، وسجل البوابة يبين خروج بطاقة ماجد في كل فترات الوقائع، وسجل الغسل يقارن توقيت خروجه."
+    },
+    {
+      "id": "rh_pipe",
+      "points_to_hypothesis_id": "h_pipe",
+      "planted_via_ar": "الماء الجاري في عدّاد المخزن يوحي لأول وهلة بعطل في التمديدات.",
+      "evidence_ids": [
+        "ev_water_meter"
+      ],
+      "refuted_by_inference_ids": [
+        "i_rule_pipe"
+      ],
+      "fairness_note_ar": "شهادة السباك وطبيعة الجريان الثابت من لحظة واحدة متاحتان مع القراءات."
+    }
+  ],
+  "learning_objectives": [
+    {
+      "id": "lo_claim",
+      "statement_ar": "يعامل البلاغ والإفادة والعريضة ادعاءات تحتاج إلى سجل مستقل، ويسأل عمّن ينقل عن من.",
+      "skill_ko_ref": "KO-RS-05-001",
+      "observable_behaviors_ar": [
+        "يصنّف الإفادات والعريضة أقوالاً",
+        "يكشف أن تسعة تواقيع تعود إلى مصدر واحد"
+      ],
+      "evidence_sources": [
+        "evidence_board"
+      ]
+    },
+    {
+      "id": "lo_timeline",
+      "statement_ar": "يرتّب سجلات الإنذار والعدّاد والأبواب على خط زمني ليعرف ما سبق ما.",
+      "skill_ko_ref": "KO-RS-05-005",
+      "observable_behaviors_ar": [
+        "يضع بدء جريان الماء قبل خروج هشام",
+        "يضع صورة المندوب وورقة الغسل في موضعيهما"
+      ],
+      "evidence_sources": [
+        "timeline_task",
+        "action_log"
+      ]
+    },
+    {
+      "id": "lo_hyp",
+      "statement_ar": "يوازن بين عدة فرضيات ويستبعد منها ما تنقضه السجلات دون أن يرفض البلاغات كلها.",
+      "skill_ko_ref": "KO-RS-05-002",
+      "observable_behaviors_ar": [
+        "يضيف فرضيات منها ما يخالف الرواية الأولى",
+        "يستبعد بدليل"
+      ],
+      "evidence_sources": [
+        "hypothesis_ledger"
+      ]
+    },
+    {
+      "id": "lo_diag",
+      "statement_ar": "يقدّر ما يثبته كل سجل وما لا يثبته، ويربط الدليل بالفرضية باتجاه صحيح.",
+      "skill_ko_ref": "KO-RS-06-002",
+      "observable_behaviors_ar": [
+        "يعرف أن الأقفال والإنذارات تسجل البطاقة أو الرمز لا الشخص",
+        "يعرف أن الحافز المالي ليس إثباتاً"
+      ],
+      "evidence_sources": [
+        "evidence_board",
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_calib",
+      "statement_ar": "يصوغ نسبة الترجيح بحدودها.",
+      "skill_ko_ref": "KO-RS-06-021",
+      "observable_behaviors_ar": [
+        "يختار ثقة معقولة",
+        "يذكر حدوداً"
+      ],
+      "evidence_sources": [
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_revise",
+      "statement_ar": "يراجع رأيه الأول حين يظهر ما يخالفه، ويقبل أن البلاغ الحقيقي يتأيد بالتحقق.",
+      "skill_ko_ref": "KO-RS-06-009",
+      "observable_behaviors_ar": [
+        "يغيّر فرضيته الرائدة بدليل"
+      ],
+      "evidence_sources": [
+        "hypothesis_ledger"
+      ]
+    }
+  ],
+  "mechanics": {
+    "time_budget_units": 40,
+    "actions": [
+      {
+        "id": "a_get_claim_file",
+        "type": "examine",
+        "label_ar": "اقرأ ملف المطالبة",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_claim_file"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_committee",
+        "telemetry_code": "GET_CLAIM"
+      },
+      {
+        "id": "a_get_huda_case",
+        "type": "examine",
+        "label_ar": "اطلب ملف مطالبة هدى السابقة",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_huda_case"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_committee",
+        "telemetry_code": "GET_HUDA_CASE"
+      },
+      {
+        "id": "a_get_hisham_stmt",
+        "type": "examine",
+        "label_ar": "اطلب إفادة هشام المكتوبة",
+        "precondition": {
+          "has_evidence": "ev_claim_file"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_hisham_statement"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_committee",
+        "telemetry_code": "GET_HISHAM"
+      },
+      {
+        "id": "a_get_petition",
+        "type": "examine",
+        "label_ar": "اطلب عريضة التجار",
+        "precondition": {
+          "has_evidence": "ev_claim_file"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_petition"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_committee",
+        "telemetry_code": "GET_PETITION"
+      },
+      {
+        "id": "a_get_fund_notice",
+        "type": "examine",
+        "label_ar": "اقرأ إعلان قواعد الصندوق",
+        "precondition": {
+          "has_evidence": "ev_claim_file"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_fund_notice"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_committee",
+        "telemetry_code": "GET_FUND"
+      },
+      {
+        "id": "a_get_stock",
+        "type": "examine",
+        "label_ar": "اطلب جرد الجمعية للدكان",
+        "precondition": {
+          "has_evidence": "ev_claim_file"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_stock_sheet"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_committee",
+        "telemetry_code": "GET_STOCK"
+      },
+      {
+        "id": "a_get_supplier",
+        "type": "examine",
+        "label_ar": "اطلب رسالة مورّد الورق",
+        "precondition": {
+          "has_evidence": "ev_fund_notice"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_supplier_letter"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_committee",
+        "telemetry_code": "GET_SUPPLIER"
+      },
+      {
+        "id": "a_get_majed_stmt",
+        "type": "examine",
+        "label_ar": "اطلب إفادة ماجد",
+        "precondition": {
+          "has_evidence": "ev_hisham_statement"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_majed_statement"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_committee",
+        "telemetry_code": "GET_MAJED"
+      },
+      {
+        "id": "a_get_dispute",
+        "type": "examine",
+        "label_ar": "اطلب محضر خلاف اللافتة",
+        "precondition": {
+          "has_evidence": "ev_hisham_statement"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_dispute_minutes"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_committee",
+        "telemetry_code": "GET_DISPUTE"
+      },
+      {
+        "id": "a_get_alarm",
+        "type": "search_location",
+        "label_ar": "اطلب سجل لوحة الإنذار",
+        "precondition": {
+          "has_evidence": "ev_claim_file"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_alarm_log"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_shop",
+        "telemetry_code": "GET_ALARM"
+      },
+      {
+        "id": "a_get_sensor",
+        "type": "search_location",
+        "label_ar": "اطلب سجل صيانة الحساس",
+        "precondition": {
+          "has_evidence": "ev_alarm_log"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_sensor_test"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_shop",
+        "telemetry_code": "GET_SENSOR"
+      },
+      {
+        "id": "a_get_guard",
+        "type": "search_location",
+        "label_ar": "اطلب دفتر جولات الحارس",
+        "precondition": {
+          "has_evidence": "ev_claim_file"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_guard_sheet"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_row",
+        "telemetry_code": "GET_GUARD"
+      },
+      {
+        "id": "a_get_wash",
+        "type": "search_location",
+        "label_ar": "اطلب ورقة عمل شركة النظافة",
+        "precondition": {
+          "has_evidence": "ev_hisham_statement"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_wash_sheet"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_row",
+        "telemetry_code": "GET_WASH"
+      },
+      {
+        "id": "a_get_courier",
+        "type": "search_location",
+        "label_ar": "اطلب سجل مندوب التوصيل",
+        "precondition": {
+          "has_evidence": "ev_wash_sheet"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_courier_photo"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_shop",
+        "telemetry_code": "GET_COURIER"
+      },
+      {
+        "id": "a_get_cafe",
+        "type": "search_location",
+        "label_ar": "اطلب قائمة مقاطع كاميرا المقهى",
+        "precondition": {
+          "has_evidence": "ev_courier_photo"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_cafe_cam"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_cafe",
+        "telemetry_code": "GET_CAFE"
+      },
+      {
+        "id": "a_get_receipt",
+        "type": "examine",
+        "label_ar": "اطلب فاتورة محل الدهانات",
+        "precondition": {
+          "has_evidence": "ev_cafe_cam"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_paint_receipt"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_paint_shop",
+        "telemetry_code": "GET_RECEIPT"
+      },
+      {
+        "id": "a_get_reardoor",
+        "type": "search_location",
+        "label_ar": "اطلب سجل قفل الباب الخلفي",
+        "precondition": {
+          "has_evidence": "ev_claim_file"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_rear_door_log"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_stockroom",
+        "telemetry_code": "GET_REARDOOR"
+      },
+      {
+        "id": "a_get_meter",
+        "type": "search_location",
+        "label_ar": "اطلب قراءات عدّاد مياه المخزن",
+        "precondition": {
+          "has_evidence": "ev_rear_door_log"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_water_meter"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_stockroom",
+        "telemetry_code": "GET_METER"
+      },
+      {
+        "id": "a_get_plumber",
+        "type": "examine",
+        "label_ar": "اطلب شهادة السباك",
+        "precondition": {
+          "has_evidence": "ev_water_meter"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_plumber_cert"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_stockroom",
+        "telemetry_code": "GET_PLUMBER"
+      },
+      {
+        "id": "a_get_gate",
+        "type": "search_location",
+        "label_ar": "اطلب سجل البوابة ودفتر الزوار",
+        "precondition": {
+          "has_evidence": "ev_guard_sheet"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_gate_log"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_gate",
+        "telemetry_code": "GET_GATE"
+      },
+      {
+        "id": "a_int_hisham",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة هشام",
+        "precondition": {
+          "has_evidence": "ev_claim_file"
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "hisham",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "hisham",
+        "telemetry_code": "INT_HISHAM"
+      },
+      {
+        "id": "a_int_majed",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة ماجد",
+        "precondition": {
+          "has_evidence": "ev_hisham_statement"
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "majed",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "majed",
+        "telemetry_code": "INT_MAJED"
+      },
+      {
+        "id": "a_int_salim",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة سالم",
+        "precondition": {
+          "has_evidence": "ev_guard_sheet"
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "salim",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "salim",
+        "telemetry_code": "INT_SALIM"
+      },
+      {
+        "id": "a_int_huda",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة هدى",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "huda",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "huda",
+        "telemetry_code": "INT_HUDA"
+      },
+      {
+        "id": "a_int_nada",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة ندى",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "nada",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "nada",
+        "telemetry_code": "INT_NADA"
+      },
+      {
+        "id": "p_courier_hisham",
+        "type": "present_evidence",
+        "label_ar": "اعرض صورة المندوب على هشام",
+        "precondition": {
+          "presented": {
+            "evidence_id": "ev_courier_photo",
+            "to_character": "hisham"
+          }
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "PRESENTED_COURIER"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "hisham",
+        "telemetry_code": "P_COURIER_HISHAM"
+      },
+      {
+        "id": "p_supplier_hisham",
+        "type": "present_evidence",
+        "label_ar": "اعرض رسالة المورّد على هشام",
+        "precondition": {
+          "presented": {
+            "evidence_id": "ev_supplier_letter",
+            "to_character": "hisham"
+          }
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "PRESENTED_SUPPLIER"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "hisham",
+        "telemetry_code": "P_SUPPLIER_HISHAM"
+      },
+      {
+        "id": "a_hint",
+        "type": "request_hint",
+        "label_ar": "اطلب تلميحاً",
+        "precondition": {
+          "always": true
+        },
+        "effects": [],
+        "time_cost_units": 0,
+        "telemetry_code": "REQUEST_HINT"
+      },
+      {
+        "id": "a_accuse",
+        "type": "final_accusation",
+        "label_ar": "قدّم الاستنتاج النهائي",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "SUBMIT"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "FINAL_ACCUSATION"
+      },
+      {
+        "id": "ask_hisham_f_paint_bought",
+        "type": "interview",
+        "label_ar": "[نموذج] hisham يذكر f_paint_bought",
+        "precondition": {
+          "has_evidence": "ev_claim_file"
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_paint_bought"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "hisham",
+        "telemetry_code": "ASK_HISHAM_F_PAINT_BOUGHT"
+      },
+      {
+        "id": "ask_hisham_f_early_close",
+        "type": "interview",
+        "label_ar": "[نموذج] hisham يذكر f_early_close",
+        "precondition": {
+          "all": [
+            {
+              "has_evidence": "ev_claim_file"
+            },
+            {
+              "presented": {
+                "evidence_id": "ev_courier_photo",
+                "to_character": "hisham"
+              }
+            }
+          ]
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_early_close"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "hisham",
+        "telemetry_code": "ASK_HISHAM_F_EARLY_CLOSE"
+      },
+      {
+        "id": "ask_hisham_f_supplier_overdue",
+        "type": "interview",
+        "label_ar": "[نموذج] hisham يذكر f_supplier_overdue",
+        "precondition": {
+          "all": [
+            {
+              "has_evidence": "ev_claim_file"
+            },
+            {
+              "presented": {
+                "evidence_id": "ev_supplier_letter",
+                "to_character": "hisham"
+              }
+            }
+          ]
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_supplier_overdue"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "hisham",
+        "telemetry_code": "ASK_HISHAM_F_SUPPLIER_OVERDUE"
+      },
+      {
+        "id": "ask_majed_f_dispute",
+        "type": "interview",
+        "label_ar": "[نموذج] majed يذكر f_dispute",
+        "precondition": {
+          "has_evidence": "ev_hisham_statement"
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_dispute"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "majed",
+        "telemetry_code": "ASK_MAJED_F_DISPUTE"
+      },
+      {
+        "id": "ask_majed_f_majed_gate",
+        "type": "interview",
+        "label_ar": "[نموذج] majed يذكر f_majed_gate",
+        "precondition": {
+          "has_evidence": "ev_hisham_statement"
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_majed_gate"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "majed",
+        "telemetry_code": "ASK_MAJED_F_MAJED_GATE"
+      },
+      {
+        "id": "ask_salim_f_guard_rounds",
+        "type": "interview",
+        "label_ar": "[نموذج] salim يذكر f_guard_rounds",
+        "precondition": {
+          "has_evidence": "ev_guard_sheet"
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_guard_rounds"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "salim",
+        "telemetry_code": "ASK_SALIM_F_GUARD_ROUNDS"
+      },
+      {
+        "id": "ask_huda_f_huda_saw_intact",
+        "type": "interview",
+        "label_ar": "[نموذج] huda يذكر f_huda_saw_intact",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_huda_saw_intact"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "huda",
+        "telemetry_code": "ASK_HUDA_F_HUDA_SAW_INTACT"
+      },
+      {
+        "id": "ask_huda_f_huda_verified",
+        "type": "interview",
+        "label_ar": "[نموذج] huda يذكر f_huda_verified",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_huda_verified"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "huda",
+        "telemetry_code": "ASK_HUDA_F_HUDA_VERIFIED"
+      },
+      {
+        "id": "ask_nada_f_fund_rule",
+        "type": "interview",
+        "label_ar": "[نموذج] nada يذكر f_fund_rule",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_fund_rule"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "nada",
+        "telemetry_code": "ASK_NADA_F_FUND_RULE"
+      },
+      {
+        "id": "ask_nada_f_claim_total",
+        "type": "interview",
+        "label_ar": "[نموذج] nada يذكر f_claim_total",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_claim_total"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "nada",
+        "telemetry_code": "ASK_NADA_F_CLAIM_TOTAL"
+      },
+      {
+        "id": "ask_nada_f_stock_slow",
+        "type": "interview",
+        "label_ar": "[نموذج] nada يذكر f_stock_slow",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_stock_slow"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "nada",
+        "telemetry_code": "ASK_NADA_F_STOCK_SLOW"
+      }
+    ]
+  },
+  "state_machine": {
+    "id": "c036",
+    "initial": "briefing",
+    "type": "compound",
+    "states": {
+      "briefing": {
+        "description_ar": "الإحاطة",
+        "type": "atomic",
+        "on": {
+          "START": {
+            "target": "investigating"
+          }
+        }
+      },
+      "investigating": {
+        "description_ar": "التحقيق",
+        "type": "compound",
+        "initial": "gathering",
+        "states": {
+          "gathering": {
+            "type": "atomic",
+            "on": {
+              "OPEN_DEDUCTION": {
+                "target": "deducing"
+              }
+            }
+          },
+          "deducing": {
+            "type": "atomic",
+            "on": {
+              "BACK": {
+                "target": "gathering"
+              }
+            }
+          }
+        },
+        "on": {
+          "SUBMIT": {
+            "target": "review"
+          }
+        }
+      },
+      "review": {
+        "description_ar": "مراجعة",
+        "type": "atomic",
+        "on": {
+          "CLOSE": {
+            "target": "resolved"
+          }
+        }
+      },
+      "resolved": {
+        "description_ar": "إغلاق",
+        "type": "final"
+      }
+    }
+  },
+  "dialogue": {
+    "max_turns_per_interview": 10,
+    "llm_enabled": false,
+    "topics": [
+      {
+        "id": "t_reports",
+        "label_ar": "البلاغات الثلاثة",
+        "example_questions_ar": [
+          "متى وجدت الواجهة؟",
+          "ماذا حدث في المخزن؟"
+        ],
+        "fact_ids": [],
+        "claim_ids": [
+          "cl_window_night",
+          "cl_tap_later",
+          "cl_neighbours"
+        ]
+      },
+      {
+        "id": "t_closing",
+        "label_ar": "الإغلاق والستارة",
+        "example_questions_ar": [
+          "متى أغلقت يوم السبت؟"
+        ],
+        "fact_ids": [
+          "f_early_close"
+        ],
+        "claim_ids": [
+          "cl_closing_21"
+        ]
+      },
+      {
+        "id": "t_money",
+        "label_ar": "الدين والتعويض",
+        "example_questions_ar": [
+          "هل عليك التزامات للمورّد؟",
+          "كيف قدّرت الخسارة؟"
+        ],
+        "fact_ids": [
+          "f_supplier_overdue",
+          "f_fund_rule",
+          "f_claim_total",
+          "f_stock_slow"
+        ],
+        "claim_ids": [
+          "cl_no_pressure"
+        ]
+      },
+      {
+        "id": "t_dispute",
+        "label_ar": "الخلاف بين الجارين",
+        "example_questions_ar": [
+          "ما قصة اللافتة؟",
+          "هل هددك أحد؟"
+        ],
+        "fact_ids": [
+          "f_dispute"
+        ],
+        "claim_ids": [
+          "cl_majed_threat"
+        ]
+      },
+      {
+        "id": "t_nights",
+        "label_ar": "ليالي الوقائع",
+        "example_questions_ar": [
+          "أين كنت تلك الليالي؟",
+          "ماذا سجلت في الجولات؟"
+        ],
+        "fact_ids": [
+          "f_majed_gate",
+          "f_guard_rounds",
+          "f_huda_saw_intact"
+        ]
+      },
+      {
+        "id": "t_paint",
+        "label_ar": "الطلاء",
+        "example_questions_ar": [
+          "هل اشتريت طلاء قريباً؟"
+        ],
+        "fact_ids": [
+          "f_paint_bought"
+        ]
+      },
+      {
+        "id": "t_verified",
+        "label_ar": "بلاغ سابق تحققت منه اللجنة",
+        "example_questions_ar": [
+          "كيف تحققت اللجنة من بلاغك؟"
+        ],
+        "fact_ids": [
+          "f_huda_verified"
+        ]
+      }
+    ]
+  },
+  "rubric": {
+    "reference_answer_ar": "لم يتعرض هشام العريان لثلاثة اعتداءات من الغير؛ دبّر وقائعها بنفسه. كان زجاج الواجهة سليماً حتى الصباح والإنذار المسلّح صامتاً حتى أوقفه برمزه، وكان الماء يجري في المخزن قبل أن يغادر ولم تدخله بطاقة ولا زائر بعده، ووُجد الدهان على الستارة في ساعة غير التي رواها. ودين المورّد وقواعد الصندوق وتضخيم قيمة الورق تفسّر الحافز، وعريضة التجار منقولة عن روايته فلا تعدّ تأييداً مستقلاً. وماجد خارج السوق في الفترات الثلاث، والتمديدات سليمة. حدود الاستنتاج: الأقفال والإنذارات تسجل البطاقة أو الرمز لا الحامل، والكاميرا لا تحدد هوية من عند الستارة، والحافز لا يثبت الفعل وحده. ويبقى أن بلاغ هدى السابق يبين أن المتضرر الحقيقي يتأيد بسجلات مستقلة ويُصرف تعويضه.",
+    "criteria": [
+      {
+        "id": "c_source",
+        "name_ar": "تصنيف المصادر",
+        "objective_ids": [
+          "lo_claim"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يصنّف"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "أخطأ في الأغلب"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "نصف صحيح"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمه صحيح"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كله صحيح"
+          }
+        ]
+      },
+      {
+        "id": "c_conflict",
+        "name_ar": "ربط السجلات بأزمنتها",
+        "objective_ids": [
+          "lo_timeline"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يضع شيئاً"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "وضع قليلاً"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "وضع نصفها صحيحاً"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمها"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كلها في موضعها"
+          }
+        ]
+      },
+      {
+        "id": "c_links",
+        "name_ar": "ربط الأدلة بالفرضيات",
+        "objective_ids": [
+          "lo_diag"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.2,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لا روابط"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "قليلة"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "نصفها صحيح"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمها"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كلها دقيقة"
+          }
+        ]
+      },
+      {
+        "id": "c_uncertainty",
+        "name_ar": "معايرة الثقة",
+        "objective_ids": [
+          "lo_calib"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.2,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "ثقة مفرطة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "حدود قليلة"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "جزئية"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معقولة"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "معايَرة كاملة"
+          }
+        ]
+      },
+      {
+        "id": "c_revision",
+        "name_ar": "مراجعة الرأي",
+        "objective_ids": [
+          "lo_revise"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "بقي على فرضية مرفوضة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "لم يعلن فرضية"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "ثبت على فرضية سليمة"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "غيّر بدليل"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "غيّر بدليل ووثّق"
+          }
+        ]
+      },
+      {
+        "id": "c_elimination",
+        "name_ar": "استبعاد الفرضيات الخاطئة",
+        "objective_ids": [
+          "lo_hyp"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يستبعد"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "استبعد خطأً"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "فرضية بدليل"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "فرضيتين"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كل الخاطئة"
+          }
+        ]
+      },
+      {
+        "id": "c_justification",
+        "name_ar": "جودة الحجة المكتوبة",
+        "objective_ids": [
+          "lo_diag",
+          "lo_hyp"
+        ],
+        "scored_by": "human",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لا حجة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "ادعاء بلا سند"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "أدلة دون ربط"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "ربط الأدلة بالاستنتاج"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "ربط مع البدائل والحدود"
+          }
+        ]
+      }
+    ]
+  },
+  "hint_ladder": [
+    {
+      "id": "hg1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "قبل أن تسأل من الفاعل، اسأل: ما الذي يؤيد كل بلاغ من غير صاحبه؟",
+      "trigger": {
+        "always": true
+      },
+      "assessment_weight": 0.02
+    },
+    {
+      "id": "hg2",
+      "level": 2,
+      "kind": "focus_area",
+      "text_ar": "ضع البلاغات في جدول: متى وقع كل منها؟ وأي سجل لم يصنعه صاحب البلاغ يغطي ذلك الوقت؟",
+      "trigger": {
+        "has_evidence": "ev_claim_file"
+      },
+      "assessment_weight": 0.04
+    },
+    {
+      "id": "hg3",
+      "level": 3,
+      "kind": "pointer",
+      "text_ar": "ابحث عن سجلات أجهزة وأقفال وبوابات وحارس، وقابل ما فيها بما رواه صاحب الدكان عن كل ليلة.",
+      "trigger": {
+        "has_evidence": "ev_hisham_statement"
+      },
+      "assessment_weight": 0.08
+    },
+    {
+      "id": "hp1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "لو انكسر زجاج الواجهة والإنذار مسلّح، فما الذي كنت تتوقع أن تجده في سجل الإنذار؟",
+      "trigger": {
+        "has_evidence": "ev_claim_file"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_i1_a"
+    },
+    {
+      "id": "hp2",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "قارن ساعة إيقاف الإنذار بآخر جولة سجّل فيها الحارس حال الواجهة.",
+      "trigger": {
+        "has_evidence": "ev_alarm_log"
+      },
+      "assessment_weight": 0.06,
+      "targets_inference_id": "i_i1_a"
+    },
+    {
+      "id": "hp3",
+      "level": 3,
+      "kind": "partial_reveal",
+      "text_ar": "ضع على خط واحد: تسليح الجمعة، وجولتي الحارس، وإيقاف الإنذار، وساعة البلاغ، ثم اسأل متى كان الزجاج سليماً آخر مرة.",
+      "trigger": {
+        "has_evidence": "ev_sensor_test"
+      },
+      "assessment_weight": 0.1,
+      "targets_inference_id": "i_i1_a"
+    },
+    {
+      "id": "hq1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "إذا قيل لك إن أحداً دخل بعد خروج صاحب الدكان، فأي سجل يرصد الدخول؟",
+      "trigger": {
+        "has_evidence": "ev_claim_file"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_i3_a"
+    },
+    {
+      "id": "hq2",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "افتح سجلات الأقفال والبوابات وأوراق الحراسة لتلك الليلة، وانظر هل تظهر فيها أي حركة غير حركة صاحب الدكان.",
+      "trigger": {
+        "has_evidence": "ev_rear_door_log"
+      },
+      "assessment_weight": 0.06,
+      "targets_inference_id": "i_i3_a"
+    },
+    {
+      "id": "hq3",
+      "level": 3,
+      "kind": "partial_reveal",
+      "text_ar": "ضع بدء جريان الماء في العدّاد وخروج بطاقة صاحب الدكان على الخط نفسه، وقارن بينهما.",
+      "trigger": {
+        "has_evidence": "ev_water_meter"
+      },
+      "assessment_weight": 0.1,
+      "targets_inference_id": "i_i3_a"
+    },
+    {
+      "id": "hm1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "لماذا قد يهم أحداً توقيت المطالبة قبل معاينة اللجنة؟",
+      "trigger": {
+        "has_evidence": "ev_claim_file"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_motive_a"
+    },
+    {
+      "id": "hm2",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "اقرأ قواعد الصندوق ورسالة المورّد وقارن أجليهما.",
+      "trigger": {
+        "has_evidence": "ev_fund_notice"
+      },
+      "assessment_weight": 0.05,
+      "targets_inference_id": "i_motive_a"
+    },
+    {
+      "id": "hm3",
+      "level": 3,
+      "kind": "partial_reveal",
+      "text_ar": "قابل ما قدّره صاحب الدكان لورق المخزن بما سجّله جرد الجمعية قبل شهرين.",
+      "trigger": {
+        "has_evidence": "ev_supplier_letter"
+      },
+      "assessment_weight": 0.08,
+      "targets_inference_id": "i_motive_a"
+    }
+  ],
+  "fairness_test": {
+    "requirements": {
+      "min_disjoint_proof_paths": 2,
+      "max_inference_depth": 3,
+      "all_red_herrings_refutable": true,
+      "culprit_uniquely_entailed": true,
+      "no_hidden_fact_dependency": true,
+      "max_required_actions": 40
+    },
+    "runs": []
+  },
+  "ending_explanation": {
+    "steps": [
+      {
+        "order": 1,
+        "text_ar": "ابدأ بالمصدر: البلاغات الثلاثة كلها جاءت من صاحب الدكان الذي يطلب التعويض، والعريضة نفسها تقول إن التجار نقلوا عنه. فلا تعدّ تسعة تواقيع تسعة شهود.",
+        "uses_evidence_ids": [
+          "ev_claim_file",
+          "ev_petition"
+        ],
+        "inference_id": "i_echo"
+      },
+      {
+        "order": 2,
+        "text_ar": "الإنذار كان مسلّحاً ولم يسجل حساس الزجاج شيئاً، والحارس رأى الواجهة سليمة صباحاً، فلم ينكسر الزجاج في الليل كما قيل.",
+        "uses_evidence_ids": [
+          "ev_alarm_log",
+          "ev_sensor_test",
+          "ev_guard_sheet"
+        ],
+        "inference_id": "i_i1_a"
+      },
+      {
+        "order": 3,
+        "text_ar": "قفل الباب الخلفي وسجل البوابة ودفتر الحارس لا يظهر فيها دخول بعد مغادرته، والعدّاد يبين أن الماء بدأ يجري قبل مغادرته.",
+        "uses_evidence_ids": [
+          "ev_rear_door_log",
+          "ev_gate_log",
+          "ev_guard_sheet",
+          "ev_water_meter"
+        ],
+        "inference_id": "i_i3_a"
+      },
+      {
+        "order": 4,
+        "text_ar": "دين المورّد وقواعد الصندوق وفرق التقدير بين المطالبة والجرد تفسّر لماذا يهم الرجلَ أن تتكرر الوقائع قبل المعاينة، لكنها تفسير للدافع لا إثبات للفعل.",
+        "uses_evidence_ids": [
+          "ev_supplier_letter",
+          "ev_fund_notice",
+          "ev_claim_file",
+          "ev_stock_sheet"
+        ],
+        "inference_id": "i_motive_a"
+      },
+      {
+        "order": 5,
+        "text_ar": "فتسقط فرضية الغريب وفرضية ماجد وفرضية العطل، ويبقى أن صاحب الدكان هو من دبّر الوقائع. وبلاغ هدى السابق يبين أن البلاغ الحقيقي يتأيد بسجلات مستقلة خلال أيام.",
+        "uses_evidence_ids": [
+          "ev_huda_case",
+          "ev_gate_log",
+          "ev_plumber_cert"
+        ],
+        "inference_id": "i_staged"
+      }
+    ],
+    "alternative_paths_ar": [
+      "مسار مستقل: دفتر الحارس وحده يضع الواجهة سليمة صباحاً، وسجل البوابة ودفتر الزوار يغلقان الدكان على صاحبه ليلة الأحد، وفرق التقدير بين المطالبة والجرد يبين المصلحة، دون الاعتماد على الإنذار أو القفل أو العدّاد أو رسالة المورّد."
+    ],
+    "what_evidence_could_not_show_ar": [
+      "سجلات الأقفال والإنذارات تسجل البطاقة أو الرمز لا من يحمله، ولا يمكن أن نعرف من السجلات وحدها هل نُسخت البطاقة.",
+      "كاميرا المقهى لا تظهر وجه من عند الستارة ولا ما فعله، ففاعل الدهان مستنتج من الظروف لا مرئي.",
+      "الدافع المالي لا يثبت وحده الفعل؛ فكثيرون يقعون في ضيق مالي ولا يختلقون وقائع."
+    ],
+    "science_notes_ar": [
+      "البلاغ ادعاء، سواء كان صاحبه محتاجاً أو مرتاحاً، وما يميّز الصحيح من غيره هو السجل المستقل عنه.",
+      "عدد من يردّدون القول لا يكفي إن كانوا ينقلون عن مصدر واحد.",
+      "التحقق المهني لا يعني الشك في كل متضرر: بلاغ هدى تأيد بسجلات مستقلة وصُرف تعويضه، والمتضرر الحقيقي يستحق أن يُصدَّق وأن يُتحقق من بلاغه معاً."
+    ]
+  },
+  "expert_review": [
+    {
+      "role": "narrative_editor",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "scientific_reviewer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "learning_designer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "age_appropriateness",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "cultural_reviewer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "legal_rights",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "safety",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    }
+  ]
+}
