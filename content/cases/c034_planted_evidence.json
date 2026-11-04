@@ -1,0 +1,3038 @@
+{
+  "schema_version": "0.1.0",
+  "case_id": "c034_planted_evidence",
+  "case_version": "0.1.0",
+  "meta": {
+    "title_ar": "المجلد في الخزانة",
+    "title_en": "The Folio in the Cabinet",
+    "age_band": "16-18",
+    "locale": "ar",
+    "dialogue_register": "msa",
+    "estimated_minutes": 40,
+    "difficulty": 3,
+    "content_flags": [
+      "no_violence",
+      "theft"
+    ],
+    "authors": [
+      "فريق أثر التحريري (مسودة بمساعدة الذكاء الاصطناعي، لم تُراجَع بشرياً بعد)"
+    ],
+    "knowledge_object_refs": [
+      "KO-RS-05-001",
+      "KO-RS-05-005",
+      "KO-RS-05-002",
+      "KO-RS-06-002",
+      "KO-RS-06-021",
+      "KO-RS-06-009"
+    ]
+  },
+  "premise": {
+    "hook_ar": "اختفى مجلد خرائط نادر من الغرفة المغلقة، ثم وُجد في خزانة أمينة المكتبة التي لها خمس وعشرون سنة بلا شكوى، وثلاثة أشخاص يقولون ما يشير إليها. فمن أين جاء كل بلاغ؟",
+    "player_role_ar": "أنت مراجع متدرب لدى لجنة الأمناء، وطُلب منك أن تفحص الاتهام الموجّه إلى الأمينة قبل أن تقرر اللجنة شيئاً.",
+    "setting_ar": "مكتبة دار الوراقين المركزية في مدينة الواحة المتخيَّلة، مساء الثلاثاء. بإذن مكتوب من اللجنة تطّلع على سجلات البوابات والأرفف ودفاتر الحراسة والمحاضر، ولا تفتح غيرها. الأسماء والأحداث كلها متخيَّلة، وتوقيت المكتبة هو توقيت كل السجلات.",
+    "public_fact_ids": [
+      "f_missing",
+      "f_found_in_cabinet",
+      "f_three_reports",
+      "f_layla_record"
+    ],
+    "assumed_general_knowledge_ar": [
+      "قارئ البطاقات يسجل البطاقة لا حاملها",
+      "من يعثر على شيء لا يلزم أن يكون هو من وضعه",
+      "اتفاق الأقوال لا يكفي إذا لم تكن مستقلة عن بعضها"
+    ]
+  },
+  "entities": {
+    "characters": [
+      {
+        "id": "layla",
+        "name_ar": "ليلى الحداد",
+        "role": "suspect",
+        "age_descriptor_ar": "أمينة المكتبة منذ خمس وعشرين سنة",
+        "persona_ar": "هادئة ودقيقة، تحترم السجلات، وتتألم من الشك لكنها لا ترفع صوتها.",
+        "motives_ar": [
+          "أن تُحسم المسألة بالسجلات",
+          "أن تبقى سمعة المكتبة سليمة"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "ly_greet",
+            "purpose": "greeting",
+            "text_ar": "تفضّل. أجيب عمّا أعرفه وأترك الباقي للسجلات."
+          },
+          {
+            "line_id": "ly_exit",
+            "purpose": "reveal",
+            "text_ar": "خرجت إلى اجتماع لجنة الأرشيف البلدي قبل الرابعة، وبقيت في الجلسة حتى انتهت مساءً، ثم عدت إلى المكتبة.",
+            "fact_ids": [
+              "f_layla_exit",
+              "f_committee"
+            ]
+          },
+          {
+            "line_id": "ly_form",
+            "purpose": "reveal",
+            "text_ar": "أعدت طلب ريما قبل أسبوعين لأن ساعاتها ناقصة، ولا أضمر لها شيئاً. ويعرف الجميع أن تقييمي يدخل في تجديد العقود وأن الأقدمية تحدد المرشحين لمنصبي.",
+            "fact_ids": [
+              "f_rima_stake",
+              "f_vacancy"
+            ]
+          },
+          {
+            "line_id": "ly_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف كيف وصل المجلد إلى خزانتي."
+          },
+          {
+            "line_id": "ly_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن يوم الثلاثاء وما دوّنته فيه."
+          },
+          {
+            "line_id": "ly_bye",
+            "purpose": "farewell",
+            "text_ar": "أرجو أن تقرأوا السجلات كلها قبل أن تقرروا."
+          }
+        ]
+      },
+      {
+        "id": "samer",
+        "name_ar": "سامر الخوري",
+        "role": "suspect",
+        "age_descriptor_ar": "نائب أمينة المكتبة",
+        "persona_ar": "رسمي ومهذب، يتكلم بنبرة الحريص على سمعة المكتبة، ويفضّل الإجراءات المكتوبة.",
+        "motives_ar": [
+          "أن يبدو حريصاً على المكتبة",
+          "أن يُنظر إلى عمله بالإجراءات لا بالأقوال"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "sm_greet",
+            "purpose": "greeting",
+            "text_ar": "أهلاً بك. المكتبة تهمني قبل أي اعتبار شخصي."
+          },
+          {
+            "line_id": "sm_slip",
+            "purpose": "reveal",
+            "text_ar": "وجدت القسيمة على مكتب الإعارة عند الإقفال، فسلّمتها للإدارة كما هي دون أن أضيف عليها شيئاً.",
+            "fact_ids": [
+              "f_slip_given"
+            ]
+          },
+          {
+            "line_id": "sm_nokey",
+            "purpose": "lie",
+            "text_ar": "لم أقترب من خزانة الأمينة ولا من مفتاحها.",
+            "claim_ids": [
+              "cl_samer_nokey"
+            ]
+          },
+          {
+            "line_id": "sm_key",
+            "purpose": "reveal",
+            "text_ar": "نعم، وقّعت على المفتاح الاحتياطي قبل السادسة لأتفقد قفل الخزانة، وأعدته بعد أربعين دقيقة.",
+            "fact_ids": [
+              "f_key_book"
+            ]
+          },
+          {
+            "line_id": "sm_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف أكثر من ذلك."
+          },
+          {
+            "line_id": "sm_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "لنبقَ عند ما جرى في المكتبة."
+          },
+          {
+            "line_id": "sm_bye",
+            "purpose": "farewell",
+            "text_ar": "أرجو أن يُحفظ حق المكتبة قبل حق الأشخاص."
+          }
+        ]
+      },
+      {
+        "id": "nabil",
+        "name_ar": "نبيل الراشد",
+        "role": "suspect",
+        "age_descriptor_ar": "كاتب شاب في أول عمله",
+        "persona_ar": "متوتر ويبالغ في إثبات حسن نيته، ويتحدث بسرعة حين يُسأل عن تفاصيل.",
+        "motives_ar": [
+          "أن يُجدَّد عقده",
+          "ألا يُظن أنه أخطأ في عمله"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "nb_greet",
+            "purpose": "greeting",
+            "text_ar": "أهلاً. فعلت ما يفعله أي كاتب في جولة الإقفال."
+          },
+          {
+            "line_id": "nb_routine",
+            "purpose": "lie",
+            "text_ar": "كنت في جولة ترتيب روتينية، وفتحت الخزانة لأضع فيها أوراق المناوبة.",
+            "claim_ids": [
+              "cl_nabil_routine"
+            ]
+          },
+          {
+            "line_id": "nb_door",
+            "purpose": "reveal",
+            "text_ar": "فتحت باب الغرفة المغلقة بعد الخامسة لأعيد كتباً إلى رفوفها.",
+            "fact_ids": [
+              "f_nabil_door"
+            ]
+          },
+          {
+            "line_id": "nb_handover",
+            "purpose": "reveal",
+            "text_ar": "طلب مني سامر أن أحضر المجلد ليفحص تجليده، فسلّمته إياه عند الباب الجانبي، ثم طلب مني أن أفتح الخزانة وقت الإقفال ولم أسأله عن السبب.",
+            "fact_ids": [
+              "f_nabil_handover"
+            ]
+          },
+          {
+            "line_id": "nb_refuse",
+            "purpose": "refuse_secret",
+            "text_ar": "دوّنت ما فعلته في إفادتي."
+          },
+          {
+            "line_id": "nb_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف أكثر من ذلك."
+          },
+          {
+            "line_id": "nb_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن عملي في الغرفة والجولة."
+          },
+          {
+            "line_id": "nb_bye",
+            "purpose": "farewell",
+            "text_ar": "أرجو أن يُفهم أنني لم أقصد شراً."
+          }
+        ]
+      },
+      {
+        "id": "rima",
+        "name_ar": "ريما الأسمر",
+        "role": "witness",
+        "age_descriptor_ar": "متطوعة في قسم الإعارة",
+        "persona_ar": "متحمسة وتحرص على رضا الإدارة، وتتردد حين تُسأل عن التفاصيل.",
+        "motives_ar": [
+          "أن تنال شهادة التطوع",
+          "أن تبدو شاهدة نافعة"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "rm_greet",
+            "purpose": "greeting",
+            "text_ar": "أهلاً. قلت ما رأيته للإدارة."
+          },
+          {
+            "line_id": "rm_saw",
+            "purpose": "lie",
+            "text_ar": "رأيتها قرب الغرفة المغلقة حوالي السادسة، وأنا متأكدة.",
+            "claim_ids": [
+              "cl_rima_saw"
+            ]
+          },
+          {
+            "line_id": "rm_prompted",
+            "purpose": "reveal",
+            "text_ar": "قال لي سامر إن الأمر حدث نحو السادسة، فاعتمدت ذلك ولم أنظر إلى ساعتي.",
+            "fact_ids": [
+              "f_rima_prompted"
+            ]
+          },
+          {
+            "line_id": "rm_refuse",
+            "purpose": "refuse_secret",
+            "text_ar": "قلت ما عندي."
+          },
+          {
+            "line_id": "rm_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أذكر أكثر من ذلك."
+          },
+          {
+            "line_id": "rm_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عمّا رأيته مساء الثلاثاء."
+          },
+          {
+            "line_id": "rm_bye",
+            "purpose": "farewell",
+            "text_ar": "أتمنى أن تكون إفادتي نافعة."
+          }
+        ]
+      },
+      {
+        "id": "adel",
+        "name_ar": "عادل المصري",
+        "role": "witness",
+        "age_descriptor_ar": "حارس المكتبة وأمين دفتر المفاتيح",
+        "persona_ar": "قليل الكلام، يدوّن كل شيء في دفتره ولا يزيد على ما دوّنه.",
+        "motives_ar": [
+          "أن يبقى الدفتر مطابقاً لما جرى"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "ad_greet",
+            "purpose": "greeting",
+            "text_ar": "تفضّل. كل ما عندي مكتوب في الدفتر."
+          },
+          {
+            "line_id": "ad_exit",
+            "purpose": "reveal",
+            "text_ar": "سجلت خروج الأمينة قبل الرابعة، ولم أرها تعود إلا قرب الثامنة إلا عشرين دقيقة.",
+            "fact_ids": [
+              "f_layla_exit"
+            ]
+          },
+          {
+            "line_id": "ad_key",
+            "purpose": "reveal",
+            "text_ar": "المفتاح الاحتياطي يخرج بتوقيع، وخرج مرتين مساء ذلك اليوم، وكلتاهما مدوّنة في دفتري.",
+            "fact_ids": [
+              "f_key_book"
+            ]
+          },
+          {
+            "line_id": "ad_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف أكثر مما دوّنت."
+          },
+          {
+            "line_id": "ad_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن الدفتر والمفاتيح."
+          },
+          {
+            "line_id": "ad_bye",
+            "purpose": "farewell",
+            "text_ar": "الدفتر عندكم متى شئتم."
+          }
+        ]
+      }
+    ],
+    "locations": [
+      {
+        "id": "loc_closed_room",
+        "name_ar": "الغرفة المغلقة",
+        "description_ar": "غرفة المجموعات النادرة، بابها ببطاقة وعند خروجها بوابة قراءة للوسوم."
+      },
+      {
+        "id": "loc_chief_office",
+        "name_ar": "مكتب أمينة المكتبة",
+        "description_ar": "مكتب فيه خزانة تُفتح بمفتاح، وللخزانة مفتاح احتياطي عند الحارس."
+      },
+      {
+        "id": "loc_guard_desk",
+        "name_ar": "مكتب الحراسة",
+        "description_ar": "بوابة الموظفين ودفتر المفاتيح."
+      },
+      {
+        "id": "loc_systems",
+        "name_ar": "غرفة نظام المكتبة",
+        "description_ar": "سجلات الأرفف والبوابات والأبواب."
+      },
+      {
+        "id": "loc_admin",
+        "name_ar": "مكتب الإدارة",
+        "description_ar": "التقارير والنماذج والإعلانات الداخلية."
+      },
+      {
+        "id": "loc_committee",
+        "name_ar": "قاعة لجنة الأرشيف البلدي",
+        "description_ar": "قاعة في مبنى البلدية تُعقد فيها جلسات اللجنة."
+      }
+    ],
+    "objects": [
+      {
+        "id": "obj_folio",
+        "name_ar": "مجلد خرائط «دروب القوافل»",
+        "description_ar": "مجلد نادر من المجموعة المغلقة، وعليه وسم تتبع."
+      },
+      {
+        "id": "obj_cabinet",
+        "name_ar": "خزانة مكتب الأمينة",
+        "description_ar": "خزانة بقفل، لها مفتاحان أحدهما احتياطي."
+      },
+      {
+        "id": "obj_key",
+        "name_ar": "المفتاح الاحتياطي",
+        "description_ar": "مفتاح خزانة الأمينة، يخرج من الحراسة بتوقيع."
+      }
+    ],
+    "organizations": [
+      {
+        "id": "org_library",
+        "name_ar": "مكتبة دار الوراقين المركزية",
+        "description_ar": "مكتبة عامة في مدينة متخيَّلة."
+      }
+    ]
+  },
+  "truth": {
+    "solution": {
+      "culprit_ids": [
+        "samer"
+      ],
+      "summary_ar": "لم تأخذ ليلى المجلد. كانت في اجتماع اللجنة حين مرّ وسمه خارجاً وحين فُتحت خزانتها بمفتاح وقّع عليه سامر الخوري. دبّر سامر الأمر طمعاً في المنصب، واستعان بنبيل الذي عليه عقد معلّق وبريما التي رُدّ طلبها، فجاءت البلاغات الثلاثة من أصحاب مصلحة لا من مصادر مستقلة.",
+      "key_fact_ids": [
+        "f_layla_away",
+        "f_planted_by_others",
+        "f_reports_stake"
+      ]
+    },
+    "facts": [
+      {
+        "id": "f_missing",
+        "statement_ar": "أُبلغ مساء الثلاثاء عن غياب مجلد خرائط «دروب القوافل» من الغرفة المغلقة في مكتبة دار الوراقين.",
+        "kind": "event",
+        "subject_ids": [
+          "obj_folio",
+          "org_library"
+        ],
+        "spoiler_level": 0,
+        "time": {
+          "start_min": 650,
+          "precision": "approx"
+        },
+        "location_id": "loc_closed_room"
+      },
+      {
+        "id": "f_found_in_cabinet",
+        "statement_ar": "عثر الكاتب نبيل الراشد على المجلد داخل خزانة مكتب الأمينة ليلى الحداد، في جولة الإقفال الساعة 18:50.",
+        "kind": "event",
+        "subject_ids": [
+          "nabil",
+          "obj_folio",
+          "obj_cabinet"
+        ],
+        "spoiler_level": 0,
+        "time": {
+          "start_min": 650,
+          "precision": "exact"
+        },
+        "location_id": "loc_chief_office"
+      },
+      {
+        "id": "f_three_reports",
+        "statement_ar": "جاءت ثلاثة بلاغات تتجه إلى الأمينة: عثور نبيل على المجلد، وإفادة ريما بأنها رأتها، وقسيمة إعارة سلّمها سامر للإدارة.",
+        "kind": "event",
+        "subject_ids": [
+          "nabil",
+          "rima",
+          "samer"
+        ],
+        "spoiler_level": 0,
+        "time": {
+          "start_min": 665,
+          "precision": "approx"
+        },
+        "location_id": "loc_admin"
+      },
+      {
+        "id": "f_layla_record",
+        "statement_ar": "تعمل ليلى الحداد في المكتبة منذ خمس وعشرين سنة، وليس في سجلها شكوى ولا إنذار.",
+        "kind": "attribute",
+        "subject_ids": [
+          "layla"
+        ],
+        "spoiler_level": 0
+      },
+      {
+        "id": "f_layla_exit",
+        "statement_ar": "خرجت ليلى من المبنى الساعة 15:40 إلى اجتماع لجنة الأرشيف البلدي، ولم تدخل قبل 19:40.",
+        "kind": "event",
+        "subject_ids": [
+          "layla"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 460,
+          "precision": "exact"
+        },
+        "location_id": "loc_guard_desk"
+      },
+      {
+        "id": "f_committee",
+        "statement_ar": "حضرت ليلى جلسة لجنة الأرشيف البلدي من 16:10 حتى 19:10، ووقّع رئيس اللجنة محضرها.",
+        "kind": "event",
+        "subject_ids": [
+          "layla"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 490,
+          "precision": "exact",
+          "end_min": 670
+        },
+        "location_id": "loc_committee"
+      },
+      {
+        "id": "f_shelf_read",
+        "statement_ar": "قارئ الرف سجّل وسم المجلد في مكانه على الرف الساعة 17:05، ولم يسجله بعد ذلك.",
+        "kind": "event",
+        "subject_ids": [
+          "obj_folio"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 545,
+          "precision": "exact"
+        },
+        "location_id": "loc_closed_room"
+      },
+      {
+        "id": "f_gate_read",
+        "statement_ar": "مرّ وسم المجلد خارجاً من بوابة الغرفة المغلقة الساعة 17:24.",
+        "kind": "event",
+        "subject_ids": [
+          "obj_folio"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 564,
+          "precision": "exact"
+        },
+        "location_id": "loc_closed_room"
+      },
+      {
+        "id": "f_nabil_door",
+        "statement_ar": "فُتح باب الغرفة المغلقة ببطاقة نبيل الراشد الساعة 17:20، ولم تُسجَّل بطاقة ليلى على الباب بعد 09:10.",
+        "kind": "event",
+        "subject_ids": [
+          "nabil"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 560,
+          "precision": "exact"
+        },
+        "location_id": "loc_closed_room"
+      },
+      {
+        "id": "f_key_book",
+        "statement_ar": "سُجل في دفتر الحراسة أن المفتاح الاحتياطي لخزانة مكتب الأمينة خرج بتوقيع سامر الخوري من 17:30 إلى 18:10، ثم بتوقيع نبيل الراشد من 18:45 إلى 18:55.",
+        "kind": "event",
+        "subject_ids": [
+          "samer",
+          "nabil",
+          "obj_key"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 570,
+          "precision": "exact",
+          "end_min": 655
+        },
+        "location_id": "loc_guard_desk"
+      },
+      {
+        "id": "f_vacancy",
+        "statement_ar": "يذكر إعلان إدارة داخلي أن سامر الخوري أول المرشحين لمنصب الأمينة إن خلا، وأن عقد نبيل الراشد يُجدَّد بعد تقييم الأمينة.",
+        "kind": "relation",
+        "subject_ids": [
+          "samer",
+          "nabil",
+          "layla",
+          "org_library"
+        ],
+        "spoiler_level": 1,
+        "location_id": "loc_admin"
+      },
+      {
+        "id": "f_rima_stake",
+        "statement_ar": "أعادت ليلى طلب ريما الأسمر شهادة التطوع قبل أسبوعين لأن ساعاتها ناقصة.",
+        "kind": "event",
+        "subject_ids": [
+          "rima",
+          "layla"
+        ],
+        "spoiler_level": 1,
+        "location_id": "loc_admin"
+      },
+      {
+        "id": "f_slip_given",
+        "statement_ar": "سلّم سامر الخوري الإدارة قسيمة إعارة مكتوباً عليها 18:20، وقال إنه وجدها على مكتب الإعارة.",
+        "kind": "event",
+        "subject_ids": [
+          "samer"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 665,
+          "precision": "exact"
+        },
+        "location_id": "loc_admin"
+      },
+      {
+        "id": "f_nabil_off_rota",
+        "statement_ar": "خزائن المكاتب الإدارية ليست في مهام نبيل الأسبوعية، فجولته عليها خرجت عن جدوله.",
+        "kind": "state",
+        "subject_ids": [
+          "nabil",
+          "obj_cabinet"
+        ],
+        "spoiler_level": 1,
+        "location_id": "loc_admin"
+      },
+      {
+        "id": "f_rima_prompted",
+        "statement_ar": "اقترح سامر على ريما أن الأمر وقع نحو السادسة مساءً، فبنت إفادتها على ذلك.",
+        "kind": "event",
+        "subject_ids": [
+          "rima",
+          "samer"
+        ],
+        "spoiler_level": 2,
+        "time": {
+          "start_min": 655,
+          "precision": "approx"
+        }
+      },
+      {
+        "id": "f_nabil_handover",
+        "statement_ar": "سلّم نبيل المجلد لسامر عند الباب الجانبي بعد خروجه من الغرفة، بطلب من سامر.",
+        "kind": "event",
+        "subject_ids": [
+          "nabil",
+          "samer",
+          "obj_folio"
+        ],
+        "spoiler_level": 2,
+        "time": {
+          "start_min": 566,
+          "precision": "approx"
+        }
+      },
+      {
+        "id": "f_layla_away",
+        "statement_ar": "كانت ليلى بعيدة عن المكتبة طوال الفترة من 15:40 إلى 19:40، فلم تكن موجودة حين غادر الوسم الغرفة وحين فُتحت الخزانة.",
+        "kind": "relation",
+        "subject_ids": [
+          "layla",
+          "obj_folio",
+          "obj_cabinet"
+        ],
+        "spoiler_level": 2,
+        "time": {
+          "start_min": 460,
+          "precision": "exact",
+          "end_min": 700
+        },
+        "location_id": "loc_committee"
+      },
+      {
+        "id": "f_planted_by_others",
+        "statement_ar": "نقلت يدٌ غير يد ليلى المجلد من الغرفة المغلقة إلى الخزانة بين 17:05 و18:10، فهي لا تملك سبباً مادياً يجعلها صاحبة الفعل.",
+        "kind": "relation",
+        "subject_ids": [
+          "layla",
+          "obj_folio",
+          "obj_cabinet"
+        ],
+        "spoiler_level": 3,
+        "time": {
+          "start_min": 545,
+          "precision": "exact",
+          "end_min": 610
+        },
+        "location_id": "loc_chief_office"
+      },
+      {
+        "id": "f_reports_stake",
+        "statement_ar": "لكل بلاغ من البلاغات الثلاثة صاحب مصلحة في إسقاط ليلى أو سجلٌّ يعارضه، فهي ليست ثلاث شهادات مستقلة.",
+        "kind": "relation",
+        "subject_ids": [
+          "nabil",
+          "rima",
+          "samer"
+        ],
+        "spoiler_level": 3,
+        "location_id": "loc_admin"
+      }
+    ],
+    "claims": [
+      {
+        "id": "cl_rima_saw",
+        "statement_ar": "ريما رأت ليلى قرب الغرفة المغلقة حوالي السادسة مساءً.",
+        "kind": "lie",
+        "held_by": [
+          "rima"
+        ],
+        "true_fact_id": "f_layla_away",
+        "contradicted_by_evidence_ids": [
+          "ev_committee_minutes",
+          "ev_exit_log"
+        ]
+      },
+      {
+        "id": "cl_nabil_routine",
+        "statement_ar": "عثر نبيل على المجلد في جولة ترتيب روتينية.",
+        "kind": "half_truth",
+        "held_by": [
+          "nabil"
+        ],
+        "true_fact_id": "f_nabil_off_rota",
+        "contradicted_by_evidence_ids": [
+          "ev_tidy_rota"
+        ]
+      },
+      {
+        "id": "cl_samer_nokey",
+        "statement_ar": "سامر لم يقترب من خزانة الأمينة ولا من مفتاحها.",
+        "kind": "lie",
+        "held_by": [
+          "samer"
+        ],
+        "true_fact_id": "f_key_book",
+        "contradicted_by_evidence_ids": [
+          "ev_key_book"
+        ]
+      }
+    ]
+  },
+  "timeline": [
+    {
+      "id": "te_leave",
+      "description_ar": "ليلى تخرج من المبنى متجهة إلى اجتماع اللجنة.",
+      "time": {
+        "start_min": 460,
+        "precision": "exact"
+      },
+      "location_id": "loc_guard_desk",
+      "actor_ids": [
+        "layla"
+      ],
+      "fact_ids": [
+        "f_layla_exit"
+      ],
+      "motivated_by_ar": "موعد جلسة لجنة الأرشيف البلدي"
+    },
+    {
+      "id": "te_committee",
+      "description_ar": "ليلى تحضر جلسة اللجنة في قاعة البلدية.",
+      "time": {
+        "start_min": 490,
+        "precision": "exact",
+        "end_min": 670
+      },
+      "location_id": "loc_committee",
+      "actor_ids": [
+        "layla"
+      ],
+      "fact_ids": [
+        "f_committee"
+      ],
+      "motivated_by_ar": "تمثيل المكتبة في اللجنة"
+    },
+    {
+      "id": "te_shelf",
+      "description_ar": "قارئ الرف يسجل وسم المجلد في مكانه.",
+      "time": {
+        "start_min": 545,
+        "precision": "exact"
+      },
+      "location_id": "loc_closed_room",
+      "actor_ids": [],
+      "fact_ids": [
+        "f_shelf_read"
+      ]
+    },
+    {
+      "id": "te_nabil_room",
+      "description_ar": "نبيل يفتح الغرفة المغلقة ببطاقته ويدخلها.",
+      "time": {
+        "start_min": 560,
+        "precision": "exact",
+        "end_min": 564
+      },
+      "location_id": "loc_closed_room",
+      "actor_ids": [
+        "nabil"
+      ],
+      "fact_ids": [
+        "f_nabil_door"
+      ],
+      "motivated_by_ar": "طلب سامر منه إحضار المجلد لفحص تجليده"
+    },
+    {
+      "id": "te_gate",
+      "description_ar": "وسم المجلد يمر خارجاً من بوابة الغرفة.",
+      "time": {
+        "start_min": 564,
+        "precision": "exact"
+      },
+      "location_id": "loc_closed_room",
+      "actor_ids": [],
+      "fact_ids": [
+        "f_gate_read"
+      ]
+    },
+    {
+      "id": "te_handover",
+      "description_ar": "نبيل يسلّم المجلد لسامر عند الباب الجانبي.",
+      "time": {
+        "start_min": 566,
+        "precision": "approx"
+      },
+      "actor_ids": [
+        "nabil",
+        "samer"
+      ],
+      "fact_ids": [
+        "f_nabil_handover"
+      ],
+      "motivated_by_ar": "سامر طلب المجلد وتحدث بصفته نائب الأمينة"
+    },
+    {
+      "id": "te_key_out",
+      "description_ar": "سامر يوقّع على المفتاح الاحتياطي لخزانة المكتب.",
+      "time": {
+        "start_min": 570,
+        "precision": "exact"
+      },
+      "location_id": "loc_guard_desk",
+      "actor_ids": [
+        "samer"
+      ],
+      "fact_ids": [
+        "f_key_book"
+      ],
+      "motivated_by_ar": "أراد الوصول إلى خزانة الأمينة وهي غائبة"
+    },
+    {
+      "id": "te_plant",
+      "description_ar": "سامر يضع المجلد في خزانة مكتب الأمينة.",
+      "time": {
+        "start_min": 572,
+        "precision": "exact",
+        "end_min": 608
+      },
+      "location_id": "loc_chief_office",
+      "actor_ids": [
+        "samer"
+      ],
+      "fact_ids": [
+        "f_planted_by_others"
+      ],
+      "motivated_by_ar": "أراد أن يُنسب فقد المجلد إلى الأمينة ويفتح لنفسه الطريق إلى منصبها"
+    },
+    {
+      "id": "te_key_back",
+      "description_ar": "سامر يعيد المفتاح الاحتياطي إلى الحارس.",
+      "time": {
+        "start_min": 610,
+        "precision": "exact"
+      },
+      "location_id": "loc_guard_desk",
+      "actor_ids": [
+        "samer"
+      ],
+      "fact_ids": [
+        "f_key_book"
+      ],
+      "motivated_by_ar": "إعادة المفتاح كما تقتضي القاعدة"
+    },
+    {
+      "id": "te_nabil_key",
+      "description_ar": "نبيل يوقّع على المفتاح نفسه قبيل الإقفال.",
+      "time": {
+        "start_min": 645,
+        "precision": "exact"
+      },
+      "location_id": "loc_guard_desk",
+      "actor_ids": [
+        "nabil"
+      ],
+      "fact_ids": [
+        "f_key_book"
+      ],
+      "motivated_by_ar": "طلب سامر منه فتح الخزانة وقت الإقفال"
+    },
+    {
+      "id": "te_find",
+      "description_ar": "نبيل يعثر على المجلد في الخزانة ويبلغ الإدارة.",
+      "time": {
+        "start_min": 650,
+        "precision": "exact"
+      },
+      "location_id": "loc_chief_office",
+      "actor_ids": [
+        "nabil"
+      ],
+      "fact_ids": [
+        "f_found_in_cabinet"
+      ],
+      "motivated_by_ar": "أراد أن يظهر حرصه ويفي بما طُلب منه"
+    },
+    {
+      "id": "te_rima_call",
+      "description_ar": "ريما تتصل بالإدارة وتذكر ما تقول إنها رأته.",
+      "time": {
+        "start_min": 660,
+        "precision": "exact"
+      },
+      "actor_ids": [
+        "rima"
+      ],
+      "fact_ids": [
+        "f_three_reports",
+        "f_rima_prompted"
+      ],
+      "motivated_by_ar": "أرادت أن تكون شاهدة نافعة للإدارة"
+    },
+    {
+      "id": "te_slip",
+      "description_ar": "سامر يسلّم الإدارة قسيمة الإعارة.",
+      "time": {
+        "start_min": 665,
+        "precision": "exact"
+      },
+      "location_id": "loc_admin",
+      "actor_ids": [
+        "samer"
+      ],
+      "fact_ids": [
+        "f_slip_given"
+      ],
+      "motivated_by_ar": "تثبيت الاتهام بوثيقة تبدو رسمية"
+    },
+    {
+      "id": "te_return",
+      "description_ar": "ليلى تعود إلى المبنى وتُبلَّغ بالأمر.",
+      "time": {
+        "start_min": 700,
+        "precision": "exact"
+      },
+      "location_id": "loc_guard_desk",
+      "actor_ids": [
+        "layla"
+      ],
+      "fact_ids": [
+        "f_layla_exit"
+      ],
+      "motivated_by_ar": "انتهاء جلسة اللجنة والعودة إلى المكتبة"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_incident_report",
+      "title_ar": "تقرير الحادث (نسخة الإدارة)",
+      "kind": "documentary",
+      "content_ar": "تقرير حادث — مكتبة دار الوراقين (الثلاثاء)\nالمادة: مجلد خرائط «دروب القوافل» من المجموعة المغلقة.\n18:50 — الكاتب نبيل الراشد يعثر على المجلد في خزانة مكتب الأمينة أثناء جولة الإقفال، ويبلغ الإدارة.\n19:00 — المتطوعة ريما الأسمر تتصل بالإدارة وتقول إنها رأت الأمينة قرب الغرفة المغلقة مساء اليوم.\n19:05 — نائب الأمينة سامر الخوري يسلّم الإدارة قسيمة إعارة داخلية تحمل الأحرف الأولى للأمينة.\n19:40 — تعود الأمينة ليلى الحداد إلى المبنى وتُبلَّغ بالأمر.",
+      "acquired_by_action_ids": [
+        "a_get_report"
+      ],
+      "supports_fact_ids": [
+        "f_missing",
+        "f_found_in_cabinet",
+        "f_three_reports"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "ملخص إداري يسجل من أبلغ ومتى، ولا يتحقق من صحة أي بلاغ ولا يذكر ما يربح كل مبلِّغ.",
+      "location_id": "loc_admin"
+    },
+    {
+      "id": "ev_nabil_statement",
+      "title_ar": "إفادة نبيل الراشد",
+      "kind": "testimonial",
+      "content_ar": "إفادة نبيل الراشد (مكتوبة):\n«كنت في جولة ترتيب روتينية قبل الإقفال، فأخذت المفتاح الاحتياطي من الحارس وفتحت خزانة مكتب الأمينة لأضع فيها أوراق المناوبة، فوجدت المجلد أمامي ولم ألمسه.»",
+      "acquired_by_action_ids": [
+        "a_get_nabil"
+      ],
+      "supports_fact_ids": [
+        "f_found_in_cabinet"
+      ],
+      "reliability": "weak",
+      "limits_ar": "قول صاحب علاقة بالواقعة؛ يصف ما يقول إنه رآه ولا يثبت من وضع المجلد.",
+      "location_id": "loc_admin",
+      "contradicts_claim_ids": [
+        "cl_nabil_routine"
+      ]
+    },
+    {
+      "id": "ev_rima_statement",
+      "title_ar": "إفادة ريما الأسمر",
+      "kind": "testimonial",
+      "content_ar": "إفادة ريما الأسمر (هاتفية، دُوّنت 19:00):\n«رأيت الأمينة قرب باب الغرفة المغلقة حوالي السادسة مساءً، وكانت تحمل شيئاً كبيراً.»",
+      "acquired_by_action_ids": [
+        "a_get_rima_stmt"
+      ],
+      "supports_fact_ids": [
+        "f_three_reports"
+      ],
+      "reliability": "weak",
+      "limits_ar": "إفادة شفوية من الذاكرة بلا وثيقة؛ تحتاج إلى مقابلتها بسجلات الوقت والمكان.",
+      "location_id": "loc_admin",
+      "contradicts_claim_ids": [
+        "cl_rima_saw"
+      ]
+    },
+    {
+      "id": "ev_loan_slip",
+      "title_ar": "قسيمة الإعارة الداخلية",
+      "kind": "documentary",
+      "content_ar": "قسيمة إعارة داخلية (صورة):\nالمادة: مجلد خرائط «دروب القوافل»\nإلى: مكتب الأمينة\nالوقت المكتوب بخط اليد: 18:20\nالأحرف الأولى: ل. ح.\nسلّمها إلى الإدارة: سامر الخوري، 19:05.",
+      "acquired_by_action_ids": [
+        "a_get_slip"
+      ],
+      "supports_fact_ids": [
+        "f_slip_given"
+      ],
+      "reliability": "weak",
+      "limits_ar": "صورة لورقة بخط اليد؛ لا يُعرف من كتب وقتها ولا متى كُتب، ولا تُحدَّد منها هوية الكاتب.",
+      "location_id": "loc_admin"
+    },
+    {
+      "id": "ev_exit_log",
+      "title_ar": "سجل بوابة الموظفين",
+      "kind": "digital",
+      "content_ar": "سجل بوابة الموظفين — الثلاثاء\n15:40 خروج — بطاقة ليلى الحداد\n19:40 دخول — بطاقة ليلى الحداد\nلا حركة أخرى لبطاقتها بين الوقتين.",
+      "acquired_by_action_ids": [
+        "a_get_exit"
+      ],
+      "supports_fact_ids": [
+        "f_layla_exit"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يسجل البطاقة لا حاملها؛ ولا يقول ما فعله غيرها داخل المبنى.",
+      "location_id": "loc_guard_desk"
+    },
+    {
+      "id": "ev_committee_minutes",
+      "title_ar": "محضر لجنة الأرشيف البلدي",
+      "kind": "documentary",
+      "content_ar": "محضر لجنة الأرشيف البلدي — جلسة الثلاثاء\nبدأت الجلسة 16:10 وانتهت 19:10 في قاعة البلدية.\nالحاضرون: ثمانية أعضاء، منهم ليلى الحداد ممثلةً عن دار الوراقين.\nوقّع المحضر رئيس اللجنة الأستاذ جميل الهاشم.",
+      "acquired_by_action_ids": [
+        "a_get_minutes"
+      ],
+      "supports_fact_ids": [
+        "f_committee"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "وثيقة جهة ثالثة تثبت حضورها الجلسة، ولا تنفي أن تكون غابت دقائق عن القاعة، ولا تصف ما جرى في المكتبة.",
+      "location_id": "loc_committee",
+      "contradicts_claim_ids": [
+        "cl_rima_saw"
+      ]
+    },
+    {
+      "id": "ev_shelf_read",
+      "title_ar": "سجل قارئ الرف في الغرفة المغلقة",
+      "kind": "digital",
+      "content_ar": "سجل قارئ الرف د-4 — الغرفة المغلقة\nآخر قراءة لوسم «دروب القوافل» على رفه: 17:05.\nلا قراءة للوسم على الرف بعد 17:05.",
+      "acquired_by_action_ids": [
+        "a_get_shelf"
+      ],
+      "supports_fact_ids": [
+        "f_shelf_read"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يثبت وجود الوسم على الرف في تلك اللحظة، ولا يحدد من رفعه بعدها.",
+      "location_id": "loc_systems"
+    },
+    {
+      "id": "ev_gate_read",
+      "title_ar": "سجل بوابة خروج الغرفة المغلقة",
+      "kind": "digital",
+      "content_ar": "سجل بوابة خروج الغرفة المغلقة\n17:24 — وسم «دروب القوافل» يمر خارجاً.\nلا مرور آخر للوسم عبر البوابة.",
+      "acquired_by_action_ids": [
+        "a_get_gate"
+      ],
+      "supports_fact_ids": [
+        "f_gate_read"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يسجل مرور الوسم لا هوية من يحمله ولا وجهته بعد البوابة.",
+      "location_id": "loc_systems"
+    },
+    {
+      "id": "ev_door_log",
+      "title_ar": "سجل باب الغرفة المغلقة",
+      "kind": "digital",
+      "content_ar": "سجل باب الغرفة المغلقة (بطاقات) — الثلاثاء\n09:10 — بطاقة ليلى الحداد\n14:30 — بطاقة نبيل الراشد\n17:20 — بطاقة نبيل الراشد\nلا دخول ببطاقة ليلى بعد 09:10.",
+      "acquired_by_action_ids": [
+        "a_get_door"
+      ],
+      "supports_fact_ids": [
+        "f_nabil_door"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يسجل البطاقة لا حاملها، ولا يسجل الخروج، ولا يذكر ما حمله الداخل.",
+      "location_id": "loc_systems"
+    },
+    {
+      "id": "ev_key_book",
+      "title_ar": "دفتر حراسة المفاتيح",
+      "kind": "documentary",
+      "content_ar": "دفتر حراسة المفاتيح (بخط الحارس عادل المصري)\n17:30 — المفتاح الاحتياطي لخزانة مكتب الأمينة — خرج إلى: سامر الخوري — بتوقيعه\n18:10 — أُعيد من سامر الخوري\n18:45 — المفتاح نفسه — خرج إلى: نبيل الراشد — بتوقيعه\n18:55 — أُعيد من نبيل الراشد",
+      "acquired_by_action_ids": [
+        "a_get_keybook"
+      ],
+      "supports_fact_ids": [
+        "f_key_book"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يسجل من وقّع على المفتاح ومتى، ولا يثبت من فتح الخزانة فعلاً ولا ما وُضع فيها.",
+      "location_id": "loc_guard_desk",
+      "contradicts_claim_ids": [
+        "cl_samer_nokey"
+      ]
+    },
+    {
+      "id": "ev_tidy_rota",
+      "title_ar": "جدول الترتيب الأسبوعي للكتّاب",
+      "kind": "documentary",
+      "content_ar": "جدول الترتيب الأسبوعي للكتّاب\nالثلاثاء — نبيل الراشد: رفوف الدوريات في الطابق الثاني وصناديق الإعارة.\nملاحظة: خزائن المكاتب الإدارية تُرتَّب في آخر خميس من الشهر ويتولاها الحارس.",
+      "acquired_by_action_ids": [
+        "a_get_rota"
+      ],
+      "supports_fact_ids": [
+        "f_nabil_off_rota"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "يبين المكلَّف بكل مهمة، ولا يمنع كاتباً من أن يتطوع بمهمة غيرها.",
+      "location_id": "loc_admin",
+      "contradicts_claim_ids": [
+        "cl_nabil_routine"
+      ]
+    },
+    {
+      "id": "ev_vacancy_notice",
+      "title_ar": "الإعلان الداخلي للإدارة",
+      "kind": "documentary",
+      "content_ar": "إعلان داخلي من الإدارة\nيُفتح باب الترشح لمنصب أمين المكتبة عند خلوّه، ويُقدَّم المرشحون الداخليون بحسب الأقدمية: سامر الخوري أولاً.\nيُجدَّد عقد الكاتب نبيل الراشد في نهاية الشهر بعد تقييم الأمينة الحالية.",
+      "acquired_by_action_ids": [
+        "a_get_vacancy"
+      ],
+      "supports_fact_ids": [
+        "f_vacancy"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "يبين مصلحة محتملة لا فعلاً؛ وصاحب المصلحة قد يكون بريئاً.",
+      "location_id": "loc_admin"
+    },
+    {
+      "id": "ev_rima_form",
+      "title_ar": "نموذج شهادة التطوع",
+      "kind": "documentary",
+      "content_ar": "نموذج شهادة التطوع (نسخة المكتبة)\nمقدِّمة الطلب: ريما الأسمر — الساعات المسجلة 40 من 60\nقرار الأمينة: «يُعاد بعد استكمال الساعات»\nتاريخ القرار: قبل أسبوعين.",
+      "acquired_by_action_ids": [
+        "a_get_rima_form"
+      ],
+      "supports_fact_ids": [
+        "f_rima_stake"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "قرار إداري عادي بحسب النموذج؛ يبين خلافاً محتملاً ولا يدل بنفسه على نية أحد.",
+      "location_id": "loc_admin"
+    },
+    {
+      "id": "ev_layla_record",
+      "title_ar": "سجل خدمة ليلى الحداد",
+      "kind": "documentary",
+      "content_ar": "سجل خدمة — ليلى الحداد\nمدة الخدمة: 25 سنة.\nالشكاوى: لا شيء. الإنذارات: لا شيء.",
+      "acquired_by_action_ids": [
+        "a_get_record"
+      ],
+      "supports_fact_ids": [
+        "f_layla_record"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "السجل النظيف لا يثبت براءتها في هذه الواقعة، كما أن طول الخدمة لا يكفي وحده لإدانتها.",
+      "location_id": "loc_admin"
+    },
+    {
+      "id": "ev_layla_statement",
+      "title_ar": "إفادة ليلى الحداد",
+      "kind": "testimonial",
+      "content_ar": "إفادة ليلى الحداد (كُتبت 20:10):\n«غادرت بعد الظهر إلى اجتماع لجنة الأرشيف البلدي ولم أعد قبل المساء. لم آخذ المجلد ولم أضعه في خزانتي.»",
+      "acquired_by_action_ids": [
+        "a_note_layla"
+      ],
+      "supports_fact_ids": [
+        "f_committee"
+      ],
+      "reliability": "weak",
+      "limits_ar": "قول صاحبة الشأن؛ يُقاس بالسجلات لا بنبرة صاحبته.",
+      "location_id": "loc_admin"
+    }
+  ],
+  "evidence_graph": {
+    "inferences": [
+      {
+        "id": "i_away_a",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_exit_log"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_layla_away"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "سجل البوابة يسجل خروج بطاقتها الساعة 15:40 وعودتها الساعة 19:40، فكانت خارج المبنى في كل مرحلة من نقل المجلد.",
+        "skill_ko_refs": [
+          "KO-RS-06-002"
+        ]
+      },
+      {
+        "id": "i_away_b",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_committee_minutes"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_layla_away"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "محضر جهة ثالثة يضعها في قاعة اللجنة من 16:10 إلى 19:10، وهذا يغطي الفترة نفسها من طريق مستقل عن بوابة المكتبة.",
+        "skill_ko_refs": [
+          "KO-RS-05-001"
+        ]
+      },
+      {
+        "id": "i_plant_a",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_gate_read"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_door_log"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_incident_report"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_layla_away"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_planted_by_others"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "مر وسم المجلد خارجاً الساعة 17:24 بعد فتح الباب ببطاقة نبيل، ولا بطاقة لها على الباب بعد الصباح، وهي خارج المبنى؛ ثم وُجد المجلد في خزانتها فنقلته يد أخرى.",
+        "skill_ko_refs": [
+          "KO-RS-05-005"
+        ]
+      },
+      {
+        "id": "i_plant_b",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_shelf_read"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_key_book"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_layla_away"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_planted_by_others"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "كان الوسم على رفه الساعة 17:05 بعد مغادرتها، وفُتحت خزانتها بالمفتاح الاحتياطي بين 17:30 و18:10 بتوقيع سامر؛ فنقل المجلد غيرُها وهي غائبة.",
+        "skill_ko_refs": [
+          "KO-RS-05-005"
+        ]
+      },
+      {
+        "id": "i_stake_a",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_incident_report"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_vacancy_notice"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_rima_form"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_reports_stake"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "التقرير يسمّي من وجد ومن أبلغ ومن سلّم القسيمة؛ والإعلان يربط سامر ونبيل بالمنصب والعقد، ونموذج الشهادة يبين خلافاً بين ريما والأمينة.",
+        "skill_ko_refs": [
+          "KO-RS-05-001"
+        ]
+      },
+      {
+        "id": "i_stake_b",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_tidy_rota"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_loan_slip"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_rima_statement"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_committee_minutes"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_reports_stake"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "عثور نبيل خارج جدوله، وقسيمة سامر تحمل وقتاً تكون الأمينة فيه في قاعة اللجنة، وإفادة ريما تخالف المحضر؛ فكل بلاغ يعارضه سجل.",
+        "skill_ko_refs": [
+          "KO-RS-06-002"
+        ]
+      },
+      {
+        "id": "i_rule_layla",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_layla_away"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_planted_by_others"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_reports_stake"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_layla"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "غيابها عن المبنى ونقل المجلد بيد غيرها وكون البلاغات لا تستقل عن بعضها تسقط فرضية أنها أخذته وأخفته.",
+        "skill_ko_refs": [
+          "KO-RS-06-009"
+        ]
+      },
+      {
+        "id": "i_rule_misfile",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_shelf_read"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_layla_away"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_misfile"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "المجلد كان على رفه بعد أن غادرت المبنى، فلا يصح أنها نقلته إلى خزانتها قبل ذلك لغرض إداري.",
+        "skill_ko_refs": [
+          "KO-RS-05-002"
+        ]
+      },
+      {
+        "id": "i_rule_nabil",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_key_book"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_planted_by_others"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_nabil"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "فتحت الخزانة بمفتاح وقّع عليه سامر قبل توقيع نبيل بنحو ساعة، فخطة نبيل وحده لا تفسر الوقائع.",
+        "skill_ko_refs": [
+          "KO-RS-05-002"
+        ]
+      },
+      {
+        "id": "i_supports_samer",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_key_book"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_vacancy_notice"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_planted_by_others"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_reports_stake"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_samer"
+        },
+        "relation": "supports",
+        "strength": "strong",
+        "rule_ar": "سامر هو من وقّع على مفتاح الخزانة في الوقت الذي دخل فيه المجلد إليها، وله مصلحة ظاهرة في الإعلان، وبلاغاته وبلاغات من حوله لا تستقل عن بعضها.",
+        "skill_ko_refs": [
+          "KO-RS-05-002"
+        ]
+      },
+      {
+        "id": "i_rima_claim",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_rima_statement"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_committee_minutes"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_rima_saw"
+        },
+        "relation": "contradicts_claim",
+        "strength": "strong",
+        "rule_ar": "المحضر يضع الأمينة في قاعة اللجنة عند السادسة مساءً، فلا تصح الرؤية المزعومة قرب الغرفة.",
+        "skill_ko_refs": [
+          "KO-RS-05-001"
+        ]
+      },
+      {
+        "id": "i_nabil_claim",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_nabil_statement"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_tidy_rota"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_nabil_routine"
+        },
+        "relation": "contradicts_claim",
+        "strength": "strong",
+        "rule_ar": "جدول الترتيب لا يضع خزائن المكاتب الإدارية في مهام نبيل، فالجولة التي وصفها خارج الروتين.",
+        "skill_ko_refs": [
+          "KO-RS-05-001"
+        ]
+      },
+      {
+        "id": "i_samer_claim",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_key_book"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_samer_nokey"
+        },
+        "relation": "contradicts_claim",
+        "strength": "strong",
+        "rule_ar": "دفتر الحراسة يسجل توقيع سامر على المفتاح الاحتياطي، فقوله إنه لم يقترب من المفتاح غير صحيح.",
+        "skill_ko_refs": [
+          "KO-RS-05-001"
+        ]
+      }
+    ]
+  },
+  "character_knowledge": [
+    {
+      "character_id": "layla",
+      "knows": [
+        {
+          "fact_id": "f_layla_exit",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_committee",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_rima_stake",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_vacancy",
+          "access": "common_knowledge",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    },
+    {
+      "character_id": "adel",
+      "knows": [
+        {
+          "fact_id": "f_layla_exit",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_key_book",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    },
+    {
+      "character_id": "nabil",
+      "knows": [
+        {
+          "fact_id": "f_nabil_door",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [
+        {
+          "fact_id": "f_nabil_handover",
+          "reveal_when": {
+            "presented": {
+              "evidence_id": "ev_gate_read",
+              "to_character": "nabil"
+            }
+          },
+          "cover_claim_id": null,
+          "reveal_line_id": "nb_handover"
+        }
+      ],
+      "believes": [
+        {
+          "claim_id": "cl_nabil_routine",
+          "stance": "deliberate_lie"
+        }
+      ]
+    },
+    {
+      "character_id": "rima",
+      "knows": [],
+      "hides": [
+        {
+          "fact_id": "f_rima_prompted",
+          "reveal_when": {
+            "presented": {
+              "evidence_id": "ev_committee_minutes",
+              "to_character": "rima"
+            }
+          },
+          "cover_claim_id": "cl_rima_saw",
+          "reveal_line_id": "rm_prompted"
+        }
+      ],
+      "believes": [
+        {
+          "claim_id": "cl_rima_saw",
+          "stance": "deliberate_lie"
+        }
+      ]
+    },
+    {
+      "character_id": "samer",
+      "knows": [
+        {
+          "fact_id": "f_slip_given",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [
+        {
+          "fact_id": "f_key_book",
+          "reveal_when": {
+            "presented": {
+              "evidence_id": "ev_key_book",
+              "to_character": "samer"
+            }
+          },
+          "cover_claim_id": "cl_samer_nokey",
+          "reveal_line_id": "sm_key"
+        }
+      ],
+      "believes": [
+        {
+          "claim_id": "cl_samer_nokey",
+          "stance": "deliberate_lie"
+        }
+      ]
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "h_layla",
+      "statement_ar": "أخذت أمينة المكتبة ليلى الحداد المجلد وأخفته في خزانتها.",
+      "is_true": false,
+      "plausibility_at_start": "high",
+      "suspect_id": "layla"
+    },
+    {
+      "id": "h_nabil",
+      "statement_ar": "دبّر الكاتب نبيل الراشد وحده نقل المجلد إلى الخزانة ليتهم الأمينة.",
+      "is_true": false,
+      "plausibility_at_start": "medium",
+      "suspect_id": "nabil"
+    },
+    {
+      "id": "h_misfile",
+      "statement_ar": "نقلت ليلى المجلد إلى خزانتها لغرض إداري مشروع دون أن تسجل ذلك، فلا ذنب في الأمر.",
+      "is_true": false,
+      "plausibility_at_start": "low"
+    },
+    {
+      "id": "h_samer",
+      "statement_ar": "وُضع المجلد في خزانة ليلى وهي غائبة بتدبير من سامر الخوري، وجاءت البلاغات الثلاثة ممن لهم مصلحة في إبعادها.",
+      "is_true": true,
+      "plausibility_at_start": "low",
+      "suspect_id": "samer"
+    }
+  ],
+  "misdirection_plan": [
+    {
+      "id": "rh_three",
+      "points_to_hypothesis_id": "h_layla",
+      "planted_via_ar": "ثلاثة بلاغات متفقة على ليلى، والمجلد في خزانتها، وسجلها وحده لا يمنع الشك.",
+      "evidence_ids": [
+        "ev_incident_report",
+        "ev_nabil_statement",
+        "ev_rima_statement",
+        "ev_loan_slip"
+      ],
+      "refuted_by_inference_ids": [
+        "i_rule_layla",
+        "i_stake_b"
+      ],
+      "fairness_note_ar": "سجلات البوابة والرف ودفتر المفاتيح ومحضر اللجنة متاحة بالإجراءات العادية، وكل بلاغ يمكن مقابلته بسجل مستقل عنه."
+    },
+    {
+      "id": "rh_nabil",
+      "points_to_hypothesis_id": "h_nabil",
+      "planted_via_ar": "سجل الباب وبوابة الغرفة يظهران بطاقة نبيل عند خروج الوسم، وهو من عثر على المجلد.",
+      "evidence_ids": [
+        "ev_door_log",
+        "ev_gate_read",
+        "ev_tidy_rota"
+      ],
+      "refuted_by_inference_ids": [
+        "i_rule_nabil"
+      ],
+      "fairness_note_ar": "دفتر المفاتيح متاح ويظهر توقيع سامر على مفتاح الخزانة قبل توقيع نبيل، والسجلان لا يذكران سوى البطاقة."
+    },
+    {
+      "id": "rh_misfile",
+      "points_to_hypothesis_id": "h_misfile",
+      "planted_via_ar": "خزانة الأمينة قريبة من مكتبها، وقد تنقل الأمينة مجلدات لأغراض إدارية؛ وسجلها النظيف يوحي بحسن النية.",
+      "evidence_ids": [
+        "ev_layla_record"
+      ],
+      "refuted_by_inference_ids": [
+        "i_rule_misfile"
+      ],
+      "fairness_note_ar": "قراءة الرف الساعة 17:05 وسجل البوابة متاحان، ويثبتان أن المجلد كان في مكانه بعد خروجها."
+    }
+  ],
+  "learning_objectives": [
+    {
+      "id": "lo_claim",
+      "statement_ar": "يسأل عن كل دليل: من وجده؟ ومن أبلغ عنه؟ ومتى؟ وماذا يربح صاحبه؟",
+      "skill_ko_ref": "KO-RS-05-001",
+      "observable_behaviors_ar": [
+        "يصنّف الإفادات أقوالاً",
+        "يرسم مصدر كل بلاغ ومصلحة صاحبه"
+      ],
+      "evidence_sources": [
+        "evidence_board"
+      ]
+    },
+    {
+      "id": "lo_timeline",
+      "statement_ar": "يرتّب سجلات البوابات والأرفف والمفاتيح على خط زمني ليعرف ما سبق ما.",
+      "skill_ko_ref": "KO-RS-05-005",
+      "observable_behaviors_ar": [
+        "يضع الخروج وقراءة الرف ومرور الوسم وتوقيع المفتاح في أزمنتها"
+      ],
+      "evidence_sources": [
+        "timeline_task",
+        "action_log"
+      ]
+    },
+    {
+      "id": "lo_hyp",
+      "statement_ar": "يوازن بين عدة فرضيات ويستبعد ما تنقضه الأدلة.",
+      "skill_ko_ref": "KO-RS-05-002",
+      "observable_behaviors_ar": [
+        "يضيف فرضيات",
+        "يستبعد بدليل"
+      ],
+      "evidence_sources": [
+        "hypothesis_ledger"
+      ]
+    },
+    {
+      "id": "lo_diag",
+      "statement_ar": "يقدّر ما يثبته كل سجل وما لا يثبته، ويربط الدليل بالفرضية باتجاه صحيح.",
+      "skill_ko_ref": "KO-RS-06-002",
+      "observable_behaviors_ar": [
+        "يعرف أن قارئ البطاقات يسجل البطاقة لا حاملها",
+        "يربط الدليل بالفرضية"
+      ],
+      "evidence_sources": [
+        "evidence_board",
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_calib",
+      "statement_ar": "يصوغ نسبة الترجيح بحدودها.",
+      "skill_ko_ref": "KO-RS-06-021",
+      "observable_behaviors_ar": [
+        "يختار ثقة معقولة",
+        "يذكر حدوداً"
+      ],
+      "evidence_sources": [
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_revise",
+      "statement_ar": "يراجع رأيه الأول حين يظهر ما يخالفه.",
+      "skill_ko_ref": "KO-RS-06-009",
+      "observable_behaviors_ar": [
+        "يغيّر فرضيته الرائدة بدليل"
+      ],
+      "evidence_sources": [
+        "hypothesis_ledger"
+      ]
+    }
+  ],
+  "mechanics": {
+    "time_budget_units": 40,
+    "actions": [
+      {
+        "id": "a_get_report",
+        "type": "examine",
+        "label_ar": "اقرأ تقرير الحادث",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_incident_report"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_admin",
+        "telemetry_code": "GET_REPORT"
+      },
+      {
+        "id": "a_get_nabil",
+        "type": "examine",
+        "label_ar": "اطلب إفادة نبيل المكتوبة",
+        "precondition": {
+          "has_evidence": "ev_incident_report"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_nabil_statement"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_admin",
+        "telemetry_code": "GET_NABIL"
+      },
+      {
+        "id": "a_get_rima_stmt",
+        "type": "examine",
+        "label_ar": "اطلب إفادة ريما المدوّنة",
+        "precondition": {
+          "has_evidence": "ev_incident_report"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_rima_statement"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_admin",
+        "telemetry_code": "GET_RIMA_STMT"
+      },
+      {
+        "id": "a_get_slip",
+        "type": "examine",
+        "label_ar": "اطلب صورة قسيمة الإعارة",
+        "precondition": {
+          "has_evidence": "ev_incident_report"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_loan_slip"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_admin",
+        "telemetry_code": "GET_SLIP"
+      },
+      {
+        "id": "a_get_vacancy",
+        "type": "examine",
+        "label_ar": "اقرأ الإعلان الداخلي للإدارة",
+        "precondition": {
+          "has_evidence": "ev_incident_report"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_vacancy_notice"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_admin",
+        "telemetry_code": "GET_VACANCY"
+      },
+      {
+        "id": "a_get_record",
+        "type": "examine",
+        "label_ar": "اطلب سجل خدمة الأمينة",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_layla_record"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_admin",
+        "telemetry_code": "GET_RECORD"
+      },
+      {
+        "id": "a_get_rota",
+        "type": "examine",
+        "label_ar": "اطلب جدول الترتيب الأسبوعي",
+        "precondition": {
+          "has_evidence": "ev_nabil_statement"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_tidy_rota"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_admin",
+        "telemetry_code": "GET_ROTA"
+      },
+      {
+        "id": "a_get_rima_form",
+        "type": "examine",
+        "label_ar": "اطلب نموذج شهادة التطوع",
+        "precondition": {
+          "has_evidence": "ev_rima_statement"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_rima_form"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_admin",
+        "telemetry_code": "GET_RIMA_FORM"
+      },
+      {
+        "id": "a_get_exit",
+        "type": "examine",
+        "label_ar": "اطلب سجل بوابة الموظفين",
+        "precondition": {
+          "has_evidence": "ev_incident_report"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_exit_log"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_guard_desk",
+        "telemetry_code": "GET_EXIT"
+      },
+      {
+        "id": "a_get_minutes",
+        "type": "search_location",
+        "label_ar": "اطلب محضر لجنة الأرشيف البلدي",
+        "precondition": {
+          "has_evidence": "ev_exit_log"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_committee_minutes"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_committee",
+        "telemetry_code": "GET_MINUTES"
+      },
+      {
+        "id": "a_get_shelf",
+        "type": "search_location",
+        "label_ar": "اطلب سجل قارئ الرف في الغرفة المغلقة",
+        "precondition": {
+          "has_evidence": "ev_incident_report"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_shelf_read"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_systems",
+        "telemetry_code": "GET_SHELF"
+      },
+      {
+        "id": "a_get_gate",
+        "type": "search_location",
+        "label_ar": "اطلب سجل بوابة خروج الغرفة المغلقة",
+        "precondition": {
+          "has_evidence": "ev_shelf_read"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_gate_read"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_systems",
+        "telemetry_code": "GET_GATE"
+      },
+      {
+        "id": "a_get_door",
+        "type": "search_location",
+        "label_ar": "اطلب سجل باب الغرفة المغلقة",
+        "precondition": {
+          "has_evidence": "ev_gate_read"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_door_log"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_systems",
+        "telemetry_code": "GET_DOOR"
+      },
+      {
+        "id": "a_get_keybook",
+        "type": "examine",
+        "label_ar": "اطلب دفتر حراسة المفاتيح",
+        "precondition": {
+          "has_evidence": "ev_gate_read"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_key_book"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_guard_desk",
+        "telemetry_code": "GET_KEYBOOK"
+      },
+      {
+        "id": "a_int_layla",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة ليلى",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "layla",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "layla",
+        "telemetry_code": "INT_LAYLA"
+      },
+      {
+        "id": "a_int_adel",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة عادل",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "adel",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "adel",
+        "telemetry_code": "INT_ADEL"
+      },
+      {
+        "id": "a_int_nabil",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة نبيل",
+        "precondition": {
+          "has_evidence": "ev_incident_report"
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "nabil",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "nabil",
+        "telemetry_code": "INT_NABIL"
+      },
+      {
+        "id": "a_int_rima",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة ريما",
+        "precondition": {
+          "has_evidence": "ev_incident_report"
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "rima",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "rima",
+        "telemetry_code": "INT_RIMA"
+      },
+      {
+        "id": "a_int_samer",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة سامر",
+        "precondition": {
+          "has_evidence": "ev_incident_report"
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "samer",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "samer",
+        "telemetry_code": "INT_SAMER"
+      },
+      {
+        "id": "a_note_layla",
+        "type": "examine",
+        "label_ar": "دوّن إفادة ليلى",
+        "precondition": {
+          "fact_unlocked": "f_committee"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_layla_statement"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "layla",
+        "telemetry_code": "NOTE_LAYLA"
+      },
+      {
+        "id": "p_keybook_samer",
+        "type": "present_evidence",
+        "label_ar": "اعرض دفتر المفاتيح على سامر",
+        "precondition": {
+          "presented": {
+            "evidence_id": "ev_key_book",
+            "to_character": "samer"
+          }
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "PRESENTED_KEYBOOK"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "samer",
+        "telemetry_code": "P_KEYBOOK_SAMER"
+      },
+      {
+        "id": "p_gate_nabil",
+        "type": "present_evidence",
+        "label_ar": "اعرض سجل بوابة الغرفة على نبيل",
+        "precondition": {
+          "presented": {
+            "evidence_id": "ev_gate_read",
+            "to_character": "nabil"
+          }
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "PRESENTED_GATE"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "nabil",
+        "telemetry_code": "P_GATE_NABIL"
+      },
+      {
+        "id": "p_minutes_rima",
+        "type": "present_evidence",
+        "label_ar": "اعرض محضر اللجنة على ريما",
+        "precondition": {
+          "presented": {
+            "evidence_id": "ev_committee_minutes",
+            "to_character": "rima"
+          }
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "PRESENTED_MINUTES"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "rima",
+        "telemetry_code": "P_MINUTES_RIMA"
+      },
+      {
+        "id": "a_hint",
+        "type": "request_hint",
+        "label_ar": "اطلب تلميحاً",
+        "precondition": {
+          "always": true
+        },
+        "effects": [],
+        "time_cost_units": 0,
+        "telemetry_code": "REQUEST_HINT"
+      },
+      {
+        "id": "a_accuse",
+        "type": "final_accusation",
+        "label_ar": "قدّم الاستنتاج النهائي",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "SUBMIT"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "FINAL_ACCUSATION"
+      },
+      {
+        "id": "ask_layla_f_layla_exit",
+        "type": "interview",
+        "label_ar": "[نموذج] layla يذكر f_layla_exit",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_layla_exit"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "layla",
+        "telemetry_code": "ASK_LAYLA_F_LAYLA_EXIT"
+      },
+      {
+        "id": "ask_layla_f_committee",
+        "type": "interview",
+        "label_ar": "[نموذج] layla يذكر f_committee",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_committee"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "layla",
+        "telemetry_code": "ASK_LAYLA_F_COMMITTEE"
+      },
+      {
+        "id": "ask_layla_f_rima_stake",
+        "type": "interview",
+        "label_ar": "[نموذج] layla يذكر f_rima_stake",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_rima_stake"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "layla",
+        "telemetry_code": "ASK_LAYLA_F_RIMA_STAKE"
+      },
+      {
+        "id": "ask_layla_f_vacancy",
+        "type": "interview",
+        "label_ar": "[نموذج] layla يذكر f_vacancy",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_vacancy"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "layla",
+        "telemetry_code": "ASK_LAYLA_F_VACANCY"
+      },
+      {
+        "id": "ask_adel_f_layla_exit",
+        "type": "interview",
+        "label_ar": "[نموذج] adel يذكر f_layla_exit",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_layla_exit"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "adel",
+        "telemetry_code": "ASK_ADEL_F_LAYLA_EXIT"
+      },
+      {
+        "id": "ask_adel_f_key_book",
+        "type": "interview",
+        "label_ar": "[نموذج] adel يذكر f_key_book",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_key_book"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "adel",
+        "telemetry_code": "ASK_ADEL_F_KEY_BOOK"
+      },
+      {
+        "id": "ask_nabil_f_nabil_door",
+        "type": "interview",
+        "label_ar": "[نموذج] nabil يذكر f_nabil_door",
+        "precondition": {
+          "has_evidence": "ev_incident_report"
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_nabil_door"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "nabil",
+        "telemetry_code": "ASK_NABIL_F_NABIL_DOOR"
+      },
+      {
+        "id": "ask_nabil_f_nabil_handover",
+        "type": "interview",
+        "label_ar": "[نموذج] nabil يكشف f_nabil_handover",
+        "precondition": {
+          "all": [
+            {
+              "has_evidence": "ev_incident_report"
+            },
+            {
+              "presented": {
+                "evidence_id": "ev_gate_read",
+                "to_character": "nabil"
+              }
+            }
+          ]
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_nabil_handover"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "nabil",
+        "telemetry_code": "ASK_NABIL_F_NABIL_HANDOVER"
+      },
+      {
+        "id": "ask_rima_f_rima_prompted",
+        "type": "interview",
+        "label_ar": "[نموذج] rima يكشف f_rima_prompted",
+        "precondition": {
+          "all": [
+            {
+              "has_evidence": "ev_incident_report"
+            },
+            {
+              "presented": {
+                "evidence_id": "ev_committee_minutes",
+                "to_character": "rima"
+              }
+            }
+          ]
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_rima_prompted"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "rima",
+        "telemetry_code": "ASK_RIMA_F_RIMA_PROMPTED"
+      },
+      {
+        "id": "ask_samer_f_slip_given",
+        "type": "interview",
+        "label_ar": "[نموذج] samer يذكر f_slip_given",
+        "precondition": {
+          "has_evidence": "ev_incident_report"
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_slip_given"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "samer",
+        "telemetry_code": "ASK_SAMER_F_SLIP_GIVEN"
+      },
+      {
+        "id": "ask_samer_f_key_book",
+        "type": "interview",
+        "label_ar": "[نموذج] samer يكشف f_key_book",
+        "precondition": {
+          "all": [
+            {
+              "has_evidence": "ev_incident_report"
+            },
+            {
+              "presented": {
+                "evidence_id": "ev_key_book",
+                "to_character": "samer"
+              }
+            }
+          ]
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_key_book"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "samer",
+        "telemetry_code": "ASK_SAMER_F_KEY_BOOK"
+      }
+    ]
+  },
+  "state_machine": {
+    "id": "c034",
+    "initial": "briefing",
+    "type": "compound",
+    "states": {
+      "briefing": {
+        "description_ar": "الإحاطة",
+        "type": "atomic",
+        "on": {
+          "START": {
+            "target": "investigating"
+          }
+        }
+      },
+      "investigating": {
+        "description_ar": "التحقيق",
+        "type": "compound",
+        "initial": "gathering",
+        "states": {
+          "gathering": {
+            "type": "atomic",
+            "on": {
+              "OPEN_DEDUCTION": {
+                "target": "deducing"
+              }
+            }
+          },
+          "deducing": {
+            "type": "atomic",
+            "on": {
+              "BACK": {
+                "target": "gathering"
+              }
+            }
+          }
+        },
+        "on": {
+          "SUBMIT": {
+            "target": "review"
+          }
+        }
+      },
+      "review": {
+        "description_ar": "مراجعة",
+        "type": "atomic",
+        "on": {
+          "CLOSE": {
+            "target": "resolved"
+          }
+        }
+      },
+      "resolved": {
+        "description_ar": "إغلاق",
+        "type": "final"
+      }
+    }
+  },
+  "dialogue": {
+    "max_turns_per_interview": 10,
+    "llm_enabled": false,
+    "topics": [
+      {
+        "id": "t_exit",
+        "label_ar": "الخروج والاجتماع",
+        "example_questions_ar": [
+          "أين كنت بعد الظهر؟",
+          "متى غادرت المبنى؟"
+        ],
+        "fact_ids": [
+          "f_layla_exit",
+          "f_committee"
+        ]
+      },
+      {
+        "id": "t_forms",
+        "label_ar": "الطلبات والعقود والمنصب",
+        "example_questions_ar": [
+          "لماذا أعدت طلب ريما؟",
+          "من يتأثر بتقييمك؟"
+        ],
+        "fact_ids": [
+          "f_rima_stake",
+          "f_vacancy"
+        ]
+      },
+      {
+        "id": "t_key",
+        "label_ar": "المفتاح الاحتياطي",
+        "example_questions_ar": [
+          "من أخذ المفتاح؟",
+          "هل اقتربت من الخزانة؟"
+        ],
+        "fact_ids": [
+          "f_key_book"
+        ],
+        "claim_ids": [
+          "cl_samer_nokey"
+        ]
+      },
+      {
+        "id": "t_slip",
+        "label_ar": "القسيمة",
+        "example_questions_ar": [
+          "من أين جاءت القسيمة؟"
+        ],
+        "fact_ids": [
+          "f_slip_given"
+        ]
+      },
+      {
+        "id": "t_room",
+        "label_ar": "الغرفة المغلقة والجولة",
+        "example_questions_ar": [
+          "ماذا فعلت في الغرفة المغلقة؟",
+          "كيف وجدت المجلد؟"
+        ],
+        "fact_ids": [
+          "f_nabil_door",
+          "f_nabil_handover"
+        ],
+        "claim_ids": [
+          "cl_nabil_routine"
+        ]
+      },
+      {
+        "id": "t_sighting",
+        "label_ar": "ما رأته ريما",
+        "example_questions_ar": [
+          "متى رأيت الأمينة؟",
+          "كيف حددت الوقت؟"
+        ],
+        "fact_ids": [
+          "f_rima_prompted"
+        ],
+        "claim_ids": [
+          "cl_rima_saw"
+        ]
+      }
+    ]
+  },
+  "rubric": {
+    "reference_answer_ar": "لم تأخذ ليلى الحداد المجلد. ثلاثة بلاغات تتجه إليها، لكن كل بلاغ جاء من مصدر له مصلحة أو يعارضه سجل: نبيل وجد المجلد خارج جدوله، وريما تذكر وقتاً تكون فيه الأمينة في قاعة اللجنة، وسامر سلّم قسيمة بوقت تكون فيه الأمينة غائبة. وتُظهر السجلات المحايدة أن الوسم كان على رفه بعد خروج الأمينة، ثم مر خارجاً من الغرفة، ثم دخلت يد غريبة خزانتها بمفتاح وقّع عليه سامر. لذلك الأرجح أن سامر دبّر نقل المجلد وبناء البلاغات، وأن نبيل وريما تابعاه. حدود الاستنتاج: دفتر المفاتيح يسجل التوقيع لا من فتح الخزانة، وقارئات الأبواب لا ترى الأشخاص بل البطاقات، وليس في السجلات ما يثبت نية أحد، ولا يجوز أن نعدّ المصلحة وحدها دليلاً.",
+    "criteria": [
+      {
+        "id": "c_source",
+        "name_ar": "تصنيف المصادر",
+        "objective_ids": [
+          "lo_claim"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يصنّف"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "أخطأ في الأغلب"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "نصف صحيح"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمه صحيح"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كله صحيح"
+          }
+        ]
+      },
+      {
+        "id": "c_conflict",
+        "name_ar": "ربط السجلات بأزمنتها",
+        "objective_ids": [
+          "lo_timeline"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يضع شيئاً"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "وضع قليلاً"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "وضع نصفها صحيحاً"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمها"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كلها في موضعها"
+          }
+        ]
+      },
+      {
+        "id": "c_links",
+        "name_ar": "ربط الأدلة بالفرضيات",
+        "objective_ids": [
+          "lo_diag"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.2,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لا روابط"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "قليلة"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "نصفها صحيح"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمها"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كلها دقيقة"
+          }
+        ]
+      },
+      {
+        "id": "c_uncertainty",
+        "name_ar": "معايرة الثقة",
+        "objective_ids": [
+          "lo_calib"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.2,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "ثقة مفرطة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "حدود قليلة"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "جزئية"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معقولة"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "معايَرة كاملة"
+          }
+        ]
+      },
+      {
+        "id": "c_revision",
+        "name_ar": "مراجعة الرأي",
+        "objective_ids": [
+          "lo_revise"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "بقي على فرضية مرفوضة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "لم يعلن فرضية"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "ثبت على فرضية سليمة"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "غيّر بدليل"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "غيّر بدليل ووثّق"
+          }
+        ]
+      },
+      {
+        "id": "c_elimination",
+        "name_ar": "استبعاد الفرضيات الخاطئة",
+        "objective_ids": [
+          "lo_hyp"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يستبعد"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "استبعد خطأً"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "فرضية بدليل"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "فرضيتين"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كل الخاطئة"
+          }
+        ]
+      },
+      {
+        "id": "c_justification",
+        "name_ar": "جودة الحجة المكتوبة",
+        "objective_ids": [
+          "lo_diag",
+          "lo_hyp"
+        ],
+        "scored_by": "human",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لا حجة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "ادعاء بلا سند"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "أدلة دون ربط"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "ربط الأدلة بالاستنتاج"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "ربط مع البدائل والحدود"
+          }
+        ]
+      }
+    ]
+  },
+  "hint_ladder": [
+    {
+      "id": "hg1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "قبل أن تسأل هل فعلت ليلى ذلك، اسأل: من أين جاء كل بلاغ ضدها؟ ومن يكسب منه؟",
+      "trigger": {
+        "always": true
+      },
+      "assessment_weight": 0.02
+    },
+    {
+      "id": "hg2",
+      "level": 2,
+      "kind": "focus_area",
+      "text_ar": "ضع البلاغات في جدول: من وجد؟ ومن أبلغ؟ ومتى؟ وهل أحدهم مستقل عن الآخرين؟",
+      "trigger": {
+        "has_evidence": "ev_incident_report"
+      },
+      "assessment_weight": 0.04
+    },
+    {
+      "id": "hg3",
+      "level": 3,
+      "kind": "pointer",
+      "text_ar": "ابحث عن سجلات صنعتها الأجهزة أو الحارس قبل أن يبدأ أحد بالاتهام.",
+      "trigger": {
+        "has_evidence": "ev_incident_report"
+      },
+      "assessment_weight": 0.08
+    },
+    {
+      "id": "hp1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "أين كانت ليلى حين مرّ وسم المجلد خارجاً؟ وأين كان الوسم قبل ذلك؟",
+      "trigger": {
+        "has_evidence": "ev_incident_report"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_plant_a"
+    },
+    {
+      "id": "hp2",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "قارن وقت خروج الأمينة من المبنى بآخر قراءة للوسم على رفه.",
+      "trigger": {
+        "has_evidence": "ev_exit_log"
+      },
+      "assessment_weight": 0.06,
+      "targets_inference_id": "i_plant_a"
+    },
+    {
+      "id": "hp3",
+      "level": 3,
+      "kind": "partial_reveal",
+      "text_ar": "ضع على خط واحد: خروجها 15:40، وقراءة الرف 17:05، ومرور الوسم 17:24، وتوقيع المفتاح 17:30، ثم انظر من فتح الباب ومن وقّع.",
+      "trigger": {
+        "has_evidence": "ev_gate_read"
+      },
+      "assessment_weight": 0.1,
+      "targets_inference_id": "i_plant_a"
+    },
+    {
+      "id": "hs1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "إذا كان لكل مبلِّغ سبب يجعله يتمنى غياب ليلى، فهل يبقى اتفاقهم دليلاً قوياً؟",
+      "trigger": {
+        "has_evidence": "ev_incident_report"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_stake_a"
+    },
+    {
+      "id": "hs2",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "اسأل عن كل مبلِّغ: ماذا يربح لو غابت الأمينة؟ وابحث في الإعلانات والنماذج الإدارية.",
+      "trigger": {
+        "has_evidence": "ev_incident_report"
+      },
+      "assessment_weight": 0.05,
+      "targets_inference_id": "i_stake_a"
+    },
+    {
+      "id": "hs3",
+      "level": 3,
+      "kind": "partial_reveal",
+      "text_ar": "افتح الإعلان الداخلي ونموذج شهادة التطوع وجدول الترتيب، وقابل وقت كل بلاغ بمكان الأمينة في ذلك الوقت.",
+      "trigger": {
+        "has_evidence": "ev_rima_statement"
+      },
+      "assessment_weight": 0.08,
+      "targets_inference_id": "i_stake_a"
+    }
+  ],
+  "fairness_test": {
+    "requirements": {
+      "min_disjoint_proof_paths": 2,
+      "max_inference_depth": 3,
+      "all_red_herrings_refutable": true,
+      "culprit_uniquely_entailed": true,
+      "no_hidden_fact_dependency": true,
+      "max_required_actions": 40
+    },
+    "runs": []
+  },
+  "ending_explanation": {
+    "steps": [
+      {
+        "order": 1,
+        "text_ar": "ابدأ بسؤال المصدر: وجد نبيل المجلد، وأبلغت ريما، وسلّم سامر القسيمة. والإعلان يربط سامر ونبيل بالمنصب والعقد، ونموذج الشهادة يبين خلافاً بين ريما والأمينة.",
+        "uses_evidence_ids": [
+          "ev_incident_report",
+          "ev_vacancy_notice",
+          "ev_rima_form"
+        ],
+        "inference_id": "i_stake_a"
+      },
+      {
+        "order": 2,
+        "text_ar": "سجل البوابة يضع ليلى خارج المبنى من الرابعة إلا عشرين حتى الثامنة إلا عشرين، ومحضر اللجنة يضعها في الجلسة نفسها.",
+        "uses_evidence_ids": [
+          "ev_exit_log",
+          "ev_committee_minutes"
+        ],
+        "inference_id": "i_away_a"
+      },
+      {
+        "order": 3,
+        "text_ar": "بعد خروجها قرأ قارئ الرف الوسم في مكانه، ثم مر خارجاً بعد فتح الباب ببطاقة نبيل، ولا أثر لبطاقة ليلى؛ فنقلت المجلدَ يدٌ أخرى.",
+        "uses_evidence_ids": [
+          "ev_shelf_read",
+          "ev_gate_read",
+          "ev_door_log"
+        ],
+        "inference_id": "i_plant_a"
+      },
+      {
+        "order": 4,
+        "text_ar": "دفتر المفاتيح يربط سامر بخزانة الأمينة في الساعة التي دخل فيها المجلد إليها، وهو أول المرشحين لمنصبها.",
+        "uses_evidence_ids": [
+          "ev_key_book",
+          "ev_vacancy_notice"
+        ],
+        "inference_id": "i_supports_samer"
+      },
+      {
+        "order": 5,
+        "text_ar": "فتسقط فرضية أن الأمينة هي الفاعلة، ويبقى أن الدس كان بتدبير من سامر لا من نبيل وحده.",
+        "uses_evidence_ids": [
+          "ev_key_book",
+          "ev_committee_minutes"
+        ],
+        "inference_id": "i_rule_layla"
+      }
+    ],
+    "alternative_paths_ar": [
+      "مسار مستقل: محضر اللجنة يضعها بعيداً، وقراءة الرف ودفتر المفاتيح يثبتان أن الخزانة فُتحت بمفتاح وقّع عليه سامر وهي غائبة، وجدول الترتيب والقسيمة وإفادة ريما تفقد قوتها حين تُقابَل بالمحضر."
+    ],
+    "what_evidence_could_not_show_ar": [
+      "دفتر المفاتيح يسجل من وقّع لا من فتح الخزانة، ولا تثبت السجلات نية أحد.",
+      "لا نعرف ما قاله سامر لريما ونبيل بدقة، ولا تغني المصلحة وحدها عن السجلات."
+    ],
+    "science_notes_ar": [
+      "الدليل الذي يأتي من مصدر له مصلحة يحتاج إلى سجل مستقل عنه.",
+      "ثلاثة أقوال تعود إلى مصدر واحد أو إلى مصالح متقاربة لا تساوي ثلاثة أدلة مستقلة."
+    ]
+  },
+  "expert_review": [
+    {
+      "role": "narrative_editor",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "scientific_reviewer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "learning_designer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "age_appropriateness",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "cultural_reviewer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "legal_rights",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "safety",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    }
+  ]
+}

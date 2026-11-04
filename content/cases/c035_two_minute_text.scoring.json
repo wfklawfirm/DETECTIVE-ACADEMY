@@ -1,0 +1,122 @@
+{
+  "case_id": "c035_two_minute_text",
+  "accepted_conclusions": {
+    "h_error": {
+      "grade": 1,
+      "note_ar": "استنتاج متسق مع الأدلة ويتطلب ذكر حدوده."
+    },
+    "h_taken": {
+      "grade": 0,
+      "note_ar": "يفترض نقصاً حقيقياً في المال، والحساب بالأسعار وفكّة الصباح يطابق ما وُجد."
+    },
+    "h_lied": {
+      "grade": 0,
+      "note_ar": "يفترض قصداً بلا قرينة؛ الخطأ الحسابي أبسط، وأرقام الفترات كتبتها سلمى نفسها."
+    },
+    "h_change": {
+      "grade": 0,
+      "note_ar": "تبديل الفكّة لا يغيّر مجموع المال."
+    }
+  },
+  "confidence_band": {
+    "h_error": [
+      70,
+      95
+    ],
+    "h_taken": [
+      0,
+      15
+    ],
+    "h_lied": [
+      0,
+      10
+    ],
+    "h_change": [
+      0,
+      15
+    ]
+  },
+  "source_key": {
+    "ev_note": "claim",
+    "ev_count": "primary_record",
+    "ev_price": "public_document",
+    "ev_slips": "primary_record",
+    "ev_rashed": "claim"
+  },
+  "link_key": {
+    "h_error": {
+      "ev_note": "supports",
+      "ev_slips": "supports",
+      "ev_count": "supports",
+      "ev_price": "supports",
+      "ev_rashed": "neutral"
+    },
+    "h_taken": {
+      "ev_rashed": "supports",
+      "ev_count": "weakens",
+      "ev_slips": "weakens",
+      "ev_note": "weakens"
+    },
+    "h_lied": {
+      "ev_note": "neutral",
+      "ev_count": "weakens",
+      "ev_slips": "weakens"
+    },
+    "h_change": {
+      "ev_note": "weakens",
+      "ev_rashed": "neutral",
+      "ev_count": "weakens"
+    }
+  },
+  "required_limits": [
+    "l_how_slip",
+    "l_slips_trust"
+  ],
+  "valid_mind_changers": [
+    "m_slip_30",
+    "m_count_wrong",
+    "m_no_swap"
+  ],
+  "invalid_limits": [
+    "l_invalid_short",
+    "l_invalid_rashed",
+    "l_invalid_nervous"
+  ],
+  "decisive_evidence": [
+    "ev_note",
+    "ev_slips",
+    "ev_count",
+    "ev_price"
+  ],
+  "lab_requirement": null,
+  "refuted_hypotheses": [
+    "h_taken",
+    "h_lied",
+    "h_change"
+  ],
+  "transfer_key": {
+    "valid": [
+      "o1",
+      "o2",
+      "o3",
+      "o4"
+    ],
+    "invalid": [
+      "o5",
+      "o6",
+      "o7"
+    ]
+  },
+  "criteria_map": {
+    "c_source": "source_typing",
+    "c_links": "hypothesis_links",
+    "c_uncertainty": "uncertainty",
+    "c_revision": "revision",
+    "c_elimination": "elimination",
+    "c_justification": "justification_human"
+  },
+  "caps": {
+    "no_citations_max": 45,
+    "no_conflict_resolution_max": 65
+  }
+}

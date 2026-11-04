@@ -1,0 +1,141 @@
+{
+  "case_id": "c033_three_days_nine_moves",
+  "accepted_conclusions": {
+    "h_error": {
+      "grade": 0,
+      "note_ar": "يتجاوز ما تسمح به الأدلة: تغيّر رقم الشريط يدل على فتح الصندوق لا على خطأ عدّ."
+    },
+    "h_treasurer": {
+      "grade": 0,
+      "note_ar": "تنقضه سجل الإيصالات المتتابعة وسجل البطاقات."
+    },
+    "h_caretaker": {
+      "grade": 0,
+      "note_ar": "ينقضه سجل المفاتيح وقصر دخولاته إلى المكتب."
+    },
+    "h_coord": {
+      "grade": 1,
+      "note_ar": "استنتاج متسق مع الأدلة ويتطلب ذكر حدوده، ومنها افتراض عدم إعارة المفتاح."
+    }
+  },
+  "confidence_band": {
+    "h_error": [
+      0,
+      10
+    ],
+    "h_treasurer": [
+      0,
+      10
+    ],
+    "h_caretaker": [
+      0,
+      10
+    ],
+    "h_coord": [
+      65,
+      90
+    ]
+  },
+  "source_key": {
+    "ev_slip": "primary_record",
+    "ev_mon": "primary_record",
+    "ev_keys": "primary_record",
+    "ev_anon": "claim",
+    "ev_delivery": "primary_record",
+    "ev_alarm": "primary_record",
+    "ev_receipts": "primary_record",
+    "ev_tag": "primary_record",
+    "ev_bin": "primary_record",
+    "ev_lana": "claim",
+    "ev_invoice": "public_document",
+    "ev_rima_stmt": "claim"
+  },
+  "link_key": {
+    "h_coord": {
+      "ev_tag": "supports",
+      "ev_lana": "supports",
+      "ev_bin": "supports",
+      "ev_keys": "supports",
+      "ev_invoice": "supports",
+      "ev_receipts": "supports",
+      "ev_rima_stmt": "weakens",
+      "ev_anon": "neutral"
+    },
+    "h_treasurer": {
+      "ev_anon": "supports",
+      "ev_receipts": "weakens",
+      "ev_tag": "weakens",
+      "ev_slip": "weakens"
+    },
+    "h_caretaker": {
+      "ev_rima_stmt": "supports",
+      "ev_keys": "weakens",
+      "ev_tag": "weakens"
+    },
+    "h_error": {
+      "ev_slip": "weakens",
+      "ev_mon": "weakens",
+      "ev_bin": "weakens"
+    }
+  },
+  "required_limits": [
+    "l_loan",
+    "l_motive"
+  ],
+  "valid_mind_changers": [
+    "m_loan",
+    "m_second"
+  ],
+  "invalid_limits": [
+    "l_invalid_gossip",
+    "l_invalid_motive"
+  ],
+  "decisive_evidence": [
+    "ev_slip",
+    "ev_mon",
+    "ev_keys",
+    "ev_receipts",
+    "ev_tag"
+  ],
+  "lab_requirement": null,
+  "timeline_requirement": [
+    {
+      "evidence_id": "ev_slip",
+      "utc_minute": 125,
+      "tol": 10
+    },
+    {
+      "evidence_id": "ev_delivery",
+      "utc_minute": 1430,
+      "tol": 10
+    },
+    {
+      "evidence_id": "ev_tag",
+      "utc_minute": 1512,
+      "tol": 15
+    },
+    {
+      "evidence_id": "ev_invoice",
+      "utc_minute": 1575,
+      "tol": 10
+    }
+  ],
+  "refuted_hypotheses": [
+    "h_error",
+    "h_treasurer",
+    "h_caretaker"
+  ],
+  "criteria_map": {
+    "c_source": "source_typing",
+    "c_conflict": "conflict_resolution",
+    "c_links": "hypothesis_links",
+    "c_uncertainty": "uncertainty",
+    "c_revision": "revision",
+    "c_elimination": "elimination",
+    "c_justification": "justification_human"
+  },
+  "caps": {
+    "no_citations_max": 45,
+    "no_conflict_resolution_max": 70
+  }
+}

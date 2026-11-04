@@ -1,0 +1,2484 @@
+{
+  "schema_version": "0.1.0",
+  "case_id": "c032_judge_before_context",
+  "case_version": "0.1.0",
+  "meta": {
+    "title_ar": "احكم قبل أن ترى",
+    "title_en": "Judge Before You See",
+    "age_band": "16-18",
+    "locale": "ar",
+    "dialogue_register": "msa",
+    "estimated_minutes": 30,
+    "difficulty": 3,
+    "content_flags": [
+      "no_violence",
+      "science_lab"
+    ],
+    "authors": [
+      "فريق أثر التحريري (مسودة بمساعدة الذكاء الاصطناعي، لم تُراجَع بشرياً بعد)"
+    ],
+    "knowledge_object_refs": [
+      "KO-RS-05-001",
+      "KO-RS-05-005",
+      "KO-RS-05-002",
+      "KO-RS-06-003",
+      "KO-RS-05-010",
+      "KO-RS-06-009"
+    ]
+  },
+  "premise": {
+    "hook_ar": "شكوى تقول إن وقت الخروج في ورقة قاعة المخطوطات عُدّل بعد كتابته. فهل يقول الأثر نفسه ما تقوله الشكوى؟",
+    "player_role_ar": "أنت مدقق وثائق متدرب في مختبر دار المخطوطات. عليك أن تحكم على الأثر المكتوب أولاً، ثم تفتح الأوراق التي تتحدث عن صاحبه.",
+    "setting_ar": "دار المخطوطات الأهلية في مدينة «سهل الزيتون» المتخيَّلة، يوم الخميس. الأرقام وقياسات المختبر تمثيلية لأغراض التعلم، وتوقيت الدار هو توقيت كل الأوراق.",
+    "public_fact_ids": [
+      "f_announce",
+      "f_accusation"
+    ],
+    "assumed_general_knowledge_ar": [
+      "الكتابة فوق رقم برقم آخر تترك عادة طبقة حبر ثانية أو بقايا من الرقم الأول أو تلفاً في ألياف الورق",
+      "سجل البوابة الآلي يُدوَّن لحظة مرور البطاقة دون تدخل بشري",
+      "ساعتان مضبوطتان على التوقيت نفسه قد تختلفان بدقيقة أو دقيقتين"
+    ]
+  },
+  "entities": {
+    "characters": [
+      {
+        "id": "salma",
+        "name_ar": "سلمى الحداد",
+        "role": "witness",
+        "age_descriptor_ar": "أمينة قاعة المخطوطات",
+        "persona_ar": "هادئة ومنظمة، تدوّن كل دخول وخروج بيدها، وتضيق إذا شُكك في ورقتها.",
+        "motives_ar": [
+          "أن تبقى ورقة التوقيع موثوقة",
+          "ألا يُظن أنها سمحت بتعديل في ورقتها"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "sl_greet",
+            "purpose": "greeting",
+            "text_ar": "أهلاً. كل سطر في الورقة كتبته بيدي."
+          },
+          {
+            "line_id": "sl_entry",
+            "purpose": "reveal",
+            "text_ar": "كتبت وقت خروج نبيل عند مغادرته: 11:40. كتبته مرة واحدة ولم أعدّله بعد ذلك.",
+            "fact_ids": [
+              "f_entry_times",
+              "f_salma_wrote_once"
+            ]
+          },
+          {
+            "line_id": "sl_habit",
+            "purpose": "reveal",
+            "text_ar": "أكتب الرقم واحد دائماً بعلامة صغيرة في أعلاه، وهو عادة قديمة عندي.",
+            "fact_ids": [
+              "f_hand_habit"
+            ]
+          },
+          {
+            "line_id": "sl_refuse",
+            "purpose": "refuse_secret",
+            "text_ar": "دوّنت ما رأيته في الورقة."
+          },
+          {
+            "line_id": "sl_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف أكثر من ذلك."
+          },
+          {
+            "line_id": "sl_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن ورقة التوقيع وكيف أدوّنها."
+          },
+          {
+            "line_id": "sl_bye",
+            "purpose": "farewell",
+            "text_ar": "أتمنى أن تُقرأ الورقة كما كُتبت."
+          }
+        ]
+      },
+      {
+        "id": "adel",
+        "name_ar": "عادل الجابر",
+        "role": "suspect",
+        "age_descriptor_ar": "مشرف قاعة المخطوطات",
+        "persona_ar": "حازم ومشغول، يثق بانطباعه الأول، ويخشى أن يُقال إن القاعة تهمل نظامها.",
+        "motives_ar": [
+          "أن تُطبَّق لائحة القاعة",
+          "ألا يُنسب إليه اتهام بلا سند"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "ad_greet",
+            "purpose": "greeting",
+            "text_ar": "أهلاً. كتبت مذكرتي كما رأيت الورقة."
+          },
+          {
+            "line_id": "ad_view",
+            "purpose": "reveal",
+            "text_ar": "تذكرت غرامة نبيل في الفصل الماضي قبل أن أنظر إلى الورقة. ثم رأيت خانة الخروج مريبة، فكتبت المذكرة.",
+            "fact_ids": [
+              "f_adel_prior_view"
+            ],
+            "claim_ids": [
+              "cl_adel_altered",
+              "cl_prior_alter"
+            ]
+          },
+          {
+            "line_id": "ad_refuse",
+            "purpose": "refuse_secret",
+            "text_ar": "المذكرة هي موقفي الرسمي."
+          },
+          {
+            "line_id": "ad_noscan",
+            "purpose": "reveal",
+            "text_ar": "لم أطلب مسحاً مكبّراً ولم أراجع سجل البوابة. نظرت إلى الورقة بعيني فقط.",
+            "fact_ids": [
+              "f_adel_no_scan"
+            ]
+          },
+          {
+            "line_id": "ad_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا علم لي بذلك."
+          },
+          {
+            "line_id": "ad_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن إشراف القاعة فقط."
+          },
+          {
+            "line_id": "ad_bye",
+            "purpose": "farewell",
+            "text_ar": "سأعيد النظر في مذكرتي إن ظهر ما يستدعي ذلك."
+          }
+        ]
+      },
+      {
+        "id": "nabil",
+        "name_ar": "نبيل حمدان",
+        "role": "suspect",
+        "age_descriptor_ar": "طالب ثانوي وباحث متدرب",
+        "persona_ar": "خجول ومهذب، يتعب من الانتظار، ويفضّل إنهاء الموقف على الجدال.",
+        "motives_ar": [
+          "أن يعود إلى صفه",
+          "ألا تُنسب إليه مخالفة لم يرتكبها"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "nb_greet",
+            "purpose": "greeting",
+            "text_ar": "أهلاً. أرجو أن ينتهي هذا الأمر اليوم."
+          },
+          {
+            "line_id": "nb_prior",
+            "purpose": "reveal",
+            "text_ar": "غُرّمت الفصل الماضي لأنني تأخرت في إعادة كتاب. لم أغيّر رقماً في أي ورقة قط.",
+            "fact_ids": [
+              "f_prior_fine"
+            ]
+          },
+          {
+            "line_id": "nb_lie",
+            "purpose": "lie",
+            "text_ar": "نعم، كتبت في الإفادة أنني حوّلت الاثنين إلى واحد.",
+            "fact_ids": [
+              "f_confession_given"
+            ],
+            "claim_ids": [
+              "cl_nabil_confess"
+            ]
+          },
+          {
+            "line_id": "nb_break",
+            "purpose": "break_down",
+            "text_ar": "بقيت في المكتب من الاستراحة حتى نهاية الحصة التالية. سمعت المشرف يقول إنني حوّلت الاثنين إلى واحد، فكررت عبارته لأعود إلى صفي. لم أغيّر شيئاً.",
+            "fact_ids": [
+              "f_confession_context"
+            ],
+            "claim_ids": [
+              "cl_nabil_confess"
+            ]
+          },
+          {
+            "line_id": "nb_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف أكثر من ذلك."
+          },
+          {
+            "line_id": "nb_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن يومي في القاعة."
+          },
+          {
+            "line_id": "nb_bye",
+            "purpose": "farewell",
+            "text_ar": "شكراً لأنك تقرأ الأوراق."
+          }
+        ]
+      },
+      {
+        "id": "reem",
+        "name_ar": "د. ريم الأيوبي",
+        "role": "expert",
+        "age_descriptor_ar": "فاحصة الوثائق في المختبر",
+        "persona_ar": "دقيقة وصبورة، تسجّل ما ترى قبل أن تسمع ما يُقال، وتفصل بين الأثر والرواية.",
+        "motives_ar": [
+          "أن يبقى فحص الأثر مستقلاً",
+          "ألا يخرج تقرير يتجاوز ما رأته"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "rm_greet",
+            "purpose": "greeting",
+            "text_ar": "تفضّل. أحب أن أرى الأثر قبل الرواية."
+          },
+          {
+            "line_id": "rm_blind",
+            "purpose": "reveal",
+            "text_ar": "فحصت الخانة وأنا لا أعرف اسم صاحب السطر ولا الشكوى. أُعطيت رقم الخانة وصورتها المكبّرة فقط.",
+            "fact_ids": [
+              "f_blind_exam"
+            ]
+          },
+          {
+            "line_id": "rm_order",
+            "purpose": "reveal",
+            "text_ar": "أسجّل حكمي على الأثر أولاً ثم أفتح السياق. فالمعلومة المسبقة قد تجعلني أرى في الأثر ما يوافقها.",
+            "fact_ids": [
+              "f_unmask_order"
+            ]
+          },
+          {
+            "line_id": "rm_refuse",
+            "purpose": "refuse_secret",
+            "text_ar": "ما رأيته مكتوب في التقرير."
+          },
+          {
+            "line_id": "rm_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أستطيع أن أجزم بما لم أفحصه."
+          },
+          {
+            "line_id": "rm_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن الفحص والأثر."
+          },
+          {
+            "line_id": "rm_bye",
+            "purpose": "farewell",
+            "text_ar": "راجع الأثر قبل أن تقرأ عن صاحبه."
+          }
+        ]
+      }
+    ],
+    "locations": [
+      {
+        "id": "loc_room",
+        "name_ar": "قاعة المخطوطات",
+        "description_ar": "قاعة قراءة لها بوابة ببطاقات وطاولة أمينة عليها ورقة التوقيع."
+      },
+      {
+        "id": "loc_office",
+        "name_ar": "مكتب المشرف",
+        "description_ar": "مكتب فيه المذكرات والإفادات."
+      },
+      {
+        "id": "loc_lab",
+        "name_ar": "مختبر الوثائق",
+        "description_ar": "مكان الفحص المكبّر وتقارير الأثر."
+      },
+      {
+        "id": "loc_records",
+        "name_ar": "سجلات الدار",
+        "description_ar": "اللوائح وسجل البوابة وسجل الغرامات."
+      }
+    ],
+    "objects": [
+      {
+        "id": "obj_sheet",
+        "name_ar": "ورقة التوقيع",
+        "description_ar": "ورقة يدوّن فيها دخول القراء وخروجهم بخط الأمينة."
+      },
+      {
+        "id": "obj_gate",
+        "name_ar": "بوابة القاعة",
+        "description_ar": "بوابة بقارئ بطاقات تسجّل المرور تلقائياً."
+      }
+    ],
+    "organizations": [
+      {
+        "id": "org_dar",
+        "name_ar": "دار المخطوطات الأهلية",
+        "description_ar": "دار تحفظ مخطوطات وتتيح قراءتها في قاعة مخصصة."
+      }
+    ]
+  },
+  "truth": {
+    "solution": {
+      "culprit_ids": [
+        "adel"
+      ],
+      "summary_ar": "لا دليل على تعديل الخانة. الأثر الخام يُظهر كتابة واحدة بحبر واحد وبخط يشبه خط الأمينة، وسجل البوابة يوافق الوقت المكتوب بفارق دقيقة، ومدة البقاء دون الحد. جاءت الشكوى من حكم تأثر بسابقة الطالب قبل النظر إلى الأثر، وجاء الإقرار بعد انتظار طويل وبعبارة المشرف نفسها، فلا يثبت تعديلاً. لم يقصد المشرف الظلم.",
+      "key_fact_ids": [
+        "f_original_entry"
+      ]
+    },
+    "facts": [
+      {
+        "id": "f_announce",
+        "statement_ar": "أعلنت إدارة دار المخطوطات أن خانة وقت الخروج في أحد أسطر ورقة التوقيع موضع شكوى.",
+        "kind": "event",
+        "subject_ids": [
+          "org_dar",
+          "obj_sheet"
+        ],
+        "spoiler_level": 0
+      },
+      {
+        "id": "f_accusation",
+        "statement_ar": "كتب المشرف أن خانة الخروج للقارئ ن. حمدان عُدّلت من 12:40 إلى 11:40 لإخفاء تجاوز مدة البقاء.",
+        "kind": "event",
+        "subject_ids": [
+          "adel",
+          "obj_sheet"
+        ],
+        "spoiler_level": 0,
+        "time": {
+          "start_min": 275,
+          "precision": "exact"
+        },
+        "location_id": "loc_office"
+      },
+      {
+        "id": "f_entry_times",
+        "statement_ar": "دُوّن في ورقة التوقيع للقارئ ن. حمدان دخول 10:20 وخروج 11:40.",
+        "kind": "event",
+        "subject_ids": [
+          "salma",
+          "nabil",
+          "obj_sheet"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 220,
+          "precision": "exact"
+        },
+        "location_id": "loc_room"
+      },
+      {
+        "id": "f_salma_wrote_once",
+        "statement_ar": "كتبت الأمينة وقت الخروج مرة واحدة عند مغادرة القارئ ولم تعدّله.",
+        "kind": "event",
+        "subject_ids": [
+          "salma",
+          "obj_sheet"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 220,
+          "precision": "exact"
+        },
+        "location_id": "loc_room"
+      },
+      {
+        "id": "f_hand_habit",
+        "statement_ar": "تكتب الأمينة الرقم واحد بعلامة صغيرة في أعلاه، وللرقم المفحوص العلامة نفسها.",
+        "kind": "attribute",
+        "subject_ids": [
+          "salma",
+          "obj_sheet"
+        ],
+        "spoiler_level": 1,
+        "location_id": "loc_lab"
+      },
+      {
+        "id": "f_single_pass",
+        "statement_ar": "كُتب الرقم المفحوص بضربة واحدة لكل جزء وبحبر واحد، بلا طبقة ثانية ولا كشط ولا بقايا رقم آخر، وكثافته ضمن مدى قلم الأمينة.",
+        "kind": "state",
+        "subject_ids": [
+          "obj_sheet"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 420,
+          "precision": "exact"
+        },
+        "location_id": "loc_lab",
+        "science_ko_refs": [
+          "KO-RS-06-003"
+        ]
+      },
+      {
+        "id": "f_gate_times",
+        "statement_ar": "سجّلت بوابة القاعة لبطاقة القارئ دخولاً 10:21 وخروجاً 11:39.",
+        "kind": "event",
+        "subject_ids": [
+          "nabil",
+          "obj_gate"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 219,
+          "precision": "exact"
+        },
+        "location_id": "loc_records"
+      },
+      {
+        "id": "f_slot_rule",
+        "statement_ar": "تحدد لائحة القاعة أقصى مدة للقارئ بتسعين دقيقة.",
+        "kind": "attribute",
+        "subject_ids": [
+          "org_dar"
+        ],
+        "spoiler_level": 1,
+        "location_id": "loc_records"
+      },
+      {
+        "id": "f_stay_within",
+        "statement_ar": "مدة بقاء القارئ بحسب البوابة 78 دقيقة، وهي دون الحد، فلا دافع ظاهر لإخفاء شيء.",
+        "kind": "relation",
+        "subject_ids": [
+          "nabil",
+          "obj_gate"
+        ],
+        "spoiler_level": 2,
+        "location_id": "loc_records"
+      },
+      {
+        "id": "f_original_entry",
+        "statement_ar": "خانة الخروج كُتبت مرة واحدة كما هي، 11:40، ولم تُعدَّل؛ فالأثر الخام وسجل البوابة يتفقان على ذلك.",
+        "kind": "relation",
+        "subject_ids": [
+          "obj_sheet",
+          "obj_gate"
+        ],
+        "spoiler_level": 3,
+        "location_id": "loc_lab",
+        "science_ko_refs": [
+          "KO-RS-06-003",
+          "KO-RS-05-010"
+        ]
+      },
+      {
+        "id": "f_prior_fine",
+        "statement_ar": "كل ما في سجل القارئ غرامة تأخير في إعادة كتاب في الفصل الماضي، ولا شيء عن تعديل أوراق.",
+        "kind": "state",
+        "subject_ids": [
+          "nabil"
+        ],
+        "spoiler_level": 1,
+        "location_id": "loc_records"
+      },
+      {
+        "id": "f_adel_prior_view",
+        "statement_ar": "تذكر المشرف غرامة القارئ السابقة قبل أن ينظر إلى ورقة التوقيع.",
+        "kind": "state",
+        "subject_ids": [
+          "adel"
+        ],
+        "spoiler_level": 1,
+        "location_id": "loc_office"
+      },
+      {
+        "id": "f_adel_no_scan",
+        "statement_ar": "لم يطلب المشرف مسحاً مكبّراً ولم يراجع سجل البوابة، ونظر إلى الورقة بعينه فقط.",
+        "kind": "state",
+        "subject_ids": [
+          "adel"
+        ],
+        "spoiler_level": 2,
+        "location_id": "loc_office"
+      },
+      {
+        "id": "f_confession_given",
+        "statement_ar": "كتب القارئ إفادة تقول إنه حوّل الاثنين إلى واحد في خانة الخروج.",
+        "kind": "event",
+        "subject_ids": [
+          "nabil"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 360,
+          "precision": "exact"
+        },
+        "location_id": "loc_office"
+      },
+      {
+        "id": "f_confession_context",
+        "statement_ar": "كُتبت الإفادة بعد انتظار طويل في مكتب المشرف، وبعبارة قالها المشرف نفسه، رغبةً في العودة إلى الصف.",
+        "kind": "state",
+        "subject_ids": [
+          "nabil",
+          "adel"
+        ],
+        "spoiler_level": 2,
+        "time": {
+          "start_min": 360,
+          "precision": "exact"
+        },
+        "location_id": "loc_office"
+      },
+      {
+        "id": "f_blind_exam",
+        "statement_ar": "فحصت الفاحصة الخانة دون أن تعرف اسم صاحب السطر أو الشكوى.",
+        "kind": "event",
+        "subject_ids": [
+          "reem"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 420,
+          "precision": "exact"
+        },
+        "location_id": "loc_lab"
+      },
+      {
+        "id": "f_unmask_order",
+        "statement_ar": "تسجّل الفاحصة حكمها على الأثر أولاً ثم تفتح السياق، لأن المعلومة المسبقة قد تؤثر في قراءتها.",
+        "kind": "attribute",
+        "subject_ids": [
+          "reem"
+        ],
+        "spoiler_level": 1,
+        "location_id": "loc_lab"
+      }
+    ],
+    "claims": [
+      {
+        "id": "cl_adel_altered",
+        "statement_ar": "خانة الخروج عُدّلت من 12:40 إلى 11:40.",
+        "kind": "honest_mistake",
+        "held_by": [
+          "adel"
+        ],
+        "true_fact_id": "f_original_entry",
+        "contradicted_by_evidence_ids": [
+          "ev_trace",
+          "ev_controls",
+          "ev_gate_log"
+        ]
+      },
+      {
+        "id": "cl_prior_alter",
+        "statement_ar": "للطالب سابقة تعديل تجعل الشكوى أرجح.",
+        "kind": "rumour",
+        "held_by": [
+          "adel"
+        ],
+        "true_fact_id": "f_prior_fine",
+        "contradicted_by_evidence_ids": [
+          "ev_prior_record"
+        ]
+      },
+      {
+        "id": "cl_nabil_confess",
+        "statement_ar": "أنا حوّلت الاثنين إلى واحد في خانة الخروج.",
+        "kind": "lie",
+        "held_by": [
+          "nabil"
+        ],
+        "true_fact_id": "f_original_entry",
+        "contradicted_by_evidence_ids": [
+          "ev_trace",
+          "ev_gate_log"
+        ]
+      }
+    ]
+  },
+  "timeline": [
+    {
+      "id": "te_entry",
+      "description_ar": "القارئ يدخل القاعة، والأمينة تدوّن الدخول في ورقة التوقيع.",
+      "time": {
+        "start_min": 140,
+        "precision": "exact"
+      },
+      "location_id": "loc_room",
+      "actor_ids": [
+        "salma",
+        "nabil"
+      ],
+      "fact_ids": [
+        "f_entry_times"
+      ],
+      "motivated_by_ar": "لائحة القاعة تطلب تدوين الدخول والخروج"
+    },
+    {
+      "id": "te_exit",
+      "description_ar": "القارئ يغادر، والأمينة تدوّن وقت الخروج، والبوابة تسجّل مرور البطاقة.",
+      "time": {
+        "start_min": 220,
+        "precision": "exact"
+      },
+      "location_id": "loc_room",
+      "actor_ids": [
+        "salma",
+        "nabil"
+      ],
+      "fact_ids": [
+        "f_salma_wrote_once",
+        "f_gate_times"
+      ],
+      "motivated_by_ar": "لائحة القاعة تطلب تدوين الخروج"
+    },
+    {
+      "id": "te_complaint",
+      "description_ar": "المشرف يراجع الورقة ويكتب مذكرة شكوى.",
+      "time": {
+        "start_min": 275,
+        "precision": "exact"
+      },
+      "location_id": "loc_office",
+      "actor_ids": [
+        "adel"
+      ],
+      "fact_ids": [
+        "f_accusation",
+        "f_adel_prior_view"
+      ],
+      "motivated_by_ar": "جولة المراجعة بعد الظهر"
+    },
+    {
+      "id": "te_confession",
+      "description_ar": "القارئ يكتب إفادة في مكتب المشرف.",
+      "time": {
+        "start_min": 360,
+        "precision": "exact"
+      },
+      "location_id": "loc_office",
+      "actor_ids": [
+        "nabil",
+        "adel"
+      ],
+      "fact_ids": [
+        "f_confession_given",
+        "f_confession_context"
+      ],
+      "motivated_by_ar": "أراد القارئ العودة إلى صفه"
+    },
+    {
+      "id": "te_exam",
+      "description_ar": "الفاحصة تفحص الخانة مكبّرة دون اسم أو شكوى.",
+      "time": {
+        "start_min": 420,
+        "precision": "exact"
+      },
+      "location_id": "loc_lab",
+      "actor_ids": [
+        "reem"
+      ],
+      "fact_ids": [
+        "f_blind_exam",
+        "f_single_pass"
+      ],
+      "motivated_by_ar": "إجراء الفحص المستقل قبل السياق"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_sign_sheet",
+      "title_ar": "ورقة التوقيع (نسخة مصوّرة)",
+      "kind": "documentary",
+      "content_ar": "ورقة التوقيع — قاعة المخطوطات (نسخة مصوّرة)\nالخميس\nالسطر 3: القارئ د. ك. | دخول 08:55 | خروج 09:50 | الأمينة: س. الحداد\nالسطر 4: القارئ ن. حمدان (بطاقة 0417) | دخول 10:20 | خروج 11:40 | الأمينة: س. الحداد\nالسطر 5: القارئة ل. ن. | دخول 11:10 | خروج 12:05 | الأمينة: س. الحداد",
+      "acquired_by_action_ids": [
+        "a_read_sheet"
+      ],
+      "supports_fact_ids": [
+        "f_entry_times"
+      ],
+      "reliability": "strong",
+      "limits_ar": "تعرض الأوقات المكتوبة فقط؛ لا تقول هل كُتبت مرة واحدة أم عُدّلت.",
+      "location_id": "loc_room"
+    },
+    {
+      "id": "ev_trace",
+      "title_ar": "تقرير الفحص المكبّر للخانة",
+      "kind": "lab_result",
+      "content_ar": "تقرير فحص مكبّر — خانة «خروج» في السطر 4 (الرقم المفحوص: الثاني من «11»)\nأُجري الفحص بإضاءة مائلة على صورة مكبّرة. الفاحصة د. ريم الأيوبي لم تُعطَ اسم صاحب السطر ولا أي شكوى؛ أُعطيت رقم الخانة فقط.\n- ضربات القلم عند الرقم: ضربتان (خط عمودي وعلامة صغيرة في أعلاه).\n- طبقات الحبر: طبقة واحدة في كل ضربة، ولا ضربة ثانية فوق الأولى.\n- ألياف الورق: سليمة، بلا كشط ولا رفع.\n- بقايا حبر تحت الرقم أو بجانبه: لا شيء.\n- كثافة الحبر (وحدات المختبر): العمودي 41، والعلامة 40.",
+      "acquired_by_action_ids": [
+        "a_read_trace"
+      ],
+      "supports_fact_ids": [
+        "f_single_pass"
+      ],
+      "reliability": "strong",
+      "limits_ar": "فحص خانة واحدة في ورقة واحدة؛ يصف طريقة الكتابة لا نية الكاتب ولا سبب الكتابة.",
+      "contradicts_claim_ids": [
+        "cl_adel_altered",
+        "cl_nabil_confess"
+      ],
+      "forensic_ko_ref": "KO-RS-06-003",
+      "location_id": "loc_lab"
+    },
+    {
+      "id": "ev_controls",
+      "title_ar": "مقارنة بخط الأمينة في الورقة نفسها",
+      "kind": "lab_result",
+      "content_ar": "مقارنة بخط الأمينة في الورقة نفسها (24 سطراً)\n- الرقم 1 يظهر 9 مرات في بقية الأوقات المكتوبة: في 8 منها علامة صغيرة في الأعلى مائلة إلى اليسار، وفي واحدة بلا علامة.\n- الرقم المفحوص له العلامة نفسها.\n- الرقم 2 عند الأمينة يبدأ بقوس علوي وينتهي بخط أفقي في أسفله، ويظهر 6 مرات.\n- كثافة حبر القلم في بقية الورقة: بين 38 و44.",
+      "acquired_by_action_ids": [
+        "a_read_controls"
+      ],
+      "supports_fact_ids": [
+        "f_hand_habit"
+      ],
+      "reliability": "strong",
+      "limits_ar": "تقارن الشكل والكثافة بعينة من الورقة نفسها؛ لا تحدد من كتب ولا متى.",
+      "contradicts_claim_ids": [
+        "cl_adel_altered"
+      ],
+      "forensic_ko_ref": "KO-RS-06-003",
+      "location_id": "loc_lab"
+    },
+    {
+      "id": "ev_gate_log",
+      "title_ar": "سجل بوابة القاعة",
+      "kind": "digital",
+      "content_ar": "سجل بوابة قاعة المخطوطات (مطبوع من النظام)\nالبطاقة 0417 — الخميس: دخول 10:21، خروج 11:39.\nتسجّل البوابة لحظة مرور البطاقة تلقائياً.\nملاحظة النظام: تُضبط ساعة البوابة أسبوعياً.",
+      "acquired_by_action_ids": [
+        "a_read_gate"
+      ],
+      "supports_fact_ids": [
+        "f_gate_times"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يثبت مرور البطاقة لا هوية حاملها؛ وقد تختلف ساعة البوابة عن ساعة الأمينة بدقيقة أو دقيقتين.",
+      "contradicts_claim_ids": [
+        "cl_adel_altered",
+        "cl_nabil_confess"
+      ],
+      "location_id": "loc_records"
+    },
+    {
+      "id": "ev_slot_rule",
+      "title_ar": "لائحة قاعة المخطوطات",
+      "kind": "documentary",
+      "content_ar": "لائحة قاعة المخطوطات (منشورة عند المدخل)\n1. أقصى مدة للقارئ في القاعة 90 دقيقة.\n2. من يتجاوزها يُحرم من الحجز أسبوعاً.\n3. تُدوَّن أوقات الدخول والخروج في ورقة التوقيع.",
+      "acquired_by_action_ids": [
+        "a_read_rule"
+      ],
+      "supports_fact_ids": [
+        "f_slot_rule"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "نص عام منشور؛ لا يصف حالة أي قارئ بعينه.",
+      "location_id": "loc_records"
+    },
+    {
+      "id": "ev_complaint",
+      "title_ar": "مذكرة المشرف",
+      "kind": "documentary",
+      "content_ar": "مذكرة المشرف عادل الجابر (12:35)\nإلى إدارة الدار: خانة الخروج للقارئ ن. حمدان في السطر 4 مريبة. أرى أن الاثنين حُوّل إلى واحد، فكان الوقت 12:40 ثم صار 11:40 لإخفاء تجاوز مدة التسعين دقيقة. وللطالب سابقة معروفة عندنا من الفصل الماضي. أطلب استدعاءه.",
+      "acquired_by_action_ids": [
+        "a_read_complaint"
+      ],
+      "supports_fact_ids": [
+        "f_accusation",
+        "f_adel_prior_view"
+      ],
+      "reliability": "weak",
+      "limits_ar": "رأي صاحب الشكوى؛ يصف انطباعه لا الأثر، ولا يذكر فحصاً مكبّراً ولا سجلاً آخر.",
+      "location_id": "loc_office"
+    },
+    {
+      "id": "ev_prior_record",
+      "title_ar": "مقتطف من سجل الغرامات",
+      "kind": "documentary",
+      "content_ar": "سجل الغرامات (مقتطف) — القارئ ن. حمدان\nالفصل الماضي: غرامة تأخير ثلاثة أيام في إعادة كتاب.\nلا بند آخر في سجله.",
+      "acquired_by_action_ids": [
+        "a_read_prior"
+      ],
+      "supports_fact_ids": [
+        "f_prior_fine"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "مقتطف يصف ما سُجّل في الماضي لا ما جرى في هذه الورقة.",
+      "contradicts_claim_ids": [
+        "cl_prior_alter"
+      ],
+      "location_id": "loc_records"
+    },
+    {
+      "id": "ev_confession",
+      "title_ar": "إفادة القارئ المكتوبة",
+      "kind": "testimonial",
+      "content_ar": "إفادة مكتوبة موقّعة — ن. حمدان (14:00)\n«أقر بأنني حوّلت الاثنين إلى واحد في خانة الخروج.»\nكُتبت في مكتب المشرف.",
+      "acquired_by_action_ids": [
+        "a_read_confession"
+      ],
+      "supports_fact_ids": [
+        "f_confession_given"
+      ],
+      "reliability": "weak",
+      "limits_ar": "قول لا قياس؛ لا يحمل تفصيلاً يمكن فحصه بالأثر أو بالسجلات، وتتشابه عبارته مع عبارة المذكرة.",
+      "location_id": "loc_office"
+    },
+    {
+      "id": "ev_salma_note",
+      "title_ar": "إفادة الأمينة",
+      "kind": "testimonial",
+      "content_ar": "ملخص إفادة سلمى الحداد:\n«كتبت وقت خروجه عند مغادرته: 11:40. كتبته مرة واحدة ولم أعدّله. وأكتب الواحد دائماً بعلامة صغيرة في أعلاه.»",
+      "acquired_by_action_ids": [
+        "a_note_salma"
+      ],
+      "supports_fact_ids": [
+        "f_salma_wrote_once",
+        "f_hand_habit"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "ذاكرة صاحبة الورقة؛ تتفق مع الفحص لكنها لا تغني عنه.",
+      "location_id": "loc_room"
+    },
+    {
+      "id": "ev_adel_stmt",
+      "title_ar": "إفادة المشرف",
+      "kind": "testimonial",
+      "content_ar": "ملخص إفادة عادل الجابر:\n«تذكرت غرامة نبيل قبل أن أنظر إلى الورقة، ثم نظرت إليها بعيني فقط فرأيت الرقم مريباً. لم أطلب مسحاً مكبّراً ولم أراجع سجل البوابة.»",
+      "acquired_by_action_ids": [
+        "a_note_adel"
+      ],
+      "supports_fact_ids": [
+        "f_adel_no_scan"
+      ],
+      "reliability": "weak",
+      "limits_ar": "إفادة صاحب الشكوى؛ تفسّر كيف وُلد حكمه ولا تفحص الورقة.",
+      "contradicts_claim_ids": [
+        "cl_adel_altered"
+      ],
+      "location_id": "loc_office"
+    },
+    {
+      "id": "ev_nabil_note",
+      "title_ar": "إفادة القارئ الشفوية",
+      "kind": "testimonial",
+      "content_ar": "ملخص إفادة نبيل حمدان:\n«بقيت في مكتب المشرف من الاستراحة حتى نهاية الحصة التالية. سمعته يقول إنني حوّلت الاثنين إلى واحد، فكررت العبارة كي أعود إلى صفي. لم أغيّر شيئاً في الورقة.»",
+      "acquired_by_action_ids": [
+        "a_note_nabil"
+      ],
+      "supports_fact_ids": [
+        "f_confession_context"
+      ],
+      "reliability": "weak",
+      "limits_ar": "قول صاحب العلاقة؛ يفسّر ظروف الإقرار ولا يثبت شيئاً عن الورقة، فيُقاس بالأثر وبالسجلات.",
+      "contradicts_claim_ids": [
+        "cl_nabil_confess"
+      ],
+      "location_id": "loc_office"
+    },
+    {
+      "id": "ev_reem_note",
+      "title_ar": "إفادة الفاحصة",
+      "kind": "testimonial",
+      "content_ar": "ملخص إفادة د. ريم الأيوبي:\n«فحصت الخانة دون أن أعرف الاسم أو الشكوى، وسجلت حكمي على الأثر قبل أن أفتح أي ورقة عن صاحبه. أفعل ذلك لأن المعلومة المسبقة قد تجعلني أرى في الأثر ما يوافقها.»",
+      "acquired_by_action_ids": [
+        "a_note_reem"
+      ],
+      "supports_fact_ids": [
+        "f_blind_exam",
+        "f_unmask_order"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "وصف لإجراء عمل؛ يفسّر ترتيب الفحص ولا يغني عن التقرير نفسه.",
+      "location_id": "loc_lab"
+    }
+  ],
+  "evidence_graph": {
+    "inferences": [
+      {
+        "id": "i_orig_a",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_trace"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_controls"
+          },
+          {
+            "ref_type": "general_knowledge",
+            "ref_id": "overwrite_leaves_trace"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_original_entry"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "تحويل رقم إلى آخر يترك عادة طبقة حبر ثانية أو بقايا من الرقم الأول أو تلفاً في الألياف. التقرير لا يجد شيئاً من ذلك، والرقم يطابق عادة الأمينة وكثافة قلمها؛ فالخانة كُتبت مرة واحدة.",
+        "skill_ko_refs": [
+          "KO-RS-06-003"
+        ]
+      },
+      {
+        "id": "i_orig_b",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_gate_log"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_sign_sheet"
+          },
+          {
+            "ref_type": "general_knowledge",
+            "ref_id": "auto_log_independent"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_original_entry"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "البوابة سجّلت الخروج 11:39 تلقائياً، والورقة تقول 11:40. فارق دقيقة يوافق الوقت المكتوب ولا يوافق 12:40.",
+        "skill_ko_refs": [
+          "KO-RS-05-010"
+        ]
+      },
+      {
+        "id": "i_stay",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_gate_log"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_slot_rule"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_stay_within"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "من 10:21 إلى 11:39 ثماني وسبعون دقيقة، وهي أقل من تسعين؛ فلا تجاوز يستدعي الإخفاء.",
+        "skill_ko_refs": [
+          "KO-RS-05-010"
+        ]
+      },
+      {
+        "id": "i_support_orig",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_original_entry"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_stay_within"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_original"
+        },
+        "relation": "supports",
+        "strength": "strong",
+        "rule_ar": "الخانة كُتبت مرة واحدة ولا دافع ظاهر للتعديل؛ فالفرضية الأولى سليمة، ولا يغيّر السياق حكم الأثر.",
+        "skill_ko_refs": [
+          "KO-RS-05-002"
+        ]
+      },
+      {
+        "id": "i_rule_altered",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_original_entry"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_altered"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "ما دامت الخانة كُتبت مرة واحدة فدعوى التعديل غير مسنودة.",
+        "skill_ko_refs": [
+          "KO-RS-06-009"
+        ]
+      },
+      {
+        "id": "i_rule_undecided",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_original_entry"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_undecidable"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "للأثر وللسجل الآلي قراءة واضحة تتفق في الخانة نفسها، فالقول بأن الحكم مستحيل غير صحيح.",
+        "skill_ko_refs": [
+          "KO-RS-06-009"
+        ]
+      },
+      {
+        "id": "i_adel_claim",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_trace"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_gate_log"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_adel_altered"
+        },
+        "relation": "contradicts_claim",
+        "strength": "strong",
+        "rule_ar": "الفحص المكبّر لا يجد تعديلاً، والبوابة توافق الوقت المكتوب؛ فالانطباع بالعين وحدها لا يقوم أمامهما.",
+        "skill_ko_refs": [
+          "KO-RS-05-001"
+        ]
+      },
+      {
+        "id": "i_prior_claim",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_prior_record"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_prior_alter"
+        },
+        "relation": "contradicts_claim",
+        "strength": "strong",
+        "rule_ar": "السجل يذكر غرامة تأخير فقط، لا تعديلاً في أوراق؛ فالسابقة التي أُشير إليها ليست من جنس المزعوم.",
+        "skill_ko_refs": [
+          "KO-RS-05-001"
+        ]
+      },
+      {
+        "id": "i_confess_claim",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_nabil_note"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_gate_log"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_nabil_confess"
+        },
+        "relation": "contradicts_claim",
+        "strength": "strong",
+        "rule_ar": "الإفادة جاءت بعبارة المشرف نفسها بعد انتظار طويل، ولا تحمل تفصيلاً يُفحص، وتخالف البوابة والأثر؛ فلا تُحسب دليلاً على التعديل.",
+        "skill_ko_refs": [
+          "KO-RS-05-001"
+        ]
+      }
+    ]
+  },
+  "character_knowledge": [
+    {
+      "character_id": "salma",
+      "knows": [
+        {
+          "fact_id": "f_entry_times",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_salma_wrote_once",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_hand_habit",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    },
+    {
+      "character_id": "reem",
+      "knows": [
+        {
+          "fact_id": "f_blind_exam",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_unmask_order",
+          "access": "professional",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    },
+    {
+      "character_id": "adel",
+      "knows": [
+        {
+          "fact_id": "f_adel_prior_view",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [
+        {
+          "fact_id": "f_adel_no_scan",
+          "reveal_when": {
+            "presented": {
+              "evidence_id": "ev_trace",
+              "to_character": "adel"
+            }
+          },
+          "cover_claim_id": null,
+          "reveal_line_id": "ad_noscan"
+        }
+      ],
+      "believes": [
+        {
+          "claim_id": "cl_adel_altered",
+          "stance": "sincere"
+        },
+        {
+          "claim_id": "cl_prior_alter",
+          "stance": "sincere"
+        }
+      ]
+    },
+    {
+      "character_id": "nabil",
+      "knows": [
+        {
+          "fact_id": "f_prior_fine",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_confession_given",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [
+        {
+          "fact_id": "f_confession_context",
+          "reveal_when": {
+            "presented": {
+              "evidence_id": "ev_gate_log",
+              "to_character": "nabil"
+            }
+          },
+          "cover_claim_id": "cl_nabil_confess",
+          "reveal_line_id": "nb_break"
+        }
+      ],
+      "believes": [
+        {
+          "claim_id": "cl_nabil_confess",
+          "stance": "deliberate_lie"
+        }
+      ]
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "h_altered",
+      "statement_ar": "عُدّلت خانة الخروج بعد كتابتها من 12:40 إلى 11:40.",
+      "is_true": false,
+      "plausibility_at_start": "high"
+    },
+    {
+      "id": "h_original",
+      "statement_ar": "كُتبت خانة الخروج مرة واحدة كما هي، 11:40، ولا دليل على تعديلها؛ وما قيل عن صاحب السطر لا يغيّر ما يقوله الأثر.",
+      "is_true": true,
+      "plausibility_at_start": "low"
+    },
+    {
+      "id": "h_undecidable",
+      "statement_ar": "لا يمكن الحكم على الخانة بالأثر ولا بالسجلات؛ يبقى الأمر بين قول المشرف وإقرار الطالب.",
+      "is_true": false,
+      "plausibility_at_start": "medium"
+    }
+  ],
+  "misdirection_plan": [
+    {
+      "id": "rh_reputation",
+      "points_to_hypothesis_id": "h_altered",
+      "planted_via_ar": "المذكرة تشير إلى سابقة للطالب، فيبدو التعديل مألوفاً منه.",
+      "evidence_ids": [
+        "ev_complaint"
+      ],
+      "refuted_by_inference_ids": [
+        "i_prior_claim",
+        "i_rule_altered"
+      ],
+      "fairness_note_ar": "سجل الغرامات متاح بالإجراءات العادية، وهو يذكر غرامة تأخير لا تعديلاً. والأثر والبوابة متاحان قبل السياق."
+    },
+    {
+      "id": "rh_confession",
+      "points_to_hypothesis_id": "h_altered",
+      "planted_via_ar": "إفادة مكتوبة موقّعة تقرّ بالتعديل، فتبدو حاسمة.",
+      "evidence_ids": [
+        "ev_confession"
+      ],
+      "refuted_by_inference_ids": [
+        "i_confess_claim",
+        "i_rule_altered"
+      ],
+      "fairness_note_ar": "عبارة الإفادة ظاهرة في المذكرة نفسها، وسجل البوابة والتقرير المكبّر متاحان، وكلاهما يخالف الإقرار."
+    },
+    {
+      "id": "rh_clock",
+      "points_to_hypothesis_id": "h_undecidable",
+      "planted_via_ar": "فارق الدقيقة بين ساعة البوابة وورقة الأمينة قد يوحي بأن التطابق غير مؤكد.",
+      "evidence_ids": [
+        "ev_gate_log",
+        "ev_sign_sheet"
+      ],
+      "refuted_by_inference_ids": [
+        "i_rule_undecided"
+      ],
+      "fairness_note_ar": "فارق دقيقة لا يقارب فارق ساعة كاملة بين 11:40 و12:40، والتقرير المكبّر يحسم الأمر مستقلاً عن الساعتين."
+    }
+  ],
+  "learning_objectives": [
+    {
+      "id": "lo_raw",
+      "statement_ar": "يسجّل حكمه على الأثر الخام ودرجة ثقته قبل أن يفتح أي سياق عن صاحبه.",
+      "skill_ko_ref": "KO-RS-06-003",
+      "observable_behaviors_ar": [
+        "يسجّل الحكم الأولي قبل فتح المذكرة والإفادة"
+      ],
+      "evidence_sources": [
+        "action_log",
+        "hypothesis_ledger"
+      ]
+    },
+    {
+      "id": "lo_claim",
+      "statement_ar": "يفرّق بين السجل الأصلي وبين القول والإقرار والانطباع، ويصنّف المصدر.",
+      "skill_ko_ref": "KO-RS-05-001",
+      "observable_behaviors_ar": [
+        "يصنّف الأوراق والأقوال",
+        "يقابل القول بالسجل"
+      ],
+      "evidence_sources": [
+        "evidence_board"
+      ]
+    },
+    {
+      "id": "lo_timeline",
+      "statement_ar": "يرتّب الأحداث على خط زمني ليربط كل ورقة بلحظتها.",
+      "skill_ko_ref": "KO-RS-05-005",
+      "observable_behaviors_ar": [
+        "يضع الأدلة في أزمنتها"
+      ],
+      "evidence_sources": [
+        "timeline_task",
+        "action_log"
+      ]
+    },
+    {
+      "id": "lo_hyp",
+      "statement_ar": "يوازن بين فرضيتين على الأقل ويستبعد ما تنقضه الأدلة.",
+      "skill_ko_ref": "KO-RS-05-002",
+      "observable_behaviors_ar": [
+        "يضيف فرضيات",
+        "يستبعد بدليل"
+      ],
+      "evidence_sources": [
+        "hypothesis_ledger"
+      ]
+    },
+    {
+      "id": "lo_value",
+      "statement_ar": "يقدّر القوة التشخيصية لكل دليل ويصوغ ثقته بحدود ما يثبته.",
+      "skill_ko_ref": "KO-RS-05-010",
+      "observable_behaviors_ar": [
+        "يختار ثقة معقولة",
+        "يذكر حدوداً"
+      ],
+      "evidence_sources": [
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_revise",
+      "statement_ar": "يقارن حكمه قبل السياق وبعده، ويغيّره بدليل لا بسمعة.",
+      "skill_ko_ref": "KO-RS-06-009",
+      "observable_behaviors_ar": [
+        "يغيّر فرضيته الرائدة بدليل",
+        "يفرّق بين دليل وانطباع"
+      ],
+      "evidence_sources": [
+        "hypothesis_ledger"
+      ]
+    }
+  ],
+  "mechanics": {
+    "time_budget_units": 30,
+    "actions": [
+      {
+        "id": "a_read_sheet",
+        "type": "examine",
+        "label_ar": "افتح ورقة التوقيع",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_sign_sheet"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_room",
+        "telemetry_code": "A_READ_SHEET"
+      },
+      {
+        "id": "a_read_trace",
+        "type": "examine",
+        "label_ar": "افتح تقرير الفحص المكبّر للخانة",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_trace"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_lab",
+        "telemetry_code": "A_READ_TRACE"
+      },
+      {
+        "id": "a_read_controls",
+        "type": "examine",
+        "label_ar": "افتح مقارنة خط الأمينة",
+        "precondition": {
+          "has_evidence": "ev_trace"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_controls"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_lab",
+        "telemetry_code": "A_READ_CONTROLS"
+      },
+      {
+        "id": "a_read_gate",
+        "type": "search_location",
+        "label_ar": "اطلب سجل بوابة القاعة",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_gate_log"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_records",
+        "telemetry_code": "A_READ_GATE"
+      },
+      {
+        "id": "a_read_rule",
+        "type": "search_location",
+        "label_ar": "اقرأ لائحة القاعة",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_slot_rule"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_records",
+        "telemetry_code": "A_READ_RULE"
+      },
+      {
+        "id": "a_read_complaint",
+        "type": "examine",
+        "label_ar": "افتح مذكرة المشرف",
+        "precondition": {
+          "all": [
+            {
+              "has_evidence": "ev_trace"
+            },
+            {
+              "has_evidence": "ev_controls"
+            },
+            {
+              "has_evidence": "ev_gate_log"
+            }
+          ]
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_complaint"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_office",
+        "telemetry_code": "A_READ_COMPLAINT"
+      },
+      {
+        "id": "a_read_prior",
+        "type": "search_location",
+        "label_ar": "اطلب مقتطف سجل الغرامات",
+        "precondition": {
+          "has_evidence": "ev_complaint"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_prior_record"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_records",
+        "telemetry_code": "A_READ_PRIOR"
+      },
+      {
+        "id": "a_read_confession",
+        "type": "examine",
+        "label_ar": "افتح إفادة القارئ المكتوبة",
+        "precondition": {
+          "has_evidence": "ev_complaint"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_confession"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_office",
+        "telemetry_code": "A_READ_CONFESSION"
+      },
+      {
+        "id": "a_int_salma",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة سلمى",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "salma",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "salma",
+        "telemetry_code": "A_INT_SALMA"
+      },
+      {
+        "id": "a_int_reem",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة د. ريم",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "reem",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "reem",
+        "telemetry_code": "A_INT_REEM"
+      },
+      {
+        "id": "a_int_adel",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة عادل",
+        "precondition": {
+          "has_evidence": "ev_complaint"
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "adel",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "adel",
+        "telemetry_code": "A_INT_ADEL"
+      },
+      {
+        "id": "a_int_nabil",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة نبيل",
+        "precondition": {
+          "has_evidence": "ev_complaint"
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "nabil",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "nabil",
+        "telemetry_code": "A_INT_NABIL"
+      },
+      {
+        "id": "a_note_salma",
+        "type": "examine",
+        "label_ar": "دوّن إفادة سلمى",
+        "precondition": {
+          "fact_unlocked": "f_salma_wrote_once"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_salma_note"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "salma",
+        "telemetry_code": "A_NOTE_SALMA"
+      },
+      {
+        "id": "a_note_reem",
+        "type": "examine",
+        "label_ar": "دوّن إفادة د. ريم",
+        "precondition": {
+          "fact_unlocked": "f_blind_exam"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_reem_note"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "reem",
+        "telemetry_code": "A_NOTE_REEM"
+      },
+      {
+        "id": "a_note_adel",
+        "type": "examine",
+        "label_ar": "دوّن إفادة عادل",
+        "precondition": {
+          "fact_unlocked": "f_adel_no_scan"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_adel_stmt"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "adel",
+        "telemetry_code": "A_NOTE_ADEL"
+      },
+      {
+        "id": "a_note_nabil",
+        "type": "examine",
+        "label_ar": "دوّن إفادة نبيل",
+        "precondition": {
+          "fact_unlocked": "f_confession_context"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_nabil_note"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "nabil",
+        "telemetry_code": "A_NOTE_NABIL"
+      },
+      {
+        "id": "p_trace_adel",
+        "type": "present_evidence",
+        "label_ar": "اعرض تقرير الفحص على عادل",
+        "precondition": {
+          "presented": {
+            "evidence_id": "ev_trace",
+            "to_character": "adel"
+          }
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "PRESENTED_TRACE"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "adel",
+        "telemetry_code": "P_TRACE_ADEL"
+      },
+      {
+        "id": "p_gate_nabil",
+        "type": "present_evidence",
+        "label_ar": "اعرض سجل البوابة على نبيل",
+        "precondition": {
+          "presented": {
+            "evidence_id": "ev_gate_log",
+            "to_character": "nabil"
+          }
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "PRESENTED_GATE"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "nabil",
+        "telemetry_code": "P_GATE_NABIL"
+      },
+      {
+        "id": "a_hint",
+        "type": "request_hint",
+        "label_ar": "اطلب تلميحاً",
+        "precondition": {
+          "always": true
+        },
+        "effects": [],
+        "time_cost_units": 0,
+        "telemetry_code": "A_HINT"
+      },
+      {
+        "id": "a_accuse",
+        "type": "final_accusation",
+        "label_ar": "قدّم الاستنتاج النهائي",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "SUBMIT"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "A_ACCUSE"
+      },
+      {
+        "id": "ask_salma_f_entry_times",
+        "type": "interview",
+        "label_ar": "[نموذج] salma يذكر f_entry_times",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_entry_times"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "salma",
+        "telemetry_code": "ASK_SALMA_F_ENTRY_TIMES"
+      },
+      {
+        "id": "ask_salma_f_salma_wrote_once",
+        "type": "interview",
+        "label_ar": "[نموذج] salma يذكر f_salma_wrote_once",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_salma_wrote_once"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "salma",
+        "telemetry_code": "ASK_SALMA_F_SALMA_WROTE_ONCE"
+      },
+      {
+        "id": "ask_salma_f_hand_habit",
+        "type": "interview",
+        "label_ar": "[نموذج] salma يذكر f_hand_habit",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_hand_habit"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "salma",
+        "telemetry_code": "ASK_SALMA_F_HAND_HABIT"
+      },
+      {
+        "id": "ask_reem_f_blind_exam",
+        "type": "interview",
+        "label_ar": "[نموذج] reem يذكر f_blind_exam",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_blind_exam"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "reem",
+        "telemetry_code": "ASK_REEM_F_BLIND_EXAM"
+      },
+      {
+        "id": "ask_reem_f_unmask_order",
+        "type": "interview",
+        "label_ar": "[نموذج] reem يذكر f_unmask_order",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_unmask_order"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "reem",
+        "telemetry_code": "ASK_REEM_F_UNMASK_ORDER"
+      },
+      {
+        "id": "ask_adel_f_adel_prior_view",
+        "type": "interview",
+        "label_ar": "[نموذج] adel يذكر f_adel_prior_view",
+        "precondition": {
+          "has_evidence": "ev_complaint"
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_adel_prior_view"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "adel",
+        "telemetry_code": "ASK_ADEL_F_ADEL_PRIOR_VIEW"
+      },
+      {
+        "id": "ask_adel_f_adel_no_scan",
+        "type": "interview",
+        "label_ar": "[نموذج] adel يكشف f_adel_no_scan",
+        "precondition": {
+          "all": [
+            {
+              "has_evidence": "ev_complaint"
+            },
+            {
+              "presented": {
+                "evidence_id": "ev_trace",
+                "to_character": "adel"
+              }
+            }
+          ]
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_adel_no_scan"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "adel",
+        "telemetry_code": "ASK_ADEL_F_ADEL_NO_SCAN"
+      },
+      {
+        "id": "ask_nabil_f_prior_fine",
+        "type": "interview",
+        "label_ar": "[نموذج] nabil يذكر f_prior_fine",
+        "precondition": {
+          "has_evidence": "ev_complaint"
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_prior_fine"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "nabil",
+        "telemetry_code": "ASK_NABIL_F_PRIOR_FINE"
+      },
+      {
+        "id": "ask_nabil_f_confession_given",
+        "type": "interview",
+        "label_ar": "[نموذج] nabil يذكر f_confession_given",
+        "precondition": {
+          "has_evidence": "ev_complaint"
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_confession_given"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "nabil",
+        "telemetry_code": "ASK_NABIL_F_CONFESSION_GIVEN"
+      },
+      {
+        "id": "ask_nabil_f_confession_context",
+        "type": "interview",
+        "label_ar": "[نموذج] nabil يكشف f_confession_context",
+        "precondition": {
+          "all": [
+            {
+              "has_evidence": "ev_complaint"
+            },
+            {
+              "presented": {
+                "evidence_id": "ev_gate_log",
+                "to_character": "nabil"
+              }
+            }
+          ]
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_confession_context"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "nabil",
+        "telemetry_code": "ASK_NABIL_F_CONFESSION_CONTEXT"
+      }
+    ]
+  },
+  "state_machine": {
+    "id": "c032",
+    "initial": "briefing",
+    "type": "compound",
+    "states": {
+      "briefing": {
+        "description_ar": "الإحاطة",
+        "type": "atomic",
+        "on": {
+          "START": {
+            "target": "investigating"
+          }
+        }
+      },
+      "investigating": {
+        "description_ar": "التحقيق",
+        "type": "compound",
+        "initial": "gathering",
+        "states": {
+          "gathering": {
+            "type": "atomic",
+            "on": {
+              "OPEN_DEDUCTION": {
+                "target": "deducing"
+              }
+            }
+          },
+          "deducing": {
+            "type": "atomic",
+            "on": {
+              "BACK": {
+                "target": "gathering"
+              }
+            }
+          }
+        },
+        "on": {
+          "SUBMIT": {
+            "target": "review"
+          }
+        }
+      },
+      "review": {
+        "description_ar": "مراجعة",
+        "type": "atomic",
+        "on": {
+          "CLOSE": {
+            "target": "resolved"
+          }
+        }
+      },
+      "resolved": {
+        "description_ar": "إغلاق",
+        "type": "final"
+      }
+    }
+  },
+  "dialogue": {
+    "max_turns_per_interview": 10,
+    "llm_enabled": false,
+    "topics": [
+      {
+        "id": "t_entry",
+        "label_ar": "كتابة الورقة",
+        "example_questions_ar": [
+          "متى كتبت وقت الخروج؟",
+          "كيف تكتبين الرقم واحد؟"
+        ],
+        "fact_ids": [
+          "f_entry_times",
+          "f_salma_wrote_once",
+          "f_hand_habit"
+        ]
+      },
+      {
+        "id": "t_exam",
+        "label_ar": "ترتيب الفحص",
+        "example_questions_ar": [
+          "هل عرفتِ الاسم عند الفحص؟",
+          "لماذا تسجلين الحكم أولاً؟"
+        ],
+        "fact_ids": [
+          "f_blind_exam",
+          "f_unmask_order"
+        ]
+      },
+      {
+        "id": "t_view",
+        "label_ar": "كيف وُلدت الشكوى",
+        "example_questions_ar": [
+          "ما الذي تذكرته قبل أن تنظر؟",
+          "هل راجعت المسح أو البوابة؟"
+        ],
+        "fact_ids": [
+          "f_adel_prior_view",
+          "f_adel_no_scan"
+        ],
+        "claim_ids": [
+          "cl_adel_altered",
+          "cl_prior_alter"
+        ]
+      },
+      {
+        "id": "t_confession",
+        "label_ar": "الإفادة والسجل السابق",
+        "example_questions_ar": [
+          "لماذا كتبت الإفادة؟",
+          "ما قصة الغرامة السابقة؟"
+        ],
+        "fact_ids": [
+          "f_prior_fine",
+          "f_confession_given",
+          "f_confession_context"
+        ],
+        "claim_ids": [
+          "cl_nabil_confess"
+        ]
+      }
+    ]
+  },
+  "rubric": {
+    "reference_answer_ar": "الملف لا يثبت أن خانة الخروج عُدّلت. الأثر الخام، وهو ضربة واحدة بحبر واحد دون كشط ولا بقايا وبشكل يطابق عادة الأمينة، يدل على كتابة واحدة. وسجل البوابة يسجّل الخروج 11:39 فيوافق 11:40 ولا يوافق 12:40، ومدة البقاء 78 دقيقة دون حد التسعين. أما السابقة فغرامة تأخير لا تعديل، والإقرار جاء بعبارة المشرف بعد انتظار طويل، فلا يُعدّ دليلاً. لو قُرئ السياق أولاً لمال الحكم إلى التعديل، وهذا ما يفسّر ترتيب الكشف. حدود الاستنتاج: فحص خانة واحدة، وفارق دقيقة بين الساعتين، ولا نعرف نيات الناس.",
+    "criteria": [
+      {
+        "id": "c_source",
+        "name_ar": "تصنيف المصادر",
+        "objective_ids": [
+          "lo_claim"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يصنّف"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "أخطأ في الأغلب"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "نصف صحيح"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمه صحيح"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كله صحيح"
+          }
+        ]
+      },
+      {
+        "id": "c_conflict",
+        "name_ar": "ربط الأحداث بأزمنتها",
+        "objective_ids": [
+          "lo_timeline"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يضع شيئاً"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "وضع قليلاً"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "وضع نصفها صحيحاً"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمها"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كلها في موضعها"
+          }
+        ]
+      },
+      {
+        "id": "c_links",
+        "name_ar": "ربط الأدلة بالفرضيات",
+        "objective_ids": [
+          "lo_value"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.2,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لا روابط"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "قليلة"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "نصفها صحيح"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمها"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كلها دقيقة"
+          }
+        ]
+      },
+      {
+        "id": "c_uncertainty",
+        "name_ar": "معايرة الثقة",
+        "objective_ids": [
+          "lo_value"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "ثقة مفرطة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "حدود قليلة"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "جزئية"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معقولة"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "معايَرة كاملة"
+          }
+        ]
+      },
+      {
+        "id": "c_revision",
+        "name_ar": "مقارنة الحكم قبل السياق وبعده",
+        "objective_ids": [
+          "lo_raw",
+          "lo_revise"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "بقي على فرضية مرفوضة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "لم يعلن فرضية"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "ثبت على فرضية سليمة"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "غيّر بدليل"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "غيّر بدليل ووثّق"
+          }
+        ]
+      },
+      {
+        "id": "c_elimination",
+        "name_ar": "استبعاد الفرضيات الخاطئة",
+        "objective_ids": [
+          "lo_hyp"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يستبعد"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "استبعد خطأً"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "فرضية بدليل"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "كل الخاطئة بدليل جزئي"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كل الخاطئة بدليل"
+          }
+        ]
+      },
+      {
+        "id": "c_justification",
+        "name_ar": "جودة الحجة المكتوبة",
+        "objective_ids": [
+          "lo_hyp",
+          "lo_revise"
+        ],
+        "scored_by": "human",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لا حجة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "ادعاء بلا سند"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "أدلة دون ربط"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "ربط الأدلة بالاستنتاج"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "ربط مع البدائل والحدود"
+          }
+        ]
+      }
+    ]
+  },
+  "hint_ladder": [
+    {
+      "id": "hg1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "قبل أن تقرأ أي ورقة عن صاحب السطر: ماذا يقول الأثر وحده؟ سجّل حكمك ودرجة ثقتك ثم افتح السياق.",
+      "trigger": {
+        "always": true
+      },
+      "assessment_weight": 0.02
+    },
+    {
+      "id": "hg2",
+      "level": 2,
+      "kind": "focus_area",
+      "text_ar": "لو لم تقرأ المذكرة، هل كان حكمك على الأثر سيتغير؟ وما الذي غيّره بالضبط: معلومة عن الورقة أم معلومة عن الشخص؟",
+      "trigger": {
+        "has_evidence": "ev_complaint"
+      },
+      "assessment_weight": 0.04
+    },
+    {
+      "id": "hg3",
+      "level": 3,
+      "kind": "pointer",
+      "text_ar": "هل يضيف الإقرار معلومة يمكن فحصها بالأثر أو بالسجلات، أم يكرر ما سبق أن قيل؟",
+      "trigger": {
+        "has_evidence": "ev_confession"
+      },
+      "assessment_weight": 0.06
+    },
+    {
+      "id": "hm1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "ماذا يتركه على الورقة تحويل رقم إلى رقم آخر؟ قابل ذلك بما في تقرير الفحص.",
+      "trigger": {
+        "has_evidence": "ev_trace"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_orig_a"
+    },
+    {
+      "id": "hm2",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "قارن شكل الرقم المفحوص وكثافة حبره بأرقام الأمينة الأخرى في الورقة نفسها.",
+      "trigger": {
+        "has_evidence": "ev_controls"
+      },
+      "assessment_weight": 0.05,
+      "targets_inference_id": "i_orig_a"
+    },
+    {
+      "id": "hm3",
+      "level": 3,
+      "kind": "partial_reveal",
+      "text_ar": "عدّد ما كان سيظهر في التقرير لو كان الرقم محوّلاً من رقم آخر: طبقتان، أو كشط، أو بقايا. ثم عُد إلى التقرير وتحقق بنفسك.",
+      "trigger": {
+        "has_evidence": "ev_controls"
+      },
+      "assessment_weight": 0.1,
+      "targets_inference_id": "i_orig_a"
+    },
+    {
+      "id": "hn1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "هل في ملفك سجل لا تكتبه يد بشرية؟ وماذا يمكن أن يقول عن الوقت المكتوب؟",
+      "trigger": {
+        "has_evidence": "ev_gate_log"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_orig_b"
+    },
+    {
+      "id": "hn2",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "قارن وقت الخروج في سجل البوابة بالوقت المكتوب في السطر الرابع، وبالوقت الذي تقول المذكرة إنه الأصل.",
+      "trigger": {
+        "has_evidence": "ev_gate_log"
+      },
+      "assessment_weight": 0.05,
+      "targets_inference_id": "i_orig_b"
+    },
+    {
+      "id": "hn3",
+      "level": 3,
+      "kind": "partial_reveal",
+      "text_ar": "الفارق بين ساعتي البوابة والأمينة دقيقة واحدة؛ فأي الوقتين، 11:40 أو 12:40، أقرب إلى سجل البوابة؟",
+      "trigger": {
+        "has_evidence": "ev_slot_rule"
+      },
+      "assessment_weight": 0.1,
+      "targets_inference_id": "i_orig_b"
+    }
+  ],
+  "fairness_test": {
+    "requirements": {
+      "min_disjoint_proof_paths": 2,
+      "max_inference_depth": 3,
+      "all_red_herrings_refutable": true,
+      "culprit_uniquely_entailed": true,
+      "no_hidden_fact_dependency": true,
+      "max_required_actions": 30
+    },
+    "runs": []
+  },
+  "ending_explanation": {
+    "steps": [
+      {
+        "order": 1,
+        "text_ar": "الأثر الخام وحده: ضربة واحدة بحبر واحد دون كشط ولا بقايا، والرقم يطابق عادة الأمينة وكثافة قلمها.",
+        "uses_evidence_ids": [
+          "ev_trace",
+          "ev_controls"
+        ],
+        "inference_id": "i_orig_a"
+      },
+      {
+        "order": 2,
+        "text_ar": "سجل البوابة الآلي يضع الخروج عند 11:39، فيوافق المكتوب 11:40 ولا يوافق 12:40.",
+        "uses_evidence_ids": [
+          "ev_gate_log",
+          "ev_sign_sheet"
+        ],
+        "inference_id": "i_orig_b"
+      },
+      {
+        "order": 3,
+        "text_ar": "مدة البقاء بحسب البوابة 78 دقيقة، أقل من حد التسعين، فلا دافع ظاهر للإخفاء.",
+        "uses_evidence_ids": [
+          "ev_gate_log",
+          "ev_slot_rule"
+        ],
+        "inference_id": "i_stay"
+      },
+      {
+        "order": 4,
+        "text_ar": "السابقة المذكورة في المذكرة غرامة تأخير لا تعديل أوراق، فلا تسند الشكوى.",
+        "uses_evidence_ids": [
+          "ev_prior_record"
+        ],
+        "inference_id": "i_prior_claim"
+      },
+      {
+        "order": 5,
+        "text_ar": "الإقرار جاء بعبارة المشرف بعد انتظار طويل، ويخالف الأثر والبوابة، فلا يُعدّ دليلاً على التعديل.",
+        "uses_evidence_ids": [
+          "ev_nabil_note",
+          "ev_gate_log"
+        ],
+        "inference_id": "i_confess_claim"
+      },
+      {
+        "order": 6,
+        "text_ar": "إذن الفرضية الصحيحة أن الخانة كُتبت مرة واحدة، ولا يغيّر السياق ما يقوله الأثر.",
+        "uses_evidence_ids": [
+          "ev_gate_log",
+          "ev_slot_rule"
+        ],
+        "inference_id": "i_support_orig"
+      }
+    ],
+    "alternative_paths_ar": [
+      "مسار مستقل: سجل البوابة الآلي يوافق الوقت المكتوب بفارق دقيقة، ومدة البقاء دون الحد، وسجل الغرامات لا يحمل تعديلاً، وهذا كله دون الاعتماد على تقرير الفحص المكبّر."
+    ],
+    "what_evidence_could_not_show_ar": [
+      "لا تحدد الأدلة نية المشرف ولا يمكن الجزم بأن حكمه تأثر بالسابقة إلا بقوله هو.",
+      "فحص الخانة وحدها لا يصف سائر أسطر الورقة، وساعتا البوابة والأمينة قد تختلفان بدقيقة."
+    ],
+    "science_notes_ar": [
+      "ترتيب الكشف يغيّر القراءة: من يعرف السمعة أو الإقرار قبل الأثر قد يرى فيه ما يوافقها. لذلك يُسجَّل الحكم على الأثر الخام أولاً ثم يُفتح السياق.",
+      "الإقرار قول لا قياس؛ لا يُحتسب مقدمة إثبات إلا إذا حمل تفصيلاً يمكن فحصه بالأثر أو السجلات.",
+      "السمعة القائمة على سجل سابق تغيّر شك الناس، لكنها لا تغيّر ما كُتب على الورقة."
+    ]
+  },
+  "expert_review": [
+    {
+      "role": "narrative_editor",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "scientific_reviewer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "learning_designer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "age_appropriateness",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "cultural_reviewer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "legal_rights",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "safety",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    }
+  ]
+}

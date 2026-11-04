@@ -1,0 +1,1486 @@
+{
+  "schema_version": "0.1.0",
+  "case_id": "c035_two_minute_text",
+  "case_version": "0.1.0",
+  "meta": {
+    "title_ar": "قضية الدقيقتين: تقرير السوق",
+    "title_en": "The Two-Minute Case: The Market Report",
+    "age_band": "13-15",
+    "estimated_minutes": 10,
+    "difficulty": 2,
+    "content_flags": [
+      "no_violence"
+    ],
+    "knowledge_object_refs": [
+      "KO-NP-02W-001",
+      "KO-NP-02-004",
+      "KO-NP-03-005",
+      "KO-RS-06-017",
+      "KO-RS-05-014",
+      "KO-RS-05-001",
+      "KO-RS-05-002",
+      "KO-RS-05-004",
+      "KO-RS-06-001",
+      "KO-RS-06-021",
+      "KO-RS-06-009"
+    ],
+    "locale": "ar",
+    "dialogue_register": "msa",
+    "authors": [
+      "فريق أثر التحريري (مسودة بمساعدة الذكاء الاصطناعي، لم تُراجَع بشرياً بعد)"
+    ]
+  },
+  "premise": {
+    "hook_ar": "وجد معلم نادي القراءة في الصندوق أقل مما يقوله تقرير أمينة الصندوق بأربعة دنانير. عندك دقيقتان لقراءة التقرير، وبعدها تلتزم بجواب وبجملة تشرح كيف عرفت.",
+    "player_role_ar": "أنت عضو في لجنة المراجعة الطلابية في مدرسة الغدير، وطُلب منك رأي معلّل في سبب الفرق دون اتهام أحد قبل أن تثبت السجلات شيئاً.",
+    "setting_ar": "مدرسة الغدير في مدينة وادي الزهر المتخيلة، يوم الخميس بعد انتهاء سوق الكتب المستعملة. الأوقات بساعة المدرسة.",
+    "public_fact_ids": [
+      "f_note_written",
+      "f_box_short",
+      "f_prices"
+    ],
+    "assumed_general_knowledge_ar": [
+      "الجمع والضرب في الأعداد الصغيرة",
+      "ثمن الكل يساوي العدد مضروباً في السعر",
+      "تبديل ورقة بقطع بالقيمة نفسها لا يغيّر مجموع المال في الصندوق",
+      "الخطأ في الحساب لا يعني الكذب"
+    ]
+  },
+  "entities": {
+    "characters": [
+      {
+        "id": "salma",
+        "name_ar": "سلمى النعيمي",
+        "role": "suspect",
+        "age_descriptor_ar": "طالبة في الصف التاسع، أمينة صندوق نادي القراءة",
+        "persona_ar": "مجتهدة وسريعة، تكتب تقاريرها بخط واضح وتحب أن تنهيها قبل نهاية اليوم. تتعاون وتقبل أن يُراجَع عملها.",
+        "motives_ar": [
+          "أن تسلّم تقريراً صحيحاً",
+          "ألا تُتَّهم بشيء لم تفعله"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        }
+      },
+      {
+        "id": "fadi",
+        "name_ar": "الأستاذ فادي العلي",
+        "role": "authority",
+        "age_descriptor_ar": "معلم ومشرف نادي القراءة",
+        "persona_ar": "هادئ ودقيق، يعدّ الأشياء بنفسه ويدوّن ما يجده دون حكم مسبق.",
+        "motives_ar": [
+          "أن يعرف أين ذهب الفرق",
+          "أن يحمي الطلاب من الظلم"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        }
+      },
+      {
+        "id": "rashed",
+        "name_ar": "رشاد الحمصي",
+        "role": "witness",
+        "age_descriptor_ar": "طالب في الصف السابع",
+        "persona_ar": "فضولي يحكي ما رآه كما يفهمه، ولا يقصد الإساءة لأحد.",
+        "motives_ar": [
+          "أن يحكي ما رآه",
+          "أن يفهم ما جرى"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        }
+      }
+    ],
+    "locations": [
+      {
+        "id": "loc_stall",
+        "name_ar": "طاولة السوق في الساحة",
+        "description_ar": "طاولة عليها الكتب والصندوق وملصق الأسعار."
+      },
+      {
+        "id": "loc_office",
+        "name_ar": "غرفة نادي القراءة",
+        "description_ar": "غرفة صغيرة يعدّ فيها المشرف الصندوق."
+      }
+    ],
+    "objects": [
+      {
+        "id": "obj_note",
+        "name_ar": "تقرير المبيعات",
+        "description_ar": "ورقة كتبتها أمينة الصندوق بيدها."
+      },
+      {
+        "id": "obj_box",
+        "name_ar": "صندوق النقود",
+        "description_ar": "صندوق صغير فيه ثمن الكتب وفكّة الصباح."
+      },
+      {
+        "id": "obj_slips",
+        "name_ar": "دفاتر القسائم",
+        "description_ar": "دفتران مرقّمان، واحد للكتب الصغيرة وآخر للكبيرة."
+      }
+    ],
+    "organizations": [
+      {
+        "id": "org_club",
+        "name_ar": "نادي القراءة",
+        "description_ar": "نادٍ طلابي في مدرسة الغدير ينظم سوق الكتب."
+      }
+    ]
+  },
+  "truth": {
+    "solution": {
+      "culprit_ids": [
+        "salma"
+      ],
+      "summary_ar": "لا مال ناقص ولا تزوير. أخطأت أمينة الصندوق في جمع الكتب الصغيرة في خاتمة تقريرها، فكتبت رقماً أكبر من مجموع فتراتها الثلاث، فخرج المتوقع أكبر من الموجود بأربعة دنانير. ويثبت ذلك دفتر القسائم وحساب الصندوق.",
+      "key_fact_ids": [
+        "f_real_28"
+      ]
+    },
+    "facts": [
+      {
+        "id": "f_note_written",
+        "statement_ar": "كتبت سلمى تقريراً بمبيعات سوق الكتب المستعملة وسلّمته مع الصندوق.",
+        "kind": "event",
+        "subject_ids": [
+          "salma",
+          "obj_note"
+        ],
+        "spoiler_level": 0,
+        "location_id": "loc_stall"
+      },
+      {
+        "id": "f_box_short",
+        "statement_ar": "عدّ الأستاذ فادي الصندوق فوجده أقل بأربعة دنانير مما يقتضيه التقرير.",
+        "kind": "event",
+        "subject_ids": [
+          "fadi",
+          "obj_box"
+        ],
+        "spoiler_level": 0,
+        "location_id": "loc_office"
+      },
+      {
+        "id": "f_prices",
+        "statement_ar": "سعر الكتاب الصغير دينارين وسعر الكتاب الكبير خمسة دنانير، وفكّة الصباح عشرون ديناراً.",
+        "kind": "attribute",
+        "subject_ids": [
+          "obj_box"
+        ],
+        "spoiler_level": 0
+      },
+      {
+        "id": "f_stated_total_30",
+        "statement_ar": "كتبت سلمى في خاتمة التقرير أن المبيع ثلاثون كتاباً صغيراً واثنا عشر كبيراً.",
+        "kind": "attribute",
+        "subject_ids": [
+          "salma",
+          "obj_note"
+        ],
+        "spoiler_level": 1
+      },
+      {
+        "id": "f_swap_20",
+        "statement_ar": "بدّلت سلمى لرشاد ورقته من فئة العشرين بعشرين ديناراً من الفكّة وقت الاستراحة.",
+        "kind": "event",
+        "subject_ids": [
+          "salma",
+          "rashed",
+          "obj_box"
+        ],
+        "spoiler_level": 1,
+        "location_id": "loc_stall"
+      },
+      {
+        "id": "f_rashed_saw",
+        "statement_ar": "رأى رشاد الصندوق مفتوحاً وقطعاً نقدية تخرج منه وقت الاستراحة.",
+        "kind": "event",
+        "subject_ids": [
+          "rashed",
+          "obj_box"
+        ],
+        "spoiler_level": 1,
+        "location_id": "loc_stall"
+      },
+      {
+        "id": "f_periods_sum_28",
+        "statement_ar": "أرقام الفترات الثلاث للكتب الصغيرة في التقرير تعطي مجموعاً أقل من الرقم المكتوب في الخاتمة.",
+        "kind": "attribute",
+        "subject_ids": [
+          "obj_note"
+        ],
+        "spoiler_level": 2
+      },
+      {
+        "id": "f_slips_28",
+        "statement_ar": "آخر قسيمة صغيرة مستعملة تحمل رقماً أقل من الرقم المكتوب في الخاتمة، وتسلسلها كامل.",
+        "kind": "attribute",
+        "subject_ids": [
+          "obj_slips"
+        ],
+        "spoiler_level": 2
+      },
+      {
+        "id": "f_real_28",
+        "statement_ar": "الكتب الصغيرة المبيعة فعلاً ثمانية وعشرون لا ثلاثون؛ وخطأ سلمى سهو في جمع الفترات.",
+        "kind": "state",
+        "subject_ids": [
+          "salma",
+          "obj_note"
+        ],
+        "spoiler_level": 3
+      },
+      {
+        "id": "f_cash_matches",
+        "statement_ar": "ما وُجد في الصندوق يساوي ثمن المبيع الفعلي مع فكّة الصباح، فلا نقص في المال.",
+        "kind": "state",
+        "subject_ids": [
+          "obj_box"
+        ],
+        "spoiler_level": 3
+      }
+    ],
+    "claims": [
+      {
+        "id": "cl_total_30",
+        "statement_ar": "بعنا ثلاثين كتاباً صغيراً.",
+        "kind": "honest_mistake",
+        "held_by": [
+          "salma"
+        ],
+        "true_fact_id": "f_real_28",
+        "contradicted_by_evidence_ids": [
+          "ev_note",
+          "ev_slips"
+        ]
+      },
+      {
+        "id": "cl_money_taken",
+        "statement_ar": "أخرجت سلمى نقوداً من الصندوق وأعطتها لشخص.",
+        "kind": "half_truth",
+        "held_by": [
+          "rashed"
+        ],
+        "true_fact_id": "f_swap_20",
+        "contradicted_by_evidence_ids": [
+          "ev_note",
+          "ev_count"
+        ]
+      }
+    ]
+  },
+  "timeline": [
+    {
+      "id": "te_first",
+      "description_ar": "الفترة الأولى قبل الحصة الأولى: مبيعات الطاولة.",
+      "time": {
+        "start_min": 10,
+        "end_min": 40,
+        "precision": "approx"
+      },
+      "location_id": "loc_stall",
+      "actor_ids": [
+        "salma"
+      ],
+      "fact_ids": [
+        "f_prices"
+      ],
+      "motivated_by_ar": "بيع الكتب وتدوين المبيعات"
+    },
+    {
+      "id": "te_break",
+      "description_ar": "الاستراحة: مبيعات كثيرة وتبديل الفكّة لرشاد.",
+      "time": {
+        "start_min": 150,
+        "end_min": 180,
+        "precision": "approx"
+      },
+      "location_id": "loc_stall",
+      "actor_ids": [
+        "salma",
+        "rashed"
+      ],
+      "fact_ids": [
+        "f_swap_20",
+        "f_rashed_saw"
+      ],
+      "motivated_by_ar": "مساعدة زميل على تبديل ورقته",
+      "witness_ids": [
+        "rashed"
+      ]
+    },
+    {
+      "id": "te_after",
+      "description_ar": "بعد نهاية الدوام: آخر المبيعات ثم كتابة التقرير.",
+      "time": {
+        "start_min": 330,
+        "end_min": 380,
+        "precision": "approx"
+      },
+      "location_id": "loc_stall",
+      "actor_ids": [
+        "salma"
+      ],
+      "fact_ids": [
+        "f_stated_total_30",
+        "f_note_written"
+      ],
+      "motivated_by_ar": "إنهاء التقرير وتسليم الصندوق"
+    },
+    {
+      "id": "te_count",
+      "description_ar": "عدّ الأستاذ فادي الصندوق ودوّن الفرق.",
+      "time": {
+        "start_min": 405,
+        "precision": "exact"
+      },
+      "location_id": "loc_office",
+      "actor_ids": [
+        "fadi"
+      ],
+      "fact_ids": [
+        "f_box_short"
+      ],
+      "motivated_by_ar": "مطابقة الصندوق مع التقرير"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_note",
+      "title_ar": "تقرير سلمى لمبيعات السوق",
+      "kind": "documentary",
+      "content_ar": "إلى الأستاذ فادي، مشرف نادي القراءة\nتقرير مبيعات سوق الكتب المستعملة، يوم الخميس\nكتبته سلمى النعيمي، أمينة الصندوق\n\nيسعدني أن أرفع إليك هذا التقرير عن اليوم الذي انتظرناه منذ أسابيع. بدأنا العمل على طاولة في ساحة المدرسة، تحت شجرة الكينا التي تظلل الزاوية الشرقية. وضعت في الصندوق عشرين ديناراً من الفكّة قبل أن نفتح، وعلّقنا ملصق الأسعار: الكتاب الصغير بدينارين، والكتاب الكبير بخمسة دنانير. وكان لكل كتاب صغير قسيمة مرقّمة من دفتر القسائم، نبدأ من الرقم 1، ولكل كتاب كبير قسيمة من دفتر آخر.\n\nالفترة الأولى، قبل الحصة الأولى: كانت الساحة هادئة. بعنا تسعة كتب صغيرة وثلاثة كتب كبيرة. اشترت معلمة اللغة العربية رواية كبيرة، وسألتني عن كتب الشعر التي وصلت أمس، ووعدتها بأن أحجز لها واحداً منها إن بقي شيء.\n\nالاستراحة: كانت أكثر الفترات ازدحاماً، ووقف الطلاب صفاً طويلاً أمام الطاولة، وكان زميلي أيمن يرتب الكتب كلما اختلطت، وكنت أكتب القسائم بأسرع ما أستطيع. بعنا أحد عشر كتاباً صغيراً وأربعة كتب كبيرة. وجاءني رشاد من الصف السابع بورقة من فئة عشرين ديناراً وطلب أن أبدّلها بقطع صغيرة، فأعطيته عشرين ديناراً من الفكّة ووضعت ورقته في الصندوق. ثم اشترى كتاباً صغيراً ودفع ثمنه من القطع التي أخذها.\n\nبعد نهاية الدوام: بعنا ثمانية كتب صغيرة وخمسة كتب كبيرة. جاء بعض الأهالي لاصطحاب أبنائهم واشتروا ما بقي من كتب الأطفال، وأثنت إحدى الأمهات على فكرة السوق وقالت إنها ستتبرع بكتب مكتبتها في الشهر القادم. ثم رتّبنا الكتب التي لم تُبَع في الصناديق، وكتبت هذا التقرير قبل أن أسلّمك الصندوق.\n\nجمعت المبيعات كلها فكانت: ثلاثون كتاباً صغيراً واثنا عشر كتاباً كبيراً. فثمن الكتب الصغيرة ستون ديناراً، وثمن الكتب الكبيرة ستون ديناراً، ومع عشرين ديناراً من فكّة الصباح يجب أن يكون في الصندوق مئة وأربعون ديناراً.\n\nأرجو أن يعجبك العمل، وأن تقبل شكر النادي كله على دعمك لنا طوال الأسابيع الماضية. تعبنا كثيراً وكنا نقف ساعات تحت الشمس، لكنه كان يوماً جميلاً، وطلب مني بعض الزملاء والمعلمين أن نكرر السوق في الشهر القادم ونجمع الكتب من الحي كله.",
+      "acquired_by_action_ids": [
+        "a_read_note"
+      ],
+      "supports_fact_ids": [
+        "f_note_written",
+        "f_stated_total_30",
+        "f_swap_20"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "تقرير كتبته أمينة الصندوق بنفسها من ذاكرتها ودفتر الطاولة؛ يُقرأ كما هو، وما فيه من أرقام يحتاج إلى مقارنة مع سجلات أخرى.",
+      "location_id": "loc_stall",
+      "contradicts_claim_ids": [
+        "cl_total_30",
+        "cl_money_taken"
+      ]
+    },
+    {
+      "id": "ev_count",
+      "title_ar": "ورقة عدّ الصندوق",
+      "kind": "documentary",
+      "content_ar": "ورقة عدّ الصندوق، بخط الأستاذ فادي العلي، الخميس 2:15 ظهراً\n\nعدّدت ما في الصندوق أمام أمينة الصندوق وطالبين من النادي.\nالموجود: مئة وستة وثلاثون ديناراً، وفيها ورقة واحدة من فئة عشرين ديناراً، والباقي أوراق وقطع صغيرة.\nالمتوقع بحسب تقرير سلمى: مئة وأربعون ديناراً.\nالفرق: أربعة دنانير.",
+      "acquired_by_action_ids": [
+        "a_read_count"
+      ],
+      "supports_fact_ids": [
+        "f_box_short"
+      ],
+      "reliability": "strong",
+      "limits_ar": "تدوّن الموجود لحظة العدّ فحسب، وسكوتها عن مصدر المال وعن عدد الكتب أمر طبيعي.",
+      "location_id": "loc_stall",
+      "contradicts_claim_ids": [
+        "cl_money_taken"
+      ]
+    },
+    {
+      "id": "ev_price",
+      "title_ar": "ملصق الأسعار ودفتر الفكّة",
+      "kind": "documentary",
+      "content_ar": "ملصق الأسعار على طاولة السوق (مأخوذ من الصورة المعلقة في غرفة النادي)\nكتاب صغير: دينارين\nكتاب كبير: خمسة دنانير\nفكّة الصباح مدوّنة في دفتر النادي: عشرون ديناراً.",
+      "acquired_by_action_ids": [
+        "a_read_price"
+      ],
+      "supports_fact_ids": [
+        "f_prices"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يبيّن الأسعار وفكّة الصباح؛ لا يبيّن عدد الكتب المبيعة.",
+      "location_id": "loc_stall"
+    },
+    {
+      "id": "ev_slips",
+      "title_ar": "دفاتر القسائم",
+      "kind": "documentary",
+      "content_ar": "دفتر القسائم الصغيرة: آخر قسيمة مستعملة رقمها 28، وكل القسائم من 1 إلى 28 موجودة بالتسلسل، ولا قسيمة ملغاة بينها. القسائم من 29 فصاعداً بيضاء لم تُستعمل.\nدفتر القسائم الكبيرة: آخر قسيمة مستعملة رقمها 12، بالتسلسل ودون فجوات.\nالقاعدة المكتوبة على غلاف الدفتر: قسيمة واحدة لكل كتاب يُباع.",
+      "acquired_by_action_ids": [
+        "a_read_slips"
+      ],
+      "supports_fact_ids": [
+        "f_slips_28"
+      ],
+      "reliability": "strong",
+      "limits_ar": "سجل لعدد القسائم التي استُعملت، وقيمته مرهونة بالتزام الطلاب بكتابة قسيمة عند كل عملية.",
+      "location_id": "loc_stall",
+      "contradicts_claim_ids": [
+        "cl_total_30"
+      ]
+    },
+    {
+      "id": "ev_rashed",
+      "title_ar": "إفادة رشاد",
+      "kind": "testimonial",
+      "content_ar": "إفادة رشاد، طالب في الصف السابع، كما دوّنها الأستاذ فادي\n«رأيت الصندوق مفتوحاً وقت الاستراحة، ورأيت سلمى تخرج منه مجموعة من القطع النقدية وتعطيها لشخص ما.»",
+      "acquired_by_action_ids": [
+        "a_read_rashed"
+      ],
+      "supports_fact_ids": [
+        "f_rashed_saw"
+      ],
+      "reliability": "weak",
+      "limits_ar": "يصف ما رآه من بعيد دون أن يعرف سبب إخراج القطع؛ والمشاهدة لا تقول شيئاً عن مصدر القطع أو وجهتها.",
+      "location_id": "loc_stall",
+      "is_red_herring": true
+    }
+  ],
+  "evidence_graph": {
+    "inferences": [
+      {
+        "id": "i_sum",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_note"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_periods_sum_28"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "اجمع الكتب الصغيرة الواردة في الفترات الثلاث؛ المجموع أقل من الرقم الذي كتبته سلمى في الخاتمة، فالتقرير يخالف أرقامه نفسها.",
+        "skill_ko_refs": [
+          "KO-RS-06-017"
+        ]
+      },
+      {
+        "id": "i_real_parts",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_periods_sum_28"
+          },
+          {
+            "ref_type": "general_knowledge",
+            "ref_id": "gk_parts_total"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_real_28"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "أرقام الفترات كُتبت واحدة بعد أخرى وفيها التفصيل، أما الخاتمة فعملية جمع واحدة؛ والأرجح أن السهو في الجمع لا في الفترات.",
+        "skill_ko_refs": [
+          "KO-RS-06-017",
+          "KO-RS-06-001"
+        ]
+      },
+      {
+        "id": "i_slips",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_slips"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_slips_28"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "قسائم الدفتر متسلسلة بلا فجوات، وآخر قسيمة مستعملة رقمها أقل من الرقم المكتوب في الخاتمة.",
+        "skill_ko_refs": [
+          "KO-RS-05-004"
+        ]
+      },
+      {
+        "id": "i_real_slips",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_slips_28"
+          },
+          {
+            "ref_type": "general_knowledge",
+            "ref_id": "gk_one_slip_per_sale"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_real_28"
+        },
+        "relation": "establishes",
+        "strength": "conclusive",
+        "rule_ar": "لكل كتاب مبيع قسيمة واحدة، فعدد القسائم المستعملة هو عدد المبيع، وهذا سجل لا يعتمد على جمع سلمى.",
+        "skill_ko_refs": [
+          "KO-RS-05-004",
+          "KO-RS-05-014"
+        ]
+      },
+      {
+        "id": "i_swap",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_note"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_swap_20"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "التقرير نفسه يذكر أن سلمى أخذت من الصندوق عشرين ديناراً وأعطت رشاد إياها، ووضعت ورقته مكانها.",
+        "skill_ko_refs": [
+          "KO-RS-05-014"
+        ]
+      },
+      {
+        "id": "i_cash",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_real_28"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_count"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_price"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_cash_matches"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "احسب ثمن المبيع الفعلي بالأسعار المعلنة وأضف فكّة الصباح: الناتج يساوي ما عدّه الأستاذ فادي، فالصندوق متطابق مع المبيع.",
+        "skill_ko_refs": [
+          "KO-RS-06-001",
+          "KO-RS-05-014"
+        ]
+      },
+      {
+        "id": "i_rule_taken",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_cash_matches"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_swap_20"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_taken"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "لا يوجد مال ناقص حتى يؤخذ؛ وخروج القطع من الصندوق وقت الاستراحة يقابله دخول ورقة بالقيمة نفسها.",
+        "skill_ko_refs": [
+          "KO-RS-05-003"
+        ]
+      },
+      {
+        "id": "i_rule_change",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_swap_20"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_cash_matches"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_change"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "تبديل ورقة بقطع بالقيمة نفسها لا يغيّر مجموع النقود، فلا يمكن أن يفسّر فرقاً قدره أربعة دنانير.",
+        "skill_ko_refs": [
+          "KO-RS-05-003"
+        ]
+      },
+      {
+        "id": "i_rule_lied",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_cash_matches"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_periods_sum_28"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_lied"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "لو أرادت سلمى إخفاء نقص لما كتبت بيدها أرقام الفترات التي تكشف الخطأ؛ والصندوق سليم أصلاً، فلا شيء يستدعي الإخفاء.",
+        "skill_ko_refs": [
+          "KO-RS-05-007",
+          "KO-RS-06-008"
+        ]
+      },
+      {
+        "id": "i_est_error",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_real_28"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_cash_matches"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_error"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "خطأ الجمع في الخاتمة يفسّر الفرق كله، وهو أبسط تفسير تسنده سجلات لا تعتمد على الذاكرة.",
+        "skill_ko_refs": [
+          "KO-RS-06-007",
+          "KO-RS-06-017"
+        ]
+      }
+    ]
+  },
+  "character_knowledge": [
+    {
+      "character_id": "salma",
+      "knows": [
+        {
+          "fact_id": "f_note_written",
+          "access": "witnessed"
+        },
+        {
+          "fact_id": "f_stated_total_30",
+          "access": "witnessed"
+        },
+        {
+          "fact_id": "f_swap_20",
+          "access": "witnessed"
+        },
+        {
+          "fact_id": "f_prices",
+          "access": "common_knowledge"
+        }
+      ],
+      "hides": [],
+      "believes": [
+        {
+          "claim_id": "cl_total_30",
+          "stance": "sincere"
+        }
+      ]
+    },
+    {
+      "character_id": "fadi",
+      "knows": [
+        {
+          "fact_id": "f_box_short",
+          "access": "witnessed"
+        },
+        {
+          "fact_id": "f_slips_28",
+          "access": "professional"
+        },
+        {
+          "fact_id": "f_prices",
+          "access": "common_knowledge"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    },
+    {
+      "character_id": "rashed",
+      "knows": [
+        {
+          "fact_id": "f_rashed_saw",
+          "access": "witnessed"
+        },
+        {
+          "fact_id": "f_swap_20",
+          "access": "witnessed"
+        }
+      ],
+      "hides": [],
+      "believes": [
+        {
+          "claim_id": "cl_money_taken",
+          "stance": "sincere"
+        }
+      ]
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "h_taken",
+      "statement_ar": "أخذ شخص ما أربعة دنانير من الصندوق.",
+      "is_true": false,
+      "plausibility_at_start": "high"
+    },
+    {
+      "id": "h_lied",
+      "statement_ar": "كتبت سلمى رقماً غير صحيح عمداً لتخفي أنها أخذت المال.",
+      "is_true": false,
+      "plausibility_at_start": "medium",
+      "suspect_id": "salma"
+    },
+    {
+      "id": "h_error",
+      "statement_ar": "لا مال ناقص، والتقرير فيه خطأ واحد في الجمع وقع بحسن نية.",
+      "is_true": true,
+      "plausibility_at_start": "low"
+    },
+    {
+      "id": "h_change",
+      "statement_ar": "تبديل الفكّة لرشاد هو سبب الفرق.",
+      "is_true": false,
+      "plausibility_at_start": "medium"
+    }
+  ],
+  "misdirection_plan": [
+    {
+      "id": "rh_rashed",
+      "points_to_hypothesis_id": "h_taken",
+      "planted_via_ar": "إفادة رشاد عن قطع تخرج من الصندوق وقت الاستراحة.",
+      "evidence_ids": [
+        "ev_rashed"
+      ],
+      "refuted_by_inference_ids": [
+        "i_rule_taken",
+        "i_rule_change"
+      ],
+      "fairness_note_ar": "التقرير نفسه، وهو بين يدي اللاعب من البداية، يذكر التبديل وأنه وُضعت ورقة بالقيمة نفسها."
+    },
+    {
+      "id": "rh_short",
+      "points_to_hypothesis_id": "h_lied",
+      "planted_via_ar": "وجود فرق في الصندوق وتقرير يخالف أرقامه.",
+      "evidence_ids": [
+        "ev_count",
+        "ev_note"
+      ],
+      "refuted_by_inference_ids": [
+        "i_rule_lied"
+      ],
+      "fairness_note_ar": "أرقام الفترات مكتوبة في التقرير نفسه، والصندوق يطابق المبيع الفعلي، فلا دافع للإخفاء."
+    }
+  ],
+  "learning_objectives": [
+    {
+      "id": "lo_main",
+      "statement_ar": "يفحص اتساق نص واحد مع أرقامه نفسها ويحدد تناقضه الوحيد قبل أن يبحث عن متهم.",
+      "skill_ko_ref": "KO-RS-06-017",
+      "observable_behaviors_ar": [
+        "يجمع الأرقام بنفسه",
+        "يقارن الخاتمة بالتفصيل",
+        "يكتب كيف عرف"
+      ],
+      "evidence_sources": [
+        "evidence_board",
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_source",
+      "statement_ar": "يصنّف التقرير والإفادة أقوالاً، ويصنّف القسائم وورقة العدّ سجلات.",
+      "skill_ko_ref": "KO-RS-05-001",
+      "observable_behaviors_ar": [
+        "يميز القول من السجل"
+      ],
+      "evidence_sources": [
+        "evidence_board"
+      ]
+    },
+    {
+      "id": "lo_indep",
+      "statement_ar": "يجد مساراً ثانياً لا يعتمد على النص نفسه.",
+      "skill_ko_ref": "KO-RS-05-004",
+      "observable_behaviors_ar": [
+        "يستعمل دفتر القسائم مساراً مستقلاً"
+      ],
+      "evidence_sources": [
+        "evidence_board",
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_hyp",
+      "statement_ar": "يوازن بين تفسيرات متنافسة ويستبعد ما تنقضه السجلات.",
+      "skill_ko_ref": "KO-RS-05-002",
+      "observable_behaviors_ar": [
+        "يستبعد الأخذ والتزوير بدليل"
+      ],
+      "evidence_sources": [
+        "hypothesis_ledger"
+      ]
+    },
+    {
+      "id": "lo_diag",
+      "statement_ar": "يقدّر ما يثبته كل دليل ويربطه بالفرضية باتجاه صحيح.",
+      "skill_ko_ref": "KO-RS-06-001",
+      "observable_behaviors_ar": [
+        "يربط الدليل بالفرضية"
+      ],
+      "evidence_sources": [
+        "evidence_board"
+      ]
+    },
+    {
+      "id": "lo_calib",
+      "statement_ar": "يصوغ نسبة الترجيح بحدودها.",
+      "skill_ko_ref": "KO-RS-06-021",
+      "observable_behaviors_ar": [
+        "يختار ثقة معقولة",
+        "يذكر حدوداً"
+      ],
+      "evidence_sources": [
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_revise",
+      "statement_ar": "يراجع رأيه الأول حين يظهر ما يخالفه.",
+      "skill_ko_ref": "KO-RS-06-009",
+      "observable_behaviors_ar": [
+        "يغيّر فرضيته الرائدة بدليل"
+      ],
+      "evidence_sources": [
+        "hypothesis_ledger"
+      ]
+    }
+  ],
+  "mechanics": {
+    "time_budget_units": 20,
+    "actions": [
+      {
+        "id": "a_read_note",
+        "type": "examine",
+        "label_ar": "اقرأ تقرير سلمى بتمهّل",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_note"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "READ_NOTE",
+        "target_id": "loc_stall"
+      },
+      {
+        "id": "a_read_count",
+        "type": "examine",
+        "label_ar": "اطلع على ورقة عدّ الصندوق",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_count"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "READ_COUNT",
+        "target_id": "loc_office"
+      },
+      {
+        "id": "a_read_price",
+        "type": "examine",
+        "label_ar": "اطلع على ملصق الأسعار ودفتر الفكّة",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_price"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "READ_PRICE",
+        "target_id": "loc_stall"
+      },
+      {
+        "id": "a_read_slips",
+        "type": "examine",
+        "label_ar": "افحص دفاتر القسائم",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_slips"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "READ_SLIPS",
+        "target_id": "loc_stall"
+      },
+      {
+        "id": "a_read_rashed",
+        "type": "examine",
+        "label_ar": "اقرأ إفادة رشاد",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_rashed"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "READ_RASHED",
+        "target_id": "loc_stall"
+      },
+      {
+        "id": "a_hint",
+        "type": "request_hint",
+        "label_ar": "اطلب تلميحاً",
+        "precondition": {
+          "always": true
+        },
+        "effects": [],
+        "time_cost_units": 0,
+        "telemetry_code": "REQUEST_HINT"
+      },
+      {
+        "id": "a_accuse",
+        "type": "final_accusation",
+        "label_ar": "قدّم جوابك وجملة «كيف عرفت؟»",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "SUBMIT"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "FINAL_ACCUSATION"
+      }
+    ]
+  },
+  "state_machine": {
+    "id": "c035",
+    "initial": "briefing",
+    "type": "compound",
+    "states": {
+      "briefing": {
+        "description_ar": "الإحاطة",
+        "type": "atomic",
+        "on": {
+          "START": {
+            "target": "investigating"
+          }
+        }
+      },
+      "investigating": {
+        "description_ar": "التحقيق",
+        "type": "compound",
+        "initial": "gathering",
+        "states": {
+          "gathering": {
+            "type": "atomic",
+            "on": {
+              "OPEN_DEDUCTION": {
+                "target": "deducing"
+              }
+            }
+          },
+          "deducing": {
+            "type": "atomic",
+            "on": {
+              "BACK": {
+                "target": "gathering"
+              }
+            }
+          }
+        },
+        "on": {
+          "SUBMIT": {
+            "target": "review"
+          }
+        }
+      },
+      "review": {
+        "description_ar": "مراجعة",
+        "type": "atomic",
+        "on": {
+          "CLOSE": {
+            "target": "resolved"
+          }
+        }
+      },
+      "resolved": {
+        "description_ar": "إغلاق",
+        "type": "final"
+      }
+    }
+  },
+  "rubric": {
+    "reference_answer_ar": "لا مال ناقص ولم يأخذ أحد شيئاً. التناقض الوحيد في التقرير أن مجموع الكتب الصغيرة في فتراته الثلاث أقل من الرقم المكتوب في خاتمته، وسجل القسائم يثبت الرقم الأقل وهو مسار لا يعتمد على جمع سلمى. وعند احتساب الأسعار وفكّة الصباح يطابق المبيع الفعلي ما عدّه الأستاذ. تبديل الفكّة لرشاد لا يغيّر المجموع، وسلمى ارتكبت سهواً في الجمع لا تزويراً. حدود الاستنتاج: لا نعرف كيف وقع السهو بالضبط، ونعتمد على أن كل بيع سُجّل بقسيمة.",
+    "criteria": [
+      {
+        "id": "c_source",
+        "name_ar": "تصنيف المصادر",
+        "objective_ids": [
+          "lo_source"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يصنّف"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "أخطأ في الأغلب"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "نصف صحيح"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمه صحيح"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كله صحيح"
+          }
+        ]
+      },
+      {
+        "id": "c_links",
+        "name_ar": "ربط الأدلة بالفرضيات",
+        "objective_ids": [
+          "lo_diag",
+          "lo_indep"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.25,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لا روابط"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "قليلة"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "نصفها صحيح"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمها"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كلها دقيقة"
+          }
+        ]
+      },
+      {
+        "id": "c_uncertainty",
+        "name_ar": "معايرة الثقة",
+        "objective_ids": [
+          "lo_calib"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.2,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "ثقة مفرطة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "حدود قليلة"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "جزئية"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معقولة"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "معايَرة كاملة"
+          }
+        ]
+      },
+      {
+        "id": "c_revision",
+        "name_ar": "مراجعة الرأي",
+        "objective_ids": [
+          "lo_revise"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "بقي على فرضية مرفوضة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "لم يعلن فرضية"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "ثبت على فرضية سليمة"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "غيّر بدليل"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "غيّر بدليل ووثّق"
+          }
+        ]
+      },
+      {
+        "id": "c_elimination",
+        "name_ar": "استبعاد الفرضيات الخاطئة",
+        "objective_ids": [
+          "lo_hyp"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يستبعد"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "استبعد خطأً"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "فرضية بدليل"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "فرضيتين"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كل الخاطئة"
+          }
+        ]
+      },
+      {
+        "id": "c_justification",
+        "name_ar": "جملة «كيف عرفت؟» وجودة الحجة",
+        "objective_ids": [
+          "lo_main"
+        ],
+        "scored_by": "human",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لا حجة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "ادعاء بلا سند"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "أرقام دون ربط"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "ربط الأرقام بالتناقض"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "ربط مع البدائل والحدود"
+          }
+        ]
+      }
+    ]
+  },
+  "hint_ladder": [
+    {
+      "id": "hg1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "قبل أن تبحث عن فاعل: هل كل رقم في التقرير يوافق بقية أرقامه؟",
+      "trigger": {
+        "always": true
+      },
+      "assessment_weight": 0.02
+    },
+    {
+      "id": "hg2",
+      "level": 2,
+      "kind": "focus_area",
+      "text_ar": "انتبه إلى الأرقام لا إلى النبرة، واكتب ما بيع في كل فترة ثم قارنه بما كُتب في الخاتمة.",
+      "trigger": {
+        "has_evidence": "ev_note"
+      },
+      "assessment_weight": 0.04
+    },
+    {
+      "id": "hg3",
+      "level": 3,
+      "kind": "pointer",
+      "text_ar": "ابحث عن سجلين لا تملكهما الأمينة بيدها: دفتر القسائم وورقة عدّ الصندوق.",
+      "trigger": {
+        "has_evidence": "ev_note"
+      },
+      "assessment_weight": 0.08
+    },
+    {
+      "id": "hs1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "ما مجموع الكتب الصغيرة إذا جمعتها أنت لا سلمى؟",
+      "trigger": {
+        "has_evidence": "ev_note"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_sum"
+    },
+    {
+      "id": "hs2",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "قارن ناتج جمعك بالرقم المكتوب في آخر التقرير.",
+      "trigger": {
+        "has_evidence": "ev_note"
+      },
+      "assessment_weight": 0.06,
+      "targets_inference_id": "i_sum"
+    },
+    {
+      "id": "hd1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "هل يوجد سجل آخر يحصي المبيعات بطريقة غير الجمع باليد؟",
+      "trigger": {
+        "has_evidence": "ev_note"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_slips"
+    },
+    {
+      "id": "hd2",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "انظر إلى رقم آخر قسيمة صغيرة استُعملت وإلى القاعدة المكتوبة على الغلاف.",
+      "trigger": {
+        "has_evidence": "ev_slips"
+      },
+      "assessment_weight": 0.06,
+      "targets_inference_id": "i_slips"
+    },
+    {
+      "id": "hc1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "إذا صحّ عدد المبيع كما في السجل، فكم يجب أن يكون في الصندوق؟",
+      "trigger": {
+        "has_evidence": "ev_note"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_cash"
+    },
+    {
+      "id": "hc2",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "احسب بالأسعار ثمن الكتب ثم أضف الفكّة، وقارن بالرقم الذي دوّنه الأستاذ.",
+      "trigger": {
+        "has_evidence": "ev_count"
+      },
+      "assessment_weight": 0.06,
+      "targets_inference_id": "i_cash"
+    }
+  ],
+  "fairness_test": {
+    "requirements": {
+      "min_disjoint_proof_paths": 2,
+      "max_inference_depth": 3,
+      "all_red_herrings_refutable": true,
+      "culprit_uniquely_entailed": true,
+      "no_hidden_fact_dependency": true,
+      "max_required_actions": 7
+    },
+    "runs": []
+  },
+  "ending_explanation": {
+    "steps": [
+      {
+        "order": 1,
+        "text_ar": "اجمع تسعة وأحد عشر وثمانية: الناتج ثمانية وعشرون، بينما خاتمة التقرير تقول ثلاثين. هذا هو التناقض الوحيد: التقرير يخالف تفصيله.",
+        "uses_evidence_ids": [
+          "ev_note"
+        ],
+        "inference_id": "i_sum"
+      },
+      {
+        "order": 2,
+        "text_ar": "في مسار ثانٍ لا يمر بجمع سلمى: دفتر القسائم متسلسل وينتهي عند الرقم 28، ولكل كتاب مبيع قسيمة واحدة، فالمبيع هو الثمانية والعشرون.",
+        "uses_evidence_ids": [
+          "ev_slips"
+        ],
+        "inference_id": "i_real_slips"
+      },
+      {
+        "order": 3,
+        "text_ar": "اختبر النتيجة بالمال: 28 × 2 = 56 و12 × 5 = 60، ويضاف إليها عشرون من الصباح، فالمجموع 136، وهو الذي عدّه الأستاذ فادي. لا مال ناقص.",
+        "uses_evidence_ids": [
+          "ev_count",
+          "ev_price"
+        ],
+        "inference_id": "i_cash"
+      },
+      {
+        "order": 4,
+        "text_ar": "ما رآه رشاد كان تبديلاً: خرجت قطع بعشرين وبقيت في الصندوق ورقة بالقيمة نفسها، فلم يتغير المجموع.",
+        "uses_evidence_ids": [
+          "ev_note",
+          "ev_rashed"
+        ],
+        "inference_id": "i_rule_taken"
+      },
+      {
+        "order": 5,
+        "text_ar": "لو قصدت سلمى الإخفاء لما كتبت بيدها أرقام الفترات التي تفضحها؛ الخطأ سهو في الجمع وليس كذباً.",
+        "uses_evidence_ids": [
+          "ev_note",
+          "ev_count"
+        ],
+        "inference_id": "i_rule_lied"
+      },
+      {
+        "order": 6,
+        "text_ar": "الخلاصة: لا أحد أخذ شيئاً، وسلمى أخطأت في الجمع النهائي فحسب.",
+        "uses_evidence_ids": [
+          "ev_slips",
+          "ev_count"
+        ],
+        "inference_id": "i_est_error"
+      }
+    ],
+    "alternative_paths_ar": [
+      "يكفي مسار التقرير وحده لكشف التناقض، ويكفي دفتر القسائم وحده لتحديد الرقم الصحيح؛ والأقوى أن يتفقا ثم يختبرا بالصندوق."
+    ],
+    "what_evidence_could_not_show_ar": [
+      "لا نعرف كيف وقع سهو الجمع بالضبط، هل في العدّ أم في الكتابة.",
+      "نعتمد على أن كل بيع سُجّل بقسيمة؛ ولو نُسيت قسائم لتغيّر الحساب.",
+      "لا نعرف لمن أعطى الطالب القطع التي اشتراها بها، ولا حاجة لذلك في الحل."
+    ],
+    "science_notes_ar": [
+      "أبسط فحص لنص طويل هو أن تجمع أرقامه بنفسك وتقارنها بما كُتب في خاتمته.",
+      "حين يخالف التقرير أرقامه نفسه فهذا يخبرنا أن فيه خطأً، ولا يخبرنا أن كاتبه كاذب؛ والحسم يأتي من سجل آخر مستقل.",
+      "الفرق في الصندوق أول ما يوحي بالأخذ، لكن اختبار الحساب بالأسعار والسجلات يكشف أحياناً أنه لا فرق حقيقياً.",
+      "لا يُحكم على أحد بنبرته أو بسرعة كلامه؛ المعوّل عليه الأرقام والسجلات."
+    ]
+  },
+  "expert_review": [
+    {
+      "role": "narrative_editor",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-11-04",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "scientific_reviewer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-11-04",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "learning_designer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-11-04",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "age_appropriateness",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-11-04",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "cultural_reviewer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-11-04",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "legal_rights",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-11-04",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "safety",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-11-04",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    }
+  ]
+}

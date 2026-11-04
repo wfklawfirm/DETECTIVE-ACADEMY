@@ -1,0 +1,140 @@
+{
+  "case_id": "c030_three_honest_witnesses",
+  "accepted_conclusions": {
+    "h_long": {
+      "grade": 0,
+      "note_ar": "تعتمد على تقدير بلا قياس، والسجلات المستقلة تقيس المدة بأربعين ثانية."
+    },
+    "h_one_cut": {
+      "grade": 1,
+      "note_ar": "استنتاج متسق مع السجلات ويتطلب ذكر حدوده."
+    },
+    "h_twice": {
+      "grade": 0,
+      "note_ar": "تخلط بين حالات الضوء وفقدان التيار؛ والسجلات تعدّ فقدان تيار واحداً."
+    },
+    "h_before": {
+      "grade": 0,
+      "note_ar": "تتجاوز ما تسمح به الأدلة؛ الكلمة بدأت قبل الانقطاع."
+    }
+  },
+  "confidence_band": {
+    "h_long": [
+      0,
+      15
+    ],
+    "h_one_cut": [
+      65,
+      90
+    ],
+    "h_twice": [
+      0,
+      15
+    ],
+    "h_before": [
+      0,
+      15
+    ]
+  },
+  "source_key": {
+    "ev_programme": "public_document",
+    "ev_seating_plan": "public_document",
+    "ev_sound_log": "primary_record",
+    "ev_supply_recorder": "primary_record",
+    "ev_hall_video": "primary_record",
+    "ev_lamp_log": "primary_record",
+    "ev_hospitality": "primary_record",
+    "ev_setup_note": "primary_record",
+    "ev_dana_stmt": "claim",
+    "ev_fadi_stmt": "claim",
+    "ev_samar_stmt": "claim"
+  },
+  "link_key": {
+    "h_one_cut": {
+      "ev_sound_log": "supports",
+      "ev_supply_recorder": "supports",
+      "ev_hall_video": "supports",
+      "ev_lamp_log": "supports",
+      "ev_hospitality": "supports",
+      "ev_seating_plan": "neutral",
+      "ev_programme": "neutral",
+      "ev_setup_note": "neutral"
+    },
+    "h_long": {
+      "ev_dana_stmt": "supports",
+      "ev_sound_log": "weakens",
+      "ev_hall_video": "weakens",
+      "ev_supply_recorder": "weakens",
+      "ev_seating_plan": "neutral"
+    },
+    "h_twice": {
+      "ev_fadi_stmt": "supports",
+      "ev_lamp_log": "weakens",
+      "ev_supply_recorder": "weakens",
+      "ev_sound_log": "weakens"
+    },
+    "h_before": {
+      "ev_samar_stmt": "supports",
+      "ev_hospitality": "weakens",
+      "ev_sound_log": "weakens",
+      "ev_hall_video": "weakens",
+      "ev_programme": "neutral"
+    }
+  },
+  "required_limits": [
+    "l_clocks",
+    "l_not_lies"
+  ],
+  "valid_mind_changers": [
+    "m_second_log",
+    "m_clock_bad"
+  ],
+  "invalid_limits": [
+    "l_invalid_confident",
+    "l_invalid_expert",
+    "l_invalid_average"
+  ],
+  "decisive_evidence": [
+    "ev_sound_log",
+    "ev_supply_recorder",
+    "ev_hall_video",
+    "ev_lamp_log",
+    "ev_hospitality"
+  ],
+  "lab_requirement": null,
+  "timeline_requirement": [
+    {
+      "evidence_id": "ev_programme",
+      "utc_minute": 10,
+      "tol": 3
+    },
+    {
+      "evidence_id": "ev_sound_log",
+      "utc_minute": 12,
+      "tol": 2
+    },
+    {
+      "evidence_id": "ev_hospitality",
+      "utc_minute": 12,
+      "tol": 2
+    }
+  ],
+  "refuted_hypotheses": [
+    "h_long",
+    "h_twice",
+    "h_before"
+  ],
+  "criteria_map": {
+    "c_source": "source_typing",
+    "c_conflict": "conflict_resolution",
+    "c_links": "hypothesis_links",
+    "c_uncertainty": "uncertainty",
+    "c_revision": "revision",
+    "c_elimination": "elimination",
+    "c_justification": "justification_human"
+  },
+  "caps": {
+    "no_citations_max": 45,
+    "no_conflict_resolution_max": 70
+  }
+}

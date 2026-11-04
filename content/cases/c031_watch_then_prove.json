@@ -1,0 +1,2336 @@
+{
+  "schema_version": "0.1.0",
+  "case_id": "c031_watch_then_prove",
+  "case_version": "0.1.0",
+  "meta": {
+    "title_ar": "شاهِد ثم أثبت: مصباح الحجرة 3",
+    "title_en": "Watch, Then Prove: The Lamp in Case 3",
+    "age_band": "16-18",
+    "locale": "ar",
+    "dialogue_register": "msa",
+    "estimated_minutes": 35,
+    "difficulty": 3,
+    "content_flags": [
+      "no_violence"
+    ],
+    "authors": [
+      "فريق أثر التحريري (مسودة بمساعدة الذكاء الاصطناعي، لم تُراجَع بشرياً بعد)"
+    ],
+    "knowledge_object_refs": [
+      "KO-FC-04-026",
+      "KO-RS-05-001",
+      "KO-RS-05-005",
+      "KO-RS-05-004",
+      "KO-RS-05-002",
+      "KO-RS-06-009",
+      "KO-RS-06-021",
+      "KO-NP-02-009",
+      "KO-NP-03-001"
+    ]
+  },
+  "premise": {
+    "hook_ar": "في مقطع قصير ترى مرشداً في المتحف يفتح حجرة العرض ويحمل مصباحاً فخارياً ويخرج به من باب العاملين. وفي المساء وُجد المصباح على مكتب الاستقبال، وبدأت الإشاعات. المطلوب جملة واحدة يدافع عنها المتحف: أين كان المصباح، وكيف نعرف؟",
+    "player_role_ar": "أنت مساعد مسجِّل المقتنيات في المتحف، وعليك أن تكتب ملف الواقعة من الأوراق وحدها قبل اجتماع الإدارة صباحاً. لا تفتّش ولا تتهم، بل توثّق.",
+    "setting_ar": "متحف الحرف الساحلية في مدينة متخيَّلة على الساحل، يوم الثلاثاء قبيل الإغلاق. للمتحف مخرجان فقط تخرج منهما الأغراض: البوابة الرئيسية وباب المرفأ الخلفي. وتوقيت المتحف هو توقيت كل الأوراق.",
+    "public_fact_ids": [
+      "f_clip_act",
+      "f_empty_case"
+    ],
+    "assumed_general_knowledge_ar": [
+      "لا يُقبل قيد بأثر رجعي ولا بالذاكرة بديلاً عن سجل لحظة الحدث",
+      "الصورة الملتقطة قبل لمس الشيء تثبت موضعه الأصلي، وبعد اللمس تثبت موضعه الجديد",
+      "للمتحف مخرجان فقط للأغراض: البوابة الرئيسية وباب المرفأ الخلفي",
+      "ساعات أنظمة المتحف متقاربة"
+    ]
+  },
+  "entities": {
+    "characters": [
+      {
+        "id": "hadi",
+        "name_ar": "هادي النجار",
+        "aliases_ar": [
+          "هادي"
+        ],
+        "role": "suspect",
+        "age_descriptor_ar": "مرشد متطوع في المتحف",
+        "persona_ar": "ودود وسريع الحركة، يحب أن يحمي المعروضات، ويضيق صدره إذا قيل إنه خالف النظام.",
+        "motives_ar": [
+          "ألا يُظن أنه أخذ المصباح",
+          "ألا يُحاسَب على نسيان التدوين"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "hd_greet",
+            "purpose": "greeting",
+            "text_ar": "أهلاً. أعرف أن المقطع يبدو سيئاً، لكن اسمعني أولاً."
+          },
+          {
+            "line_id": "hd_tray",
+            "purpose": "reveal",
+            "text_ar": "رأيت شقاً رفيعاً في مقبض المصباح أثناء الجولة، فخفت أن يصطدم به أحد. لففته بقماش ووضعته على الصينية 2 في غرفة الترميم قرابة الساعة 17:14. ظننت أن الأمينة تريد ذلك، فقد نبّهتني إلى مقبضه.",
+            "fact_ids": [
+              "f_lamp_in_tray",
+              "f_crack_seen"
+            ],
+            "claim_ids": [
+              "cl_hadi_ordered"
+            ]
+          },
+          {
+            "line_id": "hd_refuse",
+            "purpose": "refuse_secret",
+            "text_ar": "كتبت ما يلزم على بطاقة الصينية."
+          },
+          {
+            "line_id": "hd_own",
+            "purpose": "reveal",
+            "text_ar": "صحيح... لم يكن عندي أمر نقل ولا رقم. رأيت الشق فتصرفت بسرعة، ونويت التدوين بعد الجولة ثم نسيت.",
+            "fact_ids": [
+              "f_own_initiative"
+            ]
+          },
+          {
+            "line_id": "hd_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف ما جرى بعد أن غادرت الغرفة."
+          },
+          {
+            "line_id": "hd_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن المصباح وعن الجولة."
+          },
+          {
+            "line_id": "hd_bye",
+            "purpose": "farewell",
+            "text_ar": "أتمنى أن تُكتب الواقعة كما حدثت."
+          }
+        ]
+      },
+      {
+        "id": "salma",
+        "name_ar": "سلمى الحايك",
+        "aliases_ar": [
+          "سلمى",
+          "الأمينة"
+        ],
+        "role": "expert",
+        "age_descriptor_ar": "أمينة الترميم في المتحف",
+        "persona_ar": "دقيقة وهادئة، تحب الأوراق المرقمة، ولا تحكم قبل أن ترى السجل.",
+        "motives_ar": [
+          "أن يبقى المقتنى سالماً",
+          "أن يُكتب تقرير يمكن الدفاع عنه"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "sl_greet",
+            "purpose": "greeting",
+            "text_ar": "تفضّل. أريد تقريراً لا يقول إلا ما تسنده الأوراق."
+          },
+          {
+            "line_id": "sl_found",
+            "purpose": "reveal",
+            "text_ar": "عند الإغلاق الساعة 17:40 كانت الحجرة 3 فارغة. وبعد قليل دخلت غرفة الترميم ووجدت المصباح على الصينية 2، فصوّرته في موضعه قبل أن ألمسه.",
+            "fact_ids": [
+              "f_empty_case",
+              "f_found_in_place"
+            ]
+          },
+          {
+            "line_id": "sl_refuse",
+            "purpose": "refuse_secret",
+            "text_ar": "النموذج المكتوب أدق من ذاكرتي."
+          },
+          {
+            "line_id": "sl_order",
+            "purpose": "reveal",
+            "text_ar": "لم أصدر أمر نقل لهذا المصباح ولم أطلب من هادي نقله. قلت له الأسبوع الماضي إن مقبضه يحتاج فحصاً قريباً فقط. أوامر النقل عندنا برقم في الدفتر.",
+            "fact_ids": [
+              "f_no_order"
+            ]
+          },
+          {
+            "line_id": "sl_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف أكثر مما في الأوراق."
+          },
+          {
+            "line_id": "sl_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن المقتنى وعن عهدته."
+          },
+          {
+            "line_id": "sl_bye",
+            "purpose": "farewell",
+            "text_ar": "وثّق كل خطوة قبل أن تستنتج."
+          }
+        ]
+      },
+      {
+        "id": "dalia",
+        "name_ar": "دالية المصري",
+        "aliases_ar": [
+          "دالية"
+        ],
+        "role": "witness",
+        "age_descriptor_ar": "حارسة البوابة والاستقبال",
+        "persona_ar": "صريحة ومباشرة، تدوّن كل ما تفعله بخط واضح، وتقلق إن فُهم أنها عبثت بشيء.",
+        "motives_ar": [
+          "ألا يُنسب إليها نقل بلا إذن",
+          "أن يُفهم دفتر البوابة كما كُتب"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "dl_greet",
+            "purpose": "greeting",
+            "text_ar": "أهلاً. كل ما فعلته مدوّن في الدفتر وفي النموذج."
+          },
+          {
+            "line_id": "dl_moved",
+            "purpose": "reveal",
+            "text_ar": "الساعة 18:00 طلبت مني الأمينة أن أحمل المصباح بقفازين إلى مكتبي ليراه المدير في مكالمة مرئية. صوّرته 18:05 ثم أعدته إليها.",
+            "fact_ids": [
+              "f_guard_moved"
+            ]
+          },
+          {
+            "line_id": "dl_refuse",
+            "purpose": "refuse_secret",
+            "text_ar": "اقرأ النموذج أولاً."
+          },
+          {
+            "line_id": "dl_gate",
+            "purpose": "reveal",
+            "text_ar": "أنا على البوابة منذ الرابعة. دفتر البوابة بخطي: لم يخرج أي عامل قبل 18:40.",
+            "fact_ids": [
+              "f_gate_clear"
+            ]
+          },
+          {
+            "line_id": "dl_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لم أكن في الممر الخلفي قبل السادسة."
+          },
+          {
+            "line_id": "dl_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن البوابة وعن المصباح."
+          },
+          {
+            "line_id": "dl_bye",
+            "purpose": "farewell",
+            "text_ar": "الدفتر عندك، راجعه."
+          }
+        ]
+      }
+    ],
+    "locations": [
+      {
+        "id": "loc_hall",
+        "name_ar": "قاعة الحرف",
+        "description_ar": "القاعة التي فيها الحجرة 3 وكاميرا القاعة والباب الشرقي للعاملين."
+      },
+      {
+        "id": "loc_conservation",
+        "name_ar": "غرفة الترميم",
+        "description_ar": "غرفة خلف الممر الخلفي فيها الصينيات وطاولة العمل."
+      },
+      {
+        "id": "loc_lobby",
+        "name_ar": "الاستقبال والبوابة",
+        "description_ar": "مكتب الاستقبال والبوابة الرئيسية ودفترها."
+      },
+      {
+        "id": "loc_dock",
+        "name_ar": "باب المرفأ الخلفي",
+        "description_ar": "الباب الثاني الذي تخرج منه الأغراض، وله مستشعر منفصل."
+      },
+      {
+        "id": "loc_records",
+        "name_ar": "ملفات الإدارة",
+        "description_ar": "سجل البطاقات ودفتر النقل ونماذج العهدة."
+      }
+    ],
+    "objects": [
+      {
+        "id": "obj_lamp",
+        "name_ar": "المصباح الفخاري رقم 31",
+        "description_ar": "مصباح زيت فخاري صغير ذو مقبض، قاعدته محفورة برقم 31."
+      },
+      {
+        "id": "obj_dock",
+        "name_ar": "مستشعر باب المرفأ",
+        "description_ar": "جهاز يسجل فتح الباب وإغلاقه على نظام منفصل عن البطاقات."
+      }
+    ],
+    "organizations": [
+      {
+        "id": "org_museum",
+        "name_ar": "متحف الحرف الساحلية",
+        "description_ar": "متحف صغير في مدينة متخيَّلة على الساحل."
+      }
+    ]
+  },
+  "truth": {
+    "solution": {
+      "culprit_ids": [
+        "hadi"
+      ],
+      "summary_ar": "لم يُخرج المصباح من المتحف. نقله المرشد هادي النجار داخل المبنى إلى غرفة الترميم بمبادرته لحماية مقبضه المشقوق، ولم يستصدر أمر نقل ولم يدوّن النقل. تثبت ذلك سجلات المخارج من جهة، والصورة في الموضع وبطاقة الصينية ونموذج العهدة من جهة أخرى.",
+      "key_fact_ids": [
+        "f_stayed_inside",
+        "f_move_unlogged"
+      ]
+    },
+    "facts": [
+      {
+        "id": "f_clip_act",
+        "statement_ar": "يُظهر مقطع كاميرا القاعة المرشد هادي النجار يفتح الحجرة 3 بمفتاح المرشدين، ويحمل مصباحاً فخارياً ملفوفاً بقماش رمادي، ثم يخرج من الباب الشرقي للعاملين قرابة الساعة 17:10.",
+        "kind": "event",
+        "subject_ids": [
+          "hadi",
+          "obj_lamp"
+        ],
+        "spoiler_level": 0,
+        "time": {
+          "start_min": 70,
+          "precision": "exact"
+        },
+        "location_id": "loc_hall"
+      },
+      {
+        "id": "f_empty_case",
+        "statement_ar": "اكتُشف عند الإغلاق الساعة 17:40 أن الحجرة 3 فارغة، ولم يكن المتحف يعرف أين المصباح.",
+        "kind": "event",
+        "subject_ids": [
+          "salma",
+          "obj_lamp"
+        ],
+        "spoiler_level": 0,
+        "time": {
+          "start_min": 100,
+          "precision": "exact"
+        },
+        "location_id": "loc_hall",
+        "science_ko_refs": [
+          "KO-FC-04-026"
+        ]
+      },
+      {
+        "id": "f_crack_seen",
+        "statement_ar": "لاحظ هادي أثناء الجولة شقاً رفيعاً في مقبض المصباح، وخشي أن يصطدم به الزوار.",
+        "kind": "event",
+        "subject_ids": [
+          "hadi",
+          "obj_lamp"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 50,
+          "precision": "approx"
+        },
+        "location_id": "loc_hall"
+      },
+      {
+        "id": "f_own_initiative",
+        "statement_ar": "نقل هادي المصباح بمبادرته دون أمر نقل، ثم نسي أن يدوّن النقل.",
+        "kind": "event",
+        "subject_ids": [
+          "hadi",
+          "obj_lamp"
+        ],
+        "spoiler_level": 2,
+        "time": {
+          "start_min": 65,
+          "precision": "approx"
+        },
+        "location_id": "loc_hall"
+      },
+      {
+        "id": "f_badge_path",
+        "statement_ar": "سجل البطاقات: بطاقة هادي فتحت الباب الشرقي 17:10:58 ثم باب غرفة الترميم 17:12:30 ثم الباب الشرقي إلى القاعة 17:19:12، ولم تُسجَّل بطاقة غيره عليهما قبل 17:49.",
+        "kind": "state",
+        "subject_ids": [
+          "hadi"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 71,
+          "precision": "exact",
+          "end_min": 79
+        },
+        "location_id": "loc_records"
+      },
+      {
+        "id": "f_dock_closed",
+        "statement_ar": "مستشعر باب المرفأ الخلفي سجّل حالة «مغلق» بلا انقطاع بين 15:00 و19:30.",
+        "kind": "state",
+        "subject_ids": [
+          "obj_dock"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 0,
+          "precision": "exact",
+          "end_min": 210
+        },
+        "location_id": "loc_dock"
+      },
+      {
+        "id": "f_gate_clear",
+        "statement_ar": "لم يخرج أي عامل من البوابة الرئيسية بين 16:00 و18:40 بحسب دفتر البوابة.",
+        "kind": "absence",
+        "subject_ids": [
+          "dalia"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 0,
+          "precision": "exact",
+          "end_min": 160
+        },
+        "location_id": "loc_lobby"
+      },
+      {
+        "id": "f_lamp_in_tray",
+        "statement_ar": "وضع هادي المصباح على الصينية 2 في غرفة الترميم قرابة 17:14، وترك بطاقة بخطه.",
+        "kind": "event",
+        "subject_ids": [
+          "hadi",
+          "obj_lamp"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 74,
+          "precision": "approx"
+        },
+        "location_id": "loc_conservation",
+        "science_ko_refs": [
+          "KO-FC-04-026"
+        ]
+      },
+      {
+        "id": "f_found_in_place",
+        "statement_ar": "وجدت الأمينة المصباح على الصينية 2 الساعة 17:52 وصوّرته في موضعه 17:53 قبل أن يلمسه أحد.",
+        "kind": "event",
+        "subject_ids": [
+          "salma",
+          "obj_lamp"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 113,
+          "precision": "exact"
+        },
+        "location_id": "loc_conservation",
+        "science_ko_refs": [
+          "KO-FC-04-026"
+        ]
+      },
+      {
+        "id": "f_guard_moved",
+        "statement_ar": "حملت الحارسة المصباح بقفازين الساعة 18:00 إلى مكتب الاستقبال بطلب الأمينة، وصوّرته 18:05.",
+        "kind": "event",
+        "subject_ids": [
+          "dalia",
+          "obj_lamp"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 120,
+          "precision": "exact",
+          "end_min": 125
+        },
+        "location_id": "loc_lobby",
+        "science_ko_refs": [
+          "KO-FC-04-026"
+        ]
+      },
+      {
+        "id": "f_no_order",
+        "statement_ar": "لم تصدر الأمينة أمر نقل للمصباح، ولم تطلب من هادي نقله.",
+        "kind": "state",
+        "subject_ids": [
+          "salma"
+        ],
+        "spoiler_level": 1,
+        "location_id": "loc_records"
+      },
+      {
+        "id": "f_move_unlogged",
+        "statement_ar": "لا قيد في دفتر نقل المقتنيات ولا أمر نقل برقم للمصباح 31 ذلك اليوم، مع أن القاعدة تشترط ذلك لحظة النقل.",
+        "kind": "absence",
+        "subject_ids": [
+          "obj_lamp"
+        ],
+        "spoiler_level": 2,
+        "time": {
+          "start_min": 74,
+          "precision": "approx"
+        },
+        "location_id": "loc_records"
+      },
+      {
+        "id": "f_stayed_inside",
+        "statement_ar": "لم يغادر المصباح المتحف بين 17:10 و17:52؛ بقي داخل المبنى، وانتقل من القاعة إلى غرفة الترميم بيد هادي دون تدوين.",
+        "kind": "relation",
+        "subject_ids": [
+          "obj_lamp",
+          "hadi"
+        ],
+        "spoiler_level": 3,
+        "time": {
+          "start_min": 70,
+          "precision": "exact",
+          "end_min": 112
+        },
+        "location_id": "loc_conservation",
+        "science_ko_refs": [
+          "KO-FC-04-026"
+        ]
+      }
+    ],
+    "claims": [
+      {
+        "id": "cl_hadi_ordered",
+        "statement_ar": "الأمينة أرادت نقل المصباح، فنقلته بإذنها الضمني.",
+        "kind": "half_truth",
+        "held_by": [
+          "hadi"
+        ],
+        "true_fact_id": "f_own_initiative",
+        "contradicted_by_evidence_ids": [
+          "ev_salma_stmt",
+          "ev_transfer_log"
+        ]
+      }
+    ]
+  },
+  "timeline": [
+    {
+      "id": "te_crack",
+      "description_ar": "المرشد يلاحظ شقاً رفيعاً في مقبض المصباح أثناء الجولة.",
+      "time": {
+        "start_min": 50,
+        "precision": "approx"
+      },
+      "location_id": "loc_hall",
+      "actor_ids": [
+        "hadi"
+      ],
+      "fact_ids": [
+        "f_crack_seen",
+        "f_own_initiative"
+      ],
+      "motivated_by_ar": "خاف على المقتنى من الازدحام"
+    },
+    {
+      "id": "te_clip",
+      "description_ar": "المرشد يفتح الحجرة 3 ويحمل المصباح ملفوفاً ويخرج من الباب الشرقي.",
+      "time": {
+        "start_min": 70,
+        "precision": "exact"
+      },
+      "location_id": "loc_hall",
+      "actor_ids": [
+        "hadi"
+      ],
+      "fact_ids": [
+        "f_clip_act",
+        "f_badge_path"
+      ],
+      "motivated_by_ar": "أراد حماية المقبض المشقوق بسرعة",
+      "caused_by_event_ids": [
+        "te_crack"
+      ]
+    },
+    {
+      "id": "te_tray",
+      "description_ar": "المرشد يضع المصباح على الصينية 2 ويكتب بطاقة.",
+      "time": {
+        "start_min": 74,
+        "precision": "approx"
+      },
+      "location_id": "loc_conservation",
+      "actor_ids": [
+        "hadi"
+      ],
+      "fact_ids": [
+        "f_lamp_in_tray",
+        "f_move_unlogged"
+      ],
+      "motivated_by_ar": "أراد أن يكون المصباح في مكان آمن",
+      "caused_by_event_ids": [
+        "te_clip"
+      ]
+    },
+    {
+      "id": "te_empty",
+      "description_ar": "الأمينة تكتشف أن الحجرة 3 فارغة عند الإغلاق.",
+      "time": {
+        "start_min": 100,
+        "precision": "exact"
+      },
+      "location_id": "loc_hall",
+      "actor_ids": [
+        "salma"
+      ],
+      "fact_ids": [
+        "f_empty_case"
+      ],
+      "motivated_by_ar": "فحص الإغلاق الروتيني"
+    },
+    {
+      "id": "te_found",
+      "description_ar": "الأمينة تجد المصباح على الصينية 2 وتصوّره في موضعه.",
+      "time": {
+        "start_min": 113,
+        "precision": "exact"
+      },
+      "location_id": "loc_conservation",
+      "actor_ids": [
+        "salma"
+      ],
+      "fact_ids": [
+        "f_found_in_place"
+      ],
+      "motivated_by_ar": "بحثت أولاً في غرفة الترميم"
+    },
+    {
+      "id": "te_desk",
+      "description_ar": "الحارسة تحمل المصباح إلى مكتب الاستقبال وتصوره.",
+      "time": {
+        "start_min": 120,
+        "precision": "exact",
+        "end_min": 125
+      },
+      "location_id": "loc_lobby",
+      "actor_ids": [
+        "dalia"
+      ],
+      "fact_ids": [
+        "f_guard_moved"
+      ],
+      "motivated_by_ar": "طلبت الأمينة عرضه على المدير"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_clip_log",
+      "title_ar": "مقطع كاميرا القاعة",
+      "kind": "digital",
+      "content_ar": "مقطع كاميرا القاعة (نسخة محفوظة بختم الزمن)\nالمدة: 40 ثانية، من 17:10:20 إلى 17:11:00\n17:10:22 | المرشد هادي النجار يفتح الحجرة 3 بمفتاح المرشدين.\n17:10:31 | يرفع مصباحاً فخارياً صغيراً ويلفّه بقماش رمادي.\n17:10:55 | يمرّ من الباب الشرقي المكتوب عليه «للعاملين فقط» ويُغلق الباب خلفه.\nالكاميرا لا ترى ما وراء الباب.",
+      "acquired_by_action_ids": [
+        "a_view_clip"
+      ],
+      "supports_fact_ids": [
+        "f_clip_act"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يصف ما جرى داخل القاعة حتى الباب فقط؛ لا يقول إلى أين ذهب المصباح بعد الباب.",
+      "forensic_ko_ref": "KO-FC-04-026",
+      "location_id": "loc_hall"
+    },
+    {
+      "id": "ev_empty_report",
+      "title_ar": "محضر فحص الإغلاق",
+      "kind": "documentary",
+      "content_ar": "محضر فحص الإغلاق — 17:40\nالحجرة 3 فارغة. بطاقتها ما زالت في موضعها: «مصباح زيت فخاري، رقم 31».\nلم أعثر على قيد للمصباح في دفتر النقل عند هذا الفحص.\nالأمينة: س. الحايك",
+      "acquired_by_action_ids": [
+        "a_read_report"
+      ],
+      "supports_fact_ids": [
+        "f_empty_case"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "محضر كتبه صاحب الشأن في لحظة الفحص؛ يثبت خلو الحجرة لا مكان المصباح.",
+      "location_id": "loc_records"
+    },
+    {
+      "id": "ev_badge_log",
+      "title_ar": "سجل بطاقات الممر الخلفي",
+      "kind": "digital",
+      "content_ar": "سجل بطاقات الأبواب الخلفية (من 16:00 إلى 19:30)\n17:10:58 | الباب الشرقي (من القاعة) | هادي النجار\n17:12:30 | باب غرفة الترميم | هادي النجار\n17:19:12 | الباب الشرقي (إلى القاعة) | هادي النجار\n17:49:20 | الباب الشرقي (من القاعة) | سلمى الحايك\n17:49:48 | باب غرفة الترميم | سلمى الحايك\n17:59:55 | الباب الشرقي (من القاعة) | دالية المصري\n18:00:20 | باب غرفة الترميم | دالية المصري\n18:03:10 | الباب الشرقي (إلى القاعة) | دالية المصري\nلا أحداث أخرى. الممر الخلفي لا يؤدي إلا إلى غرفة الترميم والمخزن وباب المرفأ.",
+      "acquired_by_action_ids": [
+        "a_read_badge"
+      ],
+      "supports_fact_ids": [
+        "f_badge_path"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يثبت من فتح أي باب ومتى؛ لا يثبت ماذا كان في يد حامل البطاقة.",
+      "location_id": "loc_records"
+    },
+    {
+      "id": "ev_dock_sensor",
+      "title_ar": "سجل مستشعر باب المرفأ",
+      "kind": "digital",
+      "content_ar": "سجل مستشعر باب المرفأ الخلفي (نظام منفصل عن نظام البطاقات)\nمن 15:00 إلى 19:30: الحالة «مغلق» بلا انقطاع.\nلا حدث فتح. فحص الجهاز الذاتي: سليم.",
+      "acquired_by_action_ids": [
+        "a_read_dock"
+      ],
+      "supports_fact_ids": [
+        "f_dock_closed"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يخص باب المرفأ وحده؛ لا يقول شيئاً عن البوابة الرئيسية.",
+      "location_id": "loc_records"
+    },
+    {
+      "id": "ev_gate_book",
+      "title_ar": "دفتر البوابة الرئيسية",
+      "kind": "documentary",
+      "content_ar": "دفتر البوابة الرئيسية (بخط دالية المصري)\nقاعدة: تُفتَّش حقائب العاملين عند كل خروج.\n17:45 | خرجت مجموعة الجولة (12 زائراً).\n18:40 | خروج: سلمى الحايك، حقيبة يد، فُتّشت.\n19:05 | خروج: هادي النجار، حقيبة ظهر، فُتّشت.\nلا قيد خروج لأي عامل قبل 18:40.",
+      "acquired_by_action_ids": [
+        "a_read_gate"
+      ],
+      "supports_fact_ids": [
+        "f_gate_clear"
+      ],
+      "reliability": "strong",
+      "limits_ar": "سجل بخط الحارسة نفسها؛ يغطي البوابة الرئيسية فقط.",
+      "location_id": "loc_lobby"
+    },
+    {
+      "id": "ev_transfer_log",
+      "title_ar": "دفتر نقل المقتنيات",
+      "kind": "documentary",
+      "content_ar": "دفتر نقل المقتنيات — صفحة اليوم\n14:20 | لوحتان نسيجيتان | من القاعة 2 إلى المخزن | س. الحايك | أمر نقل رقم 88\n16:20 | إطار صورة | إلى الترميم | س. الحايك | أمر نقل رقم 89\nلا قيود بعد 16:20. لا قيد للمصباح رقم 31، ولا أمر نقل بهذا الرقم.\nقاعدة الدفتر: لا يُنقل مقتنى من حجرته إلا بأمر نقل برقم، ويُقيَّد النقل في الدفتر لحظة حدوثه.",
+      "acquired_by_action_ids": [
+        "a_read_transfer"
+      ],
+      "supports_fact_ids": [
+        "f_move_unlogged"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يثبت غياب القيد لا سبب الغياب.",
+      "contradicts_claim_ids": [
+        "cl_hadi_ordered"
+      ],
+      "forensic_ko_ref": "KO-FC-04-026",
+      "location_id": "loc_records"
+    },
+    {
+      "id": "ev_tray_photo",
+      "title_ar": "صورة الصينية 2 في موضعها",
+      "kind": "digital",
+      "content_ar": "صورة رقمية للأمينة — 17:53:10 (بيانات الصورة)\nتُظهر الصينية 2 على طاولة العمل في غرفة الترميم، وعليها مصباح فخاري صغير ذو مقبض فيه شق رفيع، والرقم 31 ظاهر محفوراً في قاعدته. بجانب الصينية بطاقة ورقية وقماش رمادي مطوي.",
+      "acquired_by_action_ids": [
+        "a_view_tray"
+      ],
+      "supports_fact_ids": [
+        "f_found_in_place"
+      ],
+      "reliability": "strong",
+      "limits_ar": "تثبت وضع المصباح لحظة التصوير؛ لا تقول متى وُضع هناك ولا من وضعه.",
+      "forensic_ko_ref": "KO-FC-04-026",
+      "location_id": "loc_conservation"
+    },
+    {
+      "id": "ev_custody_form",
+      "title_ar": "نموذج عهدة المقتنى 31",
+      "kind": "documentary",
+      "content_ar": "نموذج عهدة المقتنى 31 (يُملأ عند كل تداول)\n17:52 | س. الحايك | دخلت غرفة الترميم ووجدت المقتنى على الصينية 2؛ صورته في موضعه 17:53 دون لمس؛ لم تُستعمل قفازات لأنني لم ألمسه.\n18:00 | د. المصري | حملته بقفازين من الصينية 2 إلى مكتب الاستقبال بطلب الأمينة؛ صورة المكتب 18:05.\n18:20 | س. الحايك | استلمته من د. المصري بقفازين، وأغلقته في كيس مختوم برقم 4471 في خزانة الترميم.\nالتوقيعات: س. الحايك، د. المصري.",
+      "acquired_by_action_ids": [
+        "a_read_custody"
+      ],
+      "supports_fact_ids": [
+        "f_found_in_place",
+        "f_guard_moved"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يوثق من حمل المقتنى منذ 17:52؛ لا يوثق ما قبل ذلك.",
+      "forensic_ko_ref": "KO-FC-04-026",
+      "location_id": "loc_conservation"
+    },
+    {
+      "id": "ev_tray_tag",
+      "title_ar": "بطاقة الصينية 2",
+      "kind": "physical",
+      "content_ar": "بطاقة ورقية بخط اليد على الصينية 2\n«مصباح رقم 31 — من الحجرة 3 — وُضع هنا 17:14 — هادي»\nوتحتها بخط أصغر: «يُدوَّن في دفتر النقل بعد الجولة».\nالورق من دفتر ملاحظات المرشدين.",
+      "acquired_by_action_ids": [
+        "a_read_tag"
+      ],
+      "supports_fact_ids": [
+        "f_lamp_in_tray",
+        "f_move_unlogged"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "كتبها صاحبها بيده؛ تثبت ما كتبه لا الساعة الدقيقة التي كتب فيها.",
+      "forensic_ko_ref": "KO-FC-04-026",
+      "location_id": "loc_conservation"
+    },
+    {
+      "id": "ev_desk_photo",
+      "title_ar": "صورة مكتب الاستقبال",
+      "kind": "digital",
+      "content_ar": "صورة رقمية — 18:05:40 (بيانات الصورة)\nالمصباح رقم 31 على منديل أبيض فوق مكتب الاستقبال قرب بوابة الدخول. بجانبه قفازان وبطاقة تسجيل.",
+      "acquired_by_action_ids": [
+        "a_view_desk"
+      ],
+      "supports_fact_ids": [
+        "f_guard_moved"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "تثبت موضع المصباح لحظة التصوير فقط؛ لا تقول كيف وصل إلى هناك ولا من حمله قبلها.",
+      "is_red_herring": true,
+      "forensic_ko_ref": "KO-FC-04-026",
+      "location_id": "loc_lobby"
+    },
+    {
+      "id": "ev_hadi_stmt",
+      "title_ar": "إفادة هادي النجار",
+      "kind": "testimonial",
+      "content_ar": "ملخص إفادة هادي النجار:\n«وضعت المصباح على الصينية 2 في غرفة الترميم قرابة 17:14 بعد أن رأيت شقاً في مقبضه. ظننت أن الأمينة أرادت ذلك لأنها نبّهتني إلى المقبض. كنت أنوي التدوين بعد الجولة.»",
+      "acquired_by_action_ids": [
+        "a_note_hadi"
+      ],
+      "supports_fact_ids": [
+        "f_lamp_in_tray",
+        "f_crack_seen"
+      ],
+      "reliability": "weak",
+      "limits_ar": "إفادة صاحب الفعل؛ تقوّي ما تثبته الأوراق ولا تغني عنها.",
+      "location_id": "loc_conservation"
+    },
+    {
+      "id": "ev_salma_stmt",
+      "title_ar": "إفادة سلمى الحايك",
+      "kind": "testimonial",
+      "content_ar": "ملخص إفادة سلمى الحايك:\n«لم أصدر أمر نقل لهذا المصباح، ولم أطلب من هادي نقله. قلت له الأسبوع الماضي إن مقبضه يحتاج إلى فحص قريب فقط.»",
+      "acquired_by_action_ids": [
+        "a_note_salma"
+      ],
+      "supports_fact_ids": [
+        "f_no_order"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "ذاكرة صاحبة الشأن؛ لا نعرف ما قيل شفهياً غير ما تذكره.",
+      "contradicts_claim_ids": [
+        "cl_hadi_ordered"
+      ],
+      "location_id": "loc_records"
+    },
+    {
+      "id": "ev_dalia_stmt",
+      "title_ar": "إفادة دالية المصري",
+      "kind": "testimonial",
+      "content_ar": "ملخص إفادة دالية المصري:\n«حملت المصباح بقفازين من الصينية 2 إلى مكتبي الساعة 18:00 بطلب الأمينة، وصوّرته 18:05. لم أخرجه من المبنى.»",
+      "acquired_by_action_ids": [
+        "a_note_dalia"
+      ],
+      "supports_fact_ids": [
+        "f_guard_moved"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "إفادة تتفق مع نموذج العهدة وتحتاج إليه لتأكيد الأزمنة.",
+      "location_id": "loc_lobby"
+    }
+  ],
+  "evidence_graph": {
+    "inferences": [
+      {
+        "id": "i_inside_a",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_badge_log"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_dock_sensor"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_gate_book"
+          },
+          {
+            "ref_type": "general_knowledge",
+            "ref_id": "museum_two_exits_only"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_stayed_inside"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "للمتحف مخرجان فقط للأغراض. باب المرفأ بقي مغلقاً في سجله المستقل، ودفتر البوابة يخلو من خروج عامل، وسجل البطاقات يضع هادي في الممر ثم غرفة الترميم ثم عائداً إلى القاعة؛ فلم يخرج المصباح من المبنى.",
+        "skill_ko_refs": [
+          "KO-RS-05-004",
+          "KO-RS-05-005"
+        ]
+      },
+      {
+        "id": "i_inside_b",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_tray_photo"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_custody_form"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_tray_tag"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_stayed_inside"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "الصورة التقطت في موضعه قبل أن يلمسه أحد، والنموذج يثبت أن أول من حمله بعدها كانت الأمينة ثم الحارسة، وبطاقة الصينية بخط هادي تذكر 17:14؛ فالمصباح كان داخل غرفة الترميم من 17:14 إلى 17:53.",
+        "skill_ko_refs": [
+          "KO-FC-04-026",
+          "KO-RS-05-004"
+        ]
+      },
+      {
+        "id": "i_unlogged_a",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_transfer_log"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_move_unlogged"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "دفتر اليوم يخلو من قيد ومن أمر نقل للمصباح 31، والقاعدة المكتوبة فيه تشترط القيد لحظة النقل.",
+        "skill_ko_refs": [
+          "KO-RS-05-001"
+        ]
+      },
+      {
+        "id": "i_unlogged_b",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_tray_tag"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_move_unlogged"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "هادي نفسه كتب على البطاقة أن النقل «يُدوَّن بعد الجولة»، أي أنه لم يُدوَّن وقت النقل.",
+        "skill_ko_refs": [
+          "KO-RS-05-001"
+        ]
+      },
+      {
+        "id": "i_support_moved",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_stayed_inside"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_move_unlogged"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_moved_in"
+        },
+        "relation": "supports",
+        "strength": "strong",
+        "rule_ar": "المصباح بقي داخل المبنى وانتقل بيد هادي إلى غرفة الترميم دون قيد في الدفتر؛ فالمخالفة إجرائية وليست إخراجاً.",
+        "skill_ko_refs": [
+          "KO-RS-06-001"
+        ]
+      },
+      {
+        "id": "i_rule_took_out",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_stayed_inside"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_took_out"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "ما دام المصباح لم يغادر المبنى بحسب سجلين مستقلين على الأقل، فلا يصح القول إنه أُخرج.",
+        "skill_ko_refs": [
+          "KO-RS-06-008"
+        ]
+      },
+      {
+        "id": "i_rule_ordered_a",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_salma_stmt"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_ordered"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "الأمينة تنفي أن تكون أصدرت أمراً أو طلبت النقل، وتذكر أنها نبّهت إلى فحص قريب فقط.",
+        "skill_ko_refs": [
+          "KO-RS-05-014"
+        ]
+      },
+      {
+        "id": "i_rule_ordered_b",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_transfer_log"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_ordered"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "لا أمر نقل برقم ولا قيد في الدفتر، والقاعدة تشترط الاثنين لكل نقل مأذون.",
+        "skill_ko_refs": [
+          "KO-RS-05-014"
+        ]
+      },
+      {
+        "id": "i_hadi_claim",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_transfer_log"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_salma_stmt"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_hadi_ordered"
+        },
+        "relation": "contradicts_claim",
+        "strength": "strong",
+        "rule_ar": "قول هادي إنه نقل بإذن ضمني لا يسنده أمر ولا قيد، وتنفيه صاحبة الشأن.",
+        "skill_ko_refs": [
+          "KO-RS-05-014"
+        ]
+      }
+    ]
+  },
+  "character_knowledge": [
+    {
+      "character_id": "hadi",
+      "knows": [
+        {
+          "fact_id": "f_crack_seen",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_lamp_in_tray",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [
+        {
+          "fact_id": "f_own_initiative",
+          "reveal_when": {
+            "presented": {
+              "evidence_id": "ev_transfer_log",
+              "to_character": "hadi"
+            }
+          },
+          "cover_claim_id": "cl_hadi_ordered",
+          "reveal_line_id": "hd_own"
+        }
+      ],
+      "believes": [
+        {
+          "claim_id": "cl_hadi_ordered",
+          "stance": "sincere"
+        }
+      ]
+    },
+    {
+      "character_id": "salma",
+      "knows": [
+        {
+          "fact_id": "f_empty_case",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_found_in_place",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_no_order",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    },
+    {
+      "character_id": "dalia",
+      "knows": [
+        {
+          "fact_id": "f_guard_moved",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_gate_clear",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "h_took_out",
+      "statement_ar": "هادي أخرج المصباح من المتحف ثم أُعيد إليه.",
+      "is_true": false,
+      "plausibility_at_start": "high"
+    },
+    {
+      "id": "h_moved_in",
+      "statement_ar": "هادي نقل المصباح داخل المتحف إلى غرفة الترميم بمبادرته دون تدوين، ولم يغادر المبنى.",
+      "is_true": true,
+      "plausibility_at_start": "low",
+      "suspect_id": "hadi"
+    },
+    {
+      "id": "h_ordered",
+      "statement_ar": "نقل هادي المصباح داخل المتحف بأمر الأمينة وبإجراء سليم، فلا مخالفة.",
+      "is_true": false,
+      "plausibility_at_start": "medium"
+    }
+  ],
+  "misdirection_plan": [
+    {
+      "id": "rh_desk",
+      "points_to_hypothesis_id": "h_took_out",
+      "planted_via_ar": "صورة المصباح على مكتب الاستقبال قرب بوابة الدخول تبدو كأنه عاد من الخارج.",
+      "evidence_ids": [
+        "ev_desk_photo"
+      ],
+      "refuted_by_inference_ids": [
+        "i_inside_b",
+        "i_rule_took_out"
+      ],
+      "fairness_note_ar": "نموذج العهدة ودفتر البوابة متاحان بالإجراءات العادية، وفيهما أن الحارسة حملته من غرفة الترميم إلى المكتب بطلب الأمينة."
+    },
+    {
+      "id": "rh_clip",
+      "points_to_hypothesis_id": "h_took_out",
+      "planted_via_ar": "المقطع يُظهر المرشد يحمل المصباح ويخرج من الباب بسرعة.",
+      "evidence_ids": [
+        "ev_clip_log"
+      ],
+      "refuted_by_inference_ids": [
+        "i_inside_a",
+        "i_rule_took_out"
+      ],
+      "fairness_note_ar": "الباب الشرقي للعاملين لا يؤدي إلى خارج المتحف، وسجلات الأبواب متاحة وتبيّن أين انتهى الممر."
+    },
+    {
+      "id": "rh_claim",
+      "points_to_hypothesis_id": "h_ordered",
+      "planted_via_ar": "هادي يقول إنه ظن أن الأمينة أرادت النقل، وقد نبّهته فعلاً إلى المقبض.",
+      "evidence_ids": [
+        "ev_hadi_stmt"
+      ],
+      "refuted_by_inference_ids": [
+        "i_rule_ordered_a",
+        "i_rule_ordered_b"
+      ],
+      "fairness_note_ar": "دفتر النقل وإفادة الأمينة متاحان، وفيهما ما يحدد معنى كلامها وما يشترطه النظام."
+    }
+  ],
+  "learning_objectives": [
+    {
+      "id": "lo_claim",
+      "statement_ar": "يفرّق بين ما يُرى في المقطع وبين ما يُستنتج عن وجهة المصباح، ويصنّف المصدر.",
+      "skill_ko_ref": "KO-RS-05-001",
+      "observable_behaviors_ar": [
+        "يصنّف السجلات والإفادات",
+        "يقابل المقطع بالسجلات"
+      ],
+      "evidence_sources": [
+        "evidence_board"
+      ]
+    },
+    {
+      "id": "lo_custody",
+      "statement_ar": "يميّز الصورة المأخوذة قبل التداول عن الصورة بعده، ويقرأ نموذج العهدة.",
+      "skill_ko_ref": "KO-FC-04-026",
+      "observable_behaviors_ar": [
+        "يقدّم الدليل المحفوظ قبل أي لمس",
+        "يذكر من حمل المقتنى ومتى"
+      ],
+      "evidence_sources": [
+        "evidence_board",
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_timeline",
+      "statement_ar": "يضع الأحداث في خط زمني يربط كل سجل بلحظته.",
+      "skill_ko_ref": "KO-RS-05-005",
+      "observable_behaviors_ar": [
+        "يضع الأدلة في أزمنتها"
+      ],
+      "evidence_sources": [
+        "timeline_task",
+        "action_log"
+      ]
+    },
+    {
+      "id": "lo_indep",
+      "statement_ar": "يبني الاستنتاج على سجلين مستقلين على الأقل.",
+      "skill_ko_ref": "KO-RS-05-004",
+      "observable_behaviors_ar": [
+        "يعتمد مساراً ثانياً مستقلاً"
+      ],
+      "evidence_sources": [
+        "evidence_board",
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_hyp",
+      "statement_ar": "يوازن بين فرضيات ويستبعد ما تنقضه الأدلة.",
+      "skill_ko_ref": "KO-RS-05-002",
+      "observable_behaviors_ar": [
+        "يضيف فرضيات",
+        "يستبعد بدليل"
+      ],
+      "evidence_sources": [
+        "hypothesis_ledger"
+      ]
+    },
+    {
+      "id": "lo_calib",
+      "statement_ar": "يصوغ ثقته بحدود ما تثبته الأدلة.",
+      "skill_ko_ref": "KO-RS-06-021",
+      "observable_behaviors_ar": [
+        "يختار ثقة معقولة",
+        "يذكر حدوداً"
+      ],
+      "evidence_sources": [
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_revise",
+      "statement_ar": "يراجع رأيه الأول حين يظهر ما يخالفه.",
+      "skill_ko_ref": "KO-RS-06-009",
+      "observable_behaviors_ar": [
+        "يغيّر فرضيته الرائدة بدليل"
+      ],
+      "evidence_sources": [
+        "hypothesis_ledger"
+      ]
+    }
+  ],
+  "mechanics": {
+    "time_budget_units": 30,
+    "actions": [
+      {
+        "id": "a_view_clip",
+        "type": "examine",
+        "label_ar": "شاهد مقطع الكاميرا",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_clip_log"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_hall",
+        "telemetry_code": "VIEW_CLIP"
+      },
+      {
+        "id": "a_view_desk",
+        "type": "examine",
+        "label_ar": "افتح صورة مكتب الاستقبال",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_desk_photo"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_lobby",
+        "telemetry_code": "VIEW_DESK"
+      },
+      {
+        "id": "a_read_report",
+        "type": "examine",
+        "label_ar": "اقرأ محضر فحص الإغلاق",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_empty_report"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_records",
+        "telemetry_code": "READ_REPORT"
+      },
+      {
+        "id": "a_read_badge",
+        "type": "search_location",
+        "label_ar": "افتح سجل البطاقات",
+        "precondition": {
+          "has_evidence": "ev_clip_log"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_badge_log"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_records",
+        "telemetry_code": "READ_BADGE"
+      },
+      {
+        "id": "a_read_dock",
+        "type": "search_location",
+        "label_ar": "افتح سجل مستشعر باب المرفأ",
+        "precondition": {
+          "has_evidence": "ev_clip_log"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_dock_sensor"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_records",
+        "telemetry_code": "READ_DOCK"
+      },
+      {
+        "id": "a_read_gate",
+        "type": "search_location",
+        "label_ar": "افتح دفتر البوابة",
+        "precondition": {
+          "has_evidence": "ev_empty_report"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_gate_book"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_lobby",
+        "telemetry_code": "READ_GATE"
+      },
+      {
+        "id": "a_read_transfer",
+        "type": "search_location",
+        "label_ar": "افتح دفتر نقل المقتنيات",
+        "precondition": {
+          "has_evidence": "ev_empty_report"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_transfer_log"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_records",
+        "telemetry_code": "READ_TRANSFER"
+      },
+      {
+        "id": "a_view_tray",
+        "type": "examine",
+        "label_ar": "افتح صورة الصينية 2",
+        "precondition": {
+          "has_evidence": "ev_empty_report"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_tray_photo"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_conservation",
+        "telemetry_code": "VIEW_TRAY"
+      },
+      {
+        "id": "a_read_custody",
+        "type": "examine",
+        "label_ar": "افتح نموذج عهدة المقتنى 31",
+        "precondition": {
+          "has_evidence": "ev_tray_photo"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_custody_form"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_conservation",
+        "telemetry_code": "READ_CUSTODY"
+      },
+      {
+        "id": "a_read_tag",
+        "type": "examine",
+        "label_ar": "اقرأ بطاقة الصينية",
+        "precondition": {
+          "has_evidence": "ev_tray_photo"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_tray_tag"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_conservation",
+        "telemetry_code": "READ_TAG"
+      },
+      {
+        "id": "a_int_hadi",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة هادي",
+        "precondition": {
+          "has_evidence": "ev_clip_log"
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "hadi",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "hadi",
+        "telemetry_code": "INT_HADI"
+      },
+      {
+        "id": "a_int_salma",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة سلمى",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "salma",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "salma",
+        "telemetry_code": "INT_SALMA"
+      },
+      {
+        "id": "a_int_dalia",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة دالية",
+        "precondition": {
+          "has_evidence": "ev_desk_photo"
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "dalia",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "dalia",
+        "telemetry_code": "INT_DALIA"
+      },
+      {
+        "id": "a_note_hadi",
+        "type": "examine",
+        "label_ar": "دوّن إفادة هادي",
+        "precondition": {
+          "fact_unlocked": "f_lamp_in_tray"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_hadi_stmt"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "hadi",
+        "telemetry_code": "NOTE_HADI"
+      },
+      {
+        "id": "a_note_salma",
+        "type": "examine",
+        "label_ar": "دوّن إفادة سلمى",
+        "precondition": {
+          "fact_unlocked": "f_no_order"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_salma_stmt"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "salma",
+        "telemetry_code": "NOTE_SALMA"
+      },
+      {
+        "id": "a_note_dalia",
+        "type": "examine",
+        "label_ar": "دوّن إفادة دالية",
+        "precondition": {
+          "fact_unlocked": "f_guard_moved"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_dalia_stmt"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "dalia",
+        "telemetry_code": "NOTE_DALIA"
+      },
+      {
+        "id": "p_transfer_hadi",
+        "type": "present_evidence",
+        "label_ar": "اعرض دفتر النقل على هادي",
+        "precondition": {
+          "presented": {
+            "evidence_id": "ev_transfer_log",
+            "to_character": "hadi"
+          }
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "PRESENTED_TRANSFER"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "hadi",
+        "telemetry_code": "P_TRANSFER_HADI"
+      },
+      {
+        "id": "a_hint",
+        "type": "request_hint",
+        "label_ar": "اطلب تلميحاً",
+        "precondition": {
+          "always": true
+        },
+        "effects": [],
+        "time_cost_units": 0,
+        "telemetry_code": "REQUEST_HINT"
+      },
+      {
+        "id": "a_accuse",
+        "type": "final_accusation",
+        "label_ar": "قدّم الاستنتاج النهائي",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "SUBMIT"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "FINAL_ACCUSATION"
+      },
+      {
+        "id": "ask_hadi_f_lamp_in_tray",
+        "type": "interview",
+        "label_ar": "[نموذج] hadi يذكر f_lamp_in_tray",
+        "precondition": {
+          "has_evidence": "ev_clip_log"
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_lamp_in_tray"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "hadi",
+        "telemetry_code": "ASK_HADI_F_LAMP_IN_TRAY"
+      },
+      {
+        "id": "ask_hadi_f_crack_seen",
+        "type": "interview",
+        "label_ar": "[نموذج] hadi يذكر f_crack_seen",
+        "precondition": {
+          "has_evidence": "ev_clip_log"
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_crack_seen"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "hadi",
+        "telemetry_code": "ASK_HADI_F_CRACK_SEEN"
+      },
+      {
+        "id": "ask_hadi_f_own_initiative",
+        "type": "interview",
+        "label_ar": "[نموذج] hadi يذكر f_own_initiative",
+        "precondition": {
+          "all": [
+            {
+              "has_evidence": "ev_clip_log"
+            },
+            {
+              "presented": {
+                "evidence_id": "ev_transfer_log",
+                "to_character": "hadi"
+              }
+            }
+          ]
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_own_initiative"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "hadi",
+        "telemetry_code": "ASK_HADI_F_OWN_INITIATIVE"
+      },
+      {
+        "id": "ask_salma_f_empty_case",
+        "type": "interview",
+        "label_ar": "[نموذج] salma يذكر f_empty_case",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_empty_case"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "salma",
+        "telemetry_code": "ASK_SALMA_F_EMPTY_CASE"
+      },
+      {
+        "id": "ask_salma_f_found_in_place",
+        "type": "interview",
+        "label_ar": "[نموذج] salma يذكر f_found_in_place",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_found_in_place"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "salma",
+        "telemetry_code": "ASK_SALMA_F_FOUND_IN_PLACE"
+      },
+      {
+        "id": "ask_salma_f_no_order",
+        "type": "interview",
+        "label_ar": "[نموذج] salma يذكر f_no_order",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_no_order"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "salma",
+        "telemetry_code": "ASK_SALMA_F_NO_ORDER"
+      },
+      {
+        "id": "ask_dalia_f_guard_moved",
+        "type": "interview",
+        "label_ar": "[نموذج] dalia يذكر f_guard_moved",
+        "precondition": {
+          "has_evidence": "ev_desk_photo"
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_guard_moved"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "dalia",
+        "telemetry_code": "ASK_DALIA_F_GUARD_MOVED"
+      },
+      {
+        "id": "ask_dalia_f_gate_clear",
+        "type": "interview",
+        "label_ar": "[نموذج] dalia يذكر f_gate_clear",
+        "precondition": {
+          "has_evidence": "ev_desk_photo"
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_gate_clear"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "dalia",
+        "telemetry_code": "ASK_DALIA_F_GATE_CLEAR"
+      }
+    ]
+  },
+  "state_machine": {
+    "id": "c031",
+    "initial": "briefing",
+    "type": "compound",
+    "states": {
+      "briefing": {
+        "description_ar": "الإحاطة",
+        "type": "atomic",
+        "on": {
+          "START": {
+            "target": "investigating"
+          }
+        }
+      },
+      "investigating": {
+        "description_ar": "التحقيق",
+        "type": "compound",
+        "initial": "gathering",
+        "states": {
+          "gathering": {
+            "type": "atomic",
+            "on": {
+              "OPEN_DEDUCTION": {
+                "target": "deducing"
+              }
+            }
+          },
+          "deducing": {
+            "type": "atomic",
+            "on": {
+              "BACK": {
+                "target": "gathering"
+              }
+            }
+          }
+        },
+        "on": {
+          "SUBMIT": {
+            "target": "review"
+          }
+        }
+      },
+      "review": {
+        "description_ar": "مراجعة",
+        "type": "atomic",
+        "on": {
+          "CLOSE": {
+            "target": "resolved"
+          }
+        }
+      },
+      "resolved": {
+        "description_ar": "إغلاق",
+        "type": "final"
+      }
+    }
+  },
+  "dialogue": {
+    "max_turns_per_interview": 10,
+    "llm_enabled": false,
+    "topics": [
+      {
+        "id": "t_move",
+        "label_ar": "نقل المصباح",
+        "example_questions_ar": [
+          "لماذا حملت المصباح؟",
+          "إلى أين وضعته؟"
+        ],
+        "fact_ids": [
+          "f_crack_seen",
+          "f_lamp_in_tray",
+          "f_own_initiative"
+        ],
+        "claim_ids": [
+          "cl_hadi_ordered"
+        ]
+      },
+      {
+        "id": "t_found",
+        "label_ar": "اكتشاف المصباح",
+        "example_questions_ar": [
+          "متى وجدتِه؟",
+          "هل صوّرتِه قبل أن تلمسيه؟"
+        ],
+        "fact_ids": [
+          "f_empty_case",
+          "f_found_in_place"
+        ]
+      },
+      {
+        "id": "t_order",
+        "label_ar": "أمر النقل",
+        "example_questions_ar": [
+          "هل طلبتِ نقله؟",
+          "كيف تصدر أوامر النقل؟"
+        ],
+        "fact_ids": [
+          "f_no_order"
+        ]
+      },
+      {
+        "id": "t_desk",
+        "label_ar": "المكتب والبوابة",
+        "example_questions_ar": [
+          "لماذا حملتِه إلى المكتب؟",
+          "هل خرج عامل من البوابة؟"
+        ],
+        "fact_ids": [
+          "f_guard_moved",
+          "f_gate_clear"
+        ]
+      }
+    ]
+  },
+  "rubric": {
+    "reference_answer_ar": "هادي النجار لم يُخرج المصباح من المتحف؛ نقله داخله من الحجرة 3 إلى صينية داخل غرفة الترميم نحو الساعة 17:14 بمبادرته، دون أمر نقل ودون قيد في دفتر النقل. الدليل مساران مستقلان: سجلات البطاقات والمستشعر والبوابة، وكل منها نظام مستقل، تمنع الخروج؛ والصورة المأخوذة في موضعه قبل أن يلمسه أحد مع البطاقة المكتوبة بخط هادي ونموذج العهدة تضعه داخل الغرفة الخلفية. صورة المكتب التقطت بعد أن حملته الحارسة بطلب الأمينة، فلا تدل على موضعه قبل ذلك. ويبقى خارج الأدلة: ما قيل شفهياً بين هادي والأمينة، ونيته إلا بقوله، ولا مقطع يغطي غرفة الترميم.",
+    "criteria": [
+      {
+        "id": "c_source",
+        "name_ar": "تصنيف المصادر",
+        "objective_ids": [
+          "lo_claim"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يصنّف"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "أخطأ في الأغلب"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "نصف صحيح"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمه صحيح"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كله صحيح"
+          }
+        ]
+      },
+      {
+        "id": "c_conflict",
+        "name_ar": "ربط السجلات بأزمنتها",
+        "objective_ids": [
+          "lo_timeline"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يضع شيئاً"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "وضع قليلاً"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "وضع نصفها صحيحاً"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمها"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كلها في موضعها"
+          }
+        ]
+      },
+      {
+        "id": "c_links",
+        "name_ar": "ربط الأدلة بالفرضيات",
+        "objective_ids": [
+          "lo_custody",
+          "lo_indep"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.2,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لا روابط"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "قليلة"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "نصفها صحيح"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمها"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كلها دقيقة"
+          }
+        ]
+      },
+      {
+        "id": "c_uncertainty",
+        "name_ar": "معايرة الثقة",
+        "objective_ids": [
+          "lo_calib"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.2,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "ثقة مفرطة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "حدود قليلة"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "جزئية"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معقولة"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "معايَرة كاملة"
+          }
+        ]
+      },
+      {
+        "id": "c_revision",
+        "name_ar": "مراجعة الرأي",
+        "objective_ids": [
+          "lo_revise"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "بقي على فرضية مرفوضة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "لم يعلن فرضية"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "ثبت على فرضية سليمة"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "غيّر بدليل"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "غيّر بدليل ووثّق"
+          }
+        ]
+      },
+      {
+        "id": "c_elimination",
+        "name_ar": "استبعاد الفرضيات الخاطئة",
+        "objective_ids": [
+          "lo_hyp"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يستبعد"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "استبعد خطأً"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "فرضية بدليل"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "فرضيتين"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كل الخاطئة"
+          }
+        ]
+      },
+      {
+        "id": "c_justification",
+        "name_ar": "جودة الحجة المكتوبة",
+        "objective_ids": [
+          "lo_custody",
+          "lo_hyp"
+        ],
+        "scored_by": "human",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لا حجة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "ادعاء بلا سند"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "أدلة دون ربط"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "ربط الأدلة بالاستنتاج"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "ربط مع البدائل والحدود"
+          }
+        ]
+      }
+    ]
+  },
+  "hint_ladder": [
+    {
+      "id": "hg1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "ماذا يخبرك المقطع حقاً: ما جرى في القاعة، أم إلى أين ذهب المصباح بعد الباب؟",
+      "trigger": {
+        "always": true
+      },
+      "assessment_weight": 0.02
+    },
+    {
+      "id": "hg2",
+      "level": 2,
+      "kind": "focus_area",
+      "text_ar": "ضع الصور على خط زمني: أيها التقطت قبل أن يلمس المصباح أحد، وأيها بعد ذلك؟",
+      "trigger": {
+        "has_evidence": "ev_desk_photo"
+      },
+      "assessment_weight": 0.04
+    },
+    {
+      "id": "hg3",
+      "level": 3,
+      "kind": "pointer",
+      "text_ar": "اكتب لكل مخرج للمتحف ما يدل على أن شيئاً لم يخرج منه، ولكل صورة من حمل المصباح قبلها.",
+      "trigger": {
+        "has_evidence": "ev_empty_report"
+      },
+      "assessment_weight": 0.06
+    },
+    {
+      "id": "hm1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "ما المخارج الممكنة للمتحف؟ وأي سجل مستقل يراقب كل مخرج؟",
+      "trigger": {
+        "has_evidence": "ev_badge_log"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_inside_a"
+    },
+    {
+      "id": "hm2",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "قارن سجل البطاقات بسجل مستشعر الباب الخلفي ودفتر البوابة.",
+      "trigger": {
+        "has_evidence": "ev_gate_book"
+      },
+      "assessment_weight": 0.05,
+      "targets_inference_id": "i_inside_a"
+    },
+    {
+      "id": "hm3",
+      "level": 3,
+      "kind": "partial_reveal",
+      "text_ar": "ابدأ من الصورة الملتقطة في الموضع قبل أن يلمس أحد المصباح، ثم اربطها ببطاقة الصينية ونموذج العهدة.",
+      "trigger": {
+        "has_evidence": "ev_custody_form"
+      },
+      "assessment_weight": 0.1,
+      "targets_inference_id": "i_inside_b"
+    },
+    {
+      "id": "hm5",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "أي صورة التقطت قبل أن يلمس المصباح أحد؟ وماذا تقول عن موضعه الأصلي؟",
+      "trigger": {
+        "has_evidence": "ev_tray_photo"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_inside_b"
+    },
+    {
+      "id": "hm6",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "اقرأ نموذج العهدة سطراً سطراً: من حمل المصباح، ومتى، وبأي صورة وُثّق ذلك؟",
+      "trigger": {
+        "has_evidence": "ev_tray_photo"
+      },
+      "assessment_weight": 0.05,
+      "targets_inference_id": "i_inside_b"
+    },
+    {
+      "id": "hm7",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "هل لنقل مقتنى من حجرته إجراء مكتوب؟ وأين يُقيَّد؟",
+      "trigger": {
+        "has_evidence": "ev_empty_report"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_unlogged_a"
+    },
+    {
+      "id": "hm4",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "ما القاعدة المكتوبة لنقل مقتنى من حجرته؟ وهل تحققت في دفتر اليوم؟",
+      "trigger": {
+        "has_evidence": "ev_transfer_log"
+      },
+      "assessment_weight": 0.05,
+      "targets_inference_id": "i_unlogged_a"
+    }
+  ],
+  "fairness_test": {
+    "requirements": {
+      "min_disjoint_proof_paths": 2,
+      "max_inference_depth": 3,
+      "all_red_herrings_refutable": true,
+      "culprit_uniquely_entailed": true,
+      "no_hidden_fact_dependency": true,
+      "max_required_actions": 30
+    },
+    "runs": []
+  },
+  "ending_explanation": {
+    "steps": [
+      {
+        "order": 1,
+        "text_ar": "المقطع يصل إلى الباب الشرقي فقط. وبعد الباب تقول السجلات: بطاقة هادي في الممر ثم غرفة الترميم، وباب المرفأ مغلق في نظامه المستقل، ولا خروج عامل من البوابة؛ فالمصباح لم يغادر المبنى.",
+        "uses_evidence_ids": [
+          "ev_clip_log",
+          "ev_badge_log",
+          "ev_dock_sensor",
+          "ev_gate_book"
+        ],
+        "inference_id": "i_inside_a"
+      },
+      {
+        "order": 2,
+        "text_ar": "المسار الثاني مستقل: الصورة التقطتها الأمينة في موضعه قبل أن تلمسه، وبطاقة الصينية بخط هادي تذكر 17:14، ونموذج العهدة يثبت أن أول من حمله بعد ذلك الأمينة ثم الحارسة.",
+        "uses_evidence_ids": [
+          "ev_tray_photo",
+          "ev_tray_tag",
+          "ev_custody_form"
+        ],
+        "inference_id": "i_inside_b"
+      },
+      {
+        "order": 3,
+        "text_ar": "صورة المكتب التقطت بعد أن حملته الحارسة بطلب الأمينة؛ فهي تثبت موضعه عند 18:05 فقط، ولا تدل على موضعه قبل ذلك.",
+        "uses_evidence_ids": [
+          "ev_desk_photo",
+          "ev_custody_form"
+        ],
+        "inference_id": "i_rule_took_out"
+      },
+      {
+        "order": 4,
+        "text_ar": "لا قيد ولا أمر نقل للمصباح 31 في الدفتر، وبطاقة هادي نفسها تؤجل التدوين؛ فالنقل لم يُوثَّق وقت حدوثه.",
+        "uses_evidence_ids": [
+          "ev_transfer_log",
+          "ev_tray_tag"
+        ],
+        "inference_id": "i_unlogged_a"
+      },
+      {
+        "order": 5,
+        "text_ar": "الأمينة تنفي طلب النقل ولا أمر في الدفتر، فلا يصح القول إن النقل كان بأمر.",
+        "uses_evidence_ids": [
+          "ev_salma_stmt",
+          "ev_transfer_log"
+        ],
+        "inference_id": "i_rule_ordered_a"
+      },
+      {
+        "order": 6,
+        "text_ar": "إذن المصباح نُقل داخل المتحف بمبادرة هادي دون تدوين، ولم يُخرج منه؛ والمخالفة إجرائية.",
+        "uses_evidence_ids": [
+          "ev_badge_log",
+          "ev_tray_photo",
+          "ev_transfer_log"
+        ],
+        "inference_id": "i_support_moved"
+      }
+    ],
+    "alternative_paths_ar": [
+      "مساران لا يشتركان في دليل: سجلات المخارج (البطاقات والمستشعر والبوابة) من جهة، والصورة في الموضع مع بطاقة الصينية ونموذج العهدة من جهة أخرى. وللنقل غير المدوَّن مساران: دفتر النقل، وبطاقة هادي نفسها."
+    ],
+    "what_evidence_could_not_show_ar": [
+      "لا مقطع يغطي غرفة الترميم بين 17:12 و17:49؛ يُستدل على بقاء المصباح من السجلات والصورة لا من مشاهدته.",
+      "لا تحدد الأدلة ما قيل شفهياً بين هادي والأمينة قبل الواقعة، ولا نيته إلا بقوله.",
+      "افتُرض أن ساعات الكاميرا والبطاقات والمستشعر متقاربة؛ ولم يُقس انحرافها."
+    ],
+    "science_notes_ar": [
+      "سلسلة العهدة تعني أن نعرف من لمس الشيء ومتى وماذا فعل به. الصورة المأخوذة في الموضع قبل اللمس أقوى من صورة بعد التداول.",
+      "غياب سجل خروج في ثلاثة نظم مستقلة أقوى من سجل واحد، لكنه يظل مشروطاً بأن النظم تعمل وبأن المخارج محصورة.",
+      "الاعتراف أو الإفادة لا يحل محل السجل؛ يُقاس بما تسنده الأوراق."
+    ]
+  },
+  "expert_review": [
+    {
+      "role": "narrative_editor",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-11-04",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "scientific_reviewer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-11-04",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "learning_designer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-11-04",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "age_appropriateness",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-11-04",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "cultural_reviewer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-11-04",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "legal_rights",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-11-04",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "safety",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-11-04",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    }
+  ]
+}

@@ -1,0 +1,137 @@
+{
+  "case_id": "c031_watch_then_prove",
+  "accepted_conclusions": {
+    "h_took_out": {
+      "grade": 0,
+      "note_ar": "يتجاوز ما تسمح به الأدلة: المخارج كلها مسجلة ولم يخرج المصباح."
+    },
+    "h_moved_in": {
+      "grade": 1,
+      "note_ar": "استنتاج متسق مع الأدلة ويتطلب ذكر حدوده."
+    },
+    "h_ordered": {
+      "grade": 0,
+      "note_ar": "لا يسنده أمر نقل ولا قيد، وتنفيه صاحبة الشأن."
+    }
+  },
+  "confidence_band": {
+    "h_took_out": [
+      0,
+      10
+    ],
+    "h_moved_in": [
+      65,
+      90
+    ],
+    "h_ordered": [
+      0,
+      15
+    ]
+  },
+  "source_key": {
+    "ev_clip_log": "primary_record",
+    "ev_empty_report": "primary_record",
+    "ev_badge_log": "primary_record",
+    "ev_dock_sensor": "primary_record",
+    "ev_gate_book": "primary_record",
+    "ev_transfer_log": "primary_record",
+    "ev_tray_photo": "primary_record",
+    "ev_custody_form": "primary_record",
+    "ev_tray_tag": "primary_record",
+    "ev_desk_photo": "primary_record",
+    "ev_hadi_stmt": "claim",
+    "ev_salma_stmt": "claim",
+    "ev_dalia_stmt": "claim"
+  },
+  "link_key": {
+    "h_moved_in": {
+      "ev_badge_log": "supports",
+      "ev_dock_sensor": "supports",
+      "ev_gate_book": "supports",
+      "ev_transfer_log": "supports",
+      "ev_tray_photo": "supports",
+      "ev_custody_form": "supports",
+      "ev_tray_tag": "supports",
+      "ev_hadi_stmt": "supports",
+      "ev_dalia_stmt": "supports",
+      "ev_salma_stmt": "supports",
+      "ev_clip_log": "neutral",
+      "ev_desk_photo": "neutral"
+    },
+    "h_took_out": {
+      "ev_clip_log": "supports",
+      "ev_desk_photo": "supports",
+      "ev_empty_report": "supports",
+      "ev_badge_log": "weakens",
+      "ev_dock_sensor": "weakens",
+      "ev_gate_book": "weakens",
+      "ev_tray_photo": "weakens",
+      "ev_custody_form": "weakens",
+      "ev_tray_tag": "weakens",
+      "ev_dalia_stmt": "weakens"
+    },
+    "h_ordered": {
+      "ev_hadi_stmt": "supports",
+      "ev_salma_stmt": "weakens",
+      "ev_transfer_log": "weakens",
+      "ev_clip_log": "neutral",
+      "ev_badge_log": "neutral"
+    }
+  },
+  "required_limits": [
+    "l_oral",
+    "l_gap"
+  ],
+  "valid_mind_changers": [
+    "m_exit_event",
+    "m_clock_skew"
+  ],
+  "invalid_limits": [
+    "l_invalid_clip",
+    "l_invalid_desk"
+  ],
+  "decisive_evidence": [
+    "ev_badge_log",
+    "ev_dock_sensor",
+    "ev_gate_book",
+    "ev_tray_photo",
+    "ev_custody_form",
+    "ev_tray_tag",
+    "ev_transfer_log"
+  ],
+  "lab_requirement": null,
+  "timeline_requirement": [
+    {
+      "evidence_id": "ev_clip_log",
+      "utc_minute": 70,
+      "tol": 5
+    },
+    {
+      "evidence_id": "ev_tray_photo",
+      "utc_minute": 113,
+      "tol": 5
+    },
+    {
+      "evidence_id": "ev_desk_photo",
+      "utc_minute": 125,
+      "tol": 5
+    }
+  ],
+  "refuted_hypotheses": [
+    "h_took_out",
+    "h_ordered"
+  ],
+  "criteria_map": {
+    "c_source": "source_typing",
+    "c_conflict": "conflict_resolution",
+    "c_links": "hypothesis_links",
+    "c_uncertainty": "uncertainty",
+    "c_revision": "revision",
+    "c_elimination": "elimination",
+    "c_justification": "justification_human"
+  },
+  "caps": {
+    "no_citations_max": 45,
+    "no_conflict_resolution_max": 70
+  }
+}
