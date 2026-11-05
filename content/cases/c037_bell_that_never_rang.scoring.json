@@ -1,0 +1,158 @@
+{
+  "case_id": "c037_bell_that_never_rang",
+  "accepted_conclusions": {
+    "h_stranger": {
+      "grade": 0,
+      "note_ar": "يقرأ الصمت قراءة معكوسة؛ فالجرس والشريط والدفتر تنفي فتح الواجهة."
+    },
+    "h_apprentice": {
+      "grade": 0,
+      "note_ar": "يتجاهل أن الساعة بقيت بعد خروجه وأنه لا يملك مفتاح الباب الخلفي."
+    },
+    "h_misplaced": {
+      "grade": 0,
+      "note_ar": "ينفيه ظهور الساعة برقم حركتها في سجل محل ساعات قديمة."
+    },
+    "h_walid": {
+      "grade": 1,
+      "note_ar": "استنتاج متسق مع الأدلة ويتطلب ذكر حدوده."
+    }
+  },
+  "confidence_band": {
+    "h_stranger": [
+      0,
+      10
+    ],
+    "h_apprentice": [
+      0,
+      15
+    ],
+    "h_misplaced": [
+      0,
+      10
+    ],
+    "h_walid": [
+      60,
+      88
+    ]
+  },
+  "source_key": {
+    "ev_incident_report": "public_document",
+    "ev_owner_statement": "claim",
+    "ev_closing_list": "primary_record",
+    "ev_yasin_statement": "claim",
+    "ev_walid_statement": "claim",
+    "ev_bell_card": "primary_record",
+    "ev_bell_check": "primary_record",
+    "ev_neighbor_complaint": "primary_record",
+    "ev_neighbor_diary": "primary_record",
+    "ev_guard_round": "primary_record",
+    "ev_seal_photo": "primary_record",
+    "ev_yard_lamp": "primary_record",
+    "ev_baker_statement": "claim",
+    "ev_key_board": "primary_record",
+    "ev_repair_ticket": "primary_record",
+    "ev_dealer_slip": "primary_record"
+  },
+  "link_key": {
+    "h_stranger": {
+      "ev_incident_report": "supports",
+      "ev_owner_statement": "supports",
+      "ev_bell_card": "weakens",
+      "ev_bell_check": "weakens",
+      "ev_neighbor_diary": "weakens",
+      "ev_guard_round": "weakens",
+      "ev_seal_photo": "weakens",
+      "ev_neighbor_complaint": "weakens"
+    },
+    "h_apprentice": {
+      "ev_yasin_statement": "neutral",
+      "ev_closing_list": "weakens",
+      "ev_key_board": "weakens",
+      "ev_neighbor_diary": "weakens"
+    },
+    "h_misplaced": {
+      "ev_incident_report": "supports",
+      "ev_dealer_slip": "weakens",
+      "ev_repair_ticket": "weakens"
+    },
+    "h_walid": {
+      "ev_yard_lamp": "supports",
+      "ev_baker_statement": "supports",
+      "ev_key_board": "supports",
+      "ev_dealer_slip": "supports",
+      "ev_repair_ticket": "supports",
+      "ev_guard_round": "supports",
+      "ev_seal_photo": "supports",
+      "ev_neighbor_diary": "supports",
+      "ev_walid_statement": "weakens"
+    }
+  },
+  "required_limits": [
+    "l_expect_basis",
+    "l_not_who"
+  ],
+  "valid_mind_changers": [
+    "m_bell_muffled",
+    "m_seal_replaced",
+    "m_third_key"
+  ],
+  "invalid_limits": [
+    "l_invalid_silence",
+    "l_invalid_denial"
+  ],
+  "decisive_evidence": [
+    "ev_bell_check",
+    "ev_neighbor_diary",
+    "ev_guard_round",
+    "ev_yard_lamp",
+    "ev_key_board",
+    "ev_dealer_slip"
+  ],
+  "lab_requirement": null,
+  "timeline_requirement": [
+    {
+      "evidence_id": "ev_closing_list",
+      "utc_minute": 135,
+      "tol": 10
+    },
+    {
+      "evidence_id": "ev_guard_round",
+      "utc_minute": 150,
+      "tol": 10
+    },
+    {
+      "evidence_id": "ev_yard_lamp",
+      "utc_minute": 490,
+      "tol": 10
+    },
+    {
+      "evidence_id": "ev_seal_photo",
+      "utc_minute": 830,
+      "tol": 10
+    },
+    {
+      "evidence_id": "ev_dealer_slip",
+      "utc_minute": 940,
+      "tol": 10
+    }
+  ],
+  "refuted_hypotheses": [
+    "h_stranger",
+    "h_apprentice",
+    "h_misplaced"
+  ],
+  "criteria_map": {
+    "c_source": "source_typing",
+    "c_conflict": "conflict_resolution",
+    "c_links": "hypothesis_links",
+    "c_uncertainty": "uncertainty",
+    "c_revision": "revision",
+    "c_elimination": "elimination",
+    "c_justification": "justification_human"
+  },
+  "caps": {
+    "no_citations_max": 45,
+    "no_conflict_resolution_max": 70
+  }
+}

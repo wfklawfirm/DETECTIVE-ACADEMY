@@ -1,0 +1,2660 @@
+{
+  "schema_version": "0.1.0",
+  "case_id": "c041_accident_that_looked_deliberate",
+  "case_version": "0.1.0",
+  "meta": {
+    "title_ar": "الحادث الذي بدا مقصوداً",
+    "title_en": "The Accident That Looked Deliberate",
+    "age_band": "13-15",
+    "estimated_minutes": 30,
+    "difficulty": 2,
+    "content_flags": [
+      "no_violence"
+    ],
+    "knowledge_object_refs": [
+      "KO-RS-06-015",
+      "KO-RS-06-007",
+      "KO-RS-06-006",
+      "KO-RS-06-017",
+      "KO-RS-06-009",
+      "KO-RS-06-008",
+      "KO-RS-06-004",
+      "KO-RS-05-001",
+      "KO-RS-05-002",
+      "KO-RS-05-004",
+      "KO-RS-05-005",
+      "KO-RS-06-001",
+      "KO-RS-06-021"
+    ],
+    "locale": "ar",
+    "dialogue_register": "msa",
+    "authors": [
+      "فريق أثر التحريري (مسودة بمساعدة الذكاء الاصطناعي، لم تُراجَع بشرياً بعد)"
+    ]
+  },
+  "premise": {
+    "hook_ar": "ذبلت شتلات نادي النبات في ليلة واحدة، وكان آخر الخارجين من الغرفة طالباً شوهد يسحب سلكاً. هل يكفي أن يسبق الفعلُ الأثرَ بقليل ليكون سببه؟",
+    "player_role_ar": "أنت عضو في لجنة الأنشطة بمجلس الطلاب في مدرسة السنديان، وطُلب منك رأي معلّل في سبب ذبول الشتلات، دون اتهام أحد قبل أن تثبت السجلات شيئاً.",
+    "setting_ar": "مدرسة السنديان، صباح الخميس قبل معرض النوادي. الأوقات بساعة المدرسة.",
+    "public_fact_ids": [
+      "f_seedlings_cold",
+      "f_yusuf_seen"
+    ],
+    "assumed_general_knowledge_ar": [
+      "الشتلات الصغيرة تحتاج إلى دفء ثابت",
+      "المحوّل الموقِّت يقطع الكهرباء ويعيدها في ساعتين مضبوطتين كل يوم",
+      "ما يقع قبل شيء بقليل قد لا يكون سببه"
+    ]
+  },
+  "entities": {
+    "characters": [
+      {
+        "id": "yusuf",
+        "name_ar": "يوسف السراج",
+        "role": "suspect",
+        "age_descriptor_ar": "طالب في الصف التاسع، عضو في نادي النبات",
+        "persona_ar": "هادئ ومرتبك حين يُسأل عن الليلة الماضية، لكنه يجيب بوضوح ويحزن على الشتلات التي اعتنى بها.",
+        "motives_ar": [
+          "أن تنجو الشتلات",
+          "أن يُفهم ما فعله فعلاً"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "yu_greet",
+            "purpose": "greeting",
+            "text_ar": "أريد أن أعرف ما حدث للشتلات أكثر منك."
+          },
+          {
+            "line_id": "yu_says",
+            "purpose": "reveal",
+            "text_ar": "سحبت شاحن لوحي من مقبس الجدار قرب الطاولة وأنا أغادر قرابة السادسة إلا عشراً. لم ألمس مقبس الرف ولا البساط الدافئ، ثم أغلقت الباب وخرجت.",
+            "fact_ids": [
+              "f_yusuf_says"
+            ]
+          },
+          {
+            "line_id": "yu_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف."
+          },
+          {
+            "line_id": "yu_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن الأربعاء مساءً."
+          },
+          {
+            "line_id": "yu_bye",
+            "purpose": "farewell",
+            "text_ar": "أرجو أن تُفحص الأمور بالأوقات لا بالظنون."
+          }
+        ]
+      },
+      {
+        "id": "lara",
+        "name_ar": "لارا المنصور",
+        "role": "suspect",
+        "age_descriptor_ar": "طالبة في الصف التاسع، عضو في نادي الروبوت",
+        "persona_ar": "صريحة وسريعة الكلام، تضيق بقلة المساحة لكنها لا تتمنى الأذى لأحد.",
+        "motives_ar": [
+          "أن يجد فريقها مكاناً لمشروعه",
+          "ألا تُتهم بما لم تفعله"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "la_greet",
+            "purpose": "greeting",
+            "text_ar": "كتبت ما كتبته وأنا متضايقة، لكنني لم أؤذِ الشتلات."
+          },
+          {
+            "line_id": "la_says",
+            "purpose": "reveal",
+            "text_ar": "فتحت النافذة من 16:40 إلى 17:05 لأن الغرفة كانت دافئة وأنا أقيس الرف، ثم أغلقتها. لم ألمس الشتلات ولا الأسلاك.",
+            "fact_ids": [
+              "f_lara_says"
+            ]
+          },
+          {
+            "line_id": "la_msg",
+            "purpose": "reveal",
+            "text_ar": "نعم، كتبت في مجموعة النوادي أنني أتمنى نقل الشتلات من الرف، وكنت أقصد أن نتفاهم على المكان لا أن يحدث لها شيء.",
+            "fact_ids": [
+              "f_lara_msg"
+            ]
+          },
+          {
+            "line_id": "la_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف."
+          },
+          {
+            "line_id": "la_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن يوم الأربعاء."
+          },
+          {
+            "line_id": "la_bye",
+            "purpose": "farewell",
+            "text_ar": "أريد أن تعود الشتلات وأن يُحسم الأمر بدليل."
+          }
+        ]
+      },
+      {
+        "id": "hamdi",
+        "name_ar": "العم حمدي الصباغ",
+        "role": "suspect",
+        "age_descriptor_ar": "مسؤول الصيانة في المدرسة",
+        "persona_ar": "طيب وعملي يتحدث ببساطة، ويحزن حين يعلم أن عمله الصغير أثّر في أحد.",
+        "motives_ar": [
+          "توفير كهرباء المدرسة",
+          "ألا يتضرر أحد من عمله"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "ha_greet",
+            "purpose": "greeting",
+            "text_ar": "أنا أركّب وأصلح، وإن كان في عملي خطأ أريد أن أعرفه."
+          },
+          {
+            "line_id": "ha_wo",
+            "purpose": "reveal",
+            "text_ar": "ركّبت يوم الثلاثاء محوّلات موقِّتة في المقابس الجانبية لتوفير الكهرباء، وكتبت أمر العمل بالغرف والضبط. أرسلت التعميم للمعلمين.",
+            "fact_ids": [
+              "f_work_order_exists",
+              "f_circular_exists"
+            ]
+          },
+          {
+            "line_id": "ha_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف."
+          },
+          {
+            "line_id": "ha_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن عمل الصيانة."
+          },
+          {
+            "line_id": "ha_bye",
+            "purpose": "farewell",
+            "text_ar": "إن وجدنا خللاً في الإبلاغ فسنصلحه."
+          }
+        ]
+      },
+      {
+        "id": "salma",
+        "name_ar": "سلمى النجار",
+        "role": "witness",
+        "age_descriptor_ar": "عاملة نظافة في الممر",
+        "persona_ar": "طيبة وحذرة، تقول ما رأته وتتحرّج من التخمين.",
+        "motives_ar": [
+          "أن تقول ما رأته بدقة"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "sa_greet",
+            "purpose": "greeting",
+            "text_ar": "أنظّف الممر في المساء وأقول ما أراه."
+          },
+          {
+            "line_id": "sa_says",
+            "purpose": "reveal",
+            "text_ar": "قرابة السادسة إلا عشراً رأيت من باب الغرفة المفتوح يوسف ينحني عند الجدار قرب الطاولة ويسحب سلكاً. لم أرَ ما يتصل به السلك.",
+            "fact_ids": [
+              "f_salma_says"
+            ]
+          },
+          {
+            "line_id": "sa_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف."
+          },
+          {
+            "line_id": "sa_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عمّا رأيته في الممر."
+          },
+          {
+            "line_id": "sa_bye",
+            "purpose": "farewell",
+            "text_ar": "لا أحب أن أظلم أحداً بظني."
+          }
+        ]
+      },
+      {
+        "id": "maher",
+        "name_ar": "ماهر الزين",
+        "role": "witness",
+        "age_descriptor_ar": "حارس الممر",
+        "persona_ar": "منظّم ودقيق، يعتز بسجلاته ويقرأ منها ما دُوّن.",
+        "motives_ar": [
+          "أن تُقرأ السجلات كما كُتبت"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "ma_greet",
+            "purpose": "greeting",
+            "text_ar": "كل ما دخل وخرج مدوّن عندي."
+          },
+          {
+            "line_id": "ma_log",
+            "purpose": "reveal",
+            "text_ar": "أدوّن دخول الغرفة 12 وخروج من فيها بالبطاقة، وأفحص النوافذ عند الإقفال.",
+            "fact_ids": [
+              "f_door_log_exists"
+            ]
+          },
+          {
+            "line_id": "ma_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف."
+          },
+          {
+            "line_id": "ma_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن سجل البوابة."
+          },
+          {
+            "line_id": "ma_bye",
+            "purpose": "farewell",
+            "text_ar": "السجل لا يكتب إلا ما يمرّ على البوابة."
+          }
+        ]
+      },
+      {
+        "id": "tamer",
+        "name_ar": "تامر الفرا",
+        "role": "witness",
+        "age_descriptor_ar": "طالب في الصف التاسع، أمين سجلات نادي النبات",
+        "persona_ar": "متحمس ومنظّم يحب الأرقام، ويحرص على تسجيل كل تفصيل عن الشتلات.",
+        "motives_ar": [
+          "أن يعرف سبب ما أصاب الشتلات"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "ta_greet",
+            "purpose": "greeting",
+            "text_ar": "وضعت المسجّل ليبيّن لنا حرارة الشتلات، وأتمنى أن يفيد."
+          },
+          {
+            "line_id": "ta_log",
+            "purpose": "reveal",
+            "text_ar": "وضعت المسجّل الأربعاء قرابة 16:20 بجانب الشتلات، ويدوّن الحرارة كل عشر دقائق.",
+            "fact_ids": [
+              "f_logger_exists"
+            ]
+          },
+          {
+            "line_id": "ta_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف."
+          },
+          {
+            "line_id": "ta_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن المسجّل والشتلات."
+          },
+          {
+            "line_id": "ta_bye",
+            "purpose": "farewell",
+            "text_ar": "الأرقام تقول ما لا نراه."
+          }
+        ]
+      },
+      {
+        "id": "sawsan",
+        "name_ar": "سوسن العبيد",
+        "role": "authority",
+        "age_descriptor_ar": "معلمة مشرفة على نادي النبات",
+        "persona_ar": "هادئة ومنصفة، تعرض ما بين يديها ولا تتعجل في إلقاء اللوم.",
+        "motives_ar": [
+          "إنقاذ الشتلات",
+          "إنصاف الطلاب"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "sw_greet",
+            "purpose": "greeting",
+            "text_ar": "أريد فهم ما حدث قبل أن نحمّل أحداً شيئاً."
+          },
+          {
+            "line_id": "sw_photo",
+            "purpose": "reveal",
+            "text_ar": "صوّرت مقبس الرف صباح الخميس عند فتح الغرفة 07:20، وأرسل العم حمدي تعميماً الثلاثاء لم أفتحه قبل الحادثة.",
+            "fact_ids": [
+              "f_timer_photo_exists",
+              "f_circular_exists"
+            ]
+          },
+          {
+            "line_id": "sw_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف."
+          },
+          {
+            "line_id": "sw_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن غرفة النادي."
+          },
+          {
+            "line_id": "sw_bye",
+            "purpose": "farewell",
+            "text_ar": "نريد الحقيقة وأن تبقى الشتلات."
+          }
+        ]
+      }
+    ],
+    "locations": [
+      {
+        "id": "loc_club",
+        "name_ar": "غرفة نادي النبات",
+        "description_ar": "غرفة 12 فيها رف الشتلات والبساط الدافئ."
+      },
+      {
+        "id": "loc_gate",
+        "name_ar": "بوابة الممر",
+        "description_ar": "مكان حارس الممر وسجل الدخول والخروج."
+      },
+      {
+        "id": "loc_office",
+        "name_ar": "مكتب الصيانة",
+        "description_ar": "مكتب العم حمدي وأوراق العمل."
+      }
+    ],
+    "objects": [
+      {
+        "id": "obj_mat",
+        "name_ar": "البساط الدافئ",
+        "description_ar": "بساط يدفئ صواني الشتلات."
+      },
+      {
+        "id": "obj_timer",
+        "name_ar": "المحوّل الموقِّت",
+        "description_ar": "محوّل أبيض بشاشة صغيرة يقطع الكهرباء ويعيدها بساعتين مضبوطتين."
+      }
+    ],
+    "organizations": [
+      {
+        "id": "org_school",
+        "name_ar": "مدرسة السنديان",
+        "description_ar": "مدرسة خيالية في مدينة متخيلة تقيم معرضاً للنوادي."
+      }
+    ]
+  },
+  "truth": {
+    "solution": {
+      "culprit_ids": [
+        "hamdi"
+      ],
+      "summary_ar": "لم يتعمد أحد إيذاء الشتلات. ركّب العم حمدي يوم الثلاثاء محوّلاً موقِّتاً على مقبس الرف الشرقي لتوفير الكهرباء، ضُبط على الإيقاف 18:00 والتشغيل 06:00، وأرسل تعميماً لم تفتحه المعلمة، فوصل الطلاب البساط الدافئ به دون علم. سحب يوسف شاحنه من مقبس آخر قرابة 17:50 وخرج 17:55، وقطع المحوّل الدفء بعد ذلك عند 18:00 وأعاده 06:00 قبل دخول أحد، فبردت الشتلات ليلاً.",
+      "key_fact_ids": [
+        "f_auto_cut",
+        "f_charger_only"
+      ]
+    },
+    "facts": [
+      {
+        "id": "f_seedlings_cold",
+        "statement_ar": "ذبلت أربع عشرة شتلة من أصل أربعين في غرفة نادي النبات بعد ليلة باردة، ولم يعرف أحد السبب.",
+        "kind": "event",
+        "subject_ids": [
+          "sawsan"
+        ],
+        "spoiler_level": 0,
+        "time": {
+          "start_min": 2780,
+          "precision": "exact"
+        },
+        "location_id": "loc_club"
+      },
+      {
+        "id": "f_yusuf_seen",
+        "statement_ar": "قالت عاملة النظافة إنها رأت يوسف يسحب سلكاً من الجدار قبيل مغادرته الغرفة مساء الأربعاء.",
+        "kind": "attribute",
+        "subject_ids": [
+          "salma",
+          "yusuf"
+        ],
+        "spoiler_level": 0,
+        "time": {
+          "start_min": 1970,
+          "precision": "exact"
+        },
+        "location_id": "loc_club"
+      },
+      {
+        "id": "f_salma_says",
+        "statement_ar": "قالت سلمى للمعلمة إنها رأت من الممر يوسف ينحني عند الجدار قرب الطاولة ويسحب سلكاً قرابة 17:50 دون أن ترى ما يتصل به السلك.",
+        "kind": "attribute",
+        "subject_ids": [
+          "salma"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 2850,
+          "precision": "exact"
+        }
+      },
+      {
+        "id": "f_yusuf_says",
+        "statement_ar": "يقول يوسف إنه سحب شاحن لوحه من مقبس الجدار قرب الطاولة وهو يغادر قرابة 17:50، ولم يلمس مقبس الرف ولا البساط الدافئ.",
+        "kind": "attribute",
+        "subject_ids": [
+          "yusuf"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 2870,
+          "precision": "exact"
+        }
+      },
+      {
+        "id": "f_lara_says",
+        "statement_ar": "تقول لارا إنها فتحت النافذة من 16:40 إلى 17:05 لأن الغرفة كانت دافئة وهي تقيس الرف، ثم أغلقتها، ولم تلمس الشتلات.",
+        "kind": "attribute",
+        "subject_ids": [
+          "lara"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 2880,
+          "precision": "exact"
+        }
+      },
+      {
+        "id": "f_lara_msg",
+        "statement_ar": "كتبت لارا في مجموعة النوادي يوم الأربعاء 15:40 أنها تتمنى نقل الشتلات من الرف الذي يحتاجه فريق الروبوت.",
+        "kind": "event",
+        "subject_ids": [
+          "lara"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 1840,
+          "precision": "exact"
+        }
+      },
+      {
+        "id": "f_logger_exists",
+        "statement_ar": "وضع تامر مسجّل حرارة بجانب الشتلات يدوّن الحرارة كل عشر دقائق.",
+        "kind": "state",
+        "subject_ids": [
+          "tamer"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 1880,
+          "precision": "exact"
+        },
+        "location_id": "loc_club"
+      },
+      {
+        "id": "f_door_log_exists",
+        "statement_ar": "يدوّن حارس الممر خروج كل طالب من الغرفة 12 ودخوله بالبطاقة، ويفحص النوافذ عند الإقفال.",
+        "kind": "state",
+        "subject_ids": [
+          "maher"
+        ],
+        "spoiler_level": 1,
+        "location_id": "loc_gate"
+      },
+      {
+        "id": "f_timer_photo_exists",
+        "statement_ar": "صوّرت المعلمة مقبس الرف وما فيه صباح الخميس عند فتح الغرفة.",
+        "kind": "event",
+        "subject_ids": [
+          "sawsan"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 2785,
+          "precision": "exact"
+        },
+        "location_id": "loc_club"
+      },
+      {
+        "id": "f_work_order_exists",
+        "statement_ar": "كتب العم حمدي أمر عمل يوم الثلاثاء يبيّن المقابس التي ركّب عليها محوّلات موقِّتة وضبطها.",
+        "kind": "event",
+        "subject_ids": [
+          "hamdi"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 60,
+          "precision": "exact"
+        },
+        "location_id": "loc_office"
+      },
+      {
+        "id": "f_circular_exists",
+        "statement_ar": "أُرسل تعميم عن المحوّلات الموقِّتة إلى قائمة المعلمين يوم الثلاثاء، وتبيّن القائمة من فتحه.",
+        "kind": "event",
+        "subject_ids": [
+          "sawsan",
+          "hamdi"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 90,
+          "precision": "exact"
+        },
+        "location_id": "loc_office"
+      },
+      {
+        "id": "f_nobody_told",
+        "statement_ar": "لم يصل خبر المحوّل الموقِّت إلى أحد من نادي النبات، فوُصل البساط بمقبس الرف وهم لا يعرفون أنه موقِّت.",
+        "kind": "relation",
+        "subject_ids": [
+          "hamdi",
+          "sawsan",
+          "yusuf",
+          "tamer"
+        ],
+        "spoiler_level": 2,
+        "time": {
+          "start_min": 60,
+          "precision": "exact",
+          "end_min": 1880
+        },
+        "science_ko_refs": [
+          "KO-RS-06-004"
+        ]
+      },
+      {
+        "id": "f_charger_only",
+        "statement_ar": "ما سحبه يوسف مساء الأربعاء هو شاحن لوحه من مقبس لا محوّل عليه، أما قابس البساط فبقي في المحوّل ولم يُلمس.",
+        "kind": "relation",
+        "subject_ids": [
+          "yusuf",
+          "obj_mat"
+        ],
+        "spoiler_level": 3,
+        "time": {
+          "start_min": 1970,
+          "precision": "exact"
+        },
+        "location_id": "loc_club",
+        "science_ko_refs": [
+          "KO-RS-06-015",
+          "KO-RS-06-017"
+        ]
+      },
+      {
+        "id": "f_auto_cut",
+        "statement_ar": "انقطع الكهرباء عن البساط الدافئ بحكم ضبط المحوّل الموقِّت عند 18:00 مساء الأربعاء، وعاد تلقائياً عند 06:00 صباح الخميس؛ لم يقطعه أحد ولم يعده أحد.",
+        "kind": "relation",
+        "subject_ids": [
+          "obj_timer",
+          "obj_mat",
+          "hamdi"
+        ],
+        "spoiler_level": 3,
+        "time": {
+          "start_min": 1980,
+          "precision": "exact",
+          "end_min": 2700
+        },
+        "location_id": "loc_club",
+        "science_ko_refs": [
+          "KO-RS-06-015",
+          "KO-RS-06-007"
+        ]
+      }
+    ],
+    "claims": [
+      {
+        "id": "cl_yusuf_cut",
+        "statement_ar": "سحب يوسف سلك البساط الدافئ مساء الأربعاء فانقطعت الحرارة عن الشتلات.",
+        "kind": "honest_mistake",
+        "held_by": [
+          "sawsan"
+        ],
+        "true_fact_id": "f_auto_cut",
+        "contradicted_by_evidence_ids": [
+          "ev_logger",
+          "ev_door_log",
+          "ev_timer_photo"
+        ]
+      },
+      {
+        "id": "cl_window",
+        "statement_ar": "النافذة التي فتحتها لارا هي التي برّدت الغرفة وأذبلت الشتلات.",
+        "kind": "honest_mistake",
+        "held_by": [
+          "tamer"
+        ],
+        "true_fact_id": "f_auto_cut",
+        "contradicted_by_evidence_ids": [
+          "ev_logger",
+          "ev_door_log"
+        ]
+      }
+    ]
+  },
+  "timeline": [
+    {
+      "id": "te_install",
+      "description_ar": "العم حمدي يركّب المحوّلات الموقِّتة ويكتب أمر العمل ويرسل التعميم.",
+      "time": {
+        "start_min": 60,
+        "precision": "exact",
+        "end_min": 90
+      },
+      "location_id": "loc_office",
+      "actor_ids": [
+        "hamdi"
+      ],
+      "fact_ids": [
+        "f_work_order_exists",
+        "f_circular_exists",
+        "f_nobody_told"
+      ],
+      "motivated_by_ar": "توفير الكهرباء في المدرسة"
+    },
+    {
+      "id": "te_lara_msg",
+      "description_ar": "لارا تكتب رسالة عن الرف في مجموعة النوادي.",
+      "time": {
+        "start_min": 1840,
+        "precision": "exact"
+      },
+      "actor_ids": [
+        "lara"
+      ],
+      "fact_ids": [
+        "f_lara_msg"
+      ],
+      "motivated_by_ar": "الضيق من قلة المساحة"
+    },
+    {
+      "id": "te_setup",
+      "description_ar": "تامر يضع المسجّل ويوسف يوصل البساط الدافئ بمقبس الرف.",
+      "time": {
+        "start_min": 1880,
+        "precision": "exact"
+      },
+      "location_id": "loc_club",
+      "actor_ids": [
+        "tamer",
+        "yusuf"
+      ],
+      "fact_ids": [
+        "f_logger_exists"
+      ],
+      "motivated_by_ar": "تدفئة الشتلات ومراقبة حرارتها"
+    },
+    {
+      "id": "te_window",
+      "description_ar": "لارا تفتح النافذة ثم تغلقها وهي تقيس الرف.",
+      "time": {
+        "start_min": 1900,
+        "precision": "exact",
+        "end_min": 1925
+      },
+      "location_id": "loc_club",
+      "actor_ids": [
+        "lara"
+      ],
+      "fact_ids": [
+        "f_lara_says"
+      ],
+      "motivated_by_ar": "تهوية الغرفة وقياس الرف"
+    },
+    {
+      "id": "te_charger",
+      "description_ar": "يوسف يسحب شاحن لوحه من مقبس الجدار وسلمى تراه من الممر.",
+      "time": {
+        "start_min": 1970,
+        "precision": "exact"
+      },
+      "location_id": "loc_club",
+      "actor_ids": [
+        "yusuf"
+      ],
+      "witness_ids": [
+        "salma"
+      ],
+      "fact_ids": [
+        "f_yusuf_seen",
+        "f_charger_only"
+      ],
+      "motivated_by_ar": "أخذ شاحنه قبل المغادرة"
+    },
+    {
+      "id": "te_exit",
+      "description_ar": "يوسف يخرج ويُقفل الباب.",
+      "time": {
+        "start_min": 1975,
+        "precision": "exact"
+      },
+      "location_id": "loc_gate",
+      "actor_ids": [
+        "yusuf"
+      ],
+      "witness_ids": [
+        "maher"
+      ],
+      "fact_ids": [
+        "f_door_log_exists"
+      ],
+      "motivated_by_ar": "انتهاء وقت النادي"
+    },
+    {
+      "id": "te_off",
+      "description_ar": "المحوّل الموقِّت يقطع الكهرباء عن البساط عند الساعة المضبوطة.",
+      "time": {
+        "start_min": 1980,
+        "precision": "exact"
+      },
+      "location_id": "loc_club",
+      "actor_ids": [],
+      "fact_ids": [
+        "f_auto_cut"
+      ]
+    },
+    {
+      "id": "te_on",
+      "description_ar": "المحوّل الموقِّت يعيد الكهرباء إلى البساط عند الساعة المضبوطة.",
+      "time": {
+        "start_min": 2700,
+        "precision": "exact"
+      },
+      "location_id": "loc_club",
+      "actor_ids": [],
+      "fact_ids": [
+        "f_auto_cut"
+      ]
+    },
+    {
+      "id": "te_open",
+      "description_ar": "المعلمة تفتح الغرفة وتجد الشتلات ذابلة وتصوّر مقبس الرف.",
+      "time": {
+        "start_min": 2780,
+        "precision": "exact",
+        "end_min": 2785
+      },
+      "location_id": "loc_club",
+      "actor_ids": [
+        "sawsan"
+      ],
+      "fact_ids": [
+        "f_seedlings_cold",
+        "f_timer_photo_exists"
+      ],
+      "motivated_by_ar": "التحضير ليوم المعرض"
+    },
+    {
+      "id": "te_stmts",
+      "description_ar": "سلمى ويوسف ولارا يدلون بإفاداتهم.",
+      "time": {
+        "start_min": 2850,
+        "precision": "exact",
+        "end_min": 2880
+      },
+      "actor_ids": [
+        "salma",
+        "yusuf",
+        "lara"
+      ],
+      "fact_ids": [
+        "f_salma_says",
+        "f_yusuf_says"
+      ],
+      "motivated_by_ar": "استدعتهم المعلمة بعد البلاغ"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_report",
+      "title_ar": "بلاغ المعلمة عن الشتلات",
+      "kind": "documentary",
+      "content_ar": "بلاغ المعلمة س. العبيد — الخميس 08:10\nعند فتح غرفة نادي النبات 07:20 وُجدت 14 شتلة ذابلة من أصل 40. قالت عاملة النظافة إنها رأت الطالب يوسف السراج يسحب سلكاً من الجدار مساء الأربعاء، وكان آخر من غادر. السبب غير معروف.",
+      "acquired_by_action_ids": [
+        "a_read_report"
+      ],
+      "supports_fact_ids": [
+        "f_seedlings_cold",
+        "f_yusuf_seen"
+      ],
+      "reliability": "weak",
+      "limits_ar": "بلاغ يسجّل شبهة ولا يذكر أي سلك سُحب ولا متى بردت الغرفة؛ وكون يوسف آخر من غادر لا يثبت أنه سبب البرد.",
+      "is_red_herring": true,
+      "location_id": "loc_club"
+    },
+    {
+      "id": "ev_salma_stmt",
+      "title_ar": "إفادة سلمى (كما دوّنتها المعلمة)",
+      "kind": "testimonial",
+      "content_ar": "إفادة سلمى النجار — الخميس 08:30\n«قرابة السادسة إلا عشراً رأيت من باب الغرفة المفتوح الطالب يوسف ينحني عند الجدار قرب الطاولة ويسحب سلكاً. لم أرَ إلى أي جهاز يتصل السلك.»",
+      "acquired_by_action_ids": [
+        "a_note_salma"
+      ],
+      "supports_fact_ids": [
+        "f_salma_says"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "شاهدة صادقة رأت المشهد من بعيد؛ لا تعرف أي سلك سُحب ولا ما يتصل به، وتُقاس إفادتها بسجلات لا تعتمد عليها.",
+      "is_red_herring": true,
+      "location_id": "loc_club"
+    },
+    {
+      "id": "ev_yusuf_stmt",
+      "title_ar": "إفادة يوسف (ملخص)",
+      "kind": "testimonial",
+      "content_ar": "ملخص إفادة يوسف السراج:\n«سحبت شاحن لوحي من مقبس الجدار قرب الطاولة وأنا أغادر قرابة 17:50. لم ألمس مقبس الرف ولا البساط الدافئ. أغلقت الباب وخرجت.»",
+      "acquired_by_action_ids": [
+        "a_note_yusuf"
+      ],
+      "supports_fact_ids": [
+        "f_yusuf_says"
+      ],
+      "reliability": "weak",
+      "limits_ar": "إفادة صاحب الشأن عن نفسه؛ لا ينفي اهتمامه بالشتلات ولا يثبت وحده ما سحبه، وتُقاس بسجلات لا يكتبها.",
+      "location_id": "loc_club"
+    },
+    {
+      "id": "ev_lara_stmt",
+      "title_ar": "إفادة لارا (ملخص)",
+      "kind": "testimonial",
+      "content_ar": "ملخص إفادة لارا المنصور:\n«فتحت النافذة من 16:40 إلى 17:05 لأن الغرفة كانت دافئة وأنا أقيس الرف، ثم أغلقتها. لم ألمس الشتلات ولا الأسلاك.»",
+      "acquired_by_action_ids": [
+        "a_note_lara"
+      ],
+      "supports_fact_ids": [
+        "f_lara_says"
+      ],
+      "reliability": "weak",
+      "limits_ar": "إفادة عن النفس؛ تبيّن أن النافذة فُتحت مدة قصيرة ولا تبيّن أثرها في الحرارة.",
+      "is_red_herring": true,
+      "location_id": "loc_club"
+    },
+    {
+      "id": "ev_lara_msg",
+      "title_ar": "رسالة لارا في مجموعة النوادي",
+      "kind": "digital",
+      "content_ar": "مجموعة نوادي المدرسة — لارا المنصور — الأربعاء 15:40\n«الشتلات تأخذ الرف الذي يحتاجه فريق الروبوت. ليت النادي ينقلها إلى مكان آخر!»",
+      "acquired_by_action_ids": [
+        "a_get_lara_msg"
+      ],
+      "supports_fact_ids": [
+        "f_lara_msg"
+      ],
+      "reliability": "weak",
+      "limits_ar": "تعبّر عن ضيق من المساحة وطلب نقل؛ لا تذكر مقبساً ولا خطة، والضيق لا يثبت فعلاً.",
+      "is_red_herring": true,
+      "location_id": "loc_club"
+    },
+    {
+      "id": "ev_logger",
+      "title_ar": "سجل حرارة غرفة نادي النبات",
+      "kind": "digital",
+      "content_ar": "مسجّل الحرارة (يدوّن كل 10 دقائق)\nالأربعاء: 16:40 → 24.4° · 17:00 → 23.8° · 17:20 → 24.3° · 17:50 → 24.2° · 18:00 → 24.1° · 18:10 → 22.6° · 18:30 → 19.4° · 21:00 → 14.0° · 23:50 → 12.2°\nالخميس: 05:50 → 11.8° · 06:00 → 11.9° · 06:10 → 13.6° · 06:30 → 16.8° · 07:20 → 21.7°",
+      "acquired_by_action_ids": [
+        "a_get_logger"
+      ],
+      "supports_fact_ids": [
+        "f_logger_exists",
+        "f_auto_cut",
+        "f_charger_only"
+      ],
+      "reliability": "strong",
+      "limits_ar": "قراءات دورية متباعدة بعشر دقائق؛ تصف مسار الدفء ولا تصف سببه.",
+      "contradicts_claim_ids": [
+        "cl_yusuf_cut",
+        "cl_window"
+      ],
+      "location_id": "loc_club"
+    },
+    {
+      "id": "ev_door_log",
+      "title_ar": "سجل بوابة الممر للغرفة 12",
+      "kind": "documentary",
+      "content_ar": "سجل بوابة الممر — ماهر الزين — بطاقة الدخول والخروج\nالأربعاء 17:55: خروج يوسف السراج (آخر من غادر) · أُقفل الباب · النوافذ مغلقة عند الإقفال.\nلا دخول ولا خروج بعد ذلك حتى الخميس 07:20: دخول س. العبيد.",
+      "acquired_by_action_ids": [
+        "a_get_door_log"
+      ],
+      "supports_fact_ids": [
+        "f_door_log_exists",
+        "f_auto_cut",
+        "f_charger_only"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يدوّن مرور البطاقة وفحص النوافذ، ولا يرى الأجهزة داخل الغرفة ولا ما فيها من أسلاك.",
+      "contradicts_claim_ids": [
+        "cl_window"
+      ],
+      "location_id": "loc_gate"
+    },
+    {
+      "id": "ev_timer_photo",
+      "title_ar": "صورة مقبس الرف صباح الخميس",
+      "kind": "digital",
+      "content_ar": "هاتف المعلمة — الخميس 07:25\nمقبس الرف الشرقي: قابس البساط الدافئ داخل محوّل أبيض بشاشة صغيرة، وعليها: تشغيل 06:00 · إيقاف 18:00. القابس مثبت في المحوّل. وفي الجدار القريب من الطاولة مقبس فارغ.",
+      "acquired_by_action_ids": [
+        "a_get_timer_photo"
+      ],
+      "supports_fact_ids": [
+        "f_timer_photo_exists",
+        "f_auto_cut",
+        "f_charger_only"
+      ],
+      "reliability": "strong",
+      "limits_ar": "تُظهر الضبط والتوصيل كما هما صباحاً، ولا تقول من ضبط المحوّل ولا متى.",
+      "contradicts_claim_ids": [
+        "cl_yusuf_cut"
+      ],
+      "location_id": "loc_club"
+    },
+    {
+      "id": "ev_work_order",
+      "title_ar": "أمر عمل الصيانة",
+      "kind": "documentary",
+      "content_ar": "أمر عمل — العم حمدي الصباغ — الثلاثاء 10:00\nتركيب محوّلات موقِّتة في المقابس الجانبية لتوفير الكهرباء: إيقاف 18:00، تشغيل 06:00.\nالغرفة 12: مقبس الرف الشرقي ✓ · مقبس الطاولة (بلا محوّل)",
+      "acquired_by_action_ids": [
+        "a_get_work_order"
+      ],
+      "supports_fact_ids": [
+        "f_work_order_exists",
+        "f_auto_cut",
+        "f_charger_only",
+        "f_nobody_told"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يبيّن ما رُكّب وضبطه، ولا يبيّن أن النادي أُخبر ولا ما كان سيُوصل بالمقبس لاحقاً.",
+      "location_id": "loc_office"
+    },
+    {
+      "id": "ev_circular",
+      "title_ar": "تعميم توفير الطاقة وقائمة قراءته",
+      "kind": "documentary",
+      "content_ar": "تعميم الصيانة — الثلاثاء 10:30 — إلى قائمة المعلمين\n«ركّبنا محوّلات موقِّتة في بعض المقابس. يُرجى عدم توصيل أجهزة تعمل ليلاً بها.»\nقائمة القراءة: س. العبيد — لم يُفتح قبل الخميس.",
+      "acquired_by_action_ids": [
+        "a_get_circular"
+      ],
+      "supports_fact_ids": [
+        "f_circular_exists",
+        "f_nobody_told"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "يبيّن أن التعميم أُرسل إلى المعلمين ولم يُفتح، ولا يبيّن هل قيل شيء للطلاب بوسيلة أخرى.",
+      "location_id": "loc_office"
+    }
+  ],
+  "evidence_graph": {
+    "inferences": [
+      {
+        "id": "i_auto_a",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_logger"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_door_log"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_auto_cut"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "بدأ الانخفاض عند 18:00 لا قبله، وبدأ الارتفاع عند 06:00 وسجل البوابة لا يذكر دخول أحد بين 17:55 و07:20؛ فقطع الكهرباء وعودتها جرى بلا يد بشرية، أي آلياً.",
+        "skill_ko_refs": [
+          "KO-RS-06-015",
+          "KO-RS-06-017"
+        ]
+      },
+      {
+        "id": "i_auto_b",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_timer_photo"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_work_order"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_auto_cut"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "قابس البساط موصول بمحوّل مضبوط على الإيقاف 18:00 والتشغيل 06:00، وأمر العمل يؤكد أن المحوّل رُكّب يوم الثلاثاء؛ فالضبط نفسه يفسّر ساعتي القطع والعودة.",
+        "skill_ko_refs": [
+          "KO-RS-06-007",
+          "KO-RS-06-015"
+        ]
+      },
+      {
+        "id": "i_charger_a",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_salma_stmt"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_logger"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_door_log"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_charger_only"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "ما رأته سلمى كان قرابة 17:50 وخروج يوسف 17:55، لكن الحرارة بقيت 24.2 ثم 24.1 حتى 18:00؛ فسحب السلك لم يقطع الدفء، لأن القطع بدأ بعده.",
+        "skill_ko_refs": [
+          "KO-RS-06-015",
+          "KO-RS-06-017"
+        ]
+      },
+      {
+        "id": "i_charger_b",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_timer_photo"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_work_order"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_yusuf_stmt"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_charger_only"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "المقبس الفارغ قرب الطاولة بلا محوّل، وقابس البساط ما زال في محوّل مقبس الرف؛ وهذا يطابق قول يوسف إنه سحب شاحنه من مقبس الطاولة.",
+        "skill_ko_refs": [
+          "KO-RS-06-004",
+          "KO-RS-06-015"
+        ]
+      },
+      {
+        "id": "i_nobody_told",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_circular"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_work_order"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_nobody_told"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "التعميم أُرسل للمعلمين ولم يُفتح قبل الحادثة، وأمر العمل لا يذكر إبلاغ النادي؛ فلم يعرف أحد في النادي أن المقبس موقِّت.",
+        "skill_ko_refs": [
+          "KO-RS-06-004"
+        ]
+      },
+      {
+        "id": "i_cl_yusuf",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_auto_cut"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_charger_only"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_yusuf_cut"
+        },
+        "relation": "contradicts_claim",
+        "strength": "strong",
+        "rule_ar": "القطع بدأ بعد أن سحب يوسف شاحنه بعشر دقائق، وبساط الدفء بقي موصولاً بمحوّله؛ فالتقارب في الوقت لا يدل على سبب.",
+        "skill_ko_refs": [
+          "KO-RS-06-015"
+        ]
+      },
+      {
+        "id": "i_cl_window",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_logger"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_door_log"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_window"
+        },
+        "relation": "contradicts_claim",
+        "strength": "strong",
+        "rule_ar": "النافذة فُتحت 16:40 إلى 17:05 فنزلت الحرارة قليلاً ثم عادت 24.3 عند 17:20، والنوافذ مغلقة عند الإقفال؛ فلم تكن سبب البرد الليلي.",
+        "skill_ko_refs": [
+          "KO-RS-06-008"
+        ]
+      },
+      {
+        "id": "i_support_timer",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_auto_cut"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_nobody_told"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_timer"
+        },
+        "relation": "supports",
+        "strength": "strong",
+        "rule_ar": "ضبط المحوّل يفسّر ساعتي القطع والعودة معاً دون يد بشرية، وعدم علم النادي يفسّر لماذا وُصل البساط به.",
+        "skill_ko_refs": [
+          "KO-RS-06-007"
+        ]
+      },
+      {
+        "id": "i_rule_yusuf",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_auto_cut"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_charger_only"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_yusuf"
+        },
+        "relation": "rules_out",
+        "strength": "conclusive",
+        "rule_ar": "ما سحبه يوسف كان شاحنه، والقطع جاء بعد سحبه وبعد خروجه آلياً؛ فلا فعل منه يفسّر البرد.",
+        "skill_ko_refs": [
+          "KO-RS-06-008"
+        ]
+      },
+      {
+        "id": "i_rule_lara",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_auto_cut"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_logger"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_lara"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "لا أثر في السجل لفعل منها؛ الحرارة عادت إلى 24.3 بعد فتح النافذة، والقطع الليلي له سبب آلي لا يحتاج إلى فاعل.",
+        "skill_ko_refs": [
+          "KO-RS-06-008"
+        ]
+      },
+      {
+        "id": "i_rule_window",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_logger"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_door_log"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_window"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "النافذة أُغلقت قبل الإقفال، وبدأ البرد الحاد بعد ساعة من إغلاقها وعند 18:00 تحديداً.",
+        "skill_ko_refs": [
+          "KO-RS-06-008"
+        ]
+      }
+    ]
+  },
+  "character_knowledge": [
+    {
+      "character_id": "yusuf",
+      "knows": [
+        {
+          "fact_id": "f_yusuf_says",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    },
+    {
+      "character_id": "lara",
+      "knows": [
+        {
+          "fact_id": "f_lara_says",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_lara_msg",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    },
+    {
+      "character_id": "hamdi",
+      "knows": [
+        {
+          "fact_id": "f_work_order_exists",
+          "access": "professional",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_circular_exists",
+          "access": "professional",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    },
+    {
+      "character_id": "salma",
+      "knows": [
+        {
+          "fact_id": "f_salma_says",
+          "access": "witnessed",
+          "certainty": "fairly_sure"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    },
+    {
+      "character_id": "maher",
+      "knows": [
+        {
+          "fact_id": "f_door_log_exists",
+          "access": "professional",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    },
+    {
+      "character_id": "tamer",
+      "knows": [
+        {
+          "fact_id": "f_logger_exists",
+          "access": "professional",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": [
+        {
+          "claim_id": "cl_window",
+          "stance": "sincere"
+        }
+      ]
+    },
+    {
+      "character_id": "sawsan",
+      "knows": [
+        {
+          "fact_id": "f_timer_photo_exists",
+          "access": "professional",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_circular_exists",
+          "access": "professional",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": [
+        {
+          "claim_id": "cl_yusuf_cut",
+          "stance": "sincere"
+        }
+      ]
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "h_yusuf",
+      "statement_ar": "سحب يوسف سلك البساط الدافئ مساء الأربعاء فبردت الشتلات.",
+      "is_true": false,
+      "plausibility_at_start": "high",
+      "suspect_id": "yusuf"
+    },
+    {
+      "id": "h_lara",
+      "statement_ar": "عبثت لارا بالتدفئة لتحصل على الرف الذي يحتاجه فريقها.",
+      "is_true": false,
+      "plausibility_at_start": "medium",
+      "suspect_id": "lara"
+    },
+    {
+      "id": "h_window",
+      "statement_ar": "برّد النافذة المفتوحة الغرفة طوال الليل فذبلت الشتلات.",
+      "is_true": false,
+      "plausibility_at_start": "low"
+    },
+    {
+      "id": "h_timer",
+      "statement_ar": "لم يفعل أحد شيئاً: محوّل موقِّت ركّبته الصيانة قطع الكهرباء عن البساط عند 18:00 وأعادها عند 06:00.",
+      "is_true": true,
+      "plausibility_at_start": "low",
+      "suspect_id": "hamdi"
+    }
+  ],
+  "misdirection_plan": [
+    {
+      "id": "rh_cable",
+      "points_to_hypothesis_id": "h_yusuf",
+      "planted_via_ar": "آخر من غادر الغرفة ورؤي وهو يسحب سلكاً من الجدار.",
+      "evidence_ids": [
+        "ev_report",
+        "ev_salma_stmt"
+      ],
+      "refuted_by_inference_ids": [
+        "i_charger_a",
+        "i_charger_b",
+        "i_rule_yusuf"
+      ],
+      "fairness_note_ar": "سجل الحرارة وسجل البوابة وصورة المقبس بين يدي اللاعب، وتبيّن أن القطع بدأ بعد السحب بعشر دقائق وأن البساط لم يُفصل."
+    },
+    {
+      "id": "rh_msg",
+      "points_to_hypothesis_id": "h_lara",
+      "planted_via_ar": "رسالة لارا تتمنى نقل الشتلات من الرف.",
+      "evidence_ids": [
+        "ev_lara_msg"
+      ],
+      "refuted_by_inference_ids": [
+        "i_rule_lara",
+        "i_auto_a"
+      ],
+      "fairness_note_ar": "الرسالة طلب مكان قبل الحادثة بساعات، ولا فعل في السجلات يطابقها، والقطع آلي."
+    },
+    {
+      "id": "rh_window",
+      "points_to_hypothesis_id": "h_window",
+      "planted_via_ar": "فتحت لارا النافذة عصر الأربعاء والليلة باردة.",
+      "evidence_ids": [
+        "ev_lara_stmt"
+      ],
+      "refuted_by_inference_ids": [
+        "i_rule_window",
+        "i_cl_window"
+      ],
+      "fairness_note_ar": "سجل الحرارة يبيّن عودة الدفء بعد النافذة وبقاءه 24 حتى 18:00، والنوافذ مغلقة عند الإقفال."
+    }
+  ],
+  "learning_objectives": [
+    {
+      "id": "lo_claim",
+      "statement_ar": "يصنّف الأدلة بحسب نوع مصدرها ويعامل الأقوال ادعاءات تحتاج تأييداً.",
+      "skill_ko_ref": "KO-RS-05-001",
+      "observable_behaviors_ar": [
+        "يصنّف الإفادات أقوالاً",
+        "يميز السجل الأصلي من القول"
+      ],
+      "evidence_sources": [
+        "evidence_board"
+      ]
+    },
+    {
+      "id": "lo_timeline",
+      "statement_ar": "يرتّب الأحداث على خط زمني واحد ليكشف ما يسبق وما يلحق.",
+      "skill_ko_ref": "KO-RS-05-005",
+      "observable_behaviors_ar": [
+        "يضع الأدلة في أزمنتها"
+      ],
+      "evidence_sources": [
+        "timeline_task",
+        "action_log"
+      ]
+    },
+    {
+      "id": "lo_indep",
+      "statement_ar": "يقدّم مسارين للإثبات لا يشتركان في مصدر.",
+      "skill_ko_ref": "KO-RS-05-004",
+      "observable_behaviors_ar": [
+        "يميز بين مصادر لا تشترك في أصل"
+      ],
+      "evidence_sources": [
+        "evidence_board",
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_main",
+      "statement_ar": "يفرّق بين التقارب في الزمن والسببية: ما جرى قبل النتيجة بقليل ليس سببها إلا إذا ربطته آلية، وقد يكون للحدث الغريب تفسير آلي بلا فاعل.",
+      "skill_ko_ref": "KO-RS-06-015",
+      "observable_behaviors_ar": [
+        "يقارن وقت الفعل بوقت النتيجة",
+        "يطلب آلية تربط الفعل بالأثر",
+        "يبقي فرضية «لا فاعل» حتى تُدحض"
+      ],
+      "evidence_sources": [
+        "evidence_board",
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_hyp",
+      "statement_ar": "يوازن بين فرضيتين على الأقل ويستبعد ما تنقضه الأدلة.",
+      "skill_ko_ref": "KO-RS-05-002",
+      "observable_behaviors_ar": [
+        "يضيف فرضيات",
+        "يستبعد بدليل"
+      ],
+      "evidence_sources": [
+        "hypothesis_ledger"
+      ]
+    },
+    {
+      "id": "lo_diag",
+      "statement_ar": "يقدّر ما يثبته كل دليل وما لا يثبته ويربطه بالفرضية باتجاه صحيح.",
+      "skill_ko_ref": "KO-RS-06-001",
+      "observable_behaviors_ar": [
+        "يربط الدليل بالفرضية"
+      ],
+      "evidence_sources": [
+        "evidence_board",
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_calib",
+      "statement_ar": "يصوغ نسبة الترجيح بحدودها.",
+      "skill_ko_ref": "KO-RS-06-021",
+      "observable_behaviors_ar": [
+        "يختار ثقة معقولة",
+        "يذكر حدوداً"
+      ],
+      "evidence_sources": [
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_revise",
+      "statement_ar": "يراجع رأيه الأول حين يظهر ما يخالفه.",
+      "skill_ko_ref": "KO-RS-06-009",
+      "observable_behaviors_ar": [
+        "يغيّر فرضيته الرائدة بدليل"
+      ],
+      "evidence_sources": [
+        "hypothesis_ledger"
+      ]
+    }
+  ],
+  "mechanics": {
+    "time_budget_units": 50,
+    "actions": [
+      {
+        "id": "a_read_report",
+        "type": "examine",
+        "label_ar": "اقرأ بلاغ المعلمة عن الشتلات",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_report"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_club",
+        "telemetry_code": "READ_REPORT"
+      },
+      {
+        "id": "a_int_yusuf",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة يوسف",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "yusuf",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "yusuf",
+        "telemetry_code": "INT_YUSUF"
+      },
+      {
+        "id": "a_int_lara",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة لارا",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "lara",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "lara",
+        "telemetry_code": "INT_LARA"
+      },
+      {
+        "id": "a_int_hamdi",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة العم",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "hamdi",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "hamdi",
+        "telemetry_code": "INT_HAMDI"
+      },
+      {
+        "id": "a_int_salma",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة سلمى",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "salma",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "salma",
+        "telemetry_code": "INT_SALMA"
+      },
+      {
+        "id": "a_int_maher",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة ماهر",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "maher",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "maher",
+        "telemetry_code": "INT_MAHER"
+      },
+      {
+        "id": "a_int_tamer",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة تامر",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "tamer",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "tamer",
+        "telemetry_code": "INT_TAMER"
+      },
+      {
+        "id": "a_int_sawsan",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة سوسن",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "sawsan",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "sawsan",
+        "telemetry_code": "INT_SAWSAN"
+      },
+      {
+        "id": "a_note_salma",
+        "type": "examine",
+        "label_ar": "دوّن إفادة سلمى",
+        "precondition": {
+          "fact_unlocked": "f_salma_says"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_salma_stmt"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "salma",
+        "telemetry_code": "NOTE_SALMA"
+      },
+      {
+        "id": "a_note_yusuf",
+        "type": "examine",
+        "label_ar": "دوّن إفادة يوسف",
+        "precondition": {
+          "fact_unlocked": "f_yusuf_says"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_yusuf_stmt"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "yusuf",
+        "telemetry_code": "NOTE_YUSUF"
+      },
+      {
+        "id": "a_note_lara",
+        "type": "examine",
+        "label_ar": "دوّن إفادة لارا",
+        "precondition": {
+          "fact_unlocked": "f_lara_says"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_lara_stmt"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "lara",
+        "telemetry_code": "NOTE_LARA"
+      },
+      {
+        "id": "a_get_lara_msg",
+        "type": "examine",
+        "label_ar": "اطلب رسالة لارا في مجموعة النوادي",
+        "precondition": {
+          "fact_unlocked": "f_lara_msg"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_lara_msg"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_club",
+        "telemetry_code": "GET_LARA_MSG"
+      },
+      {
+        "id": "a_get_logger",
+        "type": "examine",
+        "label_ar": "اطلب سجل مسجّل الحرارة",
+        "precondition": {
+          "fact_unlocked": "f_logger_exists"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_logger"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_club",
+        "telemetry_code": "GET_LOGGER"
+      },
+      {
+        "id": "a_get_door_log",
+        "type": "examine",
+        "label_ar": "اطلب سجل بوابة الممر",
+        "precondition": {
+          "fact_unlocked": "f_door_log_exists"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_door_log"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_gate",
+        "telemetry_code": "GET_DOOR_LOG"
+      },
+      {
+        "id": "a_get_timer_photo",
+        "type": "examine",
+        "label_ar": "اطلب صورة مقبس الرف",
+        "precondition": {
+          "fact_unlocked": "f_timer_photo_exists"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_timer_photo"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_club",
+        "telemetry_code": "GET_TIMER_PHOTO"
+      },
+      {
+        "id": "a_get_work_order",
+        "type": "examine",
+        "label_ar": "اطلب أمر عمل الصيانة",
+        "precondition": {
+          "fact_unlocked": "f_work_order_exists"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_work_order"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_office",
+        "telemetry_code": "GET_WORK_ORDER"
+      },
+      {
+        "id": "a_get_circular",
+        "type": "examine",
+        "label_ar": "اطلب تعميم الصيانة وقائمة قراءته",
+        "precondition": {
+          "fact_unlocked": "f_circular_exists"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_circular"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_office",
+        "telemetry_code": "GET_CIRCULAR"
+      },
+      {
+        "id": "a_hint",
+        "type": "request_hint",
+        "label_ar": "اطلب تلميحاً",
+        "precondition": {
+          "always": true
+        },
+        "effects": [],
+        "time_cost_units": 0,
+        "telemetry_code": "REQUEST_HINT"
+      },
+      {
+        "id": "a_accuse",
+        "type": "final_accusation",
+        "label_ar": "قدّم الرأي المعلّل النهائي",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "SUBMIT"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "FINAL_ACCUSATION"
+      },
+      {
+        "id": "ask_yusuf_f_yusuf_says",
+        "type": "interview",
+        "label_ar": "[نموذج] yusuf يذكر f_yusuf_says",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_yusuf_says"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "yusuf",
+        "telemetry_code": "ASK_YUSUF_F_YUSUF_SAYS"
+      },
+      {
+        "id": "ask_lara_f_lara_says",
+        "type": "interview",
+        "label_ar": "[نموذج] lara يذكر f_lara_says",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_lara_says"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "lara",
+        "telemetry_code": "ASK_LARA_F_LARA_SAYS"
+      },
+      {
+        "id": "ask_lara_f_lara_msg",
+        "type": "interview",
+        "label_ar": "[نموذج] lara يذكر f_lara_msg",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_lara_msg"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "lara",
+        "telemetry_code": "ASK_LARA_F_LARA_MSG"
+      },
+      {
+        "id": "ask_hamdi_f_work_order_exists",
+        "type": "interview",
+        "label_ar": "[نموذج] hamdi يذكر f_work_order_exists",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_work_order_exists"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "hamdi",
+        "telemetry_code": "ASK_HAMDI_F_WORK_ORDER_EXISTS"
+      },
+      {
+        "id": "ask_hamdi_f_circular_exists",
+        "type": "interview",
+        "label_ar": "[نموذج] hamdi يذكر f_circular_exists",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_circular_exists"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "hamdi",
+        "telemetry_code": "ASK_HAMDI_F_CIRCULAR_EXISTS"
+      },
+      {
+        "id": "ask_salma_f_salma_says",
+        "type": "interview",
+        "label_ar": "[نموذج] salma يذكر f_salma_says",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_salma_says"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "salma",
+        "telemetry_code": "ASK_SALMA_F_SALMA_SAYS"
+      },
+      {
+        "id": "ask_maher_f_door_log_exists",
+        "type": "interview",
+        "label_ar": "[نموذج] maher يذكر f_door_log_exists",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_door_log_exists"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "maher",
+        "telemetry_code": "ASK_MAHER_F_DOOR_LOG_EXISTS"
+      },
+      {
+        "id": "ask_tamer_f_logger_exists",
+        "type": "interview",
+        "label_ar": "[نموذج] tamer يذكر f_logger_exists",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_logger_exists"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "tamer",
+        "telemetry_code": "ASK_TAMER_F_LOGGER_EXISTS"
+      },
+      {
+        "id": "ask_sawsan_f_timer_photo_exists",
+        "type": "interview",
+        "label_ar": "[نموذج] sawsan يذكر f_timer_photo_exists",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_timer_photo_exists"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "sawsan",
+        "telemetry_code": "ASK_SAWSAN_F_TIMER_PHOTO_EXISTS"
+      },
+      {
+        "id": "ask_sawsan_f_circular_exists",
+        "type": "interview",
+        "label_ar": "[نموذج] sawsan يذكر f_circular_exists",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_circular_exists"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "sawsan",
+        "telemetry_code": "ASK_SAWSAN_F_CIRCULAR_EXISTS"
+      }
+    ]
+  },
+  "state_machine": {
+    "id": "c041",
+    "initial": "briefing",
+    "type": "compound",
+    "states": {
+      "briefing": {
+        "description_ar": "الإحاطة",
+        "type": "atomic",
+        "on": {
+          "START": {
+            "target": "investigating"
+          }
+        }
+      },
+      "investigating": {
+        "description_ar": "التحقيق",
+        "type": "compound",
+        "initial": "gathering",
+        "states": {
+          "gathering": {
+            "type": "atomic",
+            "on": {
+              "OPEN_DEDUCTION": {
+                "target": "deducing"
+              }
+            }
+          },
+          "deducing": {
+            "type": "atomic",
+            "on": {
+              "BACK": {
+                "target": "gathering"
+              }
+            }
+          }
+        },
+        "on": {
+          "SUBMIT": {
+            "target": "review"
+          }
+        }
+      },
+      "review": {
+        "description_ar": "مراجعة",
+        "type": "atomic",
+        "on": {
+          "CLOSE": {
+            "target": "resolved"
+          }
+        }
+      },
+      "resolved": {
+        "description_ar": "إغلاق",
+        "type": "final"
+      }
+    }
+  },
+  "dialogue": {
+    "max_turns_per_interview": 10,
+    "llm_enabled": false,
+    "topics": [
+      {
+        "id": "t_yusuf",
+        "label_ar": "ما فعلته قبل المغادرة",
+        "example_questions_ar": [
+          "ماذا فعلت قبل أن تخرج؟",
+          "ماذا سحبت من الجدار؟"
+        ],
+        "fact_ids": [
+          "f_yusuf_says"
+        ]
+      },
+      {
+        "id": "t_lara_win",
+        "label_ar": "النافذة",
+        "example_questions_ar": [
+          "متى فتحت النافذة؟",
+          "ولماذا؟"
+        ],
+        "fact_ids": [
+          "f_lara_says"
+        ]
+      },
+      {
+        "id": "t_lara_msg",
+        "label_ar": "رسالتك عن الرف",
+        "example_questions_ar": [
+          "ماذا كتبتِ في المجموعة؟"
+        ],
+        "fact_ids": [
+          "f_lara_msg"
+        ]
+      },
+      {
+        "id": "t_hamdi",
+        "label_ar": "عملك يوم الثلاثاء",
+        "example_questions_ar": [
+          "ماذا ركّبت؟",
+          "كيف أبلغت الناس؟"
+        ],
+        "fact_ids": [
+          "f_work_order_exists",
+          "f_circular_exists"
+        ]
+      },
+      {
+        "id": "t_salma",
+        "label_ar": "ما رأيته من الممر",
+        "example_questions_ar": [
+          "ماذا رأيتِ؟",
+          "هل رأيتِ ما اتصل به السلك؟"
+        ],
+        "fact_ids": [
+          "f_salma_says"
+        ]
+      },
+      {
+        "id": "t_maher",
+        "label_ar": "سجل البوابة",
+        "example_questions_ar": [
+          "ماذا تدوّن؟",
+          "من دخل ومن خرج؟"
+        ],
+        "fact_ids": [
+          "f_door_log_exists"
+        ]
+      },
+      {
+        "id": "t_tamer",
+        "label_ar": "المسجّل",
+        "example_questions_ar": [
+          "ماذا يسجّل جهازك؟",
+          "متى وضعته؟"
+        ],
+        "fact_ids": [
+          "f_logger_exists"
+        ],
+        "claim_ids": [
+          "cl_window"
+        ]
+      },
+      {
+        "id": "t_sawsan",
+        "label_ar": "صباح الخميس",
+        "example_questions_ar": [
+          "ماذا صوّرتِ؟",
+          "هل قرأتِ التعميم؟"
+        ],
+        "fact_ids": [
+          "f_timer_photo_exists",
+          "f_circular_exists"
+        ],
+        "claim_ids": [
+          "cl_yusuf_cut"
+        ]
+      }
+    ]
+  },
+  "rubric": {
+    "reference_answer_ar": "لا فاعل مقصوداً هنا. سحب يوسف شاحنه قرابة 17:50 وخرج 17:55، لكن الحرارة بقيت 24 حتى 18:00 ثم بدأت تنخفض، أي بعد سحبه بعشر دقائق لا معه. وعادت الحرارة إلى الارتفاع عند 06:00 دون أن يدخل أحد، إذ لم يُسجَّل دخول بين 17:55 و07:20. وصورة المقبس تبيّن بساطاً موصولاً بمحوّل مضبوط على الإيقاف 18:00 والتشغيل 06:00، وأمر العمل يؤكد أن حمدي ركّبه يوم الثلاثاء، والتعميم لم يُفتح. فالمحوّل الموقِّت قطع الكهرباء وأعادها آلياً. والنافذة المفتوحة عصراً لم تؤثر، ورسالة لارا طلب مكان لا فعل. حدود الاستنتاج: السجل كل عشر دقائق فلا نعرف الدقيقة بالضبط، وسلمى رأت من بعيد ولا نعرف ماذا كان على السلك إلا بمقارنته بالسجلات، ولا نعرف كم شتلة ستتعافى.",
+    "criteria": [
+      {
+        "id": "c_source",
+        "name_ar": "تصنيف المصادر",
+        "objective_ids": [
+          "lo_claim"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يصنّف"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "أخطأ في الأغلب"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "نصف صحيح"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمه صحيح"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كله صحيح"
+          }
+        ]
+      },
+      {
+        "id": "c_conflict",
+        "name_ar": "ترتيب الأحداث على الخط الزمني",
+        "objective_ids": [
+          "lo_timeline"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.2,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يرتّب شيئاً"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "رتّب قليلاً"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "رتّب نصفها"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمها"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كلها في موضعها"
+          }
+        ]
+      },
+      {
+        "id": "c_links",
+        "name_ar": "ربط الأدلة بالفرضيات",
+        "objective_ids": [
+          "lo_diag",
+          "lo_indep"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.2,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لا روابط"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "قليلة"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "نصفها صحيح"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمها"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كلها دقيقة"
+          }
+        ]
+      },
+      {
+        "id": "c_uncertainty",
+        "name_ar": "معايرة الثقة",
+        "objective_ids": [
+          "lo_calib"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "ثقة مفرطة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "حدود قليلة"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "جزئية"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معقولة"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "معايَرة كاملة"
+          }
+        ]
+      },
+      {
+        "id": "c_revision",
+        "name_ar": "مراجعة الرأي",
+        "objective_ids": [
+          "lo_revise"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "بقي على فرضية مرفوضة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "لم يعلن فرضية"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "ثبت على فرضية سليمة"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "غيّر بدليل"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "غيّر بدليل ووثّق"
+          }
+        ]
+      },
+      {
+        "id": "c_elimination",
+        "name_ar": "استبعاد الفرضيات الخاطئة",
+        "objective_ids": [
+          "lo_hyp"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يستبعد"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "استبعد خطأً"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "فرضية بدليل"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "فرضيتين"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كل الخاطئة"
+          }
+        ]
+      },
+      {
+        "id": "c_justification",
+        "name_ar": "جودة الحجة المكتوبة",
+        "objective_ids": [
+          "lo_main"
+        ],
+        "scored_by": "human",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لا حجة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "ادعاء بلا سند"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "أدلة دون ربط"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "ربط الأدلة بالاستنتاج"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "ربط مع الآلية والحدود"
+          }
+        ]
+      }
+    ]
+  },
+  "hint_ladder": [
+    {
+      "id": "hg1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "حين يحدث أمر مؤذٍ بعد فعل ظاهر بقليل، اسأل: هل يربط بينهما شيء أم تقارب في الوقت فقط؟",
+      "trigger": {
+        "always": true
+      },
+      "assessment_weight": 0.02
+    },
+    {
+      "id": "hg2",
+      "level": 2,
+      "kind": "focus_area",
+      "text_ar": "قارن وقت سحب السلك بوقت بدء انخفاض الحرارة، وانظر ماذا حدث عند الصباح.",
+      "trigger": {
+        "has_evidence": "ev_report"
+      },
+      "assessment_weight": 0.04
+    },
+    {
+      "id": "hg3",
+      "level": 3,
+      "kind": "pointer",
+      "text_ar": "ابحث عن سجل لا يملكه أحد من المشتبه بهم: مسجّل الحرارة، وسجل البوابة، وما في المقبس نفسه.",
+      "trigger": {
+        "has_evidence": "ev_report"
+      },
+      "assessment_weight": 0.08
+    },
+    {
+      "id": "hs1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "لو قطع أحد الكهرباء، فمن الذي أعادها قبل أن يدخل أحد؟",
+      "trigger": {
+        "has_evidence": "ev_salma_stmt"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_auto_a"
+    },
+    {
+      "id": "hs2",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "اطلب سجل الحرارة وسجل البوابة، وقارن ساعة بدء البرد وساعة عودة الدفء بساعات الدخول والخروج.",
+      "trigger": {
+        "has_evidence": "ev_salma_stmt"
+      },
+      "assessment_weight": 0.06,
+      "targets_inference_id": "i_auto_a"
+    },
+    {
+      "id": "hw1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "هل نظرت إلى المقبس الذي وُصل به البساط؟ وما الذي يوصله به؟",
+      "trigger": {
+        "has_evidence": "ev_report"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_auto_b"
+    },
+    {
+      "id": "hw2",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "اسأل المعلمة عن صورة المقبس، ثم اسأل الصيانة عما رُكّب في المقابس يوم الثلاثاء.",
+      "trigger": {
+        "has_evidence": "ev_report"
+      },
+      "assessment_weight": 0.06,
+      "targets_inference_id": "i_auto_b"
+    }
+  ],
+  "fairness_test": {
+    "requirements": {
+      "min_disjoint_proof_paths": 2,
+      "max_inference_depth": 3,
+      "all_red_herrings_refutable": true,
+      "culprit_uniquely_entailed": true,
+      "no_hidden_fact_dependency": true,
+      "max_required_actions": 50
+    },
+    "runs": []
+  },
+  "ending_explanation": {
+    "steps": [
+      {
+        "order": 1,
+        "text_ar": "ابدأ بالساعات: سحب يوسف شاحنه قرابة 17:50 وخرج 17:55، لكن الحرارة بقيت 24.2 ثم 24.1 حتى 18:00 ثم بدأت تنخفض.",
+        "uses_evidence_ids": [
+          "ev_salma_stmt",
+          "ev_logger",
+          "ev_door_log"
+        ],
+        "inference_id": "i_charger_a"
+      },
+      {
+        "order": 2,
+        "text_ar": "ثم انظر إلى الصباح: ارتفعت الحرارة عند 06:00 ولم يدخل أحد بين 17:55 و07:20؛ فالقطع والعودة جريا بلا يد بشرية.",
+        "uses_evidence_ids": [
+          "ev_logger",
+          "ev_door_log"
+        ],
+        "inference_id": "i_auto_a"
+      },
+      {
+        "order": 3,
+        "text_ar": "مسار ثانٍ: صورة المقبس تبيّن البساط في محوّل مضبوط على الإيقاف 18:00 والتشغيل 06:00، وأمر العمل يبيّن أن الصيانة ركّبته يوم الثلاثاء.",
+        "uses_evidence_ids": [
+          "ev_timer_photo",
+          "ev_work_order"
+        ],
+        "inference_id": "i_auto_b"
+      },
+      {
+        "order": 4,
+        "text_ar": "ولم يعلم النادي بذلك لأن التعميم أُرسل للمعلمين ولم يُفتح؛ فوصل الطلاب البساط بالمقبس البريء الشكل.",
+        "uses_evidence_ids": [
+          "ev_circular",
+          "ev_work_order"
+        ],
+        "inference_id": "i_nobody_told"
+      },
+      {
+        "order": 5,
+        "text_ar": "رسالة لارا طلب مكان لا فعل، والنافذة فُتحت قصيراً وعادت الحرارة بعدها إلى 24؛ فلا فاعل مقصوداً هنا.",
+        "uses_evidence_ids": [
+          "ev_lara_msg",
+          "ev_lara_stmt",
+          "ev_logger"
+        ],
+        "inference_id": "i_rule_lara"
+      }
+    ],
+    "alternative_paths_ar": [
+      "يمكن إثبات الآلية الآلية بسجل الحرارة وسجل البوابة وحدهما، أو بصورة المقبس وأمر العمل وحدهما؛ والأقوى أن يتفق المساران.",
+      "ويمكن إثبات أن سحب الشاحن لم يقطع الدفء بمقارنة وقته بوقت بدء الانخفاض، أو بأن قابس البساط بقي في المحوّل."
+    ],
+    "what_evidence_could_not_show_ar": [
+      "لا نعرف الدقيقة التي قُطعت فيها الكهرباء، فالمسجّل يدوّن كل عشر دقائق؛ يكفي أن الانخفاض بدأ بعد 18:00 لا قبل 17:50.",
+      "لا يثبت أي دليل أن يوسف لم يكن ليسحب سلك البساط لو أراد؛ يثبت فقط أنه لم يفعل وأن البرد له سبب آلي.",
+      "لا نعرف كم شتلة ستتعافى من الأربعين."
+    ],
+    "science_notes_ar": [
+      "ما يقع قبل النتيجة بقليل قد لا يكون سببها؛ نبحث عن آلية تربط الفعل بالأثر ونقارن الساعات، فإن بدأ الأثر بعد الفعل بعشر دقائق لا معه فالفعل غالباً ليس السبب.",
+      "حين لا يوجد فاعل يفسر الحدث نبقي فرضية «لا فاعل» مفتوحة؛ فالأجهزة المبرمجة تفعل أحياناً أشياء تبدو مقصودة.",
+      "سجل الحرارة الدوري يبيّن متى تغيّر الأمر ولا يبيّن لماذا؛ لذلك نقرنه بسجل البوابة وصورة المقبس.",
+      "لا أحد شرير في هذه القضية: حمدي أراد توفير الكهرباء، والتعميم لم يبلغ النادي، ويوسف سحب شاحنه، ولارا طلبت مكاناً. والإصلاح بسيط: يُبلَّغ الطلاب بالمقابس الموقِّتة وتُوسَم.",
+      "القضية أصلية من ATHAR على نمط «الحادث الذي بدا مقصوداً» وهي مسودة لم تُراجَع بشرياً."
+    ]
+  },
+  "expert_review": [
+    {
+      "role": "narrative_editor",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-11-05",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "scientific_reviewer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-11-05",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "learning_designer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-11-05",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "age_appropriateness",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-11-05",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "cultural_reviewer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-11-05",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "legal_rights",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-11-05",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "safety",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-11-05",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    }
+  ]
+}

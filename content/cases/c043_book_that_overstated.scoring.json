@@ -1,0 +1,133 @@
+{
+  "case_id": "c043_book_that_overstated",
+  "accepted_conclusions": {
+    "h_ended": {
+      "grade": 0,
+      "note_ar": "يأخذ قوة اللغة دليلاً، ويتجاهل أن الهوامش تثبت إصلاحاً وسوقاً يعمل وتراجعاً تدريجياً."
+    },
+    "h_overstated": {
+      "grade": 1,
+      "note_ar": "استنتاج متسق مع الأدلة ويتطلب ذكر حدوده."
+    },
+    "h_worthless": {
+      "grade": 0,
+      "note_ar": "يتجاوز الأدلة: الفيضان والإصلاح ثابتان بسجل أصلي، والعيب في قوة العبارة لا في أصل الكتاب."
+    }
+  },
+  "confidence_band": {
+    "h_ended": [
+      0,
+      15
+    ],
+    "h_overstated": [
+      60,
+      85
+    ],
+    "h_worthless": [
+      0,
+      10
+    ]
+  },
+  "source_key": {
+    "ev_panel": "redisplay",
+    "ev_book_page": "claim",
+    "ev_footnotes": "redisplay",
+    "ev_ledger": "primary_record",
+    "ev_diary": "primary_record",
+    "ev_own_article": "public_document",
+    "ev_first_edition": "public_document",
+    "ev_edit_letters": "primary_record",
+    "ev_tax_roll": "primary_record",
+    "ev_decree_register": "primary_record",
+    "ev_blog_copy": "redisplay",
+    "ev_author_stmt": "claim",
+    "ev_editor_stmt": "claim"
+  },
+  "link_key": {
+    "h_overstated": {
+      "ev_footnotes": "supports",
+      "ev_ledger": "supports",
+      "ev_diary": "supports",
+      "ev_own_article": "supports",
+      "ev_first_edition": "supports",
+      "ev_edit_letters": "supports",
+      "ev_tax_roll": "supports",
+      "ev_decree_register": "supports",
+      "ev_author_stmt": "supports",
+      "ev_editor_stmt": "supports",
+      "ev_blog_copy": "neutral"
+    },
+    "h_ended": {
+      "ev_book_page": "supports",
+      "ev_panel": "supports",
+      "ev_blog_copy": "supports",
+      "ev_ledger": "neutral",
+      "ev_diary": "weakens",
+      "ev_tax_roll": "weakens",
+      "ev_decree_register": "weakens",
+      "ev_footnotes": "weakens"
+    },
+    "h_worthless": {
+      "ev_own_article": "supports",
+      "ev_ledger": "weakens",
+      "ev_first_edition": "weakens",
+      "ev_edit_letters": "neutral",
+      "ev_blog_copy": "neutral"
+    }
+  },
+  "required_limits": [
+    "l_cause",
+    "l_absence"
+  ],
+  "valid_mind_changers": [
+    "m_closure_doc",
+    "m_roll_error"
+  ],
+  "invalid_limits": [
+    "l_invalid_confident",
+    "l_invalid_copies"
+  ],
+  "decisive_evidence": [
+    "ev_footnotes",
+    "ev_ledger",
+    "ev_diary",
+    "ev_tax_roll",
+    "ev_first_edition",
+    "ev_edit_letters"
+  ],
+  "lab_requirement": null,
+  "timeline_requirement": [
+    {
+      "evidence_id": "ev_book_page",
+      "utc_minute": -2900,
+      "tol": 10
+    },
+    {
+      "evidence_id": "ev_panel",
+      "utc_minute": -1500,
+      "tol": 10
+    },
+    {
+      "evidence_id": "ev_blog_copy",
+      "utc_minute": -600,
+      "tol": 10
+    }
+  ],
+  "refuted_hypotheses": [
+    "h_ended",
+    "h_worthless"
+  ],
+  "criteria_map": {
+    "c_source": "source_typing",
+    "c_conflict": "conflict_resolution",
+    "c_links": "hypothesis_links",
+    "c_uncertainty": "uncertainty",
+    "c_revision": "revision",
+    "c_elimination": "elimination",
+    "c_justification": "justification_human"
+  },
+  "caps": {
+    "no_citations_max": 45,
+    "no_conflict_resolution_max": 70
+  }
+}

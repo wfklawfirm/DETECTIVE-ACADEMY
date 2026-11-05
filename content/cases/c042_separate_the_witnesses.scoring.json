@@ -1,0 +1,156 @@
+{
+  "case_id": "c042_separate_the_witnesses",
+  "accepted_conclusions": {
+    "h_dock": {
+      "grade": 0,
+      "note_ar": "يعتمد على إفادتين متطابقتين مصدرهما مشترك، وتنقضه صورة الرصيف واستمارة القاعة."
+    },
+    "h_transit": {
+      "grade": 0,
+      "note_ar": "يبالغ في فرق تقدير الدقائق عند السائق، وسجل الشاحنة يبين الباب مغلقاً بلا توقف."
+    },
+    "h_store": {
+      "grade": 1,
+      "note_ar": "استنتاج متسق مع السجلات ويتطلب ذكر حدوده."
+    },
+    "h_short": {
+      "grade": 0,
+      "note_ar": "تنقضه قائمة التعبئة وقراءة ميزان القاعة عند الاستلام."
+    }
+  },
+  "confidence_band": {
+    "h_dock": [
+      0,
+      15
+    ],
+    "h_transit": [
+      0,
+      10
+    ],
+    "h_store": [
+      65,
+      90
+    ],
+    "h_short": [
+      0,
+      10
+    ]
+  },
+  "source_key": {
+    "ev_incident_note": "public_document",
+    "ev_register": "public_document",
+    "ev_packing_list": "public_document",
+    "ev_dock_photo": "primary_record",
+    "ev_stmt_hatem": "claim",
+    "ev_stmt_dalia": "claim",
+    "ev_stmt_lubna": "claim",
+    "ev_stmt_majd": "claim",
+    "ev_stmt_tariq": "claim",
+    "ev_hall_receipt": "primary_record",
+    "ev_trip_log": "primary_record",
+    "ev_call_log": "primary_record",
+    "ev_store_door": "primary_record",
+    "ev_reweigh": "primary_record",
+    "ev_store_bin": "primary_record",
+    "ev_corner_list": "public_document"
+  },
+  "link_key": {
+    "h_dock": {
+      "ev_stmt_lubna": "supports",
+      "ev_stmt_majd": "supports",
+      "ev_incident_note": "supports",
+      "ev_dock_photo": "weakens",
+      "ev_hall_receipt": "weakens",
+      "ev_stmt_hatem": "weakens",
+      "ev_stmt_dalia": "weakens",
+      "ev_call_log": "weakens",
+      "ev_register": "neutral"
+    },
+    "h_transit": {
+      "ev_trip_log": "weakens",
+      "ev_dock_photo": "weakens",
+      "ev_hall_receipt": "weakens",
+      "ev_stmt_hatem": "neutral",
+      "ev_register": "neutral"
+    },
+    "h_store": {
+      "ev_store_door": "supports",
+      "ev_reweigh": "supports",
+      "ev_store_bin": "supports",
+      "ev_corner_list": "supports",
+      "ev_hall_receipt": "supports",
+      "ev_stmt_dalia": "supports",
+      "ev_stmt_hatem": "supports",
+      "ev_stmt_tariq": "weakens",
+      "ev_packing_list": "neutral"
+    },
+    "h_short": {
+      "ev_packing_list": "weakens",
+      "ev_hall_receipt": "weakens",
+      "ev_dock_photo": "weakens",
+      "ev_reweigh": "weakens"
+    }
+  },
+  "required_limits": [
+    "l_card",
+    "l_not_lies"
+  ],
+  "valid_mind_changers": [
+    "m_card_shared",
+    "m_scale_fault",
+    "m_second_entry"
+  ],
+  "invalid_limits": [
+    "l_invalid_agree",
+    "l_invalid_time"
+  ],
+  "decisive_evidence": [
+    "ev_hall_receipt",
+    "ev_dock_photo",
+    "ev_call_log",
+    "ev_store_door",
+    "ev_reweigh",
+    "ev_store_bin"
+  ],
+  "lab_requirement": null,
+  "timeline_requirement": [
+    {
+      "evidence_id": "ev_dock_photo",
+      "utc_minute": 32,
+      "tol": 10
+    },
+    {
+      "evidence_id": "ev_hall_receipt",
+      "utc_minute": 100,
+      "tol": 10
+    },
+    {
+      "evidence_id": "ev_store_door",
+      "utc_minute": 122,
+      "tol": 10
+    },
+    {
+      "evidence_id": "ev_call_log",
+      "utc_minute": 158,
+      "tol": 10
+    }
+  ],
+  "refuted_hypotheses": [
+    "h_dock",
+    "h_transit",
+    "h_short"
+  ],
+  "criteria_map": {
+    "c_source": "source_typing",
+    "c_conflict": "conflict_resolution",
+    "c_links": "hypothesis_links",
+    "c_uncertainty": "uncertainty",
+    "c_revision": "revision",
+    "c_elimination": "elimination",
+    "c_justification": "justification_human"
+  },
+  "caps": {
+    "no_citations_max": 45,
+    "no_conflict_resolution_max": 70
+  }
+}

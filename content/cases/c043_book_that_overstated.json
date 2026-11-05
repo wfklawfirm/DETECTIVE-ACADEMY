@@ -1,0 +1,2474 @@
+{
+  "schema_version": "0.1.0",
+  "case_id": "c043_book_that_overstated",
+  "case_version": "0.1.0",
+  "meta": {
+    "title_ar": "الكتاب الذي بالغ في التوكيد",
+    "title_en": "The Book That Overstated",
+    "age_band": "16-18",
+    "locale": "ar",
+    "dialogue_register": "msa",
+    "estimated_minutes": 35,
+    "difficulty": 3,
+    "content_flags": [
+      "no_violence"
+    ],
+    "authors": [
+      "فريق أثر التحريري (مسودة بمساعدة الذكاء الاصطناعي، لم تُراجَع بشرياً بعد)"
+    ],
+    "knowledge_object_refs": [
+      "KO-RS-05-001",
+      "KO-RS-05-004",
+      "KO-RS-05-005",
+      "KO-RS-05-002",
+      "KO-RS-05-010",
+      "KO-RS-06-009"
+    ]
+  },
+  "premise": {
+    "hook_ar": "لوحة في متحف المدينة تقول إن فيضان النهر أنهى سوق الحبوب القديم، ومصدرها كتاب يقول «ثبت بالدليل القاطع» ويعدّ ثلاثة هوامش. فهل تقول الهوامش ما قاله الكتاب؟",
+    "player_role_ar": "أنت عضو لجنة التحقق في نادي التاريخ بثانوية الجسر، وطلب المتحف رأيك المعلّل قبل أن يطبع العبارة على لوحته الدائمة.",
+    "setting_ar": "مدينة «الصفصاف» المتخيَّلة، من الاثنين إلى الأربعاء. الأسماء والكتب والسجلات والسنوات كلها متخيَّلة للتعلم، وتوقيت النادي هو توقيت أوراق القضية.",
+    "public_fact_ids": [
+      "f_panel_claim",
+      "f_book_claim"
+    ],
+    "assumed_general_knowledge_ar": [
+      "الهامش الذي يُذكر بعد العبارة لا يعني أن المصدر يقول ما قالته العبارة",
+      "كلمات مثل «ثبت» و«أجمعت» و«أنهى» أقوى من كلمات مثل «يرجَّح» و«أضعف»",
+      "تكرار العبارة في مواقع كثيرة لا يضيف دليلاً إن كان كله منقولاً من كتاب واحد"
+    ]
+  },
+  "entities": {
+    "characters": [
+      {
+        "id": "farid",
+        "name_ar": "د. فريد الصفدي",
+        "role": "suspect",
+        "age_descriptor_ar": "مؤلف الكتاب وأستاذ تاريخ محلي متقاعد",
+        "persona_ar": "هادئ ويحب الوضوح، ويقلق من أن يُظن أنه اختلق مصدراً.",
+        "motives_ar": [
+          "ألا يُتهم بالتزييف",
+          "أن يبقى كتابه مرجعاً مقروءاً"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "fr_greet",
+            "purpose": "greeting",
+            "text_ar": "أهلاً بك. كل ما في الكتاب له هامش."
+          },
+          {
+            "line_id": "fr_first",
+            "purpose": "reveal",
+            "text_ar": "في الطبعة الأولى كتبت أن الفيضان يُرجَّح أنه أضعف السوق، وأن المصادر لا تكفي لتحديد أثره. ومقالي القديم قال الشيء نفسه.",
+            "fact_ids": [
+              "f_first_ed_hedged",
+              "f_own_article_hedged"
+            ],
+            "claim_ids": [
+              "cl_book_ended"
+            ]
+          },
+          {
+            "line_id": "fr_refuse",
+            "purpose": "refuse_secret",
+            "text_ar": "الطبعة الثانية صدرت بإذني."
+          },
+          {
+            "line_id": "fr_changed",
+            "purpose": "reveal",
+            "text_ar": "نعم، وافقت على صيغة الطبعة الثانية التي جاءت بها الدار، ورأيتها أوضح. لم تكن هذه عبارتي الأولى.",
+            "fact_ids": [
+              "f_wording_changed"
+            ]
+          },
+          {
+            "line_id": "fr_noevid",
+            "purpose": "reveal",
+            "text_ar": "لم أضف بين الطبعتين أي مصدر جديد، ولم أعد قراءة الهوامش قبل الموافقة. أرى الآن أن العبارة أقوى من هوامشي.",
+            "fact_ids": [
+              "f_no_new_evidence"
+            ]
+          },
+          {
+            "line_id": "fr_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أذكر ذلك."
+          },
+          {
+            "line_id": "fr_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن الكتاب ومصادره."
+          },
+          {
+            "line_id": "fr_bye",
+            "purpose": "farewell",
+            "text_ar": "سأطلب تصحيح الصفحة قبل أي طبعة جديدة."
+          }
+        ]
+      },
+      {
+        "id": "rula",
+        "name_ar": "رولا النحاس",
+        "role": "witness",
+        "age_descriptor_ar": "محررة في دار المنارة للنشر",
+        "persona_ar": "سريعة ومتعاونة، تريد نصاً سهل القراءة، وتخشى أن يُنسب إليها تغيير المعنى.",
+        "motives_ar": [
+          "ألا يُنسب إليها تغيير معنى الكتاب",
+          "أن تُفهم نيتها في تبسيط النص"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "rl_greet",
+            "purpose": "greeting",
+            "text_ar": "أهلاً. أحتفظ بمراسلات الطبعة الثانية."
+          },
+          {
+            "line_id": "rl_print",
+            "purpose": "reveal",
+            "text_ar": "طُبعت الطبعة الثانية بعد أيام من مراسلتنا للمؤلف، وكانت الهوامش هي نفسها في الطبعتين.",
+            "fact_ids": [
+              "f_second_ed_printed"
+            ],
+            "claim_ids": [
+              "cl_notes_exist"
+            ]
+          },
+          {
+            "line_id": "rl_refuse",
+            "purpose": "refuse_secret",
+            "text_ar": "عملنا كان عملاً تحريرياً عادياً."
+          },
+          {
+            "line_id": "rl_nocheck",
+            "purpose": "reveal",
+            "text_ar": "طلبت تقوية العبارات لأن الفصل ثقيل على القارئ العام. واعتبرت أن وجود الهوامش يكفي، فلم أفتح مصدراً واحداً منها.",
+            "fact_ids": [
+              "f_editor_no_check"
+            ]
+          },
+          {
+            "line_id": "rl_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف أكثر من ذلك."
+          },
+          {
+            "line_id": "rl_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن تحرير الكتاب فقط."
+          },
+          {
+            "line_id": "rl_bye",
+            "purpose": "farewell",
+            "text_ar": "سنصحح الطبعة إن ثبت الخطأ."
+          }
+        ]
+      },
+      {
+        "id": "mazen",
+        "name_ar": "أ. مازن الوهيبي",
+        "role": "expert",
+        "age_descriptor_ar": "أمين أرشيف بلدية الصفصاف",
+        "persona_ar": "دقيق وهادئ، يفرّق بين ما يقوله السجل وما يُقال عنه.",
+        "motives_ar": [
+          "أن تُقرأ السجلات كما هي",
+          "ألا يُحمَّل السجل أكثر مما فيه"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "mz_greet",
+            "purpose": "greeting",
+            "text_ar": "تفضّل. السجل يقول ما كُتب فيه ولا يزيد."
+          },
+          {
+            "line_id": "mz_ledger",
+            "purpose": "reveal",
+            "text_ar": "دفتر الأشغال يسجل ما صُرف على الإصلاح فقط. بند سنة 1340 يخص سقف السوق وجدرانه، ولا يذكر إغلاقاً.",
+            "fact_ids": [
+              "f_ledger_repair"
+            ]
+          },
+          {
+            "line_id": "mz_roll",
+            "purpose": "reveal",
+            "text_ar": "سجل ضريبة الدكاكين يعدّ دكاكين سوق الحبوب في خمس سنوات، وتراها في الورقة. وسجل المراسيم للسنوات 1330 إلى 1360 لا فيه مرسوم بإغلاق السوق.",
+            "fact_ids": [
+              "f_gradual_decline",
+              "f_no_decree_closure"
+            ]
+          },
+          {
+            "line_id": "mz_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أجزم بما لم يُكتب."
+          },
+          {
+            "line_id": "mz_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن السجلات."
+          },
+          {
+            "line_id": "mz_bye",
+            "purpose": "farewell",
+            "text_ar": "اقرأ المصدر قبل أن تقرأ ما قيل عنه."
+          }
+        ]
+      }
+    ],
+    "locations": [
+      {
+        "id": "loc_museum",
+        "name_ar": "متحف الصفصاف",
+        "description_ar": "لوحة معرض «نهر المدينة» قبل الطباعة النهائية."
+      },
+      {
+        "id": "loc_library",
+        "name_ar": "مكتبة المدينة",
+        "description_ar": "نسختا الكتاب، الأولى والثانية، وعدد قديم من مجلة الجمعية التاريخية."
+      },
+      {
+        "id": "loc_archive",
+        "name_ar": "أرشيف البلدية",
+        "description_ar": "دفتر الأشغال وسجل الضريبة وسجل المراسيم ويوميات تاجر."
+      },
+      {
+        "id": "loc_press_house",
+        "name_ar": "دار المنارة للنشر",
+        "description_ar": "مراسلات التحرير للطبعة الثانية."
+      }
+    ],
+    "objects": [
+      {
+        "id": "obj_book",
+        "name_ar": "كتاب «حبوب على ضفة النهر»",
+        "description_ar": "كتاب في تاريخ سوق الحبوب القديم، له طبعتان."
+      },
+      {
+        "id": "obj_market",
+        "name_ar": "سوق الحبوب القديم",
+        "description_ar": "سوق مسقوف عند الجسر، تعمل فيه دكاكين مؤجرة."
+      }
+    ],
+    "organizations": [
+      {
+        "id": "org_press",
+        "name_ar": "دار المنارة للنشر",
+        "description_ar": "دار نشر محلية صغيرة."
+      },
+      {
+        "id": "org_museum",
+        "name_ar": "متحف الصفصاف",
+        "description_ar": "متحف المدينة، يعدّ لوحات معرض جديد."
+      }
+    ]
+  },
+  "truth": {
+    "solution": {
+      "culprit_ids": [
+        "farid"
+      ],
+      "summary_ar": "لا تثبت الهوامش نهاية السوق بسبب الفيضان. أولها بند عن إصلاح، وثانيها شاهد يصف سوقاً ما زال يبيع بعد اثنتي عشرة سنة، وثالثها رأي احتمالي للمؤلف نفسه. وجاء التوكيد في الطبعة الثانية من تحرير وافق عليه المؤلف دون فحص الهوامش، ولم يقصد أحد التضليل.",
+      "key_fact_ids": [
+        "f_overstated"
+      ]
+    },
+    "facts": [
+      {
+        "id": "f_panel_claim",
+        "statement_ar": "طُبعت مسودة لوحة في المتحف تقول إن فيضان سنة 1340 أنهى سوق الحبوب القديم، نقلاً عن كتاب الصفدي.",
+        "kind": "event",
+        "subject_ids": [
+          "org_museum",
+          "obj_market"
+        ],
+        "spoiler_level": 0,
+        "time": {
+          "start_min": -1500,
+          "precision": "exact"
+        },
+        "location_id": "loc_museum"
+      },
+      {
+        "id": "f_book_claim",
+        "statement_ar": "تقول الطبعة الثانية من الكتاب في الصفحة 212: ثبت بالدليل القاطع أن الفيضان أنهى السوق، فقد أجمعت عليه المصادر، وتحيل إلى ثلاثة هوامش.",
+        "kind": "attribute",
+        "subject_ids": [
+          "obj_book",
+          "farid"
+        ],
+        "spoiler_level": 0,
+        "location_id": "loc_library"
+      },
+      {
+        "id": "f_notes_three",
+        "statement_ar": "الهوامش 41 و42 و43 تحيل إلى ثلاثة مصادر فقط: بند في دفتر الأشغال، ويوميات تاجر، ومقال سابق للمؤلف نفسه.",
+        "kind": "attribute",
+        "subject_ids": [
+          "obj_book"
+        ],
+        "spoiler_level": 1,
+        "location_id": "loc_library"
+      },
+      {
+        "id": "f_ledger_repair",
+        "statement_ar": "بند سنة 1340 في دفتر الأشغال يسجل مبلغاً صُرف لإصلاح سقف سوق الحبوب وجدرانه بعد ارتفاع ماء النهر، ولا يذكر إغلاقاً.",
+        "kind": "event",
+        "subject_ids": [
+          "obj_market"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": -100000,
+          "precision": "unknown"
+        },
+        "location_id": "loc_archive"
+      },
+      {
+        "id": "f_diary_open",
+        "statement_ar": "يوميات التاجر سنة 1352 تذكر أنه باع قمح موسمه في سوق الحبوب، وأن الزحام كان دون المعتاد وأن بعض الدكاكين مغلقة.",
+        "kind": "event",
+        "subject_ids": [
+          "obj_market"
+        ],
+        "spoiler_level": 1,
+        "location_id": "loc_archive"
+      },
+      {
+        "id": "f_own_article_hedged",
+        "statement_ar": "مقال المؤلف المحال إليه في الهامش 43 يقول: يُرجَّح أن الفيضان أضعف السوق، ولا تكفي المصادر لتحديد أثره.",
+        "kind": "attribute",
+        "subject_ids": [
+          "farid"
+        ],
+        "spoiler_level": 1,
+        "location_id": "loc_library"
+      },
+      {
+        "id": "f_first_ed_hedged",
+        "statement_ar": "الطبعة الأولى كتبت بصيغة الاحتمال: يرجَّح أن الفيضان أضعف السوق، مع الهوامش الثلاثة نفسها.",
+        "kind": "attribute",
+        "subject_ids": [
+          "obj_book",
+          "farid"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": -200000,
+          "precision": "approx"
+        },
+        "location_id": "loc_library"
+      },
+      {
+        "id": "f_second_ed_printed",
+        "statement_ar": "طُبعت الطبعة الثانية بعد المراسلة بأيام وبالهوامش نفسها.",
+        "kind": "event",
+        "subject_ids": [
+          "org_press",
+          "obj_book"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": -2900,
+          "precision": "exact"
+        },
+        "location_id": "loc_press_house"
+      },
+      {
+        "id": "f_blog_repeats",
+        "statement_ar": "نُقلت العبارة القوية من الطبعة الثانية في ثلاثة مواقع، وكلها تحيل إلى الكتاب وحده.",
+        "kind": "event",
+        "subject_ids": [
+          "obj_book"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": -600,
+          "precision": "exact"
+        },
+        "location_id": "loc_library"
+      },
+      {
+        "id": "f_wording_changed",
+        "statement_ar": "اقترحت الدار على المؤلف استبدال عبارات الاحتمال بعبارات حاسمة، ووافق المؤلف على صيغة الصفحة 212.",
+        "kind": "event",
+        "subject_ids": [
+          "farid",
+          "rula"
+        ],
+        "spoiler_level": 2,
+        "time": {
+          "start_min": -4000,
+          "precision": "exact"
+        },
+        "location_id": "loc_press_house"
+      },
+      {
+        "id": "f_no_new_evidence",
+        "statement_ar": "لم يُضف المؤلف مصدراً جديداً بين الطبعتين ولم يعد قراءة الهوامش قبل الموافقة.",
+        "kind": "state",
+        "subject_ids": [
+          "farid"
+        ],
+        "spoiler_level": 2,
+        "location_id": "loc_press_house"
+      },
+      {
+        "id": "f_editor_no_check",
+        "statement_ar": "طلبت المحررة التقوية لتسهيل القراءة ولم تفتح أي مصدر من الهوامش.",
+        "kind": "state",
+        "subject_ids": [
+          "rula"
+        ],
+        "spoiler_level": 2,
+        "time": {
+          "start_min": -4300,
+          "precision": "exact"
+        },
+        "location_id": "loc_press_house"
+      },
+      {
+        "id": "f_gradual_decline",
+        "statement_ar": "عدد دكاكين سوق الحبوب كان 40 ثم 37 ثم 29 ثم 18 ثم 9 في خمس سنوات مدروسة بين 1338 و1391، أي تراجعاً تدريجياً لا سقوطاً عند الفيضان.",
+        "kind": "relation",
+        "subject_ids": [
+          "obj_market"
+        ],
+        "spoiler_level": 2,
+        "location_id": "loc_archive"
+      },
+      {
+        "id": "f_no_decree_closure",
+        "statement_ar": "سجل المراسيم للسنوات 1330 إلى 1360 لا يذكر إغلاق سوق الحبوب أو نقله أو إلغاء رسومه.",
+        "kind": "absence",
+        "subject_ids": [
+          "obj_market"
+        ],
+        "spoiler_level": 2,
+        "location_id": "loc_archive"
+      },
+      {
+        "id": "f_no_source_says_end",
+        "statement_ar": "لا يقول أي مصدر من المصادر الثلاثة المذكورة في الهوامش إن السوق انتهى؛ الأول عن إصلاح، والثاني يصف سوقاً يعمل، والثالث عبارة احتمال للمؤلف.",
+        "kind": "absence",
+        "subject_ids": [
+          "obj_book"
+        ],
+        "spoiler_level": 2,
+        "location_id": "loc_library"
+      },
+      {
+        "id": "f_overstated",
+        "statement_ar": "الأدلة المحال إليها تثبت ضرراً وإصلاحاً وتناقصاً بطيئاً بعد ذلك، ولا تثبت نهاية السوق بسبب الفيضان؛ وقد زاد التحرير حدة الصيغة دون مصدر إضافي، وسبب التناقص غير معروف.",
+        "kind": "relation",
+        "subject_ids": [
+          "obj_book",
+          "obj_market"
+        ],
+        "spoiler_level": 3,
+        "location_id": "loc_library"
+      }
+    ],
+    "claims": [
+      {
+        "id": "cl_book_ended",
+        "statement_ar": "ثبت بالدليل القاطع أن فيضان سنة 1340 أنهى سوق الحبوب، وأجمعت عليه المصادر.",
+        "kind": "honest_mistake",
+        "held_by": [
+          "farid"
+        ],
+        "true_fact_id": "f_overstated",
+        "contradicted_by_evidence_ids": [
+          "ev_diary",
+          "ev_tax_roll",
+          "ev_decree_register"
+        ]
+      },
+      {
+        "id": "cl_notes_exist",
+        "statement_ar": "كل عبارة في الكتاب لها هامش، فهي مسندة.",
+        "kind": "half_truth",
+        "held_by": [
+          "rula"
+        ],
+        "true_fact_id": "f_no_source_says_end",
+        "contradicted_by_evidence_ids": [
+          "ev_ledger",
+          "ev_diary"
+        ]
+      }
+    ]
+  },
+  "timeline": [
+    {
+      "id": "te_first",
+      "description_ar": "صدور الطبعة الأولى بصيغة الاحتمال.",
+      "time": {
+        "start_min": -200000,
+        "precision": "approx"
+      },
+      "location_id": "loc_library",
+      "actor_ids": [
+        "farid"
+      ],
+      "fact_ids": [
+        "f_first_ed_hedged"
+      ],
+      "motivated_by_ar": "عرض ما تسمح به المصادر"
+    },
+    {
+      "id": "te_request",
+      "description_ar": "المحررة تقترح على المؤلف تقوية العبارات.",
+      "time": {
+        "start_min": -4300,
+        "precision": "exact"
+      },
+      "location_id": "loc_press_house",
+      "actor_ids": [
+        "rula"
+      ],
+      "fact_ids": [
+        "f_editor_no_check"
+      ],
+      "motivated_by_ar": "أرادت نصاً أسهل على القارئ العام"
+    },
+    {
+      "id": "te_reply",
+      "description_ar": "المؤلف يوافق على صيغة الصفحة 212.",
+      "time": {
+        "start_min": -4000,
+        "precision": "exact"
+      },
+      "location_id": "loc_press_house",
+      "actor_ids": [
+        "farid"
+      ],
+      "fact_ids": [
+        "f_wording_changed",
+        "f_no_new_evidence"
+      ],
+      "motivated_by_ar": "رأى الصيغة أوضح"
+    },
+    {
+      "id": "te_print",
+      "description_ar": "طباعة الطبعة الثانية.",
+      "time": {
+        "start_min": -2900,
+        "precision": "exact"
+      },
+      "location_id": "loc_press_house",
+      "actor_ids": [
+        "rula"
+      ],
+      "fact_ids": [
+        "f_second_ed_printed"
+      ],
+      "motivated_by_ar": "موعد صدور الطبعة"
+    },
+    {
+      "id": "te_panel",
+      "description_ar": "المتحف يعدّ مسودة اللوحة عن الكتاب.",
+      "time": {
+        "start_min": -1500,
+        "precision": "exact"
+      },
+      "location_id": "loc_museum",
+      "actor_ids": [],
+      "fact_ids": [
+        "f_panel_claim"
+      ],
+      "motivated_by_ar": "موعد افتتاح المعرض"
+    },
+    {
+      "id": "te_blog",
+      "description_ar": "نقل العبارة في ثلاثة مواقع.",
+      "time": {
+        "start_min": -600,
+        "precision": "exact"
+      },
+      "location_id": "loc_library",
+      "actor_ids": [],
+      "fact_ids": [
+        "f_blog_repeats"
+      ],
+      "motivated_by_ar": "رواج الكتاب"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_panel",
+      "title_ar": "مسودة لوحة المتحف",
+      "kind": "documentary",
+      "content_ar": "مسودة لوحة معرض «نهر المدينة» — متحف الصفصاف\n«أنهى فيضان سنة 1340 سوق الحبوب القديم.»\nالمصدر: د. فريد الصفدي، «حبوب على ضفة النهر»، الطبعة الثانية.",
+      "acquired_by_action_ids": [
+        "a_read_panel"
+      ],
+      "supports_fact_ids": [
+        "f_panel_claim"
+      ],
+      "reliability": "weak",
+      "limits_ar": "نقل لعبارة الكتاب؛ لا يضيف دليلاً ولا يقول على ماذا بُنيت العبارة.",
+      "location_id": "loc_museum"
+    },
+    {
+      "id": "ev_book_page",
+      "title_ar": "الصفحة 212 من الطبعة الثانية",
+      "kind": "documentary",
+      "content_ar": "«حبوب على ضفة النهر» — الطبعة الثانية — ص 212\n«ثبت بالدليل القاطع أن فيضان سنة 1340 أنهى سوق الحبوب القديم، فقد أجمعت عليه المصادر (ح 41، 42، 43).»",
+      "acquired_by_action_ids": [
+        "a_read_book"
+      ],
+      "supports_fact_ids": [
+        "f_book_claim",
+        "f_second_ed_printed"
+      ],
+      "reliability": "weak",
+      "limits_ar": "هي الدعوى نفسها، وقوة لغتها لا تدل على قوة سندها.",
+      "contradicts_claim_ids": [
+        "cl_book_ended"
+      ],
+      "location_id": "loc_library"
+    },
+    {
+      "id": "ev_footnotes",
+      "title_ar": "هوامش الصفحة 212",
+      "kind": "documentary",
+      "content_ar": "هوامش ص 212\n41) دفتر أشغال بلدية الصفصاف، سنة 1340، البند 17.\n42) يوميات التاجر سالم بن رشيد، سنة 1352.\n43) الصفدي، «السوق والنهر»، مجلة الجمعية التاريخية المحلية (مقال سابق للمؤلف).",
+      "acquired_by_action_ids": [
+        "a_read_notes"
+      ],
+      "supports_fact_ids": [
+        "f_notes_three"
+      ],
+      "reliability": "strong",
+      "limits_ar": "تعدّ المصادر ولا تقول ما فيها؛ يلزم فتح كل مصدر على حدة.",
+      "location_id": "loc_library"
+    },
+    {
+      "id": "ev_ledger",
+      "title_ar": "بند دفتر الأشغال لسنة 1340",
+      "kind": "documentary",
+      "content_ar": "دفتر أشغال بلدية الصفصاف — سنة 1340 — البند 17\n«صُرف مئة وعشرون قرشاً لإصلاح سقف سوق الحبوب وجدرانه بعد ارتفاع ماء النهر.»",
+      "acquired_by_action_ids": [
+        "a_get_ledger"
+      ],
+      "supports_fact_ids": [
+        "f_ledger_repair"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يثبت ضرراً وإصلاحاً؛ لا يتناول فتح السوق أو إغلاقه بعد ذلك.",
+      "contradicts_claim_ids": [
+        "cl_notes_exist"
+      ],
+      "location_id": "loc_archive"
+    },
+    {
+      "id": "ev_diary",
+      "title_ar": "يوميات التاجر سالم بن رشيد",
+      "kind": "documentary",
+      "content_ar": "يوميات سالم بن رشيد — سنة 1352\n«بعت قمح الموسم في سوق الحبوب قرب الجسر. كان الزحام دون عادته، وبعض الدكاكين مغلقة.»",
+      "acquired_by_action_ids": [
+        "a_get_diary"
+      ],
+      "supports_fact_ids": [
+        "f_diary_open"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "شاهد معاصر واحد وفي يوم واحد؛ يثبت أن السوق كان يعمل بعد الفيضان ولا يصف سبب ضعفه.",
+      "contradicts_claim_ids": [
+        "cl_book_ended",
+        "cl_notes_exist"
+      ],
+      "location_id": "loc_archive"
+    },
+    {
+      "id": "ev_own_article",
+      "title_ar": "مقال المؤلف «السوق والنهر»",
+      "kind": "documentary",
+      "content_ar": "الصفدي، «السوق والنهر»، مجلة الجمعية التاريخية المحلية\n«يُرجَّح أن فيضان سنة 1340 أضعف السوق، ولا تكفي المصادر المتاحة لتحديد أثره بدقة.»",
+      "acquired_by_action_ids": [
+        "a_get_article"
+      ],
+      "supports_fact_ids": [
+        "f_own_article_hedged"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "رأي المؤلف نفسه وليس مصدراً مستقلاً؛ وهو هنا يقرّ بقلة المصادر.",
+      "location_id": "loc_library"
+    },
+    {
+      "id": "ev_first_edition",
+      "title_ar": "الصفحة 198 من الطبعة الأولى",
+      "kind": "documentary",
+      "content_ar": "«حبوب على ضفة النهر» — الطبعة الأولى — ص 198\n«يُرجَّح أن فيضان سنة 1340 أضعف سوق الحبوب، ولا تكفي المصادر لتحديد مدى أثره (ح 41–43).»",
+      "acquired_by_action_ids": [
+        "a_get_first_ed"
+      ],
+      "supports_fact_ids": [
+        "f_first_ed_hedged"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يثبت صيغة الطبعة الأولى لا صحة أي من الصيغتين.",
+      "location_id": "loc_library"
+    },
+    {
+      "id": "ev_edit_letters",
+      "title_ar": "مراسلة التحرير للطبعة الثانية",
+      "kind": "documentary",
+      "content_ar": "من دار المنارة إلى د. الصفدي (قبل الطباعة بنحو ثلاثة أيام):\n«تكثر في الفصل عبارات «يرجَّح» و«لا تكفي المصادر»، والقارئ العام يريد جملاً أوضح. نقترح عبارات حاسمة في الطبعة الثانية.»\nرد د. الصفدي:\n«أوافق على الصيغة المقترحة للصفحة 212 وما بعدها، وأشكركم على العناية بوضوح النص.»",
+      "acquired_by_action_ids": [
+        "a_get_letters"
+      ],
+      "supports_fact_ids": [
+        "f_wording_changed"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يثبت أن الصيغة تغيرت بطلب تحريري؛ ولا يقول إن المصادر تغيرت أو لم تتغير.",
+      "location_id": "loc_press_house"
+    },
+    {
+      "id": "ev_tax_roll",
+      "title_ar": "سجل ضريبة دكاكين سوق الحبوب",
+      "kind": "documentary",
+      "content_ar": "سجل ضريبة الدكاكين — سوق الحبوب\nعدد الدكاكين المؤجرة: سنة 1338: 40 — سنة 1346: 37 — سنة 1360: 29 — سنة 1375: 18 — سنة 1391: 9",
+      "acquired_by_action_ids": [
+        "a_get_tax"
+      ],
+      "supports_fact_ids": [
+        "f_gradual_decline"
+      ],
+      "reliability": "strong",
+      "limits_ar": "خمس سنوات فقط من السجل؛ يظهر الاتجاه ولا يفسر سببه.",
+      "contradicts_claim_ids": [
+        "cl_book_ended"
+      ],
+      "location_id": "loc_archive"
+    },
+    {
+      "id": "ev_decree_register",
+      "title_ar": "سجل المراسيم 1330–1360",
+      "kind": "documentary",
+      "content_ar": "سجل مراسيم بلدية الصفصاف — 1330 إلى 1360\nلا قيد فيه بإغلاق سوق الحبوب أو نقله أو إلغاء رسومه.",
+      "acquired_by_action_ids": [
+        "a_get_decrees"
+      ],
+      "supports_fact_ids": [
+        "f_no_decree_closure"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "غياب القيد في سجل واحد لا يثبت أن السوق ظل مفتوحاً كل يوم.",
+      "contradicts_claim_ids": [
+        "cl_book_ended"
+      ],
+      "location_id": "loc_archive"
+    },
+    {
+      "id": "ev_blog_copy",
+      "title_ar": "نقل العبارة في المواقع",
+      "kind": "documentary",
+      "content_ar": "مدونة «تاريخ بلا غبار» وموقعان آخران:\n«ثبت بالدليل القاطع أن فيضان 1340 أنهى سوق الحبوب (نقلاً عن د. الصفدي).»",
+      "acquired_by_action_ids": [
+        "a_get_blog"
+      ],
+      "supports_fact_ids": [
+        "f_blog_repeats"
+      ],
+      "reliability": "weak",
+      "limits_ar": "نقل من كتاب واحد؛ ثلاث نسخ لا تساوي ثلاثة أدلة.",
+      "location_id": "loc_library"
+    },
+    {
+      "id": "ev_author_stmt",
+      "title_ar": "إفادة د. فريد الصفدي",
+      "kind": "testimonial",
+      "content_ar": "ملخص إفادة د. الصفدي:\n«عبارة «يرجَّح» عبارتي، أما «ثبت بالدليل القاطع» فجاءت من التحرير ووافقت عليها لأنها أوضح. لم أضف بين الطبعتين مصدراً جديداً ولم أعد قراءة الهوامش.»",
+      "acquired_by_action_ids": [
+        "a_note_farid"
+      ],
+      "supports_fact_ids": [
+        "f_no_new_evidence",
+        "f_wording_changed"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "إفادة صاحب علاقة بالكتاب؛ تتفق مع المراسلة والطبعة الأولى وتحتاج إليهما.",
+      "location_id": "loc_press_house"
+    },
+    {
+      "id": "ev_editor_stmt",
+      "title_ar": "إفادة رولا النحاس",
+      "kind": "testimonial",
+      "content_ar": "ملخص إفادة رولا النحاس:\n«طلبت تقوية العبارات لأن الفصل ثقيل على القارئ العام. اعتبرت أن وجود الهوامش يعني أن العبارة مسندة، ولم أفتح أي مصدر منها.»",
+      "acquired_by_action_ids": [
+        "a_note_rula"
+      ],
+      "supports_fact_ids": [
+        "f_editor_no_check"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "تفسر كيف تغيرت العبارة ولا تقيس مصادر الكتاب.",
+      "contradicts_claim_ids": [
+        "cl_notes_exist"
+      ],
+      "location_id": "loc_press_house"
+    }
+  ],
+  "evidence_graph": {
+    "inferences": [
+      {
+        "id": "i_ledger",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_ledger"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_ledger_repair"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "البند يذكر إصلاح سقف السوق وجدرانه بعد ارتفاع الماء، فهو يثبت ضرراً وإصلاحاً.",
+        "skill_ko_refs": [
+          "KO-RS-05-001"
+        ]
+      },
+      {
+        "id": "i_diary",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_diary"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_diary_open"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "التاجر يبيع قمحه في السوق سنة 1352، أي بعد اثنتي عشرة سنة من الفيضان.",
+        "skill_ko_refs": [
+          "KO-RS-05-004"
+        ]
+      },
+      {
+        "id": "i_notes",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_footnotes"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_ledger"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_diary"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_own_article"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_no_source_says_end"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "فتح الهوامش الثلاثة يبين أن الأول عن إصلاح والثاني عن سوق يعمل والثالث عبارة احتمال، فلا مصدر يقول إن السوق انتهى.",
+        "skill_ko_refs": [
+          "KO-RS-05-004"
+        ]
+      },
+      {
+        "id": "i_over_a",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_no_source_says_end"
+          },
+          {
+            "ref_type": "general_knowledge",
+            "ref_id": "cited_source_must_support_claim"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_overstated"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "العبارة تنسب إلى المصادر ما ليس فيها، فهي أقوى من سندها.",
+        "skill_ko_refs": [
+          "KO-RS-05-010"
+        ]
+      },
+      {
+        "id": "i_gradual",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_tax_roll"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_decree_register"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_gradual_decline"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "الدكاكين تتناقص ببطء، من 40 إلى 37 حول الفيضان ثم إلى 9 بعد نصف قرن، ولا مرسوم بإغلاق.",
+        "skill_ko_refs": [
+          "KO-RS-05-005"
+        ]
+      },
+      {
+        "id": "i_over_b",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_gradual_decline"
+          },
+          {
+            "ref_type": "general_knowledge",
+            "ref_id": "cited_source_must_support_claim"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_overstated"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "سوق ضعف تدريجياً لعقود لا يصح أن يُقال إن فيضاناً واحداً أنهاه بدليل قاطع.",
+        "skill_ko_refs": [
+          "KO-RS-05-010"
+        ]
+      },
+      {
+        "id": "i_wording",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_first_edition"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_edit_letters"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_wording_changed"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "الطبعة الأولى بصيغة «يرجَّح»، والمراسلة تبين أن الدار اقترحت الصيغة الحاسمة.",
+        "skill_ko_refs": [
+          "KO-RS-05-005"
+        ]
+      },
+      {
+        "id": "i_noevid",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_author_stmt"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_no_new_evidence"
+        },
+        "relation": "establishes",
+        "strength": "suggestive",
+        "rule_ar": "المؤلف يقرّ بأنه لم يضف مصدراً جديداً، وتؤيده المراسلة في أن التغيير تحريري.",
+        "skill_ko_refs": [
+          "KO-RS-05-004"
+        ]
+      },
+      {
+        "id": "i_over_c",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_wording_changed"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_no_new_evidence"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_overstated"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "تغيرت قوة العبارة والمصادر ثابتة؛ فالتوكيد أضافه التحرير ولم يضفه الدليل.",
+        "skill_ko_refs": [
+          "KO-RS-05-010"
+        ]
+      },
+      {
+        "id": "i_support_over",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_overstated"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_overstated"
+        },
+        "relation": "supports",
+        "strength": "strong",
+        "rule_ar": "الهوامش تثبت الضرر والإصلاح والتراجع التدريجي فقط، والتوكيد جاء بالتحرير.",
+        "skill_ko_refs": [
+          "KO-RS-05-002"
+        ]
+      },
+      {
+        "id": "i_rule_ended",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_diary_open"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_gradual_decline"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_ended"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "سوق يعمل بعد 12 سنة ويتراجع تدريجياً لخمسين سنة لا يصح القول إن فيضان 1340 أنهاه.",
+        "skill_ko_refs": [
+          "KO-RS-06-009"
+        ]
+      },
+      {
+        "id": "i_rule_fake",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_ledger_repair"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_first_ed_hedged"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_worthless"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "الفيضان وإصلاح السوق ثابتان بسجل أصلي، والطبعة الأولى كانت حذرة؛ فالعيب في التوكيد لا في أصل الكتاب.",
+        "skill_ko_refs": [
+          "KO-RS-06-009"
+        ]
+      },
+      {
+        "id": "i_claim_book",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_book_page"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_diary"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_tax_roll"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_book_ended"
+        },
+        "relation": "contradicts_claim",
+        "strength": "strong",
+        "rule_ar": "الصفحة تدعي القطع، واليوميات وسجل الضريبة يظهران سوقاً يعمل ويتراجع تدريجياً.",
+        "skill_ko_refs": [
+          "KO-RS-05-001"
+        ]
+      },
+      {
+        "id": "i_claim_notes",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_ledger"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_diary"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_notes_exist"
+        },
+        "relation": "contradicts_claim",
+        "strength": "suggestive",
+        "rule_ar": "وجود الهامش لا يعني أنه يقول ما نسبته العبارة إليه؛ فالدفتر عن إصلاح واليوميات عن سوق يعمل.",
+        "skill_ko_refs": [
+          "KO-RS-05-004"
+        ]
+      }
+    ]
+  },
+  "character_knowledge": [
+    {
+      "character_id": "farid",
+      "knows": [
+        {
+          "fact_id": "f_first_ed_hedged",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_own_article_hedged",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [
+        {
+          "fact_id": "f_wording_changed",
+          "reveal_when": {
+            "presented": {
+              "evidence_id": "ev_first_edition",
+              "to_character": "farid"
+            }
+          },
+          "cover_claim_id": null,
+          "reveal_line_id": "fr_changed"
+        },
+        {
+          "fact_id": "f_no_new_evidence",
+          "reveal_when": {
+            "presented": {
+              "evidence_id": "ev_diary",
+              "to_character": "farid"
+            }
+          },
+          "cover_claim_id": null,
+          "reveal_line_id": "fr_noevid"
+        }
+      ],
+      "believes": [
+        {
+          "claim_id": "cl_book_ended",
+          "stance": "sincere"
+        }
+      ]
+    },
+    {
+      "character_id": "rula",
+      "knows": [
+        {
+          "fact_id": "f_second_ed_printed",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [
+        {
+          "fact_id": "f_editor_no_check",
+          "reveal_when": {
+            "presented": {
+              "evidence_id": "ev_edit_letters",
+              "to_character": "rula"
+            }
+          },
+          "cover_claim_id": null,
+          "reveal_line_id": "rl_nocheck"
+        }
+      ],
+      "believes": [
+        {
+          "claim_id": "cl_notes_exist",
+          "stance": "sincere"
+        }
+      ]
+    },
+    {
+      "character_id": "mazen",
+      "knows": [
+        {
+          "fact_id": "f_ledger_repair",
+          "access": "professional",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_gradual_decline",
+          "access": "professional",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_no_decree_closure",
+          "access": "professional",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "h_ended",
+      "statement_ar": "فيضان سنة 1340 أنهى سوق الحبوب كما يقرر الكتاب بالدليل القاطع.",
+      "is_true": false,
+      "plausibility_at_start": "high"
+    },
+    {
+      "id": "h_overstated",
+      "statement_ar": "الهوامش تثبت أن الفيضان أضرّ بالسوق وأنه أُصلح وأن السوق تراجع تدريجياً بعد ذلك، ولا تثبت أنه أنهاه؛ فعبارة «ثبت» أقوى من سندها، وجاءت بالتحرير لا بدليل جديد، وسبب التراجع غير محسوم.",
+      "is_true": true,
+      "plausibility_at_start": "low"
+    },
+    {
+      "id": "h_worthless",
+      "statement_ar": "الكتاب كله مختلق أو غير موثوق ولا يُؤخذ منه شيء.",
+      "is_true": false,
+      "plausibility_at_start": "low"
+    }
+  ],
+  "misdirection_plan": [
+    {
+      "id": "rh_confident",
+      "points_to_hypothesis_id": "h_ended",
+      "planted_via_ar": "لغة الكتاب القاطعة وتكرارها في اللوحة والمواقع توحي بأن الأمر محسوم.",
+      "evidence_ids": [
+        "ev_book_page",
+        "ev_panel",
+        "ev_blog_copy"
+      ],
+      "refuted_by_inference_ids": [
+        "i_claim_book",
+        "i_rule_ended"
+      ],
+      "fairness_note_ar": "الهوامش الثلاثة مكتوبة تحت العبارة نفسها، والمصادر متاحة في المكتبة والأرشيف بالإجراءات العادية."
+    },
+    {
+      "id": "rh_repair",
+      "points_to_hypothesis_id": "h_ended",
+      "planted_via_ar": "بند الدفتر يذكر ضرراً أصاب السوق بعد الفيضان، فقد يُظن أنه يثبت النهاية.",
+      "evidence_ids": [
+        "ev_ledger"
+      ],
+      "refuted_by_inference_ids": [
+        "i_rule_ended"
+      ],
+      "fairness_note_ar": "نص البند يقول «إصلاح» صراحة، وفي الأرشيف يوميات وسجل ضريبة يصفان السوق بعد ذلك."
+    },
+    {
+      "id": "rh_selfcite",
+      "points_to_hypothesis_id": "h_worthless",
+      "planted_via_ar": "أحد الهوامش مقال للمؤلف نفسه وتغيّرت العبارة بين طبعتين، فقد يُظن أن الكتاب كله غير موثوق.",
+      "evidence_ids": [
+        "ev_own_article",
+        "ev_edit_letters"
+      ],
+      "refuted_by_inference_ids": [
+        "i_rule_fake"
+      ],
+      "fairness_note_ar": "الطبعة الأولى حذرة وبند الدفتر أصلي يثبت الفيضان والإصلاح، فالعيب في قوة العبارة لا في أصل الكتاب."
+    }
+  ],
+  "learning_objectives": [
+    {
+      "id": "lo_claim",
+      "statement_ar": "يفرّق بين عبارة الكتاب وبين ما يقوله المصدر الذي تحيل إليه، ويصنّف كل مصدر.",
+      "skill_ko_ref": "KO-RS-05-001",
+      "observable_behaviors_ar": [
+        "يصنّف الكتاب واللوحة والسجلات",
+        "يقابل القول بالسجل"
+      ],
+      "evidence_sources": [
+        "evidence_board"
+      ]
+    },
+    {
+      "id": "lo_timeline",
+      "statement_ar": "يرتّب طبعتي الكتاب والمراسلة واللوحة على خط زمني ليعرف متى تغيرت العبارة.",
+      "skill_ko_ref": "KO-RS-05-005",
+      "observable_behaviors_ar": [
+        "يضع الأدلة في أزمنتها"
+      ],
+      "evidence_sources": [
+        "timeline_task",
+        "action_log"
+      ]
+    },
+    {
+      "id": "lo_hyp",
+      "statement_ar": "يوازن بين فرضيتين على الأقل ويستبعد ما تنقضه الأدلة.",
+      "skill_ko_ref": "KO-RS-05-002",
+      "observable_behaviors_ar": [
+        "يضيف فرضيات",
+        "يستبعد بدليل"
+      ],
+      "evidence_sources": [
+        "hypothesis_ledger"
+      ]
+    },
+    {
+      "id": "lo_notes",
+      "statement_ar": "يفتح الهوامش ويقيس ما تسنده فعلاً قبل أن يصدّق التوكيد.",
+      "skill_ko_ref": "KO-RS-05-004",
+      "observable_behaviors_ar": [
+        "يربط الدليل بالفرضية باتجاه صحيح"
+      ],
+      "evidence_sources": [
+        "evidence_board",
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_calib",
+      "statement_ar": "يصوغ ثقته بقدر السند لا بقدر قوة اللغة، ويذكر حدود الأدلة.",
+      "skill_ko_ref": "KO-RS-05-010",
+      "observable_behaviors_ar": [
+        "يختار ثقة معقولة",
+        "يذكر حدوداً"
+      ],
+      "evidence_sources": [
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_revise",
+      "statement_ar": "يراجع رأيه الأول حين يظهر ما يخالفه.",
+      "skill_ko_ref": "KO-RS-06-009",
+      "observable_behaviors_ar": [
+        "يغيّر فرضيته الرائدة بدليل"
+      ],
+      "evidence_sources": [
+        "hypothesis_ledger"
+      ]
+    }
+  ],
+  "mechanics": {
+    "time_budget_units": 30,
+    "actions": [
+      {
+        "id": "a_read_panel",
+        "type": "examine",
+        "label_ar": "اقرأ مسودة لوحة المتحف",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_panel"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_museum",
+        "telemetry_code": "READ_PANEL"
+      },
+      {
+        "id": "a_read_book",
+        "type": "examine",
+        "label_ar": "افتح الصفحة 212 من الطبعة الثانية",
+        "precondition": {
+          "has_evidence": "ev_panel"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_book_page"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_library",
+        "telemetry_code": "READ_BOOK"
+      },
+      {
+        "id": "a_read_notes",
+        "type": "examine",
+        "label_ar": "اقرأ هوامش الصفحة",
+        "precondition": {
+          "has_evidence": "ev_book_page"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_footnotes"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_library",
+        "telemetry_code": "READ_NOTES"
+      },
+      {
+        "id": "a_get_blog",
+        "type": "examine",
+        "label_ar": "ابحث عن مواقع نقلت العبارة",
+        "precondition": {
+          "has_evidence": "ev_panel"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_blog_copy"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_library",
+        "telemetry_code": "GET_BLOG"
+      },
+      {
+        "id": "a_get_first_ed",
+        "type": "examine",
+        "label_ar": "افتح الطبعة الأولى عند الفصل نفسه",
+        "precondition": {
+          "has_evidence": "ev_book_page"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_first_edition"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_library",
+        "telemetry_code": "GET_FIRST_ED"
+      },
+      {
+        "id": "a_get_ledger",
+        "type": "search_location",
+        "label_ar": "افتح بند دفتر الأشغال المذكور في الهامش 41",
+        "precondition": {
+          "has_evidence": "ev_footnotes"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_ledger"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_archive",
+        "telemetry_code": "GET_LEDGER"
+      },
+      {
+        "id": "a_get_diary",
+        "type": "search_location",
+        "label_ar": "افتح يوميات التاجر المذكورة في الهامش 42",
+        "precondition": {
+          "has_evidence": "ev_footnotes"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_diary"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_archive",
+        "telemetry_code": "GET_DIARY"
+      },
+      {
+        "id": "a_get_article",
+        "type": "search_location",
+        "label_ar": "اطلب المقال المذكور في الهامش 43",
+        "precondition": {
+          "has_evidence": "ev_footnotes"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_own_article"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_library",
+        "telemetry_code": "GET_ARTICLE"
+      },
+      {
+        "id": "a_get_tax",
+        "type": "search_location",
+        "label_ar": "اطلب سجل ضريبة دكاكين السوق",
+        "precondition": {
+          "has_evidence": "ev_ledger"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_tax_roll"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_archive",
+        "telemetry_code": "GET_TAX"
+      },
+      {
+        "id": "a_get_decrees",
+        "type": "search_location",
+        "label_ar": "اطلب سجل المراسيم للسنوات 1330 إلى 1360",
+        "precondition": {
+          "has_evidence": "ev_ledger"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_decree_register"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_archive",
+        "telemetry_code": "GET_DECREES"
+      },
+      {
+        "id": "a_get_letters",
+        "type": "examine",
+        "label_ar": "اطلب مراسلة التحرير للطبعة الثانية",
+        "precondition": {
+          "fact_unlocked": "f_wording_changed"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_edit_letters"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_press_house",
+        "telemetry_code": "GET_LETTERS"
+      },
+      {
+        "id": "a_int_farid",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة د. فريد",
+        "precondition": {
+          "has_evidence": "ev_book_page"
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "farid",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "farid",
+        "telemetry_code": "INT_FARID"
+      },
+      {
+        "id": "a_int_rula",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة رولا",
+        "precondition": {
+          "has_evidence": "ev_book_page"
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "rula",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "rula",
+        "telemetry_code": "INT_RULA"
+      },
+      {
+        "id": "a_int_mazen",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة أ. مازن",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "mazen",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "mazen",
+        "telemetry_code": "INT_MAZEN"
+      },
+      {
+        "id": "a_note_farid",
+        "type": "examine",
+        "label_ar": "دوّن إفادة د. فريد",
+        "precondition": {
+          "fact_unlocked": "f_no_new_evidence"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_author_stmt"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "farid",
+        "telemetry_code": "NOTE_FARID"
+      },
+      {
+        "id": "a_note_rula",
+        "type": "examine",
+        "label_ar": "دوّن إفادة رولا",
+        "precondition": {
+          "fact_unlocked": "f_editor_no_check"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_editor_stmt"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "rula",
+        "telemetry_code": "NOTE_RULA"
+      },
+      {
+        "id": "p_first_farid",
+        "type": "present_evidence",
+        "label_ar": "اعرض الطبعة الأولى على د. فريد",
+        "precondition": {
+          "presented": {
+            "evidence_id": "ev_first_edition",
+            "to_character": "farid"
+          }
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "PRESENTED_FIRST_ED"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "farid",
+        "telemetry_code": "P_FIRST_FARID"
+      },
+      {
+        "id": "p_diary_farid",
+        "type": "present_evidence",
+        "label_ar": "اعرض يوميات التاجر على د. فريد",
+        "precondition": {
+          "presented": {
+            "evidence_id": "ev_diary",
+            "to_character": "farid"
+          }
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "PRESENTED_DIARY"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "farid",
+        "telemetry_code": "P_DIARY_FARID"
+      },
+      {
+        "id": "p_letters_rula",
+        "type": "present_evidence",
+        "label_ar": "اعرض مراسلة التحرير على رولا",
+        "precondition": {
+          "presented": {
+            "evidence_id": "ev_edit_letters",
+            "to_character": "rula"
+          }
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "PRESENTED_LETTERS"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "rula",
+        "telemetry_code": "P_LETTERS_RULA"
+      },
+      {
+        "id": "a_hint",
+        "type": "request_hint",
+        "label_ar": "اطلب تلميحاً",
+        "precondition": {
+          "always": true
+        },
+        "effects": [],
+        "time_cost_units": 0,
+        "telemetry_code": "REQUEST_HINT"
+      },
+      {
+        "id": "a_accuse",
+        "type": "final_accusation",
+        "label_ar": "قدّم الاستنتاج النهائي",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "SUBMIT"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "FINAL_ACCUSATION"
+      },
+      {
+        "id": "ask_farid_f_first_ed_hedged",
+        "type": "interview",
+        "label_ar": "[نموذج] farid يذكر f_first_ed_hedged",
+        "precondition": {
+          "has_evidence": "ev_book_page"
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_first_ed_hedged"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "farid",
+        "telemetry_code": "ASK_FARID_F_FIRST_ED_HEDGED"
+      },
+      {
+        "id": "ask_farid_f_own_article_hedged",
+        "type": "interview",
+        "label_ar": "[نموذج] farid يذكر f_own_article_hedged",
+        "precondition": {
+          "has_evidence": "ev_book_page"
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_own_article_hedged"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "farid",
+        "telemetry_code": "ASK_FARID_F_OWN_ARTICLE_HEDGED"
+      },
+      {
+        "id": "ask_farid_f_wording_changed",
+        "type": "interview",
+        "label_ar": "[نموذج] farid يكشف f_wording_changed",
+        "precondition": {
+          "all": [
+            {
+              "has_evidence": "ev_book_page"
+            },
+            {
+              "presented": {
+                "evidence_id": "ev_first_edition",
+                "to_character": "farid"
+              }
+            }
+          ]
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_wording_changed"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "farid",
+        "telemetry_code": "ASK_FARID_F_WORDING_CHANGED"
+      },
+      {
+        "id": "ask_farid_f_no_new_evidence",
+        "type": "interview",
+        "label_ar": "[نموذج] farid يكشف f_no_new_evidence",
+        "precondition": {
+          "all": [
+            {
+              "has_evidence": "ev_book_page"
+            },
+            {
+              "presented": {
+                "evidence_id": "ev_diary",
+                "to_character": "farid"
+              }
+            }
+          ]
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_no_new_evidence"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "farid",
+        "telemetry_code": "ASK_FARID_F_NO_NEW_EVIDENCE"
+      },
+      {
+        "id": "ask_rula_f_second_ed_printed",
+        "type": "interview",
+        "label_ar": "[نموذج] rula يذكر f_second_ed_printed",
+        "precondition": {
+          "has_evidence": "ev_book_page"
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_second_ed_printed"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "rula",
+        "telemetry_code": "ASK_RULA_F_SECOND_ED_PRINTED"
+      },
+      {
+        "id": "ask_rula_f_editor_no_check",
+        "type": "interview",
+        "label_ar": "[نموذج] rula يكشف f_editor_no_check",
+        "precondition": {
+          "all": [
+            {
+              "has_evidence": "ev_book_page"
+            },
+            {
+              "presented": {
+                "evidence_id": "ev_edit_letters",
+                "to_character": "rula"
+              }
+            }
+          ]
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_editor_no_check"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "rula",
+        "telemetry_code": "ASK_RULA_F_EDITOR_NO_CHECK"
+      },
+      {
+        "id": "ask_mazen_f_ledger_repair",
+        "type": "interview",
+        "label_ar": "[نموذج] mazen يذكر f_ledger_repair",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_ledger_repair"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "mazen",
+        "telemetry_code": "ASK_MAZEN_F_LEDGER_REPAIR"
+      },
+      {
+        "id": "ask_mazen_f_gradual_decline",
+        "type": "interview",
+        "label_ar": "[نموذج] mazen يذكر f_gradual_decline",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_gradual_decline"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "mazen",
+        "telemetry_code": "ASK_MAZEN_F_GRADUAL_DECLINE"
+      },
+      {
+        "id": "ask_mazen_f_no_decree_closure",
+        "type": "interview",
+        "label_ar": "[نموذج] mazen يذكر f_no_decree_closure",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_no_decree_closure"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "mazen",
+        "telemetry_code": "ASK_MAZEN_F_NO_DECREE_CLOSURE"
+      }
+    ]
+  },
+  "state_machine": {
+    "id": "c043",
+    "initial": "briefing",
+    "type": "compound",
+    "states": {
+      "briefing": {
+        "description_ar": "الإحاطة",
+        "type": "atomic",
+        "on": {
+          "START": {
+            "target": "investigating"
+          }
+        }
+      },
+      "investigating": {
+        "description_ar": "التحقيق",
+        "type": "compound",
+        "initial": "gathering",
+        "states": {
+          "gathering": {
+            "type": "atomic",
+            "on": {
+              "OPEN_DEDUCTION": {
+                "target": "deducing"
+              }
+            }
+          },
+          "deducing": {
+            "type": "atomic",
+            "on": {
+              "BACK": {
+                "target": "gathering"
+              }
+            }
+          }
+        },
+        "on": {
+          "SUBMIT": {
+            "target": "review"
+          }
+        }
+      },
+      "review": {
+        "description_ar": "مراجعة",
+        "type": "atomic",
+        "on": {
+          "CLOSE": {
+            "target": "resolved"
+          }
+        }
+      },
+      "resolved": {
+        "description_ar": "إغلاق",
+        "type": "final"
+      }
+    }
+  },
+  "dialogue": {
+    "max_turns_per_interview": 10,
+    "llm_enabled": false,
+    "topics": [
+      {
+        "id": "t_book",
+        "label_ar": "عبارة الصفحة 212 وهوامشها",
+        "example_questions_ar": [
+          "ماذا تقول الطبعة الأولى؟",
+          "هل مقالك القديم يقول الشيء نفسه؟"
+        ],
+        "fact_ids": [
+          "f_first_ed_hedged",
+          "f_own_article_hedged"
+        ],
+        "claim_ids": [
+          "cl_book_ended"
+        ]
+      },
+      {
+        "id": "t_edit",
+        "label_ar": "تحرير الطبعة الثانية",
+        "example_questions_ar": [
+          "من اقترح تغيير الصيغة؟",
+          "هل أضفتم مصادر جديدة؟",
+          "هل فتحتم الهوامش؟"
+        ],
+        "fact_ids": [
+          "f_wording_changed",
+          "f_no_new_evidence",
+          "f_second_ed_printed",
+          "f_editor_no_check"
+        ],
+        "claim_ids": [
+          "cl_notes_exist"
+        ]
+      },
+      {
+        "id": "t_archive",
+        "label_ar": "ما تقوله سجلات الأرشيف",
+        "example_questions_ar": [
+          "ماذا يسجل دفتر الأشغال؟",
+          "هل من قرار بإغلاق السوق؟"
+        ],
+        "fact_ids": [
+          "f_ledger_repair",
+          "f_no_decree_closure"
+        ]
+      },
+      {
+        "id": "t_decline",
+        "label_ar": "عدد دكاكين السوق عبر السنين",
+        "example_questions_ar": [
+          "كم دكاناً كان قبل الفيضان وبعده؟"
+        ],
+        "fact_ids": [
+          "f_gradual_decline"
+        ]
+      }
+    ]
+  },
+  "rubric": {
+    "reference_answer_ar": "الهوامش لا تسند حكم النهاية. الأول سجل إصلاح، والثاني تاجر يبيع في السوق سنة 1352 رغم قلة الزحام، والثالث مقال للمؤلف نفسه بصيغة الترجيح. ويظهر سجل الضريبة تناقصاً بطيئاً في عدد الدكاكين، ولا مرسوم يأمر بالإغلاق. وانتقلت الصيغة من الترجيح إلى القطع بطلب من دار النشر وموافقة المؤلف، دون إضافة مصدر. فالكتاب أقوى من سنده لكنه ليس مختلقاً، والأسلم القول إن السوق تضرر وأُصلح ثم تناقص. حدود الاستنتاج: سبب التناقص غير معروف، وسجل مراسيم واحد لا يثبت استمرار العمل كل يوم، وشاهد واحد لا يكفي.",
+    "criteria": [
+      {
+        "id": "c_source",
+        "name_ar": "تصنيف المصادر",
+        "objective_ids": [
+          "lo_claim"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يصنّف"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "أخطأ في الأغلب"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "نصف صحيح"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمه صحيح"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كله صحيح"
+          }
+        ]
+      },
+      {
+        "id": "c_conflict",
+        "name_ar": "ربط الأدلة بأزمنتها",
+        "objective_ids": [
+          "lo_timeline"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يضع شيئاً"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "وضع قليلاً"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "وضع نصفها صحيحاً"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمها"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كلها في موضعها"
+          }
+        ]
+      },
+      {
+        "id": "c_links",
+        "name_ar": "ربط الأدلة بالفرضيات",
+        "objective_ids": [
+          "lo_notes"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.2,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لا روابط"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "قليلة"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "نصفها صحيح"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمها"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كلها دقيقة"
+          }
+        ]
+      },
+      {
+        "id": "c_uncertainty",
+        "name_ar": "معايرة الثقة",
+        "objective_ids": [
+          "lo_calib"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.2,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "ثقة مفرطة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "حدود قليلة"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "جزئية"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معقولة"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "معايَرة كاملة"
+          }
+        ]
+      },
+      {
+        "id": "c_revision",
+        "name_ar": "مراجعة الرأي",
+        "objective_ids": [
+          "lo_revise"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "بقي على فرضية مرفوضة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "لم يعلن فرضية"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "ثبت على فرضية سليمة"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "غيّر بدليل"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "غيّر بدليل ووثّق"
+          }
+        ]
+      },
+      {
+        "id": "c_elimination",
+        "name_ar": "استبعاد الفرضيات الخاطئة",
+        "objective_ids": [
+          "lo_hyp"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يستبعد"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "استبعد خطأً"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "فرضية بدليل"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "فرضيتين"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كل الخاطئة"
+          }
+        ]
+      },
+      {
+        "id": "c_justification",
+        "name_ar": "جودة الحجة المكتوبة",
+        "objective_ids": [
+          "lo_notes",
+          "lo_hyp"
+        ],
+        "scored_by": "human",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لا حجة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "ادعاء بلا سند"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "أدلة دون ربط"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "ربط الأدلة بالاستنتاج"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "ربط مع البدائل والحدود"
+          }
+        ]
+      }
+    ]
+  },
+  "hint_ladder": [
+    {
+      "id": "hg1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "ما الفرق بين قوة العبارة وقوة السند الذي تقف عليه؟",
+      "trigger": {
+        "always": true
+      },
+      "assessment_weight": 0.02
+    },
+    {
+      "id": "hg2",
+      "level": 2,
+      "kind": "focus_area",
+      "text_ar": "افتح كل مصدر في الهوامش، واسأل عن كل واحد: هل يقول ما نسبه الكتاب إليه؟",
+      "trigger": {
+        "has_evidence": "ev_footnotes"
+      },
+      "assessment_weight": 0.04
+    },
+    {
+      "id": "hg3",
+      "level": 3,
+      "kind": "pointer",
+      "text_ar": "قارن كلمتي «أنهى» و«أجمعت» بما كُتب فعلاً في الدفتر واليوميات والمقال.",
+      "trigger": {
+        "has_evidence": "ev_ledger"
+      },
+      "assessment_weight": 0.06
+    },
+    {
+      "id": "hm1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "هل الهامش الثالث مصدر مستقل أم رأي المؤلف نفسه؟",
+      "trigger": {
+        "has_evidence": "ev_footnotes"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_notes"
+    },
+    {
+      "id": "hm2",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "افتح الهوامش الثلاثة واحداً واحداً: ماذا كُتب فيها بالحرف، وهل هي مصادر مستقلة؟",
+      "trigger": {
+        "has_evidence": "ev_footnotes"
+      },
+      "assessment_weight": 0.05,
+      "targets_inference_id": "i_notes"
+    },
+    {
+      "id": "hm3",
+      "level": 3,
+      "kind": "partial_reveal",
+      "text_ar": "الهامش 41 إصلاح، والهامش 42 سوق يعمل سنة 1352، والهامش 43 عبارة احتمال للمؤلف نفسه؛ قارن ذلك بكلمة «أجمعت».",
+      "trigger": {
+        "has_evidence": "ev_diary"
+      },
+      "assessment_weight": 0.1,
+      "targets_inference_id": "i_notes"
+    }
+  ],
+  "fairness_test": {
+    "requirements": {
+      "min_disjoint_proof_paths": 2,
+      "max_inference_depth": 3,
+      "all_red_herrings_refutable": true,
+      "culprit_uniquely_entailed": true,
+      "no_hidden_fact_dependency": true,
+      "max_required_actions": 30
+    },
+    "runs": []
+  },
+  "ending_explanation": {
+    "steps": [
+      {
+        "order": 1,
+        "text_ar": "اللوحة والمواقع تردد كلام الكتاب وحده، وكلام الكتاب يحيل إلى ثلاثة مصادر، فيجب فتحها بدل الاكتفاء بعددها.",
+        "uses_evidence_ids": [
+          "ev_panel",
+          "ev_book_page",
+          "ev_footnotes"
+        ],
+        "inference_id": "i_claim_book"
+      },
+      {
+        "order": 2,
+        "text_ar": "الأول بند عن إصلاح السقف، والثاني تاجر يبيع في السوق بعد اثنتي عشرة سنة، والثالث ترجيح من المؤلف نفسه؛ فليس بينها ما يعلن نهاية السوق.",
+        "uses_evidence_ids": [
+          "ev_footnotes",
+          "ev_ledger",
+          "ev_diary",
+          "ev_own_article"
+        ],
+        "inference_id": "i_notes"
+      },
+      {
+        "order": 3,
+        "text_ar": "عدد الدكاكين ينقص ببطء عبر عقود ولا يوجد أمر بالإغلاق، فلا يصح ردّ النقص كله إلى يوم واحد.",
+        "uses_evidence_ids": [
+          "ev_tax_roll",
+          "ev_decree_register"
+        ],
+        "inference_id": "i_gradual"
+      },
+      {
+        "order": 4,
+        "text_ar": "النسخة الأولى كانت بصيغة الترجيح، ودار النشر هي التي اقترحت صيغة القطع، ووافق المؤلف دون أن يضيف مصدراً.",
+        "uses_evidence_ids": [
+          "ev_first_edition",
+          "ev_edit_letters",
+          "ev_author_stmt"
+        ],
+        "inference_id": "i_wording"
+      },
+      {
+        "order": 5,
+        "text_ar": "إذن الصيغة أقوى من سندها، لكن أصل الكتاب سليم؛ يُصحَّح التوكيد ويبقى ما تثبته السجلات.",
+        "uses_evidence_ids": [
+          "ev_ledger",
+          "ev_first_edition"
+        ],
+        "inference_id": "i_over_a"
+      }
+    ],
+    "alternative_paths_ar": [
+      "مسار مستقل: سجل الضريبة وسجل المراسيم يثبتان تراجعاً تدريجياً بلا قرار إغلاق، دون الحاجة إلى مراسلة التحرير.",
+      "مسار ثالث: الطبعة الأولى والمراسلة وإفادة المؤلف تثبت أن التوكيد جاء بالتحرير لا بدليل جديد."
+    ],
+    "what_evidence_could_not_show_ar": [
+      "لا تحدد الأدلة سبب تراجع السوق بعد الفيضان؛ فقد يكون الفيضان أحد أسبابه أو لا يكون.",
+      "غياب قيد الإغلاق في سجل المراسيم لا يثبت أن السوق عمل كل يوم، ويوميات تاجر واحد شاهد واحد فقط."
+    ],
+    "science_notes_ar": [
+      "الهامش يدل على أن للعبارة مصدراً، ولا يدل على أن المصدر يقول ما قالته العبارة.",
+      "نقل العبارة في مواقع كثيرة من كتاب واحد لا يعدّ تأييداً مستقلاً."
+    ]
+  },
+  "expert_review": [
+    {
+      "role": "narrative_editor",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "scientific_reviewer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "learning_designer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "age_appropriateness",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "cultural_reviewer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "legal_rights",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "safety",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    }
+  ]
+}

@@ -1,0 +1,2586 @@
+{
+  "schema_version": "0.1.0",
+  "case_id": "c030_three_honest_witnesses",
+  "case_version": "0.1.0",
+  "meta": {
+    "title_ar": "ثلاثة شهود صادقون",
+    "title_en": "Three Honest Witnesses",
+    "age_band": "16-18",
+    "locale": "ar",
+    "dialogue_register": "msa",
+    "estimated_minutes": 30,
+    "difficulty": 3,
+    "content_flags": [
+      "no_violence"
+    ],
+    "authors": [
+      "فريق أثر التحريري (مسودة بمساعدة الذكاء الاصطناعي، لم تُراجَع بشرياً بعد)"
+    ],
+    "knowledge_object_refs": [
+      "KO-NP-08-001",
+      "KO-NP-02-007",
+      "KO-NP-02-024",
+      "KO-RS-05-001",
+      "KO-RS-05-005",
+      "KO-RS-05-002",
+      "KO-RS-06-001",
+      "KO-RS-06-003",
+      "KO-RS-06-008",
+      "KO-RS-06-009"
+    ]
+  },
+  "premise": {
+    "hook_ar": "انطفأت أنوار قاعة الحفل لحظات ثم عادت. سُئل ثلاثة شهود لا مصلحة لأحد منهم في الخطأ، فجاءت ثلاث روايات مختلفة. فما الذي حدث فعلاً؟ ولماذا لا يشبه أحدهم الآخر؟",
+    "player_role_ar": "أنت عضو في لجنة التوثيق بنادي الصحافة المدرسي، وعليك أن تكتب ما يمكن إثباته عن الحادثة قبل أن تُنشر النشرة.",
+    "setting_ar": "قاعة الاحتفالات في مدرسة الريحان الثانوية، في مدينة متخيَّلة، يوم افتتاح معرض الطلاب. توقيت المدرسة هو توقيت كل الأوراق.",
+    "public_fact_ids": [
+      "f_announce",
+      "f_accounts_differ"
+    ],
+    "assumed_general_knowledge_ar": [
+      "الانتظار في العتمة بلا ساعة يجعل المدة تبدو أطول",
+      "الباب الثقيل المغلق يحجب الصوت",
+      "الإضاءة الخافتة لمصابيح الطوارئ لا تعني أن التيار الرئيسي عاد"
+    ]
+  },
+  "entities": {
+    "characters": [
+      {
+        "id": "dana",
+        "name_ar": "دانة الحايك",
+        "role": "witness",
+        "age_descriptor_ar": "طالبة في الصف الحادي عشر",
+        "persona_ar": "هادئة الصوت، متوترة قبل فقرتها، وتحب أن تُفهم كلماتها كما قصدتها.",
+        "motives_ar": [
+          "أن يُصدَّق ما عاشته",
+          "أن تؤدي فقرتها دون إحراج"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "dn_greet",
+            "purpose": "greeting",
+            "text_ar": "أهلاً. كنت أنتظر دوري في الإلقاء حين حدث ما حدث."
+          },
+          {
+            "line_id": "dn_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "هذا لا أعرفه. لم أكن أنظر إلى شيء سوى المنصة."
+          },
+          {
+            "line_id": "dn_claim",
+            "purpose": "reveal",
+            "text_ar": "جلست في الصف الثاني قرب المنصة. أذكر أن العتمة كانت طويلة، ونحو دقيقتين في ظني.",
+            "fact_ids": [
+              "f_dana_front_row"
+            ],
+            "claim_ids": [
+              "cl_dana_long",
+              "cl_dana_start"
+            ]
+          },
+          {
+            "line_id": "dn_feel",
+            "purpose": "reveal",
+            "text_ar": "لم أنظر إلى ساعة، قدّرت المدة بإحساسي. كنت أنتظر دوري وكل ثانية بدت لي أطول.",
+            "fact_ids": [
+              "f_dana_by_feel"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "fadi",
+        "name_ar": "فادي المنصور",
+        "role": "witness",
+        "age_descriptor_ar": "فني صوت في المدرسة",
+        "persona_ar": "عملي ومختصر الكلام، ويحب أن يوضح ما يراه على الأجهزة.",
+        "motives_ar": [
+          "ألا يُنسب إلى جهاز الصوت عطل",
+          "أن تُفهم ملاحظته الفنية"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "fd_greet",
+            "purpose": "greeting",
+            "text_ar": "تفضّل. أنا عند مكتب الصوت، أسأل عما لاحظته على الأجهزة."
+          },
+          {
+            "line_id": "fd_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "هذا خارج ما يظهر على مكتبي."
+          },
+          {
+            "line_id": "fd_claim",
+            "purpose": "reveal",
+            "text_ar": "جلست عند الجدار الجانبي تحت مصباح الطوارئ. لاحظت انقطاعين، وكل ذلك نحو دقيقة بعد بدء الكلمة.",
+            "fact_ids": [
+              "f_fadi_desk"
+            ],
+            "claim_ids": [
+              "cl_fadi_twice"
+            ]
+          },
+          {
+            "line_id": "fd_dim",
+            "purpose": "reveal",
+            "text_ar": "نعم، عددت مرحلة الإضاءة الخافتة انقطاعاً، لأن شكل الضوء تغير. لم أنظر إلى مؤشر التيار نفسه.",
+            "fact_ids": [
+              "f_fadi_counts_dim"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "samar",
+        "name_ar": "سمر الخطيب",
+        "role": "witness",
+        "age_descriptor_ar": "معلمة مكلفة بتنظيم الممر",
+        "persona_ar": "لطيفة ودقيقة في كلامها، وتحرص ألا تقول أكثر مما رأته.",
+        "motives_ar": [
+          "ألا تُتهم بتقصير في تنظيم الممر",
+          "أن تذكر ما رأته بدقة"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "sm_greet",
+            "purpose": "greeting",
+            "text_ar": "مرحباً. كنت مكلفة بالممر ذلك الصباح."
+          },
+          {
+            "line_id": "sm_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "هذا لم أشهده بنفسي."
+          },
+          {
+            "line_id": "sm_claim",
+            "purpose": "reveal",
+            "text_ar": "كنت في الممر، وحين فتحت الباب كانت القاعة معتمة، ثم عادت الأنوار بعد نحو عشر ثوانٍ.",
+            "fact_ids": [
+              "f_samar_corridor"
+            ],
+            "claim_ids": [
+              "cl_samar_ten",
+              "cl_samar_before"
+            ]
+          },
+          {
+            "line_id": "sm_door",
+            "purpose": "reveal",
+            "text_ar": "الباب ثقيل ولا يمر منه صوت، فلم أسمع شيئاً من الكلمة. لذلك ظننت أنها لم تبدأ.",
+            "fact_ids": [
+              "f_samar_heard_nothing"
+            ]
+          },
+          {
+            "line_id": "sm_late",
+            "purpose": "reveal",
+            "text_ar": "فتحت الباب عند الدقيقة المدونة في ورقة الضيافة، أي أنني رأيت آخر العتمة فقط.",
+            "fact_ids": [
+              "f_samar_saw_end"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "ramy",
+        "name_ar": "رامي النجار",
+        "role": "bystander",
+        "age_descriptor_ar": "متطوع في طاقم التجهيز",
+        "persona_ar": "سريع الحركة وصريح، ويحرص على تجهيز المنصة في وقتها.",
+        "motives_ar": [
+          "أن ينتهي التجهيز قبل الفقرة التالية"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "rm_greet",
+            "purpose": "greeting",
+            "text_ar": "أهلاً. كنت أجهّز عرض الصور للفقرة التالية."
+          },
+          {
+            "line_id": "rm_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "هذا لا أعلمه."
+          },
+          {
+            "line_id": "rm_claim",
+            "purpose": "reveal",
+            "text_ar": "وصلت جهاز عرض ثانٍ بخط القاعة قبل الانقطاع بدقيقة. لا أعلم إن كان لذلك علاقة.",
+            "fact_ids": [
+              "f_projector"
+            ]
+          }
+        ]
+      }
+    ],
+    "locations": [
+      {
+        "id": "loc_hall",
+        "name_ar": "قاعة الاحتفالات",
+        "description_ar": "قاعة المدرسة التي أُقيم فيها حفل الافتتاح."
+      },
+      {
+        "id": "loc_corridor",
+        "name_ar": "ممر القاعة",
+        "description_ar": "ممر ذو نوافذ خلف الباب الرئيسي للقاعة."
+      },
+      {
+        "id": "loc_office",
+        "name_ar": "غرفة السجلات",
+        "description_ar": "غرفة إدارة المدرسة التي تحفظ البرنامج والمخططات والسجلات."
+      }
+    ],
+    "objects": [
+      {
+        "id": "obj_sound_desk",
+        "name_ar": "مكتب الصوت",
+        "description_ar": "جهاز الصوت الذي يسجّل حالة المايك ومصدر الطاقة."
+      },
+      {
+        "id": "obj_lamps",
+        "name_ar": "مصابيح الطوارئ",
+        "description_ar": "مصابيح تعمل بالبطارية وتضيء خافتة عند فقدان التيار."
+      }
+    ],
+    "organizations": [
+      {
+        "id": "org_school",
+        "name_ar": "مدرسة الريحان الثانوية",
+        "description_ar": "مدرسة خيالية أقامت حفل افتتاح المعرض."
+      }
+    ]
+  },
+  "truth": {
+    "solution": {
+      "culprit_ids": [
+        "ramy"
+      ],
+      "summary_ar": "لم يكذب أحد، ولا ذنب لأحد. هبط التيار عن القاعة مرة واحدة قصيرة بعد أن مضت على كلمة المديرة دقيقة وبعض الثواني. اختلفت الروايات لأن كل شاهد كان في موضع مختلف: دانة قدّرت المدة بإحساسها في الظلمة، وفادي فهم «الانقطاع» بمعنى كل تبدل في الضوء، وسمر لم ترَ إلا آخر العتمة خلف باب ثقيل. أما الأدلة فلا تحدد سبب الهبوط.",
+      "key_fact_ids": [
+        "f_one_cut",
+        "f_forty_sec",
+        "f_in_speech"
+      ]
+    },
+    "facts": [
+      {
+        "id": "f_announce",
+        "statement_ar": "انطفأت أنوار قاعة حفل الافتتاح في مدرسة الريحان أثناء الحفل ثم عادت.",
+        "kind": "event",
+        "subject_ids": [
+          "loc_hall"
+        ],
+        "spoiler_level": 0
+      },
+      {
+        "id": "f_accounts_differ",
+        "statement_ar": "روى ثلاثة شهود صادقين الحدث بثلاث صور مختلفة في عدد الانقطاعات ومدتها وموعدها.",
+        "kind": "state",
+        "subject_ids": [
+          "dana",
+          "fadi",
+          "samar"
+        ],
+        "spoiler_level": 0
+      },
+      {
+        "id": "f_one_cut",
+        "statement_ar": "انقطع التيار عن القاعة انقطاعاً واحداً فقط، وكانت كل حالة ضوء أخرى جزءاً منه.",
+        "kind": "event",
+        "subject_ids": [
+          "loc_hall"
+        ],
+        "spoiler_level": 3,
+        "time": {
+          "start_min": 12,
+          "precision": "exact"
+        }
+      },
+      {
+        "id": "f_forty_sec",
+        "statement_ar": "دام الانقطاع نحو أربعين ثانية، من 10:12:10 إلى 10:12:50.",
+        "kind": "event",
+        "subject_ids": [
+          "loc_hall"
+        ],
+        "spoiler_level": 3,
+        "time": {
+          "start_min": 12,
+          "precision": "exact"
+        }
+      },
+      {
+        "id": "f_in_speech",
+        "statement_ar": "وقع الانقطاع بعد نحو دقيقة وعشر ثوانٍ من بدء كلمة المديرة، أي في أثنائها.",
+        "kind": "relation",
+        "subject_ids": [
+          "loc_hall"
+        ],
+        "spoiler_level": 3,
+        "time": {
+          "start_min": 12,
+          "precision": "exact"
+        }
+      },
+      {
+        "id": "f_speech_start",
+        "statement_ar": "بدأت المديرة كلمتها عند 10:11:02 تقريباً، بعد الدقيقة الأولى من الجدول المطبوع.",
+        "kind": "event",
+        "subject_ids": [
+          "loc_hall"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 11,
+          "precision": "exact"
+        }
+      },
+      {
+        "id": "f_dim_stage",
+        "statement_ar": "أضاءت مصابيح الطوارئ إضاءة خافتة في القاعة من 10:12:12 حتى عودة التيار.",
+        "kind": "state",
+        "subject_ids": [
+          "loc_hall"
+        ],
+        "spoiler_level": 2,
+        "time": {
+          "start_min": 12,
+          "precision": "exact"
+        }
+      },
+      {
+        "id": "f_projector",
+        "statement_ar": "وُصل جهاز عرض ثانٍ بخط القاعة عند 10:11 قبل الانقطاع بدقيقة.",
+        "kind": "event",
+        "subject_ids": [
+          "ramy",
+          "loc_hall"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 11,
+          "precision": "exact"
+        }
+      },
+      {
+        "id": "f_dana_front_row",
+        "statement_ar": "جلست دانة في الصف الثاني قرب المنصة تنتظر دورها في الإلقاء، وعاشت العتمة كاملة.",
+        "kind": "attribute",
+        "subject_ids": [
+          "dana"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 0,
+          "end_min": 20,
+          "precision": "approx"
+        }
+      },
+      {
+        "id": "f_dana_by_feel",
+        "statement_ar": "قدّرت دانة المدة بإحساسها ولم تنظر إلى ساعة.",
+        "kind": "state",
+        "subject_ids": [
+          "dana"
+        ],
+        "spoiler_level": 2,
+        "time": {
+          "start_min": 12,
+          "precision": "exact"
+        }
+      },
+      {
+        "id": "f_fadi_desk",
+        "statement_ar": "جلس فادي عند مكتب الصوت على الجدار الجانبي تحت مصباح طوارئ، وراقب مؤشرات الجهاز.",
+        "kind": "attribute",
+        "subject_ids": [
+          "fadi"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 0,
+          "end_min": 20,
+          "precision": "approx"
+        }
+      },
+      {
+        "id": "f_fadi_counts_dim",
+        "statement_ar": "عدّ فادي مرحلة الإضاءة الخافتة انقطاعاً مستقلاً عن عودة الأنوار الرئيسية.",
+        "kind": "state",
+        "subject_ids": [
+          "fadi"
+        ],
+        "spoiler_level": 2,
+        "time": {
+          "start_min": 12,
+          "precision": "exact"
+        }
+      },
+      {
+        "id": "f_samar_corridor",
+        "statement_ar": "كُلّفت سمر بالممر خلف باب القاعة الثقيل، وكان الممر مضاءً بنوافذه.",
+        "kind": "attribute",
+        "subject_ids": [
+          "samar"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 10,
+          "end_min": 11,
+          "precision": "approx"
+        }
+      },
+      {
+        "id": "f_samar_heard_nothing",
+        "statement_ar": "لم تسمع سمر شيئاً من القاعة وهي خلف الباب المغلق.",
+        "kind": "state",
+        "subject_ids": [
+          "samar"
+        ],
+        "spoiler_level": 2,
+        "time": {
+          "start_min": 10,
+          "end_min": 11,
+          "precision": "approx"
+        }
+      },
+      {
+        "id": "f_samar_saw_end",
+        "statement_ar": "فتحت سمر الباب عند 10:12:40 تقريباً، فرأت آخر ثوانٍ من العتمة فقط.",
+        "kind": "event",
+        "subject_ids": [
+          "samar",
+          "loc_hall"
+        ],
+        "spoiler_level": 2,
+        "time": {
+          "start_min": 12,
+          "precision": "exact"
+        }
+      }
+    ],
+    "claims": [
+      {
+        "id": "cl_dana_long",
+        "statement_ar": "كان الانقطاع طويلاً، نحو دقيقتين.",
+        "kind": "honest_mistake",
+        "held_by": [
+          "dana"
+        ],
+        "true_fact_id": "f_forty_sec",
+        "contradicted_by_evidence_ids": [
+          "ev_sound_log",
+          "ev_hall_video"
+        ]
+      },
+      {
+        "id": "cl_dana_start",
+        "statement_ar": "وقع الانقطاع في أول كلمة المديرة.",
+        "kind": "half_truth",
+        "held_by": [
+          "dana"
+        ],
+        "true_fact_id": "f_in_speech",
+        "contradicted_by_evidence_ids": [
+          "ev_sound_log"
+        ]
+      },
+      {
+        "id": "cl_fadi_twice",
+        "statement_ar": "انقطعت الإضاءة مرتين.",
+        "kind": "honest_mistake",
+        "held_by": [
+          "fadi"
+        ],
+        "true_fact_id": "f_one_cut",
+        "contradicted_by_evidence_ids": [
+          "ev_supply_recorder",
+          "ev_lamp_log"
+        ]
+      },
+      {
+        "id": "cl_samar_ten",
+        "statement_ar": "لم يدم الظلام أكثر من عشر ثوانٍ.",
+        "kind": "honest_mistake",
+        "held_by": [
+          "samar"
+        ],
+        "true_fact_id": "f_forty_sec",
+        "contradicted_by_evidence_ids": [
+          "ev_hospitality",
+          "ev_hall_video"
+        ]
+      },
+      {
+        "id": "cl_samar_before",
+        "statement_ar": "وقع الانقطاع قبل أن تبدأ الكلمة.",
+        "kind": "honest_mistake",
+        "held_by": [
+          "samar"
+        ],
+        "true_fact_id": "f_in_speech",
+        "contradicted_by_evidence_ids": [
+          "ev_sound_log"
+        ]
+      }
+    ]
+  },
+  "timeline": [
+    {
+      "id": "te_choir",
+      "description_ar": "تؤدي الجوقة فقرتها ويجلس الحضور.",
+      "time": {
+        "start_min": 0,
+        "end_min": 10,
+        "precision": "approx"
+      },
+      "location_id": "loc_hall",
+      "actor_ids": [],
+      "fact_ids": [
+        "f_announce"
+      ],
+      "witness_ids": [
+        "dana",
+        "fadi"
+      ]
+    },
+    {
+      "id": "te_samar_post",
+      "description_ar": "سمر تقف في الممر خلف الباب.",
+      "time": {
+        "start_min": 10,
+        "end_min": 11,
+        "precision": "approx"
+      },
+      "location_id": "loc_corridor",
+      "actor_ids": [
+        "samar"
+      ],
+      "fact_ids": [
+        "f_samar_corridor"
+      ],
+      "motivated_by_ar": "التكليف بتنظيم الضيافة عند باب القاعة"
+    },
+    {
+      "id": "te_speech",
+      "description_ar": "تبدأ المديرة كلمتها.",
+      "time": {
+        "start_min": 11,
+        "precision": "exact"
+      },
+      "location_id": "loc_hall",
+      "actor_ids": [],
+      "fact_ids": [
+        "f_speech_start"
+      ]
+    },
+    {
+      "id": "te_projector",
+      "description_ar": "رامي يوصل جهاز عرض ثانٍ.",
+      "time": {
+        "start_min": 11,
+        "precision": "exact"
+      },
+      "location_id": "loc_hall",
+      "actor_ids": [
+        "ramy"
+      ],
+      "fact_ids": [
+        "f_projector"
+      ],
+      "motivated_by_ar": "تجهيز عرض صور للفقرة التالية"
+    },
+    {
+      "id": "te_cut",
+      "description_ar": "ينقطع التيار عن القاعة وتضيء مصابيح الطوارئ خافتة ثم يعود التيار.",
+      "time": {
+        "start_min": 12,
+        "end_min": 12,
+        "precision": "approx"
+      },
+      "location_id": "loc_hall",
+      "actor_ids": [],
+      "fact_ids": [
+        "f_one_cut",
+        "f_forty_sec",
+        "f_in_speech",
+        "f_dim_stage"
+      ],
+      "witness_ids": [
+        "dana",
+        "fadi",
+        "samar"
+      ]
+    },
+    {
+      "id": "te_samar_tray",
+      "description_ar": "سمر تفتح الباب بصينية الماء وترى آخر العتمة.",
+      "time": {
+        "start_min": 12,
+        "precision": "exact"
+      },
+      "location_id": "loc_hall",
+      "actor_ids": [
+        "samar"
+      ],
+      "fact_ids": [
+        "f_samar_saw_end"
+      ],
+      "motivated_by_ar": "إيصال الماء إلى المنصة"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_programme",
+      "title_ar": "برنامج الحفل المطبوع",
+      "kind": "documentary",
+      "content_ar": "برنامج حفل افتتاح المعرض (نسخة مطبوعة)\n10:00 فقرة الجوقة\n10:10 كلمة المديرة (تسع دقائق)\n10:20 فقرة إلقاء: دانة الحايك\n10:30 افتتاح الأجنحة\nملاحظة أسفل الورقة: الأوقات مقررة سلفاً وقد تتقدم أو تتأخر.",
+      "acquired_by_action_ids": [
+        "a_read_programme"
+      ],
+      "supports_fact_ids": [
+        "f_speech_start"
+      ],
+      "reliability": "weak",
+      "limits_ar": "جدول مقرر قبل الحفل، لا يسجل ما جرى فعلاً.",
+      "location_id": "loc_office"
+    },
+    {
+      "id": "ev_seating_plan",
+      "title_ar": "مخطط القاعة والتكليفات",
+      "kind": "documentary",
+      "content_ar": "مخطط القاعة\nالصف الثاني، قرب المنصة: مقاعد المشاركين في الفقرات (دانة الحايك).\nمكتب الصوت: الجدار الجانبي عند الباب ب، تحت مصباح الطوارئ رقم 3 (فادي المنصور).\nالباب الرئيسي مزدوج وثقيل، وفيه نافذة زجاجية صغيرة. وراءه الممر ذو النوافذ (سمر الخطيب).",
+      "acquired_by_action_ids": [
+        "a_read_seating"
+      ],
+      "supports_fact_ids": [
+        "f_dana_front_row",
+        "f_fadi_desk",
+        "f_samar_corridor"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "يبيّن أماكن الجلوس والتكليف لا ما رآه كل واحد أو سمعه.",
+      "location_id": "loc_office"
+    },
+    {
+      "id": "ev_sound_log",
+      "title_ar": "سجل مكتب الصوت",
+      "kind": "digital",
+      "content_ar": "سجل مكتب الصوت (تصدير آلي)\n10:11:02 | المايك الرئيسي: تشغيل\n10:12:10 | مصدر الطاقة: فقدان تيار القاعة | المايك: توقف\n10:12:50 | مصدر الطاقة: عودة التيار | المايك: عاد\n10:20:03 | المايك الرئيسي: إيقاف\nساعة الجهاز مضبوطة صباح اليوم على ساعة المدرسة.",
+      "acquired_by_action_ids": [
+        "a_read_sound"
+      ],
+      "supports_fact_ids": [
+        "f_one_cut",
+        "f_forty_sec",
+        "f_in_speech",
+        "f_speech_start"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يسجّل حالة المايك ومصدر الطاقة على جهاز واحد، ولا يثبت ما رآه الحاضرون ولا سبب الانقطاع.",
+      "contradicts_claim_ids": [
+        "cl_dana_long",
+        "cl_dana_start",
+        "cl_samar_before"
+      ],
+      "forensic_ko_ref": "KO-RS-06-003",
+      "location_id": "loc_hall"
+    },
+    {
+      "id": "ev_supply_recorder",
+      "title_ar": "مسجّل لوحة الكهرباء",
+      "kind": "digital",
+      "content_ar": "مسجّل اللوحة الرئيسية، خط القاعة (ملخص الصباح 09:00 إلى 12:00)\nعدد مرات هبوط الجهد إلى الصفر: 1\nبداية الهبوط: 10:12:10\nنهايته: 10:12:50\nملاحظة: يغطي خط القاعة فقط، لا الممرات.",
+      "acquired_by_action_ids": [
+        "a_read_supply"
+      ],
+      "supports_fact_ids": [
+        "f_one_cut",
+        "f_forty_sec"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يغطي خط القاعة وحده، ولا يبيّن ما رآه الأشخاص ولا يفسّر السبب.",
+      "contradicts_claim_ids": [
+        "cl_fadi_twice"
+      ],
+      "forensic_ko_ref": "KO-RS-06-003",
+      "location_id": "loc_office"
+    },
+    {
+      "id": "ev_hall_video",
+      "title_ar": "مقطع كاميرا القاعة",
+      "kind": "digital",
+      "content_ar": "مقطع كاميرا القاعة (الطابع الزمني على الشاشة)\n10:11:04 المديرة تبدأ بكلمة الترحيب\n10:12:10 تغيب الصورة ويتوقف الصوت\n10:12:50 تعود الصورة\nلا يظهر في العتمة سوى الطابع الزمني.",
+      "acquired_by_action_ids": [
+        "a_view_video"
+      ],
+      "supports_fact_ids": [
+        "f_forty_sec",
+        "f_in_speech",
+        "f_speech_start"
+      ],
+      "reliability": "strong",
+      "limits_ar": "الكاميرا واحدة وتبيّن ما يحدث أمامها فقط، ولا تظهر شيئاً أثناء العتمة.",
+      "contradicts_claim_ids": [
+        "cl_samar_ten",
+        "cl_dana_long"
+      ],
+      "forensic_ko_ref": "KO-RS-06-003",
+      "location_id": "loc_hall"
+    },
+    {
+      "id": "ev_lamp_log",
+      "title_ar": "سجل مصابيح الطوارئ",
+      "kind": "digital",
+      "content_ar": "لوحة مصابيح الطوارئ (سجل الحالة)\n10:12:12 | مجموعة القاعة | إضاءة جزئية خافتة\n10:12:50 | مجموعة القاعة | إنهاء الإضاءة الخافتة مع عودة الإضاءة الرئيسية\nلم تُسجَّل حالة غير هاتين.",
+      "acquired_by_action_ids": [
+        "a_read_lamp"
+      ],
+      "supports_fact_ids": [
+        "f_dim_stage"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يخص مصابيح الطوارئ وحدها، ولا يبيّن بنفسه إن كان التيار الرئيسي انقطع مرة أو أكثر.",
+      "contradicts_claim_ids": [
+        "cl_fadi_twice"
+      ],
+      "forensic_ko_ref": "KO-RS-06-003",
+      "location_id": "loc_hall"
+    },
+    {
+      "id": "ev_hospitality",
+      "title_ar": "ورقة الضيافة عند باب الممر",
+      "kind": "documentary",
+      "content_ar": "ورقة الضيافة عند باب الممر (تدوين المتطوع بالدقيقة)\n10:12 | صينية الماء إلى القاعة | سمر الخطيب\nملاحظة المتطوع: عند فتح الباب كانت القاعة معتمة.",
+      "acquired_by_action_ids": [
+        "a_read_hospitality"
+      ],
+      "supports_fact_ids": [
+        "f_samar_saw_end"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "تدوين بخط المتطوع بدقة الدقيقة، لا بالثانية.",
+      "contradicts_claim_ids": [
+        "cl_samar_ten",
+        "cl_samar_before"
+      ],
+      "location_id": "loc_corridor"
+    },
+    {
+      "id": "ev_setup_note",
+      "title_ar": "ورقة طاقم التجهيز",
+      "kind": "documentary",
+      "content_ar": "ورقة طاقم التجهيز\n10:11 | وُصل جهاز عرض ثانٍ بخط القاعة | رامي النجار\n10:13 | فُحص القاطع بعد عودة التيار",
+      "acquired_by_action_ids": [
+        "a_read_setup"
+      ],
+      "supports_fact_ids": [
+        "f_projector"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "تذكر التوقيت دون أن تثبت أن الجهاز هو السبب.",
+      "location_id": "loc_hall"
+    },
+    {
+      "id": "ev_dana_stmt",
+      "title_ar": "إفادة دانة الحايك",
+      "kind": "testimonial",
+      "content_ar": "دانة الحايك، طالبة: «كنت في الصف الثاني أنتظر دوري في الإلقاء. انطفأت الأنوار مرة واحدة، في أول كلمة المديرة، وبقينا في العتمة نحو دقيقتين.»",
+      "acquired_by_action_ids": [
+        "a_note_dana"
+      ],
+      "supports_fact_ids": [
+        "f_dana_front_row"
+      ],
+      "reliability": "weak",
+      "limits_ar": "رواية شخص واحد من موضعه، وتقدير المدة فيها بلا قياس.",
+      "location_id": "loc_hall"
+    },
+    {
+      "id": "ev_fadi_stmt",
+      "title_ar": "إفادة فادي المنصور",
+      "kind": "testimonial",
+      "content_ar": "فادي المنصور، فني الصوت: «انقطعت الإضاءة مرتين. الأولى حين انطفأ كل شيء، ثم عادت إضاءة خافتة، ثم انتهت الخافتة وعادت الأنوار. وقع ذلك بعد أكثر من دقيقة من بدء الكلمة، ودام كله نحو دقيقة.»",
+      "acquired_by_action_ids": [
+        "a_note_fadi"
+      ],
+      "supports_fact_ids": [
+        "f_fadi_desk"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "رواية شخص واحد، وعدّه للانقطاعين يعتمد على معنى كلمته.",
+      "location_id": "loc_hall"
+    },
+    {
+      "id": "ev_samar_stmt",
+      "title_ar": "إفادة سمر الخطيب",
+      "kind": "testimonial",
+      "content_ar": "سمر الخطيب، معلمة مكلفة بالممر: «كنت في الممر خلف الباب المغلق. دخلت بصينية الماء فوجدت القاعة معتمة، ثم عادت الأنوار بعد عشر ثوانٍ تقريباً. حسبت أن المديرة لم تتكلم بعد.»",
+      "acquired_by_action_ids": [
+        "a_note_samar"
+      ],
+      "supports_fact_ids": [
+        "f_samar_corridor"
+      ],
+      "reliability": "weak",
+      "limits_ar": "رواية شخص واحد رأى جزءاً من الحدث من موضع بعيد.",
+      "location_id": "loc_corridor"
+    }
+  ],
+  "evidence_graph": {
+    "inferences": [
+      {
+        "id": "i_one_a",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_sound_log"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_one_cut"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "سجل مكتب الصوت فيه إدخال فقدان تيار واحد وإدخال عودة واحد، فالانقطاع واحد.",
+        "skill_ko_refs": [
+          "KO-RS-06-003"
+        ]
+      },
+      {
+        "id": "i_one_b",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_supply_recorder"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_one_cut"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "مسجّل اللوحة يعدّ مرة واحدة هبط فيها الجهد إلى الصفر على خط القاعة.",
+        "skill_ko_refs": [
+          "KO-RS-06-003"
+        ]
+      },
+      {
+        "id": "i_forty_a",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_sound_log"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_forty_sec"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "الفرق بين 10:12:10 و10:12:50 في سجل الصوت أربعون ثانية.",
+        "skill_ko_refs": [
+          "KO-RS-05-005"
+        ]
+      },
+      {
+        "id": "i_forty_b",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_hall_video"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_forty_sec"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "الطابع الزمني للمقطع يغيب عند 10:12:10 ويعود عند 10:12:50، أي أربعون ثانية.",
+        "skill_ko_refs": [
+          "KO-RS-05-005"
+        ]
+      },
+      {
+        "id": "i_speech_a",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_sound_log"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_in_speech"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "المايك الرئيسي شُغّل عند 10:11:02 وتوقف عند 10:12:10، فالانقطاع جاء في أثناء الكلمة بعد نحو دقيقة وعشر ثوانٍ.",
+        "skill_ko_refs": [
+          "KO-RS-05-005"
+        ]
+      },
+      {
+        "id": "i_speech_b",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_hall_video"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_in_speech"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "المديرة تبدأ الترحيب عند 10:11:04 في المقطع، وتغيب الصورة عند 10:12:10.",
+        "skill_ko_refs": [
+          "KO-RS-05-005"
+        ]
+      },
+      {
+        "id": "i_dim",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_lamp_log"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_dim_stage"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "السجل فيه حالتان فقط: إضاءة خافتة من 10:12:12 ثم عودة الإضاءة الرئيسية عند 10:12:50.",
+        "skill_ko_refs": [
+          "KO-RS-06-003"
+        ]
+      },
+      {
+        "id": "i_samar_end",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_hospitality"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_forty_sec"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_samar_saw_end"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "سمر دخلت عند الدقيقة 10:12 والقاعة معتمة، والانقطاع ينتهي عند 10:12:50، فلم تر منه إلا آخره.",
+        "skill_ko_refs": [
+          "KO-RS-05-005"
+        ]
+      },
+      {
+        "id": "i_fadi_claim",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_lamp_log"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_one_cut"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_fadi_twice"
+        },
+        "relation": "contradicts_claim",
+        "strength": "strong",
+        "rule_ar": "الإضاءة الخافتة وعودة الأنوار حالتان داخل انقطاع واحد للتيار، فعدّهما انقطاعين خلط بين تغير الضوء وفقدان التيار.",
+        "skill_ko_refs": [
+          "KO-RS-06-001"
+        ]
+      },
+      {
+        "id": "i_dana_claim",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_dana_stmt"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_forty_sec"
+          },
+          {
+            "ref_type": "general_knowledge",
+            "ref_id": "waiting_in_dark_feels_longer"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_dana_long"
+        },
+        "relation": "contradicts_claim",
+        "strength": "strong",
+        "rule_ar": "من ينتظر في العتمة بلا ساعة يطيل التقدير، والمدة المقيسة أربعون ثانية لا دقيقتان.",
+        "skill_ko_refs": [
+          "KO-RS-06-001"
+        ]
+      },
+      {
+        "id": "i_samar_claim",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_samar_stmt"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_samar_saw_end"
+          },
+          {
+            "ref_type": "general_knowledge",
+            "ref_id": "thick_door_blocks_sound"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_samar_ten"
+        },
+        "relation": "contradicts_claim",
+        "strength": "strong",
+        "rule_ar": "سمر رأت آخر العتمة فقط عبر باب ثقيل، فعشر الثواني مدة ما رأته لا مدة الانقطاع.",
+        "skill_ko_refs": [
+          "KO-RS-06-001"
+        ]
+      },
+      {
+        "id": "i_support",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_one_cut"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_forty_sec"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_in_speech"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_one_cut"
+        },
+        "relation": "supports",
+        "strength": "strong",
+        "rule_ar": "السجلات المستقلة تثبت انقطاعاً واحداً قصيراً في أثناء الكلمة، وكل رواية تصف جزءاً منه من موضعها.",
+        "skill_ko_refs": [
+          "KO-RS-05-002"
+        ]
+      },
+      {
+        "id": "i_rule_long",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_forty_sec"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_long"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "المدة المقيسة أربعون ثانية، فلا يصح القول إنها دقيقتان.",
+        "skill_ko_refs": [
+          "KO-RS-06-009"
+        ]
+      },
+      {
+        "id": "i_rule_twice",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_one_cut"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_dim_stage"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_twice"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "مصدرا السجل يعدّان فقدان تيار واحداً، والإضاءة الخافتة جزء منه.",
+        "skill_ko_refs": [
+          "KO-RS-06-009"
+        ]
+      },
+      {
+        "id": "i_rule_before",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_in_speech"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_before"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "المايك والكاميرا يبيّنان أن الكلمة بدأت قبل الانقطاع بأكثر من دقيقة.",
+        "skill_ko_refs": [
+          "KO-RS-06-009"
+        ]
+      }
+    ]
+  },
+  "character_knowledge": [
+    {
+      "character_id": "dana",
+      "knows": [
+        {
+          "fact_id": "f_announce",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_dana_front_row",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [
+        {
+          "fact_id": "f_dana_by_feel",
+          "reveal_when": {
+            "presented": {
+              "evidence_id": "ev_sound_log",
+              "to_character": "dana"
+            }
+          },
+          "cover_claim_id": null,
+          "reveal_line_id": "dn_feel"
+        }
+      ],
+      "believes": [
+        {
+          "claim_id": "cl_dana_long",
+          "stance": "sincere"
+        },
+        {
+          "claim_id": "cl_dana_start",
+          "stance": "sincere"
+        }
+      ]
+    },
+    {
+      "character_id": "fadi",
+      "knows": [
+        {
+          "fact_id": "f_announce",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_fadi_desk",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_speech_start",
+          "access": "witnessed",
+          "certainty": "fairly_sure"
+        }
+      ],
+      "hides": [
+        {
+          "fact_id": "f_fadi_counts_dim",
+          "reveal_when": {
+            "presented": {
+              "evidence_id": "ev_lamp_log",
+              "to_character": "fadi"
+            }
+          },
+          "cover_claim_id": null,
+          "reveal_line_id": "fd_dim"
+        }
+      ],
+      "believes": [
+        {
+          "claim_id": "cl_fadi_twice",
+          "stance": "sincere"
+        }
+      ]
+    },
+    {
+      "character_id": "samar",
+      "knows": [
+        {
+          "fact_id": "f_samar_corridor",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [
+        {
+          "fact_id": "f_samar_heard_nothing",
+          "reveal_when": {
+            "presented": {
+              "evidence_id": "ev_hospitality",
+              "to_character": "samar"
+            }
+          },
+          "cover_claim_id": null,
+          "reveal_line_id": "sm_door"
+        },
+        {
+          "fact_id": "f_samar_saw_end",
+          "reveal_when": {
+            "presented": {
+              "evidence_id": "ev_hospitality",
+              "to_character": "samar"
+            }
+          },
+          "cover_claim_id": null,
+          "reveal_line_id": "sm_late"
+        }
+      ],
+      "believes": [
+        {
+          "claim_id": "cl_samar_ten",
+          "stance": "sincere"
+        },
+        {
+          "claim_id": "cl_samar_before",
+          "stance": "sincere"
+        }
+      ]
+    },
+    {
+      "character_id": "ramy",
+      "knows": [
+        {
+          "fact_id": "f_projector",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "h_long",
+      "statement_ar": "وقع انقطاع طويل نحو دقيقتين في بداية الكلمة، كما رأت دانة.",
+      "is_true": false,
+      "plausibility_at_start": "high"
+    },
+    {
+      "id": "h_one_cut",
+      "statement_ar": "حدث انقطاع واحد قصير في أثناء الكلمة، واختلفت الروايات بسبب موضع كل شاهد وذاكرته ومعنى كلماته.",
+      "is_true": true,
+      "plausibility_at_start": "medium"
+    },
+    {
+      "id": "h_twice",
+      "statement_ar": "انقطع التيار مرتين، كما قال فادي.",
+      "is_true": false,
+      "plausibility_at_start": "medium"
+    },
+    {
+      "id": "h_before",
+      "statement_ar": "وقع الانقطاع القصير قبل أن تبدأ الكلمة، كما ظنت سمر.",
+      "is_true": false,
+      "plausibility_at_start": "medium"
+    }
+  ],
+  "misdirection_plan": [
+    {
+      "id": "rh_close",
+      "points_to_hypothesis_id": "h_long",
+      "planted_via_ar": "دانة أقرب الشهود إلى المنصة وأثبتهم نبرة، فتبدو روايتها أوثق.",
+      "evidence_ids": [
+        "ev_dana_stmt",
+        "ev_seating_plan"
+      ],
+      "refuted_by_inference_ids": [
+        "i_rule_long",
+        "i_dana_claim"
+      ],
+      "fairness_note_ar": "السجلات المقيسة متاحة بالإجراءات العادية، والقرب من الحدث لا يغني عن القياس."
+    },
+    {
+      "id": "rh_expert",
+      "points_to_hypothesis_id": "h_twice",
+      "planted_via_ar": "فادي صاحب الخبرة التقنية، فتبدو كلمته «مرتين» دقيقة فنياً.",
+      "evidence_ids": [
+        "ev_fadi_stmt",
+        "ev_lamp_log"
+      ],
+      "refuted_by_inference_ids": [
+        "i_rule_twice",
+        "i_fadi_claim"
+      ],
+      "fairness_note_ar": "سجل المصابيح ومسجّل اللوحة متاحان، ويكشفان أن الحالتين داخل انقطاع واحد."
+    },
+    {
+      "id": "rh_calm",
+      "points_to_hypothesis_id": "h_before",
+      "planted_via_ar": "سمر هادئة وحيادية وخارج الحدث، فيبدو أنها لم تتأثر بالتوتر.",
+      "evidence_ids": [
+        "ev_samar_stmt"
+      ],
+      "refuted_by_inference_ids": [
+        "i_rule_before",
+        "i_samar_claim"
+      ],
+      "fairness_note_ar": "ورقة الضيافة وسجل الصوت متاحان، ويبيّنان متى دخلت سمر وكم رأت."
+    }
+  ],
+  "learning_objectives": [
+    {
+      "id": "lo_claim",
+      "statement_ar": "يفرّق بين رواية الشاهد والسجل المقيس ويصنّف المصدر.",
+      "skill_ko_ref": "KO-RS-05-001",
+      "observable_behaviors_ar": [
+        "يصنّف الإفادات والسجلات",
+        "يقابل القول بالسجل"
+      ],
+      "evidence_sources": [
+        "evidence_board"
+      ]
+    },
+    {
+      "id": "lo_timeline",
+      "statement_ar": "يضع الأحداث على خط زمني ويربط كل رواية بلحظتها.",
+      "skill_ko_ref": "KO-RS-05-005",
+      "observable_behaviors_ar": [
+        "يضع الأدلة في أزمنتها"
+      ],
+      "evidence_sources": [
+        "timeline_task",
+        "action_log"
+      ]
+    },
+    {
+      "id": "lo_hyp",
+      "statement_ar": "يوازن بين تفسيرات عدة ويستبعد ما تنقضه السجلات.",
+      "skill_ko_ref": "KO-RS-05-002",
+      "observable_behaviors_ar": [
+        "يضيف فرضيات",
+        "يستبعد بدليل"
+      ],
+      "evidence_sources": [
+        "hypothesis_ledger"
+      ]
+    },
+    {
+      "id": "lo_diag",
+      "statement_ar": "يفسّر اختلاف الروايات بالموضع والذاكرة ومعنى الكلمات دون اتهام أحد بالكذب.",
+      "skill_ko_ref": "KO-RS-06-001",
+      "observable_behaviors_ar": [
+        "يربط الدليل بالفرضية باتجاه صحيح"
+      ],
+      "evidence_sources": [
+        "evidence_board",
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_calib",
+      "statement_ar": "يعاير ثقته بحسب جودة المصدر وحدوده.",
+      "skill_ko_ref": "KO-RS-06-008",
+      "observable_behaviors_ar": [
+        "يختار ثقة معقولة",
+        "يذكر حدوداً"
+      ],
+      "evidence_sources": [
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_revise",
+      "statement_ar": "يراجع رأيه الأول حين يظهر ما يخالفه.",
+      "skill_ko_ref": "KO-RS-06-009",
+      "observable_behaviors_ar": [
+        "يغيّر فرضيته الرائدة بدليل"
+      ],
+      "evidence_sources": [
+        "hypothesis_ledger"
+      ]
+    }
+  ],
+  "mechanics": {
+    "time_budget_units": 0,
+    "actions": [
+      {
+        "id": "a_read_programme",
+        "type": "examine",
+        "label_ar": "اقرأ برنامج الحفل المطبوع",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_programme"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_office",
+        "telemetry_code": "READ_PROGRAMME"
+      },
+      {
+        "id": "a_read_seating",
+        "type": "search_location",
+        "label_ar": "افتح مخطط القاعة والتكليفات",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_seating_plan"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_office",
+        "telemetry_code": "READ_SEATING"
+      },
+      {
+        "id": "a_read_sound",
+        "type": "search_location",
+        "label_ar": "اطلب سجل مكتب الصوت",
+        "precondition": {
+          "has_evidence": "ev_programme"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_sound_log"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_hall",
+        "telemetry_code": "READ_SOUND"
+      },
+      {
+        "id": "a_read_supply",
+        "type": "search_location",
+        "label_ar": "اطلب ملخص مسجّل اللوحة الرئيسية",
+        "precondition": {
+          "has_evidence": "ev_programme"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_supply_recorder"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_office",
+        "telemetry_code": "READ_SUPPLY"
+      },
+      {
+        "id": "a_view_video",
+        "type": "examine",
+        "label_ar": "شاهد مقطع كاميرا القاعة",
+        "precondition": {
+          "has_evidence": "ev_programme"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_hall_video"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_hall",
+        "telemetry_code": "VIEW_VIDEO"
+      },
+      {
+        "id": "a_read_lamp",
+        "type": "search_location",
+        "label_ar": "افتح سجل مصابيح الطوارئ",
+        "precondition": {
+          "has_evidence": "ev_sound_log"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_lamp_log"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_hall",
+        "telemetry_code": "READ_LAMP"
+      },
+      {
+        "id": "a_read_hospitality",
+        "type": "search_location",
+        "label_ar": "اقرأ ورقة الضيافة عند باب الممر",
+        "precondition": {
+          "has_evidence": "ev_seating_plan"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_hospitality"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_corridor",
+        "telemetry_code": "READ_HOSPITALITY"
+      },
+      {
+        "id": "a_read_setup",
+        "type": "search_location",
+        "label_ar": "اقرأ ورقة طاقم التجهيز",
+        "precondition": {
+          "has_evidence": "ev_sound_log"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_setup_note"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_hall",
+        "telemetry_code": "READ_SETUP"
+      },
+      {
+        "id": "a_int_dana",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة دانة",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "dana",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "dana",
+        "telemetry_code": "INT_DANA"
+      },
+      {
+        "id": "a_int_fadi",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة فادي",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "fadi",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "fadi",
+        "telemetry_code": "INT_FADI"
+      },
+      {
+        "id": "a_int_samar",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة سمر",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "samar",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "samar",
+        "telemetry_code": "INT_SAMAR"
+      },
+      {
+        "id": "a_int_ramy",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة رامي",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "ramy",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "ramy",
+        "telemetry_code": "INT_RAMY"
+      },
+      {
+        "id": "a_note_dana",
+        "type": "examine",
+        "label_ar": "دوّن إفادة دانة",
+        "precondition": {
+          "fact_unlocked": "f_dana_front_row"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_dana_stmt"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "dana",
+        "telemetry_code": "NOTE_DANA"
+      },
+      {
+        "id": "a_note_fadi",
+        "type": "examine",
+        "label_ar": "دوّن إفادة فادي",
+        "precondition": {
+          "fact_unlocked": "f_fadi_desk"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_fadi_stmt"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "fadi",
+        "telemetry_code": "NOTE_FADI"
+      },
+      {
+        "id": "a_note_samar",
+        "type": "examine",
+        "label_ar": "دوّن إفادة سمر",
+        "precondition": {
+          "fact_unlocked": "f_samar_corridor"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_samar_stmt"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "samar",
+        "telemetry_code": "NOTE_SAMAR"
+      },
+      {
+        "id": "p_sound_dana",
+        "type": "present_evidence",
+        "label_ar": "اعرض سجل الصوت على دانة",
+        "precondition": {
+          "presented": {
+            "evidence_id": "ev_sound_log",
+            "to_character": "dana"
+          }
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "PRESENTED_SOUND"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "dana",
+        "telemetry_code": "P_SOUND_DANA"
+      },
+      {
+        "id": "p_lamp_fadi",
+        "type": "present_evidence",
+        "label_ar": "اعرض سجل المصابيح على فادي",
+        "precondition": {
+          "presented": {
+            "evidence_id": "ev_lamp_log",
+            "to_character": "fadi"
+          }
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "PRESENTED_LAMP"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "fadi",
+        "telemetry_code": "P_LAMP_FADI"
+      },
+      {
+        "id": "p_hosp_samar",
+        "type": "present_evidence",
+        "label_ar": "اعرض ورقة الضيافة على سمر",
+        "precondition": {
+          "presented": {
+            "evidence_id": "ev_hospitality",
+            "to_character": "samar"
+          }
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "PRESENTED_HOSP"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "samar",
+        "telemetry_code": "P_HOSP_SAMAR"
+      },
+      {
+        "id": "a_hint",
+        "type": "request_hint",
+        "label_ar": "اطلب تلميحاً",
+        "precondition": {
+          "always": true
+        },
+        "effects": [],
+        "time_cost_units": 0,
+        "telemetry_code": "REQUEST_HINT"
+      },
+      {
+        "id": "a_accuse",
+        "type": "final_accusation",
+        "label_ar": "قدّم الاستنتاج النهائي",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "SUBMIT"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "FINAL_ACCUSATION"
+      },
+      {
+        "id": "ask_dana_f_announce",
+        "type": "interview",
+        "label_ar": "[نموذج] dana يذكر f_announce",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_announce"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "dana",
+        "telemetry_code": "ASK_DANA_F_ANNOUNCE"
+      },
+      {
+        "id": "ask_dana_f_dana_front_row",
+        "type": "interview",
+        "label_ar": "[نموذج] dana يذكر f_dana_front_row",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_dana_front_row"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "dana",
+        "telemetry_code": "ASK_DANA_F_DANA_FRONT_ROW"
+      },
+      {
+        "id": "ask_dana_f_dana_by_feel",
+        "type": "interview",
+        "label_ar": "[نموذج] dana يكشف f_dana_by_feel",
+        "precondition": {
+          "all": [
+            {
+              "always": true
+            },
+            {
+              "presented": {
+                "evidence_id": "ev_sound_log",
+                "to_character": "dana"
+              }
+            }
+          ]
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_dana_by_feel"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "dana",
+        "telemetry_code": "ASK_DANA_F_DANA_BY_FEEL"
+      },
+      {
+        "id": "ask_fadi_f_announce",
+        "type": "interview",
+        "label_ar": "[نموذج] fadi يذكر f_announce",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_announce"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "fadi",
+        "telemetry_code": "ASK_FADI_F_ANNOUNCE"
+      },
+      {
+        "id": "ask_fadi_f_fadi_desk",
+        "type": "interview",
+        "label_ar": "[نموذج] fadi يذكر f_fadi_desk",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_fadi_desk"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "fadi",
+        "telemetry_code": "ASK_FADI_F_FADI_DESK"
+      },
+      {
+        "id": "ask_fadi_f_speech_start",
+        "type": "interview",
+        "label_ar": "[نموذج] fadi يذكر f_speech_start",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_speech_start"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "fadi",
+        "telemetry_code": "ASK_FADI_F_SPEECH_START"
+      },
+      {
+        "id": "ask_fadi_f_fadi_counts_dim",
+        "type": "interview",
+        "label_ar": "[نموذج] fadi يكشف f_fadi_counts_dim",
+        "precondition": {
+          "all": [
+            {
+              "always": true
+            },
+            {
+              "presented": {
+                "evidence_id": "ev_lamp_log",
+                "to_character": "fadi"
+              }
+            }
+          ]
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_fadi_counts_dim"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "fadi",
+        "telemetry_code": "ASK_FADI_F_FADI_COUNTS_DIM"
+      },
+      {
+        "id": "ask_samar_f_samar_corridor",
+        "type": "interview",
+        "label_ar": "[نموذج] samar يذكر f_samar_corridor",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_samar_corridor"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "samar",
+        "telemetry_code": "ASK_SAMAR_F_SAMAR_CORRIDOR"
+      },
+      {
+        "id": "ask_samar_f_samar_heard_nothing",
+        "type": "interview",
+        "label_ar": "[نموذج] samar يكشف f_samar_heard_nothing",
+        "precondition": {
+          "all": [
+            {
+              "always": true
+            },
+            {
+              "presented": {
+                "evidence_id": "ev_hospitality",
+                "to_character": "samar"
+              }
+            }
+          ]
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_samar_heard_nothing"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "samar",
+        "telemetry_code": "ASK_SAMAR_F_SAMAR_HEARD_NOTHING"
+      },
+      {
+        "id": "ask_samar_f_samar_saw_end",
+        "type": "interview",
+        "label_ar": "[نموذج] samar يكشف f_samar_saw_end",
+        "precondition": {
+          "all": [
+            {
+              "always": true
+            },
+            {
+              "presented": {
+                "evidence_id": "ev_hospitality",
+                "to_character": "samar"
+              }
+            }
+          ]
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_samar_saw_end"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "samar",
+        "telemetry_code": "ASK_SAMAR_F_SAMAR_SAW_END"
+      },
+      {
+        "id": "ask_ramy_f_projector",
+        "type": "interview",
+        "label_ar": "[نموذج] ramy يذكر f_projector",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_projector"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "ramy",
+        "telemetry_code": "ASK_RAMY_F_PROJECTOR"
+      }
+    ]
+  },
+  "state_machine": {
+    "id": "c030",
+    "initial": "briefing",
+    "type": "compound",
+    "states": {
+      "briefing": {
+        "description_ar": "الإحاطة",
+        "type": "atomic",
+        "on": {
+          "START": {
+            "target": "investigating"
+          }
+        }
+      },
+      "investigating": {
+        "description_ar": "التحقيق",
+        "type": "compound",
+        "initial": "gathering",
+        "states": {
+          "gathering": {
+            "type": "atomic",
+            "on": {
+              "OPEN_DEDUCTION": {
+                "target": "deducing"
+              }
+            }
+          },
+          "deducing": {
+            "type": "atomic",
+            "on": {
+              "BACK": {
+                "target": "gathering"
+              }
+            }
+          }
+        },
+        "on": {
+          "SUBMIT": {
+            "target": "review"
+          }
+        }
+      },
+      "review": {
+        "description_ar": "مراجعة",
+        "type": "atomic",
+        "on": {
+          "CLOSE": {
+            "target": "resolved"
+          }
+        }
+      },
+      "resolved": {
+        "description_ar": "إغلاق",
+        "type": "final"
+      }
+    }
+  },
+  "dialogue": {
+    "max_turns_per_interview": 10,
+    "llm_enabled": false,
+    "topics": [
+      {
+        "id": "t_dana",
+        "label_ar": "ما رأته دانة",
+        "example_questions_ar": [
+          "أين جلست؟",
+          "كم دامت العتمة في رأيك؟"
+        ],
+        "fact_ids": [
+          "f_dana_front_row",
+          "f_dana_by_feel"
+        ],
+        "claim_ids": [
+          "cl_dana_long",
+          "cl_dana_start"
+        ]
+      },
+      {
+        "id": "t_fadi",
+        "label_ar": "ملاحظات فادي",
+        "example_questions_ar": [
+          "ماذا ظهر على الأجهزة؟",
+          "ماذا تقصد بمرتين؟"
+        ],
+        "fact_ids": [
+          "f_fadi_desk",
+          "f_fadi_counts_dim"
+        ],
+        "claim_ids": [
+          "cl_fadi_twice"
+        ]
+      },
+      {
+        "id": "t_samar",
+        "label_ar": "ما رأته سمر",
+        "example_questions_ar": [
+          "أين كنت؟",
+          "متى فتحت الباب؟"
+        ],
+        "fact_ids": [
+          "f_samar_corridor",
+          "f_samar_heard_nothing",
+          "f_samar_saw_end"
+        ],
+        "claim_ids": [
+          "cl_samar_ten",
+          "cl_samar_before"
+        ]
+      },
+      {
+        "id": "t_setup",
+        "label_ar": "تجهيز المنصة",
+        "example_questions_ar": [
+          "ماذا وصلت قبل الكلمة؟"
+        ],
+        "fact_ids": [
+          "f_projector"
+        ]
+      }
+    ]
+  },
+  "rubric": {
+    "reference_answer_ar": "لم يكذب أحد من الشهود الثلاثة. السجلات المستقلة، وهي سجل الصوت ومسجّل اللوحة ومقطع الكاميرا، تتفق على انقطاع واحد للتيار عن القاعة دام نحو أربعين ثانية من 10:12:10 إلى 10:12:50، بعد بدء الكلمة بأكثر من دقيقة. دانة جلست في العتمة بلا ساعة وهي تنتظر دورها، فطالت المدة في تقديرها. وفادي رأى مرحلة الإضاءة الخافتة وعودة الأنوار الرئيسية فعدّهما انقطاعين، وهما داخل انقطاع واحد. وسمر فتحت الباب في آخر العتمة بعد أن كان الباب الثقيل يحجب الصوت، فرأت عشر ثوانٍ فقط وظنت أن الكلمة لم تبدأ. حدود الاستنتاج: الأزمنة بدقة الثواني على ساعات الأجهزة، والأدلة لا تثبت سبب الانقطاع، وتوصيل جهاز العرض قبله بدقيقة لا يكفي للجزم به.",
+    "criteria": [
+      {
+        "id": "c_source",
+        "name_ar": "تصنيف المصادر",
+        "objective_ids": [
+          "lo_claim"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يصنّف"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "أخطأ في الأغلب"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "نصف صحيح"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمه صحيح"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كله صحيح"
+          }
+        ]
+      },
+      {
+        "id": "c_conflict",
+        "name_ar": "ربط الروايات والسجلات بأزمنتها",
+        "objective_ids": [
+          "lo_timeline"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يضع شيئاً"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "وضع قليلاً"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "وضع نصفها صحيحاً"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمها"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كلها في موضعها"
+          }
+        ]
+      },
+      {
+        "id": "c_links",
+        "name_ar": "ربط الأدلة بالفرضيات",
+        "objective_ids": [
+          "lo_diag"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.2,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لا روابط"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "قليلة"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "نصفها صحيح"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمها"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كلها دقيقة"
+          }
+        ]
+      },
+      {
+        "id": "c_uncertainty",
+        "name_ar": "معايرة الثقة",
+        "objective_ids": [
+          "lo_calib"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.2,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "ثقة مفرطة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "حدود قليلة"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "جزئية"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معقولة"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "معايَرة كاملة"
+          }
+        ]
+      },
+      {
+        "id": "c_revision",
+        "name_ar": "مراجعة الرأي",
+        "objective_ids": [
+          "lo_revise"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "بقي على فرضية مرفوضة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "لم يعلن فرضية"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "ثبت على فرضية سليمة"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "غيّر بدليل"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "غيّر بدليل ووثّق"
+          }
+        ]
+      },
+      {
+        "id": "c_elimination",
+        "name_ar": "استبعاد الفرضيات الخاطئة",
+        "objective_ids": [
+          "lo_hyp"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يستبعد"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "استبعد خطأً"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "فرضية بدليل"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "فرضيتين"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كل الخاطئة"
+          }
+        ]
+      },
+      {
+        "id": "c_justification",
+        "name_ar": "جودة الحجة المكتوبة",
+        "objective_ids": [
+          "lo_diag",
+          "lo_hyp"
+        ],
+        "scored_by": "human",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لا حجة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "ادعاء بلا سند"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "أدلة دون ربط"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "ربط الأدلة بالاستنتاج"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "ربط مع البدائل والحدود"
+          }
+        ]
+      }
+    ]
+  },
+  "hint_ladder": [
+    {
+      "id": "hg1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "لكل شاهد موضع ووسيلة ملاحظة. أين كان كل واحد، وماذا كان بوسعه أن يرى أو يسمع من مكانه؟",
+      "trigger": {
+        "always": true
+      },
+      "assessment_weight": 0.02
+    },
+    {
+      "id": "hg2",
+      "level": 2,
+      "kind": "focus_area",
+      "text_ar": "ضع كل قطعة في جدول: سجل مسجَّل آلياً، أم ورقة بخط شخص، أم إفادة شاهد؟",
+      "trigger": {
+        "has_evidence": "ev_sound_log"
+      },
+      "assessment_weight": 0.04
+    },
+    {
+      "id": "hg3",
+      "level": 3,
+      "kind": "pointer",
+      "text_ar": "اطلب سجلاً مستقلاً عن الشهود، وقارن ما فيه بما قاله كل شاهد، ثم اسأل كيف يمكن أن يصدق ثلاثتهم فيما رأوه.",
+      "trigger": {
+        "has_evidence": "ev_hall_video"
+      },
+      "assessment_weight": 0.06
+    },
+    {
+      "id": "hd1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "حين يقول شاهد «مرتين»، هل هو يعد انقطاع التيار أم أي تغير في الإضاءة؟",
+      "trigger": {
+        "has_evidence": "ev_fadi_stmt"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_fadi_claim"
+    },
+    {
+      "id": "hd2",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "اقرأ سجل مصابيح الطوارئ وقارنه بمسجّل اللوحة: كم حالة سجّل كل منهما؟",
+      "trigger": {
+        "has_evidence": "ev_lamp_log"
+      },
+      "assessment_weight": 0.05,
+      "targets_inference_id": "i_fadi_claim"
+    },
+    {
+      "id": "hd3",
+      "level": 3,
+      "kind": "partial_reveal",
+      "text_ar": "سجل المصابيح فيه حالتان تتبعان فقدان تيار واحد في مسجّل اللوحة، فما معنى كلمة «مرتين» عند فادي؟",
+      "trigger": {
+        "has_evidence": "ev_supply_recorder"
+      },
+      "assessment_weight": 0.1,
+      "targets_inference_id": "i_fadi_claim"
+    }
+  ],
+  "fairness_test": {
+    "requirements": {
+      "min_disjoint_proof_paths": 2,
+      "max_inference_depth": 3,
+      "all_red_herrings_refutable": true,
+      "culprit_uniquely_entailed": true,
+      "no_hidden_fact_dependency": true,
+      "max_required_actions": 30
+    },
+    "runs": []
+  },
+  "ending_explanation": {
+    "steps": [
+      {
+        "order": 1,
+        "text_ar": "ثلاث روايات تختلف في العدد والمدة والموعد، وكلها من شهود لا مصلحة لهم في الخطأ؛ فنبحث عن سجل مستقل عنهم.",
+        "uses_evidence_ids": [
+          "ev_dana_stmt",
+          "ev_fadi_stmt",
+          "ev_samar_stmt"
+        ],
+        "inference_id": "i_support"
+      },
+      {
+        "order": 2,
+        "text_ar": "سجل الصوت ومسجّل اللوحة يتفقان على فقدان تيار واحد، وكل منهما مستقل عن الآخر.",
+        "uses_evidence_ids": [
+          "ev_sound_log",
+          "ev_supply_recorder"
+        ],
+        "inference_id": "i_one_a"
+      },
+      {
+        "order": 3,
+        "text_ar": "طرح زمن العودة من زمن الفقدان يعطي أربعين ثانية، والمقطع المصوّر يؤيد المدة نفسها.",
+        "uses_evidence_ids": [
+          "ev_sound_log",
+          "ev_hall_video"
+        ],
+        "inference_id": "i_forty_a"
+      },
+      {
+        "order": 4,
+        "text_ar": "المايك شُغّل قبل الانقطاع بنحو دقيقة وعشر ثوانٍ، فوقع الانقطاع في أثناء الكلمة لا قبلها.",
+        "uses_evidence_ids": [
+          "ev_sound_log",
+          "ev_hall_video"
+        ],
+        "inference_id": "i_speech_a"
+      },
+      {
+        "order": 5,
+        "text_ar": "سجل المصابيح يفسّر قول فادي: الإضاءة الخافتة وعودة الأنوار حالتان داخل انقطاع واحد.",
+        "uses_evidence_ids": [
+          "ev_lamp_log",
+          "ev_supply_recorder"
+        ],
+        "inference_id": "i_fadi_claim"
+      },
+      {
+        "order": 6,
+        "text_ar": "ورقة الضيافة تبيّن أن سمر فتحت الباب قرب نهاية العتمة، والمخطط يبيّن ثقل الباب.",
+        "uses_evidence_ids": [
+          "ev_hospitality",
+          "ev_seating_plan"
+        ],
+        "inference_id": "i_samar_end"
+      },
+      {
+        "order": 7,
+        "text_ar": "إذن الانقطاع واحد قصير في أثناء الكلمة، وتفسّر الفروق مواضع الشهود وذاكرة من انتظر في العتمة ومعنى كلمة فادي.",
+        "uses_evidence_ids": [
+          "ev_sound_log"
+        ],
+        "inference_id": "i_rule_long"
+      }
+    ],
+    "alternative_paths_ar": [
+      "مسار مستقل: مسجّل اللوحة يثبت المرة الواحدة، ومقطع الكاميرا يثبت المدة وموضع الانقطاع من الكلمة، دون الاعتماد على سجل الصوت."
+    ],
+    "what_evidence_could_not_show_ar": [
+      "لا تثبت الأدلة سبب الانقطاع؛ فتوصيل جهاز العرض قبله بدقيقة لا يكفي للجزم.",
+      "الأزمنة تعتمد على ساعات الأجهزة، فهي دقيقة بحدود الثواني لا أدق."
+    ],
+    "science_notes_ar": [
+      "الشهود الصادقون قد يختلفون لأن كلاً منهم يرى من موضع مختلف ويحتفظ بجزء مختلف.",
+      "من ينتظر في العتمة بلا ساعة يميل إلى تطويل المدة.",
+      "كلمة واحدة مثل «انقطاع» قد تعني عند شخص فقدان التيار وعند آخر أي تغير في الضوء."
+    ]
+  },
+  "expert_review": [
+    {
+      "role": "narrative_editor",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-11-04",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "scientific_reviewer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-11-04",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "learning_designer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-11-04",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "age_appropriateness",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-11-04",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "cultural_reviewer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-11-04",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "legal_rights",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-11-04",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "safety",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-11-04",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    }
+  ]
+}

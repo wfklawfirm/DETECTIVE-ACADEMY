@@ -1,0 +1,163 @@
+{
+  "accepted_conclusions": {
+    "h_timer": {
+      "grade": 1,
+      "note_ar": "استنتاج متسق مع الأدلة ويتطلب ذكر حدوده."
+    },
+    "h_yusuf": {
+      "grade": 0,
+      "note_ar": "يخلط بين تقارب الزمن والسببية، ويتجاهل أن الانخفاض بدأ بعد سحب السلك بعشر دقائق."
+    },
+    "h_lara": {
+      "grade": 0,
+      "note_ar": "يعدّ رسالة طلب مكان فعلاً، ولا أثر لفعل في السجلات."
+    },
+    "h_window": {
+      "grade": 0,
+      "note_ar": "عادت الحرارة إلى 24 بعد النافذة وبقيت حتى 18:00، والنوافذ مغلقة عند الإقفال."
+    }
+  },
+  "confidence_band": {
+    "h_timer": [
+      65,
+      90
+    ],
+    "h_yusuf": [
+      0,
+      15
+    ],
+    "h_lara": [
+      0,
+      15
+    ],
+    "h_window": [
+      0,
+      15
+    ]
+  },
+  "source_key": {
+    "ev_report": "claim",
+    "ev_salma_stmt": "claim",
+    "ev_yusuf_stmt": "claim",
+    "ev_lara_stmt": "claim",
+    "ev_lara_msg": "claim",
+    "ev_logger": "primary_record",
+    "ev_door_log": "primary_record",
+    "ev_timer_photo": "primary_record",
+    "ev_work_order": "primary_record",
+    "ev_circular": "primary_record"
+  },
+  "link_key": {
+    "h_timer": {
+      "ev_logger": "supports",
+      "ev_door_log": "supports",
+      "ev_timer_photo": "supports",
+      "ev_work_order": "supports",
+      "ev_circular": "supports",
+      "ev_yusuf_stmt": "supports",
+      "ev_salma_stmt": "neutral",
+      "ev_lara_stmt": "neutral"
+    },
+    "h_yusuf": {
+      "ev_report": "supports",
+      "ev_salma_stmt": "supports",
+      "ev_logger": "weakens",
+      "ev_door_log": "weakens",
+      "ev_timer_photo": "weakens",
+      "ev_yusuf_stmt": "weakens"
+    },
+    "h_lara": {
+      "ev_lara_msg": "supports",
+      "ev_lara_stmt": "supports",
+      "ev_logger": "weakens",
+      "ev_timer_photo": "weakens",
+      "ev_work_order": "weakens"
+    },
+    "h_window": {
+      "ev_lara_stmt": "supports",
+      "ev_logger": "weakens",
+      "ev_door_log": "weakens"
+    }
+  },
+  "required_limits": [
+    "l_log_interval",
+    "l_salma_far"
+  ],
+  "valid_mind_changers": [
+    "m_before",
+    "m_entry",
+    "m_not_timer"
+  ],
+  "invalid_limits": [
+    "l_invalid_last",
+    "l_invalid_msg",
+    "l_invalid_nobody"
+  ],
+  "decisive_evidence": [
+    "ev_logger",
+    "ev_door_log",
+    "ev_timer_photo",
+    "ev_work_order",
+    "ev_circular"
+  ],
+  "timeline_requirement": [
+    {
+      "evidence_id": "ev_lara_msg",
+      "utc_minute": 1840,
+      "tol": 10
+    },
+    {
+      "evidence_id": "ev_door_log",
+      "utc_minute": 1975,
+      "tol": 8
+    },
+    {
+      "evidence_id": "ev_logger",
+      "utc_minute": 1990,
+      "tol": 10
+    },
+    {
+      "evidence_id": "ev_timer_photo",
+      "utc_minute": 2785,
+      "tol": 10
+    },
+    {
+      "evidence_id": "ev_yusuf_stmt",
+      "utc_minute": 2870,
+      "tol": 15
+    }
+  ],
+  "refuted_hypotheses": [
+    "h_yusuf",
+    "h_lara",
+    "h_window"
+  ],
+  "transfer_key": {
+    "valid": [
+      "o1",
+      "o2",
+      "o3",
+      "o4"
+    ],
+    "invalid": [
+      "o5",
+      "o6",
+      "o7"
+    ]
+  },
+  "case_id": "c041_accident_that_looked_deliberate",
+  "lab_requirement": null,
+  "criteria_map": {
+    "c_source": "source_typing",
+    "c_conflict": "conflict_resolution",
+    "c_links": "hypothesis_links",
+    "c_uncertainty": "uncertainty",
+    "c_revision": "revision",
+    "c_elimination": "elimination",
+    "c_justification": "justification_human"
+  },
+  "caps": {
+    "no_citations_max": 45,
+    "no_conflict_resolution_max": 65
+  }
+}

@@ -1,0 +1,126 @@
+{
+  "case_id": "c032_judge_before_context",
+  "accepted_conclusions": {
+    "h_altered": {
+      "grade": 0,
+      "note_ar": "يتجاوز ما تسمح به الأدلة: الأثر والبوابة لا يؤيدان التعديل، والسمعة والإقرار لا يثبتانه."
+    },
+    "h_original": {
+      "grade": 1,
+      "note_ar": "استنتاج متسق مع الأدلة ويتطلب ذكر حدوده."
+    },
+    "h_undecidable": {
+      "grade": 0,
+      "note_ar": "يتهرب من حكم تسنده الأدلة: للأثر وللسجل الآلي قراءة واضحة."
+    }
+  },
+  "confidence_band": {
+    "h_altered": [
+      0,
+      10
+    ],
+    "h_original": [
+      70,
+      90
+    ],
+    "h_undecidable": [
+      0,
+      15
+    ]
+  },
+  "source_key": {
+    "ev_sign_sheet": "primary_record",
+    "ev_trace": "primary_record",
+    "ev_controls": "primary_record",
+    "ev_gate_log": "primary_record",
+    "ev_slot_rule": "public_document",
+    "ev_complaint": "claim",
+    "ev_prior_record": "redisplay",
+    "ev_confession": "claim",
+    "ev_salma_note": "claim",
+    "ev_adel_stmt": "claim",
+    "ev_nabil_note": "claim",
+    "ev_reem_note": "claim"
+  },
+  "link_key": {
+    "h_original": {
+      "ev_trace": "supports",
+      "ev_controls": "supports",
+      "ev_gate_log": "supports",
+      "ev_slot_rule": "supports",
+      "ev_prior_record": "supports",
+      "ev_salma_note": "supports",
+      "ev_complaint": "weakens",
+      "ev_confession": "weakens",
+      "ev_sign_sheet": "neutral"
+    },
+    "h_altered": {
+      "ev_complaint": "supports",
+      "ev_confession": "supports",
+      "ev_trace": "weakens",
+      "ev_controls": "weakens",
+      "ev_gate_log": "weakens",
+      "ev_prior_record": "weakens",
+      "ev_sign_sheet": "neutral"
+    },
+    "h_undecidable": {
+      "ev_trace": "weakens",
+      "ev_gate_log": "weakens",
+      "ev_controls": "weakens",
+      "ev_sign_sheet": "neutral"
+    }
+  },
+  "required_limits": [
+    "l_clock_gap",
+    "l_scope"
+  ],
+  "valid_mind_changers": [
+    "m_second_exam",
+    "m_gate_fault"
+  ],
+  "invalid_limits": [
+    "l_invalid_confession",
+    "l_invalid_reputation"
+  ],
+  "decisive_evidence": [
+    "ev_trace",
+    "ev_controls",
+    "ev_gate_log",
+    "ev_sign_sheet"
+  ],
+  "lab_requirement": null,
+  "timeline_requirement": [
+    {
+      "evidence_id": "ev_gate_log",
+      "utc_minute": 219,
+      "tol": 5
+    },
+    {
+      "evidence_id": "ev_complaint",
+      "utc_minute": 275,
+      "tol": 10
+    },
+    {
+      "evidence_id": "ev_trace",
+      "utc_minute": 420,
+      "tol": 10
+    }
+  ],
+  "refuted_hypotheses": [
+    "h_altered",
+    "h_undecidable"
+  ],
+  "criteria_map": {
+    "c_source": "source_typing",
+    "c_conflict": "conflict_resolution",
+    "c_links": "hypothesis_links",
+    "c_uncertainty": "uncertainty",
+    "c_revision": "revision",
+    "c_elimination": "elimination",
+    "c_justification": "justification_human"
+  },
+  "caps": {
+    "no_citations_max": 45,
+    "no_conflict_resolution_max": 70
+  }
+}

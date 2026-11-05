@@ -1,0 +1,168 @@
+{
+  "case_id": "c036_who_gains_from_victim",
+  "accepted_conclusions": {
+    "h_hisham": {
+      "grade": 1,
+      "note_ar": "استنتاج متسق مع السجلات المستقلة ويتطلب ذكر حدوده: الرمز والبطاقة لا الحامل، والحافز لا يثبت الفعل."
+    },
+    "h_majed": {
+      "grade": 0,
+      "note_ar": "يعتمد على خلاف سابق سُوّي بمحضر، وتنقضه بطاقته الخارجة من السوق في الفترات الثلاث."
+    },
+    "h_stranger": {
+      "grade": 0,
+      "note_ar": "يقبل روايةً دون سجل مستقل، وتنقضه سجلات الإنذار والأقفال والبوابة ودفتر الحارس."
+    },
+    "h_pipe": {
+      "grade": 0,
+      "note_ar": "تنقضه شهادة السباك والجريان الثابت من لحظة واحدة."
+    }
+  },
+  "confidence_band": {
+    "h_hisham": [
+      60,
+      88
+    ],
+    "h_majed": [
+      0,
+      10
+    ],
+    "h_stranger": [
+      0,
+      15
+    ],
+    "h_pipe": [
+      0,
+      10
+    ]
+  },
+  "source_key": {
+    "ev_claim_file": "public_document",
+    "ev_hisham_statement": "claim",
+    "ev_petition": "claim",
+    "ev_majed_statement": "claim",
+    "ev_dispute_minutes": "public_document",
+    "ev_fund_notice": "public_document",
+    "ev_supplier_letter": "primary_record",
+    "ev_stock_sheet": "public_document",
+    "ev_alarm_log": "primary_record",
+    "ev_sensor_test": "primary_record",
+    "ev_guard_sheet": "primary_record",
+    "ev_wash_sheet": "primary_record",
+    "ev_courier_photo": "primary_record",
+    "ev_cafe_cam": "primary_record",
+    "ev_paint_receipt": "primary_record",
+    "ev_rear_door_log": "primary_record",
+    "ev_water_meter": "primary_record",
+    "ev_plumber_cert": "public_document",
+    "ev_gate_log": "primary_record",
+    "ev_huda_case": "public_document"
+  },
+  "link_key": {
+    "h_hisham": {
+      "ev_alarm_log": "supports",
+      "ev_sensor_test": "supports",
+      "ev_guard_sheet": "supports",
+      "ev_rear_door_log": "supports",
+      "ev_water_meter": "supports",
+      "ev_gate_log": "supports",
+      "ev_wash_sheet": "supports",
+      "ev_courier_photo": "supports",
+      "ev_cafe_cam": "supports",
+      "ev_supplier_letter": "supports",
+      "ev_stock_sheet": "supports",
+      "ev_fund_notice": "supports",
+      "ev_paint_receipt": "supports",
+      "ev_petition": "neutral",
+      "ev_huda_case": "neutral",
+      "ev_dispute_minutes": "neutral"
+    },
+    "h_majed": {
+      "ev_dispute_minutes": "supports",
+      "ev_hisham_statement": "supports",
+      "ev_gate_log": "weakens",
+      "ev_wash_sheet": "weakens",
+      "ev_majed_statement": "neutral",
+      "ev_alarm_log": "weakens"
+    },
+    "h_stranger": {
+      "ev_claim_file": "supports",
+      "ev_hisham_statement": "supports",
+      "ev_petition": "supports",
+      "ev_alarm_log": "weakens",
+      "ev_sensor_test": "weakens",
+      "ev_guard_sheet": "weakens",
+      "ev_rear_door_log": "weakens",
+      "ev_gate_log": "weakens",
+      "ev_courier_photo": "weakens",
+      "ev_water_meter": "weakens"
+    },
+    "h_pipe": {
+      "ev_claim_file": "supports",
+      "ev_plumber_cert": "weakens",
+      "ev_water_meter": "weakens"
+    }
+  },
+  "required_limits": [
+    "l_tag_not_person",
+    "l_stake_not_proof"
+  ],
+  "valid_mind_changers": [
+    "m_alarm_fault",
+    "m_spare_tag",
+    "m_meter_clock"
+  ],
+  "invalid_limits": [
+    "l_invalid_record",
+    "l_invalid_stake"
+  ],
+  "decisive_evidence": [
+    "ev_alarm_log",
+    "ev_guard_sheet",
+    "ev_rear_door_log",
+    "ev_gate_log",
+    "ev_water_meter",
+    "ev_stock_sheet"
+  ],
+  "lab_requirement": null,
+  "timeline_requirement": [
+    {
+      "evidence_id": "ev_wash_sheet",
+      "utc_minute": 1930,
+      "tol": 10
+    },
+    {
+      "evidence_id": "ev_courier_photo",
+      "utc_minute": 2140,
+      "tol": 10
+    },
+    {
+      "evidence_id": "ev_water_meter",
+      "utc_minute": 3641,
+      "tol": 5
+    },
+    {
+      "evidence_id": "ev_rear_door_log",
+      "utc_minute": 3652,
+      "tol": 5
+    }
+  ],
+  "refuted_hypotheses": [
+    "h_majed",
+    "h_stranger",
+    "h_pipe"
+  ],
+  "criteria_map": {
+    "c_source": "source_typing",
+    "c_conflict": "conflict_resolution",
+    "c_links": "hypothesis_links",
+    "c_uncertainty": "uncertainty",
+    "c_revision": "revision",
+    "c_elimination": "elimination",
+    "c_justification": "justification_human"
+  },
+  "caps": {
+    "no_citations_max": 45,
+    "no_conflict_resolution_max": 70
+  }
+}

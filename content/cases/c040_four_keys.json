@@ -1,0 +1,3331 @@
+{
+  "schema_version": "0.1.0",
+  "case_id": "c040_four_keys",
+  "case_version": "0.1.0",
+  "meta": {
+    "title_ar": "المفاتيح الأربعة",
+    "title_en": "The Four Keys",
+    "age_band": "16-18",
+    "locale": "ar",
+    "dialogue_register": "msa",
+    "estimated_minutes": 40,
+    "difficulty": 3,
+    "content_flags": [
+      "no_violence"
+    ],
+    "authors": [
+      "فريق أثر التحريري (مسودة بمساعدة الذكاء الاصطناعي، لم تُراجَع بشرياً بعد)"
+    ],
+    "knowledge_object_refs": [
+      "KO-RS-05-004",
+      "KO-RS-05-005",
+      "KO-RS-05-002",
+      "KO-RS-06-003",
+      "KO-RS-06-021",
+      "KO-RS-06-009"
+    ]
+  },
+  "premise": {
+    "hook_ar": "بقي باب غرفة التبريد في بنك البذور غير مغلق نحو نصف ساعة مساء الثلاثاء، فارتفعت حرارتها وتضررت صينية عينات قمح محلي. القارئ الإلكتروني ينسب الحركة الأخيرة إلى بطاقة مديرة المشروع، والمديرة تنفي أنها كانت هناك. أربع بطاقات تفتح الغرفة، فمن حمل أي بطاقة ومتى؟",
+    "player_role_ar": "أنت مراجع جودة متدرب لدى مجلس إدارة بنك البذور، وكُلفت بمراجعة سجلات الدخول قبل أن يقرر المجلس أي إجراء.",
+    "setting_ar": "بنك البذور المحلية في سهل الندى، مدينة متخيَّلة، مساء الثلاثاء. بإذن مكتوب من المجلس تطّلع على سجلات الأبواب والأجهزة والدفاتر والإيصالات، ولا تفتح غيرها. الأسماء والأحداث كلها متخيَّلة، وساعات الأجهزة مضبوطة على خادم الموقع.",
+    "public_fact_ids": [
+      "f_incident",
+      "f_cards",
+      "f_found_ajar",
+      "f_hala_denies"
+    ],
+    "assumed_general_knowledge_ar": [
+      "قارئ البطاقات يسجل البطاقة لا حاملها",
+      "من يملك بطاقة شخصية قد لا يكون هو من استعملها",
+      "لا يوجد شخص واحد في مكانين بعيدين في الوقت نفسه"
+    ]
+  },
+  "entities": {
+    "characters": [
+      {
+        "id": "hala",
+        "name_ar": "هالة العلي",
+        "role": "suspect",
+        "age_descriptor_ar": "مديرة بنك البذور",
+        "persona_ar": "منظمة وصريحة، تثق بالسجلات وتتضايق من الظن، وتتكلم بجمل قصيرة.",
+        "motives_ar": [
+          "أن يُعرف سبب الحادث بالسجلات",
+          "أن تبقى العينات سليمة"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "hl_greet",
+            "purpose": "greeting",
+            "text_ar": "تفضّل. أجيب عمّا أعرفه، وأترك الباقي للسجلات."
+          },
+          {
+            "line_id": "hl_away",
+            "purpose": "reveal",
+            "text_ar": "غادرت بنك البذور بعد السادسة والنصف إلى حفل البلدية، وبقيت هناك حتى انتهى الحفل. ولم أُعر بطاقتي لأحد.",
+            "fact_ids": [
+              "f_hala_denies",
+              "f_k1_holder_away"
+            ]
+          },
+          {
+            "line_id": "hl_drawer",
+            "purpose": "reveal",
+            "text_ar": "الآن أتذكر: تركت بطاقتي في درج مختبر التجهيز قبل أن أخرج، فالدرج غير مقفل.",
+            "fact_ids": [
+              "f_hala_drawer"
+            ]
+          },
+          {
+            "line_id": "hl_rana",
+            "purpose": "lie",
+            "text_ar": "رنا تنسى المزلاج دائماً في رأيي، وأظن أن الأمر منها.",
+            "claim_ids": [
+              "cl_rana_habit"
+            ]
+          },
+          {
+            "line_id": "hl_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف أكثر من ذلك."
+          },
+          {
+            "line_id": "hl_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن مساء الثلاثاء وعن بطاقتي."
+          },
+          {
+            "line_id": "hl_bye",
+            "purpose": "farewell",
+            "text_ar": "اقرأ السجلات كلها قبل أن تقرر."
+          }
+        ]
+      },
+      {
+        "id": "majed",
+        "name_ar": "ماجد الصافي",
+        "role": "suspect",
+        "age_descriptor_ar": "باحث زائر في تحسين القمح",
+        "persona_ar": "مهذب وسريع الكلام، يحب أن يبدو مرتباً، ويتحدث عن عمله أكثر من غيره.",
+        "motives_ar": [
+          "أن يُنهي بحثه في موعده",
+          "ألا يُلام على خطأ في الموقع"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "mj_greet",
+            "purpose": "greeting",
+            "text_ar": "أهلاً بك. أعمل هنا ضيفاً بإذن زيارة، وأحب أن تسير الأمور بالأصول."
+          },
+          {
+            "line_id": "mj_inside",
+            "purpose": "reveal",
+            "text_ar": "وصلت بعد الظهر وبقيت في الموقع حتى الليل، وكنت في جناح الضيوف عند الثامنة والنصف.",
+            "fact_ids": [
+              "f_majed_inside"
+            ]
+          },
+          {
+            "line_id": "mj_deny",
+            "purpose": "lie",
+            "text_ar": "استعملت بطاقتي فقط، وأنهيت عملي في غرفة التبريد قبل الثامنة، ولم أدخلها بعد ذلك.",
+            "claim_ids": [
+              "cl_majed_own"
+            ]
+          },
+          {
+            "line_id": "mj_withdraw",
+            "purpose": "reveal",
+            "text_ar": "نعم، دوّنت سحب الأنبوب رقم 14 بيدي في السجل قرابة التاسعة إلا خمس دقائق.",
+            "fact_ids": [
+              "f_majed_withdraw"
+            ]
+          },
+          {
+            "line_id": "mj_confess",
+            "purpose": "break_down",
+            "text_ar": "كنت بحاجة إلى أنبوب للشحنة الصباحية وبطاقتي مرفوضة، فأخذت بطاقة هالة من الدرج ودخلت. خرجت ولم أنتبه أن الباب لم يُغلق. كان عليّ أن أطلب الإذن.",
+            "fact_ids": [
+              "f_majed_used_k1"
+            ]
+          },
+          {
+            "line_id": "mj_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف ما جرى بعد خروجي."
+          },
+          {
+            "line_id": "mj_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "لنبقَ عند ما يخص الغرفة والبطاقات."
+          },
+          {
+            "line_id": "mj_bye",
+            "purpose": "farewell",
+            "text_ar": "أرجو أن يُنظر في الأمر بإنصاف."
+          }
+        ]
+      },
+      {
+        "id": "rana",
+        "name_ar": "رنا الحسن",
+        "role": "suspect",
+        "age_descriptor_ar": "مساعدة مختبر",
+        "persona_ar": "هادئة ودقيقة، تحفظ التفاصيل الصغيرة، وتتألم إذا اتُّهمت بالإهمال.",
+        "motives_ar": [
+          "أن يُعرف أنها أغلقت الباب",
+          "أن تُحفظ سمعتها في العمل"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "rn_greet",
+            "purpose": "greeting",
+            "text_ar": "تفضّل، اسأل عن أي ساعة تريد."
+          },
+          {
+            "line_id": "rn_out",
+            "purpose": "reveal",
+            "text_ar": "خرجت من غرفة التبريد قبل الثامنة بعشر دقائق، وسمعت المزلاج يُغلق، ثم غادرت المبنى.",
+            "fact_ids": [
+              "f_rana_out"
+            ]
+          },
+          {
+            "line_id": "rn_memo",
+            "purpose": "reveal",
+            "text_ar": "نعم، وقعت مرة في مارس وأخذت تنبيهاً، ومنذ ذلك الحين أتأكد من الطقة في كل مرة.",
+            "fact_ids": [
+              "f_rana_memo"
+            ]
+          },
+          {
+            "line_id": "rn_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لم أكن في الموقع بعد ذلك."
+          },
+          {
+            "line_id": "rn_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "أجيبك عن عملي في ذلك اليوم فقط."
+          },
+          {
+            "line_id": "rn_bye",
+            "purpose": "farewell",
+            "text_ar": "شكراً لأنك سألت قبل أن تحكم."
+          }
+        ]
+      },
+      {
+        "id": "shadi",
+        "name_ar": "شادي النجار",
+        "role": "suspect",
+        "age_descriptor_ar": "فني الصيانة والمناوب",
+        "persona_ar": "عملي ومختصر، يتكلم بلغة الأجهزة والأرقام، ويحب أن يقيس قبل أن يحكم.",
+        "motives_ar": [
+          "أن تعمل الأجهزة بدقة",
+          "ألا يُتهم بما لم يفعل"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "sh_greet",
+            "purpose": "greeting",
+            "text_ar": "أهلاً. اسأل عن الأجهزة والأوقات."
+          },
+          {
+            "line_id": "sh_away",
+            "purpose": "reveal",
+            "text_ar": "خرجت من الموقع في السادسة وخمس دقائق، وعدت بعد تنبيه الحرارة قرابة العاشرة إلا ربعاً.",
+            "fact_ids": [
+              "f_shadi_away"
+            ]
+          },
+          {
+            "line_id": "sh_check",
+            "purpose": "reveal",
+            "text_ar": "فحصت القارئ والمزلاج والمسبار صباح الاثنين، وكانت كلها سليمة وساعاتها مضبوطة.",
+            "fact_ids": [
+              "f_reader_ok"
+            ]
+          },
+          {
+            "line_id": "sh_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "هذا خارج ما أعرفه."
+          },
+          {
+            "line_id": "sh_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن الأجهزة."
+          },
+          {
+            "line_id": "sh_bye",
+            "purpose": "farewell",
+            "text_ar": "القياس أصدق من الظن."
+          }
+        ]
+      },
+      {
+        "id": "karim",
+        "name_ar": "كريم الأسعد",
+        "role": "suspect",
+        "age_descriptor_ar": "حارس المساء",
+        "persona_ar": "جاد وقليل الكلام، يعتمد على دفاتره، ويجيب عمّا رآه فقط.",
+        "motives_ar": [
+          "أن تبقى دفاتره مقبولة",
+          "أن يؤدي واجبه كاملاً"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "kr_greet",
+            "purpose": "greeting",
+            "text_ar": "تفضّل. دفاتري أمامك."
+          },
+          {
+            "line_id": "kr_found",
+            "purpose": "reveal",
+            "text_ar": "في جولتي حوالي التاسعة والنصف وجدت الباب غير مغلق بإحكام، فأغلقته.",
+            "fact_ids": [
+              "f_found_ajar"
+            ]
+          },
+          {
+            "line_id": "kr_hut",
+            "purpose": "reveal",
+            "text_ar": "كنت في الكشك الشمالي أستقبل شحنة، ولا أصل إلى الغرفة قبل ثماني دقائق مشياً.",
+            "fact_ids": [
+              "f_karim_hut"
+            ]
+          },
+          {
+            "line_id": "kr_lock",
+            "purpose": "reveal",
+            "text_ar": "بعد الثامنة والنصف تُقفل البوابة الرئيسية كهربائياً ولا تُفتح إلا بزر في الكشك.",
+            "fact_ids": [
+              "f_gate_locked"
+            ]
+          },
+          {
+            "line_id": "kr_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لم أرَ أكثر من ذلك."
+          },
+          {
+            "line_id": "kr_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "أجيب عن عملي في الحراسة."
+          },
+          {
+            "line_id": "kr_bye",
+            "purpose": "farewell",
+            "text_ar": "اقرأ الدفاتر."
+          }
+        ]
+      }
+    ],
+    "locations": [
+      {
+        "id": "loc_cold_room",
+        "name_ar": "غرفة التبريد",
+        "description_ar": "غرفة العينات المبردة، بابها بقارئ بطاقات ومزلاج بحساس."
+      },
+      {
+        "id": "loc_prep_lab",
+        "name_ar": "مختبر التجهيز",
+        "description_ar": "مختبر قرب غرفة التبريد، فيه درج مشترك غير مقفل."
+      },
+      {
+        "id": "loc_guest_wing",
+        "name_ar": "جناح الضيوف",
+        "description_ar": "مكاتب الباحثين الزائرين، على بعد دقيقتين مشياً من الغرفة."
+      },
+      {
+        "id": "loc_main_gate",
+        "name_ar": "البوابة الرئيسية",
+        "description_ar": "مدخل الموقع، وفيه دفتر استقبال يوقعه كل داخل وخارج."
+      },
+      {
+        "id": "loc_north_hut",
+        "name_ar": "كشك البوابة الشمالية",
+        "description_ar": "كشك الحارس عند بوابة الشحنات، وهو بعيد عن الغرفة."
+      },
+      {
+        "id": "loc_hall",
+        "name_ar": "قاعة بلدية سهل الندى",
+        "description_ar": "قاعة حفل ختام معرض البذور، على بعد خمس وعشرين دقيقة بالسيارة."
+      }
+    ],
+    "objects": [
+      {
+        "id": "obj_tray",
+        "name_ar": "صينية عينات القمح المحلي",
+        "description_ar": "أنابيب بذور قمح محلي مرقمة داخل غرفة التبريد."
+      },
+      {
+        "id": "obj_card_1",
+        "name_ar": "البطاقة ب1",
+        "description_ar": "بطاقة مديرة بنك البذور."
+      },
+      {
+        "id": "obj_card_2",
+        "name_ar": "البطاقة ب2",
+        "description_ar": "بطاقة الباحث الزائر، بإذن محدد الساعات."
+      },
+      {
+        "id": "obj_card_3",
+        "name_ar": "البطاقة ب3",
+        "description_ar": "بطاقة فني الصيانة."
+      },
+      {
+        "id": "obj_card_4",
+        "name_ar": "البطاقة ب4",
+        "description_ar": "بطاقة مساعدة المختبر."
+      }
+    ],
+    "organizations": [
+      {
+        "id": "org_bank",
+        "name_ar": "بنك البذور المحلية في سهل الندى",
+        "description_ar": "مؤسسة متخيَّلة تحفظ عينات بذور محلية للأبحاث."
+      }
+    ]
+  },
+  "truth": {
+    "solution": {
+      "culprit_ids": [
+        "majed"
+      ],
+      "summary_ar": "لم تعد هالة إلى غرفة التبريد. أخذ ماجد بطاقتها من درج مشترك بعدما منعته ساعات إذنه، فدخل ليسحب أنبوباً، ثم خرج وترك الباب مفتوحاً. بقية أصحاب البطاقات كانوا بعيدين أو لم يصلوا بعد، وظنّ القارئ أن صاحبة البطاقة هي من تحرك لأنه لا يرى الأشخاص.",
+      "key_fact_ids": [
+        "f_open_2104",
+        "f_k1_holder_away",
+        "f_majed_used_k1"
+      ]
+    },
+    "facts": [
+      {
+        "id": "f_incident",
+        "statement_ar": "مساء الثلاثاء ارتفعت حرارة غرفة التبريد في بنك البذور لأن بابها بقي غير مغلق، فتضررت صينية عينات القمح المحلي.",
+        "kind": "event",
+        "subject_ids": [
+          "loc_cold_room",
+          "obj_tray",
+          "org_bank"
+        ],
+        "spoiler_level": 0,
+        "time": {
+          "start_min": 785,
+          "end_min": 811,
+          "precision": "approx"
+        },
+        "location_id": "loc_cold_room"
+      },
+      {
+        "id": "f_cards",
+        "statement_ar": "أربع بطاقات شخصية تفتح غرفة التبريد: ب1 لهالة العلي، وب2 لماجد الصافي الزائر، وب3 لشادي النجار، وب4 لرنا الحسن، ولا يجوز إعارتها.",
+        "kind": "relation",
+        "subject_ids": [
+          "hala",
+          "majed",
+          "shadi",
+          "rana",
+          "obj_card_1",
+          "obj_card_2",
+          "obj_card_3",
+          "obj_card_4"
+        ],
+        "spoiler_level": 0
+      },
+      {
+        "id": "f_found_ajar",
+        "statement_ar": "وجد الحارس كريم الأسعد باب غرفة التبريد غير مغلق بإحكام في جولته الساعة 21:30 فأغلقه.",
+        "kind": "event",
+        "subject_ids": [
+          "karim",
+          "loc_cold_room"
+        ],
+        "spoiler_level": 0,
+        "time": {
+          "start_min": 810,
+          "precision": "exact"
+        },
+        "location_id": "loc_cold_room"
+      },
+      {
+        "id": "f_hala_denies",
+        "statement_ar": "نفت هالة العلي أن تكون في الموقع وقت الحادث، ونفت أنها أعارت بطاقتها.",
+        "kind": "event",
+        "subject_ids": [
+          "hala",
+          "obj_card_1"
+        ],
+        "spoiler_level": 0
+      },
+      {
+        "id": "f_k2_hours",
+        "statement_ar": "إذن زيارة ماجد يجعل بطاقته ب2 صالحة بين 08:00 و20:00 فقط.",
+        "kind": "attribute",
+        "subject_ids": [
+          "majed",
+          "obj_card_2"
+        ],
+        "spoiler_level": 1
+      },
+      {
+        "id": "f_rana_out",
+        "statement_ar": "غادرت رنا غرفة التبريد الساعة 19:50 والمبنى الساعة 19:55، وأُغلق المزلاج بعد خروجها.",
+        "kind": "event",
+        "subject_ids": [
+          "rana",
+          "loc_cold_room"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 710,
+          "end_min": 715,
+          "precision": "exact"
+        },
+        "location_id": "loc_cold_room"
+      },
+      {
+        "id": "f_shadi_away",
+        "statement_ar": "كان شادي خارج الموقع من 18:05 حتى عاد 21:35 بعد تنبيه الحرارة.",
+        "kind": "state",
+        "subject_ids": [
+          "shadi"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 605,
+          "end_min": 815,
+          "precision": "exact"
+        },
+        "location_id": "loc_main_gate"
+      },
+      {
+        "id": "f_karim_hut",
+        "statement_ar": "كان كريم في كشك البوابة الشمالية بين 20:48 و21:03 يستقبل شحنة، والمشي من الكشك إلى الغرفة ثماني دقائق.",
+        "kind": "state",
+        "subject_ids": [
+          "karim",
+          "loc_north_hut"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 768,
+          "end_min": 783,
+          "precision": "exact"
+        },
+        "location_id": "loc_north_hut"
+      },
+      {
+        "id": "f_majed_inside",
+        "statement_ar": "بقي ماجد في الموقع من 14:00 حتى 22:20، وكان في جناح الضيوف عند عدّ الساعة 20:30.",
+        "kind": "state",
+        "subject_ids": [
+          "majed",
+          "loc_guest_wing"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 360,
+          "end_min": 860,
+          "precision": "exact"
+        },
+        "location_id": "loc_guest_wing"
+      },
+      {
+        "id": "f_gate_locked",
+        "statement_ar": "تُقفل البوابة الرئيسية كهربائياً من 20:30 إلى 22:00، ولا تُفتح إلا من زر في الكشك.",
+        "kind": "state",
+        "subject_ids": [
+          "loc_main_gate",
+          "karim"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 750,
+          "end_min": 840,
+          "precision": "exact"
+        },
+        "location_id": "loc_main_gate"
+      },
+      {
+        "id": "f_reader_ok",
+        "statement_ar": "فُحصت أجهزة الغرفة صباح الاثنين فكانت سليمة، وساعاتها مضبوطة على خادم الموقع.",
+        "kind": "state",
+        "subject_ids": [
+          "shadi",
+          "loc_cold_room"
+        ],
+        "spoiler_level": 1
+      },
+      {
+        "id": "f_rana_memo",
+        "statement_ar": "سجلت مذكرة قديمة في مارس أن رنا تركت المزلاج مفتوحاً مرة واحدة دون ضرر.",
+        "kind": "event",
+        "subject_ids": [
+          "rana"
+        ],
+        "spoiler_level": 1
+      },
+      {
+        "id": "f_majed_withdraw",
+        "statement_ar": "دوّن ماجد بيده سحب الأنبوب رقم 14 من الغرفة الساعة 20:55.",
+        "kind": "event",
+        "subject_ids": [
+          "majed",
+          "loc_cold_room",
+          "obj_tray"
+        ],
+        "spoiler_level": 2,
+        "time": {
+          "start_min": 775,
+          "precision": "exact"
+        },
+        "location_id": "loc_cold_room"
+      },
+      {
+        "id": "f_hala_drawer",
+        "statement_ar": "تركت هالة بطاقتها في الدرج غير المقفل بمختبر التجهيز قبل أن تغادر.",
+        "kind": "event",
+        "subject_ids": [
+          "hala",
+          "obj_card_1",
+          "loc_prep_lab"
+        ],
+        "spoiler_level": 2,
+        "time": {
+          "start_min": 625,
+          "precision": "exact"
+        },
+        "location_id": "loc_prep_lab"
+      },
+      {
+        "id": "f_open_2104",
+        "statement_ar": "ظل باب غرفة التبريد غير مغلق من 21:04 حتى 21:31، وسبقه مباشرة خروج مسجل ببطاقة ب1.",
+        "kind": "event",
+        "subject_ids": [
+          "loc_cold_room",
+          "obj_card_1"
+        ],
+        "spoiler_level": 2,
+        "time": {
+          "start_min": 784,
+          "end_min": 811,
+          "precision": "exact"
+        },
+        "location_id": "loc_cold_room"
+      },
+      {
+        "id": "f_k1_holder_away",
+        "statement_ar": "كانت هالة العلي خارج الموقع منذ 18:30 وحتى انتهاء الحفل، فلم تكن هي من استعمل بطاقتها ب1 بين 20:51 و21:04.",
+        "kind": "relation",
+        "subject_ids": [
+          "hala",
+          "obj_card_1",
+          "loc_hall"
+        ],
+        "spoiler_level": 2,
+        "time": {
+          "start_min": 630,
+          "end_min": 870,
+          "precision": "exact"
+        },
+        "location_id": "loc_hall"
+      },
+      {
+        "id": "f_majed_used_k1",
+        "statement_ar": "استعمل ماجد الصافي بطاقة هالة من 20:51 إلى 21:04 بعد أن رُفضت بطاقته، وخرج دون أن يُحكم إغلاق الباب.",
+        "kind": "event",
+        "subject_ids": [
+          "majed",
+          "obj_card_1",
+          "obj_card_2",
+          "loc_cold_room"
+        ],
+        "spoiler_level": 3,
+        "time": {
+          "start_min": 771,
+          "end_min": 784,
+          "precision": "exact"
+        },
+        "location_id": "loc_cold_room"
+      }
+    ],
+    "claims": [
+      {
+        "id": "cl_majed_own",
+        "statement_ar": "ماجد استعمل بطاقته فقط ولم يدخل الغرفة بعد الثامنة مساءً.",
+        "kind": "lie",
+        "held_by": [
+          "majed"
+        ],
+        "true_fact_id": "f_majed_used_k1",
+        "contradicted_by_evidence_ids": [
+          "ev_door_log",
+          "ev_sample_sheet"
+        ]
+      },
+      {
+        "id": "cl_rana_habit",
+        "statement_ar": "رنا تترك مزلاج الغرفة مفتوحاً دائماً، فهي سبب الحادث.",
+        "kind": "half_truth",
+        "held_by": [
+          "hala"
+        ],
+        "true_fact_id": "f_rana_out",
+        "contradicted_by_evidence_ids": [
+          "ev_latch_log",
+          "ev_temp_graph"
+        ]
+      }
+    ]
+  },
+  "timeline": [
+    {
+      "id": "te_majed_arrive",
+      "description_ar": "ماجد يدخل الموقع بإذن زيارة.",
+      "time": {
+        "start_min": 360,
+        "precision": "exact"
+      },
+      "location_id": "loc_main_gate",
+      "actor_ids": [
+        "majed"
+      ],
+      "fact_ids": [
+        "f_majed_inside"
+      ],
+      "motivated_by_ar": "إكمال قياساته على عينات القمح"
+    },
+    {
+      "id": "te_shadi_out",
+      "description_ar": "شادي يغادر الموقع.",
+      "time": {
+        "start_min": 605,
+        "precision": "exact"
+      },
+      "location_id": "loc_main_gate",
+      "actor_ids": [
+        "shadi"
+      ],
+      "fact_ids": [
+        "f_shadi_away"
+      ],
+      "motivated_by_ar": "انتهاء دوامه"
+    },
+    {
+      "id": "te_hala_room_out",
+      "description_ar": "هالة تخرج من غرفة التبريد.",
+      "time": {
+        "start_min": 620,
+        "precision": "exact"
+      },
+      "location_id": "loc_cold_room",
+      "actor_ids": [
+        "hala"
+      ],
+      "fact_ids": [
+        "f_k1_holder_away"
+      ],
+      "motivated_by_ar": "الاستعداد لحفل البلدية"
+    },
+    {
+      "id": "te_hala_drawer",
+      "description_ar": "هالة تضع بطاقتها في الدرج وتنسى أخذها.",
+      "time": {
+        "start_min": 625,
+        "precision": "exact"
+      },
+      "location_id": "loc_prep_lab",
+      "actor_ids": [
+        "hala"
+      ],
+      "fact_ids": [
+        "f_hala_drawer"
+      ],
+      "motivated_by_ar": "عجلتها بالخروج"
+    },
+    {
+      "id": "te_hala_gate",
+      "description_ar": "هالة تغادر الموقع من البوابة الرئيسية.",
+      "time": {
+        "start_min": 630,
+        "precision": "exact"
+      },
+      "location_id": "loc_main_gate",
+      "actor_ids": [
+        "hala"
+      ],
+      "fact_ids": [
+        "f_k1_holder_away"
+      ],
+      "motivated_by_ar": "حضور الحفل"
+    },
+    {
+      "id": "te_rana_out",
+      "description_ar": "رنا تخرج من الغرفة ثم من المبنى.",
+      "time": {
+        "start_min": 710,
+        "end_min": 715,
+        "precision": "exact"
+      },
+      "location_id": "loc_cold_room",
+      "actor_ids": [
+        "rana"
+      ],
+      "fact_ids": [
+        "f_rana_out"
+      ],
+      "motivated_by_ar": "انتهاء دوامها"
+    },
+    {
+      "id": "te_headcount",
+      "description_ar": "الحارس يعدّ الموجودين في الموقع، وتُقفل البوابة الرئيسية.",
+      "time": {
+        "start_min": 750,
+        "precision": "exact"
+      },
+      "location_id": "loc_north_hut",
+      "actor_ids": [
+        "karim"
+      ],
+      "fact_ids": [
+        "f_gate_locked",
+        "f_majed_inside"
+      ],
+      "motivated_by_ar": "إجراء العدّ المسائي"
+    },
+    {
+      "id": "te_majed_refused",
+      "description_ar": "بطاقة ماجد تُرفض مرتين عند باب الغرفة.",
+      "time": {
+        "start_min": 768,
+        "end_min": 769,
+        "precision": "exact"
+      },
+      "location_id": "loc_cold_room",
+      "actor_ids": [
+        "majed"
+      ],
+      "fact_ids": [
+        "f_k2_hours"
+      ],
+      "motivated_by_ar": "حاجته إلى أنبوب للشحنة الصباحية"
+    },
+    {
+      "id": "te_majed_card",
+      "description_ar": "ماجد يأخذ بطاقة هالة من درج مختبر التجهيز.",
+      "time": {
+        "start_min": 770,
+        "precision": "exact"
+      },
+      "location_id": "loc_prep_lab",
+      "actor_ids": [
+        "majed"
+      ],
+      "fact_ids": [
+        "f_hala_drawer",
+        "f_majed_used_k1"
+      ],
+      "motivated_by_ar": "دخول الغرفة بعد رفض بطاقته"
+    },
+    {
+      "id": "te_k1_session",
+      "description_ar": "ماجد يدخل الغرفة ببطاقة هالة ويسحب أنبوباً ثم يخرج.",
+      "time": {
+        "start_min": 771,
+        "end_min": 784,
+        "precision": "exact"
+      },
+      "location_id": "loc_cold_room",
+      "actor_ids": [
+        "majed"
+      ],
+      "fact_ids": [
+        "f_majed_withdraw",
+        "f_majed_used_k1",
+        "f_open_2104"
+      ],
+      "motivated_by_ar": "سحب الأنبوب رقم 14"
+    },
+    {
+      "id": "te_delivery",
+      "description_ar": "كريم يستقبل شحنة عند البوابة الشمالية ويوقع الإيصال.",
+      "time": {
+        "start_min": 768,
+        "end_min": 783,
+        "precision": "exact"
+      },
+      "location_id": "loc_north_hut",
+      "actor_ids": [
+        "karim"
+      ],
+      "fact_ids": [
+        "f_karim_hut"
+      ],
+      "motivated_by_ar": "استلام شحنة مجدولة"
+    },
+    {
+      "id": "te_award",
+      "description_ar": "هالة تتسلم جائزة المعرض على منصة القاعة.",
+      "time": {
+        "start_min": 780,
+        "precision": "exact"
+      },
+      "location_id": "loc_hall",
+      "actor_ids": [
+        "hala"
+      ],
+      "fact_ids": [
+        "f_k1_holder_away"
+      ],
+      "motivated_by_ar": "تمثيل بنك البذور في الحفل"
+    },
+    {
+      "id": "te_temp_rise",
+      "description_ar": "الحرارة في الغرفة تبدأ بالارتفاع والباب مفتوح.",
+      "time": {
+        "start_min": 785,
+        "end_min": 811,
+        "precision": "approx"
+      },
+      "location_id": "loc_cold_room",
+      "actor_ids": [],
+      "fact_ids": [
+        "f_incident",
+        "f_open_2104"
+      ]
+    },
+    {
+      "id": "te_alarm",
+      "description_ar": "تنبيه الحرارة يصل إلى شادي، فيطلب من الحارس فحص الباب.",
+      "time": {
+        "start_min": 800,
+        "end_min": 802,
+        "precision": "exact"
+      },
+      "actor_ids": [
+        "shadi",
+        "karim"
+      ],
+      "fact_ids": [
+        "f_shadi_away"
+      ],
+      "motivated_by_ar": "واجب المناوبة"
+    },
+    {
+      "id": "te_karim_found",
+      "description_ar": "كريم يجد الباب غير مغلق ويغلقه.",
+      "time": {
+        "start_min": 810,
+        "end_min": 811,
+        "precision": "exact"
+      },
+      "location_id": "loc_cold_room",
+      "actor_ids": [
+        "karim"
+      ],
+      "fact_ids": [
+        "f_found_ajar"
+      ],
+      "motivated_by_ar": "جولة الإقفال وطلب شادي"
+    },
+    {
+      "id": "te_shadi_back",
+      "description_ar": "شادي يعود ويفحص الصينية.",
+      "time": {
+        "start_min": 815,
+        "end_min": 845,
+        "precision": "exact"
+      },
+      "location_id": "loc_cold_room",
+      "actor_ids": [
+        "shadi"
+      ],
+      "fact_ids": [
+        "f_shadi_away"
+      ],
+      "motivated_by_ar": "فحص أثر ارتفاع الحرارة"
+    },
+    {
+      "id": "te_majed_leave",
+      "description_ar": "ماجد يغادر الموقع.",
+      "time": {
+        "start_min": 860,
+        "precision": "exact"
+      },
+      "location_id": "loc_main_gate",
+      "actor_ids": [
+        "majed"
+      ],
+      "fact_ids": [
+        "f_majed_inside"
+      ],
+      "motivated_by_ar": "انتهاء يومه"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_incident_note",
+      "title_ar": "ورقة الحارس عن جولة الإقفال",
+      "kind": "documentary",
+      "content_ar": "ورقة الحارس كريم الأسعد — مساء الثلاثاء\n21:30 — في جولتي وجدت باب غرفة التبريد غير مغلق بإحكام والمزلاج مفتوح.\n21:31 — دفعت الباب حتى أُغلق، وسجلت ما على شاشة القارئ: «آخر حركة: بطاقة 1 — خروج — 21:04».\n21:34 — أبلغت شادي النجار بالهاتف أن الباب أُغلق.",
+      "acquired_by_action_ids": [
+        "a_get_note"
+      ],
+      "supports_fact_ids": [
+        "f_found_ajar",
+        "f_incident",
+        "f_open_2104"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "ورقة كتبها الحارس بيده، تنقل ما ظهر على الشاشة ولا تثبت من حمل البطاقة ولا من كان في الغرفة.",
+      "location_id": "loc_cold_room"
+    },
+    {
+      "id": "ev_card_register",
+      "title_ar": "سجل البطاقات في الإدارة",
+      "kind": "documentary",
+      "content_ar": "سجل البطاقات — إدارة بنك البذور\nب1: هالة العلي — دائمة، كل الأوقات.\nب2: ماجد الصافي — زائر، إذن الزيارة: الدخول بين 08:00 و20:00 فقط.\nب3: شادي النجار — دائمة.\nب4: رنا الحسن — دائمة، من 07:00 إلى 21:00.\nقاعدة مكتوبة: البطاقة شخصية ولا يجوز إعارتها.",
+      "acquired_by_action_ids": [
+        "a_get_cards"
+      ],
+      "supports_fact_ids": [
+        "f_cards",
+        "f_k2_hours"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يبين لمن صُرفت كل بطاقة ومتى تصلح، ولا يبين من حملها فعلاً في لحظة معينة.",
+      "location_id": "loc_cold_room"
+    },
+    {
+      "id": "ev_door_log",
+      "title_ar": "سجل قارئ باب غرفة التبريد",
+      "kind": "digital",
+      "content_ar": "سجل قارئ الباب (من 17:30 إلى 22:10) — الساعة مضبوطة على خادم الموقع\nالوقت | البطاقة | الحركة | النتيجة\n17:30 | ب4 | دخول | مقبول\n17:48 | ب3 | دخول | مقبول\n17:58 | ب3 | خروج | مقبول\n18:02 | ب1 | دخول | مقبول\n18:20 | ب1 | خروج | مقبول\n19:15 | ب2 | دخول | مقبول\n19:42 | ب2 | خروج | مقبول\n19:50 | ب4 | خروج | مقبول\n20:48 | ب2 | دخول | مرفوض: خارج ساعات الإذن\n20:49 | ب2 | دخول | مرفوض: خارج ساعات الإذن\n20:51 | ب1 | دخول | مقبول\n21:04 | ب1 | خروج | مقبول\n21:40 | ب3 | دخول | مقبول\n22:05 | ب3 | خروج | مقبول",
+      "acquired_by_action_ids": [
+        "a_get_door"
+      ],
+      "supports_fact_ids": [
+        "f_open_2104",
+        "f_majed_used_k1"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يسجل رقم البطاقة والحركة والنتيجة فقط، ولا يعرف من يحمل البطاقة ولا يرى من يمرّ خلفها.",
+      "location_id": "loc_cold_room",
+      "contradicts_claim_ids": [
+        "cl_majed_own"
+      ]
+    },
+    {
+      "id": "ev_latch_log",
+      "title_ar": "سجل حساس المزلاج",
+      "kind": "digital",
+      "content_ar": "سجل حساس المزلاج (جهاز مستقل عن القارئ) — ساعته مضبوطة على خادم الموقع\n19:50:40 — أُغلق\n20:51:10 — فُتح\n20:51:45 — أُغلق\n21:04:20 — فُتح\n21:31:00 — أُغلق\n21:40:15 — فُتح\n21:40:50 — أُغلق",
+      "acquired_by_action_ids": [
+        "a_get_latch"
+      ],
+      "supports_fact_ids": [
+        "f_open_2104",
+        "f_rana_out"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يبين حالة المزلاج وأوقاتها، ولا يبين من فتح الباب ولا ببطاقة من.",
+      "location_id": "loc_cold_room",
+      "contradicts_claim_ids": [
+        "cl_rana_habit"
+      ]
+    },
+    {
+      "id": "ev_temp_graph",
+      "title_ar": "قراءات مسبار الحرارة",
+      "kind": "digital",
+      "content_ar": "قراءات مسبار الحرارة داخل الغرفة (الهدف 4 درجات)\n19:55 — 4.0 | 20:15 — 4.1 | 20:35 — 4.0 | 20:55 — 4.1\n21:00 — 4.2 | 21:05 — 4.4 | 21:10 — 5.6 | 21:15 — 7.1\n21:20 — 8.3 | 21:25 — 9.4 | 21:30 — 10.2 | 21:35 — 7.9\n21:40 — 6.4 | 21:50 — 4.9 | 22:00 — 4.2",
+      "acquired_by_action_ids": [
+        "a_get_temp"
+      ],
+      "supports_fact_ids": [
+        "f_incident",
+        "f_open_2104"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يبين تغيّر الحرارة مع الوقت، ولا يبين من تسبب فيه.",
+      "location_id": "loc_cold_room",
+      "contradicts_claim_ids": [
+        "cl_rana_habit"
+      ]
+    },
+    {
+      "id": "ev_gate_book",
+      "title_ar": "دفتر الاستقبال في البوابة الرئيسية",
+      "kind": "documentary",
+      "content_ar": "دفتر الاستقبال — يوقع كل داخل وخارج باسمه ووقته بخط يده ويراجعه الحارس\nهالة العلي — دخول 07:50 — خروج 18:30\nرنا الحسن — دخول 08:30 — خروج 19:55\nشادي النجار — دخول 08:00 — خروج 18:05 — دخول 21:35 (فتح الحارس البوابة) — خروج 22:10\nماجد الصافي (زائر) — دخول 14:00 — خروج 22:20\nكريم الأسعد (الحارس) — دخول 16:00",
+      "acquired_by_action_ids": [
+        "a_get_gate"
+      ],
+      "supports_fact_ids": [
+        "f_k1_holder_away",
+        "f_shadi_away",
+        "f_majed_inside",
+        "f_rana_out"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "يكتبه كل شخص بيده، فلا يمنع أن يوقّع أحد عن غيره، ولا يغطي بوابة أخرى غير الرئيسية.",
+      "location_id": "loc_main_gate"
+    },
+    {
+      "id": "ev_event_roster",
+      "title_ar": "برنامج وورقة حضور حفل البلدية",
+      "kind": "documentary",
+      "content_ar": "حفل ختام معرض البذور — قاعة بلدية سهل الندى (تبعد خمساً وعشرين دقيقة بالسيارة عن بنك البذور)\n19:30 استقبال الضيوف وتوقيع الحضور\n20:15 العشاء\n21:00 تسليم جائزة المعرض لبنك البذور\nورقة الحضور: هالة العلي (بنك البذور) — توقيع 19:35 — مقعد 4\nملاحظة منسقة البلدية: «استلمت السيدة هالة العلي الجائزة على المنصة عند الساعة 21:00.»",
+      "acquired_by_action_ids": [
+        "a_get_roster"
+      ],
+      "supports_fact_ids": [
+        "f_k1_holder_away"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "وثيقة جهة خارجية تضع شخصاً في مكان، ولا تتعلق بالبطاقة ولا بمن استعملها.",
+      "location_id": "loc_hall"
+    },
+    {
+      "id": "ev_sample_sheet",
+      "title_ar": "سجل سحب العينات",
+      "kind": "documentary",
+      "content_ar": "سجل سحب العينات في غرفة التبريد — يكتب الساحب اسمه ورقم الأنبوب والغرض والوقت بخطه\n17:35 — رنا الحسن — أنبوب 3 — فحص إنبات\n18:10 — هالة العلي — أنبوب 7 — مراجعة\n19:25 — ماجد الصافي — أنبوب 12 — قياس\n20:55 — ماجد الصافي — أنبوب 14 — للشحنة الصباحية",
+      "acquired_by_action_ids": [
+        "a_get_sample"
+      ],
+      "supports_fact_ids": [
+        "f_majed_withdraw"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "الوقت يُكتب بيد الساحب ويقارب الواقع، ولا يذكر بأي بطاقة دخل ولا كيف.",
+      "location_id": "loc_cold_room",
+      "contradicts_claim_ids": [
+        "cl_majed_own"
+      ]
+    },
+    {
+      "id": "ev_night_headcount",
+      "title_ar": "كشف العدّ المسائي",
+      "kind": "documentary",
+      "content_ar": "كشف العدّ المسائي (للإخلاء) — الساعة 20:30، بخط الحارس\nالموجودون في الموقع: ماجد الصافي (جناح الضيوف)، كريم الأسعد (الكشك الشمالي).\nالمغادرون: هالة العلي، رنا الحسن، شادي النجار.\nتنبيه مطبوع في الكشف: تُقفل البوابة الرئيسية كهربائياً من 20:30 إلى 22:00 ولا تُفتح إلا من زر في الكشك، والبوابة الشمالية لا تُفتح إلا لشحنة مجدولة.",
+      "acquired_by_action_ids": [
+        "a_get_headcount"
+      ],
+      "supports_fact_ids": [
+        "f_majed_inside",
+        "f_gate_locked",
+        "f_karim_hut"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "يكتبه الحارس نفسه، ويعتمد على أنه لم يدخل أحد من بوابة أخرى بعد العدّ.",
+      "location_id": "loc_north_hut"
+    },
+    {
+      "id": "ev_delivery_receipt",
+      "title_ar": "إيصال استلام شحنة عند البوابة الشمالية",
+      "kind": "documentary",
+      "content_ar": "إيصال استلام — أكياس تعبئة — البوابة الشمالية\nوصلت الشاحنة 20:48 (فتح الحاجز من الكشك).\nالتفريغ عند الحاجز بإشراف الحارس.\nتوقيع السائق على التسليم 20:58 وبجانبه توقيع كريم الأسعد.\nغادرت الشاحنة 21:03 (أُغلق الحاجز).",
+      "acquired_by_action_ids": [
+        "a_get_receipt"
+      ],
+      "supports_fact_ids": [
+        "f_karim_hut"
+      ],
+      "reliability": "strong",
+      "limits_ar": "وثيقة بتوقيع طرف خارجي تضع الحارس عند الحاجز في ثلاث لحظات، ولا تغطي ما بينها.",
+      "location_id": "loc_north_hut"
+    },
+    {
+      "id": "ev_site_plan",
+      "title_ar": "مخطط الموقع",
+      "kind": "documentary",
+      "content_ar": "مخطط الموقع (إدارة المنشآت)\nالمسافة بين كشك البوابة الشمالية وباب غرفة التبريد: 480 متراً بممر مشاة واحد، وزمن المشي المقدّر ثماني دقائق. لا مركبات داخل الموقع.\nجناح الضيوف ومختبر التجهيز يبعدان دقيقتين مشياً عن الغرفة.",
+      "acquired_by_action_ids": [
+        "a_get_plan"
+      ],
+      "supports_fact_ids": [
+        "f_karim_hut"
+      ],
+      "reliability": "strong",
+      "limits_ar": "زمن المشي تقدير عام ولا يقيس سرعة شخص معين.",
+      "location_id": "loc_north_hut"
+    },
+    {
+      "id": "ev_maint_check",
+      "title_ar": "محضر الفحص الأسبوعي للأجهزة",
+      "kind": "documentary",
+      "content_ar": "محضر الفحص الأسبوعي — الاثنين 07:30 — شادي النجار\nقارئ باب غرفة التبريد: سليم.\nحساس المزلاج: سليم.\nمسبار الحرارة: سليم ومعايَر.\nساعات الأجهزة الثلاثة مضبوطة على خادم الموقع، والفرق بينها أقل من ثانيتين.",
+      "acquired_by_action_ids": [
+        "a_get_maint"
+      ],
+      "supports_fact_ids": [
+        "f_reader_ok"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "فحص قبل يومين من الحادث، ولا يثبت أن الأجهزة بقيت سليمة بعده.",
+      "location_id": "loc_cold_room"
+    },
+    {
+      "id": "ev_alarm_sheet",
+      "title_ar": "ورقة التنبيه في غرفة التحكم",
+      "kind": "documentary",
+      "content_ar": "ورقة التنبيه — غرفة التحكم\n21:20 — تجاوزت الحرارة 8 درجات فأُرسلت رسالة تلقائية إلى المناوب شادي النجار.\n21:22 — اتصل شادي بالحارس وطلب منه فحص الباب.\n21:35 — فتح الحارس البوابة الرئيسية لشادي.\n21:40 إلى 22:05 — شادي في الغرفة يفحص الصينية.",
+      "acquired_by_action_ids": [
+        "a_get_alarm"
+      ],
+      "supports_fact_ids": [
+        "f_shadi_away"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "تسجل التنبيه والمكالمة، ولا تثبت وحدها أين كان شادي قبل التنبيه.",
+      "location_id": "loc_cold_room"
+    },
+    {
+      "id": "ev_hala_statement",
+      "title_ar": "إفادة هالة العلي",
+      "kind": "testimonial",
+      "content_ar": "إفادة هالة العلي (مكتوبة):\n«غادرت بنك البذور إلى حفل البلدية قبل السابعة ولم أرجع. لم أُعر بطاقتي لأحد ولا أعرف من استعملها. أما رنا فتنسى المزلاج دائماً في رأيي.»",
+      "acquired_by_action_ids": [
+        "a_get_hala_stmt"
+      ],
+      "supports_fact_ids": [
+        "f_hala_denies"
+      ],
+      "reliability": "weak",
+      "limits_ar": "قول صاحبة المنصب والبطاقة، وفيه رأي في زميلة لا يستند إلى سجل.",
+      "location_id": "loc_hall"
+    },
+    {
+      "id": "ev_majed_statement",
+      "title_ar": "إفادة ماجد الصافي",
+      "kind": "testimonial",
+      "content_ar": "إفادة ماجد الصافي (مكتوبة):\n«بطاقتي هي التي أستعملها دائماً. أنهيت عملي في غرفة التبريد قبل الثامنة، ثم كتبت تقريري في جناح الضيوف حتى خرجت من الموقع. لم أدخل الغرفة بعد ذلك.»",
+      "acquired_by_action_ids": [
+        "a_get_majed_stmt"
+      ],
+      "supports_fact_ids": [
+        "f_majed_inside"
+      ],
+      "reliability": "weak",
+      "limits_ar": "قول صاحب علاقة بالواقعة، يصف ما يقول إنه فعله ولا يثبت ما تركه.",
+      "location_id": "loc_guest_wing"
+    },
+    {
+      "id": "ev_rana_statement",
+      "title_ar": "إفادة رنا الحسن",
+      "kind": "testimonial",
+      "content_ar": "إفادة رنا الحسن (مكتوبة):\n«خرجت من الغرفة قبل الثامنة بعشر دقائق وسمعت المزلاج يُغلق، ثم غادرت المبنى ولم أعد.»",
+      "acquired_by_action_ids": [
+        "a_get_rana_stmt"
+      ],
+      "supports_fact_ids": [
+        "f_rana_out"
+      ],
+      "reliability": "weak",
+      "limits_ar": "قول صاحبة علاقة بالواقعة، ويحتاج إلى سجل مستقل يؤيده.",
+      "location_id": "loc_cold_room"
+    },
+    {
+      "id": "ev_march_memo",
+      "title_ar": "مذكرة إدارية قديمة من شهر مارس",
+      "kind": "documentary",
+      "content_ar": "مذكرة إدارية — مارس\nوُجد المزلاج مفتوحاً صباح الأحد دون ضرر على العينات. تنبيه إلى رنا الحسن: تأكدي من سماع الطقة عند الإغلاق.",
+      "acquired_by_action_ids": [
+        "a_get_memo"
+      ],
+      "supports_fact_ids": [
+        "f_rana_memo"
+      ],
+      "reliability": "weak",
+      "limits_ar": "واقعة قديمة مختلفة في اليوم والظرف، ولا تثبت ما حدث الثلاثاء.",
+      "location_id": "loc_cold_room",
+      "is_red_herring": true
+    }
+  ],
+  "evidence_graph": {
+    "inferences": [
+      {
+        "id": "i_open_a",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_door_log"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_latch_log"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_open_2104"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "جهاز المزلاج مستقل عن القارئ ويسجل فتح الباب بعد ثوانٍ من آخر خروج ثم لا يسجل إغلاقاً حتى مرور الحارس، فالباب لم يُحكم إغلاقه عند ذلك الخروج.",
+        "skill_ko_refs": [
+          "KO-RS-06-003"
+        ]
+      },
+      {
+        "id": "i_open_b",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_incident_note"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_temp_graph"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_open_2104"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "ورقة الحارس تنقل آخر حركة على الشاشة ووجوده للباب مفتوحاً، ومنحنى الحرارة يبدأ بالصعود بعد الخامسة مساءً بعد التاسعة ويهبط بعد الإغلاق، فيتفق ذلك مع باب مفتوح منذ نحو الرابعة بعد التاسعة بمصدرين غير القارئ والحساس.",
+        "skill_ko_refs": [
+          "KO-RS-05-004"
+        ]
+      },
+      {
+        "id": "i_away_a",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_gate_book"
+          },
+          {
+            "ref_type": "general_knowledge",
+            "ref_id": "gk_k1_hala"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_k1_holder_away"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "صاحبة البطاقة ب1 هي هالة بحسب ما أُعلن للاعب عند البدء، والدفتر يضعها خارج المبنى بعد السادسة والنصف دون عودة، فلم تكن هي من حرّك بطاقتها مساءً.",
+        "skill_ko_refs": [
+          "KO-RS-06-017"
+        ]
+      },
+      {
+        "id": "i_away_b",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_event_roster"
+          },
+          {
+            "ref_type": "general_knowledge",
+            "ref_id": "gk_k1_hala"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_k1_holder_away"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "وثيقة البلدية، وهي جهة ثالثة، تضع هالة في قاعة تبعد خمساً وعشرين دقيقة بالسيارة عن الموقع، عند التاسعة تماماً، فهي مستقلة عن دفتر المكتبة وتصل إلى النتيجة نفسها.",
+        "skill_ko_refs": [
+          "KO-RS-05-004"
+        ]
+      },
+      {
+        "id": "i_who_a",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_sample_sheet"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_door_log"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_k1_holder_away"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_open_2104"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_majed_used_k1"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "بطاقة صاحب الإذن المقيّد مرفوضة مرتين، وبعد دقيقتين قُبلت بطاقة غائبة صاحبتها، ثم كتب الزائر بيده أنه سحب أنبوباً في الدقائق التي كانت الجلسة مفتوحة فيها، فالتقى الزمان والمكان والحاجة عند شخص واحد.",
+        "skill_ko_refs": [
+          "KO-RS-05-005"
+        ]
+      },
+      {
+        "id": "i_who_b",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_night_headcount"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_delivery_receipt"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_site_plan"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_k1_holder_away"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_open_2104"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_majed_used_k1"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "بعد قفل البوابة لم يبقَ في الموقع غير شخصين، والحارس مثبت عند الحاجز بتوقيعين يفصل بينهما وبين الغرفة مشي أطول من الفاصل الزمني، فلا يبقى لاستعمال البطاقة غير الزائر.",
+        "skill_ko_refs": [
+          "KO-RS-06-017"
+        ]
+      },
+      {
+        "id": "i_rule_hala",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_k1_holder_away"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_hala"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "من كانت خارج الموقع مع حضور موثق لا تكون قد دخلت الغرفة، وبطاقتها وحدها لا تدل على حاملها.",
+        "skill_ko_refs": [
+          "KO-RS-06-003"
+        ]
+      },
+      {
+        "id": "i_rule_rana",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_latch_log"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_temp_graph"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_rana"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "الجهازان يبينان أن المزلاج بقي مغلقاً والحرارة ثابتة أكثر من ساعة بعد خروجها، فلا يصح أن يكون تركه مفتوحاً هو السبب.",
+        "skill_ko_refs": [
+          "KO-RS-06-009"
+        ]
+      },
+      {
+        "id": "i_rule_shadi",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_gate_book"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_alarm_sheet"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_open_2104"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_shadi"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "عودته جاءت بعد التنبيه وبعد أن صار الباب مفتوحاً، والتنبيه نفسه سببه الباب، فلا يمكن أن تكون عودته سبب فتحه.",
+        "skill_ko_refs": [
+          "KO-RS-05-005"
+        ]
+      },
+      {
+        "id": "i_rule_karim",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_delivery_receipt"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_site_plan"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_open_2104"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_karim"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "الحارس كان عند الحاجز في ثلاث لحظات تغطي زمن الجلسة، والمشي إلى الغرفة أطول من المدة الفاصلة بين لحظة وأخرى.",
+        "skill_ko_refs": [
+          "KO-RS-06-017"
+        ]
+      },
+      {
+        "id": "i_rule_glitch",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_maint_check"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_latch_log"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_temp_graph"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_glitch"
+        },
+        "relation": "rules_out",
+        "strength": "suggestive",
+        "rule_ar": "ثلاثة أجهزة مختلفة تتفق على الحدث، وقد فُحصت سلامتها وتزامن ساعاتها قبل الحادث، فلا يبدو أن الخلل وحده يفسرها.",
+        "skill_ko_refs": [
+          "KO-RS-06-003"
+        ]
+      },
+      {
+        "id": "i_supports_majed",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_majed_used_k1"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_door_log"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_majed"
+        },
+        "relation": "supports",
+        "strength": "strong",
+        "rule_ar": "السجل يطابق قصة استعمال بطاقة غير بطاقته بعد رفضها، وهذا هو التفسير الوحيد الذي لا يخالف أي سجل.",
+        "skill_ko_refs": [
+          "KO-RS-05-002"
+        ]
+      },
+      {
+        "id": "i_majed_claim",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_sample_sheet"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_door_log"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_card_register"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_majed_own"
+        },
+        "relation": "contradicts_claim",
+        "strength": "strong",
+        "rule_ar": "قوله إنه لم يدخل بعد الثامنة يخالف سطراً كتبه بيده في الساعة التاسعة إلا خمس دقائق وسجل رفض بطاقته بعد ساعات إذنه.",
+        "skill_ko_refs": [
+          "KO-RS-05-001"
+        ]
+      },
+      {
+        "id": "i_rana_claim",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_latch_log"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_temp_graph"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_rana_habit"
+        },
+        "relation": "contradicts_claim",
+        "strength": "strong",
+        "rule_ar": "الرأي في عادة الزميلة لا يصمد أمام جهازين يبينان أن الباب كان مغلقاً بعد خروجها.",
+        "skill_ko_refs": [
+          "KO-RS-05-001"
+        ]
+      }
+    ]
+  },
+  "character_knowledge": [
+    {
+      "character_id": "hala",
+      "knows": [
+        {
+          "fact_id": "f_hala_denies",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_k1_holder_away",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_cards",
+          "access": "common_knowledge",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_k2_hours",
+          "access": "professional",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [
+        {
+          "fact_id": "f_hala_drawer",
+          "reveal_when": {
+            "presented": {
+              "evidence_id": "ev_door_log",
+              "to_character": "hala"
+            }
+          },
+          "cover_claim_id": null,
+          "reveal_line_id": "hl_drawer"
+        }
+      ],
+      "believes": [
+        {
+          "claim_id": "cl_rana_habit",
+          "stance": "sincere"
+        }
+      ]
+    },
+    {
+      "character_id": "majed",
+      "knows": [
+        {
+          "fact_id": "f_majed_inside",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_k2_hours",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_cards",
+          "access": "common_knowledge",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [
+        {
+          "fact_id": "f_majed_withdraw",
+          "reveal_when": {
+            "presented": {
+              "evidence_id": "ev_sample_sheet",
+              "to_character": "majed"
+            }
+          },
+          "cover_claim_id": "cl_majed_own",
+          "reveal_line_id": "mj_withdraw"
+        },
+        {
+          "fact_id": "f_majed_used_k1",
+          "reveal_when": {
+            "all": [
+              {
+                "presented": {
+                  "evidence_id": "ev_door_log",
+                  "to_character": "majed"
+                }
+              },
+              {
+                "presented": {
+                  "evidence_id": "ev_sample_sheet",
+                  "to_character": "majed"
+                }
+              }
+            ]
+          },
+          "cover_claim_id": "cl_majed_own",
+          "reveal_line_id": "mj_confess"
+        }
+      ],
+      "believes": [
+        {
+          "claim_id": "cl_majed_own",
+          "stance": "deliberate_lie"
+        }
+      ]
+    },
+    {
+      "character_id": "rana",
+      "knows": [
+        {
+          "fact_id": "f_rana_out",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_rana_memo",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_cards",
+          "access": "common_knowledge",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    },
+    {
+      "character_id": "shadi",
+      "knows": [
+        {
+          "fact_id": "f_shadi_away",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_reader_ok",
+          "access": "professional",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_gate_locked",
+          "access": "common_knowledge",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_cards",
+          "access": "common_knowledge",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    },
+    {
+      "character_id": "karim",
+      "knows": [
+        {
+          "fact_id": "f_found_ajar",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_karim_hut",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_gate_locked",
+          "access": "professional",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_majed_inside",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_cards",
+          "access": "common_knowledge",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "h_hala",
+      "statement_ar": "عادت هالة العلي إلى غرفة التبريد مساءً بنفسها وتركت الباب غير مغلق.",
+      "is_true": false,
+      "plausibility_at_start": "high",
+      "suspect_id": "hala"
+    },
+    {
+      "id": "h_rana",
+      "statement_ar": "تركت رنا الحسن الباب غير مغلق حين غادرت قبل الثامنة مساءً، فتسرب الدفء ببطء.",
+      "is_true": false,
+      "plausibility_at_start": "medium",
+      "suspect_id": "rana"
+    },
+    {
+      "id": "h_shadi",
+      "statement_ar": "فتح شادي النجار الغرفة عند عودته مساءً ولم يغلقها.",
+      "is_true": false,
+      "plausibility_at_start": "medium",
+      "suspect_id": "shadi"
+    },
+    {
+      "id": "h_majed",
+      "statement_ar": "دخل ماجد الصافي بعد انتهاء ساعات إذنه مستعملاً بطاقة هالة التي لم تكن معها، وخرج دون أن يُحكم إغلاق الباب.",
+      "is_true": true,
+      "plausibility_at_start": "low",
+      "suspect_id": "majed"
+    },
+    {
+      "id": "h_karim",
+      "statement_ar": "استعمل الحارس كريم الأسعد بطاقة هالة في جولته ولم يغلق الباب.",
+      "is_true": false,
+      "plausibility_at_start": "low",
+      "suspect_id": "karim"
+    },
+    {
+      "id": "h_glitch",
+      "statement_ar": "لم يدخل أحد؛ عطل في القارئ أو المزلاج سجّل حركة غير حقيقية.",
+      "is_true": false,
+      "plausibility_at_start": "low"
+    }
+  ],
+  "misdirection_plan": [
+    {
+      "id": "rh_card_owner",
+      "points_to_hypothesis_id": "h_hala",
+      "planted_via_ar": "سجل القارئ يذكر بطاقة المديرة في الحركة الأخيرة، فيبدو أن صاحبتها هي التي تحركت.",
+      "evidence_ids": [
+        "ev_door_log",
+        "ev_hala_statement"
+      ],
+      "refuted_by_inference_ids": [
+        "i_away_a",
+        "i_away_b",
+        "i_rule_hala"
+      ],
+      "fairness_note_ar": "دفتر الاستقبال ووثيقة البلدية متاحان بإجراءات عادية، ويبين كل منهما أنها كانت بعيدة."
+    },
+    {
+      "id": "rh_old_habit",
+      "points_to_hypothesis_id": "h_rana",
+      "planted_via_ar": "مذكرة قديمة ورأي المديرة يجعلان رنا تبدو الأكثر احتمالاً للإهمال.",
+      "evidence_ids": [
+        "ev_march_memo",
+        "ev_hala_statement"
+      ],
+      "refuted_by_inference_ids": [
+        "i_rule_rana",
+        "i_rana_claim"
+      ],
+      "fairness_note_ar": "سجل الحساس ومنحنى الحرارة متاحان ويثبتان أن الباب بقي مغلقاً بعد خروجها."
+    },
+    {
+      "id": "rh_late_entry",
+      "points_to_hypothesis_id": "h_shadi",
+      "planted_via_ar": "دخول شادي المسجل الساعة 21:40 يبدو متأخراً ومريباً لمن لا يقارنه بساعة التنبيه.",
+      "evidence_ids": [
+        "ev_door_log",
+        "ev_gate_book"
+      ],
+      "refuted_by_inference_ids": [
+        "i_rule_shadi"
+      ],
+      "fairness_note_ar": "ورقة التنبيه ودفتر الاستقبال يبينان أن عودته جاءت بعد فتح الباب بسبب التنبيه."
+    }
+  ],
+  "learning_objectives": [
+    {
+      "id": "lo_claim",
+      "statement_ar": "يفرّق بين ما يسجله الجهاز (بطاقة) وما يسجله الإنسان (شخص) ويطلب سجلاً مستقلاً لكل منهما.",
+      "skill_ko_ref": "KO-RS-05-004",
+      "observable_behaviors_ar": [
+        "يصنّف كل سجل بحسب مصدره",
+        "يذكر أن القارئ لا يعرف حامل البطاقة"
+      ],
+      "evidence_sources": [
+        "evidence_board"
+      ]
+    },
+    {
+      "id": "lo_timeline",
+      "statement_ar": "يضع الأحداث على خط زمني واحد ويفحص ما يمكن أن يجتمع في الوقت نفسه.",
+      "skill_ko_ref": "KO-RS-06-017",
+      "observable_behaviors_ar": [
+        "يرتب سجلات الأجهزة والدفاتر على خط واحد",
+        "يحسب زمن المشي بين مكانين"
+      ],
+      "evidence_sources": [
+        "timeline_task",
+        "action_log"
+      ]
+    },
+    {
+      "id": "lo_hyp",
+      "statement_ar": "يستبعد الفرضيات الخاطئة بدليل محدد لكل منها.",
+      "skill_ko_ref": "KO-RS-05-002",
+      "observable_behaviors_ar": [
+        "يستبعد فرضية بسجل مستقل",
+        "يبقي الفرضية التي لا يخالفها سجل"
+      ],
+      "evidence_sources": [
+        "hypothesis_ledger"
+      ]
+    },
+    {
+      "id": "lo_diag",
+      "statement_ar": "يقدّر ما يثبته كل سجل وما لا يثبته.",
+      "skill_ko_ref": "KO-RS-06-003",
+      "observable_behaviors_ar": [
+        "يربط الأدلة بالفرضيات بالاتجاه الصحيح",
+        "يعرض حدود كل سجل في حجته"
+      ],
+      "evidence_sources": [
+        "evidence_board",
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_calib",
+      "statement_ar": "يعبّر عن ثقته بقدر قوة الأدلة ويذكر ما لا يعرفه.",
+      "skill_ko_ref": "KO-RS-06-021",
+      "observable_behaviors_ar": [
+        "يختار نسبة ترجيح معقولة",
+        "يسمي حدوداً صحيحة لاستنتاجه"
+      ],
+      "evidence_sources": [
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_revise",
+      "statement_ar": "يغيّر رأيه حين يسقط دليل ويسمي ما كان يغيّره.",
+      "skill_ko_ref": "KO-RS-06-009",
+      "observable_behaviors_ar": [
+        "يترك فرضية ظهر ما ينقضها",
+        "يحدد دليلاً يقلب استنتاجه"
+      ],
+      "evidence_sources": [
+        "hypothesis_ledger"
+      ]
+    }
+  ],
+  "mechanics": {
+    "time_budget_units": 40,
+    "actions": [
+      {
+        "id": "a_get_note",
+        "type": "examine",
+        "label_ar": "اقرأ ورقة الحارس عن جولة الإقفال",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_incident_note"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "GET_NOTE",
+        "target_id": "loc_north_hut"
+      },
+      {
+        "id": "a_get_cards",
+        "type": "examine",
+        "label_ar": "اطلب سجل البطاقات من الإدارة",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_card_register"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "GET_CARDS",
+        "target_id": "loc_prep_lab"
+      },
+      {
+        "id": "a_get_hala_stmt",
+        "type": "examine",
+        "label_ar": "اطلب إفادة هالة المكتوبة",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_hala_statement"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "GET_HALA_STMT",
+        "target_id": "loc_hall"
+      },
+      {
+        "id": "a_get_door",
+        "type": "search_location",
+        "label_ar": "اطلب سجل قارئ باب غرفة التبريد",
+        "precondition": {
+          "has_evidence": "ev_incident_note"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_door_log"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "GET_DOOR",
+        "target_id": "loc_cold_room"
+      },
+      {
+        "id": "a_get_temp",
+        "type": "search_location",
+        "label_ar": "اطلب قراءات مسبار الحرارة",
+        "precondition": {
+          "has_evidence": "ev_incident_note"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_temp_graph"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "GET_TEMP",
+        "target_id": "loc_cold_room"
+      },
+      {
+        "id": "a_get_headcount",
+        "type": "examine",
+        "label_ar": "اطلب كشف العدّ المسائي",
+        "precondition": {
+          "has_evidence": "ev_incident_note"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_night_headcount"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "GET_HEADCOUNT",
+        "target_id": "loc_north_hut"
+      },
+      {
+        "id": "a_get_latch",
+        "type": "search_location",
+        "label_ar": "اطلب سجل حساس المزلاج",
+        "precondition": {
+          "has_evidence": "ev_door_log"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_latch_log"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "GET_LATCH",
+        "target_id": "loc_cold_room"
+      },
+      {
+        "id": "a_get_gate",
+        "type": "examine",
+        "label_ar": "اطلب دفتر الاستقبال في البوابة الرئيسية",
+        "precondition": {
+          "has_evidence": "ev_door_log"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_gate_book"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "GET_GATE",
+        "target_id": "loc_main_gate"
+      },
+      {
+        "id": "a_get_sample",
+        "type": "examine",
+        "label_ar": "اطلب سجل سحب العينات",
+        "precondition": {
+          "has_evidence": "ev_door_log"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_sample_sheet"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "GET_SAMPLE",
+        "target_id": "loc_cold_room"
+      },
+      {
+        "id": "a_get_majed_stmt",
+        "type": "examine",
+        "label_ar": "اطلب إفادة ماجد المكتوبة",
+        "precondition": {
+          "has_evidence": "ev_door_log"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_majed_statement"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "GET_MAJED_STMT",
+        "target_id": "loc_guest_wing"
+      },
+      {
+        "id": "a_get_roster",
+        "type": "examine",
+        "label_ar": "اطلب برنامج وورقة حضور حفل البلدية",
+        "precondition": {
+          "has_evidence": "ev_hala_statement"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_event_roster"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "GET_ROSTER",
+        "target_id": "loc_hall"
+      },
+      {
+        "id": "a_get_memo",
+        "type": "examine",
+        "label_ar": "اطلب المذكرات الإدارية القديمة",
+        "precondition": {
+          "has_evidence": "ev_hala_statement"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_march_memo"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "GET_MEMO",
+        "target_id": "loc_prep_lab"
+      },
+      {
+        "id": "a_get_rana_stmt",
+        "type": "examine",
+        "label_ar": "اطلب إفادة رنا المكتوبة",
+        "precondition": {
+          "has_evidence": "ev_gate_book"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_rana_statement"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "GET_RANA_STMT",
+        "target_id": "loc_cold_room"
+      },
+      {
+        "id": "a_get_receipt",
+        "type": "examine",
+        "label_ar": "اطلب إيصال الشحنة عند البوابة الشمالية",
+        "precondition": {
+          "has_evidence": "ev_night_headcount"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_delivery_receipt"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "GET_RECEIPT",
+        "target_id": "loc_north_hut"
+      },
+      {
+        "id": "a_get_plan",
+        "type": "examine",
+        "label_ar": "اطلب مخطط الموقع",
+        "precondition": {
+          "has_evidence": "ev_delivery_receipt"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_site_plan"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "GET_PLAN",
+        "target_id": "loc_north_hut"
+      },
+      {
+        "id": "a_get_maint",
+        "type": "examine",
+        "label_ar": "اطلب محضر الفحص الأسبوعي للأجهزة",
+        "precondition": {
+          "has_evidence": "ev_latch_log"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_maint_check"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "GET_MAINT",
+        "target_id": "loc_cold_room"
+      },
+      {
+        "id": "a_get_alarm",
+        "type": "examine",
+        "label_ar": "اطلب ورقة التنبيه من غرفة التحكم",
+        "precondition": {
+          "has_evidence": "ev_temp_graph"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_alarm_sheet"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "GET_ALARM",
+        "target_id": "loc_cold_room"
+      },
+      {
+        "id": "a_int_hala",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة هالة",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "hala",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "INT_HALA",
+        "target_id": "hala"
+      },
+      {
+        "id": "a_int_majed",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة ماجد",
+        "precondition": {
+          "has_evidence": "ev_door_log"
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "majed",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "INT_MAJED",
+        "target_id": "majed"
+      },
+      {
+        "id": "a_int_rana",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة رنا",
+        "precondition": {
+          "has_evidence": "ev_gate_book"
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "rana",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "INT_RANA",
+        "target_id": "rana"
+      },
+      {
+        "id": "a_int_shadi",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة شادي",
+        "precondition": {
+          "has_evidence": "ev_incident_note"
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "shadi",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "INT_SHADI",
+        "target_id": "shadi"
+      },
+      {
+        "id": "a_int_karim",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة كريم",
+        "precondition": {
+          "has_evidence": "ev_incident_note"
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "karim",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "INT_KARIM",
+        "target_id": "karim"
+      },
+      {
+        "id": "p_door_majed",
+        "type": "present_evidence",
+        "label_ar": "اعرض سجل قارئ الباب على ماجد",
+        "precondition": {
+          "presented": {
+            "evidence_id": "ev_door_log",
+            "to_character": "majed"
+          }
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "PRESENTED_DOOR"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "P_DOOR_MAJED",
+        "target_id": "majed"
+      },
+      {
+        "id": "p_sample_majed",
+        "type": "present_evidence",
+        "label_ar": "اعرض سجل سحب العينات على ماجد",
+        "precondition": {
+          "presented": {
+            "evidence_id": "ev_sample_sheet",
+            "to_character": "majed"
+          }
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "PRESENTED_SAMPLE"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "P_SAMPLE_MAJED",
+        "target_id": "majed"
+      },
+      {
+        "id": "p_door_hala",
+        "type": "present_evidence",
+        "label_ar": "اعرض سجل قارئ الباب على هالة",
+        "precondition": {
+          "presented": {
+            "evidence_id": "ev_door_log",
+            "to_character": "hala"
+          }
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "PRESENTED_DOOR_HALA"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "P_DOOR_HALA",
+        "target_id": "hala"
+      },
+      {
+        "id": "a_hint",
+        "type": "request_hint",
+        "label_ar": "اطلب تلميحاً",
+        "precondition": {
+          "always": true
+        },
+        "effects": [],
+        "time_cost_units": 0,
+        "telemetry_code": "REQUEST_HINT"
+      },
+      {
+        "id": "a_accuse",
+        "type": "final_accusation",
+        "label_ar": "قدّم الاستنتاج النهائي",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "SUBMIT"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "FINAL_ACCUSATION"
+      },
+      {
+        "id": "ask_hala_f_hala_denies",
+        "type": "interview",
+        "label_ar": "[نموذج] hala يذكر f_hala_denies",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_hala_denies"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "ASK_HALA_F_HALA_DENIES",
+        "target_id": "hala"
+      },
+      {
+        "id": "ask_hala_f_k1_holder_away",
+        "type": "interview",
+        "label_ar": "[نموذج] hala يذكر f_k1_holder_away",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_k1_holder_away"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "ASK_HALA_F_K1_HOLDER_AWAY",
+        "target_id": "hala"
+      },
+      {
+        "id": "ask_hala_f_hala_drawer",
+        "type": "interview",
+        "label_ar": "[نموذج] hala يكشف f_hala_drawer",
+        "precondition": {
+          "all": [
+            {
+              "has_evidence": "ev_door_log"
+            },
+            {
+              "presented": {
+                "evidence_id": "ev_door_log",
+                "to_character": "hala"
+              }
+            }
+          ]
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_hala_drawer"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "ASK_HALA_F_HALA_DRAWER",
+        "target_id": "hala"
+      },
+      {
+        "id": "ask_majed_f_majed_inside",
+        "type": "interview",
+        "label_ar": "[نموذج] majed يذكر f_majed_inside",
+        "precondition": {
+          "has_evidence": "ev_door_log"
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_majed_inside"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "ASK_MAJED_F_MAJED_INSIDE",
+        "target_id": "majed"
+      },
+      {
+        "id": "ask_majed_f_majed_withdraw",
+        "type": "interview",
+        "label_ar": "[نموذج] majed يكشف f_majed_withdraw",
+        "precondition": {
+          "all": [
+            {
+              "has_evidence": "ev_door_log"
+            },
+            {
+              "presented": {
+                "evidence_id": "ev_sample_sheet",
+                "to_character": "majed"
+              }
+            }
+          ]
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_majed_withdraw"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "ASK_MAJED_F_MAJED_WITHDRAW",
+        "target_id": "majed"
+      },
+      {
+        "id": "ask_majed_f_majed_used_k1",
+        "type": "interview",
+        "label_ar": "[نموذج] majed يكشف f_majed_used_k1",
+        "precondition": {
+          "all": [
+            {
+              "all": [
+                {
+                  "has_evidence": "ev_door_log"
+                },
+                {
+                  "presented": {
+                    "evidence_id": "ev_door_log",
+                    "to_character": "majed"
+                  }
+                }
+              ]
+            },
+            {
+              "presented": {
+                "evidence_id": "ev_sample_sheet",
+                "to_character": "majed"
+              }
+            }
+          ]
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_majed_used_k1"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "ASK_MAJED_F_MAJED_USED_K1",
+        "target_id": "majed"
+      },
+      {
+        "id": "ask_rana_f_rana_out",
+        "type": "interview",
+        "label_ar": "[نموذج] rana يذكر f_rana_out",
+        "precondition": {
+          "has_evidence": "ev_gate_book"
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_rana_out"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "ASK_RANA_F_RANA_OUT",
+        "target_id": "rana"
+      },
+      {
+        "id": "ask_rana_f_rana_memo",
+        "type": "interview",
+        "label_ar": "[نموذج] rana يذكر f_rana_memo",
+        "precondition": {
+          "has_evidence": "ev_gate_book"
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_rana_memo"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "ASK_RANA_F_RANA_MEMO",
+        "target_id": "rana"
+      },
+      {
+        "id": "ask_shadi_f_shadi_away",
+        "type": "interview",
+        "label_ar": "[نموذج] shadi يذكر f_shadi_away",
+        "precondition": {
+          "has_evidence": "ev_incident_note"
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_shadi_away"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "ASK_SHADI_F_SHADI_AWAY",
+        "target_id": "shadi"
+      },
+      {
+        "id": "ask_shadi_f_reader_ok",
+        "type": "interview",
+        "label_ar": "[نموذج] shadi يذكر f_reader_ok",
+        "precondition": {
+          "has_evidence": "ev_incident_note"
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_reader_ok"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "ASK_SHADI_F_READER_OK",
+        "target_id": "shadi"
+      },
+      {
+        "id": "ask_karim_f_found_ajar",
+        "type": "interview",
+        "label_ar": "[نموذج] karim يذكر f_found_ajar",
+        "precondition": {
+          "has_evidence": "ev_incident_note"
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_found_ajar"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "ASK_KARIM_F_FOUND_AJAR",
+        "target_id": "karim"
+      },
+      {
+        "id": "ask_karim_f_karim_hut",
+        "type": "interview",
+        "label_ar": "[نموذج] karim يذكر f_karim_hut",
+        "precondition": {
+          "has_evidence": "ev_incident_note"
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_karim_hut"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "ASK_KARIM_F_KARIM_HUT",
+        "target_id": "karim"
+      },
+      {
+        "id": "ask_karim_f_gate_locked",
+        "type": "interview",
+        "label_ar": "[نموذج] karim يذكر f_gate_locked",
+        "precondition": {
+          "has_evidence": "ev_incident_note"
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_gate_locked"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "ASK_KARIM_F_GATE_LOCKED",
+        "target_id": "karim"
+      }
+    ]
+  },
+  "state_machine": {
+    "id": "c040",
+    "initial": "briefing",
+    "type": "compound",
+    "states": {
+      "briefing": {
+        "description_ar": "الإحاطة",
+        "type": "atomic",
+        "on": {
+          "START": {
+            "target": "investigating"
+          }
+        }
+      },
+      "investigating": {
+        "description_ar": "التحقيق",
+        "type": "compound",
+        "initial": "gathering",
+        "states": {
+          "gathering": {
+            "type": "atomic",
+            "on": {
+              "OPEN_DEDUCTION": {
+                "target": "deducing"
+              }
+            }
+          },
+          "deducing": {
+            "type": "atomic",
+            "on": {
+              "BACK": {
+                "target": "gathering"
+              }
+            }
+          }
+        },
+        "on": {
+          "SUBMIT": {
+            "target": "review"
+          }
+        }
+      },
+      "review": {
+        "description_ar": "مراجعة",
+        "type": "atomic",
+        "on": {
+          "CLOSE": {
+            "target": "resolved"
+          }
+        }
+      },
+      "resolved": {
+        "description_ar": "إغلاق",
+        "type": "final"
+      }
+    }
+  },
+  "dialogue": {
+    "max_turns_per_interview": 10,
+    "llm_enabled": false,
+    "topics": [
+      {
+        "id": "t_hala",
+        "label_ar": "المديرة وبطاقتها",
+        "example_questions_ar": [
+          "أين كنت مساء الثلاثاء؟",
+          "أين بطاقتك؟"
+        ],
+        "fact_ids": [
+          "f_hala_denies",
+          "f_k1_holder_away",
+          "f_hala_drawer"
+        ],
+        "claim_ids": [
+          "cl_rana_habit"
+        ]
+      },
+      {
+        "id": "t_majed",
+        "label_ar": "الزائر وإذنه",
+        "example_questions_ar": [
+          "أين كنت عند الثامنة والنصف؟",
+          "ماذا سحبت من الغرفة؟"
+        ],
+        "fact_ids": [
+          "f_majed_inside",
+          "f_majed_withdraw",
+          "f_majed_used_k1"
+        ],
+        "claim_ids": [
+          "cl_majed_own"
+        ]
+      },
+      {
+        "id": "t_rana",
+        "label_ar": "مساعدة المختبر والمزلاج",
+        "example_questions_ar": [
+          "متى خرجت؟",
+          "هل أغلقت الباب؟"
+        ],
+        "fact_ids": [
+          "f_rana_out",
+          "f_rana_memo"
+        ]
+      },
+      {
+        "id": "t_shadi",
+        "label_ar": "الفني والأجهزة",
+        "example_questions_ar": [
+          "متى عدت؟",
+          "هل الأجهزة سليمة؟"
+        ],
+        "fact_ids": [
+          "f_shadi_away",
+          "f_reader_ok"
+        ]
+      },
+      {
+        "id": "t_karim",
+        "label_ar": "الحارس والبوابات",
+        "example_questions_ar": [
+          "أين كنت عند التاسعة؟",
+          "متى تُقفل البوابة؟"
+        ],
+        "fact_ids": [
+          "f_found_ajar",
+          "f_karim_hut",
+          "f_gate_locked"
+        ]
+      }
+    ]
+  },
+  "rubric": {
+    "reference_answer_ar": "لم تدخل هالة العلي غرفة التبريد مساء الثلاثاء. كانت في حفل البلدية، وبقيت بطاقتها في درج مشترك بالموقع. ورفض القارئ بطاقة الباحث الزائر مرتين بعد انتهاء ساعات إذنه، ثم قُبلت بطاقة المديرة بعد دقيقتين، وكتب الزائر بخط يده أنه سحب أنبوباً في تلك الدقائق. وبعد قفل البوابة لم يبقَ في الموقع غيره وغير الحارس، والحارس مثبت عند الحاجز بتوقيع خارجي. أما رنا فخرجت والمزلاج مغلق والحرارة ثابتة، وأما شادي فعاد بعد التنبيه. فالأرجح أن ماجد الصافي هو من استعمل البطاقة وترك الباب مفتوحاً. حدود الاستنتاج: القارئ يسجل بطاقة لا شخصاً، والدفاتر يكتبها أصحابها، ولا تثبت السجلات نية أحد، وقد يكون الفعل خطأً لا قصداً.",
+    "criteria": [
+      {
+        "id": "c_source",
+        "name_ar": "تصنيف المصادر",
+        "objective_ids": [
+          "lo_claim"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يصنّف"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "أخطأ في الأغلب"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "نصف صحيح"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمه صحيح"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كله صحيح"
+          }
+        ]
+      },
+      {
+        "id": "c_conflict",
+        "name_ar": "ربط السجلات بأزمنتها",
+        "objective_ids": [
+          "lo_timeline"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يضع شيئاً"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "وضع قليلاً"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "وضع نصفها صحيحاً"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمها"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كلها في موضعها"
+          }
+        ]
+      },
+      {
+        "id": "c_links",
+        "name_ar": "ربط الأدلة بالفرضيات",
+        "objective_ids": [
+          "lo_diag"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.2,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لا روابط"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "قليلة"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "نصفها صحيح"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمها"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كلها دقيقة"
+          }
+        ]
+      },
+      {
+        "id": "c_uncertainty",
+        "name_ar": "معايرة الثقة",
+        "objective_ids": [
+          "lo_calib"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.2,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "ثقة مفرطة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "حدود قليلة"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "جزئية"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معقولة"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "معايَرة كاملة"
+          }
+        ]
+      },
+      {
+        "id": "c_revision",
+        "name_ar": "مراجعة الرأي",
+        "objective_ids": [
+          "lo_revise"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "بقي على فرضية مرفوضة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "لم يعلن فرضية"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "ثبت على فرضية سليمة"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "غيّر بدليل"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "غيّر بدليل ووثّق"
+          }
+        ]
+      },
+      {
+        "id": "c_elimination",
+        "name_ar": "استبعاد الفرضيات الخاطئة",
+        "objective_ids": [
+          "lo_hyp"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يستبعد"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "استبعد خطأً"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "فرضية بدليل"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "فرضيتين"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كل الخاطئة"
+          }
+        ]
+      },
+      {
+        "id": "c_justification",
+        "name_ar": "جودة الحجة المكتوبة",
+        "objective_ids": [
+          "lo_diag",
+          "lo_hyp"
+        ],
+        "scored_by": "human",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لا حجة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "ادعاء بلا سند"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "أدلة دون ربط"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "ربط الأدلة بالاستنتاج"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "ربط مع البدائل والحدود"
+          }
+        ]
+      }
+    ]
+  },
+  "hint_ladder": [
+    {
+      "id": "hg1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "قبل أن تسأل من فتح الباب، اسأل: ما الذي يعرفه القارئ فعلاً، وما الذي لا يعرفه؟",
+      "trigger": {
+        "always": true
+      },
+      "assessment_weight": 0.02
+    },
+    {
+      "id": "hg2",
+      "level": 2,
+      "kind": "focus_area",
+      "text_ar": "اجعل لكل بطاقة صفحة: لمن هي؟ ومتى تصلح؟ وأين كان صاحبها في كل حركة سجلتها؟",
+      "trigger": {
+        "has_evidence": "ev_incident_note"
+      },
+      "assessment_weight": 0.04
+    },
+    {
+      "id": "hg3",
+      "level": 3,
+      "kind": "pointer",
+      "text_ar": "ابحث عن سجلات كتبها أشخاص أو جهات لا علاقة لها بالقارئ، وقابلها بسطور السجل.",
+      "trigger": {
+        "has_evidence": "ev_door_log"
+      },
+      "assessment_weight": 0.08
+    },
+    {
+      "id": "ha1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "إذا كانت بطاقة في يد غير صاحبها، فكيف تعرف مكان صاحبها وقتها؟",
+      "trigger": {
+        "has_evidence": "ev_door_log"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_away_a"
+    },
+    {
+      "id": "ha2",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "قارن أوقات حركة البطاقة ب1 بما يضع هالة في مكان آخر، من دفتر المكتبة ومن وثيقة خارجية.",
+      "trigger": {
+        "has_evidence": "ev_gate_book"
+      },
+      "assessment_weight": 0.06,
+      "targets_inference_id": "i_away_a"
+    },
+    {
+      "id": "ha3",
+      "level": 3,
+      "kind": "partial_reveal",
+      "text_ar": "ضع على خط واحد: خروجها من الموقع 18:30، ثم حضورها في القاعة، ثم حركة بطاقتها بين 20:51 و21:04.",
+      "trigger": {
+        "has_evidence": "ev_event_roster"
+      },
+      "assessment_weight": 0.1,
+      "targets_inference_id": "i_away_a"
+    },
+    {
+      "id": "hw1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "من كان داخل الموقع حين قُبلت بطاقة غائبة؟ ومن لم تُقبل بطاقته؟",
+      "trigger": {
+        "has_evidence": "ev_door_log"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_who_a"
+    },
+    {
+      "id": "hw2",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "انظر إلى سطري الرفض في سجل القارئ، ثم إلى أول حركة مقبولة بعدهما، ثم إلى سجل السحب المكتوب بخط اليد.",
+      "trigger": {
+        "has_evidence": "ev_sample_sheet"
+      },
+      "assessment_weight": 0.06,
+      "targets_inference_id": "i_who_a"
+    },
+    {
+      "id": "hw3",
+      "level": 3,
+      "kind": "partial_reveal",
+      "text_ar": "قابل ساعات إذن الزائر بوقت الرفض، ثم قارن وقت سطر السحب بالجلسة المفتوحة، واسأل من يملك سبباً لدخول الغرفة في ذلك الوقت.",
+      "trigger": {
+        "has_evidence": "ev_card_register"
+      },
+      "assessment_weight": 0.1,
+      "targets_inference_id": "i_who_a"
+    },
+    {
+      "id": "hr1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "إذا كان الباب مفتوحاً فلماذا بقيت الحرارة ثابتة بعد خروج رنا؟",
+      "trigger": {
+        "has_evidence": "ev_temp_graph"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_rule_rana"
+    },
+    {
+      "id": "hr2",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "اقرأ سجل الحساس ومنحنى الحرارة معاً ثم قارنهما بوقت خروج رنا.",
+      "trigger": {
+        "has_evidence": "ev_latch_log"
+      },
+      "assessment_weight": 0.05,
+      "targets_inference_id": "i_rule_rana"
+    }
+  ],
+  "fairness_test": {
+    "requirements": {
+      "min_disjoint_proof_paths": 2,
+      "max_inference_depth": 3,
+      "all_red_herrings_refutable": true,
+      "culprit_uniquely_entailed": true,
+      "no_hidden_fact_dependency": true,
+      "max_required_actions": 40
+    },
+    "runs": []
+  },
+  "ending_explanation": {
+    "steps": [
+      {
+        "order": 1,
+        "text_ar": "ابدأ بحدود الأجهزة: القارئ يحصي البطاقات ولا يرى الوجوه. وجهاز المزلاج الذي لا يعتمد عليه يؤكد أن الباب ظل مفتوحاً بعد آخر خروج حتى مرّ الحارس.",
+        "uses_evidence_ids": [
+          "ev_door_log",
+          "ev_latch_log"
+        ],
+        "inference_id": "i_open_a"
+      },
+      {
+        "order": 2,
+        "text_ar": "ثم اسأل أين كانت صاحبة البطاقة. دفتر المكتبة يخرجها بعد السادسة والنصف، ووثيقة البلدية تضعها في قاعة بعيدة وقت الحركة، فلا يصح أن نتهمها.",
+        "uses_evidence_ids": [
+          "ev_gate_book",
+          "ev_event_roster"
+        ],
+        "inference_id": "i_away_a"
+      },
+      {
+        "order": 3,
+        "text_ar": "ثم ابحث عن الحاجة والفرصة. الزائر مُنع بسبب ساعات إذنه، ثم دخلت البطاقة الغائبة بعدها بدقيقتين، وكتب بيده سطراً يضعه داخل الغرفة.",
+        "uses_evidence_ids": [
+          "ev_door_log",
+          "ev_sample_sheet",
+          "ev_card_register"
+        ],
+        "inference_id": "i_who_a"
+      },
+      {
+        "order": 4,
+        "text_ar": "ويؤيد ذلك طريق ثانٍ لا يمر بالقارئ: بوابة مقفلة وعدّ مسائي يحصران الحاضرين في اثنين، والحارس بعيد عن الغرفة بمقدار يفوق الزمن المتاح.",
+        "uses_evidence_ids": [
+          "ev_night_headcount",
+          "ev_delivery_receipt",
+          "ev_site_plan"
+        ],
+        "inference_id": "i_who_b"
+      },
+      {
+        "order": 5,
+        "text_ar": "أما المزلاج فبقي مغلقاً والحرارة ثابتة بعد خروج مساعدة المختبر، فلا يجوز أن نحمّلها ما لم تفعل بسبب مذكرة قديمة.",
+        "uses_evidence_ids": [
+          "ev_latch_log",
+          "ev_temp_graph",
+          "ev_march_memo"
+        ],
+        "inference_id": "i_rule_rana"
+      },
+      {
+        "order": 6,
+        "text_ar": "وعودة الفني جاءت بعد التنبيه، والأجهزة فُحصت قبل الحادث، فلا يبقى إلا الزائر؛ وهذا ترجيح قوي لا يقين، وربما كان خطأً لا قصداً.",
+        "uses_evidence_ids": [
+          "ev_alarm_sheet",
+          "ev_gate_book",
+          "ev_maint_check"
+        ],
+        "inference_id": "i_rule_shadi"
+      }
+    ],
+    "alternative_paths_ar": [
+      "مسار مستقل عن القارئ: ورقة الحارس ومنحنى الحرارة يحددان وقت الفتح، ووثيقة البلدية تُبعد المديرة، والعدّ المسائي والإيصال والمخطط تحصر الفاعل في الزائر."
+    ],
+    "what_evidence_could_not_show_ar": [
+      "لا تبين السجلات كيف أخذ الزائر البطاقة ولا ما نواه، ولا يمكن الجزم بأنه تعمّد ترك الباب مفتوحاً.",
+      "لو أُدخل شخص ثالث من بوابة غير مسجلة لتغيّر الاستنتاج، ولا شيء في الدفاتر يدل على ذلك."
+    ],
+    "science_notes_ar": [
+      "سجل الباب الإلكتروني يثبت بطاقة وحركة لا شخصاً، فيلزم سجل مستقل عن الشخص.",
+      "حين تتفق ثلاثة أجهزة مستقلة على الوقت نفسه تقوى الثقة بالوقت، لكن اتفاقها لا يعرّفنا بالفاعل."
+    ]
+  },
+  "expert_review": [
+    {
+      "role": "narrative_editor",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "scientific_reviewer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "learning_designer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "age_appropriateness",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "cultural_reviewer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "legal_rights",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "safety",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    }
+  ]
+}

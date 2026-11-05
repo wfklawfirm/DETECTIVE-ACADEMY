@@ -1,0 +1,155 @@
+{
+  "case_id": "c034_planted_evidence",
+  "accepted_conclusions": {
+    "h_layla": {
+      "grade": 0,
+      "note_ar": "يعدّ ثلاثة بلاغات من مصادر لها مصلحة ثلاثة أدلة مستقلة، وتنقضه سجلات خروجها ومحضر اللجنة."
+    },
+    "h_nabil": {
+      "grade": 0,
+      "note_ar": "يرى دوراً لنبيل ولا يفسر توقيع سامر على مفتاح الخزانة قبل توقيعه."
+    },
+    "h_misfile": {
+      "grade": 0,
+      "note_ar": "قراءة الرف بعد خروجها تنفي أنها نقلته قبل ذلك."
+    },
+    "h_samer": {
+      "grade": 1,
+      "note_ar": "استنتاج متسق مع الأدلة ويتطلب ذكر حدوده."
+    }
+  },
+  "confidence_band": {
+    "h_layla": [
+      0,
+      15
+    ],
+    "h_nabil": [
+      0,
+      20
+    ],
+    "h_misfile": [
+      0,
+      10
+    ],
+    "h_samer": [
+      60,
+      88
+    ]
+  },
+  "source_key": {
+    "ev_incident_report": "public_document",
+    "ev_nabil_statement": "claim",
+    "ev_rima_statement": "claim",
+    "ev_loan_slip": "claim",
+    "ev_exit_log": "primary_record",
+    "ev_committee_minutes": "public_document",
+    "ev_shelf_read": "primary_record",
+    "ev_gate_read": "primary_record",
+    "ev_door_log": "primary_record",
+    "ev_key_book": "primary_record",
+    "ev_tidy_rota": "primary_record",
+    "ev_vacancy_notice": "public_document",
+    "ev_rima_form": "primary_record",
+    "ev_layla_record": "public_document",
+    "ev_layla_statement": "claim"
+  },
+  "link_key": {
+    "h_layla": {
+      "ev_incident_report": "supports",
+      "ev_nabil_statement": "supports",
+      "ev_rima_statement": "supports",
+      "ev_loan_slip": "supports",
+      "ev_layla_record": "neutral",
+      "ev_exit_log": "weakens",
+      "ev_committee_minutes": "weakens",
+      "ev_shelf_read": "weakens",
+      "ev_gate_read": "weakens",
+      "ev_door_log": "weakens",
+      "ev_key_book": "weakens"
+    },
+    "h_nabil": {
+      "ev_door_log": "supports",
+      "ev_gate_read": "supports",
+      "ev_tidy_rota": "supports",
+      "ev_key_book": "weakens"
+    },
+    "h_misfile": {
+      "ev_layla_record": "supports",
+      "ev_shelf_read": "weakens",
+      "ev_exit_log": "weakens",
+      "ev_committee_minutes": "weakens"
+    },
+    "h_samer": {
+      "ev_key_book": "supports",
+      "ev_vacancy_notice": "supports",
+      "ev_rima_form": "supports",
+      "ev_tidy_rota": "supports",
+      "ev_loan_slip": "supports",
+      "ev_committee_minutes": "supports",
+      "ev_exit_log": "supports",
+      "ev_shelf_read": "supports"
+    }
+  },
+  "required_limits": [
+    "l_key_signer",
+    "l_stake_not_proof"
+  ],
+  "valid_mind_changers": [
+    "m_key_forged",
+    "m_reader_fault",
+    "m_left_early"
+  ],
+  "invalid_limits": [
+    "l_invalid_record",
+    "l_invalid_count"
+  ],
+  "decisive_evidence": [
+    "ev_exit_log",
+    "ev_committee_minutes",
+    "ev_shelf_read",
+    "ev_gate_read",
+    "ev_key_book",
+    "ev_vacancy_notice"
+  ],
+  "lab_requirement": null,
+  "timeline_requirement": [
+    {
+      "evidence_id": "ev_exit_log",
+      "utc_minute": 460,
+      "tol": 10
+    },
+    {
+      "evidence_id": "ev_gate_read",
+      "utc_minute": 564,
+      "tol": 10
+    },
+    {
+      "evidence_id": "ev_key_book",
+      "utc_minute": 570,
+      "tol": 10
+    },
+    {
+      "evidence_id": "ev_incident_report",
+      "utc_minute": 650,
+      "tol": 10
+    }
+  ],
+  "refuted_hypotheses": [
+    "h_layla",
+    "h_nabil",
+    "h_misfile"
+  ],
+  "criteria_map": {
+    "c_source": "source_typing",
+    "c_conflict": "conflict_resolution",
+    "c_links": "hypothesis_links",
+    "c_uncertainty": "uncertainty",
+    "c_revision": "revision",
+    "c_elimination": "elimination",
+    "c_justification": "justification_human"
+  },
+  "caps": {
+    "no_citations_max": 45,
+    "no_conflict_resolution_max": 70
+  }
+}

@@ -1,0 +1,2712 @@
+{
+  "schema_version": "0.1.0",
+  "case_id": "c033_three_days_nine_moves",
+  "case_version": "0.1.0",
+  "meta": {
+    "title_ar": "ثلاثة أيام وتسعة أفعال",
+    "title_en": "Three Days, Nine Moves",
+    "age_band": "16-18",
+    "locale": "ar",
+    "dialogue_register": "msa",
+    "estimated_minutes": 35,
+    "difficulty": 3,
+    "content_flags": [
+      "no_violence",
+      "theft"
+    ],
+    "authors": [
+      "فريق أثر التحريري (مسودة بمساعدة الذكاء الاصطناعي، لم تُراجَع بشرياً بعد)"
+    ],
+    "knowledge_object_refs": [
+      "KO-RS-05-003",
+      "KO-RS-06-001",
+      "KO-RS-05-012",
+      "KO-RS-05-005",
+      "KO-RS-05-001",
+      "KO-RS-05-010",
+      "KO-RS-05-004",
+      "KO-RS-05-014"
+    ]
+  },
+  "premise": {
+    "hook_ar": "صندوق مال ورشة الشباب نقص بين الجمعة والاثنين، ومجلس الحيّ يمنحك ثلاثة أيام فقط، وثلاثة طلبات في كل يوم. وإن لم تثبت الأمور بالأوراق جُمّد المال، ولامَ الناس من لم يفعل شيئاً.",
+    "player_role_ar": "أنت متطوع في لجنة الإنصاف الشبابية بمجلس الحي، تطلب السجلات وتقابل من يعنيهم الأمر ولا تملك صلاحية الاتهام ولا العقاب.",
+    "setting_ar": "حيّ الفوانيس في مدينة متخيَّلة اسمها سهلان، أسبوع فعالية الفوانيس. الأيام الثلاثة والطلبات المحدودة قاعدة داخل القصة فقط، ولا يوجد مؤقت حقيقي. وتوقيت القاعة هو توقيت كل الأوراق.",
+    "public_fact_ids": [
+      "f_announce",
+      "f_deadline"
+    ],
+    "assumed_general_knowledge_ar": [
+      "الوقت الذي تحتاجه رحلة مشي بين مكانين يساوي المسافة مقسومة على السرعة، وذهاب وعودة يعنيان ضعف ذلك",
+      "تغيّر رقم ختم متسلسل بين مرتين يعني أن الختم الأول انتهى وختماً آخر وُضع بعده"
+    ]
+  },
+  "entities": {
+    "characters": [
+      {
+        "id": "salim",
+        "name_ar": "سليم الورّاق",
+        "role": "suspect",
+        "age_descriptor_ar": "أمين صندوق المجلس، في الأربعين",
+        "persona_ar": "دقيق ومرتب، يتكلم ببطء ويعيد الأرقام بصوت مسموع، ويضيق صدره إذا شُكّ في أمانته.",
+        "motives_ar": [
+          "ألا تُنسب إليه خسارة لم يتسبب بها",
+          "أن يُفهم أن العدّ كان بتوقيعين"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "sl_greet",
+            "purpose": "greeting",
+            "text_ar": "تفضّل. كل ما عددته مكتوب ومؤرَّخ."
+          },
+          {
+            "line_id": "sl_gate",
+            "purpose": "reveal",
+            "text_ar": "كنت عند بوابة الفوانيس مساء السبت أقطع الإيصالات للزوار، وكل إيصال يحمل ختم وقته.",
+            "fact_ids": [
+              "f_gate_run"
+            ]
+          },
+          {
+            "line_id": "sl_keys",
+            "purpose": "reveal",
+            "text_ar": "معي أحد مفتاحي الصندوق، والمفتاح الآخر مع منسقة المتطوعين. هذا ما أعرفه.",
+            "fact_ids": [
+              "f_two_keys"
+            ]
+          },
+          {
+            "line_id": "sl_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "هذا خارج ما رأيته أو سجلته."
+          },
+          {
+            "line_id": "sl_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "دعنا نبقى في أمر الصندوق من فضلك."
+          },
+          {
+            "line_id": "sl_exit",
+            "purpose": "safety_exit",
+            "text_ar": "أفضّل أن نكمل غداً إن كان الحديث سيتجه إلى الاتهام دون سجل."
+          },
+          {
+            "line_id": "sl_bye",
+            "purpose": "farewell",
+            "text_ar": "اطلب أي سجل شئت، فلا شيء عندي أخفيه."
+          }
+        ]
+      },
+      {
+        "id": "rima",
+        "name_ar": "ريما النجّار",
+        "role": "suspect",
+        "age_descriptor_ar": "منسقة المتطوعين، في أواخر الثلاثينيات",
+        "persona_ar": "نشيطة سريعة الكلام، محبوبة بين المتطوعين، وتحب أن تُنجز العمل ولو خالفت الإجراء.",
+        "motives_ar": [
+          "أن تظهر بمظهر من لا يقصّر في تنظيم الفعالية",
+          "ألا تُسأل عن المال الذي لم تدبّره بالطريق الرسمي"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "rm_greet",
+            "purpose": "greeting",
+            "text_ar": "أهلاً بك! الفعالية كلها على أكتاف المتطوعين، فاسأل ما شئت."
+          },
+          {
+            "line_id": "rm_field",
+            "purpose": "lie",
+            "text_ar": "بقيت في ساحة الفوانيس مع المتطوعين طوال المساء، ولم أدخل المكتب أبداً.",
+            "fact_ids": [
+              "f_rima_said_field"
+            ],
+            "claim_ids": [
+              "cl_rima_field"
+            ]
+          },
+          {
+            "line_id": "rm_master",
+            "purpose": "lie",
+            "text_ar": "الحارس جابر يملك مفتاح كل شيء في القاعة، فاسأل عنه.",
+            "claim_ids": [
+              "cl_caretaker_all_keys"
+            ]
+          },
+          {
+            "line_id": "rm_office",
+            "purpose": "reveal",
+            "text_ar": "حسناً، دخلت المكتب مساء السبت قليلاً لآخذ أوراقاً. لكن الدخول وحده لا يعني شيئاً.",
+            "fact_ids": [
+              "f_rima_in_office"
+            ]
+          },
+          {
+            "line_id": "rm_admit",
+            "purpose": "break_down",
+            "text_ar": "دفعت للمطبعة من مال الصندوق لأن المجلس رفض سلفة اللافتات، وكنت سأردّه من تعويض أقدّمه. أعلم أنني خالفت الإجراء.",
+            "fact_ids": [
+              "f_banner_paid",
+              "f_rima_reopened_box"
+            ]
+          },
+          {
+            "line_id": "rm_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أذكر تفاصيل أكثر من هذا."
+          },
+          {
+            "line_id": "rm_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "هل نعود إلى تنظيم الفعالية؟"
+          },
+          {
+            "line_id": "rm_exit",
+            "purpose": "safety_exit",
+            "text_ar": "أحتاج أن أتوقف قليلاً، ويمكننا أن نكمل لاحقاً."
+          },
+          {
+            "line_id": "rm_bye",
+            "purpose": "farewell",
+            "text_ar": "أتمنى أن ينتهي الأمر قبل جلسة الجمعة."
+          }
+        ]
+      },
+      {
+        "id": "jaber",
+        "name_ar": "جابر العطّار",
+        "role": "suspect",
+        "age_descriptor_ar": "حارس القاعة منذ سنوات",
+        "persona_ar": "قليل الكلام صريح، يتوجس من أن يُلام لأن المفاتيح العامة في يده.",
+        "motives_ar": [
+          "ألا يُلام على ما لا يد له فيه",
+          "أن يؤدي عمله بهدوء"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "jb_greet",
+            "purpose": "greeting",
+            "text_ar": "تفضّل، أنا هنا منذ الصباح."
+          },
+          {
+            "line_id": "jb_roll",
+            "purpose": "reveal",
+            "text_ar": "استلمت رولون أشرطة الختم الجديد عند الباب الخلفي السبت قرابة الخامسة وخمسين دقيقة، ووضعته في درج المستلزمات.",
+            "fact_ids": [
+              "f_new_roll"
+            ]
+          },
+          {
+            "line_id": "jb_alarm",
+            "purpose": "reveal",
+            "text_ar": "أغلقت القاعة وفعّلت الإنذار قبل الحادية عشرة بقليل، وفتحته صباح الاثنين.",
+            "fact_ids": [
+              "f_alarm"
+            ]
+          },
+          {
+            "line_id": "jb_keys",
+            "purpose": "reveal",
+            "text_ar": "معي مفاتيح الأبواب العامة فقط. مفتاح الصندوق لم يكن معي قط.",
+            "fact_ids": [
+              "f_two_keys"
+            ]
+          },
+          {
+            "line_id": "jb_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لم أنتبه لذلك."
+          },
+          {
+            "line_id": "jb_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "سؤالك بعيد عن عملي في القاعة."
+          },
+          {
+            "line_id": "jb_exit",
+            "purpose": "safety_exit",
+            "text_ar": "أرجو ألا نتكلم عني كأنني متهم، فلنراجع السجلات."
+          },
+          {
+            "line_id": "jb_bye",
+            "purpose": "farewell",
+            "text_ar": "إن احتجت سجلاً من القاعة فاطلبه."
+          }
+        ]
+      },
+      {
+        "id": "lana",
+        "name_ar": "لانا السقّا",
+        "role": "witness",
+        "age_descriptor_ar": "متطوعة شابة على مكتب الاستعلامات",
+        "persona_ar": "خجولة مهذبة، تحاول ألا تظلم أحداً ولا تحب أن تتهم من هو أكبر منها.",
+        "motives_ar": [
+          "ألا تُنسب إليها تهمة لأحد",
+          "أن تقول ما رأته كما رأته"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "ln_greet",
+            "purpose": "greeting",
+            "text_ar": "مرحباً. أنا على مكتب الاستعلامات في الممر."
+          },
+          {
+            "line_id": "ln_rumour",
+            "purpose": "lie",
+            "text_ar": "سمعت في الممر أن الأمين يعدّ الصندوق وحده، لكنني لم أتحقق.",
+            "claim_ids": [
+              "cl_anon"
+            ]
+          },
+          {
+            "line_id": "ln_saw",
+            "purpose": "reveal",
+            "text_ar": "رأيت ريما تخرج من ممر المكتب قبل الثامنة بقليل، قرابة السابعة والنصف أو أكثر، ووضعت ظرفاً سميكاً في حقيبتها.",
+            "fact_ids": [
+              "f_lana_saw"
+            ]
+          },
+          {
+            "line_id": "ln_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف أكثر مما قلت."
+          },
+          {
+            "line_id": "ln_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "أنا أعرف فقط ما يخص مكتب الاستعلامات."
+          },
+          {
+            "line_id": "ln_exit",
+            "purpose": "safety_exit",
+            "text_ar": "لا أحب أن أتهم أحداً، فهل نكتفي بما رأيت؟"
+          },
+          {
+            "line_id": "ln_bye",
+            "purpose": "farewell",
+            "text_ar": "أرجو أن يُنصف الجميع."
+          }
+        ]
+      },
+      {
+        "id": "huda",
+        "name_ar": "هدى الزبيدي",
+        "role": "authority",
+        "age_descriptor_ar": "رئيسة مجلس حيّ الفوانيس",
+        "persona_ar": "هادئة حازمة، تريد أن تُحسم المسألة بالأدلة قبل جلسة الجمعة.",
+        "motives_ar": [
+          "حماية مال ورشة الشباب",
+          "ألا يُظلم أحد قبل التحقق"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "hd_greet",
+            "purpose": "greeting",
+            "text_ar": "لديك ثلاثة أيام، وثلاثة طلبات في كل يوم، وكل طلب يُسجَّل في محضر المجلس."
+          },
+          {
+            "line_id": "hd_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أملك غير ما في المحضر."
+          },
+          {
+            "line_id": "hd_exit",
+            "purpose": "safety_exit",
+            "text_ar": "نكمل حين تجمع سجلاتك."
+          },
+          {
+            "line_id": "hd_bye",
+            "purpose": "farewell",
+            "text_ar": "ننتظر استنتاجك يوم الجمعة."
+          }
+        ]
+      }
+    ],
+    "locations": [
+      {
+        "id": "loc_office",
+        "name_ar": "مكتب المجلس",
+        "description_ar": "غرفة فيها صندوق الأمانة ودرج المستلزمات، وبابها لا يُفتح إلا ببطاقة."
+      },
+      {
+        "id": "loc_hall",
+        "name_ar": "قاعة المجلس",
+        "description_ar": "المبنى الذي فيه المكتب والممر ومكتب الاستعلامات، وله إنذار ليلي."
+      },
+      {
+        "id": "loc_gate",
+        "name_ar": "بوابة الفوانيس",
+        "description_ar": "بوابة الفعالية في الساحة، وتبعد عن باب المكتب أربع دقائق مشياً."
+      },
+      {
+        "id": "loc_shop",
+        "name_ar": "مطبعة الزاوية",
+        "description_ar": "مطبعة في الحي طبعت لافتات الفعالية."
+      }
+    ],
+    "objects": [
+      {
+        "id": "obj_box",
+        "name_ar": "صندوق الأمانة",
+        "description_ar": "صندوق نقود بمفتاحين وشريط ختم مرقّم على غطائه."
+      },
+      {
+        "id": "obj_strips",
+        "name_ar": "أشرطة الختم",
+        "description_ar": "رولون أشرطة لاصقة مرقّمة تُستعمل مرة واحدة لختم الصندوق."
+      }
+    ],
+    "organizations": [
+      {
+        "id": "org_council",
+        "name_ar": "مجلس حيّ الفوانيس",
+        "description_ar": "مجلس أهلي ينظّم فعالية الحي ويدير صندوق ورشة الشباب."
+      }
+    ]
+  },
+  "truth": {
+    "solution": {
+      "culprit_ids": [
+        "rima"
+      ],
+      "summary_ar": "لم يسرق الصندوق أمين الصندوق ولا الحارس، ولم يكن النقص خطأ عدّ. فتحت منسقة المتطوعين الصندوق بمفتاحها ساعة الفعالية مساء السبت وأخذت 120 نجمة لتسدد فاتورة لافتات رفض المجلس سلفتها، ثم ختمته بشريط جديد ظنت أنه لا يُلاحَظ، وأتلفت شريطين في المحاولة. غير أن رقم الشريط تغيّر، والسجلات حصرت الفاعل بين حاملي المفتاح ثم استبعدت الأمين بسجل الإيصالات.",
+      "key_fact_ids": [
+        "f_reopened",
+        "f_rima_reopened_box"
+      ]
+    },
+    "facts": [
+      {
+        "id": "f_announce",
+        "statement_ar": "أعلن مجلس حيّ الفوانيس الاثنين أن صندوق الأمانة وُجد فيه 180 نجمة، بينما تذكر قسيمة الجمعة 300 نجمة.",
+        "kind": "event",
+        "subject_ids": [
+          "org_council",
+          "obj_box"
+        ],
+        "spoiler_level": 0
+      },
+      {
+        "id": "f_deadline",
+        "statement_ar": "منحت رئيسة المجلس لجنة الإنصاف ثلاثة أيام، يُسمح فيها بثلاثة طلبات كل يوم، ثم يصوّت المجلس الجمعة على تجميد مال ورشة الشباب أو إبقائه.",
+        "kind": "event",
+        "subject_ids": [
+          "huda",
+          "org_council"
+        ],
+        "spoiler_level": 0
+      },
+      {
+        "id": "f_fri_count",
+        "statement_ar": "جرى عدّ الصندوق الجمعة بتوقيع سليم وريما على قسيمة تذكر 300 نجمة، وبدأ العدّ 20:05 وانتهى الختم بالشريط 4417 عند 20:22.",
+        "kind": "event",
+        "subject_ids": [
+          "salim",
+          "rima",
+          "obj_box"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 125,
+          "precision": "exact",
+          "end_min": 142
+        },
+        "location_id": "loc_office"
+      },
+      {
+        "id": "f_mon_found",
+        "statement_ar": "وُجد الصندوق صباح الاثنين 08:00 مختوماً بالشريط 4420 وفيه 180 نجمة.",
+        "kind": "event",
+        "subject_ids": [
+          "obj_box"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 3720,
+          "precision": "exact"
+        },
+        "location_id": "loc_office"
+      },
+      {
+        "id": "f_reopened",
+        "statement_ar": "فُتح الصندوق بعد عدّ الجمعة وأُعيد ختمه بشريط جديد، فنقص منه 120 نجمة.",
+        "kind": "event",
+        "subject_ids": [
+          "obj_box"
+        ],
+        "spoiler_level": 2
+      },
+      {
+        "id": "f_new_roll",
+        "statement_ar": "تسلّم الحارس السبت 17:50 رولون أشرطة ختم جديداً يبدأ بالرقم 4418.",
+        "kind": "event",
+        "subject_ids": [
+          "jaber",
+          "obj_strips"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 1430,
+          "precision": "exact"
+        },
+        "location_id": "loc_hall"
+      },
+      {
+        "id": "f_alarm",
+        "statement_ar": "فُعّل إنذار القاعة 22:35 مساء السبت ولم يُسجَّل أي دخول حتى 07:28 صباح الاثنين.",
+        "kind": "state",
+        "subject_ids": [
+          "jaber",
+          "loc_hall"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 1715,
+          "precision": "exact",
+          "end_min": 3688
+        },
+        "location_id": "loc_hall"
+      },
+      {
+        "id": "f_window",
+        "statement_ar": "جرى فتح الصندوق وإعادة ختمه في مساء السبت بين 17:50 و22:35.",
+        "kind": "event",
+        "subject_ids": [
+          "obj_box"
+        ],
+        "spoiler_level": 2,
+        "time": {
+          "start_min": 1430,
+          "precision": "approx",
+          "end_min": 1715
+        }
+      },
+      {
+        "id": "f_two_keys",
+        "statement_ar": "لصندوق الأمانة مفتاحان فقط: مع أمين الصندوق ومنسقة المتطوعين، ولم يُبلَّغ عن فقدان أيٍّ منهما.",
+        "kind": "attribute",
+        "subject_ids": [
+          "obj_box",
+          "salim",
+          "rima"
+        ],
+        "spoiler_level": 1
+      },
+      {
+        "id": "f_gate_run",
+        "statement_ar": "أصدر سليم إيصالات بوابة الفوانيس المختومة بالوقت من 17:20 إلى 22:45 السبت، وأطول فاصل بين إيصالين خمس دقائق.",
+        "kind": "event",
+        "subject_ids": [
+          "salim",
+          "loc_gate"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 1400,
+          "precision": "exact",
+          "end_min": 1725
+        },
+        "location_id": "loc_gate"
+      },
+      {
+        "id": "f_salim_away_impossible",
+        "statement_ar": "لم يكن بوسع سليم أن يترك البوابة ويفتح الصندوق ويختمه ويعود دون فاصل بين إيصالين يزيد كثيراً على خمس دقائق.",
+        "kind": "state",
+        "subject_ids": [
+          "salim"
+        ],
+        "spoiler_level": 2
+      },
+      {
+        "id": "f_tag_log",
+        "statement_ar": "سجّلت بطاقة ريما دخولاً إلى باب المكتب 19:12 وخروجاً 19:41، وسجّلت بطاقة جابر دخولين مدة الأول أربع دقائق والثاني ست، ولم تُسجَّل بطاقة سليم.",
+        "kind": "event",
+        "subject_ids": [
+          "rima",
+          "jaber",
+          "loc_office"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 1512,
+          "precision": "exact",
+          "end_min": 1541
+        },
+        "location_id": "loc_office"
+      },
+      {
+        "id": "f_bin",
+        "statement_ar": "وُجد في سلة المكتب الاثنين شريطا ختم تالفان رقماهما 4418 و4419.",
+        "kind": "event",
+        "subject_ids": [
+          "obj_strips",
+          "loc_office"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 3720,
+          "precision": "exact"
+        },
+        "location_id": "loc_office"
+      },
+      {
+        "id": "f_lana_saw",
+        "statement_ar": "رأت لانا ريما تخرج من ممر المكتب قرابة 19:40 وتضع ظرفاً سميكاً في حقيبتها.",
+        "kind": "event",
+        "subject_ids": [
+          "lana",
+          "rima"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 1540,
+          "precision": "approx"
+        },
+        "location_id": "loc_hall"
+      },
+      {
+        "id": "f_rima_said_field",
+        "statement_ar": "قالت ريما إنها بقيت في ساحة الفوانيس مع المتطوعين طوال المساء.",
+        "kind": "event",
+        "subject_ids": [
+          "rima"
+        ],
+        "spoiler_level": 1
+      },
+      {
+        "id": "f_rima_in_office",
+        "statement_ar": "دخلت ريما المكتب مساء السبت وبقيت فيه قرابة نصف ساعة.",
+        "kind": "event",
+        "subject_ids": [
+          "rima",
+          "loc_office"
+        ],
+        "spoiler_level": 2,
+        "time": {
+          "start_min": 1512,
+          "precision": "exact",
+          "end_min": 1541
+        },
+        "location_id": "loc_office"
+      },
+      {
+        "id": "f_banner_paid",
+        "statement_ar": "دفعت ريما 120 نجمة نقداً لمطبعة الزاوية 20:15 السبت ثمن لافتات الفوانيس، من ورقتين من فئة 50 وورقة من فئة 20.",
+        "kind": "event",
+        "subject_ids": [
+          "rima",
+          "loc_shop"
+        ],
+        "spoiler_level": 2,
+        "time": {
+          "start_min": 1575,
+          "precision": "exact"
+        },
+        "location_id": "loc_shop"
+      },
+      {
+        "id": "f_anon_note",
+        "statement_ar": "وُجدت في صندوق الاقتراحات الاثنين ورقة بلا توقيع تقول إن الأمين يعدّ الصندوق وحده.",
+        "kind": "event",
+        "subject_ids": [
+          "org_council"
+        ],
+        "spoiler_level": 0
+      },
+      {
+        "id": "f_rima_reopened_box",
+        "statement_ar": "ريما النجّار فتحت الصندوق بمفتاحها بين 19:12 و19:41 مساء السبت، وأخذت منه 120 نجمة لتدفع ثمن لافتات الفعالية، ثم ختمته بالشريط 4420 بعد أن أتلفت شريطين، وكانت تنوي ردّ المبلغ من تعويض تطلبه.",
+        "kind": "event",
+        "subject_ids": [
+          "rima",
+          "obj_box"
+        ],
+        "spoiler_level": 3,
+        "time": {
+          "start_min": 1512,
+          "precision": "exact",
+          "end_min": 1541
+        },
+        "location_id": "loc_office"
+      }
+    ],
+    "claims": [
+      {
+        "id": "cl_anon",
+        "statement_ar": "الأمين يعدّ الصندوق وحده، فهو الذي أخذ المال.",
+        "kind": "rumour",
+        "held_by": [
+          "lana"
+        ],
+        "true_fact_id": "f_fri_count",
+        "contradicted_by_evidence_ids": [
+          "ev_slip",
+          "ev_receipts"
+        ]
+      },
+      {
+        "id": "cl_rima_field",
+        "statement_ar": "بقيت في ساحة الفوانيس طوال المساء ولم أدخل المكتب.",
+        "kind": "lie",
+        "held_by": [
+          "rima"
+        ],
+        "true_fact_id": "f_rima_in_office",
+        "contradicted_by_evidence_ids": [
+          "ev_tag",
+          "ev_lana"
+        ]
+      },
+      {
+        "id": "cl_caretaker_all_keys",
+        "statement_ar": "الحارس يملك مفتاح كل شيء فيستطيع فتح الصندوق.",
+        "kind": "half_truth",
+        "held_by": [
+          "rima"
+        ],
+        "true_fact_id": "f_two_keys",
+        "contradicted_by_evidence_ids": [
+          "ev_keys"
+        ]
+      }
+    ]
+  },
+  "timeline": [
+    {
+      "id": "te_count",
+      "description_ar": "سليم وريما يعدّان الصندوق ويختمانه بالشريط 4417.",
+      "time": {
+        "start_min": 125,
+        "precision": "exact",
+        "end_min": 142
+      },
+      "location_id": "loc_office",
+      "actor_ids": [
+        "salim",
+        "rima"
+      ],
+      "fact_ids": [
+        "f_fri_count"
+      ],
+      "motivated_by_ar": "العدّ الأسبوعي المزدوج قبل عطلة نهاية الأسبوع"
+    },
+    {
+      "id": "te_roll",
+      "description_ar": "الحارس يتسلّم رولون الأشرطة الجديد عند الباب الخلفي.",
+      "time": {
+        "start_min": 1430,
+        "precision": "exact"
+      },
+      "location_id": "loc_hall",
+      "actor_ids": [
+        "jaber"
+      ],
+      "fact_ids": [
+        "f_new_roll"
+      ],
+      "motivated_by_ar": "تجديد مستلزمات المكتب قبل الفعالية"
+    },
+    {
+      "id": "te_gate",
+      "description_ar": "سليم يقطع إيصالات البوابة للزوار.",
+      "time": {
+        "start_min": 1400,
+        "precision": "exact",
+        "end_min": 1725
+      },
+      "location_id": "loc_gate",
+      "actor_ids": [
+        "salim"
+      ],
+      "witness_ids": [
+        "lana"
+      ],
+      "fact_ids": [
+        "f_gate_run"
+      ],
+      "motivated_by_ar": "مهمته في الفعالية جمع ثمن الدخول"
+    },
+    {
+      "id": "te_office",
+      "description_ar": "ريما تدخل المكتب وتفتح الصندوق وتخرج منه مال اللافتات ثم تختمه.",
+      "time": {
+        "start_min": 1512,
+        "precision": "exact",
+        "end_min": 1541
+      },
+      "location_id": "loc_office",
+      "actor_ids": [
+        "rima"
+      ],
+      "witness_ids": [
+        "lana"
+      ],
+      "fact_ids": [
+        "f_rima_reopened_box",
+        "f_rima_in_office",
+        "f_tag_log",
+        "f_bin"
+      ],
+      "motivated_by_ar": "أرادت دفع فاتورة اللافتات التي لم يوافق المجلس على سلفتها"
+    },
+    {
+      "id": "te_shop",
+      "description_ar": "ريما تدفع للمطبعة نقداً.",
+      "time": {
+        "start_min": 1575,
+        "precision": "exact"
+      },
+      "location_id": "loc_shop",
+      "actor_ids": [
+        "rima"
+      ],
+      "fact_ids": [
+        "f_banner_paid"
+      ],
+      "motivated_by_ar": "فاتورة اللافتات مستحقة السبت"
+    },
+    {
+      "id": "te_alarm",
+      "description_ar": "الحارس يغلق القاعة ويفعّل الإنذار.",
+      "time": {
+        "start_min": 1715,
+        "precision": "exact"
+      },
+      "location_id": "loc_hall",
+      "actor_ids": [
+        "jaber"
+      ],
+      "fact_ids": [
+        "f_alarm"
+      ],
+      "motivated_by_ar": "إغلاق القاعة في نهاية اليوم"
+    },
+    {
+      "id": "te_found",
+      "description_ar": "فتح الصندوق صباح الاثنين ووجود النقص.",
+      "time": {
+        "start_min": 3720,
+        "precision": "exact"
+      },
+      "location_id": "loc_office",
+      "actor_ids": [],
+      "fact_ids": [
+        "f_mon_found",
+        "f_announce"
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_slip",
+      "title_ar": "قسيمة عدّ الجمعة",
+      "kind": "documentary",
+      "content_ar": "مجلس حيّ الفوانيس — قسيمة عدّ صندوق الأمانة\nالجمعة | بدأ العدّ 20:05\nأوراق 50: أربع = 200\nأوراق 20: ثلاث = 60\nأوراق 10: أربع = 40\nالمجموع: 300 نجمة\nأُغلق الصندوق وخُتم بالشريط رقم 4417 | انتهى 20:22\nالموقّعان: س. الورّاق، ر. النجّار",
+      "acquired_by_action_ids": [
+        "d1_slip"
+      ],
+      "supports_fact_ids": [
+        "f_fri_count"
+      ],
+      "reliability": "strong",
+      "limits_ar": "تثبت حال الصندوق عند الإغلاق يوم الجمعة فقط، ولا تقول شيئاً عمّا جرى بعدها.",
+      "location_id": "loc_office",
+      "contradicts_claim_ids": [
+        "cl_anon"
+      ]
+    },
+    {
+      "id": "ev_mon",
+      "title_ar": "محضر فتح الصندوق صباح الاثنين",
+      "kind": "documentary",
+      "content_ar": "محضر فتح — الاثنين 08:00\nرقم الشريط على الصندوق عند الفتح: 4420 (سليم، لم يُقطع)\nأوراق 50: اثنتان = 100\nأوراق 20: اثنتان = 40\nأوراق 10: أربع = 40\nالمجموع: 180 نجمة\nحضر الفتح: رئيسة المجلس، أمين الصندوق، منسقة المتطوعين.",
+      "acquired_by_action_ids": [
+        "d1_mon"
+      ],
+      "supports_fact_ids": [
+        "f_mon_found"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يبيّن حال الصندوق صباح الاثنين، ولا يحدد متى فُتح ولا من فتحه.",
+      "location_id": "loc_office"
+    },
+    {
+      "id": "ev_keys",
+      "title_ar": "سجل مفاتيح صندوق الأمانة",
+      "kind": "documentary",
+      "content_ar": "سجل المفاتيح — صندوق الأمانة\nمفتاح 1: أمين الصندوق س. الورّاق (استلم وتوقّع)\nمفتاح 2: منسقة المتطوعين ر. النجّار (استلمت وتوقّعت)\nمفاتيح الأبواب العامة: الحارس ج. العطّار\nبلاغات فقدان أو نسخ: لا يوجد",
+      "acquired_by_action_ids": [
+        "d1_keys"
+      ],
+      "supports_fact_ids": [
+        "f_two_keys"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يسجل من استلم المفاتيح عند الإصدار، ولا يضمن أنهما بقيا في يدي صاحبيهما طوال الوقت.",
+      "location_id": "loc_office",
+      "contradicts_claim_ids": [
+        "cl_caretaker_all_keys"
+      ]
+    },
+    {
+      "id": "ev_anon",
+      "title_ar": "ورقة صندوق الاقتراحات",
+      "kind": "testimonial",
+      "content_ar": "ورقة مطوية بلا توقيع وجدت الاثنين في صندوق الاقتراحات:\n«اسألوا من يعدّ الصندوق وحده كل أسبوع.»",
+      "acquired_by_action_ids": [
+        "d1_box"
+      ],
+      "supports_fact_ids": [
+        "f_anon_note"
+      ],
+      "reliability": "weak",
+      "limits_ar": "كاتبها مجهول ولا تذكر واقعة ولا زمناً، فهي رأي لا يصلح سنداً لحكم.",
+      "location_id": "loc_hall",
+      "is_red_herring": true
+    },
+    {
+      "id": "ev_delivery",
+      "title_ar": "إيصال تسلّم رولون الأشرطة",
+      "kind": "documentary",
+      "content_ar": "إيصال تسلّم — مستلزمات المجلس\nالسبت 17:50 | الباب الخلفي\nالصنف: رولون أشرطة ختم، الأرقام من 4418\nالمستلم: ج. العطّار\nالرولون السابق انتهى بالرقم 4417.",
+      "acquired_by_action_ids": [
+        "d2_delivery"
+      ],
+      "supports_fact_ids": [
+        "f_new_roll"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يحدد وصول الرولون فقط، ولا يقول من استعمله بعد ذلك.",
+      "location_id": "loc_hall"
+    },
+    {
+      "id": "ev_alarm",
+      "title_ar": "سجل إنذار القاعة",
+      "kind": "digital",
+      "content_ar": "سجل نظام الإنذار — السبت والأحد والاثنين\nالسبت 22:35: تفعيل (ج. العطّار)\nالسبت 22:35 إلى الاثنين 07:28: لا أحداث دخول\nالاثنين 07:28: تعطيل (ج. العطّار)",
+      "acquired_by_action_ids": [
+        "d2_alarm"
+      ],
+      "supports_fact_ids": [
+        "f_alarm"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يغطي المبنى وحده، ولا يرصد ما جرى في الساحة أو خارج الأبواب.",
+      "location_id": "loc_hall"
+    },
+    {
+      "id": "ev_receipts",
+      "title_ar": "كشف إيصالات البوابة",
+      "kind": "documentary",
+      "content_ar": "كشف إيصالات بوابة الفوانيس — السبت\nأول إيصال 17:20 | آخر إيصال 22:45\nختم الوقت آلي على كل إيصال، والإيصالات متتابعة الأرقام.\nأطول فاصل بين إيصالين: 5 دقائق.\nالقاطع: س. الورّاق.\nملاحظة من خريطة الفعالية: من البوابة إلى باب المكتب 4 دقائق مشياً.",
+      "acquired_by_action_ids": [
+        "d2_receipts"
+      ],
+      "supports_fact_ids": [
+        "f_gate_run"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يثبت وجود أمين الصندوق عند البوابة في ساعات الإيصالات، ولا يتكلم عن غيره ولا عن بقية الساعات.",
+      "location_id": "loc_gate",
+      "contradicts_claim_ids": [
+        "cl_anon"
+      ]
+    },
+    {
+      "id": "ev_tag",
+      "title_ar": "سجل بطاقات باب المكتب",
+      "kind": "digital",
+      "content_ar": "سجل قارئ البطاقات — باب المكتب، من الجمعة 20:22 إلى الاثنين 08:00\nالسبت 16:05–16:12: ج. العطّار\nالسبت 18:05–18:09: ج. العطّار\nالسبت 19:12–19:41: ر. النجّار\nالسبت 22:28–22:35: ج. العطّار\nلا دخول آخر. بطاقة س. الورّاق لم تُسجَّل.\nالباب لا يُفتح إلا بالبطاقة.",
+      "acquired_by_action_ids": [
+        "d2_tag"
+      ],
+      "supports_fact_ids": [
+        "f_tag_log"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يسجل بطاقات لا أشخاصاً، فلا يمنع أن تُعار بطاقة؛ كما لا يدل على ما فُعل داخل المكتب.",
+      "location_id": "loc_office",
+      "contradicts_claim_ids": [
+        "cl_rima_field"
+      ]
+    },
+    {
+      "id": "ev_bin",
+      "title_ar": "محتويات سلة المكتب وتعليمات الختم",
+      "kind": "physical",
+      "content_ar": "في سلة المكتب صباح الاثنين: شريطان تالفان ملتصقان بغلافهما، رقماهما 4418 و4419.\nورقة تعليمات مثبتة على الدرج:\n«أشرطة الرولون تُستعمل لختم صندوق الأمانة وحده.\nالعدّ المزدوج ثم الختم لا يقل عن 15 دقيقة.»",
+      "acquired_by_action_ids": [
+        "d2_bin"
+      ],
+      "supports_fact_ids": [
+        "f_bin"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "تدل على محاولتي ختم بعد الجمعة، ولا تحدد من حاول ولا متى.",
+      "location_id": "loc_office"
+    },
+    {
+      "id": "ev_lana",
+      "title_ar": "إفادة لانا عن مساء السبت",
+      "kind": "testimonial",
+      "content_ar": "ما دوّنته لجنة الإنصاف من كلام لانا السقّا:\nكنت على مكتب الاستعلامات في الممر. رأيت ريما تخرج من ممر المكتب قرابة السابعة والنصف إلى الثامنة إلا ثلثاً، وتضع ظرفاً سميكاً في حقيبتها.",
+      "acquired_by_action_ids": [
+        "d3_note_lana"
+      ],
+      "supports_fact_ids": [
+        "f_lana_saw"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "شهادة شفوية عن زمن تقريبي ولم ترَ لانا ما في الظرف، فتُقدَّر بالسجلات المكتوبة.",
+      "location_id": "loc_hall",
+      "contradicts_claim_ids": [
+        "cl_rima_field"
+      ]
+    },
+    {
+      "id": "ev_invoice",
+      "title_ar": "فاتورة مطبعة الزاوية",
+      "kind": "documentary",
+      "content_ar": "مطبعة الزاوية — فاتورة لافتات الفوانيس\nالمبلغ: 120 نجمة | مدفوع نقداً\nالسبت 20:15\nالفئات المقبوضة: 50 × 2، و20 × 1\nالدافع المدوَّن: ر. النجّار — متطوعو الفوانيس",
+      "acquired_by_action_ids": [
+        "d3_invoice"
+      ],
+      "supports_fact_ids": [
+        "f_banner_paid"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "تبيّن أن مبلغاً وفئاته دُفعت، ولا تبيّن مصدر النقود ولا إذن من دفعها.",
+      "location_id": "loc_shop"
+    },
+    {
+      "id": "ev_rima_stmt",
+      "title_ar": "إفادة ريما عن مساء السبت",
+      "kind": "testimonial",
+      "content_ar": "ما دوّنته لجنة الإنصاف من كلام ريما النجّار:\n«بقيت في ساحة الفوانيس مع المتطوعين طوال المساء ولم أدخل المكتب. وجابر يملك مفتاح كل شيء في القاعة.»",
+      "acquired_by_action_ids": [
+        "d1_note_rima"
+      ],
+      "supports_fact_ids": [
+        "f_rima_said_field"
+      ],
+      "reliability": "weak",
+      "limits_ar": "إفادة صاحبها نفسه ولا تتأيد وحدها بسجل، فتُعدّ قولاً يُقابَل بالسجلات.",
+      "location_id": "loc_hall"
+    }
+  ],
+  "evidence_graph": {
+    "inferences": [
+      {
+        "id": "i_reopen_a",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_slip"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_mon"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_reopened"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "القسيمة تسجل ختم الجمعة بالشريط 4417 والمحضر يسجل شريطاً آخر هو 4420 صباح الاثنين، فالشريط تغيّر، ولا يتغير إلا بفتح الصندوق وإعادة ختمه. ونقص 120 نجمة بين العدّين.",
+        "skill_ko_refs": [
+          "KO-RS-06-001"
+        ]
+      },
+      {
+        "id": "i_reopen_b",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_bin"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_reopened"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "الشريطان التالفان رقماهما 4418 و4419 أي بعد رقم الجمعة، والتعليمات تحصر الأشرطة بختم الصندوق، فقد جرت محاولتا ختم بعد عدّ الجمعة.",
+        "skill_ko_refs": [
+          "KO-RS-06-001"
+        ]
+      },
+      {
+        "id": "i_window_a",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_reopened"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_delivery"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_alarm"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_window"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "الأشرطة الجديدة تبدأ برقم 4418 ووصلت السبت 17:50، فلا تُستعمل قبل ذلك. والإنذار مفعّل من 22:35 إلى الاثنين بلا دخول. فإعادة الختم وقعت بين 17:50 و22:35 مساء السبت.",
+        "skill_ko_refs": [
+          "KO-RS-05-005"
+        ]
+      },
+      {
+        "id": "i_treasurer_out",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_window"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_receipts"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_slip"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_salim_away_impossible"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "أمين الصندوق قطع إيصالات متتابعة لا يزيد الفاصل بينها على 5 دقائق في كل المدة. والطريق إلى المكتب 4 دقائق ذهاباً ومثلها إياباً، والعدّ والختم استغرقا الجمعة 17 دقيقة. فلا يتسع فاصل الإيصالات لهذه الرحلة.",
+        "skill_ko_refs": [
+          "KO-RS-05-005"
+        ]
+      },
+      {
+        "id": "i_keys_a",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_keys"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_window"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_salim_away_impossible"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_rima_reopened_box"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "الصندوق لا يُفتح إلا بأحد مفتاحين، مع الأمين ومع المنسقة. والأمين استُبعد من مدة الفتح بسجل إيصالاته، فلم يبقَ إلا المنسقة. ويفترض ذلك أن المفتاحين لم يُعارا.",
+        "skill_ko_refs": [
+          "KO-RS-05-003"
+        ]
+      },
+      {
+        "id": "i_coord_b",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_reopened"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_bin"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_tag"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_lana"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_rima_reopened_box"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "العدّ والختم يحتاجان 15 دقيقة على الأقل بحسب التعليمات. بطاقة ريما بقيت في المكتب 29 دقيقة، أما دخولا الحارس فأربع دقائق وست، ولم تُسجَّل بطاقة الأمين. وقد رأتها لانا تخرج من الممر قرابة 19:40 بظرف سميك.",
+        "skill_ko_refs": [
+          "KO-RS-05-004"
+        ]
+      },
+      {
+        "id": "i_h_error_out",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_slip"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_mon"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_error"
+        },
+        "relation": "refutes",
+        "strength": "strong",
+        "rule_ar": "العدّ كان بتوقيعين وأرقام مفصّلة، ولو كان الخطأ في العدّ وحده لبقي رقم الشريط كما هو. لكن الرقم تغيّر.",
+        "skill_ko_refs": [
+          "KO-RS-06-001"
+        ]
+      },
+      {
+        "id": "i_h_treasurer_out",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_salim_away_impossible"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_treasurer"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "ما دام الأمين لا يستطيع ترك البوابة إلى المكتب ثم الرجوع ضمن فواصل إيصالاته، فلا يصلح أن يكون فاتح الصندوق في تلك المدة.",
+        "skill_ko_refs": [
+          "KO-RS-05-003"
+        ]
+      },
+      {
+        "id": "i_h_caretaker_out",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_keys"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_tag"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_caretaker"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "الحارس لا يملك مفتاح الصندوق بحسب السجل، ودخولاه إلى المكتب أقصر من 15 دقيقة اللازمة للعدّ والختم.",
+        "skill_ko_refs": [
+          "KO-RS-05-003"
+        ]
+      },
+      {
+        "id": "i_h_coord",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_rima_reopened_box"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_invoice"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_coord"
+        },
+        "relation": "supports",
+        "strength": "suggestive",
+        "rule_ar": "المبلغ المدفوع للمطبعة 120 نجمة وفئاته ورقتان من 50 وورقة من 20، وهو مقدار النقص وفئاته بين عدّي الجمعة والاثنين، وقد دُفع بعد خروجها من المكتب بنحو نصف ساعة. وهذا يؤيد الاستنتاج ولا يغني عنه.",
+        "skill_ko_refs": [
+          "KO-RS-06-001"
+        ]
+      },
+      {
+        "id": "i_anon_claim",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_slip"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_anon"
+        },
+        "relation": "contradicts_claim",
+        "strength": "strong",
+        "rule_ar": "القسيمة تحمل توقيعين اثنين، فالعدّ لم يكن منفرداً كما تقول الورقة.",
+        "skill_ko_refs": [
+          "KO-RS-05-001"
+        ]
+      },
+      {
+        "id": "i_rima_claim",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_tag"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_lana"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_rima_field"
+        },
+        "relation": "contradicts_claim",
+        "strength": "strong",
+        "rule_ar": "السجل يثبت دخول بطاقتها المكتب 29 دقيقة، وشاهدة رأتها تخرج من الممر؛ فقولها إنها لم تدخل لا يوافق السجل.",
+        "skill_ko_refs": [
+          "KO-RS-05-014"
+        ]
+      },
+      {
+        "id": "i_caretaker_claim",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_keys"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_caretaker_all_keys"
+        },
+        "relation": "contradicts_claim",
+        "strength": "strong",
+        "rule_ar": "السجل يعطي الحارس مفاتيح الأبواب العامة فقط، وليس فيه مفتاح الصندوق.",
+        "skill_ko_refs": [
+          "KO-RS-05-014"
+        ]
+      }
+    ]
+  },
+  "character_knowledge": [
+    {
+      "character_id": "salim",
+      "knows": [
+        {
+          "fact_id": "f_fri_count",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_gate_run",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_two_keys",
+          "access": "professional",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    },
+    {
+      "character_id": "rima",
+      "knows": [
+        {
+          "fact_id": "f_fri_count",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_two_keys",
+          "access": "professional",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_rima_said_field",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [
+        {
+          "fact_id": "f_rima_in_office",
+          "reveal_when": {
+            "presented": {
+              "evidence_id": "ev_tag",
+              "to_character": "rima"
+            }
+          },
+          "cover_claim_id": "cl_rima_field",
+          "reveal_line_id": "rm_office"
+        },
+        {
+          "fact_id": "f_banner_paid",
+          "reveal_when": {
+            "presented": {
+              "evidence_id": "ev_invoice",
+              "to_character": "rima"
+            }
+          },
+          "cover_claim_id": "cl_rima_field",
+          "reveal_line_id": "rm_admit"
+        },
+        {
+          "fact_id": "f_rima_reopened_box",
+          "reveal_when": {
+            "all": [
+              {
+                "presented": {
+                  "evidence_id": "ev_tag",
+                  "to_character": "rima"
+                }
+              },
+              {
+                "presented": {
+                  "evidence_id": "ev_invoice",
+                  "to_character": "rima"
+                }
+              }
+            ]
+          },
+          "cover_claim_id": "cl_rima_field",
+          "reveal_line_id": "rm_admit"
+        }
+      ],
+      "believes": [
+        {
+          "claim_id": "cl_rima_field",
+          "stance": "deliberate_lie"
+        },
+        {
+          "claim_id": "cl_caretaker_all_keys",
+          "stance": "deliberate_lie"
+        }
+      ]
+    },
+    {
+      "character_id": "jaber",
+      "knows": [
+        {
+          "fact_id": "f_new_roll",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_alarm",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_two_keys",
+          "access": "professional",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    },
+    {
+      "character_id": "lana",
+      "knows": [],
+      "hides": [
+        {
+          "fact_id": "f_lana_saw",
+          "reveal_when": {
+            "trust_at_least": {
+              "character_id": "lana",
+              "level": 1
+            }
+          },
+          "cover_claim_id": null,
+          "reveal_line_id": "ln_saw"
+        }
+      ],
+      "believes": [
+        {
+          "claim_id": "cl_anon",
+          "stance": "sincere"
+        }
+      ]
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "h_error",
+      "statement_ar": "لم يُفتح الصندوق بعد الجمعة، والفرق ناتج عن خطأ في أحد العدّين.",
+      "is_true": false,
+      "plausibility_at_start": "medium"
+    },
+    {
+      "id": "h_treasurer",
+      "statement_ar": "أمين الصندوق أخذ المال بعد عدّ الجمعة.",
+      "is_true": false,
+      "plausibility_at_start": "high",
+      "suspect_id": "salim"
+    },
+    {
+      "id": "h_caretaker",
+      "statement_ar": "حارس القاعة فتح الصندوق لأن المفاتيح العامة في يده.",
+      "is_true": false,
+      "plausibility_at_start": "medium",
+      "suspect_id": "jaber"
+    },
+    {
+      "id": "h_coord",
+      "statement_ar": "منسقة المتطوعين فتحت الصندوق مساء السبت وأخذت المبلغ دون إذن.",
+      "is_true": true,
+      "plausibility_at_start": "low",
+      "suspect_id": "rima"
+    }
+  ],
+  "misdirection_plan": [
+    {
+      "id": "rh_anon",
+      "points_to_hypothesis_id": "h_treasurer",
+      "planted_via_ar": "ورقة بلا توقيع في صندوق الاقتراحات تلمّح إلى أن الأمين يعدّ وحده، وإشاعة بين المتطوعين.",
+      "evidence_ids": [
+        "ev_anon"
+      ],
+      "refuted_by_inference_ids": [
+        "i_anon_claim",
+        "i_h_treasurer_out"
+      ],
+      "fairness_note_ar": "قسيمة الجمعة وكشف إيصالات البوابة متاحان بالطلبات العادية، وفيهما توقيعان وفواصل زمنية تردّ على الورقة."
+    },
+    {
+      "id": "rh_master",
+      "points_to_hypothesis_id": "h_caretaker",
+      "planted_via_ar": "جملة تقولها المنسقة إن الحارس يملك مفتاح كل شيء، وهو فعلاً يحمل مفاتيح الأبواب العامة.",
+      "evidence_ids": [
+        "ev_rima_stmt"
+      ],
+      "refuted_by_inference_ids": [
+        "i_caretaker_claim",
+        "i_h_caretaker_out"
+      ],
+      "fairness_note_ar": "سجل المفاتيح متاح في اليوم الأول ويبيّن حدود ما في يد الحارس، وسجل البطاقات يبيّن قصر دخولاته."
+    }
+  ],
+  "learning_objectives": [
+    {
+      "id": "lo_claim",
+      "statement_ar": "يميّز بين السجل المكتوب والقول أو الإشاعة، ويصنّف مصدر كل ورقة.",
+      "skill_ko_ref": "KO-RS-05-001",
+      "observable_behaviors_ar": [
+        "يصنّف السجلات والإفادات",
+        "يقابل الإفادة بالسجل"
+      ],
+      "evidence_sources": [
+        "evidence_board"
+      ]
+    },
+    {
+      "id": "lo_timeline",
+      "statement_ar": "يرتّب الأحداث في زمنها ليعرف من كان قادراً على الفعل في كل مدة.",
+      "skill_ko_ref": "KO-RS-05-005",
+      "observable_behaviors_ar": [
+        "يضع السجلات في أزمنتها",
+        "يحسب الفواصل والمسافات"
+      ],
+      "evidence_sources": [
+        "timeline_task",
+        "action_log"
+      ]
+    },
+    {
+      "id": "lo_test",
+      "statement_ar": "يختار طلبات تميّز بين الفرضيات بدل طلبات تتهم شخصاً بعينه، ضمن ميزانية الأيام الثلاثة.",
+      "skill_ko_ref": "KO-RS-05-003",
+      "observable_behaviors_ar": [
+        "يبدأ بسجلات تفرّق بين المشتبهين",
+        "يتجنب طلباً لا يغيّر الترجيح"
+      ],
+      "evidence_sources": [
+        "action_log",
+        "hypothesis_ledger"
+      ]
+    },
+    {
+      "id": "lo_diag",
+      "statement_ar": "يقدّر كم يفيد كل دليل في التمييز بين الفرضيات.",
+      "skill_ko_ref": "KO-RS-06-001",
+      "observable_behaviors_ar": [
+        "يربط كل دليل بفرضية بالاتجاه الصحيح",
+        "يفرّق بين دليل يضيّق الدائرة ودليل يؤيد فقط"
+      ],
+      "evidence_sources": [
+        "evidence_board",
+        "hypothesis_ledger"
+      ]
+    },
+    {
+      "id": "lo_log",
+      "statement_ar": "يسجّل قراره وأسبابه ويراجعه عند ظهور دليل جديد.",
+      "skill_ko_ref": "KO-RS-05-012",
+      "observable_behaviors_ar": [
+        "يغيّر ترجيحه عند دليل مخالف",
+        "يوثّق سبب التغيير"
+      ],
+      "evidence_sources": [
+        "hypothesis_ledger",
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_calib",
+      "statement_ar": "يعبّر عن حدود الاستنتاج ومقدار ثقته.",
+      "skill_ko_ref": "KO-RS-05-010",
+      "observable_behaviors_ar": [
+        "يذكر افتراض عدم إعارة المفاتيح",
+        "لا يجعل الإفادة أو المطابقة وحدها حاسمة"
+      ],
+      "evidence_sources": [
+        "final_justification"
+      ]
+    }
+  ],
+  "mechanics": {
+    "time_budget_units": 9,
+    "actions": [
+      {
+        "id": "d1_slip",
+        "type": "examine",
+        "label_ar": "اليوم الأول: افتح قسيمة عدّ الجمعة",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_slip"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "D1_SLIP",
+        "target_id": "loc_office"
+      },
+      {
+        "id": "d1_mon",
+        "type": "examine",
+        "label_ar": "اليوم الأول: اقرأ محضر فتح الصندوق صباح الاثنين",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_mon"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "D1_MON",
+        "target_id": "loc_office"
+      },
+      {
+        "id": "d1_keys",
+        "type": "search_location",
+        "label_ar": "اليوم الأول: اطلب سجل مفاتيح الصندوق",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_keys"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "D1_KEYS",
+        "target_id": "loc_office"
+      },
+      {
+        "id": "d1_box",
+        "type": "search_location",
+        "label_ar": "اليوم الأول: افتح صندوق الاقتراحات",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_anon"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "D1_BOX",
+        "target_id": "loc_hall"
+      },
+      {
+        "id": "d1_int_salim",
+        "type": "interview",
+        "label_ar": "اليوم الأول: قابل سليماً أمين الصندوق",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "salim",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "D1_INT_SALIM",
+        "target_id": "salim"
+      },
+      {
+        "id": "d1_int_rima",
+        "type": "interview",
+        "label_ar": "اليوم الأول: قابل ريما منسقة المتطوعين",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "rima",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "D1_INT_RIMA",
+        "target_id": "rima"
+      },
+      {
+        "id": "d1_int_jaber",
+        "type": "interview",
+        "label_ar": "اليوم الأول: قابل جابراً حارس القاعة",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "jaber",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "D1_INT_JABER",
+        "target_id": "jaber"
+      },
+      {
+        "id": "d1_note_rima",
+        "type": "examine",
+        "label_ar": "اليوم الأول: دوّن إفادة ريما",
+        "precondition": {
+          "fact_unlocked": "f_rima_said_field"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_rima_stmt"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "D1_NOTE_RIMA",
+        "target_id": "rima"
+      },
+      {
+        "id": "d2_delivery",
+        "type": "search_location",
+        "label_ar": "اليوم الثاني: اطلب إيصال رولون الأشرطة",
+        "precondition": {
+          "has_evidence": "ev_mon"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_delivery"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "D2_DELIVERY",
+        "target_id": "loc_hall"
+      },
+      {
+        "id": "d2_alarm",
+        "type": "search_location",
+        "label_ar": "اليوم الثاني: اطلب سجل إنذار القاعة",
+        "precondition": {
+          "has_evidence": "ev_mon"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_alarm"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "D2_ALARM",
+        "target_id": "loc_hall"
+      },
+      {
+        "id": "d2_receipts",
+        "type": "search_location",
+        "label_ar": "اليوم الثاني: اطلب كشف إيصالات البوابة",
+        "precondition": {
+          "has_evidence": "ev_keys"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_receipts"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "D2_RECEIPTS",
+        "target_id": "loc_gate"
+      },
+      {
+        "id": "d2_tag",
+        "type": "search_location",
+        "label_ar": "اليوم الثاني: اطلب سجل بطاقات باب المكتب",
+        "precondition": {
+          "has_evidence": "ev_mon"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_tag"
+          },
+          {
+            "op": "lower_trust",
+            "ref_id": "rima",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "D2_TAG",
+        "target_id": "loc_office"
+      },
+      {
+        "id": "d2_bin",
+        "type": "search_location",
+        "label_ar": "اليوم الثاني: افحص سلة المكتب وورقة التعليمات",
+        "precondition": {
+          "has_evidence": "ev_mon"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_bin"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "D2_BIN",
+        "target_id": "loc_office"
+      },
+      {
+        "id": "d3_int_lana",
+        "type": "interview",
+        "label_ar": "اليوم الثالث: قابل لانا على مكتب الاستعلامات",
+        "precondition": {
+          "has_evidence": "ev_tag"
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "lana",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "D3_INT_LANA",
+        "target_id": "lana"
+      },
+      {
+        "id": "d3_note_lana",
+        "type": "examine",
+        "label_ar": "اليوم الثالث: دوّن إفادة لانا",
+        "precondition": {
+          "fact_unlocked": "f_lana_saw"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_lana"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "D3_NOTE_LANA",
+        "target_id": "lana"
+      },
+      {
+        "id": "d3_invoice",
+        "type": "search_location",
+        "label_ar": "اليوم الثالث: اطلب فاتورة مطبعة الزاوية",
+        "precondition": {
+          "has_evidence": "ev_tag"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_invoice"
+          },
+          {
+            "op": "lower_trust",
+            "ref_id": "rima",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "D3_INVOICE",
+        "target_id": "loc_shop"
+      },
+      {
+        "id": "p_tag_rima",
+        "type": "present_evidence",
+        "label_ar": "اعرض سجل البطاقات على ريما",
+        "precondition": {
+          "presented": {
+            "evidence_id": "ev_tag",
+            "to_character": "rima"
+          }
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "PRESENTED_TAG"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "P_TAG_RIMA",
+        "target_id": "rima"
+      },
+      {
+        "id": "p_invoice_rima",
+        "type": "present_evidence",
+        "label_ar": "اعرض فاتورة المطبعة على ريما",
+        "precondition": {
+          "presented": {
+            "evidence_id": "ev_invoice",
+            "to_character": "rima"
+          }
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "PRESENTED_INVOICE"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "P_INVOICE_RIMA",
+        "target_id": "rima"
+      },
+      {
+        "id": "a_hint",
+        "type": "request_hint",
+        "label_ar": "اطلب تلميحاً",
+        "precondition": {
+          "always": true
+        },
+        "effects": [],
+        "time_cost_units": 0,
+        "telemetry_code": "REQUEST_HINT"
+      },
+      {
+        "id": "a_accuse",
+        "type": "final_accusation",
+        "label_ar": "قدّم الاستنتاج النهائي",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "SUBMIT"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "FINAL_ACCUSATION"
+      },
+      {
+        "id": "ask_salim_f_gate_run",
+        "type": "interview",
+        "label_ar": "اسأل سليماً عن مساء السبت",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_gate_run"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "ASK_SALIM_F_GATE_RUN",
+        "target_id": "salim"
+      },
+      {
+        "id": "ask_salim_f_two_keys",
+        "type": "interview",
+        "label_ar": "اسأل سليماً عن مفاتيح الصندوق",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_two_keys"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "ASK_SALIM_F_TWO_KEYS",
+        "target_id": "salim"
+      },
+      {
+        "id": "ask_rima_f_said_field",
+        "type": "interview",
+        "label_ar": "اسأل ريما أين كانت مساء السبت",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_rima_said_field"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "ASK_RIMA_F_SAID_FIELD",
+        "target_id": "rima"
+      },
+      {
+        "id": "ask_rima_f_in_office",
+        "type": "interview",
+        "label_ar": "اسأل ريما عن دخولها المكتب",
+        "precondition": {
+          "presented": {
+            "evidence_id": "ev_tag",
+            "to_character": "rima"
+          }
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_rima_in_office"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "ASK_RIMA_F_IN_OFFICE",
+        "target_id": "rima"
+      },
+      {
+        "id": "ask_rima_f_banner_paid",
+        "type": "interview",
+        "label_ar": "اسأل ريما عن دفعة المطبعة",
+        "precondition": {
+          "presented": {
+            "evidence_id": "ev_invoice",
+            "to_character": "rima"
+          }
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_banner_paid"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "ASK_RIMA_F_BANNER_PAID",
+        "target_id": "rima"
+      },
+      {
+        "id": "ask_jaber_f_new_roll",
+        "type": "interview",
+        "label_ar": "اسأل جابراً عن رولون الأشرطة",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_new_roll"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "ASK_JABER_F_NEW_ROLL",
+        "target_id": "jaber"
+      },
+      {
+        "id": "ask_jaber_f_alarm",
+        "type": "interview",
+        "label_ar": "اسأل جابراً عن إغلاق القاعة",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_alarm"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "ASK_JABER_F_ALARM",
+        "target_id": "jaber"
+      },
+      {
+        "id": "ask_jaber_f_two_keys",
+        "type": "interview",
+        "label_ar": "اسأل جابراً عن مفاتيحه",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_two_keys"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "ASK_JABER_F_TWO_KEYS",
+        "target_id": "jaber"
+      },
+      {
+        "id": "ask_lana_f_saw",
+        "type": "interview",
+        "label_ar": "اسأل لانا عمّا رأته في الممر",
+        "precondition": {
+          "trust_at_least": {
+            "character_id": "lana",
+            "level": 1
+          }
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_lana_saw"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "ASK_LANA_F_SAW",
+        "target_id": "lana"
+      }
+    ]
+  },
+  "state_machine": {
+    "id": "c033",
+    "initial": "briefing",
+    "type": "compound",
+    "states": {
+      "briefing": {
+        "description_ar": "الإحاطة",
+        "type": "atomic",
+        "on": {
+          "START": {
+            "target": "investigating"
+          }
+        }
+      },
+      "investigating": {
+        "description_ar": "التحقيق",
+        "type": "compound",
+        "initial": "gathering",
+        "states": {
+          "gathering": {
+            "type": "atomic",
+            "on": {
+              "OPEN_DEDUCTION": {
+                "target": "deducing"
+              }
+            }
+          },
+          "deducing": {
+            "type": "atomic",
+            "on": {
+              "BACK": {
+                "target": "gathering"
+              }
+            }
+          }
+        },
+        "on": {
+          "SUBMIT": {
+            "target": "review"
+          }
+        }
+      },
+      "review": {
+        "description_ar": "مراجعة",
+        "type": "atomic",
+        "on": {
+          "CLOSE": {
+            "target": "resolved"
+          }
+        }
+      },
+      "resolved": {
+        "description_ar": "إغلاق",
+        "type": "final"
+      }
+    }
+  },
+  "dialogue": {
+    "max_turns_per_interview": 10,
+    "llm_enabled": false,
+    "topics": [
+      {
+        "id": "t_gate",
+        "label_ar": "مساء السبت عند البوابة",
+        "example_questions_ar": [
+          "أين كنت مساء السبت؟",
+          "كيف تثبت وجودك عند البوابة؟"
+        ],
+        "fact_ids": [
+          "f_gate_run",
+          "f_rima_said_field"
+        ],
+        "claim_ids": [
+          "cl_rima_field"
+        ]
+      },
+      {
+        "id": "t_keys",
+        "label_ar": "المفاتيح والصندوق",
+        "example_questions_ar": [
+          "من يملك مفتاح الصندوق؟",
+          "هل يستطيع الحارس فتحه؟"
+        ],
+        "fact_ids": [
+          "f_two_keys"
+        ],
+        "claim_ids": [
+          "cl_caretaker_all_keys"
+        ]
+      },
+      {
+        "id": "t_hall",
+        "label_ar": "إغلاق القاعة والأشرطة",
+        "example_questions_ar": [
+          "متى وصلت الأشرطة؟",
+          "متى فُعّل الإنذار؟"
+        ],
+        "fact_ids": [
+          "f_new_roll",
+          "f_alarm"
+        ]
+      },
+      {
+        "id": "t_office",
+        "label_ar": "المكتب والمطبعة",
+        "example_questions_ar": [
+          "هل دخلت المكتب؟",
+          "هل دفعت لأحد مبلغاً مساء السبت؟"
+        ],
+        "fact_ids": [
+          "f_rima_in_office",
+          "f_banner_paid",
+          "f_rima_reopened_box"
+        ]
+      },
+      {
+        "id": "t_corridor",
+        "label_ar": "ما جرى في الممر",
+        "example_questions_ar": [
+          "ماذا رأيت قرب المكتب؟"
+        ],
+        "fact_ids": [
+          "f_lana_saw"
+        ],
+        "claim_ids": [
+          "cl_anon"
+        ]
+      }
+    ]
+  },
+  "rubric": {
+    "reference_answer_ar": "الذي يثبته الملف أن صندوق الأمانة فُتح وأُعيد ختمه بعد عدّ الجمعة، لأن رقم الشريط تغيّر من 4417 إلى 4420 وبقي في سلة المكتب شريطان تالفان بعد رقم الجمعة. جرى ذلك في مساء السبت، بعد وصول الأشرطة الجديدة وقبل تفعيل الإنذار. للصندوق مفتاحان فقط، وأمين الصندوق لم يغب عن بوابته بما يكفي للرحلة والعدّ والختم، والحارس لا يملك المفتاح ولا بقي في المكتب مدة كافية. وحدها منسقة المتطوعين دخلت المكتب نصف ساعة، وخرجت بظرف سميك، ودفعت للمطبعة بعد ذلك مبلغاً يطابق النقص وفئاته. ويبقى الاستنتاج مشروطاً بأن أحداً لم يُعر مفتاحه أو بطاقته، وأن سبب أخذها المبلغ لا يُغني عن قرار المجلس في المسألة.",
+    "criteria": [
+      {
+        "id": "c_source",
+        "name_ar": "تصنيف المصادر",
+        "objective_ids": [
+          "lo_claim"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يصنّف"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "أخطأ في الأغلب"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "نصف صحيح"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمه صحيح"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كله صحيح"
+          }
+        ]
+      },
+      {
+        "id": "c_conflict",
+        "name_ar": "ربط السجلات بأزمنتها",
+        "objective_ids": [
+          "lo_timeline"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يضع شيئاً"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "وضع قليلاً"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "وضع نصفها صحيحاً"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمها"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كلها في موضعها"
+          }
+        ]
+      },
+      {
+        "id": "c_links",
+        "name_ar": "ربط الأدلة بالفرضيات",
+        "objective_ids": [
+          "lo_diag"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.2,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لا روابط"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "قليلة"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "نصفها صحيح"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمها"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كلها دقيقة"
+          }
+        ]
+      },
+      {
+        "id": "c_uncertainty",
+        "name_ar": "معايرة الثقة",
+        "objective_ids": [
+          "lo_calib"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "ثقة مفرطة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "حدود قليلة"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "جزئية"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معقولة"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "معايَرة كاملة"
+          }
+        ]
+      },
+      {
+        "id": "c_revision",
+        "name_ar": "مراجعة الرأي وتسجيل القرار",
+        "objective_ids": [
+          "lo_log"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "بقي على فرضية مرفوضة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "لم يعلن فرضية"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "ثبت على فرضية سليمة"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "غيّر بدليل"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "غيّر بدليل ووثّق"
+          }
+        ]
+      },
+      {
+        "id": "c_elimination",
+        "name_ar": "استبعاد الفرضيات الخاطئة",
+        "objective_ids": [
+          "lo_test"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.2,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يستبعد"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "استبعد خطأً"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "فرضية بدليل"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "فرضيتين"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كل الخاطئة"
+          }
+        ]
+      },
+      {
+        "id": "c_justification",
+        "name_ar": "جودة الحجة المكتوبة",
+        "objective_ids": [
+          "lo_diag",
+          "lo_test"
+        ],
+        "scored_by": "human",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لا حجة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "ادعاء بلا سند"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "أدلة دون ربط"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "ربط الأدلة بالاستنتاج"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "ربط مع البدائل والحدود"
+          }
+        ]
+      }
+    ]
+  },
+  "hint_ladder": [
+    {
+      "id": "hg1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "ما الذي يتغير في الصندوق إذا فُتح، وما الذي لا يتغير إذا كان الخطأ في العدّ فقط؟",
+      "trigger": {
+        "always": true
+      },
+      "assessment_weight": 0.02
+    },
+    {
+      "id": "hg2",
+      "level": 2,
+      "kind": "focus_area",
+      "text_ar": "اسأل عن كل مشتبه به: هل كان يستطيع، وهل كان يملك الوقت، وهل يملك المفتاح؟",
+      "trigger": {
+        "has_evidence": "ev_mon"
+      },
+      "assessment_weight": 0.04
+    },
+    {
+      "id": "hg3",
+      "level": 3,
+      "kind": "pointer",
+      "text_ar": "قبل أن تستعمل طلباً جديداً، اختر السجل الذي يفرّق بين اثنين من المشتبه بهم لا الذي يؤيد من تظنه.",
+      "trigger": {
+        "has_evidence": "ev_keys"
+      },
+      "assessment_weight": 0.06
+    },
+    {
+      "id": "hk1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "هل أمين الصندوق في المكان نفسه طوال الوقت؟ وكيف تعرف ذلك من الأوراق لا من كلامه؟",
+      "trigger": {
+        "has_evidence": "ev_keys"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_keys_a"
+    },
+    {
+      "id": "hk2",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "قارن سجل المفاتيح بكشف الإيصالات وبالمسافة المذكورة عليه.",
+      "trigger": {
+        "has_evidence": "ev_receipts"
+      },
+      "assessment_weight": 0.05,
+      "targets_inference_id": "i_keys_a"
+    },
+    {
+      "id": "hk3",
+      "level": 3,
+      "kind": "partial_reveal",
+      "text_ar": "احسب زمن رحلة الذهاب والعودة بين البوابة والمكتب وأضفه إلى زمن العدّ والختم الجمعة، ثم قارنه بأطول فاصل بين إيصالين.",
+      "trigger": {
+        "all": [
+          {
+            "has_evidence": "ev_receipts"
+          },
+          {
+            "has_evidence": "ev_slip"
+          }
+        ]
+      },
+      "assessment_weight": 0.1,
+      "targets_inference_id": "i_keys_a"
+    },
+    {
+      "id": "hr1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "ما الذي يدل عليه رقمان مختلفان للشريط؟",
+      "trigger": {
+        "has_evidence": "ev_mon"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_reopen_a"
+    },
+    {
+      "id": "hr2",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "قارن رقم الشريط في قسيمة الجمعة برقمه في محضر الاثنين.",
+      "trigger": {
+        "has_evidence": "ev_mon"
+      },
+      "assessment_weight": 0.05,
+      "targets_inference_id": "i_reopen_a"
+    }
+  ],
+  "fairness_test": {
+    "requirements": {
+      "min_disjoint_proof_paths": 2,
+      "max_inference_depth": 3,
+      "all_red_herrings_refutable": true,
+      "culprit_uniquely_entailed": true,
+      "no_hidden_fact_dependency": true,
+      "max_required_actions": 9
+    },
+    "runs": []
+  },
+  "ending_explanation": {
+    "steps": [
+      {
+        "order": 1,
+        "text_ar": "رقم الشريط في القسيمة غير رقمه في محضر الاثنين، وبقي في السلة شريطان تالفان بعد رقم الجمعة؛ فالصندوق فُتح وأُغلق من جديد.",
+        "uses_evidence_ids": [
+          "ev_slip",
+          "ev_mon",
+          "ev_bin"
+        ],
+        "inference_id": "i_reopen_a"
+      },
+      {
+        "order": 2,
+        "text_ar": "الأشرطة الجديدة وصلت السبت 17:50 والإنذار فُعّل 22:35 بلا دخول بعده، فالمدة محصورة في مساء السبت.",
+        "uses_evidence_ids": [
+          "ev_delivery",
+          "ev_alarm"
+        ],
+        "inference_id": "i_window_a"
+      },
+      {
+        "order": 3,
+        "text_ar": "إيصالات البوابة المتتابعة مع زمن الطريق والعدّ تبعد الأمين عن المكتب في تلك المدة.",
+        "uses_evidence_ids": [
+          "ev_receipts",
+          "ev_slip"
+        ],
+        "inference_id": "i_treasurer_out"
+      },
+      {
+        "order": 4,
+        "text_ar": "لا يملك مفتاح الصندوق إلا الأمين والمنسقة، وبعد استبعاد الأمين تبقى المنسقة.",
+        "uses_evidence_ids": [
+          "ev_keys"
+        ],
+        "inference_id": "i_keys_a"
+      },
+      {
+        "order": 5,
+        "text_ar": "ومن طريق مستقل: بطاقة المنسقة وحدها بقيت في المكتب مدة تكفي، ورأتها لانا تخرج بظرف.",
+        "uses_evidence_ids": [
+          "ev_tag",
+          "ev_lana",
+          "ev_bin"
+        ],
+        "inference_id": "i_coord_b"
+      },
+      {
+        "order": 6,
+        "text_ar": "فاتورة المطبعة تطابق مبلغ النقص وفئاته وتؤيد الاستنتاج، دون أن تكون هي الدليل الحاسم.",
+        "uses_evidence_ids": [
+          "ev_invoice"
+        ],
+        "inference_id": "i_h_coord"
+      }
+    ],
+    "alternative_paths_ar": [
+      "مسار مستقل يبدأ من سلة المكتب وسجل البطاقات وإفادة لانا ولا يحتاج إلى سجل الإيصالات ولا إلى سجل الإنذار."
+    ],
+    "what_evidence_could_not_show_ar": [
+      "لا تثبت الأدلة أن المفتاح أو البطاقة لم يُعارا، فهذا افتراض معقول وليس مثبتاً.",
+      "لا تبيّن الأدلة نية ردّ المبلغ، ولا تقرر ما يجب أن يفعله المجلس بعد ذلك؛ فهذا قراره بعد سماع صاحبة الشأن."
+    ],
+    "science_notes_ar": [
+      "كل طلب يكلّف يوماً من الأيام الثلاثة، فيربح المحقق باختيار السجل الذي يفرّق بين مشتبهين اثنين لا بسجل يؤيد ظنّه.",
+      "الاستبعاد بالسجلات يقوّي الاستنتاج حين يأتي من طريقين مستقلين، ولا يكفي اعتراف أو إفادة وحدها."
+    ]
+  },
+  "expert_review": [
+    {
+      "role": "narrative_editor",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "scientific_reviewer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "learning_designer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "age_appropriateness",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "cultural_reviewer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "legal_rights",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "safety",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    }
+  ]
+}

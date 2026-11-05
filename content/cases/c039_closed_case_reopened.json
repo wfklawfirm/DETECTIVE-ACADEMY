@@ -1,0 +1,3314 @@
+{
+  "schema_version": "0.1.0",
+  "case_id": "c039_closed_case_reopened",
+  "case_version": "0.1.0",
+  "meta": {
+    "title_ar": "الاعتراف الذي أُغلق عليه الملف",
+    "title_en": "The File Closed on a Confession",
+    "age_band": "16-18",
+    "locale": "ar",
+    "dialogue_register": "msa",
+    "estimated_minutes": 40,
+    "difficulty": 3,
+    "content_flags": [
+      "no_violence",
+      "theft"
+    ],
+    "authors": [
+      "فريق أثر التحريري (مسودة بمساعدة الذكاء الاصطناعي، لم تُراجَع بشرياً بعد)"
+    ],
+    "knowledge_object_refs": [
+      "KO-RS-05-001",
+      "KO-RS-05-005",
+      "KO-RS-05-002",
+      "KO-RS-06-002",
+      "KO-RS-06-021",
+      "KO-RS-06-009"
+    ]
+  },
+  "premise": {
+    "hook_ar": "قبل سنتين أُغلق ملف اختفاء أسطرلاب المدرسة لأن طالباً اعترف مكتوباً، وبقيت أوراق الملف في الأرشيف. فهل يطابق الاعتراف ما تقوله السجلات؟",
+    "player_role_ar": "أنت عضو في نادي الأرشيف المدرسي، وتعدّ فصلاً عن تاريخ المدرسة، وسمحت لك الإدارة كتابةً بقراءة أوراق الملف المغلق وسجلاته فقط.",
+    "setting_ar": "ثانوية النخيل في مدينة وادي الريحان المتخيَّلة. تقرأ الأوراق في أرشيف المدرسة، وتحاور من يقبل الكلام طوعاً، ولا تفتح غير ما أذنت به الإدارة. الأسماء والأحداث كلها متخيَّلة، وتوقيت المدرسة هو توقيت كل السجلات.",
+    "public_fact_ids": [
+      "f_item_gone",
+      "f_confessed",
+      "f_closed"
+    ],
+    "assumed_general_knowledge_ar": [
+      "الاعتراف قول يحتاج إلى ما يؤيده",
+      "سجل الإنذار يسجل الحركة والأبواب ولا يعرف من تحرك",
+      "من وقّع على مفتاح لا يلزم أنه هو من فتح به"
+    ]
+  },
+  "entities": {
+    "characters": [
+      {
+        "id": "ayham",
+        "name_ar": "أيهم الدباغ",
+        "role": "suspect",
+        "age_descriptor_ar": "طالب في الصف الثاني عشر، كان في الحادي عشر وقت الحادثة",
+        "persona_ar": "هادئ ومتحفظ، يجيب بجمل قصيرة، ويتجنب النظر في الأوراق حين يُسأل عن تلك الليلة.",
+        "motives_ar": [
+          "ألا يُعاد فتح ما انتهى",
+          "ألا يتضرر أحد بسببه"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "ay_greet",
+            "purpose": "greeting",
+            "text_ar": "أهلاً. قلت ما عندي قبل سنتين، وهو مكتوب في الملف."
+          },
+          {
+            "line_id": "ay_out",
+            "purpose": "reveal",
+            "text_ar": "خرجت من المدرسة بعد البروفة بقليل، وسجلت خروجي عند البوابة قرابة الخامسة.",
+            "fact_ids": [
+              "f_ayham_out"
+            ]
+          },
+          {
+            "line_id": "ay_nine",
+            "purpose": "lie",
+            "text_ar": "دخلت القاعة نحو التاسعة مساءً من الباب الجانبي، ورأيت الأسطرلاب على حامله فأخذته.",
+            "claim_ids": [
+              "cl_ayham_9pm"
+            ]
+          },
+          {
+            "line_id": "ay_cover",
+            "purpose": "reveal",
+            "text_ar": "اتصلت بي جنى تلك الليلة وهي تبكي، وقالت إنها ستخسر منحتها الدراسية إن عُرف ما جرى. وحين قالت المعلمة إن المجلس سيفحص من أخذ المفتاح، كتبت اعترافي.",
+            "fact_ids": [
+              "f_ayham_covering",
+              "f_jana_called"
+            ]
+          },
+          {
+            "line_id": "ay_refuse",
+            "purpose": "refuse_secret",
+            "text_ar": "لا أريد أن أتكلم عن غيري."
+          },
+          {
+            "line_id": "ay_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف أكثر من ذلك."
+          },
+          {
+            "line_id": "ay_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عمّا فعلته يوم الثلاثاء."
+          },
+          {
+            "line_id": "ay_bye",
+            "purpose": "farewell",
+            "text_ar": "أرجو أن تقرأ الأوراق قبل أن تحكم."
+          }
+        ]
+      },
+      {
+        "id": "jana",
+        "name_ar": "جنى الرفاعي",
+        "role": "suspect",
+        "age_descriptor_ar": "طالبة في الصف الثاني عشر، كانت في العاشر وقت الحادثة",
+        "persona_ar": "مجتهدة ومهذبة، تتكلم بحذر، وتتوتر حين يُذكر المفتاح أو الحفل.",
+        "motives_ar": [
+          "أن تحافظ على منحتها ومكانتها",
+          "ألا يُعرف ما حدث في تلك الليلة"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "jn_greet",
+            "purpose": "greeting",
+            "text_ar": "أهلاً. تذكرت ذلك الحفل جيداً."
+          },
+          {
+            "line_id": "jn_key",
+            "purpose": "reveal",
+            "text_ar": "نعم، أخذت مفتاح الخزانة لأضع ظرف الجائزة على الحامل، ثم أعدته إلى الإدارة.",
+            "fact_ids": [
+              "f_key_lama"
+            ]
+          },
+          {
+            "line_id": "jn_last",
+            "purpose": "reveal",
+            "text_ar": "كنت من آخر من غادر المبنى بعد البروفة.",
+            "fact_ids": [
+              "f_jana_last"
+            ]
+          },
+          {
+            "line_id": "jn_loan",
+            "purpose": "reveal",
+            "text_ar": "طلبت إعارة الأسطرلاب قبل البروفة بأسبوعين لأنسخ نقوشه لمسابقة العلوم، فرُفض طلبي.",
+            "fact_ids": [
+              "f_loan_denied"
+            ]
+          },
+          {
+            "line_id": "jn_nothing",
+            "purpose": "lie",
+            "text_ar": "لم ألمس الأسطرلاب. وضعت الظرف وأغلقت الخزانة وخرجت.",
+            "claim_ids": [
+              "cl_jana_nothing"
+            ]
+          },
+          {
+            "line_id": "jn_took",
+            "purpose": "reveal",
+            "text_ar": "أخذته وأنا أضع الظرف. أردت أن أقيس نقوشه تلك الليلة وأعيده قبل الصباح، ثم انكسر محوره بين يدي. خفت، فكسرت الزجاج وتركت الباب الجانبي مفتوحاً ليظنوا أن غريباً دخل. لم أعرف كيف أعيده بعد ذلك.",
+            "fact_ids": [
+              "f_lama_took"
+            ]
+          },
+          {
+            "line_id": "jn_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أذكر أكثر من ذلك."
+          },
+          {
+            "line_id": "jn_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن البروفة والمفتاح."
+          },
+          {
+            "line_id": "jn_bye",
+            "purpose": "farewell",
+            "text_ar": "أرجو أن تنظر إلى الأوراق كلها."
+          }
+        ]
+      },
+      {
+        "id": "azmi",
+        "name_ar": "عزمي البيطار",
+        "role": "witness",
+        "age_descriptor_ar": "عامل الصيانة الليلي في المدرسة",
+        "persona_ar": "عملي وصريح، يعتمد على أوراق جولاته ويحكي ما رآه دون زيادة.",
+        "motives_ar": [
+          "أن يُفهم أنه لم يكن في المبنى وقت الحادثة",
+          "أن يبقى عمله سليماً"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "az_greet",
+            "purpose": "greeting",
+            "text_ar": "أهلاً. كل ما أعرفه مكتوب في ورقة الجولة."
+          },
+          {
+            "line_id": "az_late",
+            "purpose": "reveal",
+            "text_ar": "بدّلت مناوبتي ذلك اليوم، فلم أصل إلى المدرسة إلا قبل الثامنة بخمس دقائق، وشغّلت الإنذار بعدها.",
+            "fact_ids": [
+              "f_azmi_late",
+              "f_alarm_armed"
+            ]
+          },
+          {
+            "line_id": "az_found",
+            "purpose": "reveal",
+            "text_ar": "في الصباح فككت الإنذار ووجدت الباب الجانبي غير مقفل، وزجاج الخزانة مكسوراً أمامها، والحامل فارغاً.",
+            "fact_ids": [
+              "f_item_gone"
+            ]
+          },
+          {
+            "line_id": "az_memo",
+            "purpose": "reveal",
+            "text_ar": "نعم، أُنذرت العام الماضي لأنني صنعت نسخة من مفتاح الباب الجانبي، وسُحبت منذ ذلك اليوم.",
+            "fact_ids": [
+              "f_azmi_memo"
+            ]
+          },
+          {
+            "line_id": "az_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف ما جرى قبل أن أصل."
+          },
+          {
+            "line_id": "az_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن جولتي وعن الإنذار."
+          },
+          {
+            "line_id": "az_bye",
+            "purpose": "farewell",
+            "text_ar": "اقرأ ورقة الجولة وسجل الإنذار معاً."
+          }
+        ]
+      },
+      {
+        "id": "wafaa",
+        "name_ar": "الأستاذة وفاء المصري",
+        "role": "authority",
+        "age_descriptor_ar": "المعلمة المسؤولة عن حفل الجوائز وعضو مجلس الانضباط",
+        "persona_ar": "حازمة ومنظمة، تحرص على سمعة المدرسة، وتدافع عن قرارها لكنها تصغي إلى الأوراق.",
+        "motives_ar": [
+          "أن يُحترم قرار المجلس",
+          "ألا يظهر أن الملف أُغلق على عجل"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "wf_greet",
+            "purpose": "greeting",
+            "text_ar": "تفضّل. أغلقنا ذلك الملف بعد أن اعترف الطالب مكتوباً."
+          },
+          {
+            "line_id": "wf_closed",
+            "purpose": "reveal",
+            "text_ar": "قرر المجلس إغلاق الملف على الاعتراف وحده، ولم نطلب سجلات أخرى.",
+            "fact_ids": [
+              "f_closed",
+              "f_closure_flawed"
+            ]
+          },
+          {
+            "line_id": "wf_enough",
+            "purpose": "lie",
+            "text_ar": "كان الاعتراف يطابق كل ما نعرفه عن الحادثة، فلم نحتج إلى غيره.",
+            "claim_ids": [
+              "cl_wafaa_enough"
+            ]
+          },
+          {
+            "line_id": "wf_loan",
+            "purpose": "reveal",
+            "text_ar": "رفضت طلب إعارة الأسطرلاب قبل البروفة لأنه هش ويجب أن يبقى في الخزانة.",
+            "fact_ids": [
+              "f_loan_denied"
+            ]
+          },
+          {
+            "line_id": "wf_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أذكر تفاصيل أكثر."
+          },
+          {
+            "line_id": "wf_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن قرار المجلس وعن الحفل."
+          },
+          {
+            "line_id": "wf_bye",
+            "purpose": "farewell",
+            "text_ar": "إن كانت لديك سجلات جديدة فاعرضها على المجلس."
+          }
+        ]
+      },
+      {
+        "id": "mays",
+        "name_ar": "ميس الزعبي",
+        "role": "witness",
+        "age_descriptor_ar": "طالبة مصورة في نادي التصوير، صورت البروفة",
+        "persona_ar": "دقيقة ومرحة، تحب الأرقام على لقطاتها وتحتفظ بأوراق النادي مرتبة.",
+        "motives_ar": [
+          "أن تُقرأ صورها كما التُقطت",
+          "ألا يُحمَّل النادي ما لا يخصه"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "my_greet",
+            "purpose": "greeting",
+            "text_ar": "أهلاً. صور البروفة كلها محفوظة في أوراق النادي."
+          },
+          {
+            "line_id": "my_frames",
+            "purpose": "reveal",
+            "text_ar": "التقطت اللقطة 31 قرابة الخامسة إلا عشراً، واللقطة 58 بعد السابعة بربع ساعة، ولم أصور الخزانة بينهما.",
+            "fact_ids": [
+              "f_present_1650",
+              "f_empty_1915"
+            ]
+          },
+          {
+            "line_id": "my_clock",
+            "purpose": "reveal",
+            "text_ar": "ضبطنا ساعة الكاميرا على ساعة المدرسة صباح ذلك اليوم.",
+            "fact_ids": [
+              "f_camera_clock"
+            ]
+          },
+          {
+            "line_id": "my_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف ما جرى خارج لقطاتي."
+          },
+          {
+            "line_id": "my_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن الصور والبروفة."
+          },
+          {
+            "line_id": "my_bye",
+            "purpose": "farewell",
+            "text_ar": "الأرقام على اللقطات تتكلم أحسن مني."
+          }
+        ]
+      }
+    ],
+    "locations": [
+      {
+        "id": "loc_hall",
+        "name_ar": "قاعة الاحتفالات",
+        "description_ar": "قاعة المدرسة التي تُعرض فيها الخزانة الزجاجية."
+      },
+      {
+        "id": "loc_key_office",
+        "name_ar": "مكتب الإدارة وصندوق المفاتيح",
+        "description_ar": "مكتب فيه صندوق مفاتيح العرض وورقة التوقيع."
+      },
+      {
+        "id": "loc_gate",
+        "name_ar": "مكتب البوابة",
+        "description_ar": "مكتب الحارس وسجلات الدخول والمناوبات."
+      },
+      {
+        "id": "loc_media",
+        "name_ar": "غرفة نادي التصوير",
+        "description_ar": "غرفة تُحفظ فيها أوراق صور النادي."
+      },
+      {
+        "id": "loc_archive",
+        "name_ar": "أرشيف المدرسة",
+        "description_ar": "غرفة الملفات المغلقة التي يعمل فيها نادي الأرشيف بإذن مكتوب."
+      }
+    ],
+    "objects": [
+      {
+        "id": "obj_astrolabe",
+        "name_ar": "الأسطرلاب النحاسي",
+        "description_ar": "أداة فلكية قديمة أهداها مؤسسو المدرسة، تُعرض في الخزانة."
+      },
+      {
+        "id": "obj_case",
+        "name_ar": "الخزانة الزجاجية",
+        "description_ar": "خزانة عرض في قاعة الاحتفالات."
+      },
+      {
+        "id": "obj_case_key",
+        "name_ar": "مفتاح الخزانة",
+        "description_ar": "مفتاح يُحفظ في صندوق مفاتيح الإدارة."
+      }
+    ],
+    "organizations": [
+      {
+        "id": "org_school",
+        "name_ar": "ثانوية النخيل",
+        "description_ar": "مدرسة ثانوية في مدينة وادي الريحان المتخيَّلة."
+      }
+    ]
+  },
+  "truth": {
+    "solution": {
+      "culprit_ids": [
+        "jana"
+      ],
+      "summary_ar": "لم يأخذ أيهم الأسطرلاب. أخذته جنى الرفاعي أثناء وضعها الظرف بين 17:20 و17:45 لتنسخ نقوشه بعد أن رُفض طلب إعارته، وانكسر محوره، فكسرت الزجاج بعد 19:15 وتركت الباب الجانبي دون إقفال ثم خرجت آخر الجميع. واعترف أيهم ليحميها حين علم أن المجلس سيراجع أمر المفتاح، فأُغلق الملف على الاعتراف وحده.",
+      "key_fact_ids": [
+        "f_taken_in_window",
+        "f_glass_after",
+        "f_lama_took"
+      ]
+    },
+    "facts": [
+      {
+        "id": "f_item_gone",
+        "statement_ar": "وُجد صباح الأربعاء أن الأسطرلاب غير موجود في خزانته بقاعة الاحتفالات، وزجاج الخزانة مكسور، والباب الجانبي للقاعة غير مقفل.",
+        "kind": "event",
+        "subject_ids": [
+          "obj_astrolabe",
+          "obj_case"
+        ],
+        "spoiler_level": 0,
+        "time": {
+          "start_min": 1001,
+          "precision": "exact"
+        },
+        "location_id": "loc_hall"
+      },
+      {
+        "id": "f_confessed",
+        "statement_ar": "كتب الطالب أيهم الدباغ اعترافاً بأنه أخذ الأسطرلاب، يوم الخميس عصراً.",
+        "kind": "event",
+        "subject_ids": [
+          "ayham"
+        ],
+        "spoiler_level": 0,
+        "time": {
+          "start_min": 1530,
+          "precision": "exact"
+        },
+        "location_id": "loc_archive"
+      },
+      {
+        "id": "f_closed",
+        "statement_ar": "أغلق مجلس الانضباط الملف بناءً على الاعتراف ومنع أيهم من نشاط النادي العلمي مدة شهر.",
+        "kind": "event",
+        "subject_ids": [
+          "ayham",
+          "wafaa"
+        ],
+        "spoiler_level": 0,
+        "time": {
+          "start_min": 2900,
+          "precision": "approx"
+        },
+        "location_id": "loc_archive"
+      },
+      {
+        "id": "f_present_1650",
+        "statement_ar": "التقطت اللقطة 31 الساعة 16:50 والأسطرلاب على حامله داخل الخزانة والزجاج سليم.",
+        "kind": "event",
+        "subject_ids": [
+          "obj_astrolabe",
+          "mays"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 170,
+          "precision": "exact"
+        },
+        "location_id": "loc_hall"
+      },
+      {
+        "id": "f_empty_1915",
+        "statement_ar": "التقطت اللقطة 58 الساعة 19:15 والحامل فارغ إلا من ظرف أبيض والزجاج سليم.",
+        "kind": "event",
+        "subject_ids": [
+          "obj_astrolabe",
+          "mays"
+        ],
+        "spoiler_level": 2,
+        "time": {
+          "start_min": 315,
+          "precision": "exact"
+        },
+        "location_id": "loc_hall"
+      },
+      {
+        "id": "f_camera_clock",
+        "statement_ar": "ساعة كاميرا النادي مضبوطة على ساعة المدرسة صباح يوم البروفة.",
+        "kind": "state",
+        "subject_ids": [
+          "mays"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 0,
+          "precision": "approx"
+        },
+        "location_id": "loc_media"
+      },
+      {
+        "id": "f_key_lama",
+        "statement_ar": "وقّعت جنى الرفاعي على مفتاح الخزانة الساعة 17:20 وأعادته الساعة 17:45، ولم يوقّع عليه أحد غيرها ذلك اليوم.",
+        "kind": "event",
+        "subject_ids": [
+          "jana",
+          "obj_case_key"
+        ],
+        "spoiler_level": 2,
+        "time": {
+          "start_min": 200,
+          "precision": "exact",
+          "end_min": 225
+        },
+        "location_id": "loc_key_office"
+      },
+      {
+        "id": "f_ayham_out",
+        "statement_ar": "سجّل أيهم الدباغ خروجه من المبنى عند البوابة الساعة 17:02.",
+        "kind": "event",
+        "subject_ids": [
+          "ayham"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 182,
+          "precision": "exact"
+        },
+        "location_id": "loc_gate"
+      },
+      {
+        "id": "f_jana_last",
+        "statement_ar": "سُجل خروج جنى الرفاعي الساعة 19:42، وهو آخر خروج من المبنى ذلك المساء.",
+        "kind": "event",
+        "subject_ids": [
+          "jana"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 342,
+          "precision": "exact"
+        },
+        "location_id": "loc_gate"
+      },
+      {
+        "id": "f_azmi_late",
+        "statement_ar": "بدأت مناوبة عزمي البيطار الساعة 19:55 بعد أن بدّل مناوبته.",
+        "kind": "event",
+        "subject_ids": [
+          "azmi"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 355,
+          "precision": "exact"
+        },
+        "location_id": "loc_gate"
+      },
+      {
+        "id": "f_alarm_armed",
+        "statement_ar": "شغّل عزمي البيطار إنذار قاعة الاحتفالات الساعة 20:05، ولم يُسجَّل حتى الصباح أي حركة أو فتح باب.",
+        "kind": "event",
+        "subject_ids": [
+          "azmi",
+          "obj_case"
+        ],
+        "spoiler_level": 2,
+        "time": {
+          "start_min": 365,
+          "precision": "exact"
+        },
+        "location_id": "loc_hall"
+      },
+      {
+        "id": "f_azmi_memo",
+        "statement_ar": "أُنذر عزمي البيطار في العام الماضي لأنه صنع نسخة من مفتاح الباب الجانبي دون إذن، وسُحبت النسخة.",
+        "kind": "event",
+        "subject_ids": [
+          "azmi"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 0,
+          "precision": "unknown"
+        },
+        "location_id": "loc_archive"
+      },
+      {
+        "id": "f_loan_denied",
+        "statement_ar": "رفضت المعلمة وفاء المصري طلب جنى الرفاعي إعارة الأسطرلاب قبل البروفة بأسبوعين.",
+        "kind": "event",
+        "subject_ids": [
+          "jana",
+          "wafaa"
+        ],
+        "spoiler_level": 2,
+        "time": {
+          "start_min": -20000,
+          "precision": "approx"
+        },
+        "location_id": "loc_archive"
+      },
+      {
+        "id": "f_confession_public_only",
+        "statement_ar": "كل ما في الاعتراف مما يمكن مقابلته بالنشرة المعلنة مذكور فيها: الزجاج المكسور والباب الجانبي غير المقفل واختفاء الأسطرلاب.",
+        "kind": "attribute",
+        "subject_ids": [
+          "ayham"
+        ],
+        "spoiler_level": 2
+      },
+      {
+        "id": "f_taken_in_window",
+        "statement_ar": "خرج الأسطرلاب من الخزانة بين اللقطتين 16:50 و19:15، والتوقيع الوحيد على مفتاحها في تلك المدة هو توقيع جنى الرفاعي بين 17:20 و17:45.",
+        "kind": "event",
+        "subject_ids": [
+          "obj_astrolabe",
+          "jana"
+        ],
+        "spoiler_level": 3,
+        "time": {
+          "start_min": 200,
+          "precision": "exact",
+          "end_min": 315
+        },
+        "location_id": "loc_hall"
+      },
+      {
+        "id": "f_glass_after",
+        "statement_ar": "كُسر الزجاج بعد 19:15 وقبل تشغيل الإنذار 20:05، فلم يكسره أحد في التاسعة مساءً.",
+        "kind": "event",
+        "subject_ids": [
+          "obj_case"
+        ],
+        "spoiler_level": 3,
+        "time": {
+          "start_min": 315,
+          "precision": "exact",
+          "end_min": 365
+        },
+        "location_id": "loc_hall"
+      },
+      {
+        "id": "f_lama_took",
+        "statement_ar": "أخذت جنى الرفاعي الأسطرلاب من الخزانة أثناء وضعها الظرف، ثم كسرت الزجاج وترك الباب الجانبي مفتوحاً قبل خروجها.",
+        "kind": "event",
+        "subject_ids": [
+          "jana",
+          "obj_astrolabe"
+        ],
+        "spoiler_level": 3,
+        "time": {
+          "start_min": 205,
+          "precision": "exact",
+          "end_min": 341
+        },
+        "location_id": "loc_hall"
+      },
+      {
+        "id": "f_jana_called",
+        "statement_ar": "اتصلت جنى بأيهم في الليلة نفسها وأخبرته بما جرى.",
+        "kind": "event",
+        "subject_ids": [
+          "jana",
+          "ayham"
+        ],
+        "spoiler_level": 3,
+        "time": {
+          "start_min": 480,
+          "precision": "approx"
+        }
+      },
+      {
+        "id": "f_ayham_covering",
+        "statement_ar": "اعترف أيهم بأخذ الأسطرلاب ليحمي جنى لا لأنه أخذه.",
+        "kind": "state",
+        "subject_ids": [
+          "ayham"
+        ],
+        "spoiler_level": 3
+      },
+      {
+        "id": "f_closure_flawed",
+        "statement_ar": "أُغلق الملف على الاعتراف وحده دون أن تُجمع سجلات الإنذار والصور والمفاتيح والبوابة.",
+        "kind": "state",
+        "subject_ids": [
+          "wafaa"
+        ],
+        "spoiler_level": 2
+      },
+      {
+        "id": "f_unknown_whereabouts",
+        "statement_ar": "لا يظهر في أي سجل أين الأسطرلاب الآن.",
+        "kind": "absence",
+        "subject_ids": [
+          "obj_astrolabe"
+        ],
+        "spoiler_level": 1
+      }
+    ],
+    "claims": [
+      {
+        "id": "cl_ayham_9pm",
+        "statement_ar": "أيهم دخل القاعة نحو التاسعة مساءً، ورأى الأسطرلاب على حامله فأخذه.",
+        "kind": "lie",
+        "held_by": [
+          "ayham"
+        ],
+        "true_fact_id": "f_empty_1915",
+        "contradicted_by_evidence_ids": [
+          "ev_alarm_log",
+          "ev_contact_sheet"
+        ]
+      },
+      {
+        "id": "cl_jana_nothing",
+        "statement_ar": "جنى لم تلمس الأسطرلاب، ووضعت الظرف وأغلقت الخزانة وخرجت.",
+        "kind": "lie",
+        "held_by": [
+          "jana"
+        ],
+        "true_fact_id": "f_lama_took",
+        "contradicted_by_evidence_ids": [
+          "ev_contact_sheet",
+          "ev_key_sheet"
+        ]
+      },
+      {
+        "id": "cl_wafaa_enough",
+        "statement_ar": "الاعتراف يطابق كل ما يُعرف عن الحادثة، فلا حاجة إلى غيره.",
+        "kind": "honest_mistake",
+        "held_by": [
+          "wafaa"
+        ],
+        "true_fact_id": "f_confession_public_only",
+        "contradicted_by_evidence_ids": [
+          "ev_bulletin",
+          "ev_alarm_log"
+        ]
+      }
+    ]
+  },
+  "timeline": [
+    {
+      "id": "te_photo1",
+      "description_ar": "تلتقط ميس الزعبي اللقطة 31 والأسطرلاب في خزانته.",
+      "time": {
+        "start_min": 170,
+        "precision": "exact"
+      },
+      "location_id": "loc_hall",
+      "actor_ids": [
+        "mays"
+      ],
+      "fact_ids": [
+        "f_present_1650"
+      ],
+      "motivated_by_ar": "توثيق البروفة لنادي التصوير"
+    },
+    {
+      "id": "te_ayham_out",
+      "description_ar": "يسجل أيهم خروجه عند البوابة.",
+      "time": {
+        "start_min": 182,
+        "precision": "exact"
+      },
+      "location_id": "loc_gate",
+      "actor_ids": [
+        "ayham"
+      ],
+      "fact_ids": [
+        "f_ayham_out"
+      ],
+      "motivated_by_ar": "طُلب منه الانصراف ليستعد لعمل آخر"
+    },
+    {
+      "id": "te_key",
+      "description_ar": "جنى توقّع على مفتاح الخزانة في مكتب الإدارة.",
+      "time": {
+        "start_min": 200,
+        "precision": "exact",
+        "end_min": 202
+      },
+      "location_id": "loc_key_office",
+      "actor_ids": [
+        "jana"
+      ],
+      "fact_ids": [
+        "f_key_lama"
+      ],
+      "motivated_by_ar": "كُلفت بوضع ظرف الجائزة على الحامل"
+    },
+    {
+      "id": "te_take",
+      "description_ar": "جنى تفتح الخزانة وتأخذ الأسطرلاب.",
+      "time": {
+        "start_min": 205,
+        "precision": "exact",
+        "end_min": 225
+      },
+      "location_id": "loc_hall",
+      "actor_ids": [
+        "jana"
+      ],
+      "fact_ids": [
+        "f_lama_took"
+      ],
+      "motivated_by_ar": "أرادت نسخ نقوشه لمسابقة العلوم بعد أن رُفض طلب إعارته",
+      "caused_by_event_ids": [
+        "te_key"
+      ]
+    },
+    {
+      "id": "te_photo2",
+      "description_ar": "تلتقط ميس الزعبي اللقطة 58 والحامل فارغ.",
+      "time": {
+        "start_min": 315,
+        "precision": "exact"
+      },
+      "location_id": "loc_hall",
+      "actor_ids": [
+        "mays"
+      ],
+      "fact_ids": [
+        "f_empty_1915"
+      ],
+      "motivated_by_ar": "توثيق البروفة لنادي التصوير",
+      "caused_by_event_ids": [
+        "te_take"
+      ]
+    },
+    {
+      "id": "te_glass",
+      "description_ar": "جنى تكسر زجاج الخزانة وتترك الباب الجانبي غير مقفل.",
+      "time": {
+        "start_min": 325,
+        "precision": "exact",
+        "end_min": 341
+      },
+      "location_id": "loc_hall",
+      "actor_ids": [
+        "jana"
+      ],
+      "fact_ids": [
+        "f_glass_after"
+      ],
+      "motivated_by_ar": "خافت من العقاب فأرادت أن يبدو الأمر دخول غريب",
+      "caused_by_event_ids": [
+        "te_take"
+      ]
+    },
+    {
+      "id": "te_jana_out",
+      "description_ar": "جنى تغادر المبنى وهي آخر من يخرج.",
+      "time": {
+        "start_min": 342,
+        "precision": "exact"
+      },
+      "location_id": "loc_gate",
+      "actor_ids": [
+        "jana"
+      ],
+      "fact_ids": [
+        "f_jana_last"
+      ],
+      "motivated_by_ar": "انتهاء البروفة",
+      "caused_by_event_ids": [
+        "te_glass"
+      ]
+    },
+    {
+      "id": "te_azmi_in",
+      "description_ar": "عزمي يبدأ مناوبته المبدّلة.",
+      "time": {
+        "start_min": 355,
+        "precision": "exact"
+      },
+      "location_id": "loc_gate",
+      "actor_ids": [
+        "azmi"
+      ],
+      "fact_ids": [
+        "f_azmi_late"
+      ],
+      "motivated_by_ar": "تبديل المناوبة مع زميل"
+    },
+    {
+      "id": "te_alarm",
+      "description_ar": "عزمي يشغّل إنذار القاعة.",
+      "time": {
+        "start_min": 365,
+        "precision": "exact"
+      },
+      "location_id": "loc_hall",
+      "actor_ids": [
+        "azmi"
+      ],
+      "fact_ids": [
+        "f_alarm_armed"
+      ],
+      "motivated_by_ar": "إجراء الإقفال الليلي المعتاد"
+    },
+    {
+      "id": "te_call",
+      "description_ar": "جنى تتصل بأيهم وتخبره بما جرى.",
+      "time": {
+        "start_min": 480,
+        "precision": "approx"
+      },
+      "actor_ids": [
+        "jana",
+        "ayham"
+      ],
+      "fact_ids": [
+        "f_jana_called"
+      ],
+      "motivated_by_ar": "خافت وطلبت من يسمعها"
+    },
+    {
+      "id": "te_found",
+      "description_ar": "عزمي يفك الإنذار ويجد الخزانة مكسورة والحامل فارغاً.",
+      "time": {
+        "start_min": 1001,
+        "precision": "exact"
+      },
+      "location_id": "loc_hall",
+      "actor_ids": [
+        "azmi"
+      ],
+      "fact_ids": [
+        "f_item_gone"
+      ],
+      "motivated_by_ar": "جولة الصباح المعتادة"
+    },
+    {
+      "id": "te_confess",
+      "description_ar": "أيهم يكتب اعترافه ويوقّعه أمام المعلمة.",
+      "time": {
+        "start_min": 1530,
+        "precision": "exact"
+      },
+      "location_id": "loc_archive",
+      "actor_ids": [
+        "ayham",
+        "wafaa"
+      ],
+      "fact_ids": [
+        "f_confessed",
+        "f_ayham_covering"
+      ],
+      "motivated_by_ar": "أراد حماية جنى حين علم أن المجلس سيفحص من أخذ المفتاح",
+      "caused_by_event_ids": [
+        "te_call"
+      ]
+    },
+    {
+      "id": "te_close",
+      "description_ar": "مجلس الانضباط يغلق الملف على الاعتراف.",
+      "time": {
+        "start_min": 2900,
+        "precision": "approx"
+      },
+      "location_id": "loc_archive",
+      "actor_ids": [
+        "wafaa"
+      ],
+      "fact_ids": [
+        "f_closed",
+        "f_closure_flawed"
+      ],
+      "motivated_by_ar": "رأى المجلس أن الاعتراف المكتوب كافٍ",
+      "caused_by_event_ids": [
+        "te_confess"
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_bulletin",
+      "title_ar": "نشرة المدرسة المعلنة",
+      "kind": "documentary",
+      "content_ar": "نشرة المدرسة — عدد الأربعاء\nخبر: افتُقد صباح اليوم الأسطرلاب النحاسي الذي أهداه المؤسسون إلى المدرسة، وكان معروضاً في خزانة زجاجية بقاعة الاحتفالات استعداداً لحفل الجوائز. وجد عامل الصيانة زجاج الخزانة مكسوراً والباب الجانبي للقاعة غير مقفل. أُبلغت الإدارة، وتتابع المعلمة المسؤولة عن الحفل الأمر.",
+      "acquired_by_action_ids": [
+        "a_get_bulletin"
+      ],
+      "supports_fact_ids": [
+        "f_item_gone"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "نشرة معلنة للجميع تذكر ما رآه العامل صباحاً، ولا تذكر متى حدث ذلك ولا من فعله.",
+      "location_id": "loc_archive"
+    },
+    {
+      "id": "ev_confession",
+      "title_ar": "اعتراف أيهم الدباغ المكتوب",
+      "kind": "testimonial",
+      "content_ar": "إفادة مكتوبة بخط أيهم الدباغ، الخميس 15:30:\n«أنا من أخذ الأسطرلاب. دخلت القاعة من الباب الجانبي المفتوح نحو التاسعة مساءً، وكسرت زجاج الخزانة، ورأيت الأسطرلاب على حامله فأخذته، ثم رميته في القناة الشرقية. لم يساعدني أحد. أتحمل ما يقرره المجلس.»\nوقّعها أيهم، وشهدت على توقيعه الأستاذة وفاء المصري.",
+      "acquired_by_action_ids": [
+        "a_get_confession"
+      ],
+      "supports_fact_ids": [
+        "f_confessed"
+      ],
+      "reliability": "weak",
+      "limits_ar": "اعتراف مكتوب يصف ما يقول صاحبه إنه فعله، ولا يثبت وحده أنه فعله؛ وما فيه من تفاصيل يحتاج إلى سجلات مستقلة تؤيده أو تخالفه.",
+      "location_id": "loc_archive",
+      "contradicts_claim_ids": [
+        "cl_ayham_9pm"
+      ],
+      "is_red_herring": true
+    },
+    {
+      "id": "ev_closure_memo",
+      "title_ar": "مذكرة إغلاق الملف",
+      "kind": "documentary",
+      "content_ar": "مجلس الانضباط — مذكرة إغلاق\nالسبب: اعتراف الطالب أيهم الدباغ مكتوباً وموقعاً.\nالقرار: يُغلق الملف، ويُمنع الطالب من نشاط النادي العلمي مدة شهر.\nملاحظة: لم تُطلب سجلات أخرى لأن المجلس رأى الاعتراف كافياً.\nالتوقيع: الأستاذة وفاء المصري.",
+      "acquired_by_action_ids": [
+        "a_get_memo"
+      ],
+      "supports_fact_ids": [
+        "f_closed",
+        "f_closure_flawed"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "وثيقة رسمية تبين على أي أساس أُغلق الملف، ولا تبين ما كانت ستظهره السجلات لو طُلبت.",
+      "location_id": "loc_archive",
+      "contradicts_claim_ids": [
+        "cl_wafaa_enough"
+      ]
+    },
+    {
+      "id": "ev_morning_sheet",
+      "title_ar": "ورقة جولة الصباح",
+      "kind": "documentary",
+      "content_ar": "ورقة جولة الصباح — عامل الصيانة عزمي البيطار، الأربعاء:\n06:41 فك إنذار قاعة الاحتفالات.\n06:45 الباب الجانبي غير مقفل ومغلق على إطاره.\nزجاج الخزانة مكسور وقطعه على أرضية القاعة أمامها. الحامل فارغ.\nمفتاح الخزانة في صندوق المفاتيح بالإدارة.",
+      "acquired_by_action_ids": [
+        "a_get_morning"
+      ],
+      "supports_fact_ids": [
+        "f_item_gone"
+      ],
+      "reliability": "strong",
+      "limits_ar": "تصف ما رآه العامل صباحاً فقط، ولا تحدد وقت كسر الزجاج ولا وقت فتح الباب الجانبي.",
+      "location_id": "loc_archive",
+      "is_red_herring": true
+    },
+    {
+      "id": "ev_alarm_log",
+      "title_ar": "سجل شركة الإنذار",
+      "kind": "documentary",
+      "content_ar": "سجل شركة الإنذار — قاعة الاحتفالات، من الثلاثاء إلى الأربعاء:\n19:41 آخر حركة مسجلة داخل القاعة.\n20:05 تشغيل الإنذار (المستخدم: عزمي البيطار).\nمن 20:05 إلى 06:41 لا حركة ولا فتح باب ولا تنبيه.\n06:41 فك الإنذار (المستخدم: عزمي البيطار).",
+      "acquired_by_action_ids": [
+        "a_get_alarm"
+      ],
+      "supports_fact_ids": [
+        "f_alarm_armed"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يسجل حركة القاعة وأبوابها المراقبة، ولا يعرف من تحرك، ولا يغطي ما قبل 19:41 بتفصيل.",
+      "location_id": "loc_archive",
+      "contradicts_claim_ids": [
+        "cl_ayham_9pm",
+        "cl_wafaa_enough"
+      ]
+    },
+    {
+      "id": "ev_azmi_memo",
+      "title_ar": "مذكرة تنبيه العام الماضي",
+      "kind": "documentary",
+      "content_ar": "مذكرة إدارية (العام الماضي):\nيُنبَّه عامل الصيانة عزمي البيطار إلى أنه صنع نسخة من مفتاح الباب الجانبي لقاعة الاحتفالات دون إذن مكتوب. سُحبت النسخة وسُلّم الأصل إلى مكتب البوابة.",
+      "acquired_by_action_ids": [
+        "a_get_azmi_memo"
+      ],
+      "supports_fact_ids": [
+        "f_azmi_memo"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "تدل على مخالفة قديمة، ولا تدل على أنه كان في المبنى مساء الثلاثاء ولا على أنه فعل شيئاً.",
+      "location_id": "loc_archive",
+      "is_red_herring": true
+    },
+    {
+      "id": "ev_guard_log",
+      "title_ar": "سجل البوابة ليوم الثلاثاء",
+      "kind": "documentary",
+      "content_ar": "سجل مكتب البوابة، الثلاثاء:\n17:02 خروج أيهم الدباغ.\n19:30 خروج الأستاذة وفاء المصري.\n19:38 خروج ميس الزعبي.\n19:42 خروج جنى الرفاعي.\n19:55 دخول عزمي البيطار للمناوبة.\nلا دخول ولا خروج آخر حتى صباح الأربعاء.",
+      "acquired_by_action_ids": [
+        "a_get_guard"
+      ],
+      "supports_fact_ids": [
+        "f_ayham_out",
+        "f_jana_last",
+        "f_azmi_late"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يسجل من مرّ عند البوابة الرئيسية، ولا يسجل من كان داخل القاعة تحديداً ولا ما حمله الخارجون.",
+      "location_id": "loc_gate"
+    },
+    {
+      "id": "ev_roster",
+      "title_ar": "جدول مناوبات الصيانة",
+      "kind": "documentary",
+      "content_ar": "جدول مناوبات الصيانة — أسبوع الحفل:\nالثلاثاء: عزمي البيطار — بدّل مناوبته مع زميل، فتبدأ مناوبته 19:55 وتنتهي 06:45.\nمناوبة النهار في اليوم نفسه: عامل آخر لا يحمل مفتاح خزانة العرض.",
+      "acquired_by_action_ids": [
+        "a_get_roster"
+      ],
+      "supports_fact_ids": [
+        "f_azmi_late"
+      ],
+      "reliability": "strong",
+      "limits_ar": "جدول رسمي يبين ساعات العمل المقررة، ولا يبين ما فعله الناس خارجها.",
+      "location_id": "loc_gate"
+    },
+    {
+      "id": "ev_contact_sheet",
+      "title_ar": "ورقة صور البروفة",
+      "kind": "observation",
+      "content_ar": "ورقة صور البروفة — نادي التصوير. ضُبطت ساعة الكاميرا على ساعة المدرسة صباح اليوم نفسه بحسب ملاحظة مسؤول النادي.\nاللقطة 31، الساعة 16:50: الأسطرلاب على حامله داخل الخزانة، والزجاج سليم.\nاللقطة 58، الساعة 19:15: الخزانة نفسها والزجاج سليم، وعلى الحامل ظرف أبيض ولا أسطرلاب.\nملاحظة المصورة ميس الزعبي: لم تُلتقط صور للخزانة بين اللقطتين.",
+      "acquired_by_action_ids": [
+        "a_get_frames"
+      ],
+      "supports_fact_ids": [
+        "f_present_1650",
+        "f_empty_1915",
+        "f_camera_clock"
+      ],
+      "reliability": "strong",
+      "limits_ar": "تثبت حال الخزانة عند وقتين فقط، ولا تبين متى بين الوقتين اختفى الأسطرلاب ولا من أخذه.",
+      "location_id": "loc_media",
+      "contradicts_claim_ids": [
+        "cl_ayham_9pm",
+        "cl_jana_nothing"
+      ]
+    },
+    {
+      "id": "ev_key_sheet",
+      "title_ar": "ورقة صندوق مفاتيح الإدارة",
+      "kind": "documentary",
+      "content_ar": "ورقة صندوق مفاتيح الإدارة، الثلاثاء:\nمفتاح خزانة العرض: 17:20 أخذته جنى الرفاعي «لوضع ظرف الجائزة»؛ 17:45 أعادته.\nلا توقيع آخر على هذا المفتاح في اليوم.\nالمفتاح الاحتياطي في خزنة المديرة، ولا تسجيل لفتح الخزنة.",
+      "acquired_by_action_ids": [
+        "a_get_keysheet"
+      ],
+      "supports_fact_ids": [
+        "f_key_lama"
+      ],
+      "reliability": "strong",
+      "limits_ar": "تسجل من وقّع على المفتاح لا من فتح الخزانة فعلاً ولا ما فعله بها، وغياب تسجيل فتح الخزنة لا يثبت أنها لم تُفتح.",
+      "location_id": "loc_key_office",
+      "contradicts_claim_ids": [
+        "cl_jana_nothing"
+      ]
+    },
+    {
+      "id": "ev_loan_request",
+      "title_ar": "طلب إعارة الأسطرلاب",
+      "kind": "documentary",
+      "content_ar": "طلب إعارة الأسطرلاب (قبل البروفة بأسبوعين):\nمقدّمة الطلب: جنى الرفاعي، الصف العاشر، لبناء نموذج مطابق لمسابقة العلوم.\nقرار الأستاذة وفاء المصري: «مرفوض. الأسطرلاب هش ويبقى في الخزانة.»",
+      "acquired_by_action_ids": [
+        "a_get_loan"
+      ],
+      "supports_fact_ids": [
+        "f_loan_denied"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "يبين رغبة في الاطلاع على الأسطرلاب ورفضاً لها، ولا يثبت أن صاحبة الطلب أخذته؛ فالرغبة وحدها ليست دليلاً على الفعل.",
+      "location_id": "loc_archive"
+    },
+    {
+      "id": "ev_ayham_stmt",
+      "title_ar": "إفادة أيهم الجديدة",
+      "kind": "testimonial",
+      "content_ar": "إفادة أيهم الدباغ الجديدة (شفهية، دوّنها نادي الأرشيف بموافقته):\n«لم أدخل القاعة بعد الظهر. اتصلت بي جنى تلك الليلة وهي تبكي وقالت إن منحتها الدراسية ستضيع إن عُرف ما جرى. حين قالت المعلمة إن المجلس سيفحص من أخذ المفتاح، كتبت اعترافي. اخترت أن أتحمل أنا.»",
+      "acquired_by_action_ids": [
+        "a_get_ayham_stmt"
+      ],
+      "supports_fact_ids": [
+        "f_ayham_covering",
+        "f_jana_called"
+      ],
+      "reliability": "weak",
+      "limits_ar": "قول شخص عن دافعه ومكالمة لا سجل لها، ولا يثبت وحده من أخذ الأسطرلاب.",
+      "location_id": "loc_archive"
+    },
+    {
+      "id": "ev_jana_stmt",
+      "title_ar": "إفادة جنى الجديدة",
+      "kind": "testimonial",
+      "content_ar": "إفادة جنى الرفاعي الجديدة (دوّنها نادي الأرشيف بموافقتها):\n«أخذت الأسطرلاب وأنا أضع الظرف، وأردت أن أقيس نقوشه تلك الليلة وأعيده قبل الصباح. انكسر محوره بين يدي فخفت، فكسرت الزجاج وتركت الباب الجانبي مفتوحاً ليظنوا أن غريباً دخل. لا أعرف كيف أعيده الآن.»",
+      "acquired_by_action_ids": [
+        "a_get_jana_stmt"
+      ],
+      "supports_fact_ids": [
+        "f_lama_took"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "قول صاحبته بعد عرض السجلات عليها، ولا يحدد مكان الأسطرلاب حالياً ولا يغني عن السجلات التي سبقته.",
+      "location_id": "loc_archive"
+    }
+  ],
+  "evidence_graph": {
+    "inferences": [
+      {
+        "id": "i_conf_public",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_bulletin"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_confession"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_confession_public_only"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "كل ما في الاعتراف مما يمكن مقابلته بالنشرة المعلنة موجود فيها، وما انفرد به من وقت ومكان لا تؤيده النشرة؛ فالاعتراف لا يحمل ما يكشفه إلا من كان في القاعة.",
+        "skill_ko_refs": [
+          "KO-RS-05-001"
+        ]
+      },
+      {
+        "id": "i_conf_alarm",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_confession"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_alarm_log"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_ayham_9pm"
+        },
+        "relation": "contradicts_claim",
+        "strength": "strong",
+        "rule_ar": "الإنذار عمل من 20:05 حتى الصباح ولم يسجل حركة ولا فتح باب، فلا يصح أن أحداً دخل القاعة في التاسعة.",
+        "skill_ko_refs": [
+          "KO-RS-05-001"
+        ]
+      },
+      {
+        "id": "i_conf_frame",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_confession"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_contact_sheet"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_ayham_9pm"
+        },
+        "relation": "contradicts_claim",
+        "strength": "strong",
+        "rule_ar": "اللقطة 58 الساعة 19:15 تظهر الحامل فارغاً والزجاج سليماً، فلا يصح أن الأسطرلاب كان على الحامل في التاسعة ولا أن الزجاج كسر في ذلك الوقت.",
+        "skill_ko_refs": [
+          "KO-RS-05-005"
+        ]
+      },
+      {
+        "id": "i_taken_window",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_contact_sheet"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_key_sheet"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_taken_in_window"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "الأسطرلاب في خزانته 16:50 وغائب 19:15، ومفتاح الخزانة لم يوقّع عليه في اليوم غير جنى بين 17:20 و17:45؛ فخرج الأسطرلاب في تلك المدة.",
+        "skill_ko_refs": [
+          "KO-RS-05-005"
+        ]
+      },
+      {
+        "id": "i_staged",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_contact_sheet"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_alarm_log"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_guard_log"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_glass_after"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "الزجاج سليم 19:15 والإنذار عمل 20:05 بلا أي فتح باب بعد ذلك، وآخر خروج من المبنى كان 19:42؛ فكُسر الزجاج بعد 19:15 وقبل 20:05 من داخل القاعة.",
+        "skill_ko_refs": [
+          "KO-RS-06-002"
+        ]
+      },
+      {
+        "id": "i_rule_ayham",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_guard_log"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_taken_in_window"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_glass_after"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_ayham"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "خرج أيهم الساعة 17:02 قبل توقيع المفتاح، وخرج الأسطرلاب وكُسر الزجاج وهو خارج المبنى، فلا يصح أنه فعل ذلك في التاسعة ولا قبلها.",
+        "skill_ko_refs": [
+          "KO-RS-05-002"
+        ]
+      },
+      {
+        "id": "i_rule_outsider",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_alarm_log"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_glass_after"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_outsider"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "لم يُفتح باب ولا سُجلت حركة بعد تشغيل الإنذار، وكُسر الزجاج قبل ذلك؛ فلا يصح أن غريباً دخل ليلاً.",
+        "skill_ko_refs": [
+          "KO-RS-05-002"
+        ]
+      },
+      {
+        "id": "i_rule_azmi",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_roster"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_guard_log"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_taken_in_window"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_azmi"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "بدأت مناوبة عزمي 19:55 بحسب الجدول والبوابة، وخرج الأسطرلاب قبل 19:15؛ فمذكرة النسخة القديمة لا تضعه في القاعة وقت الأخذ.",
+        "skill_ko_refs": [
+          "KO-RS-05-002"
+        ]
+      },
+      {
+        "id": "i_lama_took",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_taken_in_window"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_glass_after"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_guard_log"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_lama_took"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "الأسطرلاب خرج في مدة وقّعت فيها جنى وحدها على المفتاح، ثم كُسر الزجاج من داخل القاعة قبل الإنذار وهي آخر من خرج؛ فالأرجح أنها من أخذه ودبّر مظهر الدخول.",
+        "skill_ko_refs": [
+          "KO-RS-06-002"
+        ]
+      },
+      {
+        "id": "i_taken_window_b",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_jana_stmt"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_loan_request"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_taken_in_window"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "جنى نفسها تقول إنها أخذت الأسطرلاب أثناء وضع الظرف، وطلب الإعارة المرفوض يفسر رغبتها فيه؛ وهذا مسار يعتمد على إفادتها بعد مواجهتها بالسجلات، لا على ورقة الصور.",
+        "skill_ko_refs": [
+          "KO-RS-05-001"
+        ]
+      },
+      {
+        "id": "i_staged_b",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_jana_stmt"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_morning_sheet"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_glass_after"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "إفادة جنى تقول إنها كسرت الزجاج وتركت الباب الجانبي مفتوحاً، وورقة الصباح تصف الزجاج المكسور أمام الخزانة والباب غير المقفل؛ فالوصفان متفقان.",
+        "skill_ko_refs": [
+          "KO-RS-05-001"
+        ]
+      },
+      {
+        "id": "i_lama_took_b",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_jana_stmt"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_ayham_stmt"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_taken_in_window"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_lama_took"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "إفادتا جنى وأيهم متفقتان على أنها هي من أخذت الأسطرلاب وأن اعتراف أيهم كان لحمايتها، وكل منهما تكمل الأخرى دون أن ينقل إحداهما عن الأخرى في الملف.",
+        "skill_ko_refs": [
+          "KO-RS-06-009"
+        ]
+      },
+      {
+        "id": "i_support_jana_a",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_taken_in_window"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_glass_after"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_guard_log"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_jana"
+        },
+        "relation": "supports",
+        "strength": "strong",
+        "rule_ar": "هي الوحيدة التي وقّعت على المفتاح في مدة الاختفاء، وآخر من خرج من المبنى بعد كسر الزجاج وقبل الإنذار.",
+        "skill_ko_refs": [
+          "KO-RS-06-002"
+        ]
+      },
+      {
+        "id": "i_support_jana_b",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_loan_request"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_key_sheet"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_alarm_log"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_jana"
+        },
+        "relation": "supports",
+        "strength": "suggestive",
+        "rule_ar": "طلبت جنى الاطلاع على الأسطرلاب فرُفض طلبها، ثم كانت صاحبة المفتاح في المدة المعنية، والإنذار لا يعارض أنها هي من بقيت في القاعة؛ وهذا يرجّح ولا يثبت.",
+        "skill_ko_refs": [
+          "KO-RS-05-002"
+        ]
+      },
+      {
+        "id": "i_cover",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_ayham_stmt"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_taken_in_window"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_ayham_covering"
+        },
+        "relation": "supports",
+        "strength": "suggestive",
+        "rule_ar": "إفادة أيهم عن المكالمة تفسر لماذا اعترف، وتنسجم مع أنه كان خارج المبنى حين خرج الأسطرلاب؛ لكنها قول لا سجل.",
+        "skill_ko_refs": [
+          "KO-RS-06-009"
+        ]
+      },
+      {
+        "id": "i_closure",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_closure_memo"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_alarm_log"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_contact_sheet"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_closure_flawed"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "المذكرة تقول إن الملف أُغلق دون سجلات، وسجلات الإنذار والصور كانت موجودة وتخالف الاعتراف في الوقت وحال الزجاج.",
+        "skill_ko_refs": [
+          "KO-RS-06-009"
+        ]
+      },
+      {
+        "id": "i_wafaa_claim",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_bulletin"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_alarm_log"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_wafaa_enough"
+        },
+        "relation": "contradicts_claim",
+        "strength": "strong",
+        "rule_ar": "ما يطابق الاعتراف هو ما في النشرة المعلنة فقط، وما انفرد به مخالف لسجل الإنذار؛ فالمطابقة لم تكن كاملة.",
+        "skill_ko_refs": [
+          "KO-RS-05-001"
+        ]
+      },
+      {
+        "id": "i_jana_claim",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_contact_sheet"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_key_sheet"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_jana_nothing"
+        },
+        "relation": "contradicts_claim",
+        "strength": "strong",
+        "rule_ar": "لو لم تلمس الأسطرلاب لبقي على حامله بعد وضعها الظرف، لكن الحامل فارغ في اللقطة 58 وهي صاحبة التوقيع الوحيد.",
+        "skill_ko_refs": [
+          "KO-RS-05-001"
+        ]
+      }
+    ]
+  },
+  "character_knowledge": [
+    {
+      "character_id": "ayham",
+      "knows": [
+        {
+          "fact_id": "f_ayham_out",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [
+        {
+          "fact_id": "f_ayham_covering",
+          "reveal_when": {
+            "presented": {
+              "evidence_id": "ev_contact_sheet",
+              "to_character": "ayham"
+            }
+          },
+          "cover_claim_id": "cl_ayham_9pm",
+          "reveal_line_id": "ay_cover"
+        },
+        {
+          "fact_id": "f_jana_called",
+          "reveal_when": {
+            "presented": {
+              "evidence_id": "ev_contact_sheet",
+              "to_character": "ayham"
+            }
+          },
+          "cover_claim_id": "cl_ayham_9pm",
+          "reveal_line_id": "ay_cover"
+        }
+      ],
+      "believes": [
+        {
+          "claim_id": "cl_ayham_9pm",
+          "stance": "deliberate_lie"
+        }
+      ]
+    },
+    {
+      "character_id": "jana",
+      "knows": [
+        {
+          "fact_id": "f_key_lama",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_jana_last",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_loan_denied",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [
+        {
+          "fact_id": "f_lama_took",
+          "reveal_when": {
+            "presented": {
+              "evidence_id": "ev_key_sheet",
+              "to_character": "jana"
+            }
+          },
+          "cover_claim_id": "cl_jana_nothing",
+          "reveal_line_id": "jn_took"
+        }
+      ],
+      "believes": [
+        {
+          "claim_id": "cl_jana_nothing",
+          "stance": "deliberate_lie"
+        }
+      ]
+    },
+    {
+      "character_id": "azmi",
+      "knows": [
+        {
+          "fact_id": "f_azmi_late",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_alarm_armed",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_item_gone",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_azmi_memo",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    },
+    {
+      "character_id": "wafaa",
+      "knows": [
+        {
+          "fact_id": "f_closed",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_closure_flawed",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_loan_denied",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": [
+        {
+          "claim_id": "cl_wafaa_enough",
+          "stance": "sincere"
+        }
+      ]
+    },
+    {
+      "character_id": "mays",
+      "knows": [
+        {
+          "fact_id": "f_present_1650",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_empty_1915",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_camera_clock",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "h_ayham",
+      "statement_ar": "أيهم الدباغ أخذ الأسطرلاب وكسر الزجاج كما اعترف.",
+      "is_true": false,
+      "plausibility_at_start": "high",
+      "suspect_id": "ayham"
+    },
+    {
+      "id": "h_outsider",
+      "statement_ar": "دخل غريب القاعة ليلاً من الباب الجانبي غير المقفل وأخذ الأسطرلاب.",
+      "is_true": false,
+      "plausibility_at_start": "medium"
+    },
+    {
+      "id": "h_azmi",
+      "statement_ar": "عامل الصيانة عزمي البيطار استعمل نسخة المفتاح القديمة وأخذ الأسطرلاب.",
+      "is_true": false,
+      "plausibility_at_start": "low",
+      "suspect_id": "azmi"
+    },
+    {
+      "id": "h_jana",
+      "statement_ar": "جنى الرفاعي أخذت الأسطرلاب أثناء وضعها الظرف، ثم كسرت الزجاج لتبدو الحادثة دخول غريب، واعترف أيهم ليحميها.",
+      "is_true": true,
+      "plausibility_at_start": "low",
+      "suspect_id": "jana"
+    }
+  ],
+  "misdirection_plan": [
+    {
+      "id": "rh_confession",
+      "points_to_hypothesis_id": "h_ayham",
+      "planted_via_ar": "اعتراف مكتوب وموقّع وشاهدت عليه المعلمة، وأُغلق الملف بناءً عليه.",
+      "evidence_ids": [
+        "ev_confession",
+        "ev_closure_memo"
+      ],
+      "refuted_by_inference_ids": [
+        "i_conf_alarm",
+        "i_conf_frame",
+        "i_rule_ayham"
+      ],
+      "fairness_note_ar": "سجل الإنذار وورقة الصور وسجل البوابة متاحة بالإجراءات العادية، وكل تفصيل انفرد به الاعتراف يمكن مقابلته بسجل مستقل."
+    },
+    {
+      "id": "rh_azmi_memo",
+      "points_to_hypothesis_id": "h_azmi",
+      "planted_via_ar": "مذكرة قديمة عن نسخة مفتاح الباب الجانبي، والباب وُجد غير مقفل.",
+      "evidence_ids": [
+        "ev_azmi_memo",
+        "ev_morning_sheet"
+      ],
+      "refuted_by_inference_ids": [
+        "i_rule_azmi"
+      ],
+      "fairness_note_ar": "جدول المناوبات وسجل البوابة يضعان العامل خارج المدرسة حتى 19:55، قبل أن يثبت غياب الأسطرلاب بساعة تقريباً."
+    },
+    {
+      "id": "rh_side_door",
+      "points_to_hypothesis_id": "h_outsider",
+      "planted_via_ar": "الباب الجانبي غير مقفل صباحاً والزجاج مكسور، فيبدو الأمر دخول غريب.",
+      "evidence_ids": [
+        "ev_morning_sheet",
+        "ev_bulletin"
+      ],
+      "refuted_by_inference_ids": [
+        "i_rule_outsider"
+      ],
+      "fairness_note_ar": "سجل الإنذار متاح ويبين أن لا باب فُتح ولا حركة سُجلت بعد 20:05."
+    }
+  ],
+  "learning_objectives": [
+    {
+      "id": "lo_claim",
+      "statement_ar": "يعامل الاعتراف والإفادة أقوالاً تحتاج إلى سجل مستقل يؤيدها، ولا يكتفي بصاحبها.",
+      "skill_ko_ref": "KO-RS-05-001",
+      "observable_behaviors_ar": [
+        "يصنّف الاعتراف قولاً",
+        "يقابل تفاصيل الاعتراف بالنشرة المعلنة"
+      ],
+      "evidence_sources": [
+        "evidence_board"
+      ]
+    },
+    {
+      "id": "lo_timeline",
+      "statement_ar": "يرتب الصور والمفاتيح والبوابة والإنذار على خط زمني ليعرف ما سبق ما.",
+      "skill_ko_ref": "KO-RS-05-005",
+      "observable_behaviors_ar": [
+        "يضع لقطتي 16:50 و19:15 وتوقيع المفتاح وخروج الأشخاص وتشغيل الإنذار في أزمنتها"
+      ],
+      "evidence_sources": [
+        "timeline_task",
+        "action_log"
+      ]
+    },
+    {
+      "id": "lo_hyp",
+      "statement_ar": "يوازن بين عدة فرضيات ويستبعد ما تنقضه السجلات.",
+      "skill_ko_ref": "KO-RS-05-002",
+      "observable_behaviors_ar": [
+        "يضيف فرضيات",
+        "يستبعد بدليل"
+      ],
+      "evidence_sources": [
+        "hypothesis_ledger"
+      ]
+    },
+    {
+      "id": "lo_diag",
+      "statement_ar": "يقدّر ما يثبته كل سجل وما لا يثبته، ويربط الدليل بالفرضية باتجاه صحيح.",
+      "skill_ko_ref": "KO-RS-06-002",
+      "observable_behaviors_ar": [
+        "يعرف أن ورقة المفاتيح تسجل التوقيع لا من فتح الخزانة",
+        "يربط الدليل بالفرضية"
+      ],
+      "evidence_sources": [
+        "evidence_board",
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_calib",
+      "statement_ar": "يصوغ نسبة الترجيح بحدودها.",
+      "skill_ko_ref": "KO-RS-06-021",
+      "observable_behaviors_ar": [
+        "يختار ثقة معقولة",
+        "يذكر حدوداً"
+      ],
+      "evidence_sources": [
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_revise",
+      "statement_ar": "يراجع رأيه الأول حين تخالفه السجلات، حتى لو كان الاعتراف مكتوباً وموقعاً.",
+      "skill_ko_ref": "KO-RS-06-009",
+      "observable_behaviors_ar": [
+        "يغيّر فرضيته الرائدة بدليل"
+      ],
+      "evidence_sources": [
+        "hypothesis_ledger"
+      ]
+    }
+  ],
+  "mechanics": {
+    "time_budget_units": 40,
+    "actions": [
+      {
+        "id": "a_get_bulletin",
+        "type": "examine",
+        "label_ar": "اقرأ نشرة المدرسة المعلنة",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_bulletin"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "GET_BULLETIN",
+        "target_id": "loc_archive"
+      },
+      {
+        "id": "a_get_confession",
+        "type": "examine",
+        "label_ar": "اقرأ اعتراف أيهم المكتوب",
+        "precondition": {
+          "has_evidence": "ev_bulletin"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_confession"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "GET_CONFESSION",
+        "target_id": "loc_archive"
+      },
+      {
+        "id": "a_get_memo",
+        "type": "examine",
+        "label_ar": "اقرأ مذكرة إغلاق الملف",
+        "precondition": {
+          "has_evidence": "ev_bulletin"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_closure_memo"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "GET_MEMO",
+        "target_id": "loc_archive"
+      },
+      {
+        "id": "a_get_morning",
+        "type": "examine",
+        "label_ar": "اقرأ ورقة جولة الصباح",
+        "precondition": {
+          "has_evidence": "ev_bulletin"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_morning_sheet"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "GET_MORNING",
+        "target_id": "loc_archive"
+      },
+      {
+        "id": "a_get_alarm",
+        "type": "examine",
+        "label_ar": "اطلب سجل شركة الإنذار من الأرشيف",
+        "precondition": {
+          "has_evidence": "ev_confession"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_alarm_log"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "GET_ALARM",
+        "target_id": "loc_archive"
+      },
+      {
+        "id": "a_get_azmi_memo",
+        "type": "examine",
+        "label_ar": "اقرأ مذكرة التنبيه القديمة",
+        "precondition": {
+          "has_evidence": "ev_morning_sheet"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_azmi_memo"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "GET_AZMI_MEMO",
+        "target_id": "loc_archive"
+      },
+      {
+        "id": "a_get_guard",
+        "type": "examine",
+        "label_ar": "اطلب سجل البوابة ليوم الثلاثاء",
+        "precondition": {
+          "has_evidence": "ev_confession"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_guard_log"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "GET_GUARD",
+        "target_id": "loc_gate"
+      },
+      {
+        "id": "a_get_roster",
+        "type": "examine",
+        "label_ar": "اطلب جدول مناوبات الصيانة",
+        "precondition": {
+          "has_evidence": "ev_guard_log"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_roster"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "GET_ROSTER",
+        "target_id": "loc_gate"
+      },
+      {
+        "id": "a_get_frames",
+        "type": "search_location",
+        "label_ar": "افتح ورقة صور البروفة في نادي التصوير",
+        "precondition": {
+          "has_evidence": "ev_alarm_log"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_contact_sheet"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "GET_FRAMES",
+        "target_id": "loc_media"
+      },
+      {
+        "id": "a_get_keysheet",
+        "type": "examine",
+        "label_ar": "اطلب ورقة صندوق المفاتيح",
+        "precondition": {
+          "has_evidence": "ev_contact_sheet"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_key_sheet"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "GET_KEYSHEET",
+        "target_id": "loc_key_office"
+      },
+      {
+        "id": "a_get_loan",
+        "type": "examine",
+        "label_ar": "اقرأ طلب إعارة الأسطرلاب",
+        "precondition": {
+          "has_evidence": "ev_key_sheet"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_loan_request"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "GET_LOAN",
+        "target_id": "loc_archive"
+      },
+      {
+        "id": "a_get_ayham_stmt",
+        "type": "examine",
+        "label_ar": "دوّن إفادة أيهم الجديدة بموافقته",
+        "precondition": {
+          "fact_unlocked": "f_ayham_covering"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_ayham_stmt"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "GET_AYHAM_STMT",
+        "target_id": "ayham"
+      },
+      {
+        "id": "a_get_jana_stmt",
+        "type": "examine",
+        "label_ar": "دوّن إفادة جنى الجديدة بموافقتها",
+        "precondition": {
+          "fact_unlocked": "f_lama_took"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_jana_stmt"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "GET_JANA_STMT",
+        "target_id": "jana"
+      },
+      {
+        "id": "a_int_ayham",
+        "type": "interview",
+        "label_ar": "حاور أيهم الدباغ",
+        "precondition": {
+          "has_evidence": "ev_confession"
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "ayham",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "INT_AYHAM",
+        "target_id": "ayham"
+      },
+      {
+        "id": "a_int_jana",
+        "type": "interview",
+        "label_ar": "حاور جنى الرفاعي",
+        "precondition": {
+          "has_evidence": "ev_key_sheet"
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "jana",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "INT_JANA",
+        "target_id": "jana"
+      },
+      {
+        "id": "a_int_azmi",
+        "type": "interview",
+        "label_ar": "حاور عزمي البيطار",
+        "precondition": {
+          "has_evidence": "ev_morning_sheet"
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "azmi",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "INT_AZMI",
+        "target_id": "azmi"
+      },
+      {
+        "id": "a_int_wafaa",
+        "type": "interview",
+        "label_ar": "حاور الأستاذة وفاء المصري",
+        "precondition": {
+          "has_evidence": "ev_closure_memo"
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "wafaa",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "INT_WAFAA",
+        "target_id": "wafaa"
+      },
+      {
+        "id": "a_int_mays",
+        "type": "interview",
+        "label_ar": "حاور ميس الزعبي",
+        "precondition": {
+          "has_evidence": "ev_contact_sheet"
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "mays",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "INT_MAYS",
+        "target_id": "mays"
+      },
+      {
+        "id": "p_frames_ayham",
+        "type": "present_evidence",
+        "label_ar": "اعرض ورقة الصور على أيهم",
+        "precondition": {
+          "presented": {
+            "evidence_id": "ev_contact_sheet",
+            "to_character": "ayham"
+          }
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "PRESENTED_FRAMES"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "PRESENTED_FRAMES",
+        "target_id": "ayham"
+      },
+      {
+        "id": "p_keysheet_jana",
+        "type": "present_evidence",
+        "label_ar": "اعرض ورقة المفاتيح على جنى",
+        "precondition": {
+          "presented": {
+            "evidence_id": "ev_key_sheet",
+            "to_character": "jana"
+          }
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "PRESENTED_KEYSHEET"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "PRESENTED_KEYSHEET",
+        "target_id": "jana"
+      },
+      {
+        "id": "p_alarm_wafaa",
+        "type": "present_evidence",
+        "label_ar": "اعرض سجل الإنذار على الأستاذة وفاء",
+        "precondition": {
+          "presented": {
+            "evidence_id": "ev_alarm_log",
+            "to_character": "wafaa"
+          }
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "PRESENTED_ALARM"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "PRESENTED_ALARM",
+        "target_id": "wafaa"
+      },
+      {
+        "id": "a_hint",
+        "type": "request_hint",
+        "label_ar": "اطلب تلميحاً",
+        "precondition": {
+          "always": true
+        },
+        "effects": [],
+        "time_cost_units": 0,
+        "telemetry_code": "HINT"
+      },
+      {
+        "id": "a_accuse",
+        "type": "final_accusation",
+        "label_ar": "قدّم استنتاجك",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "SUBMIT"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "ACCUSE"
+      },
+      {
+        "id": "ask_ayham_f_ayham_out",
+        "type": "interview",
+        "label_ar": "اسأل عن f_ayham_out",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_ayham_out"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "ASK_AYHAM_AYHAM_OUT",
+        "target_id": "ayham"
+      },
+      {
+        "id": "ask_ayham_f_ayham_covering",
+        "type": "interview",
+        "label_ar": "اسأل عن f_ayham_covering",
+        "precondition": {
+          "all": [
+            {
+              "always": true
+            },
+            {
+              "presented": {
+                "evidence_id": "ev_contact_sheet",
+                "to_character": "ayham"
+              }
+            }
+          ]
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_ayham_covering"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "ASK_AYHAM_AYHAM_COVERING",
+        "target_id": "ayham"
+      },
+      {
+        "id": "ask_ayham_f_jana_called",
+        "type": "interview",
+        "label_ar": "اسأل عن f_jana_called",
+        "precondition": {
+          "all": [
+            {
+              "always": true
+            },
+            {
+              "presented": {
+                "evidence_id": "ev_contact_sheet",
+                "to_character": "ayham"
+              }
+            }
+          ]
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_jana_called"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "ASK_AYHAM_JANA_CALLED",
+        "target_id": "ayham"
+      },
+      {
+        "id": "ask_jana_f_key_lama",
+        "type": "interview",
+        "label_ar": "اسأل عن f_key_lama",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_key_lama"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "ASK_JANA_KEY_LAMA",
+        "target_id": "jana"
+      },
+      {
+        "id": "ask_jana_f_jana_last",
+        "type": "interview",
+        "label_ar": "اسأل عن f_jana_last",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_jana_last"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "ASK_JANA_JANA_LAST",
+        "target_id": "jana"
+      },
+      {
+        "id": "ask_jana_f_loan_denied",
+        "type": "interview",
+        "label_ar": "اسأل عن f_loan_denied",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_loan_denied"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "ASK_JANA_LOAN_DENIED",
+        "target_id": "jana"
+      },
+      {
+        "id": "ask_jana_f_lama_took",
+        "type": "interview",
+        "label_ar": "اسأل عن f_lama_took",
+        "precondition": {
+          "all": [
+            {
+              "always": true
+            },
+            {
+              "presented": {
+                "evidence_id": "ev_key_sheet",
+                "to_character": "jana"
+              }
+            }
+          ]
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_lama_took"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "ASK_JANA_LAMA_TOOK",
+        "target_id": "jana"
+      },
+      {
+        "id": "ask_azmi_f_azmi_late",
+        "type": "interview",
+        "label_ar": "اسأل عن f_azmi_late",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_azmi_late"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "ASK_AZMI_AZMI_LATE",
+        "target_id": "azmi"
+      },
+      {
+        "id": "ask_azmi_f_alarm_armed",
+        "type": "interview",
+        "label_ar": "اسأل عن f_alarm_armed",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_alarm_armed"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "ASK_AZMI_ALARM_ARMED",
+        "target_id": "azmi"
+      },
+      {
+        "id": "ask_azmi_f_item_gone",
+        "type": "interview",
+        "label_ar": "اسأل عن f_item_gone",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_item_gone"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "ASK_AZMI_ITEM_GONE",
+        "target_id": "azmi"
+      },
+      {
+        "id": "ask_azmi_f_azmi_memo",
+        "type": "interview",
+        "label_ar": "اسأل عن f_azmi_memo",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_azmi_memo"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "ASK_AZMI_AZMI_MEMO",
+        "target_id": "azmi"
+      },
+      {
+        "id": "ask_wafaa_f_closed",
+        "type": "interview",
+        "label_ar": "اسأل عن f_closed",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_closed"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "ASK_WAFAA_CLOSED",
+        "target_id": "wafaa"
+      },
+      {
+        "id": "ask_wafaa_f_closure_flawed",
+        "type": "interview",
+        "label_ar": "اسأل عن f_closure_flawed",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_closure_flawed"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "ASK_WAFAA_CLOSURE_FLAWED",
+        "target_id": "wafaa"
+      },
+      {
+        "id": "ask_wafaa_f_loan_denied",
+        "type": "interview",
+        "label_ar": "اسأل عن f_loan_denied",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_loan_denied"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "ASK_WAFAA_LOAN_DENIED",
+        "target_id": "wafaa"
+      },
+      {
+        "id": "ask_mays_f_present_1650",
+        "type": "interview",
+        "label_ar": "اسأل عن f_present_1650",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_present_1650"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "ASK_MAYS_PRESENT_1650",
+        "target_id": "mays"
+      },
+      {
+        "id": "ask_mays_f_empty_1915",
+        "type": "interview",
+        "label_ar": "اسأل عن f_empty_1915",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_empty_1915"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "ASK_MAYS_EMPTY_1915",
+        "target_id": "mays"
+      },
+      {
+        "id": "ask_mays_f_camera_clock",
+        "type": "interview",
+        "label_ar": "اسأل عن f_camera_clock",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_camera_clock"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "ASK_MAYS_CAMERA_CLOCK",
+        "target_id": "mays"
+      }
+    ]
+  },
+  "state_machine": {
+    "id": "c039",
+    "initial": "briefing",
+    "type": "compound",
+    "states": {
+      "briefing": {
+        "description_ar": "الإحاطة",
+        "type": "atomic",
+        "on": {
+          "START": {
+            "target": "investigating"
+          }
+        }
+      },
+      "investigating": {
+        "description_ar": "التحقيق",
+        "type": "compound",
+        "initial": "gathering",
+        "states": {
+          "gathering": {
+            "type": "atomic",
+            "on": {
+              "OPEN_DEDUCTION": {
+                "target": "deducing"
+              }
+            }
+          },
+          "deducing": {
+            "type": "atomic",
+            "on": {
+              "BACK": {
+                "target": "gathering"
+              }
+            }
+          }
+        },
+        "on": {
+          "SUBMIT": {
+            "target": "review"
+          }
+        }
+      },
+      "review": {
+        "description_ar": "مراجعة",
+        "type": "atomic",
+        "on": {
+          "CLOSE": {
+            "target": "resolved"
+          }
+        }
+      },
+      "resolved": {
+        "description_ar": "إغلاق",
+        "type": "final"
+      }
+    }
+  },
+  "dialogue": {
+    "max_turns_per_interview": 10,
+    "llm_enabled": false,
+    "topics": [
+      {
+        "id": "t_confession",
+        "label_ar": "الاعتراف",
+        "example_questions_ar": [
+          "ماذا حدث في التاسعة مساءً؟",
+          "من أين عرفت هذه التفاصيل؟"
+        ],
+        "fact_ids": [
+          "f_ayham_out",
+          "f_ayham_covering",
+          "f_jana_called"
+        ],
+        "claim_ids": [
+          "cl_ayham_9pm"
+        ]
+      },
+      {
+        "id": "t_key",
+        "label_ar": "المفتاح والظرف",
+        "example_questions_ar": [
+          "من أخذ مفتاح الخزانة؟",
+          "ماذا فعلت في القاعة؟"
+        ],
+        "fact_ids": [
+          "f_key_lama",
+          "f_jana_last",
+          "f_lama_took"
+        ],
+        "claim_ids": [
+          "cl_jana_nothing"
+        ]
+      },
+      {
+        "id": "t_loan",
+        "label_ar": "طلب الإعارة",
+        "example_questions_ar": [
+          "لماذا طلبتِ الأسطرلاب؟",
+          "لماذا رُفض الطلب؟"
+        ],
+        "fact_ids": [
+          "f_loan_denied"
+        ]
+      },
+      {
+        "id": "t_night",
+        "label_ar": "الإنذار والباب",
+        "example_questions_ar": [
+          "متى بدأت مناوبتك؟",
+          "ماذا وجدت صباحاً؟"
+        ],
+        "fact_ids": [
+          "f_azmi_late",
+          "f_alarm_armed",
+          "f_item_gone",
+          "f_azmi_memo"
+        ]
+      },
+      {
+        "id": "t_closure",
+        "label_ar": "إغلاق الملف",
+        "example_questions_ar": [
+          "على أي أساس أُغلق الملف؟",
+          "هل طُلبت سجلات أخرى؟"
+        ],
+        "fact_ids": [
+          "f_closed",
+          "f_closure_flawed"
+        ],
+        "claim_ids": [
+          "cl_wafaa_enough"
+        ]
+      },
+      {
+        "id": "t_frames",
+        "label_ar": "الصور",
+        "example_questions_ar": [
+          "متى التقطت اللقطتين؟",
+          "هل ضُبطت الساعة؟"
+        ],
+        "fact_ids": [
+          "f_present_1650",
+          "f_empty_1915",
+          "f_camera_clock"
+        ]
+      }
+    ]
+  },
+  "rubric": {
+    "reference_answer_ar": "لم يأخذ أيهم الدباغ الأسطرلاب. اعترافه يطابق ما في النشرة المعلنة، وما انفرد به يخالف السجلات: الإنذار لا يسجل حركة بعد 20:05، وصورة 19:15 تظهر الحامل فارغاً والزجاج سليماً، وقد خرج أيهم 17:02. وتبين الصور ورقة المفاتيح أن الأسطرلاب غاب بين 16:50 و19:15، وأن جنى الرفاعي وحدها وقّعت على مفتاح الخزانة في المدة، ثم كانت آخر من خرج بعد كسر الزجاج. لذلك الأرجح أن جنى أخذته ودبّرت مظهر الدخول، وأن أيهم اعترف ليحميها، وأن الملف أُغلق على الاعتراف وحده. حدود الاستنتاج: ورقة المفاتيح تسجل التوقيع لا الفاعل، ولا يظهر أين الأسطرلاب الآن، ولا تثبت السجلات نية أحد.",
+    "criteria": [
+      {
+        "id": "c_source",
+        "name_ar": "تصنيف المصادر",
+        "objective_ids": [
+          "lo_claim"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يصنّف"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "أخطأ في الأغلب"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "نصف صحيح"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمه صحيح"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كله صحيح"
+          }
+        ]
+      },
+      {
+        "id": "c_conflict",
+        "name_ar": "ربط السجلات بأزمنتها",
+        "objective_ids": [
+          "lo_timeline"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يضع شيئاً"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "وضع قليلاً"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "وضع نصفها صحيحاً"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمها"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كلها في موضعها"
+          }
+        ]
+      },
+      {
+        "id": "c_links",
+        "name_ar": "ربط الأدلة بالفرضيات",
+        "objective_ids": [
+          "lo_diag"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.2,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لا روابط"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "قليلة"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "نصفها صحيح"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمها"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كلها دقيقة"
+          }
+        ]
+      },
+      {
+        "id": "c_uncertainty",
+        "name_ar": "معايرة الثقة",
+        "objective_ids": [
+          "lo_calib"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.2,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "ثقة مفرطة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "حدود قليلة"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "جزئية"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معقولة"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "معايَرة كاملة"
+          }
+        ]
+      },
+      {
+        "id": "c_revision",
+        "name_ar": "مراجعة الرأي",
+        "objective_ids": [
+          "lo_revise"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "بقي على فرضية مرفوضة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "لم يعلن فرضية"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "ثبت على فرضية سليمة"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "غيّر بدليل"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "غيّر بدليل ووثّق"
+          }
+        ]
+      },
+      {
+        "id": "c_elimination",
+        "name_ar": "استبعاد الفرضيات الخاطئة",
+        "objective_ids": [
+          "lo_hyp"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يستبعد"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "استبعد خطأً"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "فرضية بدليل"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "فرضيتين"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كل الخاطئة"
+          }
+        ]
+      },
+      {
+        "id": "c_justification",
+        "name_ar": "جودة الحجة المكتوبة",
+        "objective_ids": [
+          "lo_diag",
+          "lo_hyp"
+        ],
+        "scored_by": "human",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لا حجة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "ادعاء بلا سند"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "أدلة دون ربط"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "ربط الأدلة بالاستنتاج"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "ربط مع البدائل والحدود"
+          }
+        ]
+      }
+    ]
+  },
+  "hint_ladder": [
+    {
+      "id": "hg1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "قبل أن تسأل من اعترف، اسأل: ماذا في الاعتراف لا يعرفه إلا من كان في القاعة؟ وهل يوجد سجل يؤيده؟",
+      "trigger": {
+        "always": true
+      },
+      "assessment_weight": 0.02
+    },
+    {
+      "id": "hg2",
+      "level": 2,
+      "kind": "focus_area",
+      "text_ar": "ضع تفاصيل الاعتراف في عمودين: ما نُشر علناً من قبل، وما لم يرد إلا على لسان المعترف من وقت وحال الأسطرلاب.",
+      "trigger": {
+        "has_evidence": "ev_confession"
+      },
+      "assessment_weight": 0.04
+    },
+    {
+      "id": "hg3",
+      "level": 3,
+      "kind": "pointer",
+      "text_ar": "ابحث عن سجلات صنعتها أجهزة أو أوراق إدارية قبل أن يبدأ أحد بالاتهام: الإنذار والبوابة والصور والمفاتيح.",
+      "trigger": {
+        "has_evidence": "ev_confession"
+      },
+      "assessment_weight": 0.08
+    },
+    {
+      "id": "hc1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "إذا قال المعترف إنه دخل في التاسعة، فماذا يُفترض أن يسجل الإنذار في تلك الساعة؟",
+      "trigger": {
+        "has_evidence": "ev_confession"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_conf_alarm"
+    },
+    {
+      "id": "hc2",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "قابل وقت الاعتراف بسجل الإنذار من 20:05 حتى 06:41.",
+      "trigger": {
+        "has_evidence": "ev_alarm_log"
+      },
+      "assessment_weight": 0.06,
+      "targets_inference_id": "i_conf_alarm"
+    },
+    {
+      "id": "hc3",
+      "level": 3,
+      "kind": "partial_reveal",
+      "text_ar": "الإنذار لم يسجل حركة ولا فتح باب بعد 20:05، واللقطة 58 تظهر الحامل فارغاً الساعة 19:15؛ فماذا يبقى من رواية التاسعة؟",
+      "trigger": {
+        "has_evidence": "ev_contact_sheet"
+      },
+      "assessment_weight": 0.1,
+      "targets_inference_id": "i_conf_alarm"
+    },
+    {
+      "id": "ht1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "متى كان الأسطرلاب في مكانه آخر مرة؟ ومتى تأكدنا أنه غاب؟",
+      "trigger": {
+        "has_evidence": "ev_contact_sheet"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_taken_window"
+    },
+    {
+      "id": "ht2",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "اجمع بين ورقة الصور وورقة صندوق المفاتيح، وانظر من وقّع داخل المدة بين اللقطتين.",
+      "trigger": {
+        "has_evidence": "ev_key_sheet"
+      },
+      "assessment_weight": 0.06,
+      "targets_inference_id": "i_taken_window"
+    },
+    {
+      "id": "ht3",
+      "level": 3,
+      "kind": "partial_reveal",
+      "text_ar": "ضع على خط واحد: 16:50 لقطة، 17:02 خروج أيهم، 17:20 توقيع، 17:45 إعادة، 19:15 لقطة، 19:42 آخر خروج، 20:05 إنذار.",
+      "trigger": {
+        "has_evidence": "ev_guard_log"
+      },
+      "assessment_weight": 0.1,
+      "targets_inference_id": "i_taken_window"
+    }
+  ],
+  "fairness_test": {
+    "requirements": {
+      "min_disjoint_proof_paths": 2,
+      "max_inference_depth": 3,
+      "all_red_herrings_refutable": true,
+      "culprit_uniquely_entailed": true,
+      "no_hidden_fact_dependency": true,
+      "max_required_actions": 40
+    },
+    "runs": []
+  },
+  "ending_explanation": {
+    "steps": [
+      {
+        "order": 1,
+        "text_ar": "ابدأ بالاعتراف نفسه: ما يمكن مقابلته منه بالنشرة المعلنة مذكور فيها كله، وما انفرد به من وقت ومكان يحتاج إلى سجل مستقل.",
+        "uses_evidence_ids": [
+          "ev_bulletin",
+          "ev_confession"
+        ],
+        "inference_id": "i_conf_public"
+      },
+      {
+        "order": 2,
+        "text_ar": "سجل الإنذار لا يعرف حركة بعد 20:05، وورقة الصور تظهر الحامل فارغاً والزجاج سليماً الساعة 19:15؛ فرواية التاسعة تسقط من مسارين.",
+        "uses_evidence_ids": [
+          "ev_alarm_log",
+          "ev_contact_sheet",
+          "ev_confession"
+        ],
+        "inference_id": "i_conf_alarm"
+      },
+      {
+        "order": 3,
+        "text_ar": "الأسطرلاب في خزانته 16:50 وغائب 19:15، والتوقيع الوحيد على مفتاح الخزانة في المدة هو توقيع جنى بين 17:20 و17:45.",
+        "uses_evidence_ids": [
+          "ev_contact_sheet",
+          "ev_key_sheet"
+        ],
+        "inference_id": "i_taken_window"
+      },
+      {
+        "order": 4,
+        "text_ar": "الزجاج كُسر بعد 19:15 وقبل 20:05، وآخر من غادر المبنى هو جنى الساعة 19:42؛ فلا غريب في الليل ولا أيهم الذي خرج 17:02.",
+        "uses_evidence_ids": [
+          "ev_contact_sheet",
+          "ev_alarm_log",
+          "ev_guard_log"
+        ],
+        "inference_id": "i_staged"
+      },
+      {
+        "order": 5,
+        "text_ar": "تبقى مذكرة النسخة القديمة عن عزمي بلا أثر، فمناوبته بدأت 19:55 بحسب الجدول والبوابة، وطلب الإعارة المرفوض يعطي جنى دافعاً لكنه لا يكفي وحده.",
+        "uses_evidence_ids": [
+          "ev_roster",
+          "ev_guard_log",
+          "ev_loan_request"
+        ],
+        "inference_id": "i_rule_azmi"
+      },
+      {
+        "order": 6,
+        "text_ar": "لذلك الأرجح أن جنى أخذت الأسطرلاب ودبّرت مظهر الدخول، وأن أيهم اعترف ليحميها، وأن الملف أُغلق مبكراً لأنه اكتفى بالاعتراف.",
+        "uses_evidence_ids": [
+          "ev_guard_log",
+          "ev_loan_request",
+          "ev_closure_memo"
+        ],
+        "inference_id": "i_support_jana_a"
+      }
+    ],
+    "alternative_paths_ar": [
+      "مسار ثانٍ: سجل الإنذار وحده يسقط رواية التاسعة، ثم ورقة المفاتيح مع سجل البوابة ترجّحان جنى دون الاعتماد على أي إفادة."
+    ],
+    "what_evidence_could_not_show_ar": [
+      "ورقة المفاتيح تسجل التوقيع لا من فتح الخزانة فعلاً، والمفتاح الاحتياطي لم يُسجَّل فتح خزنته لكن غياب التسجيل لا يثبت عدم الفتح.",
+      "لا يبين أي سجل مكان الأسطرلاب حالياً، ولا تثبت السجلات نية أحد أو ما قيل في المكالمة.",
+      "هذا تمرين على قراءة الملفات في إطار مدرسي بإذن مكتوب؛ لا يدعو إلى التحقيق في قضايا حقيقية، والبتّ في المسائل الحقيقية للجهات المختصة."
+    ],
+    "science_notes_ar": [
+      "الاعتراف قول يحتاج إلى سند، ولا يزيد قوة بمجرد كونه مكتوباً وموقعاً.",
+      "إذا طابق الاعتراف ما أُعلن فقط فلا يدل على معرفة خاصة بالواقعة، وإذا خالف السجلات فيما انفرد به فالسجلات أولى.",
+      "السجلات التي تصنعها الأجهزة قبل أن يتهم أحد أحداً أقل تأثراً بالمصالح من الأقوال اللاحقة."
+    ]
+  },
+  "expert_review": [
+    {
+      "role": "narrative_editor",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "scientific_reviewer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "learning_designer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "age_appropriateness",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "cultural_reviewer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "legal_rights",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "safety",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    }
+  ]
+}
