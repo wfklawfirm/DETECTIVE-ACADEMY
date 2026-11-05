@@ -1,0 +1,154 @@
+{
+  "case_id": "c058_field_then_session",
+  "accepted_conclusions": {
+    "h_mazen": {
+      "grade": 0,
+      "note_ar": "يعتمد على شكوى حمدان وسطر الدفتر، وينقضه شريط البوابة وعدّاد الفرع وتغير التأخر مع ثبات موعد الإغلاق."
+    },
+    "h_wind": {
+      "grade": 0,
+      "note_ar": "القصب كان في القناة قبل الخميس 14 ووصل الماء فيه بتأخر طبيعي."
+    },
+    "h_leak": {
+      "grade": 0,
+      "note_ar": "يرى الأرض الرطبة ولا يقارن التسرب بالتدفق؛ النسبة نحو نصف بالمئة."
+    },
+    "h_mesh": {
+      "grade": 1,
+      "note_ar": "استنتاج متسق مع الأدلة، ويتطلب ذكر أن السبب لا يثبت سوء نية وأن المتابعة الناقصة لا تعني قصداً."
+    }
+  },
+  "confidence_band": {
+    "h_mazen": [
+      0,
+      10
+    ],
+    "h_wind": [
+      0,
+      15
+    ],
+    "h_leak": [
+      0,
+      10
+    ],
+    "h_mesh": [
+      60,
+      88
+    ]
+  },
+  "source_key": {
+    "ev_docket": "public_document",
+    "ev_schedule": "public_document",
+    "ev_strip": "primary_record",
+    "ev_branch_meter": "primary_record",
+    "ev_upstream_chart": "primary_record",
+    "ev_intake_chart": "primary_record",
+    "ev_culvert_trace": "primary_record",
+    "ev_grate_clog": "primary_record",
+    "ev_shed_grate": "primary_record",
+    "ev_work_order": "public_document",
+    "ev_leak_test": "primary_record",
+    "ev_wind_note": "public_document",
+    "ev_keeper_log": "claim",
+    "ev_field_file": "redisplay",
+    "ev_hamdan_stmt": "claim",
+    "ev_mazen_stmt": "claim",
+    "ev_tariq_stmt": "claim"
+  },
+  "link_key": {
+    "h_mazen": {
+      "ev_hamdan_stmt": "supports",
+      "ev_keeper_log": "supports",
+      "ev_strip": "weakens",
+      "ev_branch_meter": "weakens",
+      "ev_intake_chart": "weakens",
+      "ev_upstream_chart": "weakens",
+      "ev_mazen_stmt": "neutral"
+    },
+    "h_wind": {
+      "ev_wind_note": "supports",
+      "ev_grate_clog": "neutral",
+      "ev_intake_chart": "weakens",
+      "ev_shed_grate": "weakens"
+    },
+    "h_leak": {
+      "ev_leak_test": "supports",
+      "ev_branch_meter": "weakens",
+      "ev_upstream_chart": "neutral"
+    },
+    "h_mesh": {
+      "ev_grate_clog": "supports",
+      "ev_shed_grate": "supports",
+      "ev_work_order": "supports",
+      "ev_culvert_trace": "supports",
+      "ev_upstream_chart": "supports",
+      "ev_intake_chart": "supports",
+      "ev_strip": "supports",
+      "ev_branch_meter": "supports",
+      "ev_tariq_stmt": "neutral"
+    }
+  },
+  "required_limits": [
+    "l_gate_scope",
+    "l_cause_not_intent"
+  ],
+  "valid_mind_changers": [
+    "m_meters_fault",
+    "m_early_delays",
+    "m_flow_after_six"
+  ],
+  "invalid_limits": [
+    "l_invalid_party",
+    "l_invalid_volunteer"
+  ],
+  "decisive_evidence": [
+    "ev_strip",
+    "ev_branch_meter",
+    "ev_upstream_chart",
+    "ev_intake_chart",
+    "ev_grate_clog",
+    "ev_shed_grate",
+    "ev_work_order"
+  ],
+  "lab_requirement": null,
+  "timeline_requirement": [
+    {
+      "evidence_id": "ev_strip",
+      "utc_minute": 120,
+      "tol": 5
+    },
+    {
+      "evidence_id": "ev_branch_meter",
+      "utc_minute": 120,
+      "tol": 5
+    },
+    {
+      "evidence_id": "ev_keeper_log",
+      "utc_minute": 175,
+      "tol": 5
+    },
+    {
+      "evidence_id": "ev_intake_chart",
+      "utc_minute": 190,
+      "tol": 5
+    }
+  ],
+  "refuted_hypotheses": [
+    "h_mazen",
+    "h_wind",
+    "h_leak"
+  ],
+  "criteria_map": {
+    "c_source": "source_typing",
+    "c_conflict": "conflict_resolution",
+    "c_links": "hypothesis_links",
+    "c_uncertainty": "uncertainty",
+    "c_revision": "revision",
+    "c_elimination": "elimination",
+    "c_justification": "justification_human"
+  },
+  "caps": {
+    "no_citations_max": 45,
+    "no_conflict_resolution_max": 70
+  }
+}

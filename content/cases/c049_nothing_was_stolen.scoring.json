@@ -1,0 +1,150 @@
+{
+  "case_id": "c049_nothing_was_stolen",
+  "accepted_conclusions": {
+    "h_repair": {
+      "grade": 1,
+      "note_ar": "استنتاج متسق مع الأدلة ويتطلب ذكر حدوده."
+    },
+    "h_rami": {
+      "grade": 0,
+      "note_ar": "يبني على رغبة معلنة في رسالة، بينما سجل الاستعارة وسجل المفتاح يبيّنان أنه أعاد الناي قبل إغلاق الخزانة."
+    },
+    "h_lina": {
+      "grade": 0,
+      "note_ar": "يبني على استعارة سابقة مأذون بها؛ ولا اسم لها في المفتاح بعد إغلاق الخزانة."
+    },
+    "h_karim": {
+      "grade": 0,
+      "note_ar": "يحوّل وقوفه في الممر إلى فعل؛ والقفل سليم والمفتاح لم يسجَّل باسمه."
+    },
+    "h_zaid": {
+      "grade": 0,
+      "note_ar": "يقرأ الحمل قصداً؛ القسيمة الموقّعة وسجل البوابة وإيصال الورشة تفسر الحمل بمهمة مكتوبة."
+    }
+  },
+  "confidence_band": {
+    "h_repair": [
+      70,
+      95
+    ],
+    "h_rami": [
+      0,
+      10
+    ],
+    "h_lina": [
+      0,
+      10
+    ],
+    "h_karim": [
+      0,
+      10
+    ],
+    "h_zaid": [
+      0,
+      15
+    ]
+  },
+  "source_key": {
+    "ev_hisham_stmt": "claim",
+    "ev_cabinet": "primary_record",
+    "ev_signout_sheet": "primary_record",
+    "ev_key_log": "primary_record",
+    "ev_slip14": "primary_record",
+    "ev_gate_book": "primary_record",
+    "ev_receipt": "primary_record",
+    "ev_dalal": "claim",
+    "ev_rami_msg": "primary_record",
+    "ev_karim_stmt": "claim"
+  },
+  "link_key": {
+    "h_repair": {
+      "ev_slip14": "supports",
+      "ev_key_log": "supports",
+      "ev_gate_book": "supports",
+      "ev_receipt": "supports",
+      "ev_cabinet": "supports",
+      "ev_hisham_stmt": "neutral",
+      "ev_dalal": "neutral",
+      "ev_rami_msg": "neutral"
+    },
+    "h_rami": {
+      "ev_rami_msg": "supports",
+      "ev_karim_stmt": "supports",
+      "ev_signout_sheet": "weakens",
+      "ev_key_log": "weakens",
+      "ev_cabinet": "weakens",
+      "ev_slip14": "weakens"
+    },
+    "h_lina": {
+      "ev_signout_sheet": "neutral",
+      "ev_key_log": "weakens",
+      "ev_cabinet": "weakens",
+      "ev_slip14": "weakens"
+    },
+    "h_karim": {
+      "ev_dalal": "supports",
+      "ev_key_log": "weakens",
+      "ev_cabinet": "weakens",
+      "ev_slip14": "weakens"
+    },
+    "h_zaid": {
+      "ev_dalal": "supports",
+      "ev_key_log": "neutral",
+      "ev_slip14": "weakens",
+      "ev_receipt": "weakens",
+      "ev_gate_book": "weakens"
+    }
+  },
+  "required_limits": [
+    "l_log_complete",
+    "l_not_seen"
+  ],
+  "valid_mind_changers": [
+    "m_slip_unsigned",
+    "m_key_gap",
+    "m_no_receipt"
+  ],
+  "invalid_limits": [
+    "l_invalid_missing",
+    "l_invalid_rushed",
+    "l_invalid_strange"
+  ],
+  "decisive_evidence": [
+    "ev_slip14",
+    "ev_key_log",
+    "ev_gate_book",
+    "ev_receipt"
+  ],
+  "lab_requirement": null,
+  "refuted_hypotheses": [
+    "h_rami",
+    "h_lina",
+    "h_karim",
+    "h_zaid"
+  ],
+  "transfer_key": {
+    "valid": [
+      "o1",
+      "o2",
+      "o3",
+      "o4"
+    ],
+    "invalid": [
+      "o5",
+      "o6",
+      "o7"
+    ]
+  },
+  "criteria_map": {
+    "c_source": "source_typing",
+    "c_links": "hypothesis_links",
+    "c_uncertainty": "uncertainty",
+    "c_revision": "revision",
+    "c_elimination": "elimination",
+    "c_justification": "justification_human"
+  },
+  "caps": {
+    "no_citations_max": 45,
+    "no_conflict_resolution_max": 65
+  }
+}

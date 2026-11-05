@@ -1,0 +1,3259 @@
+{
+  "schema_version": "0.1.0",
+  "case_id": "c052_device_is_not_its_owner",
+  "case_version": "0.1.0",
+  "meta": {
+    "title_ar": "اللوح بلا صاحبه",
+    "title_en": "The Tablet Without Its Owner",
+    "age_band": "16-18",
+    "locale": "ar",
+    "dialogue_register": "msa",
+    "estimated_minutes": 35,
+    "difficulty": 3,
+    "content_flags": [
+      "no_violence",
+      "fraud"
+    ],
+    "authors": [
+      "فريق أثر التحريري (مسودة بمساعدة الذكاء الاصطناعي، لم تُراجَع بشرياً بعد)"
+    ],
+    "knowledge_object_refs": [
+      "KO-RS-05-001",
+      "KO-RS-05-005",
+      "KO-RS-05-002",
+      "KO-RS-06-002",
+      "KO-RS-06-021",
+      "KO-RS-06-009"
+    ]
+  },
+  "premise": {
+    "hook_ar": "ظهر الأربعاء نُشر على لوحة نادي الروبوت إعلان باسم رئيسه يؤجل اختبار الانضمام، فغاب عنه أربعة متنافسين. السجل يقول إن الإعلان خرج من حساب الرئيس ومن لوحه، والرئيس يقول إنه كان في الامتحان. فهل صاحب الحساب هو صاحب اليد؟",
+    "player_role_ar": "أنت مراجع متدرب في لجنة شؤون الطلاب، وطُلب منك أن تفحص الشكوى وتبين ما تثبته السجلات وما لا تثبته قبل أن تقرر الإدارة شيئاً.",
+    "setting_ar": "ثانوية الفجر في مدينة وادي الندى المتخيَّلة، يوم الخميس بعد الظهر. بإذن مكتوب من الإدارة تطّلع على سجلات اللوحة والشبكة والحضور والدفاتر الورقية، ولا تفتح غيرها. الأسماء والأحداث كلها متخيَّلة، وتوقيت المدرسة هو توقيت كل السجلات.",
+    "public_fact_ids": [
+      "f_notice",
+      "f_absent",
+      "f_account_device",
+      "f_nader_denies"
+    ],
+    "assumed_general_knowledge_ar": [
+      "سجل الحساب والجهاز يدل على الاستعمال لا على هوية المستعمل",
+      "بطاقة الطالب تسجل البطاقة لا حاملها",
+      "من يصف شخصاً رآه من الخلف قد يخطئ في التعرف عليه"
+    ]
+  },
+  "entities": {
+    "characters": [
+      {
+        "id": "nader",
+        "name_ar": "نادر الشهابي",
+        "role": "suspect",
+        "age_descriptor_ar": "رئيس نادي الروبوت، طالب في الصف الثالث الثانوي",
+        "persona_ar": "هادئ ومرتب، يغضب بصمت حين يُنسب إليه ما لم يفعله، ويتحدث بجمل قصيرة.",
+        "motives_ar": [
+          "أن يبرّئ اسمه",
+          "أن يعود اختبار الانضمام عادلاً للجميع"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "nd_greet",
+            "purpose": "greeting",
+            "text_ar": "تفضّل. أحب أن تُحسم المسألة بالسجلات."
+          },
+          {
+            "line_id": "nd_tablet",
+            "purpose": "reveal",
+            "text_ar": "تركت لوحي على حامل الشحن في غرفة النادي الساعة 12:20 ثم ذهبت إلى امتحان الفيزياء. ظننت أن الشاشة تُقفل برمز بعد دقائق، ولا يستعمله غيري.",
+            "fact_ids": [
+              "f_nader_left_tablet"
+            ],
+            "claim_ids": [
+              "cl_nader_locked"
+            ]
+          },
+          {
+            "line_id": "nd_hall",
+            "purpose": "reveal",
+            "text_ar": "جلست في القاعة 5 من 12:30 حتى انتهى الامتحان، وكانت أجهزتنا كلها خارج القاعة.",
+            "fact_ids": [
+              "f_nader_in_hall"
+            ]
+          },
+          {
+            "line_id": "nd_deny",
+            "purpose": "reveal",
+            "text_ar": "لم أكتب الإعلان ولم أطلب تأجيل الاختبار، ولا أعرف من فعل.",
+            "fact_ids": [
+              "f_nader_denies"
+            ]
+          },
+          {
+            "line_id": "nd_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف أكثر من ذلك."
+          },
+          {
+            "line_id": "nd_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن لوحي وعن وقت الامتحان."
+          },
+          {
+            "line_id": "nd_bye",
+            "purpose": "farewell",
+            "text_ar": "أرجو أن تقارنوا السجلات بعضها ببعض قبل أن تقرروا."
+          }
+        ]
+      },
+      {
+        "id": "joud",
+        "name_ar": "جود الهاشمي",
+        "role": "suspect",
+        "age_descriptor_ar": "طالبة في الصف الثاني الثانوي، الأولى في جولة التأهل",
+        "persona_ar": "حادّة الكلام حين تغضب، لكنها صريحة وتحب الأرقام الواضحة.",
+        "motives_ar": [
+          "أن تنال مكاناً في فريق المسابقة",
+          "ألا يضيع مشروعها بسبب قرار لم تُسمع فيه"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "jd_greet",
+            "purpose": "greeting",
+            "text_ar": "أهلاً. لا أخفي أنني غاضبة، لكن الغضب ليس دليلاً."
+          },
+          {
+            "line_id": "jd_left",
+            "purpose": "reveal",
+            "text_ar": "كنت في غرفة النادي أنهي لوحة مشروعي من 12:50 إلى 13:10، ثم ذهبت إلى مكتبة المبنى ب لأستعير مرجعاً.",
+            "fact_ids": [
+              "f_joud_left_club",
+              "f_joud_library",
+              "f_joud_desk"
+            ]
+          },
+          {
+            "line_id": "jd_msg",
+            "purpose": "reveal",
+            "text_ar": "نعم، أرسلت إلى نادر رسالة غاضبة صباح الأربعاء لأنه أخّر مشروعي. لكنني لم أنشر شيئاً، ولا أريد أن أخسر مكاني بحيلة.",
+            "fact_ids": [
+              "f_joud_message"
+            ]
+          },
+          {
+            "line_id": "jd_refuse",
+            "purpose": "refuse_secret",
+            "text_ar": "رسائلي الخاصة لا تخص هذا السؤال إلا بقدر ما تظهر في السجلات."
+          },
+          {
+            "line_id": "jd_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف أكثر من ذلك."
+          },
+          {
+            "line_id": "jd_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن ظهر الأربعاء ومكاني فيه."
+          },
+          {
+            "line_id": "jd_bye",
+            "purpose": "farewell",
+            "text_ar": "صدّقت الإعلان فلم أحضر الاختبار، وأرجو أن يُنصف الجميع."
+          }
+        ]
+      },
+      {
+        "id": "murad",
+        "name_ar": "مراد الجبوري",
+        "role": "suspect",
+        "age_descriptor_ar": "طالب في الصف الثالث الثانوي، الرابع في جولة التأهل",
+        "persona_ar": "ودود وسريع الجواب، يبتسم كثيراً ويتجنب التفاصيل الدقيقة حين تُطلب منه.",
+        "motives_ar": [
+          "أن ينال مكاناً في فريق المسابقة",
+          "ألا يظهر بمظهر من يتنافس بالحيلة"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "mr_greet",
+            "purpose": "greeting",
+            "text_ar": "أهلاً بك. يسعدني أن أساعد، وأتمنى أن تنتهي المسألة سريعاً."
+          },
+          {
+            "line_id": "mr_absent",
+            "purpose": "lie",
+            "text_ar": "لم أدخل غرفة النادي وقت الغداء. بقيت في الساحة مع زملائي.",
+            "claim_ids": [
+              "cl_murad_absent"
+            ]
+          },
+          {
+            "line_id": "mr_present",
+            "purpose": "reveal",
+            "text_ar": "حسناً، دخلت الغرفة من 13:12 إلى 13:36 لأطبع ورقة وأفتح حاسوب النادي. لم ألمس لوح نادر ولا رأيت أحداً حولي.",
+            "fact_ids": [
+              "f_murad_in_club"
+            ]
+          },
+          {
+            "line_id": "mr_booking",
+            "purpose": "reveal",
+            "text_ar": "حجزت المختبر ب صباح الأربعاء لأتدرب على مشروعي، وهذا حق لكل عضو.",
+            "fact_ids": [
+              "f_booking"
+            ]
+          },
+          {
+            "line_id": "mr_refuse",
+            "purpose": "refuse_secret",
+            "text_ar": "ما فعلته في الغرفة دوّنته في الدفتر."
+          },
+          {
+            "line_id": "mr_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف أكثر من ذلك."
+          },
+          {
+            "line_id": "mr_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "لنبقَ عند ما جرى ظهر الأربعاء."
+          },
+          {
+            "line_id": "mr_bye",
+            "purpose": "farewell",
+            "text_ar": "أرجو ألا تُبنى الأحكام على الظنون."
+          }
+        ]
+      },
+      {
+        "id": "hana",
+        "name_ar": "هناء القباني",
+        "role": "witness",
+        "age_descriptor_ar": "عضوة في النادي، لا تشارك في الاختبار",
+        "persona_ar": "متعاونة وتحب أن تكون مفيدة، وتتكلم بثقة أكبر مما تتذكر.",
+        "motives_ar": [
+          "أن تساعد في كشف ما جرى",
+          "ألا تُظلم زميلاً بكلامها"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "hn_greet",
+            "purpose": "greeting",
+            "text_ar": "أهلاً. سأقول لكم ما رأيت."
+          },
+          {
+            "line_id": "hn_saw",
+            "purpose": "reveal",
+            "text_ar": "كنت عند ممر المبنى أ نحو 13:15، فرأيت طالباً بسترة النادي يدخل غرفة النادي. ظننته نادراً لأنه رئيس النادي.",
+            "fact_ids": [
+              "f_hana_saw"
+            ],
+            "claim_ids": [
+              "cl_hana_nader"
+            ]
+          },
+          {
+            "line_id": "hn_back",
+            "purpose": "reveal",
+            "text_ar": "عندما رأيت كشف الامتحان تذكرت أنني رأيته من الخلف فقط، وعرفته من السترة ومن طوله، ولم أرَ وجهه.",
+            "fact_ids": [
+              "f_hana_recognition"
+            ]
+          },
+          {
+            "line_id": "hn_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف أكثر من ذلك."
+          },
+          {
+            "line_id": "hn_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عمّا رأيته في الممر."
+          },
+          {
+            "line_id": "hn_bye",
+            "purpose": "farewell",
+            "text_ar": "آسفة إن كنت قد تسرعت في ظني."
+          }
+        ]
+      },
+      {
+        "id": "maysa",
+        "name_ar": "ميساء الرفاعي",
+        "role": "authority",
+        "age_descriptor_ar": "معلمة الفيزياء ومنسقة شؤون الطلاب",
+        "persona_ar": "رسمية ودقيقة، تحفظ الأوراق بترتيب وتجيب عمّا في سجلاتها فقط.",
+        "motives_ar": [
+          "أن تُحفظ حقوق الطلاب كلهم",
+          "أن يُقاس كل قول بالسجل"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "ms_greet",
+            "purpose": "greeting",
+            "text_ar": "تفضّلوا. الأوراق التي عندي مرتبة بتواريخها."
+          },
+          {
+            "line_id": "ms_hall",
+            "purpose": "reveal",
+            "text_ar": "راقبت امتحان الفيزياء في القاعة 5 من 12:30 إلى 14:00، وجلس نادر في مقعده طوال الوقت.",
+            "fact_ids": [
+              "f_nader_in_hall"
+            ]
+          },
+          {
+            "line_id": "ms_tryout",
+            "purpose": "reveal",
+            "text_ar": "حضر اختبار الخميس خمسة من تسعة مسجلين، والأماكن ثلاثة. لا أعرف لماذا غاب كل واحد من الأربعة.",
+            "fact_ids": [
+              "f_absent"
+            ]
+          },
+          {
+            "line_id": "ms_log",
+            "purpose": "reveal",
+            "text_ar": "سجل اللوحة ينسب الإعلان إلى حساب نادر وإلى لوحه المسجل باسمه، وهو ما أحلته إليكم.",
+            "fact_ids": [
+              "f_account_device"
+            ]
+          },
+          {
+            "line_id": "ms_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف أكثر مما دوّنت."
+          },
+          {
+            "line_id": "ms_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألوني عن الأوراق التي عندي."
+          },
+          {
+            "line_id": "ms_bye",
+            "purpose": "farewell",
+            "text_ar": "الأوراق عندكم متى شئتم."
+          }
+        ]
+      }
+    ],
+    "locations": [
+      {
+        "id": "loc_club",
+        "name_ar": "غرفة نادي الروبوت",
+        "description_ar": "غرفة في المبنى أ فيها حاسوب النادي ودفتر الدخول وحامل شحن للوح، ولها نقطة اتصال لاسلكي."
+      },
+      {
+        "id": "loc_hall",
+        "name_ar": "القاعة 5",
+        "description_ar": "قاعة امتحان الفيزياء، تُترك الأجهزة خارجها."
+      },
+      {
+        "id": "loc_library",
+        "name_ar": "مكتبة المبنى ب",
+        "description_ar": "مكتبة فيها جهاز إعارة ذاتية يقرأ بطاقات الطلاب."
+      },
+      {
+        "id": "loc_it",
+        "name_ar": "غرفة الشبكة",
+        "description_ar": "سجلات لوحة النادي ونقاط الاتصال وحاسوب الغرفة."
+      },
+      {
+        "id": "loc_office",
+        "name_ar": "مكتب شؤون الطلاب",
+        "description_ar": "الإحالات والكشوف وسجل حجز المختبرات."
+      }
+    ],
+    "objects": [
+      {
+        "id": "obj_tablet",
+        "name_ar": "اللوح TB-14",
+        "description_ar": "لوح مسجل باسم نادر الشهابي، وضع على حامل الشحن في غرفة النادي بوضع العرض."
+      },
+      {
+        "id": "obj_board",
+        "name_ar": "لوحة إعلانات النادي الإلكترونية",
+        "description_ar": "موقع داخلي ينشر عليه أعضاء النادي إعلاناتهم بحساباتهم."
+      }
+    ],
+    "organizations": [
+      {
+        "id": "org_school",
+        "name_ar": "ثانوية الفجر",
+        "description_ar": "ثانوية في مدينة وادي الندى المتخيَّلة، فيها نادي الروبوت."
+      }
+    ]
+  },
+  "truth": {
+    "solution": {
+      "culprit_ids": [
+        "murad"
+      ],
+      "summary_ar": "لم ينشر نادر الإعلان. ترك لوحه المفتوح فوق حامل الشحن بغرفة النادي الساعة 12:20 وجلس في امتحان الفيزياء، فبقي حسابه مسجل الدخول بلا صاحبه. دخل مراد الغرفة 13:12، وجود كانت قد خرجت وسجلت بطاقتها في المكتبة 13:18. نشر مراد الإعلان 13:20 من الشاشة المفتوحة طمعاً في مكان بالفريق، فغاب أصحاب المراتب الأعلى منه، وكان قد حجز الموعد المذكور في الإعلان قبله بثلاث ساعات وأربعين دقيقة. أما هناء فرأت طالباً بسترة النادي من الخلف فظنته نادراً.",
+      "key_fact_ids": [
+        "f_posted_by_other",
+        "f_joud_away",
+        "f_murad_alone"
+      ]
+    },
+    "facts": [
+      {
+        "id": "f_notice",
+        "statement_ar": "ظهر الأربعاء الساعة 13:20 نُشر على لوحة نادي الروبوت إعلان باسم الرئيس نادر الشهابي يؤجل اختبار الانضمام من الخميس 15:00 إلى الأربعاء القادم في المختبر ب.",
+        "kind": "event",
+        "subject_ids": [
+          "nader",
+          "obj_board"
+        ],
+        "spoiler_level": 0,
+        "time": {
+          "start_min": 320,
+          "precision": "exact"
+        },
+        "location_id": "loc_club"
+      },
+      {
+        "id": "f_absent",
+        "statement_ar": "غاب عن اختبار الانضمام يوم الخميس أربعة من تسعة متنافسين مسجلين، وحضر خمسة، والأماكن ثلاثة.",
+        "kind": "event",
+        "subject_ids": [
+          "org_school"
+        ],
+        "spoiler_level": 0,
+        "time": {
+          "start_min": 1860,
+          "precision": "approx"
+        },
+        "location_id": "loc_office"
+      },
+      {
+        "id": "f_account_device",
+        "statement_ar": "ينسب سجل اللوحة النشر إلى حساب نادر وإلى اللوح TB-14 المسجل باسمه.",
+        "kind": "attribute",
+        "subject_ids": [
+          "nader",
+          "obj_tablet",
+          "obj_board"
+        ],
+        "spoiler_level": 0,
+        "location_id": "loc_it"
+      },
+      {
+        "id": "f_nader_denies",
+        "statement_ar": "ينفي نادر أنه كتب الإعلان، ويقول إنه كان في امتحان الفيزياء.",
+        "kind": "attribute",
+        "subject_ids": [
+          "nader"
+        ],
+        "spoiler_level": 0
+      },
+      {
+        "id": "f_nader_left_tablet",
+        "statement_ar": "ترك نادر لوحه على حامل الشحن في غرفة النادي نحو 12:20 وانصرف إلى امتحان الفيزياء.",
+        "kind": "event",
+        "subject_ids": [
+          "nader",
+          "obj_tablet"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 260,
+          "precision": "exact",
+          "end_min": 265
+        },
+        "location_id": "loc_club"
+      },
+      {
+        "id": "f_display_mode",
+        "statement_ar": "كان اللوح على وضع العرض فوق الحامل: الشاشة مفتوحة وتطبيق اللوحة مسجل الدخول بحساب نادر، فلا يُطلب رمز عند النشر.",
+        "kind": "state",
+        "subject_ids": [
+          "obj_tablet",
+          "obj_board"
+        ],
+        "spoiler_level": 1,
+        "location_id": "loc_club"
+      },
+      {
+        "id": "f_post_manual",
+        "statement_ar": "نُشر الإعلان يدوياً من شاشة اللوح الساعة 13:20، ولم يكن مجدولاً مسبقاً.",
+        "kind": "event",
+        "subject_ids": [
+          "obj_tablet",
+          "obj_board"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 320,
+          "precision": "exact"
+        },
+        "location_id": "loc_club"
+      },
+      {
+        "id": "f_tablet_stayed",
+        "statement_ar": "بقي اللوح متصلاً بنقطة اتصال غرفة النادي وحدها من 12:20 إلى 14:10، ولم يتصل بأي نقطة أخرى.",
+        "kind": "state",
+        "subject_ids": [
+          "obj_tablet"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 260,
+          "precision": "exact",
+          "end_min": 370
+        },
+        "location_id": "loc_club"
+      },
+      {
+        "id": "f_nader_in_hall",
+        "statement_ar": "جلس نادر في القاعة 5 من 12:30 إلى 14:00، ولم يخرج منها قبل 13:45.",
+        "kind": "state",
+        "subject_ids": [
+          "nader"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 270,
+          "precision": "exact",
+          "end_min": 360
+        },
+        "location_id": "loc_hall"
+      },
+      {
+        "id": "f_joud_left_club",
+        "statement_ar": "خرجت جود من غرفة النادي الساعة 13:10 بحسب دفتر الدخول.",
+        "kind": "event",
+        "subject_ids": [
+          "joud"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 310,
+          "precision": "exact"
+        },
+        "location_id": "loc_club"
+      },
+      {
+        "id": "f_joud_library",
+        "statement_ar": "سجّل جهاز الإعارة في مكتبة المبنى ب بطاقة جود الساعة 13:18 ثم الساعة 13:31، والمسافة بين المبنيين ثماني دقائق مشياً.",
+        "kind": "event",
+        "subject_ids": [
+          "joud"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 318,
+          "precision": "exact",
+          "end_min": 331
+        },
+        "location_id": "loc_library"
+      },
+      {
+        "id": "f_joud_desk",
+        "statement_ar": "كانت جود قرب مكتب أمينة المكتبة من 13:19 إلى 13:35 بحسب دفتر المكتب.",
+        "kind": "state",
+        "subject_ids": [
+          "joud"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 319,
+          "precision": "exact",
+          "end_min": 335
+        },
+        "location_id": "loc_library"
+      },
+      {
+        "id": "f_tablet_charging",
+        "statement_ar": "كان اللوح موصولاً بحامل الشحن في غرفة النادي من 12:20 إلى 14:08.",
+        "kind": "state",
+        "subject_ids": [
+          "obj_tablet"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 260,
+          "precision": "exact",
+          "end_min": 368
+        },
+        "location_id": "loc_club"
+      },
+      {
+        "id": "f_joud_message",
+        "statement_ar": "أرسلت جود صباح الأربعاء 08:50 رسالة غاضبة إلى نادر تعترض فيها على تأخير مشروعها.",
+        "kind": "event",
+        "subject_ids": [
+          "joud",
+          "nader"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 50,
+          "precision": "exact"
+        }
+      },
+      {
+        "id": "f_hana_saw",
+        "statement_ar": "رأت هناء نحو 13:15 طالباً بسترة النادي يدخل غرفة النادي، من الخلف.",
+        "kind": "event",
+        "subject_ids": [
+          "hana"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 315,
+          "precision": "approx"
+        },
+        "location_id": "loc_club"
+      },
+      {
+        "id": "f_hana_recognition",
+        "statement_ar": "عرفت هناء الطالب من سترة النادي ومن طوله، ولم ترَ وجهه.",
+        "kind": "state",
+        "subject_ids": [
+          "hana"
+        ],
+        "spoiler_level": 2,
+        "time": {
+          "start_min": 315,
+          "precision": "approx"
+        },
+        "location_id": "loc_club"
+      },
+      {
+        "id": "f_murad_in_club",
+        "statement_ar": "كان مراد في غرفة النادي من 13:12 إلى 13:36، وفُتح حاسوب الغرفة بحسابه من 13:13 إلى 13:36.",
+        "kind": "event",
+        "subject_ids": [
+          "murad"
+        ],
+        "spoiler_level": 2,
+        "time": {
+          "start_min": 312,
+          "precision": "exact",
+          "end_min": 336
+        },
+        "location_id": "loc_club"
+      },
+      {
+        "id": "f_booking",
+        "statement_ar": "سجّل مراد صباح الأربعاء 09:40 طلب حجز المختبر ب للأربعاء القادم 15:00، أي قبل الإعلان بثلاث ساعات وأربعين دقيقة.",
+        "kind": "event",
+        "subject_ids": [
+          "murad"
+        ],
+        "spoiler_level": 2,
+        "time": {
+          "start_min": 100,
+          "precision": "exact"
+        },
+        "location_id": "loc_office"
+      },
+      {
+        "id": "f_murad_gain",
+        "statement_ar": "كان مراد الرابع في جولة التأهل والأماكن ثلاثة، وغاب أصحاب المرتبة 1 و2 و3 و7، فصار الأول بين الحاضرين.",
+        "kind": "state",
+        "subject_ids": [
+          "murad"
+        ],
+        "spoiler_level": 2,
+        "location_id": "loc_office"
+      },
+      {
+        "id": "f_posted_by_other",
+        "statement_ar": "نشر الإعلان شخص غير نادر كان عند اللوح الساعة 13:20؛ فالحساب والجهاز ينسبان الفعل إلى صاحبهما ولا يثبتان من لمس الشاشة.",
+        "kind": "relation",
+        "subject_ids": [
+          "nader",
+          "obj_tablet"
+        ],
+        "spoiler_level": 3,
+        "time": {
+          "start_min": 320,
+          "precision": "exact"
+        },
+        "location_id": "loc_club"
+      },
+      {
+        "id": "f_joud_away",
+        "statement_ar": "لم تكن جود في غرفة النادي الساعة 13:20.",
+        "kind": "absence",
+        "subject_ids": [
+          "joud"
+        ],
+        "spoiler_level": 3,
+        "time": {
+          "start_min": 320,
+          "precision": "exact"
+        },
+        "location_id": "loc_club"
+      },
+      {
+        "id": "f_murad_alone",
+        "statement_ar": "كان مراد الوحيد من المشتبه بهم في غرفة النادي الساعة 13:20.",
+        "kind": "relation",
+        "subject_ids": [
+          "murad"
+        ],
+        "spoiler_level": 3,
+        "time": {
+          "start_min": 320,
+          "precision": "exact"
+        },
+        "location_id": "loc_club"
+      }
+    ],
+    "claims": [
+      {
+        "id": "cl_murad_absent",
+        "statement_ar": "مراد لم يدخل غرفة النادي وقت الغداء وبقي في الساحة.",
+        "kind": "lie",
+        "held_by": [
+          "murad"
+        ],
+        "true_fact_id": "f_murad_in_club",
+        "contradicted_by_evidence_ids": [
+          "ev_signin",
+          "ev_pc_log"
+        ]
+      },
+      {
+        "id": "cl_hana_nader",
+        "statement_ar": "هناء رأت نادراً يدخل غرفة النادي نحو 13:15.",
+        "kind": "honest_mistake",
+        "held_by": [
+          "hana"
+        ],
+        "true_fact_id": "f_hana_saw",
+        "contradicted_by_evidence_ids": [
+          "ev_exam_sheet",
+          "ev_door_counter"
+        ]
+      },
+      {
+        "id": "cl_nader_locked",
+        "statement_ar": "لوح نادر كان مقفلاً برمز ولا يستعمله غيره.",
+        "kind": "honest_mistake",
+        "held_by": [
+          "nader"
+        ],
+        "true_fact_id": "f_display_mode",
+        "contradicted_by_evidence_ids": [
+          "ev_it_note"
+        ]
+      }
+    ]
+  },
+  "timeline": [
+    {
+      "id": "te_joud_msg",
+      "description_ar": "جود ترسل رسالتها الغاضبة إلى نادر.",
+      "time": {
+        "start_min": 50,
+        "precision": "exact"
+      },
+      "actor_ids": [
+        "joud"
+      ],
+      "fact_ids": [
+        "f_joud_message"
+      ],
+      "motivated_by_ar": "اعتراضها على تأخير مشروعها"
+    },
+    {
+      "id": "te_booking",
+      "description_ar": "مراد يسجل طلب حجز المختبر ب للأربعاء القادم.",
+      "time": {
+        "start_min": 100,
+        "precision": "exact"
+      },
+      "actor_ids": [
+        "murad"
+      ],
+      "fact_ids": [
+        "f_booking"
+      ],
+      "location_id": "loc_office",
+      "motivated_by_ar": "أراد أن يكون الموعد البديل جاهزاً قبل أن يظهر الإعلان"
+    },
+    {
+      "id": "te_tablet_left",
+      "description_ar": "نادر يضع لوحه على الحامل في غرفة النادي.",
+      "time": {
+        "start_min": 260,
+        "precision": "exact",
+        "end_min": 265
+      },
+      "actor_ids": [
+        "nader"
+      ],
+      "fact_ids": [
+        "f_nader_left_tablet",
+        "f_display_mode"
+      ],
+      "location_id": "loc_club",
+      "motivated_by_ar": "لا يُسمح بالأجهزة في قاعة الامتحان"
+    },
+    {
+      "id": "te_exam",
+      "description_ar": "نادر يجلس في امتحان الفيزياء في القاعة 5.",
+      "time": {
+        "start_min": 270,
+        "precision": "exact",
+        "end_min": 360
+      },
+      "actor_ids": [
+        "nader"
+      ],
+      "fact_ids": [
+        "f_nader_in_hall"
+      ],
+      "location_id": "loc_hall",
+      "witness_ids": [
+        "maysa"
+      ],
+      "motivated_by_ar": "موعد الامتحان"
+    },
+    {
+      "id": "te_joud_club",
+      "description_ar": "جود تعمل على لوحة مشروعها في غرفة النادي.",
+      "time": {
+        "start_min": 290,
+        "precision": "exact",
+        "end_min": 310
+      },
+      "actor_ids": [
+        "joud"
+      ],
+      "fact_ids": [
+        "f_joud_left_club"
+      ],
+      "location_id": "loc_club",
+      "motivated_by_ar": "أرادت إنهاء لوحة مشروعها قبل نهاية الغداء"
+    },
+    {
+      "id": "te_murad_enter",
+      "description_ar": "مراد يدخل غرفة النادي ويفتح حاسوبها بحسابه.",
+      "time": {
+        "start_min": 312,
+        "precision": "exact",
+        "end_min": 336
+      },
+      "actor_ids": [
+        "murad"
+      ],
+      "fact_ids": [
+        "f_murad_in_club"
+      ],
+      "location_id": "loc_club",
+      "motivated_by_ar": "أراد أن يكون وحده في الغرفة"
+    },
+    {
+      "id": "te_hana_sees",
+      "description_ar": "هناء ترى من الخلف طالباً بسترة النادي يدخل الغرفة.",
+      "time": {
+        "start_min": 315,
+        "precision": "approx"
+      },
+      "actor_ids": [
+        "hana"
+      ],
+      "fact_ids": [
+        "f_hana_saw",
+        "f_hana_recognition"
+      ],
+      "location_id": "loc_club",
+      "motivated_by_ar": "كانت تمر بالممر إلى صفها"
+    },
+    {
+      "id": "te_joud_library",
+      "description_ar": "جود تستعير كتابين من جهاز الإعارة في المكتبة.",
+      "time": {
+        "start_min": 318,
+        "precision": "exact",
+        "end_min": 331
+      },
+      "actor_ids": [
+        "joud"
+      ],
+      "fact_ids": [
+        "f_joud_library"
+      ],
+      "location_id": "loc_library",
+      "motivated_by_ar": "احتاجت مرجعاً لمشروعها"
+    },
+    {
+      "id": "te_post",
+      "description_ar": "شخص يجلس أمام اللوح ويكتب الإعلان وينشره من الشاشة المفتوحة.",
+      "time": {
+        "start_min": 320,
+        "precision": "exact"
+      },
+      "actor_ids": [
+        "murad"
+      ],
+      "fact_ids": [
+        "f_notice",
+        "f_post_manual",
+        "f_posted_by_other",
+        "f_murad_alone",
+        "f_joud_away"
+      ],
+      "location_id": "loc_club",
+      "motivated_by_ar": "أراد أن يغيب المتنافسون الذين يسبقونه في الترتيب"
+    },
+    {
+      "id": "te_tablet_back",
+      "description_ar": "نادر يعود ويأخذ لوحه من الحامل.",
+      "time": {
+        "start_min": 370,
+        "precision": "exact"
+      },
+      "actor_ids": [
+        "nader"
+      ],
+      "fact_ids": [
+        "f_tablet_stayed"
+      ],
+      "location_id": "loc_club",
+      "motivated_by_ar": "انتهى الامتحان وأراد استرداد لوحه"
+    },
+    {
+      "id": "te_tryout",
+      "description_ar": "يُعقد اختبار الانضمام ويغيب عنه أربعة متنافسين.",
+      "time": {
+        "start_min": 1860,
+        "precision": "approx"
+      },
+      "actor_ids": [],
+      "fact_ids": [
+        "f_absent",
+        "f_murad_gain"
+      ],
+      "location_id": "loc_office"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_referral",
+      "title_ar": "ورقة الإحالة من شؤون الطلاب",
+      "kind": "documentary",
+      "content_ar": "ورقة إحالة — مكتب شؤون الطلاب، ثانوية الفجر (الخميس 16:30)\nإلى: لجنتكم المراجِعة\nتتلقى الإدارة شكوى من أعضاء نادي الروبوت: ظهر الأربعاء 13:20 نُشر على لوحة النادي إعلان باسم الرئيس نادر الشهابي يؤجل اختبار الانضمام. سجل اللوحة ينسب النشر إلى حسابه وإلى لوحه. ينفي نادر ويقول إنه كان في امتحان الفيزياء. حضر الاختبار خمسة من تسعة مسجلين.\nالمطلوب: بيان ما تثبته السجلات وما لا تثبته.",
+      "acquired_by_action_ids": [
+        "a_get_referral"
+      ],
+      "supports_fact_ids": [
+        "f_notice",
+        "f_absent",
+        "f_account_device",
+        "f_nader_denies"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "ورقة إدارية تلخص الشكوى بأسلوب الإدارة، ولا تتحقق من أي سجل ولا تحدد من كتب الإعلان.",
+      "location_id": "loc_office"
+    },
+    {
+      "id": "ev_notice",
+      "title_ar": "صورة الإعلان على اللوحة",
+      "kind": "digital",
+      "content_ar": "صورة شاشة للوحة نادي الروبوت:\n«إعلان من رئيس النادي: يتأجل اختبار الانضمام الذي كان مقرراً غداً الخميس 15:00. الموعد الجديد: الأربعاء القادم 15:00 في المختبر ب. — نادر الشهابي»\nالوقت المعروض: الأربعاء 13:20.",
+      "acquired_by_action_ids": [
+        "a_get_notice"
+      ],
+      "supports_fact_ids": [
+        "f_notice"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "تثبت الصورة نص الإعلان وساعة ظهوره، ولا تثبت من كتبه ولا من كان أمام الشاشة.",
+      "location_id": "loc_club"
+    },
+    {
+      "id": "ev_post_log",
+      "title_ar": "سجل النشر في لوحة النادي",
+      "kind": "digital",
+      "content_ar": "سجل نظام لوحة النادي (يطلبه فني الشبكة):\n13:20:07 — إعلان جديد\nالحساب: nader.s\nالجهاز: اللوح TB-14 (المسجل باسم: نادر الشهابي)\nطريقة النشر: مباشر من الشاشة، وليس مجدولاً\nالشبكة: نقطة اتصال غرفة النادي",
+      "acquired_by_action_ids": [
+        "a_get_postlog"
+      ],
+      "supports_fact_ids": [
+        "f_account_device",
+        "f_post_manual"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يسجل الحساب والجهاز وطريقة النشر، ولا يسجل من لمس الشاشة؛ فالحساب المسجل يعني أن الدخول كان مفتوحاً لا أن صاحبه هو الفاعل.",
+      "location_id": "loc_it"
+    },
+    {
+      "id": "ev_it_note",
+      "title_ar": "مذكرة فني الشبكة عن اللوح",
+      "kind": "documentary",
+      "content_ar": "مذكرة فني الشبكة (كُتبت بتاريخ بداية الفصل، وسُلّمت لشؤون الطلاب):\nبطلب من النادي ضُبط اللوح TB-14 على وضع العرض فوق حامل غرفة النادي: تبقى الشاشة مفتوحة ويبقى التطبيق مسجل الدخول، ولا يُطلب رمز عند النشر. الغرض: عرض جدول التدريبات على من يدخل الغرفة.",
+      "acquired_by_action_ids": [
+        "a_get_itnote"
+      ],
+      "supports_fact_ids": [
+        "f_display_mode"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "تصف إعداد الجهاز كما كان في بداية الفصل، ولا تبين من استعمله ظهر الأربعاء.",
+      "location_id": "loc_it",
+      "contradicts_claim_ids": [
+        "cl_nader_locked"
+      ]
+    },
+    {
+      "id": "ev_wifi",
+      "title_ar": "سجل نقاط الاتصال اللاسلكي",
+      "kind": "digital",
+      "content_ar": "سجل نقاط الاتصال — اللوح TB-14 (الأربعاء):\n12:20 اتصل بنقطة غرفة النادي (ن-3)\n12:20 → 14:10 بقي متصلاً بها دون انقطاع\nلم يتصل بأي نقطة أخرى في المدرسة.",
+      "acquired_by_action_ids": [
+        "a_get_wifi"
+      ],
+      "supports_fact_ids": [
+        "f_tablet_stayed"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يثبت أين كان اللوح لا من كان يستعمله.",
+      "location_id": "loc_it"
+    },
+    {
+      "id": "ev_exam_sheet",
+      "title_ar": "كشف حضور امتحان الفيزياء",
+      "kind": "documentary",
+      "content_ar": "كشف حضور — امتحان الفيزياء، القاعة 5 (الأربعاء)\nمن 12:30 إلى 14:00\nالمقعد 14: نادر الشهابي — توقيع الحضور 12:30\nقاعدة القاعة: تُترك الأجهزة كلها خارج القاعة.\nالمراقبة: ميساء الرفاعي.",
+      "acquired_by_action_ids": [
+        "a_get_exam"
+      ],
+      "supports_fact_ids": [
+        "f_nader_in_hall"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يثبت التسجيل والتوقيع عند بدء الامتحان، ولا يمنع وحده خروجاً قصيراً غير مسجل.",
+      "location_id": "loc_hall",
+      "contradicts_claim_ids": [
+        "cl_hana_nader"
+      ]
+    },
+    {
+      "id": "ev_door_counter",
+      "title_ar": "عداد باب القاعة 5",
+      "kind": "digital",
+      "content_ar": "عداد الباب في القاعة 5 (يعدّ العابرين فقط):\n12:30–13:45 دخول 28 · خروج 0\n13:45 خروج 1 (مقعد تسليم مبكر)",
+      "acquired_by_action_ids": [
+        "a_get_counter"
+      ],
+      "supports_fact_ids": [
+        "f_nader_in_hall"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يعدّ المارّين ولا يعرف أشخاصهم؛ فيدل على أن أحداً لم يخرج، ولا يسمّي من لم يخرج.",
+      "location_id": "loc_hall",
+      "contradicts_claim_ids": [
+        "cl_hana_nader"
+      ]
+    },
+    {
+      "id": "ev_signin",
+      "title_ar": "دفتر الدخول إلى غرفة النادي",
+      "kind": "documentary",
+      "content_ar": "دفتر الدخول (ورق، بخط كل داخل):\n12:15–12:25 نادر الشهابي (وضع لوحه على الحامل)\n12:50–13:10 جود الهاشمي\n13:12–13:36 مراد الجبوري\nلا أسماء أخرى بين 12:25 و14:00.",
+      "acquired_by_action_ids": [
+        "a_get_signin"
+      ],
+      "supports_fact_ids": [
+        "f_nader_left_tablet",
+        "f_joud_left_club",
+        "f_murad_in_club"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "يكتبه الداخلون بأنفسهم؛ قد ينسى أحدهم الكتابة، ولا يسجل من وقف عند الباب أو دخل خلف غيره.",
+      "location_id": "loc_club",
+      "contradicts_claim_ids": [
+        "cl_murad_absent"
+      ]
+    },
+    {
+      "id": "ev_pc_log",
+      "title_ar": "سجل جلسات حاسوب غرفة النادي",
+      "kind": "digital",
+      "content_ar": "حاسوب غرفة النادي — جلسات الأربعاء:\n12:52–13:09 الحساب: j.hashemi\n13:13–13:36 الحساب: m.jabouri\n13:36 إغلاق الجلسة",
+      "acquired_by_action_ids": [
+        "a_get_pclog"
+      ],
+      "supports_fact_ids": [
+        "f_murad_in_club"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "يسجل الحساب لا الشخص، ويثبت أن الحاسوب فُتح بحساب مراد لا أنه هو من لمس اللوح.",
+      "location_id": "loc_it",
+      "contradicts_claim_ids": [
+        "cl_murad_absent"
+      ]
+    },
+    {
+      "id": "ev_kiosk",
+      "title_ar": "سجل جهاز الإعارة الذاتية",
+      "kind": "digital",
+      "content_ar": "جهاز الإعارة الذاتية — مكتبة المبنى ب (الأربعاء):\n13:18 إعارة كتاب مرجعي — بطاقة: جود الهاشمي\n13:31 إعارة كتاب ثانٍ — بطاقة: جود الهاشمي",
+      "acquired_by_action_ids": [
+        "a_get_kiosk"
+      ],
+      "supports_fact_ids": [
+        "f_joud_library"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "يسجل البطاقة لا حاملها؛ ويحتاج إلى مقارنة بمكان الطالبة وإمكان انتقالها.",
+      "location_id": "loc_library"
+    },
+    {
+      "id": "ev_charge_log",
+      "title_ar": "سجل حامل الشحن في غرفة النادي",
+      "kind": "digital",
+      "content_ar": "سجل الحامل ن-3 في غرفة النادي (الأربعاء):\n12:20 وُصل الجهاز TB-14\n12:20 → 14:08 بقي موصولاً دون انقطاع\n14:08 فُصل الجهاز",
+      "acquired_by_action_ids": [
+        "a_get_charge"
+      ],
+      "supports_fact_ids": [
+        "f_tablet_charging"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يثبت أن اللوح بقي على الحامل لا من كان قريباً منه.",
+      "location_id": "loc_it"
+    },
+    {
+      "id": "ev_library_desk",
+      "title_ar": "دفتر مكتب أمينة المكتبة",
+      "kind": "documentary",
+      "content_ar": "دفتر مكتب أمينة مكتبة المبنى ب (بخط الأمينة، الأربعاء):\n13:19 الطالبة جود الهاشمي تطلب كتاباً مرجعياً من الأرشيف، وبقيت قرب المكتب حتى 13:35 تنتظر ثم تقرأ.",
+      "acquired_by_action_ids": [
+        "a_get_libdesk"
+      ],
+      "supports_fact_ids": [
+        "f_joud_desk"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "تدوّنه الأمينة بعد الحدث بقليل من ذاكرتها، ولا يحصي الدقائق.",
+      "location_id": "loc_library"
+    },
+    {
+      "id": "ev_floor_plan",
+      "title_ar": "مخطط المسافات في ثانوية الفجر",
+      "kind": "documentary",
+      "content_ar": "مخطط من إدارة المدرسة (قياس رسمي):\nمن غرفة النادي في المبنى أ إلى مكتبة المبنى ب: ثماني دقائق مشياً، وخمس دقائق جرياً.",
+      "acquired_by_action_ids": [
+        "a_get_plan"
+      ],
+      "supports_fact_ids": [
+        "f_joud_library"
+      ],
+      "reliability": "strong",
+      "limits_ar": "قياس تقريبي لمسار واحد؛ ولا يقول أين كان أي طالب في وقت بعينه.",
+      "location_id": "loc_office"
+    },
+    {
+      "id": "ev_tryout_sheet",
+      "title_ar": "كشف اختبار الانضمام (الخميس)",
+      "kind": "documentary",
+      "content_ar": "كشف اختبار الانضمام — الخميس 15:00 (الأماكن: 3)\nالترتيب في جولة التأهل ← الحضور:\n1 جود الهاشمي: غائبة · 2 دانة العطار: غائبة · 3 نوفل السعدي: غائب · 4 مراد الجبوري: حاضر · 5 لؤي الصايغ: حاضر · 6 رشا المنصور: حاضرة · 7 باسل الحايك: غائب · 8 ثائر القيسي: حاضر · 9 ميار الأيوبي: حاضرة",
+      "acquired_by_action_ids": [
+        "a_get_tryout"
+      ],
+      "supports_fact_ids": [
+        "f_absent",
+        "f_murad_gain"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "يبين من غاب ومن حضر ومراتبهم، ولا يبين لماذا غاب كل واحد، ولا من استفاد عن قصد.",
+      "location_id": "loc_office"
+    },
+    {
+      "id": "ev_booking",
+      "title_ar": "سجل حجز المختبرات",
+      "kind": "documentary",
+      "content_ar": "سجل حجز المختبرات (ورقة عند شؤون الطلاب):\nالمختبر ب — الأربعاء القادم 15:00–17:00\nالطالب: مراد الجبوري\nوقت التسجيل: الأربعاء الماضي 09:40\nالغرض المكتوب: تدريب على مشروع شخصي\nلا طلب آخر على هذا الموعد.",
+      "acquired_by_action_ids": [
+        "a_get_booking"
+      ],
+      "supports_fact_ids": [
+        "f_booking"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "يبين من طلب الموعد ومتى، ولا يثبت أنه كتب الإعلان؛ ويستطيع أي طالب يزور المكتب أن يرى السجل.",
+      "location_id": "loc_office"
+    },
+    {
+      "id": "ev_nader_statement",
+      "title_ar": "إفادة نادر الشهابي",
+      "kind": "testimonial",
+      "content_ar": "إفادة نادر الشهابي (مكتوبة، الخميس):\n«كنت في امتحان الفيزياء من 12:30. تركت لوحي على الحامل في غرفة النادي ولا أعرف من نشر الإعلان باسمي. ظننت أن لوحي مقفل برمز.»",
+      "acquired_by_action_ids": [
+        "a_get_nader_stmt"
+      ],
+      "supports_fact_ids": [
+        "f_nader_denies",
+        "f_nader_left_tablet"
+      ],
+      "reliability": "weak",
+      "limits_ar": "قول صاحب الشأن؛ يُقاس بالسجلات لا بنبرته.",
+      "location_id": "loc_office",
+      "contradicts_claim_ids": [
+        "cl_nader_locked"
+      ]
+    },
+    {
+      "id": "ev_hana_statement",
+      "title_ar": "إفادة هناء القباني",
+      "kind": "testimonial",
+      "content_ar": "إفادة هناء القباني (مكتوبة، الخميس):\n«حوالي 13:15 رأيت نادراً يدخل غرفة النادي بسترته. أنا متأكدة أنه هو.»",
+      "acquired_by_action_ids": [
+        "a_get_hana_stmt"
+      ],
+      "supports_fact_ids": [
+        "f_hana_saw"
+      ],
+      "reliability": "weak",
+      "limits_ar": "إفادة من الذاكرة بلا وثيقة؛ والتعرف على شخص من الخلف أو من لباسه ضعيف.",
+      "location_id": "loc_office",
+      "contradicts_claim_ids": [
+        "cl_hana_nader"
+      ]
+    },
+    {
+      "id": "ev_joud_message",
+      "title_ar": "رسالة جود إلى نادر",
+      "kind": "digital",
+      "content_ar": "رسالة على تطبيق النادي (الأربعاء 08:50) من جود الهاشمي إلى نادر الشهابي:\n«أخّرت مشروعي دون أن تسمعني. هذا غير عادل، ولن أسكت عن الأمر.»",
+      "acquired_by_action_ids": [
+        "a_get_joud_msg"
+      ],
+      "supports_fact_ids": [
+        "f_joud_message"
+      ],
+      "reliability": "weak",
+      "limits_ar": "تعبّر عن غضب وقت كتابتها، ولا تقول إنها ستنشر شيئاً ولا تثبت أنها فعلت.",
+      "location_id": "loc_office"
+    },
+    {
+      "id": "ev_murad_statement",
+      "title_ar": "إفادة مراد الجبوري",
+      "kind": "testimonial",
+      "content_ar": "إفادة مراد الجبوري (مكتوبة، الخميس):\n«لم أدخل غرفة النادي وقت الغداء، كنت في الساحة مع زملائي. حجزت المختبر ب لأتدرب على مشروعي.»",
+      "acquired_by_action_ids": [
+        "a_get_murad_stmt"
+      ],
+      "supports_fact_ids": [
+        "f_booking"
+      ],
+      "reliability": "weak",
+      "limits_ar": "قول صاحب مصلحة في نتيجة الاختبار؛ يُقاس بالسجلات.",
+      "location_id": "loc_office",
+      "contradicts_claim_ids": [
+        "cl_murad_absent"
+      ]
+    }
+  ],
+  "evidence_graph": {
+    "inferences": [
+      {
+        "id": "i_hall_a",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_exam_sheet"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_nader_in_hall"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "كشف حضور موقّع يضع نادراً في القاعة 5 من 12:30، وأجهزة الطلاب كلها خارج القاعة.",
+        "skill_ko_refs": [
+          "KO-RS-06-002"
+        ]
+      },
+      {
+        "id": "i_hall_b",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_door_counter"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_nader_in_hall"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "عداد الباب يسجل دخول 28 وخروج 0 حتى 13:45، وهو جهاز مستقل عن كشف المراقبة، فلم يغادر أحد القاعة وقت النشر.",
+        "skill_ko_refs": [
+          "KO-RS-05-001"
+        ]
+      },
+      {
+        "id": "i_other_a",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_post_log"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_wifi"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_nader_in_hall"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_posted_by_other"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "النشر يدوي من اللوح 13:20، واللوح لم يغادر نقطة غرفة النادي، وصاحبه في القاعة 5؛ فاستعمل الشاشة شخص آخر.",
+        "skill_ko_refs": [
+          "KO-RS-06-002"
+        ]
+      },
+      {
+        "id": "i_other_b",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_notice"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_it_note"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_charge_log"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_nader_in_hall"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_posted_by_other"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "الإعلان ظهر 13:20، واللوح على وضع العرض مفتوحاً بلا رمز وموصول بالحامل في الغرفة، وصاحبه في القاعة 5؛ فكان اللوح بلا صاحبه ومفتوحاً لمن دخل.",
+        "skill_ko_refs": [
+          "KO-RS-05-005"
+        ]
+      },
+      {
+        "id": "i_joud_a",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_kiosk"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_floor_plan"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_joud_away"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "بطاقة جود في المكتبة الساعة 13:18 والمسافة ثماني دقائق مشياً وخمس جرياً، فلا يمكن أن تكون في غرفة النادي الساعة 13:20.",
+        "skill_ko_refs": [
+          "KO-RS-05-005"
+        ]
+      },
+      {
+        "id": "i_joud_b",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_library_desk"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_joud_away"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "أمينة المكتبة تدوّن أن جود كانت قرب مكتبها من 13:19 إلى 13:35، وهذا مستقل عن جهاز الإعارة وعن مخطط المسافات.",
+        "skill_ko_refs": [
+          "KO-RS-06-002"
+        ]
+      },
+      {
+        "id": "i_alone_a",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_signin"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_joud_away"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_murad_alone"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "الدفتر لا يذكر في الغرفة سوى مراد من 13:12 إلى 13:36، وجود خارجها، ونادر في القاعة.",
+        "skill_ko_refs": [
+          "KO-RS-05-005"
+        ]
+      },
+      {
+        "id": "i_alone_b",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_pc_log"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_joud_away"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_murad_alone"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "حاسوب الغرفة فُتح بحساب مراد من 13:13 إلى 13:36 دون أي حساب آخر، وهذا يوافق دفتر الدخول ويجعله الوحيد بين المشتبه بهم في الغرفة وقت النشر.",
+        "skill_ko_refs": [
+          "KO-RS-06-002"
+        ]
+      },
+      {
+        "id": "i_gain",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_tryout_sheet"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_murad_gain"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "غياب أصحاب المراتب 1 و2 و3 و7 جعل مراد أول الحاضرين فنال مكاناً من الثلاثة.",
+        "skill_ko_refs": [
+          "KO-RS-05-001"
+        ]
+      },
+      {
+        "id": "i_plan",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_booking"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_notice"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_murad"
+        },
+        "relation": "supports",
+        "strength": "suggestive",
+        "rule_ar": "الموعد الجديد في الإعلان (الأربعاء القادم 15:00 في المختبر ب) هو الموعد الذي حجزه مراد قبل الإعلان بثلاث ساعات وأربعين دقيقة؛ قرينة داعمة لا تكفي وحدها.",
+        "skill_ko_refs": [
+          "KO-RS-05-002"
+        ]
+      },
+      {
+        "id": "i_supports_murad",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_posted_by_other"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_joud_away"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_murad_alone"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_murad_gain"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_murad"
+        },
+        "relation": "supports",
+        "strength": "strong",
+        "rule_ar": "شخص غير صاحب اللوح نشر الإعلان، وجود لم تكن في الغرفة، ومراد وحده كان فيها ولمصلحته غاب أصحاب المراتب الأعلى؛ فهذا أرجح تفسير للأدلة.",
+        "skill_ko_refs": [
+          "KO-RS-05-002"
+        ]
+      },
+      {
+        "id": "i_rule_nader",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_posted_by_other"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_nader"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "نسبة الحساب والجهاز إلى نادر لا تكفي حين يكون هو في قاعة الامتحان واللوح بلا صاحبه.",
+        "skill_ko_refs": [
+          "KO-RS-06-009"
+        ]
+      },
+      {
+        "id": "i_rule_joud",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_joud_away"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_joud"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "غضب جود لا يغني عن حضورها؛ وسجل المكتبة والمسافة يضعانها بعيدة عن اللوح وقت النشر.",
+        "skill_ko_refs": [
+          "KO-RS-06-009"
+        ]
+      },
+      {
+        "id": "i_rule_auto",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_post_log"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_auto"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "سجل النشر يقول إن الإعلان نُشر يدوياً من الشاشة الساعة 13:20 لا بجدولة قديمة، فلا يُعد خللاً بلا فاعل.",
+        "skill_ko_refs": [
+          "KO-RS-06-002"
+        ]
+      },
+      {
+        "id": "i_c_murad",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_signin"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_pc_log"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_murad_absent"
+        },
+        "relation": "contradicts_claim",
+        "strength": "strong",
+        "rule_ar": "دفتر الدخول وسجل الحاسوب، وهما مصدران مختلفان، يضعان مراداً في الغرفة 13:12–13:36.",
+        "skill_ko_refs": [
+          "KO-RS-05-001"
+        ]
+      },
+      {
+        "id": "i_c_hana",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_exam_sheet"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_door_counter"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_hana_nader"
+        },
+        "relation": "contradicts_claim",
+        "strength": "strong",
+        "rule_ar": "نادر كان في القاعة 5 وقت رؤية هناء، فالطالب الذي رأته بالسترة ليس نادراً.",
+        "skill_ko_refs": [
+          "KO-RS-05-001"
+        ]
+      },
+      {
+        "id": "i_c_nader",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_it_note"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_nader_locked"
+        },
+        "relation": "contradicts_claim",
+        "strength": "strong",
+        "rule_ar": "مذكرة الفني تبين أن اللوح كان على وضع العرض بلا رمز، فظن نادر غير صحيح.",
+        "skill_ko_refs": [
+          "KO-RS-06-002"
+        ]
+      }
+    ]
+  },
+  "character_knowledge": [
+    {
+      "character_id": "nader",
+      "knows": [
+        {
+          "fact_id": "f_nader_left_tablet",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_nader_in_hall",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_nader_denies",
+          "access": "common_knowledge",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": [
+        {
+          "claim_id": "cl_nader_locked",
+          "stance": "sincere"
+        }
+      ]
+    },
+    {
+      "character_id": "joud",
+      "knows": [
+        {
+          "fact_id": "f_joud_left_club",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_joud_library",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_joud_desk",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [
+        {
+          "fact_id": "f_joud_message",
+          "reveal_when": {
+            "presented": {
+              "evidence_id": "ev_joud_message",
+              "to_character": "joud"
+            }
+          },
+          "cover_claim_id": null,
+          "reveal_line_id": "jd_msg"
+        }
+      ],
+      "believes": []
+    },
+    {
+      "character_id": "murad",
+      "knows": [
+        {
+          "fact_id": "f_booking",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [
+        {
+          "fact_id": "f_murad_in_club",
+          "reveal_when": {
+            "presented": {
+              "evidence_id": "ev_signin",
+              "to_character": "murad"
+            }
+          },
+          "cover_claim_id": "cl_murad_absent",
+          "reveal_line_id": "mr_present"
+        }
+      ],
+      "believes": [
+        {
+          "claim_id": "cl_murad_absent",
+          "stance": "deliberate_lie"
+        }
+      ]
+    },
+    {
+      "character_id": "hana",
+      "knows": [
+        {
+          "fact_id": "f_hana_saw",
+          "access": "witnessed",
+          "certainty": "fairly_sure"
+        }
+      ],
+      "hides": [
+        {
+          "fact_id": "f_hana_recognition",
+          "reveal_when": {
+            "presented": {
+              "evidence_id": "ev_exam_sheet",
+              "to_character": "hana"
+            }
+          },
+          "cover_claim_id": "cl_hana_nader",
+          "reveal_line_id": "hn_back"
+        }
+      ],
+      "believes": [
+        {
+          "claim_id": "cl_hana_nader",
+          "stance": "sincere"
+        }
+      ]
+    },
+    {
+      "character_id": "maysa",
+      "knows": [
+        {
+          "fact_id": "f_nader_in_hall",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_absent",
+          "access": "professional",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_account_device",
+          "access": "professional",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "h_nader",
+      "statement_ar": "نشر نادر الشهابي الإعلان بنفسه من لوحه ثم أنكر ذلك.",
+      "is_true": false,
+      "plausibility_at_start": "high",
+      "suspect_id": "nader"
+    },
+    {
+      "id": "h_joud",
+      "statement_ar": "نشرت جود الهاشمي الإعلان من لوح نادر انتقاماً منه.",
+      "is_true": false,
+      "plausibility_at_start": "medium",
+      "suspect_id": "joud"
+    },
+    {
+      "id": "h_auto",
+      "statement_ar": "ظهر الإعلان بجدولة قديمة أو بخلل في اللوحة، ولم يكتبه أحد ظهر الأربعاء.",
+      "is_true": false,
+      "plausibility_at_start": "low"
+    },
+    {
+      "id": "h_murad",
+      "statement_ar": "استعمل مراد الجبوري لوح نادر المفتوح في غرفة النادي ونشر الإعلان ليغيب المتنافسون الذين يسبقونه في الترتيب.",
+      "is_true": true,
+      "plausibility_at_start": "low",
+      "suspect_id": "murad"
+    }
+  ],
+  "misdirection_plan": [
+    {
+      "id": "rh_device",
+      "points_to_hypothesis_id": "h_nader",
+      "planted_via_ar": "الإعلان خرج من حساب نادر ومن لوحه المسجل باسمه، وهناء تذكر أنها رأته يدخل الغرفة بسترته.",
+      "evidence_ids": [
+        "ev_post_log",
+        "ev_referral",
+        "ev_hana_statement"
+      ],
+      "refuted_by_inference_ids": [
+        "i_rule_nader",
+        "i_c_hana"
+      ],
+      "fairness_note_ar": "كشف الامتحان وعداد الباب ومذكرة الفني وسجل النقاط كلها متاحة بالإجراءات العادية، وتبين أن اللوح كان في الغرفة بلا صاحبه وأن صاحبه في القاعة."
+    },
+    {
+      "id": "rh_joud",
+      "points_to_hypothesis_id": "h_joud",
+      "planted_via_ar": "رسالة جود الغاضبة صباح الأربعاء، وكانت في غرفة النادي قبل النشر بدقائق.",
+      "evidence_ids": [
+        "ev_joud_message",
+        "ev_signin"
+      ],
+      "refuted_by_inference_ids": [
+        "i_rule_joud"
+      ],
+      "fairness_note_ar": "سجل جهاز الإعارة ومخطط المسافات ودفتر الدخول متاحة، وتبين أنها خرجت 13:10 وسجلت بطاقتها في المكتبة 13:18."
+    },
+    {
+      "id": "rh_auto",
+      "points_to_hypothesis_id": "h_auto",
+      "planted_via_ar": "نادر يقول إنه لا يعرف من نشر، ولا يظهر أي اسم آخر على اللوحة.",
+      "evidence_ids": [
+        "ev_nader_statement",
+        "ev_notice"
+      ],
+      "refuted_by_inference_ids": [
+        "i_rule_auto"
+      ],
+      "fairness_note_ar": "سجل النشر متاح عند فني الشبكة ويبين أن النشر يدوي من الشاشة لا جدولة."
+    }
+  ],
+  "learning_objectives": [
+    {
+      "id": "lo_claim",
+      "statement_ar": "يسأل عن كل سجل: من أنتجه؟ وماذا يسجل بالضبط؟ وماذا لا يسجل؟",
+      "skill_ko_ref": "KO-RS-05-001",
+      "observable_behaviors_ar": [
+        "يصنّف السجلات والأقوال",
+        "يفرق بين سجل الحساب وسجل الشخص"
+      ],
+      "evidence_sources": [
+        "evidence_board"
+      ]
+    },
+    {
+      "id": "lo_timeline",
+      "statement_ar": "يرتب أزمنة الدخول والاتصال والنشر ليعرف أين كان كل شخص وكل جهاز.",
+      "skill_ko_ref": "KO-RS-05-005",
+      "observable_behaviors_ar": [
+        "يضع النشر والدخول والاتصال في أزمنتها"
+      ],
+      "evidence_sources": [
+        "timeline_task",
+        "action_log"
+      ]
+    },
+    {
+      "id": "lo_hyp",
+      "statement_ar": "يوازن بين عدة فرضيات ويستبعد ما تنقضه الأدلة.",
+      "skill_ko_ref": "KO-RS-05-002",
+      "observable_behaviors_ar": [
+        "يضيف فرضيات",
+        "يستبعد بدليل"
+      ],
+      "evidence_sources": [
+        "hypothesis_ledger"
+      ]
+    },
+    {
+      "id": "lo_diag",
+      "statement_ar": "يقدّر ما يثبته سجل الجهاز وما لا يثبته، ويربط الدليل بالفرضية باتجاه صحيح.",
+      "skill_ko_ref": "KO-RS-06-002",
+      "observable_behaviors_ar": [
+        "يعرف أن سجل الحساب والجهاز يدل على استعمالهما لا على هوية المستعمل",
+        "يربط الدليل بالفرضية"
+      ],
+      "evidence_sources": [
+        "evidence_board",
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_calib",
+      "statement_ar": "يصوغ نسبة الترجيح بحدودها.",
+      "skill_ko_ref": "KO-RS-06-021",
+      "observable_behaviors_ar": [
+        "يختار ثقة معقولة",
+        "يذكر حدوداً"
+      ],
+      "evidence_sources": [
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_revise",
+      "statement_ar": "يراجع رأيه الأول حين يظهر ما يخالفه.",
+      "skill_ko_ref": "KO-RS-06-009",
+      "observable_behaviors_ar": [
+        "يغيّر فرضيته الرائدة بدليل"
+      ],
+      "evidence_sources": [
+        "hypothesis_ledger"
+      ]
+    }
+  ],
+  "mechanics": {
+    "time_budget_units": 30,
+    "actions": [
+      {
+        "id": "a_get_referral",
+        "type": "examine",
+        "label_ar": "اقرأ ورقة الإحالة من شؤون الطلاب",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_referral"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "GET_REFERRAL",
+        "target_id": "loc_office"
+      },
+      {
+        "id": "a_get_notice",
+        "type": "examine",
+        "label_ar": "اطلب صورة الإعلان من اللوحة",
+        "precondition": {
+          "has_evidence": "ev_referral"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_notice"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "GET_NOTICE",
+        "target_id": "loc_club"
+      },
+      {
+        "id": "a_get_nader_stmt",
+        "type": "examine",
+        "label_ar": "اطلب إفادة نادر المكتوبة",
+        "precondition": {
+          "has_evidence": "ev_referral"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_nader_statement"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "GET_NADER_STMT",
+        "target_id": "loc_office"
+      },
+      {
+        "id": "a_get_hana_stmt",
+        "type": "examine",
+        "label_ar": "اطلب إفادة هناء المكتوبة",
+        "precondition": {
+          "has_evidence": "ev_notice"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_hana_statement"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "GET_HANA_STMT",
+        "target_id": "loc_office"
+      },
+      {
+        "id": "a_get_joud_msg",
+        "type": "examine",
+        "label_ar": "اطلب رسالة جود إلى نادر",
+        "precondition": {
+          "has_evidence": "ev_notice"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_joud_message"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "GET_JOUD_MSG",
+        "target_id": "loc_office"
+      },
+      {
+        "id": "a_get_postlog",
+        "type": "search_location",
+        "label_ar": "اطلب سجل النشر من فني الشبكة",
+        "precondition": {
+          "has_evidence": "ev_notice"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_post_log"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "GET_POSTLOG",
+        "target_id": "loc_it"
+      },
+      {
+        "id": "a_get_itnote",
+        "type": "examine",
+        "label_ar": "اطلب مذكرة فني الشبكة عن اللوح",
+        "precondition": {
+          "has_evidence": "ev_post_log"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_it_note"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "GET_ITNOTE",
+        "target_id": "loc_it"
+      },
+      {
+        "id": "a_get_wifi",
+        "type": "search_location",
+        "label_ar": "اطلب سجل نقاط الاتصال للوح",
+        "precondition": {
+          "has_evidence": "ev_post_log"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_wifi"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "GET_WIFI",
+        "target_id": "loc_it"
+      },
+      {
+        "id": "a_get_exam",
+        "type": "search_location",
+        "label_ar": "اطلب كشف حضور امتحان الفيزياء",
+        "precondition": {
+          "has_evidence": "ev_wifi"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_exam_sheet"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "GET_EXAM",
+        "target_id": "loc_hall"
+      },
+      {
+        "id": "a_get_counter",
+        "type": "search_location",
+        "label_ar": "اطلب سجل عداد باب القاعة 5",
+        "precondition": {
+          "has_evidence": "ev_exam_sheet"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_door_counter"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "GET_COUNTER",
+        "target_id": "loc_hall"
+      },
+      {
+        "id": "a_get_signin",
+        "type": "search_location",
+        "label_ar": "اطلب دفتر الدخول إلى غرفة النادي",
+        "precondition": {
+          "has_evidence": "ev_wifi"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_signin"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "GET_SIGNIN",
+        "target_id": "loc_club"
+      },
+      {
+        "id": "a_get_charge",
+        "type": "search_location",
+        "label_ar": "اطلب سجل حامل الشحن في غرفة النادي",
+        "precondition": {
+          "has_evidence": "ev_post_log"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_charge_log"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "GET_CHARGE",
+        "target_id": "loc_it"
+      },
+      {
+        "id": "a_get_libdesk",
+        "type": "search_location",
+        "label_ar": "اطلب دفتر مكتب أمينة المكتبة",
+        "precondition": {
+          "has_evidence": "ev_kiosk"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_library_desk"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "GET_LIBDESK",
+        "target_id": "loc_library"
+      },
+      {
+        "id": "a_get_pclog",
+        "type": "search_location",
+        "label_ar": "اطلب سجل جلسات حاسوب الغرفة",
+        "precondition": {
+          "has_evidence": "ev_signin"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_pc_log"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "GET_PCLOG",
+        "target_id": "loc_it"
+      },
+      {
+        "id": "a_get_kiosk",
+        "type": "search_location",
+        "label_ar": "اطلب سجل جهاز الإعارة في المكتبة",
+        "precondition": {
+          "has_evidence": "ev_signin"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_kiosk"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "GET_KIOSK",
+        "target_id": "loc_library"
+      },
+      {
+        "id": "a_get_plan",
+        "type": "examine",
+        "label_ar": "اطلب مخطط المسافات في المدرسة",
+        "precondition": {
+          "has_evidence": "ev_kiosk"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_floor_plan"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "GET_PLAN",
+        "target_id": "loc_office"
+      },
+      {
+        "id": "a_get_tryout",
+        "type": "examine",
+        "label_ar": "اطلب كشف اختبار الانضمام",
+        "precondition": {
+          "has_evidence": "ev_referral"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_tryout_sheet"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "GET_TRYOUT",
+        "target_id": "loc_office"
+      },
+      {
+        "id": "a_get_booking",
+        "type": "examine",
+        "label_ar": "اطلب سجل حجز المختبرات",
+        "precondition": {
+          "has_evidence": "ev_tryout_sheet"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_booking"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "GET_BOOKING",
+        "target_id": "loc_office"
+      },
+      {
+        "id": "a_get_murad_stmt",
+        "type": "examine",
+        "label_ar": "اطلب إفادة مراد المكتوبة",
+        "precondition": {
+          "has_evidence": "ev_signin"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_murad_statement"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "GET_MURAD_STMT",
+        "target_id": "loc_office"
+      },
+      {
+        "id": "ask_nader_f_nader_left_tablet",
+        "type": "interview",
+        "label_ar": "اسأل نادراً أين ترك لوحه",
+        "precondition": {
+          "has_evidence": "ev_referral"
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_nader_left_tablet"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "ASK_NADER_NADER_LEFT_TABLET",
+        "target_id": "nader"
+      },
+      {
+        "id": "ask_nader_f_nader_in_hall",
+        "type": "interview",
+        "label_ar": "اسأل نادراً أين كان وقت الإعلان",
+        "precondition": {
+          "has_evidence": "ev_referral"
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_nader_in_hall"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "ASK_NADER_NADER_IN_HALL",
+        "target_id": "nader"
+      },
+      {
+        "id": "ask_nader_f_nader_denies",
+        "type": "interview",
+        "label_ar": "اسأل نادراً هل كتب الإعلان",
+        "precondition": {
+          "has_evidence": "ev_referral"
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_nader_denies"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "ASK_NADER_NADER_DENIES",
+        "target_id": "nader"
+      },
+      {
+        "id": "ask_joud_f_joud_left_club",
+        "type": "interview",
+        "label_ar": "اسأل جود متى خرجت من غرفة النادي",
+        "precondition": {
+          "has_evidence": "ev_referral"
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_joud_left_club"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "ASK_JOUD_JOUD_LEFT_CLUB",
+        "target_id": "joud"
+      },
+      {
+        "id": "ask_joud_f_joud_library",
+        "type": "interview",
+        "label_ar": "اسأل جود أين ذهبت بعد الخروج",
+        "precondition": {
+          "has_evidence": "ev_referral"
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_joud_library"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "ASK_JOUD_JOUD_LIBRARY",
+        "target_id": "joud"
+      },
+      {
+        "id": "ask_murad_f_booking",
+        "type": "interview",
+        "label_ar": "اسأل مراداً عن حجز المختبر ب",
+        "precondition": {
+          "has_evidence": "ev_referral"
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_booking"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "ASK_MURAD_BOOKING",
+        "target_id": "murad"
+      },
+      {
+        "id": "ask_hana_f_hana_saw",
+        "type": "interview",
+        "label_ar": "اسأل هناء ماذا رأت في الممر",
+        "precondition": {
+          "has_evidence": "ev_referral"
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_hana_saw"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "ASK_HANA_HANA_SAW",
+        "target_id": "hana"
+      },
+      {
+        "id": "ask_maysa_f_nader_in_hall",
+        "type": "interview",
+        "label_ar": "اسأل ميساء أين كان نادر أثناء الامتحان",
+        "precondition": {
+          "has_evidence": "ev_referral"
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_nader_in_hall"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "ASK_MAYSA_NADER_IN_HALL",
+        "target_id": "maysa"
+      },
+      {
+        "id": "ask_maysa_f_absent",
+        "type": "interview",
+        "label_ar": "اسأل ميساء عن الحضور يوم الخميس",
+        "precondition": {
+          "has_evidence": "ev_referral"
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_absent"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "ASK_MAYSA_ABSENT",
+        "target_id": "maysa"
+      },
+      {
+        "id": "ask_maysa_f_account_device",
+        "type": "interview",
+        "label_ar": "اسأل ميساء ماذا يقول سجل اللوحة",
+        "precondition": {
+          "has_evidence": "ev_referral"
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_account_device"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "ASK_MAYSA_ACCOUNT_DEVICE",
+        "target_id": "maysa"
+      },
+      {
+        "id": "ask_joud_f_joud_message",
+        "type": "interview",
+        "label_ar": "اسأل جود عن رسالتها إلى نادر",
+        "precondition": {
+          "all": [
+            {
+              "has_evidence": "ev_referral"
+            },
+            {
+              "presented": {
+                "evidence_id": "ev_joud_message",
+                "to_character": "joud"
+              }
+            }
+          ]
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_joud_message"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "ASK_JOUD_JOUD_MESSAGE",
+        "target_id": "joud"
+      },
+      {
+        "id": "ask_murad_f_murad_in_club",
+        "type": "interview",
+        "label_ar": "اسأل مراداً عن وقت الغداء",
+        "precondition": {
+          "all": [
+            {
+              "has_evidence": "ev_referral"
+            },
+            {
+              "presented": {
+                "evidence_id": "ev_signin",
+                "to_character": "murad"
+              }
+            }
+          ]
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_murad_in_club"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "ASK_MURAD_MURAD_IN_CLUB",
+        "target_id": "murad"
+      },
+      {
+        "id": "ask_hana_f_hana_recognition",
+        "type": "interview",
+        "label_ar": "اسأل هناء كيف عرفت الطالب",
+        "precondition": {
+          "all": [
+            {
+              "has_evidence": "ev_referral"
+            },
+            {
+              "presented": {
+                "evidence_id": "ev_exam_sheet",
+                "to_character": "hana"
+              }
+            }
+          ]
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_hana_recognition"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "ASK_HANA_HANA_RECOGNITION",
+        "target_id": "hana"
+      },
+      {
+        "id": "p_joudmsg_joud",
+        "type": "present_evidence",
+        "label_ar": "اعرض رسالتها على جود",
+        "precondition": {
+          "presented": {
+            "evidence_id": "ev_joud_message",
+            "to_character": "joud"
+          }
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "PRESENTED_JOUD_MESSAGE"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "P_JOUDMSG_JOUD",
+        "target_id": "joud"
+      },
+      {
+        "id": "p_signin_murad",
+        "type": "present_evidence",
+        "label_ar": "اعرض دفتر الدخول على مراد",
+        "precondition": {
+          "presented": {
+            "evidence_id": "ev_signin",
+            "to_character": "murad"
+          }
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "PRESENTED_SIGNIN"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "P_SIGNIN_MURAD",
+        "target_id": "murad"
+      },
+      {
+        "id": "p_exam_hana",
+        "type": "present_evidence",
+        "label_ar": "اعرض كشف الامتحان على هناء",
+        "precondition": {
+          "presented": {
+            "evidence_id": "ev_exam_sheet",
+            "to_character": "hana"
+          }
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "PRESENTED_EXAM_SHEET"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "P_EXAM_HANA",
+        "target_id": "hana"
+      },
+      {
+        "id": "a_hint",
+        "type": "request_hint",
+        "label_ar": "اطلب تلميحاً",
+        "precondition": {
+          "always": true
+        },
+        "effects": [],
+        "time_cost_units": 0,
+        "telemetry_code": "REQUEST_HINT"
+      },
+      {
+        "id": "a_accuse",
+        "type": "final_accusation",
+        "label_ar": "قدّم الاستنتاج النهائي",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "SUBMIT"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "FINAL_ACCUSATION"
+      }
+    ]
+  },
+  "state_machine": {
+    "id": "c052",
+    "initial": "briefing",
+    "type": "compound",
+    "states": {
+      "briefing": {
+        "description_ar": "الإحاطة",
+        "type": "atomic",
+        "on": {
+          "START": {
+            "target": "investigating"
+          }
+        }
+      },
+      "investigating": {
+        "description_ar": "التحقيق",
+        "type": "compound",
+        "initial": "gathering",
+        "states": {
+          "gathering": {
+            "type": "atomic",
+            "on": {
+              "OPEN_DEDUCTION": {
+                "target": "deducing"
+              }
+            }
+          },
+          "deducing": {
+            "type": "atomic",
+            "on": {
+              "BACK": {
+                "target": "gathering"
+              }
+            }
+          }
+        },
+        "on": {
+          "SUBMIT": {
+            "target": "review"
+          }
+        }
+      },
+      "review": {
+        "description_ar": "مراجعة",
+        "type": "atomic",
+        "on": {
+          "CLOSE": {
+            "target": "resolved"
+          }
+        }
+      },
+      "resolved": {
+        "description_ar": "إغلاق",
+        "type": "final"
+      }
+    }
+  },
+  "dialogue": {
+    "max_turns_per_interview": 10,
+    "llm_enabled": false,
+    "topics": [
+      {
+        "id": "t_tablet",
+        "label_ar": "اللوح والحامل",
+        "example_questions_ar": [
+          "أين تركت لوحك؟",
+          "هل كان اللوح مقفلاً؟"
+        ],
+        "fact_ids": [
+          "f_nader_left_tablet"
+        ],
+        "claim_ids": [
+          "cl_nader_locked"
+        ]
+      },
+      {
+        "id": "t_hall",
+        "label_ar": "الامتحان والقاعة",
+        "example_questions_ar": [
+          "أين كنت ظهر الأربعاء؟",
+          "من راقب القاعة؟"
+        ],
+        "fact_ids": [
+          "f_nader_in_hall",
+          "f_nader_denies"
+        ]
+      },
+      {
+        "id": "t_joud",
+        "label_ar": "جود وغرفة النادي",
+        "example_questions_ar": [
+          "متى خرجت من الغرفة؟",
+          "إلى أين ذهبت؟"
+        ],
+        "fact_ids": [
+          "f_joud_left_club",
+          "f_joud_library",
+          "f_joud_desk",
+          "f_joud_message"
+        ]
+      },
+      {
+        "id": "t_lunch",
+        "label_ar": "ظهر الأربعاء في غرفة النادي",
+        "example_questions_ar": [
+          "أين كنت وقت الغداء؟",
+          "هل دخلت غرفة النادي؟"
+        ],
+        "fact_ids": [
+          "f_murad_in_club"
+        ],
+        "claim_ids": [
+          "cl_murad_absent"
+        ]
+      },
+      {
+        "id": "t_booking",
+        "label_ar": "حجز المختبر ب",
+        "example_questions_ar": [
+          "لماذا حجزت المختبر؟",
+          "متى سجلت الطلب؟"
+        ],
+        "fact_ids": [
+          "f_booking"
+        ]
+      },
+      {
+        "id": "t_sighting",
+        "label_ar": "ما رأته هناء",
+        "example_questions_ar": [
+          "ماذا رأيت في الممر؟",
+          "كيف عرفته؟"
+        ],
+        "fact_ids": [
+          "f_hana_saw",
+          "f_hana_recognition"
+        ],
+        "claim_ids": [
+          "cl_hana_nader"
+        ]
+      },
+      {
+        "id": "t_records",
+        "label_ar": "الأوراق والسجلات",
+        "example_questions_ar": [
+          "ماذا في سجل اللوحة؟",
+          "من حضر الاختبار؟"
+        ],
+        "fact_ids": [
+          "f_account_device",
+          "f_absent",
+          "f_nader_in_hall"
+        ]
+      }
+    ]
+  },
+  "rubric": {
+    "reference_answer_ar": "لم ينشر نادر الإعلان بنفسه، ولا جود، وليس الإعلان خللاً بلا فاعل. تنسب سجلات اللوحة الإعلان إلى حساب نادر وإلى لوحه، لكنها تسجل الحساب والجهاز لا من لمس الشاشة. كان اللوح على وضع العرض مفتوحاً بلا رمز في غرفة النادي منذ 12:20 كما يبين سجل النقاط، وكان نادر في القاعة 5 كما يبين كشف الحضور وعداد الباب. وجود خرجت من الغرفة 13:10 وسجلت بطاقتها في المكتبة 13:18 والمسافة ثماني دقائق. أما مراد فتضعه دفتر الدخول وحاسوب الغرفة في الغرفة من 13:12 إلى 13:36، وقد غاب بالإعلان أصحاب المراتب 1 و2 و3 و7 فصار الأول بين الحاضرين، وحجز الموعد الذي ذكره الإعلان قبله بثلاث ساعات وأربعين دقيقة. لذلك الأرجح أن مراداً نشر الإعلان من اللوح المفتوح. حدود الاستنتاج: دفتر الدخول بخط الداخلين، وسجل الحاسوب يدل على الحساب وليس على الشخص، وبطاقة المكتبة تسجل البطاقة لا حاملها، ولا يثبت أي سجل أن مراداً لمس الشاشة بيده ولا ما نيّته.",
+    "criteria": [
+      {
+        "id": "c_source",
+        "name_ar": "تصنيف المصادر",
+        "objective_ids": [
+          "lo_claim"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يصنّف"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "أخطأ في الأغلب"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "نصف صحيح"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمه صحيح"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كله صحيح"
+          }
+        ]
+      },
+      {
+        "id": "c_conflict",
+        "name_ar": "ربط السجلات بأزمنتها",
+        "objective_ids": [
+          "lo_timeline"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يضع شيئاً"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "وضع قليلاً"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "وضع نصفها صحيحاً"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمها"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كلها في موضعها"
+          }
+        ]
+      },
+      {
+        "id": "c_links",
+        "name_ar": "ربط الأدلة بالفرضيات",
+        "objective_ids": [
+          "lo_diag"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.2,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لا روابط"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "قليلة"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "نصفها صحيح"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمها"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كلها دقيقة"
+          }
+        ]
+      },
+      {
+        "id": "c_uncertainty",
+        "name_ar": "معايرة الثقة",
+        "objective_ids": [
+          "lo_calib"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.2,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "ثقة مفرطة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "حدود قليلة"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "جزئية"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معقولة"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "معايَرة كاملة"
+          }
+        ]
+      },
+      {
+        "id": "c_revision",
+        "name_ar": "مراجعة الرأي",
+        "objective_ids": [
+          "lo_revise"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "بقي على فرضية مرفوضة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "لم يعلن فرضية"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "ثبت على فرضية سليمة"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "غيّر بدليل"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "غيّر بدليل ووثّق"
+          }
+        ]
+      },
+      {
+        "id": "c_elimination",
+        "name_ar": "استبعاد الفرضيات الخاطئة",
+        "objective_ids": [
+          "lo_hyp"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يستبعد"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "استبعد خطأً"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "فرضية بدليل"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "فرضيتين"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كل الخاطئة"
+          }
+        ]
+      },
+      {
+        "id": "c_justification",
+        "name_ar": "جودة الحجة المكتوبة",
+        "objective_ids": [
+          "lo_diag",
+          "lo_hyp"
+        ],
+        "scored_by": "human",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لا حجة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "ادعاء بلا سند"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "أدلة دون ربط"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "ربط الأدلة بالاستنتاج"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "ربط مع البدائل والحدود"
+          }
+        ]
+      }
+    ]
+  },
+  "hint_ladder": [
+    {
+      "id": "hg1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "قبل أن تسأل هل كتب نادر الإعلان، اسأل: ماذا يسجل السجل بالضبط، الحساب أم الشخص؟",
+      "trigger": {
+        "always": true
+      },
+      "assessment_weight": 0.02
+    },
+    {
+      "id": "hg2",
+      "level": 2,
+      "kind": "focus_area",
+      "text_ar": "ضع كل سجل في جدول: ماذا سجّل؟ ومتى؟ وهل يسجل الشخص أم الجهاز أم البطاقة؟",
+      "trigger": {
+        "has_evidence": "ev_referral"
+      },
+      "assessment_weight": 0.04
+    },
+    {
+      "id": "hg3",
+      "level": 3,
+      "kind": "pointer",
+      "text_ar": "ابحث عن سجلات صنعتها الأجهزة أو الأوراق قبل أن يبدأ أحد بالاتهام.",
+      "trigger": {
+        "has_evidence": "ev_referral"
+      },
+      "assessment_weight": 0.08
+    },
+    {
+      "id": "hp1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "أين كان اللوح وأين كان صاحبه وقت النشر؟ هل هما المكان نفسه؟",
+      "trigger": {
+        "has_evidence": "ev_post_log"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_other_a"
+    },
+    {
+      "id": "hp2",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "قارن سجل النقاط اللاسلكية بكشف حضور الامتحان وعداد الباب.",
+      "trigger": {
+        "has_evidence": "ev_wifi"
+      },
+      "assessment_weight": 0.06,
+      "targets_inference_id": "i_other_a"
+    },
+    {
+      "id": "hp3",
+      "level": 3,
+      "kind": "partial_reveal",
+      "text_ar": "اللوح بقي في غرفة النادي من 12:20 إلى 14:10، ونادر في القاعة 5 من 12:30 إلى 14:00؛ فمن كان أمام الشاشة الساعة 13:20؟",
+      "trigger": {
+        "has_evidence": "ev_exam_sheet"
+      },
+      "assessment_weight": 0.1,
+      "targets_inference_id": "i_other_a"
+    },
+    {
+      "id": "hs1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "إذا كانت جود غاضبة، فهل يكفي الغضب لتكون قرب اللوح وقت النشر؟",
+      "trigger": {
+        "has_evidence": "ev_joud_message"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_joud_a"
+    },
+    {
+      "id": "hs2",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "اسأل أين كانت بطاقة جود الساعة 13:18، وكم تحتاج من الوقت لتصل إلى غرفة النادي؟",
+      "trigger": {
+        "has_evidence": "ev_signin"
+      },
+      "assessment_weight": 0.05,
+      "targets_inference_id": "i_joud_a"
+    },
+    {
+      "id": "hs3",
+      "level": 3,
+      "kind": "partial_reveal",
+      "text_ar": "ضع على خط واحد: خروج جود 13:10، وبطاقتها في المكتبة 13:18، والنشر 13:20، والمسافة ثماني دقائق مشياً.",
+      "trigger": {
+        "has_evidence": "ev_kiosk"
+      },
+      "assessment_weight": 0.08,
+      "targets_inference_id": "i_joud_a"
+    },
+    {
+      "id": "hm1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "من كان في غرفة النادي بين 13:12 و13:36، وكيف تعرف ذلك من أكثر من مصدر؟",
+      "trigger": {
+        "has_evidence": "ev_signin"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_alone_a"
+    },
+    {
+      "id": "hm2",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "قابل دفتر الدخول بسجل جلسات الحاسوب، ثم اسأل: ما الذي يضيفه كشف الاختبار وسجل الحجز؟",
+      "trigger": {
+        "has_evidence": "ev_pc_log"
+      },
+      "assessment_weight": 0.05,
+      "targets_inference_id": "i_alone_a"
+    },
+    {
+      "id": "hm3",
+      "level": 3,
+      "kind": "partial_reveal",
+      "text_ar": "اجمع: حساب مراد على الحاسوب 13:13–13:36، وغياب أصحاب المراتب الثلاث الأولى، وحجزه الموعد نفسه المذكور في الإعلان، ثم اذكر ما لا تثبته هذه الأدلة.",
+      "trigger": {
+        "has_evidence": "ev_booking"
+      },
+      "assessment_weight": 0.09,
+      "targets_inference_id": "i_alone_a"
+    }
+  ],
+  "fairness_test": {
+    "requirements": {
+      "min_disjoint_proof_paths": 2,
+      "max_inference_depth": 3,
+      "all_red_herrings_refutable": true,
+      "culprit_uniquely_entailed": true,
+      "no_hidden_fact_dependency": true,
+      "max_required_actions": 40
+    },
+    "runs": []
+  },
+  "ending_explanation": {
+    "steps": [
+      {
+        "order": 1,
+        "text_ar": "ابدأ بسؤال السجل: سجل النشر يقول إن حساب نادر ولوحه نشرا الإعلان يدوياً الساعة 13:20، لكنه يسجل الحساب والجهاز لا اليد التي لمست الشاشة. ومذكرة الفني تبين أن اللوح كان مفتوحاً بلا رمز على الحامل.",
+        "uses_evidence_ids": [
+          "ev_referral",
+          "ev_post_log",
+          "ev_it_note"
+        ],
+        "inference_id": "i_rule_auto"
+      },
+      {
+        "order": 2,
+        "text_ar": "سجل النقاط اللاسلكية يبقي اللوح في غرفة النادي من 12:20 إلى 14:10، وكشف الحضور وعداد الباب، وهما مصدران مستقلان، يبقيان نادراً في القاعة 5؛ فاللوح كان بلا صاحبه.",
+        "uses_evidence_ids": [
+          "ev_wifi",
+          "ev_exam_sheet",
+          "ev_door_counter"
+        ],
+        "inference_id": "i_other_a"
+      },
+      {
+        "order": 3,
+        "text_ar": "جود خرجت من الغرفة 13:10 وسجلت بطاقتها في المكتبة 13:18، والمسافة ثماني دقائق، فلم تكن عند اللوح؛ ورسالتها الغاضبة لا تدل على فعل.",
+        "uses_evidence_ids": [
+          "ev_signin",
+          "ev_kiosk",
+          "ev_floor_plan",
+          "ev_joud_message"
+        ],
+        "inference_id": "i_joud_a"
+      },
+      {
+        "order": 4,
+        "text_ar": "دفتر الدخول وسجل الحاسوب يضعان مراداً وحده في الغرفة من 13:12 إلى 13:36، وقوله إنه بقي في الساحة يخالف السجلين، وإفادة هناء عن رؤية نادر لا تصمد أمام كشف الامتحان.",
+        "uses_evidence_ids": [
+          "ev_signin",
+          "ev_pc_log",
+          "ev_exam_sheet",
+          "ev_hana_statement"
+        ],
+        "inference_id": "i_alone_a"
+      },
+      {
+        "order": 5,
+        "text_ar": "غياب أصحاب المراتب 1 و2 و3 و7 جعل مراداً أول الحاضرين، وحجزه المختبر ب للموعد نفسه قبل الإعلان؛ فالأرجح أنه نشر الإعلان، مع التنبيه إلى أن هذه قرائن لا مشاهدة.",
+        "uses_evidence_ids": [
+          "ev_tryout_sheet",
+          "ev_booking",
+          "ev_notice"
+        ],
+        "inference_id": "i_supports_murad"
+      }
+    ],
+    "alternative_paths_ar": [
+      "مسار أول: سجل النشر وسجل النقاط وكشف الحضور يبقون اللوح في الغرفة وصاحبه في القاعة، وجهاز الإعارة والمخطط ودفتر الدخول تحصر الموجودين عند اللوح في مراد. مسار ثانٍ بأدلة مختلفة: صورة الإعلان ومذكرة الفني وسجل حامل الشحن وعداد الباب تبقي اللوح مفتوحاً بلا صاحبه، ودفتر مكتب المكتبة يبعد جود، وسجل حاسوب الغرفة يضع حساب مراد وحده في الغرفة."
+    ],
+    "what_evidence_could_not_show_ar": [
+      "دفتر الدخول بخط الداخلين وقد ينسى أحدهم الكتابة، وسجل الحاسوب يدل على الحساب وليس على الشخص، وبطاقة المكتبة تسجل البطاقة لا حاملها.",
+      "لا يثبت أي سجل أن مراداً هو من لمس شاشة اللوح، ولا يبين ما قصده؛ والمصلحة وحدها لا تكفي دليلاً."
+    ],
+    "science_notes_ar": [
+      "سجل الحساب والجهاز يدل على أن الحساب استُعمل من ذلك الجهاز، ولا يدل على هوية من كان يمسكه.",
+      "قبل أن تنسب فعلاً رقمياً إلى شخص، قارن مكان الجهاز بمكان الشخص من سجلين مستقلين على الأقل."
+    ]
+  },
+  "expert_review": [
+    {
+      "role": "narrative_editor",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "scientific_reviewer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "learning_designer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "age_appropriateness",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "cultural_reviewer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "legal_rights",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "safety",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    }
+  ]
+}

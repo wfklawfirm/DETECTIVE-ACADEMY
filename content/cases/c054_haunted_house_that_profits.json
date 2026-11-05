@@ -1,0 +1,2053 @@
+{
+  "schema_version": "0.1.0",
+  "case_id": "c054_haunted_house_that_profits",
+  "case_version": "0.1.0",
+  "meta": {
+    "title_ar": "البيت المسكون الذي يربح",
+    "title_en": "The Haunted House That Paid",
+    "age_band": "13-15",
+    "estimated_minutes": 25,
+    "difficulty": 2,
+    "content_flags": [
+      "no_violence"
+    ],
+    "knowledge_object_refs": [
+      "KO-NP-02-018",
+      "KO-RS-05-001",
+      "KO-RS-05-002",
+      "KO-RS-05-003",
+      "KO-RS-05-004",
+      "KO-RS-05-005",
+      "KO-RS-05-014",
+      "KO-RS-06-001",
+      "KO-RS-06-008",
+      "KO-RS-06-009",
+      "KO-RS-06-021"
+    ],
+    "locale": "ar",
+    "dialogue_register": "msa",
+    "authors": [
+      "فريق أثر التحريري (مسودة بمساعدة الذكاء الاصطناعي، لم تُراجَع بشرياً بعد)"
+    ]
+  },
+  "premise": {
+    "hook_ar": "منذ أول نيسان يتحدث حي الأقواس عن ضوء في علية بيت قديم وعن طرقات تُسمع في الليل، وانسحب مشترون كانوا يريدون البيت فانخفض سعره. طلبت لجنة الحي رأياً معلّلاً: ما الذي يحدث في العلية، ومن ينتفع من الحديث عنه؟",
+    "player_role_ar": "أنت عضو في فريق «عيون الحي» الشبابي لدى لجنة حي الأقواس، وطُلب منك رأي مبني على السجلات دون سخرية من أحد ودون اتهام أحد قبل أن تثبت الأدلة شيئاً.",
+    "setting_ar": "مدينة الصفصاف المتخيلة، حي الأقواس القديم. بيت الفانوس رقم 14 مغلق منذ آذار، ويلاصقه من الشرق المقهى رقم 16. الأوقات بتوقيت الحي.",
+    "public_fact_ids": [
+      "f_rumor",
+      "f_price_drop"
+    ],
+    "assumed_general_knowledge_ar": [
+      "البيت الذي فُصلت عنه الكهرباء والماء لا يشغّل مصباحاً ولا يجري فيه ماء",
+      "المؤقت الزمني يشغّل جهازاً في ساعة محددة دون وجود أحد قربه",
+      "الغرفة المقفلة لا يدخلها عادة غير من يحمل مفتاحها",
+      "النسبة المئوية: ثلاثة بالمئة من مبلغ هي ثلاثة أجزاء من كل مئة منه",
+      "الشائعة تدل على ما يعتقده الناس ولا تدل وحدها على ما وقع"
+    ]
+  },
+  "entities": {
+    "characters": [
+      {
+        "id": "jamil",
+        "name_ar": "جميل الحداد",
+        "role": "suspect",
+        "age_descriptor_ar": "صاحب مقهى الأقواس، جار البيت من الشرق",
+        "persona_ar": "ودود وكثير الكلام، يحب حيّه ويعرف أخبار الجميع، ويحمل المفتاح الاحتياطي للبيت منذ سنوات بطلب من أهله.",
+        "motives_ar": [
+          "أن يوسّع مقهاه",
+          "أن يشتري ما يجاور مقهاه بسعر مناسب"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        }
+      },
+      {
+        "id": "hanan",
+        "name_ar": "هنان السعدي",
+        "role": "suspect",
+        "age_descriptor_ar": "وسيطة عقارية في مكتب صغير بالحي",
+        "persona_ar": "منظمة وعملية، تدوّن كل موعد في دفترها، وتريد أن تُتمّ البيع بسرعة وبهدوء.",
+        "motives_ar": [
+          "أن تبيع البيت وتنال عمولتها",
+          "أن تحافظ على سمعة مكتبها"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        }
+      },
+      {
+        "id": "zaid",
+        "name_ar": "زيد المصري",
+        "role": "suspect",
+        "age_descriptor_ar": "طالب في الصف التاسع، يدير قناة صغيرة عن أخبار الحي",
+        "persona_ar": "فضولي ومتحمس، يصدّق ما يسمعه من الجيران ويحب أن يصوّر كل شيء غريب.",
+        "motives_ar": [
+          "أن يجذب مشاهدين لقناته",
+          "أن يعرف سرّ الضوء والطرقات"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        }
+      },
+      {
+        "id": "sanaa",
+        "name_ar": "السيدة سناء الرضوان",
+        "role": "authority",
+        "age_descriptor_ar": "ممثلة ورثة البيت",
+        "persona_ar": "هادئة ومتعبة من كثرة الكلام عن بيت عائلتها، تتعاون مع اللجنة وتفتح لها الأبواب.",
+        "motives_ar": [
+          "أن تبيع البيت بسعر عادل",
+          "أن تعرف حقيقة ما يُقال"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        }
+      }
+    ],
+    "locations": [
+      {
+        "id": "loc_house",
+        "name_ar": "بيت الفانوس رقم 14",
+        "description_ar": "بيت قديم مغلق منذ آذار في حي الأقواس، ويلاصقه من الشرق المقهى رقم 16."
+      },
+      {
+        "id": "loc_attic",
+        "name_ar": "علية البيت رقم 14",
+        "description_ar": "غرفة صغيرة تحت السقف لها نافذة تطل على الشارع."
+      },
+      {
+        "id": "loc_cafe_store",
+        "name_ar": "مخزن مقهى الأقواس",
+        "description_ar": "غرفة مقفلة خلف المقهى رقم 16، جدارها الخلفي مشترك مع البيت."
+      },
+      {
+        "id": "loc_street",
+        "name_ar": "الشارع المقابل للبيت",
+        "description_ar": "شارع ضيق تحت الأقواس القديمة يقف فيه المارة."
+      },
+      {
+        "id": "loc_council",
+        "name_ar": "مقر لجنة الحي",
+        "description_ar": "غرفة تحفظ فيها اللجنة سجلاتها وإشعارات الحي."
+      },
+      {
+        "id": "loc_agency",
+        "name_ar": "مكتب الوسيطة",
+        "description_ar": "مكتب عقاري صغير في أول الحي."
+      },
+      {
+        "id": "loc_shop",
+        "name_ar": "محل الأدوات الكهربائية الحديثة",
+        "description_ar": "محل في السوق يبيع الأجهزة الكهربائية الصغيرة."
+      }
+    ],
+    "objects": [
+      {
+        "id": "obj_log",
+        "name_ar": "سجل بلاغات الجيران",
+        "description_ar": "دفتر تدوّن فيه أمينة اللجنة ما يبلّغ عنه الجيران."
+      },
+      {
+        "id": "obj_timer",
+        "name_ar": "المؤقت والجهازان",
+        "description_ar": "مؤقت زمني وُصل به مصباح صغير وجهاز بمطرقة."
+      },
+      {
+        "id": "obj_cable",
+        "name_ar": "الكابل الأبيض",
+        "description_ar": "كابل تمديد أبيض ملفوف عند قابسه بشريط عزل أخضر."
+      },
+      {
+        "id": "obj_book",
+        "name_ar": "دفتر المعاينات",
+        "description_ar": "دفتر الوسيطة الذي تسجّل فيه مواعيد عرض البيت."
+      }
+    ],
+    "organizations": [
+      {
+        "id": "org_council",
+        "name_ar": "لجنة حي الأقواس",
+        "description_ar": "لجنة من أهل الحي تتابع شؤونه وتسجل بلاغاته."
+      },
+      {
+        "id": "org_utility",
+        "name_ar": "شركة كهرباء ومياه الصفصاف",
+        "description_ar": "الجهة التي تفصل الخدمة وتعيدها وتقرأ العدادات."
+      }
+    ]
+  },
+  "truth": {
+    "solution": {
+      "culprit_ids": [
+        "jamil"
+      ],
+      "summary_ar": "جميل الحداد، صاحب المقهى المجاور، ركّب في العلية مصباحاً وجهازاً بمطرقة على مؤقت ويوصل كابلهما بمخزنه مساء كل يوم يسبق معاينة، فأبعد المشترين وانخفض سعر البيت ثم عرض شراءه. لا أرواح ولا أنابيب، وزيد والوسيطة بريئان.",
+      "key_fact_ids": [
+        "f_jamil_did"
+      ]
+    },
+    "facts": [
+      {
+        "id": "f_rumor",
+        "statement_ar": "منذ أول نيسان يتحدث الجيران عن ضوء خافت في نافذة علية البيت رقم 14 وعن ثلاث طرقات تُسمع قرابة التاسعة والنصف ليلاً في بعض الليالي، ويقول بعضهم إن البيت مسكون.",
+        "kind": "event",
+        "subject_ids": [
+          "obj_log",
+          "org_council"
+        ],
+        "spoiler_level": 0,
+        "location_id": "loc_house"
+      },
+      {
+        "id": "f_price_drop",
+        "statement_ar": "كان سعر البيت المعروض تسعين ألف دينار في آذار، وانسحب عدد من المشترين، فخفّض الورثة السعر إلى ستين ألفاً.",
+        "kind": "event",
+        "subject_ids": [
+          "sanaa",
+          "loc_house"
+        ],
+        "spoiler_level": 0
+      },
+      {
+        "id": "f_keys",
+        "statement_ar": "يحمل جميل مفتاحاً احتياطياً للبيت ويفتح الباب للمشترين عند كل معاينة، وتحمل الوسيطة هنان مفتاحاً آخر.",
+        "kind": "relation",
+        "subject_ids": [
+          "jamil",
+          "hanan",
+          "loc_house"
+        ],
+        "spoiler_level": 1
+      },
+      {
+        "id": "f_no_power",
+        "statement_ar": "فُصلت الكهرباء والمياه عن البيت منذ العاشر من آذار ولم تُعد الخدمة، وعدّاد الكهرباء لم يتحرك.",
+        "kind": "state",
+        "subject_ids": [
+          "loc_house",
+          "org_utility"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 13560,
+          "precision": "approx"
+        }
+      },
+      {
+        "id": "f_device_external",
+        "statement_ar": "في العلية مصباح صغير وجهاز بمطرقة موصولان بمؤقت مضبوط على التاسعة وعشر دقائق، وتيارهما يأتي بكابل يخرج من ثقب في الجدار المشترك مع البناء المجاور.",
+        "kind": "state",
+        "subject_ids": [
+          "obj_timer",
+          "obj_cable",
+          "loc_attic"
+        ],
+        "spoiler_level": 2,
+        "location_id": "loc_attic"
+      },
+      {
+        "id": "f_cable_from_cafe",
+        "statement_ar": "الطرف الآخر من الكابل الأبيض ذي الشريط الأخضر مغروس في مقبس بمخزن مقهى الأقواس المقفل، ومفتاح المخزن مع صاحب المقهى.",
+        "kind": "state",
+        "subject_ids": [
+          "obj_cable",
+          "loc_cafe_store",
+          "jamil"
+        ],
+        "spoiler_level": 2,
+        "location_id": "loc_cafe_store"
+      },
+      {
+        "id": "f_eve_pattern",
+        "statement_ar": "وقعت الظواهر الخمس المسجلة كلها مساء اليوم السابق لمعاينة مقررة للبيت، ولم يُسجل شيء في أي ليلة أخرى.",
+        "kind": "attribute",
+        "subject_ids": [
+          "obj_log",
+          "obj_book"
+        ],
+        "spoiler_level": 2
+      },
+      {
+        "id": "f_jamil_bought",
+        "statement_ar": "اشترى حساب مقهى الأقواس في السابع والعشرين من آذار مؤقتاً وكابلاً أبيض طوله خمسة عشر متراً وشريطاً أخضر ومصباحاً وجرساً بمطرقة، قبل أول ظاهرة بسبعة أيام.",
+        "kind": "event",
+        "subject_ids": [
+          "jamil",
+          "obj_timer",
+          "obj_cable"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 38340,
+          "precision": "exact"
+        },
+        "location_id": "loc_shop"
+      },
+      {
+        "id": "f_jamil_motive",
+        "statement_ar": "عرض جميل في الخامس من حزيران شراء البيت بخمسة وخمسين ألف دينار ليضمّه إلى مقهاه، أي بأقل من السعر المخفض.",
+        "kind": "event",
+        "subject_ids": [
+          "jamil",
+          "loc_house"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 138960,
+          "precision": "approx"
+        }
+      },
+      {
+        "id": "f_broker_loss",
+        "statement_ar": "عمولة الوسيطة ثلاثة بالمئة من سعر البيع وتُدفع عند إتمام البيع فقط، فانخفاض السعر من تسعين ألفاً إلى ستين ألفاً أنزل عمولتها المتوقعة من 2700 إلى 1800 دينار.",
+        "kind": "attribute",
+        "subject_ids": [
+          "hanan"
+        ],
+        "spoiler_level": 1
+      },
+      {
+        "id": "f_zaid_late",
+        "statement_ar": "نشر زيد أول منشور عن البيت في الرابع والعشرين من نيسان، بعد أول ظاهرة مسجلة بواحد وعشرين يوماً، ولا يحمل مفتاحاً للبيت.",
+        "kind": "attribute",
+        "subject_ids": [
+          "zaid"
+        ],
+        "spoiler_level": 1
+      },
+      {
+        "id": "f_jamil_did",
+        "statement_ar": "جميل هو الذي ركّب المصباح والجهاز والمؤقت في العلية ويوصل الكابل بمقبس مخزنه مساء كل يوم يسبق معاينة، ليبعد المشترين وينخفض السعر فيشتري البيت.",
+        "kind": "event",
+        "subject_ids": [
+          "jamil",
+          "obj_timer",
+          "obj_cable"
+        ],
+        "spoiler_level": 3,
+        "time": {
+          "start_min": 45240,
+          "precision": "approx"
+        },
+        "location_id": "loc_attic"
+      }
+    ],
+    "claims": [
+      {
+        "id": "cl_haunted",
+        "statement_ar": "ما يحدث في العلية لا يفسره سبب عادي.",
+        "kind": "rumour",
+        "held_by": [
+          "zaid"
+        ],
+        "true_fact_id": "f_device_external",
+        "contradicted_by_evidence_ids": [
+          "ev_attic",
+          "ev_storeroom"
+        ]
+      },
+      {
+        "id": "cl_pipes",
+        "statement_ar": "الطرقات سببها أنابيب البيت القديمة.",
+        "kind": "honest_mistake",
+        "held_by": [
+          "hanan"
+        ],
+        "true_fact_id": "f_no_power",
+        "contradicted_by_evidence_ids": [
+          "ev_utility",
+          "ev_attic"
+        ]
+      },
+      {
+        "id": "cl_cafe_light",
+        "statement_ar": "الكابل في مخزني للإنارة المؤقتة فقط.",
+        "kind": "lie",
+        "held_by": [
+          "jamil"
+        ],
+        "true_fact_id": "f_cable_from_cafe",
+        "contradicted_by_evidence_ids": [
+          "ev_attic"
+        ]
+      },
+      {
+        "id": "cl_zaid_prank",
+        "statement_ar": "لعلّ ولداً من الحي هو الذي يمزح بالضوء والطرقات.",
+        "kind": "rumour",
+        "held_by": [
+          "sanaa"
+        ],
+        "true_fact_id": "f_zaid_late",
+        "contradicted_by_evidence_ids": [
+          "ev_log",
+          "ev_zaid"
+        ]
+      }
+    ]
+  },
+  "timeline": [
+    {
+      "id": "te_cut",
+      "description_ar": "فصل الكهرباء والمياه عن البيت الخالي بطلب الورثة.",
+      "time": {
+        "start_min": 13560,
+        "precision": "approx"
+      },
+      "location_id": "loc_house",
+      "actor_ids": [
+        "sanaa"
+      ],
+      "fact_ids": [
+        "f_no_power"
+      ],
+      "motivated_by_ar": "توفير نفقات بيت خالٍ"
+    },
+    {
+      "id": "te_buy",
+      "description_ar": "شراء المؤقت والكابل والشريط والمصباح والجرس من محل الأدوات.",
+      "time": {
+        "start_min": 38340,
+        "precision": "exact"
+      },
+      "location_id": "loc_shop",
+      "actor_ids": [
+        "jamil"
+      ],
+      "fact_ids": [
+        "f_jamil_bought"
+      ],
+      "motivated_by_ar": "تجهيز الأجهزة التي سيركّبها"
+    },
+    {
+      "id": "te_install",
+      "description_ar": "تركيب الأجهزة في العلية وتمرير الكابل من الثقب في الجدار المشترك.",
+      "time": {
+        "start_min": 45240,
+        "end_min": 45300,
+        "precision": "approx"
+      },
+      "location_id": "loc_attic",
+      "actor_ids": [
+        "jamil"
+      ],
+      "fact_ids": [
+        "f_jamil_did",
+        "f_device_external",
+        "f_keys"
+      ],
+      "motivated_by_ar": "إبعاد المشترين وخفض السعر ليشتري البيت"
+    },
+    {
+      "id": "te_event_first",
+      "description_ar": "أول ظاهرة مسجلة: ضوء في العلية وثلاث طرقات.",
+      "time": {
+        "start_min": 48790,
+        "end_min": 48792,
+        "precision": "approx"
+      },
+      "location_id": "loc_attic",
+      "actor_ids": [],
+      "fact_ids": [
+        "f_rumor",
+        "f_eve_pattern"
+      ]
+    },
+    {
+      "id": "te_inspect",
+      "description_ar": "زيارة مفتش السلامة لمخزن المقهى وتدوين الكابل المغروس في مقبسه.",
+      "time": {
+        "start_min": 104640,
+        "end_min": 104670,
+        "precision": "approx"
+      },
+      "location_id": "loc_cafe_store",
+      "actor_ids": [
+        "jamil"
+      ],
+      "fact_ids": [
+        "f_cable_from_cafe"
+      ],
+      "motivated_by_ar": "فتح مخزنه للمفتش كما يفعل أصحاب المحال"
+    },
+    {
+      "id": "te_event_may12",
+      "description_ar": "ظاهرة مساء الثاني عشر من أيار وزيد يصوّرها من الشارع.",
+      "time": {
+        "start_min": 104948,
+        "end_min": 104954,
+        "precision": "approx"
+      },
+      "location_id": "loc_street",
+      "actor_ids": [
+        "zaid"
+      ],
+      "witness_ids": [
+        "zaid"
+      ],
+      "fact_ids": [
+        "f_rumor",
+        "f_zaid_late"
+      ],
+      "motivated_by_ar": "تصوير ما يتحدث عنه الحي لقناته"
+    },
+    {
+      "id": "te_price_cut",
+      "description_ar": "خفض الورثة سعر البيت إلى ستين ألف دينار.",
+      "time": {
+        "start_min": 134580,
+        "precision": "approx"
+      },
+      "location_id": "loc_house",
+      "actor_ids": [
+        "sanaa"
+      ],
+      "fact_ids": [
+        "f_price_drop",
+        "f_broker_loss"
+      ],
+      "motivated_by_ar": "بيع البيت بعد انسحاب المشترين"
+    },
+    {
+      "id": "te_offer",
+      "description_ar": "عرض جميل شراء البيت بخمسة وخمسين ألف دينار.",
+      "time": {
+        "start_min": 138960,
+        "precision": "approx"
+      },
+      "location_id": "loc_house",
+      "actor_ids": [
+        "jamil"
+      ],
+      "fact_ids": [
+        "f_jamil_motive"
+      ],
+      "motivated_by_ar": "ضم البيت إلى مقهاه بسعر منخفض"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_log",
+      "title_ar": "سجل بلاغات لجنة الحي",
+      "kind": "documentary",
+      "content_ar": "سجل لجنة حي الأقواس: بلاغات الجيران عن البيت رقم 14، من أول نيسان إلى آخر أيار\nيروي الجيران ما رأوه وسمعوه، وتدوّنه أمينة اللجنة أم سالم كما قيل لها.\n\n3 نيسان، قرابة 9:10 مساءً: ضوء أصفر خافت في نافذة العلية ثم ثلاث طرقات بطيئة، ودام ذلك نحو دقيقتين.\n17 نيسان، قرابة 9:10 مساءً: الضوء نفسه والطرقات الثلاث نفسها، نحو دقيقتين.\n29 نيسان، قرابة 9:12 مساءً: الضوء والطرقات الثلاث، نحو دقيقتين.\n12 أيار، 9:10 مساءً: الضوء والطرقات الثلاث، وصوّر الجار زيد جزءاً منها.\n26 أيار، 9:10 مساءً: الضوء والطرقات الثلاث، نحو دقيقتين.\n\nملاحظة أمينة اللجنة: لم يبلّغ أحد عن شيء في أي ليلة أخرى خلال الشهرين.\nيقول عدد من الجيران: «البيت مسكون، فقد سمعه أكثر من واحد».",
+      "acquired_by_action_ids": [
+        "a_read_log"
+      ],
+      "supports_fact_ids": [
+        "f_rumor",
+        "f_eve_pattern"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "سجل أهلي يدوّن ما يقوله الجيران؛ يثبت أن هؤلاء رأوا الضوء وسمعوا الطرق في هذه الليالي، ولا يثبت سبب ما رأوه، وقد يفوته من لم يبلّغ.",
+      "location_id": "loc_council",
+      "contradicts_claim_ids": [
+        "cl_zaid_prank"
+      ]
+    },
+    {
+      "id": "ev_book",
+      "title_ar": "دفتر معاينات الوسيطة",
+      "kind": "documentary",
+      "content_ar": "دفتر معاينات الوسيطة هنان السعدي، البيت رقم 14 (نسخة مصورة)\nالمفتاح الاحتياطي عند الجار جميل الحداد، وهو يفتح الباب للمشترين؛ ومفتاح ثانٍ عند الوسيطة.\nتُحدَّد المعاينة قبل أسبوع على الأقل، ويُبلَّغ بها الورثة وجميل.\n\nالمعاينات:\n4 نيسان، 11:00، زوجان: فتح الباب جميل. اتصل الزوج بعد أسبوع وانسحب.\n18 نيسان، 10:00، رجل أعمال: فتح الباب جميل. طلب تخفيضاً ولم يعد.\n30 نيسان، 12:00، عائلة: فتح الباب جميل. انسحبت وقالت إنها سمعت عن البيت.\n13 أيار، 10:00، مشترٍ: فتح الباب جميل. قال إنه لا يشتري بيتاً يتحدث عنه الحي.\n27 أيار، 11:00، مشترية: فتح الباب جميل. لم تردّ.",
+      "acquired_by_action_ids": [
+        "a_read_book"
+      ],
+      "supports_fact_ids": [
+        "f_keys",
+        "f_eve_pattern"
+      ],
+      "reliability": "strong",
+      "limits_ar": "دفتر الوسيطة يبيّن مواعيد المعاينات ومن كان يعرفها ومن يفتح الباب؛ لا يبيّن من نصب الضوء، ولا يدلّ وحده على أحد.",
+      "location_id": "loc_agency"
+    },
+    {
+      "id": "ev_utility",
+      "title_ar": "إشعار فصل الكهرباء والمياه",
+      "kind": "documentary",
+      "content_ar": "شركة كهرباء ومياه الصفصاف، إشعار فصل خدمة\nالعقار: رقم 14، حي الأقواس.\nبطلب من الورثة (السيدة سناء الرضوان)، فُصلت الكهرباء وأُغلق خط المياه الرئيسي بتاريخ 10 آذار لأن العقار خالٍ.\nلم يُقدَّم طلب لإعادة الخدمة حتى 30 أيار.\nقراءة عدّاد الكهرباء في 30 أيار: لم تتغير منذ يوم الفصل.",
+      "acquired_by_action_ids": [
+        "a_read_utility"
+      ],
+      "supports_fact_ids": [
+        "f_no_power"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يبيّن حالة خدمات العقار وقراءة العدّاد؛ لا يبيّن ما في العلية ولا من يدخلها.",
+      "location_id": "loc_council",
+      "contradicts_claim_ids": [
+        "cl_pipes"
+      ]
+    },
+    {
+      "id": "ev_attic",
+      "title_ar": "فحص العلية",
+      "kind": "observation",
+      "content_ar": "عند فتح العلية بحضور السيدة سناء الرضوان:\nعلى الرف تحت النافذة مصباح صغير ذو ضوء أصفر، وبجانبه جهاز صغير بمطرقة تضرب لوحاً خشبياً.\nكلاهما موصول بمؤقت زمني أبيض مضبوط على الساعة 9:10 مساءً ومدة التشغيل دقيقتان.\nيخرج من المؤقت كابل أبيض ملفوف عند قابسه بشريط عزل أخضر، ويمتد على الأرض إلى ثقب قديم في الجدار الشرقي، وهو الجدار المشترك بين العلية والبناء رقم 16، ثم يختفي داخله.\nلوحة الكهرباء في البيت مفصولة ومفتاحها في وضع الإطفاء، ولا مقبس في العلية يعمل.",
+      "acquired_by_action_ids": [
+        "a_open_attic"
+      ],
+      "supports_fact_ids": [
+        "f_device_external"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يصف ما وُجد في العلية يوم الفحص؛ لا يبيّن من ركّب الأجهزة ولا متى، ولا أين ينتهي الكابل داخل الجدار.",
+      "location_id": "loc_attic",
+      "contradicts_claim_ids": [
+        "cl_haunted",
+        "cl_pipes",
+        "cl_cafe_light"
+      ]
+    },
+    {
+      "id": "ev_storeroom",
+      "title_ar": "تقرير فحص السلامة الكهربائية",
+      "kind": "documentary",
+      "content_ar": "بلدية الصفصاف، تقرير فحص السلامة الكهربائية للمحال في حي الأقواس\nالموقع: مخزن مقهى الأقواس، رقم 16. التاريخ: 12 أيار، 4:00 مساءً.\nالمخزن مقفل بقفل، فتحه صاحب المقهى جميل الحداد بمفتاحه.\nمقبس الجدار الخلفي (الغربي، المشترك مع البناء رقم 14) مشغول بقابس كابل تمديد أبيض، ملفوف عند قابسه بشريط عزل أخضر. يدخل الكابل ثقباً قديماً في الجدار نفسه إلى البناء المجاور.\nالتوصيل غير مرخص. اكتفينا بتنبيه شفهي وسنعاود الزيارة. قال صاحب المقهى إنه «للإنارة».",
+      "acquired_by_action_ids": [
+        "a_read_storeroom"
+      ],
+      "supports_fact_ids": [
+        "f_cable_from_cafe"
+      ],
+      "reliability": "strong",
+      "limits_ar": "تقرير مفتش رسمي عن يوم واحد؛ لا يبيّن إلى أين يصل الكابل داخل الجدار ولا من وصله، وقول صاحب المقهى فيه ادعاء يُفحص.",
+      "location_id": "loc_cafe_store"
+    },
+    {
+      "id": "ev_receipt",
+      "title_ar": "إيصال محل الأدوات الكهربائية",
+      "kind": "documentary",
+      "content_ar": "محل الأدوات الكهربائية الحديثة، إيصال بيع\nالتاريخ: 27 آذار، 3:00 مساءً.\nالزبون: مقهى الأقواس (حساب شهري). استلم: جميل الحداد.\nمؤقت كهربائي رقمي: 12 ديناراً\nكابل تمديد أبيض 15 متراً: 9 دنانير\nشريط عزل أخضر: 2 دينار\nمصباح مكتبي صغير: 7 دنانير\nجرس كهربائي بمطرقة: 10 دنانير\nالمجموع: 40 ديناراً.",
+      "acquired_by_action_ids": [
+        "a_read_receipt"
+      ],
+      "supports_fact_ids": [
+        "f_jamil_bought"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يثبت ما اشتُري وبأي حساب ومتى؛ لا يثبت أين استُعملت الأدوات، وللمقهى أن يشتري أدوات كهربائية لأسباب أخرى.",
+      "location_id": "loc_shop"
+    },
+    {
+      "id": "ev_offer",
+      "title_ar": "رسالة عرض الشراء",
+      "kind": "documentary",
+      "content_ar": "من جميل الحداد، صاحب مقهى الأقواس، إلى السيدة سناء الرضوان\nالتاريخ: 5 حزيران.\nأعرض عليكم شراء البيت رقم 14 بمبلغ خمسة وخمسين ألف دينار نقداً، لأوسّع المقهى وأضمّ المخزن والعلية إلى مطبخه.\nأعلم أن سعركم الحالي ستون ألفاً، لكن الحي كله يتحدث عن البيت، وقد لا تجدون مشترياً غيري.",
+      "acquired_by_action_ids": [
+        "a_read_offer"
+      ],
+      "supports_fact_ids": [
+        "f_jamil_motive"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "تبيّن رغبة جميل في الشراء بسعر أقل؛ الرغبة في الشراء أو الانتفاع من انخفاض السعر لا تثبت أن صاحبها فعل شيئاً.",
+      "location_id": "loc_house"
+    },
+    {
+      "id": "ev_commission",
+      "title_ar": "عقد الوساطة",
+      "kind": "documentary",
+      "content_ar": "عقد وساطة بين الورثة ومكتب هنان السعدي، البيت رقم 14\nتاريخ التوقيع: 5 آذار. السعر المعروض عند التوقيع: 90,000 دينار.\nعمولة الوسيطة: ثلاثة بالمئة من سعر البيع الفعلي، تُدفع عند إتمام البيع فقط، ولا شيء قبله.\nتعديل بتاريخ 2 حزيران: السعر المعروض 60,000 دينار.",
+      "acquired_by_action_ids": [
+        "a_read_contract"
+      ],
+      "supports_fact_ids": [
+        "f_broker_loss",
+        "f_price_drop"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يبيّن شروط العمولة والأسعار؛ لا يبيّن ما فعلته الوسيطة أو لم تفعله.",
+      "location_id": "loc_agency"
+    },
+    {
+      "id": "ev_zaid",
+      "title_ar": "منشورات زيد على قناته",
+      "kind": "digital",
+      "content_ar": "لقطات شاشة من قناة «أخبار الحي» التي يديرها زيد المصري\nمنشور 24 نيسان، بعنوان «ما سرّ بيت الفانوس؟»: «سمعت من الجيران، ولم أرَ الضوء بنفسي بعد».\nمنشور 12 أيار: مقطع مصوّر من الشارع المقابل بين 9:08 و9:14 مساءً. يظهر فيه ضوء النافذة ويُسمع صوت ثلاث طرقات في التوقيت نفسه، وصوت زيد يعلّق.\nتعليق زيد تحت المقطع: «أنا لا أملك مفتاحاً ولم أدخل البيت قط».",
+      "acquired_by_action_ids": [
+        "a_read_posts"
+      ],
+      "supports_fact_ids": [
+        "f_zaid_late"
+      ],
+      "reliability": "weak",
+      "limits_ar": "يبيّن متى بدأ زيد يصوّر وما قاله عن نفسه؛ قوله إنه لا يملك مفتاحاً ادعاء، ووقوفه في الشارع لا يثبت شيئاً عن أصل الضوء.",
+      "location_id": "loc_street",
+      "contradicts_claim_ids": [
+        "cl_zaid_prank"
+      ],
+      "is_red_herring": true
+    }
+  ],
+  "evidence_graph": {
+    "inferences": [
+      {
+        "id": "i_nopower",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_utility"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_no_power"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "الشركة فصلت الكهرباء والمياه عن البيت منذ 10 آذار وعدّادها لم يتحرك، فلا يستمد الضوء ولا الطرق طاقته من نظام البيت نفسه.",
+        "skill_ko_refs": [
+          "KO-RS-05-014"
+        ]
+      },
+      {
+        "id": "i_attic",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_attic"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_device_external"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "وُجد في العلية مصباح وجهاز بمطرقة موصولان بمؤقت على الساعة 9:10، وكابلهما يخرج من ثقب في الجدار المشترك؛ فللضوء والطرقات جهازان مضبوطان يأتيهما التيار من الجهة المجاورة.",
+        "skill_ko_refs": [
+          "KO-RS-05-003",
+          "KO-RS-06-003"
+        ]
+      },
+      {
+        "id": "i_cable_cafe",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_device_external"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_storeroom"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_cable_from_cafe"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "الكابل الأبيض ذو الشريط الأخضر الخارج من العلية يطابق الكابل المغروس في مقبس مخزن المقهى، والمخزن مقفل ومفتاحه مع صاحب المقهى.",
+        "skill_ko_refs": [
+          "KO-RS-05-014",
+          "KO-RS-06-001"
+        ]
+      },
+      {
+        "id": "i_jamil_p1",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_no_power"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_cable_from_cafe"
+          },
+          {
+            "ref_type": "general_knowledge",
+            "ref_id": "gk_locked_room_key"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_jamil_did"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "لا مصدر للتيار داخل البيت، والكابل ينتهي في غرفة مقفلة لا يدخلها عادة غير من يحمل مفتاحها وهو صاحب المقهى، فهو من وصل الجهازين.",
+        "skill_ko_refs": [
+          "KO-RS-05-004",
+          "KO-RS-06-001"
+        ]
+      },
+      {
+        "id": "i_pattern",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_log"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_book"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_eve_pattern"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "ضع تواريخ الظواهر الخمس إلى جانب تواريخ المعاينات: كل ظاهرة وقعت مساء اليوم السابق لمعاينة ولم تقع في ليلة أخرى؛ فمن دبّرها كان يعرف مواعيد المعاينة سلفاً.",
+        "skill_ko_refs": [
+          "KO-RS-05-005",
+          "KO-RS-05-004"
+        ]
+      },
+      {
+        "id": "i_bought",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_receipt"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_jamil_bought"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "الإيصال يثبت أن حساب المقهى اشترى في 27 آذار مؤقتاً وكابلاً أبيض طوله 15 متراً وشريطاً أخضر ومصباحاً وجرساً بمطرقة، قبل أول ظاهرة بسبعة أيام.",
+        "skill_ko_refs": [
+          "KO-RS-05-014"
+        ]
+      },
+      {
+        "id": "i_jamil_p2",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_eve_pattern"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_jamil_bought"
+          },
+          {
+            "ref_type": "general_knowledge",
+            "ref_id": "gk_schedule_known_to_keyholder"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_jamil_did"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "من يعرف المواعيد سلفاً ويفتح الباب في كل معاينة ويشتري قبل أول ظاهرة الأدوات نفسها التي وُجدت في العلية هو من ركّبها؛ وهذا مسار لا يمر بالكابل ولا بالمخزن.",
+        "skill_ko_refs": [
+          "KO-RS-05-004",
+          "KO-RS-06-008"
+        ]
+      },
+      {
+        "id": "i_motive",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_offer"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_jamil_motive"
+        },
+        "relation": "supports",
+        "strength": "suggestive",
+        "rule_ar": "جميل يعرض الشراء بأقل من السعر المخفض ليضم البيت إلى مقهاه، فهو ينتفع من انخفاض السعر؛ وهذا دافع يستدعي الفحص ولا يكفي دليلاً.",
+        "skill_ko_refs": [
+          "KO-RS-06-001"
+        ]
+      },
+      {
+        "id": "i_commission",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_commission"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_broker_loss"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "ثلاثة بالمئة من 90,000 تساوي 2,700 دينار، وثلاثة بالمئة من 60,000 تساوي 1,800 دينار؛ فانخفاض السعر أنقص عمولة الوسيطة 900 دينار وأخّر بيعها.",
+        "skill_ko_refs": [
+          "KO-RS-05-014"
+        ]
+      },
+      {
+        "id": "i_zaid_late",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_zaid"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_log"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_zaid_late"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "أول ظاهرة في السجل يوم 3 نيسان وأول منشور لزيد يوم 24 نيسان، بفارق 21 يوماً؛ وقد كتب في منشوره أنه لم يرَ الضوء بنفسه بعد.",
+        "skill_ko_refs": [
+          "KO-RS-05-005",
+          "KO-RS-06-008"
+        ]
+      },
+      {
+        "id": "i_rule_zaid",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_zaid_late"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_device_external"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_zaid"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "الظواهر بدأت قبل أن ينشر زيد شيئاً، والتيار يأتي بكابل من جدار مشترك مع مخزن مقفل، وزيد لا يحمل مفتاحاً؛ فوجوده في الشارع مع هاتفه لا يجعله فاعلاً.",
+        "skill_ko_refs": [
+          "KO-RS-05-003"
+        ]
+      },
+      {
+        "id": "i_rule_broker",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_broker_loss"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_jamil_bought"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_broker"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "الوسيطة تخسر من انخفاض السعر ولا تقبض شيئاً بلا بيع، والأدوات اشتُريت بحساب المقهى لا بحساب مكتبها؛ فلا دافع لها ولا وسيلة ظاهرة.",
+        "skill_ko_refs": [
+          "KO-RS-05-003",
+          "KO-RS-06-008"
+        ]
+      },
+      {
+        "id": "i_rule_pipes",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_no_power"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_eve_pattern"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_pipes"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "لا ماء في أنابيب البيت لتطرق، ولا تيار فيه ليضيء مصباحاً، والأنابيب لا تعرف مواعيد المعاينات؛ أما الظواهر فتتبعها.",
+        "skill_ko_refs": [
+          "KO-RS-05-003"
+        ]
+      },
+      {
+        "id": "i_rule_ghost",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_device_external"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_cable_from_cafe"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_ghost"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "وُجد لكل من الضوء والطرقات في هذه الليالي سبب عادي قابل للفحص، وهو الأجهزة والكابل؛ وهذا لا يحكم على معتقدات أحد، وإنما يفسّر ما سُجّل.",
+        "skill_ko_refs": [
+          "KO-RS-05-003",
+          "KO-RS-06-009"
+        ]
+      },
+      {
+        "id": "i_est_neighbor",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_jamil_did"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_jamil_motive"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_neighbor"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "الفعل ثابت بمسارين مستقلين، والدافع يفسّر لماذا فعل؛ وهذا أبسط تفسير يوافق كل السجلات.",
+        "skill_ko_refs": [
+          "KO-RS-06-007",
+          "KO-RS-05-002"
+        ]
+      }
+    ]
+  },
+  "character_knowledge": [
+    {
+      "character_id": "jamil",
+      "knows": [
+        {
+          "fact_id": "f_keys",
+          "access": "witnessed"
+        },
+        {
+          "fact_id": "f_jamil_bought",
+          "access": "witnessed"
+        },
+        {
+          "fact_id": "f_jamil_motive",
+          "access": "witnessed"
+        }
+      ],
+      "hides": [
+        {
+          "fact_id": "f_jamil_did",
+          "reveal_when": {
+            "all": [
+              {
+                "has_evidence": "ev_attic"
+              },
+              {
+                "has_evidence": "ev_storeroom"
+              }
+            ]
+          },
+          "cover_claim_id": "cl_cafe_light"
+        }
+      ],
+      "believes": [
+        {
+          "claim_id": "cl_cafe_light",
+          "stance": "deliberate_lie"
+        }
+      ]
+    },
+    {
+      "character_id": "hanan",
+      "knows": [
+        {
+          "fact_id": "f_keys",
+          "access": "witnessed"
+        },
+        {
+          "fact_id": "f_broker_loss",
+          "access": "professional"
+        },
+        {
+          "fact_id": "f_price_drop",
+          "access": "common_knowledge"
+        }
+      ],
+      "hides": [],
+      "believes": [
+        {
+          "claim_id": "cl_pipes",
+          "stance": "sincere"
+        }
+      ]
+    },
+    {
+      "character_id": "zaid",
+      "knows": [
+        {
+          "fact_id": "f_zaid_late",
+          "access": "witnessed"
+        },
+        {
+          "fact_id": "f_rumor",
+          "access": "common_knowledge"
+        }
+      ],
+      "hides": [],
+      "believes": [
+        {
+          "claim_id": "cl_haunted",
+          "stance": "sincere"
+        }
+      ]
+    },
+    {
+      "character_id": "sanaa",
+      "knows": [
+        {
+          "fact_id": "f_no_power",
+          "access": "professional"
+        },
+        {
+          "fact_id": "f_price_drop",
+          "access": "witnessed"
+        },
+        {
+          "fact_id": "f_rumor",
+          "access": "common_knowledge"
+        }
+      ],
+      "hides": [],
+      "believes": [
+        {
+          "claim_id": "cl_zaid_prank",
+          "stance": "sincere"
+        }
+      ]
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "h_pipes",
+      "statement_ar": "سبب طبيعي من البيت نفسه: أنابيب قديمة تطرق وانعكاس ضوء على زجاج النافذة.",
+      "is_true": false,
+      "plausibility_at_start": "high"
+    },
+    {
+      "id": "h_ghost",
+      "statement_ar": "ما يحدث في العلية لا يفسره سبب عادي.",
+      "is_true": false,
+      "plausibility_at_start": "medium"
+    },
+    {
+      "id": "h_zaid",
+      "statement_ar": "زيد المصري افتعل الضوء والطرقات ليصنع قصة لقناته.",
+      "is_true": false,
+      "plausibility_at_start": "medium",
+      "suspect_id": "zaid"
+    },
+    {
+      "id": "h_broker",
+      "statement_ar": "الوسيطة هنان السعدي افتعلتهما لتتعجل البيع.",
+      "is_true": false,
+      "plausibility_at_start": "medium",
+      "suspect_id": "hanan"
+    },
+    {
+      "id": "h_neighbor",
+      "statement_ar": "جميل الحداد جهّز الضوء والطرقات بأجهزة على مؤقت ليبعد المشترين ويشتري البيت بسعر أقل.",
+      "is_true": true,
+      "plausibility_at_start": "low",
+      "suspect_id": "jamil"
+    }
+  ],
+  "misdirection_plan": [
+    {
+      "id": "rh_zaid",
+      "points_to_hypothesis_id": "h_zaid",
+      "planted_via_ar": "زيد يقف في الشارع بهاتفه كل مرة ويصوّر الظاهرة، وله قناة تبحث عن قصص الحي.",
+      "evidence_ids": [
+        "ev_zaid"
+      ],
+      "refuted_by_inference_ids": [
+        "i_rule_zaid"
+      ],
+      "fairness_note_ar": "منشورات زيد بين يدي اللاعب، وتاريخ أول منشور له يأتي بعد أول ظاهرة في السجل، وهو لا يحمل مفتاحاً في دفتر المعاينات."
+    },
+    {
+      "id": "rh_broker",
+      "points_to_hypothesis_id": "h_broker",
+      "planted_via_ar": "الوسيطة تعرف كل مواعيد المعاينات وتحمل مفتاحاً، ويبدو أنها تريد البيع بسرعة.",
+      "evidence_ids": [
+        "ev_book"
+      ],
+      "refuted_by_inference_ids": [
+        "i_rule_broker"
+      ],
+      "fairness_note_ar": "عقد الوساطة بين يدي اللاعب ويبيّن أن عمولتها نسبة من السعر، فانخفاض السعر يضرّها، وإيصال الأدوات باسم المقهى لا باسم مكتبها."
+    },
+    {
+      "id": "rh_rumor",
+      "points_to_hypothesis_id": "h_ghost",
+      "planted_via_ar": "أكثر من جار سمع ورأى، ويقول بعضهم إن البيت مسكون.",
+      "evidence_ids": [
+        "ev_log"
+      ],
+      "refuted_by_inference_ids": [
+        "i_rule_ghost"
+      ],
+      "fairness_note_ar": "كثرة الشهود تثبت وقوع الضوء والطرقات، وفحص العلية يبيّن أجهزتها بين يدي اللاعب؛ والتفسير يخص هذه الليالي دون الحكم على معتقد أحد."
+    }
+  ],
+  "learning_objectives": [
+    {
+      "id": "lo_main",
+      "statement_ar": "يتتبع الآلية التي تنتج الظاهرة ويسأل من ينتفع منها ومن يستطيع الوصول إليها قبل أن يتهم أحداً.",
+      "skill_ko_ref": "KO-RS-06-001",
+      "observable_behaviors_ar": [
+        "يفحص ما يلزم لو صح كل تفسير",
+        "يربط الأجهزة بمصدر تيارها"
+      ],
+      "evidence_sources": [
+        "evidence_board",
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_source",
+      "statement_ar": "يميز بين ما لوحظ فعلاً وما قيل أو استُنتج، ويعامل الشائعة دليلاً على ما يعتقده الناس لا على ما وقع.",
+      "skill_ko_ref": "KO-RS-05-001",
+      "observable_behaviors_ar": [
+        "يصنّف السجل الأهلي والمنشورات أقوالاً",
+        "يصنّف الإيصال والتقرير سجلات"
+      ],
+      "evidence_sources": [
+        "evidence_board"
+      ]
+    },
+    {
+      "id": "lo_indep",
+      "statement_ar": "يجد مسارين مستقلين يصلان إلى النتيجة نفسها ولا يشتركان في دليل.",
+      "skill_ko_ref": "KO-RS-05-004",
+      "observable_behaviors_ar": [
+        "يبني مسار الكابل والمخزن",
+        "يبني مسار المواعيد والإيصال"
+      ],
+      "evidence_sources": [
+        "evidence_board",
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_pattern",
+      "statement_ar": "يضع الأحداث بجانب جدول آخر ليكشف نمطاً لا يظهر في أحدهما وحده.",
+      "skill_ko_ref": "KO-RS-05-005",
+      "observable_behaviors_ar": [
+        "يقارن تواريخ الظواهر بتواريخ المعاينات"
+      ],
+      "evidence_sources": [
+        "timeline_task",
+        "evidence_board"
+      ]
+    },
+    {
+      "id": "lo_hyp",
+      "statement_ar": "يولّد تفسيرات طبيعية وبشرية متنافسة ويختبر كلاً منها باختبار قادر على دحضه.",
+      "skill_ko_ref": "KO-RS-05-002",
+      "observable_behaviors_ar": [
+        "يستبعد الأنابيب بانقطاع الماء",
+        "يستبعد زيداً والوسيطة بدليل"
+      ],
+      "evidence_sources": [
+        "hypothesis_ledger"
+      ]
+    },
+    {
+      "id": "lo_calib",
+      "statement_ar": "يصوغ نسبة الترجيح بحدودها فيفرق بين الدافع والإثبات.",
+      "skill_ko_ref": "KO-RS-06-021",
+      "observable_behaviors_ar": [
+        "يختار ثقة معقولة",
+        "يذكر أن الدافع وحده لا يكفي"
+      ],
+      "evidence_sources": [
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_revise",
+      "statement_ar": "يراجع رأيه الأول حين تظهر أدلة تخالفه.",
+      "skill_ko_ref": "KO-RS-06-009",
+      "observable_behaviors_ar": [
+        "يغيّر فرضيته الرائدة بدليل"
+      ],
+      "evidence_sources": [
+        "hypothesis_ledger"
+      ]
+    }
+  ],
+  "mechanics": {
+    "time_budget_units": 20,
+    "actions": [
+      {
+        "id": "a_read_log",
+        "type": "examine",
+        "label_ar": "اقرأ سجل بلاغات لجنة الحي",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_log"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_council",
+        "telemetry_code": "READ_LOG"
+      },
+      {
+        "id": "a_read_utility",
+        "type": "examine",
+        "label_ar": "اطلع على إشعار فصل الكهرباء والمياه",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_utility"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_council",
+        "telemetry_code": "READ_UTILITY"
+      },
+      {
+        "id": "a_open_attic",
+        "type": "search_location",
+        "label_ar": "اطلب من السيدة سناء فتح العلية وافحصها",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_attic"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_attic",
+        "telemetry_code": "OPEN_ATTIC"
+      },
+      {
+        "id": "a_read_storeroom",
+        "type": "examine",
+        "label_ar": "اقرأ تقرير فحص السلامة لمخزن المقهى",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_storeroom"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_cafe_store",
+        "telemetry_code": "READ_STOREROOM"
+      },
+      {
+        "id": "a_read_book",
+        "type": "examine",
+        "label_ar": "اطلع على دفتر معاينات الوسيطة",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_book"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_agency",
+        "telemetry_code": "READ_BOOK"
+      },
+      {
+        "id": "a_read_contract",
+        "type": "examine",
+        "label_ar": "اطلع على عقد الوساطة",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_commission"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_agency",
+        "telemetry_code": "READ_CONTRACT"
+      },
+      {
+        "id": "a_read_receipt",
+        "type": "examine",
+        "label_ar": "اطلع على إيصال محل الأدوات الكهربائية",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_receipt"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_shop",
+        "telemetry_code": "READ_RECEIPT"
+      },
+      {
+        "id": "a_read_offer",
+        "type": "examine",
+        "label_ar": "اقرأ رسالة عرض الشراء عند السيدة سناء",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_offer"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_house",
+        "telemetry_code": "READ_OFFER"
+      },
+      {
+        "id": "a_read_posts",
+        "type": "examine",
+        "label_ar": "اطلع على منشورات زيد",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_zaid"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_street",
+        "telemetry_code": "READ_POSTS"
+      },
+      {
+        "id": "a_hint",
+        "type": "request_hint",
+        "label_ar": "اطلب تلميحاً",
+        "precondition": {
+          "always": true
+        },
+        "effects": [],
+        "time_cost_units": 0,
+        "telemetry_code": "REQUEST_HINT"
+      },
+      {
+        "id": "a_accuse",
+        "type": "final_accusation",
+        "label_ar": "قدّم جوابك وجملة «كيف عرفت؟»",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "SUBMIT"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "FINAL_ACCUSATION"
+      }
+    ]
+  },
+  "state_machine": {
+    "id": "c054",
+    "initial": "briefing",
+    "type": "compound",
+    "states": {
+      "briefing": {
+        "description_ar": "الإحاطة",
+        "type": "atomic",
+        "on": {
+          "START": {
+            "target": "investigating"
+          }
+        }
+      },
+      "investigating": {
+        "description_ar": "التحقيق",
+        "type": "compound",
+        "initial": "gathering",
+        "states": {
+          "gathering": {
+            "type": "atomic",
+            "on": {
+              "OPEN_DEDUCTION": {
+                "target": "deducing"
+              }
+            }
+          },
+          "deducing": {
+            "type": "atomic",
+            "on": {
+              "BACK": {
+                "target": "gathering"
+              }
+            }
+          }
+        },
+        "on": {
+          "SUBMIT": {
+            "target": "review"
+          }
+        }
+      },
+      "review": {
+        "description_ar": "مراجعة",
+        "type": "atomic",
+        "on": {
+          "CLOSE": {
+            "target": "resolved"
+          }
+        }
+      },
+      "resolved": {
+        "description_ar": "إغلاق",
+        "type": "final"
+      }
+    }
+  },
+  "rubric": {
+    "reference_answer_ar": "الضوء والطرقات في العلية صنعها جهازان على مؤقت، لا روح ولا أنابيب. الدليل مساران مستقلان: الأول أن البيت مفصول عنه التيار، وكابل المؤقت يخرج من الجدار المشترك وينتهي في مقبس مخزن المقهى المقفل. والثاني أن الظواهر الخمس وقعت كلها قبل معاينات مقررة سلفاً، وأن حساب المقهى اشترى قبلها بأيام الأدوات نفسها. جميل الحداد، صاحب المقهى، يحمل مفتاح المخزن ويفتح الباب في المعاينات، وعرضه شراء البيت بخمسة وخمسين ألفاً يفسّر دافعه لكنه لا يكفي وحده. زيد صوّر بعد أن بدأت الظواهر بثلاثة أسابيع ولا مفتاح معه، والوسيطة تخسر من انخفاض السعر لأن عمولتها ثلاثة بالمئة منه. حدود الاستنتاج: لا نعرف من وصل القابس بيده في كل ليلة، ونعتمد على أن السجل التقط الظواهر كلها.",
+    "criteria": [
+      {
+        "id": "c_source",
+        "name_ar": "تصنيف المصادر",
+        "objective_ids": [
+          "lo_source"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يصنّف"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "أخطأ في الأغلب"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "نصف صحيح"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمه صحيح"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كله صحيح"
+          }
+        ]
+      },
+      {
+        "id": "c_links",
+        "name_ar": "ربط الأدلة بالفرضيات",
+        "objective_ids": [
+          "lo_main",
+          "lo_indep"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.25,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لا روابط"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "قليلة"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "نصفها صحيح"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمها"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كلها دقيقة"
+          }
+        ]
+      },
+      {
+        "id": "c_uncertainty",
+        "name_ar": "معايرة الثقة",
+        "objective_ids": [
+          "lo_calib"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.2,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "ثقة مفرطة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "حدود قليلة"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "جزئية"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معقولة"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "معايَرة كاملة"
+          }
+        ]
+      },
+      {
+        "id": "c_revision",
+        "name_ar": "مراجعة الرأي",
+        "objective_ids": [
+          "lo_revise"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "بقي على فرضية مرفوضة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "لم يعلن فرضية"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "ثبت على فرضية سليمة"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "غيّر بدليل"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "غيّر بدليل ووثّق"
+          }
+        ]
+      },
+      {
+        "id": "c_elimination",
+        "name_ar": "استبعاد الفرضيات الخاطئة",
+        "objective_ids": [
+          "lo_hyp"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يستبعد"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "استبعد خطأً"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "فرضية بدليل"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "فرضيتين"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كل الخاطئة"
+          }
+        ]
+      },
+      {
+        "id": "c_justification",
+        "name_ar": "جملة «كيف عرفت؟» وجودة الحجة",
+        "objective_ids": [
+          "lo_pattern"
+        ],
+        "scored_by": "human",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لا حجة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "ادعاء بلا سند"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "أدلة دون ربط"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "ربط الأدلة بالمسارين"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "ربط مع البدائل والحدود"
+          }
+        ]
+      }
+    ]
+  },
+  "hint_ladder": [
+    {
+      "id": "hg1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "قبل أن تسأل عن الأشباح أو المتهمين: ما الذي يجب أن يكون صحيحاً في البيت لو كان كل تفسير صحيحاً؟",
+      "trigger": {
+        "always": true
+      },
+      "assessment_weight": 0.02
+    },
+    {
+      "id": "hg2",
+      "level": 2,
+      "kind": "focus_area",
+      "text_ar": "اكتب لكل ليلة مسجلة تاريخها، ثم ضع بجانبها أي جدول آخر يخص البيت، وانظر هل يتشابهان.",
+      "trigger": {
+        "has_evidence": "ev_log"
+      },
+      "assessment_weight": 0.04
+    },
+    {
+      "id": "hg3",
+      "level": 3,
+      "kind": "pointer",
+      "text_ar": "ابحث عمّا يجعل مصباحاً وجهازاً يعملان في بيت قُطعت عنه الخدمة: من أين يأتيهما التيار؟",
+      "trigger": {
+        "has_evidence": "ev_log"
+      },
+      "assessment_weight": 0.08
+    },
+    {
+      "id": "hn1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "هل يستطيع بيت بلا كهرباء ولا ماء أن يضيء مصباحاً أو يطرق أنبوباً؟",
+      "trigger": {
+        "has_evidence": "ev_log"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_nopower"
+    },
+    {
+      "id": "hn2",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "اقرأ إشعار شركة الكهرباء والمياه وانتبه إلى تاريخ الفصل وقراءة العدّاد.",
+      "trigger": {
+        "has_evidence": "ev_log"
+      },
+      "assessment_weight": 0.06,
+      "targets_inference_id": "i_nopower"
+    },
+    {
+      "id": "hk1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "إلى أين يمتد الكابل الذي يخرج من المؤقت؟ ومن يستطيع أن يصل إلى طرفه الآخر؟",
+      "trigger": {
+        "has_evidence": "ev_attic"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_cable_cafe"
+    },
+    {
+      "id": "hk2",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "قارن شكل الكابل وشريطه في العلية بما دوّنه مفتش السلامة في المحال المجاورة.",
+      "trigger": {
+        "has_evidence": "ev_attic"
+      },
+      "assessment_weight": 0.06,
+      "targets_inference_id": "i_cable_cafe"
+    },
+    {
+      "id": "hp1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "هل تقع الظواهر في أي ليلة، أم في ليالٍ تسبق شيئاً آخر؟",
+      "trigger": {
+        "has_evidence": "ev_log"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_pattern"
+    },
+    {
+      "id": "hp2",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "قارن تواريخ سجل الجيران بتواريخ دفتر الوسيطة، ومن كان يعرف الأخيرة سلفاً؟",
+      "trigger": {
+        "has_evidence": "ev_book"
+      },
+      "assessment_weight": 0.06,
+      "targets_inference_id": "i_pattern"
+    },
+    {
+      "id": "hb1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "هل اشترى أحد في الحي قبل أول ظاهرة أدوات تشبه ما وُجد في العلية؟",
+      "trigger": {
+        "has_evidence": "ev_book"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_bought"
+    },
+    {
+      "id": "hb2",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "اقرأ إيصال محل الأدوات الكهربائية: ما الذي اشتُري، وباسم من، وقبل أول ظاهرة بكم يوماً؟",
+      "trigger": {
+        "has_evidence": "ev_receipt"
+      },
+      "assessment_weight": 0.06,
+      "targets_inference_id": "i_bought"
+    },
+    {
+      "id": "hr1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "من يخسر ومن يربح حين ينخفض سعر البيت؟ احسب بنفسك.",
+      "trigger": {
+        "has_evidence": "ev_book"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_commission"
+    },
+    {
+      "id": "hr2",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "احسب ثلاثة بالمئة من السعر القديم ثم من السعر الجديد، وقارن الناتجين.",
+      "trigger": {
+        "has_evidence": "ev_commission"
+      },
+      "assessment_weight": 0.06,
+      "targets_inference_id": "i_commission"
+    },
+    {
+      "id": "hz1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "لو كان زيد هو الفاعل، فمتى كان يجب أن يبدأ بالنشر؟",
+      "trigger": {
+        "has_evidence": "ev_zaid"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_zaid_late"
+    },
+    {
+      "id": "hz2",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "قارن تاريخ أول منشور له بتاريخ أول ليلة في سجل الجيران.",
+      "trigger": {
+        "has_evidence": "ev_zaid"
+      },
+      "assessment_weight": 0.06,
+      "targets_inference_id": "i_zaid_late"
+    }
+  ],
+  "fairness_test": {
+    "requirements": {
+      "min_disjoint_proof_paths": 2,
+      "max_inference_depth": 3,
+      "all_red_herrings_refutable": true,
+      "culprit_uniquely_entailed": true,
+      "no_hidden_fact_dependency": true,
+      "max_required_actions": 11
+    },
+    "runs": []
+  },
+  "ending_explanation": {
+    "steps": [
+      {
+        "order": 1,
+        "text_ar": "ابدأ بالسؤال عن التيار: أنهت الشركة خدمة البيت منذ العاشر من آذار والعدّاد ثابت. إذن ليس في البيت ماء يطرق الأنابيب ولا كهرباء تضيء المصباح.",
+        "uses_evidence_ids": [
+          "ev_utility"
+        ],
+        "inference_id": "i_nopower"
+      },
+      {
+        "order": 2,
+        "text_ar": "في العلية مصباح وجهاز بمطرقة موصولان بمؤقت على 9:10، وكابل أبيض بشريط أخضر يخرج من ثقب في الجدار المشترك. للضوء والطرق إذن جهازان مضبوطان وتيارهما من الجهة المجاورة.",
+        "uses_evidence_ids": [
+          "ev_attic"
+        ],
+        "inference_id": "i_attic"
+      },
+      {
+        "order": 3,
+        "text_ar": "مفتش السلامة وجد في مخزن المقهى المقفل كابلاً أبيض بالشريط الأخضر نفسه مغروساً في المقبس. المخزن مقفل ومفتاحه مع جميل، فهذا المسار الأول يقود إليه.",
+        "uses_evidence_ids": [
+          "ev_storeroom",
+          "ev_attic"
+        ],
+        "inference_id": "i_cable_cafe"
+      },
+      {
+        "order": 4,
+        "text_ar": "في مسار ثانٍ لا يشترك مع الأول بأي دليل: قارن سجل الجيران بدفتر الوسيطة. الليالي الخمس هي كل ليلة سبقت معاينة، ولم تقع ظاهرة في غيرها؛ فمن دبّرها يعرف المواعيد سلفاً.",
+        "uses_evidence_ids": [
+          "ev_log",
+          "ev_book"
+        ],
+        "inference_id": "i_pattern"
+      },
+      {
+        "order": 5,
+        "text_ar": "إيصال 27 آذار باسم مقهى الأقواس يضم مؤقتاً وكابلاً أبيض بطول 15 متراً وشريطاً أخضر ومصباحاً وجرساً بمطرقة: 12 + 9 + 2 + 7 + 10 يساوي 40 ديناراً، قبل أول ظاهرة بسبعة أيام.",
+        "uses_evidence_ids": [
+          "ev_receipt"
+        ],
+        "inference_id": "i_bought"
+      },
+      {
+        "order": 6,
+        "text_ar": "اختبر المتهمين الآخرين: زيد نشر أول منشور بعد 21 يوماً من أول ظاهرة ولا يحمل مفتاحاً. والوسيطة تخسر 900 دينار من عمولتها حين نزل السعر من 90,000 إلى 60,000: ثلاثة بالمئة من الأول 2,700 ومن الثاني 1,800.",
+        "uses_evidence_ids": [
+          "ev_zaid",
+          "ev_log",
+          "ev_commission"
+        ],
+        "inference_id": "i_rule_zaid"
+      },
+      {
+        "order": 7,
+        "text_ar": "أما عرض جميل شراء البيت بخمسة وخمسين ألفاً فيفسّر دافعه ولا يثبت وحده فعلته. الدافع مع المسارين المستقلين يجعل تفسير جميل أبسط تفسير يوافق السجلات.",
+        "uses_evidence_ids": [
+          "ev_offer"
+        ],
+        "inference_id": "i_est_neighbor"
+      }
+    ],
+    "alternative_paths_ar": [
+      "يكفي مسار الكابل والمخزن وحده لتحديد صاحب الوسيلة، ويكفي مسار المواعيد والإيصال وحده لتحديد صاحب المعرفة والشراء؛ والأقوى أن يتفقا."
+    ],
+    "what_evidence_could_not_show_ar": [
+      "لا نعرف من وصل القابس بيده في كل ليلة، فلا شاهد ولا تسجيل لذلك.",
+      "نعتمد على أن سجل الجيران التقط كل الظواهر؛ لو وقعت ظاهرة لم يبلّغ عنها أحد لتغيّر النمط.",
+      "لا نعرف إن كان جميل قدّر أثر ما فعله على أسرة الورثة وعلى جيرانه.",
+      "تفسير هذه الليالي الخمس لا يحكم على معتقدات أحد، ولا نعرف ما يعتقده كل جار."
+    ],
+    "science_notes_ar": [
+      "الشائعة دليل على ما يعتقده الناس لا على ما وقع؛ ولمعرفة ما وقع نبحث عن الآلية التي تنتج الظاهرة.",
+      "كثرة من رأوا الضوء وسمعوا الطرقات تثبت أن الظاهرة وقعت فعلاً، ولا تثبت سببها.",
+      "لاختبار تفسير طبيعي اسأل: ما الذي يجب أن يوجد لو صح؟ لو كانت الأنابيب السبب لوجب أن يكون فيها ماء وأن تطرق بلا نظام.",
+      "أن ينتفع أحد من نتيجة لا يجعله فاعلاً؛ نحتاج صلة مادية بين الوسيلة وصاحبها."
+    ]
+  },
+  "expert_review": [
+    {
+      "role": "narrative_editor",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-11-05",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "scientific_reviewer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-11-05",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "learning_designer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-11-05",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "age_appropriateness",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-11-05",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "cultural_reviewer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-11-05",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "legal_rights",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-11-05",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "safety",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-11-05",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    }
+  ]
+}

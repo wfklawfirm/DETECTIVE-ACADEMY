@@ -1,0 +1,1744 @@
+{
+  "schema_version": "0.1.0",
+  "case_id": "c059_readers_challenge",
+  "case_version": "0.1.0",
+  "meta": {
+    "title_ar": "تحدي القارئ: البرطمان والظرف الرابع",
+    "title_en": "The Reader's Challenge: The Jar and Envelope Four",
+    "age_band": "13-15",
+    "estimated_minutes": 15,
+    "difficulty": 2,
+    "content_flags": [
+      "no_violence"
+    ],
+    "knowledge_object_refs": [
+      "KO-NP-02W-003",
+      "KO-NP-02-004",
+      "KO-NP-02W-015",
+      "KO-NP-02W-004",
+      "KO-RS-06-007",
+      "KO-RS-06-017",
+      "KO-RS-05-001",
+      "KO-RS-05-002",
+      "KO-RS-05-004",
+      "KO-RS-06-001",
+      "KO-RS-06-021",
+      "KO-RS-06-009"
+    ],
+    "locale": "ar",
+    "dialogue_register": "msa",
+    "authors": [
+      "فريق أثر التحريري (مسودة بمساعدة الذكاء الاصطناعي، لم تُراجَع بشرياً بعد)"
+    ]
+  },
+  "premise": {
+    "hook_ar": "في نشرة نادي الأثر هذا الأسبوع «تحدي القارئ»: كتب لايث توقعه صباحاً وختمه في برطمان، وفي المساء خرج من بين خمسة أظرف الظرف الذي توقعه. الشروط كلها معلنة أمامك، فاذكر كيف جرى الأمر، وسمِّ الدليل الذي يحسم جوابك.",
+    "player_role_ar": "أنت قارئ مشارك في تحدي النشرة، وعليك أن تجيب عن سؤالين: كيف حدث ذلك؟ وما الدليل الذي يحسم الجواب؟ ولا يحق لك أن تحكم على نية أحد قبل أن تقول السجلات شيئاً.",
+    "setting_ar": "نادي الأثر في ثانوية المنارة بمدينة تلّ الصفصاف المتخيلة، يوم الخميس. الأوقات بساعة النادي.",
+    "public_fact_ids": [
+      "f_pred_sealed",
+      "f_result_4",
+      "f_rules_public"
+    ],
+    "assumed_general_knowledge_ar": [
+      "جمع الأعداد الصغيرة",
+      "القسمة على 5 وباقيها",
+      "كل خمسة أعداد متتالية تعطي عند القسمة على 5 خمسة بواقٍ مختلفة",
+      "التأخر عن موعد لا يثبت نية سيئة"
+    ]
+  },
+  "entities": {
+    "characters": [
+      {
+        "id": "layth",
+        "name_ar": "لايث الشامي",
+        "role": "suspect",
+        "age_descriptor_ar": "طالب في الصف التاسع، عضو في نادي الأثر",
+        "persona_ar": "مرح ويحب الألغاز، يجيب عن الأسئلة بابتسامة ويقبل أن تُراجَع سجلاته.",
+        "motives_ar": [
+          "أن يدهش أصدقاءه",
+          "أن يفوز بتحدي النشرة"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        }
+      },
+      {
+        "id": "abeer",
+        "name_ar": "الأستاذة عبير الحداد",
+        "role": "authority",
+        "age_descriptor_ar": "مشرفة نادي الأثر",
+        "persona_ar": "دقيقة وهادئة، تدوّن كل شيء بخط واضح وتحرص على أن تكون قواعد النادي معلنة.",
+        "motives_ar": [
+          "أن تكون القرعة عادلة",
+          "أن تُحفظ سجلات النادي"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        }
+      },
+      {
+        "id": "sanaa",
+        "name_ar": "سناء الفارس",
+        "role": "bystander",
+        "age_descriptor_ar": "طالبة في الصف الثامن، عضو في النادي",
+        "persona_ar": "منظمة وتحب الأرقام، قالت عدداً واحداً ثم جلست تتفرج.",
+        "motives_ar": [
+          "أن تفهم ما جرى"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        }
+      },
+      {
+        "id": "rami",
+        "name_ar": "رامي العلي",
+        "role": "witness",
+        "age_descriptor_ar": "طالب في الصف التاسع",
+        "persona_ar": "ملاحظ يروي ما رآه ويضيف إليه ظنونه أحياناً.",
+        "motives_ar": [
+          "أن يروي ما رآه",
+          "أن يعرف كيف حدث ذلك"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        }
+      },
+      {
+        "id": "dima",
+        "name_ar": "ديمة الخطيب",
+        "role": "bystander",
+        "age_descriptor_ar": "طالبة في الصف الثامن",
+        "persona_ar": "فضولية وتتحمس للنظريات الغريبة.",
+        "motives_ar": [
+          "أن تجد تفسيراً مثيراً"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        }
+      },
+      {
+        "id": "nabil",
+        "name_ar": "نبيل سعد",
+        "role": "bystander",
+        "age_descriptor_ar": "طالب في الصف التاسع",
+        "persona_ar": "هادئ، صديق لايث منذ سنوات.",
+        "motives_ar": [
+          "أن يبرّئ نفسه من أي شبهة"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        }
+      }
+    ],
+    "locations": [
+      {
+        "id": "loc_hall",
+        "name_ar": "قاعة نادي الأثر",
+        "description_ar": "قاعة فيها طاولة وسبورة وبطاقة القواعد المعلقة."
+      },
+      {
+        "id": "loc_super_room",
+        "name_ar": "غرفة المشرفة",
+        "description_ar": "غرفة صغيرة تُقفل بمفتاح واحد تحتفظ به المشرفة."
+      }
+    ],
+    "objects": [
+      {
+        "id": "obj_jar",
+        "name_ar": "البرطمان المختوم",
+        "description_ar": "برطمان زجاجي فيه ورقة مطوية وعلى غطائه شريط موقّع."
+      },
+      {
+        "id": "obj_envelopes",
+        "name_ar": "الأظرف الخمسة",
+        "description_ar": "خمسة أظرف بيضاء متماثلة ومرقّمة من 1 إلى 5."
+      },
+      {
+        "id": "obj_rules_card",
+        "name_ar": "بطاقة قواعد القرعة",
+        "description_ar": "بطاقة معلقة على لوح القاعة."
+      },
+      {
+        "id": "obj_board",
+        "name_ar": "لوح القرعة",
+        "description_ar": "لوح كتبت عليه المشرفة الأعداد والمجاميع."
+      },
+      {
+        "id": "obj_logbook",
+        "name_ar": "دفتر النادي",
+        "description_ar": "دفتر فيه سجل الوصول وسجل الجلسة التجريبية."
+      }
+    ],
+    "organizations": [
+      {
+        "id": "org_club",
+        "name_ar": "نادي الأثر",
+        "description_ar": "نادٍ طلابي يصدر نشرة أسبوعية فيها تحدٍّ للقرّاء."
+      }
+    ]
+  },
+  "truth": {
+    "solution": {
+      "culprit_ids": [
+        "layth"
+      ],
+      "summary_ar": "لا حيلة في الأظرف ولا معاون. رقم الظرف يخرج من باقي قسمة مجموع الأعداد على 5، ولايث كان آخر المتكلمين، فاختار عدده الأخير بحيث يصير الباقي 4 كما كتب صباحاً. يثبت ذلك لوح القرعة مع بطاقة القواعد، ويؤيده سجل الجلسة التجريبية مع سجل الوصول.",
+      "key_fact_ids": [
+        "f_steered"
+      ]
+    },
+    "facts": [
+      {
+        "id": "f_pred_sealed",
+        "statement_ar": "في التاسعة صباحاً كتب لايث توقعاً وختمه في برطمان أمام المشرفة، وبقي البرطمان في غرفتها المقفلة حتى الخامسة.",
+        "kind": "event",
+        "subject_ids": [
+          "layth",
+          "obj_jar"
+        ],
+        "spoiler_level": 0,
+        "location_id": "loc_super_room",
+        "time": {
+          "start_min": 0,
+          "end_min": 5,
+          "precision": "approx"
+        }
+      },
+      {
+        "id": "f_result_4",
+        "statement_ar": "خرج في قرعة الخامسة الظرف رقم 4، وحين فُتح البرطمان كان فيه الرقم نفسه والشريط سليماً.",
+        "kind": "event",
+        "subject_ids": [
+          "obj_envelopes",
+          "obj_jar"
+        ],
+        "spoiler_level": 0,
+        "location_id": "loc_hall",
+        "time": {
+          "start_min": 480,
+          "end_min": 485,
+          "precision": "approx"
+        }
+      },
+      {
+        "id": "f_rules_public",
+        "statement_ar": "قواعد القرعة معلنة: عدد من 1 إلى 9 لكل عضو بحسب وقت وصوله، ومجموع الأعداد يُقسم على 5، وباقي القسمة يعيّن الظرف.",
+        "kind": "attribute",
+        "subject_ids": [
+          "obj_rules_card"
+        ],
+        "spoiler_level": 0,
+        "location_id": "loc_hall"
+      },
+      {
+        "id": "f_order_arrival",
+        "statement_ar": "وصل لايث إلى القاعة بعد الأعضاء الأربعة الآخرين، فكان خامس المتكلمين وآخرهم.",
+        "kind": "event",
+        "subject_ids": [
+          "layth",
+          "obj_logbook"
+        ],
+        "spoiler_level": 1,
+        "location_id": "loc_hall",
+        "time": {
+          "start_min": 478,
+          "precision": "exact"
+        }
+      },
+      {
+        "id": "f_ink_spots",
+        "statement_ar": "على الظرفين 2 و4 نقطتا حبر صغيرتان سببهما قلم سقط على الطاولة أثناء الترقيم.",
+        "kind": "attribute",
+        "subject_ids": [
+          "obj_envelopes"
+        ],
+        "spoiler_level": 1,
+        "location_id": "loc_hall"
+      },
+      {
+        "id": "f_whisper_seen",
+        "statement_ar": "رأى رامي لايثاً ونبيلاً يتحدثان قرب الباب قبل القرعة بدقيقتين، ولم يسمع كلامهما.",
+        "kind": "event",
+        "subject_ids": [
+          "rami",
+          "layth",
+          "nabil"
+        ],
+        "spoiler_level": 1,
+        "location_id": "loc_hall",
+        "time": {
+          "start_min": 478,
+          "end_min": 480,
+          "precision": "approx"
+        }
+      },
+      {
+        "id": "f_can_force",
+        "statement_ar": "من يتكلم آخر مرة يستطيع أن يجعل الباقي أي قيمة من 1 إلى 5؛ لأن الأعداد من 1 إلى 9 تضم خمسة أعداد متتالية، وكل عدد منها يعطي باقياً مختلفاً.",
+        "kind": "relation",
+        "subject_ids": [
+          "obj_rules_card"
+        ],
+        "spoiler_level": 2
+      },
+      {
+        "id": "f_pattern",
+        "statement_ar": "في التجربة التي سبقت هذا اليوم أصاب توقع لايث المختوم حين تكلم آخراً، وأخطأ حين تكلم ثالثاً.",
+        "kind": "attribute",
+        "subject_ids": [
+          "layth",
+          "obj_logbook"
+        ],
+        "spoiler_level": 2,
+        "location_id": "loc_hall"
+      },
+      {
+        "id": "f_envelopes_plain",
+        "statement_ar": "الأظرف متماثلة، ولا يدخل لمسها في تعيين الظرف؛ فنقطتا الحبر لا تغيّران ناتج الحساب.",
+        "kind": "state",
+        "subject_ids": [
+          "obj_envelopes"
+        ],
+        "spoiler_level": 2
+      },
+      {
+        "id": "f_helper_unneeded",
+        "statement_ar": "كانت النتيجة ستتحقق مهما كانت أعداد الأربعة الأوائل، فلا حاجة إلى معاون.",
+        "kind": "state",
+        "subject_ids": [
+          "obj_board"
+        ],
+        "spoiler_level": 2
+      },
+      {
+        "id": "f_steered",
+        "statement_ar": "اختار لايث وهو آخر المتكلمين العدد 7 ليصير الباقي 4 كما في برطمان الصباح؛ فالنتيجة من تدبيره لا من حظ ولا من علامة على ظرف.",
+        "kind": "event",
+        "subject_ids": [
+          "layth",
+          "obj_board"
+        ],
+        "spoiler_level": 3,
+        "location_id": "loc_hall",
+        "time": {
+          "start_min": 482,
+          "precision": "approx"
+        }
+      }
+    ],
+    "claims": [
+      {
+        "id": "cl_marked",
+        "statement_ar": "عرف لايث الظرف 4 من نقطة الحبر التي عليه.",
+        "kind": "rumour",
+        "held_by": [
+          "dima"
+        ],
+        "true_fact_id": "f_envelopes_plain",
+        "contradicted_by_evidence_ids": [
+          "ev_rules",
+          "ev_envelopes"
+        ]
+      },
+      {
+        "id": "cl_helper",
+        "statement_ar": "اتفق لايث مع نبيل على العدد الذي يقوله.",
+        "kind": "rumour",
+        "held_by": [
+          "rami"
+        ],
+        "true_fact_id": "f_helper_unneeded",
+        "contradicted_by_evidence_ids": [
+          "ev_log"
+        ]
+      }
+    ]
+  },
+  "timeline": [
+    {
+      "id": "te_seal",
+      "description_ar": "كتب لايث توقعه وختم البرطمان أمام المشرفة.",
+      "time": {
+        "start_min": 0,
+        "end_min": 5,
+        "precision": "approx"
+      },
+      "location_id": "loc_super_room",
+      "actor_ids": [
+        "layth",
+        "abeer"
+      ],
+      "fact_ids": [
+        "f_pred_sealed"
+      ],
+      "motivated_by_ar": "المشاركة في تحدي النشرة",
+      "witness_ids": [
+        "abeer"
+      ]
+    },
+    {
+      "id": "te_arrivals",
+      "description_ar": "وصل الأعضاء إلى القاعة بين 4:35 و4:58 مساءً، وكان لايث آخرهم.",
+      "time": {
+        "start_min": 455,
+        "end_min": 478,
+        "precision": "approx"
+      },
+      "location_id": "loc_hall",
+      "actor_ids": [
+        "sanaa",
+        "rami",
+        "dima",
+        "nabil",
+        "layth"
+      ],
+      "fact_ids": [
+        "f_order_arrival"
+      ],
+      "motivated_by_ar": "حضور جلسة القرعة"
+    },
+    {
+      "id": "te_whisper",
+      "description_ar": "تحدث لايث ونبيل قرب الباب قبل القرعة.",
+      "time": {
+        "start_min": 478,
+        "end_min": 480,
+        "precision": "approx"
+      },
+      "location_id": "loc_hall",
+      "actor_ids": [
+        "layth",
+        "nabil"
+      ],
+      "fact_ids": [
+        "f_whisper_seen"
+      ],
+      "motivated_by_ar": "تحية بين صديقين بعد وصول متأخر",
+      "witness_ids": [
+        "rami"
+      ]
+    },
+    {
+      "id": "te_draw",
+      "description_ar": "قال الأعضاء الخمسة أعدادهم بحسب الوصول، وكان لايث آخرهم.",
+      "time": {
+        "start_min": 480,
+        "end_min": 484,
+        "precision": "approx"
+      },
+      "location_id": "loc_hall",
+      "actor_ids": [
+        "sanaa",
+        "rami",
+        "dima",
+        "nabil",
+        "layth",
+        "abeer"
+      ],
+      "fact_ids": [
+        "f_steered",
+        "f_result_4"
+      ],
+      "motivated_by_ar": "إجراء قرعة النادي وفق القواعد المعلنة",
+      "witness_ids": [
+        "abeer"
+      ]
+    },
+    {
+      "id": "te_open",
+      "description_ar": "فُتح البرطمان أمام الحاضرين فكان فيه الرقم 4.",
+      "time": {
+        "start_min": 485,
+        "precision": "exact"
+      },
+      "location_id": "loc_hall",
+      "actor_ids": [
+        "abeer"
+      ],
+      "fact_ids": [
+        "f_result_4"
+      ],
+      "motivated_by_ar": "مطابقة التوقع المختوم مع نتيجة القرعة",
+      "witness_ids": [
+        "layth",
+        "sanaa",
+        "rami",
+        "dima",
+        "nabil"
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_jar",
+      "title_ar": "صورة البرطمان وملاحظة الفتح",
+      "kind": "observation",
+      "content_ar": "صورة التقطتها المشرفة عبير الحداد الساعة 9:02 صباحاً\nفي الصورة برطمان زجاجي فيه ورقة مطوية، وعلى غطائه شريط لاصق وقّعت عليه المشرفة وكتبت التاريخ والوقت. قال لايث أمام ثلاثة طلاب: «وضعت توقعي عن ظرف الخامسة». حفظت المشرفة البرطمان في غرفتها وأقفلتها بمفتاحها الوحيد.\nملاحظة كتبتها تحت الصورة الساعة 5:05 مساءً: فُتح الشريط أمام الحاضرين كلهم وهو سليم، وكانت الورقة بخط لايث: «الظرف رقم 4».",
+      "acquired_by_action_ids": [
+        "a_read_jar"
+      ],
+      "supports_fact_ids": [
+        "f_pred_sealed",
+        "f_result_4"
+      ],
+      "reliability": "strong",
+      "limits_ar": "تثبت أن التوقع كُتب صباحاً وبقي محفوظاً؛ ولا تبيّن كيف جاءت نتيجة القرعة.",
+      "location_id": "loc_super_room"
+    },
+    {
+      "id": "ev_rules",
+      "title_ar": "بطاقة قواعد القرعة",
+      "kind": "documentary",
+      "content_ar": "بطاقة قواعد القرعة (معلقة على لوح القاعة منذ الأسبوع الماضي)\n1. يقول كل عضو، بحسب وقت وصوله إلى القاعة، عدداً صحيحاً من 1 إلى 9 بصوت مسموع أمام الجميع.\n2. تكتب المشرفة كل عدد على اللوح، وتدوّن المجموع الجاري بعده.\n3. بعد كلام العضو الخامس يُقسم المجموع الكلي على 5. الباقي هو رقم الظرف، وإذا كان الباقي صفراً فالظرف رقم 5.\n4. الأظرف الخمسة متماثلة ومرقّمة، تضعها المشرفة على الطاولة قبل القرعة ولا يلمسها أحد حتى تنتهي.\n5. لا كتابة ولا همس أثناء القرعة.",
+      "acquired_by_action_ids": [
+        "a_read_rules"
+      ],
+      "supports_fact_ids": [
+        "f_rules_public",
+        "f_can_force",
+        "f_envelopes_plain"
+      ],
+      "contradicts_claim_ids": [
+        "cl_marked"
+      ],
+      "reliability": "strong",
+      "limits_ar": "تبيّن قواعد القرعة المعلنة، ولا تبيّن ما قاله كل عضو في هذا اليوم.",
+      "location_id": "loc_hall"
+    },
+    {
+      "id": "ev_log",
+      "title_ar": "لوح القرعة",
+      "kind": "documentary",
+      "content_ar": "لوح القرعة، الخميس 5:00 مساءً (نسخة بخط المشرفة)\nالترتيب | العضو | العدد المقول | المجموع الجاري\n1 | سناء | 8 | 8\n2 | رامي | 4 | 12\n3 | ديمة | 9 | 21\n4 | نبيل | 6 | 27\n5 | لايث | 7 | 34\nالظرف الخارج: رقم 4.\nكتبت المشرفة: قال كل عضو عدده بصوت مسموع، ولم يلمس أحد الأظرف.",
+      "acquired_by_action_ids": [
+        "a_read_board"
+      ],
+      "supports_fact_ids": [
+        "f_steered",
+        "f_helper_unneeded",
+        "f_result_4"
+      ],
+      "contradicts_claim_ids": [
+        "cl_helper"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يسجل الأعداد والمجاميع كما كتبتها المشرفة؛ ولا يبيّن ما دار في ذهن أي عضو حين قال عدده.",
+      "location_id": "loc_hall"
+    },
+    {
+      "id": "ev_arrival",
+      "title_ar": "سجل وصول الأعضاء",
+      "kind": "documentary",
+      "content_ar": "سجل وصول الأعضاء إلى القاعة، الخميس (بخط المشرفة)\nسناء 4:35 مساءً · رامي 4:38 · ديمة 4:40 · نبيل 4:44 · لايث 4:58.\nملاحظة: وصل لايث من تمرين فريق المدرسة، وكان قد أخبرني قبل ذلك بيومين أنه سيتأخر.\nيتكلم الأعضاء بحسب وقت الوصول كما في بطاقة القواعد.",
+      "acquired_by_action_ids": [
+        "a_read_arrival"
+      ],
+      "supports_fact_ids": [
+        "f_order_arrival"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يبيّن ترتيب الوصول؛ ولا يبيّن إن كان التأخر مقصوداً، والمشرفة تذكر له سبباً عادياً.",
+      "location_id": "loc_hall"
+    },
+    {
+      "id": "ev_practice",
+      "title_ar": "سجل الجلسة التجريبية",
+      "kind": "documentary",
+      "content_ar": "دفتر النادي: جلسة تجريبية يوم الأربعاء بالقواعد نفسها\nطلب لايث أن يكتب في كل جولة توقعاً مختوماً قبل أن تبدأ، وغيّرنا ترتيب الكلام بين الجولتين لنرى هل يتغير شيء.\nالجولة الأولى: ديمة 3، سناء 8، لايث 5، رامي 6، نبيل 2. توقع لايث المختوم: الظرف 2. الظرف الخارج: 4.\nالجولة الثانية: ديمة 9، سناء 3، رامي 6، نبيل 4، لايث 4. توقع لايث المختوم: الظرف 1. الظرف الخارج: 1.\nكتبت المشرفة: لم نكرر أكثر من جولتين لضيق الوقت.",
+      "acquired_by_action_ids": [
+        "a_read_practice"
+      ],
+      "supports_fact_ids": [
+        "f_pattern"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "جولتان فقط، فلا يكفيان وحدهما لإثبات قاعدة؛ وهما ترجّحان أن موضع المتكلم هو ما تغيّر.",
+      "location_id": "loc_hall"
+    },
+    {
+      "id": "ev_envelopes",
+      "title_ar": "الأظرف الخمسة بعد القرعة",
+      "kind": "physical",
+      "content_ar": "الأظرف الخمسة بعد انتهاء القرعة: بيضاء متماثلة الحجم والورق، ورُقمت بقلم لبّاد أسود. في كل ظرف بطاقة تهنئة صغيرة بجملة مختلفة. تظهر نقطة حبر صغيرة عند الزاوية العليا للظرفين 2 و4، وقالت المشرفة إن القلم سقط على الطاولة أثناء الترقيم.",
+      "acquired_by_action_ids": [
+        "a_read_envelopes"
+      ],
+      "supports_fact_ids": [
+        "f_ink_spots",
+        "f_envelopes_plain"
+      ],
+      "reliability": "weak",
+      "limits_ar": "تبيّن وجود نقطتين على ظرفين؛ ولا تبيّن أن أحداً استعملهما، ولا تقول شيئاً عن طريقة اختيار الظرف.",
+      "location_id": "loc_hall",
+      "is_red_herring": true
+    },
+    {
+      "id": "ev_whisper",
+      "title_ar": "إفادة رامي",
+      "kind": "testimonial",
+      "content_ar": "إفادة رامي كما دوّنتها المشرفة:\n«قبل القرعة بدقيقتين رأيت لايثاً ونبيلاً يتحدثان قرب الباب، ولم أسمع شيئاً مما قالاه.»",
+      "acquired_by_action_ids": [
+        "a_read_whisper"
+      ],
+      "supports_fact_ids": [
+        "f_whisper_seen"
+      ],
+      "reliability": "weak",
+      "limits_ar": "تصف حديثاً رآه من بعيد؛ ولا تبيّن مضمونه، ولا تقول إن للحديث علاقة بالقرعة.",
+      "location_id": "loc_hall",
+      "is_red_herring": true
+    }
+  ],
+  "evidence_graph": {
+    "inferences": [
+      {
+        "id": "i_jar",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_jar"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_pred_sealed"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "الشريط الموقّع والصورة المؤرخة وغرفة المشرفة المقفلة تثبت أن التوقع كُتب قبل القرعة وبقي كما هو.",
+        "skill_ko_refs": [
+          "KO-RS-05-004"
+        ]
+      },
+      {
+        "id": "i_force",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_rules"
+          },
+          {
+            "ref_type": "general_knowledge",
+            "ref_id": "gk_five_remainders"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_can_force"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "الباقي هو الذي يعيّن الظرف، والأعداد المسموحة من 1 إلى 9 تضم خمسة أعداد متتالية تعطي خمسة بواقٍ مختلفة؛ فصاحب العدد الأخير يختار الباقي الذي يريد.",
+        "skill_ko_refs": [
+          "KO-RS-06-017",
+          "KO-RS-05-002"
+        ]
+      },
+      {
+        "id": "i_steer_a",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_can_force"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_log"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_steered"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "قبل كلام لايث كان المجموع 27 وباقيه 2 عند القسمة على 5. ليكون الباقي 4 يلزم عدد باقيه 2، وقد قال لايث 7: 27 + 7 = 34، و34 = 6 × 5 + 4.",
+        "skill_ko_refs": [
+          "KO-RS-06-007",
+          "KO-RS-06-017"
+        ]
+      },
+      {
+        "id": "i_order",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_arrival"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_order_arrival"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "سجل الوصول يضع لايث بعد الأربعة الآخرين، وبطاقة القواعد تجعل الكلام بحسب الوصول؛ فهو آخر المتكلمين.",
+        "skill_ko_refs": [
+          "KO-RS-05-004"
+        ]
+      },
+      {
+        "id": "i_pattern",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_practice"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_pattern"
+        },
+        "relation": "supports",
+        "strength": "strong",
+        "rule_ar": "في الجولة الثانية كان آخر المتكلمين فأصاب توقعه، وفي الأولى كان ثالثاً فأخطأ؛ والفارق الوحيد بين الجولتين هو موضعه في الترتيب.",
+        "skill_ko_refs": [
+          "KO-RS-06-001",
+          "KO-RS-05-004"
+        ]
+      },
+      {
+        "id": "i_steer_b",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_pattern"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_order_arrival"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_steered"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "مسار ثانٍ لا يستعمل لوح القرعة: التجربة تربط الإصابة بموضع المتكلم الأخير، وسجل الوصول يضع لايث في هذا الموضع يوم القرعة.",
+        "skill_ko_refs": [
+          "KO-RS-05-004",
+          "KO-RS-06-007"
+        ]
+      },
+      {
+        "id": "i_plain",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_envelopes"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_rules"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_envelopes_plain"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "الظرف يتعيّن بباقي القسمة لا باللمس ولا بالنظر إلى العلامات، ولا يلمس أحد الأظرف أثناء القرعة؛ ونقطتا الحبر على ظرفين لا على ظرف واحد.",
+        "skill_ko_refs": [
+          "KO-RS-05-002"
+        ]
+      },
+      {
+        "id": "i_unneeded",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_can_force"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_log"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_helper_unneeded"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "لأن العدد الأخير وحده يعيّن الباقي، فلو تغيرت أعداد الأربعة الأوائل لوجد لايث عدداً مناسباً من 1 إلى 9؛ فلا حاجة إلى معاون.",
+        "skill_ko_refs": [
+          "KO-RS-06-007"
+        ]
+      },
+      {
+        "id": "i_rule_marked",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_envelopes_plain"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_steered"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_marked"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "طريقة الاختيار حسابية لا تمر بيد أحد، وقد فُسِّر الظرف 4 بالعدد الأخير؛ فالعلامة لا تضيف شيئاً.",
+        "skill_ko_refs": [
+          "KO-RS-05-003"
+        ]
+      },
+      {
+        "id": "i_rule_helper",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_helper_unneeded"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_whisper"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_helper"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "رؤية حديث بين صديقين لا تبيّن مضمونه، والنتيجة تحققت دون أي أعداد خاصة من الآخرين؛ فلا قرينة على معاون.",
+        "skill_ko_refs": [
+          "KO-RS-05-003",
+          "KO-RS-05-007"
+        ]
+      },
+      {
+        "id": "i_est_last",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_steered"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_last"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "التفسير الذي يغطي كل المعطيات بأقل افتراض: أعداد معلنة وقاعدة حسابية وآخر متكلم يختار عدده.",
+        "skill_ko_refs": [
+          "KO-RS-06-007",
+          "KO-RS-06-017"
+        ]
+      }
+    ]
+  },
+  "character_knowledge": [
+    {
+      "character_id": "layth",
+      "knows": [
+        {
+          "fact_id": "f_pred_sealed",
+          "access": "witnessed"
+        },
+        {
+          "fact_id": "f_order_arrival",
+          "access": "witnessed"
+        },
+        {
+          "fact_id": "f_rules_public",
+          "access": "common_knowledge"
+        },
+        {
+          "fact_id": "f_whisper_seen",
+          "access": "witnessed"
+        }
+      ],
+      "hides": [
+        {
+          "fact_id": "f_steered",
+          "reveal_when": {
+            "has_evidence": "ev_log"
+          },
+          "cover_claim_id": null
+        }
+      ],
+      "believes": []
+    },
+    {
+      "character_id": "abeer",
+      "knows": [
+        {
+          "fact_id": "f_pred_sealed",
+          "access": "witnessed"
+        },
+        {
+          "fact_id": "f_result_4",
+          "access": "witnessed"
+        },
+        {
+          "fact_id": "f_rules_public",
+          "access": "professional"
+        },
+        {
+          "fact_id": "f_order_arrival",
+          "access": "professional"
+        },
+        {
+          "fact_id": "f_ink_spots",
+          "access": "witnessed"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    },
+    {
+      "character_id": "sanaa",
+      "knows": [
+        {
+          "fact_id": "f_result_4",
+          "access": "witnessed"
+        },
+        {
+          "fact_id": "f_rules_public",
+          "access": "common_knowledge"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    },
+    {
+      "character_id": "rami",
+      "knows": [
+        {
+          "fact_id": "f_whisper_seen",
+          "access": "witnessed"
+        },
+        {
+          "fact_id": "f_result_4",
+          "access": "witnessed"
+        },
+        {
+          "fact_id": "f_rules_public",
+          "access": "common_knowledge"
+        }
+      ],
+      "hides": [],
+      "believes": [
+        {
+          "claim_id": "cl_helper",
+          "stance": "sincere"
+        }
+      ]
+    },
+    {
+      "character_id": "dima",
+      "knows": [
+        {
+          "fact_id": "f_ink_spots",
+          "access": "witnessed"
+        },
+        {
+          "fact_id": "f_result_4",
+          "access": "witnessed"
+        },
+        {
+          "fact_id": "f_rules_public",
+          "access": "common_knowledge"
+        }
+      ],
+      "hides": [],
+      "believes": [
+        {
+          "claim_id": "cl_marked",
+          "stance": "sincere"
+        }
+      ]
+    },
+    {
+      "character_id": "nabil",
+      "knows": [
+        {
+          "fact_id": "f_whisper_seen",
+          "access": "witnessed"
+        },
+        {
+          "fact_id": "f_result_4",
+          "access": "witnessed"
+        },
+        {
+          "fact_id": "f_rules_public",
+          "access": "common_knowledge"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "h_marked",
+      "statement_ar": "عرف لايث الظرف الذي سيخرج من علامة على الأظرف.",
+      "is_true": false,
+      "plausibility_at_start": "high"
+    },
+    {
+      "id": "h_helper",
+      "statement_ar": "اتفق لايث مع زميل على أعداد معينة ليصل إلى الظرف 4.",
+      "is_true": false,
+      "plausibility_at_start": "medium"
+    },
+    {
+      "id": "h_last",
+      "statement_ar": "لايث تكلم آخراً واختار عدده الأخير ليصل الباقي إلى ما كتبه صباحاً.",
+      "is_true": true,
+      "plausibility_at_start": "low",
+      "suspect_id": "layth"
+    }
+  ],
+  "misdirection_plan": [
+    {
+      "id": "rh_ink",
+      "points_to_hypothesis_id": "h_marked",
+      "planted_via_ar": "نقطتا حبر على ظرفين، أحدهما الظرف المختار.",
+      "evidence_ids": [
+        "ev_envelopes"
+      ],
+      "refuted_by_inference_ids": [
+        "i_rule_marked",
+        "i_plain"
+      ],
+      "fairness_note_ar": "بطاقة القواعد في يد اللاعب من البداية وفيها أن الظرف يتعيّن بباقي القسمة وأن أحداً لا يلمس الأظرف، والنقطة على ظرفين لا على ظرف واحد."
+    },
+    {
+      "id": "rh_whisper",
+      "points_to_hypothesis_id": "h_helper",
+      "planted_via_ar": "إفادة رامي عن حديث بين لايث ونبيل قرب الباب.",
+      "evidence_ids": [
+        "ev_whisper"
+      ],
+      "refuted_by_inference_ids": [
+        "i_rule_helper",
+        "i_unneeded"
+      ],
+      "fairness_note_ar": "لوح القرعة وبطاقة القواعد في يد اللاعب، ويظهر منهما أن العدد الأخير وحده يكفي لتعيين الباقي، فلا حاجة إلى معاون."
+    }
+  ],
+  "learning_objectives": [
+    {
+      "id": "lo_main",
+      "statement_ar": "يختار أفضل تفسير يغطي كل المعطيات بأقل افتراضات بعد أن يختبر أفضل التفسيرين المنافسين.",
+      "skill_ko_ref": "KO-RS-06-007",
+      "observable_behaviors_ar": [
+        "يحسب الباقي بنفسه",
+        "يذكر لماذا يفشل كل تفسير منافس"
+      ],
+      "evidence_sources": [
+        "evidence_board",
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_source",
+      "statement_ar": "يميّز السجل المدوّن لحظة الحدث من القول الذي يرويه شاهد.",
+      "skill_ko_ref": "KO-RS-05-001",
+      "observable_behaviors_ar": [
+        "يصنّف اللوح وسجل الوصول سجلات",
+        "يصنّف إفادة رامي قولاً"
+      ],
+      "evidence_sources": [
+        "evidence_board"
+      ]
+    },
+    {
+      "id": "lo_indep",
+      "statement_ar": "يجد مساراً ثانياً مستقلاً يصل إلى النتيجة نفسها.",
+      "skill_ko_ref": "KO-RS-05-004",
+      "observable_behaviors_ar": [
+        "يستعمل التجربة التجريبية مع سجل الوصول مساراً ثانياً"
+      ],
+      "evidence_sources": [
+        "evidence_board",
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_hyp",
+      "statement_ar": "يوازن بين تفسيرات متنافسة ويستبعد ما تنقضه السجلات.",
+      "skill_ko_ref": "KO-RS-05-002",
+      "observable_behaviors_ar": [
+        "يستبعد العلامة والمعاون بدليل",
+        "يولّد حجة مضادة لتفسيره"
+      ],
+      "evidence_sources": [
+        "hypothesis_ledger"
+      ]
+    },
+    {
+      "id": "lo_diag",
+      "statement_ar": "يقدّر ما يثبته كل دليل ويربطه بالفرضية باتجاه صحيح.",
+      "skill_ko_ref": "KO-RS-06-001",
+      "observable_behaviors_ar": [
+        "يربط الدليل بالفرضية باتجاه صحيح"
+      ],
+      "evidence_sources": [
+        "evidence_board"
+      ]
+    },
+    {
+      "id": "lo_calib",
+      "statement_ar": "يعاير ثقته بحسب قوة الأدلة وحدودها.",
+      "skill_ko_ref": "KO-RS-06-021",
+      "observable_behaviors_ar": [
+        "يختار نسبة ترجيح معقولة",
+        "يذكر حدوداً حقيقية"
+      ],
+      "evidence_sources": [
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_revise",
+      "statement_ar": "يراجع رأيه الأول حين يظهر ما يخالفه.",
+      "skill_ko_ref": "KO-RS-06-009",
+      "observable_behaviors_ar": [
+        "يترك فرضية العلامة إذا نقضتها القواعد"
+      ],
+      "evidence_sources": [
+        "hypothesis_ledger"
+      ]
+    }
+  ],
+  "mechanics": {
+    "time_budget_units": 20,
+    "actions": [
+      {
+        "id": "a_read_jar",
+        "type": "examine",
+        "label_ar": "اطلع على صورة البرطمان وملاحظة الفتح",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_jar"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "READ_JAR",
+        "target_id": "loc_super_room"
+      },
+      {
+        "id": "a_read_rules",
+        "type": "examine",
+        "label_ar": "اقرأ بطاقة قواعد القرعة",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_rules"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "READ_RULES",
+        "target_id": "loc_hall"
+      },
+      {
+        "id": "a_read_board",
+        "type": "examine",
+        "label_ar": "اطلع على لوح القرعة",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_log"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "READ_BOARD",
+        "target_id": "loc_hall"
+      },
+      {
+        "id": "a_read_arrival",
+        "type": "examine",
+        "label_ar": "اقرأ سجل وصول الأعضاء",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_arrival"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "READ_ARRIVAL",
+        "target_id": "loc_hall"
+      },
+      {
+        "id": "a_read_practice",
+        "type": "examine",
+        "label_ar": "اقرأ سجل الجلسة التجريبية",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_practice"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "READ_PRACTICE",
+        "target_id": "loc_hall"
+      },
+      {
+        "id": "a_read_envelopes",
+        "type": "examine",
+        "label_ar": "افحص الأظرف الخمسة",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_envelopes"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "READ_ENVELOPES",
+        "target_id": "loc_hall"
+      },
+      {
+        "id": "a_read_whisper",
+        "type": "examine",
+        "label_ar": "اقرأ إفادة رامي",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_whisper"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "READ_WHISPER",
+        "target_id": "loc_hall"
+      },
+      {
+        "id": "a_hint",
+        "type": "request_hint",
+        "label_ar": "اطلب تلميحاً",
+        "precondition": {
+          "always": true
+        },
+        "effects": [],
+        "time_cost_units": 0,
+        "telemetry_code": "REQUEST_HINT"
+      },
+      {
+        "id": "a_accuse",
+        "type": "final_accusation",
+        "label_ar": "قدّم جوابك والدليل الذي يحسمه",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "SUBMIT"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "FINAL_ACCUSATION"
+      }
+    ]
+  },
+  "state_machine": {
+    "id": "c059",
+    "initial": "briefing",
+    "type": "compound",
+    "states": {
+      "briefing": {
+        "description_ar": "الإحاطة",
+        "type": "atomic",
+        "on": {
+          "START": {
+            "target": "investigating"
+          }
+        }
+      },
+      "investigating": {
+        "description_ar": "التحقيق",
+        "type": "compound",
+        "initial": "gathering",
+        "states": {
+          "gathering": {
+            "type": "atomic",
+            "on": {
+              "OPEN_DEDUCTION": {
+                "target": "deducing"
+              }
+            }
+          },
+          "deducing": {
+            "type": "atomic",
+            "on": {
+              "BACK": {
+                "target": "gathering"
+              }
+            }
+          }
+        },
+        "on": {
+          "SUBMIT": {
+            "target": "review"
+          }
+        }
+      },
+      "review": {
+        "description_ar": "مراجعة",
+        "type": "atomic",
+        "on": {
+          "CLOSE": {
+            "target": "resolved"
+          }
+        }
+      },
+      "resolved": {
+        "description_ar": "إغلاق",
+        "type": "final"
+      }
+    }
+  },
+  "rubric": {
+    "reference_answer_ar": "لا علامة على الأظرف ولا معاون. الظرف يتعيّن بباقي قسمة مجموع الأعداد على 5، وفي هذه القاعدة يستطيع آخر المتكلمين أن يختار أي باقٍ يريد لأن الأعداد من 1 إلى 9 تغطي كل البواقي. كان لايث آخر المتكلمين، والمجموع قبله 27 وباقيه 2، فقال 7 فصار المجموع 34 وباقيه 4، وهو ما كتبه صباحاً. الدليل الحاسم هو لوح القرعة مع بطاقة القواعد، ومساره الثاني سجل التجربة مع سجل الوصول. الحدود: لا نعرف إن كان تأخره مقصوداً، والتجربة جولتان فقط، ولا يمكن نفي الصدفة نفياً مطلقاً لكن الحساب يفسّر النتيجة.",
+    "criteria": [
+      {
+        "id": "c_source",
+        "name_ar": "تصنيف المصادر",
+        "objective_ids": [
+          "lo_source"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يصنّف"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "أخطأ في الأغلب"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "نصف صحيح"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمه صحيح"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كله صحيح"
+          }
+        ]
+      },
+      {
+        "id": "c_links",
+        "name_ar": "ربط الأدلة بالفرضيات",
+        "objective_ids": [
+          "lo_diag",
+          "lo_indep"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.25,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لا روابط"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "قليلة"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "نصفها صحيح"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمها"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كلها دقيقة"
+          }
+        ]
+      },
+      {
+        "id": "c_uncertainty",
+        "name_ar": "معايرة الثقة",
+        "objective_ids": [
+          "lo_calib"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.2,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "ثقة مفرطة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "حدود قليلة"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "جزئية"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معقولة"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "معايَرة كاملة"
+          }
+        ]
+      },
+      {
+        "id": "c_revision",
+        "name_ar": "مراجعة الرأي",
+        "objective_ids": [
+          "lo_revise"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "بقي على فرضية مرفوضة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "لم يعلن فرضية"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "ثبت على فرضية سليمة"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "غيّر بدليل"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "غيّر بدليل ووثّق"
+          }
+        ]
+      },
+      {
+        "id": "c_elimination",
+        "name_ar": "استبعاد الفرضيات الخاطئة",
+        "objective_ids": [
+          "lo_hyp"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يستبعد"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "استبعد خطأً"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "فرضية بدليل"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "فرضيتين"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كل الخاطئة مع حجة مضادة"
+          }
+        ]
+      },
+      {
+        "id": "c_justification",
+        "name_ar": "الجواب والدليل الحاسم",
+        "objective_ids": [
+          "lo_main"
+        ],
+        "scored_by": "human",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لا حجة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "ادعاء بلا سند"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "أرقام دون ربط"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "ربط الأرقام بموضع المتكلم"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "ربط مع البدائل والحدود"
+          }
+        ]
+      }
+    ]
+  },
+  "hint_ladder": [
+    {
+      "id": "hg1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "قبل أن تتهم أحداً: ما الذي يقرر رقم الظرف فعلاً، اليد أم الحساب؟",
+      "trigger": {
+        "always": true
+      },
+      "assessment_weight": 0.02
+    },
+    {
+      "id": "hg2",
+      "level": 2,
+      "kind": "focus_area",
+      "text_ar": "اكتب القيود الخمسة بكلماتك، ثم اسأل: هل لموضع المتكلم في الترتيب أثر على النتيجة؟",
+      "trigger": {
+        "has_evidence": "ev_rules"
+      },
+      "assessment_weight": 0.04
+    },
+    {
+      "id": "hg3",
+      "level": 3,
+      "kind": "pointer",
+      "text_ar": "احسب المجموع قبل أن يتكلم آخر عضو، ثم ابحث عن عدد من 1 إلى 9 يوصل الباقي إلى المطلوب.",
+      "trigger": {
+        "has_evidence": "ev_log"
+      },
+      "assessment_weight": 0.08
+    },
+    {
+      "id": "hf1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "إذا أضفت الأعداد 1 ثم 2 ثم 3 حتى 9 إلى مجموع ثابت، فماذا يحدث لباقي القسمة على 5؟",
+      "trigger": {
+        "has_evidence": "ev_rules"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_force"
+    },
+    {
+      "id": "hf2",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "جرّب بنفسك: خذ مجموعاً من اختيارك وأضف إليه أعداداً مختلفة، وعدّ كم باقياً مختلفاً تحصل عليه.",
+      "trigger": {
+        "has_evidence": "ev_rules"
+      },
+      "assessment_weight": 0.06,
+      "targets_inference_id": "i_force"
+    },
+    {
+      "id": "hp1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "هل تملك تجربة سابقة تقارن بين حالتين لا يختلف فيهما إلا شيء واحد؟",
+      "trigger": {
+        "has_evidence": "ev_log"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_pattern"
+    },
+    {
+      "id": "hp2",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "في سجل الجلسة التجريبية، قارن بين موضع لايث في كل جولة ونتيجة توقعه.",
+      "trigger": {
+        "has_evidence": "ev_practice"
+      },
+      "assessment_weight": 0.06,
+      "targets_inference_id": "i_pattern"
+    }
+  ],
+  "fairness_test": {
+    "requirements": {
+      "min_disjoint_proof_paths": 2,
+      "max_inference_depth": 3,
+      "all_red_herrings_refutable": true,
+      "culprit_uniquely_entailed": true,
+      "no_hidden_fact_dependency": true,
+      "max_required_actions": 8
+    },
+    "runs": []
+  },
+  "ending_explanation": {
+    "steps": [
+      {
+        "order": 1,
+        "text_ar": "ابدأ بالقيود المعلنة: الظرف يتعيّن بباقي القسمة على 5، لا بلمس الأظرف ولا باختيارها بالنظر. وبين 1 و9 خمسة أعداد متتالية، فكل عدد منها يعطي باقياً مختلفاً؛ ومن يقول عدده الأخير يستطيع أن يصل إلى أي باقٍ من 1 إلى 5.",
+        "uses_evidence_ids": [
+          "ev_rules"
+        ],
+        "inference_id": "i_force"
+      },
+      {
+        "order": 2,
+        "text_ar": "في لوح القرعة كان لايث الخامس والأخير. المجموع قبله 27، وباقيه 2. الباقي 4 يحتاج عدداً باقيه 2، وقد قال 7: 27 + 7 = 34، و6 × 5 = 30، والباقي 4، وهو ما كتبه صباحاً.",
+        "uses_evidence_ids": [
+          "ev_log"
+        ],
+        "inference_id": "i_steer_a"
+      },
+      {
+        "order": 3,
+        "text_ar": "المسار الثاني لا يعتمد على اللوح: في الجلسة التجريبية أخطأ توقع لايث حين تكلم ثالثاً وأصاب حين تكلم آخراً، وسجل الوصول يبيّن أنه وصل بعد الجميع يوم القرعة.",
+        "uses_evidence_ids": [
+          "ev_practice",
+          "ev_arrival"
+        ],
+        "inference_id": "i_steer_b"
+      },
+      {
+        "order": 4,
+        "text_ar": "نقطتا الحبر على ظرفين لا ظرف واحد، ولا شأن للمس الأظرف بالنتيجة؛ فالفرضية القائلة بعلامة تسقط.",
+        "uses_evidence_ids": [
+          "ev_envelopes",
+          "ev_rules"
+        ],
+        "inference_id": "i_rule_marked"
+      },
+      {
+        "order": 5,
+        "text_ar": "حديث لايث ونبيل قرب الباب لا يبيّن مضمونه، والنتيجة كانت ستتحقق مهما قال الأربعة الأوائل؛ فلا حاجة إلى معاون.",
+        "uses_evidence_ids": [
+          "ev_whisper",
+          "ev_log"
+        ],
+        "inference_id": "i_rule_helper"
+      },
+      {
+        "order": 6,
+        "text_ar": "الخلاصة: التوقع المختوم صحيح لأن لايث ضبط عدده الأخير على الباقي المطلوب، لا لأنه عرف المستقبل.",
+        "uses_evidence_ids": [
+          "ev_log",
+          "ev_jar"
+        ],
+        "inference_id": "i_est_last"
+      }
+    ],
+    "alternative_paths_ar": [
+      "يكفي لوح القرعة مع بطاقة القواعد لإثبات الحل حساباً، ويكفي سجل الجلسة التجريبية مع سجل الوصول لإثباته بالمقارنة؛ والأقوى أن يتفق المساران."
+    ],
+    "what_evidence_could_not_show_ar": [
+      "لا نعرف إن كان تأخر لايث عن الوصول مقصوداً، والمشرفة تذكر له سبباً عادياً.",
+      "التجربة جولتان فقط، فلا تثبت قاعدة وحدها.",
+      "لا يمكن نفي الصدفة نفياً مطلقاً، لكن الحساب يفسّر النتيجة بلا حاجة إليها.",
+      "لا نعرف ما قاله لايث ونبيل قرب الباب، ولا حاجة إلى معرفته في هذا الحل."
+    ],
+    "science_notes_ar": [
+      "باقي القسمة على 5 يأخذ خمس قيم فقط، ولذلك تغطيها كلها خمسة أعداد متتالية.",
+      "القاعدة التي تجعل آخر المتكلمين يتحكم في الناتج تُسمى هنا ثغرة في تصميم القرعة، لا خرقاً لقواعدها المعلنة.",
+      "عند الحيرة من حدث يبدو مستحيلاً، اجمع القيود المعلنة أولاً، ثم اختبر كل تفسير منافس بسؤال: ما الذي كان سيحدث لو تغير شيء آخر؟",
+      "اكتشاف طريقة تتيح لأحد أن يتحكم في النتيجة لا يثبت وحده سوء نيته؛ والحكم على النية يحتاج دليلاً آخر."
+    ]
+  },
+  "expert_review": [
+    {
+      "role": "narrative_editor",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-11-05",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "scientific_reviewer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-11-05",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "learning_designer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-11-05",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "age_appropriateness",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-11-05",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "cultural_reviewer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-11-05",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "legal_rights",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-11-05",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "safety",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-11-05",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    }
+  ]
+}

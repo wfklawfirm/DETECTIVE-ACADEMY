@@ -1,0 +1,171 @@
+{
+  "case_id": "c056_report_that_knew_too_much",
+  "accepted_conclusions": {
+    "h_adnan": {
+      "grade": 0,
+      "note_ar": "يصدّق التقرير كما نُشر، وتنقضه ورقة عدنان الموقّعة والمحضر وإعادة الجمع."
+    },
+    "h_maysoon": {
+      "grade": 0,
+      "note_ar": "يرى اختلاقاً، وتنقضه نسخة الملف التي فُتح رابطها في غرفة النشرة قبل النشر؛ تبقى لها مسؤولية عن عدم المقابلة."
+    },
+    "h_wasim": {
+      "grade": 1,
+      "note_ar": "استنتاج متسق مع الأدلة ويتطلب ذكر حدوده."
+    },
+    "h_sources": {
+      "grade": 0,
+      "note_ar": "يفترض أن المصدرين عرفا ما لم يقولاه، ولا يفسر غياب طريقهما إلى القاعة وأوراقها."
+    },
+    "h_judge": {
+      "grade": 0,
+      "note_ar": "يتهم عضواً بالتسريب، ولا يفسر أن الرقمين المنشورين ليسا في أي ورقة موقّعة ولا أن الرابط فُتح قبل زيارة حازم."
+    }
+  },
+  "confidence_band": {
+    "h_adnan": [
+      0,
+      10
+    ],
+    "h_maysoon": [
+      0,
+      15
+    ],
+    "h_wasim": [
+      60,
+      88
+    ],
+    "h_sources": [
+      0,
+      10
+    ],
+    "h_judge": [
+      0,
+      10
+    ]
+  },
+  "source_key": {
+    "ev_report": "claim",
+    "ev_notice": "public_document",
+    "ev_complaint": "claim",
+    "ev_lubna": "claim",
+    "ev_tarek": "claim",
+    "ev_room_log": "primary_record",
+    "ev_paper_sheets": "primary_record",
+    "ev_minutes": "public_document",
+    "ev_draft_copy": "redisplay",
+    "ev_version_history": "primary_record",
+    "ev_share_log": "primary_record",
+    "ev_messenger": "primary_record",
+    "ev_club_list": "public_document",
+    "ev_maysoon_corr": "public_document",
+    "ev_hazem_visit": "primary_record"
+  },
+  "link_key": {
+    "h_adnan": {
+      "ev_report": "supports",
+      "ev_draft_copy": "supports",
+      "ev_club_list": "supports",
+      "ev_complaint": "weakens",
+      "ev_paper_sheets": "weakens",
+      "ev_minutes": "weakens",
+      "ev_version_history": "weakens"
+    },
+    "h_maysoon": {
+      "ev_report": "supports",
+      "ev_maysoon_corr": "supports",
+      "ev_draft_copy": "weakens",
+      "ev_share_log": "weakens",
+      "ev_messenger": "weakens"
+    },
+    "h_wasim": {
+      "ev_version_history": "supports",
+      "ev_share_log": "supports",
+      "ev_messenger": "supports",
+      "ev_draft_copy": "supports",
+      "ev_room_log": "supports",
+      "ev_paper_sheets": "supports",
+      "ev_minutes": "supports",
+      "ev_club_list": "supports",
+      "ev_lubna": "supports",
+      "ev_tarek": "supports"
+    },
+    "h_sources": {
+      "ev_report": "supports",
+      "ev_lubna": "weakens",
+      "ev_tarek": "weakens",
+      "ev_room_log": "weakens",
+      "ev_notice": "weakens"
+    },
+    "h_judge": {
+      "ev_hazem_visit": "supports",
+      "ev_paper_sheets": "weakens",
+      "ev_share_log": "weakens",
+      "ev_version_history": "weakens"
+    }
+  },
+  "required_limits": [
+    "l_account_not_hand",
+    "l_motive_not_act"
+  ],
+  "valid_mind_changers": [
+    "m_hist_forged",
+    "m_open_login",
+    "m_fifth_card"
+  ],
+  "invalid_limits": [
+    "l_invalid_names",
+    "l_invalid_paper"
+  ],
+  "decisive_evidence": [
+    "ev_paper_sheets",
+    "ev_minutes",
+    "ev_lubna",
+    "ev_tarek",
+    "ev_room_log",
+    "ev_version_history",
+    "ev_share_log"
+  ],
+  "lab_requirement": null,
+  "timeline_requirement": [
+    {
+      "evidence_id": "ev_room_log",
+      "utc_minute": 221,
+      "tol": 10
+    },
+    {
+      "evidence_id": "ev_version_history",
+      "utc_minute": 232,
+      "tol": 6
+    },
+    {
+      "evidence_id": "ev_share_log",
+      "utc_minute": 244,
+      "tol": 6
+    },
+    {
+      "evidence_id": "ev_report",
+      "utc_minute": 345,
+      "tol": 10
+    }
+  ],
+  "refuted_hypotheses": [
+    "h_adnan",
+    "h_maysoon",
+    "h_sources",
+    "h_judge"
+  ],
+  "criteria_map": {
+    "c_source": "source_typing",
+    "c_conflict": "conflict_resolution",
+    "c_links": "hypothesis_links",
+    "c_uncertainty": "uncertainty",
+    "c_revision": "revision",
+    "c_elimination": "elimination",
+    "c_justification": "justification_human"
+  },
+  "caps": {
+    "no_citations_max": 45,
+    "no_conflict_resolution_max": 70
+  }
+}

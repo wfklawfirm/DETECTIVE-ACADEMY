@@ -1,0 +1,3032 @@
+{
+  "schema_version": "0.1.0",
+  "case_id": "c058_field_then_session",
+  "case_version": "0.1.0",
+  "meta": {
+    "title_ar": "ماء متأخر على ضفة الصفصاف",
+    "title_en": "Late Water on the Safsaf Canal",
+    "age_band": "16-18",
+    "locale": "ar",
+    "dialogue_register": "msa",
+    "estimated_minutes": 40,
+    "difficulty": 3,
+    "content_flags": [
+      "no_violence"
+    ],
+    "authors": [
+      "فريق أثر التحريري (مسودة بمساعدة الذكاء الاصطناعي، لم تُراجَع بشرياً بعد)"
+    ],
+    "knowledge_object_refs": [
+      "KO-RS-05-001",
+      "KO-RS-05-005",
+      "KO-RS-05-002",
+      "KO-RS-05-004",
+      "KO-RS-06-001",
+      "KO-RS-06-002",
+      "KO-RS-06-021",
+      "KO-RS-06-009",
+      "KO-NP-02W-010",
+      "KO-NP-02W-011"
+    ]
+  },
+  "premise": {
+    "hook_ar": "تأخر ماء حمدان سبعين دقيقة عن موعد دوره، وهو يتهم جاره الأعلى، والجار يرد بأن سطراً في دفتر الحارس يظلمه. ثلاث شكاوى في جدول جلسة واحدة، وقبلها جولة قصيرة في الميدان تجمع فيها ما سيُعرض أمام اللجنة.",
+    "player_role_ar": "أنت متدرب لدى لجنة فضّ منازعات الري تُعدّ ملفاً ورأياً معلّلاً. تجمع الوقائع في الميدان ثم تعرضها في الجلسة، والقرار لرئيسة اللجنة لا لك، وتحترم حق كل مستمَع إليه في أن يوضح وأن يصمت.",
+    "setting_ar": "تعاونية ري وادي الصفصاف في سهل الندى المتخيَّل، صباح السبت 30 من الشهر ثم جلسة اللجنة بعد الظهر، والوقائع بين الاثنين 11 والخميس 28. تدخل الميدان بإذن مكتوب من اللجنة لقراءة المسجلات وفحص المواضع، ولا تحرك البوابات ولا تفك الشبكة. الأسماء والأماكن والأحداث كلها متخيَّلة، وساعة التعاونية هي ساعة كل السجلات.",
+    "public_fact_ids": [
+      "f_complaint_a",
+      "f_complaint_b",
+      "f_complaint_c",
+      "f_turns"
+    ],
+    "assumed_general_knowledge_ar": [
+      "الماء يرتفع أمام عائق يضيّق مجراه ثم يمر منه ببطء",
+      "الفتحة الصغيرة تحبس ما تمرره الفتحة الأكبر",
+      "الجهاز الذي يسجل لحظة الحدث لا يقدّر ولا يتذكر",
+      "كمية صغيرة لا تفسر غياب كمية أكبر منها بمئات المرات"
+    ]
+  },
+  "entities": {
+    "characters": [
+      {
+        "id": "hamdan",
+        "name_ar": "حمدان الراوي",
+        "role": "victim",
+        "age_descriptor_ar": "مزارع يملك الحقل 3 في آخر القناة",
+        "persona_ar": "متعب وغاضب من ضياع ماء دوره، لكنه منصف حين تُعرض عليه الأرقام، ويتكلم بسرعة حين يتألم.",
+        "motives_ar": [
+          "أن يصل ماء دوره في موعده",
+          "ألا يبدو مفتعلاً للخصومة مع جاره"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "hm_greet",
+            "purpose": "greeting",
+            "text_ar": "تفضّل. جئت لأقول ما جرى لي يوم الخميس، لا أكثر."
+          },
+          {
+            "line_id": "hm_arrive",
+            "purpose": "reveal",
+            "text_ar": "وقفت عند مدخل حقلي منذ السادسة، ولم يصل الماء إلا بعد السابعة بعشر دقائق.",
+            "fact_ids": [
+              "f_arrival_late"
+            ]
+          },
+          {
+            "line_id": "hm_held",
+            "purpose": "lie",
+            "text_ar": "مازن أبقى بوابته مفتوحة بعد دوره، ولا تفسير عندي غير هذا.",
+            "claim_ids": [
+              "cl_hamdan_held"
+            ]
+          },
+          {
+            "line_id": "hm_first",
+            "purpose": "lie",
+            "text_ar": "لم يتأخر عليّ الماء بهذا الشكل من قبل.",
+            "claim_ids": [
+              "cl_hamdan_first"
+            ]
+          },
+          {
+            "line_id": "hm_21",
+            "purpose": "reveal",
+            "text_ar": "تأخر الماء عليّ قبل أسبوع أيضاً، لكنني سكتّ ولم أرد أن أشتكي من جاري. اليوم زاد التأخر كثيراً.",
+            "fact_ids": [
+              "f_hamdan_21"
+            ]
+          },
+          {
+            "line_id": "hm_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف أكثر من ذلك."
+          },
+          {
+            "line_id": "hm_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن الماء الذي وصل إلى حقلي."
+          },
+          {
+            "line_id": "hm_bye",
+            "purpose": "farewell",
+            "text_ar": "أريد فقط أن يصل ماء دوري في موعده."
+          }
+        ]
+      },
+      {
+        "id": "mazen",
+        "name_ar": "مازن العطار",
+        "role": "suspect",
+        "age_descriptor_ar": "مزارع يملك الحقل 2 فوق حقل حمدان",
+        "persona_ar": "كريم الكلام لكنه حساس من أي اتهام، ويعيد جملته بإصرار حين يشعر أنه يُظلم.",
+        "motives_ar": [
+          "أن يُصحَّح السطر المنسوب إليه",
+          "ألا يُظن أنه يأخذ فوق دوره"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "mz_greet",
+            "purpose": "greeting",
+            "text_ar": "أهلاً. أغلقت بوابتي في موعدها، وأريد أن يُصحَّح السطر."
+          },
+          {
+            "line_id": "mz_closed",
+            "purpose": "reveal",
+            "text_ar": "أغلقت بوابتي عند السادسة تماماً وانصرفت إلى بيتي، وهذه عادتي في كل خميس.",
+            "fact_ids": [
+              "f_gate_on_time"
+            ]
+          },
+          {
+            "line_id": "mz_forged",
+            "purpose": "lie",
+            "text_ar": "أظن أن الحارس كتب السادسة وخمساً وخمسين عمداً ليحمّلني ما جرى.",
+            "claim_ids": [
+              "cl_mazen_forged"
+            ]
+          },
+          {
+            "line_id": "mz_tight",
+            "purpose": "lie",
+            "text_ar": "بوابتي محكمة ولا تسرّب نقطة بعد الإغلاق.",
+            "claim_ids": [
+              "cl_mazen_tight"
+            ]
+          },
+          {
+            "line_id": "mz_leak",
+            "purpose": "reveal",
+            "text_ar": "نعم، تتسرب البوابة قليلاً منذ الشتاء، ولم أذكر ذلك لأنني خشيت أن يُظن أنني آخذ ماءً فوق دوري.",
+            "fact_ids": [
+              "f_leak_small"
+            ]
+          },
+          {
+            "line_id": "mz_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف أكثر من ذلك."
+          },
+          {
+            "line_id": "mz_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن بوابتي ودوري."
+          },
+          {
+            "line_id": "mz_bye",
+            "purpose": "farewell",
+            "text_ar": "أرجو أن يُكتب في الدفتر ما جرى فعلاً."
+          }
+        ]
+      },
+      {
+        "id": "jalal",
+        "name_ar": "جلال النجار",
+        "role": "witness",
+        "age_descriptor_ar": "حارس القناة منذ سنوات",
+        "persona_ar": "صريح وقليل الصبر مع الأوراق، يدوّن بسرعة ويحب أن يُنجز جولته قبل الظهر.",
+        "motives_ar": [
+          "أن يبقى دفتره موضع ثقة",
+          "ألا يُلام على تفصيل صغير"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "jl_greet",
+            "purpose": "greeting",
+            "text_ar": "أهلاً بك. أنا حارس القناة، والدفتر دفتري منذ سنوات."
+          },
+          {
+            "line_id": "jl_time",
+            "purpose": "lie",
+            "text_ar": "كتبت أن البوابة أُغلقت نحو السادسة وخمس وخمسين، وهذا ما رأيته.",
+            "claim_ids": [
+              "cl_jalal_time"
+            ]
+          },
+          {
+            "line_id": "jl_estimate",
+            "purpose": "reveal",
+            "text_ar": "لم أقرأ مسجل البوابة. مررت بالقنطرة فرأيت الماء ما زال عالياً، فقدّرت الوقت وكتبته.",
+            "fact_ids": [
+              "f_log_estimate"
+            ]
+          },
+          {
+            "line_id": "jl_wind",
+            "purpose": "reveal",
+            "text_ar": "هبّت ريح شديدة يوم الاثنين 11 وألقت قصباً في القناة، ولم ننظّفها تنظيفاً عاماً بعد ذلك.",
+            "fact_ids": [
+              "f_wind_early"
+            ]
+          },
+          {
+            "line_id": "jl_mesh",
+            "purpose": "reveal",
+            "text_ar": "رأيت طارق يركّب الشبكة الجديدة يوم الأحد 17 بموجب أمر العمل.",
+            "fact_ids": [
+              "f_mesh_installed"
+            ]
+          },
+          {
+            "line_id": "jl_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف أكثر مما دوّنت."
+          },
+          {
+            "line_id": "jl_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن جولتي في القناة."
+          },
+          {
+            "line_id": "jl_bye",
+            "purpose": "farewell",
+            "text_ar": "الدفتر عندكم متى شئتم."
+          }
+        ]
+      },
+      {
+        "id": "tariq",
+        "name_ar": "طارق السويدي",
+        "role": "suspect",
+        "age_descriptor_ar": "متطوع خريج زراعة في لجنة الصيانة",
+        "persona_ar": "متحمس ومهذب، يفرح بالحلول العملية ويتألم إذا قيل إن حلاً له أضر بغيره.",
+        "motives_ar": [
+          "أن يُحسب عمله نافعاً",
+          "ألا يُظن أنه قصّر في المتابعة"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "tq_greet",
+            "purpose": "greeting",
+            "text_ar": "أهلاً. أردت أن أحل مشكلة الأكياس، لا أن أسبب مشكلة."
+          },
+          {
+            "line_id": "tq_good",
+            "purpose": "reveal",
+            "text_ar": "كانت الأكياس البلاستيكية تدخل أنبوب مدخل حقل حمدان وتسده، فاقترحت شبكة دقيقة تحجزها.",
+            "fact_ids": [
+              "f_good_faith"
+            ]
+          },
+          {
+            "line_id": "tq_install",
+            "purpose": "reveal",
+            "text_ar": "ركّبت الشبكة يوم الأحد 17 بأمر العمل، وفحصتها وقتها فكانت سليمة.",
+            "fact_ids": [
+              "f_mesh_installed"
+            ]
+          },
+          {
+            "line_id": "tq_clean",
+            "purpose": "lie",
+            "text_ar": "فحصتها مراراً بعد التركيب وكانت نظيفة في كل مرة، فلا علاقة لها بالتأخير.",
+            "claim_ids": [
+              "cl_tariq_clean"
+            ]
+          },
+          {
+            "line_id": "tq_once",
+            "purpose": "reveal",
+            "text_ar": "صحيح، فحصتها مرة واحدة يوم التركيب ولم أرجع إليها بعد ذلك، لانشغالي بعمل آخر.",
+            "fact_ids": [
+              "f_tariq_check_once"
+            ]
+          },
+          {
+            "line_id": "tq_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف أكثر من ذلك."
+          },
+          {
+            "line_id": "tq_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن الشبكة وأمر العمل."
+          },
+          {
+            "line_id": "tq_bye",
+            "purpose": "farewell",
+            "text_ar": "إن كان في عملي خطأ فأريد أن أصلحه."
+          }
+        ]
+      },
+      {
+        "id": "chair",
+        "name_ar": "سلمى القباني",
+        "role": "authority",
+        "age_descriptor_ar": "رئيسة لجنة فضّ منازعات الري",
+        "persona_ar": "هادئة ومنظّمة، تفرّق بين من يجمع الوقائع ومن يحكم، وتصرّ على أن يُسمع كل طرف دون ضغط.",
+        "motives_ar": [
+          "أن تُنظر الشكاوى على وقائع مسجلة",
+          "أن يُحفظ حق كل مستمَع إليه"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "ch_greet",
+            "purpose": "greeting",
+            "text_ar": "أهلاً بك يا متدرب. أنا أحكم في الجلسة، وأنت تُعدّ الملف والرأي المعلّل."
+          },
+          {
+            "line_id": "ch_rules",
+            "purpose": "reveal",
+            "text_ar": "لا يُطرح في الجلسة إلا ما جُمع في الميدان وورد في الملف. ولكل مستمَع إليه أن يصمت أو يستعين بمن يشاء، ولا نضغط على أحد. وأذكّرك بالأدوار: مازن من 04:00 إلى 06:00، وحمدان من 06:00 إلى 08:00.",
+            "fact_ids": [
+              "f_turns"
+            ]
+          },
+          {
+            "line_id": "ch_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "هذا يُبحث في الجلسة بعد تسليم الملف."
+          },
+          {
+            "line_id": "ch_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "لنُبقِ الكلام على ملف الميدان."
+          },
+          {
+            "line_id": "ch_bye",
+            "purpose": "farewell",
+            "text_ar": "سلّم الملف حين تكتمل الوقائع، ثم اكتب رأيك."
+          }
+        ]
+      }
+    ],
+    "locations": [
+      {
+        "id": "loc_office",
+        "name_ar": "مكتب التعاونية",
+        "description_ar": "مكتب فيه جداول الأدوار وأوامر العمل ودفتر الأحوال."
+      },
+      {
+        "id": "loc_gate2",
+        "name_ar": "بوابة الحقل 2",
+        "description_ar": "بوابة فرع الحقل 2 وعندها صندوق مسجل الفتح والإغلاق وعدّاد التدفق."
+      },
+      {
+        "id": "loc_culvert",
+        "name_ar": "القنطرة المشتركة",
+        "description_ar": "ممر مغطى تحت الطريق تمر منه القناة السفلى، وعند مدخله شبكة تحجز الشوائب."
+      },
+      {
+        "id": "loc_shed",
+        "name_ar": "مخزن المعدات",
+        "description_ar": "مخزن صغير للتعاونية فيه قطع القناة المفكوكة."
+      },
+      {
+        "id": "loc_hut",
+        "name_ar": "كوخ الحارس",
+        "description_ar": "كوخ على الضفة يحفظ فيه الحارس دفتره."
+      },
+      {
+        "id": "loc_intake",
+        "name_ar": "مدخل حقل حمدان",
+        "description_ar": "مدخل الحقل 3 وعنده مقياس آلي يرسم لحظة وصول الماء."
+      },
+      {
+        "id": "loc_hall",
+        "name_ar": "قاعة الجلسة",
+        "description_ar": "قاعة التعاونية التي تنعقد فيها لجنة فضّ المنازعات."
+      }
+    ],
+    "objects": [
+      {
+        "id": "obj_mesh",
+        "name_ar": "الشبكة الدقيقة",
+        "description_ar": "شبكة معدنية فتحاتها صغيرة عند مدخل القنطرة."
+      },
+      {
+        "id": "obj_bars",
+        "name_ar": "القضبان القديمة",
+        "description_ar": "قضبان معدنية واسعة كانت تحجز الشوائب الكبيرة عند القنطرة."
+      },
+      {
+        "id": "obj_gate2",
+        "name_ar": "بوابة الفرع 2",
+        "description_ar": "بوابة الفرع الذي يسقي حقل مازن."
+      },
+      {
+        "id": "obj_gauge",
+        "name_ar": "مقياس ارتفاع الماء",
+        "description_ar": "مقياس آلي أمام القنطرة ترسم بكرته منسوب الماء."
+      }
+    ],
+    "organizations": [
+      {
+        "id": "org_coop",
+        "name_ar": "تعاونية ري وادي الصفصاف",
+        "description_ar": "تعاونية فلاحين في سهل متخيَّل تنظّم أدوار السقاية."
+      },
+      {
+        "id": "org_committee",
+        "name_ar": "لجنة فضّ منازعات الري",
+        "description_ar": "لجنة محلية تنظر في شكاوى الأدوار والصيانة."
+      }
+    ]
+  },
+  "truth": {
+    "solution": {
+      "culprit_ids": [
+        "tariq"
+      ],
+      "summary_ar": "لم يؤخر الماء مازن ولا الريح ولا قطرات البوابة. أخّره استبدال القضبان بشبكة أضيق قبل أحد عشر يوماً بنية حسنة، فاحتبست عليها قطع قصب كانت تعبر من قبل، وبقي الماء واقفاً أمام القنطرة. تسبب طارق بذلك دون قصد سيئ وبمتابعة ناقصة، وكتب جلال وقتاً مقدّراً لا مقروءاً من الجهاز.",
+      "key_fact_ids": [
+        "f_gate_on_time",
+        "f_backwater",
+        "f_cause_mesh"
+      ]
+    },
+    "facts": [
+      {
+        "id": "f_complaint_a",
+        "statement_ar": "قدّم حمدان الراوي شكوى بأن ماء دوره يوم الخميس 28 وصل إلى مدخل حقله متأخراً، وهو يرى أن جاره الأعلى مازن العطار أبقى بوابته مفتوحة بعد دوره.",
+        "kind": "event",
+        "subject_ids": [
+          "hamdan",
+          "mazen"
+        ],
+        "spoiler_level": 0,
+        "time": {
+          "start_min": 840,
+          "precision": "approx"
+        },
+        "location_id": "loc_office"
+      },
+      {
+        "id": "f_complaint_b",
+        "statement_ar": "قدّم مازن العطار شكوى يعترض فيها على سطر في دفتر الحارس يذكر أنه أغلق بوابته نحو 06:55، ويقول إنه أغلقها عند السادسة.",
+        "kind": "event",
+        "subject_ids": [
+          "mazen",
+          "jalal"
+        ],
+        "spoiler_level": 0,
+        "time": {
+          "start_min": 840,
+          "precision": "approx"
+        },
+        "location_id": "loc_office"
+      },
+      {
+        "id": "f_complaint_c",
+        "statement_ar": "رفعت التعاونية إلى اللجنة طلباً بتقييم أعمال الصيانة الأخيرة على القنطرة المشتركة قبل اعتمادها نهائياً.",
+        "kind": "event",
+        "subject_ids": [
+          "org_coop",
+          "org_committee"
+        ],
+        "spoiler_level": 0,
+        "time": {
+          "start_min": 1800,
+          "precision": "approx"
+        },
+        "location_id": "loc_office"
+      },
+      {
+        "id": "f_turns",
+        "statement_ar": "دور مازن بين 04:00 و06:00 صباح الخميس، ودور حمدان بين 06:00 و08:00، والمعتاد أن يصل الماء إلى مدخل حمدان خلال نحو عشرين دقيقة من انتهاء دور مازن.",
+        "kind": "state",
+        "subject_ids": [
+          "mazen",
+          "hamdan",
+          "org_coop"
+        ],
+        "spoiler_level": 0,
+        "location_id": "loc_office"
+      },
+      {
+        "id": "f_arrival_late",
+        "statement_ar": "وصل الماء إلى مدخل حقل حمدان الساعة 07:10 يوم الخميس 28، أي بعد سبعين دقيقة من بدء دوره.",
+        "kind": "event",
+        "subject_ids": [
+          "hamdan"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 190,
+          "precision": "exact"
+        },
+        "location_id": "loc_intake"
+      },
+      {
+        "id": "f_delays_pattern",
+        "statement_ar": "كان تأخر وصول الماء إلى مدخل حمدان بعد بدء دوره 18 دقيقة يوم الخميس 7، و19 يوم 14، و41 يوم 21، و70 يوم 28.",
+        "kind": "attribute",
+        "subject_ids": [
+          "hamdan"
+        ],
+        "spoiler_level": 1,
+        "location_id": "loc_intake"
+      },
+      {
+        "id": "f_gate_on_time",
+        "statement_ar": "أُغلقت بوابة مازن الساعة 06:00 يوم الخميس 28، وأُغلقت في الخميسات الثلاثة السابقة في الساعة نفسها بفارق دقيقة على الأكثر.",
+        "kind": "event",
+        "subject_ids": [
+          "mazen",
+          "obj_gate2"
+        ],
+        "spoiler_level": 2,
+        "time": {
+          "start_min": 120,
+          "precision": "exact"
+        },
+        "location_id": "loc_gate2"
+      },
+      {
+        "id": "f_backwater",
+        "statement_ar": "بقي الماء مرتفعاً أمام القنطرة بعد إغلاق بوابة مازن (62 سم الساعة 07:00)، وما زال يقف أمام الشبكة بعمق 41 سم مقابل 3 سم خلفها بعد انقطاع الجريان ساعة.",
+        "kind": "state",
+        "subject_ids": [
+          "obj_gauge",
+          "obj_mesh"
+        ],
+        "spoiler_level": 2,
+        "time": {
+          "start_min": 120,
+          "end_min": 190,
+          "precision": "approx"
+        },
+        "location_id": "loc_culvert"
+      },
+      {
+        "id": "f_mesh_installed",
+        "statement_ar": "استُبدلت يوم الأحد 17 القضبان القديمة (المسافة بينها 8 سم) بشبكة دقيقة فتحاتها 1.5 سم، بأمر العمل 31 الذي نفّذه طارق السويدي.",
+        "kind": "event",
+        "subject_ids": [
+          "tariq",
+          "obj_mesh",
+          "obj_bars"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": -15480,
+          "precision": "approx"
+        },
+        "location_id": "loc_culvert"
+      },
+      {
+        "id": "f_mesh_clogged",
+        "statement_ar": "الشبكة الدقيقة مغطاة بقطع قصب وطمي حتى ارتفاع 35 سم، وطول قطع القصب العالقة بين 3 و6 سم.",
+        "kind": "state",
+        "subject_ids": [
+          "obj_mesh"
+        ],
+        "spoiler_level": 2,
+        "location_id": "loc_culvert"
+      },
+      {
+        "id": "f_cause_mesh",
+        "statement_ar": "سبب بطء مرور الماء وتأخر وصوله إلى حمدان هو الشبكة الدقيقة التي حبست قطع القصب عند القنطرة، لا بوابة مازن ولا ريح الأسبوع الماضي ولا تسرب البوابة.",
+        "kind": "relation",
+        "subject_ids": [
+          "obj_mesh",
+          "tariq",
+          "hamdan"
+        ],
+        "spoiler_level": 3,
+        "time": {
+          "start_min": 120,
+          "end_min": 190,
+          "precision": "approx"
+        },
+        "location_id": "loc_culvert"
+      },
+      {
+        "id": "f_leak_small",
+        "statement_ar": "تسرب بوابة مازن بعد إغلاقها نحو 2 لتر في الدقيقة، قيس بوعاء سعته 10 لترات امتلأ في 5 دقائق.",
+        "kind": "state",
+        "subject_ids": [
+          "obj_gate2",
+          "mazen"
+        ],
+        "spoiler_level": 2,
+        "location_id": "loc_gate2"
+      },
+      {
+        "id": "f_wind_early",
+        "statement_ar": "هبّت ريح شديدة يوم الاثنين 11 ألقت قصباً في القناة، وكان آخر تنظيف عام للقناة يوم السبت 9 ولم يتبعه تنظيف.",
+        "kind": "event",
+        "subject_ids": [
+          "org_coop"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": -24480,
+          "end_min": -23400,
+          "precision": "approx"
+        }
+      },
+      {
+        "id": "f_log_estimate",
+        "statement_ar": "كتب جلال سطر 06:55 تقديراً من منظر الماء عند القنطرة حين مرّ بها، ولم يقرأ مسجل البوابة.",
+        "kind": "event",
+        "subject_ids": [
+          "jalal"
+        ],
+        "spoiler_level": 2,
+        "time": {
+          "start_min": 175,
+          "precision": "approx"
+        },
+        "location_id": "loc_culvert"
+      },
+      {
+        "id": "f_tariq_check_once",
+        "statement_ar": "فحص طارق الشبكة مرة واحدة يوم التركيب ولم يفحصها بعد ذلك، مع أن بطاقة المتابعة تنص على فحص أسبوعي.",
+        "kind": "event",
+        "subject_ids": [
+          "tariq"
+        ],
+        "spoiler_level": 2,
+        "time": {
+          "start_min": -15450,
+          "precision": "approx"
+        },
+        "location_id": "loc_culvert"
+      },
+      {
+        "id": "f_good_faith",
+        "statement_ar": "غرض طارق من الشبكة الدقيقة منع الأكياس البلاستيكية من دخول أنبوب مدخل حقل حمدان، ولم يقصد تأخير الماء.",
+        "kind": "attribute",
+        "subject_ids": [
+          "tariq"
+        ],
+        "spoiler_level": 1,
+        "location_id": "loc_culvert"
+      },
+      {
+        "id": "f_hamdan_21",
+        "statement_ar": "لاحظ حمدان يوم الخميس 21 أن الماء تأخر عليه، ولم يقدّم شكوى حينها.",
+        "kind": "event",
+        "subject_ids": [
+          "hamdan"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": -9919,
+          "precision": "approx"
+        },
+        "location_id": "loc_intake"
+      }
+    ],
+    "claims": [
+      {
+        "id": "cl_hamdan_held",
+        "statement_ar": "مازن أبقى بوابته مفتوحة بعد دوره فتأخر الماء عن حمدان.",
+        "kind": "honest_mistake",
+        "held_by": [
+          "hamdan"
+        ],
+        "true_fact_id": "f_gate_on_time",
+        "contradicted_by_evidence_ids": [
+          "ev_strip",
+          "ev_branch_meter"
+        ]
+      },
+      {
+        "id": "cl_hamdan_first",
+        "statement_ar": "لم يتأخر الماء على حمدان من قبل هذا الخميس.",
+        "kind": "half_truth",
+        "held_by": [
+          "hamdan"
+        ],
+        "true_fact_id": "f_hamdan_21",
+        "contradicted_by_evidence_ids": [
+          "ev_intake_chart"
+        ]
+      },
+      {
+        "id": "cl_mazen_forged",
+        "statement_ar": "الحارس كتب 06:55 عمداً ليحمّل مازن ما جرى.",
+        "kind": "honest_mistake",
+        "held_by": [
+          "mazen"
+        ],
+        "true_fact_id": "f_log_estimate",
+        "contradicted_by_evidence_ids": [],
+        "unresolved_by_design": true
+      },
+      {
+        "id": "cl_mazen_tight",
+        "statement_ar": "بوابة مازن محكمة ولا تسرّب شيئاً بعد الإغلاق.",
+        "kind": "half_truth",
+        "held_by": [
+          "mazen"
+        ],
+        "true_fact_id": "f_leak_small",
+        "contradicted_by_evidence_ids": [
+          "ev_leak_test"
+        ]
+      },
+      {
+        "id": "cl_jalal_time",
+        "statement_ar": "بوابة الفرع 2 أُغلقت نحو 06:55 كما رآها الحارس.",
+        "kind": "honest_mistake",
+        "held_by": [
+          "jalal"
+        ],
+        "true_fact_id": "f_gate_on_time",
+        "contradicted_by_evidence_ids": [
+          "ev_strip",
+          "ev_branch_meter"
+        ]
+      },
+      {
+        "id": "cl_tariq_clean",
+        "statement_ar": "طارق فحص الشبكة مراراً بعد التركيب فوجدها نظيفة فلا علاقة لها بالتأخير.",
+        "kind": "half_truth",
+        "held_by": [
+          "tariq"
+        ],
+        "true_fact_id": "f_tariq_check_once",
+        "contradicted_by_evidence_ids": [
+          "ev_work_order",
+          "ev_grate_clog"
+        ]
+      }
+    ]
+  },
+  "timeline": [
+    {
+      "id": "te_wind",
+      "description_ar": "ريح شديدة تلقي قصباً في القناة.",
+      "time": {
+        "start_min": -24480,
+        "precision": "approx",
+        "end_min": -23400
+      },
+      "actor_ids": [],
+      "fact_ids": [
+        "f_wind_early"
+      ]
+    },
+    {
+      "id": "te_replace",
+      "description_ar": "طارق يستبدل القضبان القديمة بالشبكة الدقيقة ويفحصها مرة واحدة.",
+      "time": {
+        "start_min": -15480,
+        "precision": "approx",
+        "end_min": -15450
+      },
+      "actor_ids": [
+        "tariq"
+      ],
+      "fact_ids": [
+        "f_mesh_installed",
+        "f_tariq_check_once",
+        "f_good_faith"
+      ],
+      "location_id": "loc_culvert",
+      "witness_ids": [
+        "jalal"
+      ],
+      "motivated_by_ar": "تنفيذ أمر العمل لمنع الأكياس البلاستيكية من دخول أنبوب الحقل 3"
+    },
+    {
+      "id": "te_th21",
+      "description_ar": "الماء يصل إلى مدخل حمدان بعد 41 دقيقة من بدء دوره.",
+      "time": {
+        "start_min": -9919,
+        "precision": "exact"
+      },
+      "actor_ids": [],
+      "fact_ids": [
+        "f_delays_pattern",
+        "f_hamdan_21"
+      ],
+      "location_id": "loc_intake"
+    },
+    {
+      "id": "te_open",
+      "description_ar": "مازن يفتح بوابة فرعه في بداية دوره.",
+      "time": {
+        "start_min": 0,
+        "precision": "exact"
+      },
+      "actor_ids": [
+        "mazen"
+      ],
+      "fact_ids": [
+        "f_turns"
+      ],
+      "location_id": "loc_gate2",
+      "motivated_by_ar": "بدء دوره في جدول السقاية"
+    },
+    {
+      "id": "te_close",
+      "description_ar": "مازن يغلق بوابته وينقطع تدفق الفرع.",
+      "time": {
+        "start_min": 120,
+        "precision": "exact"
+      },
+      "actor_ids": [
+        "mazen"
+      ],
+      "fact_ids": [
+        "f_gate_on_time"
+      ],
+      "location_id": "loc_gate2",
+      "motivated_by_ar": "انتهاء دوره في الموعد المقرر"
+    },
+    {
+      "id": "te_pool",
+      "description_ar": "الماء يبقى مرتفعاً أمام القنطرة ويمر منها ببطء.",
+      "time": {
+        "start_min": 120,
+        "precision": "approx",
+        "end_min": 190
+      },
+      "actor_ids": [],
+      "fact_ids": [
+        "f_backwater",
+        "f_cause_mesh"
+      ],
+      "location_id": "loc_culvert"
+    },
+    {
+      "id": "te_jalal",
+      "description_ar": "جلال يمر بالقنطرة ويكتب في دفتره وقتاً مقدّراً لإغلاق البوابة.",
+      "time": {
+        "start_min": 175,
+        "precision": "approx"
+      },
+      "actor_ids": [
+        "jalal"
+      ],
+      "fact_ids": [
+        "f_log_estimate"
+      ],
+      "location_id": "loc_culvert",
+      "motivated_by_ar": "أراد أن يسجل وقتاً في الدفتر قبل أن يترك جولته"
+    },
+    {
+      "id": "te_arrive",
+      "description_ar": "الماء يصل إلى مدخل حقل حمدان.",
+      "time": {
+        "start_min": 190,
+        "precision": "exact"
+      },
+      "actor_ids": [],
+      "fact_ids": [
+        "f_arrival_late"
+      ],
+      "location_id": "loc_intake"
+    },
+    {
+      "id": "te_complaints",
+      "description_ar": "حمدان ومازن يقدمان شكواهما إلى مكتب التعاونية.",
+      "time": {
+        "start_min": 840,
+        "precision": "approx"
+      },
+      "actor_ids": [
+        "hamdan",
+        "mazen"
+      ],
+      "fact_ids": [
+        "f_complaint_a",
+        "f_complaint_b"
+      ],
+      "location_id": "loc_office",
+      "motivated_by_ar": "كل منهما يرى أن الحادثة تظلمه"
+    },
+    {
+      "id": "te_request",
+      "description_ar": "التعاونية ترفع طلب تقييم أعمال الصيانة إلى اللجنة.",
+      "time": {
+        "start_min": 1800,
+        "precision": "approx"
+      },
+      "actor_ids": [],
+      "fact_ids": [
+        "f_complaint_c"
+      ],
+      "location_id": "loc_office"
+    },
+    {
+      "id": "te_session",
+      "description_ar": "اللجنة تنظر القضايا الثلاث بعد تسليم ملف الميدان.",
+      "time": {
+        "start_min": 3480,
+        "precision": "approx"
+      },
+      "actor_ids": [
+        "chair"
+      ],
+      "fact_ids": [
+        "f_complaint_c"
+      ],
+      "location_id": "loc_hall",
+      "motivated_by_ar": "النظر في الشكاوى على الوقائع الواردة في الملف"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_docket",
+      "title_ar": "جدول قضايا الجلسة",
+      "kind": "documentary",
+      "content_ar": "جدول قضايا لجنة فضّ منازعات الري — السبت 30 من الشهر.\nالقضية الأولى: شكوى حمدان الراوي من تأخر ماء دوره يوم الخميس 28، ويطلب مساءلة جاره الأعلى مازن العطار.\nالقضية الثانية: شكوى مازن العطار من سطر في دفتر الحارس يذكر إغلاق بوابته نحو 06:55، ويطلب تصحيحه.\nالقضية الثالثة: طلب التعاونية تقييم أعمال الصيانة الأخيرة على القنطرة المشتركة.\nتنظر اللجنة في الثلاث معاً بعد استلام ملف الميدان، ولا تُقبل في الجلسة وقائع لم ترد فيه.",
+      "acquired_by_action_ids": [
+        "a_get_docket"
+      ],
+      "supports_fact_ids": [
+        "f_complaint_a",
+        "f_complaint_b",
+        "f_complaint_c"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "جدول إداري يعرض الشكاوى كما قُدمت، ولا يحكم في صحة أي منها.",
+      "location_id": "loc_office"
+    },
+    {
+      "id": "ev_schedule",
+      "title_ar": "جدول أدوار السقاية",
+      "kind": "documentary",
+      "content_ar": "جدول أدوار السقاية — الخميس:\nالحقل 2 (مازن العطار): 04:00 إلى 06:00.\nالحقل 3 (حمدان الراوي): 06:00 إلى 08:00.\nحين تُغلق بوابة الفرع 2 يتجه تدفق القناة، وهو 400 لتر في الدقيقة، إلى القناة السفلى ثم إلى القنطرة المشتركة ومدخل الحقل 3.\nمتوسط وصول الماء إلى مدخل الحقل 3 بعد انتهاء دور الحقل 2: نحو 20 دقيقة.",
+      "acquired_by_action_ids": [
+        "a_get_schedule"
+      ],
+      "supports_fact_ids": [
+        "f_turns"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "جدول مقرر يبين الأدوار المعتادة ولا يثبت ما جرى فعلاً في أي يوم.",
+      "location_id": "loc_office"
+    },
+    {
+      "id": "ev_strip",
+      "title_ar": "شريط مسجل بوابة الحقل 2",
+      "kind": "documentary",
+      "content_ar": "شريط ورقي يثقبه مسجل البوابة آلياً عند كل فتح وإغلاق (ساعته مضبوطة على ساعة التعاونية، وتحقق منها الفني صباح السبت):\nالخميس 7: فتح 04:00، إغلاق 06:00.\nالخميس 14: فتح 04:00، إغلاق 06:01.\nالخميس 21: فتح 04:00، إغلاق 06:00.\nالخميس 28: فتح 04:00، إغلاق 06:00.",
+      "acquired_by_action_ids": [
+        "a_f_strip"
+      ],
+      "supports_fact_ids": [
+        "f_gate_on_time"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يسجل حركة عجلة البوابة فقط، ولا يبين كمية الماء المارة ولا ما يتسرب حولها.",
+      "location_id": "loc_gate2",
+      "contradicts_claim_ids": [
+        "cl_hamdan_held",
+        "cl_jalal_time"
+      ]
+    },
+    {
+      "id": "ev_branch_meter",
+      "title_ar": "سجل عدّاد تدفق الفرع 2",
+      "kind": "digital",
+      "content_ar": "سجل عدّاد التدفق الآلي عند مدخل أنبوب الفرع 2 (حدّه الأدنى للقراءة 5 لترات في الدقيقة):\nالخميس 28: من 04:00 إلى 06:00 تدفق ثابت 400 لتر في الدقيقة.\nعند 06:00: القراءة صفر وبقيت صفراً حتى 08:00.",
+      "acquired_by_action_ids": [
+        "a_f_meter"
+      ],
+      "supports_fact_ids": [
+        "f_gate_on_time"
+      ],
+      "reliability": "strong",
+      "limits_ar": "لا يقرأ ما دون حده الأدنى، ولا يبين أين ذهب الماء بعد الفرع.",
+      "location_id": "loc_gate2",
+      "contradicts_claim_ids": [
+        "cl_hamdan_held",
+        "cl_jalal_time"
+      ]
+    },
+    {
+      "id": "ev_upstream_chart",
+      "title_ar": "رسم مقياس الماء أمام القنطرة",
+      "kind": "digital",
+      "content_ar": "رسم المقياس الآلي أمام القنطرة (الارتفاع بالسنتيمتر فوق قاع القناة):\nالخميس 28: 06:00 → 80؛ 06:20 → 76؛ 06:40 → 69؛ 07:00 → 62؛ 07:10 → 59.\nالخميس 7: 06:00 → 80؛ 06:20 → 20.",
+      "acquired_by_action_ids": [
+        "a_f_upchart"
+      ],
+      "supports_fact_ids": [
+        "f_backwater"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يقيس ارتفاع الماء أمام القنطرة فقط، ولا يبين ما الذي أبقاه مرتفعاً.",
+      "location_id": "loc_culvert"
+    },
+    {
+      "id": "ev_intake_chart",
+      "title_ar": "رسم مقياس مدخل حقل حمدان",
+      "kind": "digital",
+      "content_ar": "رسم المقياس الآلي عند مدخل الحقل 3 (وقت وصول الماء الأول بعد بدء دور حمدان عند 06:00):\nالخميس 7: 06:18.\nالخميس 14: 06:19.\nالخميس 21: 06:41.\nالخميس 28: 07:10.",
+      "acquired_by_action_ids": [
+        "a_f_intake"
+      ],
+      "supports_fact_ids": [
+        "f_arrival_late",
+        "f_delays_pattern"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يسجل لحظة الوصول لا سببها، ولا يبين ما جرى للماء في الطريق.",
+      "location_id": "loc_intake",
+      "contradicts_claim_ids": [
+        "cl_hamdan_first"
+      ]
+    },
+    {
+      "id": "ev_culvert_trace",
+      "title_ar": "أثر الماء أمام الشبكة",
+      "kind": "observation",
+      "content_ar": "عند فحص القنطرة صباح السبت، وبعد انقطاع الجريان منذ ساعة: يقف أمام الشبكة ماء بعمق 41 سم، وخلفها 3 سم فقط. على الجدار خط رطب غامق عند 80 سم فوق قاع القناة، وفوقه طين جاف بلا أثر ماء.",
+      "acquired_by_action_ids": [
+        "a_f_trace"
+      ],
+      "supports_fact_ids": [
+        "f_backwater"
+      ],
+      "reliability": "strong",
+      "limits_ar": "قياس في لحظة واحدة؛ يبين فرق الارتفاع حول الشبكة ولا يبين متى بدأ ولا لماذا.",
+      "location_id": "loc_culvert"
+    },
+    {
+      "id": "ev_grate_clog",
+      "title_ar": "فحص الشبكة الدقيقة عن قرب",
+      "kind": "observation",
+      "content_ar": "الشبكة المعدنية فتحاتها 1.5 سم. سطحها مغطى بقطع قصب وطمي حتى ارتفاع 35 سم، وبين القطع مسام ضيقة يرشح منها الماء ببطء. قيست عشر قطع قصب عالقة فتراوحت أطوالها بين 3 و6 سم.",
+      "acquired_by_action_ids": [
+        "a_f_grate"
+      ],
+      "supports_fact_ids": [
+        "f_mesh_clogged"
+      ],
+      "reliability": "strong",
+      "limits_ar": "فحص في يوم واحد؛ لا يبين منذ متى تراكمت القطع ولا مقدار أثرها في الماء وحدها.",
+      "location_id": "loc_culvert",
+      "contradicts_claim_ids": [
+        "cl_tariq_clean"
+      ]
+    },
+    {
+      "id": "ev_shed_grate",
+      "title_ar": "القضبان القديمة في المخزن",
+      "kind": "physical",
+      "content_ar": "في مخزن المعدات قضبان القنطرة القديمة مسندة إلى الجدار، والمسافة بين القضبان 8 سم. عليها بطاقة: «فُكّت الأحد 17 — أمر العمل 31». لا طمي عليها إلا طبقة قديمة جافة.",
+      "acquired_by_action_ids": [
+        "a_f_shed"
+      ],
+      "supports_fact_ids": [
+        "f_mesh_installed"
+      ],
+      "reliability": "strong",
+      "limits_ar": "تثبت مقاس الفتحات القديمة وتاريخ فكّها، ولا تثبت وحدها أن الشبكة الجديدة أخّرت الماء.",
+      "location_id": "loc_shed"
+    },
+    {
+      "id": "ev_work_order",
+      "title_ar": "أمر العمل 31",
+      "kind": "documentary",
+      "content_ar": "أمر العمل 31 — القنطرة المشتركة.\nالسبب: دخول أكياس بلاستيكية إلى أنبوب مدخل الحقل 3.\nالإجراء: استبدال القضبان (المسافة بينها 8 سم) بشبكة فتحاتها 1.5 سم.\nالتنفيذ: طارق السويدي (متطوع) يوم الأحد 17. اعتمده أمين الصندوق.\nبطاقة المتابعة (فحص أسبوعي للشبكة): الأسبوع الأول (17) — تم، ط.س. | الأسبوع الثاني (24) — فارغ.",
+      "acquired_by_action_ids": [
+        "a_f_order"
+      ],
+      "supports_fact_ids": [
+        "f_mesh_installed",
+        "f_good_faith",
+        "f_tariq_check_once"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "وثيقة إدارية تبين ما أُمر به وما دُوّن في بطاقة المتابعة، ولا تبين ما جرى في القناة بعد التركيب.",
+      "location_id": "loc_office",
+      "contradicts_claim_ids": [
+        "cl_tariq_clean"
+      ]
+    },
+    {
+      "id": "ev_leak_test",
+      "title_ar": "قياس تسرب بوابة الحقل 2",
+      "kind": "observation",
+      "content_ar": "قيس تسرب البوابة المغلقة بوعاء سعته 10 لترات: امتلأ في 5 دقائق. حول البوابة بقعة أرض رطبة مساحتها نحو متر مربع، وفيها برك صغيرة.",
+      "acquired_by_action_ids": [
+        "a_f_leak"
+      ],
+      "supports_fact_ids": [
+        "f_leak_small"
+      ],
+      "reliability": "strong",
+      "limits_ar": "قياس واحد في لحظة واحدة؛ لا يبين مقدار التسرب في يوم الخميس نفسه ولا ما إذا كان يتغير.",
+      "location_id": "loc_gate2",
+      "contradicts_claim_ids": [
+        "cl_mazen_tight"
+      ],
+      "is_red_herring": true
+    },
+    {
+      "id": "ev_wind_note",
+      "title_ar": "دفتر أحوال التعاونية",
+      "kind": "documentary",
+      "content_ar": "دفتر أحوال التعاونية:\nالسبت 9: تنظيف عام للقناة.\nالاثنين 11: ريح شديدة طوال النهار، وسقط قصب الضفة في القناة.\nلم يُسجَّل تنظيف عام بعد ذلك التاريخ.",
+      "acquired_by_action_ids": [
+        "a_f_wind"
+      ],
+      "supports_fact_ids": [
+        "f_wind_early"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "يسجل الطقس وتواريخ التنظيف، ولا يقيس ما بقي من القصب في القناة.",
+      "location_id": "loc_office",
+      "is_red_herring": true
+    },
+    {
+      "id": "ev_keeper_log",
+      "title_ar": "دفتر الحارس يوم الخميس 28",
+      "kind": "documentary",
+      "content_ar": "دفتر الحارس جلال النجار — الخميس 28:\n04:00 فتح الفرع 2.\n~06:55 أُغلقت بوابة الفرع 2.\n07:10 اتصل حمدان: وصل الماء.",
+      "acquired_by_action_ids": [
+        "a_f_log"
+      ],
+      "supports_fact_ids": [
+        "f_arrival_late"
+      ],
+      "reliability": "weak",
+      "limits_ar": "سطر بخط الحارس لا يبين مصدر الوقت المدوّن فيه، ولا يثبت أنه قرأ جهازاً.",
+      "location_id": "loc_hut",
+      "is_red_herring": true
+    },
+    {
+      "id": "ev_field_file",
+      "title_ar": "ملف الميدان المختوم",
+      "kind": "documentary",
+      "content_ar": "ملف الميدان المختوم — سُلّم إلى رئيسة اللجنة قبل الجلسة.\nيحوي المسجلات والفحوص التي جمعها المتدرب في الميدان، بالترتيب الذي جُمعت به.\nلا يُضاف إليه شيء بعد الختم، ولا يُقبل في الجلسة ما لم يرد فيه.\nمن حق كل مستمَع إليه أن يصمت أو يستعين بمن يشاء.",
+      "acquired_by_action_ids": [
+        "a_seal_field"
+      ],
+      "supports_fact_ids": [],
+      "reliability": "moderate",
+      "limits_ar": "فهرس إجرائي لما جُمع، لا يضيف واقعة ولا يحكم في شيء.",
+      "location_id": "loc_hall"
+    },
+    {
+      "id": "ev_hamdan_stmt",
+      "title_ar": "أقوال حمدان في الجلسة",
+      "kind": "testimonial",
+      "content_ar": "أقوال حمدان الراوي (شفوية، دوّنها المتدرب):\n«كنت عند مدخل حقلي منذ السادسة، ولم يأتِ الماء إلا بعد السابعة بعشر دقائق. مازن أبقى بوابته. ولم يتأخر الماء عليّ هكذا من قبل.»",
+      "acquired_by_action_ids": [
+        "a_s_hamdan"
+      ],
+      "supports_fact_ids": [
+        "f_complaint_a"
+      ],
+      "reliability": "weak",
+      "limits_ar": "قول صاحب مصلحة في نتيجة الشكوى؛ يصف ما رآه ويفسره، والتفسير يحتاج إلى سجلات.",
+      "location_id": "loc_hall"
+    },
+    {
+      "id": "ev_mazen_stmt",
+      "title_ar": "أقوال مازن في الجلسة",
+      "kind": "testimonial",
+      "content_ar": "أقوال مازن العطار (شفوية، دوّنها المتدرب):\n«أغلقت بوابتي عند السادسة وانصرفت. أظن أن الحارس كتب السادسة وخمساً وخمسين عمداً. وبوابتي محكمة لا تسرّب شيئاً.»",
+      "acquired_by_action_ids": [
+        "a_s_mazen"
+      ],
+      "supports_fact_ids": [
+        "f_complaint_b"
+      ],
+      "reliability": "weak",
+      "limits_ar": "قول صاحب مصلحة في تصحيح السطر؛ يتضمن ظناً في نية الحارس لا يثبته سجل.",
+      "location_id": "loc_hall"
+    },
+    {
+      "id": "ev_tariq_stmt",
+      "title_ar": "أقوال طارق في الجلسة",
+      "kind": "testimonial",
+      "content_ar": "أقوال طارق السويدي (شفوية، دوّنها المتدرب):\n«اقترحت الشبكة الدقيقة لأن الأكياس البلاستيكية كانت تسد أنبوب مدخل حقل حمدان. فحصتها بعد التركيب مراراً وكانت نظيفة.»",
+      "acquired_by_action_ids": [
+        "a_s_tariq"
+      ],
+      "supports_fact_ids": [
+        "f_good_faith"
+      ],
+      "reliability": "weak",
+      "limits_ar": "قول صاحب علاقة بعمل يُقيَّم؛ يذكر غرضه ولا يثبت عدد مرات الفحص.",
+      "location_id": "loc_hall"
+    }
+  ],
+  "evidence_graph": {
+    "inferences": [
+      {
+        "id": "i_gate_strip",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_strip"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_gate_on_time"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "شريط المسجل يثقب لحظة الإغلاق آلياً فيضعها عند 06:00 في الخميسات الأربعة، فليست بوابة مازن مفتوحة بعد دوره.",
+        "skill_ko_refs": [
+          "KO-RS-06-002"
+        ]
+      },
+      {
+        "id": "i_gate_meter",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_branch_meter"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_gate_on_time"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "عدّاد الفرع جهاز مستقل عن شريط البوابة، وقد انتقل من 400 إلى صفر عند 06:00، فتوقف سحب مازن في موعده.",
+        "skill_ko_refs": [
+          "KO-RS-05-001"
+        ]
+      },
+      {
+        "id": "i_back_chart",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_upstream_chart"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_backwater"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "هبط الماء أمام القنطرة 18 سم فقط في ساعة يوم 28 (من 80 إلى 62)، وهبط 60 سم في عشرين دقيقة يوم 7؛ فالماء يمر منها اليوم ببطء.",
+        "skill_ko_refs": [
+          "KO-RS-05-004"
+        ]
+      },
+      {
+        "id": "i_back_trace",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_culvert_trace"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_backwater"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "وقوف ماء بعمق 41 سم أمام الشبكة و3 سم خلفها بعد انقطاع الجريان يدل على أن المرور من الشبكة أبطأ من الجريان نفسه.",
+        "skill_ko_refs": [
+          "KO-RS-05-004"
+        ]
+      },
+      {
+        "id": "i_mesh_a",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_gate_on_time"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_backwater"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_intake_chart"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_work_order"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_cause_mesh"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "بوابة مازن مغلقة في موعدها كل خميس، والماء يبطئ عند القنطرة، وتأخر الوصول قفز من 19 إلى 41 دقيقة بين الخميسين 14 و21، وفي الفترة بينهما (الأحد 17) نُفّذ أمر العمل؛ فالتغير يتبع الشبكة لا مازن.",
+        "skill_ko_refs": [
+          "KO-RS-05-005"
+        ]
+      },
+      {
+        "id": "i_mesh_b",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_backwater"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_grate_clog"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_shed_grate"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_cause_mesh"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "قطع القصب العالقة طولها 3 إلى 6 سم، وهي تمر من فتحات 8 سم القديمة وتحبسها فتحات 1.5 سم؛ فالشبكة هي التي تسد المجرى وتبقي الماء واقفاً أمامها.",
+        "skill_ko_refs": [
+          "KO-RS-06-002"
+        ]
+      },
+      {
+        "id": "i_rule_mazen",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_gate_on_time"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_intake_chart"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_mazen"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "لو كان إبقاء البوابة هو السبب لارتبط التأخر بوقت إغلاقها، لكنها أُغلقت في موعدها في الخميسات الأربعة وتغير التأخر من 18 إلى 70 دقيقة.",
+        "skill_ko_refs": [
+          "KO-RS-05-002"
+        ]
+      },
+      {
+        "id": "i_rule_wind",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_wind_note"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_intake_chart"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_wind"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "الريح هبّت يوم 11 ولم يتبعها تنظيف، ومع ذلك وصل الماء في الخميس 14 بعد 19 دقيقة؛ فالقصب كان في القناة والمرور طبيعي، والتغير جاء بعد ذلك.",
+        "skill_ko_refs": [
+          "KO-RS-05-002"
+        ]
+      },
+      {
+        "id": "i_rule_leak",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_leak_test"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_branch_meter"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_leak"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "التسرب 2 لتر في الدقيقة، أي 140 لتراً في 70 دقيقة، بينما تدفق القناة 400 لتر في الدقيقة أي 28000 لتر في المدة نفسها؛ والنسبة نحو نصف بالمئة، فلا تفسر غياب الماء.",
+        "skill_ko_refs": [
+          "KO-RS-06-001"
+        ]
+      },
+      {
+        "id": "i_supports_mesh",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_cause_mesh"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_mesh"
+        },
+        "relation": "supports",
+        "strength": "strong",
+        "rule_ar": "ثبوت أن الشبكة هي سبب البطء يجعل تركيبها بأمر العمل 31 التفسير المتسق مع كل السجلات.",
+        "skill_ko_refs": [
+          "KO-RS-05-002"
+        ]
+      },
+      {
+        "id": "i_claim_hamdan_held",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_strip"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_hamdan_stmt"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_hamdan_held"
+        },
+        "relation": "contradicts_claim",
+        "strength": "strong",
+        "rule_ar": "إغلاق البوابة عند 06:00 في الشريط لا يوافق قول حمدان إن مازن أبقاها مفتوحة بعد دوره.",
+        "skill_ko_refs": [
+          "KO-RS-05-001"
+        ]
+      },
+      {
+        "id": "i_claim_hamdan_first",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_intake_chart"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_hamdan_stmt"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_hamdan_first"
+        },
+        "relation": "contradicts_claim",
+        "strength": "strong",
+        "rule_ar": "رسم المدخل يسجل وصولاً متأخراً 41 دقيقة يوم 21، فلم يكن هذا الخميس الأول الذي يتأخر فيه الماء.",
+        "skill_ko_refs": [
+          "KO-RS-05-001"
+        ]
+      },
+      {
+        "id": "i_claim_mazen_tight",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_leak_test"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_mazen_stmt"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_mazen_tight"
+        },
+        "relation": "contradicts_claim",
+        "strength": "strong",
+        "rule_ar": "قياس الوعاء يسجل تسرباً بعد الإغلاق، فبوابته ليست محكمة تماماً وإن كان تسربها صغيراً.",
+        "skill_ko_refs": [
+          "KO-RS-05-001"
+        ]
+      },
+      {
+        "id": "i_claim_jalal",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_branch_meter"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_keeper_log"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_jalal_time"
+        },
+        "relation": "contradicts_claim",
+        "strength": "strong",
+        "rule_ar": "سطر الدفتر يضع الإغلاق نحو 06:55 والعدّاد يضع توقف التدفق عند 06:00، فالسطر لا يوافق السجل الآلي.",
+        "skill_ko_refs": [
+          "KO-RS-05-001"
+        ]
+      },
+      {
+        "id": "i_claim_tariq",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_work_order"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_tariq_stmt"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_tariq_clean"
+        },
+        "relation": "contradicts_claim",
+        "strength": "strong",
+        "rule_ar": "بطاقة المتابعة فيها فحص واحد مؤرخ بيوم التركيب وخانة الأسبوع الثاني فارغة، فلم تُفحص الشبكة مراراً.",
+        "skill_ko_refs": [
+          "KO-RS-05-001"
+        ]
+      }
+    ]
+  },
+  "character_knowledge": [
+    {
+      "character_id": "hamdan",
+      "knows": [
+        {
+          "fact_id": "f_arrival_late",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [
+        {
+          "fact_id": "f_hamdan_21",
+          "reveal_when": {
+            "presented": {
+              "evidence_id": "ev_intake_chart",
+              "to_character": "hamdan"
+            }
+          },
+          "cover_claim_id": "cl_hamdan_first",
+          "reveal_line_id": "hm_21"
+        }
+      ],
+      "believes": [
+        {
+          "claim_id": "cl_hamdan_held",
+          "stance": "sincere"
+        },
+        {
+          "claim_id": "cl_hamdan_first",
+          "stance": "deliberate_lie"
+        }
+      ]
+    },
+    {
+      "character_id": "mazen",
+      "knows": [
+        {
+          "fact_id": "f_gate_on_time",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [
+        {
+          "fact_id": "f_leak_small",
+          "reveal_when": {
+            "presented": {
+              "evidence_id": "ev_leak_test",
+              "to_character": "mazen"
+            }
+          },
+          "cover_claim_id": "cl_mazen_tight",
+          "reveal_line_id": "mz_leak"
+        }
+      ],
+      "believes": [
+        {
+          "claim_id": "cl_mazen_forged",
+          "stance": "sincere"
+        },
+        {
+          "claim_id": "cl_mazen_tight",
+          "stance": "deliberate_lie"
+        }
+      ]
+    },
+    {
+      "character_id": "jalal",
+      "knows": [
+        {
+          "fact_id": "f_wind_early",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_mesh_installed",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [
+        {
+          "fact_id": "f_log_estimate",
+          "reveal_when": {
+            "presented": {
+              "evidence_id": "ev_strip",
+              "to_character": "jalal"
+            }
+          },
+          "cover_claim_id": "cl_jalal_time",
+          "reveal_line_id": "jl_estimate"
+        }
+      ],
+      "believes": [
+        {
+          "claim_id": "cl_jalal_time",
+          "stance": "sincere"
+        }
+      ]
+    },
+    {
+      "character_id": "tariq",
+      "knows": [
+        {
+          "fact_id": "f_mesh_installed",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_good_faith",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [
+        {
+          "fact_id": "f_tariq_check_once",
+          "reveal_when": {
+            "presented": {
+              "evidence_id": "ev_work_order",
+              "to_character": "tariq"
+            }
+          },
+          "cover_claim_id": "cl_tariq_clean",
+          "reveal_line_id": "tq_once"
+        }
+      ],
+      "believes": [
+        {
+          "claim_id": "cl_tariq_clean",
+          "stance": "deliberate_lie"
+        }
+      ]
+    },
+    {
+      "character_id": "chair",
+      "knows": [
+        {
+          "fact_id": "f_turns",
+          "access": "common_knowledge",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "h_mazen",
+      "statement_ar": "أبقى مازن العطار بوابته مفتوحة بعد انتهاء دوره فتأخر الماء عن حمدان.",
+      "is_true": false,
+      "plausibility_at_start": "high",
+      "suspect_id": "mazen"
+    },
+    {
+      "id": "h_wind",
+      "statement_ar": "ريح الأسبوع الماضي ألقت قصباً في القناة فسدّت المجرى وتأخر الماء، ولا أحد مسؤول.",
+      "is_true": false,
+      "plausibility_at_start": "medium"
+    },
+    {
+      "id": "h_leak",
+      "statement_ar": "تسرب بوابة مازن بعد إغلاقها سحب من الماء ما أخّر وصوله إلى حمدان.",
+      "is_true": false,
+      "plausibility_at_start": "low"
+    },
+    {
+      "id": "h_mesh",
+      "statement_ar": "أبطأت الشبكة الدقيقة المركّبة في القنطرة مرور الماء حين حبست قطع القصب، وتسبب طارق السويدي بذلك دون قصد سيئ.",
+      "is_true": true,
+      "plausibility_at_start": "low",
+      "suspect_id": "tariq"
+    }
+  ],
+  "misdirection_plan": [
+    {
+      "id": "rh_log_and_complaint",
+      "points_to_hypothesis_id": "h_mazen",
+      "planted_via_ar": "شكوى حمدان تتهم الجار الأعلى، وسطر الحارس يضع الإغلاق بعد دور مازن بخمس وخمسين دقيقة.",
+      "evidence_ids": [
+        "ev_keeper_log",
+        "ev_hamdan_stmt"
+      ],
+      "refuted_by_inference_ids": [
+        "i_rule_mazen",
+        "i_claim_jalal"
+      ],
+      "fairness_note_ar": "شريط البوابة وعدّاد الفرع متاحان بإجراءين عاديين في الميدان، وهما جهازان مستقلان عن الدفتر وعن بعضهما."
+    },
+    {
+      "id": "rh_reeds_and_wind",
+      "points_to_hypothesis_id": "h_wind",
+      "planted_via_ar": "دفتر الأحوال يسجل ريحاً شديدة أسقطت قصباً في القناة، والشبكة مغطاة بالقصب.",
+      "evidence_ids": [
+        "ev_wind_note",
+        "ev_grate_clog"
+      ],
+      "refuted_by_inference_ids": [
+        "i_rule_wind"
+      ],
+      "fairness_note_ar": "رسم مدخل حمدان يسجل وصول الخميس 14 بعد الريح بتأخر طبيعي، وهو متاح بإجراء عادي."
+    },
+    {
+      "id": "rh_wet_ground",
+      "points_to_hypothesis_id": "h_leak",
+      "planted_via_ar": "أرض رطبة وبرك حول بوابة مازن المغلقة، وهو ينكر أن بوابته تسرب.",
+      "evidence_ids": [
+        "ev_leak_test"
+      ],
+      "refuted_by_inference_ids": [
+        "i_rule_leak"
+      ],
+      "fairness_note_ar": "القياس والتدفق المسجل في العدّاد متاحان في الميدان، والحساب بسيط (ضرب وقسمة)."
+    }
+  ],
+  "learning_objectives": [
+    {
+      "id": "lo_claim",
+      "statement_ar": "يميّز بين ما سجّله جهاز لحظة الحدث وما كتبه إنسان بعد ذلك أو قاله في الجلسة.",
+      "skill_ko_ref": "KO-RS-05-001",
+      "observable_behaviors_ar": [
+        "يصنّف الأقوال والدفتر أقوالاً",
+        "يعطي الشريط والعدّاد وزناً أكبر"
+      ],
+      "evidence_sources": [
+        "evidence_board"
+      ]
+    },
+    {
+      "id": "lo_timeline",
+      "statement_ar": "يضع السجلات الآلية على خط زمني واحد ليعرف ما سبق ما.",
+      "skill_ko_ref": "KO-RS-05-005",
+      "observable_behaviors_ar": [
+        "يضع إغلاق البوابة ووصول الماء وتقدير الحارس في أزمنتها"
+      ],
+      "evidence_sources": [
+        "timeline_task",
+        "action_log"
+      ]
+    },
+    {
+      "id": "lo_hyp",
+      "statement_ar": "يوازن بين عدة تفسيرات ويستبعد ما تنقضه الأرقام.",
+      "skill_ko_ref": "KO-RS-05-002",
+      "observable_behaviors_ar": [
+        "يضيف فرضيات",
+        "يستبعد بدليل"
+      ],
+      "evidence_sources": [
+        "hypothesis_ledger"
+      ]
+    },
+    {
+      "id": "lo_diag",
+      "statement_ar": "يقدّر ما يبينه كل سجل وما لا يبينه، ويربط الدليل بالفرضية باتجاه صحيح.",
+      "skill_ko_ref": "KO-RS-06-002",
+      "observable_behaviors_ar": [
+        "يعرف أن مسجل البوابة لا يقيس التسرب",
+        "يربط الدليل بالفرضية"
+      ],
+      "evidence_sources": [
+        "evidence_board",
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_calib",
+      "statement_ar": "يصوغ نسبة الترجيح بحدودها.",
+      "skill_ko_ref": "KO-RS-06-021",
+      "observable_behaviors_ar": [
+        "يختار ثقة معقولة",
+        "يذكر حدوداً"
+      ],
+      "evidence_sources": [
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_revise",
+      "statement_ar": "يراجع رأيه الأول حين تخالفه الأرقام، ويسجل سبب التغيير.",
+      "skill_ko_ref": "KO-RS-06-009",
+      "observable_behaviors_ar": [
+        "يغيّر فرضيته الرائدة بدليل",
+        "يوثق سبب التغيير"
+      ],
+      "evidence_sources": [
+        "hypothesis_ledger"
+      ]
+    }
+  ],
+  "mechanics": {
+    "time_budget_units": 30,
+    "actions": [
+      {
+        "id": "a_get_docket",
+        "type": "examine",
+        "label_ar": "اقرأ جدول قضايا الجلسة",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_docket"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_office",
+        "telemetry_code": "GET_DOCKET"
+      },
+      {
+        "id": "a_get_schedule",
+        "type": "examine",
+        "label_ar": "اطلب جدول أدوار السقاية",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_schedule"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_office",
+        "telemetry_code": "GET_SCHEDULE"
+      },
+      {
+        "id": "a_f_strip",
+        "type": "search_location",
+        "label_ar": "اقرأ شريط مسجل بوابة الحقل 2",
+        "precondition": {
+          "has_evidence": "ev_docket"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_strip"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_gate2",
+        "telemetry_code": "F_STRIP"
+      },
+      {
+        "id": "a_f_meter",
+        "type": "search_location",
+        "label_ar": "اطلب سجل عدّاد تدفق الفرع 2",
+        "precondition": {
+          "has_evidence": "ev_schedule"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_branch_meter"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_gate2",
+        "telemetry_code": "F_METER"
+      },
+      {
+        "id": "a_f_upchart",
+        "type": "search_location",
+        "label_ar": "اقرأ رسم المقياس أمام القنطرة",
+        "precondition": {
+          "has_evidence": "ev_docket"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_upstream_chart"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_culvert",
+        "telemetry_code": "F_UPCHART"
+      },
+      {
+        "id": "a_f_trace",
+        "type": "search_location",
+        "label_ar": "افحص أثر الماء على جدار القنطرة",
+        "precondition": {
+          "has_evidence": "ev_docket"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_culvert_trace"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_culvert",
+        "telemetry_code": "F_TRACE"
+      },
+      {
+        "id": "a_f_grate",
+        "type": "examine",
+        "label_ar": "افحص الشبكة الدقيقة عن قرب",
+        "precondition": {
+          "has_evidence": "ev_culvert_trace"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_grate_clog"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_culvert",
+        "telemetry_code": "F_GRATE"
+      },
+      {
+        "id": "a_f_shed",
+        "type": "search_location",
+        "label_ar": "ابحث في مخزن المعدات",
+        "precondition": {
+          "has_evidence": "ev_grate_clog"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_shed_grate"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_shed",
+        "telemetry_code": "F_SHED"
+      },
+      {
+        "id": "a_f_order",
+        "type": "examine",
+        "label_ar": "اطلب أمر العمل 31 من المكتب",
+        "precondition": {
+          "has_evidence": "ev_shed_grate"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_work_order"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_office",
+        "telemetry_code": "F_ORDER"
+      },
+      {
+        "id": "a_f_intake",
+        "type": "search_location",
+        "label_ar": "اقرأ رسم مقياس مدخل حقل حمدان",
+        "precondition": {
+          "has_evidence": "ev_schedule"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_intake_chart"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_intake",
+        "telemetry_code": "F_INTAKE"
+      },
+      {
+        "id": "a_f_leak",
+        "type": "examine",
+        "label_ar": "قِس تسرب بوابة الحقل 2 بوعاء مدرّج",
+        "precondition": {
+          "has_evidence": "ev_strip"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_leak_test"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_gate2",
+        "telemetry_code": "F_LEAK"
+      },
+      {
+        "id": "a_f_wind",
+        "type": "examine",
+        "label_ar": "اطلب دفتر أحوال التعاونية",
+        "precondition": {
+          "has_evidence": "ev_docket"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_wind_note"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_office",
+        "telemetry_code": "F_WIND"
+      },
+      {
+        "id": "a_f_log",
+        "type": "examine",
+        "label_ar": "اقرأ دفتر الحارس في الكوخ",
+        "precondition": {
+          "has_evidence": "ev_docket"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_keeper_log"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_hut",
+        "telemetry_code": "F_LOG"
+      },
+      {
+        "id": "a_seal_field",
+        "type": "examine",
+        "label_ar": "اختم ملف الميدان وسلّمه إلى رئيسة اللجنة",
+        "precondition": {
+          "all": [
+            {
+              "has_evidence": "ev_strip"
+            },
+            {
+              "has_evidence": "ev_intake_chart"
+            },
+            {
+              "has_evidence": "ev_culvert_trace"
+            },
+            {
+              "has_evidence": "ev_keeper_log"
+            }
+          ]
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_field_file"
+          },
+          {
+            "op": "emit_event",
+            "ref_id": "FIELD_CLOSED"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_hall",
+        "telemetry_code": "SEAL_FIELD"
+      },
+      {
+        "id": "a_int_chair",
+        "type": "interview",
+        "label_ar": "اسأل رئيسة اللجنة عن أصول الجلسة",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "chair",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "chair",
+        "telemetry_code": "INT_CHAIR"
+      },
+      {
+        "id": "a_int_hamdan",
+        "type": "interview",
+        "label_ar": "استمع إلى حمدان في الجلسة",
+        "precondition": {
+          "has_evidence": "ev_field_file"
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "hamdan",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "hamdan",
+        "telemetry_code": "INT_HAMDAN"
+      },
+      {
+        "id": "a_int_mazen",
+        "type": "interview",
+        "label_ar": "استمع إلى مازن في الجلسة",
+        "precondition": {
+          "has_evidence": "ev_field_file"
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "mazen",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "mazen",
+        "telemetry_code": "INT_MAZEN"
+      },
+      {
+        "id": "a_int_jalal",
+        "type": "interview",
+        "label_ar": "استمع إلى الحارس جلال في الجلسة",
+        "precondition": {
+          "has_evidence": "ev_field_file"
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "jalal",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "jalal",
+        "telemetry_code": "INT_JALAL"
+      },
+      {
+        "id": "a_int_tariq",
+        "type": "interview",
+        "label_ar": "استمع إلى طارق في الجلسة",
+        "precondition": {
+          "has_evidence": "ev_field_file"
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "tariq",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "tariq",
+        "telemetry_code": "INT_TARIQ"
+      },
+      {
+        "id": "a_s_hamdan",
+        "type": "examine",
+        "label_ar": "دوّن أقوال حمدان",
+        "precondition": {
+          "has_evidence": "ev_field_file"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_hamdan_stmt"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "hamdan",
+        "telemetry_code": "S_HAMDAN"
+      },
+      {
+        "id": "a_s_mazen",
+        "type": "examine",
+        "label_ar": "دوّن أقوال مازن",
+        "precondition": {
+          "has_evidence": "ev_field_file"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_mazen_stmt"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "mazen",
+        "telemetry_code": "S_MAZEN"
+      },
+      {
+        "id": "a_s_tariq",
+        "type": "examine",
+        "label_ar": "دوّن أقوال طارق",
+        "precondition": {
+          "has_evidence": "ev_field_file"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_tariq_stmt"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "tariq",
+        "telemetry_code": "S_TARIQ"
+      },
+      {
+        "id": "p_strip_jalal",
+        "type": "present_evidence",
+        "label_ar": "اعرض شريط البوابة على الحارس",
+        "precondition": {
+          "presented": {
+            "evidence_id": "ev_strip",
+            "to_character": "jalal"
+          }
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "PRESENTED_STRIP"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "jalal",
+        "telemetry_code": "P_STRIP_JALAL"
+      },
+      {
+        "id": "p_intake_hamdan",
+        "type": "present_evidence",
+        "label_ar": "اعرض رسم مدخل حقله على حمدان",
+        "precondition": {
+          "presented": {
+            "evidence_id": "ev_intake_chart",
+            "to_character": "hamdan"
+          }
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "PRESENTED_INTAKE"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "hamdan",
+        "telemetry_code": "P_INTAKE_HAMDAN"
+      },
+      {
+        "id": "p_leak_mazen",
+        "type": "present_evidence",
+        "label_ar": "اعرض قياس التسرب على مازن",
+        "precondition": {
+          "presented": {
+            "evidence_id": "ev_leak_test",
+            "to_character": "mazen"
+          }
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "PRESENTED_LEAK"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "mazen",
+        "telemetry_code": "P_LEAK_MAZEN"
+      },
+      {
+        "id": "p_order_tariq",
+        "type": "present_evidence",
+        "label_ar": "اعرض أمر العمل 31 على طارق",
+        "precondition": {
+          "presented": {
+            "evidence_id": "ev_work_order",
+            "to_character": "tariq"
+          }
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "PRESENTED_ORDER"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "tariq",
+        "telemetry_code": "P_ORDER_TARIQ"
+      },
+      {
+        "id": "a_hint",
+        "type": "request_hint",
+        "label_ar": "اطلب تلميحاً",
+        "precondition": {
+          "always": true
+        },
+        "effects": [],
+        "time_cost_units": 0,
+        "telemetry_code": "REQUEST_HINT"
+      },
+      {
+        "id": "a_accuse",
+        "type": "final_accusation",
+        "label_ar": "قدّم الرأي المعلّل النهائي",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "SUBMIT"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "FINAL_ACCUSATION"
+      }
+    ]
+  },
+  "state_machine": {
+    "id": "c058",
+    "initial": "briefing",
+    "type": "compound",
+    "states": {
+      "briefing": {
+        "description_ar": "الإحاطة",
+        "type": "atomic",
+        "on": {
+          "START": {
+            "target": "investigating"
+          }
+        }
+      },
+      "investigating": {
+        "description_ar": "التحقيق",
+        "type": "compound",
+        "initial": "gathering",
+        "states": {
+          "gathering": {
+            "type": "atomic",
+            "on": {
+              "OPEN_DEDUCTION": {
+                "target": "deducing"
+              }
+            }
+          },
+          "deducing": {
+            "type": "atomic",
+            "on": {
+              "BACK": {
+                "target": "gathering"
+              }
+            }
+          }
+        },
+        "on": {
+          "SUBMIT": {
+            "target": "review"
+          }
+        }
+      },
+      "review": {
+        "description_ar": "مراجعة",
+        "type": "atomic",
+        "on": {
+          "CLOSE": {
+            "target": "resolved"
+          }
+        }
+      },
+      "resolved": {
+        "description_ar": "إغلاق",
+        "type": "final"
+      }
+    }
+  },
+  "dialogue": {
+    "max_turns_per_interview": 8,
+    "llm_enabled": false,
+    "topics": [
+      {
+        "id": "t_rules",
+        "label_ar": "أصول الجلسة وأدوار السقاية",
+        "example_questions_ar": [
+          "ما قواعد الجلسة؟",
+          "ما أدوار الخميس؟"
+        ],
+        "fact_ids": [
+          "f_turns"
+        ]
+      },
+      {
+        "id": "t_gate",
+        "label_ar": "إغلاق بوابة الحقل 2",
+        "example_questions_ar": [
+          "متى أغلقت بوابتك؟",
+          "هل تتسرب البوابة؟"
+        ],
+        "fact_ids": [
+          "f_gate_on_time",
+          "f_leak_small"
+        ],
+        "claim_ids": [
+          "cl_mazen_tight"
+        ]
+      },
+      {
+        "id": "t_log",
+        "label_ar": "سطر الدفتر ومصدر الوقت",
+        "example_questions_ar": [
+          "من أين جاء الوقت المكتوب؟",
+          "هل قرأت الجهاز؟"
+        ],
+        "fact_ids": [
+          "f_log_estimate"
+        ],
+        "claim_ids": [
+          "cl_jalal_time",
+          "cl_mazen_forged"
+        ]
+      },
+      {
+        "id": "t_arrival",
+        "label_ar": "وصول الماء إلى مدخل حقل حمدان",
+        "example_questions_ar": [
+          "متى وصل الماء؟",
+          "هل تأخر الماء من قبل؟"
+        ],
+        "fact_ids": [
+          "f_arrival_late",
+          "f_hamdan_21"
+        ],
+        "claim_ids": [
+          "cl_hamdan_held",
+          "cl_hamdan_first"
+        ]
+      },
+      {
+        "id": "t_weather",
+        "label_ar": "الريح وتنظيف القناة",
+        "example_questions_ar": [
+          "متى هبّت الريح؟",
+          "متى نُظفت القناة؟"
+        ],
+        "fact_ids": [
+          "f_wind_early"
+        ]
+      },
+      {
+        "id": "t_mesh",
+        "label_ar": "تركيب الشبكة وسببه",
+        "example_questions_ar": [
+          "لماذا رُكّبت الشبكة؟",
+          "متى رُكّبت؟"
+        ],
+        "fact_ids": [
+          "f_mesh_installed",
+          "f_good_faith"
+        ]
+      },
+      {
+        "id": "t_check",
+        "label_ar": "متابعة الشبكة بعد التركيب",
+        "example_questions_ar": [
+          "كم مرة فحصت الشبكة؟"
+        ],
+        "fact_ids": [
+          "f_tariq_check_once"
+        ],
+        "claim_ids": [
+          "cl_tariq_clean"
+        ]
+      }
+    ]
+  },
+  "rubric": {
+    "reference_answer_ar": "الرأي المعلّل الذي أرفعه إلى الرئيسة: لا تثبت مساءلة مازن عن تأخر الماء. جهازان مستقلان، شريط البوابة وعدّاد الفرع، يضعان توقف سحبه عند السادسة، وقد أغلق في الموعد نفسه في أربعة خميسات، بينما تغير التأخر من 18 دقيقة إلى 19 ثم 41 ثم 70. سطر الحارس تقدير كُتب من منظر الماء، فيُصحَّح بالشريط دون أن نحكم على نية صاحبه. والريح هبّت قبل خميس 14 الذي وصل فيه الماء طبيعياً، وتسرب البوابة نحو 2 لتر في الدقيقة مقابل تدفق 400، فهو دون واحد بالمئة من الماء الذي فُقد. أما القنطرة فقد استُبدلت قضبانها بشبكة فتحاتها 1.5 سم يوم الأحد 17، وقطع القصب العالقة عليها 3 إلى 6 سم تمر من قضبان 8 سم، والماء يقف أمام الشبكة 41 سم مقابل 3 سم خلفها. الأرجح إذن أن الشبكة هي سبب البطء، وأن طارق تسبب به بحسن نية ومتابعة ناقصة. حدود الاستنتاج: لم نقس يوم الخميس نفسه إلا بالرسوم المسجلة، ولا نعرف كم من الفحص الأسبوعي يكفي، ولا يثبت السجل نية الحارس، ونسبة الترجيح تبقى ترجيحاً لا يقيناً.",
+    "criteria": [
+      {
+        "id": "c_source",
+        "name_ar": "تصنيف المصادر",
+        "objective_ids": [
+          "lo_claim"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يصنّف"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "أخطأ في الأغلب"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "نصف صحيح"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمه صحيح"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كله صحيح"
+          }
+        ]
+      },
+      {
+        "id": "c_conflict",
+        "name_ar": "ربط السجلات بأزمنتها",
+        "objective_ids": [
+          "lo_timeline"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يضع شيئاً"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "وضع قليلاً"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "وضع نصفها صحيحاً"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمها"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كلها في موضعها"
+          }
+        ]
+      },
+      {
+        "id": "c_links",
+        "name_ar": "ربط الأدلة بالفرضيات",
+        "objective_ids": [
+          "lo_diag"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.2,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لا روابط"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "قليلة"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "نصفها صحيح"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمها"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كلها دقيقة"
+          }
+        ]
+      },
+      {
+        "id": "c_uncertainty",
+        "name_ar": "معايرة الثقة",
+        "objective_ids": [
+          "lo_calib"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.2,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "ثقة مفرطة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "حدود قليلة"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "جزئية"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معقولة"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "معايَرة كاملة"
+          }
+        ]
+      },
+      {
+        "id": "c_revision",
+        "name_ar": "مراجعة الرأي",
+        "objective_ids": [
+          "lo_revise"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "بقي على فرضية مرفوضة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "لم يعلن فرضية"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "ثبت على فرضية سليمة"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "غيّر بدليل"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "غيّر بدليل ووثّق"
+          }
+        ]
+      },
+      {
+        "id": "c_elimination",
+        "name_ar": "استبعاد الفرضيات الخاطئة",
+        "objective_ids": [
+          "lo_hyp"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يستبعد"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "استبعد خطأً"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "فرضية بدليل"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "فرضيتين"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كل الخاطئة"
+          }
+        ]
+      },
+      {
+        "id": "c_justification",
+        "name_ar": "جودة الحجة المكتوبة",
+        "objective_ids": [
+          "lo_diag",
+          "lo_hyp"
+        ],
+        "scored_by": "human",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لا حجة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "ادعاء بلا سند"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "أدلة دون ربط"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "ربط الأدلة بالاستنتاج"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "ربط مع البدائل والحدود"
+          }
+        ]
+      }
+    ]
+  },
+  "hint_ladder": [
+    {
+      "id": "hg1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "قبل أن تسأل من أخّر الماء، اسأل: أي سجل في الميدان صنعه جهاز، وأي سطر كتبه إنسان؟",
+      "trigger": {
+        "always": true
+      },
+      "assessment_weight": 0.02
+    },
+    {
+      "id": "hg2",
+      "level": 2,
+      "kind": "focus_area",
+      "text_ar": "رتّب الشكاوى الثلاث وتتبّع مسار الماء من بوابة مازن إلى مدخل حمدان: ماذا يوجد بينهما يمكن أن يغيّر السرعة؟",
+      "trigger": {
+        "has_evidence": "ev_docket"
+      },
+      "assessment_weight": 0.04
+    },
+    {
+      "id": "hg3",
+      "level": 3,
+      "kind": "pointer",
+      "text_ar": "قارن الخميسات الأربعة بعضها ببعض: متى بدأ التأخر يكبر، وماذا تغيّر في القناة قبل ذلك التاريخ؟",
+      "trigger": {
+        "has_evidence": "ev_intake_chart"
+      },
+      "assessment_weight": 0.08
+    },
+    {
+      "id": "hm1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "إذا كان مازن يغلق في موعده كل خميس، فلماذا تختلف مدة التأخر من أسبوع إلى آخر؟",
+      "trigger": {
+        "has_evidence": "ev_intake_chart"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_mesh_a"
+    },
+    {
+      "id": "hm2",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "ضع على سطر واحد تواريخ الخميسات وأرقام التأخر، ثم ابحث عن عمل أُنجز بين خميسين متتاليين.",
+      "trigger": {
+        "has_evidence": "ev_intake_chart"
+      },
+      "assessment_weight": 0.06,
+      "targets_inference_id": "i_mesh_a"
+    },
+    {
+      "id": "hm3",
+      "level": 3,
+      "kind": "partial_reveal",
+      "text_ar": "التأخر 19 دقيقة يوم 14 و41 يوم 21، وأمر العمل 31 نُفّذ يوم 17؛ فماذا يفعل ذلك العمل بمرور الماء؟",
+      "trigger": {
+        "has_evidence": "ev_work_order"
+      },
+      "assessment_weight": 0.1,
+      "targets_inference_id": "i_mesh_a"
+    },
+    {
+      "id": "hb1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "ماذا يحدث لقطعة قصب طولها خمسة سنتيمترات حين تصل إلى فتحة ضيقة، وماذا يحدث لها عند فتحة واسعة؟",
+      "trigger": {
+        "has_evidence": "ev_culvert_trace"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_mesh_b"
+    },
+    {
+      "id": "hb2",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "قارن أطوال القطع العالقة على الشبكة بالمسافة بين القضبان التي وجدتها في المخزن.",
+      "trigger": {
+        "has_evidence": "ev_grate_clog"
+      },
+      "assessment_weight": 0.06,
+      "targets_inference_id": "i_mesh_b"
+    },
+    {
+      "id": "hb3",
+      "level": 3,
+      "kind": "partial_reveal",
+      "text_ar": "القطع التي طولها بين 3 و6 سم تعبر فتحات 8 سم وتتوقف عند فتحات 1.5 سم؛ فما أثر ذلك في الماء أمام الشبكة؟",
+      "trigger": {
+        "has_evidence": "ev_shed_grate"
+      },
+      "assessment_weight": 0.1,
+      "targets_inference_id": "i_mesh_b"
+    },
+    {
+      "id": "hl1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "هل يكفي تسرب صغير وحده لتفسير غياب الماء عن حقل كامل؟ قدّر النسبة قبل أن تحكم.",
+      "trigger": {
+        "has_evidence": "ev_leak_test"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_rule_leak"
+    },
+    {
+      "id": "hl2",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "اضرب تدفق القناة في سبعين دقيقة، واضرب التسرب في سبعين دقيقة، ثم قارن الناتجين.",
+      "trigger": {
+        "has_evidence": "ev_branch_meter"
+      },
+      "assessment_weight": 0.06,
+      "targets_inference_id": "i_rule_leak"
+    },
+    {
+      "id": "hw1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "إن كان القصب هو السبب، فهل كان القصب في القناة قبل الخميس 14؟ وكم كان التأخر في ذلك الخميس؟",
+      "trigger": {
+        "has_evidence": "ev_wind_note"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_rule_wind"
+    },
+    {
+      "id": "hw2",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "اقرأ تاريخ الريح وتاريخ آخر تنظيف، ثم رقم التأخر في الخميس التالي للريح.",
+      "trigger": {
+        "has_evidence": "ev_intake_chart"
+      },
+      "assessment_weight": 0.06,
+      "targets_inference_id": "i_rule_wind"
+    }
+  ],
+  "fairness_test": {
+    "requirements": {
+      "min_disjoint_proof_paths": 2,
+      "max_inference_depth": 3,
+      "all_red_herrings_refutable": true,
+      "culprit_uniquely_entailed": true,
+      "no_hidden_fact_dependency": true,
+      "max_required_actions": 30
+    },
+    "runs": []
+  },
+  "ending_explanation": {
+    "steps": [
+      {
+        "order": 1,
+        "text_ar": "ابدأ بالأجهزة: شريط البوابة يثقب لحظة الإغلاق، وعدّاد الفرع ينتقل من 400 إلى صفر، وكلاهما عند السادسة، فلا يصح اتهام مازن بإبقاء الماء.",
+        "uses_evidence_ids": [
+          "ev_strip",
+          "ev_branch_meter"
+        ],
+        "inference_id": "i_gate_strip"
+      },
+      {
+        "order": 2,
+        "text_ar": "ثم اسأل لماذا بقي الماء عالياً: رسم المقياس يريه هابطاً ببطء، وفرق العمق حول الشبكة يؤكد أن الممر يسرّب الماء بقدر قليل.",
+        "uses_evidence_ids": [
+          "ev_upstream_chart",
+          "ev_culvert_trace"
+        ],
+        "inference_id": "i_back_chart"
+      },
+      {
+        "order": 3,
+        "text_ar": "قارن الأسابيع: وصل الماء بعد 18 ثم 19 دقيقة، ثم قفز إلى 41 و70، وبين الرقمين الأخيرين والأولين أُنجز أمر العمل يوم الأحد 17.",
+        "uses_evidence_ids": [
+          "ev_intake_chart",
+          "ev_work_order"
+        ],
+        "inference_id": "i_mesh_a"
+      },
+      {
+        "order": 4,
+        "text_ar": "ثم انظر إلى الأشياء نفسها: القصب العالق بين 3 و6 سم لا تحجزه فتحات القضبان الأولى المسافة بينها 8 سم، وتحجزه الشبكة الأضيق.",
+        "uses_evidence_ids": [
+          "ev_grate_clog",
+          "ev_shed_grate"
+        ],
+        "inference_id": "i_mesh_b"
+      },
+      {
+        "order": 5,
+        "text_ar": "اختبر الريح: هبّت يوم الاثنين 11 ولم يتبعها تنظيف، ومع ذلك وصل الماء يوم الخميس 14 بعد 19 دقيقة فقط، فالقصب وحده لا يفسر ما جاء بعد ذلك.",
+        "uses_evidence_ids": [
+          "ev_wind_note",
+          "ev_intake_chart"
+        ],
+        "inference_id": "i_rule_wind"
+      },
+      {
+        "order": 6,
+        "text_ar": "فاحسب التسرب: لترين كل دقيقة طوال سبعين دقيقة تساوي 140 لتراً، والقناة تدفع كل دقيقة 400 لتراً أي 28000 لتر، والنسبة نصف بالمئة تقريباً.",
+        "uses_evidence_ids": [
+          "ev_leak_test",
+          "ev_branch_meter"
+        ],
+        "inference_id": "i_rule_leak"
+      }
+    ],
+    "alternative_paths_ar": [
+      "مسار ثانٍ مستقل: عدّاد الفرع وفرق العمق حول الشبكة يثبتان معاً أن الماء لم يُحجز عند بوابة مازن بل عند القنطرة، وقطع القصب مع القضبان القديمة تفسر السبب دون الحاجة إلى مقارنة الأسابيع."
+    ],
+    "what_evidence_could_not_show_ar": [
+      "لا يبين الشريط ولا العدّاد نية الحارس عندما كتب السطر، ولا يصح الجزم بأنه تعمد أو أخطأ.",
+      "لا نعرف كم يلزم من الفحص الأسبوعي لمنع انسداد الشبكة، ولا ما إذا كانت شبكة أوسع قليلاً تمنع الأكياس دون أن تسد.",
+      "الرسوم المسجلة تثبت الخميسات الأربعة فقط، وتبقى بقية الأيام بلا قياس."
+    ],
+    "science_notes_ar": [
+      "الماء يرتفع أمام عائق يضيّق مجراه ثم يمر منه ببطء، وكلما صغرت الفتحات حبست قطعاً أكثر.",
+      "قارن الحجم بالنسبة: تسرب صغير لا يفسر غياب كمية كبيرة مهما بدا مرئياً على الأرض الرطبة.",
+      "الجهاز الذي يسجل لحظة الحدث أقوى من التقدير المكتوب بعده، لكن لكل جهاز حدوده."
+    ]
+  },
+  "expert_review": [
+    {
+      "role": "narrative_editor",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-11-05",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "scientific_reviewer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-11-05",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "learning_designer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-11-05",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "age_appropriateness",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-11-05",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "cultural_reviewer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-11-05",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "legal_rights",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-11-05",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "safety",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-11-05",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    }
+  ]
+}

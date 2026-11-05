@@ -1,0 +1,3206 @@
+{
+  "schema_version": "0.1.0",
+  "case_id": "c050_approved_account",
+  "case_version": "0.1.0",
+  "meta": {
+    "title_ar": "اللوحة التي لم تراجع الأصل",
+    "title_en": "The Plaque That Never Checked the File",
+    "age_band": "16-18",
+    "locale": "ar",
+    "dialogue_register": "msa",
+    "estimated_minutes": 40,
+    "difficulty": 3,
+    "content_flags": [
+      "no_violence",
+      "historical"
+    ],
+    "authors": [
+      "فريق أثر التحريري (مسودة بمساعدة الذكاء الاصطناعي، لم تُراجَع بشرياً بعد)"
+    ],
+    "knowledge_object_refs": [
+      "KO-RS-05-001",
+      "KO-RS-05-004",
+      "KO-RS-05-005",
+      "KO-RS-05-002",
+      "KO-RS-06-021",
+      "KO-RS-06-009"
+    ]
+  },
+  "premise": {
+    "hook_ar": "تريد لجنة احتفال دار القناديل أن تنقش على لوحة برونزية أن الدار «بُنيت من مال الحاج حمدان الزهراني». اللوحة القديمة تقول ذلك، والكتيّب، والمقال، والجميع يردده. فماذا تقول سجلات البلدية؟",
+    "player_role_ar": "أنت متدرب في وحدة التحقق بأرشيف البلدية، وطلبت اللجنة رأيك المعلّل في العبارة قبل أن تُسلَّم إلى النقّاش.",
+    "setting_ar": "مدينة «الغدير» المتخيَّلة، من الاثنين إلى الأربعاء. الأسماء والمؤسسات والمبالغ والسنوات كلها متخيَّلة للتعلم، والمبالغ بالدنانير المتخيَّلة، وتوقيت الأرشيف هو توقيت أوراق القضية. بإذن اللجنة تطّلع على الحزمة المختومة وسجل الاطلاع وأوراق مجلس الدار، ولا تفتح غيرها.",
+    "public_fact_ids": [
+      "f_panel_claim",
+      "f_plaque_1974",
+      "f_repeated",
+      "f_panel_plan"
+    ],
+    "assumed_general_knowledge_ar": [
+      "النص المنقوش على نحاس أو حجر لا يثبت صحة ما كُتب عليه",
+      "هبة الأرض غير دفع كلفة البناء",
+      "تكرار الخبر عن مصدر واحد لا يضيف دليلاً جديداً",
+      "مجموع الأجزاء يجب أن يطابق الإجمالي المذكور"
+    ]
+  },
+  "entities": {
+    "characters": [
+      {
+        "id": "nader",
+        "name_ar": "نادر الزهراني",
+        "role": "suspect",
+        "age_descriptor_ar": "رئيس لجنة احتفال دار القناديل، في الثامنة والخمسين",
+        "persona_ar": "فخور بتاريخ حيّه وكريم في الضيافة، يتحمس حين يتكلم عن جدّه ويستعجل إنجاز اللوحة.",
+        "motives_ar": [
+          "أن تُنقش اللوحة في موعدها",
+          "أن يبقى اسم جدّه مرتبطاً بالدار"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "nd_greet",
+            "purpose": "greeting",
+            "text_ar": "أهلاً بك. هذه الحكاية يعرفها الصغير والكبير في حيّنا."
+          },
+          {
+            "line_id": "nd_claim",
+            "purpose": "lie",
+            "text_ar": "جدّي بنى الدار من ماله، وهذا مكتوب على اللوحة منذ اثنتين وخمسين سنة. وعندي رسالة منه تؤيد ذلك.",
+            "claim_ids": [
+              "cl_plaque",
+              "cl_memo"
+            ]
+          },
+          {
+            "line_id": "nd_letter",
+            "purpose": "reveal",
+            "text_ar": "قرأت الرسالة مرات كثيرة ولم أنتبه إلى أنها تذكر الأرض وستمئة دينار، ولا تذكر البناء كله.",
+            "fact_ids": [
+              "f_hamdan_letter"
+            ]
+          },
+          {
+            "line_id": "nd_panel",
+            "purpose": "reveal",
+            "text_ar": "اللجنة تريد تسليم النص إلى النقّاش بعد ثلاثة أيام، وأنا أرأس اللجنة منذ سنتين.",
+            "fact_ids": [
+              "f_panel_plan"
+            ]
+          },
+          {
+            "line_id": "nd_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لم أكن موجوداً حين جرى ذلك، فاسأل أهل الأرشيف."
+          },
+          {
+            "line_id": "nd_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "دعنا نتكلم عن نص اللوحة وما وراءه."
+          },
+          {
+            "line_id": "nd_bye",
+            "purpose": "farewell",
+            "text_ar": "أرجو أن يخرج النص الجديد صادقاً، فاسم الدار أغلى من اسم أي عائلة."
+          }
+        ]
+      },
+      {
+        "id": "salwa",
+        "name_ar": "سلوى القباني",
+        "role": "witness",
+        "age_descriptor_ar": "معلمة متقاعدة كتبت كتيّب الدار قبل تسعة وثلاثين عاماً",
+        "persona_ar": "منظّمة ودقيقة في اللغة، تعتز بكتيّبها وتحب أن تُسأل عن طريقة عملها.",
+        "motives_ar": [
+          "ألا يُقال إن عملها كان متسرعاً",
+          "أن يبقى الكتيّب مرجعاً للحي"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "sl_greet",
+            "purpose": "greeting",
+            "text_ar": "تفضّل. كتبت الكتيّب بعناية، وكل سطر فيه له أصل."
+          },
+          {
+            "line_id": "sl_official",
+            "purpose": "lie",
+            "text_ar": "أخذت العبارة من اللوحة، واللوحة منقوشة بقرار من مجلس الإدارة، فهي وثيقة رسمية لا شك فيها.",
+            "claim_ids": [
+              "cl_official"
+            ]
+          },
+          {
+            "line_id": "sl_source",
+            "purpose": "reveal",
+            "text_ar": "صحيح، لم أطلب ملف البناء من البلدية. اعتمدت على اللوحة وحدها وظننت أن المجلس راجع الأمر قبلي.",
+            "fact_ids": [
+              "f_booklet_source"
+            ]
+          },
+          {
+            "line_id": "sl_booklet",
+            "purpose": "reveal",
+            "text_ar": "كتبت الكتيّب سنة 1987 لجمعية أصدقاء الدار، وفيه هامش واحد على هذه العبارة.",
+            "fact_ids": [
+              "f_booklet_1987"
+            ]
+          },
+          {
+            "line_id": "sl_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أذكر أكثر من ذلك."
+          },
+          {
+            "line_id": "sl_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن الكتيّب وكيف كتبته."
+          },
+          {
+            "line_id": "sl_bye",
+            "purpose": "farewell",
+            "text_ar": "إن وجدتم خطأً فأصلحوه، فالكتيّب لخدمة الحي لا لحمايتي."
+          }
+        ]
+      },
+      {
+        "id": "jamal",
+        "name_ar": "جمال الزهراني",
+        "role": "suspect",
+        "age_descriptor_ar": "ابن الحاج حمدان، في الحادية والثمانين، كان أمين سر مجلس الدار سنة 1974",
+        "persona_ar": "هادئ وبطيء الكلام، يحمل لأبيه وفاءً كبيراً ويتأثر حين يُسأل عن الماضي.",
+        "motives_ar": [
+          "أن يُذكر أبوه بالخير",
+          "ألا يُظن أنه قصد خداع أحد"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "jm_greet",
+            "purpose": "greeting",
+            "text_ar": "أهلاً يا بني. مضى أكثر من خمسين عاماً، لكني أذكر تلك الأيام."
+          },
+          {
+            "line_id": "jm_claim",
+            "purpose": "lie",
+            "text_ar": "الدار من بيتنا، هكذا عرفنا الأمر في البيت وهكذا كُتب.",
+            "claim_ids": [
+              "cl_plaque"
+            ]
+          },
+          {
+            "line_id": "jm_origin",
+            "purpose": "reveal",
+            "text_ar": "أنا الذي اقترحت العبارة على المجلس. أردت أن أكرّم أبي، ولم أفتح ملف البناء، ووافق الجميع لأنهم يحبون أبي.",
+            "fact_ids": [
+              "f_origin"
+            ]
+          },
+          {
+            "line_id": "jm_receipt",
+            "purpose": "reveal",
+            "text_ar": "دفع بيتنا ثمن اللوحة، أربعين ديناراً، وسُجّل ذلك في المجلس علناً.",
+            "fact_ids": [
+              "f_plaque_receipt"
+            ]
+          },
+          {
+            "line_id": "jm_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أذكر ذلك جيداً، فقد طال الزمن."
+          },
+          {
+            "line_id": "jm_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن المجلس واللوحة."
+          },
+          {
+            "line_id": "jm_bye",
+            "purpose": "farewell",
+            "text_ar": "أرجو أن يُكتب ما هو صحيح، ولو كان أقل مما كتبناه."
+          }
+        ]
+      },
+      {
+        "id": "afaf",
+        "name_ar": "عفاف الصيرفي",
+        "role": "authority",
+        "age_descriptor_ar": "أمينة أرشيف بلدية الغدير",
+        "persona_ar": "موجزة وحذرة، لا تفسّر الوثائق بل تقول ما فيها وأين تجدها.",
+        "motives_ar": [
+          "أن تُحفظ الوثائق كما هي",
+          "أن يُعرف ما في الأرشيف قبل أن تُنقش الكلمات"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "af_greet",
+            "purpose": "greeting",
+            "text_ar": "أهلاً بك في الأرشيف. أدلّك على الوثيقة ولا أحكم عنك."
+          },
+          {
+            "line_id": "af_register",
+            "purpose": "reveal",
+            "text_ar": "حزمة الإنشاء مختومة منذ 1966، وسجل الاطلاع لا يذكر أي طلب عليها قبل طلب اللجنة هذا الأسبوع.",
+            "fact_ids": [
+              "f_no_access"
+            ]
+          },
+          {
+            "line_id": "af_records",
+            "purpose": "reveal",
+            "text_ar": "في الحزمة محضر المجلس البلدي ومستخرج الأرض ودفتر الاكتتاب وكشف المقاول.",
+            "fact_ids": [
+              "f_council",
+              "f_deed",
+              "f_ledger",
+              "f_invoices"
+            ]
+          },
+          {
+            "line_id": "af_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "ليس عندي أكثر مما في الورق."
+          },
+          {
+            "line_id": "af_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن الحزمة والسجلات."
+          },
+          {
+            "line_id": "af_bye",
+            "purpose": "farewell",
+            "text_ar": "الحزمة عندي متى احتجت إليها."
+          }
+        ]
+      }
+    ],
+    "locations": [
+      {
+        "id": "loc_archive",
+        "name_ar": "أرشيف بلدية الغدير",
+        "description_ar": "قاعة الحزم المختومة وسجل الاطلاع."
+      },
+      {
+        "id": "loc_hall",
+        "name_ar": "دار القناديل",
+        "description_ar": "دار قراءة عامة في حي القناديل، وعند مدخلها لوحة نحاسية."
+      },
+      {
+        "id": "loc_committee",
+        "name_ar": "غرفة لجنة الاحتفال",
+        "description_ar": "غرفة صغيرة في الدار تجتمع فيها اللجنة."
+      }
+    ],
+    "objects": [
+      {
+        "id": "obj_plaque",
+        "name_ar": "اللوحة النحاسية عند المدخل",
+        "description_ar": "لوحة نُصبت سنة 1974 وعليها نص عن بناء الدار."
+      },
+      {
+        "id": "obj_ledger",
+        "name_ar": "دفتر الاكتتاب الشعبي",
+        "description_ar": "دفتر أمين صندوق البلدية لتبرعات أهل الحي سنة 1964-1965."
+      },
+      {
+        "id": "obj_land",
+        "name_ar": "القطعة رقم 118",
+        "description_ar": "قطعة الأرض التي أُقيمت عليها الدار."
+      }
+    ],
+    "organizations": [
+      {
+        "id": "org_municipality",
+        "name_ar": "بلدية الغدير",
+        "description_ar": "البلدية المتخيَّلة التي يعود إليها الأرشيف."
+      },
+      {
+        "id": "org_board",
+        "name_ar": "مجلس إدارة دار القناديل",
+        "description_ar": "المجلس الذي أقرّ نص اللوحة سنة 1974."
+      },
+      {
+        "id": "org_zahrani",
+        "name_ar": "بيت الزهراني التجاري",
+        "description_ar": "بيت تجاري في الحي، من آل الحاج حمدان."
+      }
+    ]
+  },
+  "truth": {
+    "solution": {
+      "culprit_ids": [
+        "jamal"
+      ],
+      "summary_ar": "لا تسند السجلات أن حمدان الزهراني هو من موّل البناء. أهدى الأرض وأسهم بستمئة دينار من كلفة قدرها تسعة آلاف، وجاء الباقي من اكتتاب أهل الحي ومنحة البلدية. وبدأت العبارة سنة 1974 باقتراح ابنه جمال وفاءً له دون مراجعة الملف، ثم نقلتها اللوحة فالكتيّب فالمقال، ولم يقصد أحد التضليل.",
+      "key_fact_ids": [
+        "f_account_unsupported",
+        "f_origin",
+        "f_chain",
+        "f_share"
+      ]
+    },
+    "facts": [
+      {
+        "id": "f_panel_claim",
+        "statement_ar": "تقترح مسودة اللوحة الجديدة نقش عبارة: «بُنيت دار القناديل سنة 1966 من مال الحاج حمدان الزهراني».",
+        "kind": "state",
+        "subject_ids": [
+          "obj_plaque",
+          "org_zahrani"
+        ],
+        "spoiler_level": 0,
+        "time": {
+          "start_min": -3000,
+          "precision": "approx"
+        },
+        "location_id": "loc_committee"
+      },
+      {
+        "id": "f_plaque_1974",
+        "statement_ar": "تحمل اللوحة النحاسية عند المدخل منذ سنة 1974 العبارة نفسها، ولا تذكر أي مصدر لها.",
+        "kind": "state",
+        "subject_ids": [
+          "obj_plaque"
+        ],
+        "spoiler_level": 0,
+        "time": {
+          "start_min": -27330000,
+          "precision": "approx"
+        },
+        "location_id": "loc_hall"
+      },
+      {
+        "id": "f_repeated",
+        "statement_ar": "تتكرر الرواية نفسها في اللوحة والكتيّب ومقال صحفي وجولات المدارس، ويردّدها الناس في الحي.",
+        "kind": "state",
+        "subject_ids": [
+          "obj_plaque",
+          "org_zahrani"
+        ],
+        "spoiler_level": 0,
+        "location_id": "loc_hall"
+      },
+      {
+        "id": "f_panel_plan",
+        "statement_ar": "ستُسلَّم المسودة إلى النقّاش بعد ثلاثة أيام، وطلبت اللجنة رأي وحدة التحقق في الأرشيف قبل ذلك.",
+        "kind": "event",
+        "subject_ids": [
+          "nader",
+          "org_municipality"
+        ],
+        "spoiler_level": 0,
+        "time": {
+          "start_min": -3000,
+          "precision": "approx"
+        },
+        "location_id": "loc_committee"
+      },
+      {
+        "id": "f_booklet_1987",
+        "statement_ar": "صدر سنة 1987 كتيّب «حكاية دار القناديل» من تأليف سلوى القباني، وفيه العبارة وهامش واحد عليها هو نص اللوحة.",
+        "kind": "event",
+        "subject_ids": [
+          "salwa",
+          "obj_plaque"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": -20500000,
+          "precision": "approx"
+        },
+        "location_id": "loc_hall"
+      },
+      {
+        "id": "f_article_2019",
+        "statement_ar": "نشرت صحيفة «صدى الغدير» سنة 2019 مقالاً يروي العبارة نفسها وينسبها إلى كتيّب الدار.",
+        "kind": "event",
+        "subject_ids": [
+          "salwa"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": -3680000,
+          "precision": "approx"
+        },
+        "location_id": "loc_hall"
+      },
+      {
+        "id": "f_deed",
+        "statement_ar": "نُقلت ملكية القطعة رقم 118 من حمدان الزهراني إلى بلدية الغدير سنة 1964 هبةً «لإقامة دار قراءة عامة».",
+        "kind": "event",
+        "subject_ids": [
+          "obj_land",
+          "org_municipality",
+          "org_zahrani"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": -32600000,
+          "precision": "approx"
+        },
+        "location_id": "loc_archive"
+      },
+      {
+        "id": "f_council",
+        "statement_ar": "قرر المجلس البلدي سنة 1964 قبول هبة الأرض وفتح اكتتاب شعبي وتخصيص منحة بلدية قدرها 1,800 دينار.",
+        "kind": "event",
+        "subject_ids": [
+          "org_municipality",
+          "obj_land"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": -32590000,
+          "precision": "approx"
+        },
+        "location_id": "loc_archive"
+      },
+      {
+        "id": "f_hamdan_letter",
+        "statement_ar": "كتب حمدان الزهراني إلى المجلس سنة 1964 أنه يهب القطعة ويشارك في الاكتتاب بستمئة دينار.",
+        "kind": "event",
+        "subject_ids": [
+          "org_zahrani",
+          "obj_land"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": -32580000,
+          "precision": "approx"
+        },
+        "location_id": "loc_archive"
+      },
+      {
+        "id": "f_ledger",
+        "statement_ar": "دوّن أمين الصندوق في دفتر الاكتتاب 156 اسماً ومجموعاً قدره 7,200 دينار، منها 600 باسم حمدان الزهراني.",
+        "kind": "state",
+        "subject_ids": [
+          "obj_ledger",
+          "org_zahrani"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": -32300000,
+          "precision": "approx",
+          "end_min": -32000000
+        },
+        "location_id": "loc_archive"
+      },
+      {
+        "id": "f_invoices",
+        "statement_ar": "بلغت كلفة البناء بحسب كشف المقاول النهائي 9,000 دينار دُفعت من حساب الاكتتاب والمنحة.",
+        "kind": "state",
+        "subject_ids": [
+          "obj_ledger",
+          "org_municipality"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": -31700000,
+          "precision": "approx"
+        },
+        "location_id": "loc_archive"
+      },
+      {
+        "id": "f_opening",
+        "statement_ar": "شكر رئيس البلدية في حفل افتتاح سنة 1966 أهل الحي والمجلس البلدي وحمدان الزهراني على هبة الأرض ومشاركته في الاكتتاب.",
+        "kind": "event",
+        "subject_ids": [
+          "org_municipality",
+          "org_zahrani"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": -31500000,
+          "precision": "approx"
+        },
+        "location_id": "loc_hall"
+      },
+      {
+        "id": "f_board_1974",
+        "statement_ar": "أقرّ مجلس إدارة الدار سنة 1974 نص اللوحة بالإجماع بعد اقتراح أمين السر، ودوّن المحضر أن ملف الإنشاء لم يُعرض في الجلسة.",
+        "kind": "event",
+        "subject_ids": [
+          "org_board",
+          "jamal"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": -27340000,
+          "precision": "approx"
+        },
+        "location_id": "loc_hall"
+      },
+      {
+        "id": "f_plaque_receipt",
+        "statement_ar": "دفع بيت الزهراني التجاري أربعين ديناراً للنقّاش ثمن اللوحة سنة 1974.",
+        "kind": "event",
+        "subject_ids": [
+          "org_zahrani",
+          "obj_plaque"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": -27335000,
+          "precision": "approx"
+        },
+        "location_id": "loc_hall"
+      },
+      {
+        "id": "f_no_access",
+        "statement_ar": "لم يُسجَّل أي طلب اطلاع على حزمة الإنشاء منذ ختمها سنة 1966 حتى طلب اللجنة هذا الأسبوع.",
+        "kind": "absence",
+        "subject_ids": [
+          "org_municipality"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": -30,
+          "precision": "approx"
+        },
+        "location_id": "loc_archive"
+      },
+      {
+        "id": "f_booklet_source",
+        "statement_ar": "اعتمدت سلوى القباني على نص اللوحة وحده ولم تطلب حزمة الإنشاء من البلدية.",
+        "kind": "relation",
+        "subject_ids": [
+          "salwa",
+          "obj_plaque"
+        ],
+        "spoiler_level": 2,
+        "time": {
+          "start_min": -20500000,
+          "precision": "approx"
+        },
+        "location_id": "loc_hall"
+      },
+      {
+        "id": "f_share",
+        "statement_ar": "كلفة البناء 9,000 دينار دُفعت من الاكتتاب (7,200، منها 600 لحمدان) ومن المنحة البلدية (1,800)؛ فمال حمدان النقدي جزء من خمسة عشر جزءاً من الكلفة، وزاد عليه بهبة الأرض.",
+        "kind": "relation",
+        "subject_ids": [
+          "org_zahrani",
+          "obj_ledger",
+          "org_municipality"
+        ],
+        "spoiler_level": 2,
+        "location_id": "loc_archive"
+      },
+      {
+        "id": "f_chain",
+        "statement_ar": "لم يرجع كاتب من كتّاب الرواية إلى حزمة الإنشاء: المقال نقل عن الكتيّب، والكتيّب نقل عن اللوحة، واللوحة أُقرّت دون عرض الملف.",
+        "kind": "relation",
+        "subject_ids": [
+          "obj_plaque",
+          "salwa",
+          "org_board"
+        ],
+        "spoiler_level": 2,
+        "location_id": "loc_hall"
+      },
+      {
+        "id": "f_first_wording",
+        "statement_ar": "لا ترد عبارة «من ماله» في أي وثيقة من سنتي 1964 و1966؛ وأول ورود لها في محضر مجلس الإدارة سنة 1974.",
+        "kind": "absence",
+        "subject_ids": [
+          "obj_plaque",
+          "org_board"
+        ],
+        "spoiler_level": 2,
+        "time": {
+          "start_min": -27330000,
+          "precision": "approx"
+        },
+        "location_id": "loc_hall"
+      },
+      {
+        "id": "f_account_unsupported",
+        "statement_ar": "الرواية التي تنسب تمويل البناء كله إلى حمدان لا تسندها السجلات: أهدى حمدان الأرض وأسهم بجزء صغير نقداً، وبُنيت الدار باكتتاب أهل الحي ومنحة البلدية.",
+        "kind": "relation",
+        "subject_ids": [
+          "org_zahrani",
+          "obj_plaque",
+          "org_municipality"
+        ],
+        "spoiler_level": 3,
+        "location_id": "loc_archive"
+      },
+      {
+        "id": "f_origin",
+        "statement_ar": "جاءت العبارة من اقتراح جمال الزهراني سنة 1974 وفاءً لأبيه من غير مراجعة الملف، فأقرّها المجلس ثم نقلها الآخرون؛ ولا دليل على قصد التضليل.",
+        "kind": "event",
+        "subject_ids": [
+          "jamal",
+          "org_board",
+          "obj_plaque"
+        ],
+        "spoiler_level": 3,
+        "time": {
+          "start_min": -27340000,
+          "precision": "approx"
+        },
+        "location_id": "loc_hall"
+      }
+    ],
+    "claims": [
+      {
+        "id": "cl_plaque",
+        "statement_ar": "دار القناديل بُنيت من مال الحاج حمدان الزهراني.",
+        "kind": "half_truth",
+        "held_by": [
+          "nader",
+          "jamal"
+        ],
+        "true_fact_id": "f_share",
+        "contradicted_by_evidence_ids": [
+          "ev_ledger",
+          "ev_invoices",
+          "ev_council_1964"
+        ]
+      },
+      {
+        "id": "cl_official",
+        "statement_ar": "ما نُقش على اللوحة بقرار المجلس موثّق ولا يحتاج إلى مراجعة.",
+        "kind": "honest_mistake",
+        "held_by": [
+          "salwa"
+        ],
+        "true_fact_id": "f_chain",
+        "contradicted_by_evidence_ids": [
+          "ev_board_1974",
+          "ev_access_register"
+        ]
+      },
+      {
+        "id": "cl_memo",
+        "statement_ar": "رسالة الحاج حمدان نفسه تقول إنه تكفّل بالبناء.",
+        "kind": "honest_mistake",
+        "held_by": [
+          "nader"
+        ],
+        "true_fact_id": "f_hamdan_letter",
+        "contradicted_by_evidence_ids": [
+          "ev_hamdan_letter"
+        ]
+      }
+    ]
+  },
+  "timeline": [
+    {
+      "id": "te_deed",
+      "description_ar": "حمدان الزهراني يهب القطعة 118 للبلدية.",
+      "time": {
+        "start_min": -32600000,
+        "precision": "approx"
+      },
+      "actor_ids": [],
+      "fact_ids": [
+        "f_deed",
+        "f_hamdan_letter"
+      ],
+      "location_id": "loc_archive",
+      "motivated_by_ar": "أراد أن تقوم دار قراءة لأهل الحي"
+    },
+    {
+      "id": "te_council",
+      "description_ar": "المجلس البلدي يقبل الهبة ويفتح الاكتتاب ويخصص المنحة.",
+      "time": {
+        "start_min": -32590000,
+        "precision": "approx"
+      },
+      "actor_ids": [],
+      "fact_ids": [
+        "f_council"
+      ],
+      "location_id": "loc_archive",
+      "motivated_by_ar": "تمويل دار عامة بمشاركة الأهالي"
+    },
+    {
+      "id": "te_ledger",
+      "description_ar": "أمين الصندوق يدوّن تبرعات الأهالي في الدفتر.",
+      "time": {
+        "start_min": -32300000,
+        "precision": "approx",
+        "end_min": -32000000
+      },
+      "actor_ids": [],
+      "fact_ids": [
+        "f_ledger"
+      ],
+      "location_id": "loc_archive",
+      "motivated_by_ar": "حفظ حساب الاكتتاب"
+    },
+    {
+      "id": "te_invoice",
+      "description_ar": "المقاول يسلّم كشفه النهائي ويُدفع من الحساب.",
+      "time": {
+        "start_min": -31700000,
+        "precision": "approx"
+      },
+      "actor_ids": [],
+      "fact_ids": [
+        "f_invoices"
+      ],
+      "location_id": "loc_archive",
+      "motivated_by_ar": "إنهاء البناء ودفع مستحقاته"
+    },
+    {
+      "id": "te_opening",
+      "description_ar": "افتتاح الدار وكلمة رئيس البلدية.",
+      "time": {
+        "start_min": -31500000,
+        "precision": "approx"
+      },
+      "actor_ids": [],
+      "fact_ids": [
+        "f_opening"
+      ],
+      "location_id": "loc_hall",
+      "motivated_by_ar": "شكر كل من أسهم في الدار"
+    },
+    {
+      "id": "te_board",
+      "description_ar": "مجلس الدار يقرّ نص اللوحة بعد اقتراح جمال.",
+      "time": {
+        "start_min": -27340000,
+        "precision": "approx"
+      },
+      "actor_ids": [
+        "jamal"
+      ],
+      "fact_ids": [
+        "f_board_1974",
+        "f_origin",
+        "f_first_wording"
+      ],
+      "location_id": "loc_hall",
+      "motivated_by_ar": "أراد جمال تكريم أبيه ولم يراجع الملف"
+    },
+    {
+      "id": "te_receipt",
+      "description_ar": "بيت الزهراني يدفع ثمن اللوحة للنقّاش.",
+      "time": {
+        "start_min": -27335000,
+        "precision": "approx"
+      },
+      "actor_ids": [
+        "jamal"
+      ],
+      "fact_ids": [
+        "f_plaque_receipt"
+      ],
+      "location_id": "loc_hall",
+      "motivated_by_ar": "تحمّل كلفة اللوحة كما جاء في المجلس"
+    },
+    {
+      "id": "te_plaque",
+      "description_ar": "نصب اللوحة النحاسية عند المدخل.",
+      "time": {
+        "start_min": -27330000,
+        "precision": "approx"
+      },
+      "actor_ids": [],
+      "fact_ids": [
+        "f_plaque_1974"
+      ],
+      "location_id": "loc_hall"
+    },
+    {
+      "id": "te_booklet",
+      "description_ar": "سلوى تؤلف الكتيّب وتنقل العبارة عن اللوحة.",
+      "time": {
+        "start_min": -20500000,
+        "precision": "approx"
+      },
+      "actor_ids": [
+        "salwa"
+      ],
+      "fact_ids": [
+        "f_booklet_1987",
+        "f_booklet_source"
+      ],
+      "location_id": "loc_hall",
+      "motivated_by_ar": "أرادت جمع حكاية الحي سريعاً قبل ذكرى الدار"
+    },
+    {
+      "id": "te_article",
+      "description_ar": "الصحيفة تنشر المقال عن الكتيّب.",
+      "time": {
+        "start_min": -3680000,
+        "precision": "approx"
+      },
+      "actor_ids": [],
+      "fact_ids": [
+        "f_article_2019"
+      ],
+      "location_id": "loc_hall"
+    },
+    {
+      "id": "te_panel",
+      "description_ar": "لجنة الاحتفال تعدّ مسودة اللوحة الجديدة.",
+      "time": {
+        "start_min": -3000,
+        "precision": "approx"
+      },
+      "actor_ids": [
+        "nader"
+      ],
+      "fact_ids": [
+        "f_panel_claim",
+        "f_panel_plan",
+        "f_repeated"
+      ],
+      "location_id": "loc_committee",
+      "motivated_by_ar": "إحياء الذكرى الستين للدار"
+    },
+    {
+      "id": "te_register",
+      "description_ar": "اللجنة تطلب حزمة الإنشاء للمرة الأولى في سجل الاطلاع.",
+      "time": {
+        "start_min": -30,
+        "precision": "exact"
+      },
+      "actor_ids": [
+        "afaf"
+      ],
+      "fact_ids": [
+        "f_no_access"
+      ],
+      "location_id": "loc_archive",
+      "motivated_by_ar": "التحقق قبل النقش"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_new_panel_draft",
+      "title_ar": "مسودة لوحة الذكرى الستين",
+      "kind": "documentary",
+      "content_ar": "لجنة احتفال دار القناديل — مسودة لوحة برونزية\nرئيس اللجنة: نادر الزهراني (منذ سنتين).\nالنص المقترح للنقش: «بُنيت دار القناديل سنة 1966 من مال الحاج حمدان الزهراني، هديةً منه لأهل حي القناديل.»\nمصادر المسودة: اللوحة عند المدخل (1974)، كتيّب الدار (1987)، مقال «صدى الغدير» (2019).\nموعد التسليم إلى النقّاش: بعد ثلاثة أيام.",
+      "acquired_by_action_ids": [
+        "a_get_panel"
+      ],
+      "supports_fact_ids": [
+        "f_panel_claim",
+        "f_panel_plan",
+        "f_repeated"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "مسودة تعرض ما تريد اللجنة نقشه ومصادرها المعلنة؛ ولا تتحقق من صحة أي مصدر منها.",
+      "location_id": "loc_committee"
+    },
+    {
+      "id": "ev_plaque_photo",
+      "title_ar": "صورة اللوحة النحاسية عند المدخل",
+      "kind": "documentary",
+      "content_ar": "صورة اللوحة (نُصبت سنة 1974):\n«بُنيت هذه الدار من مال الحاج حمدان الزهراني سنة 1966.\nمجلس إدارة الدار — 1974. تنفيذ: أمين السر جمال الزهراني.»\nلا يوجد على اللوحة ذكر لوثيقة أو سجل.",
+      "acquired_by_action_ids": [
+        "a_get_plaque"
+      ],
+      "supports_fact_ids": [
+        "f_plaque_1974"
+      ],
+      "reliability": "weak",
+      "limits_ar": "نص منقوش يبين ما أراد كاتبه قوله ومتى، ولا يذكر مصدره ولا يثبت صحته.",
+      "location_id": "loc_hall"
+    },
+    {
+      "id": "ev_booklet_1987",
+      "title_ar": "كتيّب «حكاية دار القناديل» (1987)",
+      "kind": "documentary",
+      "content_ar": "كتيّب جمعية أصدقاء الدار — تأليف: سلوى القباني، 1987.\nص3: «كما تقول اللوحة عند المدخل، بُنيت الدار من مال الحاج حمدان الزهراني، وهذا ما يعرفه أهل الحي.»\nالهوامش: (1) نص اللوحة، المدخل.\nقائمة المراجع: لوحة المدخل؛ أحاديث كبار السن في الحي.",
+      "acquired_by_action_ids": [
+        "a_get_booklet"
+      ],
+      "supports_fact_ids": [
+        "f_booklet_1987"
+      ],
+      "reliability": "weak",
+      "limits_ar": "كتيّب يعيد نص اللوحة؛ ولا يذكر أنه رجع إلى دفتر أو محضر أو كشف بناء.",
+      "location_id": "loc_hall"
+    },
+    {
+      "id": "ev_article_2019",
+      "title_ar": "مقال «صدى الغدير» (2019)",
+      "kind": "documentary",
+      "content_ar": "«صدى الغدير» — ملحق التراث، 2019.\n«يروي كتيّب الدار أن الحاج حمدان الزهراني بناها من ماله سنة 1966، وما زال أهل الحي يذكرون كرمه.»\nالمصدر المذكور في المقال: كتيّب جمعية أصدقاء الدار.",
+      "acquired_by_action_ids": [
+        "a_get_article"
+      ],
+      "supports_fact_ids": [
+        "f_article_2019"
+      ],
+      "reliability": "weak",
+      "limits_ar": "مقال ينقل عن الكتيّب؛ ولا يضيف سجلاً جديداً ولا شاهداً معاصراً للبناء.",
+      "location_id": "loc_hall"
+    },
+    {
+      "id": "ev_board_1974",
+      "title_ar": "محضر مجلس إدارة الدار (1974)",
+      "kind": "documentary",
+      "content_ar": "محضر مجلس إدارة دار القناديل — 1974\nالحاضرون: ستة أعضاء.\nالبند 4 — اللوحة التذكارية: اقترح أمين السر جمال الزهراني نص اللوحة: «بُنيت هذه الدار من مال الحاج حمدان الزهراني». وافق المجلس بالإجماع.\nملاحظة الأمين: ملف الإنشاء محفوظ عند البلدية ولم يُعرض في هذه الجلسة.",
+      "acquired_by_action_ids": [
+        "a_get_board74"
+      ],
+      "supports_fact_ids": [
+        "f_board_1974",
+        "f_first_wording"
+      ],
+      "reliability": "strong",
+      "limits_ar": "محضر معاصر يبين من اقترح الصياغة وأن الملف لم يُعرض؛ ولا يثبت أن الصياغة خاطئة ولا ما قصده صاحبها.",
+      "location_id": "loc_hall",
+      "contradicts_claim_ids": [
+        "cl_official"
+      ]
+    },
+    {
+      "id": "ev_plaque_receipt",
+      "title_ar": "إيصال النقّاش (1974)",
+      "kind": "documentary",
+      "content_ar": "إيصال نقّاش — 1974\nالعمل: لوحة نحاسية بنص مرفق.\nالمبلغ: 40 ديناراً.\nالدافع: بيت الزهراني التجاري.\nمرفق: نسخة من محضر المجلس الذي أقرّ النص.",
+      "acquired_by_action_ids": [
+        "a_get_receipt"
+      ],
+      "supports_fact_ids": [
+        "f_plaque_receipt"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "يبين من دفع ثمن اللوحة وأنها نُفذت بقرار المجلس؛ ولا يدل على قصد التضليل ولا على صحة العبارة.",
+      "location_id": "loc_hall"
+    },
+    {
+      "id": "ev_access_register",
+      "title_ar": "سجل الاطلاع على حزمة الإنشاء",
+      "kind": "documentary",
+      "content_ar": "أرشيف بلدية الغدير — سجل الاطلاع (يُعمل به منذ 1965)\nالحزمة: «دار القناديل 1964-1966» (ملف الإنشاء). مختومة منذ 1966.\nطلبات الاطلاع المسجلة قبل هذا الأسبوع: لا شيء.\nالطلب الأول: لجنة احتفال دار القناديل، هذا الأسبوع.",
+      "acquired_by_action_ids": [
+        "a_get_register"
+      ],
+      "supports_fact_ids": [
+        "f_no_access"
+      ],
+      "reliability": "strong",
+      "limits_ar": "غياب طلب مسجل يبين أن الحزمة لم تُفتح رسمياً؛ ولا ينفي أن أحداً سمع من أصحاب الشأن أو رأى نسخة عند غير الأرشيف.",
+      "location_id": "loc_archive",
+      "contradicts_claim_ids": [
+        "cl_official"
+      ]
+    },
+    {
+      "id": "ev_council_1964",
+      "title_ar": "محضر المجلس البلدي (1964)",
+      "kind": "documentary",
+      "content_ar": "محضر المجلس البلدي — 1964 (ملخص الحزمة)\n1. قبل المجلس هبة القطعة رقم 118 من الحاج حمدان الزهراني لإنشاء دار قراءة عامة.\n2. فُتح باب الاكتتاب الشعبي لأهل الحي لتمويل البناء.\n3. خصص المجلس منحة بلدية قدرها 1,800 دينار.\n4. أُسند حساب الاكتتاب إلى أمين صندوق البلدية.",
+      "acquired_by_action_ids": [
+        "a_get_council"
+      ],
+      "supports_fact_ids": [
+        "f_council"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يبين ما قرره المجلس عند البدء؛ ولا يبين كم جُمع ولا كم دُفع فعلاً.",
+      "location_id": "loc_archive",
+      "contradicts_claim_ids": [
+        "cl_plaque"
+      ]
+    },
+    {
+      "id": "ev_deed",
+      "title_ar": "مستخرج السجل العقاري للقطعة 118",
+      "kind": "documentary",
+      "content_ar": "مستخرج السجل العقاري — القطعة 118\nنقل الملكية: من حمدان الزهراني إلى بلدية الغدير، سنة 1964.\nالسبب المدوّن: «هبة لإقامة دار قراءة عامة».\nبدل النقل: لا شيء.",
+      "acquired_by_action_ids": [
+        "a_get_deed"
+      ],
+      "supports_fact_ids": [
+        "f_deed"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يثبت نقل الأرض هبة؛ ولا يذكر من بنى عليها ولا كلفة البناء ولا قيمة الأرض.",
+      "location_id": "loc_archive"
+    },
+    {
+      "id": "ev_hamdan_letter",
+      "title_ar": "رسالة حمدان الزهراني إلى المجلس (1964)",
+      "kind": "documentary",
+      "content_ar": "رسالة الحاج حمدان الزهراني إلى المجلس البلدي — 1964\n«يسرني أن أهب البلدية القطعة 118 لتقام عليها دار القراءة، وأن أشارك أهل الحي في الاكتتاب بستمئة دينار. وأرجو أن تكون الدار لكل أبناء الحي.»",
+      "acquired_by_action_ids": [
+        "a_get_letter"
+      ],
+      "supports_fact_ids": [
+        "f_hamdan_letter"
+      ],
+      "reliability": "strong",
+      "limits_ar": "رسالة صاحب الشأن وقت الأمر؛ تبين ما عرضه هو، ولا تبين ما جمعه غيره.",
+      "location_id": "loc_archive",
+      "contradicts_claim_ids": [
+        "cl_memo",
+        "cl_plaque"
+      ]
+    },
+    {
+      "id": "ev_ledger",
+      "title_ar": "دفتر الاكتتاب الشعبي",
+      "kind": "documentary",
+      "content_ar": "دفتر الاكتتاب الشعبي لدار القناديل — بخط أمين صندوق البلدية\nص1: 41 اسماً — 1,850 دينار (منها: الحاج حمدان الزهراني 600).\nص2: 44 اسماً — 2,130 دينار.\nص3: 38 اسماً — 1,720 دينار.\nص4: 33 اسماً — 1,500 دينار.\nالمجموع المدوّن في آخر الدفتر: 156 اسماً — 7,200 دينار.",
+      "acquired_by_action_ids": [
+        "a_get_ledger"
+      ],
+      "supports_fact_ids": [
+        "f_ledger"
+      ],
+      "reliability": "strong",
+      "limits_ar": "دفتر مالي يسجل ما قُبض نقداً؛ ولا يقيّم الأرض ولا العمل التطوعي ولا ما لم يُقيَّد فيه.",
+      "location_id": "loc_archive",
+      "contradicts_claim_ids": [
+        "cl_plaque"
+      ]
+    },
+    {
+      "id": "ev_invoices",
+      "title_ar": "كشف المقاول النهائي (1966)",
+      "kind": "documentary",
+      "content_ar": "كشف المقاول النهائي — دار القناديل، 1966\nالأساسات: 2,400 دينار.\nالجدران والسقف: 4,900 دينار.\nالأبواب والرفوف: 1,700 دينار.\nالمجموع: 9,000 دينار.\nختم أمين الصندوق: دُفع المبلغ كاملاً من «حساب الاكتتاب والمنحة».",
+      "acquired_by_action_ids": [
+        "a_get_invoices"
+      ],
+      "supports_fact_ids": [
+        "f_invoices"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يبين كلفة البناء ومصدر الدفع؛ ولا يذكر قيمة الأرض ولا هبات عينية لم تُقيَّد ولا أثاثاً اشتُري بعد التسليم.",
+      "location_id": "loc_archive",
+      "contradicts_claim_ids": [
+        "cl_plaque"
+      ]
+    },
+    {
+      "id": "ev_opening_1966",
+      "title_ar": "برنامج حفل الافتتاح وكلمة رئيس البلدية (1966)",
+      "kind": "documentary",
+      "content_ar": "برنامج حفل افتتاح دار القناديل — 1966\nمن كلمة رئيس البلدية: «نشكر أهل حي القناديل الذين اكتتبوا قرشاً بعد قرش، ونشكر المجلس البلدي على منحته، ونشكر الحاج حمدان الزهراني على هبة الأرض ومشاركته في الاكتتاب.»",
+      "acquired_by_action_ids": [
+        "a_get_opening"
+      ],
+      "supports_fact_ids": [
+        "f_opening"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "كلمة احتفالية تعكس ما قيل في ذلك اليوم؛ وليست سجلاً مالياً ولا تحصي المبالغ.",
+      "location_id": "loc_hall"
+    },
+    {
+      "id": "ev_nader_statement",
+      "title_ar": "إفادة نادر الزهراني",
+      "kind": "testimonial",
+      "content_ar": "إفادة نادر الزهراني (مكتوبة):\n«جدي بنى الدار من ماله، هذا ما تقوله اللوحة والكتيّب ويردده الجميع. وعندي رسالة منه تؤيد ذلك.»",
+      "acquired_by_action_ids": [
+        "a_get_nader_stmt"
+      ],
+      "supports_fact_ids": [
+        "f_repeated"
+      ],
+      "reliability": "weak",
+      "limits_ar": "قول رئيس اللجنة وهو صاحب علاقة بالجدّ؛ ولد بعد افتتاح الدار بسنتين، فهو ينقل ما سمعه.",
+      "location_id": "loc_committee",
+      "contradicts_claim_ids": [
+        "cl_plaque",
+        "cl_memo"
+      ]
+    },
+    {
+      "id": "ev_salwa_statement",
+      "title_ar": "إفادة سلوى القباني",
+      "kind": "testimonial",
+      "content_ar": "إفادة سلوى القباني (مكتوبة):\n«نقلت العبارة من اللوحة سنة 1987، واللوحة منقوشة بقرار رسمي من المجلس، فلم أر حاجة إلى البحث عن غيرها.»",
+      "acquired_by_action_ids": [
+        "a_get_salwa_stmt"
+      ],
+      "supports_fact_ids": [
+        "f_booklet_source"
+      ],
+      "reliability": "weak",
+      "limits_ar": "قول صادق على ما يبدو لكنه يصف طريقة عملها هي؛ ولا يثبت صحة اللوحة.",
+      "location_id": "loc_hall",
+      "contradicts_claim_ids": [
+        "cl_official"
+      ]
+    },
+    {
+      "id": "ev_jamal_statement",
+      "title_ar": "إفادة جمال الزهراني",
+      "kind": "testimonial",
+      "content_ar": "إفادة جمال الزهراني (مكتوبة):\n«كنت أمين سر المجلس سنة 1974، واقترحت العبارة وفاءً لأبي ولم أفتح ملف البناء. لم أقصد أن أنقص من أحد.»",
+      "acquired_by_action_ids": [
+        "a_get_jamal_stmt"
+      ],
+      "supports_fact_ids": [
+        "f_origin"
+      ],
+      "reliability": "weak",
+      "limits_ar": "إفادة بعد نصف قرن من الواقعة؛ تصف نيته كما يتذكرها، والنية لا تثبتها السجلات.",
+      "location_id": "loc_hall"
+    }
+  ],
+  "evidence_graph": {
+    "inferences": [
+      {
+        "id": "i_share_a",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_ledger"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_invoices"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_share"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "الكشف يضع الكلفة 9,000 ويقول إنها دُفعت من حساب الاكتتاب والمنحة، والدفتر يجمع الاكتتاب 7,200 منها 600 لحمدان؛ والباقي 1,800 هو المنحة. فمال حمدان 600 من 9,000، أي جزء من خمسة عشر.",
+        "skill_ko_refs": [
+          "KO-RS-05-004"
+        ]
+      },
+      {
+        "id": "i_share_b",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_council_1964"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_hamdan_letter"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_opening_1966"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_share"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "المجلس فتح اكتتاباً عاماً وخصص منحة، ورسالة حمدان تعرض الأرض وستمئة دينار، وكلمة الافتتاح تشكر الأهالي والبلدية وحمدان على الأرض والمشاركة؛ فلا وثيقة معاصرة تجعله المموّل الوحيد.",
+        "skill_ko_refs": [
+          "KO-RS-05-001"
+        ]
+      },
+      {
+        "id": "i_chain_a",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_plaque_photo"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_booklet_1987"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_article_2019"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_chain"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "اللوحة بلا مصدر، وهامش الكتيّب الوحيد هو نص اللوحة، والمقال يذكر الكتيّب؛ فالنصوص الثلاثة تدور حول عبارة واحدة ولا يستند أي منها إلى سجل البناء.",
+        "skill_ko_refs": [
+          "KO-RS-05-005"
+        ]
+      },
+      {
+        "id": "i_chain_b",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_board_1974"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_access_register"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_chain"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "المحضر يقول إن ملف الإنشاء لم يُعرض عند إقرار النص، وسجل الاطلاع يقول إن الحزمة لم تُطلب قبل هذا الأسبوع؛ فلم يرجع أحد إلى الأصل.",
+        "skill_ko_refs": [
+          "KO-RS-05-005"
+        ]
+      },
+      {
+        "id": "i_first_a",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_council_1964"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_hamdan_letter"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_opening_1966"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_board_1974"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_first_wording"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "وثائق 1964 و1966 تصف إسهام حمدان بالأرض والستمئة دون عبارة «من ماله»، وأول ورودها في محضر 1974.",
+        "skill_ko_refs": [
+          "KO-RS-05-005"
+        ]
+      },
+      {
+        "id": "i_first_b",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_deed"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_ledger"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_invoices"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_plaque_photo"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_first_wording"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "المستخرج والدفتر والكشف لا تحمل العبارة، وهي أول ما تظهر في نص اللوحة المؤرخة سنة 1974.",
+        "skill_ko_refs": [
+          "KO-RS-05-004"
+        ]
+      },
+      {
+        "id": "i_unsup",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_share"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_chain"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_account_unsupported"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "إذا كان مال حمدان جزءاً صغيراً من الكلفة، وكانت النصوص اللاحقة كلها منقولة عن عبارة لم تُراجَع على الأصل، فالرواية لا يسندها سجل.",
+        "skill_ko_refs": [
+          "KO-RS-05-004"
+        ]
+      },
+      {
+        "id": "i_origin_a",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_board_1974"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_plaque_receipt"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_origin"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "المحضر ينسب الصياغة إلى أمين السر جمال، والإيصال يبين أن بيتهم دفع ثمن اللوحة علناً بقرار المجلس؛ فالعبارة بدأت من دائرة الأسرة وفاءً لا خفية.",
+        "skill_ko_refs": [
+          "KO-RS-05-005"
+        ]
+      },
+      {
+        "id": "i_origin_b",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_plaque_photo"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_opening_1966"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_hamdan_letter"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_origin"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "وثائق 1964 و1966 لا تقول «من ماله»، واللوحة المؤرخة 1974 تذكر جمال منفذاً لها؛ فالعبارة وُلدت مع اللوحة لا مع البناء.",
+        "skill_ko_refs": [
+          "KO-RS-05-005"
+        ]
+      },
+      {
+        "id": "i_rule_donor",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_share"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_account_unsupported"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_donor"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "مساهمة حمدان النقدية 600 من 9,000، والرواية لا يسندها سجل؛ فلا يصح القول إنه بنى الدار من ماله.",
+        "skill_ko_refs": [
+          "KO-RS-06-009"
+        ]
+      },
+      {
+        "id": "i_rule_council",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_ledger"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_invoices"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_council"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "الاكتتاب 7,200 من 9,000 أي أربعة أخماس الكلفة، والمنحة 1,800 أي الخمس؛ فالبلدية لم تموّل الدار وحدها.",
+        "skill_ko_refs": [
+          "KO-RS-06-009"
+        ]
+      },
+      {
+        "id": "i_rule_deliberate",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_plaque_photo"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_booklet_1987"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_article_2019"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_new_panel_draft"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_deliberate"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "اللوحة والكتيّب والمقال سبقت رئاسة نادر للجنة بسنوات، فلم يخترع العبارة ليستفيد منها الآن؛ ومسودته تنقل ما وجده.",
+        "skill_ko_refs": [
+          "KO-RS-06-009"
+        ]
+      },
+      {
+        "id": "i_supports_land",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_share"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_account_unsupported"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_origin"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_land"
+        },
+        "relation": "supports",
+        "strength": "strong",
+        "rule_ar": "السجلات تثبت هبة الأرض ومساهمة صغيرة نقداً، والاكتتاب والمنحة موّلا الباقي، وبدأت العبارة بصياغة 1974 ثم تناقلها الناس.",
+        "skill_ko_refs": [
+          "KO-RS-05-002"
+        ]
+      },
+      {
+        "id": "i_claim_plaque",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_ledger"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_invoices"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_plaque"
+        },
+        "relation": "contradicts_claim",
+        "strength": "strong",
+        "rule_ar": "الدفتر والكشف يبينان أن مصدر الدفع الاكتتاب والمنحة وأن حصة حمدان 600 من 9,000.",
+        "skill_ko_refs": [
+          "KO-RS-05-001"
+        ]
+      },
+      {
+        "id": "i_claim_official",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_board_1974"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_access_register"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_official"
+        },
+        "relation": "contradicts_claim",
+        "strength": "strong",
+        "rule_ar": "القرار الرسمي بالنقش لا يعني أن أحداً راجع الأصل؛ فالمحضر والسجل يبينان أن الملف لم يُفتح.",
+        "skill_ko_refs": [
+          "KO-RS-05-001"
+        ]
+      },
+      {
+        "id": "i_claim_memo",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_hamdan_letter"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_memo"
+        },
+        "relation": "contradicts_claim",
+        "strength": "strong",
+        "rule_ar": "الرسالة تذكر الأرض والستمئة دينار ولا تذكر تمويل البناء.",
+        "skill_ko_refs": [
+          "KO-RS-05-004"
+        ]
+      }
+    ]
+  },
+  "character_knowledge": [
+    {
+      "character_id": "afaf",
+      "knows": [
+        {
+          "fact_id": "f_no_access",
+          "access": "professional",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_deed",
+          "access": "professional",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_council",
+          "access": "professional",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_ledger",
+          "access": "professional",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_invoices",
+          "access": "professional",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_opening",
+          "access": "professional",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    },
+    {
+      "character_id": "nader",
+      "knows": [
+        {
+          "fact_id": "f_panel_plan",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_repeated",
+          "access": "common_knowledge",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [
+        {
+          "fact_id": "f_hamdan_letter",
+          "reveal_when": {
+            "presented": {
+              "evidence_id": "ev_hamdan_letter",
+              "to_character": "nader"
+            }
+          },
+          "cover_claim_id": "cl_memo",
+          "reveal_line_id": "nd_letter"
+        }
+      ],
+      "believes": [
+        {
+          "claim_id": "cl_plaque",
+          "stance": "sincere"
+        },
+        {
+          "claim_id": "cl_memo",
+          "stance": "sincere"
+        }
+      ]
+    },
+    {
+      "character_id": "salwa",
+      "knows": [
+        {
+          "fact_id": "f_booklet_1987",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_plaque_1974",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [
+        {
+          "fact_id": "f_booklet_source",
+          "reveal_when": {
+            "presented": {
+              "evidence_id": "ev_access_register",
+              "to_character": "salwa"
+            }
+          },
+          "cover_claim_id": "cl_official",
+          "reveal_line_id": "sl_source"
+        }
+      ],
+      "believes": [
+        {
+          "claim_id": "cl_official",
+          "stance": "sincere"
+        }
+      ]
+    },
+    {
+      "character_id": "jamal",
+      "knows": [
+        {
+          "fact_id": "f_plaque_receipt",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_board_1974",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_plaque_1974",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [
+        {
+          "fact_id": "f_origin",
+          "reveal_when": {
+            "presented": {
+              "evidence_id": "ev_board_1974",
+              "to_character": "jamal"
+            }
+          },
+          "cover_claim_id": "cl_plaque",
+          "reveal_line_id": "jm_origin"
+        }
+      ],
+      "believes": [
+        {
+          "claim_id": "cl_plaque",
+          "stance": "sincere"
+        }
+      ]
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "h_donor",
+      "statement_ar": "بنى الحاج حمدان الزهراني الدار من ماله، كما تقول اللوحة والكتيّب.",
+      "is_true": false,
+      "plausibility_at_start": "high"
+    },
+    {
+      "id": "h_council",
+      "statement_ar": "بنت البلدية الدار وحدها من أموالها، ونُسب الفضل إلى حمدان خطأً.",
+      "is_true": false,
+      "plausibility_at_start": "low"
+    },
+    {
+      "id": "h_deliberate",
+      "statement_ar": "اخترع نادر الزهراني العبارة حديثاً ليرفع اسم عائلته في الذكرى الستين.",
+      "is_true": false,
+      "plausibility_at_start": "medium",
+      "suspect_id": "nader"
+    },
+    {
+      "id": "h_land",
+      "statement_ar": "أهدى حمدان الأرض وأسهم بجزء صغير نقداً، وبُنيت الدار باكتتاب أهل الحي ومنحة البلدية؛ وبدأت العبارة المبالغة بصياغة جمال سنة 1974 دون مراجعة الملف ثم تناقلها الناس.",
+      "is_true": true,
+      "plausibility_at_start": "low",
+      "suspect_id": "jamal"
+    }
+  ],
+  "misdirection_plan": [
+    {
+      "id": "rh_repeat",
+      "points_to_hypothesis_id": "h_donor",
+      "planted_via_ar": "العبارة منقوشة على النحاس وفي كتيّب ومقال ويرددها الجميع، وكلمة حمدان نفسه عن الأرض والاكتتاب لا تُقرأ إلا في الأرشيف.",
+      "evidence_ids": [
+        "ev_plaque_photo",
+        "ev_booklet_1987",
+        "ev_article_2019",
+        "ev_nader_statement"
+      ],
+      "refuted_by_inference_ids": [
+        "i_rule_donor",
+        "i_chain_a"
+      ],
+      "fairness_note_ar": "الدفتر والكشف والمحضر والرسالة في حزمة الأرشيف المتاحة للطلب، وكل نص مكرر يذكر مصدره المباشر فيسهل تتبع السلسلة."
+    },
+    {
+      "id": "rh_council",
+      "points_to_hypothesis_id": "h_council",
+      "planted_via_ar": "محضر المجلس يخصص منحة وكلمة الافتتاح تشكر البلدية، فيبدو أن البلدية صاحبة المشروع.",
+      "evidence_ids": [
+        "ev_council_1964",
+        "ev_opening_1966"
+      ],
+      "refuted_by_inference_ids": [
+        "i_rule_council"
+      ],
+      "fairness_note_ar": "المنحة 1,800 مذكورة بنصها في المحضر ولا تتجاوز خمس الكلفة بحسب الكشف والدفتر المتاحين معاً."
+    },
+    {
+      "id": "rh_nader",
+      "points_to_hypothesis_id": "h_deliberate",
+      "planted_via_ar": "بيت الزهراني دفع ثمن اللوحة، ونادر يرأس اللجنة التي تريد النقش مجدداً، فتبدو المسألة دعاية عائلية.",
+      "evidence_ids": [
+        "ev_plaque_receipt",
+        "ev_nader_statement"
+      ],
+      "refuted_by_inference_ids": [
+        "i_rule_deliberate"
+      ],
+      "fairness_note_ar": "الإيصال علني ومرفق بمحضر المجلس، وتواريخ اللوحة والكتيّب والمقال تسبق رئاسة نادر للجنة."
+    }
+  ],
+  "learning_objectives": [
+    {
+      "id": "lo_source",
+      "statement_ar": "يسأل عن كل نص: من كتبه؟ ومن أين نقل؟ وهل رجع إلى السجل الأصلي؟",
+      "skill_ko_ref": "KO-RS-05-001",
+      "observable_behaviors_ar": [
+        "يصنّف اللوحة والكتيّب والمقال",
+        "يفرّق بين الأصل والنسخة"
+      ],
+      "evidence_sources": [
+        "evidence_board"
+      ]
+    },
+    {
+      "id": "lo_trace",
+      "statement_ar": "يرتّب الوثائق بحسب تواريخها ليعرف متى ظهرت العبارة لأول مرة.",
+      "skill_ko_ref": "KO-RS-05-005",
+      "observable_behaviors_ar": [
+        "يضع وثائق 1964 و1966 قبل لوحة 1974"
+      ],
+      "evidence_sources": [
+        "timeline_task",
+        "action_log"
+      ]
+    },
+    {
+      "id": "lo_hyp",
+      "statement_ar": "يوازن بين عدة فرضيات ويستبعد ما تنقضه الأدلة.",
+      "skill_ko_ref": "KO-RS-05-002",
+      "observable_behaviors_ar": [
+        "يضيف فرضيات",
+        "يستبعد بدليل"
+      ],
+      "evidence_sources": [
+        "hypothesis_ledger"
+      ]
+    },
+    {
+      "id": "lo_read",
+      "statement_ar": "يقرأ ما تقوله الوثيقة فعلاً قبل أن يصدّق ما نُسب إليها، ويقارن المجموع بأجزائه.",
+      "skill_ko_ref": "KO-RS-05-004",
+      "observable_behaviors_ar": [
+        "يربط الدليل بالفرضية باتجاه صحيح",
+        "يتحقق من الأرقام"
+      ],
+      "evidence_sources": [
+        "evidence_board",
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_calib",
+      "statement_ar": "يصوغ ثقته بقدر السند ويذكر حدود الأدلة، ومنها الدليل الغائب.",
+      "skill_ko_ref": "KO-RS-06-021",
+      "observable_behaviors_ar": [
+        "يختار ثقة معقولة",
+        "يذكر حدوداً"
+      ],
+      "evidence_sources": [
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_revise",
+      "statement_ar": "يراجع رأيه الأول حين يظهر ما يخالفه.",
+      "skill_ko_ref": "KO-RS-06-009",
+      "observable_behaviors_ar": [
+        "يغيّر فرضيته الرائدة بدليل"
+      ],
+      "evidence_sources": [
+        "hypothesis_ledger"
+      ]
+    }
+  ],
+  "mechanics": {
+    "time_budget_units": 40,
+    "actions": [
+      {
+        "id": "a_get_panel",
+        "type": "examine",
+        "label_ar": "اقرأ مسودة لوحة الذكرى الستين",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_new_panel_draft"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_committee",
+        "telemetry_code": "GET_PANEL"
+      },
+      {
+        "id": "a_get_plaque",
+        "type": "examine",
+        "label_ar": "اطلب صورة اللوحة عند المدخل",
+        "precondition": {
+          "has_evidence": "ev_new_panel_draft"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_plaque_photo"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_hall",
+        "telemetry_code": "GET_PLAQUE"
+      },
+      {
+        "id": "a_get_booklet",
+        "type": "examine",
+        "label_ar": "اطلب كتيّب الدار (1987)",
+        "precondition": {
+          "has_evidence": "ev_new_panel_draft"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_booklet_1987"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_hall",
+        "telemetry_code": "GET_BOOKLET"
+      },
+      {
+        "id": "a_get_article",
+        "type": "examine",
+        "label_ar": "اطلب مقال «صدى الغدير»",
+        "precondition": {
+          "has_evidence": "ev_booklet_1987"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_article_2019"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_hall",
+        "telemetry_code": "GET_ARTICLE"
+      },
+      {
+        "id": "a_get_board74",
+        "type": "search_location",
+        "label_ar": "اطلب محضر مجلس الدار (1974)",
+        "precondition": {
+          "has_evidence": "ev_plaque_photo"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_board_1974"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_hall",
+        "telemetry_code": "GET_BOARD74"
+      },
+      {
+        "id": "a_get_receipt",
+        "type": "examine",
+        "label_ar": "اطلب إيصال النقّاش",
+        "precondition": {
+          "has_evidence": "ev_board_1974"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_plaque_receipt"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_hall",
+        "telemetry_code": "GET_RECEIPT"
+      },
+      {
+        "id": "a_get_register",
+        "type": "search_location",
+        "label_ar": "اطلب سجل الاطلاع على حزمة الإنشاء",
+        "precondition": {
+          "has_evidence": "ev_new_panel_draft"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_access_register"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_archive",
+        "telemetry_code": "GET_REGISTER"
+      },
+      {
+        "id": "a_get_council",
+        "type": "search_location",
+        "label_ar": "افتح محضر المجلس البلدي (1964)",
+        "precondition": {
+          "has_evidence": "ev_access_register"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_council_1964"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_archive",
+        "telemetry_code": "GET_COUNCIL"
+      },
+      {
+        "id": "a_get_deed",
+        "type": "search_location",
+        "label_ar": "اطلب مستخرج السجل العقاري للقطعة 118",
+        "precondition": {
+          "has_evidence": "ev_council_1964"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_deed"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_archive",
+        "telemetry_code": "GET_DEED"
+      },
+      {
+        "id": "a_get_ledger",
+        "type": "search_location",
+        "label_ar": "افتح دفتر الاكتتاب الشعبي",
+        "precondition": {
+          "has_evidence": "ev_council_1964"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_ledger"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_archive",
+        "telemetry_code": "GET_LEDGER"
+      },
+      {
+        "id": "a_get_invoices",
+        "type": "search_location",
+        "label_ar": "افتح كشف المقاول النهائي",
+        "precondition": {
+          "has_evidence": "ev_ledger"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_invoices"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_archive",
+        "telemetry_code": "GET_INVOICES"
+      },
+      {
+        "id": "a_get_opening",
+        "type": "examine",
+        "label_ar": "اطلب برنامج حفل الافتتاح (1966)",
+        "precondition": {
+          "has_evidence": "ev_council_1964"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_opening_1966"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_archive",
+        "telemetry_code": "GET_OPENING"
+      },
+      {
+        "id": "a_get_letter",
+        "type": "search_location",
+        "label_ar": "اطلب رسالة حمدان إلى المجلس",
+        "precondition": {
+          "has_evidence": "ev_deed"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_hamdan_letter"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_archive",
+        "telemetry_code": "GET_LETTER"
+      },
+      {
+        "id": "a_int_afaf",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة عفاف",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "afaf",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "afaf",
+        "telemetry_code": "INT_AFAF"
+      },
+      {
+        "id": "a_int_nader",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة نادر",
+        "precondition": {
+          "has_evidence": "ev_new_panel_draft"
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "nader",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "nader",
+        "telemetry_code": "INT_NADER"
+      },
+      {
+        "id": "a_int_salwa",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة سلوى",
+        "precondition": {
+          "has_evidence": "ev_booklet_1987"
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "salwa",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "salwa",
+        "telemetry_code": "INT_SALWA"
+      },
+      {
+        "id": "a_int_jamal",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة جمال",
+        "precondition": {
+          "has_evidence": "ev_plaque_photo"
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "jamal",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "jamal",
+        "telemetry_code": "INT_JAMAL"
+      },
+      {
+        "id": "a_get_nader_stmt",
+        "type": "examine",
+        "label_ar": "دوّن إفادة نادر",
+        "precondition": {
+          "fact_unlocked": "f_panel_plan"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_nader_statement"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "nader",
+        "telemetry_code": "NOTE_NADER"
+      },
+      {
+        "id": "a_get_salwa_stmt",
+        "type": "examine",
+        "label_ar": "دوّن إفادة سلوى",
+        "precondition": {
+          "fact_unlocked": "f_booklet_1987"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_salwa_statement"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "salwa",
+        "telemetry_code": "NOTE_SALWA"
+      },
+      {
+        "id": "a_get_jamal_stmt",
+        "type": "examine",
+        "label_ar": "دوّن إفادة جمال",
+        "precondition": {
+          "fact_unlocked": "f_origin"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_jamal_statement"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "jamal",
+        "telemetry_code": "NOTE_JAMAL"
+      },
+      {
+        "id": "p_board_jamal",
+        "type": "present_evidence",
+        "label_ar": "اعرض محضر 1974 على جمال",
+        "precondition": {
+          "presented": {
+            "evidence_id": "ev_board_1974",
+            "to_character": "jamal"
+          }
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "PRESENTED_BOARD"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "jamal",
+        "telemetry_code": "P_BOARD_JAMAL"
+      },
+      {
+        "id": "p_register_salwa",
+        "type": "present_evidence",
+        "label_ar": "اعرض سجل الاطلاع على سلوى",
+        "precondition": {
+          "presented": {
+            "evidence_id": "ev_access_register",
+            "to_character": "salwa"
+          }
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "PRESENTED_REGISTER"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "salwa",
+        "telemetry_code": "P_REGISTER_SALWA"
+      },
+      {
+        "id": "p_letter_nader",
+        "type": "present_evidence",
+        "label_ar": "اعرض رسالة حمدان على نادر",
+        "precondition": {
+          "presented": {
+            "evidence_id": "ev_hamdan_letter",
+            "to_character": "nader"
+          }
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "PRESENTED_LETTER"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "nader",
+        "telemetry_code": "P_LETTER_NADER"
+      },
+      {
+        "id": "a_hint",
+        "type": "request_hint",
+        "label_ar": "اطلب تلميحاً",
+        "precondition": {
+          "always": true
+        },
+        "effects": [],
+        "time_cost_units": 0,
+        "telemetry_code": "REQUEST_HINT"
+      },
+      {
+        "id": "a_accuse",
+        "type": "final_accusation",
+        "label_ar": "قدّم الاستنتاج النهائي",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "SUBMIT"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "FINAL_ACCUSATION"
+      },
+      {
+        "id": "ask_afaf_f_no_access",
+        "type": "interview",
+        "label_ar": "[نموذج] afaf يذكر f_no_access",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_no_access"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "afaf",
+        "telemetry_code": "ASK_AFAF_F_NO_ACCESS"
+      },
+      {
+        "id": "ask_afaf_f_deed",
+        "type": "interview",
+        "label_ar": "[نموذج] afaf يذكر f_deed",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_deed"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "afaf",
+        "telemetry_code": "ASK_AFAF_F_DEED"
+      },
+      {
+        "id": "ask_afaf_f_council",
+        "type": "interview",
+        "label_ar": "[نموذج] afaf يذكر f_council",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_council"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "afaf",
+        "telemetry_code": "ASK_AFAF_F_COUNCIL"
+      },
+      {
+        "id": "ask_afaf_f_ledger",
+        "type": "interview",
+        "label_ar": "[نموذج] afaf يذكر f_ledger",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_ledger"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "afaf",
+        "telemetry_code": "ASK_AFAF_F_LEDGER"
+      },
+      {
+        "id": "ask_afaf_f_invoices",
+        "type": "interview",
+        "label_ar": "[نموذج] afaf يذكر f_invoices",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_invoices"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "afaf",
+        "telemetry_code": "ASK_AFAF_F_INVOICES"
+      },
+      {
+        "id": "ask_afaf_f_opening",
+        "type": "interview",
+        "label_ar": "[نموذج] afaf يذكر f_opening",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_opening"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "afaf",
+        "telemetry_code": "ASK_AFAF_F_OPENING"
+      },
+      {
+        "id": "ask_nader_f_panel_plan",
+        "type": "interview",
+        "label_ar": "[نموذج] nader يذكر f_panel_plan",
+        "precondition": {
+          "has_evidence": "ev_new_panel_draft"
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_panel_plan"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "nader",
+        "telemetry_code": "ASK_NADER_F_PANEL_PLAN"
+      },
+      {
+        "id": "ask_nader_f_repeated",
+        "type": "interview",
+        "label_ar": "[نموذج] nader يذكر f_repeated",
+        "precondition": {
+          "has_evidence": "ev_new_panel_draft"
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_repeated"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "nader",
+        "telemetry_code": "ASK_NADER_F_REPEATED"
+      },
+      {
+        "id": "ask_salwa_f_booklet_1987",
+        "type": "interview",
+        "label_ar": "[نموذج] salwa يذكر f_booklet_1987",
+        "precondition": {
+          "has_evidence": "ev_booklet_1987"
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_booklet_1987"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "salwa",
+        "telemetry_code": "ASK_SALWA_F_BOOKLET_1987"
+      },
+      {
+        "id": "ask_salwa_f_plaque_1974",
+        "type": "interview",
+        "label_ar": "[نموذج] salwa يذكر f_plaque_1974",
+        "precondition": {
+          "has_evidence": "ev_booklet_1987"
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_plaque_1974"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "salwa",
+        "telemetry_code": "ASK_SALWA_F_PLAQUE_1974"
+      },
+      {
+        "id": "ask_jamal_f_plaque_receipt",
+        "type": "interview",
+        "label_ar": "[نموذج] jamal يذكر f_plaque_receipt",
+        "precondition": {
+          "has_evidence": "ev_plaque_photo"
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_plaque_receipt"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "jamal",
+        "telemetry_code": "ASK_JAMAL_F_PLAQUE_RECEIPT"
+      },
+      {
+        "id": "ask_jamal_f_board_1974",
+        "type": "interview",
+        "label_ar": "[نموذج] jamal يذكر f_board_1974",
+        "precondition": {
+          "has_evidence": "ev_plaque_photo"
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_board_1974"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "jamal",
+        "telemetry_code": "ASK_JAMAL_F_BOARD_1974"
+      },
+      {
+        "id": "ask_jamal_f_plaque_1974",
+        "type": "interview",
+        "label_ar": "[نموذج] jamal يذكر f_plaque_1974",
+        "precondition": {
+          "has_evidence": "ev_plaque_photo"
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_plaque_1974"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "jamal",
+        "telemetry_code": "ASK_JAMAL_F_PLAQUE_1974"
+      },
+      {
+        "id": "ask_nader_f_hamdan_letter",
+        "type": "interview",
+        "label_ar": "[نموذج] nader يكشف f_hamdan_letter",
+        "precondition": {
+          "all": [
+            {
+              "has_evidence": "ev_new_panel_draft"
+            },
+            {
+              "presented": {
+                "evidence_id": "ev_hamdan_letter",
+                "to_character": "nader"
+              }
+            }
+          ]
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_hamdan_letter"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "nader",
+        "telemetry_code": "ASK_NADER_F_HAMDAN_LETTER"
+      },
+      {
+        "id": "ask_salwa_f_booklet_source",
+        "type": "interview",
+        "label_ar": "[نموذج] salwa يكشف f_booklet_source",
+        "precondition": {
+          "all": [
+            {
+              "has_evidence": "ev_booklet_1987"
+            },
+            {
+              "presented": {
+                "evidence_id": "ev_access_register",
+                "to_character": "salwa"
+              }
+            }
+          ]
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_booklet_source"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "salwa",
+        "telemetry_code": "ASK_SALWA_F_BOOKLET_SOURCE"
+      },
+      {
+        "id": "ask_jamal_f_origin",
+        "type": "interview",
+        "label_ar": "[نموذج] jamal يكشف f_origin",
+        "precondition": {
+          "all": [
+            {
+              "has_evidence": "ev_plaque_photo"
+            },
+            {
+              "presented": {
+                "evidence_id": "ev_board_1974",
+                "to_character": "jamal"
+              }
+            }
+          ]
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_origin"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "jamal",
+        "telemetry_code": "ASK_JAMAL_F_ORIGIN"
+      }
+    ]
+  },
+  "state_machine": {
+    "id": "c050",
+    "initial": "briefing",
+    "type": "compound",
+    "states": {
+      "briefing": {
+        "description_ar": "الإحاطة",
+        "type": "atomic",
+        "on": {
+          "START": {
+            "target": "investigating"
+          }
+        }
+      },
+      "investigating": {
+        "description_ar": "التحقيق",
+        "type": "compound",
+        "initial": "gathering",
+        "states": {
+          "gathering": {
+            "type": "atomic",
+            "on": {
+              "OPEN_DEDUCTION": {
+                "target": "deducing"
+              }
+            }
+          },
+          "deducing": {
+            "type": "atomic",
+            "on": {
+              "BACK": {
+                "target": "gathering"
+              }
+            }
+          }
+        },
+        "on": {
+          "SUBMIT": {
+            "target": "review"
+          }
+        }
+      },
+      "review": {
+        "description_ar": "مراجعة",
+        "type": "atomic",
+        "on": {
+          "CLOSE": {
+            "target": "resolved"
+          }
+        }
+      },
+      "resolved": {
+        "description_ar": "إغلاق",
+        "type": "final"
+      }
+    }
+  },
+  "dialogue": {
+    "max_turns_per_interview": 10,
+    "llm_enabled": false,
+    "topics": [
+      {
+        "id": "t_panel",
+        "label_ar": "لوحة الذكرى ومسودتها",
+        "example_questions_ar": [
+          "لماذا تريدون النقش الآن؟",
+          "من كتب المسودة؟"
+        ],
+        "fact_ids": [
+          "f_panel_plan",
+          "f_repeated"
+        ],
+        "claim_ids": [
+          "cl_plaque"
+        ]
+      },
+      {
+        "id": "t_letter",
+        "label_ar": "رسالة الحاج حمدان",
+        "example_questions_ar": [
+          "ماذا تقول رسالة جدك؟"
+        ],
+        "fact_ids": [
+          "f_hamdan_letter"
+        ],
+        "claim_ids": [
+          "cl_memo"
+        ]
+      },
+      {
+        "id": "t_booklet",
+        "label_ar": "الكتيّب ومصدره",
+        "example_questions_ar": [
+          "من أين نقلت العبارة؟",
+          "هل طلبت ملف البناء؟"
+        ],
+        "fact_ids": [
+          "f_booklet_1987",
+          "f_booklet_source"
+        ],
+        "claim_ids": [
+          "cl_official"
+        ]
+      },
+      {
+        "id": "t_board",
+        "label_ar": "مجلس 1974 واللوحة",
+        "example_questions_ar": [
+          "من اقترح العبارة؟",
+          "من دفع ثمن اللوحة؟"
+        ],
+        "fact_ids": [
+          "f_board_1974",
+          "f_plaque_receipt",
+          "f_origin",
+          "f_plaque_1974"
+        ]
+      },
+      {
+        "id": "t_archive",
+        "label_ar": "حزمة الإنشاء",
+        "example_questions_ar": [
+          "ماذا في الحزمة؟",
+          "هل طلبها أحد قبلنا؟"
+        ],
+        "fact_ids": [
+          "f_no_access",
+          "f_deed",
+          "f_council",
+          "f_ledger",
+          "f_invoices",
+          "f_opening"
+        ]
+      }
+    ]
+  },
+  "rubric": {
+    "reference_answer_ar": "لا تسند السجلات تمويل الحاج حمدان الزهراني بناء دار القناديل وحده. الكلفة 9,000 دينار بحسب كشف المقاول، دُفعت من الاكتتاب (7,200، منها 600 لحمدان) ومن المنحة البلدية (1,800). وحمدان أهدى الأرض وأسهم بنحو جزء من خمسة عشر جزءاً نقداً، وتشكره رسالته وكلمة افتتاح 1966 على ذلك. وأول ظهور لعبارة «من ماله» في محضر مجلس الدار سنة 1974 باقتراح ابنه جمال دون عرض الملف، ثم نقلها الكتيّب عن اللوحة والمقال عن الكتيّب. فالأرجح أن الرواية مبالغة نشأت من هبة حقيقية ثم تكررت، لا تزويراً. حدود الاستنتاج: الدفتر والكشف يحصيان المال النقدي ولا يقيّمان الأرض، وغياب طلبات الاطلاع لا ينفي أن أحداً عرف الأمر مشافهة، ولا تثبت السجلات نية جمال. وتكرار العبارة لا يزيدها قوة.",
+    "criteria": [
+      {
+        "id": "c_source",
+        "name_ar": "تصنيف المصادر",
+        "objective_ids": [
+          "lo_source"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يصنّف"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "أخطأ في الأغلب"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "نصف صحيح"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمه صحيح"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كله صحيح"
+          }
+        ]
+      },
+      {
+        "id": "c_conflict",
+        "name_ar": "ترتيب الوثائق زمنياً",
+        "objective_ids": [
+          "lo_trace"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يضع شيئاً"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "وضع قليلاً"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "وضع نصفها صحيحاً"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمها"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كلها في موضعها"
+          }
+        ]
+      },
+      {
+        "id": "c_links",
+        "name_ar": "ربط الأدلة بالفرضيات",
+        "objective_ids": [
+          "lo_read"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.2,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لا روابط"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "قليلة"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "نصفها صحيح"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمها"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كلها دقيقة"
+          }
+        ]
+      },
+      {
+        "id": "c_uncertainty",
+        "name_ar": "معايرة الثقة",
+        "objective_ids": [
+          "lo_calib"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.2,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "ثقة مفرطة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "حدود قليلة"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "جزئية"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معقولة"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "معايَرة كاملة"
+          }
+        ]
+      },
+      {
+        "id": "c_revision",
+        "name_ar": "مراجعة الرأي",
+        "objective_ids": [
+          "lo_revise"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "بقي على فرضية مرفوضة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "لم يعلن فرضية"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "ثبت على فرضية سليمة"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "غيّر بدليل"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "غيّر بدليل ووثّق"
+          }
+        ]
+      },
+      {
+        "id": "c_elimination",
+        "name_ar": "استبعاد الفرضيات الخاطئة",
+        "objective_ids": [
+          "lo_hyp"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يستبعد"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "استبعد خطأً"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "فرضية بدليل"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "فرضيتين"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كل الخاطئة"
+          }
+        ]
+      },
+      {
+        "id": "c_justification",
+        "name_ar": "جودة الحجة المكتوبة",
+        "objective_ids": [
+          "lo_read",
+          "lo_hyp"
+        ],
+        "scored_by": "human",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لا حجة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "ادعاء بلا سند"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "أدلة دون ربط"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "ربط الأدلة بالاستنتاج"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "ربط مع البدائل والحدود"
+          }
+        ]
+      }
+    ]
+  },
+  "hint_ladder": [
+    {
+      "id": "hg1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "قبل أن تسأل هل الرواية صحيحة، اسأل: كم مصدراً مستقلاً يقولها فعلاً؟",
+      "trigger": {
+        "always": true
+      },
+      "assessment_weight": 0.02
+    },
+    {
+      "id": "hg2",
+      "level": 2,
+      "kind": "focus_area",
+      "text_ar": "ضع النصوص الثلاثة في سلسلة: من نقل عن من؟ وأين الأصل الذي يعود إليه الجميع؟",
+      "trigger": {
+        "has_evidence": "ev_new_panel_draft"
+      },
+      "assessment_weight": 0.04
+    },
+    {
+      "id": "hg3",
+      "level": 3,
+      "kind": "pointer",
+      "text_ar": "في الأرشيف حزمة مختومة منذ 1966؛ اطلب سجل الاطلاع عليها ثم افتحها.",
+      "trigger": {
+        "has_evidence": "ev_new_panel_draft"
+      },
+      "assessment_weight": 0.08
+    },
+    {
+      "id": "hc1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "إذا لم يفتح أحد الأصل قبل الكتابة، فماذا يضيف تكرار النص إلى صحته؟",
+      "trigger": {
+        "has_evidence": "ev_plaque_photo"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_chain_a"
+    },
+    {
+      "id": "hc2",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "قارن هامش الكتيّب بهامش المقال، ثم اقرأ ما دوّنه أمين سر المجلس عن ملف الإنشاء.",
+      "trigger": {
+        "has_evidence": "ev_booklet_1987"
+      },
+      "assessment_weight": 0.06,
+      "targets_inference_id": "i_chain_a"
+    },
+    {
+      "id": "hc3",
+      "level": 3,
+      "kind": "partial_reveal",
+      "text_ar": "اللوحة بلا مصدر، والكتيّب ينقل عنها، والمقال ينقل عن الكتيّب، ومحضر 1974 يقول إن الملف لم يُعرض، وسجل الاطلاع لا يذكر طلباً قبل هذا الأسبوع.",
+      "trigger": {
+        "has_evidence": "ev_board_1974"
+      },
+      "assessment_weight": 0.1,
+      "targets_inference_id": "i_chain_a"
+    },
+    {
+      "id": "hs1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "حين تقول الرواية «من ماله»، كم دينار تعني؟ وأين تجد هذا الرقم؟",
+      "trigger": {
+        "has_evidence": "ev_new_panel_draft"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_share_a"
+    },
+    {
+      "id": "hs2",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "اجمع صفحات دفتر الاكتتاب، ثم قارن مجموعها وحصة حمدان بكلفة كشف المقاول.",
+      "trigger": {
+        "has_evidence": "ev_ledger"
+      },
+      "assessment_weight": 0.05,
+      "targets_inference_id": "i_share_a"
+    },
+    {
+      "id": "hs3",
+      "level": 3,
+      "kind": "partial_reveal",
+      "text_ar": "الكلفة 9,000 دفع منها الاكتتاب 7,200 ومنها 600 لحمدان، والمنحة 1,800؛ وارجع إلى رسالته لتعرف ماذا عرض.",
+      "trigger": {
+        "has_evidence": "ev_invoices"
+      },
+      "assessment_weight": 0.08,
+      "targets_inference_id": "i_share_a"
+    }
+  ],
+  "fairness_test": {
+    "requirements": {
+      "min_disjoint_proof_paths": 2,
+      "max_inference_depth": 3,
+      "all_red_herrings_refutable": true,
+      "culprit_uniquely_entailed": true,
+      "no_hidden_fact_dependency": true,
+      "max_required_actions": 40
+    },
+    "runs": []
+  },
+  "ending_explanation": {
+    "steps": [
+      {
+        "order": 1,
+        "text_ar": "ابدأ بسؤال المصدر: اللوحة بلا مصدر، والكتيّب يذكر اللوحة هامشاً وحيداً، والمقال يذكر الكتيّب؛ فالنصوص الثلاثة سلسلة واحدة.",
+        "uses_evidence_ids": [
+          "ev_plaque_photo",
+          "ev_booklet_1987",
+          "ev_article_2019"
+        ],
+        "inference_id": "i_chain_a"
+      },
+      {
+        "order": 2,
+        "text_ar": "محضر 1974 يقول إن ملف الإنشاء لم يُعرض عند إقرار النص، وسجل الاطلاع يقول إن الحزمة بقيت مختومة؛ فلم يرجع أحد إلى الأصل.",
+        "uses_evidence_ids": [
+          "ev_board_1974",
+          "ev_access_register"
+        ],
+        "inference_id": "i_chain_b"
+      },
+      {
+        "order": 3,
+        "text_ar": "كشف المقاول 9,000 دينار دُفعت من الاكتتاب والمنحة، والدفتر يجمع الاكتتاب 7,200 منها 600 لحمدان؛ فنصيب حمدان النقدي جزء من خمسة عشر جزءاً.",
+        "uses_evidence_ids": [
+          "ev_ledger",
+          "ev_invoices"
+        ],
+        "inference_id": "i_share_a"
+      },
+      {
+        "order": 4,
+        "text_ar": "وثائق 1964 و1966 تذكر هبة الأرض وستمئة دينار ومنحة واكتتاباً عاماً، ولا تقول «من ماله»؛ فالعبارة طارئة بعدها.",
+        "uses_evidence_ids": [
+          "ev_council_1964",
+          "ev_hamdan_letter",
+          "ev_opening_1966",
+          "ev_board_1974"
+        ],
+        "inference_id": "i_first_a"
+      },
+      {
+        "order": 5,
+        "text_ar": "المحضر والإيصال ينسبان الصياغة إلى جمال سنة 1974 وفاءً لأبيه، ودفع بيتهم ثمن اللوحة علناً؛ فالمبالغة وُلدت من هبة حقيقية لا من تزوير.",
+        "uses_evidence_ids": [
+          "ev_board_1974",
+          "ev_plaque_receipt"
+        ],
+        "inference_id": "i_origin_a"
+      },
+      {
+        "order": 6,
+        "text_ar": "فتسقط فرضية أن حمدان موّل البناء وحده، ولا تقوم فرضية أن البلدية بنتها وحدها ولا أن نادراً اخترع العبارة؛ والصياغة الأصح تذكر هبة الأرض وإسهام أهل الحي والبلدية.",
+        "uses_evidence_ids": [
+          "ev_ledger",
+          "ev_invoices",
+          "ev_plaque_photo",
+          "ev_booklet_1987"
+        ],
+        "inference_id": "i_rule_donor"
+      }
+    ],
+    "alternative_paths_ar": [
+      "مسار مستقل: محضر المجلس البلدي ورسالة حمدان وكلمة الافتتاح تبين دوره بالأرض وستمئة دينار، ثم محضر 1974 وسجل الاطلاع يبينان أن العبارة جاءت لاحقاً دون رجوع إلى الأصل، دون الاعتماد على الدفتر أو الكشف."
+    ],
+    "what_evidence_could_not_show_ar": [
+      "الدفتر والكشف يحصيان المال النقدي فقط، ولا يقيّمان الأرض ولا ما لم يُقيَّد فيهما.",
+      "غياب طلبات الاطلاع لا يمنع أن يكون أحد قد سمع من أصحاب الشأن أو رأى نسخة خارج الأرشيف.",
+      "لا تثبت السجلات نية جمال، ويبقى أن إفادته عن نيته قول بعد نصف قرن."
+    ],
+    "science_notes_ar": [
+      "اللوحة المنقوشة تثبت أن أحداً أراد كتابة العبارة، ولا تثبت صحتها.",
+      "تكرار الرواية عن مصدر واحد لا يضيف دليلاً جديداً.",
+      "غياب سجل اطلاع دليل غائب له حدوده، فهو يقول إن الحزمة لم تُطلب ولا يقول لماذا.",
+      "الرقم الإجمالي يُقابَل بمجموع أجزائه قبل أن يُصدَّق."
+    ]
+  },
+  "expert_review": [
+    {
+      "role": "narrative_editor",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-11-05",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "scientific_reviewer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-11-05",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "learning_designer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-11-05",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "age_appropriateness",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-11-05",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "cultural_reviewer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-11-05",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "legal_rights",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-11-05",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "safety",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-11-05",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    }
+  ]
+}

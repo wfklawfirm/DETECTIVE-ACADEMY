@@ -1,0 +1,145 @@
+{
+  "case_id": "c050_approved_account",
+  "accepted_conclusions": {
+    "h_donor": {
+      "grade": 0,
+      "note_ar": "يكتفي بتكرار الرواية ويهمل أن مال حمدان 600 من 9,000 وأن العبارة لم ترد قبل 1974."
+    },
+    "h_council": {
+      "grade": 0,
+      "note_ar": "يرى المنحة والشكر ولا يجمع الاكتتاب 7,200 من الكلفة."
+    },
+    "h_deliberate": {
+      "grade": 0,
+      "note_ar": "يرى دفع العائلة ثمن اللوحة ويهمل أن اللوحة والكتيّب والمقال سبقت رئاسة نادر للجنة."
+    },
+    "h_land": {
+      "grade": 1,
+      "note_ar": "استنتاج متسق مع الأدلة ويتطلب ذكر حدوده: المال النقدي وحده، وغياب سجل الاطلاع، والنية."
+    }
+  },
+  "confidence_band": {
+    "h_donor": [
+      0,
+      10
+    ],
+    "h_council": [
+      0,
+      5
+    ],
+    "h_deliberate": [
+      0,
+      15
+    ],
+    "h_land": [
+      65,
+      90
+    ]
+  },
+  "source_key": {
+    "ev_new_panel_draft": "public_document",
+    "ev_plaque_photo": "claim",
+    "ev_booklet_1987": "redisplay",
+    "ev_article_2019": "redisplay",
+    "ev_board_1974": "primary_record",
+    "ev_plaque_receipt": "primary_record",
+    "ev_access_register": "primary_record",
+    "ev_council_1964": "primary_record",
+    "ev_deed": "primary_record",
+    "ev_hamdan_letter": "primary_record",
+    "ev_ledger": "primary_record",
+    "ev_invoices": "primary_record",
+    "ev_opening_1966": "public_document",
+    "ev_nader_statement": "claim",
+    "ev_salwa_statement": "claim",
+    "ev_jamal_statement": "claim"
+  },
+  "link_key": {
+    "h_donor": {
+      "ev_plaque_photo": "supports",
+      "ev_booklet_1987": "supports",
+      "ev_article_2019": "supports",
+      "ev_nader_statement": "supports",
+      "ev_salwa_statement": "supports",
+      "ev_new_panel_draft": "supports",
+      "ev_ledger": "weakens",
+      "ev_invoices": "weakens",
+      "ev_hamdan_letter": "weakens",
+      "ev_council_1964": "weakens",
+      "ev_opening_1966": "weakens",
+      "ev_board_1974": "weakens",
+      "ev_access_register": "weakens",
+      "ev_deed": "neutral",
+      "ev_plaque_receipt": "neutral"
+    },
+    "h_council": {
+      "ev_council_1964": "supports",
+      "ev_opening_1966": "supports",
+      "ev_ledger": "weakens",
+      "ev_invoices": "weakens",
+      "ev_hamdan_letter": "weakens",
+      "ev_deed": "neutral"
+    },
+    "h_deliberate": {
+      "ev_plaque_receipt": "supports",
+      "ev_nader_statement": "supports",
+      "ev_plaque_photo": "weakens",
+      "ev_booklet_1987": "weakens",
+      "ev_article_2019": "weakens",
+      "ev_board_1974": "weakens",
+      "ev_new_panel_draft": "neutral"
+    },
+    "h_land": {
+      "ev_deed": "supports",
+      "ev_hamdan_letter": "supports",
+      "ev_ledger": "supports",
+      "ev_invoices": "supports",
+      "ev_council_1964": "supports",
+      "ev_opening_1966": "supports",
+      "ev_board_1974": "supports",
+      "ev_access_register": "supports",
+      "ev_plaque_receipt": "supports",
+      "ev_jamal_statement": "supports",
+      "ev_plaque_photo": "neutral"
+    }
+  },
+  "required_limits": [
+    "l_absence_register",
+    "l_no_intent"
+  ],
+  "valid_mind_changers": [
+    "m_direct_payment",
+    "m_ledger_copy"
+  ],
+  "invalid_limits": [
+    "l_invalid_plaque",
+    "l_invalid_repeat"
+  ],
+  "decisive_evidence": [
+    "ev_ledger",
+    "ev_invoices",
+    "ev_council_1964",
+    "ev_hamdan_letter",
+    "ev_board_1974",
+    "ev_access_register"
+  ],
+  "lab_requirement": null,
+  "refuted_hypotheses": [
+    "h_donor",
+    "h_council",
+    "h_deliberate"
+  ],
+  "criteria_map": {
+    "c_source": "source_typing",
+    "c_conflict": "conflict_resolution",
+    "c_links": "hypothesis_links",
+    "c_uncertainty": "uncertainty",
+    "c_revision": "revision",
+    "c_elimination": "elimination",
+    "c_justification": "justification_human"
+  },
+  "caps": {
+    "no_citations_max": 45,
+    "no_conflict_resolution_max": 70
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "case_id": "c059_readers_challenge",
+  "accepted_conclusions": {
+    "h_last": {
+      "grade": 1,
+      "note_ar": "استنتاج متسق مع الأدلة ويتطلب ذكر حدوده."
+    },
+    "h_marked": {
+      "grade": 0,
+      "note_ar": "الظرف يتعيّن بباقي القسمة، ولا يمر الاختيار بيد أحد؛ ونقطتا الحبر على ظرفين."
+    },
+    "h_helper": {
+      "grade": 0,
+      "note_ar": "العدد الأخير وحده يعيّن الباقي، فلا حاجة إلى معاون، وحديث الباب لا يعرف مضمونه."
+    }
+  },
+  "confidence_band": {
+    "h_last": [
+      75,
+      95
+    ],
+    "h_marked": [
+      0,
+      10
+    ],
+    "h_helper": [
+      0,
+      15
+    ]
+  },
+  "source_key": {
+    "ev_jar": "primary_record",
+    "ev_rules": "public_document",
+    "ev_log": "primary_record",
+    "ev_arrival": "primary_record",
+    "ev_practice": "primary_record",
+    "ev_envelopes": "primary_record",
+    "ev_whisper": "claim"
+  },
+  "link_key": {
+    "h_last": {
+      "ev_rules": "supports",
+      "ev_log": "supports",
+      "ev_practice": "supports",
+      "ev_arrival": "supports",
+      "ev_jar": "neutral",
+      "ev_envelopes": "neutral",
+      "ev_whisper": "neutral"
+    },
+    "h_marked": {
+      "ev_envelopes": "supports",
+      "ev_rules": "weakens",
+      "ev_log": "weakens",
+      "ev_practice": "weakens",
+      "ev_jar": "neutral"
+    },
+    "h_helper": {
+      "ev_whisper": "supports",
+      "ev_log": "weakens",
+      "ev_rules": "weakens",
+      "ev_practice": "weakens",
+      "ev_arrival": "neutral"
+    }
+  },
+  "required_limits": [
+    "l_intent",
+    "l_sample"
+  ],
+  "valid_mind_changers": [
+    "m_first_speaker",
+    "m_hand_pick",
+    "m_board_wrong"
+  ],
+  "invalid_limits": [
+    "l_invalid_late",
+    "l_invalid_ink",
+    "l_invalid_whisper"
+  ],
+  "decisive_evidence": [
+    "ev_rules",
+    "ev_log",
+    "ev_practice",
+    "ev_arrival"
+  ],
+  "lab_requirement": null,
+  "refuted_hypotheses": [
+    "h_marked",
+    "h_helper"
+  ],
+  "criteria_map": {
+    "c_source": "source_typing",
+    "c_links": "hypothesis_links",
+    "c_uncertainty": "uncertainty",
+    "c_revision": "revision",
+    "c_elimination": "elimination",
+    "c_justification": "justification_human"
+  },
+  "transfer_key": {
+    "valid": [
+      "o1",
+      "o2",
+      "o3",
+      "o4"
+    ],
+    "invalid": [
+      "o5",
+      "o6",
+      "o7"
+    ]
+  },
+  "caps": {
+    "no_citations_max": 45,
+    "no_conflict_resolution_max": 65
+  }
+}

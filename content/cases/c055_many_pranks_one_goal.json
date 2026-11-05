@@ -1,0 +1,2028 @@
+{
+  "schema_version": "0.1.0",
+  "case_id": "c055_many_pranks_one_goal",
+  "case_version": "0.1.0",
+  "meta": {
+    "title_ar": "مقالب كثيرة وهدف واحد",
+    "title_en": "Many Pranks, One Goal",
+    "age_band": "13-15",
+    "estimated_minutes": 30,
+    "difficulty": 2,
+    "content_flags": [
+      "no_violence"
+    ],
+    "knowledge_object_refs": [
+      "KO-NP-02-012",
+      "KO-NP-02-025",
+      "KO-RS-05-001",
+      "KO-RS-05-002",
+      "KO-RS-05-003",
+      "KO-RS-05-004",
+      "KO-RS-06-001",
+      "KO-RS-06-009",
+      "KO-RS-06-017",
+      "KO-RS-06-021"
+    ],
+    "locale": "ar",
+    "dialogue_register": "msa",
+    "authors": [
+      "فريق أثر التحريري (مسودة بمساعدة الذكاء الاصطناعي، لم تُراجَع بشرياً بعد)"
+    ]
+  },
+  "premise": {
+    "hook_ar": "في أسبوع واحد وقعت خمسة مقالب في مدرسة الينابيع، وعادت الأشياء بعد كل منها إلى مكانها. الإدارة تلوم جواداً لأنه نشر أفكار مقالب في الدردشة، وجواد يقول إن موعد عرضه في ورقة الحجز ليس ما كتبه. اكتشف إن كان وراء المقالب غرض واحد قبل أن يُعاقَب أحد.",
+    "player_role_ar": "أنت عضو في مجلس الطلاب، كلّفتك مديرة المدرسة بمراجعة الوقائع وكتابة رأي معلّل دون اتهام أحد قبل أن تثبت السجلات شيئاً.",
+    "setting_ar": "مدرسة الينابيع في مدينة سهل الورد المتخيلة، من الاثنين إلى الجمعة، والوقت بساعة المدرسة؛ والآن الجمعة بعد الظهر.",
+    "public_fact_ids": [
+      "f_five_pranks",
+      "f_sheet_exists",
+      "f_jawad_complaint"
+    ],
+    "assumed_general_knowledge_ar": [
+      "من يربح من تغيير ما هو أول من يُسأل عن سببه، لكن الربح وحده لا يكفي حكماً",
+      "علامة واحدة تتكرر في عدة وقائع تدل غالباً على فاعل واحد",
+      "إعادة تعليق ورقة لا تغيّر ما كُتب عليها",
+      "الصدفة تصنع أنماطاً في الأعداد الصغيرة، والمتوقع بالصدفة يُحسب بالنسبة",
+      "الخروج من الصف بإذن يُدوَّن في دفتر الاستئذان"
+    ]
+  },
+  "entities": {
+    "characters": [
+      {
+        "id": "hadi",
+        "name_ar": "هادي الصفدي",
+        "role": "suspect",
+        "age_descriptor_ar": "طالب في الصف الثامن (أ)، مشارك في معرض العلوم",
+        "persona_ar": "متحمس لمشروعه ويحب أن ينال التقدير. يتكلم بثقة، ويقصّر جوابه حين يُسأل عن تنقلاته.",
+        "motives_ar": [
+          "أن يُقدَّم مشروعه جيداً",
+          "ألا يُسأل عن أمور لا يريد الحديث فيها"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        }
+      },
+      {
+        "id": "jawad",
+        "name_ar": "جواد المعلوف",
+        "role": "suspect",
+        "age_descriptor_ar": "طالب في الصف الثامن (ب)، يحب النكات",
+        "persona_ar": "مرح وسريع الضحك، ينشر أفكاره دون أن يفكر في وقعها على الآخرين، لكنه يحترم القواعد حين يُسأل عنها.",
+        "motives_ar": [
+          "أن يبرّئ نفسه",
+          "أن يعود موعد عرضه إلى ما كتبه"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        }
+      },
+      {
+        "id": "rana",
+        "name_ar": "رنا الخطيب",
+        "role": "suspect",
+        "age_descriptor_ar": "طالبة في الصف الثامن (ج)، مسؤولة لوحة الإعلانات",
+        "persona_ar": "منظمة وصبورة، تعلّق الأوراق بترتيب وتحتفظ بمفتاح خزانة الدبابيس. تجيب عمّا فعلته ولا تخمّن ما لا تعرفه.",
+        "motives_ar": [
+          "أن تبقى اللوحة مرتبة",
+          "ألا تُتَّهم بما لم تفعله"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        }
+      },
+      {
+        "id": "mariam",
+        "name_ar": "مريم السعدي",
+        "role": "witness",
+        "age_descriptor_ar": "طالبة في الصف الثامن (أ)، مشاركة في معرض العلوم",
+        "persona_ar": "جادة وقليلة الكلام، تنقل ما سمعته كما سمعته وقد تخلط بين ما رأته وما قيل لها.",
+        "motives_ar": [
+          "أن تعرض مشروعها في موعده",
+          "أن تفهم ما يجري"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        }
+      },
+      {
+        "id": "salim",
+        "name_ar": "العم سليم",
+        "role": "witness",
+        "age_descriptor_ar": "حارس المدرسة",
+        "persona_ar": "هادئ ومنتظم، يدوّن جولاته على ورقة واحدة كل يوم ولا يضيف إليها رأياً.",
+        "motives_ar": [
+          "أن يمرّ على الأماكن في مواعيدها",
+          "أن تبقى المدرسة سليمة"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        }
+      },
+      {
+        "id": "najla",
+        "name_ar": "الأستاذة نجلاء الحداد",
+        "role": "authority",
+        "age_descriptor_ar": "معلمة العلوم، مشرفة عروض معرض العلوم",
+        "persona_ar": "دقيقة وعادلة، تنقل المواعيد بخطها وتضع حرف اسمها بجانب كل موعد تأكّده.",
+        "motives_ar": [
+          "أن تُجرى العروض في مواعيدها العادلة",
+          "ألا يُظلم طالب بتخمين"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        }
+      }
+    ],
+    "locations": [
+      {
+        "id": "loc_corridor",
+        "name_ar": "ممر الطابق الثاني",
+        "description_ar": "ممر طويل عند باب المختبر، عليه لوحة الإعلانات."
+      },
+      {
+        "id": "loc_music",
+        "name_ar": "قاعة الموسيقى",
+        "description_ar": "قاعة في الطابق الثاني فيها بيانو وساعة جدار."
+      },
+      {
+        "id": "loc_library",
+        "name_ar": "المكتبة",
+        "description_ar": "مكتبة المدرسة في الطابق الأرضي."
+      },
+      {
+        "id": "loc_canteen",
+        "name_ar": "المقصف",
+        "description_ar": "قاعة الطعام الصغيرة في الطابق الأرضي."
+      },
+      {
+        "id": "loc_art",
+        "name_ar": "مرسم الفنون",
+        "description_ar": "غرفة الرسم في الطابق الثاني."
+      },
+      {
+        "id": "loc_office",
+        "name_ar": "إدارة المدرسة",
+        "description_ar": "غرفة الإدارة حيث تحفظ السجلات."
+      },
+      {
+        "id": "loc_guard",
+        "name_ar": "غرفة الحارس",
+        "description_ar": "غرفة صغيرة عند المدخل يحفظ فيها الحارس أوراق جولاته."
+      }
+    ],
+    "objects": [
+      {
+        "id": "obj_sheet",
+        "name_ar": "ورقة حجز مواعيد العروض",
+        "description_ar": "ورقة بثلاثة مواعيد معلّقة على لوحة ممر الطابق الثاني."
+      },
+      {
+        "id": "obj_boat",
+        "name_ar": "القارب الورقي الأخضر",
+        "description_ar": "قارب صغير مطوي من ورق أخضر وُجد عند كل واقعة."
+      },
+      {
+        "id": "obj_passbook",
+        "name_ar": "دفتر الاستئذان",
+        "description_ar": "دفتر في كل صف يدوّن فيه خروج الطلاب بإذن."
+      }
+    ],
+    "organizations": [
+      {
+        "id": "org_students",
+        "name_ar": "مجلس الطلاب",
+        "description_ar": "مجلس طلابي في مدرسة الينابيع يعاون الإدارة في مراجعة الوقائع."
+      }
+    ]
+  },
+  "truth": {
+    "solution": {
+      "culprit_ids": [
+        "hadi"
+      ],
+      "summary_ar": "هادي الصفدي نفّذ المقالب الخمسة الصغيرة ليخفي بينها هدفاً واحداً: تبديل موعده مع موعد جواد في ورقة حجز عروض العلوم حتى يعرض قبل مغادرة الضيفة. ظهر فعل التبديل في مقلب الأربعاء على لوحة الممر، وسجّل دفتر الاستئذان خروجه في كل نافذة، وخالفت إفادته سجلات المدرسة.",
+      "key_fact_ids": [
+        "f_hadi_did"
+      ]
+    },
+    "facts": [
+      {
+        "id": "f_five_pranks",
+        "statement_ar": "وقعت خمسة مقالب في أسبوع واحد في خمسة أماكن، وبدت كلها وكأن الأشياء عادت بعدها إلى مكانها.",
+        "kind": "event",
+        "subject_ids": [
+          "org_students"
+        ],
+        "spoiler_level": 0
+      },
+      {
+        "id": "f_sheet_exists",
+        "statement_ar": "علّقت الأستاذة نجلاء على لوحة ممر الطابق الثاني ورقة فيها ثلاثة مواعيد لعروض الاثنين القادم.",
+        "kind": "attribute",
+        "subject_ids": [
+          "najla",
+          "obj_sheet"
+        ],
+        "spoiler_level": 0,
+        "location_id": "loc_corridor"
+      },
+      {
+        "id": "f_jawad_complaint",
+        "statement_ar": "قال جواد يوم الجمعة إن موعد عرضه في الورقة غير الذي كتبه.",
+        "kind": "event",
+        "subject_ids": [
+          "jawad",
+          "obj_sheet"
+        ],
+        "spoiler_level": 0,
+        "location_id": "loc_corridor",
+        "time": {
+          "start_min": 7500,
+          "precision": "approx"
+        }
+      },
+      {
+        "id": "f_ideas_posted",
+        "statement_ar": "نشر جواد مساء الأحد قائمة بأفكار مقالب في دردشة مشتركة للصف الثامن بشعبه الثلاث.",
+        "kind": "event",
+        "subject_ids": [
+          "jawad"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 760,
+          "precision": "exact"
+        }
+      },
+      {
+        "id": "f_hadi_last_slot",
+        "statement_ar": "سجّل هادي آخر المسجلين، فجاء موعده بعد الوقت الذي تغادر فيه الضيفة.",
+        "kind": "state",
+        "subject_ids": [
+          "hadi",
+          "obj_sheet"
+        ],
+        "spoiler_level": 1,
+        "location_id": "loc_corridor",
+        "time": {
+          "start_min": 3200,
+          "precision": "approx"
+        }
+      },
+      {
+        "id": "f_judge_window",
+        "statement_ar": "تحضر الضيفة العروض من 12:00 إلى 12:20 فقط، ولا ترشّح للمعرض الإقليمي إلا عرضاً حضرته.",
+        "kind": "attribute",
+        "subject_ids": [
+          "obj_sheet"
+        ],
+        "spoiler_level": 1
+      },
+      {
+        "id": "f_all_restored",
+        "statement_ar": "كل واحدة من الوقائع الخمس سُجّلت في دفتر الإدارة على أن الأشياء عادت إلى وضعها دون نقص أو ضرر.",
+        "kind": "attribute",
+        "subject_ids": [
+          "org_students"
+        ],
+        "spoiler_level": 1
+      },
+      {
+        "id": "f_windows",
+        "statement_ar": "كل مقلب وقع داخل مدة قصيرة عشرين دقيقة بين جولتين متتاليتين للحارس.",
+        "kind": "attribute",
+        "subject_ids": [
+          "salim",
+          "obj_boat"
+        ],
+        "spoiler_level": 1
+      },
+      {
+        "id": "f_repinned_as_found",
+        "statement_ar": "أعادت رنا والحارس تعليق أوراق اللوحة بالترتيب الذي وجداه دون أن يغيّرا مضمون ورقة.",
+        "kind": "event",
+        "subject_ids": [
+          "rana",
+          "salim"
+        ],
+        "spoiler_level": 1,
+        "location_id": "loc_corridor",
+        "time": {
+          "start_min": 4520,
+          "precision": "approx"
+        }
+      },
+      {
+        "id": "f_slots_swapped",
+        "statement_ar": "في ورقة الجمعة تبدّل موعدا هادي وجواد بالنسبة إلى نسخة الثلاثاء، وبقيت حروف الأستاذة نجلاء في أماكنها.",
+        "kind": "state",
+        "subject_ids": [
+          "obj_sheet",
+          "hadi",
+          "jawad"
+        ],
+        "spoiler_level": 2,
+        "location_id": "loc_corridor"
+      },
+      {
+        "id": "f_hadi_gains",
+        "statement_ar": "التبديل ينقل هادي وحده من موعد بعد مغادرة الضيفة إلى موعد قبله، وينقل جواداً إلى الأسوأ، ولا يمس موعد مريم.",
+        "kind": "relation",
+        "subject_ids": [
+          "hadi",
+          "jawad",
+          "mariam"
+        ],
+        "spoiler_level": 2
+      },
+      {
+        "id": "f_floor_chance",
+        "statement_ar": "ثلاثة مقالب في الطابق الثاني هو بالضبط ما تتوقعه الصدفة، لأن ستة من عشرة أماكن مشتركة في ذلك الطابق.",
+        "kind": "attribute",
+        "subject_ids": [
+          "org_students"
+        ],
+        "spoiler_level": 2
+      },
+      {
+        "id": "f_hadi_all_windows",
+        "statement_ar": "اسم هادي وحده يظهر في قوائم الخارجين بإذن في نوافذ الأيام الخمسة، وجواد في نافذتين فقط ورنا في لا واحدة.",
+        "kind": "relation",
+        "subject_ids": [
+          "hadi",
+          "jawad",
+          "rana",
+          "obj_passbook"
+        ],
+        "spoiler_level": 2
+      },
+      {
+        "id": "f_hadi_lie",
+        "statement_ar": "قال هادي إنه خرج مرة أو مرتين فقط هذا الأسبوع، والدفتر يسجل خمس مرات.",
+        "kind": "attribute",
+        "subject_ids": [
+          "hadi",
+          "obj_passbook"
+        ],
+        "spoiler_level": 2
+      },
+      {
+        "id": "f_goal_sheet",
+        "statement_ar": "المقالب الخمسة كانت غطاء لهدف واحد هو تبديل الموعدين في الورقة.",
+        "kind": "state",
+        "subject_ids": [
+          "hadi",
+          "obj_sheet"
+        ],
+        "spoiler_level": 3
+      },
+      {
+        "id": "f_hadi_did",
+        "statement_ar": "هادي نفّذ المقالب الخمسة، وبدّل موعده مع جواد على لوحة الممر يوم الأربعاء بين العاشرة وخمس وعشرين دقيقة والعاشرة وثلاث وثلاثين دقيقة.",
+        "kind": "event",
+        "subject_ids": [
+          "hadi"
+        ],
+        "spoiler_level": 3,
+        "location_id": "loc_corridor",
+        "time": {
+          "start_min": 4495,
+          "precision": "approx",
+          "end_min": 4503
+        }
+      }
+    ],
+    "claims": [
+      {
+        "id": "cl_hadi_twice",
+        "statement_ar": "خرجت من الصف مرة أو مرتين فقط هذا الأسبوع ولم أقترب من اللوحة.",
+        "kind": "lie",
+        "held_by": [
+          "hadi"
+        ],
+        "true_fact_id": "f_hadi_all_windows",
+        "contradicted_by_evidence_ids": [
+          "ev_pass"
+        ]
+      },
+      {
+        "id": "cl_jawad_rumour",
+        "statement_ar": "جواد هو الذي نفّذ كل المقالب، فقد كتب أفكارها في الدردشة.",
+        "kind": "rumour",
+        "held_by": [
+          "mariam"
+        ],
+        "true_fact_id": "f_hadi_did",
+        "contradicted_by_evidence_ids": [
+          "ev_pass",
+          "ev_sheet_fri"
+        ]
+      }
+    ]
+  },
+  "timeline": [
+    {
+      "id": "te_ideas",
+      "description_ar": "مساء الأحد: جواد ينشر في الدردشة المشتركة أفكار مقالب للتسلية.",
+      "time": {
+        "start_min": 760,
+        "precision": "exact"
+      },
+      "location_id": "loc_office",
+      "actor_ids": [
+        "jawad"
+      ],
+      "fact_ids": [
+        "f_ideas_posted"
+      ],
+      "motivated_by_ar": "إضحاك زملائه"
+    },
+    {
+      "id": "te_signup_a",
+      "description_ar": "ظهر الاثنين: مريم ثم جواد يسجلان موعديهما في ورقة الحجز.",
+      "time": {
+        "start_min": 1775,
+        "precision": "approx",
+        "end_min": 1790
+      },
+      "location_id": "loc_corridor",
+      "actor_ids": [
+        "mariam",
+        "jawad"
+      ],
+      "fact_ids": [
+        "f_sheet_exists"
+      ],
+      "motivated_by_ar": "حجز موعد للعرض"
+    },
+    {
+      "id": "te_p1",
+      "description_ar": "الاثنين: مقلب الساعة في قاعة الموسيقى.",
+      "time": {
+        "start_min": 1575,
+        "precision": "approx",
+        "end_min": 1585
+      },
+      "location_id": "loc_music",
+      "actor_ids": [
+        "hadi"
+      ],
+      "fact_ids": [
+        "f_windows",
+        "f_all_restored"
+      ],
+      "motivated_by_ar": "تمهيد غطاء لهدفه"
+    },
+    {
+      "id": "te_p2",
+      "description_ar": "الثلاثاء: مقلب كتب المكتبة.",
+      "time": {
+        "start_min": 3095,
+        "precision": "approx",
+        "end_min": 3102
+      },
+      "location_id": "loc_library",
+      "actor_ids": [
+        "hadi"
+      ],
+      "fact_ids": [
+        "f_windows",
+        "f_all_restored"
+      ],
+      "motivated_by_ar": "تمهيد غطاء لهدفه"
+    },
+    {
+      "id": "te_signup_b",
+      "description_ar": "الثلاثاء قبيل الإغلاق: هادي آخر من يسجل موعده.",
+      "time": {
+        "start_min": 3200,
+        "precision": "approx"
+      },
+      "location_id": "loc_corridor",
+      "actor_ids": [
+        "hadi"
+      ],
+      "fact_ids": [
+        "f_hadi_last_slot"
+      ],
+      "motivated_by_ar": "حجز موعد للعرض"
+    },
+    {
+      "id": "te_copy",
+      "description_ar": "الثلاثاء 3:30: الأستاذة نجلاء تنقل الورقة بخطها وتضع حرفها بجانب كل موعد.",
+      "time": {
+        "start_min": 3360,
+        "precision": "exact"
+      },
+      "location_id": "loc_office",
+      "actor_ids": [
+        "najla"
+      ],
+      "fact_ids": [
+        "f_sheet_exists"
+      ],
+      "motivated_by_ar": "حفظ نسخة موثوقة من المواعيد"
+    },
+    {
+      "id": "te_p3",
+      "description_ar": "الأربعاء: مقلب اللوحة؛ في أثنائه يبدّل هادي موعده مع جواد.",
+      "time": {
+        "start_min": 4495,
+        "precision": "approx",
+        "end_min": 4503
+      },
+      "location_id": "loc_corridor",
+      "actor_ids": [
+        "hadi"
+      ],
+      "fact_ids": [
+        "f_hadi_did",
+        "f_slots_swapped",
+        "f_windows",
+        "f_all_restored"
+      ],
+      "motivated_by_ar": "أن يحصل على موعد تحضره الضيفة"
+    },
+    {
+      "id": "te_repin",
+      "description_ar": "الأربعاء 10:50: رنا والحارس يعيدان تعليق الأوراق كما وجداها.",
+      "time": {
+        "start_min": 4520,
+        "precision": "approx"
+      },
+      "location_id": "loc_corridor",
+      "actor_ids": [
+        "rana",
+        "salim"
+      ],
+      "fact_ids": [
+        "f_repinned_as_found"
+      ],
+      "motivated_by_ar": "إعادة اللوحة إلى ترتيبها",
+      "witness_ids": [
+        "salim"
+      ]
+    },
+    {
+      "id": "te_p4",
+      "description_ar": "الخميس: مقلب كراسي المقصف.",
+      "time": {
+        "start_min": 5875,
+        "precision": "approx",
+        "end_min": 5882
+      },
+      "location_id": "loc_canteen",
+      "actor_ids": [
+        "hadi"
+      ],
+      "fact_ids": [
+        "f_windows",
+        "f_all_restored"
+      ],
+      "motivated_by_ar": "تمهيد غطاء لهدفه"
+    },
+    {
+      "id": "te_p5",
+      "description_ar": "الجمعة: مقلب فرش الرسم.",
+      "time": {
+        "start_min": 7475,
+        "precision": "approx",
+        "end_min": 7482
+      },
+      "location_id": "loc_art",
+      "actor_ids": [
+        "hadi"
+      ],
+      "fact_ids": [
+        "f_windows",
+        "f_all_restored"
+      ],
+      "motivated_by_ar": "تمهيد غطاء لهدفه"
+    },
+    {
+      "id": "te_complaint",
+      "description_ar": "الجمعة ظهراً: جواد يعترض على موعده المكتوب.",
+      "time": {
+        "start_min": 7500,
+        "precision": "approx"
+      },
+      "location_id": "loc_corridor",
+      "actor_ids": [
+        "jawad"
+      ],
+      "fact_ids": [
+        "f_jawad_complaint"
+      ],
+      "motivated_by_ar": "استعادة موعده"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_log",
+      "title_ar": "سجل وقائع أسبوع المقالب",
+      "kind": "documentary",
+      "content_ar": "سجل الوقائع في أسبوع المقالب، كما دوّنته مساعدة الإدارة\n\nالاثنين، قاعة الموسيقى (الطابق الثاني): ساعة الجدار مقدّمة عشر دقائق. صُحّح الوقت في الحال. على البيانو قارب ورقي أخضر.\nالثلاثاء، المكتبة (الطابق الأرضي): كتب رف واحد مقلوبة الأغلفة إلى الداخل. أُعيدت إلى وضعها خلال ربع ساعة. على الرف قارب ورقي أخضر.\nالأربعاء، ممر الطابق الثاني: كل أوراق لوحة الإعلانات معلّقة مقلوبة. أُعيد تعليقها عند العاشرة وخمسين دقيقة. على حافة اللوحة قارب ورقي أخضر.\nالخميس، المقصف (الطابق الأرضي): كراسي المقصف مرصوصة فوق الطاولات. أُنزلت خلال عشر دقائق. على إحدى الطاولات قارب ورقي أخضر.\nالجمعة، مرسم الفنون (الطابق الثاني): فرش الرسم مربوطة بشرائط ملونة. فُكّت قبل الظهر. على الطاولة الكبيرة قارب ورقي أخضر.\n\nملاحظة المساعدة: لم يُفقد شيء ولم يتلف شيء في أي واقعة، وأرى أنها كلها مزاح من صاحب الأفكار المنشورة.",
+      "acquired_by_action_ids": [
+        "a_read_log"
+      ],
+      "supports_fact_ids": [
+        "f_five_pranks",
+        "f_all_restored"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "تدوّن ما رأته المساعدة وقت الاكتشاف؛ لم تقارن مضمون الأوراق المعلقة بنسخ قديمة، ورأيها في الفاعل تخمين.",
+      "location_id": "loc_office"
+    },
+    {
+      "id": "ev_patrol",
+      "title_ar": "ورقة جولات الحارس",
+      "kind": "documentary",
+      "content_ar": "ورقة جولات الحارس العم سليم، من الاثنين إلى الجمعة\n\nأمرّ على الأماكن المشتركة كل عشرين دقيقة وأسجل آخر مرة وجدت فيها المكان سليماً وأول مرة وجدته فيها على غير حاله.\nالاثنين، قاعة الموسيقى: سليمة 9:40، وجدت الساعة مقدّمة 10:00.\nالثلاثاء، المكتبة: سليمة 11:00، وجدت الكتب مقلوبة 11:20.\nالأربعاء، ممر الطابق الثاني: سليم 10:20، وجدت الأوراق مقلوبة 10:40. في 10:50 أعدت أنا ورنا الخطيب تعليق الأوراق كما وجدناها دون أن نغيّر منها شيئاً.\nالخميس، المقصف: سليم 9:20، وجدت الكراسي مرصوصة 9:40.\nالجمعة، مرسم الفنون: سليم 12:00، وجدت الفرش مربوطة 12:20.\nفي كل مرة وجدت قارباً ورقياً أخضر، من الورق نفسه، في المكان نفسه الذي وقع فيه المقلب.",
+      "acquired_by_action_ids": [
+        "a_read_patrol"
+      ],
+      "supports_fact_ids": [
+        "f_windows",
+        "f_repinned_as_found"
+      ],
+      "reliability": "strong",
+      "limits_ar": "تحدد نوافذ زمنية قصيرة لكل مقلب، ولا تحدد من فعله.",
+      "location_id": "loc_guard"
+    },
+    {
+      "id": "ev_pass",
+      "title_ar": "دفتر الاستئذان المجمّع",
+      "kind": "documentary",
+      "content_ar": "دفتر الاستئذان المجمّع للصفوف الثامنة الثلاثة، الأسبوع نفسه\n\nأسماء من خرج بإذن من صفه داخل كل نافذة من نوافذ الحارس:\nالاثنين، 9:40 إلى 10:00: هادي (9:45 إلى 9:55)، جواد (9:50 إلى 9:58)، سلمى (9:41 إلى 9:48).\nالثلاثاء، 11:00 إلى 11:20: هادي (11:05 إلى 11:12)، جواد (11:10 إلى 11:15)، أنس (11:02 إلى 11:09).\nالأربعاء، 10:20 إلى 10:40: هادي (10:25 إلى 10:33)، ليان (10:22 إلى 10:30).\nالخميس، 9:20 إلى 9:40: هادي (9:25 إلى 9:32)، أنس (9:30 إلى 9:38).\nالجمعة، 12:00 إلى 12:20: هادي (12:05 إلى 12:12)، سلمى (12:02 إلى 12:10)، ليان (12:08 إلى 12:15).\nالسبب المكتوب بجانب اسم هادي في كل مرة: دورة المياه. لا اسم لرنا في أي نافذة.",
+      "acquired_by_action_ids": [
+        "a_read_pass"
+      ],
+      "supports_fact_ids": [
+        "f_hadi_all_windows",
+        "f_hadi_lie"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يغطي ثلاثة صفوف فقط ولا يبيّن ماذا فعل الخارج بعد خروجه.",
+      "location_id": "loc_office",
+      "contradicts_claim_ids": [
+        "cl_hadi_twice",
+        "cl_jawad_rumour"
+      ]
+    },
+    {
+      "id": "ev_sheet_tue",
+      "title_ar": "نسخة نجلاء من الورقة (الثلاثاء)",
+      "kind": "documentary",
+      "content_ar": "نسخة الأستاذة نجلاء من ورقة الحجز، كتبتها بخطها الثلاثاء 3:30 عصراً بعد إغلاق التسجيل عند الثانية\n\nعروض معرض العلوم، الاثنين القادم، قاعة المختبر. مدة كل عرض عشر دقائق.\n12:00 | مريم السعدي | مجفف الفاكهة بالشمس | سجّلت الاثنين 1:05 | ن\n12:10 | جواد المعلوف | سيارة تتحرك بالهواء | سجّل الاثنين 1:20 | ن\n12:20 | هادي الصفدي | مصفاة المياه | سجّل الثلاثاء 12:50 | ن\nالحرف «ن» بالحبر الأحمر هو حرفي، أضعه بجانب كل موعد أتأكد منه.",
+      "acquired_by_action_ids": [
+        "a_read_sheet_tue"
+      ],
+      "supports_fact_ids": [
+        "f_sheet_exists",
+        "f_hadi_last_slot"
+      ],
+      "reliability": "strong",
+      "limits_ar": "نسخة بخط المعلمة ساعة إغلاق التسجيل؛ لا تبيّن ما جرى للورقة المعلقة بعد ذلك.",
+      "location_id": "loc_office"
+    },
+    {
+      "id": "ev_sheet_fri",
+      "title_ar": "ورقة الحجز المعلقة (الجمعة)",
+      "kind": "documentary",
+      "content_ar": "ورقة الحجز كما كانت معلقة على لوحة ممر الطابق الثاني يوم الجمعة 12:40 ظهراً (صورة التقطها مجلس الطلاب)\n\nعروض معرض العلوم، الاثنين القادم، قاعة المختبر. مدة كل عرض عشر دقائق.\n12:00 | مريم السعدي | مجفف الفاكهة بالشمس | ن\n12:10 | هادي الصفدي | مصفاة المياه | ن\n12:20 | جواد المعلوف | سيارة تتحرك بالهواء | ن\nالحرف «ن» الأحمر في الأسطر الثلاثة بالحبر الأحمر نفسه، وأسماء الطلاب بقلم رصاص.",
+      "acquired_by_action_ids": [
+        "a_read_sheet_fri"
+      ],
+      "supports_fact_ids": [
+        "f_slots_swapped"
+      ],
+      "reliability": "strong",
+      "limits_ar": "صورة للورقة في لحظة واحدة؛ لا تبيّن متى ولا بيد من تغيّرت الأسماء.",
+      "location_id": "loc_corridor",
+      "contradicts_claim_ids": [
+        "cl_jawad_rumour"
+      ]
+    },
+    {
+      "id": "ev_judge",
+      "title_ar": "إعلان زيارة الضيفة",
+      "kind": "documentary",
+      "content_ar": "إعلان إدارة مدرسة الينابيع\n\nتزور الدكتورة هالة الرفاعي، مسؤولة معرض العلوم الإقليمي، مدرستنا الاثنين القادم. تصل عند 12:00 وتغادر عند 12:20 لموعد آخر.\nيمثّل المدرسة في المعرض الإقليمي عرض واحد تختاره الدكتورة، ولا تختار إلا من العروض التي حضرتها.\nالعروض التي تأتي بعد مغادرتها تُصوَّر وتُحفظ في أرشيف المدرسة.",
+      "acquired_by_action_ids": [
+        "a_read_judge"
+      ],
+      "supports_fact_ids": [
+        "f_judge_window"
+      ],
+      "reliability": "strong",
+      "limits_ar": "إعلان رسمي بمواعيد الزيارة؛ لا يذكر أسماء الطلاب.",
+      "location_id": "loc_office"
+    },
+    {
+      "id": "ev_map",
+      "title_ar": "مخطط الأماكن المشتركة",
+      "kind": "documentary",
+      "content_ar": "مخطط المدرسة: الأماكن المشتركة العشرة\n\nالطابق الأرضي (4 أماكن): المدخل، المكتبة، المقصف، الإدارة.\nالطابق الثاني (6 أماكن): ممر الطابق الثاني، المختبر، مرسم الفنون، قاعة الحاسوب، قاعة الموسيقى، غرفة المعلمين.\nالصفوف الثامنة: الشعبة (أ) في الطابق الأرضي، والشعبتان (ب) و(ج) في الطابق الثاني.",
+      "acquired_by_action_ids": [
+        "a_read_map"
+      ],
+      "supports_fact_ids": [
+        "f_floor_chance"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يعدّ الأماكن في كل طابق فحسب.",
+      "location_id": "loc_office"
+    },
+    {
+      "id": "ev_ideas",
+      "title_ar": "لقطتان من دردشة الصف الثامن",
+      "kind": "digital",
+      "content_ar": "لقطتان من الدردشة المشتركة للصف الثامن بشعبه الثلاث (66 عضواً)\n\nالأحد 8:10 مساء، جواد: «أفكار مقالب للتسلية فقط ولا أحد يتأذى: ساعة قاعة الموسيقى، كتب المكتبة، لوحة الإعلانات، كراسي المقصف، فرش الرسم. من يجرؤ؟»\nالجمعة 12:50، سلمى: «ثلاثة مقالب من خمسة كانت في الطابق الثاني، يعني الفاعل من الطابق الثاني، والقائمة قائمة جواد.»",
+      "acquired_by_action_ids": [
+        "a_read_ideas"
+      ],
+      "supports_fact_ids": [
+        "f_ideas_posted"
+      ],
+      "reliability": "weak",
+      "limits_ar": "القائمة منشورة لعدد كبير من الطلاب، ونشر الفكرة لا يعني تنفيذها؛ وكلام سلمى استنتاج لا ملاحظة.",
+      "location_id": "loc_office",
+      "is_red_herring": true
+    },
+    {
+      "id": "ev_rana",
+      "title_ar": "إفادة رنا الخطيب",
+      "kind": "testimonial",
+      "content_ar": "إفادة رنا الخطيب، مسؤولة لوحة الإعلانات، كما دوّنها مجلس الطلاب\n\n«أنا التي أعلّق الأوراق على اللوحة ومعي مفتاح خزانة الدبابيس. يوم الأربعاء عند 10:50 أعدت تعليق كل الأوراق مع العم سليم كما وجدناها، ولم أقرأ ما كتب في أي ورقة.»",
+      "acquired_by_action_ids": [
+        "a_read_rana"
+      ],
+      "supports_fact_ids": [
+        "f_repinned_as_found"
+      ],
+      "reliability": "weak",
+      "limits_ar": "تصف ما فعلته بعد الاكتشاف لا ما سبقه، ولا تبيّن شيئاً عن مضمون الورقة وقت التعليق.",
+      "location_id": "loc_corridor",
+      "is_red_herring": true
+    },
+    {
+      "id": "ev_hadi",
+      "title_ar": "إفادة هادي الصفدي",
+      "kind": "testimonial",
+      "content_ar": "إفادة هادي الصفدي، كما دوّنتها الأستاذة نجلاء\n\n«لم أقترب من اللوحة هذا الأسبوع. خرجت من الصف مرة أو مرتين فقط إلى دورة المياه. وحين رأيت اسمي عند 12:10 ظننت أن الأستاذة نجلاء رتّبت المواعيد من جديد.»",
+      "acquired_by_action_ids": [
+        "a_read_hadi"
+      ],
+      "supports_fact_ids": [
+        "f_hadi_lie"
+      ],
+      "reliability": "weak",
+      "limits_ar": "قول شخص عن نفسه؛ يُقاس بالسجلات لا بثقة صاحبه.",
+      "location_id": "loc_office",
+      "contradicts_claim_ids": [
+        "cl_hadi_twice"
+      ]
+    }
+  ],
+  "evidence_graph": {
+    "inferences": [
+      {
+        "id": "i_swap",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_sheet_tue"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_sheet_fri"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_slots_swapped"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "ضع نسخة الثلاثاء بجانب ورقة الجمعة: الأسطر والحروف الحمراء في أماكنها، لكن اسمي هادي وجواد تبادلا موعديهما، وإعادة تعليق ورقة لا تبدّل ما كُتب عليها.",
+        "skill_ko_refs": [
+          "KO-RS-06-017",
+          "KO-RS-05-004"
+        ]
+      },
+      {
+        "id": "i_gain",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_slots_swapped"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_judge"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_hadi_gains"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "الضيفة تغادر عند 12:20، والعرض الذي لا تحضره لا يُرشَّح. التبديل جعل هادي في 12:10 بدل 12:20، ونقل جواداً من 12:10 إلى 12:20، وبقي موعد مريم كما هو.",
+        "skill_ko_refs": [
+          "KO-RS-05-003",
+          "KO-RS-06-001"
+        ]
+      },
+      {
+        "id": "i_goal",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_hadi_gains"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_log"
+          },
+          {
+            "ref_type": "general_knowledge",
+            "ref_id": "gk_who_benefits"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_hadi_did"
+        },
+        "relation": "supports",
+        "strength": "strong",
+        "rule_ar": "المقالب الخمسة انتهت كلها بعودة الأشياء إلى مكانها، إلا الأربعاء الذي تغيّر فيه شيء بقي. وكل من ربح من التبديل هو هادي وحده، فهو صاحب الدافع الوحيد.",
+        "skill_ko_refs": [
+          "KO-NP-02-012",
+          "KO-RS-05-003"
+        ]
+      },
+      {
+        "id": "i_windows",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_patrol"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_windows"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "جولات الحارس كل عشرين دقيقة تحدد لكل مقلب نافذة لا تزيد على عشرين دقيقة، وتتكرر العلامة نفسها (القارب الأخضر) في الأيام كلها.",
+        "skill_ko_refs": [
+          "KO-RS-05-004"
+        ]
+      },
+      {
+        "id": "i_out",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_pass"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_windows"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_hadi_all_windows"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "اكتب أسماء الخارجين في كل نافذة ثم ابحث عن الاسم المشترك بين الخمس: هادي وحده، أما جواد ففي نافذتين، وسلمى وأنس وليان في بعضها لا في كلها.",
+        "skill_ko_refs": [
+          "KO-RS-06-017",
+          "KO-RS-05-004"
+        ]
+      },
+      {
+        "id": "i_opportunity",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_hadi_all_windows"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_patrol"
+          },
+          {
+            "ref_type": "general_knowledge",
+            "ref_id": "gk_one_sign_one_doer"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_hadi_did"
+        },
+        "relation": "supports",
+        "strength": "strong",
+        "rule_ar": "علامة واحدة تتكرر في خمس وقائع تدل غالباً على فاعل واحد، والفاعل الواحد يجب أن يكون خارج صفه في كل نافذة منها، وهذا ينطبق على هادي وحده.",
+        "skill_ko_refs": [
+          "KO-RS-05-002",
+          "KO-RS-06-001"
+        ]
+      },
+      {
+        "id": "i_lie",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_pass"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_hadi"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_hadi_twice"
+        },
+        "relation": "contradicts_claim",
+        "strength": "strong",
+        "rule_ar": "قال هادي إنه خرج مرة أو مرتين، والدفتر يسجل خروجه في النوافذ الخمس.",
+        "skill_ko_refs": [
+          "KO-RS-05-001"
+        ]
+      },
+      {
+        "id": "i_floor",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_map"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_log"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_floor_chance"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "ستة أماكن من عشرة في الطابق الثاني، فالمتوقع من خمسة مقالب موزعة بالصدفة ثلاثة هناك (5 × 6 ÷ 10 = 3)، وهو ما حدث؛ فالنمط لا يخبرنا بشيء.",
+        "skill_ko_refs": [
+          "KO-RS-06-017",
+          "KO-RS-06-021"
+        ]
+      },
+      {
+        "id": "i_est_hadi",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_hadi_did"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_hadi"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "ما دام هادي هو من نفّذ المقالب وبدّل الموعدين، فالفرضية الأولى قائمة، وتقوم بمسارين لا يشتركان في دليل.",
+        "skill_ko_refs": [
+          "KO-RS-05-002"
+        ]
+      },
+      {
+        "id": "i_rule_jawad",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_hadi_gains"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_floor_chance"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_hadi_all_windows"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_jawad"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "جواد خسر بالتبديل، وكان خارج صفه في نافذتين فقط من خمس، وكونه نشر القائمة أو يدرس في الطابق الثاني لا يرجّحه لأن ثلاثة من خمسة هو المتوقع بالصدفة.",
+        "skill_ko_refs": [
+          "KO-RS-05-003",
+          "KO-RS-06-017"
+        ]
+      },
+      {
+        "id": "i_rule_rana",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_hadi_gains"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_hadi_all_windows"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_rana"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "رنا لا اسم لها في أي نافذة، وليس لها موعد تربح به، وما فعلته كان بعد الاكتشاف.",
+        "skill_ko_refs": [
+          "KO-RS-05-003"
+        ]
+      },
+      {
+        "id": "i_rule_random",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_slots_swapped"
+          },
+          {
+            "ref_type": "general_knowledge",
+            "ref_id": "gk_repin_keeps_text"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_random"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "إعادة تعليق ورقة لا تبدّل الأسماء المكتوبة عليها، فتبادل موعدين مع بقاء حروف المعلمة في أماكنها عمل مقصود.",
+        "skill_ko_refs": [
+          "KO-RS-05-003"
+        ]
+      }
+    ]
+  },
+  "character_knowledge": [
+    {
+      "character_id": "hadi",
+      "knows": [
+        {
+          "fact_id": "f_slots_swapped",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_hadi_last_slot",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": [
+        {
+          "claim_id": "cl_hadi_twice",
+          "stance": "deliberate_lie"
+        }
+      ]
+    },
+    {
+      "character_id": "jawad",
+      "knows": [
+        {
+          "fact_id": "f_ideas_posted",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_jawad_complaint",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    },
+    {
+      "character_id": "rana",
+      "knows": [
+        {
+          "fact_id": "f_repinned_as_found",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    },
+    {
+      "character_id": "mariam",
+      "knows": [
+        {
+          "fact_id": "f_sheet_exists",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": [
+        {
+          "claim_id": "cl_jawad_rumour",
+          "stance": "sincere"
+        }
+      ]
+    },
+    {
+      "character_id": "salim",
+      "knows": [
+        {
+          "fact_id": "f_windows",
+          "access": "professional",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_repinned_as_found",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    },
+    {
+      "character_id": "najla",
+      "knows": [
+        {
+          "fact_id": "f_sheet_exists",
+          "access": "professional",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_judge_window",
+          "access": "professional",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "h_jawad",
+      "statement_ar": "جواد، صاحب قائمة الأفكار، هو من نفّذ المقالب.",
+      "is_true": false,
+      "plausibility_at_start": "high",
+      "suspect_id": "jawad"
+    },
+    {
+      "id": "h_random",
+      "statement_ar": "المقالب بلا هدف، وما تغيّر في ورقة الحجز جاء من خطأ عند إعادة تعليق الأوراق.",
+      "is_true": false,
+      "plausibility_at_start": "medium"
+    },
+    {
+      "id": "h_rana",
+      "statement_ar": "رنا، مسؤولة اللوحة، غيّرت الورقة.",
+      "is_true": false,
+      "plausibility_at_start": "medium",
+      "suspect_id": "rana"
+    },
+    {
+      "id": "h_hadi",
+      "statement_ar": "المقالب غطاء لتبديل واحد في ورقة الحجز يفيد صاحبه.",
+      "is_true": true,
+      "plausibility_at_start": "low",
+      "suspect_id": "hadi"
+    }
+  ],
+  "misdirection_plan": [
+    {
+      "id": "rh_ideas",
+      "points_to_hypothesis_id": "h_jawad",
+      "planted_via_ar": "قائمة جواد في الدردشة وكلام زميلة عن الطابق الثاني.",
+      "evidence_ids": [
+        "ev_ideas"
+      ],
+      "refuted_by_inference_ids": [
+        "i_rule_jawad",
+        "i_floor"
+      ],
+      "fairness_note_ar": "اللقطتان بين يدي اللاعب من البداية وفيهما أن الدردشة تضم ستة وستين عضواً، ومخطط المدرسة يبين أن الطابق الثاني فيه ستة أماكن من عشرة."
+    },
+    {
+      "id": "rh_rana",
+      "points_to_hypothesis_id": "h_rana",
+      "planted_via_ar": "رنا هي من يعلّق الأوراق وقد أعادت تعليق الورقة بعد الاكتشاف.",
+      "evidence_ids": [
+        "ev_rana"
+      ],
+      "refuted_by_inference_ids": [
+        "i_rule_rana"
+      ],
+      "fairness_note_ar": "ورقة الحارس تؤكد أنها أعادت التعليق بحضوره دون تغيير، ودفتر الاستئذان لا يضم اسمها في أي نافذة."
+    }
+  ],
+  "learning_objectives": [
+    {
+      "id": "lo_main",
+      "statement_ar": "يسأل «من استفاد؟» حين تتكرر الوقائع، ويبحث عن الواقعة الوحيدة التي بقي أثرها.",
+      "skill_ko_ref": "KO-NP-02-012",
+      "observable_behaviors_ar": [
+        "يقارن الوقائع الخمس",
+        "يحدد ما بقي مختلفاً"
+      ],
+      "evidence_sources": [
+        "evidence_board",
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_source",
+      "statement_ar": "يصنّف الإفادتين واللقطة أقوالاً، ويصنّف الدفاتر والنسخ سجلات.",
+      "skill_ko_ref": "KO-RS-05-001",
+      "observable_behaviors_ar": [
+        "يميز القول من السجل"
+      ],
+      "evidence_sources": [
+        "evidence_board"
+      ]
+    },
+    {
+      "id": "lo_indep",
+      "statement_ar": "يجد مسارين مستقلين: مسار المنفعة ومسار الفرصة.",
+      "skill_ko_ref": "KO-RS-05-004",
+      "observable_behaviors_ar": [
+        "يبني حجة من سجلات لا تشترك"
+      ],
+      "evidence_sources": [
+        "evidence_board",
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_chance",
+      "statement_ar": "يقدّر ما تتوقعه الصدفة قبل أن يعدّ نمطاً دليلاً.",
+      "skill_ko_ref": "KO-RS-06-017",
+      "observable_behaviors_ar": [
+        "يحسب العدد المتوقع بالصدفة"
+      ],
+      "evidence_sources": [
+        "timeline_task",
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_hyp",
+      "statement_ar": "يوازن بين تفسيرات متنافسة ويستبعد ما تنقضه السجلات.",
+      "skill_ko_ref": "KO-RS-05-002",
+      "observable_behaviors_ar": [
+        "يستبعد جواداً ورنا والصدفة بدليل"
+      ],
+      "evidence_sources": [
+        "hypothesis_ledger"
+      ]
+    },
+    {
+      "id": "lo_calib",
+      "statement_ar": "يصوغ نسبة الترجيح بحدودها.",
+      "skill_ko_ref": "KO-RS-06-021",
+      "observable_behaviors_ar": [
+        "يختار ثقة معقولة",
+        "يذكر حدوداً"
+      ],
+      "evidence_sources": [
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_revise",
+      "statement_ar": "يراجع رأيه الأول حين يظهر ما يخالفه.",
+      "skill_ko_ref": "KO-RS-06-009",
+      "observable_behaviors_ar": [
+        "يغيّر فرضيته الرائدة بدليل"
+      ],
+      "evidence_sources": [
+        "hypothesis_ledger"
+      ]
+    }
+  ],
+  "mechanics": {
+    "time_budget_units": 20,
+    "actions": [
+      {
+        "id": "a_read_log",
+        "type": "examine",
+        "label_ar": "اقرأ سجل وقائع الأسبوع",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_log"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "READ_LOG",
+        "target_id": "loc_office"
+      },
+      {
+        "id": "a_read_patrol",
+        "type": "examine",
+        "label_ar": "اقرأ ورقة جولات الحارس",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_patrol"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "READ_PATROL",
+        "target_id": "loc_guard"
+      },
+      {
+        "id": "a_read_pass",
+        "type": "examine",
+        "label_ar": "اطلع على دفتر الاستئذان المجمّع",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_pass"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "READ_PASS",
+        "target_id": "loc_office"
+      },
+      {
+        "id": "a_read_sheet_tue",
+        "type": "examine",
+        "label_ar": "اقرأ نسخة الأستاذة نجلاء من الورقة",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_sheet_tue"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "READ_SHEET_TUE",
+        "target_id": "loc_office"
+      },
+      {
+        "id": "a_read_sheet_fri",
+        "type": "examine",
+        "label_ar": "افحص ورقة الحجز المعلقة اليوم",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_sheet_fri"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "READ_SHEET_FRI",
+        "target_id": "loc_corridor"
+      },
+      {
+        "id": "a_read_judge",
+        "type": "examine",
+        "label_ar": "اقرأ إعلان زيارة الضيفة",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_judge"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "READ_JUDGE",
+        "target_id": "loc_office"
+      },
+      {
+        "id": "a_read_map",
+        "type": "examine",
+        "label_ar": "اطلع على مخطط الأماكن المشتركة",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_map"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "READ_MAP",
+        "target_id": "loc_office"
+      },
+      {
+        "id": "a_read_ideas",
+        "type": "examine",
+        "label_ar": "اقرأ لقطتي الدردشة",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_ideas"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "READ_IDEAS",
+        "target_id": "loc_office"
+      },
+      {
+        "id": "a_read_rana",
+        "type": "examine",
+        "label_ar": "اقرأ إفادة رنا",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_rana"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "READ_RANA",
+        "target_id": "loc_corridor"
+      },
+      {
+        "id": "a_read_hadi",
+        "type": "examine",
+        "label_ar": "اقرأ إفادة هادي",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_hadi"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "READ_HADI",
+        "target_id": "loc_office"
+      },
+      {
+        "id": "a_hint",
+        "type": "request_hint",
+        "label_ar": "اطلب تلميحاً",
+        "precondition": {
+          "always": true
+        },
+        "effects": [],
+        "time_cost_units": 0,
+        "telemetry_code": "REQUEST_HINT"
+      },
+      {
+        "id": "a_accuse",
+        "type": "final_accusation",
+        "label_ar": "قدّم جوابك وجملة «كيف عرفت؟»",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "SUBMIT"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "FINAL_ACCUSATION"
+      }
+    ]
+  },
+  "state_machine": {
+    "id": "c055",
+    "initial": "briefing",
+    "type": "compound",
+    "states": {
+      "briefing": {
+        "description_ar": "الإحاطة",
+        "type": "atomic",
+        "on": {
+          "START": {
+            "target": "investigating"
+          }
+        }
+      },
+      "investigating": {
+        "description_ar": "التحقيق",
+        "type": "compound",
+        "initial": "gathering",
+        "states": {
+          "gathering": {
+            "type": "atomic",
+            "on": {
+              "OPEN_DEDUCTION": {
+                "target": "deducing"
+              }
+            }
+          },
+          "deducing": {
+            "type": "atomic",
+            "on": {
+              "BACK": {
+                "target": "gathering"
+              }
+            }
+          }
+        },
+        "on": {
+          "SUBMIT": {
+            "target": "review"
+          }
+        }
+      },
+      "review": {
+        "description_ar": "مراجعة",
+        "type": "atomic",
+        "on": {
+          "CLOSE": {
+            "target": "resolved"
+          }
+        }
+      },
+      "resolved": {
+        "description_ar": "إغلاق",
+        "type": "final"
+      }
+    }
+  },
+  "rubric": {
+    "reference_answer_ar": "المقالب الخمسة غطاء، والهدف واحد هو تبديل موعدين في ورقة الحجز. أربع وقائع أعادت الأشياء كما كانت، والخامسة تركت أثراً: قارن نسخة الثلاثاء بورقة الجمعة فتجد أن هادي صار قبل مغادرة الضيفة وجواداً بعدها، فالمستفيد هادي. وفي مسار آخر لا يشترك مع الأول في دليل، يظهر اسم هادي وحده في قوائم الخارجين في نوافذ الأيام الخمسة. أما جواد فقد خسر بالتبديل، ونمط الطابق الثاني هو المتوقع بالصدفة، ورنا أعادت التعليق بحضور الحارس. حدود الاستنتاج: لا نعرف كيف بدّل الأسماء بالضبط ولا نملك اعترافه، ونفترض أن القارب الأخضر علامة فاعل واحد.",
+    "criteria": [
+      {
+        "id": "c_source",
+        "name_ar": "تصنيف المصادر",
+        "objective_ids": [
+          "lo_source"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يصنّف"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "أخطأ في الأغلب"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "نصف صحيح"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمه صحيح"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كله صحيح"
+          }
+        ]
+      },
+      {
+        "id": "c_links",
+        "name_ar": "ربط الأدلة بالفرضيات",
+        "objective_ids": [
+          "lo_main",
+          "lo_indep"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.25,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لا روابط"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "قليلة"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "نصفها صحيح"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمها"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كلها دقيقة"
+          }
+        ]
+      },
+      {
+        "id": "c_uncertainty",
+        "name_ar": "معايرة الثقة",
+        "objective_ids": [
+          "lo_calib"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.2,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "ثقة مفرطة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "حدود قليلة"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "جزئية"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معقولة"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "معايَرة كاملة"
+          }
+        ]
+      },
+      {
+        "id": "c_revision",
+        "name_ar": "مراجعة الرأي",
+        "objective_ids": [
+          "lo_revise"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "بقي على فرضية مرفوضة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "لم يعلن فرضية"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "ثبت على فرضية سليمة"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "غيّر بدليل"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "غيّر بدليل ووثّق"
+          }
+        ]
+      },
+      {
+        "id": "c_elimination",
+        "name_ar": "استبعاد الفرضيات الخاطئة",
+        "objective_ids": [
+          "lo_hyp",
+          "lo_chance"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يستبعد"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "استبعد خطأً"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "فرضية بدليل"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "فرضيتين"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كل الخاطئة"
+          }
+        ]
+      },
+      {
+        "id": "c_justification",
+        "name_ar": "جملة «كيف عرفت؟» وجودة الحجة",
+        "objective_ids": [
+          "lo_main"
+        ],
+        "scored_by": "human",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لا حجة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "ادعاء بلا سند"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "أسماء دون ربط"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "ربط المنفعة والفرصة"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "ربط مع البدائل والحدود"
+          }
+        ]
+      }
+    ]
+  },
+  "hint_ladder": [
+    {
+      "id": "hg1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "حين تتكرر الأحداث، اسأل: هل بقي بعدها كلها شيء تغيّر فعلاً؟",
+      "trigger": {
+        "always": true
+      },
+      "assessment_weight": 0.02
+    },
+    {
+      "id": "hg2",
+      "level": 2,
+      "kind": "focus_area",
+      "text_ar": "ضع الوقائع الخمس جنباً إلى جنب، وانتبه إلى الواقعة التي تخص ورقة مكتوبة لا شيئاً يمكن إعادته كما كان.",
+      "trigger": {
+        "has_evidence": "ev_log"
+      },
+      "assessment_weight": 0.04
+    },
+    {
+      "id": "hg3",
+      "level": 3,
+      "kind": "pointer",
+      "text_ar": "قارن ورقة الحجز كما نقلتها المعلمة بما هي عليه اليوم.",
+      "trigger": {
+        "has_evidence": "ev_log"
+      },
+      "assessment_weight": 0.08
+    },
+    {
+      "id": "hs1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "من ربح من تغيير الموعدين، ومن خسر، ومن لم يتغير شيء له؟",
+      "trigger": {
+        "has_evidence": "ev_sheet_fri"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_gain"
+    },
+    {
+      "id": "hs2",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "اقرأ إعلان الضيفة ثم انظر أي موعد صار قبل مغادرتها وأيّ موعد صار بعدها.",
+      "trigger": {
+        "has_evidence": "ev_sheet_fri"
+      },
+      "assessment_weight": 0.06,
+      "targets_inference_id": "i_gain"
+    },
+    {
+      "id": "hp1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "هل في قوائم الخارجين اسم يتكرر في كل الأيام؟",
+      "trigger": {
+        "has_evidence": "ev_pass"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_out"
+    },
+    {
+      "id": "hp2",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "اكتب قائمة كل يوم ثم ابحث عن الاسم المشترك بينها كلها.",
+      "trigger": {
+        "has_evidence": "ev_pass"
+      },
+      "assessment_weight": 0.06,
+      "targets_inference_id": "i_out"
+    },
+    {
+      "id": "hf1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "ثلاثة من خمسة تبدو كثيرة؛ فكم كنت تتوقع لو وقعت المقالب في أماكن اختيرت بالصدفة؟",
+      "trigger": {
+        "has_evidence": "ev_map"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_floor"
+    },
+    {
+      "id": "hf2",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "عدّ الأماكن في كل طابق واحسب نصيب الطابق الثاني من خمسة مقالب.",
+      "trigger": {
+        "has_evidence": "ev_map"
+      },
+      "assessment_weight": 0.06,
+      "targets_inference_id": "i_floor"
+    }
+  ],
+  "fairness_test": {
+    "requirements": {
+      "min_disjoint_proof_paths": 2,
+      "max_inference_depth": 3,
+      "all_red_herrings_refutable": true,
+      "culprit_uniquely_entailed": true,
+      "no_hidden_fact_dependency": true,
+      "max_required_actions": 20
+    },
+    "runs": []
+  },
+  "ending_explanation": {
+    "steps": [
+      {
+        "order": 1,
+        "text_ar": "اسأل عمّا بقي بعد الأسبوع: أربعة مقالب انتهت بعودة الأشياء كما كانت، أما ورقة الحجز فنسخة الثلاثاء تختلف عن ورقة الجمعة في موعدين تبادلا مكانيهما.",
+        "uses_evidence_ids": [
+          "ev_sheet_tue",
+          "ev_sheet_fri",
+          "ev_log"
+        ],
+        "inference_id": "i_swap"
+      },
+      {
+        "order": 2,
+        "text_ar": "الضيفة تغادر عند 12:20 ولا تختار إلا ما شاهدته؛ فمن انتقل إلى 12:10 هو المستفيد الوحيد، وهو هادي، أما جواد فنُقل إلى الأسوأ ومريم لم تتغير.",
+        "uses_evidence_ids": [
+          "ev_judge",
+          "ev_sheet_fri"
+        ],
+        "inference_id": "i_gain"
+      },
+      {
+        "order": 3,
+        "text_ar": "مسار ثانٍ لا يمر بالورقة: لكل مقلب نافذة قصيرة من جولات الحارس، وفي دفتر الاستئذان اسم واحد حاضر في النوافذ الخمس هو هادي.",
+        "uses_evidence_ids": [
+          "ev_patrol",
+          "ev_pass"
+        ],
+        "inference_id": "i_out"
+      },
+      {
+        "order": 4,
+        "text_ar": "أما قول هادي إنه خرج مرتين فقط فيخالفه الدفتر، وهو خلاف لا يفسره سهو بريء لأن الخروج خمس مرات.",
+        "uses_evidence_ids": [
+          "ev_hadi",
+          "ev_pass"
+        ],
+        "inference_id": "i_lie"
+      },
+      {
+        "order": 5,
+        "text_ar": "اختبر نمط الطابق الثاني: ستة أماكن من عشرة في ذلك الطابق، و5 × 6 ÷ 10 يساوي 3، فثلاثة مقالب هناك هو المتوقع بالصدفة ولا يدل على جواد.",
+        "uses_evidence_ids": [
+          "ev_map",
+          "ev_log",
+          "ev_ideas"
+        ],
+        "inference_id": "i_floor"
+      },
+      {
+        "order": 6,
+        "text_ar": "الخلاصة: هادي نفّذ المقالب الخمسة وأخفى بينها تبديل الموعدين، وجواد لِيم وهو الخاسر، ورنا أعادت التعليق بحضور الحارس. يعود كل موعد إلى ما سجلته المعلمة قبل أي حكم.",
+        "uses_evidence_ids": [
+          "ev_sheet_tue",
+          "ev_pass",
+          "ev_patrol"
+        ],
+        "inference_id": "i_est_hadi"
+      }
+    ],
+    "alternative_paths_ar": [
+      "يكفي مسار المنفعة وحده (النسخة والورقة والإعلان والسجل) ليدل على هادي، ويكفي مسار الفرصة وحده (الحارس والدفتر)؛ والأقوى أن يتفقا ثم تُختبر الأنماط الزائفة بالحساب."
+    ],
+    "what_evidence_could_not_show_ar": [
+      "لا نعرف كيف بدّل الأسماء بالضبط ولا من رآه، وليس عندنا اعتراف منه.",
+      "نفترض أن القارب الأخضر في الوقائع الخمس علامة فاعل واحد؛ لو كان هناك مقلّد لتغيّر الحساب.",
+      "دفتر الاستئذان يغطي ثلاثة صفوف فقط، فلا نعرف من خرج من الصفوف الأخرى."
+    ],
+    "science_notes_ar": [
+      "حين تتشابه الوقائع ابحث عن الفرق الوحيد بينها: أيها بقي أثره بعد انتهاء المقلب؟",
+      "النمط الذي يظهر في ثلاث من خمس قد تصنعه الصدفة؛ فاحسب المتوقع قبل أن تعدّه دليلاً.",
+      "الاستفادة وحدها لا تكفي للحكم، لكنها تدل على أين نبحث، ثم يأتي سجل مستقل ليؤكد.",
+      "كثرة المقالب تشتّت النظر عن الحدث الذي يهم، وهذا يسمى التمويه بالنمط."
+    ]
+  },
+  "expert_review": [
+    {
+      "role": "narrative_editor",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-11-05",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "scientific_reviewer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-11-05",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "learning_designer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-11-05",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "age_appropriateness",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-11-05",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "cultural_reviewer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-11-05",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "legal_rights",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-11-05",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "safety",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-11-05",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    }
+  ]
+}

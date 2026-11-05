@@ -1,0 +1,3655 @@
+{
+  "schema_version": "0.1.0",
+  "case_id": "c048_third_margin",
+  "case_version": "0.1.0",
+  "meta": {
+    "title_ar": "الهامش الثالث",
+    "title_en": "The Third Margin",
+    "age_band": "16-18",
+    "locale": "ar",
+    "dialogue_register": "msa",
+    "estimated_minutes": 40,
+    "difficulty": 3,
+    "content_flags": [
+      "no_violence",
+      "fraud"
+    ],
+    "authors": [
+      "فريق أثر التحريري (مسودة بمساعدة الذكاء الاصطناعي، لم تُراجَع بشرياً بعد)"
+    ],
+    "knowledge_object_refs": [
+      "KO-RS-05-001",
+      "KO-RS-05-005",
+      "KO-RS-05-002",
+      "KO-RS-05-004",
+      "KO-RS-06-021",
+      "KO-RS-06-009"
+    ]
+  },
+  "premise": {
+    "hook_ar": "سجل مياه قديم في دار الحُجَج، وعلى هامش ورقة منه ثلاث ملاحظات، والثالثة وحدها تمنح بستاناً دورة الماء كاملة صباح الجمعة. فأيّ ملاحظة قديمة وأيّها أُضيفت؟ وأي أصحاب المصلحة كتبها؟",
+    "player_role_ar": "أنت محكّم متدرّب لدى لجنة المحفوظات في مدينة مرج الريحان، وطُلب منك أن تقيّم الهوامش الثلاثة قبل أن تنظر اللجنة في دورة الماء.",
+    "setting_ar": "مدينة مرج الريحان المتخيَّلة، من الخميس إلى الاثنين. بإذن مكتوب من اللجنة تطّلع على سجلات الدار وقاعة الجمعية ومكتب العقود، ولا تفتح غيرها. الأسماء والسنوات والقرارات كلها متخيَّلة، وتوقيت المدينة هو توقيت كل السجلات.",
+    "public_fact_ids": [
+      "f_dispute",
+      "f_objection",
+      "f_exhibition"
+    ],
+    "assumed_general_knowledge_ar": [
+      "سجل القفل أو التنبيه يسجل البطاقة أو الرمز لا حامله",
+      "من يربح من أمر ما قد يكون فاعله وقد لا يكون",
+      "النص الذي يظهر في ملف قبل ظهوره على الورقة سبق الورقة"
+    ]
+  },
+  "entities": {
+    "characters": [
+      {
+        "id": "khalid",
+        "name_ar": "خالد البحيري",
+        "role": "suspect",
+        "age_descriptor_ar": "أمين سر جمعية سقاة الجرن وصاحب ورشة مضخات",
+        "persona_ar": "مرتب وودود، يتحدث عن التراث بحماسة، ويحب أن يبدو صاحب الإجراءات الصحيحة.",
+        "motives_ar": [
+          "أن تُرى الجمعية حامية لتراث القرية",
+          "أن تستقر أعماله مع أصحاب البساتين"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "kh_greet",
+            "purpose": "greeting",
+            "text_ar": "أهلاً بك. سعدت بإعارة السجل للمعرض، ويسرّني أن أجيب."
+          },
+          {
+            "line_id": "kh_found",
+            "purpose": "lie",
+            "text_ar": "الهامش الأيسر كان على الورقة حين تسلّمت السجل، ولم أنتبه له إلا في المساء.",
+            "claim_ids": [
+              "cl_kh_found"
+            ]
+          },
+          {
+            "line_id": "kh_nocase",
+            "purpose": "lie",
+            "text_ar": "لم أفتح واجهة العرض بعد افتتاح المعرض، فالمفتاح بقي مع الجمعية.",
+            "claim_ids": [
+              "cl_kh_nocase"
+            ]
+          },
+          {
+            "line_id": "kh_receipt",
+            "purpose": "reveal",
+            "text_ar": "وقّعت على الوصل صباحاً، وفيه ملاحظتان مكتوبتان فقط، وأقرّ بأن الأيسر لم يكن مكتوباً وقتها.",
+            "fact_ids": [
+              "f_receipt"
+            ]
+          },
+          {
+            "line_id": "kh_lock",
+            "purpose": "reveal",
+            "text_ar": "فتحت الواجهة مساءً بعد خروج الزوار، وكنت وحدي في القاعة، وقلت لنفسي إنني أعدّل وضع السجل.",
+            "fact_ids": [
+              "f_lock_log"
+            ]
+          },
+          {
+            "line_id": "kh_draft",
+            "purpose": "reveal",
+            "text_ar": "هذه مسودتي، وفيها الفقرة نفسها منذ الثلاثاء، ولا أستطيع القول إنني نقلتها عن الورقة.",
+            "fact_ids": [
+              "f_draft"
+            ]
+          },
+          {
+            "line_id": "kh_contract",
+            "purpose": "reveal",
+            "text_ar": "ركّبت مضخة لبستان عصام، والعقد مسجل، وجزء من أجري مؤجل إلى حين حسم الدورة.",
+            "fact_ids": [
+              "f_contract"
+            ]
+          },
+          {
+            "line_id": "kh_msg",
+            "purpose": "reveal",
+            "text_ar": "نعم أرسلت لعصام صورة الهامش مساءً بعد إعادة السجل إلى الدار.",
+            "fact_ids": [
+              "f_msg"
+            ]
+          },
+          {
+            "line_id": "kh_refuse",
+            "purpose": "refuse_secret",
+            "text_ar": "قلت ما عندي في الوصل والرسائل."
+          },
+          {
+            "line_id": "kh_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف أكثر من ذلك."
+          },
+          {
+            "line_id": "kh_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن المعرض والسجل."
+          },
+          {
+            "line_id": "kh_bye",
+            "purpose": "farewell",
+            "text_ar": "أرجو أن تُحفظ مكانة الجمعية وحقوق الجميع."
+          }
+        ]
+      },
+      {
+        "id": "isam",
+        "name_ar": "عصام الصفّار",
+        "role": "suspect",
+        "age_descriptor_ar": "صاحب بستان التين",
+        "persona_ar": "صبور وطيب القلب، متلهف على سند لبستان أبيه، ويثق بمن يمدّ له يد العون.",
+        "motives_ar": [
+          "أن يحفظ حق بستان العائلة",
+          "ألا يُظن أنه يطلب ما ليس له"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "is_greet",
+            "purpose": "greeting",
+            "text_ar": "تفضّل. أنا لا أطلب إلا ما أظنه حقاً لبستاننا."
+          },
+          {
+            "line_id": "is_orig",
+            "purpose": "lie",
+            "text_ar": "الهامش الثالث أصلي في السجل كما أخبرني الأستاذ خالد.",
+            "claim_ids": [
+              "cl_is_original"
+            ]
+          },
+          {
+            "line_id": "is_reading",
+            "purpose": "reveal",
+            "text_ar": "قرأت السجل في قاعة القراءة مرتين بالرصاص وتحت الإشراف، ونسخت هامشين فقط.",
+            "fact_ids": [
+              "f_reading"
+            ]
+          },
+          {
+            "line_id": "is_visit",
+            "purpose": "reveal",
+            "text_ar": "زرت المعرض صباحاً مع أسرتي نحو الحادية عشرة، ولم أكن وحدي، وغادرت قبل الظهر.",
+            "fact_ids": [
+              "f_isam_visit"
+            ]
+          },
+          {
+            "line_id": "is_contract",
+            "purpose": "reveal",
+            "text_ar": "نعم، وقّعت عقد المضخة مع ورشة خالد قبل المعرض بثلاثة أسابيع.",
+            "fact_ids": [
+              "f_contract"
+            ]
+          },
+          {
+            "line_id": "is_msg",
+            "purpose": "reveal",
+            "text_ar": "أرسل لي خالد صورة الهامش مساء الخميس، وقد استغربت لأنني لم أره في قراءتي.",
+            "fact_ids": [
+              "f_msg"
+            ]
+          },
+          {
+            "line_id": "is_refuse",
+            "purpose": "refuse_secret",
+            "text_ar": "لا أريد الكلام في ظنون لا دليل عليها."
+          },
+          {
+            "line_id": "is_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف أكثر من ذلك."
+          },
+          {
+            "line_id": "is_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن قراءتي للسجل وعن المعرض."
+          },
+          {
+            "line_id": "is_bye",
+            "purpose": "farewell",
+            "text_ar": "أريد الحق للجميع، وليس لبستاننا وحده."
+          }
+        ]
+      },
+      {
+        "id": "najwa",
+        "name_ar": "نجوى الطويل",
+        "role": "suspect",
+        "age_descriptor_ar": "منسقة حديقة مدرسة الجرن الزراعية",
+        "persona_ar": "حازمة وصريحة، تتحمس لحق المدرسة، وتميل إلى الحكم على الشيء من مظهره بسرعة.",
+        "motives_ar": [
+          "أن تحفظ نصف دورة الماء لحديقة المدرسة",
+          "أن يُكشف كل غش في السجل"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "nj_greet",
+            "purpose": "greeting",
+            "text_ar": "أهلاً. أهمّني أن يُعرف الحق وأن تُحمى الحديقة."
+          },
+          {
+            "line_id": "nj_isam",
+            "purpose": "lie",
+            "text_ar": "عصام هو الذي كتب الهامش الثالث ليأخذ دورتنا، فحبره أغمق وخطه جديد.",
+            "claim_ids": [
+              "cl_nj_isam"
+            ]
+          },
+          {
+            "line_id": "nj_pen",
+            "purpose": "reveal",
+            "text_ar": "كنت أدوّن في دفتري وصف لوحات العرض لنعدّ لوحة للمدرسة، ولم ألمس الواجهة.",
+            "fact_ids": [
+              "f_najwa_pen"
+            ]
+          },
+          {
+            "line_id": "nj_stake",
+            "purpose": "reveal",
+            "text_ar": "نعم، إن ثبت الهامش خسرت الحديقة نصف دورتها، ولهذا اعترضت.",
+            "fact_ids": [
+              "f_najwa_stake"
+            ]
+          },
+          {
+            "line_id": "nj_refuse",
+            "purpose": "refuse_secret",
+            "text_ar": "قلت ما عندي في مذكرتي."
+          },
+          {
+            "line_id": "nj_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف أكثر من ذلك."
+          },
+          {
+            "line_id": "nj_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن الحديقة والدورة."
+          },
+          {
+            "line_id": "nj_bye",
+            "purpose": "farewell",
+            "text_ar": "أرجو أن تُقرأ الأوراق قبل الأحكام."
+          }
+        ]
+      },
+      {
+        "id": "maysa",
+        "name_ar": "ميادة السلّوم",
+        "role": "expert",
+        "age_descriptor_ar": "فاحصة المواد في دار الحُجَج للمحفوظات",
+        "persona_ar": "دقيقة وهادئة، تحذر من الجزم، وتفرّق بين ما رأته وما تستنتجه.",
+        "motives_ar": [
+          "أن تُحفظ المواد كما وصلت",
+          "أن يُقال عنها ما تثبته الأوراق فقط"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": [
+            "كيفية تقليد الخط أو الحبر"
+          ]
+        },
+        "authored_lines": [
+          {
+            "line_id": "ms_greet",
+            "purpose": "greeting",
+            "text_ar": "أهلاً. أصف ما أراه وأسمّي حدود وصفي."
+          },
+          {
+            "line_id": "ms_receipt",
+            "purpose": "reveal",
+            "text_ar": "وصفت الورقة عند التسليم بنفسي: ملاحظتان مكتوبتان، والهامش الأيسر أبيض.",
+            "fact_ids": [
+              "f_receipt"
+            ]
+          },
+          {
+            "line_id": "ms_exam",
+            "purpose": "reveal",
+            "text_ar": "عند الإعادة وجدت ثلاث ملاحظات. وحبر الأيسر حاد الحواف فوق لطخة الماء، أما الآخران فقد تشرّب حبرهما فيها. هذا يرتّب الكتابة ولا يسمّي الكاتب.",
+            "fact_ids": [
+              "f_exam",
+              "f_return_three"
+            ]
+          },
+          {
+            "line_id": "ms_scan",
+            "purpose": "reveal",
+            "text_ar": "مسح الدار سنة 2009 يظهر الهامش الأيسر أبيض.",
+            "fact_ids": [
+              "f_scan"
+            ]
+          },
+          {
+            "line_id": "ms_reg",
+            "purpose": "reveal",
+            "text_ar": "ما تكتبه الدار على المواد يُقيَّد برقم، وآخر قيد لهذا السجل قديم.",
+            "fact_ids": [
+              "f_annot_reg"
+            ]
+          },
+          {
+            "line_id": "ms_refuse",
+            "purpose": "refuse_secret",
+            "text_ar": "لا أتكلم في طرق تقليد الكتابة؛ كلامي في الفحص والترتيب."
+          },
+          {
+            "line_id": "ms_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف أكثر مما كتبته في محضري."
+          },
+          {
+            "line_id": "ms_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن حالة الورقة وما سُجل عنها."
+          },
+          {
+            "line_id": "ms_bye",
+            "purpose": "farewell",
+            "text_ar": "المحاضر عندكم متى شئتم."
+          }
+        ]
+      },
+      {
+        "id": "abeer",
+        "name_ar": "عبير الجندي",
+        "role": "witness",
+        "age_descriptor_ar": "متطوعة في قاعة المعرض",
+        "persona_ar": "نشيطة وودودة، تتحدث بسرعة، وتميل إلى إكمال الصورة بما تظنه.",
+        "motives_ar": [
+          "أن تنجح فعالية القرية",
+          "أن تبدو مفيدة للجمعية"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "ab_greet",
+            "purpose": "greeting",
+            "text_ar": "أهلاً. كنت في القاعة طوال اليوم أستقبل الزوار."
+          },
+          {
+            "line_id": "ab_wrote",
+            "purpose": "lie",
+            "text_ar": "رأيت الأستاذة نجوى تكتب فوق الواجهة نحو الثانية والثلث، وظننتها تكتب على السجل.",
+            "claim_ids": [
+              "cl_ab_wrote"
+            ]
+          },
+          {
+            "line_id": "ab_pen",
+            "purpose": "reveal",
+            "text_ar": "كانت منحنية فوق الواجهة وبيدها قلم، ولم أرها تفتح شيئاً.",
+            "fact_ids": [
+              "f_najwa_pen"
+            ]
+          },
+          {
+            "line_id": "ab_visit",
+            "purpose": "reveal",
+            "text_ar": "مرّ عصام نحو الحادية عشرة مع أسرته، ولم يبق وحده عند الواجهة.",
+            "fact_ids": [
+              "f_isam_visit"
+            ]
+          },
+          {
+            "line_id": "ab_close",
+            "purpose": "reveal",
+            "text_ar": "فعّلت التنبيه وأقفلت القاعة نحو الثامنة والثلث وغادرت، وكان الجميع قد خرج.",
+            "fact_ids": [
+              "f_hall_closed"
+            ]
+          },
+          {
+            "line_id": "ab_refuse",
+            "purpose": "refuse_secret",
+            "text_ar": "كتبت ما رأيته في إفادتي."
+          },
+          {
+            "line_id": "ab_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أذكر أكثر من ذلك."
+          },
+          {
+            "line_id": "ab_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن المعرض وما رأيته فيه."
+          },
+          {
+            "line_id": "ab_bye",
+            "purpose": "farewell",
+            "text_ar": "أتمنى أن تفيدكم إفادتي."
+          }
+        ]
+      }
+    ],
+    "locations": [
+      {
+        "id": "loc_archive",
+        "name_ar": "دار الحُجَج للمحفوظات",
+        "description_ar": "دار تحفظ السجلات القديمة، فيها مكتب الإعارة والصندوق الليلي ومختبر الفحص."
+      },
+      {
+        "id": "loc_hall",
+        "name_ar": "قاعة جمعية سقاة الجرن",
+        "description_ar": "قاعة معرض يوم التراث الزراعي، فيها واجهة عرض بقفل إلكتروني ولوحة تنبيه."
+      },
+      {
+        "id": "loc_reading",
+        "name_ar": "قاعة القراءة في الدار",
+        "description_ar": "قاعة يُسمح فيها بقلم الرصاص وحده، وتحت إشراف موظفة."
+      },
+      {
+        "id": "loc_registry",
+        "name_ar": "مكتب العقود والمياه",
+        "description_ar": "مكتب بلدي يحفظ العقود المسجلة وفهارس الجريدة."
+      },
+      {
+        "id": "loc_committee",
+        "name_ar": "قاعة لجنة المحفوظات",
+        "description_ar": "قاعة في مبنى البلدية تنظر فيها اللجنة في النزاع."
+      },
+      {
+        "id": "loc_assoc",
+        "name_ar": "مكتب جمعية سقاة الجرن",
+        "description_ar": "مكتب فيه مجلد ملفات مشترك للجمعية."
+      }
+    ],
+    "objects": [
+      {
+        "id": "obj_ledger",
+        "name_ar": "سجل مياه قرية الجرن",
+        "description_ar": "سجل قديم لحصص الماء، وفي الورقة 12 ظهراً ثلاثة هوامش."
+      },
+      {
+        "id": "obj_case",
+        "name_ar": "واجهة العرض",
+        "description_ar": "واجهة زجاجية بقفل إلكتروني يسجل كل فتح وقفل."
+      }
+    ],
+    "organizations": [
+      {
+        "id": "org_archive",
+        "name_ar": "دار الحُجَج للمحفوظات",
+        "description_ar": "دار محفوظات في مدينة متخيَّلة."
+      },
+      {
+        "id": "org_assoc",
+        "name_ar": "جمعية سقاة الجرن",
+        "description_ar": "جمعية أهلية تنظم دورات الماء وتقيم معرض التراث."
+      }
+    ]
+  },
+  "truth": {
+    "solution": {
+      "culprit_ids": [
+        "khalid"
+      ],
+      "summary_ar": "الهامشان الأيمن والسفلي قديمان، وأما الأيسر فأضافه خالد البحيري أو دبّر إضافته ليلة المعرض. تسلّم السجل بوصف يخلو من هامش ثالث، ولم تُفتح الواجهة بعد الافتتاح إلا مرة بطاقته وحدها وقد خلت القاعة من غيره، وسبق نصه الورقة في مسودة يملكها. أراد أن تثبت دورة الماء لعميله فيستحق بقية أجر المضخة. صدّق عصام ما أُرسل إليه، وظنت نجوى أن عصاماً هو الكاتب، فبنى الاثنان موقفهما على هامش مضاف.",
+      "key_fact_ids": [
+        "f_m3_in_loan",
+        "f_khalid_added"
+      ]
+    },
+    "facts": [
+      {
+        "id": "f_dispute",
+        "statement_ar": "قدّم عصام الصفّار طلباً إلى لجنة المحفوظات يطلب دورة الجمعة صباحاً كاملة من نبع الحجر لبستان التين، مستنداً إلى الهامش الأيسر للورقة 12 ظهراً في سجل مياه الجرن.",
+        "kind": "event",
+        "subject_ids": [
+          "isam",
+          "obj_ledger"
+        ],
+        "spoiler_level": 0,
+        "location_id": "loc_committee"
+      },
+      {
+        "id": "f_objection",
+        "statement_ar": "اعترضت نجوى الطويل على الطلب، وقالت إن الهامش الأيسر مضاف وإن حبره أغمق من غيره.",
+        "kind": "event",
+        "subject_ids": [
+          "najwa",
+          "obj_ledger"
+        ],
+        "spoiler_level": 0,
+        "location_id": "loc_committee"
+      },
+      {
+        "id": "f_exhibition",
+        "statement_ar": "عُرض سجل مياه الجرن يوم الخميس في قاعة جمعية سقاة الجرن ضمن يوم التراث الزراعي بإعارة من دار الحُجَج، وأُعيد إلى الدار مساء اليوم نفسه.",
+        "kind": "event",
+        "subject_ids": [
+          "obj_ledger",
+          "org_assoc",
+          "org_archive"
+        ],
+        "spoiler_level": 0,
+        "time": {
+          "start_min": 120,
+          "precision": "approx",
+          "end_min": 840
+        },
+        "location_id": "loc_hall"
+      },
+      {
+        "id": "f_receipt",
+        "statement_ar": "حين سُلّم السجل لخالد البحيري الخميس 09:30 كانت الورقة 12 ظهراً تحمل ملاحظتين مكتوبتين فقط، الأيمن والسفلي، والهامش الأيسر أبيض، ووقّع خالد على هذا الوصف.",
+        "kind": "event",
+        "subject_ids": [
+          "khalid",
+          "maysa",
+          "obj_ledger"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 90,
+          "precision": "exact",
+          "end_min": 100
+        },
+        "location_id": "loc_archive"
+      },
+      {
+        "id": "f_lock_log",
+        "statement_ar": "سجل قفل الواجهة يبين أنها فُتحت 09:45 بحضور عبير وقُفلت 10:05، ثم فُتحت 20:42 ببطاقة خالد وحدها وقُفلت 21:20، ولا فتح غير ذلك حتى الصباح.",
+        "kind": "event",
+        "subject_ids": [
+          "khalid",
+          "obj_case"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 762,
+          "precision": "exact",
+          "end_min": 800
+        },
+        "location_id": "loc_hall"
+      },
+      {
+        "id": "f_alarm",
+        "statement_ar": "لوحة التنبيه سجلت تفعيلاً 20:20 برمز عبير، وتعطيلاً 20:35 برمز خالد، وتفعيلاً 21:30 برمزه، ولا تعطيل بغير رمزه حتى الصباح.",
+        "kind": "event",
+        "subject_ids": [
+          "khalid",
+          "abeer",
+          "loc_hall"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 755,
+          "precision": "exact",
+          "end_min": 810
+        },
+        "location_id": "loc_hall"
+      },
+      {
+        "id": "f_hall_closed",
+        "statement_ar": "أقفلت عبير القاعة وفعّلت التنبيه 20:20 وغادرت، وكان الزوار قد خرجوا.",
+        "kind": "event",
+        "subject_ids": [
+          "abeer"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 740,
+          "precision": "exact"
+        },
+        "location_id": "loc_hall"
+      },
+      {
+        "id": "f_photo_blank",
+        "statement_ar": "صورة زائر التقطت الخميس 16:45 تُظهر الورقة 12 ظهراً والهامش الأيسر أبيض.",
+        "kind": "state",
+        "subject_ids": [
+          "obj_ledger"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 525,
+          "precision": "exact"
+        },
+        "location_id": "loc_hall"
+      },
+      {
+        "id": "f_msg",
+        "statement_ar": "أرسل خالد إلى عصام الخميس 22:05 صورة للهامش الأيسر وهو مكتوب، وقال إنه سند لبستانه.",
+        "kind": "event",
+        "subject_ids": [
+          "khalid",
+          "isam"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 845,
+          "precision": "exact"
+        }
+      },
+      {
+        "id": "f_draft",
+        "statement_ar": "أُنشئ ملف «مسودة دليل الجمعية» الثلاثاء 19:10 بحساب خالد، وفيه فقرة تطابق حرفياً نص الهامش الأيسر بما فيه رقم القرار 41، ولم يُشارَك الملف إلا مع المطبعة.",
+        "kind": "state",
+        "subject_ids": [
+          "khalid",
+          "org_assoc"
+        ],
+        "spoiler_level": 1,
+        "location_id": "loc_assoc"
+      },
+      {
+        "id": "f_gazette",
+        "statement_ar": "فهرس الجريدة لسنة 1934 يبين أن القرار 14 يخص حصص ماء الجرن وأن القرار 41 يخص تعرفة المعدّية، ولا قرار مائي آخر في تلك السنة.",
+        "kind": "attribute",
+        "subject_ids": [
+          "obj_ledger"
+        ],
+        "spoiler_level": 1,
+        "location_id": "loc_registry"
+      },
+      {
+        "id": "f_scan",
+        "statement_ar": "مسح الدار الرقمي سنة 2009 يُظهر الهامشين الأيمن والسفلي مكتوبين والأيسر أبيض.",
+        "kind": "state",
+        "subject_ids": [
+          "obj_ledger"
+        ],
+        "spoiler_level": 1,
+        "location_id": "loc_archive"
+      },
+      {
+        "id": "f_exam",
+        "statement_ar": "الهامشان الأيمن والسفلي تشرّب حبرهما في لطخة ماء قديمة بعد فيضان 2011، أما حبر الأيسر فحاد الحواف فوق اللطخة نفسها.",
+        "kind": "state",
+        "subject_ids": [
+          "maysa",
+          "obj_ledger"
+        ],
+        "spoiler_level": 1,
+        "location_id": "loc_archive"
+      },
+      {
+        "id": "f_annot_reg",
+        "statement_ar": "سجل الملاحظات اللاحقة في الدار يخلو من أي قيد على هذا السجل بعد سنة 1987.",
+        "kind": "absence",
+        "subject_ids": [
+          "obj_ledger",
+          "org_archive"
+        ],
+        "spoiler_level": 1,
+        "location_id": "loc_archive"
+      },
+      {
+        "id": "f_reading",
+        "statement_ar": "زار عصام قاعة القراءة زيارتين قبل المعرض ودوّن بالرصاص تحت الإشراف هامشين فقط.",
+        "kind": "event",
+        "subject_ids": [
+          "isam"
+        ],
+        "spoiler_level": 1,
+        "location_id": "loc_reading"
+      },
+      {
+        "id": "f_isam_visit",
+        "statement_ar": "زار عصام المعرض نحو الساعة 11:10 مع أسرته حتى 11:40، ولم يبق وحده عند الواجهة.",
+        "kind": "event",
+        "subject_ids": [
+          "isam",
+          "abeer"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 190,
+          "precision": "exact",
+          "end_min": 220
+        },
+        "location_id": "loc_hall"
+      },
+      {
+        "id": "f_najwa_pen",
+        "statement_ar": "رأت عبير نجوى منحنية فوق الواجهة وبيدها قلم نحو 14:20.",
+        "kind": "event",
+        "subject_ids": [
+          "najwa",
+          "abeer"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 380,
+          "precision": "approx"
+        },
+        "location_id": "loc_hall"
+      },
+      {
+        "id": "f_najwa_stake",
+        "statement_ar": "تخسر حديقة المدرسة نصف دورتها إن ثبت الهامش الأيسر.",
+        "kind": "relation",
+        "subject_ids": [
+          "najwa"
+        ],
+        "spoiler_level": 1,
+        "location_id": "loc_committee"
+      },
+      {
+        "id": "f_contract",
+        "statement_ar": "عقد مضخة مسجل بين عصام وورشة خالد يجعل 40% من الأجر مستحقاً عند ثبوت دورة الجمعة صباحاً كاملة لبستان التين.",
+        "kind": "relation",
+        "subject_ids": [
+          "isam",
+          "khalid"
+        ],
+        "spoiler_level": 1,
+        "location_id": "loc_registry"
+      },
+      {
+        "id": "f_return_three",
+        "statement_ar": "عند فحص الإعادة صباح الجمعة 09:00 وُجدت على الورقة ثلاث ملاحظات مكتوبة، بعد أن بقي السجل في الصندوق الليلي المختوم منذ 22:00.",
+        "kind": "event",
+        "subject_ids": [
+          "maysa",
+          "obj_ledger"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 1500,
+          "precision": "exact"
+        },
+        "location_id": "loc_archive"
+      },
+      {
+        "id": "f_stakes",
+        "statement_ar": "لعصام وخالد ونجوى مصلحة ظاهرة في نتيجة النزاع، فالمصلحة لا تفرّق بين الثلاثة.",
+        "kind": "relation",
+        "subject_ids": [
+          "isam",
+          "khalid",
+          "najwa"
+        ],
+        "spoiler_level": 2
+      },
+      {
+        "id": "f_m3_not_orig",
+        "statement_ar": "الهامش الأيسر كُتب بعد مسح 2009 وبعد جفاف لطخة الماء، فهو ليس من الكتابة القديمة.",
+        "kind": "state",
+        "subject_ids": [
+          "obj_ledger"
+        ],
+        "spoiler_level": 2
+      },
+      {
+        "id": "f_m3_in_loan",
+        "statement_ar": "ظهر الهامش الأيسر على الورقة في يوم المعرض، والسجل خارج الدار، بين وصف التسليم صباحاً وإيداع الصندوق الليلي مساءً.",
+        "kind": "event",
+        "subject_ids": [
+          "obj_ledger"
+        ],
+        "spoiler_level": 2,
+        "time": {
+          "start_min": 90,
+          "precision": "approx",
+          "end_min": 845
+        },
+        "location_id": "loc_hall"
+      },
+      {
+        "id": "f_khalid_added",
+        "statement_ar": "كُتب الهامش الأيسر ليلة المعرض بين فتح الواجهة 20:42 وقفلها 21:20، بيد خالد البحيري أو بتدبير مباشر منه، ونصه مأخوذ من مسودته.",
+        "kind": "event",
+        "subject_ids": [
+          "khalid",
+          "obj_ledger",
+          "obj_case"
+        ],
+        "spoiler_level": 3,
+        "time": {
+          "start_min": 762,
+          "precision": "approx",
+          "end_min": 800
+        },
+        "location_id": "loc_hall"
+      }
+    ],
+    "claims": [
+      {
+        "id": "cl_kh_found",
+        "statement_ar": "الهامش الأيسر كان على الورقة حين تسلّم خالد السجل.",
+        "kind": "lie",
+        "held_by": [
+          "khalid"
+        ],
+        "true_fact_id": "f_receipt",
+        "contradicted_by_evidence_ids": [
+          "ev_receipt",
+          "ev_visitor_photo"
+        ]
+      },
+      {
+        "id": "cl_kh_nocase",
+        "statement_ar": "خالد لم يفتح واجهة العرض بعد افتتاح المعرض.",
+        "kind": "lie",
+        "held_by": [
+          "khalid"
+        ],
+        "true_fact_id": "f_lock_log",
+        "contradicted_by_evidence_ids": [
+          "ev_case_lock_log",
+          "ev_alarm_log"
+        ]
+      },
+      {
+        "id": "cl_is_original",
+        "statement_ar": "الهامش الثالث أصلي في السجل.",
+        "kind": "honest_mistake",
+        "held_by": [
+          "isam"
+        ],
+        "true_fact_id": "f_m3_not_orig",
+        "contradicted_by_evidence_ids": [
+          "ev_scan_2009",
+          "ev_exam"
+        ]
+      },
+      {
+        "id": "cl_nj_isam",
+        "statement_ar": "عصام هو الذي كتب الهامش الثالث بنفسه.",
+        "kind": "rumour",
+        "held_by": [
+          "najwa"
+        ],
+        "true_fact_id": "f_reading",
+        "contradicted_by_evidence_ids": [
+          "ev_reading_log",
+          "ev_case_lock_log"
+        ]
+      },
+      {
+        "id": "cl_ab_wrote",
+        "statement_ar": "نجوى كتبت على السجل فوق الواجهة نحو 14:20.",
+        "kind": "honest_mistake",
+        "held_by": [
+          "abeer"
+        ],
+        "true_fact_id": "f_photo_blank",
+        "contradicted_by_evidence_ids": [
+          "ev_visitor_photo",
+          "ev_case_lock_log"
+        ]
+      }
+    ]
+  },
+  "timeline": [
+    {
+      "id": "te_receipt",
+      "description_ar": "خالد يتسلّم السجل من فاحصة الدار ويوقّع على وصف حالته.",
+      "time": {
+        "start_min": 90,
+        "precision": "exact",
+        "end_min": 100
+      },
+      "actor_ids": [
+        "khalid",
+        "maysa"
+      ],
+      "fact_ids": [
+        "f_receipt"
+      ],
+      "location_id": "loc_archive",
+      "motivated_by_ar": "استلام السجل لعرضه في يوم التراث"
+    },
+    {
+      "id": "te_setup",
+      "description_ar": "خالد وعبير يضعان السجل في الواجهة ويقفلانها.",
+      "time": {
+        "start_min": 105,
+        "precision": "exact",
+        "end_min": 125
+      },
+      "actor_ids": [
+        "khalid",
+        "abeer"
+      ],
+      "fact_ids": [
+        "f_lock_log"
+      ],
+      "location_id": "loc_hall",
+      "motivated_by_ar": "تجهيز المعرض قبل فتح الأبواب"
+    },
+    {
+      "id": "te_isam_visit",
+      "description_ar": "عصام يزور المعرض مع أسرته.",
+      "time": {
+        "start_min": 190,
+        "precision": "exact",
+        "end_min": 220
+      },
+      "actor_ids": [
+        "isam"
+      ],
+      "fact_ids": [
+        "f_isam_visit"
+      ],
+      "location_id": "loc_hall",
+      "motivated_by_ar": "حضور المعرض مع العائلة",
+      "witness_ids": [
+        "abeer"
+      ]
+    },
+    {
+      "id": "te_najwa_pen",
+      "description_ar": "نجوى تدوّن في دفترها قرب الواجهة.",
+      "time": {
+        "start_min": 380,
+        "precision": "approx"
+      },
+      "actor_ids": [
+        "najwa"
+      ],
+      "fact_ids": [
+        "f_najwa_pen"
+      ],
+      "location_id": "loc_hall",
+      "motivated_by_ar": "جمع وصف للوحات العرض للمدرسة",
+      "witness_ids": [
+        "abeer"
+      ]
+    },
+    {
+      "id": "te_photo",
+      "description_ar": "زائر يلتقط صورة للسجل تحت الزجاج.",
+      "time": {
+        "start_min": 525,
+        "precision": "exact"
+      },
+      "actor_ids": [],
+      "fact_ids": [
+        "f_photo_blank"
+      ],
+      "location_id": "loc_hall"
+    },
+    {
+      "id": "te_close",
+      "description_ar": "عبير تفعّل التنبيه وتغادر القاعة.",
+      "time": {
+        "start_min": 740,
+        "precision": "exact"
+      },
+      "actor_ids": [
+        "abeer"
+      ],
+      "fact_ids": [
+        "f_hall_closed",
+        "f_alarm"
+      ],
+      "location_id": "loc_hall",
+      "motivated_by_ar": "إقفال القاعة بعد انتهاء المعرض"
+    },
+    {
+      "id": "te_khalid_in",
+      "description_ar": "خالد يعطّل التنبيه ويدخل القاعة وحده.",
+      "time": {
+        "start_min": 755,
+        "precision": "exact",
+        "end_min": 810
+      },
+      "actor_ids": [
+        "khalid"
+      ],
+      "fact_ids": [
+        "f_alarm"
+      ],
+      "location_id": "loc_hall",
+      "motivated_by_ar": "البقاء وحده مع الواجهة بعد خروج الجميع"
+    },
+    {
+      "id": "te_write",
+      "description_ar": "خالد يفتح الواجهة ثم يقفلها وقد أضيف الهامش الأيسر.",
+      "time": {
+        "start_min": 762,
+        "precision": "exact",
+        "end_min": 800
+      },
+      "actor_ids": [
+        "khalid"
+      ],
+      "fact_ids": [
+        "f_lock_log",
+        "f_khalid_added",
+        "f_m3_in_loan"
+      ],
+      "location_id": "loc_hall",
+      "motivated_by_ar": "أراد أن تثبت دورة الجمعة كاملة لبستان عميله فيستحق باقي أجر المضخة"
+    },
+    {
+      "id": "te_return",
+      "description_ar": "خالد يودع السجل في الصندوق الليلي للدار.",
+      "time": {
+        "start_min": 840,
+        "precision": "exact"
+      },
+      "actor_ids": [
+        "khalid"
+      ],
+      "fact_ids": [
+        "f_exhibition"
+      ],
+      "location_id": "loc_archive",
+      "motivated_by_ar": "تسليم السجل في موعده المكتوب"
+    },
+    {
+      "id": "te_msg",
+      "description_ar": "خالد يرسل لعصام صورة الهامش الأيسر.",
+      "time": {
+        "start_min": 845,
+        "precision": "exact"
+      },
+      "actor_ids": [
+        "khalid",
+        "isam"
+      ],
+      "fact_ids": [
+        "f_msg"
+      ],
+      "motivated_by_ar": "إقناع عصام بأن للهامش قيمة سند لبستانه"
+    },
+    {
+      "id": "te_check",
+      "description_ar": "ميادة تفحص السجل عند الإعادة وتجد ثلاث ملاحظات.",
+      "time": {
+        "start_min": 1500,
+        "precision": "exact"
+      },
+      "actor_ids": [
+        "maysa"
+      ],
+      "fact_ids": [
+        "f_return_three"
+      ],
+      "location_id": "loc_archive",
+      "motivated_by_ar": "فحص حالة المادة المعارة"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_dispute_file",
+      "title_ar": "ملف النزاع لدى لجنة المحفوظات",
+      "kind": "documentary",
+      "content_ar": "ملف نزاع دورة الجمعة صباحاً — نبع الحجر (لجنة المحفوظات، مرج الريحان)\nالاثنين 10:00 — عصام الصفّار (بستان التين) يطلب دورة الجمعة صباحاً كاملة، ويستند إلى الهامش الأيسر للورقة 12 ظهراً من «سجل مياه الجرن»، ويقول إنه من أصل السجل.\nالاثنين 14:00 — نجوى الطويل (حديقة مدرسة الجرن الزراعية) تعترض: الهامش الأيسر مضاف، وحبره يبدو أغمق، وتتهم صاحب الطلب بكتابته.\nملاحظة اللجنة: عُرض السجل الخميس في قاعة جمعية سقاة الجرن ضمن «يوم التراث الزراعي» بإعارة من دار الحُجَج، وأُعيد مساء اليوم نفسه. الدورة الحالية مقسومة نصفين بين البستانين.",
+      "acquired_by_action_ids": [
+        "a_get_file"
+      ],
+      "supports_fact_ids": [
+        "f_dispute",
+        "f_objection",
+        "f_exhibition"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "ملخص إداري يسجل الطلب والاعتراض كما قُدّما، ولا يتحقق من صحة أيهما ولا يذكر من كتب الهامش.",
+      "location_id": "loc_committee"
+    },
+    {
+      "id": "ev_card_1994",
+      "title_ar": "بطاقة فهرس قديمة (1994)",
+      "kind": "documentary",
+      "content_ar": "بطاقة فهرس — دار الحُجَج (1994)\nسجل مياه قرية الجرن — الورقة 12 ظهراً: ثلاثة هوامش.\n(بخط أمين الفهرس آنذاك)",
+      "acquired_by_action_ids": [
+        "a_get_card"
+      ],
+      "supports_fact_ids": [
+        "f_scan"
+      ],
+      "reliability": "weak",
+      "limits_ar": "البطاقة لا تبيّن هل الهوامش ملاحظات مكتوبة أم حواف الصفحة، ولا تذكر نصاً ولا كاتباً.",
+      "location_id": "loc_archive"
+    },
+    {
+      "id": "ev_scan_2009",
+      "title_ar": "سجل المسح الرقمي (2009)",
+      "kind": "documentary",
+      "content_ar": "سجل المسح الرقمي — دار الحُجَج\nالمادة: سجل مياه الجرن، الورقة 12 ظهراً. تاريخ المسح في بيانات الملف: 2009.\nوصف الفاحص: الهامش الأيمن مكتوب (دورة الجمعة، ثلث الحصة). الهامش السفلي مكتوب (تعديل الحصة، وعليه ختم السجل). الهامش الأيسر أبيض.",
+      "acquired_by_action_ids": [
+        "a_get_scan"
+      ],
+      "supports_fact_ids": [
+        "f_scan"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يصف حال الورقة سنة 2009 فقط، ولا يقول شيئاً عمّا جرى بعد ذلك.",
+      "location_id": "loc_archive",
+      "contradicts_claim_ids": [
+        "cl_is_original"
+      ]
+    },
+    {
+      "id": "ev_receipt",
+      "title_ar": "وصل تسليم السجل للإعارة",
+      "kind": "documentary",
+      "content_ar": "وصل تسليم للإعارة — دار الحُجَج (الخميس 09:30)\nالمستلم: خالد البحيري، أمين سر جمعية سقاة الجرن. الغرض: عرض يوم التراث الزراعي من 10:00 إلى 20:00، ويعاد السجل في الصندوق الليلي للدار مساء اليوم نفسه.\nحالة الورقة 12 ظهراً (الفاحصة ميادة السلّوم): ملاحظتان مكتوبتان، هما الهامش الأيمن (1929) والهامش السفلي (1934). الهامش الأيسر أبيض.\n«استلمت المادة مطابقة للوصف أعلاه». التوقيع: خالد البحيري، 09:30.",
+      "acquired_by_action_ids": [
+        "a_get_receipt"
+      ],
+      "supports_fact_ids": [
+        "f_receipt"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يصف الورقة لحظة التسليم فقط، ولا يقول شيئاً عمّا جرى بعد خروج السجل.",
+      "location_id": "loc_archive",
+      "contradicts_claim_ids": [
+        "cl_kh_found"
+      ]
+    },
+    {
+      "id": "ev_return_form",
+      "title_ar": "محضر فحص الإعادة",
+      "kind": "documentary",
+      "content_ar": "محضر فحص الإعادة — دار الحُجَج (الجمعة 09:00)\nورد السجل في الصندوق الليلي الخميس 22:00، وبقي الصندوق مختوماً حتى فتحه موظفان الساعة 08:50.\nفحص الورقة 12 ظهراً (ميادة السلّوم): ثلاث ملاحظات مكتوبة، الأيمن والسفلي والأيسر. نص الأيسر: «دورة الجمعة صباحاً كاملةً لبستان التين وقفاً بلا انقطاع بموجب القرار رقم 41 لسنة 1934». لا ختم عليه ولا حروف أولى.\nأُحيلت الملاحظة إلى لجنة المحفوظات.",
+      "acquired_by_action_ids": [
+        "a_get_return"
+      ],
+      "supports_fact_ids": [
+        "f_return_three"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يثبت حال الورقة صباح الجمعة فقط، ولا يقول متى كُتبت الملاحظة الثالثة ولا من كتبها.",
+      "location_id": "loc_archive"
+    },
+    {
+      "id": "ev_exam",
+      "title_ar": "ملاحظة فحص الحبر",
+      "kind": "observation",
+      "content_ar": "ملاحظة فحص — ميادة السلّوم (الجمعة 10:30)\nعلى الورقة 12 ظهراً لطخة ماء قديمة عند الزاوية السفلية اليسرى، قيّدتها الدار بعد فيضان سنة 2011.\nالهامشان الأيمن والسفلي: حبر بني تشرّب في اللطخة وأبهتت حوافه عندها.\nالهامش الأيسر: حبر أزرق داكن، حواف خطه حادة فوق اللطخة نفسها، وسماكة الخط منتظمة.\nمعلومة عامة: الحبر المكتوب قبل البلل يتشرب ويبهت عند حواف اللطخة، والمكتوب بعد جفافها يبقى حاد الحواف.",
+      "acquired_by_action_ids": [
+        "a_get_exam"
+      ],
+      "supports_fact_ids": [
+        "f_exam"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يرتّب الكتابات بالنسبة إلى اللطخة فقط، ولا يحدد سنة الكتابة ولا كاتبها ولا يقارن الخطوط.",
+      "location_id": "loc_archive",
+      "contradicts_claim_ids": [
+        "cl_is_original"
+      ]
+    },
+    {
+      "id": "ev_annotation_register",
+      "title_ar": "سجل الملاحظات اللاحقة في الدار",
+      "kind": "documentary",
+      "content_ar": "سجل الملاحظات اللاحقة — دار الحُجَج\nقاعدة الدار: كل ملاحظة تضيفها الدار على مادة بعد استلامها تُكتب بقلم رصاص، وتحمل ختم الدار وحروف كاتبها، وتُقيَّد برقم في هذا السجل.\nالمادة: سجل مياه الجرن. آخر قيد: رقم 12 (1987)، تصحيح ترقيم الأوراق. لا قيد بعده.",
+      "acquired_by_action_ids": [
+        "a_get_register"
+      ],
+      "supports_fact_ids": [
+        "f_annot_reg"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يبيّن ما قيّدته الدار فقط، ولا يمنع أن يضيف شخص من خارجها كتابة غير مقيدة.",
+      "location_id": "loc_archive"
+    },
+    {
+      "id": "ev_reading_log",
+      "title_ar": "سجل قاعة القراءة وملاحظات عصام",
+      "kind": "documentary",
+      "content_ar": "سجل قاعة القراءة — طلبات «سجل مياه الجرن»\nعصام الصفّار: زيارتان، الأولى قبل المعرض بأسبوعين والثانية قبله بأسبوع، ساعة لكل زيارة وتحت إشراف موظفة القاعة. المسموح في القاعة قلم رصاص فقط.\nورقة ملاحظاته المرفقة (بالرصاص): نسخ الهامش الأيمن (ثلث الدورة) والهامش السفلي (تعديل إلى النصف). لا شيء عن هامش ثالث.",
+      "acquired_by_action_ids": [
+        "a_get_reading"
+      ],
+      "supports_fact_ids": [
+        "f_reading"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "يثبت ما دوّنه في الزيارتين لا ما عرفه بعدهما، ولا يمنع أن يعلم بشيء لاحقاً.",
+      "location_id": "loc_reading",
+      "contradicts_claim_ids": [
+        "cl_nj_isam"
+      ]
+    },
+    {
+      "id": "ev_visitor_photo",
+      "title_ar": "صورة زائر على صفحة الجمعية",
+      "kind": "digital",
+      "content_ar": "صورة نشرها زائر على صفحة الجمعية يوم التراث.\nبيانات الملف: الخميس 16:45.\nالوصف: السجل مفتوح تحت الزجاج على الورقة 12 ظهراً. الهامش الأيمن مكتوب، والسفلي مكتوب، والأيسر أبيض. يظهر في الزاوية جزء من ساعة القاعة.",
+      "acquired_by_action_ids": [
+        "a_get_photo"
+      ],
+      "supports_fact_ids": [
+        "f_photo_blank"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "صورة زائر على صفحة عامة، ولا تُعرف معالجتها، وتغطي ما يظهر فيها فقط.",
+      "location_id": "loc_hall",
+      "contradicts_claim_ids": [
+        "cl_kh_found",
+        "cl_ab_wrote"
+      ]
+    },
+    {
+      "id": "ev_case_lock_log",
+      "title_ar": "سجل قفل واجهة العرض",
+      "kind": "digital",
+      "content_ar": "سجل قفل واجهة العرض — قاعة جمعية سقاة الجرن (الخميس)\n09:45 فتح — بطاقة خالد البحيري ورمز عبير الجندي.\n10:05 قفل.\n20:42 فتح — بطاقة خالد البحيري وحدها.\n21:20 قفل — بطاقة خالد البحيري.\nلا قيد آخر حتى الجمعة 08:00.",
+      "acquired_by_action_ids": [
+        "a_get_lock"
+      ],
+      "supports_fact_ids": [
+        "f_lock_log"
+      ],
+      "reliability": "strong",
+      "limits_ar": "القفل يسجل البطاقات والرموز ولا يعرف من استعملها، ولا يسجل ما جرى داخل الواجهة.",
+      "location_id": "loc_hall",
+      "contradicts_claim_ids": [
+        "cl_kh_nocase",
+        "cl_nj_isam"
+      ]
+    },
+    {
+      "id": "ev_alarm_log",
+      "title_ar": "سجل لوحة تنبيه القاعة",
+      "kind": "digital",
+      "content_ar": "سجل لوحة تنبيه القاعة (الخميس)\n20:20 تفعيل — رمز المستخدم 2.\n20:35 تعطيل — رمز المستخدم 1.\n21:30 تفعيل — رمز المستخدم 1.\nبين 21:30 والصباح: التنبيه مفعّل.\nقائمة المستخدمين: 1 خالد البحيري، 2 عبير الجندي.",
+      "acquired_by_action_ids": [
+        "a_get_alarm"
+      ],
+      "supports_fact_ids": [
+        "f_alarm",
+        "f_hall_closed"
+      ],
+      "reliability": "strong",
+      "limits_ar": "اللوحة تسجل الرموز ولا تعدّ من في القاعة ولا تعرف من أدخل الرمز.",
+      "location_id": "loc_hall",
+      "contradicts_claim_ids": [
+        "cl_kh_nocase"
+      ]
+    },
+    {
+      "id": "ev_isam_msg",
+      "title_ar": "لقطات رسائل هاتف عصام",
+      "kind": "digital",
+      "content_ar": "لقطات رسائل من هاتف عصام الصفّار، قدّمها طوعاً.\nالخميس 22:05 — خالد: [صورة للهامش الأيسر] «وجدت لك سنداً في السجل: دورة الجمعة كاملة لبستانك».\n22:12 — عصام: «لم أرَ هذا حين قرأت السجل!»\n22:14 — خالد: «الإضاءة في قاعة القراءة ضعيفة، وهذا يحدث مع الخط القديم».",
+      "acquired_by_action_ids": [
+        "a_get_msgs"
+      ],
+      "supports_fact_ids": [
+        "f_msg"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "لقطات من هاتف أحد أطراف النزاع، ولا يُعرف إن حُذف منها شيء؛ تثبت وقت الإرسال والمضمون لا كاتب الهامش.",
+      "location_id": "loc_committee"
+    },
+    {
+      "id": "ev_draft_file",
+      "title_ar": "خصائص ملف مسودة دليل الجمعية",
+      "kind": "digital",
+      "content_ar": "خصائص ملف «مسودة دليل الجمعية» في المجلد المشترك.\nأُنشئ: الثلاثاء 19:10 — الحساب: خالد البحيري. آخر تعديل: الأربعاء 22:30.\nالمشاركة: صاحب الحساب والمطبعة فقط.\nمن فقرة في المسودة: «ويؤكد السجل في هامشه الأيسر أن دورة الجمعة صباحاً كاملةً لبستان التين وقفاً بلا انقطاع بموجب القرار رقم 41 لسنة 1934».",
+      "acquired_by_action_ids": [
+        "a_get_draft"
+      ],
+      "supports_fact_ids": [
+        "f_draft"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "يثبت أن النص كُتب في الملف قبل الخميس وأن الحساب عدّله، ولا يثبت من كتبه على الورقة ولا من اطلع عليه.",
+      "location_id": "loc_assoc"
+    },
+    {
+      "id": "ev_gazette_index",
+      "title_ar": "فهرس الجريدة الرسمية لسنة 1934",
+      "kind": "documentary",
+      "content_ar": "فهرس الجريدة الرسمية لمدينة مرج الريحان — سنة 1934\nالقرار 14: تعديل حصص ماء قرية الجرن.\nالقرار 41: تعرفة المعدّية على النهر.\nلا قرار آخر في تلك السنة يتعلق بدورات الماء.",
+      "acquired_by_action_ids": [
+        "a_get_gazette"
+      ],
+      "supports_fact_ids": [
+        "f_gazette"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يعدّد القرارات المنشورة ولا يبيّن ما كُتب في السجل ولا من نقل رقماً خاطئاً.",
+      "location_id": "loc_registry"
+    },
+    {
+      "id": "ev_pump_contract",
+      "title_ar": "عقد تركيب مضخة",
+      "kind": "documentary",
+      "content_ar": "عقد تركيب مضخة — مسجل في مكتب العقود والمياه\nالطرفان: عصام الصفّار (بستان التين)، وورشة البحيري للمضخات (صاحبها خالد البحيري).\nالأجر: 60% عند التوقيع قبل المعرض بثلاثة أسابيع، و40% «عند ثبوت حق البستان في دورة الجمعة صباحاً كاملة».",
+      "acquired_by_action_ids": [
+        "a_get_contract"
+      ],
+      "supports_fact_ids": [
+        "f_contract"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "يبين مصلحة مالية للطرفين في نتيجة الدورة، ولا يثبت أن أحداً كتب شيئاً أو اتفق على غش.",
+      "location_id": "loc_registry"
+    },
+    {
+      "id": "ev_najwa_note",
+      "title_ar": "مذكرة اعتراض نجوى الطويل",
+      "kind": "testimonial",
+      "content_ar": "مذكرة اعتراض — نجوى الطويل (الاثنين 14:00)\n«الهامش الأيسر حبره أغمق من الباقي وشكل خطه جديد. أرجّح أن عصاماً كتبه ليأخذ دورتنا. أقدّم هذه المذكرة لأن حديقة المدرسة ستفقد نصف دورتها إن ثبت».",
+      "acquired_by_action_ids": [
+        "a_get_najwa_note"
+      ],
+      "supports_fact_ids": [
+        "f_najwa_stake",
+        "f_objection"
+      ],
+      "reliability": "weak",
+      "limits_ar": "رأي صاحبة مصلحة في النتيجة؛ انطباعها عن الحبر لا يحدد وقت الكتابة ولا كاتبها.",
+      "location_id": "loc_committee"
+    },
+    {
+      "id": "ev_abeer_stmt",
+      "title_ar": "إفادة عبير الجندي",
+      "kind": "testimonial",
+      "content_ar": "إفادة عبير الجندي (متطوعة القاعة)، الاثنين:\n«نحو 14:20 رأيت الأستاذة نجوى منحنية فوق الواجهة وفي يدها قلم، وكانت تكتب بسرعة. ظننت أنها تكتب على السجل».",
+      "acquired_by_action_ids": [
+        "a_get_abeer_stmt"
+      ],
+      "supports_fact_ids": [
+        "f_najwa_pen"
+      ],
+      "reliability": "weak",
+      "limits_ar": "تصف ما ظنته عبير لا ما كُتب، ولا تذكر أن أحداً لمس الواجهة، وتقدير الوقت تقريبي.",
+      "location_id": "loc_hall"
+    }
+  ],
+  "evidence_graph": {
+    "inferences": [
+      {
+        "id": "i_inloan_a",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_receipt"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_return_form"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_m3_in_loan"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "وصف الدار عند التسليم صباح الخميس يعدّ ملاحظتين مكتوبتين، وفحصها بعد ليلة في صندوق مختوم يجد ثلاثاً؛ فظهرت الثالثة خلال اليوم الذي كان فيه السجل خارج الدار.",
+        "skill_ko_refs": [
+          "KO-RS-05-005"
+        ]
+      },
+      {
+        "id": "i_inloan_b",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_visitor_photo"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_isam_msg"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_m3_in_loan"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "الصورة المؤرخة 16:45 تُظهر الهامش الأيسر أبيض، ورسالة 22:05 تُظهره مكتوباً؛ فكُتب بين الساعتين في يوم المعرض.",
+        "skill_ko_refs": [
+          "KO-RS-05-005"
+        ]
+      },
+      {
+        "id": "i_added_a",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_m3_in_loan"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_case_lock_log"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_alarm_log"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_khalid_added"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "بعد قفل الواجهة 10:05 لم تُفتح إلا 20:42 ببطاقة خالد وحده، وبين تفعيل التنبيه 20:20 وتعطيله 20:35 برمزه لم يدخل أحد؛ فالفرصة المسجلة للكتابة في يوم المعرض هي فرصته وحده.",
+        "skill_ko_refs": [
+          "KO-RS-05-005"
+        ]
+      },
+      {
+        "id": "i_added_b",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_m3_in_loan"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_draft_file"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_gazette_index"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_khalid_added"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "نص الهامش الثالث بما فيه رقم القرار الذي لا يخص الماء موجود حرفياً في مسودة خالد منذ الثلاثاء، قبل ظهوره على الورقة؛ فالنص خرج من المسودة، ولا يكون نقلاً عن كاتب قديم.",
+        "skill_ko_refs": [
+          "KO-RS-05-001"
+        ]
+      },
+      {
+        "id": "i_notorig",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_scan_2009"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_exam"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_m3_not_orig"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "المسح سنة 2009 يترك الهامش الأيسر أبيض، والحبر الحاد فوق لطخة الماء كُتب بعد جفافها بينما تشرّب حبر الهامشين الآخرين فيها؛ فالأيسر متأخر عن الكتابة القديمة.",
+        "skill_ko_refs": [
+          "KO-RS-05-005"
+        ]
+      },
+      {
+        "id": "i_stake",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_dispute_file"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_pump_contract"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_najwa_note"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_stakes"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "الطلب يخدم بستان عصام، والعقد يربط جزءاً من أجر خالد بحسم الدورة، والمذكرة تقر بخسارة المدرسة؛ فكل طرف له مصلحة، والمصلحة وحدها لا تدل على فاعل.",
+        "skill_ko_refs": [
+          "KO-RS-05-001"
+        ]
+      },
+      {
+        "id": "i_rule_original",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_m3_not_orig"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_m3_in_loan"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_original"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "الهامش الأيسر متأخر عن المسح واللطخة، وظهر في يوم المعرض؛ فلا يصح أنه من عمل الكاتبين القديمين.",
+        "skill_ko_refs": [
+          "KO-RS-06-009"
+        ]
+      },
+      {
+        "id": "i_rule_archive",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_m3_in_loan"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_annotation_register"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_archive"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "ملاحظات الدار تُكتب بالرصاص وتُختم وتُقيَّد بسجل لا قيد فيه بعد 1987، والهامش الثالث بحبر وبلا ختم وظهر والسجل في عهدة الجمعية.",
+        "skill_ko_refs": [
+          "KO-RS-05-002"
+        ]
+      },
+      {
+        "id": "i_rule_isam",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_reading_log"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_alarm_log"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_case_lock_log"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_isam"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "ملاحظات عصام من قراءتيه تنقل هامشين فقط، ولا بطاقة له ولا رمز على الواجهة أو القاعة ليلة المعرض؛ فلا فرصة مسجلة له.",
+        "skill_ko_refs": [
+          "KO-RS-05-002"
+        ]
+      },
+      {
+        "id": "i_rule_najwa",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_abeer_stmt"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_case_lock_log"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_visitor_photo"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_najwa"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "رأتها عبير قرب الواجهة نحو 14:20، لكن الواجهة كانت مقفلة منذ 10:05، والهامش الأيسر أبيض في صورة 16:45 بعد ذلك الوقت؛ فلم تكتب شيئاً عليه.",
+        "skill_ko_refs": [
+          "KO-RS-05-002"
+        ]
+      },
+      {
+        "id": "i_supports_khalid",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_khalid_added"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_pump_contract"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_khalid"
+        },
+        "relation": "supports",
+        "strength": "strong",
+        "rule_ar": "الفرصة المسجلة ومصدر النص يتجهان إلى خالد، وله مصلحة مالية معلنة في العقد؛ فاجتماع الثلاثة يرجّح فرضيته مع بقاء حدود الأدلة.",
+        "skill_ko_refs": [
+          "KO-RS-05-002"
+        ]
+      },
+      {
+        "id": "i_claim_kh_found",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_receipt"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_visitor_photo"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_kh_found"
+        },
+        "relation": "contradicts_claim",
+        "strength": "strong",
+        "rule_ar": "وصل التسليم الذي وقّعه يعدّ ملاحظتين فقط، والصورة المؤرخة 16:45 تُظهر الهامش الأيسر أبيض؛ فقوله إنه كان موجوداً لا يصح.",
+        "skill_ko_refs": [
+          "KO-RS-05-001"
+        ]
+      },
+      {
+        "id": "i_claim_kh_nocase",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_case_lock_log"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_kh_nocase"
+        },
+        "relation": "contradicts_claim",
+        "strength": "strong",
+        "rule_ar": "سجل القفل يسجل فتح الواجهة 20:42 ببطاقته بعد الافتتاح، فقوله إنه لم يفتحها بعده يخالف السجل.",
+        "skill_ko_refs": [
+          "KO-RS-05-001"
+        ]
+      },
+      {
+        "id": "i_claim_is",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_scan_2009"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_exam"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_is_original"
+        },
+        "relation": "contradicts_claim",
+        "strength": "strong",
+        "rule_ar": "المسح القديم يترك الهامش الأيسر أبيض وحبره حاد فوق لطخة متأخرة، فالقول إنه أصلي لا تسنده الأوراق.",
+        "skill_ko_refs": [
+          "KO-RS-05-001"
+        ]
+      },
+      {
+        "id": "i_claim_najwa",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_reading_log"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_case_lock_log"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_nj_isam"
+        },
+        "relation": "contradicts_claim",
+        "strength": "strong",
+        "rule_ar": "عصام نسخ هامشين فقط بالرصاص تحت الإشراف، ولا فتح للواجهة بغير بطاقة خالد بعد الافتتاح؛ فلا سند لقول إنه كتب الهامش.",
+        "skill_ko_refs": [
+          "KO-RS-05-001"
+        ]
+      },
+      {
+        "id": "i_claim_abeer",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_visitor_photo"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_case_lock_log"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_ab_wrote"
+        },
+        "relation": "contradicts_claim",
+        "strength": "strong",
+        "rule_ar": "الواجهة كانت مقفلة نحو 14:20 والهامش أبيض في صورة 16:45؛ فظنها أن نجوى كتبت على السجل لا يصح.",
+        "skill_ko_refs": [
+          "KO-RS-05-001"
+        ]
+      }
+    ]
+  },
+  "character_knowledge": [
+    {
+      "character_id": "khalid",
+      "knows": [
+        {
+          "fact_id": "f_contract",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_msg",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [
+        {
+          "fact_id": "f_receipt",
+          "reveal_when": {
+            "presented": {
+              "evidence_id": "ev_receipt",
+              "to_character": "khalid"
+            }
+          },
+          "cover_claim_id": "cl_kh_found",
+          "reveal_line_id": "kh_receipt"
+        },
+        {
+          "fact_id": "f_lock_log",
+          "reveal_when": {
+            "presented": {
+              "evidence_id": "ev_case_lock_log",
+              "to_character": "khalid"
+            }
+          },
+          "cover_claim_id": "cl_kh_nocase",
+          "reveal_line_id": "kh_lock"
+        },
+        {
+          "fact_id": "f_draft",
+          "reveal_when": {
+            "presented": {
+              "evidence_id": "ev_draft_file",
+              "to_character": "khalid"
+            }
+          },
+          "cover_claim_id": null,
+          "reveal_line_id": "kh_draft"
+        }
+      ],
+      "believes": [
+        {
+          "claim_id": "cl_kh_found",
+          "stance": "deliberate_lie"
+        },
+        {
+          "claim_id": "cl_kh_nocase",
+          "stance": "deliberate_lie"
+        }
+      ]
+    },
+    {
+      "character_id": "isam",
+      "knows": [
+        {
+          "fact_id": "f_reading",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_isam_visit",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_contract",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_msg",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": [
+        {
+          "claim_id": "cl_is_original",
+          "stance": "sincere"
+        }
+      ]
+    },
+    {
+      "character_id": "najwa",
+      "knows": [
+        {
+          "fact_id": "f_najwa_stake",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [
+        {
+          "fact_id": "f_najwa_pen",
+          "reveal_when": {
+            "presented": {
+              "evidence_id": "ev_abeer_stmt",
+              "to_character": "najwa"
+            }
+          },
+          "cover_claim_id": null,
+          "reveal_line_id": "nj_pen"
+        }
+      ],
+      "believes": [
+        {
+          "claim_id": "cl_nj_isam",
+          "stance": "sincere"
+        }
+      ]
+    },
+    {
+      "character_id": "maysa",
+      "knows": [
+        {
+          "fact_id": "f_receipt",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_exam",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_return_three",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_scan",
+          "access": "professional",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_annot_reg",
+          "access": "professional",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    },
+    {
+      "character_id": "abeer",
+      "knows": [
+        {
+          "fact_id": "f_najwa_pen",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_isam_visit",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_hall_closed",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": [
+        {
+          "claim_id": "cl_ab_wrote",
+          "stance": "sincere"
+        }
+      ]
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "h_original",
+      "statement_ar": "الهوامش الثلاثة كلها قديمة من عمل الكاتبين الأصليين، والهامش الأيسر أصلي.",
+      "is_true": false,
+      "plausibility_at_start": "high"
+    },
+    {
+      "id": "h_isam",
+      "statement_ar": "كتب عصام الصفّار الهامش الأيسر بنفسه ليأخذ دورة الجمعة كاملة.",
+      "is_true": false,
+      "plausibility_at_start": "medium",
+      "suspect_id": "isam"
+    },
+    {
+      "id": "h_najwa",
+      "statement_ar": "كتبت نجوى الطويل الهامش الأيسر بقصد أن يُكشف فيُتهم عصام بالتزوير.",
+      "is_true": false,
+      "plausibility_at_start": "low",
+      "suspect_id": "najwa"
+    },
+    {
+      "id": "h_archive",
+      "statement_ar": "أضافت الدار نفسها الهامش الأيسر قديماً ضمن تصحيح رسمي لم يُقيَّد.",
+      "is_true": false,
+      "plausibility_at_start": "low"
+    },
+    {
+      "id": "h_khalid",
+      "statement_ar": "أضيف الهامش الأيسر ليلة المعرض بيد خالد البحيري أو بتدبير منه، وصدّق عصام ونجوى ما بدا لهما.",
+      "is_true": true,
+      "plausibility_at_start": "low",
+      "suspect_id": "khalid"
+    }
+  ],
+  "misdirection_plan": [
+    {
+      "id": "rh_card",
+      "points_to_hypothesis_id": "h_original",
+      "planted_via_ar": "بطاقة فهرس قديمة تقول إن للورقة ثلاثة هوامش، فيظن قارئها أن الملاحظات الثلاث قديمة.",
+      "evidence_ids": [
+        "ev_card_1994",
+        "ev_dispute_file"
+      ],
+      "refuted_by_inference_ids": [
+        "i_rule_original"
+      ],
+      "fairness_note_ar": "وصف التسليم والمسح الرقمي يعدّان الملاحظات المكتوبة ويُبقيان الأيسر أبيض، فالبطاقة تعدّ حواف الصفحة لا الكتابات."
+    },
+    {
+      "id": "rh_najwa",
+      "points_to_hypothesis_id": "h_najwa",
+      "planted_via_ar": "متطوعة ترى نجوى منحنية فوق الواجهة وفي يدها قلم، ولنجوى مصلحة في إسقاط الطلب.",
+      "evidence_ids": [
+        "ev_abeer_stmt",
+        "ev_najwa_note"
+      ],
+      "refuted_by_inference_ids": [
+        "i_rule_najwa"
+      ],
+      "fairness_note_ar": "سجل القفل وصورة 16:45 متاحان بالإجراءات العادية، ويبينان أن الواجهة كانت مقفلة وأن الهامش أبيض بعد ذلك الوقت."
+    },
+    {
+      "id": "rh_isam",
+      "points_to_hypothesis_id": "h_isam",
+      "planted_via_ar": "هو المستفيد الأول من الهامش، وقد قرأ السجل مرتين قبل المعرض.",
+      "evidence_ids": [
+        "ev_dispute_file",
+        "ev_reading_log"
+      ],
+      "refuted_by_inference_ids": [
+        "i_rule_isam"
+      ],
+      "fairness_note_ar": "ورقة ملاحظاته المرفقة بسجل القراءة تنقل هامشين فقط، وسجلا القفل والتنبيه لا يحملان له بطاقة ولا رمزاً."
+    }
+  ],
+  "learning_objectives": [
+    {
+      "id": "lo_claim",
+      "statement_ar": "يسأل عن كل وثيقة: من كتبها؟ ومتى؟ ولمن؟ وماذا يربح صاحبها؟",
+      "skill_ko_ref": "KO-RS-05-001",
+      "observable_behaviors_ar": [
+        "يصنّف السجلات والأقوال",
+        "يفرّق بين وصف دقيق وقول صاحب مصلحة"
+      ],
+      "evidence_sources": [
+        "evidence_board"
+      ]
+    },
+    {
+      "id": "lo_timeline",
+      "statement_ar": "يرتّب الكتابات والسجلات زمنياً ليعرف ما سبق ما.",
+      "skill_ko_ref": "KO-RS-05-005",
+      "observable_behaviors_ar": [
+        "يضع التسليم والصورة والفتح والرسالة في أزمنتها"
+      ],
+      "evidence_sources": [
+        "timeline_task",
+        "action_log"
+      ]
+    },
+    {
+      "id": "lo_hyp",
+      "statement_ar": "يوازن بين تفسيرات متنافسة ويستبعد ما تنقضه الأدلة.",
+      "skill_ko_ref": "KO-RS-05-002",
+      "observable_behaviors_ar": [
+        "يضيف فرضيات",
+        "يستبعد بدليل"
+      ],
+      "evidence_sources": [
+        "hypothesis_ledger"
+      ]
+    },
+    {
+      "id": "lo_diag",
+      "statement_ar": "يقدّر ما يثبته كل سجل وما لا يثبته، ويربط الدليل بالفرضية باتجاه صحيح.",
+      "skill_ko_ref": "KO-RS-05-004",
+      "observable_behaviors_ar": [
+        "يعرف أن السجل الإلكتروني يسجل بطاقة لا شخصاً",
+        "يربط الدليل بالفرضية"
+      ],
+      "evidence_sources": [
+        "evidence_board",
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_calib",
+      "statement_ar": "يصوغ نسبة الترجيح بحدودها.",
+      "skill_ko_ref": "KO-RS-06-021",
+      "observable_behaviors_ar": [
+        "يختار ثقة معقولة",
+        "يذكر حدوداً"
+      ],
+      "evidence_sources": [
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_revise",
+      "statement_ar": "يراجع رأيه الأول حين يظهر ما يخالفه.",
+      "skill_ko_ref": "KO-RS-06-009",
+      "observable_behaviors_ar": [
+        "يغيّر فرضيته الرائدة بدليل"
+      ],
+      "evidence_sources": [
+        "hypothesis_ledger"
+      ]
+    }
+  ],
+  "mechanics": {
+    "time_budget_units": 40,
+    "actions": [
+      {
+        "id": "a_get_file",
+        "type": "examine",
+        "label_ar": "اقرأ ملف النزاع",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_dispute_file"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_committee",
+        "telemetry_code": "GET_FILE"
+      },
+      {
+        "id": "a_get_card",
+        "type": "examine",
+        "label_ar": "اطلب بطاقة الفهرس القديمة",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_card_1994"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_archive",
+        "telemetry_code": "GET_CARD"
+      },
+      {
+        "id": "a_get_receipt",
+        "type": "examine",
+        "label_ar": "اطلب وصل تسليم السجل للإعارة",
+        "precondition": {
+          "has_evidence": "ev_dispute_file"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_receipt"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_archive",
+        "telemetry_code": "GET_RECEIPT"
+      },
+      {
+        "id": "a_get_return",
+        "type": "examine",
+        "label_ar": "اطلب محضر فحص الإعادة",
+        "precondition": {
+          "has_evidence": "ev_receipt"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_return_form"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_archive",
+        "telemetry_code": "GET_RETURN"
+      },
+      {
+        "id": "a_get_scan",
+        "type": "examine",
+        "label_ar": "اطلب سجل المسح الرقمي",
+        "precondition": {
+          "has_evidence": "ev_dispute_file"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_scan_2009"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_archive",
+        "telemetry_code": "GET_SCAN"
+      },
+      {
+        "id": "a_get_exam",
+        "type": "examine",
+        "label_ar": "اطلب ملاحظة فحص الحبر",
+        "precondition": {
+          "has_evidence": "ev_return_form"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_exam"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_archive",
+        "telemetry_code": "GET_EXAM"
+      },
+      {
+        "id": "a_get_register",
+        "type": "examine",
+        "label_ar": "اطلب سجل الملاحظات اللاحقة",
+        "precondition": {
+          "has_evidence": "ev_dispute_file"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_annotation_register"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_archive",
+        "telemetry_code": "GET_REGISTER"
+      },
+      {
+        "id": "a_get_reading",
+        "type": "search_location",
+        "label_ar": "اطلب سجل قاعة القراءة",
+        "precondition": {
+          "has_evidence": "ev_dispute_file"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_reading_log"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_reading",
+        "telemetry_code": "GET_READING"
+      },
+      {
+        "id": "a_get_najwa_note",
+        "type": "examine",
+        "label_ar": "اقرأ مذكرة اعتراض نجوى",
+        "precondition": {
+          "has_evidence": "ev_dispute_file"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_najwa_note"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_committee",
+        "telemetry_code": "GET_NAJWA_NOTE"
+      },
+      {
+        "id": "a_get_photo",
+        "type": "search_location",
+        "label_ar": "ابحث في صور يوم التراث على صفحة الجمعية",
+        "precondition": {
+          "has_evidence": "ev_dispute_file"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_visitor_photo"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_hall",
+        "telemetry_code": "GET_PHOTO"
+      },
+      {
+        "id": "a_get_lock",
+        "type": "search_location",
+        "label_ar": "اطلب سجل قفل الواجهة",
+        "precondition": {
+          "has_evidence": "ev_visitor_photo"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_case_lock_log"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_hall",
+        "telemetry_code": "GET_LOCK"
+      },
+      {
+        "id": "a_get_alarm",
+        "type": "search_location",
+        "label_ar": "اطلب سجل لوحة التنبيه",
+        "precondition": {
+          "has_evidence": "ev_case_lock_log"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_alarm_log"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_hall",
+        "telemetry_code": "GET_ALARM"
+      },
+      {
+        "id": "a_get_msgs",
+        "type": "examine",
+        "label_ar": "اطلب لقطات الرسائل من عصام",
+        "precondition": {
+          "has_evidence": "ev_dispute_file"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_isam_msg"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "isam",
+        "telemetry_code": "GET_MSGS"
+      },
+      {
+        "id": "a_get_draft",
+        "type": "search_location",
+        "label_ar": "اطلب خصائص مسودة الدليل من مجلد الجمعية",
+        "precondition": {
+          "has_evidence": "ev_isam_msg"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_draft_file"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_assoc",
+        "telemetry_code": "GET_DRAFT"
+      },
+      {
+        "id": "a_get_gazette",
+        "type": "examine",
+        "label_ar": "اطلب فهرس الجريدة لسنة 1934",
+        "precondition": {
+          "has_evidence": "ev_draft_file"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_gazette_index"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_registry",
+        "telemetry_code": "GET_GAZETTE"
+      },
+      {
+        "id": "a_get_contract",
+        "type": "examine",
+        "label_ar": "اطلب عقد المضخة من مكتب العقود",
+        "precondition": {
+          "has_evidence": "ev_dispute_file"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_pump_contract"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_registry",
+        "telemetry_code": "GET_CONTRACT"
+      },
+      {
+        "id": "a_get_abeer_stmt",
+        "type": "examine",
+        "label_ar": "اطلب إفادة عبير المكتوبة",
+        "precondition": {
+          "has_evidence": "ev_najwa_note"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_abeer_stmt"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "abeer",
+        "telemetry_code": "GET_ABEER_STMT"
+      },
+      {
+        "id": "a_int_khalid",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة خالد",
+        "precondition": {
+          "has_evidence": "ev_dispute_file"
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "khalid",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "khalid",
+        "telemetry_code": "INT_KHALID"
+      },
+      {
+        "id": "a_int_isam",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة عصام",
+        "precondition": {
+          "has_evidence": "ev_dispute_file"
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "isam",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "isam",
+        "telemetry_code": "INT_ISAM"
+      },
+      {
+        "id": "a_int_najwa",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة نجوى",
+        "precondition": {
+          "has_evidence": "ev_dispute_file"
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "najwa",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "najwa",
+        "telemetry_code": "INT_NAJWA"
+      },
+      {
+        "id": "a_int_maysa",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة ميادة",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "maysa",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "maysa",
+        "telemetry_code": "INT_MAYSA"
+      },
+      {
+        "id": "a_int_abeer",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة عبير",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "abeer",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "abeer",
+        "telemetry_code": "INT_ABEER"
+      },
+      {
+        "id": "p_receipt_khalid",
+        "type": "present_evidence",
+        "label_ar": "اعرض وصل التسليم على خالد",
+        "precondition": {
+          "presented": {
+            "evidence_id": "ev_receipt",
+            "to_character": "khalid"
+          }
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "PRESENTED_RECEIPT"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "khalid",
+        "telemetry_code": "RECEIPT_KHALID"
+      },
+      {
+        "id": "p_lock_khalid",
+        "type": "present_evidence",
+        "label_ar": "اعرض سجل قفل الواجهة على خالد",
+        "precondition": {
+          "presented": {
+            "evidence_id": "ev_case_lock_log",
+            "to_character": "khalid"
+          }
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "PRESENTED_LOCK"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "khalid",
+        "telemetry_code": "LOCK_KHALID"
+      },
+      {
+        "id": "p_draft_khalid",
+        "type": "present_evidence",
+        "label_ar": "اعرض خصائص المسودة على خالد",
+        "precondition": {
+          "presented": {
+            "evidence_id": "ev_draft_file",
+            "to_character": "khalid"
+          }
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "PRESENTED_DRAFT"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "khalid",
+        "telemetry_code": "DRAFT_KHALID"
+      },
+      {
+        "id": "p_stmt_najwa",
+        "type": "present_evidence",
+        "label_ar": "اعرض إفادة عبير على نجوى",
+        "precondition": {
+          "presented": {
+            "evidence_id": "ev_abeer_stmt",
+            "to_character": "najwa"
+          }
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "PRESENTED_STMT"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "najwa",
+        "telemetry_code": "STMT_NAJWA"
+      },
+      {
+        "id": "a_hint",
+        "type": "request_hint",
+        "label_ar": "اطلب تلميحاً",
+        "precondition": {
+          "always": true
+        },
+        "effects": [],
+        "time_cost_units": 0,
+        "telemetry_code": "REQUEST_HINT"
+      },
+      {
+        "id": "a_accuse",
+        "type": "final_accusation",
+        "label_ar": "قدّم الاستنتاج النهائي",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "SUBMIT"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "FINAL_ACCUSATION"
+      },
+      {
+        "id": "ask_khalid_f_contract",
+        "type": "interview",
+        "label_ar": "[نموذج] khalid يذكر f_contract",
+        "precondition": {
+          "has_evidence": "ev_dispute_file"
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_contract"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "khalid",
+        "telemetry_code": "ASK_KHALID_F_CONTRACT"
+      },
+      {
+        "id": "ask_khalid_f_msg",
+        "type": "interview",
+        "label_ar": "[نموذج] khalid يذكر f_msg",
+        "precondition": {
+          "has_evidence": "ev_dispute_file"
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_msg"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "khalid",
+        "telemetry_code": "ASK_KHALID_F_MSG"
+      },
+      {
+        "id": "ask_khalid_f_receipt",
+        "type": "interview",
+        "label_ar": "[نموذج] khalid يكشف f_receipt",
+        "precondition": {
+          "all": [
+            {
+              "has_evidence": "ev_dispute_file"
+            },
+            {
+              "presented": {
+                "evidence_id": "ev_receipt",
+                "to_character": "khalid"
+              }
+            }
+          ]
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_receipt"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "khalid",
+        "telemetry_code": "ASK_KHALID_F_RECEIPT"
+      },
+      {
+        "id": "ask_khalid_f_lock_log",
+        "type": "interview",
+        "label_ar": "[نموذج] khalid يكشف f_lock_log",
+        "precondition": {
+          "all": [
+            {
+              "has_evidence": "ev_dispute_file"
+            },
+            {
+              "presented": {
+                "evidence_id": "ev_case_lock_log",
+                "to_character": "khalid"
+              }
+            }
+          ]
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_lock_log"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "khalid",
+        "telemetry_code": "ASK_KHALID_F_LOCK_LOG"
+      },
+      {
+        "id": "ask_khalid_f_draft",
+        "type": "interview",
+        "label_ar": "[نموذج] khalid يكشف f_draft",
+        "precondition": {
+          "all": [
+            {
+              "has_evidence": "ev_dispute_file"
+            },
+            {
+              "presented": {
+                "evidence_id": "ev_draft_file",
+                "to_character": "khalid"
+              }
+            }
+          ]
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_draft"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "khalid",
+        "telemetry_code": "ASK_KHALID_F_DRAFT"
+      },
+      {
+        "id": "ask_isam_f_reading",
+        "type": "interview",
+        "label_ar": "[نموذج] isam يذكر f_reading",
+        "precondition": {
+          "has_evidence": "ev_dispute_file"
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_reading"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "isam",
+        "telemetry_code": "ASK_ISAM_F_READING"
+      },
+      {
+        "id": "ask_isam_f_isam_visit",
+        "type": "interview",
+        "label_ar": "[نموذج] isam يذكر f_isam_visit",
+        "precondition": {
+          "has_evidence": "ev_dispute_file"
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_isam_visit"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "isam",
+        "telemetry_code": "ASK_ISAM_F_ISAM_VISIT"
+      },
+      {
+        "id": "ask_isam_f_contract",
+        "type": "interview",
+        "label_ar": "[نموذج] isam يذكر f_contract",
+        "precondition": {
+          "has_evidence": "ev_dispute_file"
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_contract"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "isam",
+        "telemetry_code": "ASK_ISAM_F_CONTRACT"
+      },
+      {
+        "id": "ask_isam_f_msg",
+        "type": "interview",
+        "label_ar": "[نموذج] isam يذكر f_msg",
+        "precondition": {
+          "has_evidence": "ev_dispute_file"
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_msg"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "isam",
+        "telemetry_code": "ASK_ISAM_F_MSG"
+      },
+      {
+        "id": "ask_najwa_f_najwa_stake",
+        "type": "interview",
+        "label_ar": "[نموذج] najwa يذكر f_najwa_stake",
+        "precondition": {
+          "has_evidence": "ev_dispute_file"
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_najwa_stake"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "najwa",
+        "telemetry_code": "ASK_NAJWA_F_NAJWA_STAKE"
+      },
+      {
+        "id": "ask_najwa_f_najwa_pen",
+        "type": "interview",
+        "label_ar": "[نموذج] najwa يكشف f_najwa_pen",
+        "precondition": {
+          "all": [
+            {
+              "has_evidence": "ev_dispute_file"
+            },
+            {
+              "presented": {
+                "evidence_id": "ev_abeer_stmt",
+                "to_character": "najwa"
+              }
+            }
+          ]
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_najwa_pen"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "najwa",
+        "telemetry_code": "ASK_NAJWA_F_NAJWA_PEN"
+      },
+      {
+        "id": "ask_maysa_f_receipt",
+        "type": "interview",
+        "label_ar": "[نموذج] maysa يذكر f_receipt",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_receipt"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "maysa",
+        "telemetry_code": "ASK_MAYSA_F_RECEIPT"
+      },
+      {
+        "id": "ask_maysa_f_exam",
+        "type": "interview",
+        "label_ar": "[نموذج] maysa يذكر f_exam",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_exam"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "maysa",
+        "telemetry_code": "ASK_MAYSA_F_EXAM"
+      },
+      {
+        "id": "ask_maysa_f_return_three",
+        "type": "interview",
+        "label_ar": "[نموذج] maysa يذكر f_return_three",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_return_three"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "maysa",
+        "telemetry_code": "ASK_MAYSA_F_RETURN_THREE"
+      },
+      {
+        "id": "ask_maysa_f_scan",
+        "type": "interview",
+        "label_ar": "[نموذج] maysa يذكر f_scan",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_scan"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "maysa",
+        "telemetry_code": "ASK_MAYSA_F_SCAN"
+      },
+      {
+        "id": "ask_maysa_f_annot_reg",
+        "type": "interview",
+        "label_ar": "[نموذج] maysa يذكر f_annot_reg",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_annot_reg"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "maysa",
+        "telemetry_code": "ASK_MAYSA_F_ANNOT_REG"
+      },
+      {
+        "id": "ask_abeer_f_najwa_pen",
+        "type": "interview",
+        "label_ar": "[نموذج] abeer يذكر f_najwa_pen",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_najwa_pen"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "abeer",
+        "telemetry_code": "ASK_ABEER_F_NAJWA_PEN"
+      },
+      {
+        "id": "ask_abeer_f_isam_visit",
+        "type": "interview",
+        "label_ar": "[نموذج] abeer يذكر f_isam_visit",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_isam_visit"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "abeer",
+        "telemetry_code": "ASK_ABEER_F_ISAM_VISIT"
+      },
+      {
+        "id": "ask_abeer_f_hall_closed",
+        "type": "interview",
+        "label_ar": "[نموذج] abeer يذكر f_hall_closed",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_hall_closed"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "abeer",
+        "telemetry_code": "ASK_ABEER_F_HALL_CLOSED"
+      }
+    ]
+  },
+  "state_machine": {
+    "id": "c048",
+    "initial": "briefing",
+    "type": "compound",
+    "states": {
+      "briefing": {
+        "description_ar": "الإحاطة",
+        "type": "atomic",
+        "on": {
+          "START": {
+            "target": "investigating"
+          }
+        }
+      },
+      "investigating": {
+        "description_ar": "التحقيق",
+        "type": "compound",
+        "initial": "gathering",
+        "states": {
+          "gathering": {
+            "type": "atomic",
+            "on": {
+              "OPEN_DEDUCTION": {
+                "target": "deducing"
+              }
+            }
+          },
+          "deducing": {
+            "type": "atomic",
+            "on": {
+              "BACK": {
+                "target": "gathering"
+              }
+            }
+          }
+        },
+        "on": {
+          "SUBMIT": {
+            "target": "review"
+          }
+        }
+      },
+      "review": {
+        "description_ar": "مراجعة",
+        "type": "atomic",
+        "on": {
+          "CLOSE": {
+            "target": "resolved"
+          }
+        }
+      },
+      "resolved": {
+        "description_ar": "إغلاق",
+        "type": "final"
+      }
+    }
+  },
+  "dialogue": {
+    "max_turns_per_interview": 10,
+    "llm_enabled": false,
+    "topics": [
+      {
+        "id": "t_receipt",
+        "label_ar": "استلام السجل وحالته",
+        "example_questions_ar": [
+          "كيف كانت الورقة حين تسلّمت السجل؟",
+          "ماذا وقّعت عند التسليم؟"
+        ],
+        "fact_ids": [
+          "f_receipt",
+          "f_return_three",
+          "f_exam",
+          "f_scan",
+          "f_annot_reg"
+        ],
+        "claim_ids": [
+          "cl_kh_found"
+        ]
+      },
+      {
+        "id": "t_case",
+        "label_ar": "الواجهة والقاعة",
+        "example_questions_ar": [
+          "هل فتحت الواجهة بعد الافتتاح؟",
+          "من كان في القاعة مساءً؟"
+        ],
+        "fact_ids": [
+          "f_lock_log",
+          "f_hall_closed"
+        ],
+        "claim_ids": [
+          "cl_kh_nocase"
+        ]
+      },
+      {
+        "id": "t_draft",
+        "label_ar": "مسودة الدليل",
+        "example_questions_ar": [
+          "متى كتبت هذه الفقرة؟",
+          "من شاركته الملف؟"
+        ],
+        "fact_ids": [
+          "f_draft"
+        ]
+      },
+      {
+        "id": "t_contract",
+        "label_ar": "عقد المضخة",
+        "example_questions_ar": [
+          "ما علاقة عقد المضخة بالدورة؟"
+        ],
+        "fact_ids": [
+          "f_contract",
+          "f_najwa_stake"
+        ]
+      },
+      {
+        "id": "t_msg",
+        "label_ar": "رسائل مساء الخميس",
+        "example_questions_ar": [
+          "متى وصلتك صورة الهامش؟",
+          "ماذا قال لك خالد؟"
+        ],
+        "fact_ids": [
+          "f_msg"
+        ]
+      },
+      {
+        "id": "t_reading",
+        "label_ar": "قراءة السجل والزيارة",
+        "example_questions_ar": [
+          "ماذا نسخت في قاعة القراءة؟",
+          "متى زرت المعرض؟"
+        ],
+        "fact_ids": [
+          "f_reading",
+          "f_isam_visit"
+        ],
+        "claim_ids": [
+          "cl_is_original"
+        ]
+      },
+      {
+        "id": "t_pen",
+        "label_ar": "القلم عند الواجهة",
+        "example_questions_ar": [
+          "ماذا كنت تكتبين عند الواجهة؟",
+          "ماذا رأيت بالضبط؟"
+        ],
+        "fact_ids": [
+          "f_najwa_pen"
+        ],
+        "claim_ids": [
+          "cl_nj_isam",
+          "cl_ab_wrote"
+        ]
+      }
+    ]
+  },
+  "rubric": {
+    "reference_answer_ar": "الهامشان الأيمن والسفلي من كتابة قديمة، أما الأيسر فدخل الورقة في يوم المعرض. وصف التسليم صباحاً والمسح القديم يتركانه أبيض، وصورة زائر بعد الظهر تؤيد ذلك، ثم يظهر مكتوباً في رسالة المساء وفحص الصباح التالي بحبر حاد فوق لطخة الماء. وبعد الإقفال لم تُفتح الواجهة إلا مرة ببطاقة خالد البحيري والقاعة معه وحده، ونصه سابق للورقة في مسودة يملكها برقم قرار لا يخص الماء. فالأرجح أن خالداً كتبه أو دبّر كتابته ليربح جزءاً مؤجلاً من أجر عقده، وأن عصاماً صدّقه ونجوى ظنّته كاتبه. حدود الاستنتاج: الأجهزة تعرف بطاقة أو رمزاً ولا تعرف اليد، وتطابق النص يدل على مصدره لا على من أمسك القلم، والعقد يبين مصلحة لا اتفاقاً على غش.",
+    "criteria": [
+      {
+        "id": "c_source",
+        "name_ar": "تصنيف المصادر",
+        "objective_ids": [
+          "lo_claim"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يصنّف"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "أخطأ في الأغلب"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "نصف صحيح"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمه صحيح"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كله صحيح"
+          }
+        ]
+      },
+      {
+        "id": "c_conflict",
+        "name_ar": "ربط السجلات بأزمنتها",
+        "objective_ids": [
+          "lo_timeline"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يضع شيئاً"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "وضع قليلاً"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "وضع نصفها صحيحاً"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمها"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كلها في موضعها"
+          }
+        ]
+      },
+      {
+        "id": "c_links",
+        "name_ar": "ربط الأدلة بالفرضيات",
+        "objective_ids": [
+          "lo_diag"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.2,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لا روابط"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "قليلة"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "نصفها صحيح"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمها"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كلها دقيقة"
+          }
+        ]
+      },
+      {
+        "id": "c_uncertainty",
+        "name_ar": "معايرة الثقة",
+        "objective_ids": [
+          "lo_calib"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.2,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "ثقة مفرطة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "حدود قليلة"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "جزئية"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معقولة"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "معايَرة كاملة"
+          }
+        ]
+      },
+      {
+        "id": "c_revision",
+        "name_ar": "مراجعة الرأي",
+        "objective_ids": [
+          "lo_revise"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "بقي على فرضية مرفوضة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "لم يعلن فرضية"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "ثبت على فرضية سليمة"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "غيّر بدليل"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "غيّر بدليل ووثّق"
+          }
+        ]
+      },
+      {
+        "id": "c_elimination",
+        "name_ar": "استبعاد الفرضيات الخاطئة",
+        "objective_ids": [
+          "lo_hyp"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يستبعد"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "استبعد خطأً"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "فرضية بدليل"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "فرضيتين"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كل الخاطئة"
+          }
+        ]
+      },
+      {
+        "id": "c_justification",
+        "name_ar": "جودة الحجة المكتوبة",
+        "objective_ids": [
+          "lo_diag",
+          "lo_hyp"
+        ],
+        "scored_by": "human",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لا حجة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "ادعاء بلا سند"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "أدلة دون ربط"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "ربط الأدلة بالاستنتاج"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "ربط مع البدائل والحدود"
+          }
+        ]
+      }
+    ]
+  },
+  "hint_ladder": [
+    {
+      "id": "hg1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "قبل أن تسأل أي هامش أصلي، اسأل: ما الذي يمكن ترتيبه في الزمن على هذه الورقة؟ ومن كانت له يد عليها في كل مرحلة؟",
+      "trigger": {
+        "always": true
+      },
+      "assessment_weight": 0.02
+    },
+    {
+      "id": "hg2",
+      "level": 2,
+      "kind": "focus_area",
+      "text_ar": "ضع الأوراق في جدول: ما قيل عن الهوامش، وما سُجل عنها قبل النزاع، ومن كتب كل سجل.",
+      "trigger": {
+        "has_evidence": "ev_dispute_file"
+      },
+      "assessment_weight": 0.04
+    },
+    {
+      "id": "hg3",
+      "level": 3,
+      "kind": "pointer",
+      "text_ar": "ابحث عن سجلات كتبتها الدار والأجهزة قبل أن يبدأ الخلاف، ثم قابلها بما قاله أطراف النزاع.",
+      "trigger": {
+        "has_evidence": "ev_dispute_file"
+      },
+      "assessment_weight": 0.08
+    },
+    {
+      "id": "hl1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "متى وُصفت الورقة وصفاً مفصلاً قبل النزاع؟ ومتى وُصفت أول مرة بعده؟",
+      "trigger": {
+        "has_evidence": "ev_dispute_file"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_inloan_a"
+    },
+    {
+      "id": "hl2",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "قارن وصف الورقة عند تسليمها للإعارة بوصفها عند إعادتها.",
+      "trigger": {
+        "has_evidence": "ev_receipt"
+      },
+      "assessment_weight": 0.06,
+      "targets_inference_id": "i_inloan_a"
+    },
+    {
+      "id": "hl3",
+      "level": 3,
+      "kind": "partial_reveal",
+      "text_ar": "ضع على خط واحد: التسليم صباح الخميس، وإيداع الصندوق الليلي 22:00، وفحص الجمعة 09:00، ثم اسأل متى كان السجل خارج الدار.",
+      "trigger": {
+        "has_evidence": "ev_return_form"
+      },
+      "assessment_weight": 0.1,
+      "targets_inference_id": "i_inloan_a"
+    },
+    {
+      "id": "ha1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "إن ظهرت الكتابة في يوم المعرض، فمن استطاع الوصول إلى السجل وهو خلف الزجاج؟",
+      "trigger": {
+        "has_evidence": "ev_visitor_photo"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_added_a"
+    },
+    {
+      "id": "ha2",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "اقرأ سجل قفل الواجهة بحثاً عن كل مرة فُتحت فيها، ثم ابحث عن سجل آخر يبين من كان في القاعة.",
+      "trigger": {
+        "has_evidence": "ev_case_lock_log"
+      },
+      "assessment_weight": 0.06,
+      "targets_inference_id": "i_added_a"
+    },
+    {
+      "id": "ha3",
+      "level": 3,
+      "kind": "partial_reveal",
+      "text_ar": "قابل فتح الواجهة 20:42 بتعطيل التنبيه 20:35 وتفعيله 21:30، وتذكّر أن السجلين لا يعرفان من استعمل البطاقة أو الرمز.",
+      "trigger": {
+        "has_evidence": "ev_alarm_log"
+      },
+      "assessment_weight": 0.1,
+      "targets_inference_id": "i_added_a"
+    },
+    {
+      "id": "hd1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "من أين جاء نص الهامش الثالث؟ وهل يوجد في مكان آخر قبل أن يظهر على الورقة؟",
+      "trigger": {
+        "has_evidence": "ev_isam_msg"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_added_b"
+    },
+    {
+      "id": "hd2",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "قارن تاريخ إنشاء الملف بتاريخ ظهور الهامش، ثم قارن رقم القرار في النص بفهرس الجريدة.",
+      "trigger": {
+        "has_evidence": "ev_draft_file"
+      },
+      "assessment_weight": 0.06,
+      "targets_inference_id": "i_added_b"
+    },
+    {
+      "id": "hd3",
+      "level": 3,
+      "kind": "partial_reveal",
+      "text_ar": "النص موجود حرفياً في ملف أُنشئ الثلاثاء، والورقة بيضاء الخميس صباحاً؛ فاسأل من يملك الملف ومن شاركه.",
+      "trigger": {
+        "has_evidence": "ev_gazette_index"
+      },
+      "assessment_weight": 0.1,
+      "targets_inference_id": "i_added_b"
+    },
+    {
+      "id": "hn1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "ما الذي يستطيع الحبر أن يقوله عن الترتيب الزمني دون أن يسمّي كاتباً؟",
+      "trigger": {
+        "has_evidence": "ev_dispute_file"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_notorig"
+    },
+    {
+      "id": "hn2",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "قارن الهوامش الثلاثة بلطخة الماء القديمة وبحال الورقة في المسح الرقمي.",
+      "trigger": {
+        "has_evidence": "ev_return_form"
+      },
+      "assessment_weight": 0.06,
+      "targets_inference_id": "i_notorig"
+    },
+    {
+      "id": "hn3",
+      "level": 3,
+      "kind": "partial_reveal",
+      "text_ar": "هامشان تشرّب حبرهما في اللطخة وواحد حاد الحواف فوقها؛ فأيها سبق اللطخة؟ وأيها جاء بعدها؟",
+      "trigger": {
+        "has_evidence": "ev_exam"
+      },
+      "assessment_weight": 0.1,
+      "targets_inference_id": "i_notorig"
+    }
+  ],
+  "fairness_test": {
+    "requirements": {
+      "min_disjoint_proof_paths": 2,
+      "max_inference_depth": 3,
+      "all_red_herrings_refutable": true,
+      "culprit_uniquely_entailed": true,
+      "no_hidden_fact_dependency": true,
+      "max_required_actions": 40
+    },
+    "runs": []
+  },
+  "ending_explanation": {
+    "steps": [
+      {
+        "order": 1,
+        "text_ar": "ابدأ بالمصالح: لعصام طلب أمام اللجنة، ولخالد جزء مؤجل من أجر عقد مرتبط بالدورة، ولنجوى حديقة تخسر نصفها؛ فالثلاثة أصحاب مصلحة ولا يكفي ذلك لتسمية كاتب.",
+        "uses_evidence_ids": [
+          "ev_dispute_file",
+          "ev_pump_contract",
+          "ev_najwa_note"
+        ],
+        "inference_id": "i_stake"
+      },
+      {
+        "order": 2,
+        "text_ar": "ثم رتّب الحبر والأوراق: المسح القديم لا يرى كتابة يسرى، واللطخة تبهت أول هامشين وتمرّ تحت الأيسر الحاد؛ فالأيسر لاحق للقدماء.",
+        "uses_evidence_ids": [
+          "ev_scan_2009",
+          "ev_exam"
+        ],
+        "inference_id": "i_notorig"
+      },
+      {
+        "order": 3,
+        "text_ar": "الوصف عند التسليم يعدّ ملاحظتين، والفحص بعد ليلة في صندوق مختوم يعدّ ثلاثاً، فالإضافة وقعت والسجل خارج الدار في يوم المعرض.",
+        "uses_evidence_ids": [
+          "ev_receipt",
+          "ev_return_form"
+        ],
+        "inference_id": "i_inloan_a"
+      },
+      {
+        "order": 4,
+        "text_ar": "ويأتي التضييق نفسه من طريق مستقل: الصورة تُظهر الورقة بيضاء عند 16:45، ورسالة المساء تحمل صورة الهامش مكتوباً.",
+        "uses_evidence_ids": [
+          "ev_visitor_photo",
+          "ev_isam_msg"
+        ],
+        "inference_id": "i_inloan_b"
+      },
+      {
+        "order": 5,
+        "text_ar": "بعد الإقفال الصباحي لم تُفتح الواجهة إلا مساءً ببطاقة خالد، وفي المدة نفسها لم يعطّل التنبيه غير رمزه؛ فهو صاحب الفرصة المسجلة.",
+        "uses_evidence_ids": [
+          "ev_case_lock_log",
+          "ev_alarm_log"
+        ],
+        "inference_id": "i_added_a"
+      },
+      {
+        "order": 6,
+        "text_ar": "ومن طريق ثانٍ لا يشاركه أي سجل سابق: الفقرة نفسها بخطئها في رقم القرار سبقت الورقة في ملف أنشأه خالد، والفهرس الرسمي يبين أن الرقم لا يخص الماء.",
+        "uses_evidence_ids": [
+          "ev_draft_file",
+          "ev_gazette_index"
+        ],
+        "inference_id": "i_added_b"
+      },
+      {
+        "order": 7,
+        "text_ar": "فتسقط فرضية القدم، وتسقط فرضية عصام لأن ملاحظاته لا تعرف الهامش الثالث، وتسقط فرضية نجوى لأن الواجهة كانت مقفلة والورقة بيضاء بعد لحظة قلمها.",
+        "uses_evidence_ids": [
+          "ev_reading_log",
+          "ev_abeer_stmt",
+          "ev_visitor_photo"
+        ],
+        "inference_id": "i_rule_najwa"
+      },
+      {
+        "order": 8,
+        "text_ar": "تتجه الفرصة المسجلة ومصدر النص والمصلحة المعلنة إلى فرضية خالد، مع الإقرار بحدود السجلات.",
+        "uses_evidence_ids": [
+          "ev_pump_contract",
+          "ev_draft_file"
+        ],
+        "inference_id": "i_supports_khalid"
+      }
+    ],
+    "alternative_paths_ar": [
+      "مسار مستقل: الصورة والرسالة تحددان نافذة الإضافة، والمسودة والفهرس يربطان النص بخالد، من غير الاعتماد على وصل التسليم ولا على سجلي القفل والتنبيه."
+    ],
+    "what_evidence_could_not_show_ar": [
+      "الأجهزة تعرف البطاقة والرمز ولا تعرف اليد التي استعملتهما، ولا تثبت من أمسك القلم.",
+      "المسودة تبين مصدر النص لا كاتبه، ولا نعرف إن تواطأ أحد مع خالد؛ والعقد وحده لا يثبت غشاً.",
+      "فحص الحبر يرتّب الكتابات زمنياً ولا يحدد سنة الكتابة."
+    ],
+    "science_notes_ar": [
+      "الترتيب الزمني للمواد (ما تشرّب في اللطخة وما كُتب فوقها) يحدد التسلسل لا الكاتب.",
+      "وصف مفصل مدوّن عند التسليم أقوى من عدد مجرد في بطاقة فهرس.",
+      "المصلحة تفسر الدافع المحتمل ولا تغني عن السجلات المستقلة."
+    ]
+  },
+  "expert_review": [
+    {
+      "role": "narrative_editor",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "scientific_reviewer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "learning_designer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "age_appropriateness",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "cultural_reviewer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "legal_rights",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "safety",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    }
+  ]
+}

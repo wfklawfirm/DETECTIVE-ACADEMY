@@ -1,0 +1,143 @@
+{
+  "case_id": "c051_not_enough_yet",
+  "accepted_conclusions": {
+    "h_insufficient": {
+      "grade": 1,
+      "note_ar": "استنتاج متسق مع الأدلة؛ ويتطلب تسمية الفحص الحاسم وذكر أن «غير كافٍ» ليست «بلا أثر»."
+    },
+    "h_works": {
+      "grade": 0,
+      "note_ar": "يبني الجزم على الفرق الأكبر، وهو يجمع اختلاف الموضع والماء؛ والفرق الأعدل أصغر من التفاوت المعتاد."
+    },
+    "h_fudged": {
+      "grade": 0,
+      "note_ar": "يبني اتهاماً على ظن، والصورة تطابق السجلات."
+    },
+    "h_sun_only": {
+      "grade": 0,
+      "note_ar": "يجزم بغياب الأثر من نبتة واحدة لكل معاملة، وهي لا تنفي أثراً صغيراً."
+    }
+  },
+  "confidence_band": {
+    "h_insufficient": [
+      65,
+      90
+    ],
+    "h_works": [
+      0,
+      15
+    ],
+    "h_fudged": [
+      0,
+      10
+    ],
+    "h_sun_only": [
+      0,
+      20
+    ]
+  },
+  "source_key": {
+    "ev_dana_log": "primary_record",
+    "ev_karim_log": "primary_record",
+    "ev_salim_log": "primary_record",
+    "ev_last_round": "primary_record",
+    "ev_other_class": "redisplay",
+    "ev_sun_sheet": "primary_record",
+    "ev_water_sheet": "primary_record",
+    "ev_ruler_photo": "primary_record",
+    "ev_rima_green": "claim",
+    "ev_karim_note": "claim"
+  },
+  "link_key": {
+    "h_insufficient": {
+      "ev_dana_log": "supports",
+      "ev_karim_log": "supports",
+      "ev_salim_log": "supports",
+      "ev_last_round": "supports",
+      "ev_other_class": "supports",
+      "ev_sun_sheet": "supports",
+      "ev_water_sheet": "supports",
+      "ev_ruler_photo": "neutral",
+      "ev_rima_green": "neutral",
+      "ev_karim_note": "neutral"
+    },
+    "h_works": {
+      "ev_dana_log": "supports",
+      "ev_karim_log": "supports",
+      "ev_salim_log": "weakens",
+      "ev_last_round": "weakens",
+      "ev_other_class": "weakens",
+      "ev_sun_sheet": "weakens",
+      "ev_water_sheet": "weakens",
+      "ev_rima_green": "supports"
+    },
+    "h_fudged": {
+      "ev_karim_note": "supports",
+      "ev_ruler_photo": "weakens",
+      "ev_rima_green": "neutral"
+    },
+    "h_sun_only": {
+      "ev_sun_sheet": "supports",
+      "ev_water_sheet": "supports",
+      "ev_karim_log": "supports",
+      "ev_salim_log": "neutral",
+      "ev_last_round": "weakens",
+      "ev_other_class": "weakens"
+    }
+  },
+  "required_limits": [
+    "l_no_replicates",
+    "l_not_no_effect"
+  ],
+  "valid_mind_changers": [
+    "m_repeat_gap",
+    "m_repeat_overlap",
+    "m_photo_mismatch"
+  ],
+  "invalid_limits": [
+    "l_invalid_gap",
+    "l_invalid_green",
+    "l_invalid_doubt"
+  ],
+  "decisive_evidence": [
+    "ev_dana_log",
+    "ev_karim_log",
+    "ev_salim_log",
+    "ev_last_round",
+    "ev_other_class",
+    "ev_sun_sheet",
+    "ev_water_sheet",
+    "ev_ruler_photo"
+  ],
+  "lab_requirement": null,
+  "refuted_hypotheses": [
+    "h_works",
+    "h_fudged",
+    "h_sun_only"
+  ],
+  "transfer_key": {
+    "valid": [
+      "o1",
+      "o2",
+      "o3",
+      "o4"
+    ],
+    "invalid": [
+      "o5",
+      "o6",
+      "o7"
+    ]
+  },
+  "criteria_map": {
+    "c_source": "source_typing",
+    "c_links": "hypothesis_links",
+    "c_uncertainty": "uncertainty",
+    "c_revision": "revision",
+    "c_elimination": "elimination",
+    "c_justification": "justification_human"
+  },
+  "caps": {
+    "no_citations_max": 45,
+    "no_conflict_resolution_max": 65
+  }
+}

@@ -1,0 +1,1817 @@
+{
+  "schema_version": "0.1.0",
+  "case_id": "c051_not_enough_yet",
+  "case_version": "0.1.0",
+  "meta": {
+    "title_ar": "نبتة دانة: لا يكفي بعد",
+    "title_en": "Dana's Bean Plant: Not Enough Yet",
+    "age_band": "13-15",
+    "locale": "ar",
+    "dialogue_register": "msa",
+    "estimated_minutes": 20,
+    "difficulty": 2,
+    "content_flags": [
+      "no_violence"
+    ],
+    "authors": [
+      "فريق أثر التحريري (مسودة بمساعدة الذكاء الاصطناعي، لم تُراجَع بشرياً بعد)"
+    ],
+    "knowledge_object_refs": [
+      "KO-NP-02-027",
+      "KO-NP-02-006",
+      "KO-RS-06-021",
+      "KO-RS-05-010",
+      "KO-RS-05-004",
+      "KO-RS-05-001",
+      "KO-RS-05-002",
+      "KO-RS-06-001",
+      "KO-RS-06-008",
+      "KO-RS-06-009"
+    ]
+  },
+  "premise": {
+    "hook_ar": "قالت دانة إن مغلي قشور الموز جعل نبتة الفاصولياء عندها تسبق نبتة كريم بتسعة سنتيمترات في عشرة أيام، وتريد أن يعتمد النادي الوصفة. طلبت المشرفة رأياً معلّلاً: هل تكفي الأوراق التي بين يديك لتقول إن المغلي ينفع؟",
+    "player_role_ar": "أنت عضو في لجنة المراجعة العلمية الطلابية في مدرسة الياسمين، ومهمتك أن تزن ما تثبته الأوراق قبل أن يقرر النادي شيئاً، من غير أن تتهم أحداً.",
+    "setting_ar": "مدرسة الياسمين في مدينة سهل الندى المتخيلة، مختبر الصف الثامن في أسبوع الربيع. الأوقات بساعة المدرسة.",
+    "public_fact_ids": [
+      "f_claim",
+      "f_same_start",
+      "f_review_asked"
+    ],
+    "assumed_general_knowledge_ar": [
+      "النباتات تنمو بمقادير مختلفة حتى لو زُرعت متشابهة",
+      "الطرح البسيط للأعداد الصغيرة",
+      "الشمس والماء يؤثران في نمو النبتة",
+      "المقارنة العادلة تغيّر شيئاً واحداً فقط"
+    ]
+  },
+  "entities": {
+    "characters": [
+      {
+        "id": "dana",
+        "name_ar": "دانة الشريف",
+        "role": "suspect",
+        "age_descriptor_ar": "طالبة في الصف الثامن، عضوة في نادي الزراعة",
+        "persona_ar": "متحمسة ومرتبة، تحب أن تجرّب وصفات جديدة وتدوّن كل شيء في دفترها. تتقبل أن تُراجَع نتائجها.",
+        "motives_ar": [
+          "أن يعتمد النادي وصفتها",
+          "ألا يُشكَّك في أمانتها دون سبب"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        }
+      },
+      {
+        "id": "karim",
+        "name_ar": "كريم الحلبي",
+        "role": "witness",
+        "age_descriptor_ar": "طالب في الصف الثامن، عضو في النادي",
+        "persona_ar": "صريح وسريع الحكم، يقول ما يخطر له ثم يراجع نفسه حين يُسأل عن سنده.",
+        "motives_ar": [
+          "أن يفهم لماذا نبتته أقصر",
+          "ألا يُظلم في المقارنة"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        }
+      },
+      {
+        "id": "salim",
+        "name_ar": "سليم المصري",
+        "role": "witness",
+        "age_descriptor_ar": "طالب في الصف الثامن، عضو في النادي",
+        "persona_ar": "هادئ ودقيق، يكتب قياساته في وقتها ولا يعلّق عليها كثيراً.",
+        "motives_ar": [
+          "أن يؤدي ما طُلب منه",
+          "أن تكون القياسات واضحة"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        }
+      },
+      {
+        "id": "hala",
+        "name_ar": "الأستاذة هالة النجار",
+        "role": "authority",
+        "age_descriptor_ar": "معلمة ومشرفة نادي الزراعة",
+        "persona_ar": "متأنية وتحب الأسئلة، تدوّن ما رأته ولا تستعجل الحكم.",
+        "motives_ar": [
+          "أن يتعلم الطلاب كيف يختبرون فكرة",
+          "ألا يُعمَّم شيء قبل أن يتضح"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        }
+      },
+      {
+        "id": "amjad",
+        "name_ar": "السيد أمجد الدباغ",
+        "role": "assistant",
+        "age_descriptor_ar": "فني المختبر",
+        "persona_ar": "منظم وقليل الكلام، يسجّل ما يصبّه ويقيسه في أوراق ثابتة.",
+        "motives_ar": [
+          "أن تبقى أوراق المختبر دقيقة"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        }
+      },
+      {
+        "id": "rima",
+        "name_ar": "ريم الخوري",
+        "role": "bystander",
+        "age_descriptor_ar": "طالبة في الصف الثامن، زائرة للمختبر",
+        "persona_ar": "ودودة تحكي انطباعها كما هو، ولا تقصد ترجيح أحد.",
+        "motives_ar": [
+          "أن تشارك ما لاحظته"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        }
+      }
+    ],
+    "locations": [
+      {
+        "id": "loc_lab",
+        "name_ar": "مختبر الصف الثامن",
+        "description_ar": "غرفة فيها حافة نافذة جنوبية ورف خشبي عند الجدار الشمالي."
+      },
+      {
+        "id": "loc_club",
+        "name_ar": "غرفة نادي الزراعة",
+        "description_ar": "غرفة صغيرة تُحفظ فيها دفاتر النادي وجداوله."
+      }
+    ],
+    "objects": [
+      {
+        "id": "obj_pot_dana",
+        "name_ar": "الإناء رقم 1",
+        "description_ar": "إناء فاصولياء دانة."
+      },
+      {
+        "id": "obj_pot_karim",
+        "name_ar": "الإناء رقم 2",
+        "description_ar": "إناء فاصولياء كريم."
+      },
+      {
+        "id": "obj_pot_salim",
+        "name_ar": "الإناء رقم 3",
+        "description_ar": "إناء فاصولياء سليم."
+      },
+      {
+        "id": "obj_ruler",
+        "name_ar": "المسطرة الجدارية",
+        "description_ar": "مسطرة مدرّجة بالسنتيمتر معلقة في المختبر."
+      }
+    ],
+    "organizations": [
+      {
+        "id": "org_club",
+        "name_ar": "نادي الزراعة",
+        "description_ar": "نادٍ طلابي في مدرسة الياسمين يجرّب زراعة النباتات."
+      }
+    ]
+  },
+  "truth": {
+    "solution": {
+      "culprit_ids": [
+        "dana"
+      ],
+      "summary_ar": "لا يوجد خطأ ولا تزوير يُنسبان لأحد؛ والقضية قضية كفاية أدلة. المقارنة التي قدّمتها دانة غير عادلة لاختلاف الموضع والماء، والمقارنة الأعدل بين نبتتين فقط تُظهر فرقاً صغيراً يقع داخل التفاوت الطبيعي. فالأدلة لا تثبت أثر المغلي ولا تنفيه، والذي يحسم تجربة مكررة بنبتات كثيرة تحت شروط واحدة.",
+      "key_fact_ids": [
+        "f_unfair_pair",
+        "f_fair_within_spread",
+        "f_not_enough"
+      ]
+    },
+    "facts": [
+      {
+        "id": "f_claim",
+        "statement_ar": "تقول دانة إن مغلي قشور الموز زاد نمو نبتتها، فبلغت زيادتها عشرين سنتيمتراً في عشرة أيام مقابل أحد عشر لنبتة كريم.",
+        "kind": "attribute",
+        "subject_ids": [
+          "dana",
+          "karim"
+        ],
+        "spoiler_level": 0,
+        "location_id": "loc_lab"
+      },
+      {
+        "id": "f_same_start",
+        "statement_ar": "زُرعت حبوب الفاصولياء من كيس واحد في اليوم نفسه، وكان طول كل نبتة أربعة سنتيمترات عند القياس الأول.",
+        "kind": "attribute",
+        "subject_ids": [
+          "obj_pot_dana",
+          "obj_pot_karim",
+          "obj_pot_salim"
+        ],
+        "spoiler_level": 0,
+        "location_id": "loc_lab"
+      },
+      {
+        "id": "f_review_asked",
+        "statement_ar": "طلبت المشرفة رأياً معلّلاً في ما تثبته الأوراق قبل أن يقرر النادي اعتماد الوصفة.",
+        "kind": "event",
+        "subject_ids": [
+          "hala",
+          "org_club"
+        ],
+        "spoiler_level": 0,
+        "location_id": "loc_club"
+      },
+      {
+        "id": "f_single_plants",
+        "statement_ar": "لكل معاملة نبتة واحدة فقط: دانة بمغلي القشور، وكريم وسليم بماء الصنبور.",
+        "kind": "state",
+        "subject_ids": [
+          "obj_pot_dana",
+          "obj_pot_karim",
+          "obj_pot_salim"
+        ],
+        "spoiler_level": 1,
+        "location_id": "loc_lab"
+      },
+      {
+        "id": "f_heights",
+        "statement_ar": "الأطوال بعد عشرة أيام: نبتة دانة 24 سم، ونبتة سليم 21 سم، ونبتة كريم 15 سم.",
+        "kind": "attribute",
+        "subject_ids": [
+          "obj_pot_dana",
+          "obj_pot_salim",
+          "obj_pot_karim"
+        ],
+        "spoiler_level": 1,
+        "location_id": "loc_lab",
+        "time": {
+          "start_min": 14400,
+          "precision": "exact"
+        }
+      },
+      {
+        "id": "f_photo_matches",
+        "statement_ar": "قياسات الصورة في اليوم العاشر توافق الأطوال المدوّنة في سجلات الثلاثة.",
+        "kind": "attribute",
+        "subject_ids": [
+          "obj_ruler",
+          "dana"
+        ],
+        "spoiler_level": 1,
+        "location_id": "loc_lab"
+      },
+      {
+        "id": "f_unfair_pair",
+        "statement_ar": "نبتة كريم لم تُقارَن بنبتة دانة في شروط واحدة: وقفت في موضع أقل شمساً وسُقيت ماءً أقل، فاجتمعت في الفرق عوامل غير نوع الماء.",
+        "kind": "relation",
+        "subject_ids": [
+          "obj_pot_dana",
+          "obj_pot_karim"
+        ],
+        "spoiler_level": 2,
+        "location_id": "loc_lab"
+      },
+      {
+        "id": "f_fair_within_spread",
+        "statement_ar": "النبتتان اللتان تشاركتا الموضع وكمية الماء، نبتة دانة ونبتة سليم، يفصل بينهما ثلاثة سنتيمترات؛ وهذا أقل من التفاوت المعتاد بين نباتات متماثلة تماماً، ومداه ستة إلى سبعة سنتيمترات.",
+        "kind": "relation",
+        "subject_ids": [
+          "obj_pot_dana",
+          "obj_pot_salim"
+        ],
+        "spoiler_level": 2,
+        "location_id": "loc_lab"
+      },
+      {
+        "id": "f_not_enough",
+        "statement_ar": "ما جُمع حتى الآن لا يكفي لإثبات أثر المغلي ولا لنفيه؛ والذي يحسم تجربة مكررة بنبتات عدة لكل معاملة في الموضع نفسه وبمقدار الماء نفسه.",
+        "kind": "state",
+        "subject_ids": [
+          "obj_pot_dana",
+          "org_club"
+        ],
+        "spoiler_level": 3
+      }
+    ],
+    "claims": [
+      {
+        "id": "cl_works",
+        "statement_ar": "مغلي قشور الموز هو الذي جعل نبتتي أطول.",
+        "kind": "half_truth",
+        "held_by": [
+          "dana"
+        ],
+        "true_fact_id": "f_fair_within_spread",
+        "contradicted_by_evidence_ids": [],
+        "unresolved_by_design": true
+      },
+      {
+        "id": "cl_fudged",
+        "statement_ar": "دانة كتبت أرقاماً أكبر من الحقيقة.",
+        "kind": "rumour",
+        "held_by": [
+          "karim"
+        ],
+        "true_fact_id": "f_photo_matches",
+        "contradicted_by_evidence_ids": [
+          "ev_ruler_photo"
+        ]
+      },
+      {
+        "id": "cl_green",
+        "statement_ar": "أوراق نبتة دانة أغمق خضرة، فالمغلي قوّاها.",
+        "kind": "honest_mistake",
+        "held_by": [
+          "rima"
+        ],
+        "contradicted_by_evidence_ids": [],
+        "unresolved_by_design": true
+      }
+    ]
+  },
+  "timeline": [
+    {
+      "id": "te_plant",
+      "description_ar": "زرع الطلاب الفاصولياء ووضعوا الأواني كل في موضعه.",
+      "time": {
+        "start_min": 0,
+        "end_min": 45,
+        "precision": "approx"
+      },
+      "location_id": "loc_lab",
+      "actor_ids": [
+        "dana",
+        "karim",
+        "salim"
+      ],
+      "fact_ids": [
+        "f_same_start",
+        "f_single_plants"
+      ],
+      "motivated_by_ar": "بدء تجربة نادي الزراعة"
+    },
+    {
+      "id": "te_water",
+      "description_ar": "صبّ الفني كل صباح كمية الماء المقررة لكل إناء ودوّنها.",
+      "time": {
+        "start_min": 5,
+        "end_min": 13685,
+        "precision": "approx"
+      },
+      "location_id": "loc_lab",
+      "actor_ids": [
+        "amjad"
+      ],
+      "fact_ids": [
+        "f_unfair_pair"
+      ],
+      "motivated_by_ar": "تثبيت كميات الري في ورقة واحدة"
+    },
+    {
+      "id": "te_sun",
+      "description_ar": "رصدت المشرفة ساعات الشمس المباشرة في الموضعين ثلاثة أيام.",
+      "time": {
+        "start_min": 1440,
+        "end_min": 5760,
+        "precision": "approx"
+      },
+      "location_id": "loc_lab",
+      "actor_ids": [
+        "hala"
+      ],
+      "fact_ids": [
+        "f_unfair_pair"
+      ],
+      "motivated_by_ar": "معرفة ما يصل إلى كل إناء من ضوء"
+    },
+    {
+      "id": "te_measure",
+      "description_ar": "قاس الثلاثة طول نباتاتهم وصوّرت المشرفة الأواني بجانب المسطرة.",
+      "time": {
+        "start_min": 14400,
+        "end_min": 14430,
+        "precision": "approx"
+      },
+      "location_id": "loc_lab",
+      "actor_ids": [
+        "dana",
+        "karim",
+        "salim",
+        "hala"
+      ],
+      "witness_ids": [
+        "rima"
+      ],
+      "fact_ids": [
+        "f_heights",
+        "f_photo_matches"
+      ],
+      "motivated_by_ar": "تسجيل نتيجة اليوم العاشر"
+    },
+    {
+      "id": "te_review",
+      "description_ar": "طلبت المشرفة رأي لجنة المراجعة قبل اجتماع النادي.",
+      "time": {
+        "start_min": 14700,
+        "precision": "approx"
+      },
+      "location_id": "loc_club",
+      "actor_ids": [
+        "hala"
+      ],
+      "fact_ids": [
+        "f_review_asked"
+      ],
+      "motivated_by_ar": "ألا يُعمَّم شيء قبل أن يتضح"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_dana_log",
+      "title_ar": "سجل دانة لنبتتها",
+      "kind": "documentary",
+      "content_ar": "سجل دانة الشريف لنبتة الفاصولياء (الإناء رقم 1)\nزُرعت الحبة من كيس النادي في إناء من الحجم الذي أخذه الجميع.\nالموضع: حافة النافذة الجنوبية في مختبر الصف الثامن.\nالري: 50 مل كل صباح من مغلي قشور الموز بعد أن برد.\nالطول بالسنتيمتر: اليوم 0: 4، اليوم 5: 13، اليوم 10: 24.\nملاحظة دانة: اخترت الحافة الجنوبية لأن الفاصولياء تحب الضوء.",
+      "acquired_by_action_ids": [
+        "a_read_dana"
+      ],
+      "supports_fact_ids": [
+        "f_single_plants",
+        "f_heights",
+        "f_claim"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "سجل كتبته صاحبة النبتة بنفسها؛ يبيّن ما فعلته وما قاسته، ولا يبيّن ما كان سيحدث لو سُقيت ماءً عادياً.",
+      "location_id": "loc_lab"
+    },
+    {
+      "id": "ev_karim_log",
+      "title_ar": "سجل كريم لنبتته",
+      "kind": "documentary",
+      "content_ar": "سجل كريم الحلبي لنبتة الفاصولياء (الإناء رقم 2)\nالموضع: الرف الخشبي عند الجدار الشمالي، لأن الحافة الجنوبية كانت مشغولة.\nالري: 30 مل من ماء الصنبور كل صباح.\nالطول بالسنتيمتر: اليوم 0: 4، اليوم 5: 8، اليوم 10: 15.",
+      "acquired_by_action_ids": [
+        "a_read_karim"
+      ],
+      "supports_fact_ids": [
+        "f_single_plants",
+        "f_heights"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "سجل كتبه صاحب النبتة بنفسه؛ يبيّن موضعها وريّها وأطوالها، ولا يقيس ما وصل إليها من شمس.",
+      "location_id": "loc_lab"
+    },
+    {
+      "id": "ev_salim_log",
+      "title_ar": "سجل سليم لنبتته",
+      "kind": "documentary",
+      "content_ar": "سجل سليم المصري لنبتة الفاصولياء (الإناء رقم 3)\nطلبت منه المشرفة أن يزرع نبتة بماء الصنبور بجانب نبتة دانة.\nالموضع: حافة النافذة الجنوبية، بجانب الإناء رقم 1.\nالري: 50 مل من ماء الصنبور كل صباح.\nالطول بالسنتيمتر: اليوم 0: 4، اليوم 5: 12، اليوم 10: 21.",
+      "acquired_by_action_ids": [
+        "a_read_salim"
+      ],
+      "supports_fact_ids": [
+        "f_single_plants",
+        "f_heights"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "نبتة واحدة فقط بالماء العادي في ذلك الموضع؛ لا يظهر فيه كيف تتفاوت نباتات متماثلة فيما بينها.",
+      "location_id": "loc_lab"
+    },
+    {
+      "id": "ev_last_round",
+      "title_ar": "جدول نادي الفصل الماضي",
+      "kind": "documentary",
+      "content_ar": "جدول نادي الزراعة للفصل الماضي\nخمس نبتات فاصولياء من نوع البذور نفسه، على الحافة الجنوبية نفسها، تُسقى كل واحدة 50 مل من ماء الصنبور كل صباح، لمدة عشرة أيام. لم يُستعمل أي مغلي.\nالزيادة في الطول بالسنتيمتر: 13، 17، 15، 11، 18.",
+      "acquired_by_action_ids": [
+        "a_read_last"
+      ],
+      "supports_fact_ids": [
+        "f_fair_within_spread"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "جدول قديم لمجموعة أخرى؛ يبيّن تفاوتاً بين خمس نبتات، ولا يضمن أن نباتات اليوم ستتفاوت بالمقدار ذاته.",
+      "location_id": "loc_club"
+    },
+    {
+      "id": "ev_other_class",
+      "title_ar": "بطاقة الصف الثامن (ب)",
+      "kind": "documentary",
+      "content_ar": "بطاقة كتبها معلم الصف الثامن (ب)\nأربع نبتات فاصولياء متماثلة على حافة نافذة جنوبية في مختبرهم، تُسقى كل واحدة بالمقدار نفسه من ماء الصنبور، لمدة عشرة أيام.\nالزيادة في الطول بالسنتيمتر: 14، 18، 12، 17.",
+      "acquired_by_action_ids": [
+        "a_read_other"
+      ],
+      "supports_fact_ids": [
+        "f_fair_within_spread"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "بطاقة منقولة عن صف آخر وبظروف مختبر آخر؛ تصلح لتقدير حجم التفاوت المعتاد فحسب.",
+      "location_id": "loc_club"
+    },
+    {
+      "id": "ev_sun_sheet",
+      "title_ar": "ورقة رصد الشمس",
+      "kind": "documentary",
+      "content_ar": "ورقة رصد الشمس بخط الأستاذة هالة\nساعات الشمس المباشرة في كل موضع خلال ثلاثة أيام صافية متتالية:\nالحافة الجنوبية: 5 ساعات، 5 ساعات، 4 ساعات.\nالرف الشمالي: ساعة، ساعة، ساعتان.",
+      "acquired_by_action_ids": [
+        "a_read_sun"
+      ],
+      "supports_fact_ids": [
+        "f_unfair_pair"
+      ],
+      "reliability": "strong",
+      "limits_ar": "رصد لثلاثة أيام فقط؛ لا يقول شيئاً عن بقية أيام التجربة، ولا عن أثر الضوء في الفاصولياء بالتحديد.",
+      "location_id": "loc_lab"
+    },
+    {
+      "id": "ev_water_sheet",
+      "title_ar": "ورقة الري عند الفني",
+      "kind": "documentary",
+      "content_ar": "ورقة الري بخط الفني أمجد\nيُصبّ كل صباح من الإبريق المعلَّم إلى المخبار ثم إلى الإناء.\nالمجموع بعد عشرة أيام:\nالإناء 1 (مغلي قشور الموز): 500 مل.\nالإناء 2 (ماء الصنبور): 300 مل.\nالإناء 3 (ماء الصنبور): 500 مل.",
+      "acquired_by_action_ids": [
+        "a_read_water"
+      ],
+      "supports_fact_ids": [
+        "f_unfair_pair"
+      ],
+      "reliability": "strong",
+      "limits_ar": "تبيّن ما صُبّ في كل إناء؛ لا تبيّن كم امتصّته النبتة فعلاً ولا ما ضاع بالتبخر.",
+      "location_id": "loc_lab"
+    },
+    {
+      "id": "ev_ruler_photo",
+      "title_ar": "صورة اليوم العاشر",
+      "kind": "observation",
+      "content_ar": "صورة التقطتها الأستاذة هالة صباح اليوم العاشر: الإناءان 1 و3 جنباً إلى جنب على الحافة الجنوبية بجانب مسطرة مدرّجة بالسنتيمتر، وفي لقطة ثانية الإناء 2 على الرف الشمالي بجانب المسطرة نفسها. على كل إناء ورقة برقمه.\nقمة النبتة في الإناء 1 عند العلامة 24، وفي الإناء 3 عند 21، وفي الإناء 2 عند 15.",
+      "acquired_by_action_ids": [
+        "a_view_photo"
+      ],
+      "supports_fact_ids": [
+        "f_photo_matches",
+        "f_heights"
+      ],
+      "reliability": "strong",
+      "limits_ar": "تُظهر أطوال اليوم العاشر فقط؛ لا تبيّن ما جرى في الأيام السابقة ولا سبب الفروق.",
+      "location_id": "loc_lab",
+      "contradicts_claim_ids": [
+        "cl_fudged"
+      ]
+    },
+    {
+      "id": "ev_rima_green",
+      "title_ar": "إفادة ريم",
+      "kind": "testimonial",
+      "content_ar": "إفادة ريم الخوري كما دوّنتها المشرفة\n«أوراق نبتة دانة أغمق خضرة من أوراق نبتة كريم، وهذا يعني أن المغلي قوّاها.»",
+      "acquired_by_action_ids": [
+        "a_read_rima"
+      ],
+      "supports_fact_ids": [
+        "f_claim"
+      ],
+      "reliability": "weak",
+      "limits_ar": "انطباع بالعين دون مقياس؛ قارنت نبتة دانة بنبتة كريم فقط، والموضع والماء مختلفان بينهما.",
+      "location_id": "loc_lab",
+      "is_red_herring": true
+    },
+    {
+      "id": "ev_karim_note",
+      "title_ar": "إفادة كريم",
+      "kind": "testimonial",
+      "content_ar": "إفادة كريم الحلبي كما دوّنتها المشرفة\n«لا أصدق أن نبتتها بلغت 24 سم، أظن أنها كتبت أرقاماً أكبر من الحقيقة.»",
+      "acquired_by_action_ids": [
+        "a_read_karim_note"
+      ],
+      "supports_fact_ids": [
+        "f_claim"
+      ],
+      "reliability": "weak",
+      "limits_ar": "ظن لا يستند إلى قياس قام به كريم؛ ولم يقس نبتة دانة بنفسه.",
+      "location_id": "loc_lab",
+      "is_red_herring": true
+    }
+  ],
+  "evidence_graph": {
+    "inferences": [
+      {
+        "id": "i_a_unfair",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_dana_log"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_karim_log"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_unfair_pair"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "قارن سجلَّي الإناءين: الموضع مختلف (جنوبي وشمالي) وكمية الماء مختلفة (50 و30 مل)، فاختلف أكثر من عامل غير نوع الماء.",
+        "skill_ko_refs": [
+          "KO-RS-05-001",
+          "KO-RS-05-004"
+        ]
+      },
+      {
+        "id": "i_b_unfair",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_sun_sheet"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_water_sheet"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_unfair_pair"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "ورقتان كتبهما طرفان لا يملكان نبتة: ساعات الشمس تختلف بين الموضعين، وكمية الماء في الإناء 2 أقل من الإناء 1.",
+        "skill_ko_refs": [
+          "KO-RS-05-004"
+        ]
+      },
+      {
+        "id": "i_a_spread",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_dana_log"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_salim_log"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_last_round"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_fair_within_spread"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "نبتة دانة ونبتة سليم في موضع واحد وبمقدار ماء واحد وفرقهما 24 − 21 = 3 سم، بينما نباتات الفصل الماضي المتماثلة تفاوتت بمدى 18 − 11 = 7 سم.",
+        "skill_ko_refs": [
+          "KO-RS-06-001",
+          "KO-RS-05-010"
+        ]
+      },
+      {
+        "id": "i_b_spread",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_ruler_photo"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_water_sheet"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_other_class"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_fair_within_spread"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "الصورة تضع الإناءين 1 و3 على الحافة نفسها بفرق 3 سم، والورقة تثبت أن لكل منهما 500 مل، وبطاقة الصف الآخر تبيّن تفاوتاً مداه 18 − 12 = 6 سم بين نباتات متماثلة.",
+        "skill_ko_refs": [
+          "KO-RS-06-001",
+          "KO-RS-05-004"
+        ]
+      },
+      {
+        "id": "i_single",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_dana_log"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_salim_log"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_single_plants"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "كل سجل يخص نبتة واحدة، ولا سجل لنبتة ثانية بالمعاملة نفسها.",
+        "skill_ko_refs": [
+          "KO-RS-05-001"
+        ]
+      },
+      {
+        "id": "i_nodec",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_unfair_pair"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_fair_within_spread"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_not_enough"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "المقارنة الكبيرة (تسعة سنتيمترات) غير عادلة، والمقارنة العادلة (ثلاثة سنتيمترات) أصغر من التفاوت المعتاد؛ فلا تحسم الأوراق شيئاً.",
+        "skill_ko_refs": [
+          "KO-RS-06-021",
+          "KO-RS-05-010"
+        ]
+      },
+      {
+        "id": "i_support_insufficient",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_not_enough"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_insufficient"
+        },
+        "relation": "supports",
+        "strength": "strong",
+        "rule_ar": "الحكم المسؤول أن الأدلة لا تكفي بعد، مع تسمية ما يحسم: تجربة مكررة بنبتات عدة لكل معاملة وتحت شروط واحدة.",
+        "skill_ko_refs": [
+          "KO-RS-06-021",
+          "KO-RS-05-010"
+        ]
+      },
+      {
+        "id": "i_rule_works",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_unfair_pair"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_fair_within_spread"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_works"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "الفرق الأكبر تشارك فيه الموضع والماء؛ والفرق الأعدل أصغر من التفاوت الطبيعي، فلا يصح الجزم بأن المغلي هو السبب.",
+        "skill_ko_refs": [
+          "KO-RS-06-008"
+        ]
+      },
+      {
+        "id": "i_rule_sun",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_single_plants"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_fair_within_spread"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_sun_only"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "نبتة واحدة لكل معاملة لا تنفي أثراً صغيراً؛ فيبقى أثر المغلي غير محسوم، ولا يصح الجزم بأنه معدوم.",
+        "skill_ko_refs": [
+          "KO-RS-06-008",
+          "KO-RS-05-002"
+        ]
+      },
+      {
+        "id": "i_rule_fudged",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_ruler_photo"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_dana_log"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_fudged"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "صورة التقطتها طرف ثالث توافق أطوال سجل دانة وسجلَّي الاثنين الآخرين؛ فلا قرينة على أن الأرقام كُبّرت.",
+        "skill_ko_refs": [
+          "KO-RS-05-004",
+          "KO-RS-06-008"
+        ]
+      },
+      {
+        "id": "i_fudged_claim",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_ruler_photo"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_fudged"
+        },
+        "relation": "contradicts_claim",
+        "strength": "strong",
+        "rule_ar": "قياسات الصورة موافقة للمدوَّن، فلا يسندها الظن وحده.",
+        "skill_ko_refs": [
+          "KO-RS-05-004"
+        ]
+      }
+    ]
+  },
+  "character_knowledge": [
+    {
+      "character_id": "dana",
+      "knows": [
+        {
+          "fact_id": "f_claim",
+          "access": "witnessed"
+        },
+        {
+          "fact_id": "f_single_plants",
+          "access": "witnessed"
+        },
+        {
+          "fact_id": "f_heights",
+          "access": "witnessed"
+        }
+      ],
+      "hides": [],
+      "believes": [
+        {
+          "claim_id": "cl_works",
+          "stance": "sincere"
+        }
+      ]
+    },
+    {
+      "character_id": "karim",
+      "knows": [
+        {
+          "fact_id": "f_single_plants",
+          "access": "witnessed"
+        },
+        {
+          "fact_id": "f_heights",
+          "access": "witnessed"
+        }
+      ],
+      "hides": [],
+      "believes": [
+        {
+          "claim_id": "cl_fudged",
+          "stance": "sincere"
+        }
+      ]
+    },
+    {
+      "character_id": "salim",
+      "knows": [
+        {
+          "fact_id": "f_single_plants",
+          "access": "witnessed"
+        },
+        {
+          "fact_id": "f_heights",
+          "access": "witnessed"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    },
+    {
+      "character_id": "hala",
+      "knows": [
+        {
+          "fact_id": "f_review_asked",
+          "access": "witnessed"
+        },
+        {
+          "fact_id": "f_photo_matches",
+          "access": "witnessed"
+        },
+        {
+          "fact_id": "f_same_start",
+          "access": "witnessed"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    },
+    {
+      "character_id": "amjad",
+      "knows": [
+        {
+          "fact_id": "f_same_start",
+          "access": "professional"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    },
+    {
+      "character_id": "rima",
+      "knows": [
+        {
+          "fact_id": "f_heights",
+          "access": "told_by",
+          "source_character_id": "hala"
+        }
+      ],
+      "hides": [],
+      "believes": [
+        {
+          "claim_id": "cl_green",
+          "stance": "sincere"
+        }
+      ],
+      "opinions_ar": [
+        "أظن أن المغلي مفيد"
+      ]
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "h_works",
+      "statement_ar": "الأوراق تكفي لإثبات أن مغلي قشور الموز يزيد نمو الفاصولياء.",
+      "is_true": false,
+      "plausibility_at_start": "high"
+    },
+    {
+      "id": "h_fudged",
+      "statement_ar": "دانة دوّنت أطوالاً أكبر من الحقيقية.",
+      "is_true": false,
+      "plausibility_at_start": "medium",
+      "suspect_id": "dana"
+    },
+    {
+      "id": "h_sun_only",
+      "statement_ar": "الأوراق تكفي لإثبات أن المغلي بلا أثر، وأن الشمس والماء وحدهما فسّرا الفرق.",
+      "is_true": false,
+      "plausibility_at_start": "medium"
+    },
+    {
+      "id": "h_insufficient",
+      "statement_ar": "الأوراق الحالية لا تكفي لإثبات أثر المغلي ولا لنفيه، وما يحسم تجربة مكررة.",
+      "is_true": true,
+      "plausibility_at_start": "low"
+    }
+  ],
+  "misdirection_plan": [
+    {
+      "id": "rh_green",
+      "points_to_hypothesis_id": "h_works",
+      "planted_via_ar": "إفادة ريم عن اخضرار أوراق نبتة دانة.",
+      "evidence_ids": [
+        "ev_rima_green"
+      ],
+      "refuted_by_inference_ids": [
+        "i_rule_works"
+      ],
+      "fairness_note_ar": "بطاقة الإفادة نفسها تنبّه إلى أن المقارنة مع نبتة كريم، وسجلات الموضع والماء بين يدي اللاعب."
+    },
+    {
+      "id": "rh_doubt",
+      "points_to_hypothesis_id": "h_fudged",
+      "planted_via_ar": "شك كريم في أرقام دانة.",
+      "evidence_ids": [
+        "ev_karim_note"
+      ],
+      "refuted_by_inference_ids": [
+        "i_rule_fudged"
+      ],
+      "fairness_note_ar": "الصورة بيد اللاعب، وفيها قراءات تطابق السجلات، ولا قياس عند كريم يخالفها."
+    }
+  ],
+  "learning_objectives": [
+    {
+      "id": "lo_main",
+      "statement_ar": "يقرر متى تكون الأدلة غير كافية، ويسمّي الفحص الإضافي الذي يحسم.",
+      "skill_ko_ref": "KO-RS-05-010",
+      "observable_behaviors_ar": [
+        "يختار «لا يكفي بعد» بمسوغات",
+        "يسمّي تجربة مكررة بشروط واحدة"
+      ],
+      "evidence_sources": [
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_source",
+      "statement_ar": "يميز السجلات التي كتبها طرف ثالث من ظنون الأشخاص.",
+      "skill_ko_ref": "KO-RS-05-001",
+      "observable_behaviors_ar": [
+        "يصنف الإفادتين أقوالاً",
+        "يصنف الأوراق والصورة سجلات"
+      ],
+      "evidence_sources": [
+        "evidence_board"
+      ]
+    },
+    {
+      "id": "lo_indep",
+      "statement_ar": "يجد مسارين مستقلين يدعمان النتيجة نفسها.",
+      "skill_ko_ref": "KO-RS-05-004",
+      "observable_behaviors_ar": [
+        "يستعمل ورقتي الشمس والري مساراً ثانياً"
+      ],
+      "evidence_sources": [
+        "evidence_board",
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_hyp",
+      "statement_ar": "يستبعد الفرضيات التي تزعم أكثر مما تثبته الأوراق.",
+      "skill_ko_ref": "KO-RS-05-002",
+      "observable_behaviors_ar": [
+        "يستبعد «ثبت أنه ينفع» و«ثبت أنه لا أثر له»"
+      ],
+      "evidence_sources": [
+        "hypothesis_ledger"
+      ]
+    },
+    {
+      "id": "lo_diag",
+      "statement_ar": "يقدّر ما يثبته كل دليل ويربطه بالفرضية باتجاه صحيح.",
+      "skill_ko_ref": "KO-RS-06-001",
+      "observable_behaviors_ar": [
+        "يربط الدليل بالفرضية"
+      ],
+      "evidence_sources": [
+        "evidence_board"
+      ]
+    },
+    {
+      "id": "lo_calib",
+      "statement_ar": "يعبّر عن يقينه بدرجة معايَرة، فلا يفرط ولا يتهرب.",
+      "skill_ko_ref": "KO-RS-06-021",
+      "observable_behaviors_ar": [
+        "يختار ثقة معقولة",
+        "يذكر حدود الاستنتاج"
+      ],
+      "evidence_sources": [
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_revise",
+      "statement_ar": "يسمّي مسبقاً ما قد يغيّر رأيه.",
+      "skill_ko_ref": "KO-RS-06-009",
+      "observable_behaviors_ar": [
+        "يختار ما يغيّر رأيه من القائمة"
+      ],
+      "evidence_sources": [
+        "hypothesis_ledger"
+      ]
+    }
+  ],
+  "mechanics": {
+    "time_budget_units": 20,
+    "actions": [
+      {
+        "id": "a_read_dana",
+        "type": "examine",
+        "label_ar": "اقرأ سجل دانة",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_dana_log"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "READ_DANA",
+        "target_id": "loc_lab"
+      },
+      {
+        "id": "a_read_karim",
+        "type": "examine",
+        "label_ar": "اقرأ سجل كريم",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_karim_log"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "READ_KARIM",
+        "target_id": "loc_lab"
+      },
+      {
+        "id": "a_read_salim",
+        "type": "examine",
+        "label_ar": "اقرأ سجل سليم",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_salim_log"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "READ_SALIM",
+        "target_id": "loc_lab"
+      },
+      {
+        "id": "a_read_last",
+        "type": "examine",
+        "label_ar": "افتح جدول نادي الفصل الماضي",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_last_round"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "READ_LAST",
+        "target_id": "loc_club"
+      },
+      {
+        "id": "a_read_other",
+        "type": "examine",
+        "label_ar": "اقرأ بطاقة الصف الثامن (ب)",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_other_class"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "READ_OTHER",
+        "target_id": "loc_club"
+      },
+      {
+        "id": "a_read_sun",
+        "type": "examine",
+        "label_ar": "اطلع على ورقة رصد الشمس",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_sun_sheet"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "READ_SUN",
+        "target_id": "loc_lab"
+      },
+      {
+        "id": "a_read_water",
+        "type": "examine",
+        "label_ar": "اطلع على ورقة الري عند الفني",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_water_sheet"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "READ_WATER",
+        "target_id": "loc_lab"
+      },
+      {
+        "id": "a_view_photo",
+        "type": "examine",
+        "label_ar": "انظر إلى صورة اليوم العاشر",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_ruler_photo"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "VIEW_PHOTO",
+        "target_id": "loc_lab"
+      },
+      {
+        "id": "a_read_rima",
+        "type": "examine",
+        "label_ar": "اقرأ إفادة ريم",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_rima_green"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "READ_RIMA",
+        "target_id": "loc_lab"
+      },
+      {
+        "id": "a_read_karim_note",
+        "type": "examine",
+        "label_ar": "اقرأ إفادة كريم",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_karim_note"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "READ_KARIM_NOTE",
+        "target_id": "loc_lab"
+      },
+      {
+        "id": "a_hint",
+        "type": "request_hint",
+        "label_ar": "اطلب تلميحاً",
+        "precondition": {
+          "always": true
+        },
+        "effects": [],
+        "time_cost_units": 0,
+        "telemetry_code": "REQUEST_HINT"
+      },
+      {
+        "id": "a_accuse",
+        "type": "final_accusation",
+        "label_ar": "قدّم جوابك وجملة «كيف عرفت؟»",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "SUBMIT"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "FINAL_ACCUSATION"
+      }
+    ]
+  },
+  "state_machine": {
+    "id": "c051",
+    "initial": "briefing",
+    "type": "compound",
+    "states": {
+      "briefing": {
+        "description_ar": "الإحاطة",
+        "type": "atomic",
+        "on": {
+          "START": {
+            "target": "investigating"
+          }
+        }
+      },
+      "investigating": {
+        "description_ar": "التحقيق",
+        "type": "compound",
+        "initial": "gathering",
+        "states": {
+          "gathering": {
+            "type": "atomic",
+            "on": {
+              "OPEN_DEDUCTION": {
+                "target": "deducing"
+              }
+            }
+          },
+          "deducing": {
+            "type": "atomic",
+            "on": {
+              "BACK": {
+                "target": "gathering"
+              }
+            }
+          }
+        },
+        "on": {
+          "SUBMIT": {
+            "target": "review"
+          }
+        }
+      },
+      "review": {
+        "description_ar": "مراجعة",
+        "type": "atomic",
+        "on": {
+          "CLOSE": {
+            "target": "resolved"
+          }
+        }
+      },
+      "resolved": {
+        "description_ar": "إغلاق",
+        "type": "final"
+      }
+    }
+  },
+  "rubric": {
+    "reference_answer_ar": "الأوراق لا تكفي بعد لنحكم بأن مغلي قشور الموز ينفع ولا بأنه لا ينفع. أكبر فرق بين نبتتين، تسعة سنتيمترات، جمع بين اختلاف الموضع والماء إلى جانب نوع الماء، وهذا أخذناه من سجلات أصحاب النباتات ومن ورقتي الشمس والري المستقلتين. أما أعدل مقارنة فهي بين دانة وسليم، وفرقها ثلاثة سنتيمترات، وهو دون مدى التفاوت بين نباتات متماثلة في جدولين آخرين، ولكل معاملة نبتة واحدة. الذي يحسم تجربة مكررة بست نبتات أو أكثر لكل معاملة في الموضع نفسه وبكمية الماء نفسها. حدود الاستنتاج: لا نعرف كم يبلغ التفاوت في هذه التجربة تحديداً، و«غير كافٍ» لا تعني أن المغلي بلا أثر.",
+    "criteria": [
+      {
+        "id": "c_source",
+        "name_ar": "تصنيف المصادر",
+        "objective_ids": [
+          "lo_source"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يصنّف"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "أخطأ في الأغلب"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "نصف صحيح"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمه صحيح"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كله صحيح"
+          }
+        ]
+      },
+      {
+        "id": "c_links",
+        "name_ar": "ربط الأدلة بالفرضيات",
+        "objective_ids": [
+          "lo_diag",
+          "lo_indep"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.2,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لا روابط"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "قليلة"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "نصفها صحيح"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمها"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كلها دقيقة"
+          }
+        ]
+      },
+      {
+        "id": "c_uncertainty",
+        "name_ar": "معايرة الثقة",
+        "objective_ids": [
+          "lo_calib"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.25,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "ثقة مفرطة أو تهرّب"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "حدود قليلة"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "جزئية"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معقولة"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "معايَرة كاملة"
+          }
+        ]
+      },
+      {
+        "id": "c_revision",
+        "name_ar": "مراجعة الرأي",
+        "objective_ids": [
+          "lo_revise"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "بقي على فرضية مرفوضة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "لم يعلن فرضية"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "ثبت على فرضية سليمة دون تسمية ما يغيّرها"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "سمّى ما يغيّر رأيه"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "سمّى ما يغيّر رأيه ووثّقه"
+          }
+        ]
+      },
+      {
+        "id": "c_elimination",
+        "name_ar": "استبعاد الفرضيات الخاطئة",
+        "objective_ids": [
+          "lo_hyp"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يستبعد"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "استبعد خطأً"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "فرضية بدليل"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "فرضيتين"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كل الخاطئة"
+          }
+        ]
+      },
+      {
+        "id": "c_justification",
+        "name_ar": "جملة «كيف عرفت؟» وتسمية الفحص الحاسم",
+        "objective_ids": [
+          "lo_main"
+        ],
+        "scored_by": "human",
+        "weight": 0.2,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لا حجة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "ادعاء بلا سند"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "يذكر الفروق دون تسمية الفحص"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "يسمّي الفحص الحاسم"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "يسمّيه ويذكر الحدود وما لا يعنيه الجواب"
+          }
+        ]
+      }
+    ]
+  },
+  "hint_ladder": [
+    {
+      "id": "hg1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "قبل أن تقرر: هل الأوراق تقارن نبتتين تختلفان في شيء واحد فقط؟",
+      "trigger": {
+        "always": true
+      },
+      "assessment_weight": 0.02
+    },
+    {
+      "id": "hg2",
+      "level": 2,
+      "kind": "focus_area",
+      "text_ar": "ضع الأواني الثلاثة في جدول واحد: الموضع، ومقدار الماء، ونوعه، والطول.",
+      "trigger": {
+        "has_evidence": "ev_dana_log"
+      },
+      "assessment_weight": 0.04
+    },
+    {
+      "id": "hg3",
+      "level": 3,
+      "kind": "pointer",
+      "text_ar": "ابحث عن ورقتين لم يكتبهما أصحاب النباتات، ثم عن جدولين لنباتات متماثلة من قبل.",
+      "trigger": {
+        "has_evidence": "ev_dana_log"
+      },
+      "assessment_weight": 0.08
+    },
+    {
+      "id": "hu1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "ما الذي اختلف بين إناء دانة وإناء كريم غير نوع الماء؟",
+      "trigger": {
+        "has_evidence": "ev_dana_log"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_a_unfair"
+    },
+    {
+      "id": "hu2",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "قارن الموضع وكمية الماء في السجلين، ثم تحقق منهما في ورقة الشمس وورقة الري.",
+      "trigger": {
+        "has_evidence": "ev_karim_log"
+      },
+      "assessment_weight": 0.06,
+      "targets_inference_id": "i_a_unfair"
+    },
+    {
+      "id": "hf1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "إذا زُرعت نبتتان متماثلتان تماماً، فهل تبلغان الطول نفسه بعد عشرة أيام؟",
+      "trigger": {
+        "has_evidence": "ev_dana_log"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_a_spread"
+    },
+    {
+      "id": "hf2",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "قارن الفرق بين دانة وسليم بمدى الزيادات في الجدولين الآخرين.",
+      "trigger": {
+        "has_evidence": "ev_salim_log"
+      },
+      "assessment_weight": 0.06,
+      "targets_inference_id": "i_a_spread"
+    },
+    {
+      "id": "hn1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "هل يكفي قياس نبتة واحدة لكل معاملة لنعرف أثر المغلي؟",
+      "trigger": {
+        "has_evidence": "ev_dana_log"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_nodec"
+    },
+    {
+      "id": "hn2",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "فكّر في تجربة تكرر المعاملة نفسها على عدة نباتات متشابهة، وتبقي كل شيء آخر ثابتاً.",
+      "trigger": {
+        "all": [
+          {
+            "has_evidence": "ev_salim_log"
+          },
+          {
+            "has_evidence": "ev_last_round"
+          }
+        ]
+      },
+      "assessment_weight": 0.06,
+      "targets_inference_id": "i_nodec"
+    }
+  ],
+  "fairness_test": {
+    "requirements": {
+      "min_disjoint_proof_paths": 2,
+      "max_inference_depth": 3,
+      "all_red_herrings_refutable": true,
+      "culprit_uniquely_entailed": true,
+      "no_hidden_fact_dependency": true,
+      "max_required_actions": 10
+    },
+    "runs": []
+  },
+  "ending_explanation": {
+    "steps": [
+      {
+        "order": 1,
+        "text_ar": "ابدأ بما يحيط بكل إناء قبل أن تنظر إلى الأطوال. إناء كريم وقف على رف شمالي نال 4 ساعات شمس في ثلاثة أيام مقابل 14 للحافة الجنوبية، وتلقى 300 مل لا 500. فالتسعة سنتيمترات لا تُنسب إلى المغلي وحده.",
+        "uses_evidence_ids": [
+          "ev_dana_log",
+          "ev_karim_log",
+          "ev_sun_sheet",
+          "ev_water_sheet"
+        ],
+        "inference_id": "i_a_unfair"
+      },
+      {
+        "order": 2,
+        "text_ar": "الزوج الأعدل هو دانة وسليم: حافة واحدة، و500 مل لكل منهما، ولا يختلفان إلا في نوع الماء. الفرق 24 − 21 = 3 سم.",
+        "uses_evidence_ids": [
+          "ev_salim_log",
+          "ev_ruler_photo",
+          "ev_water_sheet"
+        ],
+        "inference_id": "i_b_spread"
+      },
+      {
+        "order": 3,
+        "text_ar": "ثم اسأل: كم تتفاوت نباتات متماثلة دون أي مغلي؟ في الجدول القديم الزيادات 13 و17 و15 و11 و18، أي مدى 18 − 11 = 7. وفي بطاقة الصف الآخر 14 و18 و12 و17، أي مدى 18 − 12 = 6. الثلاثة أقل من الستة والسبعة.",
+        "uses_evidence_ids": [
+          "ev_last_round",
+          "ev_other_class"
+        ],
+        "inference_id": "i_a_spread"
+      },
+      {
+        "order": 4,
+        "text_ar": "مع نبتة واحدة فقط لكل معاملة لا نميّز أثر المغلي من تفاوت طبيعي. فلا يصح القول إنه ثبت نفعه، ولا القول إنه ثبت أنه بلا أثر.",
+        "uses_evidence_ids": [
+          "ev_dana_log",
+          "ev_salim_log"
+        ],
+        "inference_id": "i_rule_sun"
+      },
+      {
+        "order": 5,
+        "text_ar": "أما شك كريم فلا قياس يسنده، والصورة التي التقطتها المشرفة تطابق السجلات. ولون الأوراق في إفادة ريم لم يُقَس، وقارنت به نبتة في موضع آخر.",
+        "uses_evidence_ids": [
+          "ev_ruler_photo",
+          "ev_karim_note",
+          "ev_rima_green"
+        ],
+        "inference_id": "i_rule_fudged"
+      },
+      {
+        "order": 6,
+        "text_ar": "الحكم المسؤول: لا يكفي بعد. والفحص الذي يحسم أن تُزرع ست نبتات أو أكثر لكل معاملة، في الموضع نفسه وبالمقدار نفسه من الماء، ثم تُقارن مداها ومتوسطها.",
+        "uses_evidence_ids": [
+          "ev_salim_log",
+          "ev_last_round",
+          "ev_other_class"
+        ],
+        "inference_id": "i_support_insufficient"
+      }
+    ],
+    "alternative_paths_ar": [
+      "يكفي مسار السجلات الثلاثة وجدول الفصل الماضي لبيان عدم عدالة المقارنة وصغر الفرق، من غير الورقتين والصورة وبطاقة الصف الآخر.",
+      "ويكفي مسار ورقة الشمس وورقة الري والصورة وبطاقة الصف الآخر، من غير سجلات الطلاب؛ والأقوى أن يتفق المساران."
+    ],
+    "what_evidence_could_not_show_ar": [
+      "لا نعرف كم يبلغ التفاوت بين النباتات في هذه التجربة تحديداً؛ قدّرناه من جدولين آخرين.",
+      "لا نعرف أن المغلي بلا أثر؛ فقد يكون أثره صغيراً ولا تكشفه نبتة واحدة.",
+      "«لا يكفي بعد» لا تعني أن دانة مخطئة ولا أنها مصيبة؛ تعني أن الأوراق لا تحسم.",
+      "لا نعرف كم امتصت النبتة من الماء فعلاً، فقد حسبنا ما صُبّ فقط."
+    ],
+    "science_notes_ar": [
+      "المقارنة العادلة تغيّر شيئاً واحداً وتبقي الباقي ثابتاً: الموضع والماء والإناء والبذور.",
+      "فرق بين نبتتين لا يدل بذاته على أثر؛ فقد تتفاوت نباتات متماثلة بفرق قريب منه من غير أي معاملة.",
+      "التكرار على عدة نباتات يكشف حجم التفاوت الطبيعي ويجعل الفرق الحقيقي، إن وُجد، أوضح.",
+      "«غير كافٍ» جواب كامل حين تسنده بما أثبتّه وبتسمية الفحص الناقص؛ والإفراط في استعماله تهرّب لا معايرة.",
+      "لون الأوراق ونبرة الثقة لا يقيسان أثر المعاملة؛ المعوّل عليه القياسات والسجلات.",
+      "بطاقة الأصل: القضية أصلية من ATHAR، وبنيتها من نمط «لا يكفي بعد»؛ لا أحداث حقيقية فيها."
+    ]
+  },
+  "expert_review": [
+    {
+      "role": "narrative_editor",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-11-04",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "scientific_reviewer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-11-04",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "learning_designer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-11-04",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "age_appropriateness",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-11-04",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "cultural_reviewer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-11-04",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "legal_rights",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-11-04",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "safety",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-11-04",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    }
+  ]
+}

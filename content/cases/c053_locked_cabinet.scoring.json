@@ -1,0 +1,146 @@
+{
+  "case_id": "c053_locked_cabinet",
+  "accepted_conclusions": {
+    "h_inside": {
+      "grade": 1,
+      "note_ar": "استنتاج متسق مع الأدلة ويتطلب ذكر حدوده."
+    },
+    "h_thief": {
+      "grade": 0,
+      "note_ar": "يفترض فتح الباب بلا قرينة؛ سجل المفاتيح والنسخة الاحتياطية والشريط وغبار الرف تنفيه."
+    },
+    "h_before": {
+      "grade": 0,
+      "note_ar": "صورة مراد بعد الختم تُظهر الميدالية على الرف."
+    },
+    "h_borrowed": {
+      "grade": 0,
+      "note_ar": "لا إعارة مسجلة ولم يُفتح الباب لأي نقل."
+    }
+  },
+  "confidence_band": {
+    "h_inside": [
+      70,
+      95
+    ],
+    "h_thief": [
+      0,
+      10
+    ],
+    "h_before": [
+      0,
+      10
+    ],
+    "h_borrowed": [
+      0,
+      10
+    ]
+  },
+  "source_key": {
+    "ev_report": "claim",
+    "ev_keylog": "primary_record",
+    "ev_spare": "primary_record",
+    "ev_seal": "primary_record",
+    "ev_photo_thu": "primary_record",
+    "ev_register": "primary_record",
+    "ev_murad": "claim",
+    "ev_sameer": "claim",
+    "ev_inventory": "public_document",
+    "ev_maint": "primary_record",
+    "ev_photo_front": "primary_record",
+    "ev_photo_dust": "primary_record",
+    "ev_floor": "primary_record",
+    "ev_open": "primary_record"
+  },
+  "link_key": {
+    "h_inside": {
+      "ev_seal": "supports",
+      "ev_keylog": "supports",
+      "ev_spare": "supports",
+      "ev_inventory": "supports",
+      "ev_maint": "supports",
+      "ev_photo_front": "supports",
+      "ev_photo_dust": "supports",
+      "ev_floor": "supports",
+      "ev_open": "supports",
+      "ev_report": "neutral",
+      "ev_murad": "neutral"
+    },
+    "h_thief": {
+      "ev_register": "supports",
+      "ev_murad": "supports",
+      "ev_report": "neutral",
+      "ev_keylog": "weakens",
+      "ev_spare": "weakens",
+      "ev_seal": "weakens",
+      "ev_photo_dust": "weakens",
+      "ev_open": "weakens"
+    },
+    "h_before": {
+      "ev_photo_thu": "weakens",
+      "ev_seal": "neutral",
+      "ev_report": "neutral"
+    },
+    "h_borrowed": {
+      "ev_register": "weakens",
+      "ev_keylog": "weakens",
+      "ev_seal": "weakens",
+      "ev_murad": "neutral"
+    }
+  },
+  "required_limits": [
+    "l_when_fell",
+    "l_logs_trust"
+  ],
+  "valid_mind_changers": [
+    "m_seal_torn",
+    "m_key_taken",
+    "m_hand_marks"
+  ],
+  "invalid_limits": [
+    "l_invalid_motive",
+    "l_invalid_empty",
+    "l_invalid_quiet"
+  ],
+  "decisive_evidence": [
+    "ev_seal",
+    "ev_keylog",
+    "ev_spare",
+    "ev_photo_dust",
+    "ev_photo_front",
+    "ev_inventory",
+    "ev_maint",
+    "ev_floor"
+  ],
+  "lab_requirement": null,
+  "refuted_hypotheses": [
+    "h_thief",
+    "h_before",
+    "h_borrowed"
+  ],
+  "transfer_key": {
+    "valid": [
+      "o1",
+      "o2",
+      "o3",
+      "o4"
+    ],
+    "invalid": [
+      "o5",
+      "o6",
+      "o7"
+    ]
+  },
+  "criteria_map": {
+    "c_source": "source_typing",
+    "c_links": "hypothesis_links",
+    "c_uncertainty": "uncertainty",
+    "c_revision": "revision",
+    "c_elimination": "elimination",
+    "c_justification": "justification_human"
+  },
+  "caps": {
+    "no_citations_max": 45,
+    "no_conflict_resolution_max": 65
+  }
+}

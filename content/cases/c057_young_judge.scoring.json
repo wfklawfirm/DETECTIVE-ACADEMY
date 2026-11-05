@@ -1,0 +1,143 @@
+{
+  "case_id": "c057_young_judge",
+  "accepted_conclusions": {
+    "h_robotics": {
+      "grade": 0,
+      "note_ar": "يعدّ الأوراق جلسات محسوبة، والعدّ بعد تطبيق شروط اللائحة يخالفه."
+    },
+    "h_theatre": {
+      "grade": 1,
+      "note_ar": "استنتاج متسق مع الأدلة ويتطلب ذكر حدوده."
+    },
+    "h_tie": {
+      "grade": 0,
+      "note_ar": "يقوم على تطبيق الحد الجديد بأثر رجعي أو على إسقاط جلسة تستوفي الشرط الساري وقتها."
+    },
+    "h_undecided": {
+      "grade": 0,
+      "note_ar": "يتهرب من رأي تسنده سجلات مستقلة متفقة، مع بقاء هامش الخطأ مذكوراً."
+    }
+  },
+  "confidence_band": {
+    "h_robotics": [
+      0,
+      10
+    ],
+    "h_theatre": [
+      60,
+      85
+    ],
+    "h_tie": [
+      0,
+      15
+    ],
+    "h_undecided": [
+      0,
+      10
+    ]
+  },
+  "source_key": {
+    "ev_rule_text": "public_document",
+    "ev_club_form": "redisplay",
+    "ev_council_minutes": "public_document",
+    "ev_posted_notice": "public_document",
+    "ev_robot_claim": "claim",
+    "ev_theatre_claim": "claim",
+    "ev_robot_sheets": "primary_record",
+    "ev_theatre_sheets": "primary_record",
+    "ev_room_log": "primary_record",
+    "ev_hala_diary": "primary_record",
+    "ev_fair_notice": "public_document",
+    "ev_popularity": "claim"
+  },
+  "link_key": {
+    "h_theatre": {
+      "ev_rule_text": "supports",
+      "ev_club_form": "supports",
+      "ev_council_minutes": "supports",
+      "ev_posted_notice": "supports",
+      "ev_robot_sheets": "supports",
+      "ev_theatre_sheets": "supports",
+      "ev_room_log": "supports",
+      "ev_hala_diary": "supports",
+      "ev_fair_notice": "supports",
+      "ev_robot_claim": "weakens",
+      "ev_popularity": "neutral"
+    },
+    "h_robotics": {
+      "ev_robot_claim": "supports",
+      "ev_popularity": "neutral",
+      "ev_robot_sheets": "weakens",
+      "ev_theatre_sheets": "weakens",
+      "ev_room_log": "weakens",
+      "ev_hala_diary": "weakens",
+      "ev_fair_notice": "weakens",
+      "ev_rule_text": "weakens"
+    },
+    "h_tie": {
+      "ev_robot_claim": "supports",
+      "ev_theatre_claim": "supports",
+      "ev_rule_text": "weakens",
+      "ev_posted_notice": "weakens",
+      "ev_council_minutes": "weakens",
+      "ev_theatre_sheets": "weakens"
+    },
+    "h_undecided": {
+      "ev_room_log": "weakens",
+      "ev_hala_diary": "weakens",
+      "ev_robot_sheets": "weakens",
+      "ev_theatre_sheets": "weakens"
+    }
+  },
+  "required_limits": [
+    "l_margin_one",
+    "l_rule_scope"
+  ],
+  "valid_mind_changers": [
+    "m_miscount",
+    "m_log_mismatch"
+  ],
+  "invalid_limits": [
+    "l_invalid_sheets",
+    "l_invalid_retro"
+  ],
+  "decisive_evidence": [
+    "ev_rule_text",
+    "ev_posted_notice",
+    "ev_robot_sheets",
+    "ev_theatre_sheets",
+    "ev_room_log",
+    "ev_hala_diary"
+  ],
+  "lab_requirement": null,
+  "timeline_requirement": [
+    {
+      "evidence_id": "ev_council_minutes",
+      "utc_minute": 840,
+      "tol": 10
+    },
+    {
+      "evidence_id": "ev_posted_notice",
+      "utc_minute": 2040,
+      "tol": 10
+    }
+  ],
+  "refuted_hypotheses": [
+    "h_robotics",
+    "h_tie",
+    "h_undecided"
+  ],
+  "criteria_map": {
+    "c_source": "source_typing",
+    "c_conflict": "conflict_resolution",
+    "c_links": "hypothesis_links",
+    "c_uncertainty": "uncertainty",
+    "c_revision": "revision",
+    "c_elimination": "elimination",
+    "c_justification": "justification_human"
+  },
+  "caps": {
+    "no_citations_max": 45,
+    "no_conflict_resolution_max": 70
+  }
+}

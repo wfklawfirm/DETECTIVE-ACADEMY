@@ -1,0 +1,2165 @@
+{
+  "schema_version": "0.1.0",
+  "case_id": "c053_locked_cabinet",
+  "case_version": "0.1.0",
+  "meta": {
+    "title_ar": "الميدالية في الخزانة المغلقة",
+    "title_en": "The Medal in the Sealed Cabinet",
+    "age_band": "13-15",
+    "estimated_minutes": 25,
+    "difficulty": 2,
+    "content_flags": [
+      "no_violence"
+    ],
+    "knowledge_object_refs": [
+      "KO-NP-02-003",
+      "KO-NP-02-030",
+      "KO-RS-06-008",
+      "KO-RS-05-004",
+      "KO-RS-05-014",
+      "KO-RS-06-017",
+      "KO-RS-05-001",
+      "KO-RS-05-002",
+      "KO-RS-05-003",
+      "KO-RS-06-001",
+      "KO-RS-06-021",
+      "KO-RS-06-009"
+    ],
+    "locale": "ar",
+    "dialogue_register": "msa",
+    "authors": [
+      "فريق أثر التحريري (مسودة بمساعدة الذكاء الاصطناعي، لم تُراجَع بشرياً بعد)"
+    ]
+  },
+  "premise": {
+    "hook_ar": "قبل وصول ضيوف المدرسة بنصف ساعة، اختفت ميدالية نحاسية من رف خزانة مغلقة وعليها ختم لم يتحرك. كيف يغيب شيء من مكان لم يُفتح؟",
+    "player_role_ar": "أنت عضو في فريق مراجعة الركن بنادي المتحف في مدرسة الواحة، وطُلب منك رأي معلّل في غياب الميدالية دون اتهام أحد قبل أن تثبت السجلات شيئاً.",
+    "setting_ar": "مدرسة الواحة في مدينة تلّ الزيتون المتخيلة، ركن المتحف صباح الجمعة قبل يوم الأبواب المفتوحة. الأوقات بساعة المدرسة.",
+    "public_fact_ids": [
+      "f_medal_gone",
+      "f_sealed_locked",
+      "f_medal_desc"
+    ],
+    "assumed_general_knowledge_ar": [
+      "القطعة المسطحة الملساء تنزلق على الزجاج إذا مال أو اهتز",
+      "القطعة التي يقل قطرها عن عرض فتحة تمر منها",
+      "الغبار يحتفظ بأثر ما يرفعه أو يجرّه",
+      "غياب شيء عن النظر لا يعني خروجه من مكانه",
+      "الرغبة في استعارة شيء ليست دليلاً على أخذه"
+    ]
+  },
+  "entities": {
+    "characters": [
+      {
+        "id": "huda",
+        "name_ar": "هدى الشامي",
+        "role": "witness",
+        "age_descriptor_ar": "طالبة في الصف التاسع، أمينة ركن المتحف",
+        "persona_ar": "منظمة ودقيقة، تدوّن ما تراه بتاريخه ووقته، وتخاف على مقتنيات الركن لكنها تقبل أن يُراجَع كلامها.",
+        "motives_ar": [
+          "أن تستقبل الضيوف والركن مرتب",
+          "ألا يُظلم أحد بسبب ظن"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        }
+      },
+      {
+        "id": "nizar",
+        "name_ar": "الأستاذ نزار العطار",
+        "role": "authority",
+        "age_descriptor_ar": "معلم علوم ومشرف نادي المتحف",
+        "persona_ar": "هادئ ومنهجي، يحتفظ بالسجلات ويطلب الدليل قبل الحكم.",
+        "motives_ar": [
+          "أن يعرف أين الميدالية",
+          "أن يحمي الطلاب من الاتهام بلا دليل"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        }
+      },
+      {
+        "id": "murad",
+        "name_ar": "مراد القاسم",
+        "role": "suspect",
+        "age_descriptor_ar": "طالب في الصف الثامن، عضو نادي التصوير",
+        "persona_ar": "متحمس للتصوير وصريح، منزعج لأن طلبه رُفض لكنه قبل القرار ولا يخفي ذلك.",
+        "motives_ar": [
+          "أن يبرّئ نفسه",
+          "أن يصوّر الركن للمسابقة"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        }
+      },
+      {
+        "id": "sameer",
+        "name_ar": "العم سمير الحداد",
+        "role": "suspect",
+        "age_descriptor_ar": "عامل النظافة والصيانة في المدرسة",
+        "persona_ar": "قليل الكلام، يعمل بحسب ورقة المهام، ويرى أن تنظيف الأرضية لا شأن له بالمعروضات.",
+        "motives_ar": [
+          "أن ينهي عمله قبل وصول الطلاب",
+          "ألا يُنسب إليه ما لم يفعله"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        }
+      }
+    ],
+    "locations": [
+      {
+        "id": "loc_museum",
+        "name_ar": "ركن المتحف",
+        "description_ar": "زاوية في الممر الشرقي فيها خزانة العرض الزجاجية وطاولة صغيرة."
+      },
+      {
+        "id": "loc_office",
+        "name_ar": "غرفة المشرف",
+        "description_ar": "غرفة صغيرة فيها لوحة المفاتيح ودفتر الإعارة ودفتر الصيانة."
+      }
+    ],
+    "objects": [
+      {
+        "id": "obj_medal",
+        "name_ar": "الميدالية النحاسية",
+        "description_ar": "ميدالية الدفعة الأولى، قطعة مسطحة قطرها ثلاثة سنتمترات."
+      },
+      {
+        "id": "obj_cabinet",
+        "name_ar": "خزانة العرض",
+        "description_ar": "خزانة زجاج وخشب بباب أمامي واحد."
+      },
+      {
+        "id": "obj_shelf",
+        "name_ar": "الرف الزجاجي",
+        "description_ar": "رف واحد على أربعة مساند صغيرة."
+      },
+      {
+        "id": "obj_seal",
+        "name_ar": "شريط الختم",
+        "description_ar": "شريط ورقي بتوقيعين ملصق على حافة الباب."
+      },
+      {
+        "id": "obj_key_log",
+        "name_ar": "سجل المفتاح",
+        "description_ar": "صفحة في لوحة المفاتيح تدوّن من أخذ المفتاح ومتى."
+      }
+    ],
+    "organizations": [
+      {
+        "id": "org_club",
+        "name_ar": "نادي المتحف",
+        "description_ar": "نادٍ طلابي في مدرسة الواحة يهتم بمقتنيات المدرسة القديمة."
+      }
+    ]
+  },
+  "truth": {
+    "solution": {
+      "culprit_ids": [
+        "sameer"
+      ],
+      "summary_ar": "لم تُسرق الميدالية ولم تُعَر، ولم تخرج من الخزانة. كان المسند الخلفي الأيسر للرف مخلخلاً، فلما أزاح العم سمير الخزانة صباح الجمعة لتلميع الأرضية مال الرف واهتز، فانزلقت القطعة المسطحة الملساء ومرت من فتحة السلك الخلفية إلى حجرة تحت الرف. بقي الباب والختم سليمين، وكانت القطعة قد خرجت من نظر من يقف أمام الزجاج فقط.",
+      "key_fact_ids": [
+        "f_in_base"
+      ]
+    },
+    "facts": [
+      {
+        "id": "f_medal_gone",
+        "statement_ar": "صباح الجمعة 8:30 كان الرف العلوي في خزانة ركن المتحف خالياً من الميدالية النحاسية، وفيه الكتاب والقارورة.",
+        "kind": "state",
+        "subject_ids": [
+          "obj_medal",
+          "obj_cabinet"
+        ],
+        "spoiler_level": 0,
+        "time": {
+          "start_min": 990,
+          "precision": "exact"
+        },
+        "location_id": "loc_museum"
+      },
+      {
+        "id": "f_sealed_locked",
+        "statement_ar": "أُقفلت الخزانة وأُلصق عليها شريط ختم بتوقيعين الخميس 4:40 مساءً، وكان الباب مقفلاً والشريط ملتصقاً عند الفحص صباح الجمعة.",
+        "kind": "state",
+        "subject_ids": [
+          "obj_cabinet",
+          "obj_seal"
+        ],
+        "spoiler_level": 0,
+        "time": {
+          "start_min": 40,
+          "precision": "exact"
+        },
+        "location_id": "loc_museum"
+      },
+      {
+        "id": "f_medal_desc",
+        "statement_ar": "الميدالية قطعة نحاسية مسطحة ملساء قطرها ثلاثة سنتمترات، وكانت موضوعة على زجاج الرف بلا حامل.",
+        "kind": "attribute",
+        "subject_ids": [
+          "obj_medal"
+        ],
+        "spoiler_level": 0,
+        "location_id": "loc_museum"
+      },
+      {
+        "id": "f_key_unused",
+        "statement_ar": "لم يُسجَّل أخذ المفتاح المتداول بين 4:42 مساءً الخميس و8:40 صباح الجمعة، والمفتاح الاحتياطي ما زال في مظروفه المختوم.",
+        "kind": "absence",
+        "subject_ids": [
+          "obj_key_log"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 42,
+          "end_min": 1000,
+          "precision": "exact"
+        },
+        "location_id": "loc_office"
+      },
+      {
+        "id": "f_seal_intact",
+        "statement_ar": "بقي شريط الختم كاملاً وملتصق الحواف حتى فحصه الأستاذ نزار 8:40.",
+        "kind": "state",
+        "subject_ids": [
+          "obj_seal"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 1000,
+          "precision": "exact"
+        },
+        "location_id": "loc_museum"
+      },
+      {
+        "id": "f_there_after_seal",
+        "statement_ar": "صورة التُقطت 4:47 مساءً، أي بعد الختم بسبع دقائق، تُظهر الميدالية على الرف وشريط الختم على الباب.",
+        "kind": "event",
+        "subject_ids": [
+          "murad",
+          "obj_medal"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 47,
+          "precision": "exact"
+        },
+        "location_id": "loc_museum"
+      },
+      {
+        "id": "f_no_loan",
+        "statement_ar": "لا إعارة مسجَّلة للميدالية ولا إذن من المشرف بنقلها.",
+        "kind": "absence",
+        "subject_ids": [
+          "obj_medal"
+        ],
+        "spoiler_level": 1,
+        "location_id": "loc_office"
+      },
+      {
+        "id": "f_murad_asked",
+        "statement_ar": "طلب مراد قبل أسبوع استعارة الميدالية لمسابقة التصوير فلم يوافق المشرف.",
+        "kind": "event",
+        "subject_ids": [
+          "murad",
+          "nizar"
+        ],
+        "spoiler_level": 1,
+        "location_id": "loc_office"
+      },
+      {
+        "id": "f_cab_moved",
+        "statement_ar": "أزاح العم سمير الخزانة نحو عشرين سنتمتراً بين 7:05 و7:40 صباح الجمعة ليلمّع الأرضية خلفها، ثم أعادها قريباً من موضعها.",
+        "kind": "event",
+        "subject_ids": [
+          "sameer",
+          "obj_cabinet"
+        ],
+        "spoiler_level": 2,
+        "time": {
+          "start_min": 905,
+          "end_min": 940,
+          "precision": "exact"
+        },
+        "location_id": "loc_museum"
+      },
+      {
+        "id": "f_support_loose",
+        "statement_ar": "المسند الخلفي الأيسر للرف الزجاجي مخلخل منذ أسابيع، وطلب تثبيته لم يُنفَّذ.",
+        "kind": "state",
+        "subject_ids": [
+          "obj_shelf"
+        ],
+        "spoiler_level": 2,
+        "location_id": "loc_museum"
+      },
+      {
+        "id": "f_gap_bay",
+        "statement_ar": "الرف أقصر من عمق الخزانة بأربعة سنتمترات ليمرّ سلك الإضاءة، وتحته حجرة مغلقة داخل جسم الخزانة لا تُرى من الأمام.",
+        "kind": "attribute",
+        "subject_ids": [
+          "obj_cabinet",
+          "obj_shelf"
+        ],
+        "spoiler_level": 2,
+        "location_id": "loc_museum"
+      },
+      {
+        "id": "f_shelf_tilted",
+        "statement_ar": "الرف الزجاجي مائل: طرفه الأيسر الخلفي أخفض من بقية أطرافه.",
+        "kind": "state",
+        "subject_ids": [
+          "obj_shelf"
+        ],
+        "spoiler_level": 2,
+        "time": {
+          "start_min": 992,
+          "precision": "approx"
+        },
+        "location_id": "loc_museum"
+      },
+      {
+        "id": "f_slide_trail",
+        "statement_ar": "في غبار الرف دائرة نظيفة حيث كانت الميدالية، يخرج منها خط نظيف رفيع مستقيم إلى الحافة الخلفية عند الزاوية اليسرى.",
+        "kind": "state",
+        "subject_ids": [
+          "obj_shelf",
+          "obj_medal"
+        ],
+        "spoiler_level": 2,
+        "time": {
+          "start_min": 993,
+          "precision": "approx"
+        },
+        "location_id": "loc_museum"
+      },
+      {
+        "id": "f_no_lift",
+        "statement_ar": "لم تُرفع الميدالية بيد: أثرها خط متصل في الغبار، وغبار الكتاب والقارورة حولهما سليم بلا بصمات.",
+        "kind": "absence",
+        "subject_ids": [
+          "obj_shelf"
+        ],
+        "spoiler_level": 2,
+        "location_id": "loc_museum"
+      },
+      {
+        "id": "f_no_entry",
+        "statement_ar": "لم يُفتح باب الخزانة بين ختمها صباحاً وفحصها في اليوم التالي.",
+        "kind": "absence",
+        "subject_ids": [
+          "obj_cabinet"
+        ],
+        "spoiler_level": 2,
+        "time": {
+          "start_min": 42,
+          "end_min": 1000,
+          "precision": "exact"
+        },
+        "location_id": "loc_museum"
+      },
+      {
+        "id": "f_in_base",
+        "statement_ar": "انزلقت الميدالية على الرف المائل وسقطت من الفتحة الخلفية إلى أسفل الخزانة، فهي لم تغادرها.",
+        "kind": "event",
+        "subject_ids": [
+          "obj_medal",
+          "obj_cabinet"
+        ],
+        "spoiler_level": 3,
+        "time": {
+          "start_min": 905,
+          "end_min": 990,
+          "precision": "approx"
+        },
+        "location_id": "loc_museum"
+      }
+    ],
+    "claims": [
+      {
+        "id": "cl_someone_opened",
+        "statement_ar": "الباب لا يُفتح إلا بمفتاح، فالأرجح أن شخصاً فتحه وأخذ الميدالية.",
+        "kind": "honest_mistake",
+        "held_by": [
+          "huda"
+        ],
+        "true_fact_id": "f_no_entry",
+        "contradicted_by_evidence_ids": [
+          "ev_keylog",
+          "ev_spare",
+          "ev_seal"
+        ]
+      },
+      {
+        "id": "cl_changed_nothing",
+        "statement_ar": "لم أغيّر في الخزانة شيئاً.",
+        "kind": "half_truth",
+        "held_by": [
+          "sameer"
+        ],
+        "true_fact_id": "f_cab_moved",
+        "contradicted_by_evidence_ids": [
+          "ev_floor"
+        ]
+      }
+    ]
+  },
+  "timeline": [
+    {
+      "id": "te_seal",
+      "description_ar": "هدى والأستاذ نزار يقفلان الخزانة بالمفتاح ويلصقان شريط الختم 4:40، ثم يُعاد المفتاح إلى اللوحة 4:42.",
+      "time": {
+        "start_min": 30,
+        "end_min": 42,
+        "precision": "exact"
+      },
+      "location_id": "loc_museum",
+      "actor_ids": [
+        "huda",
+        "nizar"
+      ],
+      "fact_ids": [
+        "f_sealed_locked"
+      ],
+      "motivated_by_ar": "حماية مقتنيات الركن قبل يوم الأبواب المفتوحة"
+    },
+    {
+      "id": "te_photo",
+      "description_ar": "مراد يصوّر الخزانة من الأمام بهاتفه.",
+      "time": {
+        "start_min": 47,
+        "precision": "exact"
+      },
+      "location_id": "loc_museum",
+      "actor_ids": [
+        "murad"
+      ],
+      "fact_ids": [
+        "f_there_after_seal",
+        "f_medal_desc"
+      ],
+      "motivated_by_ar": "تصوير ضوء الركن لنادي التصوير"
+    },
+    {
+      "id": "te_move",
+      "description_ar": "العم سمير يزيح الخزانة نحو عشرين سنتمتراً ويلمّع الأرضية ثم يعيدها.",
+      "time": {
+        "start_min": 905,
+        "end_min": 940,
+        "precision": "exact"
+      },
+      "location_id": "loc_museum",
+      "actor_ids": [
+        "sameer"
+      ],
+      "fact_ids": [
+        "f_cab_moved",
+        "f_in_base"
+      ],
+      "motivated_by_ar": "تنفيذ ورقة المهام وتلميع الأرضية قبل وصول الطلاب",
+      "caused_by_event_ids": [
+        "te_seal"
+      ]
+    },
+    {
+      "id": "te_notice",
+      "description_ar": "هدى تجد الرف خالياً وتصوّره من خلف الزجاج 8:32 و8:33 وتبلّغ الأستاذ نزار 8:35.",
+      "time": {
+        "start_min": 990,
+        "end_min": 995,
+        "precision": "exact"
+      },
+      "location_id": "loc_museum",
+      "actor_ids": [
+        "huda"
+      ],
+      "witness_ids": [
+        "huda"
+      ],
+      "fact_ids": [
+        "f_medal_gone",
+        "f_shelf_tilted",
+        "f_slide_trail",
+        "f_no_lift"
+      ],
+      "motivated_by_ar": "تجهيز الركن لضيوف التاسعة",
+      "caused_by_event_ids": [
+        "te_move"
+      ]
+    },
+    {
+      "id": "te_check",
+      "description_ar": "الأستاذ نزار يأخذ المفتاح 8:40 ويفحص الشريط قبل الفتح.",
+      "time": {
+        "start_min": 1000,
+        "precision": "exact"
+      },
+      "location_id": "loc_museum",
+      "actor_ids": [
+        "nizar"
+      ],
+      "fact_ids": [
+        "f_seal_intact",
+        "f_key_unused",
+        "f_no_entry"
+      ],
+      "motivated_by_ar": "فحص الخزانة قبل فتحها بحضور شهود"
+    },
+    {
+      "id": "te_open",
+      "description_ar": "فتح الخزانة ورفع الرف الزجاجي بحضور الأستاذ نزار وهدى وسكرتيرة الإدارة 9:10.",
+      "time": {
+        "start_min": 1030,
+        "precision": "exact"
+      },
+      "location_id": "loc_museum",
+      "actor_ids": [
+        "nizar",
+        "huda"
+      ],
+      "fact_ids": [
+        "f_in_base"
+      ],
+      "motivated_by_ar": "التحقق من الاستنتاج بحضور شهود"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_report",
+      "title_ar": "بلاغ هدى إلى المشرف",
+      "kind": "documentary",
+      "content_ar": "بلاغ كتبته هدى الشامي بخطها إلى الأستاذ نزار، الجمعة 8:35 صباحاً:\n«وصلت 8:30 لأجهّز الركن قبل ضيوف التاسعة. على الرف العلوي الكتاب والقارورة، أما الميدالية النحاسية فليست في مكانها. الباب مقفل وشريط الختم ملتصق كما تركناه أمس. لم ألمس شيئاً. التقطت صورتين من خلف الزجاج: الأولى 8:32 والثانية 8:33.»",
+      "acquired_by_action_ids": [
+        "a_read_report"
+      ],
+      "supports_fact_ids": [
+        "f_medal_gone",
+        "f_sealed_locked"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "بلاغ كتبته صاحبته بنفسها؛ يخبر بما رأته وقت الدخول فقط، ولا يخبر عمّا جرى قبل وصولها.",
+      "location_id": "loc_museum"
+    },
+    {
+      "id": "ev_keylog",
+      "title_ar": "سجل لوحة المفاتيح",
+      "kind": "documentary",
+      "content_ar": "سجل لوحة المفاتيح في غرفة المشرف، الصفحة الخاصة بمفتاح خزانة المتحف (رقم 1، الحلقة الحمراء):\nالخميس 4:30 مساءً: أخذه هدى الشامي للختم. أُعيد 4:42 مساءً.\nالجمعة 8:40 صباحاً: أخذه الأستاذ نزار العطار.\nلا سطر آخر بين التاريخين. غرفة المشرف تُقفل بعد الدوام ومفتاحها مع الأستاذ نزار.",
+      "acquired_by_action_ids": [
+        "a_read_keylog"
+      ],
+      "supports_fact_ids": [
+        "f_key_unused"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يثبت ما دُوّن فيه فقط؛ لو أُخذ مفتاح بلا تدوين لما ظهر هنا، ولذلك يُقرأ مع سجلات أخرى مستقلة عنه.",
+      "location_id": "loc_office",
+      "contradicts_claim_ids": [
+        "cl_someone_opened"
+      ]
+    },
+    {
+      "id": "ev_spare",
+      "title_ar": "مظروف المفتاح الاحتياطي",
+      "kind": "documentary",
+      "content_ar": "وصف دوّنته سكرتيرة الإدارة الجمعة 9:00 صباحاً لمظروف المفتاح الاحتياطي في خزنة الإدارة: مظروف أبيض مغلق بشمع أحمر عليه ختم الإدارة وتوقيع المديرة بتاريخ بداية الفصل، والشمع غير مكسور. سجل الخزنة: آخر فتح قبل ثلاثة أسابيع لأوراق لا علاقة لها بالمتحف.",
+      "acquired_by_action_ids": [
+        "a_read_spare"
+      ],
+      "supports_fact_ids": [
+        "f_key_unused"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يخص نسخة احتياطية واحدة معروفة؛ لا يقول شيئاً عن أي مفتاح آخر قد يكون موجوداً ولا يعلمه أحد.",
+      "location_id": "loc_office",
+      "contradicts_claim_ids": [
+        "cl_someone_opened"
+      ]
+    },
+    {
+      "id": "ev_seal",
+      "title_ar": "شريط الختم على الباب",
+      "kind": "physical",
+      "content_ar": "فحصه الأستاذ نزار قبل الفتح الجمعة 8:40: شريط ورقي أبيض عرضه ثلاثة سنتمترات، ملصق بين حافة الباب والإطار. عليه توقيع هدى وتوقيع الأستاذ نزار وعبارة «الخميس 4:40 م». الشريط كامل غير ممزق، وحوافه ملتصقة بالخشب ولا أثر لرفعها.",
+      "acquired_by_action_ids": [
+        "a_check_seal"
+      ],
+      "supports_fact_ids": [
+        "f_sealed_locked",
+        "f_seal_intact"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يبيّن حال الباب عند الفحص؛ لا يخبر عمّا في داخل الخزانة ولا عن حالة الرف.",
+      "location_id": "loc_museum",
+      "contradicts_claim_ids": [
+        "cl_someone_opened"
+      ]
+    },
+    {
+      "id": "ev_photo_thu",
+      "title_ar": "صورة مراد من الخميس",
+      "kind": "digital",
+      "content_ar": "صورة التقطها مراد القاسم بهاتفه ووقتها المسجّل في الهاتف 4:47 مساءً الخميس. تُظهر الخزانة من الأمام: على الرف العلوي الكتاب والقارورة والميدالية النحاسية، وعلى حافة الباب شريط أبيض بتوقيعين. وفي طرف الصورة ساعة الجدار تشير إلى الرابعة وسبع وأربعين دقيقة تقريباً.",
+      "acquired_by_action_ids": [
+        "a_view_photo_thu"
+      ],
+      "supports_fact_ids": [
+        "f_there_after_seal",
+        "f_medal_desc"
+      ],
+      "reliability": "strong",
+      "limits_ar": "تثبت وجود الميدالية بعد الختم بسبع دقائق فقط؛ لا تخبر شيئاً عن الليل ولا عن صباح الجمعة.",
+      "location_id": "loc_museum"
+    },
+    {
+      "id": "ev_register",
+      "title_ar": "دفتر الإعارة في غرفة المشرف",
+      "kind": "documentary",
+      "content_ar": "صفحة الميدالية النحاسية في دفتر الإعارة: آخر سطر «لا إعارة حالية». وتحته ملاحظة بخط الأستاذ نزار قبل أسبوع: «طلب الطالب مراد القاسم استعارة الميدالية لمسابقة التصوير. لم أوافق؛ تبقى في الخزانة حتى يوم الأبواب المفتوحة.»",
+      "acquired_by_action_ids": [
+        "a_read_register"
+      ],
+      "supports_fact_ids": [
+        "f_no_loan",
+        "f_murad_asked"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يبيّن غياب الإعارة المسجّلة وطلباً مرفوضاً؛ الرغبة في الاستعارة ليست أخذاً.",
+      "location_id": "loc_office"
+    },
+    {
+      "id": "ev_murad",
+      "title_ar": "إفادة مراد",
+      "kind": "testimonial",
+      "content_ar": "إفادة مراد القاسم كما دوّنتها هدى:\n«طلبت استعارة الميدالية فرفض الأستاذ نزار، وفهمت سبب الرفض. صوّرت الركن الخميس بعد الحصة لأن ضوء العصر جميل فيه. وصباح الجمعة بقيت في الملعب حتى الثامنة والنصف ولم أدخل الركن.»",
+      "acquired_by_action_ids": [
+        "a_read_murad"
+      ],
+      "supports_fact_ids": [
+        "f_murad_asked"
+      ],
+      "reliability": "weak",
+      "limits_ar": "قول شخص عن نفسه؛ لا يثبت براءته ولا يثبت العكس، ويُقاس بالسجلات والصور.",
+      "location_id": "loc_museum",
+      "is_red_herring": true
+    },
+    {
+      "id": "ev_sameer",
+      "title_ar": "إفادة العم سمير",
+      "kind": "testimonial",
+      "content_ar": "إفادة العم سمير الحداد كما دوّنها الأستاذ نزار:\n«نظّفت ركن المتحف صباح الجمعة بحسب ورقة المهام. ليس معي مفتاح الخزانة ولم أفتحها، ولم أغيّر في الخزانة شيئاً. أنهيت عملي قبل وصول أي طالب.»",
+      "acquired_by_action_ids": [
+        "a_read_sameer"
+      ],
+      "supports_fact_ids": [],
+      "reliability": "moderate",
+      "limits_ar": "قول صاحبه عن عمله؛ يُقارن بورقة المهام وبأثر الأرضية قبل أن يُبنى عليه شيء.",
+      "location_id": "loc_museum"
+    },
+    {
+      "id": "ev_inventory",
+      "title_ar": "بطاقة جرد الخزانة",
+      "kind": "documentary",
+      "content_ar": "بطاقة ملصقة في غرفة المشرف كتبها نجار المدرسة عند تركيب الخزانة:\n«خزانة من الزجاج والخشب، لها باب أمامي واحد بقفل واحد. رف زجاجي واحد يستند إلى أربعة مساند معدنية صغيرة. عمق الرف أقصر من عمق الخزانة بأربعة سنتمترات حتى يمرّ سلك الإضاءة من الخلف. تحت الرف حجرة خشبية داخل جسم الخزانة فيها محوّل الإضاءة، وواجهتها لوح ثابت، ولا يُوصل إليها إلا بعد رفع الرف.»\nوتحتها قائمة المعروضات الحالية: كتاب قديم على حامل، وقارورة زجاجية قاعدتها ستة سنتمترات وتحتها لباد، وميدالية نحاسية مسطحة قطرها ثلاثة سنتمترات بلا حامل.",
+      "acquired_by_action_ids": [
+        "a_read_inventory"
+      ],
+      "supports_fact_ids": [
+        "f_gap_bay",
+        "f_medal_desc"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يصف تصميم الخزانة يوم تركيبها؛ لا يخبر عن حالتها اليوم ولا عمّا حدث للرف.",
+      "location_id": "loc_office"
+    },
+    {
+      "id": "ev_maint",
+      "title_ar": "طلب الصيانة القديم",
+      "kind": "documentary",
+      "content_ar": "صفحة من دفتر الصيانة، بخط الأستاذ نزار قبل ثلاثة أسابيع:\n«خزانة المتحف: أحد مساند الرف الزجاجي، في الزاوية الخلفية من جهة اليسار، يتحرك بخفة ولا يثبت. يُرجى تثبيته.»\nوفي عمود الحالة: «لم يُنفَّذ بعد».",
+      "acquired_by_action_ids": [
+        "a_read_maint"
+      ],
+      "supports_fact_ids": [
+        "f_support_loose"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يثبت أن المسند كان مخلخلاً قبل ثلاثة أسابيع؛ لا يخبر ماذا حدث له بعد ذلك.",
+      "location_id": "loc_office"
+    },
+    {
+      "id": "ev_photo_front",
+      "title_ar": "صورة هدى الأولى 8:32",
+      "kind": "digital",
+      "content_ar": "صورة هدى الأولى من خلف الزجاج، الجمعة 8:32. على اللوح الخلفي للخزانة خطوط خضراء أفقية موازية للأرض. حافة الرف الأمامية لا توازي هذه الخطوط: طرفها الأيسر أخفض من الأيمن بنحو سنتيمتر. الكتاب والقارورة في موضعيهما. ولا ميدالية على الرف.",
+      "acquired_by_action_ids": [
+        "a_view_front"
+      ],
+      "supports_fact_ids": [
+        "f_shelf_tilted",
+        "f_medal_gone"
+      ],
+      "reliability": "strong",
+      "limits_ar": "صورة من الأمام بزاوية واحدة؛ لا تُظهر ما تحت الرف ولا خلفه.",
+      "location_id": "loc_museum"
+    },
+    {
+      "id": "ev_photo_dust",
+      "title_ar": "صورة هدى الثانية بالضوء المائل",
+      "kind": "digital",
+      "content_ar": "صورة هدى الثانية الجمعة 8:33، التقطتها بضوء مصباح هاتفها مائلاً على الرف. على زجاج الرف طبقة غبار رقيقة. قرب مقدمة الرف دائرة نظيفة قطرها ثلاثة سنتمترات، يخرج منها خط نظيف رفيع مستقيم نحو الزاوية الخلفية اليسرى وينتهي عند الحافة الخلفية، وخلفه شريط معتم. غبار الرف حول الكتاب والقارورة متصل لا بصمات فيه ولا خدوش.",
+      "acquired_by_action_ids": [
+        "a_view_dust"
+      ],
+      "supports_fact_ids": [
+        "f_slide_trail",
+        "f_no_lift"
+      ],
+      "reliability": "strong",
+      "limits_ar": "تُظهر سطح الرف وقت التصوير فقط؛ لا تبيّن متى تكوّن الخط ولا ما وراء الحافة الخلفية.",
+      "location_id": "loc_museum"
+    },
+    {
+      "id": "ev_floor",
+      "title_ar": "ورقة مهام العم سمير وأثر الأرضية",
+      "kind": "documentary",
+      "content_ar": "ورقة مهام العم سمير ليوم الجمعة بتوقيعه وتوقيع مشرف الصيانة:\n«7:00 تلميع أرضية الجناح الشرقي. 7:05 إلى 7:40 ركن المتحف: إزاحة الخزانة الزجاجية لتلميع الأرضية خلفها ثم إعادتها.»\nوصورة التقطها الأستاذ نزار للأرضية 8:45: أربع علامات مستديرة في الشمع القديم تبعد نحو عشرين سنتمتراً عن مواضع قوائم الخزانة الحالية، وبين الموضعين شمع لامع حديث.",
+      "acquired_by_action_ids": [
+        "a_read_floor"
+      ],
+      "supports_fact_ids": [
+        "f_cab_moved"
+      ],
+      "reliability": "strong",
+      "limits_ar": "تثبت أن الخزانة أُزيحت وأُعيدت؛ لا تبيّن كيف تأثر ما في داخلها.",
+      "location_id": "loc_museum",
+      "contradicts_claim_ids": [
+        "cl_changed_nothing"
+      ]
+    },
+    {
+      "id": "ev_open",
+      "title_ar": "محضر فتح الخزانة",
+      "kind": "physical",
+      "content_ar": "محضر كتبته هدى الجمعة 9:10 بحضور الأستاذ نزار وسكرتيرة الإدارة: فُحص الشريط وصُوّر، ثم فُتح الباب بالمفتاح ورُفع الرف الزجاجي بحذر. وُجدت الميدالية النحاسية ملقاة على أرض الحجرة التي تحت الرف، بين محوّل الإضاءة والجدار الخلفي، وبجوارها مسند معدني صغير. لا كسر ولا خدش على الزجاج.",
+      "acquired_by_action_ids": [
+        "a_open_cabinet"
+      ],
+      "supports_fact_ids": [
+        "f_in_base"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يؤكد موضع الميدالية فقط؛ كيف وصلت إليه يُستنتج من الأدلة السابقة لا من المحضر.",
+      "location_id": "loc_museum"
+    }
+  ],
+  "evidence_graph": {
+    "inferences": [
+      {
+        "id": "i_key",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_keylog"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_spare"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_key_unused"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "المفتاح المتداول لا يظهر في السجل إلا مرتين، قبل الختم وبعد الفجر، والنسخة الاحتياطية مختومة: سجلان مستقلان لا يُظهران أي أخذ بين الموعدين.",
+        "skill_ko_refs": [
+          "KO-RS-05-004"
+        ]
+      },
+      {
+        "id": "i_seal",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_seal"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_seal_intact"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "الشريط كامل الحواف وعليه تاريخ الختم، فالباب بقي على حاله منذ الخميس.",
+        "skill_ko_refs": [
+          "KO-RS-05-014"
+        ]
+      },
+      {
+        "id": "i_no_entry",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_key_unused"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_seal_intact"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_no_entry"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "لا مفتاح أُخذ ولا ختم قُطع؛ والمسار الثاني مستقل عن الأول: الأول يخص من يملك المفتاح، والثاني يخص حالة الباب نفسه.",
+        "skill_ko_refs": [
+          "KO-RS-06-008"
+        ]
+      },
+      {
+        "id": "i_there",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_photo_thu"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_there_after_seal"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "الصورة تُظهر الميدالية والشريط معاً وساعة الجدار تؤيد وقتها، فالميدالية كانت على الرف بعد الإقفال.",
+        "skill_ko_refs": [
+          "KO-RS-05-014"
+        ]
+      },
+      {
+        "id": "i_loan",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_register"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_no_loan"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "الدفتر لا يسجل إعارة، وملاحظة المشرف تذكر أن الطلب رُفض.",
+        "skill_ko_refs": [
+          "KO-RS-05-001"
+        ]
+      },
+      {
+        "id": "i_gap",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_inventory"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_gap_bay"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "بطاقة النجار تذكر فتحة خلفية عرضها أربعة سنتمترات وحجرة تحت الرف، وقطر الميدالية ثلاثة سنتمترات فقط.",
+        "skill_ko_refs": [
+          "KO-RS-05-014"
+        ]
+      },
+      {
+        "id": "i_loose",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_maint"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_support_loose"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "طلب مكتوب قبل أسابيع بتاريخه يذكر المسند المخلخل ولم يُنفَّذ.",
+        "skill_ko_refs": [
+          "KO-RS-05-004"
+        ]
+      },
+      {
+        "id": "i_tilt",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_photo_front"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_shelf_tilted"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "قارن حافة الرف بخطوط اللوح الخلفي الأفقية: انحرافها يعني أن الرف مائل.",
+        "skill_ko_refs": [
+          "KO-RS-06-017"
+        ]
+      },
+      {
+        "id": "i_moved",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_floor"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_cab_moved"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "ورقة المهام وعلامات القوائم في الشمع القديم تتفقان على أن الخزانة تحركت.",
+        "skill_ko_refs": [
+          "KO-RS-05-004"
+        ]
+      },
+      {
+        "id": "i_trail",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_photo_dust"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_slide_trail"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "الخط النظيف يبدأ من دائرة الميدالية وينتهي عند الحافة الخلفية، فهذا مسار حركة على الزجاج.",
+        "skill_ko_refs": [
+          "KO-RS-06-017"
+        ]
+      },
+      {
+        "id": "i_nolift",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_photo_dust"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_no_lift"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "من يرفع قطعة بيده يترك بصمة أو خدشاً في الغبار حولها؛ هنا أثر متصل واحد وبقية الغبار سليم.",
+        "skill_ko_refs": [
+          "KO-RS-06-001"
+        ]
+      },
+      {
+        "id": "i_path_a",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_gap_bay"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_support_loose"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_shelf_tilted"
+          },
+          {
+            "ref_type": "general_knowledge",
+            "ref_id": "gk_slide_down"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_in_base"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "القطعة المسطحة الملساء تنزلق على الزجاج المائل نحو الجهة الأخفض، والفتحة الخلفية أوسع من قطرها، فتحتها حجرة داخل الخزانة.",
+        "skill_ko_refs": [
+          "KO-RS-06-008",
+          "KO-RS-05-014"
+        ]
+      },
+      {
+        "id": "i_path_b",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_slide_trail"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_cab_moved"
+          },
+          {
+            "ref_type": "general_knowledge",
+            "ref_id": "gk_jolt_slides"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_in_base"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "الاهتزاز عند إزاحة الخزانة يكفي لتحريك قطعة ملساء على الزجاج، وأثرها ينتهي عند حافة الرف فلم تُرفع من مكانها.",
+        "skill_ko_refs": [
+          "KO-RS-06-008",
+          "KO-RS-05-004"
+        ]
+      },
+      {
+        "id": "i_open",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_open"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_in_base"
+        },
+        "relation": "establishes",
+        "strength": "conclusive",
+        "rule_ar": "وجود الميدالية بعد رفع الرف يؤكد الاستنتاج بفحص مباشر.",
+        "skill_ko_refs": [
+          "KO-RS-05-014"
+        ]
+      },
+      {
+        "id": "i_rule_thief",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_no_entry"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_no_lift"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_thief"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "لو أخذها أحد لفُتح الباب وقُطع الشريط أو تُرك أثر رفع؛ والسجلات والغبار لا يُظهران شيئاً من ذلك. والدافع وحده لا يثبت الفعل.",
+        "skill_ko_refs": [
+          "KO-RS-05-003"
+        ]
+      },
+      {
+        "id": "i_rule_before",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_there_after_seal"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_seal_intact"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_before"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "الميدالية ظاهرة في صورة بعد الإقفال بسبع دقائق، والباب لم يُفتح بعدها.",
+        "skill_ko_refs": [
+          "KO-RS-05-003"
+        ]
+      },
+      {
+        "id": "i_rule_borrow",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_no_loan"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_no_entry"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_borrowed"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "نقل رسمي كان سيمر بفتح الباب وتسجيل الإعارة، ولم يحدث أي منهما.",
+        "skill_ko_refs": [
+          "KO-RS-05-003"
+        ]
+      },
+      {
+        "id": "i_est_inside",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_in_base"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_no_entry"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_inside"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "الباب لم يُفتح، والميدالية سقطت داخل الخزانة؛ فهي لم تغادرها وإنما خرجت من نظر من يقف أمام الزجاج.",
+        "skill_ko_refs": [
+          "KO-RS-06-007",
+          "KO-RS-06-008"
+        ]
+      }
+    ]
+  },
+  "character_knowledge": [
+    {
+      "character_id": "huda",
+      "knows": [
+        {
+          "fact_id": "f_medal_gone",
+          "access": "witnessed"
+        },
+        {
+          "fact_id": "f_sealed_locked",
+          "access": "witnessed"
+        },
+        {
+          "fact_id": "f_medal_desc",
+          "access": "common_knowledge"
+        }
+      ],
+      "hides": [],
+      "believes": [
+        {
+          "claim_id": "cl_someone_opened",
+          "stance": "sincere"
+        }
+      ]
+    },
+    {
+      "character_id": "nizar",
+      "knows": [
+        {
+          "fact_id": "f_support_loose",
+          "access": "professional"
+        },
+        {
+          "fact_id": "f_gap_bay",
+          "access": "professional"
+        },
+        {
+          "fact_id": "f_no_loan",
+          "access": "professional"
+        },
+        {
+          "fact_id": "f_key_unused",
+          "access": "witnessed"
+        },
+        {
+          "fact_id": "f_seal_intact",
+          "access": "witnessed"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    },
+    {
+      "character_id": "murad",
+      "knows": [
+        {
+          "fact_id": "f_there_after_seal",
+          "access": "witnessed"
+        },
+        {
+          "fact_id": "f_murad_asked",
+          "access": "witnessed"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    },
+    {
+      "character_id": "sameer",
+      "knows": [
+        {
+          "fact_id": "f_cab_moved",
+          "access": "witnessed"
+        }
+      ],
+      "hides": [],
+      "believes": [
+        {
+          "claim_id": "cl_changed_nothing",
+          "stance": "sincere"
+        }
+      ]
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "h_thief",
+      "statement_ar": "فتح شخص الخزانة وأخذ الميدالية ثم ترك الباب والشريط كما كانا.",
+      "is_true": false,
+      "plausibility_at_start": "high"
+    },
+    {
+      "id": "h_before",
+      "statement_ar": "لم تكن الميدالية في الخزانة وقت إقفالها وختمها الخميس.",
+      "is_true": false,
+      "plausibility_at_start": "medium"
+    },
+    {
+      "id": "h_borrowed",
+      "statement_ar": "نُقلت الميدالية بترتيب رسمي كإعارة، فلا مخالفة.",
+      "is_true": false,
+      "plausibility_at_start": "medium"
+    },
+    {
+      "id": "h_inside",
+      "statement_ar": "الميدالية ما زالت داخل الخزانة المقفلة، وقد خرجت من مجال النظر فقط.",
+      "is_true": true,
+      "plausibility_at_start": "low"
+    }
+  ],
+  "misdirection_plan": [
+    {
+      "id": "rh_murad",
+      "points_to_hypothesis_id": "h_thief",
+      "planted_via_ar": "طلب مراد الاستعارة ورفضه، وتصويره الخزانة بعد الظهر.",
+      "evidence_ids": [
+        "ev_register",
+        "ev_murad"
+      ],
+      "refuted_by_inference_ids": [
+        "i_rule_thief",
+        "i_rule_before"
+      ],
+      "fairness_note_ar": "الدافع لا يثبت الفعل؛ وصورة مراد نفسها تُظهر الميدالية والشريط بعد الختم، والسجلات لا تُظهر فتحاً للباب."
+    },
+    {
+      "id": "rh_spare",
+      "points_to_hypothesis_id": "h_thief",
+      "planted_via_ar": "وجود نسخة احتياطية من المفتاح في الإدارة.",
+      "evidence_ids": [
+        "ev_spare"
+      ],
+      "refuted_by_inference_ids": [
+        "i_no_entry",
+        "i_rule_thief"
+      ],
+      "fairness_note_ar": "مظروف النسخة الاحتياطية بقي بشمعه، وهو مكتوب في وصف السكرتيرة الذي بين يدي اللاعب."
+    }
+  ],
+  "learning_objectives": [
+    {
+      "id": "lo_main",
+      "statement_ar": "يفكك «المستحيل» إلى افتراضاته الخمسة (الزمن، والمكان، وهوية الغرض، والإغلاق الفعلي، وهل هناك مخالفة) ويختبرها من أرخصها.",
+      "skill_ko_ref": "KO-RS-06-008",
+      "observable_behaviors_ar": [
+        "يبدأ بسجلات الفتح",
+        "يطلب اختباراً يكذّب فرضية",
+        "يكتب كيف عرف"
+      ],
+      "evidence_sources": [
+        "evidence_board",
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_source",
+      "statement_ar": "يصنّف البلاغ والإفادات أقوالاً، ويصنّف السجلات والصور سجلات.",
+      "skill_ko_ref": "KO-RS-05-001",
+      "observable_behaviors_ar": [
+        "يميز القول من السجل"
+      ],
+      "evidence_sources": [
+        "evidence_board"
+      ]
+    },
+    {
+      "id": "lo_indep",
+      "statement_ar": "يجد مسارين مستقلين للنتيجة نفسها.",
+      "skill_ko_ref": "KO-RS-05-004",
+      "observable_behaviors_ar": [
+        "يستعمل أثر الغبار وورقة المهام مساراً مستقلاً عن مسار البناء والصيانة"
+      ],
+      "evidence_sources": [
+        "evidence_board",
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_hyp",
+      "statement_ar": "يوازن بين تفسيرات متنافسة ويستبعد ما تنقضه السجلات.",
+      "skill_ko_ref": "KO-RS-05-002",
+      "observable_behaviors_ar": [
+        "يستبعد الأخذ بمفتاح والغياب قبل الإقفال والإعارة بدليل"
+      ],
+      "evidence_sources": [
+        "hypothesis_ledger"
+      ]
+    },
+    {
+      "id": "lo_diag",
+      "statement_ar": "يقدّر ما يثبته كل دليل ويربطه بالفرضية باتجاه صحيح.",
+      "skill_ko_ref": "KO-RS-06-001",
+      "observable_behaviors_ar": [
+        "يربط الدليل بالفرضية"
+      ],
+      "evidence_sources": [
+        "evidence_board"
+      ]
+    },
+    {
+      "id": "lo_calib",
+      "statement_ar": "يصوغ نسبة الترجيح بحدودها.",
+      "skill_ko_ref": "KO-RS-06-021",
+      "observable_behaviors_ar": [
+        "يختار ثقة معقولة",
+        "يذكر حدوداً"
+      ],
+      "evidence_sources": [
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_revise",
+      "statement_ar": "يراجع رأيه الأول حين يظهر ما يخالفه.",
+      "skill_ko_ref": "KO-RS-06-009",
+      "observable_behaviors_ar": [
+        "يترك فرضية السرقة بدليل"
+      ],
+      "evidence_sources": [
+        "hypothesis_ledger"
+      ]
+    }
+  ],
+  "mechanics": {
+    "time_budget_units": 24,
+    "actions": [
+      {
+        "id": "a_read_report",
+        "type": "examine",
+        "label_ar": "اقرأ بلاغ هدى",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_report"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "READ_REPORT",
+        "target_id": "loc_museum"
+      },
+      {
+        "id": "a_read_keylog",
+        "type": "examine",
+        "label_ar": "اطلع على سجل لوحة المفاتيح",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_keylog"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "READ_KEYLOG",
+        "target_id": "loc_office"
+      },
+      {
+        "id": "a_read_spare",
+        "type": "examine",
+        "label_ar": "اطلع على وصف مظروف المفتاح الاحتياطي",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_spare"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "READ_SPARE",
+        "target_id": "loc_office"
+      },
+      {
+        "id": "a_check_seal",
+        "type": "examine",
+        "label_ar": "افحص شريط الختم على الباب",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_seal"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "CHECK_SEAL",
+        "target_id": "loc_museum"
+      },
+      {
+        "id": "a_view_photo_thu",
+        "type": "examine",
+        "label_ar": "اعرض صورة مراد من الخميس",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_photo_thu"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "VIEW_PHOTO_THU",
+        "target_id": "loc_museum"
+      },
+      {
+        "id": "a_read_register",
+        "type": "examine",
+        "label_ar": "اقرأ دفتر الإعارة",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_register"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "READ_REGISTER",
+        "target_id": "loc_office"
+      },
+      {
+        "id": "a_read_murad",
+        "type": "examine",
+        "label_ar": "اقرأ إفادة مراد",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_murad"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "READ_MURAD",
+        "target_id": "loc_museum"
+      },
+      {
+        "id": "a_read_sameer",
+        "type": "examine",
+        "label_ar": "اقرأ إفادة العم سمير",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_sameer"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "READ_SAMEER",
+        "target_id": "loc_museum"
+      },
+      {
+        "id": "a_read_inventory",
+        "type": "examine",
+        "label_ar": "اقرأ بطاقة جرد الخزانة",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_inventory"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "READ_INVENTORY",
+        "target_id": "loc_office"
+      },
+      {
+        "id": "a_read_maint",
+        "type": "examine",
+        "label_ar": "اقرأ دفتر الصيانة",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_maint"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "READ_MAINT",
+        "target_id": "loc_office"
+      },
+      {
+        "id": "a_view_front",
+        "type": "examine",
+        "label_ar": "اعرض صورة هدى الأولى",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_photo_front"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "VIEW_FRONT",
+        "target_id": "loc_museum"
+      },
+      {
+        "id": "a_view_dust",
+        "type": "examine",
+        "label_ar": "اعرض صورة هدى الثانية بالضوء المائل",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_photo_dust"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "VIEW_DUST",
+        "target_id": "loc_museum"
+      },
+      {
+        "id": "a_read_floor",
+        "type": "examine",
+        "label_ar": "اقرأ ورقة المهام وصورة الأرضية",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_floor"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "READ_FLOOR",
+        "target_id": "loc_museum"
+      },
+      {
+        "id": "a_open_cabinet",
+        "type": "examine",
+        "label_ar": "اطلب فتح الخزانة بحضور شهود",
+        "precondition": {
+          "all": [
+            {
+              "has_evidence": "ev_seal"
+            },
+            {
+              "has_evidence": "ev_photo_front"
+            },
+            {
+              "has_evidence": "ev_photo_dust"
+            },
+            {
+              "has_evidence": "ev_inventory"
+            }
+          ]
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_open"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "OPEN_CABINET",
+        "target_id": "loc_museum"
+      },
+      {
+        "id": "a_hint",
+        "type": "request_hint",
+        "label_ar": "اطلب تلميحاً",
+        "precondition": {
+          "always": true
+        },
+        "effects": [],
+        "time_cost_units": 0,
+        "telemetry_code": "REQUEST_HINT"
+      },
+      {
+        "id": "a_accuse",
+        "type": "final_accusation",
+        "label_ar": "قدّم رأيك المعلّل النهائي",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "SUBMIT"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "FINAL_ACCUSATION"
+      }
+    ]
+  },
+  "state_machine": {
+    "id": "c053",
+    "initial": "briefing",
+    "type": "compound",
+    "states": {
+      "briefing": {
+        "description_ar": "الإحاطة",
+        "type": "atomic",
+        "on": {
+          "START": {
+            "target": "investigating"
+          }
+        }
+      },
+      "investigating": {
+        "description_ar": "التحقيق",
+        "type": "compound",
+        "initial": "gathering",
+        "states": {
+          "gathering": {
+            "type": "atomic",
+            "on": {
+              "OPEN_DEDUCTION": {
+                "target": "deducing"
+              }
+            }
+          },
+          "deducing": {
+            "type": "atomic",
+            "on": {
+              "BACK": {
+                "target": "gathering"
+              }
+            }
+          }
+        },
+        "on": {
+          "SUBMIT": {
+            "target": "review"
+          }
+        }
+      },
+      "review": {
+        "description_ar": "مراجعة",
+        "type": "atomic",
+        "on": {
+          "CLOSE": {
+            "target": "resolved"
+          }
+        }
+      },
+      "resolved": {
+        "description_ar": "إغلاق",
+        "type": "final"
+      }
+    }
+  },
+  "rubric": {
+    "reference_answer_ar": "لا سرقة ولا إعارة، والميدالية لم تغادر الخزانة. اختبرنا الافتراضات بالترتيب: صورة مراد بعد الختم تنفي أن الميدالية غابت قبل الإقفال؛ وسجل المفتاح والنسخة الاحتياطية وشريط الختم، وهي مصادر مستقلة، تنفي فتح الباب؛ وغبار الرف لا يحمل أثر يد. الرف مال لأن مسنده مخلخل (بطاقة الجرد وطلب الصيانة وصورة الرف)، وفي مؤخرته فتحة أوسع من قطر الميدالية، وإزاحة الخزانة 35 دقيقة هزّت القطعة الملساء فانزلقت وسقطت إلى حجرة أسفل الرف (خط الغبار وورقة المهام). حدود الاستنتاج: لا نعرف لحظة السقوط بالضبط، ونعتمد على أن السجلات دُوّنت بأمانة.",
+    "criteria": [
+      {
+        "id": "c_source",
+        "name_ar": "تصنيف المصادر",
+        "objective_ids": [
+          "lo_source"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يصنّف"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "أخطأ في الأغلب"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "نصف صحيح"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمه صحيح"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كله صحيح"
+          }
+        ]
+      },
+      {
+        "id": "c_links",
+        "name_ar": "ربط الأدلة بالفرضيات",
+        "objective_ids": [
+          "lo_diag",
+          "lo_indep"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.25,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لا روابط"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "قليلة"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "نصفها صحيح"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمها"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كلها دقيقة"
+          }
+        ]
+      },
+      {
+        "id": "c_uncertainty",
+        "name_ar": "معايرة الثقة",
+        "objective_ids": [
+          "lo_calib"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.2,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "ثقة مفرطة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "حدود قليلة"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "جزئية"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معقولة"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "معايَرة كاملة"
+          }
+        ]
+      },
+      {
+        "id": "c_revision",
+        "name_ar": "مراجعة الرأي",
+        "objective_ids": [
+          "lo_revise"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "بقي على فرضية مرفوضة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "لم يعلن فرضية"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "ثبت على فرضية سليمة"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "غيّر بدليل"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "غيّر بدليل ووثّق"
+          }
+        ]
+      },
+      {
+        "id": "c_elimination",
+        "name_ar": "استبعاد الفرضيات الخاطئة",
+        "objective_ids": [
+          "lo_hyp"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يستبعد"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "استبعد خطأً"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "فرضية بدليل"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "فرضيتين"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كل الخاطئة"
+          }
+        ]
+      },
+      {
+        "id": "c_justification",
+        "name_ar": "جملة «كيف عرفت؟» وجودة الحجة",
+        "objective_ids": [
+          "lo_main"
+        ],
+        "scored_by": "human",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لا حجة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "ادعاء بلا سند"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "أدلة دون ربط"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "ربط الأدلة بالافتراضات"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "ربط مع البدائل والحدود"
+          }
+        ]
+      }
+    ]
+  },
+  "hint_ladder": [
+    {
+      "id": "hg1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "قبل أن تبحث عن فاعل، افحص افتراضات «المستحيل» الخمسة: الزمن، والمكان، وهوية الغرض، وإغلاق الخزانة فعلاً، وهل هناك مخالفة أصلاً.",
+      "trigger": {
+        "always": true
+      },
+      "assessment_weight": 0.02
+    },
+    {
+      "id": "hg2",
+      "level": 2,
+      "kind": "focus_area",
+      "text_ar": "ابدأ بأرخص اختبار يكذّب فرضية: أي سجل يبيّن هل فُتح الباب أصلاً؟",
+      "trigger": {
+        "has_evidence": "ev_report"
+      },
+      "assessment_weight": 0.04
+    },
+    {
+      "id": "hg3",
+      "level": 3,
+      "kind": "pointer",
+      "text_ar": "انظر إلى الرف نفسه لا إلى الباب: ماذا تقول صورتا هدى عن شكل الرف وعن غباره؟",
+      "trigger": {
+        "has_evidence": "ev_report"
+      },
+      "assessment_weight": 0.08
+    },
+    {
+      "id": "hn1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "إن لم يُفتح الباب، فماذا يبقى من الفرضيات؟",
+      "trigger": {
+        "has_evidence": "ev_report"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_no_entry"
+    },
+    {
+      "id": "hn2",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "قارن سجل المفتاح بالنسخة الاحتياطية ثم بشريط الختم؛ هل يتفق ثلاثتها؟",
+      "trigger": {
+        "has_evidence": "ev_keylog"
+      },
+      "assessment_weight": 0.06,
+      "targets_inference_id": "i_no_entry"
+    },
+    {
+      "id": "ht1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "ما الذي قد يميل برفّ زجاجي عن وضعه الأفقي؟",
+      "trigger": {
+        "has_evidence": "ev_photo_front"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_path_a"
+    },
+    {
+      "id": "ht2",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "ماذا كتب النجار عن تصميم الخزانة، وماذا كتب المشرف عن أحد مساندها؟ ثم انظر إلى الرف في الصورة.",
+      "trigger": {
+        "has_evidence": "ev_inventory"
+      },
+      "assessment_weight": 0.06,
+      "targets_inference_id": "i_path_a"
+    },
+    {
+      "id": "hb1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "أين ينتهي الخط النظيف في غبار الرف؟",
+      "trigger": {
+        "has_evidence": "ev_photo_dust"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_path_b"
+    },
+    {
+      "id": "hb2",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "وما الذي حدث للخزانة نفسها قبل الثامنة صباحاً؟",
+      "trigger": {
+        "has_evidence": "ev_photo_dust"
+      },
+      "assessment_weight": 0.06,
+      "targets_inference_id": "i_path_b"
+    }
+  ],
+  "fairness_test": {
+    "requirements": {
+      "min_disjoint_proof_paths": 2,
+      "max_inference_depth": 3,
+      "all_red_herrings_refutable": true,
+      "culprit_uniquely_entailed": true,
+      "no_hidden_fact_dependency": true,
+      "max_required_actions": 16
+    },
+    "runs": []
+  },
+  "ending_explanation": {
+    "steps": [
+      {
+        "order": 1,
+        "text_ar": "ابدأ بالزمن: الصورة التي التقطها مراد 4:47 تُظهر القطعة على الرف وشريط الختم على الباب، وساعة الجدار تؤيد وقتها. فالقطعة لم تكن غائبة وقت إقفال الخميس.",
+        "uses_evidence_ids": [
+          "ev_photo_thu",
+          "ev_seal"
+        ],
+        "inference_id": "i_rule_before"
+      },
+      {
+        "order": 2,
+        "text_ar": "ثم الإقفال الفعلي: لا يوجد في لوحة المفاتيح أخذ بين المساء والفجر، ومظروف النسخة الاحتياطية بشمعه، والشريط بحواف ملتصقة. ثلاثة سجلات تتفق على أن الباب بقي مغلقاً.",
+        "uses_evidence_ids": [
+          "ev_keylog",
+          "ev_spare",
+          "ev_seal"
+        ],
+        "inference_id": "i_no_entry"
+      },
+      {
+        "order": 3,
+        "text_ar": "هل أخذها أحد؟ لا بصمة ولا خدش في الغبار، وأثر القطعة خط واحد متصل. أما طلب مراد المرفوض فدافع فحسب، لا دليل. والإعارة لم تُسجَّل.",
+        "uses_evidence_ids": [
+          "ev_photo_dust",
+          "ev_register",
+          "ev_murad"
+        ],
+        "inference_id": "i_rule_thief"
+      },
+      {
+        "order": 4,
+        "text_ar": "المسار الأول لتفسير الغياب: يميل الرف لأن مسنده الأيسر الخلفي مخلخل منذ ثلاثة أسابيع، وقطر القطعة 3 سم وخلف الرف فتحة 4 سم تحتها حجرة، فالقطعة تمر منها إذا انزلقت.",
+        "uses_evidence_ids": [
+          "ev_inventory",
+          "ev_maint",
+          "ev_photo_front"
+        ],
+        "inference_id": "i_path_a"
+      },
+      {
+        "order": 5,
+        "text_ar": "المسار الثاني، ولا يشترك مع الأول في أي دليل: أثر الغبار ينتهي عند الحافة الخلفية، وورقة المهام تقول إن الخزانة أُزيحت 35 دقيقة (من 7:05 إلى 7:40). هذا الاهتزاز يكفي لتحريك قطعة ملساء على زجاج مائل.",
+        "uses_evidence_ids": [
+          "ev_photo_dust",
+          "ev_floor"
+        ],
+        "inference_id": "i_path_b"
+      },
+      {
+        "order": 6,
+        "text_ar": "الاختبار الحاسم: عند الفتح بحضور شهود 9:10 رُفع الرف فظهرت القطعة مع المسند الصغير.",
+        "uses_evidence_ids": [
+          "ev_open"
+        ],
+        "inference_id": "i_open"
+      },
+      {
+        "order": 7,
+        "text_ar": "الخلاصة: لا مخالفة هنا. أزاح العم سمير الخزانة بحسن نية دون أن يعلم بضعف المسند، فسقطت القطعة داخلها.",
+        "uses_evidence_ids": [
+          "ev_floor",
+          "ev_open"
+        ],
+        "inference_id": "i_est_inside"
+      }
+    ],
+    "alternative_paths_ar": [
+      "يكفي المسار الأول (بطاقة الجرد وطلب الصيانة وصورة الرف) وحده، ويكفي المسار الثاني (أثر الغبار وورقة المهام) وحده؛ والأقوى أن يتفقا ثم يُختبرا بفتح الخزانة."
+    ],
+    "what_evidence_could_not_show_ar": [
+      "لا نعرف لحظة السقوط بالضبط، هل كانت أثناء الإزاحة أم بعدها بقليل.",
+      "نعتمد على أن السجلات دُوّنت بأمانة؛ ولو أُخذ مفتاح بلا تدوين لتغيّر الحساب، لذلك تعاضدت ثلاثة سجلات مستقلة.",
+      "لا نعرف لماذا لم يُنفَّذ طلب الصيانة، ولا حاجة لذلك في الحل."
+    ],
+    "science_notes_ar": [
+      "«المستحيل» ليس لغزاً واحداً بل خمسة افتراضات مخفية؛ اختبرها من الأرخص إلى الأغلى، فيسقط أحدها وينحل اللغز.",
+      "الجسم المسطح الأملس يتحرك على سطح مائل أو مهتز إلى الجهة الأخفض، ويترك في الغبار خط انزلاق لا بصمة رفع.",
+      "الدافع لا يثبت الفعل، والخلو من الأدلة على الفتح ليس اتهاماً لأحد.",
+      "حين يتفق سجلان مستقلان على النتيجة نفسها يقوى الاستنتاج أكثر مما يقويه سجل واحد."
+    ]
+  },
+  "expert_review": [
+    {
+      "role": "narrative_editor",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-11-05",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "scientific_reviewer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-11-05",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "learning_designer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-11-05",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "age_appropriateness",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-11-05",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "cultural_reviewer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-11-05",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "legal_rights",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-11-05",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "safety",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-11-05",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    }
+  ]
+}

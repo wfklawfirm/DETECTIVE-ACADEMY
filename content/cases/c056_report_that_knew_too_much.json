@@ -1,0 +1,3642 @@
+{
+  "schema_version": "0.1.0",
+  "case_id": "c056_report_that_knew_too_much",
+  "case_version": "0.1.0",
+  "meta": {
+    "title_ar": "تقرير يعرف أكثر من مصدريه",
+    "title_en": "The Report That Knew Too Much",
+    "age_band": "16-18",
+    "locale": "ar",
+    "dialogue_register": "msa",
+    "estimated_minutes": 40,
+    "difficulty": 3,
+    "content_flags": [
+      "no_violence",
+      "fraud"
+    ],
+    "authors": [
+      "فريق أثر التحريري (مسودة بمساعدة الذكاء الاصطناعي، لم تُراجَع بشرياً بعد)"
+    ],
+    "knowledge_object_refs": [
+      "KO-RS-05-001",
+      "KO-RS-05-004",
+      "KO-RS-05-005",
+      "KO-RS-05-002",
+      "KO-RS-06-002",
+      "KO-RS-06-021",
+      "KO-RS-06-009"
+    ]
+  },
+  "premise": {
+    "hook_ar": "نشرت صحيفة الطلاب تقريراً يذكر درجات لجنة المنحة وعبارة قيلت خلف باب مغلق، ويسمّي مصدرين لم يدخلا القاعة. معلم يشكو من أنه نُسب إليه ما لم يقله، والمشرفة تسأل: نصحّح أم ندافع؟",
+    "player_role_ar": "أنت عضو متدرب في لجنة أخلاقيات «نشرة الفجر»، وطلبت منك المشرفة أن تفحص التقرير قبل أن تقرر النشرة شيئاً.",
+    "setting_ar": "ثانوية الفجر الأهلية في مدينة سهل الزيتون المتخيَّلة، مساء الخميس. بإذن مكتوب من المشرفة تطّلع على سجلات الأبواب والتخزين والمراسلة المدرسية والأوراق الموقّعة، ولا تفتح غيرها. الأسماء والأحداث كلها متخيَّلة، وتوقيت الثانوية هو توقيت كل السجلات.",
+    "public_fact_ids": [
+      "f_panel_session",
+      "f_result_public",
+      "f_report_published",
+      "f_complaint"
+    ],
+    "assumed_general_knowledge_ar": [
+      "الأرقام المنشورة يجب أن تطابق السجل الأصلي الموقّع",
+      "من لم يدخل غرفة مغلقة لا يعرف ما جرى فيها إلا بنقل عن غيره",
+      "سجل الباب يسجل البطاقة لا حاملها، وسجل الملف يسجل الحساب لا اليد",
+      "جمع أرقام بسيطة (جمع أربعة أعداد وثلاثة أعداد)"
+    ]
+  },
+  "entities": {
+    "characters": [
+      {
+        "id": "maysoon",
+        "name_ar": "ميسون القباني",
+        "role": "suspect",
+        "age_descriptor_ar": "طالبة في الصف الثاني عشر وكاتبة التقرير",
+        "persona_ar": "متحمسة للسبق الصحفي وتدافع عن مصادرها، وتتردد حين تُسأل كيف تحققت من الأرقام.",
+        "motives_ar": [
+          "أن يُقرأ تقريرها وتُحترم نشرتها",
+          "أن تحمي من أعطاها المعلومة"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "ms_greet",
+            "purpose": "greeting",
+            "text_ar": "أهلاً. كتبت تقريري من مصادري ولا أخفي ذلك."
+          },
+          {
+            "line_id": "ms_cover",
+            "purpose": "lie",
+            "text_ar": "كل ما في تقريري جاء من لبنى وطارق، وهما شاهدان موثوقان.",
+            "claim_ids": [
+              "cl_report_sources"
+            ]
+          },
+          {
+            "line_id": "ms_share",
+            "purpose": "reveal",
+            "text_ar": "وصلني رابط ملف من وسيم الصباغ بعد الرابعة بقليل، وقال إنه نسخة اللجنة. نقلت الأرقام منه ولم أقابلها بالمحضر.",
+            "fact_ids": [
+              "f_wasim_shared"
+            ]
+          },
+          {
+            "line_id": "ms_prev",
+            "purpose": "reveal",
+            "text_ar": "نعم، صحّحت النشرة لي قبل شهرين خطأ في موعد رحلة، ولم أخطئ في أرقام قط قبل اليوم.",
+            "fact_ids": [
+              "f_maysoon_prev"
+            ]
+          },
+          {
+            "line_id": "ms_refuse",
+            "purpose": "refuse_secret",
+            "text_ar": "لا أكشف مصادري دون سبب."
+          },
+          {
+            "line_id": "ms_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف أكثر من ذلك."
+          },
+          {
+            "line_id": "ms_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن كتابة التقرير."
+          },
+          {
+            "line_id": "ms_bye",
+            "purpose": "farewell",
+            "text_ar": "سأعيد قراءة تقريري قبل أن أدافع عنه."
+          }
+        ]
+      },
+      {
+        "id": "wasim",
+        "name_ar": "وسيم الصباغ",
+        "role": "suspect",
+        "age_descriptor_ar": "طالب في الصف الثاني عشر وأمين سر اللجنة",
+        "persona_ar": "هادئ ومرتب، يجيب بإيجاز ويحب أن يبدو دقيقاً، ويتجنب الأسئلة عن ملف الدرجات.",
+        "motives_ar": [
+          "أن ينال صديقه ما يراه حقاً له",
+          "ألا يُسأل عن الملف"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "ws_greet",
+            "purpose": "greeting",
+            "text_ar": "أهلاً. دوري أن أدوّن ما تقرره اللجنة."
+          },
+          {
+            "line_id": "ws_cover",
+            "purpose": "lie",
+            "text_ar": "دوّنت الدرجات كما قالها الأعضاء ولم أغيّر شيئاً بعد خروجهم.",
+            "claim_ids": [
+              "cl_wasim_typed"
+            ]
+          },
+          {
+            "line_id": "ws_edit",
+            "purpose": "reveal",
+            "text_ar": "غيّرت الخانة من 17 إلى 20 بعد خروج الأعضاء، وكتبت العبارة من عندي في ملاحظات الكاتب.",
+            "fact_ids": [
+              "f_wasim_edit"
+            ]
+          },
+          {
+            "line_id": "ws_share",
+            "purpose": "reveal",
+            "text_ar": "أرسلت الرابط إلى ميسون وطلبت منها ألا تذكر اسمي.",
+            "fact_ids": [
+              "f_wasim_shared"
+            ]
+          },
+          {
+            "line_id": "ws_club",
+            "purpose": "reveal",
+            "text_ar": "أنا وزيد في فريق الروبوت نفسه منذ سنتين.",
+            "fact_ids": [
+              "f_club"
+            ]
+          },
+          {
+            "line_id": "ws_refuse",
+            "purpose": "refuse_secret",
+            "text_ar": "لا أتحدث عن ملف الدرجات."
+          },
+          {
+            "line_id": "ws_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف أكثر من ذلك."
+          },
+          {
+            "line_id": "ws_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن الجلسة وتدوينها."
+          },
+          {
+            "line_id": "ws_bye",
+            "purpose": "farewell",
+            "text_ar": "أرجو أن تنتهي المسألة بسرعة."
+          }
+        ]
+      },
+      {
+        "id": "adnan",
+        "name_ar": "عدنان البقاعي",
+        "role": "suspect",
+        "age_descriptor_ar": "معلم فيزياء وعضو في اللجنة",
+        "persona_ar": "صريح ويغضب بهدوء حين يُنسب إليه ما لم يقله، ويستشهد بأوراقه الموقّعة.",
+        "motives_ar": [
+          "أن يُصحَّح التقرير",
+          "أن تبقى نزاهة اللجنة سليمة"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "ad_greet",
+            "purpose": "greeting",
+            "text_ar": "تفضّل. أوراقي موقّعة ومحفوظة."
+          },
+          {
+            "line_id": "ad_scores",
+            "purpose": "reveal",
+            "text_ar": "ورقتي الموقّعة فيها 17 لكرم و15 لزيد، ولا شيء غير ذلك.",
+            "fact_ids": [
+              "f_true_scores"
+            ]
+          },
+          {
+            "line_id": "ad_coach",
+            "purpose": "reveal",
+            "text_ar": "أدرّب فريق الروبوت الذي ينتمي إليه المرشحان، وقد أعلنت ذلك للجنة في بداية الجلسة.",
+            "fact_ids": [
+              "f_club"
+            ]
+          },
+          {
+            "line_id": "ad_complaint",
+            "purpose": "reveal",
+            "text_ar": "كتبت شكواي مساء الخميس لأن التقرير نسب إليّ درجة وعبارة لا أعرفهما.",
+            "fact_ids": [
+              "f_complaint"
+            ]
+          },
+          {
+            "line_id": "ad_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف كيف وصلت تلك الأرقام إلى النشرة."
+          },
+          {
+            "line_id": "ad_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن الجلسة وأوراقي."
+          },
+          {
+            "line_id": "ad_bye",
+            "purpose": "farewell",
+            "text_ar": "اقرأوا الأوراق قبل أن تحكموا."
+          }
+        ]
+      },
+      {
+        "id": "hazem",
+        "name_ar": "حازم العطار",
+        "role": "suspect",
+        "age_descriptor_ar": "محاضر جامعي وعضو خارجي في اللجنة",
+        "persona_ar": "ودود ومشغول، يتكلم بإيجاز ويحرص على ألا يُظن أنه تدخل في شأن النشرة.",
+        "motives_ar": [
+          "أن ينتهي دوره دون إحراج",
+          "ألا يُنسب إليه تسريب"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "hz_greet",
+            "purpose": "greeting",
+            "text_ar": "أهلاً. كنت ضيفاً على اللجنة لا أكثر."
+          },
+          {
+            "line_id": "hz_scores",
+            "purpose": "reveal",
+            "text_ar": "درجاتي لكرم ولزيد 16 و16، وهي في ورقتي الموقّعة.",
+            "fact_ids": [
+              "f_true_scores"
+            ]
+          },
+          {
+            "line_id": "hz_visit",
+            "purpose": "reveal",
+            "text_ar": "مررت بغرفة النشرة قرابة الرابعة والربع لأسلّم صور الحفل ولم أتحدث عن الدرجات.",
+            "fact_ids": [
+              "f_hazem_visit"
+            ]
+          },
+          {
+            "line_id": "hz_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف أكثر من ذلك."
+          },
+          {
+            "line_id": "hz_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عمّا جرى في الجلسة."
+          },
+          {
+            "line_id": "hz_bye",
+            "purpose": "farewell",
+            "text_ar": "أتمنى أن يُنصف الجميع."
+          }
+        ]
+      },
+      {
+        "id": "mona",
+        "name_ar": "منى الشامي",
+        "role": "witness",
+        "age_descriptor_ar": "معلمة أحياء وعضو في اللجنة",
+        "persona_ar": "دقيقة وقليلة الكلام، تقرأ ما وقّعت عليه قبل أن تتكلم.",
+        "motives_ar": [
+          "أن يطابق المحضر ما جرى"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "mn_greet",
+            "purpose": "greeting",
+            "text_ar": "تفضّل. محضرنا موقّع ومعروض عليك."
+          },
+          {
+            "line_id": "mn_scores",
+            "purpose": "reveal",
+            "text_ar": "درجاتي 16 لكل مرشح، ووقّعنا المحضر الساعة الرابعة وعشرين دقيقة.",
+            "fact_ids": [
+              "f_true_scores"
+            ]
+          },
+          {
+            "line_id": "mn_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف أكثر مما في المحضر."
+          },
+          {
+            "line_id": "mn_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن الجلسة والمحضر."
+          },
+          {
+            "line_id": "mn_bye",
+            "purpose": "farewell",
+            "text_ar": "الأوراق تكفي."
+          }
+        ]
+      },
+      {
+        "id": "lubna",
+        "name_ar": "لبنى الحايك",
+        "role": "witness",
+        "age_descriptor_ar": "طالبة متطوعة في تنظيم المسابقة",
+        "persona_ar": "لطيفة وصادقة، وتقلق من أن يُحمَّل كلامها أكثر مما قالته.",
+        "motives_ar": [
+          "أن يُنقل كلامها كما قالته"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "lb_greet",
+            "purpose": "greeting",
+            "text_ar": "أهلاً. سأقول لك أين كنت وما سمعت."
+          },
+          {
+            "line_id": "lb_corr",
+            "purpose": "reveal",
+            "text_ar": "كنت في الممر حتى الثالثة، والباب مغلق، ثم ذهبت إلى القاعة الكبرى. لم أسمع شيئاً مفهوماً.",
+            "fact_ids": [
+              "f_corridor"
+            ]
+          },
+          {
+            "line_id": "lb_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف شيئاً عن الدرجات."
+          },
+          {
+            "line_id": "lb_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن الممر والمتسابقين."
+          },
+          {
+            "line_id": "lb_bye",
+            "purpose": "farewell",
+            "text_ar": "أتمنى ألا يُنسب إليّ ما لم أقله."
+          }
+        ]
+      },
+      {
+        "id": "tarek",
+        "name_ar": "طارق النجار",
+        "role": "witness",
+        "age_descriptor_ar": "موظف في مكتب القبول",
+        "persona_ar": "رسمي ومحدد، لا يتكلم إلا في اختصاصه.",
+        "motives_ar": [
+          "ألا يتجاوز اختصاصه"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "tk_greet",
+            "purpose": "greeting",
+            "text_ar": "أهلاً. أتحدث عن الملفات فقط."
+          },
+          {
+            "line_id": "tk_desk",
+            "purpose": "reveal",
+            "text_ar": "استلمت ملفي المرشحَين حتى الثانية والنصف، وكانا كاملين. لم أدخل القاعة 4 ولم أرَ أوراق الدرجات.",
+            "fact_ids": [
+              "f_clerk"
+            ]
+          },
+          {
+            "line_id": "tk_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "هذا خارج اختصاصي."
+          },
+          {
+            "line_id": "tk_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن الملفات والمواعيد."
+          },
+          {
+            "line_id": "tk_bye",
+            "purpose": "farewell",
+            "text_ar": "ما قلته مكتوب في إفادتي."
+          }
+        ]
+      },
+      {
+        "id": "salwa",
+        "name_ar": "سلوى المرعبي",
+        "role": "authority",
+        "age_descriptor_ar": "مشرفة «نشرة الفجر»",
+        "persona_ar": "حازمة وهادئة، تريد قراراً قائماً على الأوراق قبل أي تصحيح أو اعتذار.",
+        "motives_ar": [
+          "أن تحمي مصداقية النشرة"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "sl_greet",
+            "purpose": "greeting",
+            "text_ar": "أريد أن أعرف هل نصحّح التقرير أم ندافع عنه، وأن أعرف السبب."
+          },
+          {
+            "line_id": "sl_report",
+            "purpose": "reveal",
+            "text_ar": "نُشر التقرير الساعة الخامسة والثلاثة أرباع، وفيه مصدران مسمّيان.",
+            "fact_ids": [
+              "f_report_published"
+            ]
+          },
+          {
+            "line_id": "sl_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "ركّز على الأوراق."
+          },
+          {
+            "line_id": "sl_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "هذا ما عندي."
+          },
+          {
+            "line_id": "sl_bye",
+            "purpose": "farewell",
+            "text_ar": "أنتظر ما تقرره بالأدلة."
+          }
+        ]
+      }
+    ],
+    "locations": [
+      {
+        "id": "loc_room4",
+        "name_ar": "القاعة 4",
+        "description_ar": "قاعة اجتماعات صغيرة لها باب يُفتح ببطاقة، وفيها حاسوب مشترك."
+      },
+      {
+        "id": "loc_corridor",
+        "name_ar": "الممر أمام القاعة 4",
+        "description_ar": "ممر ضيق يؤدي إلى باب القاعة 4."
+      },
+      {
+        "id": "loc_admissions",
+        "name_ar": "مكتب القبول",
+        "description_ar": "مكتب في جناح آخر تُسلَّم إليه ملفات المرشحين."
+      },
+      {
+        "id": "loc_press",
+        "name_ar": "غرفة النشرة",
+        "description_ar": "غرفة طلاب «نشرة الفجر»، وفيها حاسوب مشترك رقمه PR-2."
+      },
+      {
+        "id": "loc_it",
+        "name_ar": "مكتب السجلات والشبكة",
+        "description_ar": "مكتب يحفظ سجلات الأبواب والتخزين والمراسلة المدرسية."
+      },
+      {
+        "id": "loc_office",
+        "name_ar": "مكتب الإدارة",
+        "description_ar": "مكتب فيه الأوراق الموقّعة والإعلانات والقوائم."
+      },
+      {
+        "id": "loc_hall",
+        "name_ar": "القاعة الكبرى",
+        "description_ar": "قاعة الحفل الذي أُعلن فيه الفائز."
+      }
+    ],
+    "objects": [
+      {
+        "id": "obj_score_file",
+        "name_ar": "ملف الدرجات الإلكتروني",
+        "description_ar": "جدول مشترك يدوّن فيه أمين السر درجات الأعضاء."
+      },
+      {
+        "id": "obj_report",
+        "name_ar": "تقرير «نشرة الفجر»",
+        "description_ar": "التقرير المنشور مساء الخميس عن نتيجة المنحة."
+      },
+      {
+        "id": "obj_laptop4",
+        "name_ar": "حاسوب القاعة 4",
+        "description_ar": "الحاسوب المشترك في القاعة 4، يدخله كل مستخدم بحسابه."
+      }
+    ],
+    "organizations": [
+      {
+        "id": "org_school",
+        "name_ar": "ثانوية الفجر الأهلية",
+        "description_ar": "مدرسة ثانوية في مدينة سهل الزيتون المتخيَّلة."
+      },
+      {
+        "id": "org_paper",
+        "name_ar": "نشرة الفجر",
+        "description_ar": "صحيفة طلاب الثانوية، تشرف عليها الأستاذة سلوى المرعبي."
+      },
+      {
+        "id": "org_panel",
+        "name_ar": "لجنة تحكيم المنحة العلمية",
+        "description_ar": "ثلاثة أعضاء وأمين سر، تختار طالباً لتدريب صيفي في مختبر."
+      }
+    ]
+  },
+  "truth": {
+    "solution": {
+      "culprit_ids": [
+        "wasim"
+      ],
+      "key_fact_ids": [
+        "f_info_closed",
+        "f_figures_not_record",
+        "f_wasim_edit",
+        "f_wasim_shared"
+      ],
+      "summary_ar": "لم تخترع ميسون الأرقام ولم يكن لمصدريها المسمَّيين علم بها. أمين سر اللجنة وسيم الصباغ بقي وحده في القاعة 4 بعد خروج الأعضاء، فبدّل في ملف الدرجات الإلكتروني خانة عدنان لكرم من 17 إلى 20، وأضاف عبارة منسوبة إليه، ثم أنشأ رابطاً للنسخة وأرسله إلى ميسون طالباً إخفاء اسمه. فعل ذلك ليظهر فوز كرم بتحيّز فتُعاد المنحة لصديقه زيد. نقلت ميسون ما وصلها دون مقابلته بالمحضر، وسمّت مصدرين لا صلة لهما بالأمر."
+    },
+    "facts": [
+      {
+        "id": "f_panel_session",
+        "statement_ar": "اجتمعت لجنة تحكيم المنحة في القاعة 4 يوم الخميس من الساعة 14:00 إلى 15:40، وبقي الباب مغلقاً على أربعة أشخاص.",
+        "kind": "event",
+        "subject_ids": [
+          "org_panel",
+          "loc_room4"
+        ],
+        "spoiler_level": 0,
+        "time": {
+          "start_min": 120,
+          "precision": "exact",
+          "end_min": 220
+        },
+        "location_id": "loc_room4"
+      },
+      {
+        "id": "f_result_public",
+        "statement_ar": "أُعلن الفائز الساعة 16:30 باسم كرم الصيداني فقط، ونصّ الإعلان على أن الدرجات والمحاضر داخلية.",
+        "kind": "event",
+        "subject_ids": [
+          "org_panel",
+          "org_school"
+        ],
+        "spoiler_level": 0,
+        "time": {
+          "start_min": 270,
+          "precision": "exact"
+        },
+        "location_id": "loc_hall"
+      },
+      {
+        "id": "f_report_published",
+        "statement_ar": "نشرت «نشرة الفجر» الساعة 17:45 تقريراً يذكر 52 لكرم و47 لزيد، ويقول إن عدنان منح كرماً 20 من 20 وقال عبارة محددة، ويسمّي مصدريه: لبنى الحايك وطارق النجار.",
+        "kind": "event",
+        "subject_ids": [
+          "obj_report",
+          "org_paper"
+        ],
+        "spoiler_level": 0,
+        "time": {
+          "start_min": 345,
+          "precision": "exact"
+        },
+        "location_id": "loc_press"
+      },
+      {
+        "id": "f_complaint",
+        "statement_ar": "أرسل عدنان البقاعي الساعة 19:10 شكوى مكتوبة ينفي فيها الدرجة والعبارة ويطلب تصحيح التقرير.",
+        "kind": "event",
+        "subject_ids": [
+          "adnan",
+          "obj_report"
+        ],
+        "spoiler_level": 0,
+        "time": {
+          "start_min": 430,
+          "precision": "exact"
+        },
+        "location_id": "loc_office"
+      },
+      {
+        "id": "f_corridor",
+        "statement_ar": "كانت لبنى الحايك في الممر أمام القاعة 4 من 13:50 إلى 15:00 والباب مغلق، ثم غادرت إلى القاعة الكبرى.",
+        "kind": "state",
+        "subject_ids": [
+          "lubna",
+          "loc_corridor"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 110,
+          "precision": "exact",
+          "end_min": 180
+        },
+        "location_id": "loc_corridor"
+      },
+      {
+        "id": "f_clerk",
+        "statement_ar": "استلم طارق النجار ملفي المرشحَين في مكتب القبول حتى 14:30، ولم يدخل القاعة 4 ولم يرَ أوراق الدرجات.",
+        "kind": "state",
+        "subject_ids": [
+          "tarek",
+          "loc_admissions"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 30,
+          "precision": "exact",
+          "end_min": 150
+        },
+        "location_id": "loc_admissions"
+      },
+      {
+        "id": "f_room_cards",
+        "statement_ar": "لم يُفتح باب القاعة 4 خلال الجلسة وبعدها إلا لأربع بطاقات: وسيم الصباغ وعدنان البقاعي ومنى الشامي وحازم العطار.",
+        "kind": "absence",
+        "subject_ids": [
+          "loc_room4",
+          "org_panel"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 110,
+          "precision": "exact",
+          "end_min": 242
+        },
+        "location_id": "loc_room4"
+      },
+      {
+        "id": "f_true_scores",
+        "statement_ar": "السجل الموقّع يعطي كرماً 49 (من عدنان 17 ومن منى 16 ومن حازم 16) ويعطي زيداً 47 (15 و16 و16).",
+        "kind": "state",
+        "subject_ids": [
+          "org_panel"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 220,
+          "precision": "exact"
+        },
+        "location_id": "loc_room4"
+      },
+      {
+        "id": "f_info_closed",
+        "statement_ar": "لم يكن في وسع مصدرَي التقرير المسمَّيين أن يعرفا الدرجات ولا العبارة؛ فهذه التفاصيل لا يعرفها إلا من دخل القاعة 4 أو وصل إلى أوراق الجلسة.",
+        "kind": "attribute",
+        "subject_ids": [
+          "obj_report",
+          "lubna",
+          "tarek"
+        ],
+        "spoiler_level": 2,
+        "time": {
+          "start_min": 345,
+          "precision": "exact"
+        },
+        "location_id": "loc_press"
+      },
+      {
+        "id": "f_figures_not_record",
+        "statement_ar": "الرقمان 20 و52 اللذان نشرهما التقرير لا وجود لهما في السجل الموقّع، وفيه 17 و49.",
+        "kind": "attribute",
+        "subject_ids": [
+          "obj_report",
+          "org_panel"
+        ],
+        "spoiler_level": 2,
+        "time": {
+          "start_min": 345,
+          "precision": "exact"
+        },
+        "location_id": "loc_press"
+      },
+      {
+        "id": "f_quote_origin",
+        "statement_ar": "العبارة المنسوبة إلى عدنان لا ترد في المحضر الموقّع، وترد في ملاحظات الكاتب داخل النسخة المعدّلة من ملف الدرجات.",
+        "kind": "attribute",
+        "subject_ids": [
+          "obj_report",
+          "obj_score_file"
+        ],
+        "spoiler_level": 2,
+        "time": {
+          "start_min": 232,
+          "precision": "exact"
+        },
+        "location_id": "loc_room4"
+      },
+      {
+        "id": "f_wasim_edit",
+        "statement_ar": "غيّر وسيم الصباغ، وهو الوحيد الباقي في القاعة 4، خانة درجة عدنان لكرم من 17 إلى 20 في ملف الدرجات الساعة 15:52، بعد خروج الأعضاء الثلاثة.",
+        "kind": "event",
+        "subject_ids": [
+          "wasim",
+          "obj_score_file",
+          "obj_laptop4"
+        ],
+        "spoiler_level": 3,
+        "time": {
+          "start_min": 232,
+          "precision": "exact"
+        },
+        "location_id": "loc_room4"
+      },
+      {
+        "id": "f_wasim_shared",
+        "statement_ar": "أنشأ وسيم الصباغ الساعة 16:04 رابطاً للنسخة المعدّلة وبلغ الرابط غرفة النشرة قبل نشر التقرير بأكثر من ساعة؛ فتحه حاسوب الغرفة الساعة 16:11.",
+        "kind": "event",
+        "subject_ids": [
+          "wasim",
+          "obj_score_file",
+          "loc_press"
+        ],
+        "spoiler_level": 3,
+        "time": {
+          "start_min": 244,
+          "precision": "exact",
+          "end_min": 251
+        },
+        "location_id": "loc_press"
+      },
+      {
+        "id": "f_club",
+        "statement_ar": "يدرّب عدنان البقاعي فريق الروبوت الذي فيه كرم وزيد ووسيم، وقد أعلن صلته بالمرشحَين للجنة في بداية الجلسة.",
+        "kind": "relation",
+        "subject_ids": [
+          "adnan",
+          "wasim",
+          "org_school"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 118,
+          "precision": "exact"
+        },
+        "location_id": "loc_room4"
+      },
+      {
+        "id": "f_maysoon_prev",
+        "statement_ar": "صحّحت «نشرة الفجر» قبل شهرين خطأً في موعد رحلة مدرسية كتبته ميسون القباني.",
+        "kind": "event",
+        "subject_ids": [
+          "maysoon",
+          "org_paper"
+        ],
+        "spoiler_level": 1
+      },
+      {
+        "id": "f_hazem_visit",
+        "statement_ar": "زار حازم العطار غرفة النشرة من 16:15 إلى 16:25 لتسليم صور الحفل.",
+        "kind": "event",
+        "subject_ids": [
+          "hazem",
+          "loc_press"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 255,
+          "precision": "exact",
+          "end_min": 265
+        },
+        "location_id": "loc_press"
+      }
+    ],
+    "claims": [
+      {
+        "id": "cl_report_scores",
+        "statement_ar": "منح عدنان كرماً 20 من 20 فكان المجموع 52 مقابل 47.",
+        "kind": "honest_mistake",
+        "held_by": [
+          "maysoon"
+        ],
+        "true_fact_id": "f_true_scores",
+        "contradicted_by_evidence_ids": [
+          "ev_paper_sheets",
+          "ev_minutes"
+        ]
+      },
+      {
+        "id": "cl_report_sources",
+        "statement_ar": "كل ما في التقرير جاء من لبنى الحايك وطارق النجار.",
+        "kind": "half_truth",
+        "held_by": [
+          "maysoon"
+        ],
+        "true_fact_id": "f_info_closed",
+        "contradicted_by_evidence_ids": [
+          "ev_lubna",
+          "ev_tarek"
+        ]
+      },
+      {
+        "id": "cl_wasim_typed",
+        "statement_ar": "دوّن وسيم الدرجات كما قالها الأعضاء ولم يغيّر شيئاً بعد خروجهم.",
+        "kind": "lie",
+        "held_by": [
+          "wasim"
+        ],
+        "true_fact_id": "f_wasim_edit",
+        "contradicted_by_evidence_ids": [
+          "ev_version_history"
+        ]
+      }
+    ]
+  },
+  "timeline": [
+    {
+      "id": "te_desk",
+      "description_ar": "طارق يستلم ملفي المرشحَين في مكتب القبول.",
+      "time": {
+        "start_min": 30,
+        "precision": "exact",
+        "end_min": 150
+      },
+      "actor_ids": [
+        "tarek"
+      ],
+      "fact_ids": [
+        "f_clerk"
+      ],
+      "location_id": "loc_admissions",
+      "motivated_by_ar": "عمله في مكتب القبول"
+    },
+    {
+      "id": "te_corridor",
+      "description_ar": "لبنى توزع الماء في الممر والباب مغلق.",
+      "time": {
+        "start_min": 110,
+        "precision": "exact",
+        "end_min": 180
+      },
+      "actor_ids": [
+        "lubna"
+      ],
+      "fact_ids": [
+        "f_corridor"
+      ],
+      "location_id": "loc_corridor",
+      "motivated_by_ar": "تطوعها في تنظيم المسابقة"
+    },
+    {
+      "id": "te_session",
+      "description_ar": "اللجنة وأمين سرها يعملون في القاعة 4 خلف باب مغلق.",
+      "time": {
+        "start_min": 110,
+        "precision": "exact",
+        "end_min": 223
+      },
+      "actor_ids": [
+        "wasim",
+        "adnan",
+        "mona",
+        "hazem"
+      ],
+      "fact_ids": [
+        "f_panel_session",
+        "f_room_cards",
+        "f_true_scores"
+      ],
+      "location_id": "loc_room4",
+      "motivated_by_ar": "اختيار الفائز بالمنحة"
+    },
+    {
+      "id": "te_hall",
+      "description_ar": "لبنى تجهّز القاعة الكبرى للحفل.",
+      "time": {
+        "start_min": 181,
+        "precision": "exact",
+        "end_min": 270
+      },
+      "actor_ids": [
+        "lubna"
+      ],
+      "fact_ids": [
+        "f_result_public"
+      ],
+      "location_id": "loc_hall",
+      "motivated_by_ar": "تجهيز الحفل"
+    },
+    {
+      "id": "te_v1",
+      "description_ar": "وسيم ينشئ جدول الدرجات في الملف الإلكتروني ويكتب فيه 17 لخانة عدنان.",
+      "time": {
+        "start_min": 211,
+        "precision": "exact"
+      },
+      "actor_ids": [
+        "wasim"
+      ],
+      "fact_ids": [
+        "f_true_scores"
+      ],
+      "location_id": "loc_room4",
+      "motivated_by_ar": "تدوين ما يقرره الأعضاء"
+    },
+    {
+      "id": "te_edit",
+      "description_ar": "وسيم وحده في القاعة يغيّر الخانة إلى 20 ويضيف عبارة إلى ملاحظات الكاتب.",
+      "time": {
+        "start_min": 232,
+        "precision": "exact"
+      },
+      "actor_ids": [
+        "wasim"
+      ],
+      "fact_ids": [
+        "f_wasim_edit",
+        "f_quote_origin"
+      ],
+      "location_id": "loc_room4",
+      "motivated_by_ar": "إضعاف نتيجة كرم لمصلحة زيد صديقه"
+    },
+    {
+      "id": "te_leave",
+      "description_ar": "وسيم يخرج من القاعة 4 آخر الأشخاص.",
+      "time": {
+        "start_min": 242,
+        "precision": "exact"
+      },
+      "actor_ids": [
+        "wasim"
+      ],
+      "fact_ids": [
+        "f_room_cards"
+      ],
+      "location_id": "loc_room4",
+      "motivated_by_ar": "إنهاء عمله بعد تعديل الملف"
+    },
+    {
+      "id": "te_share",
+      "description_ar": "وسيم ينشئ رابط النسخة المعدّلة ويرسله إلى ميسون.",
+      "time": {
+        "start_min": 244,
+        "precision": "exact"
+      },
+      "actor_ids": [
+        "wasim"
+      ],
+      "fact_ids": [
+        "f_wasim_shared"
+      ],
+      "location_id": "loc_press",
+      "motivated_by_ar": "أن تنشر النشرة الأرقام المعدّلة دون اسمه"
+    },
+    {
+      "id": "te_open",
+      "description_ar": "الرابط يُفتح من حاسوب غرفة النشرة.",
+      "time": {
+        "start_min": 251,
+        "precision": "exact"
+      },
+      "actor_ids": [
+        "maysoon"
+      ],
+      "fact_ids": [
+        "f_wasim_shared"
+      ],
+      "location_id": "loc_press",
+      "motivated_by_ar": "حاجتها إلى معلومات للتقرير"
+    },
+    {
+      "id": "te_visit",
+      "description_ar": "حازم يسلّم صور الحفل في غرفة النشرة.",
+      "time": {
+        "start_min": 255,
+        "precision": "exact",
+        "end_min": 265
+      },
+      "actor_ids": [
+        "hazem"
+      ],
+      "fact_ids": [
+        "f_hazem_visit"
+      ],
+      "location_id": "loc_press",
+      "motivated_by_ar": "تسليم الصور المتفق عليها"
+    },
+    {
+      "id": "te_minutes",
+      "description_ar": "الأعضاء الثلاثة يوقّعون المحضر في مكتب الإدارة.",
+      "time": {
+        "start_min": 260,
+        "precision": "exact"
+      },
+      "actor_ids": [
+        "adnan",
+        "mona"
+      ],
+      "fact_ids": [
+        "f_true_scores"
+      ],
+      "location_id": "loc_office",
+      "motivated_by_ar": "توثيق القرار"
+    },
+    {
+      "id": "te_announce",
+      "description_ar": "إعلان الفائز باسمه فقط.",
+      "time": {
+        "start_min": 270,
+        "precision": "exact"
+      },
+      "actor_ids": [
+        "lubna"
+      ],
+      "fact_ids": [
+        "f_result_public"
+      ],
+      "location_id": "loc_hall",
+      "motivated_by_ar": "إعلان نتيجة المنحة"
+    },
+    {
+      "id": "te_report",
+      "description_ar": "نشر تقرير «نشرة الفجر».",
+      "time": {
+        "start_min": 345,
+        "precision": "exact"
+      },
+      "actor_ids": [
+        "maysoon"
+      ],
+      "fact_ids": [
+        "f_report_published",
+        "f_info_closed",
+        "f_figures_not_record"
+      ],
+      "location_id": "loc_press",
+      "motivated_by_ar": "السبق الصحفي"
+    },
+    {
+      "id": "te_complaint",
+      "description_ar": "عدنان يكتب شكواه إلى المشرفة.",
+      "time": {
+        "start_min": 430,
+        "precision": "exact"
+      },
+      "actor_ids": [
+        "adnan"
+      ],
+      "fact_ids": [
+        "f_complaint"
+      ],
+      "location_id": "loc_office",
+      "motivated_by_ar": "تصحيح ما نُسب إليه"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_report",
+      "title_ar": "تقرير «نشرة الفجر» المنشور",
+      "kind": "documentary",
+      "content_ar": "«نشرة الفجر» — الخميس 17:45\nالعنوان: المنحة التي حُسمت بدرجة كاملة\nاجتمعت لجنة تحكيم المنحة العلمية في القاعة 4 من الثانية ظهراً حتى الرابعة إلا عشرين. وحصل كرم الصيداني على 52 درجة مقابل 47 لزيد الحلبي، بفارق خمس درجات.\nومنح الأستاذ عدنان البقاعي كرماً العلامة الكاملة 20 من 20، وقال أمام اللجنة: «هذا الولد يستحق، لا تعقّدوا الأمر».\nمصادر التقرير: لبنى الحايك (متطوعة كانت في الممر)، وطارق النجار (مكتب القبول).\nكتبت: ميسون القباني.",
+      "acquired_by_action_ids": [
+        "a_read_report"
+      ],
+      "supports_fact_ids": [
+        "f_report_published"
+      ],
+      "reliability": "weak",
+      "limits_ar": "تقرير منشور يعرض ما كتبته الكاتبة ومصادرها المعلنة؛ لا يبين كيف عُرفت الدرجات ولا يرفق أي وثيقة.",
+      "location_id": "loc_press"
+    },
+    {
+      "id": "ev_notice",
+      "title_ar": "إعلان نتيجة المنحة",
+      "kind": "documentary",
+      "content_ar": "إعلان ثانوية الفجر الأهلية — الخميس 16:30\nأعلنت لجنة المنحة العلمية فوز الطالب كرم الصيداني. وبحسب لائحة المنحة تبقى محاضر الجلسة وأوراق الدرجات داخلية ولا تُنشر، ولا يُذاع إلا اسم الفائز.",
+      "acquired_by_action_ids": [
+        "a_read_notice"
+      ],
+      "supports_fact_ids": [
+        "f_result_public"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يبين ما أُعلن للجمهور فقط، ولا يبين من اطّلع على الأوراق الداخلية.",
+      "location_id": "loc_office"
+    },
+    {
+      "id": "ev_complaint",
+      "title_ar": "شكوى الأستاذ عدنان",
+      "kind": "documentary",
+      "content_ar": "من: عدنان البقاعي — إلى: مشرفة النشرة — الخميس 19:10\nأنفي أنني منحت أي مرشح 20 من 20، فدرجتي لكرم في ورقتي الموقّعة 17. ولم أقل العبارة المنسوبة إليّ. أطلب تصحيح التقرير، وأطلب أن يُعرف من أين جاءت الأرقام، فالمحضر لم يُنشر. وأعلم أنني أدرّب فريق الروبوت الذي ينتمي إليه المرشحان، وقد أعلنت ذلك للجنة.",
+      "acquired_by_action_ids": [
+        "a_get_complaint"
+      ],
+      "supports_fact_ids": [
+        "f_complaint"
+      ],
+      "reliability": "weak",
+      "limits_ar": "شكوى طرف له مصلحة؛ تنفي وتطلب ولا تثبت شيئاً دون الأوراق الموقّعة.",
+      "location_id": "loc_office"
+    },
+    {
+      "id": "ev_lubna",
+      "title_ar": "إفادة لبنى الحايك",
+      "kind": "testimonial",
+      "content_ar": "إفادة لبنى الحايك (مكتوبة):\n«كنت في الممر من 13:50 إلى 15:00 أوزع الماء على المتسابقين، وكان باب القاعة 4 مغلقاً ولم أسمع كلاماً مفهوماً. بعدها ذهبت إلى القاعة الكبرى لتجهيز الحفل. قلت لميسون إن الجلسة بدأت في الثانية وإن الباب لم يُفتح، ولم أذكر لها درجات ولا عبارات.»",
+      "acquired_by_action_ids": [
+        "a_get_lubna"
+      ],
+      "supports_fact_ids": [
+        "f_corridor"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "شهادة عن موضعها ومدتها؛ لا تغطي ما بعد 15:00 ولا ما جرى داخل القاعة.",
+      "location_id": "loc_hall",
+      "contradicts_claim_ids": [
+        "cl_report_sources"
+      ]
+    },
+    {
+      "id": "ev_tarek",
+      "title_ar": "إفادة طارق النجار",
+      "kind": "testimonial",
+      "content_ar": "إفادة طارق النجار (مكتوبة):\n«استلمت ملفي المرشحَين في مكتب القبول قبل الثانية والنصف، وكان كل ملف كاملاً. لم أدخل القاعة 4، ولم أرَ أوراق الدرجات في أي وقت. قلت لميسون إن الملفين كاملان، وهذا كل ما قلته.»",
+      "acquired_by_action_ids": [
+        "a_get_tarek"
+      ],
+      "supports_fact_ids": [
+        "f_clerk"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "شهادة عن اختصاصه فقط؛ لا تبين ما جرى في القاعة ولا بعدها.",
+      "location_id": "loc_admissions",
+      "contradicts_claim_ids": [
+        "cl_report_sources"
+      ]
+    },
+    {
+      "id": "ev_room_log",
+      "title_ar": "سجل بطاقات باب القاعة 4",
+      "kind": "documentary",
+      "content_ar": "سجل الباب الآلي — القاعة 4 — الخميس:\n13:50 دخول — بطاقة وسيم الصباغ\n13:55 دخول — بطاقة عدنان البقاعي\n13:57 دخول — بطاقة منى الشامي\n13:58 دخول — بطاقة حازم العطار\n14:00 قفل آلي: لا يُفتح إلا لهذه البطاقات الأربع\n15:10 خروج — بطاقة حازم العطار\n15:14 دخول — بطاقة حازم العطار\n15:41 خروج — بطاقة عدنان البقاعي\n15:42 خروج — بطاقة منى الشامي\n15:43 خروج — بطاقة حازم العطار\n16:02 خروج — بطاقة وسيم الصباغ\nلا بطاقات أخرى في اليوم.",
+      "acquired_by_action_ids": [
+        "a_get_roomlog"
+      ],
+      "supports_fact_ids": [
+        "f_room_cards",
+        "f_panel_session"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يسجل البطاقة لا حاملها، ولا يبين ما قيل داخل القاعة ولا ما كُتب على أي جهاز.",
+      "location_id": "loc_it"
+    },
+    {
+      "id": "ev_paper_sheets",
+      "title_ar": "أوراق الدرجات المكتوبة بخط اليد",
+      "kind": "documentary",
+      "content_ar": "أوراق الأعضاء الثلاثة (مسحها مكتب الإدارة ضوئياً الساعة 15:45). لكل ورقة أربعة معايير، الحد الأعلى لكل معيار 5: الأصالة، المنهج، الوضوح، قابلية التنفيذ.\nعدنان — كرم: 5+4+4+4 = 17 ، زيد: 4+4+4+3 = 15\nمنى — كرم: 4+4+4+4 = 16 ، زيد: 4+4+4+4 = 16\nحازم — كرم: 4+4+4+4 = 16 ، زيد: 4+4+4+4 = 16\nعلى كل ورقة توقيع صاحبها.",
+      "acquired_by_action_ids": [
+        "a_get_paper"
+      ],
+      "supports_fact_ids": [
+        "f_true_scores"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يبين ما كتبه الأعضاء بأيديهم قبل أي ملف إلكتروني؛ لا يبين من أطلع الصحافة على ملف آخر.",
+      "location_id": "loc_office",
+      "contradicts_claim_ids": [
+        "cl_report_scores"
+      ]
+    },
+    {
+      "id": "ev_minutes",
+      "title_ar": "محضر اللجنة الموقّع",
+      "kind": "documentary",
+      "content_ar": "محضر لجنة المنحة العلمية (موقّع الساعة 16:20 من الأعضاء الثلاثة):\nالنتيجة: كرم الصيداني 49 ، زيد الحلبي 47.\nدرجات كرم من الأعضاء: 17 و16 و16. درجات زيد: 15 و16 و16.\nسجّل المحضر أن الأستاذ عدنان طلب قبل الحسم التأكد من اكتمال ملف كل مرشح، فتبيّن أنهما كاملان. واعتمدت اللجنة صاحب أعلى مجموع.",
+      "acquired_by_action_ids": [
+        "a_get_minutes"
+      ],
+      "supports_fact_ids": [
+        "f_true_scores",
+        "f_quote_origin"
+      ],
+      "reliability": "strong",
+      "limits_ar": "محضر قرار لا ينقل الكلام حرفياً، ولا يبين كيف وصلت أي معلومة إلى النشرة.",
+      "location_id": "loc_office",
+      "contradicts_claim_ids": [
+        "cl_report_scores"
+      ]
+    },
+    {
+      "id": "ev_draft_copy",
+      "title_ar": "نسخة ملف الدرجات التي فُتح رابطها",
+      "kind": "digital",
+      "content_ar": "مسودة نتائج المنحة العلمية — النسخة 2 (للقراءة فقط)\nآخر تعديل: 15:52 من حاسوب القاعة 4 المشترك.\nكرم: عدنان 5+5+5+5 = 20 ، منى 16 ، حازم 16 ، المجموع 52.\nزيد: عدنان 15 ، منى 16 ، حازم 16 ، المجموع 47.\nملاحظات الكاتب: عدنان — «هذا الولد يستحق، لا تعقّدوا الأمر».",
+      "acquired_by_action_ids": [
+        "a_get_draft"
+      ],
+      "supports_fact_ids": [
+        "f_quote_origin"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "نسخة تعرض خانات وملاحظة ووقت آخر تعديل؛ لا تبين من كتبها بيده ولا إلى من أُرسلت.",
+      "location_id": "loc_it"
+    },
+    {
+      "id": "ev_version_history",
+      "title_ar": "سجل إصدارات ملف الدرجات",
+      "kind": "digital",
+      "content_ar": "سجل نظام التخزين المدرسي — ملف: مسودة نتائج المنحة العلمية — المالك: حساب وسيم الصباغ\nالإصدار 1 — 15:31 — حساب وسيم الصباغ — حاسوب القاعة 4: إنشاء الجدول، وفيه خانة عدنان/كرم = 17.\nالإصدار 2 — 15:52 — حساب وسيم الصباغ — حاسوب القاعة 4: تعديل خانة عدنان/كرم (القيمة السابقة 17، القيمة الجديدة 20)، وإضافة سطر في «ملاحظات الكاتب».\nلا إصدارات بعد ذلك.",
+      "acquired_by_action_ids": [
+        "a_get_version"
+      ],
+      "supports_fact_ids": [
+        "f_wasim_edit",
+        "f_quote_origin"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يسجل الحساب والجهاز لا اليد التي حرّكت الفأرة، ولا يبين من اطّلع على الملف لاحقاً.",
+      "location_id": "loc_it",
+      "contradicts_claim_ids": [
+        "cl_wasim_typed"
+      ]
+    },
+    {
+      "id": "ev_share_log",
+      "title_ar": "سجل مشاركة الملف",
+      "kind": "digital",
+      "content_ar": "سجل نظام التخزين المدرسي — مشاركة الملف:\n16:04 — أنشأ حساب وسيم الصباغ رابط قراءة للإصدار 2.\n16:11 — فُتح الرابط من حاسوب غرفة النشرة (الجهاز PR-2).\nلا فتح آخر للرابط في اليوم.",
+      "acquired_by_action_ids": [
+        "a_get_share"
+      ],
+      "supports_fact_ids": [
+        "f_wasim_shared"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يبين إنشاء الرابط وفتحه وجهازه؛ لا يبين من جلس أمام الجهاز ولا ما قيل عند إرسال الرابط.",
+      "location_id": "loc_it"
+    },
+    {
+      "id": "ev_messenger",
+      "title_ar": "سجل رسائل مراسلة الثانوية",
+      "kind": "digital",
+      "content_ar": "تصدير سجل المراسلة الداخلية — الخميس:\n16:04 — من وسيم الصباغ إلى ميسون القباني: «الرابط للقراءة فقط. إن نشرتِ فلا تذكري اسمي.»\n16:06 — من ميسون القباني إلى وسيم الصباغ: «وصل الرابط، شكراً.»",
+      "acquired_by_action_ids": [
+        "a_get_messenger"
+      ],
+      "supports_fact_ids": [
+        "f_wasim_shared"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يبين نص الرسالتين ووقتهما؛ لا يبين ما قيل بينهما خارج المراسلة ولا نية المرسل.",
+      "location_id": "loc_it"
+    },
+    {
+      "id": "ev_club_list",
+      "title_ar": "قائمة فريق الروبوت",
+      "kind": "documentary",
+      "content_ar": "قائمة فريق الروبوت للعام الدراسي:\nالمدرّب: عدنان البقاعي.\nالأعضاء: كرم الصيداني، زيد الحلبي، وسيم الصباغ، وثلاثة طلاب آخرين.\nملاحظة: أُعلنت صلة المدرب بالمرشحَين في بداية الجلسة وسُجّلت.",
+      "acquired_by_action_ids": [
+        "a_get_club"
+      ],
+      "supports_fact_ids": [
+        "f_club"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "تبين العضوية فقط؛ وجود صلة بين أشخاص لا يثبت أن أحدهم فعل شيئاً.",
+      "location_id": "loc_office",
+      "is_red_herring": true
+    },
+    {
+      "id": "ev_maysoon_corr",
+      "title_ar": "تصحيح سابق لميسون",
+      "kind": "documentary",
+      "content_ar": "تصحيح منشور في «نشرة الفجر» قبل شهرين: «ورد في مقال ميسون القباني عن الرحلة المدرسية أن الموعد يوم الأحد، والصحيح يوم الثلاثاء».",
+      "acquired_by_action_ids": [
+        "a_get_corr"
+      ],
+      "supports_fact_ids": [
+        "f_maysoon_prev"
+      ],
+      "reliability": "weak",
+      "limits_ar": "خطأ سابق في تاريخ لا يدل على أنها اختلقت أرقاماً اليوم.",
+      "location_id": "loc_press",
+      "is_red_herring": true
+    },
+    {
+      "id": "ev_hazem_visit",
+      "title_ar": "سجل زوار غرفة النشرة",
+      "kind": "documentary",
+      "content_ar": "دفتر زوار غرفة النشرة (ورقي):\n16:15 — د. حازم العطار — لتسليم صور حفل المنحة — خرج 16:25.",
+      "acquired_by_action_ids": [
+        "a_get_visit"
+      ],
+      "supports_fact_ids": [
+        "f_hazem_visit"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "يبين وقت الزيارة وغرضها المكتوب فقط، ولا يبين ما قيل فيها.",
+      "location_id": "loc_press",
+      "is_red_herring": true
+    }
+  ],
+  "evidence_graph": {
+    "inferences": [
+      {
+        "id": "i_a_closed",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_report"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_lubna"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_tarek"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_info_closed"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "التقرير ينسب إلى مصدريه معرفة بالدرجات والعبارة، لكن لبنى كانت خلف باب مغلق وغادرت قبل نهاية الجلسة، وطارق لم يدخل القاعة ولم ير الأوراق؛ فما نُشر أكثر مما كان بوسعهما معرفته.",
+        "skill_ko_refs": [
+          "KO-RS-05-001"
+        ]
+      },
+      {
+        "id": "i_a_figures",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_report"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_paper_sheets"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_figures_not_record"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "أوراق الأعضاء مجموعة بيدك: 5+4+4+4 يساوي 17 لا 20، و17+16+16 يساوي 49 لا 52؛ فالرقمان المنشوران لا يطابقان الأصل المكتوب.",
+        "skill_ko_refs": [
+          "KO-RS-06-002"
+        ]
+      },
+      {
+        "id": "i_a_edit",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_version_history"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_wasim_edit"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "سجل الإصدارات يبين أن الإصدار 1 كان فيه 17 وأن الإصدار 2 غيّر الخانة إلى 20 الساعة 15:52 بحساب وسيم، أي بعد خروج الأعضاء بعشر دقائق.",
+        "skill_ko_refs": [
+          "KO-RS-05-005"
+        ]
+      },
+      {
+        "id": "i_a_share",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_share_log"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_wasim_shared"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "رابط الإصدار 2 أنشأه حساب وسيم الساعة 16:04، وفتحه حاسوب غرفة النشرة الساعة 16:11، أي قبل نشر التقرير بساعة ونصف تقريباً.",
+        "skill_ko_refs": [
+          "KO-RS-05-005"
+        ]
+      },
+      {
+        "id": "i_b_closed",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_complaint"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_room_log"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_notice"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_info_closed"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "الإعلان لم يذع غير اسم الفائز، وسجل الباب لا يذكر بطاقة لبنى ولا طارق، والمعلومات المنشورة تخص ما بعد الإغلاق؛ فمصدرها من داخل القاعة أو من أوراقها.",
+        "skill_ko_refs": [
+          "KO-RS-05-001"
+        ]
+      },
+      {
+        "id": "i_b_figures",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_complaint"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_minutes"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_figures_not_record"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "عدنان ينفي الدرجة، والمحضر الموقّع يذكر له 17 لكرم والمجموع 49؛ فالرقمان 20 و52 ليسا في السجل الذي وقّعه الأعضاء.",
+        "skill_ko_refs": [
+          "KO-RS-06-002"
+        ]
+      },
+      {
+        "id": "i_b_edit",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_draft_copy"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_room_log"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_wasim_edit"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "آخر تعديل في النسخة كان الساعة 15:52 من حاسوب القاعة 4، وفي تلك الدقيقة لم تكن بطاقة داخل القاعة إلا بطاقة وسيم بعد خروج الأعضاء الثلاثة.",
+        "skill_ko_refs": [
+          "KO-RS-05-005"
+        ]
+      },
+      {
+        "id": "i_b_share",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_messenger"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_wasim_shared"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "رسالة من حساب وسيم إلى ميسون الساعة 16:04 تحمل الرابط وتطلب إخفاء الاسم، وردّت ميسون بوصوله.",
+        "skill_ko_refs": [
+          "KO-RS-05-004"
+        ]
+      },
+      {
+        "id": "i_quote",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_minutes"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_draft_copy"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_quote_origin"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "المحضر الموقّع لا يحتوي العبارة، وهي مكتوبة في ملاحظات الكاتب داخل النسخة المعدّلة؛ فمصدرها صيغة الكاتب لا كلام العضو.",
+        "skill_ko_refs": [
+          "KO-RS-06-002"
+        ]
+      },
+      {
+        "id": "i_wasim",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_info_closed"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_figures_not_record"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_wasim_edit"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_wasim_shared"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_wasim"
+        },
+        "relation": "supports",
+        "strength": "strong",
+        "rule_ar": "المعلومات من داخل القاعة، وأرقامها غير الأصلية، وصاحب تعديلها هو الباقي وحده، وهو من أرسل الرابط إلى النشرة؛ فهذا التفسير الوحيد الذي يجمع الوقائع كلها.",
+        "skill_ko_refs": [
+          "KO-RS-05-002"
+        ]
+      },
+      {
+        "id": "i_rule_adnan",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_paper_sheets"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_minutes"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_adnan"
+        },
+        "relation": "refutes",
+        "strength": "strong",
+        "rule_ar": "ورقة عدنان الموقّعة فيها 17 لا 20، والمحضر الموقّع لا يتضمن العبارة؛ فلا تصح فرضية أن التقرير دقيق.",
+        "skill_ko_refs": [
+          "KO-RS-06-002"
+        ]
+      },
+      {
+        "id": "i_rule_maysoon",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_draft_copy"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_share_log"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_maysoon"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "الرقمان والعبارة موجودة في ملف فُتح رابطه في غرفة النشرة قبل النشر، فهي نقلت مما وصلها ولم تخترع؛ ويبقى عليها خطأ أنها لم تقابل الأرقام بالمحضر.",
+        "skill_ko_refs": [
+          "KO-RS-05-003"
+        ]
+      },
+      {
+        "id": "i_rule_judge",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_hazem_visit"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_share_log"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_paper_sheets"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_judge"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "عضو يسرّب من أوراقه كان سيذكر 17 و49، لا 20 و52، ثم إن الرابط فُتح الساعة 16:11 قبل وصول حازم إلى غرفة النشرة الساعة 16:15.",
+        "skill_ko_refs": [
+          "KO-RS-05-003"
+        ]
+      },
+      {
+        "id": "i_rule_sources",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_info_closed"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_sources"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "لو عرف المصدران المسمَّيان هذه التفاصيل لكان لهما طريق إلى القاعة أو أوراقها، ولا طريق لهما؛ فالأرجح أن المعلومة جاءت من غيرهما.",
+        "skill_ko_refs": [
+          "KO-RS-05-004"
+        ]
+      }
+    ]
+  },
+  "character_knowledge": [
+    {
+      "character_id": "maysoon",
+      "knows": [
+        {
+          "fact_id": "f_report_published",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_maysoon_prev",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [
+        {
+          "fact_id": "f_wasim_shared",
+          "reveal_when": {
+            "presented": {
+              "evidence_id": "ev_share_log",
+              "to_character": "maysoon"
+            }
+          },
+          "cover_claim_id": "cl_report_sources",
+          "reveal_line_id": "ms_share"
+        }
+      ],
+      "believes": [
+        {
+          "claim_id": "cl_report_scores",
+          "stance": "sincere"
+        },
+        {
+          "claim_id": "cl_report_sources",
+          "stance": "deliberate_lie"
+        }
+      ]
+    },
+    {
+      "character_id": "wasim",
+      "knows": [
+        {
+          "fact_id": "f_panel_session",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_true_scores",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_club",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [
+        {
+          "fact_id": "f_wasim_edit",
+          "reveal_when": {
+            "presented": {
+              "evidence_id": "ev_version_history",
+              "to_character": "wasim"
+            }
+          },
+          "cover_claim_id": "cl_wasim_typed",
+          "reveal_line_id": "ws_edit"
+        },
+        {
+          "fact_id": "f_wasim_shared",
+          "reveal_when": {
+            "presented": {
+              "evidence_id": "ev_messenger",
+              "to_character": "wasim"
+            }
+          },
+          "cover_claim_id": null,
+          "reveal_line_id": "ws_share"
+        }
+      ],
+      "believes": [
+        {
+          "claim_id": "cl_wasim_typed",
+          "stance": "deliberate_lie"
+        }
+      ]
+    },
+    {
+      "character_id": "adnan",
+      "knows": [
+        {
+          "fact_id": "f_true_scores",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_club",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_complaint",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_panel_session",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    },
+    {
+      "character_id": "hazem",
+      "knows": [
+        {
+          "fact_id": "f_true_scores",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_hazem_visit",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_panel_session",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    },
+    {
+      "character_id": "mona",
+      "knows": [
+        {
+          "fact_id": "f_true_scores",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_panel_session",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    },
+    {
+      "character_id": "lubna",
+      "knows": [
+        {
+          "fact_id": "f_corridor",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    },
+    {
+      "character_id": "tarek",
+      "knows": [
+        {
+          "fact_id": "f_clerk",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    },
+    {
+      "character_id": "salwa",
+      "knows": [
+        {
+          "fact_id": "f_report_published",
+          "access": "common_knowledge",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_complaint",
+          "access": "told_by",
+          "certainty": "certain",
+          "source_character_id": "adnan"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "h_adnan",
+      "statement_ar": "التقرير دقيق: منح الأستاذ عدنان كرماً 20 من 20 وقال العبارة المنسوبة إليه، فحُسمت المنحة بتحيّز.",
+      "is_true": false,
+      "plausibility_at_start": "high",
+      "suspect_id": "adnan"
+    },
+    {
+      "id": "h_maysoon",
+      "statement_ar": "اختلقت ميسون القباني الأرقام والعبارة من عندها.",
+      "is_true": false,
+      "plausibility_at_start": "medium",
+      "suspect_id": "maysoon"
+    },
+    {
+      "id": "h_wasim",
+      "statement_ar": "غيّر أمين سر اللجنة وسيم الصباغ درجة عدنان في الملف الإلكتروني بعد الجلسة وأرسل النسخة المعدّلة إلى غرفة النشرة، فنقلت ميسون أرقاماً غير حقيقية.",
+      "is_true": true,
+      "plausibility_at_start": "low",
+      "suspect_id": "wasim"
+    },
+    {
+      "id": "h_sources",
+      "statement_ar": "عرف لبنى وطارق الدرجات فعلاً ولم يقولا كل ما يعرفان، فالتقرير صادق.",
+      "is_true": false,
+      "plausibility_at_start": "medium"
+    },
+    {
+      "id": "h_judge",
+      "statement_ar": "سرّب أحد الأعضاء الأرقام للنشرة بعد الجلسة.",
+      "is_true": false,
+      "plausibility_at_start": "low",
+      "suspect_id": "hazem"
+    }
+  ],
+  "misdirection_plan": [
+    {
+      "id": "rh_report_trust",
+      "points_to_hypothesis_id": "h_adnan",
+      "planted_via_ar": "تقرير منشور بأرقام دقيقة وعبارة مقتبسة، وعدنان يدرّب فريق المرشحَين.",
+      "evidence_ids": [
+        "ev_report",
+        "ev_club_list"
+      ],
+      "refuted_by_inference_ids": [
+        "i_rule_adnan"
+      ],
+      "fairness_note_ar": "ورقة عدنان الموقّعة والمحضر متاحان بالإجراء العادي، ويمكن إعادة الجمع بالقلم."
+    },
+    {
+      "id": "rh_prev_error",
+      "points_to_hypothesis_id": "h_maysoon",
+      "planted_via_ar": "تصحيح سابق لخطأ كتبته ميسون في تاريخ.",
+      "evidence_ids": [
+        "ev_maysoon_corr"
+      ],
+      "refuted_by_inference_ids": [
+        "i_rule_maysoon"
+      ],
+      "fairness_note_ar": "الخطأ السابق في تاريخ، والأرقام الحالية موجودة في ملف وصل غرفة النشرة قبل النشر."
+    },
+    {
+      "id": "rh_visit",
+      "points_to_hypothesis_id": "h_judge",
+      "planted_via_ar": "زيارة عضو خارجي لغرفة النشرة بعد الجلسة.",
+      "evidence_ids": [
+        "ev_hazem_visit"
+      ],
+      "refuted_by_inference_ids": [
+        "i_rule_judge"
+      ],
+      "fairness_note_ar": "وقت فتح الرابط وسجل الزوار متاحان، ويكفي ترتيبهما على خط زمني."
+    },
+    {
+      "id": "rh_named",
+      "points_to_hypothesis_id": "h_sources",
+      "planted_via_ar": "ذكر التقرير مصدرين بالاسم يوحي بأن لهما علماً بالتفاصيل.",
+      "evidence_ids": [
+        "ev_report"
+      ],
+      "refuted_by_inference_ids": [
+        "i_rule_sources"
+      ],
+      "fairness_note_ar": "إفادتا المصدرين وسجل الباب متاحة وتبين حدود ما كان بوسعهما معرفته."
+    }
+  ],
+  "learning_objectives": [
+    {
+      "id": "lo_access",
+      "statement_ar": "يسأل عن كل تفصيل في التقرير: كيف عرفه المصدر؟ وهل كان بوسعه أن يعرفه؟",
+      "skill_ko_ref": "KO-RS-05-001",
+      "observable_behaviors_ar": [
+        "يقارن ما ينسبه التقرير إلى كل مصدر بموضعه ووقته",
+        "يصنّف الإفادات أقوالاً محدودة بموضع صاحبها"
+      ],
+      "evidence_sources": [
+        "evidence_board"
+      ]
+    },
+    {
+      "id": "lo_timeline",
+      "statement_ar": "يرتّب سجلات الباب والملف والمراسلة والنشر على خط زمني ليعرف ما سبق ما.",
+      "skill_ko_ref": "KO-RS-05-005",
+      "observable_behaviors_ar": [
+        "يضع خروج الأعضاء وتعديل الملف وإنشاء الرابط والنشر في أزمنتها"
+      ],
+      "evidence_sources": [
+        "timeline_task",
+        "action_log"
+      ]
+    },
+    {
+      "id": "lo_check",
+      "statement_ar": "يقابل رقماً منشوراً بسجله الأصلي ويعيد الحساب بنفسه.",
+      "skill_ko_ref": "KO-RS-06-002",
+      "observable_behaviors_ar": [
+        "يجمع الدرجات من الأوراق الموقّعة",
+        "يكشف أن الرقم المنشور لا يطابق الأصل"
+      ],
+      "evidence_sources": [
+        "evidence_board",
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_indep",
+      "statement_ar": "يميّز بين دليلين مستقلين وبين دليلين يعودان إلى أصل واحد.",
+      "skill_ko_ref": "KO-RS-05-004",
+      "observable_behaviors_ar": [
+        "لا يعدّ التقرير والنسخة المعدّلة دليلين مستقلين على الأرقام"
+      ],
+      "evidence_sources": [
+        "hypothesis_ledger"
+      ]
+    },
+    {
+      "id": "lo_hyp",
+      "statement_ar": "يوازن بين عدة فرضيات ويستبعد ما تنقضه الأدلة.",
+      "skill_ko_ref": "KO-RS-05-002",
+      "observable_behaviors_ar": [
+        "يضيف فرضيات",
+        "يستبعد بدليل"
+      ],
+      "evidence_sources": [
+        "hypothesis_ledger"
+      ]
+    },
+    {
+      "id": "lo_calib",
+      "statement_ar": "يضبط ثقته بقدر قوة الأدلة ويذكر حدودها.",
+      "skill_ko_ref": "KO-RS-06-021",
+      "observable_behaviors_ar": [
+        "يحدد ما لا تثبته السجلات"
+      ],
+      "evidence_sources": [
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_revise",
+      "statement_ar": "يغيّر رأيه حين يسقط أساسه ويوثّق السبب.",
+      "skill_ko_ref": "KO-RS-06-009",
+      "observable_behaviors_ar": [
+        "يتخلى عن فرضية أن التقرير دقيق حين يقابله بالأوراق"
+      ],
+      "evidence_sources": [
+        "hypothesis_ledger",
+        "action_log"
+      ]
+    }
+  ],
+  "mechanics": {
+    "time_budget_units": 40,
+    "actions": [
+      {
+        "id": "a_read_report",
+        "type": "examine",
+        "label_ar": "اقرأ التقرير المنشور",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_report"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "READ_REPORT",
+        "target_id": "loc_press"
+      },
+      {
+        "id": "a_read_notice",
+        "type": "examine",
+        "label_ar": "اقرأ إعلان نتيجة المنحة",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_notice"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "READ_NOTICE",
+        "target_id": "loc_office"
+      },
+      {
+        "id": "a_get_complaint",
+        "type": "examine",
+        "label_ar": "اطلب شكوى الأستاذ عدنان",
+        "precondition": {
+          "has_evidence": "ev_report"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_complaint"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "GET_COMPLAINT",
+        "target_id": "loc_office"
+      },
+      {
+        "id": "a_get_lubna",
+        "type": "examine",
+        "label_ar": "اطلب إفادة لبنى المكتوبة",
+        "precondition": {
+          "has_evidence": "ev_report"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_lubna"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "GET_LUBNA",
+        "target_id": "lubna"
+      },
+      {
+        "id": "a_get_tarek",
+        "type": "examine",
+        "label_ar": "اطلب إفادة طارق المكتوبة",
+        "precondition": {
+          "has_evidence": "ev_report"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_tarek"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "GET_TAREK",
+        "target_id": "tarek"
+      },
+      {
+        "id": "a_get_roomlog",
+        "type": "search_location",
+        "label_ar": "اطلب سجل بطاقات باب القاعة 4",
+        "precondition": {
+          "has_evidence": "ev_report"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_room_log"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "GET_ROOMLOG",
+        "target_id": "loc_it"
+      },
+      {
+        "id": "a_get_paper",
+        "type": "search_location",
+        "label_ar": "اطلب أوراق الدرجات الموقّعة",
+        "precondition": {
+          "has_evidence": "ev_room_log"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_paper_sheets"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "GET_PAPER",
+        "target_id": "loc_office"
+      },
+      {
+        "id": "a_get_minutes",
+        "type": "search_location",
+        "label_ar": "اطلب محضر اللجنة",
+        "precondition": {
+          "has_evidence": "ev_notice"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_minutes"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "GET_MINUTES",
+        "target_id": "loc_office"
+      },
+      {
+        "id": "a_get_version",
+        "type": "search_location",
+        "label_ar": "اطلب سجل إصدارات ملف الدرجات",
+        "precondition": {
+          "has_evidence": "ev_room_log"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_version_history"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "GET_VERSION",
+        "target_id": "loc_it"
+      },
+      {
+        "id": "a_get_draft",
+        "type": "search_location",
+        "label_ar": "افتح النسخة التي أُرسل رابطها",
+        "precondition": {
+          "has_evidence": "ev_version_history"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_draft_copy"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "GET_DRAFT",
+        "target_id": "loc_it"
+      },
+      {
+        "id": "a_get_share",
+        "type": "search_location",
+        "label_ar": "اطلب سجل مشاركة الملف",
+        "precondition": {
+          "has_evidence": "ev_version_history"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_share_log"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "GET_SHARE",
+        "target_id": "loc_it"
+      },
+      {
+        "id": "a_get_messenger",
+        "type": "search_location",
+        "label_ar": "اطلب سجل رسائل المراسلة المدرسية",
+        "precondition": {
+          "has_evidence": "ev_share_log"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_messenger"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "GET_MESSENGER",
+        "target_id": "loc_it"
+      },
+      {
+        "id": "a_get_club",
+        "type": "examine",
+        "label_ar": "اطلب قائمة فريق الروبوت",
+        "precondition": {
+          "has_evidence": "ev_complaint"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_club_list"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "GET_CLUB",
+        "target_id": "loc_office"
+      },
+      {
+        "id": "a_get_corr",
+        "type": "examine",
+        "label_ar": "ابحث في تصحيحات النشرة السابقة",
+        "precondition": {
+          "has_evidence": "ev_report"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_maysoon_corr"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "GET_CORR",
+        "target_id": "loc_press"
+      },
+      {
+        "id": "a_get_visit",
+        "type": "examine",
+        "label_ar": "اطلب دفتر زوار غرفة النشرة",
+        "precondition": {
+          "has_evidence": "ev_share_log"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_hazem_visit"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "GET_VISIT",
+        "target_id": "loc_press"
+      },
+      {
+        "id": "a_int_maysoon",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة ميسون",
+        "precondition": {
+          "has_evidence": "ev_report"
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "maysoon",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "INT_MAYSOON",
+        "target_id": "maysoon"
+      },
+      {
+        "id": "a_int_wasim",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة وسيم",
+        "precondition": {
+          "has_evidence": "ev_report"
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "wasim",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "INT_WASIM",
+        "target_id": "wasim"
+      },
+      {
+        "id": "a_int_adnan",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة عدنان",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "adnan",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "INT_ADNAN",
+        "target_id": "adnan"
+      },
+      {
+        "id": "a_int_hazem",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة حازم",
+        "precondition": {
+          "has_evidence": "ev_report"
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "hazem",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "INT_HAZEM",
+        "target_id": "hazem"
+      },
+      {
+        "id": "a_int_mona",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة منى",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "mona",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "INT_MONA",
+        "target_id": "mona"
+      },
+      {
+        "id": "a_int_lubna",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة لبنى",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "lubna",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "INT_LUBNA",
+        "target_id": "lubna"
+      },
+      {
+        "id": "a_int_tarek",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة طارق",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "tarek",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "INT_TAREK",
+        "target_id": "tarek"
+      },
+      {
+        "id": "a_int_salwa",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة سلوى",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "salwa",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "INT_SALWA",
+        "target_id": "salwa"
+      },
+      {
+        "id": "p_version_wasim",
+        "type": "present_evidence",
+        "label_ar": "اعرض سجل الإصدارات على وسيم",
+        "precondition": {
+          "presented": {
+            "evidence_id": "ev_version_history",
+            "to_character": "wasim"
+          }
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "PRESENTED_VERSION"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "P_VERSION_WASIM",
+        "target_id": "wasim"
+      },
+      {
+        "id": "p_messenger_wasim",
+        "type": "present_evidence",
+        "label_ar": "اعرض سجل الرسائل على وسيم",
+        "precondition": {
+          "presented": {
+            "evidence_id": "ev_messenger",
+            "to_character": "wasim"
+          }
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "PRESENTED_MESSENGER"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "P_MESSENGER_WASIM",
+        "target_id": "wasim"
+      },
+      {
+        "id": "p_share_maysoon",
+        "type": "present_evidence",
+        "label_ar": "اعرض سجل المشاركة على ميسون",
+        "precondition": {
+          "presented": {
+            "evidence_id": "ev_share_log",
+            "to_character": "maysoon"
+          }
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "PRESENTED_SHARE"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "P_SHARE_MAYSOON",
+        "target_id": "maysoon"
+      },
+      {
+        "id": "ask_maysoon_f_report_published",
+        "type": "interview",
+        "label_ar": "[نموذج] maysoon يذكر f_report_published",
+        "precondition": {
+          "has_evidence": "ev_report"
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_report_published"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "ASK_MAYSOON_F_REPORT_PUBLISHED",
+        "target_id": "maysoon"
+      },
+      {
+        "id": "ask_maysoon_f_maysoon_prev",
+        "type": "interview",
+        "label_ar": "[نموذج] maysoon يذكر f_maysoon_prev",
+        "precondition": {
+          "has_evidence": "ev_report"
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_maysoon_prev"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "ASK_MAYSOON_F_MAYSOON_PREV",
+        "target_id": "maysoon"
+      },
+      {
+        "id": "ask_maysoon_f_wasim_shared",
+        "type": "interview",
+        "label_ar": "[نموذج] maysoon يكشف f_wasim_shared",
+        "precondition": {
+          "all": [
+            {
+              "has_evidence": "ev_report"
+            },
+            {
+              "presented": {
+                "evidence_id": "ev_share_log",
+                "to_character": "maysoon"
+              }
+            }
+          ]
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_wasim_shared"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "ASK_MAYSOON_F_WASIM_SHARED",
+        "target_id": "maysoon"
+      },
+      {
+        "id": "ask_wasim_f_panel_session",
+        "type": "interview",
+        "label_ar": "[نموذج] wasim يذكر f_panel_session",
+        "precondition": {
+          "has_evidence": "ev_report"
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_panel_session"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "ASK_WASIM_F_PANEL_SESSION",
+        "target_id": "wasim"
+      },
+      {
+        "id": "ask_wasim_f_true_scores",
+        "type": "interview",
+        "label_ar": "[نموذج] wasim يذكر f_true_scores",
+        "precondition": {
+          "has_evidence": "ev_report"
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_true_scores"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "ASK_WASIM_F_TRUE_SCORES",
+        "target_id": "wasim"
+      },
+      {
+        "id": "ask_wasim_f_club",
+        "type": "interview",
+        "label_ar": "[نموذج] wasim يذكر f_club",
+        "precondition": {
+          "has_evidence": "ev_report"
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_club"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "ASK_WASIM_F_CLUB",
+        "target_id": "wasim"
+      },
+      {
+        "id": "ask_wasim_f_wasim_edit",
+        "type": "interview",
+        "label_ar": "[نموذج] wasim يكشف f_wasim_edit",
+        "precondition": {
+          "all": [
+            {
+              "has_evidence": "ev_report"
+            },
+            {
+              "presented": {
+                "evidence_id": "ev_version_history",
+                "to_character": "wasim"
+              }
+            }
+          ]
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_wasim_edit"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "ASK_WASIM_F_WASIM_EDIT",
+        "target_id": "wasim"
+      },
+      {
+        "id": "ask_wasim_f_wasim_shared",
+        "type": "interview",
+        "label_ar": "[نموذج] wasim يكشف f_wasim_shared",
+        "precondition": {
+          "all": [
+            {
+              "has_evidence": "ev_report"
+            },
+            {
+              "presented": {
+                "evidence_id": "ev_messenger",
+                "to_character": "wasim"
+              }
+            }
+          ]
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_wasim_shared"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "ASK_WASIM_F_WASIM_SHARED",
+        "target_id": "wasim"
+      },
+      {
+        "id": "ask_adnan_f_true_scores",
+        "type": "interview",
+        "label_ar": "[نموذج] adnan يذكر f_true_scores",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_true_scores"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "ASK_ADNAN_F_TRUE_SCORES",
+        "target_id": "adnan"
+      },
+      {
+        "id": "ask_adnan_f_club",
+        "type": "interview",
+        "label_ar": "[نموذج] adnan يذكر f_club",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_club"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "ASK_ADNAN_F_CLUB",
+        "target_id": "adnan"
+      },
+      {
+        "id": "ask_adnan_f_complaint",
+        "type": "interview",
+        "label_ar": "[نموذج] adnan يذكر f_complaint",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_complaint"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "ASK_ADNAN_F_COMPLAINT",
+        "target_id": "adnan"
+      },
+      {
+        "id": "ask_adnan_f_panel_session",
+        "type": "interview",
+        "label_ar": "[نموذج] adnan يذكر f_panel_session",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_panel_session"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "ASK_ADNAN_F_PANEL_SESSION",
+        "target_id": "adnan"
+      },
+      {
+        "id": "ask_hazem_f_true_scores",
+        "type": "interview",
+        "label_ar": "[نموذج] hazem يذكر f_true_scores",
+        "precondition": {
+          "has_evidence": "ev_report"
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_true_scores"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "ASK_HAZEM_F_TRUE_SCORES",
+        "target_id": "hazem"
+      },
+      {
+        "id": "ask_hazem_f_hazem_visit",
+        "type": "interview",
+        "label_ar": "[نموذج] hazem يذكر f_hazem_visit",
+        "precondition": {
+          "has_evidence": "ev_report"
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_hazem_visit"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "ASK_HAZEM_F_HAZEM_VISIT",
+        "target_id": "hazem"
+      },
+      {
+        "id": "ask_hazem_f_panel_session",
+        "type": "interview",
+        "label_ar": "[نموذج] hazem يذكر f_panel_session",
+        "precondition": {
+          "has_evidence": "ev_report"
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_panel_session"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "ASK_HAZEM_F_PANEL_SESSION",
+        "target_id": "hazem"
+      },
+      {
+        "id": "ask_mona_f_true_scores",
+        "type": "interview",
+        "label_ar": "[نموذج] mona يذكر f_true_scores",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_true_scores"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "ASK_MONA_F_TRUE_SCORES",
+        "target_id": "mona"
+      },
+      {
+        "id": "ask_mona_f_panel_session",
+        "type": "interview",
+        "label_ar": "[نموذج] mona يذكر f_panel_session",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_panel_session"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "ASK_MONA_F_PANEL_SESSION",
+        "target_id": "mona"
+      },
+      {
+        "id": "ask_lubna_f_corridor",
+        "type": "interview",
+        "label_ar": "[نموذج] lubna يذكر f_corridor",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_corridor"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "ASK_LUBNA_F_CORRIDOR",
+        "target_id": "lubna"
+      },
+      {
+        "id": "ask_tarek_f_clerk",
+        "type": "interview",
+        "label_ar": "[نموذج] tarek يذكر f_clerk",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_clerk"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "ASK_TAREK_F_CLERK",
+        "target_id": "tarek"
+      },
+      {
+        "id": "ask_salwa_f_report_published",
+        "type": "interview",
+        "label_ar": "[نموذج] salwa يذكر f_report_published",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_report_published"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "ASK_SALWA_F_REPORT_PUBLISHED",
+        "target_id": "salwa"
+      },
+      {
+        "id": "ask_salwa_f_complaint",
+        "type": "interview",
+        "label_ar": "[نموذج] salwa يذكر f_complaint",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_complaint"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "ASK_SALWA_F_COMPLAINT",
+        "target_id": "salwa"
+      },
+      {
+        "id": "a_hint",
+        "type": "request_hint",
+        "label_ar": "اطلب تلميحاً",
+        "precondition": {
+          "always": true
+        },
+        "effects": [],
+        "time_cost_units": 0,
+        "telemetry_code": "REQUEST_HINT"
+      },
+      {
+        "id": "a_accuse",
+        "type": "final_accusation",
+        "label_ar": "قدّم الاستنتاج النهائي",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "SUBMIT"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "FINAL_ACCUSATION"
+      }
+    ]
+  },
+  "state_machine": {
+    "id": "c056",
+    "initial": "briefing",
+    "type": "compound",
+    "states": {
+      "briefing": {
+        "description_ar": "الإحاطة",
+        "type": "atomic",
+        "on": {
+          "START": {
+            "target": "investigating"
+          }
+        }
+      },
+      "investigating": {
+        "description_ar": "التحقيق",
+        "type": "compound",
+        "initial": "gathering",
+        "states": {
+          "gathering": {
+            "type": "atomic",
+            "on": {
+              "OPEN_DEDUCTION": {
+                "target": "deducing"
+              }
+            }
+          },
+          "deducing": {
+            "type": "atomic",
+            "on": {
+              "BACK": {
+                "target": "gathering"
+              }
+            }
+          }
+        },
+        "on": {
+          "SUBMIT": {
+            "target": "review"
+          }
+        }
+      },
+      "review": {
+        "description_ar": "مراجعة",
+        "type": "atomic",
+        "on": {
+          "CLOSE": {
+            "target": "resolved"
+          }
+        }
+      },
+      "resolved": {
+        "description_ar": "إغلاق",
+        "type": "final"
+      }
+    }
+  },
+  "dialogue": {
+    "max_turns_per_interview": 10,
+    "llm_enabled": false,
+    "topics": [
+      {
+        "id": "t_maysoon_src",
+        "label_ar": "مصدر الأرقام",
+        "example_questions_ar": [
+          "من أين جاءتك الأرقام؟",
+          "كيف تحققت منها؟"
+        ],
+        "fact_ids": [
+          "f_wasim_shared"
+        ],
+        "claim_ids": [
+          "cl_report_sources"
+        ]
+      },
+      {
+        "id": "t_maysoon_prev",
+        "label_ar": "خطؤها السابق",
+        "example_questions_ar": [
+          "هل أخطأت في تقرير سابق؟"
+        ],
+        "fact_ids": [
+          "f_maysoon_prev"
+        ]
+      },
+      {
+        "id": "t_wasim_edit",
+        "label_ar": "ملف الدرجات",
+        "example_questions_ar": [
+          "هل غيّرت شيئاً بعد خروج الأعضاء؟"
+        ],
+        "fact_ids": [
+          "f_wasim_edit"
+        ],
+        "claim_ids": [
+          "cl_wasim_typed"
+        ]
+      },
+      {
+        "id": "t_wasim_share",
+        "label_ar": "الرابط",
+        "example_questions_ar": [
+          "هل أرسلت الملف إلى أحد؟"
+        ],
+        "fact_ids": [
+          "f_wasim_shared"
+        ]
+      },
+      {
+        "id": "t_wasim_club",
+        "label_ar": "فريق الروبوت",
+        "example_questions_ar": [
+          "ما صلتك بزيد؟"
+        ],
+        "fact_ids": [
+          "f_club"
+        ]
+      },
+      {
+        "id": "t_adnan_scores",
+        "label_ar": "درجات عدنان",
+        "example_questions_ar": [
+          "كم درجة منحت كرماً؟"
+        ],
+        "fact_ids": [
+          "f_true_scores"
+        ]
+      },
+      {
+        "id": "t_adnan_coach",
+        "label_ar": "التدريب والإعلان",
+        "example_questions_ar": [
+          "هل لك صلة بالمرشحَين؟"
+        ],
+        "fact_ids": [
+          "f_club"
+        ]
+      },
+      {
+        "id": "t_adnan_complaint",
+        "label_ar": "الشكوى",
+        "example_questions_ar": [
+          "لماذا كتبت الشكوى؟"
+        ],
+        "fact_ids": [
+          "f_complaint"
+        ]
+      },
+      {
+        "id": "t_hazem_visit",
+        "label_ar": "زيارة غرفة النشرة",
+        "example_questions_ar": [
+          "لماذا زرت غرفة النشرة؟"
+        ],
+        "fact_ids": [
+          "f_hazem_visit"
+        ]
+      },
+      {
+        "id": "t_hazem_scores",
+        "label_ar": "درجات حازم",
+        "example_questions_ar": [
+          "ما درجاتك للمرشحَين؟"
+        ],
+        "fact_ids": [
+          "f_true_scores"
+        ]
+      },
+      {
+        "id": "t_mona_scores",
+        "label_ar": "درجات منى",
+        "example_questions_ar": [
+          "ما درجاتك والمحضر؟"
+        ],
+        "fact_ids": [
+          "f_true_scores"
+        ]
+      },
+      {
+        "id": "t_lubna",
+        "label_ar": "الممر",
+        "example_questions_ar": [
+          "أين كنت وماذا سمعت؟"
+        ],
+        "fact_ids": [
+          "f_corridor"
+        ]
+      },
+      {
+        "id": "t_tarek",
+        "label_ar": "مكتب القبول",
+        "example_questions_ar": [
+          "ماذا رأيت من ملفات وأوراق؟"
+        ],
+        "fact_ids": [
+          "f_clerk"
+        ]
+      },
+      {
+        "id": "t_salwa",
+        "label_ar": "النشر",
+        "example_questions_ar": [
+          "متى نُشر التقرير؟"
+        ],
+        "fact_ids": [
+          "f_report_published"
+        ]
+      }
+    ]
+  },
+  "rubric": {
+    "reference_answer_ar": "لم يخترع أحد أرقام التقرير، ولم يعرفها مصدراه المسمَّيان. أوراق الأعضاء الموقّعة والمحضر يعطيان كرماً 49 وعدنان منحه 17، أما 52 و20 والعبارة فتوجد في نسخة من ملف الدرجات عُدّلت الساعة 15:52 بحساب وسيم الصباغ حين لم يبق في القاعة 4 غيره، ثم أُرسل رابطها إلى ميسون الساعة 16:04 وفُتح في غرفة النشرة. لذلك الأرجح أن وسيم عدّل الملف وسرّب نسخته، وأن ميسون نقلت من غير مقابلة بالمحضر. حدود الاستنتاج: سجل الإصدارات يثبت الحساب لا اليد، وسجل الباب يثبت البطاقة لا حاملها، وصلة وسيم بزيد دافع محتمل ولا تثبت الفعل، ولا نعرف ما دار بين وسيم وميسون خارج المراسلة.",
+    "criteria": [
+      {
+        "id": "c_source",
+        "name_ar": "تصنيف المصادر",
+        "objective_ids": [
+          "lo_access"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يصنّف"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "أخطأ في الأغلب"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "نصف صحيح"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمه صحيح"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كله صحيح"
+          }
+        ]
+      },
+      {
+        "id": "c_conflict",
+        "name_ar": "ربط السجلات بأزمنتها",
+        "objective_ids": [
+          "lo_timeline"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يضع شيئاً"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "وضع قليلاً"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "وضع نصفها صحيحاً"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمها"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كلها في موضعها"
+          }
+        ]
+      },
+      {
+        "id": "c_links",
+        "name_ar": "ربط الأدلة بالفرضيات",
+        "objective_ids": [
+          "lo_check",
+          "lo_indep"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.2,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لا روابط"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "قليلة"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "نصفها صحيح"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمها"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كلها دقيقة"
+          }
+        ]
+      },
+      {
+        "id": "c_uncertainty",
+        "name_ar": "معايرة الثقة",
+        "objective_ids": [
+          "lo_calib"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.2,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "ثقة مفرطة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "حدود قليلة"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "جزئية"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معقولة"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "معايَرة كاملة"
+          }
+        ]
+      },
+      {
+        "id": "c_revision",
+        "name_ar": "مراجعة الرأي",
+        "objective_ids": [
+          "lo_revise"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "بقي على فرضية مرفوضة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "لم يعلن فرضية"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "ثبت على فرضية سليمة"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "غيّر بدليل"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "غيّر بدليل ووثّق"
+          }
+        ]
+      },
+      {
+        "id": "c_elimination",
+        "name_ar": "استبعاد الفرضيات الخاطئة",
+        "objective_ids": [
+          "lo_hyp"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يستبعد"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "استبعد خطأً"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "فرضية بدليل"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "فرضيتين"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كل الخاطئة"
+          }
+        ]
+      },
+      {
+        "id": "c_justification",
+        "name_ar": "جودة الحجة المكتوبة",
+        "objective_ids": [
+          "lo_check",
+          "lo_hyp"
+        ],
+        "scored_by": "human",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لا حجة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "ادعاء بلا سند"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "أدلة دون ربط"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "ربط الأدلة بالاستنتاج"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "ربط مع البدائل والحدود"
+          }
+        ]
+      }
+    ]
+  },
+  "hint_ladder": [
+    {
+      "id": "hg1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "قبل أن تحكم على التقرير، اسأل عن كل تفصيل فيه: من كان بوسعه أن يعرفه؟",
+      "trigger": {
+        "always": true
+      },
+      "assessment_weight": 0.02
+    },
+    {
+      "id": "hg2",
+      "level": 2,
+      "kind": "focus_area",
+      "text_ar": "قابل ما ينسبه التقرير إلى كل مصدر بمكانه ووقته، ثم اسأل من دخل القاعة فعلاً.",
+      "trigger": {
+        "has_evidence": "ev_report"
+      },
+      "assessment_weight": 0.04
+    },
+    {
+      "id": "hg3",
+      "level": 3,
+      "kind": "pointer",
+      "text_ar": "الأرقام المنشورة تُقابَل بالأوراق الموقّعة لا بالتقرير نفسه؛ أعد الجمع بقلمك.",
+      "trigger": {
+        "has_evidence": "ev_report"
+      },
+      "assessment_weight": 0.08
+    },
+    {
+      "id": "hg4",
+      "level": 4,
+      "kind": "partial_reveal",
+      "text_ar": "للجدول نسخة إلكترونية؛ اطلب سجل إصداراتها وسجل مشاركتها وقارنهما بأزمنة الباب.",
+      "trigger": {
+        "has_evidence": "ev_room_log"
+      },
+      "assessment_weight": 0.12
+    },
+    {
+      "id": "hg5",
+      "level": 5,
+      "kind": "full_reveal",
+      "text_ar": "الرقمان 20 و52 والعبارة ليست في أي ورقة موقّعة، بل في نسخة عُدّلت بعد الجلسة وأُرسل رابطها إلى غرفة النشرة، وصاحب التعديل والإرسال هو أمين السر وسيم الصباغ.",
+      "trigger": {
+        "has_evidence": "ev_share_log"
+      },
+      "assessment_weight": 0.2
+    },
+    {
+      "id": "hc1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "هل كان بوسع من يقف في الممر أو في مكتب آخر أن يعرف ما يُقال خلف باب مغلق؟",
+      "trigger": {
+        "has_evidence": "ev_report"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_a_closed"
+    },
+    {
+      "id": "hc2",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "اقرأ إفادتي المصدرين وانتبه إلى ما يقول كل منهما إنه قاله لميسون وما لم يقله.",
+      "trigger": {
+        "has_evidence": "ev_lubna"
+      },
+      "assessment_weight": 0.06,
+      "targets_inference_id": "i_a_closed"
+    },
+    {
+      "id": "hc3",
+      "level": 3,
+      "kind": "partial_reveal",
+      "text_ar": "لبنى غادرت الممر في الثالثة والباب مغلق، وطارق لم يدخل القاعة؛ فمن أين جاءت تفاصيل الجلسة؟",
+      "trigger": {
+        "has_evidence": "ev_tarek"
+      },
+      "assessment_weight": 0.1,
+      "targets_inference_id": "i_a_closed"
+    },
+    {
+      "id": "hf1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "إذا كان رقم منشور صحيحاً فأين تجده في السجل الأصلي؟",
+      "trigger": {
+        "has_evidence": "ev_report"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_a_figures"
+    },
+    {
+      "id": "hf2",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "اجمع معايير كل ورقة بنفسك ثم اجمع الأوراق الثلاث لكل مرشح.",
+      "trigger": {
+        "has_evidence": "ev_paper_sheets"
+      },
+      "assessment_weight": 0.06,
+      "targets_inference_id": "i_a_figures"
+    },
+    {
+      "id": "hf3",
+      "level": 3,
+      "kind": "partial_reveal",
+      "text_ar": "ورقة عدنان تعطي كرماً 17، ومجموع كرم الأصلي 49، فكم يبعد الرقمان المنشوران؟",
+      "trigger": {
+        "has_evidence": "ev_paper_sheets"
+      },
+      "assessment_weight": 0.1,
+      "targets_inference_id": "i_a_figures"
+    },
+    {
+      "id": "he1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "من يملك أن يغيّر ملفاً إلكترونياً بعد أن غادر أصحاب الأوراق؟",
+      "trigger": {
+        "has_evidence": "ev_room_log"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_a_edit"
+    },
+    {
+      "id": "he2",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "ضع على خط واحد: خروج الأعضاء وزمن الإصدار الثاني وخروج آخر بطاقة.",
+      "trigger": {
+        "has_evidence": "ev_version_history"
+      },
+      "assessment_weight": 0.06,
+      "targets_inference_id": "i_a_edit"
+    },
+    {
+      "id": "he3",
+      "level": 3,
+      "kind": "partial_reveal",
+      "text_ar": "الإصدار الثاني كان الساعة 15:52، وخرج الأعضاء بين 15:41 و15:43، وبقيت في القاعة بطاقة واحدة حتى 16:02.",
+      "trigger": {
+        "has_evidence": "ev_version_history"
+      },
+      "assessment_weight": 0.1,
+      "targets_inference_id": "i_a_edit"
+    }
+  ],
+  "fairness_test": {
+    "requirements": {
+      "min_disjoint_proof_paths": 2,
+      "max_inference_depth": 3,
+      "all_red_herrings_refutable": true,
+      "culprit_uniquely_entailed": true,
+      "no_hidden_fact_dependency": true,
+      "max_required_actions": 40
+    },
+    "runs": []
+  },
+  "ending_explanation": {
+    "steps": [
+      {
+        "order": 1,
+        "text_ar": "ابدأ بسؤال الوصول إلى المعلومة: لبنى كانت وراء باب مغلق وغادرت قبل نهاية الجلسة، وطارق لم يدخل القاعة. فما نشره التقرير يفوق ما كان بوسعهما معرفته.",
+        "uses_evidence_ids": [
+          "ev_report",
+          "ev_lubna",
+          "ev_tarek"
+        ],
+        "inference_id": "i_a_closed"
+      },
+      {
+        "order": 2,
+        "text_ar": "أعد الحساب من الأوراق الموقّعة: 17 و16 و16 تعطي 49، والتقرير نشر 52 ونسب لعدنان 20 بدل 17.",
+        "uses_evidence_ids": [
+          "ev_report",
+          "ev_paper_sheets"
+        ],
+        "inference_id": "i_a_figures"
+      },
+      {
+        "order": 3,
+        "text_ar": "سجل الإصدارات يظهر تبديل الخانة من 17 إلى 20 الساعة 15:52 بحساب وسيم، وقد خرج الأعضاء قبلها.",
+        "uses_evidence_ids": [
+          "ev_version_history"
+        ],
+        "inference_id": "i_a_edit"
+      },
+      {
+        "order": 4,
+        "text_ar": "الإصدار المعدّل صار رابطاً أنشأه حساب وسيم الساعة 16:04، وفتحه حاسوب غرفة النشرة الساعة 16:11.",
+        "uses_evidence_ids": [
+          "ev_share_log"
+        ],
+        "inference_id": "i_a_share"
+      },
+      {
+        "order": 5,
+        "text_ar": "تجتمع الحلقات في تفسير واحد: عدّل وسيم الملف وسرّب نسخته، فنقلتها ميسون دون مقابلة بالمحضر.",
+        "uses_evidence_ids": [
+          "ev_version_history",
+          "ev_share_log",
+          "ev_paper_sheets"
+        ],
+        "inference_id": "i_wasim"
+      }
+    ],
+    "alternative_paths_ar": [
+      "مسار مستقل: الإعلان والشكوى وسجل الباب تبين أن الأرقام لم تُنشر ولم يدخل القاعة غير أربع بطاقات، والمحضر الموقّع يخالف الرقمين المنشورين، وآخر تعديل في النسخة جاء من حاسوب القاعة بعد خروج الأعضاء، ورسالة وسيم إلى ميسون تحمل الرابط."
+    ],
+    "what_evidence_could_not_show_ar": [
+      "سجل الإصدارات يسجل الحساب والجهاز لا اليد التي كتبت، وسجل الباب يسجل البطاقة لا حاملها.",
+      "صلة وسيم بزيد تفسّر دافعاً محتملاً ولا تثبت الفعل، ولا نعرف ما دار بين وسيم وميسون خارج المراسلة.",
+      "لا يعرف السجل إن كانت ميسون قد شكّت في الملف أم لا، وإنما تبين أنها لم تقابل الأرقام بالمحضر."
+    ],
+    "science_notes_ar": [
+      "التقرير الذي يذكر تفاصيل لا يستطيع مصدره المعلن معرفتها يدل على مصدر آخر غير معلن، ولا يدل بذاته على أن التفاصيل صحيحة.",
+      "تطابق رقم منشور مع نسخة معدّلة لا يعدّ تأييداً مستقلاً؛ فهو يعود إلى أصل واحد.",
+      "إعادة جمع الأرقام من الأصل المكتوب أقوى من الاكتفاء بإنكار صاحب المصلحة."
+    ]
+  },
+  "expert_review": [
+    {
+      "role": "narrative_editor",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-11-05",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "scientific_reviewer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-11-05",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "learning_designer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-11-05",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "age_appropriateness",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-11-05",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "cultural_reviewer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-11-05",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "legal_rights",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-11-05",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "safety",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-11-05",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    }
+  ]
+}

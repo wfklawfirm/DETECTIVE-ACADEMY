@@ -1,0 +1,2122 @@
+{
+  "schema_version": "0.1.0",
+  "case_id": "c049_nothing_was_stolen",
+  "case_version": "0.1.0",
+  "meta": {
+    "title_ar": "لم يُسرق شيء: ناي الفرقة الأزرق",
+    "title_en": "Nothing Was Stolen: The Blue Nay",
+    "age_band": "13-15",
+    "estimated_minutes": 25,
+    "difficulty": 2,
+    "content_flags": [
+      "no_violence"
+    ],
+    "knowledge_object_refs": [
+      "KO-NP-02-002",
+      "KO-NP-03-009",
+      "KO-NP-02-011",
+      "KO-RS-05-001",
+      "KO-RS-05-002",
+      "KO-RS-05-003",
+      "KO-RS-05-004",
+      "KO-RS-05-014",
+      "KO-RS-06-001",
+      "KO-RS-06-009",
+      "KO-RS-06-021"
+    ],
+    "locale": "ar",
+    "dialogue_register": "msa",
+    "authors": [
+      "فريق أثر التحريري (مسودة بمساعدة الذكاء الاصطناعي، لم تُراجَع بشرياً بعد)"
+    ]
+  },
+  "premise": {
+    "hook_ar": "قبل حفل الخميس بيوم وجد معلم الموسيقى خزانة الآلات مقفلة سليمة القفل، لكن الناي الأزرق، ناي الفرقة الوحيد، غير موجود. بدأ الطلاب يهمسون باسم رامي، وقد يُظلم قبل أن يثبت شيء.",
+    "player_role_ar": "أنت عضو في لجنة المراجعة الطلابية في مدرسة الراية، وطُلب منك رأي معلّل في ما جرى للناي دون اتهام أحد قبل أن تثبت السجلات شيئاً.",
+    "setting_ar": "مدرسة الراية في مدينة وادي الصفصاف المتخيلة، يوم الأربعاء قبل حفل نهاية الفصل. الأوقات بساعة المدرسة.",
+    "public_fact_ids": [
+      "f_nay_missing",
+      "f_concert"
+    ],
+    "assumed_general_knowledge_ar": [
+      "من يريد فتح خزانة مقفلة سليمة القفل يحتاج إلى مفتاحها",
+      "قسيمة موقّعة من المسؤول تعني إذناً بالإجراء المكتوب فيها",
+      "الحساب البسيط للساعات والدقائق (من 3:08 إلى 3:55 سبع وأربعون دقيقة)",
+      "رؤية شخص يحمل شيئاً لا تخبرنا لماذا يحمله"
+    ]
+  },
+  "entities": {
+    "characters": [
+      {
+        "id": "hisham",
+        "name_ar": "الأستاذ هشام الراعي",
+        "role": "authority",
+        "age_descriptor_ar": "معلم الموسيقى ومشرف فرقة المدرسة",
+        "persona_ar": "منظم ومنشغل بالحفل، يوقّع أوراقاً كثيرة في اليوم الواحد ويقرّ بأنه قد ينسى.",
+        "motives_ar": [
+          "أن يقام الحفل بنايه الأزرق",
+          "ألا يُظلم طالب بسبب ظنّ"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        }
+      },
+      {
+        "id": "rami",
+        "name_ar": "رامي القاسم",
+        "role": "suspect",
+        "age_descriptor_ar": "طالب في الصف التاسع، عازف الناي المنفرد في الفرقة",
+        "persona_ar": "شغوف بالعزف ويتكلم بحماس، ويقول ما يخطر له قبل أن يفكر.",
+        "motives_ar": [
+          "أن يتمرن أكثر قبل الحفل",
+          "أن يحتفظ بدوره المنفرد"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        }
+      },
+      {
+        "id": "lina",
+        "name_ar": "لينا السقا",
+        "role": "suspect",
+        "age_descriptor_ar": "طالبة في الصف التاسع، عازفة الناي الثانية",
+        "persona_ar": "هادئة وصريحة، استعارت الناي مرة بإذن وأعادته.",
+        "motives_ar": [
+          "أن تتمرن على المقطوعة",
+          "أن تُعطى فرصة العزف المنفرد"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        }
+      },
+      {
+        "id": "karim",
+        "name_ar": "كرم الشامي",
+        "role": "suspect",
+        "age_descriptor_ar": "طالب في الصف التاسع، عازف طبلة وزميل رامي",
+        "persona_ar": "سريع الحكم ويردد ما يسمعه، لكنه يتراجع حين يرى الدليل.",
+        "motives_ar": [
+          "أن يعرف من أخذ الناي",
+          "منافسة رامي على مكان في الحفل"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        }
+      },
+      {
+        "id": "zaid",
+        "name_ar": "العم زيد الحمدان",
+        "role": "suspect",
+        "age_descriptor_ar": "حارس المدرسة وعامل الصيانة منذ سنوات",
+        "persona_ar": "قليل الكلام، ينفذ المهام المكتوبة له بدقة ويحتفظ بأوراقه في جيب سترته.",
+        "motives_ar": [
+          "أن ينجز مهامه اليومية",
+          "ألا يُلام على شيء لم يقصده"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        }
+      },
+      {
+        "id": "dalal",
+        "name_ar": "السيدة دلال العمري",
+        "role": "witness",
+        "age_descriptor_ar": "معلمة الفنون",
+        "persona_ar": "ملاحِظة وتحكي ما رأته، وتضيف أحياناً ظنها فيما رأت.",
+        "motives_ar": [
+          "أن تساعد في معرفة ما جرى"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        }
+      }
+    ],
+    "locations": [
+      {
+        "id": "loc_music",
+        "name_ar": "غرفة الموسيقى",
+        "description_ar": "غرفة فيها خزانة الآلات المقفلة."
+      },
+      {
+        "id": "loc_lounge",
+        "name_ar": "غرفة المعلمين",
+        "description_ar": "عليها لوحة المفاتيح وسجلها."
+      },
+      {
+        "id": "loc_office",
+        "name_ar": "مكتب المدرسة",
+        "description_ar": "فيه صينية القسائم والختم."
+      },
+      {
+        "id": "loc_gate",
+        "name_ar": "بوابة المدرسة",
+        "description_ar": "يدوّن الحارس فيها الدخول والخروج."
+      },
+      {
+        "id": "loc_corridor",
+        "name_ar": "الممر قرب غرفة الموسيقى",
+        "description_ar": "فيه خزائن حقائب الطلاب."
+      },
+      {
+        "id": "loc_workshop",
+        "name_ar": "ورشة المعازف الشرقية",
+        "description_ar": "ورشة خارج المدرسة تصلح الآلات."
+      }
+    ],
+    "objects": [
+      {
+        "id": "obj_nay",
+        "name_ar": "الناي الأزرق",
+        "description_ar": "ناي الفرقة الوحيد الصالح للحفل، له صندوق أزرق طويل."
+      },
+      {
+        "id": "obj_cabinet",
+        "name_ar": "خزانة الآلات",
+        "description_ar": "خزانة مقفلة في غرفة الموسيقى."
+      },
+      {
+        "id": "obj_key_log",
+        "name_ar": "سجل المفتاح",
+        "description_ar": "ورقة بجانب لوحة المفاتيح يدوّن فيها من أخذ المفتاح ومتى."
+      },
+      {
+        "id": "obj_slip",
+        "name_ar": "قسيمة الصيانة",
+        "description_ar": "ورقة مرقّمة بتوقيع المسؤول تطلب إصلاح شيء."
+      },
+      {
+        "id": "obj_receipt",
+        "name_ar": "إيصال الورشة",
+        "description_ar": "إيصال صادر عن ورشة الإصلاح."
+      }
+    ],
+    "organizations": [
+      {
+        "id": "org_band",
+        "name_ar": "فرقة مدرسة الراية",
+        "description_ar": "فرقة موسيقية طلابية يشرف عليها معلم الموسيقى."
+      }
+    ]
+  },
+  "truth": {
+    "solution": {
+      "culprit_ids": [
+        "zaid"
+      ],
+      "summary_ar": "لا سرقة. وقّع المعلم صباح الثلاثاء القسيمة 14 لإصلاح الناي ونسيها بين أربع قسائم، وبعد الدوام أخرج العم زيد الناي من الخزانة بالمفتاح المسجّل «حسب القسيمة 14» وأوصله إلى الورشة، فغاب الناي عن الخزانة المقفلة دون كسر. ويثبت ذلك مساران: القسيمة مع سجل المفتاح، وسجل البوابة مع إيصال الورشة.",
+      "key_fact_ids": [
+        "f_nay_for_repair"
+      ]
+    },
+    "facts": [
+      {
+        "id": "f_nay_missing",
+        "statement_ar": "صباح الأربعاء 7:50 فتح الأستاذ هشام خزانة الآلات فلم يجد الناي الأزرق، والحفل يوم الخميس الساعة 5 مساءً.",
+        "kind": "event",
+        "subject_ids": [
+          "hisham",
+          "obj_nay"
+        ],
+        "spoiler_level": 0,
+        "time": {
+          "start_min": 1460
+        },
+        "location_id": "loc_music"
+      },
+      {
+        "id": "f_concert",
+        "statement_ar": "الحفل يوم الخميس الساعة 5 مساءً، والناي الأزرق هو ناي الفرقة الوحيد الصالح للحفل.",
+        "kind": "attribute",
+        "subject_ids": [
+          "obj_nay"
+        ],
+        "spoiler_level": 0
+      },
+      {
+        "id": "f_cabinet_intact",
+        "statement_ar": "الخزانة وجدت مقفلة وقفلها سليم بلا كسر ولا خدش.",
+        "kind": "state",
+        "subject_ids": [
+          "obj_cabinet"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 1460
+        },
+        "location_id": "loc_music"
+      },
+      {
+        "id": "f_rami_msg",
+        "statement_ar": "كتب رامي مساء الاثنين في مجموعة الفرقة أنه يتمنى لو يأخذ الناي إلى بيته ليتمرن حتى الحفل، فرد عليه الأستاذ هشام بأن الناي لا يخرج من الغرفة.",
+        "kind": "event",
+        "subject_ids": [
+          "rami",
+          "hisham"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": -810
+        }
+      },
+      {
+        "id": "f_lina_loan",
+        "statement_ar": "استعارت لينا الناي قبل ثلاثة أسابيع بإذن مكتوب من الأستاذ هشام وأعادته يوم الاثنين التالي، وكل ذلك مسجل في ورقة الاستعارة.",
+        "kind": "event",
+        "subject_ids": [
+          "lina",
+          "obj_nay"
+        ],
+        "spoiler_level": 1
+      },
+      {
+        "id": "f_rami_returned",
+        "statement_ar": "تمرن رامي على الناي في استراحة الغداء من 12:40 إلى 12:58 يوم الثلاثاء بحضور المعلم، وأعاده ووقّع المعلم على ورقة الاستعارة.",
+        "kind": "event",
+        "subject_ids": [
+          "rami",
+          "hisham",
+          "obj_nay"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 310,
+          "end_min": 328
+        },
+        "location_id": "loc_music"
+      },
+      {
+        "id": "f_in_cabinet_1305",
+        "statement_ar": "الناي كان داخل الخزانة المقفلة حين أعاد الأستاذ هشام المفتاح إلى اللوحة الساعة 1:05 يوم الثلاثاء.",
+        "kind": "state",
+        "subject_ids": [
+          "obj_nay",
+          "obj_cabinet"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 335
+        },
+        "location_id": "loc_music"
+      },
+      {
+        "id": "f_dalal_saw",
+        "statement_ar": "رأت السيدة دلال العم زيد بعد الثالثة بقليل يخرج من غرفة الموسيقى حاملاً صندوقاً أزرق طويلاً، ورأت كرماً واقفاً قرب الباب.",
+        "kind": "event",
+        "subject_ids": [
+          "dalal",
+          "zaid",
+          "karim"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 453,
+          "precision": "approx"
+        },
+        "location_id": "loc_corridor"
+      },
+      {
+        "id": "f_karim_there",
+        "statement_ar": "كان كرم قرب غرفة الموسيقى الساعة 3 لأن خزانة حقيبته في الممر نفسه، وليس معه مفتاح الخزانة.",
+        "kind": "state",
+        "subject_ids": [
+          "karim"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 450,
+          "precision": "approx"
+        },
+        "location_id": "loc_corridor"
+      },
+      {
+        "id": "f_slip_signed",
+        "statement_ar": "وقّع الأستاذ هشام صباح الثلاثاء الساعة 7:50 القسيمة رقم 14: إصلاح الناي الأزرق، وقّع معها قسائم أخرى هي 12 و13 و15، فكانت أربع قسائم في الدفعة نفسها.",
+        "kind": "event",
+        "subject_ids": [
+          "hisham",
+          "obj_slip"
+        ],
+        "spoiler_level": 2,
+        "time": {
+          "start_min": 20
+        },
+        "location_id": "loc_office"
+      },
+      {
+        "id": "f_slip_handed",
+        "statement_ar": "ختم المكتب القسيمة وسلّمها للعم زيد الساعة 2:50 ظهراً يوم الثلاثاء.",
+        "kind": "event",
+        "subject_ids": [
+          "zaid",
+          "obj_slip"
+        ],
+        "spoiler_level": 2,
+        "time": {
+          "start_min": 440
+        },
+        "location_id": "loc_office"
+      },
+      {
+        "id": "f_key_log",
+        "statement_ar": "سجل مفتاح الخزانة: أخذه العم زيد الساعة 3:00 «حسب القسيمة 14» وأعاده 3:06، ولا اسم آخر بين 1:05 و3:00 ولا بعد 3:06 حتى صباح الأربعاء.",
+        "kind": "event",
+        "subject_ids": [
+          "zaid",
+          "obj_key_log"
+        ],
+        "spoiler_level": 2,
+        "time": {
+          "start_min": 450,
+          "end_min": 456
+        },
+        "location_id": "loc_lounge"
+      },
+      {
+        "id": "f_gate_out",
+        "statement_ar": "سجّل حارس البوابة خروج العم زيد الساعة 3:08 إلى «ورشة المعازف» حاملاً صندوقاً طويلاً، ودخوله 3:55 دون حمولة.",
+        "kind": "event",
+        "subject_ids": [
+          "zaid"
+        ],
+        "spoiler_level": 2,
+        "time": {
+          "start_min": 458,
+          "end_min": 505
+        },
+        "location_id": "loc_gate"
+      },
+      {
+        "id": "f_receipt",
+        "statement_ar": "ورشة المعازف الشرقية استلمت ناياً أزرق بصندوقه الساعة 3:40 بالإيصال رقم 61 باسم المدرسة بموجب القسيمة 14، وموعد التسليم الخميس 11:00.",
+        "kind": "event",
+        "subject_ids": [
+          "zaid",
+          "obj_nay",
+          "obj_receipt"
+        ],
+        "spoiler_level": 2,
+        "time": {
+          "start_min": 490
+        },
+        "location_id": "loc_workshop"
+      },
+      {
+        "id": "f_zaid_off",
+        "statement_ar": "كان الأربعاء يوم الإجازة الأسبوعية للعم زيد، فلم يكن في المدرسة حين اكتُشف غياب الناي.",
+        "kind": "state",
+        "subject_ids": [
+          "zaid"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 1460
+        }
+      },
+      {
+        "id": "f_hisham_forgot",
+        "statement_ar": "نسي الأستاذ هشام أنه وقّع القسيمة 14 بين قسائم أخرى، فلم يربط اختفاء الناي بها.",
+        "kind": "state",
+        "subject_ids": [
+          "hisham"
+        ],
+        "spoiler_level": 3,
+        "time": {
+          "start_min": 1460
+        }
+      },
+      {
+        "id": "f_nay_for_repair",
+        "statement_ar": "أُخذ الناي من الخزانة بإذن صحيح موقّع، وسُلّم للورشة لإصلاحه؛ لم يسرقه أحد.",
+        "kind": "event",
+        "subject_ids": [
+          "zaid",
+          "obj_nay"
+        ],
+        "spoiler_level": 3,
+        "time": {
+          "start_min": 450,
+          "end_min": 490
+        },
+        "location_id": "loc_workshop"
+      },
+      {
+        "id": "f_no_theft",
+        "statement_ar": "لا سرقة ولا إخفاء: ما جرى نقل مصرّح به لم يصل خبره إلى المعلم.",
+        "kind": "state",
+        "subject_ids": [
+          "obj_nay"
+        ],
+        "spoiler_level": 3
+      }
+    ],
+    "claims": [
+      {
+        "id": "cl_no_permission",
+        "statement_ar": "لم آذن بإخراج الناي من الخزانة.",
+        "kind": "honest_mistake",
+        "held_by": [
+          "hisham"
+        ],
+        "true_fact_id": "f_hisham_forgot",
+        "contradicted_by_evidence_ids": [
+          "ev_slip14"
+        ]
+      },
+      {
+        "id": "cl_rami_took",
+        "statement_ar": "رامي أخذ الناي إلى بيته.",
+        "kind": "rumour",
+        "held_by": [
+          "karim"
+        ],
+        "true_fact_id": "f_nay_for_repair",
+        "contradicted_by_evidence_ids": [
+          "ev_key_log",
+          "ev_signout_sheet"
+        ]
+      },
+      {
+        "id": "cl_zaid_took",
+        "statement_ar": "العم زيد أخذ الناي بصندوقه ومضى به خارج المدرسة.",
+        "kind": "half_truth",
+        "held_by": [
+          "dalal"
+        ],
+        "true_fact_id": "f_nay_for_repair",
+        "contradicted_by_evidence_ids": [
+          "ev_slip14",
+          "ev_receipt"
+        ]
+      }
+    ]
+  },
+  "timeline": [
+    {
+      "id": "te_msg",
+      "description_ar": "مساء الاثنين: رسالة رامي في مجموعة الفرقة وجواب المعلم.",
+      "time": {
+        "start_min": -810
+      },
+      "actor_ids": [
+        "rami",
+        "hisham"
+      ],
+      "fact_ids": [
+        "f_rami_msg"
+      ],
+      "motivated_by_ar": "رغبة في مزيد من التمرين"
+    },
+    {
+      "id": "te_slip",
+      "description_ar": "صباح الثلاثاء: توقيع أربع قسائم صيانة ومنها القسيمة 14.",
+      "time": {
+        "start_min": 20
+      },
+      "location_id": "loc_office",
+      "actor_ids": [
+        "hisham"
+      ],
+      "fact_ids": [
+        "f_slip_signed"
+      ],
+      "motivated_by_ar": "إصلاح الناي قبل الحفل بعد أن لاحظ المعلم نغمة متقطعة فيه"
+    },
+    {
+      "id": "te_rami",
+      "description_ar": "الغداء: تمرن رامي وأعاد الناي ووقّع المعلم.",
+      "time": {
+        "start_min": 310,
+        "end_min": 328
+      },
+      "location_id": "loc_music",
+      "actor_ids": [
+        "rami",
+        "hisham"
+      ],
+      "fact_ids": [
+        "f_rami_returned"
+      ],
+      "witness_ids": [
+        "hisham"
+      ],
+      "motivated_by_ar": "تمرين قبل الحفل"
+    },
+    {
+      "id": "te_lock",
+      "description_ar": "أغلق المعلم الخزانة وأعاد المفتاح إلى اللوحة.",
+      "time": {
+        "start_min": 335
+      },
+      "location_id": "loc_music",
+      "actor_ids": [
+        "hisham"
+      ],
+      "fact_ids": [
+        "f_in_cabinet_1305"
+      ],
+      "motivated_by_ar": "حفظ الآلات بعد انتهاء الحصص"
+    },
+    {
+      "id": "te_handed",
+      "description_ar": "سلّم المكتب القسيمة 14 للعم زيد.",
+      "time": {
+        "start_min": 440
+      },
+      "location_id": "loc_office",
+      "actor_ids": [
+        "zaid"
+      ],
+      "fact_ids": [
+        "f_slip_handed"
+      ],
+      "motivated_by_ar": "تنفيذ مهمة الصيانة المكتوبة"
+    },
+    {
+      "id": "te_key",
+      "description_ar": "أخذ العم زيد المفتاح وأخرج الناي بصندوقه.",
+      "time": {
+        "start_min": 450,
+        "end_min": 454
+      },
+      "location_id": "loc_music",
+      "actor_ids": [
+        "zaid"
+      ],
+      "witness_ids": [
+        "dalal"
+      ],
+      "fact_ids": [
+        "f_key_log",
+        "f_dalal_saw",
+        "f_karim_there"
+      ],
+      "motivated_by_ar": "تنفيذ القسيمة 14",
+      "caused_by_event_ids": [
+        "te_handed"
+      ]
+    },
+    {
+      "id": "te_keyback",
+      "description_ar": "أعاد العم زيد المفتاح إلى اللوحة بعد إقفال الخزانة.",
+      "time": {
+        "start_min": 456
+      },
+      "location_id": "loc_lounge",
+      "actor_ids": [
+        "zaid"
+      ],
+      "fact_ids": [
+        "f_key_log"
+      ],
+      "motivated_by_ar": "إتمام الإجراء المعتاد",
+      "caused_by_event_ids": [
+        "te_key"
+      ]
+    },
+    {
+      "id": "te_gate_out",
+      "description_ar": "خرج العم زيد من البوابة متجهاً إلى الورشة.",
+      "time": {
+        "start_min": 458
+      },
+      "location_id": "loc_gate",
+      "actor_ids": [
+        "zaid"
+      ],
+      "fact_ids": [
+        "f_gate_out"
+      ],
+      "motivated_by_ar": "إيصال الناي إلى الورشة",
+      "caused_by_event_ids": [
+        "te_keyback"
+      ]
+    },
+    {
+      "id": "te_receipt",
+      "description_ar": "استلمت الورشة الناي وأصدرت الإيصال 61.",
+      "time": {
+        "start_min": 490
+      },
+      "location_id": "loc_workshop",
+      "actor_ids": [
+        "zaid"
+      ],
+      "fact_ids": [
+        "f_receipt",
+        "f_nay_for_repair"
+      ],
+      "motivated_by_ar": "إتمام التسليم للإصلاح",
+      "caused_by_event_ids": [
+        "te_gate_out"
+      ]
+    },
+    {
+      "id": "te_gate_in",
+      "description_ar": "عاد العم زيد إلى المدرسة دون حمولة.",
+      "time": {
+        "start_min": 505
+      },
+      "location_id": "loc_gate",
+      "actor_ids": [
+        "zaid"
+      ],
+      "fact_ids": [
+        "f_gate_out"
+      ],
+      "motivated_by_ar": "العودة بعد إنجاز المهمة",
+      "caused_by_event_ids": [
+        "te_receipt"
+      ]
+    },
+    {
+      "id": "te_discover",
+      "description_ar": "صباح الأربعاء: اكتشف المعلم غياب الناي.",
+      "time": {
+        "start_min": 1460
+      },
+      "location_id": "loc_music",
+      "actor_ids": [
+        "hisham"
+      ],
+      "fact_ids": [
+        "f_nay_missing",
+        "f_cabinet_intact",
+        "f_zaid_off",
+        "f_hisham_forgot"
+      ],
+      "motivated_by_ar": "تجهيز البروفة الأخيرة قبل الحفل"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_hisham_stmt",
+      "title_ar": "إفادة الأستاذ هشام",
+      "kind": "testimonial",
+      "content_ar": "إفادة الأستاذ هشام الراعي، معلم الموسيقى\n«صباح الأربعاء فتحت الخزانة الساعة 7:50 فلم أجد الناي الأزرق. كانت الخزانة مقفلة كما تركتها، والآلات الأخرى كلها في أماكنها. أغلقتها يوم الثلاثاء بعد الواحدة بقليل وأعدت المفتاح إلى اللوحة في غرفة المعلمين. لا أذكر أنني أذنت بإخراج الناي، والحفل بعد غد.»",
+      "acquired_by_action_ids": [
+        "a_hear_hisham"
+      ],
+      "supports_fact_ids": [
+        "f_nay_missing",
+        "f_concert"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "قول معلم صادق يصف ما يتذكره؛ لا يُثبت ما لا يتذكره، ولا يغني عن السجلات.",
+      "location_id": "loc_music",
+      "contradicts_claim_ids": [
+        "cl_no_permission"
+      ]
+    },
+    {
+      "id": "ev_cabinet",
+      "title_ar": "فحص الخزانة",
+      "kind": "observation",
+      "content_ar": "خزانة الآلات في غرفة الموسيقى: بابها مقفل، والقفل بلا خدش ولا كسر، والمفصلات سليمة. على الرف الأوسط مستطيل خالٍ من الغبار بطول الناي وصندوقه، وبقية الرف عليها غبار خفيف. بجواره ثلاثة نايات خشبية قديمة للتدريب لم تُمس، وطبلتان ومثلث معدني في مواضعها.",
+      "acquired_by_action_ids": [
+        "a_see_cabinet"
+      ],
+      "supports_fact_ids": [
+        "f_cabinet_intact"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يبيّن أن الخزانة فُتحت بمفتاح لا بكسر وأن الناي الأزرق وحده غاب؛ لا يبيّن من فتحها ولا متى.",
+      "location_id": "loc_music"
+    },
+    {
+      "id": "ev_signout_sheet",
+      "title_ar": "ورقة استعارة الناي",
+      "kind": "documentary",
+      "content_ar": "ورقة استعارة الناي الأزرق (معلّقة داخل باب الخزانة)\n• قبل ثلاثة أسابيع، الخميس: لينا السقا، بإذن مكتوب من الأستاذ هشام. أُعيد يوم الاثنين التالي، وقّع الأستاذ هشام.\n• الثلاثاء: رامي القاسم. سُحب 12:40، أُعيد 12:58. ملاحظة رامي: «نغمة متقطعة في الدرجة العالية». وقّع الأستاذ هشام: «أُعيد».\n• لا سطر بعد ذلك.",
+      "acquired_by_action_ids": [
+        "a_read_signout"
+      ],
+      "supports_fact_ids": [
+        "f_lina_loan",
+        "f_rami_returned",
+        "f_in_cabinet_1305"
+      ],
+      "reliability": "strong",
+      "limits_ar": "تسجّل من استعار ومتى أُعيد، وتعتمد على التزام الجميع بالتوقيع؛ لا تُسجّل ما يجري بعد إغلاق الخزانة.",
+      "location_id": "loc_music",
+      "contradicts_claim_ids": [
+        "cl_rami_took"
+      ]
+    },
+    {
+      "id": "ev_key_log",
+      "title_ar": "سجل مفتاح الخزانة",
+      "kind": "documentary",
+      "content_ar": "سجل مفتاح خزانة الآلات (لوحة المفاتيح في غرفة المعلمين)\nالثلاثاء:\n7:40 — هشام — أخذ\n1:05 ظهراً — هشام — أعاد\n3:00 عصراً — زيد — أخذ — الغرض: «حسب القسيمة 14»\n3:06 عصراً — زيد — أعاد\nالأربعاء:\n7:45 — هشام — أخذ\nلا أسطر أخرى.",
+      "acquired_by_action_ids": [
+        "a_read_keylog"
+      ],
+      "supports_fact_ids": [
+        "f_key_log",
+        "f_in_cabinet_1305"
+      ],
+      "reliability": "strong",
+      "limits_ar": "سجل بخط اليد في غرفة لا يحرسها أحد؛ قيمته أنه يطابق بقية السجلات، فلو نُسي سطر لما عرفنا.",
+      "location_id": "loc_lounge",
+      "contradicts_claim_ids": [
+        "cl_rami_took"
+      ]
+    },
+    {
+      "id": "ev_slip14",
+      "title_ar": "قسيمة الصيانة رقم 14",
+      "kind": "documentary",
+      "content_ar": "مدرسة الراية — قسيمة صيانة رقم 14\nالتاريخ: الثلاثاء، 7:50 صباحاً\nالجهة: ورشة المعازف الشرقية\nالمطلوب: إصلاح الناي الأزرق (ناي الفرقة): نغمة متقطعة وشق صغير عند فوهة النفخ.\nالتوقيع: هشام الراعي، معلم الموسيقى.\nختم المكتب: استُلمت وسُلّمت للعم زيد الساعة 2:50 ظهراً.\n(قسائم هذه الدفعة: 12 و13 و14 و15، وُقّعت معاً.)",
+      "acquired_by_action_ids": [
+        "a_read_slip"
+      ],
+      "supports_fact_ids": [
+        "f_slip_signed",
+        "f_slip_handed"
+      ],
+      "reliability": "strong",
+      "limits_ar": "تثبت أن الإخراج طُلب بتوقيع المعلم؛ لا تثبت أن الناي وصل الورشة فعلاً، فذلك تثبته سجلات أخرى.",
+      "location_id": "loc_office",
+      "contradicts_claim_ids": [
+        "cl_no_permission",
+        "cl_zaid_took"
+      ]
+    },
+    {
+      "id": "ev_gate_book",
+      "title_ar": "سجل البوابة",
+      "kind": "documentary",
+      "content_ar": "سجل بوابة المدرسة، الثلاثاء\n3:08 عصراً — خروج — العم زيد — الوجهة: ورشة المعازف — يحمل صندوقاً طويلاً\n3:55 عصراً — دخول — العم زيد — بلا حمولة",
+      "acquired_by_action_ids": [
+        "a_read_gate"
+      ],
+      "supports_fact_ids": [
+        "f_gate_out"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يبيّن خروج الصندوق من المدرسة ومن حمله ووجهته المعلنة؛ لا يبيّن ما في الصندوق.",
+      "location_id": "loc_gate"
+    },
+    {
+      "id": "ev_receipt",
+      "title_ar": "إيصال الورشة رقم 61",
+      "kind": "documentary",
+      "content_ar": "ورشة المعازف الشرقية — إيصال رقم 61 (صورة أرسلتها الورشة إلى مكتب المدرسة)\nالثلاثاء، 3:40 عصراً\nاستلمنا من مدرسة الراية: ناياً أزرق بصندوقه الطويل، العطل: شق عند فوهة النفخ ونغمة متقطعة.\nبموجب قسيمة المدرسة رقم 14.\nالمستلم منه: زيد الحمدان.\nموعد التسليم: الخميس 11:00 صباحاً.",
+      "acquired_by_action_ids": [
+        "a_read_receipt"
+      ],
+      "supports_fact_ids": [
+        "f_receipt",
+        "f_nay_for_repair"
+      ],
+      "reliability": "strong",
+      "limits_ar": "إيصال صدر عن جهة خارج المدرسة يثبت الاستلام؛ لا يثبت حالة الناي الآن ولا أنه سيُسلَّم في الموعد.",
+      "location_id": "loc_workshop",
+      "contradicts_claim_ids": [
+        "cl_zaid_took"
+      ]
+    },
+    {
+      "id": "ev_dalal",
+      "title_ar": "إفادة السيدة دلال",
+      "kind": "testimonial",
+      "content_ar": "إفادة السيدة دلال العمري، معلمة الفنون\n«بعد الثالثة بقليل كنت في الممر، فرأيت العم زيد يخرج من غرفة الموسيقى حاملاً صندوقاً أزرق طويلاً ويمضي مسرعاً. وكان كرم واقفاً قرب الباب. ظننت الأمر غريباً ولم أسأل أحداً.»",
+      "acquired_by_action_ids": [
+        "a_hear_dalal"
+      ],
+      "supports_fact_ids": [
+        "f_dalal_saw",
+        "f_karim_there"
+      ],
+      "reliability": "weak",
+      "limits_ar": "تصف ما رأته من بعيد ولا تعرف ما في الصندوق ولا سبب خروجه؛ وقولها «غريب» انطباع لا دليل.",
+      "location_id": "loc_corridor",
+      "contradicts_claim_ids": [
+        "cl_zaid_took"
+      ],
+      "is_red_herring": true
+    },
+    {
+      "id": "ev_rami_msg",
+      "title_ar": "رسالة رامي في مجموعة الفرقة",
+      "kind": "digital",
+      "content_ar": "مجموعة فرقة مدرسة الراية، الاثنين 6:00 مساءً\nرامي: «لو كان الأمر بيدي لأخذت الناي إلى البيت حتى الحفل لأتمرن كل ليلة.»\nالأستاذ هشام: «الناي لا يخرج من غرفة الموسيقى يا رامي، تمرن في الاستراحة.»\nرامي: «حاضر يا أستاذ.»",
+      "acquired_by_action_ids": [
+        "a_read_rami_msg"
+      ],
+      "supports_fact_ids": [
+        "f_rami_msg"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "تعبّر عن رغبة ثم قبول للقاعدة؛ الرغبة لا تثبت فعلاً.",
+      "is_red_herring": true
+    },
+    {
+      "id": "ev_karim_stmt",
+      "title_ar": "إفادة كرم",
+      "kind": "testimonial",
+      "content_ar": "إفادة كرم الشامي\n«أنا واثق أن رامي أخذ الناي إلى بيته، فهو أكثر من يريده وقد قال ذلك في المجموعة. وكنت عصر الثلاثاء قرب الغرفة، إذ جئت آخذ حقيبتي من خزانتي في آخر الممر.»",
+      "acquired_by_action_ids": [
+        "a_hear_karim"
+      ],
+      "supports_fact_ids": [
+        "f_karim_there"
+      ],
+      "reliability": "weak",
+      "limits_ar": "ظن مبني على كلام رامي في الرسالة؛ لا يذكر كرم ما رآه يفعل رامي.",
+      "location_id": "loc_corridor",
+      "contradicts_claim_ids": [
+        "cl_rami_took"
+      ],
+      "is_red_herring": true
+    }
+  ],
+  "evidence_graph": {
+    "inferences": [
+      {
+        "id": "i_in_cabinet",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_signout_sheet"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_key_log"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_in_cabinet_1305"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "ورقة الاستعارة تقول إن الناي أُعيد 12:58، وسجل المفتاح يقول إن المعلم أعاد المفتاح 1:05 وقبله كان المفتاح معه منذ 7:40؛ فالناي كان داخل الخزانة المقفلة عند 1:05.",
+        "skill_ko_refs": [
+          "KO-RS-05-004"
+        ]
+      },
+      {
+        "id": "i_rule_rami",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_in_cabinet_1305"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_key_log"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_cabinet"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_rami"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "بعد 1:05 لم يأخذ أحد المفتاح إلا العم زيد 3:00 والقفل سليم؛ فرامي لم يكن معه المفتاح ولا طريق لفتح الخزانة، وكان قد أعاد الناي ووقّع قبل ذلك.",
+        "skill_ko_refs": [
+          "KO-RS-05-003"
+        ]
+      },
+      {
+        "id": "i_rule_lina",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_in_cabinet_1305"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_key_log"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_signout_sheet"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_lina"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "استعارة لينا السابقة كانت بإذن وأُعيدت موقّعة، ولا سطر لها بعد ذلك؛ وبعد إغلاق الخزانة 1:05 لم يسجل المفتاح اسمها.",
+        "skill_ko_refs": [
+          "KO-RS-05-003"
+        ]
+      },
+      {
+        "id": "i_rule_karim",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_in_cabinet_1305"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_key_log"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_cabinet"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_karim"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "وقوف كرم في الممر لا يفتح خزانة مقفلة سليمة القفل؛ والمفتاح لم يسجل باسمه، وخزانة حقيبته في الممر نفسه تفسر وجوده هناك.",
+        "skill_ko_refs": [
+          "KO-RS-05-003"
+        ]
+      },
+      {
+        "id": "i_path_a",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_slip14"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_key_log"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_nay_for_repair"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "قسيمة موقّعة من المعلم تطلب إصلاح الناي، وسجل المفتاح يذكر أن العم زيد أخذه 3:00 «حسب القسيمة 14»؛ فالإخراج كان بتصريح مكتوب.",
+        "skill_ko_refs": [
+          "KO-RS-05-004",
+          "KO-RS-05-014"
+        ]
+      },
+      {
+        "id": "i_path_b",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_gate_book"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_receipt"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_nay_for_repair"
+        },
+        "relation": "establishes",
+        "strength": "conclusive",
+        "rule_ar": "سجل البوابة يبيّن خروج العم زيد 3:08 إلى الورشة بصندوق طويل، وإيصال الورشة رقم 61 الساعة 3:40 يثبت استلام ناي أزرق بصندوقه؛ سجلان مستقلان عن المدرسة وعن القسيمة.",
+        "skill_ko_refs": [
+          "KO-RS-05-004",
+          "KO-RS-05-014"
+        ]
+      },
+      {
+        "id": "i_rule_zaid",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_slip14"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_receipt"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_zaid"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "من يسرق لا يحمل قسيمة موقّعة ولا يسلّم الشيء إلى ورشة بإيصال باسم المدرسة؛ وما رأته السيدة دلال هو الحمل نفسه لا قصده.",
+        "skill_ko_refs": [
+          "KO-RS-05-003",
+          "KO-RS-05-007"
+        ]
+      },
+      {
+        "id": "i_repair",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_nay_for_repair"
+          },
+          {
+            "ref_type": "general_knowledge",
+            "ref_id": "gk_authorized_move"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_repair"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "إخراج مصرّح به بقسيمة وإيصال ورشة يفسّر الغياب كله بلا سرقة؛ والسبب خلل في وصول الخبر إلى المعلم لا فعل خفي.",
+        "skill_ko_refs": [
+          "KO-RS-06-007",
+          "KO-RS-05-002"
+        ]
+      }
+    ]
+  },
+  "character_knowledge": [
+    {
+      "character_id": "hisham",
+      "knows": [
+        {
+          "fact_id": "f_nay_missing",
+          "access": "witnessed"
+        },
+        {
+          "fact_id": "f_concert",
+          "access": "common_knowledge"
+        },
+        {
+          "fact_id": "f_cabinet_intact",
+          "access": "witnessed"
+        },
+        {
+          "fact_id": "f_rami_msg",
+          "access": "witnessed"
+        },
+        {
+          "fact_id": "f_lina_loan",
+          "access": "witnessed"
+        },
+        {
+          "fact_id": "f_rami_returned",
+          "access": "witnessed"
+        },
+        {
+          "fact_id": "f_in_cabinet_1305",
+          "access": "witnessed"
+        }
+      ],
+      "hides": [],
+      "believes": [
+        {
+          "claim_id": "cl_no_permission",
+          "stance": "sincere"
+        }
+      ]
+    },
+    {
+      "character_id": "rami",
+      "knows": [
+        {
+          "fact_id": "f_rami_msg",
+          "access": "witnessed"
+        },
+        {
+          "fact_id": "f_rami_returned",
+          "access": "witnessed"
+        },
+        {
+          "fact_id": "f_concert",
+          "access": "common_knowledge"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    },
+    {
+      "character_id": "lina",
+      "knows": [
+        {
+          "fact_id": "f_lina_loan",
+          "access": "witnessed"
+        },
+        {
+          "fact_id": "f_concert",
+          "access": "common_knowledge"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    },
+    {
+      "character_id": "karim",
+      "knows": [
+        {
+          "fact_id": "f_karim_there",
+          "access": "witnessed"
+        },
+        {
+          "fact_id": "f_rami_msg",
+          "access": "told_by",
+          "source_character_id": "rami"
+        },
+        {
+          "fact_id": "f_concert",
+          "access": "common_knowledge"
+        }
+      ],
+      "hides": [],
+      "believes": [
+        {
+          "claim_id": "cl_rami_took",
+          "stance": "sincere"
+        }
+      ]
+    },
+    {
+      "character_id": "zaid",
+      "knows": [
+        {
+          "fact_id": "f_slip_handed",
+          "access": "witnessed"
+        },
+        {
+          "fact_id": "f_key_log",
+          "access": "witnessed"
+        },
+        {
+          "fact_id": "f_gate_out",
+          "access": "witnessed"
+        },
+        {
+          "fact_id": "f_receipt",
+          "access": "witnessed"
+        },
+        {
+          "fact_id": "f_zaid_off",
+          "access": "witnessed"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    },
+    {
+      "character_id": "dalal",
+      "knows": [
+        {
+          "fact_id": "f_dalal_saw",
+          "access": "witnessed"
+        }
+      ],
+      "hides": [],
+      "believes": [
+        {
+          "claim_id": "cl_zaid_took",
+          "stance": "sincere"
+        }
+      ]
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "h_rami",
+      "statement_ar": "أخذ رامي الناي إلى بيته ليتمرن عليه قبل الحفل.",
+      "is_true": false,
+      "plausibility_at_start": "high",
+      "suspect_id": "rami"
+    },
+    {
+      "id": "h_lina",
+      "statement_ar": "أخذت لينا الناي كما فعلت قبل أسابيع لتتمرن على المقطوعة.",
+      "is_true": false,
+      "plausibility_at_start": "medium",
+      "suspect_id": "lina"
+    },
+    {
+      "id": "h_karim",
+      "statement_ar": "أخفى كرم الناي ليحرج رامي ويأخذ مكانه في الحفل.",
+      "is_true": false,
+      "plausibility_at_start": "medium",
+      "suspect_id": "karim"
+    },
+    {
+      "id": "h_zaid",
+      "statement_ar": "أخذ العم زيد الناي لنفسه أو ليبيعه.",
+      "is_true": false,
+      "plausibility_at_start": "medium",
+      "suspect_id": "zaid"
+    },
+    {
+      "id": "h_repair",
+      "statement_ar": "لم يُسرق شيء: أُخرج الناي بإذن موقّع لإصلاحه، ولم يصل الخبر إلى المعلم.",
+      "is_true": true,
+      "plausibility_at_start": "low"
+    }
+  ],
+  "misdirection_plan": [
+    {
+      "id": "rh_msg",
+      "points_to_hypothesis_id": "h_rami",
+      "planted_via_ar": "رسالة رامي التي يتمنى فيها أخذ الناي، وظن كرم المبني عليها.",
+      "evidence_ids": [
+        "ev_rami_msg",
+        "ev_karim_stmt"
+      ],
+      "refuted_by_inference_ids": [
+        "i_rule_rami"
+      ],
+      "fairness_note_ar": "الرسالة نفسها فيها قبول رامي لقاعدة المعلم، وسجلا المفتاح والاستعارة بين يدي اللاعب من البداية ويبيّنان أنه أعاد الناي قبل إغلاق الخزانة."
+    },
+    {
+      "id": "rh_loan",
+      "points_to_hypothesis_id": "h_lina",
+      "planted_via_ar": "سطر استعارة لينا السابقة في الورقة المعلقة داخل الباب.",
+      "evidence_ids": [
+        "ev_signout_sheet"
+      ],
+      "refuted_by_inference_ids": [
+        "i_rule_lina"
+      ],
+      "fairness_note_ar": "السطر نفسه يقول إنها استعارته بإذن مكتوب وأعادته موقّعة، فهو عادة سابقة لا فعل جديد."
+    },
+    {
+      "id": "rh_dalal",
+      "points_to_hypothesis_id": "h_zaid",
+      "planted_via_ar": "رؤية السيدة دلال للعم زيد يحمل صندوقاً أزرق طويلاً ويمضي مسرعاً.",
+      "evidence_ids": [
+        "ev_dalal"
+      ],
+      "refuted_by_inference_ids": [
+        "i_rule_zaid"
+      ],
+      "fairness_note_ar": "المشاهدة صحيحة؛ الخطأ في تأويلها. القسيمة 14 وسجل البوابة وإيصال الورشة تفسر الحمل نفسه بإجراء مكتوب."
+    }
+  ],
+  "learning_objectives": [
+    {
+      "id": "lo_main",
+      "statement_ar": "يُبقي فرضية «لا سرقة» على اللوحة بجانب فرضيات المشتبه بهم ولا يحكم بالغياب وحده.",
+      "skill_ko_ref": "KO-RS-05-002",
+      "observable_behaviors_ar": [
+        "يكتب فرضية الإخراج المصرّح به",
+        "يقارن كل فرضية بالأدلة"
+      ],
+      "evidence_sources": [
+        "hypothesis_ledger",
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_source",
+      "statement_ar": "يصنّف الإفادات أقوالاً والسجلات والإيصالات سجلات.",
+      "skill_ko_ref": "KO-RS-05-001",
+      "observable_behaviors_ar": [
+        "يميّز القول من السجل"
+      ],
+      "evidence_sources": [
+        "evidence_board"
+      ]
+    },
+    {
+      "id": "lo_indep",
+      "statement_ar": "يجد مسارين مستقلين: أوراق المدرسة، وسجلات خارجية (البوابة والورشة).",
+      "skill_ko_ref": "KO-RS-05-004",
+      "observable_behaviors_ar": [
+        "يستعمل سجل البوابة وإيصال الورشة مساراً ثانياً"
+      ],
+      "evidence_sources": [
+        "evidence_board",
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_elim",
+      "statement_ar": "يستبعد كل مشتبه بدليل إيجابي لا بمجرد أنه لم يظهر عليه شيء.",
+      "skill_ko_ref": "KO-RS-05-003",
+      "observable_behaviors_ar": [
+        "يستبعد رامي ولينا وكرماً بسجل المفتاح والقفل السليم"
+      ],
+      "evidence_sources": [
+        "hypothesis_ledger"
+      ]
+    },
+    {
+      "id": "lo_diag",
+      "statement_ar": "يقدّر ما يثبته كل دليل ويربطه بالفرضية باتجاه صحيح.",
+      "skill_ko_ref": "KO-RS-06-001",
+      "observable_behaviors_ar": [
+        "يربط الدليل بالفرضية"
+      ],
+      "evidence_sources": [
+        "evidence_board"
+      ]
+    },
+    {
+      "id": "lo_calib",
+      "statement_ar": "يصوغ درجة ثقته بحدودها.",
+      "skill_ko_ref": "KO-RS-06-021",
+      "observable_behaviors_ar": [
+        "يختار ثقة معقولة",
+        "يذكر حدوداً"
+      ],
+      "evidence_sources": [
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_revise",
+      "statement_ar": "يراجع الفرضية الرائدة حين تظهر القسيمة والإيصال.",
+      "skill_ko_ref": "KO-RS-06-009",
+      "observable_behaviors_ar": [
+        "يغيّر فرضيته الأولى بدليل"
+      ],
+      "evidence_sources": [
+        "hypothesis_ledger"
+      ]
+    }
+  ],
+  "mechanics": {
+    "time_budget_units": 20,
+    "actions": [
+      {
+        "id": "a_hear_hisham",
+        "type": "interview",
+        "label_ar": "استمع إلى إفادة الأستاذ هشام",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_hisham_stmt"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "HEAR_HISHAM",
+        "target_id": "hisham"
+      },
+      {
+        "id": "a_see_cabinet",
+        "type": "search_location",
+        "label_ar": "افحص خزانة الآلات",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_cabinet"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "SEE_CABINET",
+        "target_id": "loc_music"
+      },
+      {
+        "id": "a_read_signout",
+        "type": "examine",
+        "label_ar": "اقرأ ورقة استعارة الناي",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_signout_sheet"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "READ_SIGNOUT",
+        "target_id": "loc_music"
+      },
+      {
+        "id": "a_read_keylog",
+        "type": "examine",
+        "label_ar": "اقرأ سجل مفتاح الخزانة",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_key_log"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "READ_KEYLOG",
+        "target_id": "loc_lounge"
+      },
+      {
+        "id": "a_read_rami_msg",
+        "type": "examine",
+        "label_ar": "اقرأ رسالة رامي في مجموعة الفرقة",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_rami_msg"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "READ_RAMI_MSG"
+      },
+      {
+        "id": "a_hear_karim",
+        "type": "interview",
+        "label_ar": "استمع إلى إفادة كرم",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_karim_stmt"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "HEAR_KARIM",
+        "target_id": "karim"
+      },
+      {
+        "id": "a_hear_dalal",
+        "type": "interview",
+        "label_ar": "استمع إلى إفادة السيدة دلال",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_dalal"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "HEAR_DALAL",
+        "target_id": "dalal"
+      },
+      {
+        "id": "a_read_slip",
+        "type": "examine",
+        "label_ar": "اطلع على القسائم في صينية المكتب",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_slip14"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "READ_SLIP",
+        "target_id": "loc_office"
+      },
+      {
+        "id": "a_read_gate",
+        "type": "examine",
+        "label_ar": "اقرأ سجل البوابة",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_gate_book"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "READ_GATE",
+        "target_id": "loc_gate"
+      },
+      {
+        "id": "a_read_receipt",
+        "type": "examine",
+        "label_ar": "اطلب من الورشة صورة إيصالها",
+        "precondition": {
+          "any": [
+            {
+              "has_evidence": "ev_slip14"
+            },
+            {
+              "has_evidence": "ev_gate_book"
+            },
+            {
+              "has_evidence": "ev_key_log"
+            }
+          ]
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_receipt"
+          }
+        ],
+        "time_cost_units": 1,
+        "telemetry_code": "READ_RECEIPT",
+        "target_id": "loc_workshop"
+      },
+      {
+        "id": "a_hint",
+        "type": "request_hint",
+        "label_ar": "اطلب تلميحاً",
+        "precondition": {
+          "always": true
+        },
+        "effects": [],
+        "time_cost_units": 0,
+        "telemetry_code": "REQUEST_HINT"
+      },
+      {
+        "id": "a_accuse",
+        "type": "final_accusation",
+        "label_ar": "قدّم جوابك وجملة «كيف عرفت؟»",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "SUBMIT"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "FINAL_ACCUSATION"
+      }
+    ]
+  },
+  "state_machine": {
+    "id": "c049",
+    "initial": "briefing",
+    "type": "compound",
+    "states": {
+      "briefing": {
+        "description_ar": "الإحاطة",
+        "type": "atomic",
+        "on": {
+          "START": {
+            "target": "investigating"
+          }
+        }
+      },
+      "investigating": {
+        "description_ar": "التحقيق",
+        "type": "compound",
+        "initial": "gathering",
+        "states": {
+          "gathering": {
+            "type": "atomic",
+            "on": {
+              "OPEN_DEDUCTION": {
+                "target": "deducing"
+              }
+            }
+          },
+          "deducing": {
+            "type": "atomic",
+            "on": {
+              "BACK": {
+                "target": "gathering"
+              }
+            }
+          }
+        },
+        "on": {
+          "SUBMIT": {
+            "target": "review"
+          }
+        }
+      },
+      "review": {
+        "description_ar": "مراجعة",
+        "type": "atomic",
+        "on": {
+          "CLOSE": {
+            "target": "resolved"
+          }
+        }
+      },
+      "resolved": {
+        "description_ar": "إغلاق",
+        "type": "final"
+      }
+    }
+  },
+  "rubric": {
+    "reference_answer_ar": "لم يُسرق الناي. صباح الثلاثاء 7:50 وقّع المعلم القسيمة 14 لإصلاحه، وبعد الواحدة أُغلقت الخزانة والناي فيها، ثم أخذ العم زيد المفتاح 3:00 «حسب القسيمة 14» وأعاده 3:06، وخرج 3:08 بصندوق طويل إلى الورشة التي أصدرت الإيصال 61 الساعة 3:40. لم يكن لرامي ولا للينا ولا لكرم مفتاح بعد إغلاق الخزانة، والقفل سليم. والمعلم نسي القسيمة بين أربع قسائم. حدود الاستنتاج: نعتمد على اكتمال سجل المفتاح، ولا نرى الناي في الورشة بأعيننا، ولا نعرف لماذا لم يُبلَّغ المعلم.",
+    "criteria": [
+      {
+        "id": "c_source",
+        "name_ar": "تصنيف المصادر",
+        "objective_ids": [
+          "lo_source"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يصنّف"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "أخطأ في الأغلب"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "نصف صحيح"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمه صحيح"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كله صحيح"
+          }
+        ]
+      },
+      {
+        "id": "c_links",
+        "name_ar": "ربط الأدلة بالفرضيات",
+        "objective_ids": [
+          "lo_diag",
+          "lo_indep"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.25,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لا روابط"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "قليلة"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "نصفها صحيح"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمها"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كلها دقيقة"
+          }
+        ]
+      },
+      {
+        "id": "c_uncertainty",
+        "name_ar": "معايرة الثقة",
+        "objective_ids": [
+          "lo_calib"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.2,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "ثقة مفرطة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "حدود قليلة"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "جزئية"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معقولة"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "معايَرة كاملة"
+          }
+        ]
+      },
+      {
+        "id": "c_revision",
+        "name_ar": "مراجعة الرأي",
+        "objective_ids": [
+          "lo_revise"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "بقي على فرضية مرفوضة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "لم يعلن فرضية"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "ثبت على فرضية سليمة"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "غيّر بدليل"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "غيّر بدليل ووثّق"
+          }
+        ]
+      },
+      {
+        "id": "c_elimination",
+        "name_ar": "استبعاد الفرضيات الخاطئة",
+        "objective_ids": [
+          "lo_elim",
+          "lo_main"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يستبعد"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "استبعد خطأً"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "فرضية بدليل"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "فرضيتين أو ثلاثاً"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كل الخاطئة"
+          }
+        ]
+      },
+      {
+        "id": "c_justification",
+        "name_ar": "جملة «كيف عرفت؟» وجودة الحجة",
+        "objective_ids": [
+          "lo_main"
+        ],
+        "scored_by": "human",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لا حجة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "ادعاء بلا سند"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "سجلات دون ربط"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "ربط السجلات بالفرضيات"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "ربط مع البدائل والحدود"
+          }
+        ]
+      }
+    ]
+  },
+  "hint_ladder": [
+    {
+      "id": "hg1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "قبل أن تسأل «من أخذه؟»: هل أنت متأكد أن أحداً أخذه؟ ما التفسيرات الأخرى لغياب شيء من مكانه؟",
+      "trigger": {
+        "always": true
+      },
+      "assessment_weight": 0.02
+    },
+    {
+      "id": "hg2",
+      "level": 2,
+      "kind": "focus_area",
+      "text_ar": "ابدأ بسؤال الوصول: من كان يملك المفتاح بعد أن أغلق المعلم الخزانة، ومتى؟",
+      "trigger": {
+        "always": true
+      },
+      "assessment_weight": 0.04
+    },
+    {
+      "id": "hg3",
+      "level": 3,
+      "kind": "pointer",
+      "text_ar": "ابحث عن ورقة تنفي أو تثبت أن الإخراج كان مصرحاً به، وعن سجل من خارج المدرسة.",
+      "trigger": {
+        "has_evidence": "ev_key_log"
+      },
+      "assessment_weight": 0.08
+    },
+    {
+      "id": "hr1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "ما الذي يحتاجه من أراد فتح خزانة مقفلة سليمة القفل؟",
+      "trigger": {
+        "always": true
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_rule_rami"
+    },
+    {
+      "id": "hr2",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "قارن وقت إعادة رامي للناي بوقت إعادة المعلم للمفتاح، ثم انظر من أخذ المفتاح بعد ذلك.",
+      "trigger": {
+        "has_evidence": "ev_signout_sheet"
+      },
+      "assessment_weight": 0.06,
+      "targets_inference_id": "i_rule_rami"
+    },
+    {
+      "id": "hz1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "رؤية شخص يحمل شيئاً: هل تخبرك لماذا يحمله؟",
+      "trigger": {
+        "has_evidence": "ev_dalal"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_rule_zaid"
+    },
+    {
+      "id": "hz0",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "هل تذكر القسيمة المرقّمة الموجودة في صينية المكتب، وسطر المفتاح الذي يشير إلى رقمها؟",
+      "trigger": {
+        "has_evidence": "ev_key_log"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_path_a"
+    },
+    {
+      "id": "hz2",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "انظر إلى عبارة «الغرض» في سطر المفتاح الذي باسم العم زيد، وإلى الورقة التي تحمل الرقم المذكور.",
+      "trigger": {
+        "has_evidence": "ev_key_log"
+      },
+      "assessment_weight": 0.06,
+      "targets_inference_id": "i_path_a"
+    },
+    {
+      "id": "hb1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "هل هناك سجل مكتوب خارج المدرسة يؤكد وصول الناي إلى مكان ما؟",
+      "trigger": {
+        "has_evidence": "ev_gate_book"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_path_b"
+    },
+    {
+      "id": "hb2",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "الوجهة المكتوبة في سجل البوابة تدلك على جهة يمكنها أن تثبت الاستلام بإيصال.",
+      "trigger": {
+        "has_evidence": "ev_gate_book"
+      },
+      "assessment_weight": 0.06,
+      "targets_inference_id": "i_path_b"
+    }
+  ],
+  "fairness_test": {
+    "requirements": {
+      "min_disjoint_proof_paths": 2,
+      "max_inference_depth": 3,
+      "all_red_herrings_refutable": true,
+      "culprit_uniquely_entailed": true,
+      "no_hidden_fact_dependency": true,
+      "max_required_actions": 12
+    },
+    "runs": []
+  },
+  "ending_explanation": {
+    "steps": [
+      {
+        "order": 1,
+        "text_ar": "ورقة الاستعارة: رامي أعاد الناي 12:58. وسجل المفتاح: المعلم أعاد المفتاح 1:05 بعد أن كان معه منذ 7:40. فالناي كان داخل الخزانة المقفلة عند 1:05.",
+        "uses_evidence_ids": [
+          "ev_signout_sheet",
+          "ev_key_log"
+        ],
+        "inference_id": "i_in_cabinet"
+      },
+      {
+        "order": 2,
+        "text_ar": "بعد 1:05 لم يأخذ المفتاح غير العم زيد الساعة 3:00، والقفل سليم. فرامي لا يملك طريقاً لفتح الخزانة، وكلامه في الرسالة تمنٍّ قَبِل بعده القاعدة.",
+        "uses_evidence_ids": [
+          "ev_key_log",
+          "ev_cabinet"
+        ],
+        "inference_id": "i_rule_rami"
+      },
+      {
+        "order": 3,
+        "text_ar": "استعارة لينا قبل ثلاثة أسابيع كانت بإذن مكتوب وأُعيدت موقّعة، ولا اسم لها في السجلين بعد ذلك.",
+        "uses_evidence_ids": [
+          "ev_signout_sheet",
+          "ev_key_log"
+        ],
+        "inference_id": "i_rule_lina"
+      },
+      {
+        "order": 4,
+        "text_ar": "كرم كان قرب الغرفة لأن خزانة حقيبته في الممر، ولا مفتاح باسمه والقفل سليم؛ وقوفه قرب باب مقفل لا يفتحه.",
+        "uses_evidence_ids": [
+          "ev_key_log",
+          "ev_cabinet"
+        ],
+        "inference_id": "i_rule_karim"
+      },
+      {
+        "order": 5,
+        "text_ar": "المسار الأول: القسيمة 14 موقّعة من المعلم 7:50 تطلب إصلاح الناي، وسجل المفتاح يذكر أن العم زيد أخذ المفتاح 3:00 «حسب القسيمة 14». فالإخراج مصرّح به.",
+        "uses_evidence_ids": [
+          "ev_slip14",
+          "ev_key_log"
+        ],
+        "inference_id": "i_path_a"
+      },
+      {
+        "order": 6,
+        "text_ar": "المسار الثاني المستقل: سجل البوابة يبيّن خروج العم زيد 3:08 إلى الورشة بصندوق طويل، وعودته 3:55 دون حمولة، والمدة 47 دقيقة؛ وإيصال الورشة رقم 61 الساعة 3:40 يثبت استلام ناي أزرق بالقسيمة نفسها.",
+        "uses_evidence_ids": [
+          "ev_gate_book",
+          "ev_receipt"
+        ],
+        "inference_id": "i_path_b"
+      },
+      {
+        "order": 7,
+        "text_ar": "ما رأته السيدة دلال كان حقيقياً: عم زيد يحمل صندوقاً أزرق. لكن الحمل لا يخبر عن القصد، والقسيمة والإيصال يفسّرانه.",
+        "uses_evidence_ids": [
+          "ev_dalal",
+          "ev_slip14",
+          "ev_receipt"
+        ],
+        "inference_id": "i_rule_zaid"
+      },
+      {
+        "order": 8,
+        "text_ar": "الخلاصة: لم يُسرق شيء. الناي في الورشة ليُصلح ويُسلَّم الخميس 11:00، قبل الحفل الساعة 5 بست ساعات؛ والذي حدث أن المعلم وقّع أربع قسائم معاً ونسي إحداها وأن العم زيد كان في إجازته الأربعاء.",
+        "uses_evidence_ids": [
+          "ev_slip14",
+          "ev_receipt",
+          "ev_hisham_stmt"
+        ],
+        "inference_id": "i_repair"
+      }
+    ],
+    "alternative_paths_ar": [
+      "يكفي المسار الأول (القسيمة وسجل المفتاح) لإثبات أن الإخراج كان مصرحاً به، ويكفي المسار الثاني (سجل البوابة وإيصال الورشة) لإثبات أن الناي في الورشة؛ والأقوى أن يتفقا."
+    ],
+    "what_evidence_could_not_show_ar": [
+      "نفترض أن سجل المفتاح كامل، فهو بخط اليد في غرفة لا يحرسها أحد.",
+      "لا نرى الناي في الورشة بأعيننا؛ نعتمد على إيصالها، والتأكد النهائي باستلامه الخميس.",
+      "لا نعرف لماذا لم يصل الخبر إلى المعلم، ولا حاجة لذلك في الحل."
+    ],
+    "science_notes_ar": [
+      "غياب شيء من مكانه لا يعني أنه سُرق؛ فالنقل البريء وخطأ التسجيل تفسيران يجب أن يبقيا على اللوحة حتى تُختبر الفرضيات الأخرى.",
+      "استبعاد المشتبه به يكون بدليل إيجابي، مثل من كان معه المفتاح ومتى، لا بأنه «لم يظهر عليه شيء».",
+      "رؤية شخص يحمل شيئاً تخبرنا بما رأينا ولا تخبرنا بقصده؛ والسجل المكتوب يسدّ هذه الفجوة.",
+      "مسارا إثبات لا يشتركان في دليل، مثل أوراق المدرسة وسجلات الجهات الخارجية، أقوى من مسار واحد مهما كثرت فيه الشهادات."
+    ]
+  },
+  "expert_review": [
+    {
+      "role": "narrative_editor",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-11-04",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "scientific_reviewer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-11-04",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "learning_designer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-11-04",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "age_appropriateness",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-11-04",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "cultural_reviewer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-11-04",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "legal_rights",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-11-04",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "safety",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-11-04",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    }
+  ]
+}

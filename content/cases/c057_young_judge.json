@@ -1,0 +1,3008 @@
+{
+  "schema_version": "0.1.0",
+  "case_id": "c057_young_judge",
+  "case_version": "0.1.0",
+  "meta": {
+    "title_ar": "الموعد الوحيد",
+    "title_en": "The Only Slot",
+    "age_band": "16-18",
+    "locale": "ar",
+    "dialogue_register": "msa",
+    "estimated_minutes": 35,
+    "difficulty": 3,
+    "content_flags": [
+      "no_violence"
+    ],
+    "authors": [
+      "فريق أثر التحريري (مسودة بمساعدة الذكاء الاصطناعي، لم تُراجَع بشرياً بعد)"
+    ],
+    "knowledge_object_refs": [
+      "KO-RS-05-001",
+      "KO-RS-05-004",
+      "KO-RS-05-005",
+      "KO-RS-05-002",
+      "KO-RS-06-001",
+      "KO-RS-06-021",
+      "KO-RS-06-009"
+    ]
+  },
+  "premise": {
+    "hook_ar": "ناديان في ثانوية الينابيع يطلبان الموعد الأسبوعي الأخير في الورشة الكبرى. نادي الروبوت يقدّم ثماني ورقات حضور، ونادي المسرح سبعاً، واللائحة تعطي الموعد لمن له جلسات محسوبة أكثر. فما الرأي الذي تبنيه، وعلى أي سجل؟",
+    "player_role_ar": "أنت طالب في ورشة «القاضي الصغير» التدريبية بالثانوية. دورك تمرين تعليمي: تقرأ سجلات الطرفين وتكتب رأياً معلَّلاً تقدّمه إلى مشرفة الأندية. القرار الفعلي للمجلس والمشرفة وحدهما، ولا تحكم على أحد ولا تحاسبه.",
+    "setting_ar": "ثانوية الينابيع في مدينة وادي الصفصاف المتخيَّلة، صباح الأحد من الأسبوع الحادي عشر بعد إغلاق عدّ الجلسات. بإذن مشرفة الأندية تطّلع على اللائحة وأوراق الحضور ومحاضر المجلس ودفتر مفاتيح القاعات ومفكرتها، ولا تفتح غيرها. الأسماء والأحداث كلها متخيَّلة، وتوقيت المدرسة هو توقيت كل السجلات.",
+    "public_fact_ids": [
+      "f_slot_dispute",
+      "f_both_claims",
+      "f_rule_exists"
+    ],
+    "assumed_general_knowledge_ar": [
+      "القاعدة المعلنة تُطبَّق كما كُتبت على الطرفين بلا تفضيل",
+      "التعديل الجديد لقاعدة لا يغيّر الحكم على ما جرى قبل إعلانه",
+      "الخطأ في العدّ لا يعني بالضرورة سوء نية"
+    ]
+  },
+  "entities": {
+    "characters": [
+      {
+        "id": "yaser",
+        "name_ar": "ياسر الخطيب",
+        "role": "suspect",
+        "age_descriptor_ar": "رئيس نادي الروبوت، طالب في الصف الثاني عشر",
+        "persona_ar": "حماسي وصادق، يعدّ كل ورقة حضور عملاً يستحق الحساب، ويضيق صدره إذا قيل له إن عدده أقل مما يظن.",
+        "motives_ar": [
+          "أن يحتفظ ناديه بالموعد الذي يشغله",
+          "أن يُحتسب تعب الأعضاء كله"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "yz_greet",
+            "purpose": "greeting",
+            "text_ar": "أهلاً. عندنا ثماني ورقات حضور موقّعة، وأرجو أن تُنظر كلها."
+          },
+          {
+            "line_id": "yz_claim",
+            "purpose": "lie",
+            "text_ar": "ثماني ورقات تعني ثماني جلسات، وقد عددتها بنفسي.",
+            "claim_ids": [
+              "cl_rob_eight"
+            ]
+          },
+          {
+            "line_id": "yz_retro",
+            "purpose": "lie",
+            "text_ar": "المجلس خفّض الحد إلى خمسة لأنه رآه أعدل، فليُطبَّق على الفصل كله حتى جلسة الأسبوع الثالث.",
+            "claim_ids": [
+              "cl_retro"
+            ]
+          },
+          {
+            "line_id": "yz_pop",
+            "purpose": "lie",
+            "text_ar": "وقّع لنا ستون زميلاً وفزنا بجائزة المقاطعة، أفلا يدل ذلك على أننا الأحق بالموعد؟",
+            "claim_ids": [
+              "cl_popular"
+            ]
+          },
+          {
+            "line_id": "yz_w3",
+            "purpose": "reveal",
+            "text_ar": "نعم، حضر جلسة الأسبوع الثالث خمسة أعضاء فقط، وكان الباقون في اختبار.",
+            "fact_ids": [
+              "f_rob_w3_five"
+            ]
+          },
+          {
+            "line_id": "yz_lab",
+            "purpose": "reveal",
+            "text_ar": "صحيح، عقدنا جلسة الأسبوع الثامن في قاعة الحاسوب لأن الورشة كانت مشغولة بالمعرض، ونسيت أن أذكر ذلك.",
+            "fact_ids": [
+              "f_rob_w8_lab"
+            ]
+          },
+          {
+            "line_id": "yz_popfact",
+            "purpose": "reveal",
+            "text_ar": "جمعنا التواقيع في أسبوعين، والجائزة من مسابقة المقاطعة للروبوتات.",
+            "fact_ids": [
+              "f_popularity"
+            ]
+          },
+          {
+            "line_id": "yz_refuse",
+            "purpose": "refuse_secret",
+            "text_ar": "كتبت ما عندي في ورقة المطالبة."
+          },
+          {
+            "line_id": "yz_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف أكثر من ذلك."
+          },
+          {
+            "line_id": "yz_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن جلسات النادي وأوراقه."
+          },
+          {
+            "line_id": "yz_bye",
+            "purpose": "farewell",
+            "text_ar": "أرجو أن يكون الحكم عادلاً لنا وللمسرح معاً."
+          }
+        ]
+      },
+      {
+        "id": "lama",
+        "name_ar": "لمى السمّان",
+        "role": "suspect",
+        "age_descriptor_ar": "رئيسة نادي المسرح، طالبة في الصف الحادي عشر",
+        "persona_ar": "حذرة ومنظمة، تميل إلى الشك فيما هو لها، وتسلّم أوراقها كاملة ولو أضرّت بها.",
+        "motives_ar": [
+          "أن يجد ناديها موعداً بعد إلغاء موعد الخميس",
+          "ألا تأخذ ما ليس لها"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "lm_greet",
+            "purpose": "greeting",
+            "text_ar": "أهلاً. أوراقنا كلها عندك، ولا أريد إلا ما تقوله اللائحة."
+          },
+          {
+            "line_id": "lm_doubt",
+            "purpose": "lie",
+            "text_ar": "حضر جلسة الأسبوع الثامن خمسة فقط، وأظنها لا تُحسب؛ اتركوها خارج العدّ إن رأيتم ذلك.",
+            "claim_ids": [
+              "cl_salma_doubt"
+            ]
+          },
+          {
+            "line_id": "lm_w8",
+            "purpose": "reveal",
+            "text_ar": "كان في جلسة الأسبوع الثامن خمسة أعضاء، فمعظم الفريق شارك في تجهيز المعرض.",
+            "fact_ids": [
+              "f_the_w8_five"
+            ]
+          },
+          {
+            "line_id": "lm_rule",
+            "purpose": "reveal",
+            "text_ar": "أعرف أن الجلسة المحسوبة تُعقد في الورشة، بورقة موقّعة، وبحضور ستة على الأقل.",
+            "fact_ids": [
+              "f_rule_orig"
+            ]
+          },
+          {
+            "line_id": "lm_refuse",
+            "purpose": "refuse_secret",
+            "text_ar": "قلت ما عندي في ورقتي."
+          },
+          {
+            "line_id": "lm_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا علم لي بذلك."
+          },
+          {
+            "line_id": "lm_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن جلسات المسرح وأوراقه."
+          },
+          {
+            "line_id": "lm_bye",
+            "purpose": "farewell",
+            "text_ar": "شكراً لأنك تقرأ السجلات قبل أن تحكم."
+          }
+        ]
+      },
+      {
+        "id": "hala",
+        "name_ar": "هالة الميداني",
+        "role": "authority",
+        "age_descriptor_ar": "مشرفة الأندية في الثانوية",
+        "persona_ar": "محايدة ودقيقة، تجيب عمّا في مفكرتها وتترك القرار للمجلس.",
+        "motives_ar": [
+          "أن تُطبَّق اللائحة على الجميع بلا تفضيل",
+          "أن يُكتب الرأي بحدوده"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "hl_greet",
+            "purpose": "greeting",
+            "text_ar": "أهلاً بك. أجيب عمّا دوّنته في مفكرتي، والقرار للمجلس لا لي ولا لك."
+          },
+          {
+            "line_id": "hl_rule",
+            "purpose": "reveal",
+            "text_ar": "اللائحة معلنة للجميع: للجلسة المحسوبة ثلاثة شروط، وأي تعديل يسري بعد تعليقه.",
+            "fact_ids": [
+              "f_rule_orig"
+            ]
+          },
+          {
+            "line_id": "hl_amend",
+            "purpose": "reveal",
+            "text_ar": "خفّض المجلس الحد الأدنى إلى خمسة بقرار يوم الثلاثاء من الأسبوع الخامس، وعلّقنا الإعلان صباح الأربعاء.",
+            "fact_ids": [
+              "f_rule_amend"
+            ]
+          },
+          {
+            "line_id": "hl_diary",
+            "purpose": "reveal",
+            "text_ar": "أعدّ الحاضرين بنفسي في كل جلسة أحضرها، وأدوّن العدد في المفكرة.",
+            "fact_ids": [
+              "f_rob_w3_five",
+              "f_the_w8_five"
+            ]
+          },
+          {
+            "line_id": "hl_fair",
+            "purpose": "reveal",
+            "text_ar": "كانت الورشة محجوزة لتجهيز المعرض ذلك السبت، فوافقت على نقل جلسة الروبوت إلى قاعة الحاسوب.",
+            "fact_ids": [
+              "f_fair_setup",
+              "f_rob_w8_lab"
+            ]
+          },
+          {
+            "line_id": "hl_refuse",
+            "purpose": "refuse_secret",
+            "text_ar": "لا أبدي رأياً فيمن يستحق الموعد؛ هذا شأن المجلس."
+          },
+          {
+            "line_id": "hl_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "ليس في مفكرتي ما يجيب عن ذلك."
+          },
+          {
+            "line_id": "hl_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن اللائحة والأوراق والمفكرة."
+          },
+          {
+            "line_id": "hl_bye",
+            "purpose": "farewell",
+            "text_ar": "اكتب ما تراه، واذكر حدوده."
+          }
+        ]
+      },
+      {
+        "id": "subhi",
+        "name_ar": "العم صبحي",
+        "role": "witness",
+        "age_descriptor_ar": "مسؤول مفاتيح القاعات",
+        "persona_ar": "قليل الكلام، يسجل كل مفتاح يخرج ويعود، ولا يعرف شيئاً عن اللوائح.",
+        "motives_ar": [
+          "أن يبقى الدفتر مرتباً",
+          "ألا يُتهم بتسجيل ما لم يحدث"
+        ],
+        "speech_constraints": {
+          "register": "msa",
+          "max_sentences_per_turn": 3,
+          "forbidden_topics_ar": []
+        },
+        "authored_lines": [
+          {
+            "line_id": "sb_greet",
+            "purpose": "greeting",
+            "text_ar": "أهلاً يا ابني. الدفتر أمامك."
+          },
+          {
+            "line_id": "sb_log",
+            "purpose": "reveal",
+            "text_ar": "أكتب كل مرة يخرج فيها مفتاح الورشة: الجهة، وساعة الأخذ، وساعة الإعادة. ولا أسأل عمّا يجري داخلها.",
+            "fact_ids": [
+              "f_room_log_kept"
+            ]
+          },
+          {
+            "line_id": "sb_fair",
+            "purpose": "reveal",
+            "text_ar": "في سبت الأسبوع الثامن أخذت لجنة المعرض المفتاح مبكراً وأعادته بعد الواحدة بعشر دقائق.",
+            "fact_ids": [
+              "f_fair_setup"
+            ]
+          },
+          {
+            "line_id": "sb_refuse",
+            "purpose": "refuse_secret",
+            "text_ar": "هذا ليس من شأني."
+          },
+          {
+            "line_id": "sb_unknown",
+            "purpose": "deflect_unknown",
+            "text_ar": "لا أعرف، لا يظهر في الدفتر."
+          },
+          {
+            "line_id": "sb_off",
+            "purpose": "deflect_offtopic",
+            "text_ar": "اسألني عن المفاتيح وحدها."
+          },
+          {
+            "line_id": "sb_bye",
+            "purpose": "farewell",
+            "text_ar": "مع السلامة."
+          }
+        ]
+      }
+    ],
+    "locations": [
+      {
+        "id": "loc_workshop",
+        "name_ar": "غرفة الورشة الكبرى",
+        "description_ar": "قاعة مشتركة في الثانوية تستعملها الأندية بحسب مواعيد أسبوعية، ويُفتح بابها بمفتاح يسلَّم من مكتب المفاتيح."
+      },
+      {
+        "id": "loc_lab",
+        "name_ar": "قاعة الحاسوب",
+        "description_ar": "قاعة بديلة في الثانوية يمكن للأندية استعمالها بموافقة المشرفة."
+      },
+      {
+        "id": "loc_keydesk",
+        "name_ar": "مكتب المفاتيح",
+        "description_ar": "مكتب يسلّم مفاتيح القاعات ويدوّن كل أخذ وإعادة."
+      },
+      {
+        "id": "loc_council",
+        "name_ar": "غرفة مجلس الطلبة",
+        "description_ar": "غرفة اجتماعات المجلس، وفيها يحفظ نص اللائحة والمحاضر."
+      },
+      {
+        "id": "loc_office",
+        "name_ar": "مكتب شؤون الطلبة",
+        "description_ar": "مكتب يحفظ أوراق الأندية والإعلانات الرسمية ومفكرة مشرفة الأندية."
+      }
+    ],
+    "objects": [
+      {
+        "id": "obj_rule",
+        "name_ar": "لائحة توزيع الورشة",
+        "description_ar": "لائحة مكتوبة تحدد كيف يُمنح الموعد الأسبوعي."
+      },
+      {
+        "id": "obj_room_log",
+        "name_ar": "دفتر مفاتيح القاعات",
+        "description_ar": "دفتر يدوّن فيه مسؤول المفاتيح كل فتح للورشة."
+      },
+      {
+        "id": "obj_robot_sheets",
+        "name_ar": "أوراق حضور الروبوت",
+        "description_ar": "أوراق جلسات نادي الروبوت الموقّعة من المشرفة."
+      },
+      {
+        "id": "obj_theatre_sheets",
+        "name_ar": "أوراق حضور المسرح",
+        "description_ar": "أوراق جلسات نادي المسرح الموقّعة من المشرفة."
+      }
+    ],
+    "organizations": [
+      {
+        "id": "org_school",
+        "name_ar": "ثانوية الينابيع",
+        "description_ar": "مدرسة ثانوية في مدينة وادي الصفصاف المتخيَّلة."
+      },
+      {
+        "id": "org_robotics",
+        "name_ar": "نادي الروبوت",
+        "description_ar": "نادٍ طلابي يجتمع صباح السبت."
+      },
+      {
+        "id": "org_theatre",
+        "name_ar": "نادي المسرح",
+        "description_ar": "نادٍ طلابي يجتمع عصر الخميس."
+      },
+      {
+        "id": "org_council",
+        "name_ar": "مجلس الطلبة",
+        "description_ar": "مجلس يضع لوائح استعمال القاعات ويقر تعديلها."
+      }
+    ]
+  },
+  "truth": {
+    "solution": {
+      "culprit_ids": [
+        "yaser"
+      ],
+      "summary_ar": "الذي تثبته السجلات أن عدد أوراق الروبوت لا يساوي عدد جلساته المحسوبة: سقطت منه جلسة لقلة الحضور قبل تعديل الحد، وجلسة عُقدت في قاعة أخرى، فبقيت له ست، وللمسرح سبع. فالموعد من نصيب المسرح بنص القاعدة، والفارق جلسة واحدة. أما الروبوت فخطؤه في قراءة اللائحة لا في نية، ولم يتعمد أحد إخفاء شيء.",
+      "key_fact_ids": [
+        "f_rob_six",
+        "f_the_seven",
+        "f_ruling"
+      ]
+    },
+    "facts": [
+      {
+        "id": "f_slot_dispute",
+        "statement_ar": "موعد صباح السبت في الورشة الكبرى هو الموعد الأسبوعي الوحيد المتبقي للفصل القادم، ويشغله الآن نادي الروبوت، أما موعد الخميس لنادي المسرح فيُلغى.",
+        "kind": "state",
+        "subject_ids": [
+          "loc_workshop",
+          "org_robotics",
+          "org_theatre"
+        ],
+        "spoiler_level": 0,
+        "time": {
+          "start_min": 57600,
+          "precision": "approx"
+        },
+        "location_id": "loc_workshop"
+      },
+      {
+        "id": "f_both_claims",
+        "statement_ar": "قدّم نادي الروبوت ورقة مطالبة تذكر ثماني جلسات، وقدّم نادي المسرح ورقة تذكر سبعاً.",
+        "kind": "event",
+        "subject_ids": [
+          "yaser",
+          "lama"
+        ],
+        "spoiler_level": 0,
+        "time": {
+          "start_min": 57600,
+          "precision": "approx"
+        }
+      },
+      {
+        "id": "f_rule_exists",
+        "statement_ar": "للمجلس لائحة مكتوبة تعطي الموعد للنادي الذي له أكبر عدد من الجلسات المحسوبة في الفصل.",
+        "kind": "state",
+        "subject_ids": [
+          "org_council",
+          "obj_rule"
+        ],
+        "spoiler_level": 0
+      },
+      {
+        "id": "f_rule_orig",
+        "statement_ar": "تعدّ اللائحة جلسة محسوبة إذا عُقدت في الورشة الكبرى، وكانت لها ورقة بتوقيع المشرفة، وحضرها ستة أعضاء على الأقل؛ وعند التعادل يبقى الموعد لشاغله؛ وأي تعديل يسري على ما بعد تعليق إعلانه لا على ما قبله.",
+        "kind": "state",
+        "subject_ids": [
+          "obj_rule",
+          "org_council"
+        ],
+        "spoiler_level": 1
+      },
+      {
+        "id": "f_rule_amend",
+        "statement_ar": "قرر المجلس يوم الثلاثاء من الأسبوع الخامس خفض الحد الأدنى للحضور من ستة إلى خمسة، وعُلّق الإعلان صباح الأربعاء 10:00؛ فتُقاس جلسات الأسابيع 1 إلى 4 بحد ستة، وجلسات الأسبوع 5 فما بعده بحد خمسة.",
+        "kind": "event",
+        "subject_ids": [
+          "org_council",
+          "obj_rule"
+        ],
+        "spoiler_level": 2,
+        "time": {
+          "start_min": 2040,
+          "precision": "exact"
+        },
+        "location_id": "loc_office"
+      },
+      {
+        "id": "f_rob_w3_five",
+        "statement_ar": "حضر جلسة نادي الروبوت في الأسبوع الثالث خمسة أعضاء، وهي سابقة لتعليق الإعلان.",
+        "kind": "event",
+        "subject_ids": [
+          "org_robotics",
+          "yaser"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": -13860,
+          "precision": "exact",
+          "end_min": -13740
+        },
+        "location_id": "loc_workshop"
+      },
+      {
+        "id": "f_rob_w8_lab",
+        "statement_ar": "عُقدت جلسة نادي الروبوت في الأسبوع الثامن في قاعة الحاسوب لا في الورشة الكبرى.",
+        "kind": "event",
+        "subject_ids": [
+          "org_robotics",
+          "yaser",
+          "loc_lab"
+        ],
+        "spoiler_level": 2,
+        "time": {
+          "start_min": 36540,
+          "precision": "exact",
+          "end_min": 36660
+        },
+        "location_id": "loc_lab"
+      },
+      {
+        "id": "f_the_w8_five",
+        "statement_ar": "حضر جلسة نادي المسرح في الأسبوع الثامن خمسة أعضاء، وهي لاحقة لتعليق الإعلان.",
+        "kind": "event",
+        "subject_ids": [
+          "org_theatre",
+          "lama"
+        ],
+        "spoiler_level": 2,
+        "time": {
+          "start_min": 34080,
+          "precision": "exact",
+          "end_min": 34200
+        },
+        "location_id": "loc_workshop"
+      },
+      {
+        "id": "f_fair_setup",
+        "statement_ar": "خُصصت الورشة الكبرى لتجهيز معرض المدرسة صباح السبت من الأسبوع الثامن من 08:00 إلى 13:00، وفتحتها لجنة المعرض لا الأندية.",
+        "kind": "event",
+        "subject_ids": [
+          "loc_workshop",
+          "subhi"
+        ],
+        "spoiler_level": 1,
+        "time": {
+          "start_min": 36480,
+          "precision": "exact",
+          "end_min": 36780
+        },
+        "location_id": "loc_workshop"
+      },
+      {
+        "id": "f_room_log_kept",
+        "statement_ar": "يسجل مسؤول المفاتيح كل فتح للورشة باسم الجهة وساعتي الأخذ والإعادة.",
+        "kind": "attribute",
+        "subject_ids": [
+          "subhi",
+          "obj_room_log"
+        ],
+        "spoiler_level": 1
+      },
+      {
+        "id": "f_popularity",
+        "statement_ar": "جمع نادي الروبوت ستين توقيعاً تأييداً له، وفاز فريقه بالمركز الثاني في مسابقة للمقاطعة.",
+        "kind": "attribute",
+        "subject_ids": [
+          "org_robotics",
+          "yaser"
+        ],
+        "spoiler_level": 1
+      },
+      {
+        "id": "f_rob_six",
+        "statement_ar": "بعد تطبيق شروط اللائحة بحدّها الساري وقت كل جلسة، لنادي الروبوت ست جلسات محسوبة: الأسابيع 1 و2 و4 و5 و7 و9.",
+        "kind": "state",
+        "subject_ids": [
+          "org_robotics",
+          "obj_robot_sheets"
+        ],
+        "spoiler_level": 3
+      },
+      {
+        "id": "f_the_seven",
+        "statement_ar": "بعد تطبيق الشروط نفسها، لنادي المسرح سبع جلسات محسوبة: الأسابيع 1 و2 و3 و5 و6 و8 و10.",
+        "kind": "state",
+        "subject_ids": [
+          "org_theatre",
+          "obj_theatre_sheets"
+        ],
+        "spoiler_level": 3
+      },
+      {
+        "id": "f_ruling",
+        "statement_ar": "الأرجح بنص اللائحة أن الموعد من نصيب نادي المسرح لأن سبعاً أكثر من ست؛ والفارق جلسة واحدة فلا يجري حكم التعادل، ولم يتعمد أحد خطأ في العدّ.",
+        "kind": "state",
+        "subject_ids": [
+          "org_theatre",
+          "org_robotics",
+          "obj_rule"
+        ],
+        "spoiler_level": 3
+      }
+    ],
+    "claims": [
+      {
+        "id": "cl_rob_eight",
+        "statement_ar": "نادي الروبوت عقد ثماني جلسات محسوبة.",
+        "kind": "half_truth",
+        "held_by": [
+          "yaser"
+        ],
+        "true_fact_id": "f_rob_six",
+        "contradicted_by_evidence_ids": [
+          "ev_robot_sheets",
+          "ev_room_log",
+          "ev_hala_diary"
+        ]
+      },
+      {
+        "id": "cl_retro",
+        "statement_ar": "الحد الجديد، خمسة أعضاء، يسري على الفصل كله فتُحسب جلسة الأسبوع الثالث.",
+        "kind": "honest_mistake",
+        "held_by": [
+          "yaser"
+        ],
+        "true_fact_id": "f_rule_amend",
+        "contradicted_by_evidence_ids": [
+          "ev_rule_text",
+          "ev_club_form",
+          "ev_posted_notice"
+        ]
+      },
+      {
+        "id": "cl_popular",
+        "statement_ar": "الأحق بالموعد هو النادي الأكثر تأييداً وجوائز.",
+        "kind": "half_truth",
+        "held_by": [
+          "yaser"
+        ],
+        "true_fact_id": "f_rule_orig",
+        "contradicted_by_evidence_ids": [
+          "ev_rule_text",
+          "ev_club_form"
+        ]
+      },
+      {
+        "id": "cl_salma_doubt",
+        "statement_ar": "جلسة المسرح في الأسبوع الثامن لا تُحسب لأن حضورها خمسة فقط.",
+        "kind": "honest_mistake",
+        "held_by": [
+          "lama"
+        ],
+        "true_fact_id": "f_rule_amend",
+        "contradicted_by_evidence_ids": [
+          "ev_posted_notice",
+          "ev_council_minutes"
+        ]
+      }
+    ]
+  },
+  "timeline": [
+    {
+      "id": "te_rob_w3",
+      "description_ar": "جلسة نادي الروبوت في الأسبوع الثالث بحضور خمسة أعضاء.",
+      "time": {
+        "start_min": -13860,
+        "precision": "exact",
+        "end_min": -13740
+      },
+      "location_id": "loc_workshop",
+      "actor_ids": [
+        "yaser",
+        "hala"
+      ],
+      "fact_ids": [
+        "f_rob_w3_five"
+      ],
+      "motivated_by_ar": "موعد النادي الأسبوعي وتوقيع المشرفة على الورقة"
+    },
+    {
+      "id": "te_vote",
+      "description_ar": "المجلس يقرر خفض الحد الأدنى للحضور إلى خمسة.",
+      "time": {
+        "start_min": 840,
+        "precision": "exact",
+        "end_min": 900
+      },
+      "location_id": "loc_council",
+      "actor_ids": [
+        "hala"
+      ],
+      "fact_ids": [
+        "f_rule_amend"
+      ],
+      "motivated_by_ar": "حضور المشرفة اجتماع المجلس بحكم عملها"
+    },
+    {
+      "id": "te_notice",
+      "description_ar": "تعليق الإعلان الرسمي بالحد الجديد في مكتب شؤون الطلبة.",
+      "time": {
+        "start_min": 2040,
+        "precision": "exact"
+      },
+      "location_id": "loc_office",
+      "actor_ids": [
+        "hala"
+      ],
+      "fact_ids": [
+        "f_rule_amend"
+      ],
+      "motivated_by_ar": "تنفيذ قرار المجلس وتوقيع الإعلان",
+      "caused_by_event_ids": [
+        "te_vote"
+      ]
+    },
+    {
+      "id": "te_the_w5",
+      "description_ar": "أول جلسة لنادي المسرح بعد تعليق الإعلان.",
+      "time": {
+        "start_min": 3840,
+        "precision": "exact",
+        "end_min": 3960
+      },
+      "location_id": "loc_workshop",
+      "actor_ids": [
+        "lama",
+        "hala"
+      ],
+      "fact_ids": [
+        "f_the_seven"
+      ],
+      "motivated_by_ar": "موعد النادي الأسبوعي وتوقيع المشرفة على الورقة"
+    },
+    {
+      "id": "te_rob_w5",
+      "description_ar": "جلسة نادي الروبوت في الأسبوع الخامس بحضور ستة أعضاء.",
+      "time": {
+        "start_min": 6300,
+        "precision": "exact",
+        "end_min": 6420
+      },
+      "location_id": "loc_workshop",
+      "actor_ids": [
+        "yaser",
+        "hala"
+      ],
+      "fact_ids": [
+        "f_rob_six"
+      ],
+      "motivated_by_ar": "موعد النادي الأسبوعي وتوقيع المشرفة على الورقة"
+    },
+    {
+      "id": "te_the_w8",
+      "description_ar": "جلسة نادي المسرح في الأسبوع الثامن بحضور خمسة أعضاء.",
+      "time": {
+        "start_min": 34080,
+        "precision": "exact",
+        "end_min": 34200
+      },
+      "location_id": "loc_workshop",
+      "actor_ids": [
+        "lama",
+        "hala"
+      ],
+      "fact_ids": [
+        "f_the_w8_five"
+      ],
+      "motivated_by_ar": "موعد النادي الأسبوعي وتوقيع المشرفة على الورقة"
+    },
+    {
+      "id": "te_fair",
+      "description_ar": "لجنة المعرض تحتل الورشة الكبرى لتجهيز المعرض.",
+      "time": {
+        "start_min": 36480,
+        "precision": "exact",
+        "end_min": 36780
+      },
+      "location_id": "loc_workshop",
+      "actor_ids": [],
+      "fact_ids": [
+        "f_fair_setup"
+      ]
+    },
+    {
+      "id": "te_rob_w8",
+      "description_ar": "جلسة نادي الروبوت في الأسبوع الثامن تنتقل إلى قاعة الحاسوب.",
+      "time": {
+        "start_min": 36540,
+        "precision": "exact",
+        "end_min": 36660
+      },
+      "location_id": "loc_lab",
+      "actor_ids": [
+        "yaser",
+        "hala"
+      ],
+      "fact_ids": [
+        "f_rob_w8_lab"
+      ],
+      "motivated_by_ar": "الورشة مشغولة بالمعرض فنُقلت الجلسة بموافقة المشرفة",
+      "caused_by_event_ids": [
+        "te_fair"
+      ]
+    },
+    {
+      "id": "te_close",
+      "description_ar": "يُغلق عدّ الجلسات المحسوبة بنهاية الأسبوع العاشر.",
+      "time": {
+        "start_min": 57599,
+        "precision": "exact"
+      },
+      "actor_ids": [],
+      "fact_ids": [
+        "f_rule_exists"
+      ]
+    },
+    {
+      "id": "te_hearing",
+      "description_ar": "يقدّم النادان أوراق مطالبتهما إلى مشرفة الأندية قبل اجتماع المجلس.",
+      "time": {
+        "start_min": 58200,
+        "precision": "exact",
+        "end_min": 58320
+      },
+      "location_id": "loc_office",
+      "actor_ids": [
+        "hala",
+        "yaser",
+        "lama"
+      ],
+      "fact_ids": [
+        "f_both_claims",
+        "f_slot_dispute"
+      ],
+      "motivated_by_ar": "تهيئة ملف الموعد لقرار المجلس",
+      "caused_by_event_ids": [
+        "te_close"
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_rule_text",
+      "title_ar": "لائحة توزيع قاعة الورشة الكبرى",
+      "kind": "documentary",
+      "content_ar": "لائحة توزيع قاعة الورشة الكبرى — مجلس طلبة ثانوية الينابيع (نسخة بداية الفصل)\nم1: يُمنح الموعد الأسبوعي الواحد المتبقي للنادي الذي له أكبر عدد من الجلسات المحسوبة في الفصل.\nم2: الجلسة المحسوبة هي التي (أ) عُقدت في غرفة الورشة الكبرى، و(ب) لها ورقة حضور موقّعة من مشرفة الأندية، و(ج) حضرها ستة أعضاء على الأقل.\nم3: إذا تساوى العددان بقي الموعد للنادي الذي يشغله وقت الحسم.\nم4: يُغلق العدّ بنهاية الأسبوع العاشر. وأي تعديل يقرّه المجلس يُعلَّق في إعلان مؤرخ، ويسري على الجلسات التي تُعقد بعد تعليقه لا قبله.",
+      "acquired_by_action_ids": [
+        "a_get_rule"
+      ],
+      "supports_fact_ids": [
+        "f_rule_exists",
+        "f_rule_orig"
+      ],
+      "reliability": "strong",
+      "limits_ar": "نص القاعدة لا يذكر عدد جلسات أي نادٍ، ولا يقول إن القاعدة عادلة أو غير عادلة؛ وهو يقيس الجلسات ولا يقيس جودة النوادي.",
+      "location_id": "loc_council",
+      "contradicts_claim_ids": [
+        "cl_retro",
+        "cl_popular"
+      ]
+    },
+    {
+      "id": "ev_club_form",
+      "title_ar": "نموذج تسجيل الأندية",
+      "kind": "documentary",
+      "content_ar": "نموذج تسجيل الأندية لهذا الفصل — مكتب شؤون الطلبة (الأسبوع الأول)\nأقرّ الموقّعان أدناه أنهما قرآ لائحة القاعة: يُحسب من الجلسات ما عُقد في الورشة الكبرى، وبورقة موقّعة من المشرفة، وبحضور ستة فأكثر. يبقى الموعد عند التعادل لشاغله. ويسري أي تعديل مُعلَن على ما بعد تعليق إعلانه.\nالتوقيعان: ياسر الخطيب (نادي الروبوت) · لمى السمّان (نادي المسرح).",
+      "acquired_by_action_ids": [
+        "a_get_form"
+      ],
+      "supports_fact_ids": [
+        "f_rule_orig"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "نموذج يلخّص اللائحة ولا ينشئ قاعدة جديدة؛ وقد يسقط الملخص بنداً، فيُرجع إلى النص الأصلي عند الخلاف.",
+      "location_id": "loc_office",
+      "contradicts_claim_ids": [
+        "cl_retro",
+        "cl_popular"
+      ]
+    },
+    {
+      "id": "ev_council_minutes",
+      "title_ar": "محضر مجلس الطلبة",
+      "kind": "documentary",
+      "content_ar": "محضر مجلس طلبة ثانوية الينابيع — الثلاثاء من الأسبوع الخامس، 14:00\nالبند 3: بسبب غياب أعضاء كثيرين في أسبوع الاختبارات، تقرر خفض الحد الأدنى للحضور في م2 (ج) من ستة إلى خمسة أعضاء. يُعلَّق القرار صباح الغد في إعلان مؤرخ، ويُطبَّق وفق م4.",
+      "acquired_by_action_ids": [
+        "a_get_minutes"
+      ],
+      "supports_fact_ids": [
+        "f_rule_amend"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يثبت القرار ويوم اتخاذه، ولا يذكر أي الجلسات تتأثر به ولا عدد جلسات أي نادٍ.",
+      "location_id": "loc_council",
+      "contradicts_claim_ids": [
+        "cl_salma_doubt"
+      ]
+    },
+    {
+      "id": "ev_posted_notice",
+      "title_ar": "الإعلان الرسمي رقم 7",
+      "kind": "documentary",
+      "content_ar": "إعلان رقم 7 — مكتب شؤون الطلبة\nتعديل م2 (ج): الحد الأدنى لحضور الجلسة المحسوبة خمسة أعضاء.\nختم التعليق: الأربعاء، الأسبوع الخامس، 10:00\nالتوقيع: مشرفة الأندية",
+      "acquired_by_action_ids": [
+        "a_get_notice"
+      ],
+      "supports_fact_ids": [
+        "f_rule_amend"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يثبت وقت التعليق، ولا يثبت أن كل الطلاب قرؤوه؛ والمادة الرابعة تحسب من التعليق لا من العلم به.",
+      "location_id": "loc_office",
+      "contradicts_claim_ids": [
+        "cl_retro",
+        "cl_salma_doubt"
+      ]
+    },
+    {
+      "id": "ev_robot_claim",
+      "title_ar": "ورقة مطالبة نادي الروبوت",
+      "kind": "testimonial",
+      "content_ar": "ورقة مطالبة نادي الروبوت (بقلم ياسر الخطيب)\nلدينا ثماني ورقات حضور موقّعة، أي ثماني جلسات، وللمسرح سبع؛ فالموعد لنا. ونطلب تطبيق الحد الجديد، خمسة أعضاء، على الفصل كله لأن المجلس رآه أعدل.",
+      "acquired_by_action_ids": [
+        "a_get_robot_claim"
+      ],
+      "supports_fact_ids": [
+        "f_both_claims"
+      ],
+      "reliability": "weak",
+      "limits_ar": "ورقة تعرض مطلب صاحبها وعدّه؛ ولا يتحقق من العدّ إلا بمطابقته بالسجلات الأخرى.",
+      "location_id": "loc_office"
+    },
+    {
+      "id": "ev_theatre_claim",
+      "title_ar": "ورقة مطالبة نادي المسرح",
+      "kind": "testimonial",
+      "content_ar": "ورقة مطالبة نادي المسرح (بقلم لمى السمّان)\nعقدنا سبع جلسات في الورشة أيام الخميس وسلّمنا سبع ورقات حضور. وقد لا تُحسب جلسة الأسبوع الثامن لأن حضورها خمسة فقط، ونتركها لتقدير المجلس.",
+      "acquired_by_action_ids": [
+        "a_get_theatre_claim"
+      ],
+      "supports_fact_ids": [
+        "f_both_claims"
+      ],
+      "reliability": "weak",
+      "limits_ar": "ورقة تعرض عدّ صاحبتها وتردّدها؛ ولا يتحقق من ذلك إلا بمطابقته بالسجلات الأخرى.",
+      "location_id": "loc_office"
+    },
+    {
+      "id": "ev_robot_sheets",
+      "title_ar": "أوراق حضور نادي الروبوت",
+      "kind": "documentary",
+      "content_ar": "أوراق حضور نادي الروبوت (السبت 09:00) — موقّعة من مشرفة الأندية\nالأسبوع 1 · الورشة الكبرى · الحضور 9\nالأسبوع 2 · الورشة الكبرى · الحضور 8\nالأسبوع 3 · الورشة الكبرى · الحضور 5\nالأسبوع 4 · الورشة الكبرى · الحضور 7\nالأسبوع 5 · الورشة الكبرى · الحضور 6\nالأسبوع 7 · الورشة الكبرى · الحضور 7\nالأسبوع 8 · قاعة الحاسوب · الحضور 8\nالأسبوع 9 · الورشة الكبرى · الحضور 6\nعدد الأوراق: 8",
+      "acquired_by_action_ids": [
+        "a_get_robot_sheets"
+      ],
+      "supports_fact_ids": [
+        "f_rob_w3_five",
+        "f_rob_w8_lab"
+      ],
+      "reliability": "strong",
+      "limits_ar": "أوراق يعدّها النادي وتوقّعها المشرفة؛ تثبت القاعة المكتوبة والحضور المسجل، ولا تبيّن أي حد يطبَّق على كل ورقة.",
+      "location_id": "loc_office",
+      "contradicts_claim_ids": [
+        "cl_rob_eight"
+      ]
+    },
+    {
+      "id": "ev_theatre_sheets",
+      "title_ar": "أوراق حضور نادي المسرح",
+      "kind": "documentary",
+      "content_ar": "أوراق حضور نادي المسرح (الخميس 16:00) — موقّعة من مشرفة الأندية\nالأسبوع 1 · الورشة الكبرى · الحضور 11\nالأسبوع 2 · الورشة الكبرى · الحضور 10\nالأسبوع 3 · الورشة الكبرى · الحضور 9\nالأسبوع 5 · الورشة الكبرى · الحضور 9\nالأسبوع 6 · الورشة الكبرى · الحضور 8\nالأسبوع 8 · الورشة الكبرى · الحضور 5\nالأسبوع 10 · الورشة الكبرى · الحضور 10\nعدد الأوراق: 7",
+      "acquired_by_action_ids": [
+        "a_get_theatre_sheets"
+      ],
+      "supports_fact_ids": [
+        "f_the_w8_five"
+      ],
+      "reliability": "strong",
+      "limits_ar": "أوراق يعدّها النادي وتوقّعها المشرفة؛ تثبت القاعة المكتوبة والحضور المسجل، ولا تبيّن أي حد يطبَّق على كل ورقة.",
+      "location_id": "loc_office",
+      "contradicts_claim_ids": [
+        "cl_salma_doubt"
+      ]
+    },
+    {
+      "id": "ev_room_log",
+      "title_ar": "دفتر مفاتيح القاعات",
+      "kind": "documentary",
+      "content_ar": "دفتر مفاتيح القاعات — العم صبحي — مفتاح الورشة الكبرى (الأخذ – الإعادة)\nالأسبوع 1 · خميس · نادي المسرح · 15:55 – 18:05\nالأسبوع 1 · سبت · نادي الروبوت · 08:50 – 11:05\nالأسبوع 2 · خميس · نادي المسرح · 15:55 – 18:05\nالأسبوع 2 · سبت · نادي الروبوت · 08:50 – 11:05\nالأسبوع 3 · خميس · نادي المسرح · 15:55 – 18:05\nالأسبوع 3 · سبت · نادي الروبوت · 08:50 – 11:05\nالأسبوع 4 · سبت · نادي الروبوت · 08:50 – 11:05\nالأسبوع 5 · خميس · نادي المسرح · 15:55 – 18:05\nالأسبوع 5 · سبت · نادي الروبوت · 08:50 – 11:05\nالأسبوع 6 · خميس · نادي المسرح · 15:55 – 18:05\nالأسبوع 7 · سبت · نادي الروبوت · 08:50 – 11:05\nالأسبوع 8 · خميس · نادي المسرح · 15:55 – 18:05\nالأسبوع 8 · سبت · لجنة المعرض · 07:55 – 13:10\nالأسبوع 9 · سبت · نادي الروبوت · 08:50 – 11:05\nالأسبوع 10 · خميس · نادي المسرح · 15:55 – 18:05",
+      "acquired_by_action_ids": [
+        "a_get_room_log"
+      ],
+      "supports_fact_ids": [
+        "f_room_log_kept",
+        "f_rob_w8_lab",
+        "f_fair_setup"
+      ],
+      "reliability": "strong",
+      "limits_ar": "يسجل من أخذ المفتاح ومتى أعاده، ولا يسجل عدد الحاضرين ولا ما جرى داخل القاعة.",
+      "location_id": "loc_keydesk",
+      "contradicts_claim_ids": [
+        "cl_rob_eight"
+      ]
+    },
+    {
+      "id": "ev_hala_diary",
+      "title_ar": "مفكرة مشرفة الأندية",
+      "kind": "documentary",
+      "content_ar": "مفكرة مشرفة الأندية: الجلسات التي حضرتُها ووقّعتُ ورقتها، وعدد الحاضرين كما عددتُهم بنفسي في بدايتها.\nالروبوت: أ1: 9 · أ2: 8 · أ3: 5 · أ4: 7 · أ5: 6 · أ7: 7 · أ8: 8 (في قاعة الحاسوب) · أ9: 6\nالمسرح: أ1: 11 · أ2: 10 · أ3: 9 · أ5: 9 · أ6: 8 · أ8: 5 · أ10: 10",
+      "acquired_by_action_ids": [
+        "a_get_diary"
+      ],
+      "supports_fact_ids": [
+        "f_rob_w3_five",
+        "f_the_w8_five",
+        "f_rob_w8_lab"
+      ],
+      "reliability": "strong",
+      "limits_ar": "مفكرة شخص واحد؛ تثبت ما حضرته هي وعدّته، ولا تقول أين يجب أن تُعقد الجلسة بحسب اللائحة، ولا تغني عن شاهد آخر على العدد.",
+      "location_id": "loc_office",
+      "contradicts_claim_ids": [
+        "cl_rob_eight"
+      ]
+    },
+    {
+      "id": "ev_fair_notice",
+      "title_ar": "إعلان تخصيص الورشة للمعرض",
+      "kind": "documentary",
+      "content_ar": "إعلان — لجنة معرض المدرسة\nتُخصَّص الورشة الكبرى لتجهيز المعرض صباح السبت من الأسبوع الثامن، من 08:00 إلى 13:00. على الأندية نقل جلساتها إلى قاعة أخرى بموافقة المشرفة.",
+      "acquired_by_action_ids": [
+        "a_get_fair"
+      ],
+      "supports_fact_ids": [
+        "f_fair_setup"
+      ],
+      "reliability": "moderate",
+      "limits_ar": "يقول إن القاعة كانت مخصصة، ولا يقول أي ناد انتقل ولا إلى أين.",
+      "location_id": "loc_office"
+    },
+    {
+      "id": "ev_popularity",
+      "title_ar": "عريضة التأييد وشهادة المسابقة",
+      "kind": "documentary",
+      "content_ar": "عريضة بستين توقيعاً من طلاب المدرسة تؤيد نادي الروبوت.\nشهادة فوز فريق النادي بالمركز الثاني في مسابقة المقاطعة للروبوتات.",
+      "acquired_by_action_ids": [
+        "a_get_popularity"
+      ],
+      "supports_fact_ids": [
+        "f_popularity"
+      ],
+      "reliability": "weak",
+      "limits_ar": "تعبّر عن تأييد وإنجاز، ولا تدخل في حساب الجلسات الذي تقيسه اللائحة.",
+      "location_id": "loc_office"
+    }
+  ],
+  "evidence_graph": {
+    "inferences": [
+      {
+        "id": "i_rule_a",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_rule_text"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_rule_orig"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "نص اللائحة يحدد معيار العدّ: ثلاثة شروط للجلسة المحسوبة، وبقاء الموعد لشاغله عند التعادل، وسريان أي تعديل بعد تعليقه فقط.",
+        "skill_ko_refs": [
+          "KO-RS-05-001"
+        ]
+      },
+      {
+        "id": "i_rule_b",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_club_form"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_rule_orig"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "نموذج التسجيل وقّعه رئيسا النادين في الأسبوع الأول ويلخص المعيار نفسه؛ وهو مصدر مستقل عن نص اللائحة، فاتفاقهما يثبت أن المعيار كان معلوماً للطرفين من البداية.",
+        "skill_ko_refs": [
+          "KO-RS-05-004"
+        ]
+      },
+      {
+        "id": "i_amend_a",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_council_minutes"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_rule_orig"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_rule_amend"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "المحضر يسجل قرار الثلاثاء من الأسبوع الخامس بخفض الحد إلى خمسة ويأمر بتعليقه صباح اليوم التالي، والمادة الرابعة تجعل السريان بعد التعليق؛ فالجلسات السابقة تُقاس بحد ستة.",
+        "skill_ko_refs": [
+          "KO-RS-05-005"
+        ]
+      },
+      {
+        "id": "i_amend_b",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_posted_notice"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_rule_orig"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_rule_amend"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "ختم الإعلان يضع التعليق في الأربعاء من الأسبوع الخامس الساعة 10:00، وهو سجل مكتب مستقل عن المحضر؛ فجلسات الأسابيع 1 إلى 4 للحد القديم، وما بعدها للجديد.",
+        "skill_ko_refs": [
+          "KO-RS-05-005"
+        ]
+      },
+      {
+        "id": "i_rob_a",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_robot_sheets"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_rule_orig"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_rule_amend"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_rob_six"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "الأوراق ثمانٍ. ورقة الأسبوع 3 حضورها خمسة وقد سبقت التعليق، فيحكمها حد ستة وتسقط. وورقة الأسبوع 8 مكتوب فيها قاعة الحاسوب، فيسقط شرط المكان. فنحسب 8 − 2 = 6، وبقية الأوراق (الأسابيع 1 و2 و4 و5 و7 و9) تستوفي الشروط بحضور 9 و8 و7 و6 و7 و6.",
+        "skill_ko_refs": [
+          "KO-RS-05-005",
+          "KO-RS-06-001"
+        ]
+      },
+      {
+        "id": "i_rob_b",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_hala_diary"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_room_log"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_rule_orig"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_rule_amend"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_rob_six"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "دفتر المفاتيح يسجل فتح الورشة للروبوت سبع مرات (الأسابيع 1 و2 و3 و4 و5 و7 و9) ولا يسجل له فتحاً في الأسبوع 8، والمفكرة تضع جلسة ذلك الأسبوع في قاعة الحاسوب. وتعطي المفكرة حضور الأسبوع 3 خمسة قبل التعليق فتسقط، فيبقى 7 − 1 = 6.",
+        "skill_ko_refs": [
+          "KO-RS-05-004",
+          "KO-RS-05-005"
+        ]
+      },
+      {
+        "id": "i_the_a",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_theatre_sheets"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_rule_orig"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_rule_amend"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_the_seven"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "سبع ورقات كلها في الورشة. أدناها حضوراً ورقة الأسبوع 8 بخمسة، وقد عُقدت بعد التعليق فيحكمها حد خمسة فتُحسب. وسائر الأوراق بحضور 11 و10 و9 و9 و8 و10، وهي فوق ستة. فالمجموع سبع.",
+        "skill_ko_refs": [
+          "KO-RS-05-005",
+          "KO-RS-06-001"
+        ]
+      },
+      {
+        "id": "i_the_b",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_hala_diary"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_room_log"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_rule_orig"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_rule_amend"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_the_seven"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "دفتر المفاتيح يسجل فتح الورشة للمسرح في الأسابيع 1 و2 و3 و5 و6 و8 و10، أي سبع مرات، والمفكرة تعطي حضور كل منها. أدناها الأسبوع 8 بخمسة بعد التعليق فتُحسب، فالمجموع سبع.",
+        "skill_ko_refs": [
+          "KO-RS-05-004",
+          "KO-RS-05-005"
+        ]
+      },
+      {
+        "id": "i_ruling",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_rob_six"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_the_seven"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_rule_orig"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "fact",
+          "ref_id": "f_ruling"
+        },
+        "relation": "establishes",
+        "strength": "strong",
+        "rule_ar": "المادة الأولى تعطي الموعد للأكثر جلسات محسوبة: سبع للمسرح مقابل ست للروبوت. والفارق جلسة واحدة، فلا تعادل تطبق عليه المادة الثالثة. وهذا رأي معلل يُرفع إلى المجلس، وليس حكماً نهائياً.",
+        "skill_ko_refs": [
+          "KO-RS-06-001",
+          "KO-RS-06-021"
+        ]
+      },
+      {
+        "id": "i_ref_robotics",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_ruling"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_robotics"
+        },
+        "relation": "refutes",
+        "strength": "strong",
+        "rule_ar": "ثماني ورقات لا تساوي ثماني جلسات محسوبة؛ فبعد فحص شروط اللائحة يهبط عدد الروبوت إلى ست، وهو أقل من سبع.",
+        "skill_ko_refs": [
+          "KO-RS-06-001"
+        ]
+      },
+      {
+        "id": "i_ref_tie",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_ruling"
+          },
+          {
+            "ref_type": "fact",
+            "ref_id": "f_rule_amend"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_tie"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "التعادل لا يظهر إلا إذا طُبق الحد الجديد بأثر رجعي على جلسة الأسبوع 3، أو أُسقطت جلسة المسرح في الأسبوع 8. الأول تمنعه المادة الرابعة، والثاني يخالف الحد الجديد الساري وقتها.",
+        "skill_ko_refs": [
+          "KO-RS-05-005",
+          "KO-RS-05-002"
+        ]
+      },
+      {
+        "id": "i_ref_undecided",
+        "premises": [
+          {
+            "ref_type": "fact",
+            "ref_id": "f_ruling"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "hypothesis",
+          "ref_id": "h_undecided"
+        },
+        "relation": "rules_out",
+        "strength": "strong",
+        "rule_ar": "سجلات مستقلة، هي الأوراق ودفتر المفاتيح والمفكرة، تصل إلى العدّ نفسه بطرق مختلفة؛ فلا حاجة إلى قرعة، وإن بقي هامش الخطأ بعضو واحد مذكوراً في الرأي.",
+        "skill_ko_refs": [
+          "KO-RS-05-004",
+          "KO-RS-06-021"
+        ]
+      },
+      {
+        "id": "i_c_eight",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_robot_sheets"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_rob_eight"
+        },
+        "relation": "contradicts_claim",
+        "strength": "strong",
+        "rule_ar": "الورقتان رقم 3 ورقم 8 في ملف الروبوت لا تستوفيان الشروط، فعدد الأوراق لا يساوي عدد الجلسات المحسوبة.",
+        "skill_ko_refs": [
+          "KO-RS-05-001"
+        ]
+      },
+      {
+        "id": "i_c_retro",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_rule_text"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_posted_notice"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_retro"
+        },
+        "relation": "contradicts_claim",
+        "strength": "strong",
+        "rule_ar": "المادة الرابعة تقول إن التعديل يسري على ما بعد تعليقه، وختم الإعلان يضع التعليق في الأسبوع الخامس؛ فلا يمتد الحد الجديد إلى الأسبوع الثالث.",
+        "skill_ko_refs": [
+          "KO-RS-05-005"
+        ]
+      },
+      {
+        "id": "i_c_popular",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_rule_text"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_popularity"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_popular"
+        },
+        "relation": "contradicts_claim",
+        "strength": "strong",
+        "rule_ar": "المادة الأولى تقيس الجلسات المحسوبة فقط، والعريضة والجائزة ليستا من شروطها؛ فهما لا يدخلان العدّ.",
+        "skill_ko_refs": [
+          "KO-RS-06-001"
+        ]
+      },
+      {
+        "id": "i_c_doubt",
+        "premises": [
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_posted_notice"
+          },
+          {
+            "ref_type": "evidence",
+            "ref_id": "ev_theatre_sheets"
+          }
+        ],
+        "conclusion": {
+          "ref_type": "claim",
+          "ref_id": "cl_salma_doubt"
+        },
+        "relation": "contradicts_claim",
+        "strength": "strong",
+        "rule_ar": "جلسة المسرح في الأسبوع 8 لاحقة لتعليق الإعلان، وحضورها خمسة يساوي الحد الجديد؛ فهي تستوفي الشرط ولو شكّت صاحبتها.",
+        "skill_ko_refs": [
+          "KO-RS-05-005"
+        ]
+      }
+    ]
+  },
+  "character_knowledge": [
+    {
+      "character_id": "yaser",
+      "knows": [
+        {
+          "fact_id": "f_slot_dispute",
+          "access": "common_knowledge",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_both_claims",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_rule_exists",
+          "access": "common_knowledge",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_rule_orig",
+          "access": "common_knowledge",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_rob_w3_five",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_popularity",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [
+        {
+          "fact_id": "f_rob_w8_lab",
+          "reveal_when": {
+            "presented": {
+              "evidence_id": "ev_robot_sheets",
+              "to_character": "yaser"
+            }
+          },
+          "cover_claim_id": "cl_rob_eight",
+          "reveal_line_id": "yz_lab"
+        }
+      ],
+      "believes": [
+        {
+          "claim_id": "cl_rob_eight",
+          "stance": "sincere"
+        },
+        {
+          "claim_id": "cl_retro",
+          "stance": "sincere"
+        },
+        {
+          "claim_id": "cl_popular",
+          "stance": "sincere"
+        }
+      ]
+    },
+    {
+      "character_id": "lama",
+      "knows": [
+        {
+          "fact_id": "f_slot_dispute",
+          "access": "common_knowledge",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_both_claims",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_rule_exists",
+          "access": "common_knowledge",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_rule_orig",
+          "access": "common_knowledge",
+          "certainty": "fairly_sure"
+        },
+        {
+          "fact_id": "f_the_w8_five",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": [
+        {
+          "claim_id": "cl_salma_doubt",
+          "stance": "sincere"
+        }
+      ]
+    },
+    {
+      "character_id": "hala",
+      "knows": [
+        {
+          "fact_id": "f_slot_dispute",
+          "access": "professional",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_both_claims",
+          "access": "professional",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_rule_exists",
+          "access": "professional",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_rule_orig",
+          "access": "professional",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_rule_amend",
+          "access": "professional",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_rob_w3_five",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_the_w8_five",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_rob_w8_lab",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_fair_setup",
+          "access": "professional",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    },
+    {
+      "character_id": "subhi",
+      "knows": [
+        {
+          "fact_id": "f_room_log_kept",
+          "access": "witnessed",
+          "certainty": "certain"
+        },
+        {
+          "fact_id": "f_fair_setup",
+          "access": "witnessed",
+          "certainty": "certain"
+        }
+      ],
+      "hides": [],
+      "believes": []
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "h_robotics",
+      "statement_ar": "الموعد لنادي الروبوت لأن عنده ثماني ورقات حضور مقابل سبع للمسرح.",
+      "is_true": false,
+      "plausibility_at_start": "high"
+    },
+    {
+      "id": "h_theatre",
+      "statement_ar": "تفيد السجلات المستقلة أن للمسرح جلسات محسوبة أكثر من الروبوت، فالأرجح أن الموعد من نصيب نادي المسرح بنص اللائحة.",
+      "is_true": true,
+      "plausibility_at_start": "low"
+    },
+    {
+      "id": "h_tie",
+      "statement_ar": "بعد تصحيح العدّ يتعادل النادان، فيبقى الموعد لنادي الروبوت لأنه يشغله الآن.",
+      "plausibility_at_start": "medium",
+      "is_true": false
+    },
+    {
+      "id": "h_undecided",
+      "statement_ar": "السجلات لا تكفي للتفضيل بين النادين، فيُترك الأمر للقرعة.",
+      "is_true": false,
+      "plausibility_at_start": "low"
+    }
+  ],
+  "misdirection_plan": [
+    {
+      "id": "rh_count",
+      "points_to_hypothesis_id": "h_robotics",
+      "planted_via_ar": "ثماني ورقات مقابل سبع، وورقة المطالبة تقدم عدد الأوراق كأنه عدد الجلسات المحسوبة.",
+      "evidence_ids": [
+        "ev_robot_claim",
+        "ev_robot_sheets"
+      ],
+      "refuted_by_inference_ids": [
+        "i_rob_a",
+        "i_ref_robotics"
+      ],
+      "fairness_note_ar": "أوراق الحضور نفسها تكتب القاعة والحضور في كل سطر، ودفتر المفاتيح والمفكرة متاحان من أول التحقيق."
+    },
+    {
+      "id": "rh_popular",
+      "points_to_hypothesis_id": "h_robotics",
+      "planted_via_ar": "عريضة بستين توقيعاً وجائزة مقاطعة تجعل الروبوت يبدو الأحق.",
+      "evidence_ids": [
+        "ev_popularity"
+      ],
+      "refuted_by_inference_ids": [
+        "i_c_popular"
+      ],
+      "fairness_note_ar": "المادة الأولى معروضة كاملة في أول وثيقة، وتقيس الجلسات المحسوبة وحدها."
+    },
+    {
+      "id": "rh_retro",
+      "points_to_hypothesis_id": "h_tie",
+      "planted_via_ar": "تخفيض الحد إلى خمسة يبدو كأنه يعيد جلسة الأسبوع الثالث للروبوت فيتعادل النادان.",
+      "evidence_ids": [
+        "ev_robot_claim",
+        "ev_council_minutes"
+      ],
+      "refuted_by_inference_ids": [
+        "i_c_retro",
+        "i_ref_tie"
+      ],
+      "fairness_note_ar": "المحضر والإعلان يذكران يوم القرار ووقت التعليق، والمادة الرابعة تحدد السريان نصاً."
+    },
+    {
+      "id": "rh_doubt",
+      "points_to_hypothesis_id": "h_tie",
+      "planted_via_ar": "تردد رئيسة المسرح في جلستها الأضعف حضوراً يوحي بإسقاطها فيتعادل العددان.",
+      "evidence_ids": [
+        "ev_theatre_claim",
+        "ev_theatre_sheets"
+      ],
+      "refuted_by_inference_ids": [
+        "i_c_doubt",
+        "i_the_a"
+      ],
+      "fairness_note_ar": "الحد الجديد ووقت تعليقه ظاهران في الإعلان، وحضور الجلسة مدوّن في الورقة والمفكرة."
+    },
+    {
+      "id": "rh_lots",
+      "points_to_hypothesis_id": "h_undecided",
+      "planted_via_ar": "الأوراق تأتي من النادين أصحاب المصلحة، وتاريخا القرار والتعليق مختلفان، فيبدو الأمر عصياً على الحسم.",
+      "evidence_ids": [
+        "ev_robot_claim",
+        "ev_theatre_claim",
+        "ev_council_minutes"
+      ],
+      "refuted_by_inference_ids": [
+        "i_ref_undecided"
+      ],
+      "fairness_note_ar": "السجلان المستقلان، دفتر المفاتيح والمفكرة، يعطيان العدّ نفسه من غير أوراق النادين."
+    }
+  ],
+  "learning_objectives": [
+    {
+      "id": "lo_claim",
+      "statement_ar": "يميّز بين ما قاله صاحب المطالبة وما تثبته السجلات المستقلة، ويصنّف كل ورقة بحسب مصدرها.",
+      "skill_ko_ref": "KO-RS-05-001",
+      "observable_behaviors_ar": [
+        "يصنّف ورقتي المطالبة والعريضة أقوالاً",
+        "يعامل دفتر المفاتيح والمفكرة سجلين أصليين"
+      ],
+      "evidence_sources": [
+        "evidence_board"
+      ]
+    },
+    {
+      "id": "lo_indep",
+      "statement_ar": "يتحقق من استقلال السجلات قبل أن يعدّ اتفاقها تقوية للعدّ.",
+      "skill_ko_ref": "KO-RS-05-004",
+      "observable_behaviors_ar": [
+        "يقابل أوراق النادين بدفتر المفاتيح",
+        "يعرف أن نسخة تلخّص اللائحة ليست مصدراً جديداً للقاعدة"
+      ],
+      "evidence_sources": [
+        "evidence_board",
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_timeline",
+      "statement_ar": "يرتّب قرار المجلس وتعليق الإعلان وأيام الجلسات ليعرف أي حدٍّ كان ساريًا وقت كل جلسة.",
+      "skill_ko_ref": "KO-RS-05-005",
+      "observable_behaviors_ar": [
+        "يضع قرار الثلاثاء وتعليق الأربعاء في مكانيهما",
+        "لا يطبّق الحد الجديد على جلسة سبقته"
+      ],
+      "evidence_sources": [
+        "timeline_task",
+        "action_log"
+      ]
+    },
+    {
+      "id": "lo_hyp",
+      "statement_ar": "يوازن بين رأيين متنافسين وتفسير ثالث للتعادل، ويستبعد ما تنقضه السجلات.",
+      "skill_ko_ref": "KO-RS-05-002",
+      "observable_behaviors_ar": [
+        "يضيف فرضية التعادل",
+        "يستبعد بدليل"
+      ],
+      "evidence_sources": [
+        "hypothesis_ledger"
+      ]
+    },
+    {
+      "id": "lo_diag",
+      "statement_ar": "يقدّر ما يثبته كل سجل وما لا يثبته، ويربط كل دليل بالفرضية في اتجاهه الصحيح.",
+      "skill_ko_ref": "KO-RS-06-001",
+      "observable_behaviors_ar": [
+        "يعرف أن العريضة لا تدخل في عدّ الجلسات",
+        "يربط الدليل بالفرضية"
+      ],
+      "evidence_sources": [
+        "evidence_board",
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_calib",
+      "statement_ar": "يصوغ رأيه بدرجة ثقة معقولة ويذكر هامش الخطأ وأن القرار لجهة أخرى.",
+      "skill_ko_ref": "KO-RS-06-021",
+      "observable_behaviors_ar": [
+        "يختار ثقة معقولة",
+        "يذكر أن الفارق جلسة واحدة"
+      ],
+      "evidence_sources": [
+        "final_justification"
+      ]
+    },
+    {
+      "id": "lo_revise",
+      "statement_ar": "يراجع رأيه الأول حين يظهر أن عدّ الأوراق لا يساوي عدّ الجلسات المحسوبة.",
+      "skill_ko_ref": "KO-RS-06-009",
+      "observable_behaviors_ar": [
+        "يغيّر فرضيته الرائدة بدليل"
+      ],
+      "evidence_sources": [
+        "hypothesis_ledger"
+      ]
+    }
+  ],
+  "mechanics": {
+    "time_budget_units": 30,
+    "actions": [
+      {
+        "id": "a_get_rule",
+        "type": "examine",
+        "label_ar": "اقرأ لائحة توزيع الورشة",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_rule_text"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_council",
+        "telemetry_code": "GET_RULE"
+      },
+      {
+        "id": "a_get_robot_claim",
+        "type": "examine",
+        "label_ar": "اقرأ ورقة مطالبة نادي الروبوت",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_robot_claim"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_office",
+        "telemetry_code": "GET_ROBOT_CLAIM"
+      },
+      {
+        "id": "a_get_theatre_claim",
+        "type": "examine",
+        "label_ar": "اقرأ ورقة مطالبة نادي المسرح",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_theatre_claim"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_office",
+        "telemetry_code": "GET_THEATRE_CLAIM"
+      },
+      {
+        "id": "a_get_robot_sheets",
+        "type": "examine",
+        "label_ar": "اطلب أوراق حضور نادي الروبوت",
+        "precondition": {
+          "has_evidence": "ev_robot_claim"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_robot_sheets"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_office",
+        "telemetry_code": "GET_ROBOT_SHEETS"
+      },
+      {
+        "id": "a_get_theatre_sheets",
+        "type": "examine",
+        "label_ar": "اطلب أوراق حضور نادي المسرح",
+        "precondition": {
+          "has_evidence": "ev_theatre_claim"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_theatre_sheets"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_office",
+        "telemetry_code": "GET_THEATRE_SHEETS"
+      },
+      {
+        "id": "a_get_popularity",
+        "type": "examine",
+        "label_ar": "اطلب العريضة وشهادة المسابقة",
+        "precondition": {
+          "has_evidence": "ev_robot_claim"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_popularity"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_office",
+        "telemetry_code": "GET_POPULARITY"
+      },
+      {
+        "id": "a_get_form",
+        "type": "examine",
+        "label_ar": "اطلب نموذج تسجيل الأندية",
+        "precondition": {
+          "has_evidence": "ev_rule_text"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_club_form"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_office",
+        "telemetry_code": "GET_FORM"
+      },
+      {
+        "id": "a_get_minutes",
+        "type": "search_location",
+        "label_ar": "اطلب محضر مجلس الطلبة",
+        "precondition": {
+          "has_evidence": "ev_rule_text"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_council_minutes"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_council",
+        "telemetry_code": "GET_MINUTES"
+      },
+      {
+        "id": "a_get_notice",
+        "type": "examine",
+        "label_ar": "اطلب الإعلان الرسمي المعلّق",
+        "precondition": {
+          "has_evidence": "ev_council_minutes"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_posted_notice"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_office",
+        "telemetry_code": "GET_NOTICE"
+      },
+      {
+        "id": "a_get_room_log",
+        "type": "search_location",
+        "label_ar": "اطلب دفتر مفاتيح القاعات",
+        "precondition": {
+          "any": [
+            {
+              "has_evidence": "ev_robot_sheets"
+            },
+            {
+              "has_evidence": "ev_theatre_sheets"
+            }
+          ]
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_room_log"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_keydesk",
+        "telemetry_code": "GET_ROOM_LOG"
+      },
+      {
+        "id": "a_get_diary",
+        "type": "examine",
+        "label_ar": "اطلب مفكرة مشرفة الأندية",
+        "precondition": {
+          "has_evidence": "ev_rule_text"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_hala_diary"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_office",
+        "telemetry_code": "GET_DIARY"
+      },
+      {
+        "id": "a_get_fair",
+        "type": "examine",
+        "label_ar": "اطلب إعلان تخصيص الورشة للمعرض",
+        "precondition": {
+          "has_evidence": "ev_robot_sheets"
+        },
+        "effects": [
+          {
+            "op": "grant_evidence",
+            "ref_id": "ev_fair_notice"
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "loc_office",
+        "telemetry_code": "GET_FAIR"
+      },
+      {
+        "id": "a_int_yaser",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة ياسر",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "yaser",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "yaser",
+        "telemetry_code": "INT_YASER"
+      },
+      {
+        "id": "a_int_lama",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة لمى",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "lama",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "lama",
+        "telemetry_code": "INT_LAMA"
+      },
+      {
+        "id": "a_int_hala",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة مشرفة الأندية",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "hala",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "hala",
+        "telemetry_code": "INT_HALA"
+      },
+      {
+        "id": "a_int_subhi",
+        "type": "interview",
+        "label_ar": "ابدأ مقابلة العم صبحي",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "raise_trust",
+            "ref_id": "subhi",
+            "amount": 1
+          }
+        ],
+        "time_cost_units": 1,
+        "target_id": "subhi",
+        "telemetry_code": "INT_SUBHI"
+      },
+      {
+        "id": "p_sheets_yaser",
+        "type": "present_evidence",
+        "label_ar": "اعرض أوراق الروبوت على ياسر",
+        "precondition": {
+          "presented": {
+            "evidence_id": "ev_robot_sheets",
+            "to_character": "yaser"
+          }
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "PRESENTED_SHEETS"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "yaser",
+        "telemetry_code": "P_SHEETS_YASER"
+      },
+      {
+        "id": "ask_yaser_f_rob_w3_five",
+        "type": "interview",
+        "label_ar": "[نموذج] yaser يذكر f_rob_w3_five",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_rob_w3_five"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "yaser",
+        "telemetry_code": "ASK_YASER_F_ROB_W3_FIVE"
+      },
+      {
+        "id": "ask_yaser_f_popularity",
+        "type": "interview",
+        "label_ar": "[نموذج] yaser يذكر f_popularity",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_popularity"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "yaser",
+        "telemetry_code": "ASK_YASER_F_POPULARITY"
+      },
+      {
+        "id": "ask_yaser_f_rob_w8_lab",
+        "type": "interview",
+        "label_ar": "[نموذج] yaser يذكر f_rob_w8_lab",
+        "precondition": {
+          "presented": {
+            "evidence_id": "ev_robot_sheets",
+            "to_character": "yaser"
+          }
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_rob_w8_lab"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "yaser",
+        "telemetry_code": "ASK_YASER_F_ROB_W8_LAB"
+      },
+      {
+        "id": "ask_lama_f_the_w8_five",
+        "type": "interview",
+        "label_ar": "[نموذج] lama يذكر f_the_w8_five",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_the_w8_five"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "lama",
+        "telemetry_code": "ASK_LAMA_F_THE_W8_FIVE"
+      },
+      {
+        "id": "ask_lama_f_rule_orig",
+        "type": "interview",
+        "label_ar": "[نموذج] lama يذكر f_rule_orig",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_rule_orig"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "lama",
+        "telemetry_code": "ASK_LAMA_F_RULE_ORIG"
+      },
+      {
+        "id": "ask_hala_f_rule_orig",
+        "type": "interview",
+        "label_ar": "[نموذج] hala يذكر f_rule_orig",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_rule_orig"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "hala",
+        "telemetry_code": "ASK_HALA_F_RULE_ORIG"
+      },
+      {
+        "id": "ask_hala_f_rule_amend",
+        "type": "interview",
+        "label_ar": "[نموذج] hala يذكر f_rule_amend",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_rule_amend"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "hala",
+        "telemetry_code": "ASK_HALA_F_RULE_AMEND"
+      },
+      {
+        "id": "ask_hala_f_rob_w3_five",
+        "type": "interview",
+        "label_ar": "[نموذج] hala يذكر f_rob_w3_five",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_rob_w3_five"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "hala",
+        "telemetry_code": "ASK_HALA_F_ROB_W3_FIVE"
+      },
+      {
+        "id": "ask_hala_f_the_w8_five",
+        "type": "interview",
+        "label_ar": "[نموذج] hala يذكر f_the_w8_five",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_the_w8_five"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "hala",
+        "telemetry_code": "ASK_HALA_F_THE_W8_FIVE"
+      },
+      {
+        "id": "ask_hala_f_fair_setup",
+        "type": "interview",
+        "label_ar": "[نموذج] hala يذكر f_fair_setup",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_fair_setup"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "hala",
+        "telemetry_code": "ASK_HALA_F_FAIR_SETUP"
+      },
+      {
+        "id": "ask_subhi_f_room_log_kept",
+        "type": "interview",
+        "label_ar": "[نموذج] subhi يذكر f_room_log_kept",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_room_log_kept"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "subhi",
+        "telemetry_code": "ASK_SUBHI_F_ROOM_LOG_KEPT"
+      },
+      {
+        "id": "ask_subhi_f_fair_setup",
+        "type": "interview",
+        "label_ar": "[نموذج] subhi يذكر f_fair_setup",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "unlock_fact",
+            "ref_id": "f_fair_setup"
+          }
+        ],
+        "time_cost_units": 0,
+        "target_id": "subhi",
+        "telemetry_code": "ASK_SUBHI_F_FAIR_SETUP"
+      },
+      {
+        "id": "a_hint",
+        "type": "request_hint",
+        "label_ar": "اطلب تلميحاً",
+        "precondition": {
+          "always": true
+        },
+        "effects": [],
+        "time_cost_units": 0,
+        "telemetry_code": "REQUEST_HINT"
+      },
+      {
+        "id": "a_accuse",
+        "type": "final_accusation",
+        "label_ar": "قدّم الرأي المعلَّل النهائي",
+        "precondition": {
+          "always": true
+        },
+        "effects": [
+          {
+            "op": "emit_event",
+            "ref_id": "SUBMIT"
+          }
+        ],
+        "time_cost_units": 0,
+        "telemetry_code": "FINAL_ACCUSATION"
+      }
+    ]
+  },
+  "state_machine": {
+    "id": "c057",
+    "initial": "briefing",
+    "type": "compound",
+    "states": {
+      "briefing": {
+        "description_ar": "الإحاطة",
+        "type": "atomic",
+        "on": {
+          "START": {
+            "target": "investigating"
+          }
+        }
+      },
+      "investigating": {
+        "description_ar": "التحقيق",
+        "type": "compound",
+        "initial": "gathering",
+        "states": {
+          "gathering": {
+            "type": "atomic",
+            "on": {
+              "OPEN_DEDUCTION": {
+                "target": "deducing"
+              }
+            }
+          },
+          "deducing": {
+            "type": "atomic",
+            "on": {
+              "BACK": {
+                "target": "gathering"
+              }
+            }
+          }
+        },
+        "on": {
+          "SUBMIT": {
+            "target": "review"
+          }
+        }
+      },
+      "review": {
+        "description_ar": "مراجعة",
+        "type": "atomic",
+        "on": {
+          "CLOSE": {
+            "target": "resolved"
+          }
+        }
+      },
+      "resolved": {
+        "description_ar": "إغلاق",
+        "type": "final"
+      }
+    }
+  },
+  "dialogue": {
+    "max_turns_per_interview": 10,
+    "llm_enabled": false,
+    "topics": [
+      {
+        "id": "t_count",
+        "label_ar": "عدد الجلسات والحضور",
+        "example_questions_ar": [
+          "كم جلسة عقدتم؟",
+          "كم حضر في الأسبوع الثالث؟"
+        ],
+        "fact_ids": [
+          "f_both_claims",
+          "f_rob_w3_five",
+          "f_the_w8_five"
+        ],
+        "claim_ids": [
+          "cl_rob_eight",
+          "cl_salma_doubt"
+        ]
+      },
+      {
+        "id": "t_rule",
+        "label_ar": "اللائحة وشروط الجلسة",
+        "example_questions_ar": [
+          "ما شروط الجلسة المحسوبة؟",
+          "هل يسري التعديل على ما قبله؟"
+        ],
+        "fact_ids": [
+          "f_rule_exists",
+          "f_rule_orig"
+        ],
+        "claim_ids": [
+          "cl_retro"
+        ]
+      },
+      {
+        "id": "t_amend",
+        "label_ar": "قرار خفض الحد",
+        "example_questions_ar": [
+          "متى قرر المجلس؟",
+          "متى عُلّق الإعلان؟"
+        ],
+        "fact_ids": [
+          "f_rule_amend"
+        ]
+      },
+      {
+        "id": "t_fair",
+        "label_ar": "المعرض والمفاتيح",
+        "example_questions_ar": [
+          "أين عُقدت جلسة الأسبوع الثامن؟",
+          "من أخذ مفتاح الورشة ذلك السبت؟"
+        ],
+        "fact_ids": [
+          "f_fair_setup",
+          "f_rob_w8_lab",
+          "f_room_log_kept"
+        ]
+      },
+      {
+        "id": "t_merit",
+        "label_ar": "التأييد والجوائز",
+        "example_questions_ar": [
+          "لماذا جمعتم التواقيع؟",
+          "هل تدخل الجائزة في العدّ؟"
+        ],
+        "fact_ids": [
+          "f_popularity"
+        ],
+        "claim_ids": [
+          "cl_popular"
+        ]
+      }
+    ]
+  },
+  "rubric": {
+    "reference_answer_ar": "الأرجح بنص اللائحة أن الموعد من نصيب نادي المسرح، وأن ثماني أوراق لا تجعل للروبوت ثماني جلسات محسوبة. عند فحص كل ورقة بشروط المادة الثانية وبالحد الذي كان ساريًا يوم انعقادها، تسقط جلسة الروبوت ذات الأعضاء الخمسة لأنها سبقت التعليق، وتسقط جلسته في قاعة الحاسوب لأنها خارج الورشة؛ فيبقى للروبوت ست. وللمسرح سبع، منها جلسة الأعضاء الخمسة التي جاءت بعد التعليق. دفتر المفاتيح ومفكرة المشرفة سجلان مستقلان يوافقان الأوراق، والنموذج والإعلان يثبتان القاعدة وتاريخها. حدود الرأي: الفارق جلسة واحدة، وجلستان منهما عند الحد الأدنى تماماً، والعدد من عدّ شخص واحد؛ والعريضة والجائزة ليستا من شروط اللائحة؛ ولا دليل على أن أحداً تعمّد الخطأ. وهذا رأي معلل يُرفع إلى المجلس صاحب القرار، وليس حكماً نهائياً.",
+    "criteria": [
+      {
+        "id": "c_source",
+        "name_ar": "تصنيف المصادر",
+        "objective_ids": [
+          "lo_claim",
+          "lo_indep"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يصنّف"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "أخطأ في الأغلب"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "نصف صحيح"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمه صحيح"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كله صحيح"
+          }
+        ]
+      },
+      {
+        "id": "c_conflict",
+        "name_ar": "ربط القرار والتعليق بالجلسات",
+        "objective_ids": [
+          "lo_timeline"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.15,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يضع شيئاً"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "وضع قليلاً"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "وضع نصفها صحيحاً"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمها"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كلها في موضعها"
+          }
+        ]
+      },
+      {
+        "id": "c_links",
+        "name_ar": "ربط الأدلة بالفرضيات",
+        "objective_ids": [
+          "lo_diag"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.2,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لا روابط"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "قليلة"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "نصفها صحيح"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معظمها"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كلها دقيقة"
+          }
+        ]
+      },
+      {
+        "id": "c_uncertainty",
+        "name_ar": "معايرة الثقة وذكر الحدود",
+        "objective_ids": [
+          "lo_calib"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.2,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "ثقة مفرطة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "حدود قليلة"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "جزئية"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "معقولة"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "معايَرة كاملة"
+          }
+        ]
+      },
+      {
+        "id": "c_revision",
+        "name_ar": "مراجعة الرأي",
+        "objective_ids": [
+          "lo_revise"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "بقي على فرضية مرفوضة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "لم يعلن فرضية"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "ثبت على فرضية سليمة"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "غيّر بدليل"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "غيّر بدليل ووثّق"
+          }
+        ]
+      },
+      {
+        "id": "c_elimination",
+        "name_ar": "استبعاد الفرضيات الخاطئة",
+        "objective_ids": [
+          "lo_hyp"
+        ],
+        "scored_by": "deterministic",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لم يستبعد"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "استبعد خطأً"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "فرضية بدليل"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "فرضيتين"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "كل الخاطئة"
+          }
+        ]
+      },
+      {
+        "id": "c_justification",
+        "name_ar": "جودة الرأي المكتوب",
+        "objective_ids": [
+          "lo_diag",
+          "lo_hyp"
+        ],
+        "scored_by": "human",
+        "weight": 0.1,
+        "levels": [
+          {
+            "score": 0,
+            "descriptor_ar": "لا حجة"
+          },
+          {
+            "score": 1,
+            "descriptor_ar": "ادعاء بلا سند"
+          },
+          {
+            "score": 2,
+            "descriptor_ar": "أدلة دون ربط"
+          },
+          {
+            "score": 3,
+            "descriptor_ar": "ربط الأدلة بالاستنتاج"
+          },
+          {
+            "score": 4,
+            "descriptor_ar": "ربط مع البدائل والحدود"
+          }
+        ]
+      }
+    ]
+  },
+  "hint_ladder": [
+    {
+      "id": "hg1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "قبل أن تقارن العددين، اسأل: هل كل ورقة حضور تُعدّ جلسة بحسب اللائحة؟ وما الذي تقيسه اللائحة بالضبط؟",
+      "trigger": {
+        "always": true
+      },
+      "assessment_weight": 0.02
+    },
+    {
+      "id": "hg2",
+      "level": 2,
+      "kind": "focus_area",
+      "text_ar": "اقرأ شروط الجلسة شرطاً شرطاً، ثم افحص كل سطر في كل ورقة أمام تلك الشروط، ولا تعتمد على المجموع الذي كتبه صاحب المطالبة.",
+      "trigger": {
+        "has_evidence": "ev_rule_text"
+      },
+      "assessment_weight": 0.04
+    },
+    {
+      "id": "hg3",
+      "level": 3,
+      "kind": "pointer",
+      "text_ar": "ابحث عن سطرين في ملف الروبوت يخالف أحدهما شرطاً، وعن سطر في ملف المسرح يبدو ضعيفاً وقد يستوفي الشرط الذي كان ساريًا وقتها.",
+      "trigger": {
+        "has_evidence": "ev_robot_sheets"
+      },
+      "assessment_weight": 0.08
+    },
+    {
+      "id": "hd1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "أي حدٍّ للحضور كان ساريًا يوم عُقدت كل جلسة: القديم أم الجديد؟",
+      "trigger": {
+        "has_evidence": "ev_council_minutes"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_amend_b"
+    },
+    {
+      "id": "hd2",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "قارن يوم قرار المجلس ووقت تعليق الإعلان بأيام الجلسات، واقرأ المادة الرابعة من اللائحة.",
+      "trigger": {
+        "has_evidence": "ev_council_minutes"
+      },
+      "assessment_weight": 0.06,
+      "targets_inference_id": "i_amend_b"
+    },
+    {
+      "id": "hd3",
+      "level": 3,
+      "kind": "partial_reveal",
+      "text_ar": "التعليق كان الأربعاء من الأسبوع الخامس الساعة 10:00؛ فجلسات الأسابيع 1 إلى 4 تُقاس بحد ستة، وما بعدها بحد خمسة.",
+      "trigger": {
+        "has_evidence": "ev_posted_notice"
+      },
+      "assessment_weight": 0.1,
+      "targets_inference_id": "i_amend_b"
+    },
+    {
+      "id": "hr1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "هل في أوراق الروبوت ما يخالف شرطاً غير شرط الحضور؟",
+      "trigger": {
+        "has_evidence": "ev_robot_sheets"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_rob_a"
+    },
+    {
+      "id": "hr2",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "انظر إلى عمود القاعة في كل ورقة، وقابله بدفتر مفاتيح القاعات.",
+      "trigger": {
+        "has_evidence": "ev_robot_sheets"
+      },
+      "assessment_weight": 0.06,
+      "targets_inference_id": "i_rob_a"
+    },
+    {
+      "id": "hr3",
+      "level": 3,
+      "kind": "partial_reveal",
+      "text_ar": "ورقة الأسبوع 3 حضرها خمسة قبل التعليق، وورقة الأسبوع 8 عُقدت في قاعة أخرى؛ فاحسب ما يبقى.",
+      "trigger": {
+        "has_evidence": "ev_room_log"
+      },
+      "assessment_weight": 0.1,
+      "targets_inference_id": "i_rob_a"
+    },
+    {
+      "id": "ht1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "لو أسقطت جلسة المسرح ذات الحضور الأدنى، ماذا يتغير في المقارنة؟ وهل يسمح لها الحد الساري وقتها بالبقاء؟",
+      "trigger": {
+        "has_evidence": "ev_theatre_sheets"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_the_a"
+    },
+    {
+      "id": "ht2",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "قابل وقت جلسة الأسبوع 8 بوقت تعليق الإعلان، ثم بالحد الأدنى المذكور فيه.",
+      "trigger": {
+        "has_evidence": "ev_posted_notice"
+      },
+      "assessment_weight": 0.06,
+      "targets_inference_id": "i_the_a"
+    },
+    {
+      "id": "ht3",
+      "level": 3,
+      "kind": "partial_reveal",
+      "text_ar": "جلسة المسرح في الأسبوع 8 حضرها خمسة بعد التعليق، والحد حينها خمسة؛ فهي محسوبة.",
+      "trigger": {
+        "has_evidence": "ev_theatre_sheets"
+      },
+      "assessment_weight": 0.1,
+      "targets_inference_id": "i_the_a"
+    },
+    {
+      "id": "hf1",
+      "level": 1,
+      "kind": "metacognitive",
+      "text_ar": "كم يبلغ الفارق بين العددين؟ وهل يكفي خطأ في عدّ عضو واحد لتغييره؟",
+      "trigger": {
+        "has_evidence": "ev_hala_diary"
+      },
+      "assessment_weight": 0.02,
+      "targets_inference_id": "i_ruling"
+    },
+    {
+      "id": "hf2",
+      "level": 2,
+      "kind": "pointer",
+      "text_ar": "اذكر في رأيك أي الجلسات يعتمد حسابها على رقم قريب جداً من الحد، ومن صاحب القرار.",
+      "trigger": {
+        "has_evidence": "ev_hala_diary"
+      },
+      "assessment_weight": 0.05,
+      "targets_inference_id": "i_ruling"
+    },
+    {
+      "id": "hf3",
+      "level": 3,
+      "kind": "pointer",
+      "text_ar": "اكتب الرأي بعبارة «الأرجح» لا «المؤكد»، واذكر ما يمكن أن يغيّره.",
+      "trigger": {
+        "has_evidence": "ev_room_log"
+      },
+      "assessment_weight": 0.08,
+      "targets_inference_id": "i_ruling"
+    }
+  ],
+  "fairness_test": {
+    "requirements": {
+      "min_disjoint_proof_paths": 2,
+      "max_inference_depth": 3,
+      "all_red_herrings_refutable": true,
+      "culprit_uniquely_entailed": true,
+      "no_hidden_fact_dependency": true,
+      "max_required_actions": 30
+    },
+    "runs": []
+  },
+  "ending_explanation": {
+    "steps": [
+      {
+        "order": 1,
+        "text_ar": "ابدأ بالقاعدة نفسها لا بالأرقام: المادة الثانية تضع ثلاثة شروط، والمادة الرابعة تمنع تطبيق التعديل على ما سبقه، ونموذج التسجيل يذكر الأمر ذاته.",
+        "uses_evidence_ids": [
+          "ev_rule_text",
+          "ev_club_form"
+        ],
+        "inference_id": "i_rule_a"
+      },
+      {
+        "order": 2,
+        "text_ar": "ثم ثبّت التاريخين: قرر المجلس يوم الثلاثاء، وعُلّق الإعلان صباح الأربعاء من الأسبوع الخامس؛ فما سبق ذلك يُقاس بستة وما لحقه بخمسة.",
+        "uses_evidence_ids": [
+          "ev_council_minutes",
+          "ev_posted_notice"
+        ],
+        "inference_id": "i_amend_b"
+      },
+      {
+        "order": 3,
+        "text_ar": "افحص ورقة الروبوت سطراً سطراً: سقط سطران، أحدهما لقلة الحضور قبل التعليق والآخر لأنه خارج الورشة، فثمانٍ ناقص اثنتين تساوي ست.",
+        "uses_evidence_ids": [
+          "ev_robot_sheets",
+          "ev_room_log",
+          "ev_hala_diary"
+        ],
+        "inference_id": "i_rob_a"
+      },
+      {
+        "order": 4,
+        "text_ar": "افحص ورقة المسرح بالطريقة نفسها: لا سطر يسقط، وأضعفها حضوراً جاء بعد التعليق وبلغ الحد الجديد بالضبط؛ فالمجموع سبع.",
+        "uses_evidence_ids": [
+          "ev_theatre_sheets",
+          "ev_room_log",
+          "ev_hala_diary"
+        ],
+        "inference_id": "i_the_a"
+      },
+      {
+        "order": 5,
+        "text_ar": "سبع تفوق ست بجلسة، فلا تعادل. لذلك الأرجح أن الموعد للمسرح، ويُرفع هذا الرأي إلى المجلس مع هامشه.",
+        "uses_evidence_ids": [
+          "ev_robot_sheets",
+          "ev_theatre_sheets",
+          "ev_rule_text"
+        ],
+        "inference_id": "i_ruling"
+      },
+      {
+        "order": 6,
+        "text_ar": "وأخيراً اختبر البدائل: العريضة والجائزة ليستا من شروط اللائحة، وتطبيق الحد الجديد بأثر رجعي ممنوع نصاً، ولا حاجة إلى قرعة ما دامت السجلات المستقلة متفقة.",
+        "uses_evidence_ids": [
+          "ev_popularity",
+          "ev_posted_notice",
+          "ev_rule_text"
+        ],
+        "inference_id": "i_ref_tie"
+      }
+    ],
+    "alternative_paths_ar": [
+      "مسار مستقل: دفتر المفاتيح ومفكرة المشرفة يعطيان العدّ نفسه دون الرجوع إلى أوراق النادين، والنموذج والإعلان يثبتان القاعدة وتاريخها دون نص اللائحة."
+    ],
+    "what_evidence_could_not_show_ar": [
+      "لا تبين السجلات أي النادين أنفع للمدرسة، ولا أن اللائحة عادلة؛ فهذا من شأن المجلس وحده.",
+      "الحضور مأخوذ من عدّ المشرفة وحدها، وجلستان تقفان عند الحد الأدنى تماماً؛ فخطأ بعضو واحد قد يغيّر النتيجة.",
+      "لا شيء يثبت نية أحد في العدّ الخاطئ، وقد يكون ناتجاً عن فهم اللائحة على غير وجهها."
+    ],
+    "science_notes_ar": [
+      "القاعدة الساريّة تُحدَّد بوقت الحدث لا بوقت الحكم، فلا يغيّر تعديل لاحق ما جرى قبله.",
+      "اتفاق سجلين مستقلين يقوّي العدّ أكثر من تكرار سجل واحد في نسختين.",
+      "الرأي المعلل يذكر درجة الترجيح وهامش الخطأ ويترك القرار لأصحابه."
+    ]
+  },
+  "expert_review": [
+    {
+      "role": "narrative_editor",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "scientific_reviewer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "learning_designer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "age_appropriateness",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "cultural_reviewer",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "legal_rights",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    },
+    {
+      "role": "safety",
+      "reviewer": "—",
+      "status": "pending",
+      "content_hash": "unbound",
+      "date": "2026-10-27",
+      "notes_ar": "بانتظار مراجعة بشرية؛ لم يُجرَ أي اعتماد."
+    }
+  ]
+}

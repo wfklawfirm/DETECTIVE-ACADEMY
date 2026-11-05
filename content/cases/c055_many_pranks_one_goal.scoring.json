@@ -1,0 +1,135 @@
+{
+  "case_id": "c055_many_pranks_one_goal",
+  "accepted_conclusions": {
+    "h_hadi": {
+      "grade": 1,
+      "note_ar": "استنتاج متسق مع الأدلة ويتطلب ذكر حدوده."
+    },
+    "h_jawad": {
+      "grade": 0,
+      "note_ar": "يعدّ نشر الأفكار وموقع الصف دليلاً، ويتجاهل أن جواداً خسر بالتبديل وأن ثلاثة من خمسة متوقعة بالصدفة."
+    },
+    "h_random": {
+      "grade": 0,
+      "note_ar": "إعادة التعليق لا تبدّل الأسماء المكتوبة، وحروف المعلمة بقيت في أماكنها."
+    },
+    "h_rana": {
+      "grade": 0,
+      "note_ar": "رنا بلا موعد تربح به، ولا اسم لها في نوافذ الخروج، وقد أعادت التعليق بحضور الحارس."
+    }
+  },
+  "confidence_band": {
+    "h_hadi": [
+      65,
+      90
+    ],
+    "h_jawad": [
+      0,
+      15
+    ],
+    "h_random": [
+      0,
+      15
+    ],
+    "h_rana": [
+      0,
+      15
+    ]
+  },
+  "source_key": {
+    "ev_log": "primary_record",
+    "ev_patrol": "primary_record",
+    "ev_pass": "primary_record",
+    "ev_sheet_tue": "primary_record",
+    "ev_sheet_fri": "primary_record",
+    "ev_judge": "public_document",
+    "ev_map": "public_document",
+    "ev_ideas": "claim",
+    "ev_rana": "claim",
+    "ev_hadi": "claim"
+  },
+  "link_key": {
+    "h_hadi": {
+      "ev_sheet_tue": "supports",
+      "ev_sheet_fri": "supports",
+      "ev_judge": "supports",
+      "ev_patrol": "supports",
+      "ev_pass": "supports",
+      "ev_hadi": "weakens",
+      "ev_log": "neutral",
+      "ev_map": "neutral"
+    },
+    "h_jawad": {
+      "ev_ideas": "supports",
+      "ev_sheet_fri": "weakens",
+      "ev_judge": "weakens",
+      "ev_pass": "weakens",
+      "ev_map": "weakens",
+      "ev_log": "neutral"
+    },
+    "h_random": {
+      "ev_log": "supports",
+      "ev_sheet_tue": "weakens",
+      "ev_sheet_fri": "weakens",
+      "ev_patrol": "neutral"
+    },
+    "h_rana": {
+      "ev_rana": "supports",
+      "ev_patrol": "weakens",
+      "ev_pass": "weakens",
+      "ev_judge": "weakens"
+    }
+  },
+  "required_limits": [
+    "l_how_swap",
+    "l_one_sign"
+  ],
+  "valid_mind_changers": [
+    "m_pass_other",
+    "m_sheet_same",
+    "m_other_sign"
+  ],
+  "invalid_limits": [
+    "l_invalid_ideas",
+    "l_invalid_floor",
+    "l_invalid_calm"
+  ],
+  "decisive_evidence": [
+    "ev_sheet_tue",
+    "ev_sheet_fri",
+    "ev_judge",
+    "ev_patrol",
+    "ev_pass"
+  ],
+  "lab_requirement": null,
+  "refuted_hypotheses": [
+    "h_jawad",
+    "h_random",
+    "h_rana"
+  ],
+  "transfer_key": {
+    "valid": [
+      "o1",
+      "o2",
+      "o3",
+      "o4"
+    ],
+    "invalid": [
+      "o5",
+      "o6",
+      "o7"
+    ]
+  },
+  "criteria_map": {
+    "c_source": "source_typing",
+    "c_links": "hypothesis_links",
+    "c_uncertainty": "uncertainty",
+    "c_revision": "revision",
+    "c_elimination": "elimination",
+    "c_justification": "justification_human"
+  },
+  "caps": {
+    "no_citations_max": 45,
+    "no_conflict_resolution_max": 65
+  }
+}

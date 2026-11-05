@@ -1,0 +1,147 @@
+{
+  "case_id": "c054_haunted_house_that_profits",
+  "accepted_conclusions": {
+    "h_neighbor": {
+      "grade": 1,
+      "note_ar": "استنتاج متسق مع الأدلة ويتطلب ذكر حدوده."
+    },
+    "h_pipes": {
+      "grade": 0,
+      "note_ar": "لا ماء ولا كهرباء في البيت، والظواهر تتبع مواعيد المعاينات."
+    },
+    "h_ghost": {
+      "grade": 0,
+      "note_ar": "وُجد لكل من الضوء والطرقات سبب عادي في العلية؛ والتقييم يخص هذه الليالي دون الحكم على معتقد أحد."
+    },
+    "h_zaid": {
+      "grade": 0,
+      "note_ar": "بدأت الظواهر قبل نشره بثلاثة أسابيع، ولا مفتاح معه ولا وسيلة للتيار."
+    },
+    "h_broker": {
+      "grade": 0,
+      "note_ar": "تخسر من انخفاض السعر، والأدوات اشتُريت بحساب المقهى."
+    }
+  },
+  "confidence_band": {
+    "h_neighbor": [
+      70,
+      95
+    ],
+    "h_pipes": [
+      0,
+      10
+    ],
+    "h_ghost": [
+      0,
+      10
+    ],
+    "h_zaid": [
+      0,
+      10
+    ],
+    "h_broker": [
+      0,
+      10
+    ]
+  },
+  "source_key": {
+    "ev_log": "claim",
+    "ev_book": "primary_record",
+    "ev_utility": "primary_record",
+    "ev_attic": "primary_record",
+    "ev_storeroom": "public_document",
+    "ev_receipt": "primary_record",
+    "ev_offer": "claim",
+    "ev_commission": "public_document",
+    "ev_zaid": "claim"
+  },
+  "link_key": {
+    "h_neighbor": {
+      "ev_log": "supports",
+      "ev_book": "supports",
+      "ev_utility": "supports",
+      "ev_attic": "supports",
+      "ev_storeroom": "supports",
+      "ev_receipt": "supports",
+      "ev_offer": "supports",
+      "ev_commission": "neutral",
+      "ev_zaid": "neutral"
+    },
+    "h_pipes": {
+      "ev_utility": "weakens",
+      "ev_attic": "weakens",
+      "ev_log": "weakens",
+      "ev_book": "weakens"
+    },
+    "h_ghost": {
+      "ev_attic": "weakens",
+      "ev_storeroom": "weakens",
+      "ev_utility": "weakens",
+      "ev_log": "neutral"
+    },
+    "h_zaid": {
+      "ev_zaid": "supports",
+      "ev_log": "weakens",
+      "ev_storeroom": "weakens",
+      "ev_attic": "weakens"
+    },
+    "h_broker": {
+      "ev_book": "supports",
+      "ev_commission": "weakens",
+      "ev_receipt": "weakens",
+      "ev_storeroom": "weakens"
+    }
+  },
+  "required_limits": [
+    "l_who_plugged",
+    "l_log_complete"
+  ],
+  "valid_mind_changers": [
+    "m_water_on",
+    "m_off_eve",
+    "m_cable_other"
+  ],
+  "invalid_limits": [
+    "l_invalid_crowd",
+    "l_invalid_motive",
+    "l_invalid_channel"
+  ],
+  "decisive_evidence": [
+    "ev_attic",
+    "ev_storeroom",
+    "ev_receipt",
+    "ev_book"
+  ],
+  "lab_requirement": null,
+  "refuted_hypotheses": [
+    "h_pipes",
+    "h_ghost",
+    "h_zaid",
+    "h_broker"
+  ],
+  "transfer_key": {
+    "valid": [
+      "o1",
+      "o2",
+      "o3",
+      "o4"
+    ],
+    "invalid": [
+      "o5",
+      "o6",
+      "o7"
+    ]
+  },
+  "criteria_map": {
+    "c_source": "source_typing",
+    "c_links": "hypothesis_links",
+    "c_uncertainty": "uncertainty",
+    "c_revision": "revision",
+    "c_elimination": "elimination",
+    "c_justification": "justification_human"
+  },
+  "caps": {
+    "no_citations_max": 45,
+    "no_conflict_resolution_max": 65
+  }
+}

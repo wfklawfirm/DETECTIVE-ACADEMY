@@ -1,0 +1,175 @@
+{
+  "case_id": "c048_third_margin",
+  "accepted_conclusions": {
+    "h_original": {
+      "grade": 0,
+      "note_ar": "يعدّ بطاقة الفهرس دليلاً على قدم الملاحظات الثلاث، وينقضه وصف التسليم والمسح ولطخة الماء."
+    },
+    "h_isam": {
+      "grade": 0,
+      "note_ar": "يكتفي بالمصلحة، وتنقضه ملاحظاته في القراءة وخلو سجلي القفل والتنبيه من اسمه."
+    },
+    "h_najwa": {
+      "grade": 0,
+      "note_ar": "يبني على قلم رآه شاهد، وتنقضه واجهة مقفلة وصورة بعد ذلك الوقت."
+    },
+    "h_archive": {
+      "grade": 0,
+      "note_ar": "ينقضه سجل الملاحظات اللاحقة الذي لا قيد فيه، وغياب الختم والرصاص."
+    },
+    "h_khalid": {
+      "grade": 1,
+      "note_ar": "استنتاج متسق مع الأدلة ويتطلب ذكر حدوده."
+    }
+  },
+  "confidence_band": {
+    "h_original": [
+      0,
+      10
+    ],
+    "h_isam": [
+      0,
+      15
+    ],
+    "h_najwa": [
+      0,
+      12
+    ],
+    "h_archive": [
+      0,
+      10
+    ],
+    "h_khalid": [
+      60,
+      88
+    ]
+  },
+  "source_key": {
+    "ev_dispute_file": "public_document",
+    "ev_card_1994": "public_document",
+    "ev_scan_2009": "primary_record",
+    "ev_receipt": "primary_record",
+    "ev_return_form": "primary_record",
+    "ev_exam": "primary_record",
+    "ev_annotation_register": "primary_record",
+    "ev_reading_log": "primary_record",
+    "ev_visitor_photo": "primary_record",
+    "ev_case_lock_log": "primary_record",
+    "ev_alarm_log": "primary_record",
+    "ev_isam_msg": "claim",
+    "ev_draft_file": "primary_record",
+    "ev_gazette_index": "public_document",
+    "ev_pump_contract": "public_document",
+    "ev_najwa_note": "claim",
+    "ev_abeer_stmt": "claim"
+  },
+  "link_key": {
+    "h_original": {
+      "ev_card_1994": "supports",
+      "ev_dispute_file": "neutral",
+      "ev_scan_2009": "weakens",
+      "ev_receipt": "weakens",
+      "ev_exam": "weakens",
+      "ev_visitor_photo": "weakens",
+      "ev_draft_file": "weakens"
+    },
+    "h_isam": {
+      "ev_dispute_file": "supports",
+      "ev_pump_contract": "supports",
+      "ev_reading_log": "weakens",
+      "ev_alarm_log": "weakens",
+      "ev_case_lock_log": "weakens"
+    },
+    "h_najwa": {
+      "ev_abeer_stmt": "supports",
+      "ev_najwa_note": "supports",
+      "ev_visitor_photo": "weakens",
+      "ev_case_lock_log": "weakens"
+    },
+    "h_archive": {
+      "ev_annotation_register": "weakens",
+      "ev_exam": "weakens",
+      "ev_return_form": "neutral"
+    },
+    "h_khalid": {
+      "ev_receipt": "supports",
+      "ev_return_form": "supports",
+      "ev_visitor_photo": "supports",
+      "ev_isam_msg": "supports",
+      "ev_case_lock_log": "supports",
+      "ev_alarm_log": "supports",
+      "ev_draft_file": "supports",
+      "ev_gazette_index": "supports",
+      "ev_pump_contract": "supports",
+      "ev_reading_log": "neutral"
+    }
+  },
+  "required_limits": [
+    "l_hand_not_proved",
+    "l_text_origin"
+  ],
+  "valid_mind_changers": [
+    "m_log_error",
+    "m_shared_draft",
+    "m_earlier_photo"
+  ],
+  "invalid_limits": [
+    "l_invalid_card",
+    "l_invalid_benefit"
+  ],
+  "decisive_evidence": [
+    "ev_receipt",
+    "ev_return_form",
+    "ev_case_lock_log",
+    "ev_alarm_log",
+    "ev_draft_file",
+    "ev_visitor_photo"
+  ],
+  "lab_requirement": null,
+  "timeline_requirement": [
+    {
+      "evidence_id": "ev_receipt",
+      "utc_minute": 90,
+      "tol": 10
+    },
+    {
+      "evidence_id": "ev_visitor_photo",
+      "utc_minute": 525,
+      "tol": 10
+    },
+    {
+      "evidence_id": "ev_alarm_log",
+      "utc_minute": 755,
+      "tol": 10
+    },
+    {
+      "evidence_id": "ev_case_lock_log",
+      "utc_minute": 762,
+      "tol": 10
+    },
+    {
+      "evidence_id": "ev_isam_msg",
+      "utc_minute": 845,
+      "tol": 10
+    }
+  ],
+  "refuted_hypotheses": [
+    "h_original",
+    "h_isam",
+    "h_najwa",
+    "h_archive"
+  ],
+  "criteria_map": {
+    "c_source": "source_typing",
+    "c_conflict": "conflict_resolution",
+    "c_links": "hypothesis_links",
+    "c_uncertainty": "uncertainty",
+    "c_revision": "revision",
+    "c_elimination": "elimination",
+    "c_justification": "justification_human"
+  },
+  "caps": {
+    "no_citations_max": 45,
+    "no_conflict_resolution_max": 70
+  }
+}

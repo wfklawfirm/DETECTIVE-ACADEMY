@@ -1,0 +1,162 @@
+{
+  "case_id": "c052_device_is_not_its_owner",
+  "accepted_conclusions": {
+    "h_nader": {
+      "grade": 0,
+      "note_ar": "يعدّ حساب الجهاز وإفادة هناء دليلاً على نادر، وينقضه كشف الامتحان وعداد الباب وسجل النقاط."
+    },
+    "h_joud": {
+      "grade": 0,
+      "note_ar": "يعدّ الغضب دليلاً على الفعل، ولا يفسر بطاقتها في المكتبة 13:18 والمسافة."
+    },
+    "h_auto": {
+      "grade": 0,
+      "note_ar": "يتجاهل أن سجل النشر يبين نشراً يدوياً من الشاشة لا جدولة."
+    },
+    "h_murad": {
+      "grade": 1,
+      "note_ar": "استنتاج متسق مع الأدلة ويتطلب ذكر حدوده."
+    }
+  },
+  "confidence_band": {
+    "h_nader": [
+      0,
+      15
+    ],
+    "h_joud": [
+      0,
+      15
+    ],
+    "h_auto": [
+      0,
+      10
+    ],
+    "h_murad": [
+      60,
+      88
+    ]
+  },
+  "source_key": {
+    "ev_referral": "public_document",
+    "ev_notice": "redisplay",
+    "ev_post_log": "primary_record",
+    "ev_it_note": "public_document",
+    "ev_wifi": "primary_record",
+    "ev_exam_sheet": "primary_record",
+    "ev_door_counter": "primary_record",
+    "ev_signin": "primary_record",
+    "ev_pc_log": "primary_record",
+    "ev_kiosk": "primary_record",
+    "ev_charge_log": "primary_record",
+    "ev_library_desk": "primary_record",
+    "ev_floor_plan": "public_document",
+    "ev_tryout_sheet": "public_document",
+    "ev_booking": "primary_record",
+    "ev_nader_statement": "claim",
+    "ev_hana_statement": "claim",
+    "ev_joud_message": "claim",
+    "ev_murad_statement": "claim"
+  },
+  "link_key": {
+    "h_nader": {
+      "ev_post_log": "supports",
+      "ev_referral": "supports",
+      "ev_hana_statement": "supports",
+      "ev_notice": "neutral",
+      "ev_it_note": "neutral",
+      "ev_exam_sheet": "weakens",
+      "ev_door_counter": "weakens",
+      "ev_wifi": "weakens",
+      "ev_signin": "weakens",
+      "ev_charge_log": "weakens"
+    },
+    "h_joud": {
+      "ev_joud_message": "supports",
+      "ev_signin": "neutral",
+      "ev_pc_log": "neutral",
+      "ev_kiosk": "weakens",
+      "ev_floor_plan": "weakens",
+      "ev_library_desk": "weakens"
+    },
+    "h_auto": {
+      "ev_nader_statement": "supports",
+      "ev_post_log": "weakens"
+    },
+    "h_murad": {
+      "ev_it_note": "supports",
+      "ev_wifi": "supports",
+      "ev_exam_sheet": "supports",
+      "ev_door_counter": "supports",
+      "ev_signin": "supports",
+      "ev_pc_log": "supports",
+      "ev_kiosk": "supports",
+      "ev_tryout_sheet": "supports",
+      "ev_booking": "supports",
+      "ev_post_log": "supports",
+      "ev_charge_log": "supports",
+      "ev_library_desk": "supports"
+    }
+  },
+  "required_limits": [
+    "l_device_not_person",
+    "l_signin_self_written"
+  ],
+  "valid_mind_changers": [
+    "m_tablet_with_nader",
+    "m_counter_fault",
+    "m_card_lent"
+  ],
+  "invalid_limits": [
+    "l_invalid_account",
+    "l_invalid_jacket"
+  ],
+  "decisive_evidence": [
+    "ev_post_log",
+    "ev_wifi",
+    "ev_exam_sheet",
+    "ev_door_counter",
+    "ev_signin",
+    "ev_kiosk"
+  ],
+  "lab_requirement": null,
+  "timeline_requirement": [
+    {
+      "evidence_id": "ev_wifi",
+      "utc_minute": 260,
+      "tol": 10
+    },
+    {
+      "evidence_id": "ev_pc_log",
+      "utc_minute": 313,
+      "tol": 10
+    },
+    {
+      "evidence_id": "ev_kiosk",
+      "utc_minute": 318,
+      "tol": 10
+    },
+    {
+      "evidence_id": "ev_post_log",
+      "utc_minute": 320,
+      "tol": 10
+    }
+  ],
+  "refuted_hypotheses": [
+    "h_nader",
+    "h_joud",
+    "h_auto"
+  ],
+  "criteria_map": {
+    "c_source": "source_typing",
+    "c_conflict": "conflict_resolution",
+    "c_links": "hypothesis_links",
+    "c_uncertainty": "uncertainty",
+    "c_revision": "revision",
+    "c_elimination": "elimination",
+    "c_justification": "justification_human"
+  },
+  "caps": {
+    "no_citations_max": 45,
+    "no_conflict_resolution_max": 70
+  }
+}
